@@ -1,6 +1,7 @@
 import type { Condition, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
+import { bodyTraits } from './body.ts';
 import { MINUTES_PER_DAY } from './clock.ts';
 export interface Check { pass: boolean; reason: string }
 /** 条件求值是纯读取：不能在这里抽 RNG，也不能推进时钟。 */
@@ -36,6 +37,9 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
       reason = condition.state === 'unseen' ? '这件事已经处理过了。' : '当前事件进度不符合条件。';
       break;
     }
+    case 'body.hasPart': pass = state.player.body?.parts.some(x => x.definitionId === condition.definitionId) ?? false; reason = `需要${registry.bodyPart(condition.definitionId).label}。`; break;
+    case 'body.hasCapability': { const n = bodyTraits(state.player.body, registry)[condition.capability]; pass = n >= condition.count; reason = `需要 ${condition.count} 个可用${{ grasp: '抓握部位', walk: '行走部位', hear: '听觉部位', balance: '平衡部位', tailGrip: '尾部抓握部位' }[condition.capability]}（当前 ${n}）。`; break; }
+    case 'tf.state': { const jobs = state.tfQueues.filter(x => x.definitionId === condition.id); pass = condition.state === 'idle' ? !jobs.some(x => ['active', 'paused', 'blocked'].includes(x.status)) : jobs.some(x => x.status === condition.state); reason = '当前改造进度不符合这项行动。'; break; }
     default: throw new RuleError('UNSUPPORTED_CONDITION', '内容包使用了未实现的 Condition。');
   }
   return { pass, reason: pass ? '' : reason };

@@ -1,7 +1,8 @@
+import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import type { ContentPack } from '../core/types.ts';
-export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1'] as const;
+export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1'] as const;
 type Obj = Record<string, unknown>;
 /** 只冻结本切片实际使用的契约；未实现操作符必须导入失败，不能静默跳过。 */
 export function parsePack(input: unknown): ContentPack {
@@ -35,6 +36,9 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'location.is') { const x = obj(value, path, ['op', 'id']); id(x.id, `${path}/id`); }
     else if (op === 'time.window') { const x = obj(value, path, ['op', 'start', 'end']); integer(x.start, `${path}/start`, 0, 1439); integer(x.end, `${path}/end`, 0, 1439); if (x.start === x.end) fail(path, '时间窗口不可为空。'); }
     else if (op === 'event.state') { const x = obj(value, path, ['op', 'id', 'state']); id(x.id, `${path}/id`); choice(x.state, `${path}/state`, ['unseen', 'active', 'completed']); }
+    else if (op === 'body.hasPart') { const x = obj(value, path, ['op', 'definitionId']); id(x.definitionId, `${path}/definitionId`); }
+    else if (op === 'body.hasCapability') { const x = obj(value, path, ['op', 'capability', 'count']); choice(x.capability, `${path}/capability`, [...BODY_CAPABILITIES]); integer(x.count, `${path}/count`, 1, 128); }
+    else if (op === 'tf.state') { const x = obj(value, path, ['op', 'id', 'state']); id(x.id, `${path}/id`); choice(x.state, `${path}/state`, ['idle', 'active', 'paused', 'blocked', 'completed', 'cancelled']); }
     else fail(`${path}/op`, '未知或未实现的条件操作符。', 'UNSUPPORTED_OPCODE');
   }
   function effect(value: unknown, path: string): void {
@@ -46,9 +50,10 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'event.start') { const x = obj(value, path, ['op', 'id']); id(x.id, `${path}/id`); }
     else if (op === 'event.advance') { const x = obj(value, path, ['op', 'nodeId']); str(x.nodeId, `${path}/nodeId`); }
     else if (op === 'event.exit') obj(value, path, ['op']);
+    else if (['tf.apply', 'tf.enqueue', 'tf.pause', 'tf.resume', 'tf.cancel'].includes(String(op))) { const x = obj(value, path, ['op', 'id']); id(x.id, `${path}/id`); }
     else fail(`${path}/op`, '未知或未实现的效果操作符。', 'UNSUPPORTED_OPCODE');
   }
-  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start']);
+  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks']);
   const m = obj(root.manifest, '/manifest', ['id', 'namespace', 'version', 'schemaVersion', 'engineApiVersion', 'author', 'status', 'dependencies', 'requiresCapabilities', 'migrations']);
   if (typeof m.id === 'string') packId = m.id;
   str(m.id, '/manifest/id'); str(m.author, '/manifest/author');
@@ -64,12 +69,41 @@ export function parsePack(input: unknown): ContentPack {
   list(root.hooks, '/hooks', (v, p) => { const x = obj(v, p, ['id', 'accepts', 'visibility']); id(x.id, `${p}/id`); choice(x.accepts, `${p}/accepts`, ['action']); choice(x.visibility, `${p}/visibility`, ['public']); });
   list(root.locations, '/locations', (v, p) => { const x = obj(v, p, ['id', 'name', 'subtitle', 'textKey', 'actionHook', 'map']); for (const k of ['id', 'textKey', 'actionHook']) id(x[k], `${p}/${k}`); str(x.name, `${p}/name`); str(x.subtitle, `${p}/subtitle`); const map = obj(x.map, `${p}/map`, ['x', 'y']); integer(map.x, `${p}/map/x`, 0, 100); integer(map.y, `${p}/map/y`, 0, 100); });
   list(root.routes, '/routes', (v, p) => { const x = obj(v, p, ['id', 'from', 'to']); for (const k of ['id', 'from', 'to']) id(x[k], `${p}/${k}`); });
-  list(root.actions, '/actions', (v, p) => { const x = obj(v, p, ['id', 'label', 'hint', 'group', 'conditions', 'effects', 'resultText', 'context']); id(x.id, `${p}/id`); id(x.resultText, `${p}/resultText`); str(x.label, `${p}/label`); str(x.hint, `${p}/hint`); choice(x.group, `${p}/group`, ['travel', 'daily', 'explore', 'event']); list(x.conditions, `${p}/conditions`, condition); list(x.effects, `${p}/effects`, effect); if (x.context) { const c = obj(x.context, `${p}/context`, ['eventId', 'nodeId']); id(c.eventId, `${p}/context/eventId`); str(c.nodeId, `${p}/context/nodeId`); } if (x.group === 'event' && !x.context) fail(`${p}/context`, '事件动作必须绑定事件及节点。'); if (!Array.isArray(x.effects) || !x.effects.length) fail(`${p}/effects`, '没有可执行效果的按钮不可注册。'); });
+  list(root.actions, '/actions', (v, p) => { const x = obj(v, p, ['id', 'label', 'hint', 'group', 'conditions', 'effects', 'resultText', 'context', 'surface']); id(x.id, `${p}/id`); id(x.resultText, `${p}/resultText`); if (x.surface !== undefined) choice(x.surface, `${p}/surface`, ['scene', 'body']); str(x.label, `${p}/label`); str(x.hint, `${p}/hint`); choice(x.group, `${p}/group`, ['travel', 'daily', 'explore', 'event']); list(x.conditions, `${p}/conditions`, condition); list(x.effects, `${p}/effects`, effect); if (x.context) { const c = obj(x.context, `${p}/context`, ['eventId', 'nodeId']); id(c.eventId, `${p}/context/eventId`); str(c.nodeId, `${p}/context/nodeId`); } if (x.group === 'event' && !x.context) fail(`${p}/context`, '事件动作必须绑定事件及节点。'); if (!Array.isArray(x.effects) || !x.effects.length) fail(`${p}/effects`, '没有可执行效果的按钮不可注册。'); });
   list(root.events, '/events', (v, p) => { const x = obj(v, p, ['id', 'startNode', 'nodes']); id(x.id, `${p}/id`); str(x.startNode, `${p}/startNode`); list(x.nodes, `${p}/nodes`, (v, p) => { const n = obj(v, p, ['id', 'type', 'textVariants', 'actionIds', 'onEnter']); str(n.id, `${p}/id`); choice(n.type, `${p}/type`, ['choice', 'exit']); list(n.textVariants, `${p}/textVariants`, id); list(n.actionIds, `${p}/actionIds`, id); list(n.onEnter, `${p}/onEnter`, effect); if (!Array.isArray(n.textVariants) || !n.textVariants.length) fail(`${p}/textVariants`, '必须有回退文字。'); }); });
   if (!root.texts || typeof root.texts !== 'object' || Array.isArray(root.texts)) fail('/texts', '需要文字字典。');
   else for (const [k, v] of Object.entries(root.texts)) { id(k, `/texts/${k}`); str(v, `/texts/${k}`); }
   list(root.contributions, '/contributions', (v, p) => { const x = obj(v, p, ['hookId', 'actionIds']); id(x.hookId, `${p}/hookId`); list(x.actionIds, `${p}/actionIds`, id); });
   if (root.start) { const x = obj(root.start, '/start', ['locationId', 'minutes']); id(x.locationId, '/start/locationId'); integer(x.minutes, '/start/minutes', 0); }
+  function token(value: unknown, path: string): void { if (typeof value !== 'string' || !/^[a-z][a-z0-9_.-]{0,79}$/.test(value)) fail(path, '需要稳定的局部实例/锚点 ID。'); }
+  list(root.bodyParts ?? [], '/bodyParts', (v, p) => {
+    const x = obj(v, p, ['id', 'label', 'kind', 'material', 'capabilities', 'anchors']); id(x.id, `${p}/id`); str(x.label, `${p}/label`);
+    choice(x.kind, `${p}/kind`, [...PART_KINDS]); choice(x.material, `${p}/material`, ['organic', 'mechanical']);
+    list(x.capabilities, `${p}/capabilities`, (v, p) => choice(v, p, [...BODY_CAPABILITIES]));
+    if (Array.isArray(x.capabilities) && new Set(x.capabilities).size !== x.capabilities.length) fail(p, '能力不可重复。');
+    list(x.anchors, `${p}/anchors`, (v, p) => { const a = obj(v, p, ['id', 'accepts', 'capacity']); token(a.id, `${p}/id`); integer(a.capacity, `${p}/capacity`, 1, 16); list(a.accepts, `${p}/accepts`, (v, p) => choice(v, p, [...PART_KINDS].filter(k => k !== 'root'))); if (!Array.isArray(a.accepts) || !a.accepts.length) fail(p, '锚点需要声明接收类别。'); });
+    if (Array.isArray(x.anchors) && new Set(x.anchors.map(v => (v as Obj)?.id)).size !== x.anchors.length) fail(p, '锚点 ID 重复。');
+  });
+  list(root.bodyTemplates ?? [], '/bodyTemplates', (v, p) => {
+    const x = obj(v, p, ['id', 'label', 'initial', 'rootPartId', 'parts', 'edges']); id(x.id, `${p}/id`); str(x.label, `${p}/label`); boolean(x.initial, `${p}/initial`); token(x.rootPartId, `${p}/rootPartId`);
+    list(x.parts, `${p}/parts`, (v, p) => { const part = obj(v, p, ['instanceId', 'definitionId']); token(part.instanceId, `${p}/instanceId`); id(part.definitionId, `${p}/definitionId`); });
+    list(x.edges, `${p}/edges`, (v, p) => { const e = obj(v, p, ['parentPartId', 'childPartId', 'anchorId']); for (const k of ['parentPartId', 'childPartId', 'anchorId']) token(e[k], `${p}/${k}`); });
+  });
+  list(root.bodyPatches ?? [], '/bodyPatches', (v, p) => {
+    const x = obj(v, p, ['id', 'label', 'summary', 'operations']); id(x.id, `${p}/id`); str(x.label, `${p}/label`); str(x.summary, `${p}/summary`);
+    list(x.operations, `${p}/operations`, (v, p) => { const op = (v as Obj)?.type; const o = obj(v, p, op === 'attach' ? ['type', 'partId', 'definitionId', 'parentPartId', 'anchorId'] : op === 'replace' ? ['type', 'partId', 'definitionId'] : ['type', 'partId']); choice(op, `${p}/type`, ['attach', 'replace', 'remove']); token(o.partId, `${p}/partId`); if (op !== 'remove') id(o.definitionId, `${p}/definitionId`); if (op === 'attach') { token(o.parentPartId, `${p}/parentPartId`); token(o.anchorId, `${p}/anchorId`); } });
+    if (!Array.isArray(x.operations) || !x.operations.length || x.operations.length > 32) fail(p, '补丁需有1–32个实际图操作。');
+  });
+  list(root.transformations ?? [], '/transformations', (v, p) => {
+    const x = obj(v, p, ['id', 'label', 'source', 'stages']); id(x.id, `${p}/id`); str(x.label, `${p}/label`); choice(x.source, `${p}/source`, ['free', 'story']);
+    list(x.stages, `${p}/stages`, (v, p) => { const s = obj(v, p, ['id', 'atMinutes', 'label', 'patchId']); token(s.id, `${p}/id`); str(s.label, `${p}/label`); integer(s.atMinutes, `${p}/atMinutes`, 0, 10080); if (s.patchId !== undefined) id(s.patchId, `${p}/patchId`); });
+    const stages = Array.isArray(x.stages) ? x.stages as Obj[] : [];
+    if (!stages.length || stages.length > 32 || !stages.some(s => s.patchId)) fail(p, '变化需有1–32个阶段，且实际改变身体。');
+    if (new Set(stages.map(s => s.id)).size !== stages.length || stages.some((s, i) => i > 0 && Number(s.atMinutes) <= Number(stages[i - 1].atMinutes))) fail(p, '阶段 ID 重复或时间边界没有严格递增。');
+    if (x.source === 'free' && (stages.length !== 1 || stages[0]?.atMinutes !== 0)) fail(p, '自由塑形只允许一个0分钟即时阶段。');
+    if (x.source === 'story' && Number(stages[0]?.atMinutes) <= 0) fail(p, '剧情变化从正数分钟边界开始。');
+  });
+  list(root.globalActionHooks ?? [], '/globalActionHooks', id);
   if (issues.length) throw new PackError(issues);
   return input as ContentPack;
 }

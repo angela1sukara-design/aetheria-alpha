@@ -25,7 +25,7 @@ export class ActionExecutor {
     if (!option) return fail('ACTION_NOT_AVAILABLE', '该行动不属于当前地点或事件。');
     if (!option.available) return fail('CONDITION_FAILED', option.reason);
     const draft = clone(this.#state);
-    const context: EffectContext = { budget: 64, changes: [], resolvedTexts: [], transactionId: requestId };
+    const context: EffectContext = { budget: 64, changes: [], resolvedTexts: [], transactionId: requestId, actionId: intent.actionId };
     try {
       applyEffects(option.definition.effects, draft, this.registry, context);
       draft.meta.revision++;

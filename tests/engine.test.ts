@@ -63,7 +63,7 @@ test('效果中途失败：时间、金钱、事件、RNG 原子回滚', async (
 });
 test('事件分支有真实代价与奖励，结束后回到行动列表', async () => {
   const { engine } = await game(); act(engine, 'travel.apartment_street'); act(engine, 'street.notice');
-  assert.equal(engine.view().actions.length, 2); assert.ok(engine.view().eventTitle);
+  assert.equal(engine.view().actions.filter(x => x.definition.surface !== 'body').length, 2); assert.ok(engine.view().eventTitle);
   const result = act(engine, 'notice.help'); assert.equal(result.ok, true); assert.match(result.text, /收好报酬/);
   const s = engine.snapshot(); assert.equal(s.player.variables['core:money'], 66); assert.equal(s.player.variables['core:energy'], 65); assert.equal(s.clock.totalMinutes, 505);
   assert.equal(s.activeEventStack.length, 0); assert.equal(s.eventInstances[0].status, 'completed');

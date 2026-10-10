@@ -1,10 +1,11 @@
 import type { Change, Effect, EventInstance, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
-import { advanceClock, formatClock } from './clock.ts';
+import { advanceTransformationTime, performTransformation } from './transformations.ts';
+import { formatClock } from './clock.ts';
 import { draw } from './rng.ts';
 import { activeEvent } from './events.ts';
-export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string }
+export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
   for (const effect of effects) {
     if (--context.budget < 0) throw new RuleError('EFFECT_BUDGET', '单次事务效果超过安全上限。');
@@ -23,7 +24,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
         break;
       }
       case 'clock.advance': {
-        const before = draft.clock.totalMinutes; advanceClock(draft, effect.minutes);
+        const before = draft.clock.totalMinutes; advanceTransformationTime(draft, effect.minutes, registry, context.changes);
         if (effect.minutes) context.changes.push({ label: '时间', before: formatClock(before), after: formatClock(draft.clock.totalMinutes) });
         break;
       }
@@ -58,6 +59,8 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
         if (!instance) throw new RuleError('NO_EVENT', '没有正在进行的事件。');
         instance.status = 'completed'; draft.activeEventStack.pop(); break;
       }
+      case 'tf.apply': case 'tf.enqueue': case 'tf.pause': case 'tf.resume': case 'tf.cancel':
+        performTransformation(effect.op, effect.id, draft, registry, context.transactionId, context.actionId, context.changes); break;
       default: throw new RuleError('UNSUPPORTED_EFFECT', '效果未实现，事务未提交。');
     }
   }

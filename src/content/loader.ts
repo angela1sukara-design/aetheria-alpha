@@ -3,6 +3,7 @@ import type { PackIssue } from '../core/errors.ts';
 import { clone, stableJson } from '../core/types.ts';
 import type { Condition, ContentPack, Effect, Id, PackRef } from '../core/types.ts';
 import { parsePack } from './schema.ts';
+import { instantiateBody, validateBody } from '../engine/body.ts';
 import { Registry } from './registry.ts';
 export async function loadPacks(input: unknown[]): Promise<Registry> {
   const packs = input.map(x => parsePack(clone(x)));
@@ -30,8 +31,8 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   for (const p of [...packs].sort((a, b) => a.manifest.id.localeCompare(b.manifest.id, 'en'))) visit(p);
   const definitions = new Map<string, { type: string; pack: ContentPack; value: unknown }>();
   for (const p of sorted) {
-    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events'] as const) {
-      for (const value of p[type]) add(p, value.id, type, value);
+    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations'] as const) {
+      for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
   }
@@ -52,12 +53,21 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     else if (c.op === 'flag.has') ref(p, c.id, 'flags', path);
     else if (c.op === 'location.is') ref(p, c.id, 'locations', path);
     else if (c.op === 'event.state') ref(p, c.id, 'events', path);
+    else if (c.op === 'body.hasPart') ref(p, c.definitionId, 'bodyParts', path);
+    else if (c.op === 'tf.state') ref(p, c.id, 'transformations', path);
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
     if (e.op === 'var.change') ref(p, e.id, 'variables', path);
     else if (e.op === 'flag.set') ref(p, e.id, 'flags', path);
     else if (e.op === 'location.move') ref(p, e.routeId, 'routes', path);
     else if (e.op === 'event.start') ref(p, e.id, 'events', path);
+    else if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') {
+      ref(p, e.id, 'transformations', path);
+      const def = definitions.get(e.id)?.value as NonNullable<ContentPack['transformations']>[number] | undefined;
+      const source = def?.source;
+      if ((e.op === 'tf.apply' && source !== 'free') || (e.op === 'tf.enqueue' && source !== 'story')) fail(p, 'TF_SOURCE', path, '变化入口与定义来源不一致。');
+      if (!p.manifest.requiresCapabilities.includes('tf.pipeline.v1')) fail(p, 'CAPABILITY_UNDECLARED', path, 'TF 效果需要声明 tf.pipeline.v1。');
+    }
     else if (e.op === 'event.advance' || e.op === 'event.exit') {
       if (!context) fail(p, 'MISSING_EVENT_CONTEXT', path, '事件转换必须绑定事件节点。');
       else if (e.op === 'event.advance') {
@@ -100,6 +110,31 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       }
     }
   }
+  const templates = sorted.flatMap(p => p.bodyTemplates ?? []);
+  if (templates.length && templates.filter(x => x.initial).length !== 1) fail(sorted[0], 'BODY_ENTRYPOINT', '/bodyTemplates', '身体模板需有且只有一个默认入口。');
+  for (const p of sorted) {
+    if ((p.bodyParts?.length || p.bodyTemplates?.length || p.bodyPatches?.length) && !p.manifest.requiresCapabilities.includes('body.graph.v1')) fail(p, 'CAPABILITY_UNDECLARED', '/manifest/requiresCapabilities', '身体定义需要声明 body.graph.v1。');
+    if (p.transformations?.length && !p.manifest.requiresCapabilities.includes('tf.pipeline.v1')) fail(p, 'CAPABILITY_UNDECLARED', '/manifest/requiresCapabilities', 'TF 定义需要声明 tf.pipeline.v1。');
+    for (const t of p.bodyTemplates ?? []) for (const part of t.parts) ref(p, part.definitionId, 'bodyParts', `/bodyTemplates/${t.id}/parts`);
+    for (const patch of p.bodyPatches ?? []) for (const op of patch.operations) {
+      if (op.type !== 'remove') ref(p, op.definitionId, 'bodyParts', `/bodyPatches/${patch.id}/operations`);
+      if (op.type === 'attach') {
+        const part = definitions.get(op.definitionId)?.value as NonNullable<ContentPack['bodyParts']>[number] | undefined;
+        const parents = sorted.flatMap(pack => pack.bodyParts ?? []);
+        if (part && !parents.some(parent => parent.anchors.some(a => a.id === op.anchorId && a.accepts.includes(part.kind)))) fail(p, 'BODY_ANCHOR', `/bodyPatches/${patch.id}/operations`, '没有注册接收该部件的对应锚点。', patch.id);
+      }
+    }
+    for (const t of p.transformations ?? []) for (const stage of t.stages) if (stage.patchId) ref(p, stage.patchId, 'bodyPatches', `/transformations/${t.id}/stages`);
+    for (const hook of p.globalActionHooks ?? []) {
+      ref(p, hook, 'hooks', '/globalActionHooks');
+      if (hook.split(':')[0] !== p.manifest.namespace) fail(p, 'GLOBAL_HOOK_OWNERSHIP', '/globalActionHooks', '只能登记自己拥有的全局 Hook。');
+      if (!p.manifest.requiresCapabilities.includes('hook.global.v1')) fail(p, 'CAPABILITY_UNDECLARED', '/globalActionHooks', '需声明 hook.global.v1。');
+    }
+    for (const c of p.contributions) if (sorted.some(owner => owner.globalActionHooks?.includes(c.hookId))) for (const id of c.actionIds) {
+      const action = definitions.get(id)?.value as ContentPack['actions'][number] | undefined;
+      if (action?.surface !== 'body' || action.context) fail(p, 'GLOBAL_ACTION_SURFACE', '/contributions', '当前全局 Hook 仅接受身体面板行动。');
+    }
+  }
   if (issues.length) throw new PackError(issues);
   const references: PackRef[] = [];
   for (const p of sorted) {
@@ -107,5 +142,11 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     const digest = await crypto.subtle.digest('SHA-256', bytes);
     references.push({ id: p.manifest.id, version: p.manifest.version, hash: [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2, '0')).join('') });
   }
-  return new Registry(sorted, references);
+  const registry = new Registry(sorted, references);
+  for (const p of sorted) for (const template of p.bodyTemplates ?? []) {
+    try { validateBody(instantiateBody(template), registry); }
+    catch (error) { fail(p, 'BODY_TOPOLOGY', `/bodyTemplates/${template.id}`, error instanceof Error ? error.message : '身体模板无效。', template.id); }
+  }
+  if (issues.length) throw new PackError(issues);
+  return registry;
 }

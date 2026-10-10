@@ -23,7 +23,15 @@ const registry = await loadPacks(packs); const engine = new ActionExecutor(regis
 for (const suffix of ['travel.apartment_street', 'street.notice', 'notice.help', 'travel.street_market', 'market.work']) {
   assert.equal(engine.performAction({ actionId: `aetheria:action.${suffix}` }, engine.snapshot().meta.revision, `compiled-${suffix}`).ok, true);
 }
+for (const suffix of ['travel.market_street']) assert.equal(engine.performAction({ actionId: `aetheria:action.${suffix}` }, engine.snapshot().meta.revision, `compiled-${suffix}`).ok, true);
+for (const suffix of ['travel.street_clinic', 'clinic.consult', 'consult.offer.accept', 'clinic.wait', 'clinic.wait', 'clinic.wait']) {
+  assert.equal(engine.performAction({ actionId: `aetheria-tf:action.${suffix}` }, engine.snapshot().meta.revision, `compiled-tf-${engine.snapshot().meta.revision}`).ok, true);
+}
+assert.equal(engine.snapshot().tfQueues.at(-1).status, 'completed');
+assert.ok(engine.snapshot().player.body.parts.some(p => p.definitionId === 'aetheria-tf:part.tail.mechanical'));
 const codec = new SaveCodec(registry); const decoded = await codec.decode(await codec.encode(engine.snapshot()));
 assert.equal(decoded.status, 'ready'); assert.deepEqual(decoded.state, engine.snapshot());
 const html = await readFile(path.join(root, 'index.html'), 'utf8'); assert.ok(html.includes('./src/ui/main.js'));
-console.log('Distribution check passed: emitted ESM imports, JSON loading, action/event execution, save round trip. This is not browser QA.');
+const legacy = await codec.decode(await readFile(new URL('../tests/fixtures/stage1-save.json', import.meta.url), 'utf8'));
+assert.equal(legacy.status, 'ready'); assert.equal(legacy.state.meta.schemaVersion, 2);
+console.log('Distribution check passed: ESM imports, JSON loading, daily/event/BodyGraph/TF execution, schema-2 save round trip, stage-1 migration. This is not browser QA.');

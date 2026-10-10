@@ -1,5 +1,6 @@
 import { clone, freeze } from '../core/types.ts';
 import type { ActionDef, ContentPack, EventDef, FlagDef, HookDef, Id, LocationDef, PackRef, RouteDef, VariableDef } from '../core/types.ts';
+import type { BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef } from '../core/body-types.ts';
 import { RuleError } from '../core/errors.ts';
 export class Registry {
   #definitions = new Map<string, { kind: string; value: unknown }>();
@@ -10,6 +11,9 @@ export class Registry {
   readonly flags: FlagDef[];
   readonly locations: LocationDef[];
   readonly routes: RouteDef[];
+  readonly bodyTemplates: BodyTemplateDef[];
+  readonly transformations: TFDef[];
+  readonly globalActionHooks: Id[];
   constructor(packs: ContentPack[], references: PackRef[]) {
     // 私有 Map 永远不暴露；深冻结所有定义，避免 UI/扩展包直接改注册表。
     const data = freeze(clone(packs));
@@ -17,8 +21,11 @@ export class Registry {
     this.start = freeze(data.find(x => x.start)!.start!);
     this.variables = freeze(data.flatMap(x => x.variables)); this.flags = freeze(data.flatMap(x => x.flags));
     this.locations = freeze(data.flatMap(x => x.locations)); this.routes = freeze(data.flatMap(x => x.routes));
+    this.bodyTemplates = freeze(data.flatMap(x => x.bodyTemplates ?? []));
+    this.transformations = freeze(data.flatMap(x => x.transformations ?? []));
+    this.globalActionHooks = freeze(data.flatMap(x => x.globalActionHooks ?? []).sort());
     for (const pack of data) {
-      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events'] as const) for (const def of pack[kind]) this.#definitions.set(def.id, { kind, value: def });
+      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
       for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text });
       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);
     }
@@ -37,6 +44,11 @@ export class Registry {
   route(id: Id): RouteDef { return this.get(id, 'routes'); }
   action(id: Id): ActionDef { return this.get(id, 'actions'); }
   event(id: Id): EventDef { return this.get(id, 'events'); }
+  bodyPart(id: Id): BodyPartDef { return this.get(id, 'bodyParts'); }
+  bodyTemplate(id: Id): BodyTemplateDef { return this.get(id, 'bodyTemplates'); }
+  bodyPatch(id: Id): BodyPatchDef { return this.get(id, 'bodyPatches'); }
+  transformation(id: Id): TFDef { return this.get(id, 'transformations'); }
+  globalActions(): ActionDef[] { return this.globalActionHooks.flatMap(h => (this.#actionsByHook.get(h) ?? []).map(x => this.action(x))); }
   text(id: Id): string { return this.get(id, 'texts'); }
   actionsAt(id: Id): ActionDef[] { return (this.#actionsByHook.get(this.location(id).actionHook) ?? []).map(x => this.action(x)); }
 }

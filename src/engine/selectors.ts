@@ -2,13 +2,17 @@ import type { ActionDef, ActionOption, GameState, GameView } from '../core/types
 import { clone, freeze } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { evaluate } from './conditions.ts';
+import { transformationCheck } from './transformations.ts';
 import { eventNode } from './events.ts';
 /** 所有可执行入口同一个选择器：UI 可见动作与引擎授权集合完全一致。 */
 export function actionOptions(state: GameState, registry: Registry): ActionOption[] {
   const current = eventNode(state, registry);
   const actions: ActionDef[] = current ? current.node.actionIds.map(id => registry.action(id)).filter(x => x.context?.eventId === current.event.definitionId && x.context.nodeId === current.node.id) : registry.actionsAt(state.world.locationId).filter(x => !x.context);
-  return actions.map(definition => {
-    const failed = definition.conditions.map(c => evaluate(c, state, registry)).find(x => !x.pass);
+  const allActions = [...new Map([...actions, ...registry.globalActions()].map(a => [a.id, a])).values()];
+  return allActions.map(definition => {
+    const checks = definition.conditions.map(c => evaluate(c, state, registry));
+    for (const e of definition.effects) if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') checks.push(transformationCheck(state, registry, e.id, e.op));
+    const failed = checks.find(x => !x.pass);
     return { definition, available: !failed, reason: failed?.reason ?? '' };
   });
 }

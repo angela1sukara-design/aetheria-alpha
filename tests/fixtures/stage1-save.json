@@ -1,0 +1,125 @@
+{
+  "payload": {
+    "format": "aetheria-alpha",
+    "schemaVersion": 1,
+    "savedAt": "2026-10-10T18:37:51.811Z",
+    "state": {
+      "meta": {
+        "schemaVersion": 1,
+        "engineVersion": "0.1",
+        "revision": 2,
+        "packs": [
+          {
+            "id": "engine/core",
+            "version": "0.1.0",
+            "hash": "aab3c415bcccdd459d21e7a0d0f4f3d636008b6e6809860452ec89787a7400f7"
+          },
+          {
+            "id": "aetheria/world",
+            "version": "0.1.0",
+            "hash": "01ea5d235f7762c6e99ca9080c4390d02bdf9796208acab15a3437d615f2feb8"
+          }
+        ]
+      },
+      "clock": {
+        "totalMinutes": 495,
+        "crossedDays": []
+      },
+      "world": {
+        "locationId": "aetheria:location.street",
+        "knownLocationIds": [
+          "aetheria:location.apartment",
+          "aetheria:location.street"
+        ]
+      },
+      "player": {
+        "variables": {
+          "core:money": 60,
+          "core:energy": 70,
+          "core:health": 100
+        },
+        "flags": {
+          "aetheria:flag.notice_helped": false
+        }
+      },
+      "eventInstances": [
+        {
+          "instanceId": "event-legacy-notice",
+          "definitionId": "aetheria:event.notice",
+          "nodeId": "choice",
+          "status": "active",
+          "textByNode": {
+            "choice": "aetheria:text.notice.b"
+          },
+          "draws": [
+            {
+              "nodeId": "choice",
+              "value": 0.8142055501230061
+            }
+          ],
+          "locals": {}
+        }
+      ],
+      "activeEventStack": [
+        "event-legacy-notice"
+      ],
+      "rng": {
+        "seed": 123456,
+        "streams": {
+          "event:event-legacy-notice": {
+            "state": 3496986210,
+            "draws": 1
+          }
+        }
+      },
+      "ledger": {
+        "transactions": [
+          {
+            "requestId": "legacy-move",
+            "fingerprint": "{\"actionId\":\"aetheria:action.travel.apartment_street\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "legacy-move",
+              "revision": 1,
+              "text": "你沿着熟悉的路走到主街。身后的声音渐渐散开，眼前换了一番景象。",
+              "changes": [
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:00",
+                  "after": "第 1 天 · 08:10"
+                },
+                {
+                  "label": "地点",
+                  "before": "公寓",
+                  "after": "主街"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "legacy-notice",
+            "fingerprint": "{\"actionId\":\"aetheria:action.street.notice\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "legacy-notice",
+              "revision": 2,
+              "text": "你走近路口的告示板。",
+              "changes": [
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:10",
+                  "after": "第 1 天 · 08:15"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "checksum": "10cb4e05390b973e9523780c9d1d1ca73d448f84c6463ba18c227ecb5c9a5626"
+}

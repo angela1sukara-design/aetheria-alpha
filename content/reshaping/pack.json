@@ -1,0 +1,1047 @@
+{
+  "manifest": {
+    "id": "aetheria/reshaping",
+    "namespace": "aetheria-tf",
+    "version": "0.1.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "Alpha 0.1 stage 2 · PROPOSED test content",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "hook.action.v1",
+      "body.graph.v1",
+      "tf.pipeline.v1",
+      "hook.global.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [
+    {
+      "id": "aetheria-tf:hook.body",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "aetheria-tf:hook.clinic",
+      "accepts": "action",
+      "visibility": "public"
+    }
+  ],
+  "locations": [
+    {
+      "id": "aetheria-tf:location.clinic",
+      "name": "改造诊室",
+      "subtitle": "试用改造 · 校准与身体检查",
+      "textKey": "aetheria-tf:text.clinic",
+      "actionHook": "aetheria-tf:hook.clinic",
+      "map": {
+        "x": 79,
+        "y": 73
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "aetheria-tf:route.street_clinic",
+      "from": "aetheria:location.street",
+      "to": "aetheria-tf:location.clinic"
+    },
+    {
+      "id": "aetheria-tf:route.clinic_street",
+      "from": "aetheria-tf:location.clinic",
+      "to": "aetheria:location.street"
+    }
+  ],
+  "actions": [
+    {
+      "id": "aetheria-tf:action.travel.street_clinic",
+      "label": "前往改造诊室",
+      "hint": "步行 10 分钟",
+      "group": "travel",
+      "conditions": [
+        {
+          "op": "location.is",
+          "id": "aetheria:location.street"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria-tf:route.street_clinic"
+        }
+      ],
+      "resultText": "aetheria-tf:text.travel.street_clinic"
+    },
+    {
+      "id": "aetheria-tf:action.travel.clinic_street",
+      "label": "前往主街",
+      "hint": "步行 10 分钟",
+      "group": "travel",
+      "conditions": [
+        {
+          "op": "location.is",
+          "id": "aetheria-tf:location.clinic"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria-tf:route.clinic_street"
+        }
+      ],
+      "resultText": "aetheria-tf:text.travel.clinic_street"
+    },
+    {
+      "id": "aetheria-tf:action.clinic.wait",
+      "label": "在诊室等候一会儿",
+      "hint": "15 分钟 · 改造会按当前进度推进",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        }
+      ],
+      "resultText": "aetheria-tf:text.clinic.wait"
+    },
+    {
+      "id": "aetheria-tf:action.clinic.consult",
+      "label": "了解机械尾改造",
+      "hint": "先看过程，再决定是否支付 18 币",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "aetheria-tf:event.consult"
+        }
+      ],
+      "resultText": "aetheria-tf:text.clinic.consult"
+    },
+    {
+      "id": "aetheria-tf:action.free.ears.human",
+      "label": "恢复人类耳",
+      "hint": "即时 · 恢复初始耳型",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.apply",
+          "id": "aetheria-tf:tf.ears.human"
+        }
+      ],
+      "resultText": "aetheria-tf:text.free.ears.human",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.free.ears.wolf",
+      "label": "换成狼耳",
+      "hint": "即时 · 双耳一起改变",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.apply",
+          "id": "aetheria-tf:tf.ears.wolf"
+        }
+      ],
+      "resultText": "aetheria-tf:text.free.ears.wolf",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.free.ears.cat",
+      "label": "换成猫耳",
+      "hint": "即时 · 双耳一起改变",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.apply",
+          "id": "aetheria-tf:tf.ears.cat"
+        }
+      ],
+      "resultText": "aetheria-tf:text.free.ears.cat",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.free.tail.organic",
+      "label": "长出生物尾",
+      "hint": "即时 · 后腰需没有其他尾部",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.apply",
+          "id": "aetheria-tf:tf.tail.organic"
+        }
+      ],
+      "resultText": "aetheria-tf:text.free.tail.organic",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.free.tail.remove",
+      "label": "移除现有尾部",
+      "hint": "即时 · 改造预约需先完成或取消",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.apply",
+          "id": "aetheria-tf:tf.tail.remove"
+        }
+      ],
+      "resultText": "aetheria-tf:text.free.tail.remove",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.tf.pause",
+      "label": "暂停机械尾改造",
+      "hint": "停止进度，保留部位预约",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.pause",
+          "id": "aetheria-tf:tf.tail.mechanical"
+        }
+      ],
+      "resultText": "aetheria-tf:text.tf.pause",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.tf.resume",
+      "label": "继续机械尾改造",
+      "hint": "从保存的进度继续",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.resume",
+          "id": "aetheria-tf:tf.tail.mechanical"
+        }
+      ],
+      "resultText": "aetheria-tf:text.tf.resume",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.tf.cancel",
+      "label": "取消机械尾改造",
+      "hint": "释放预约；费用不退，已完成结构保留",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.cancel",
+          "id": "aetheria-tf:tf.tail.mechanical"
+        }
+      ],
+      "resultText": "aetheria-tf:text.tf.cancel",
+      "surface": "body"
+    },
+    {
+      "id": "aetheria-tf:action.market.tail_work",
+      "label": "用机械尾协助分拣",
+      "hint": "20 分钟 · 精力 −8 · 零钱 +14",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "body.hasCapability",
+          "capability": "tailGrip",
+          "count": 1
+        },
+        {
+          "op": "var.compare",
+          "id": "core:energy",
+          "comparison": "gte",
+          "value": 8
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -8
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 14
+        }
+      ],
+      "resultText": "aetheria-tf:text.market.tail_work"
+    },
+    {
+      "id": "aetheria-tf:action.consult.offer.accept",
+      "label": "支付费用并开始改造",
+      "hint": "18 币 · 45 分钟活动时间",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:money",
+          "comparison": "gte",
+          "value": 18
+        }
+      ],
+      "effects": [
+        {
+          "op": "tf.enqueue",
+          "id": "aetheria-tf:tf.tail.mechanical"
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": -18
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "booked"
+        }
+      ],
+      "resultText": "aetheria-tf:text.consult.offer.accept",
+      "context": {
+        "eventId": "aetheria-tf:event.consult",
+        "nodeId": "offer"
+      }
+    },
+    {
+      "id": "aetheria-tf:action.consult.details",
+      "label": "再了解一下过程",
+      "hint": "查看试装、校准和退出说明",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "details"
+        }
+      ],
+      "resultText": "aetheria-tf:text.consult.details",
+      "context": {
+        "eventId": "aetheria-tf:event.consult",
+        "nodeId": "offer"
+      }
+    },
+    {
+      "id": "aetheria-tf:action.consult.offer.leave",
+      "label": "这次先不改造",
+      "hint": "不支付费用，返回诊室",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "left"
+        }
+      ],
+      "resultText": "aetheria-tf:text.consult.offer.leave",
+      "context": {
+        "eventId": "aetheria-tf:event.consult",
+        "nodeId": "offer"
+      }
+    },
+    {
+      "id": "aetheria-tf:action.consult.details.accept",
+      "label": "支付费用并开始改造",
+      "hint": "18 币 · 45 分钟活动时间",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:money",
+          "comparison": "gte",
+          "value": 18
+        }
+      ],
+      "effects": [
+        {
+          "op": "tf.enqueue",
+          "id": "aetheria-tf:tf.tail.mechanical"
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": -18
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "booked"
+        }
+      ],
+      "resultText": "aetheria-tf:text.consult.details.accept",
+      "context": {
+        "eventId": "aetheria-tf:event.consult",
+        "nodeId": "details"
+      }
+    },
+    {
+      "id": "aetheria-tf:action.consult.details.leave",
+      "label": "这次先不改造",
+      "hint": "不支付费用，返回诊室",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "left"
+        }
+      ],
+      "resultText": "aetheria-tf:text.consult.details.leave",
+      "context": {
+        "eventId": "aetheria-tf:event.consult",
+        "nodeId": "details"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "aetheria-tf:event.consult",
+      "startNode": "offer",
+      "nodes": [
+        {
+          "id": "offer",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-tf:text.consult.offer"
+          ],
+          "actionIds": [
+            "aetheria-tf:action.consult.offer.accept",
+            "aetheria-tf:action.consult.details",
+            "aetheria-tf:action.consult.offer.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "details",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-tf:text.consult.details"
+          ],
+          "actionIds": [
+            "aetheria-tf:action.consult.details.accept",
+            "aetheria-tf:action.consult.details.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "booked",
+          "type": "exit",
+          "textVariants": [
+            "aetheria-tf:text.consult.booked"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "left",
+          "type": "exit",
+          "textVariants": [
+            "aetheria-tf:text.consult.left"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "aetheria-tf:text.clinic": "临街诊室的玻璃门隔开了主街的噪声。说明台上列着一项小型机械尾试用改造，费用和校准过程都写得清楚。\n\n你可以先了解过程，也可以在这里坐一会儿。已安排的改造会随着你的日常行动推进；需要停下时，可以打开身体面板暂停。",
+    "aetheria-tf:text.travel.street_clinic": "你沿着主街的指示走到诊室，推开玻璃门。",
+    "aetheria-tf:text.travel.clinic_street": "你离开诊室，回到主街。",
+    "aetheria-tf:text.clinic.wait": "你在等候区坐了一会儿。窗外有人推着货车经过，诊室的校准灯安静地亮着。",
+    "aetheria-tf:text.clinic.consult": "你拿起机械尾试用改造的说明。",
+    "aetheria-tf:text.free.ears.human": "双耳恢复了原本的轮廓。",
+    "aetheria-tf:text.free.ears.wolf": "双耳向上延展，覆上短毛。你动了动新的耳尖。",
+    "aetheria-tf:text.free.ears.cat": "双耳变得小巧而尖，耳尖随你的注意轻轻转动。",
+    "aetheria-tf:text.free.tail.organic": "一条长尾连接在后腰。你试着调整它的位置，站姿随之找到了新的平衡。",
+    "aetheria-tf:text.free.tail.remove": "尾部结构退去，后腰恢复为没有尾部的状态。",
+    "aetheria-tf:text.tf.pause": "你暂停了机械尾改造，已经完成的步骤保持原样。",
+    "aetheria-tf:text.tf.resume": "你重新启动了校准，改造从暂停的位置继续。",
+    "aetheria-tf:text.tf.cancel": "你取消了余下的改造安排。已经试装的部件会保留，你可以在身体面板移除它。费用不退还。",
+    "aetheria-tf:text.market.tail_work": "你用机械尾夹住轻物，让双手腾出来分拣。货物很快归位，摊位把报酬交给你。",
+    "aetheria-tf:text.consult.offer.accept": "你确认了费用与过程。",
+    "aetheria-tf:text.consult.details": "这项试用采用分阶段接入：先装上一个尚不能抓握的机械尾，再由模块完成校准。你可以正常去做日常行动，进度只随实际度过的时间增加。\n\n有其他尾部时需要先处理现有结构。改造期间，双耳等无冲突部位仍可以自由塑形。",
+    "aetheria-tf:text.consult.offer.leave": "你把说明放回台上。",
+    "aetheria-tf:text.consult.offer": "说明台上的费用为 18 币。开始后第 15 分钟完成试装，第 45 分钟校准完毕，尾部才能抓握轻物。\n\n改造期间可暂停或取消。暂停会保留尾部预约；取消不退款，也不会拆掉已经完成的结构。",
+    "aetheria-tf:text.consult.details.accept": "你确认了费用与过程。",
+    "aetheria-tf:text.consult.details.leave": "你把说明放回台上。",
+    "aetheria-tf:text.consult.booked": "改造预约已经开始。你可以在诊室等候，或继续安排日常行动。身体面板会显示试装与校准进度。",
+    "aetheria-tf:text.consult.left": "你暂时没有安排改造。说明仍留在台上，想好了再来。"
+  },
+  "contributions": [
+    {
+      "hookId": "aetheria:hook.street.actions",
+      "actionIds": [
+        "aetheria-tf:action.travel.street_clinic"
+      ]
+    },
+    {
+      "hookId": "aetheria:hook.market.actions",
+      "actionIds": [
+        "aetheria-tf:action.market.tail_work"
+      ]
+    },
+    {
+      "hookId": "aetheria-tf:hook.clinic",
+      "actionIds": [
+        "aetheria-tf:action.travel.clinic_street",
+        "aetheria-tf:action.clinic.wait",
+        "aetheria-tf:action.clinic.consult"
+      ]
+    },
+    {
+      "hookId": "aetheria-tf:hook.body",
+      "actionIds": [
+        "aetheria-tf:action.free.ears.human",
+        "aetheria-tf:action.free.ears.wolf",
+        "aetheria-tf:action.free.ears.cat",
+        "aetheria-tf:action.free.tail.organic",
+        "aetheria-tf:action.free.tail.remove",
+        "aetheria-tf:action.tf.pause",
+        "aetheria-tf:action.tf.resume",
+        "aetheria-tf:action.tf.cancel"
+      ]
+    }
+  ],
+  "bodyParts": [
+    {
+      "id": "aetheria-tf:part.torso",
+      "label": "人类躯干",
+      "kind": "root",
+      "material": "organic",
+      "capabilities": [],
+      "anchors": [
+        {
+          "id": "neck",
+          "accepts": [
+            "head"
+          ],
+          "capacity": 1
+        },
+        {
+          "id": "shoulder.left",
+          "accepts": [
+            "arm"
+          ],
+          "capacity": 1
+        },
+        {
+          "id": "shoulder.right",
+          "accepts": [
+            "arm"
+          ],
+          "capacity": 1
+        },
+        {
+          "id": "hip.left",
+          "accepts": [
+            "leg"
+          ],
+          "capacity": 1
+        },
+        {
+          "id": "hip.right",
+          "accepts": [
+            "leg"
+          ],
+          "capacity": 1
+        },
+        {
+          "id": "pelvis.back",
+          "accepts": [
+            "tail"
+          ],
+          "capacity": 1
+        },
+        {
+          "id": "aux",
+          "accepts": [
+            "arm",
+            "hand"
+          ],
+          "capacity": 2
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:part.head",
+      "label": "人类头部",
+      "kind": "head",
+      "material": "organic",
+      "capabilities": [],
+      "anchors": [
+        {
+          "id": "ear.left",
+          "accepts": [
+            "ear"
+          ],
+          "capacity": 1
+        },
+        {
+          "id": "ear.right",
+          "accepts": [
+            "ear"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:part.arm",
+      "label": "人类手臂",
+      "kind": "arm",
+      "material": "organic",
+      "capabilities": [],
+      "anchors": [
+        {
+          "id": "wrist",
+          "accepts": [
+            "hand"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:part.hand",
+      "label": "人类手掌",
+      "kind": "hand",
+      "material": "organic",
+      "capabilities": [
+        "grasp"
+      ],
+      "anchors": []
+    },
+    {
+      "id": "aetheria-tf:part.leg",
+      "label": "人类腿部",
+      "kind": "leg",
+      "material": "organic",
+      "capabilities": [],
+      "anchors": [
+        {
+          "id": "ankle",
+          "accepts": [
+            "foot"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:part.foot",
+      "label": "人类足部",
+      "kind": "foot",
+      "material": "organic",
+      "capabilities": [
+        "walk"
+      ],
+      "anchors": []
+    },
+    {
+      "id": "aetheria-tf:part.ear.human",
+      "label": "人类耳",
+      "kind": "ear",
+      "material": "organic",
+      "capabilities": [
+        "hear"
+      ],
+      "anchors": []
+    },
+    {
+      "id": "aetheria-tf:part.ear.wolf",
+      "label": "狼耳",
+      "kind": "ear",
+      "material": "organic",
+      "capabilities": [
+        "hear"
+      ],
+      "anchors": []
+    },
+    {
+      "id": "aetheria-tf:part.ear.cat",
+      "label": "猫耳",
+      "kind": "ear",
+      "material": "organic",
+      "capabilities": [
+        "hear"
+      ],
+      "anchors": []
+    },
+    {
+      "id": "aetheria-tf:part.tail.organic",
+      "label": "生物长尾",
+      "kind": "tail",
+      "material": "organic",
+      "capabilities": [
+        "balance"
+      ],
+      "anchors": []
+    },
+    {
+      "id": "aetheria-tf:part.tail.trial",
+      "label": "待校准的机械尾",
+      "kind": "tail",
+      "material": "mechanical",
+      "capabilities": [],
+      "anchors": []
+    },
+    {
+      "id": "aetheria-tf:part.tail.mechanical",
+      "label": "已校准的机械尾",
+      "kind": "tail",
+      "material": "mechanical",
+      "capabilities": [
+        "balance",
+        "tailGrip"
+      ],
+      "anchors": []
+    }
+  ],
+  "bodyTemplates": [
+    {
+      "id": "aetheria-tf:body.human",
+      "label": "人类基础身体",
+      "initial": true,
+      "rootPartId": "torso",
+      "parts": [
+        {
+          "instanceId": "torso",
+          "definitionId": "aetheria-tf:part.torso"
+        },
+        {
+          "instanceId": "head",
+          "definitionId": "aetheria-tf:part.head"
+        },
+        {
+          "instanceId": "ear.left",
+          "definitionId": "aetheria-tf:part.ear.human"
+        },
+        {
+          "instanceId": "arm.left",
+          "definitionId": "aetheria-tf:part.arm"
+        },
+        {
+          "instanceId": "hand.left",
+          "definitionId": "aetheria-tf:part.hand"
+        },
+        {
+          "instanceId": "leg.left",
+          "definitionId": "aetheria-tf:part.leg"
+        },
+        {
+          "instanceId": "foot.left",
+          "definitionId": "aetheria-tf:part.foot"
+        },
+        {
+          "instanceId": "ear.right",
+          "definitionId": "aetheria-tf:part.ear.human"
+        },
+        {
+          "instanceId": "arm.right",
+          "definitionId": "aetheria-tf:part.arm"
+        },
+        {
+          "instanceId": "hand.right",
+          "definitionId": "aetheria-tf:part.hand"
+        },
+        {
+          "instanceId": "leg.right",
+          "definitionId": "aetheria-tf:part.leg"
+        },
+        {
+          "instanceId": "foot.right",
+          "definitionId": "aetheria-tf:part.foot"
+        }
+      ],
+      "edges": [
+        {
+          "parentPartId": "torso",
+          "childPartId": "head",
+          "anchorId": "neck"
+        },
+        {
+          "parentPartId": "head",
+          "childPartId": "ear.left",
+          "anchorId": "ear.left"
+        },
+        {
+          "parentPartId": "torso",
+          "childPartId": "arm.left",
+          "anchorId": "shoulder.left"
+        },
+        {
+          "parentPartId": "arm.left",
+          "childPartId": "hand.left",
+          "anchorId": "wrist"
+        },
+        {
+          "parentPartId": "torso",
+          "childPartId": "leg.left",
+          "anchorId": "hip.left"
+        },
+        {
+          "parentPartId": "leg.left",
+          "childPartId": "foot.left",
+          "anchorId": "ankle"
+        },
+        {
+          "parentPartId": "head",
+          "childPartId": "ear.right",
+          "anchorId": "ear.right"
+        },
+        {
+          "parentPartId": "torso",
+          "childPartId": "arm.right",
+          "anchorId": "shoulder.right"
+        },
+        {
+          "parentPartId": "arm.right",
+          "childPartId": "hand.right",
+          "anchorId": "wrist"
+        },
+        {
+          "parentPartId": "torso",
+          "childPartId": "leg.right",
+          "anchorId": "hip.right"
+        },
+        {
+          "parentPartId": "leg.right",
+          "childPartId": "foot.right",
+          "anchorId": "ankle"
+        }
+      ]
+    }
+  ],
+  "bodyPatches": [
+    {
+      "id": "aetheria-tf:patch.ears.human",
+      "label": "恢复人类耳",
+      "summary": "双耳为人类耳",
+      "operations": [
+        {
+          "type": "replace",
+          "partId": "ear.left",
+          "definitionId": "aetheria-tf:part.ear.human"
+        },
+        {
+          "type": "replace",
+          "partId": "ear.right",
+          "definitionId": "aetheria-tf:part.ear.human"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:patch.ears.wolf",
+      "label": "塑形成狼耳",
+      "summary": "双耳为狼耳",
+      "operations": [
+        {
+          "type": "replace",
+          "partId": "ear.left",
+          "definitionId": "aetheria-tf:part.ear.wolf"
+        },
+        {
+          "type": "replace",
+          "partId": "ear.right",
+          "definitionId": "aetheria-tf:part.ear.wolf"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:patch.ears.cat",
+      "label": "塑形成猫耳",
+      "summary": "双耳为猫耳",
+      "operations": [
+        {
+          "type": "replace",
+          "partId": "ear.left",
+          "definitionId": "aetheria-tf:part.ear.cat"
+        },
+        {
+          "type": "replace",
+          "partId": "ear.right",
+          "definitionId": "aetheria-tf:part.ear.cat"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:patch.tail.organic",
+      "label": "长出生物尾",
+      "summary": "后腰连接生物长尾",
+      "operations": [
+        {
+          "type": "attach",
+          "partId": "tail",
+          "definitionId": "aetheria-tf:part.tail.organic",
+          "parentPartId": "torso",
+          "anchorId": "pelvis.back"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:patch.tail.remove",
+      "label": "移除尾部",
+      "summary": "后腰不再连接尾部",
+      "operations": [
+        {
+          "type": "remove",
+          "partId": "tail"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:patch.tail.trial",
+      "label": "机械尾试装",
+      "summary": "机械尾已接入，等待校准",
+      "operations": [
+        {
+          "type": "attach",
+          "partId": "tail",
+          "definitionId": "aetheria-tf:part.tail.trial",
+          "parentPartId": "torso",
+          "anchorId": "pelvis.back"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:patch.tail.calibrate",
+      "label": "完成机械尾校准",
+      "summary": "机械尾可保持平衡并抓握轻物",
+      "operations": [
+        {
+          "type": "replace",
+          "partId": "tail",
+          "definitionId": "aetheria-tf:part.tail.mechanical"
+        }
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "id": "aetheria-tf:tf.ears.human",
+      "label": "恢复人类耳",
+      "source": "free",
+      "stages": [
+        {
+          "id": "done",
+          "atMinutes": 0,
+          "label": "塑形完成",
+          "patchId": "aetheria-tf:patch.ears.human"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:tf.ears.wolf",
+      "label": "狼耳塑形",
+      "source": "free",
+      "stages": [
+        {
+          "id": "done",
+          "atMinutes": 0,
+          "label": "塑形完成",
+          "patchId": "aetheria-tf:patch.ears.wolf"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:tf.ears.cat",
+      "label": "猫耳塑形",
+      "source": "free",
+      "stages": [
+        {
+          "id": "done",
+          "atMinutes": 0,
+          "label": "塑形完成",
+          "patchId": "aetheria-tf:patch.ears.cat"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:tf.tail.organic",
+      "label": "生物尾塑形",
+      "source": "free",
+      "stages": [
+        {
+          "id": "done",
+          "atMinutes": 0,
+          "label": "塑形完成",
+          "patchId": "aetheria-tf:patch.tail.organic"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:tf.tail.remove",
+      "label": "移除尾部",
+      "source": "free",
+      "stages": [
+        {
+          "id": "done",
+          "atMinutes": 0,
+          "label": "塑形完成",
+          "patchId": "aetheria-tf:patch.tail.remove"
+        }
+      ]
+    },
+    {
+      "id": "aetheria-tf:tf.tail.mechanical",
+      "label": "机械尾改造",
+      "source": "story",
+      "stages": [
+        {
+          "id": "fit",
+          "atMinutes": 15,
+          "label": "试装完成，进入校准",
+          "patchId": "aetheria-tf:patch.tail.trial"
+        },
+        {
+          "id": "ready",
+          "atMinutes": 45,
+          "label": "校准完成，可正常使用",
+          "patchId": "aetheria-tf:patch.tail.calibrate"
+        }
+      ]
+    }
+  ],
+  "globalActionHooks": [
+    "aetheria-tf:hook.body"
+  ]
+}

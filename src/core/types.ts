@@ -1,3 +1,4 @@
+import type { BodyGraph, BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef, TFInstance, TFState, BodyCapability } from './body-types.ts';
 export type Id = `${string}:${string}`;
 export type Scalar = string | number | boolean;
 export type Condition =
@@ -7,7 +8,10 @@ export type Condition =
   | { op: 'flag.has'; id: Id; value: boolean }
   | { op: 'location.is'; id: Id }
   | { op: 'time.window'; start: number; end: number }
-  | { op: 'event.state'; id: Id; state: 'active' | 'completed' | 'unseen' };
+  | { op: 'event.state'; id: Id; state: 'active' | 'completed' | 'unseen' }
+  | { op: 'body.hasPart'; definitionId: Id }
+  | { op: 'body.hasCapability'; capability: BodyCapability; count: number }
+  | { op: 'tf.state'; id: Id; state: TFState | 'idle' };
 export type Effect =
   | { op: 'var.change'; id: Id; amount: number }
   | { op: 'flag.set'; id: Id; value: boolean }
@@ -15,7 +19,8 @@ export type Effect =
   | { op: 'location.move'; routeId: Id }
   | { op: 'event.start'; id: Id }
   | { op: 'event.advance'; nodeId: string }
-  | { op: 'event.exit' };
+  | { op: 'event.exit' }
+  | { op: 'tf.apply' | 'tf.enqueue' | 'tf.pause' | 'tf.resume' | 'tf.cancel'; id: Id };
 export interface VariableDef { id: Id; label: string; initial: number; min: number; max: number; unit: string }
 export interface FlagDef { id: Id; initial: boolean }
 export interface HookDef { id: Id; accepts: 'action'; visibility: 'public' }
@@ -25,6 +30,7 @@ export interface ActionDef {
   id: Id; label: string; hint: string; group: 'travel' | 'daily' | 'explore' | 'event';
   conditions: Condition[]; effects: Effect[]; resultText: Id;
   context?: { eventId: Id; nodeId: string };
+  surface?: 'scene' | 'body';
 }
 export interface EventNode { id: string; type: 'choice' | 'exit'; textVariants: Id[]; actionIds: Id[]; onEnter: Effect[] }
 export interface EventDef { id: Id; startNode: string; nodes: EventNode[] }
@@ -40,6 +46,8 @@ export interface ContentPack {
   locations: LocationDef[]; routes: RouteDef[]; actions: ActionDef[]; events: EventDef[];
   texts: Record<Id, string>; contributions: { hookId: Id; actionIds: Id[] }[];
   start?: { locationId: Id; minutes: number };
+  bodyParts?: BodyPartDef[]; bodyTemplates?: BodyTemplateDef[]; bodyPatches?: BodyPatchDef[];
+  transformations?: TFDef[]; globalActionHooks?: Id[];
 }
 export interface PackRef { id: string; version: string; hash: string }
 export interface EventInstance {
@@ -54,10 +62,11 @@ export interface ActionResult {
 }
 export interface Transaction { requestId: string; fingerprint: string; result: ActionResult }
 export interface GameState {
-  meta: { schemaVersion: 1; engineVersion: '0.1'; revision: number; packs: PackRef[] };
+  meta: { schemaVersion: 2; engineVersion: '0.1-stage2'; revision: number; packs: PackRef[] };
   clock: { totalMinutes: number; crossedDays: number[] };
   world: { locationId: Id; knownLocationIds: Id[] };
-  player: { variables: Record<Id, number>; flags: Record<Id, boolean> };
+  player: { variables: Record<Id, number>; flags: Record<Id, boolean>; body: BodyGraph | null };
+  tfQueues: TFInstance[];
   eventInstances: EventInstance[]; activeEventStack: string[];
   rng: { seed: number; streams: Record<string, { state: number; draws: number }> };
   ledger: { transactions: Transaction[] };

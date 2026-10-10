@@ -7,7 +7,5 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-start "Aetheria Alpha 0.1" cmd /k node scripts\serve.mjs --built
-timeout /t 2 /nobreak >nul
-start "" http://localhost:4173/
+start "Aetheria Alpha 0.1" cmd /k node scripts\serve.mjs --built --open
 endlocal

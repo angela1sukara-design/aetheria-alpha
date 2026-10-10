@@ -1,6 +1,7 @@
 import type { ActionOption, ActionResult, GameView, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { formatClock } from '../engine/clock.ts';
+import { renderBodyPanel } from './body-panel.ts';
 export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag); node.className = className; if (text) node.textContent = text; return node;
 }
@@ -32,7 +33,7 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   const actions = byId('actions'); actions.replaceChildren();
   const groups = { event: '眼下的选择', travel: '去哪儿', daily: '做些什么', explore: '留意周围' } as const;
   for (const [group, label] of Object.entries(groups)) {
-    const options = view.actions.filter(x => x.definition.group === group); if (!options.length) continue;
+    const options = view.actions.filter(x => x.definition.group === group && x.definition.surface !== 'body'); if (!options.length) continue;
     const section = element('div', 'action-group'); const grid = element('div', 'action-grid');
     section.append(element('div', 'action-group-title', label)); grid.append(...options.map(x => actionButton(x))); section.append(grid); actions.append(section);
   }
@@ -47,6 +48,7 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     byId('result-changes').replaceChildren(...result.changes.map(x => element('span', 'change', `${x.label} ${x.before} → ${x.after}`)));
   }
   renderMap(view, registry);
+  renderBodyPanel(view, registry, byId('body-content'), option => actionButton(option));
   const log = byId('log-content'); log.replaceChildren();
   for (const tx of [...view.state.ledger.transactions].reverse().slice(0, 20)) {
     const item = element('article', 'log-item'); item.append(element('small', '', `行动 ${tx.result.revision}`), element('p', '', tx.result.text)); log.append(item);

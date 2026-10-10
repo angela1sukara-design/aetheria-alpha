@@ -1,9 +1,12 @@
 import { clone, stableJson } from '../core/types.ts';
 import type { GameState, Id } from '../core/types.ts';
+import { validateBody, instantiateBody } from '../engine/body.ts';
+import { STAGE1_PACKS } from './stage1-packs.ts';
+import { validateTFState } from './tf-validation.ts';
 import type { Registry } from '../content/registry.ts';
 export const MAX_SAVE_BYTES = 4 * 1024 * 1024;
-export type DecodeResult = { status: 'ready'; state: GameState } | { status: 'quarantined'; code: string; reason: string; original: string };
-interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 1; savedAt: string; state: GameState }
+export type DecodeResult = { status: 'ready'; state: GameState; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
+interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 2; savedAt: string; state: GameState }
 async function checksum(value: unknown): Promise<string> {
   const bytes = new TextEncoder().encode(stableJson(value));
   const hash = await crypto.subtle.digest('SHA-256', bytes);
@@ -22,9 +25,9 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const array = (x: unknown): unknown[] => { if (!Array.isArray(x)) bad('状态数组无效。'); return x as unknown[]; };
   const string = (x: unknown): string => { if (typeof x !== 'string' || !x.length) bad('状态字符串无效。'); return x as string; };
   const unique = (x: unknown[]): void => { if (new Set(x).size !== x.length) bad('状态中存在重复条目。'); };
-  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger']);
+  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues']);
   const meta = object(state.meta, ['schemaVersion', 'engineVersion', 'revision', 'packs']);
-  if (meta.schemaVersion !== 1 || meta.engineVersion !== '0.1') bad('存档版本尚不支持；没有自动降级或迁移。');
+  if (meta.schemaVersion !== 2 || meta.engineVersion !== '0.1-stage2') bad('存档版本尚不支持；没有自动降级或迁移。');
   const revision = int(meta.revision);
   const refs = array(meta.packs);
   if (refs.length !== registry.packs.length) bad('PACK_MISMATCH：存档与已安装内容包集合不一致。');
@@ -42,11 +45,13 @@ export function validateState(value: unknown, registry: Registry): asserts value
   registry.location(string(world.locationId) as Id); const known = array(world.knownLocationIds); unique(known);
   for (const id of known) registry.location(string(id) as Id);
   if (!known.includes(world.locationId)) bad('当前地点必须已发现。');
-  const player = object(state.player, ['variables', 'flags']);
+  const player = object(state.player, ['variables', 'flags', 'body']);
   const variables = object(player.variables, registry.variables.map(x => x.id));
   for (const v of registry.variables) int(variables[v.id], v.min, v.max);
   const flags = object(player.flags, registry.flags.map(x => x.id));
   for (const v of registry.flags) if (typeof flags[v.id] !== 'boolean') bad('标记状态无效。');
+  if (player.body !== null) validateBody(player.body, registry);
+  else if (registry.bodyTemplates.some(x => x.initial)) bad('存档缺少身体图。');
   const eventIds: string[] = []; const activeIds: string[] = [];
   for (const raw of array(state.eventInstances)) {
     const event = object(raw, ['instanceId', 'definitionId', 'nodeId', 'status', 'textByNode', 'draws', 'locals']);
@@ -84,13 +89,30 @@ export function validateState(value: unknown, registry: Registry): asserts value
     for (const rawChange of array(result.changes)) { const c = object(rawChange, ['label', 'before', 'after']); string(c.label); for (const v of [c.before, c.after]) if (!['number', 'string', 'boolean'].includes(typeof v) || (typeof v === 'number' && !Number.isFinite(v))) bad('事务变化摘要无效。'); }
   });
   unique(requests);
+  validateTFState(value as GameState, registry);
+}
+/** 精确迁移只增加新模块；旧状态仍需通过完整校验，存储 IO 不在此函数。 */
+function migrateStage1(raw: unknown, registry: Registry): GameState {
+  const old = clone(raw) as Record<string, unknown>;
+  if (!old || typeof old !== 'object' || Array.isArray(old) || Object.keys(old).sort().join('|') !== ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger'].sort().join('|')) throw new Error('第一阶段存档字段不符合迁移协议。');
+  const meta = old.meta as GameState['meta'];
+  const player = old.player as GameState['player'];
+  if (!meta || Object.keys(meta).sort().join('|') !== ['schemaVersion', 'engineVersion', 'revision', 'packs'].sort().join('|') || (meta.schemaVersion as number) !== 1 || (meta.engineVersion as string) !== '0.1' || !player || Object.keys(player).sort().join('|') !== 'flags|variables') throw new Error('第一阶段存档版本或玩家字段不合法。');
+  const sortedRefs = (refs: unknown): string => {
+    if (!Array.isArray(refs)) throw new Error('PACK_MISMATCH：旧存档内容包记录无效。');
+    return stableJson([...refs].sort((a, b) => String(a?.id).localeCompare(String(b?.id), 'en')));
+  };
+  if (sortedRefs(meta.packs) !== sortedRefs(STAGE1_PACKS) || STAGE1_PACKS.some(ref => !registry.packs.some(p => stableJson(p) === stableJson(ref))) || registry.packs.some(p => !['engine/core', 'aetheria/world', 'aetheria/reshaping'].includes(p.id))) throw new Error('PACK_MISMATCH：只支持官方第一阶段原始包的精确升级，其他存档保留并隔离。');
+  const template = registry.bodyTemplates.find(x => x.initial);
+  if (!template) throw new Error('升级所需身体模板缺失。');
+  return { ...old, meta: { ...meta, schemaVersion: 2, engineVersion: '0.1-stage2', packs: clone(registry.packs) }, player: { ...player, body: instantiateBody(template) }, tfQueues: [] } as unknown as GameState;
 }
 export class SaveCodec {
   readonly registry: Registry;
   constructor(registry: Registry) { this.registry = registry; }
   async encode(state: GameState): Promise<string> {
     validateState(state, this.registry);
-    const payload: SavePayload = { format: 'aetheria-alpha', schemaVersion: 1, savedAt: new Date().toISOString(), state: clone(state) };
+    const payload: SavePayload = { format: 'aetheria-alpha', schemaVersion: 2, savedAt: new Date().toISOString(), state: clone(state) };
     const text = JSON.stringify({ payload, checksum: await checksum(payload) }, null, 2);
     if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB；本版本不会截断账本或删除进度。');
     return text;
@@ -99,11 +121,13 @@ export class SaveCodec {
     try {
       if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB。');
       const envelope = JSON.parse(text);
-      if (envelope?.payload?.format !== 'aetheria-alpha' || envelope.payload.schemaVersion !== 1) throw new Error('文件不是受支持的 Alpha 0.1 存档。');
+      if (envelope?.payload?.format !== 'aetheria-alpha' || ![1, 2].includes(envelope.payload.schemaVersion)) throw new Error('文件不是受支持的 Alpha 0.1 存档。');
       if (await checksum(envelope.payload) !== envelope.checksum) throw new Error('存档校验和不符，可能损坏。');
       if (!Number.isFinite(Date.parse(envelope.payload.savedAt))) throw new Error('存档日期格式不合法。');
-      validateState(envelope.payload.state, this.registry);
-      return { status: 'ready', state: clone(envelope.payload.state) };
+      const migrated = envelope.payload.schemaVersion === 1;
+      const state = migrated ? migrateStage1(envelope.payload.state, this.registry) : envelope.payload.state;
+      validateState(state, this.registry);
+      return { status: 'ready', state: clone(state), ...(migrated ? { migration: '第一阶段存档已升级：保留原进度，新增初始身体。点击保存后写入新版存档。' } : {}) };
     } catch (error) {
       const reason = error instanceof Error ? error.message : '存档格式无效。';
       return { status: 'quarantined', code: reason.includes('PACK_MISMATCH') ? 'PACK_MISMATCH' : 'SAVE_INVALID', reason, original: text };
