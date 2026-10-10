@@ -1,0 +1,53 @@
+{
+  "manifest": {
+    "id": "engine/core",
+    "namespace": "core",
+    "version": "0.1.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "Alpha 0.1 first-stage",
+    "status": "draft",
+    "dependencies": [],
+    "requiresCapabilities": [
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "hook.action.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [
+    {
+      "id": "core:money",
+      "label": "零钱",
+      "initial": 60,
+      "min": 0,
+      "max": 999999,
+      "unit": "币"
+    },
+    {
+      "id": "core:energy",
+      "label": "精力",
+      "initial": 70,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:health",
+      "label": "体况",
+      "initial": 100,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    }
+  ],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": []
+}

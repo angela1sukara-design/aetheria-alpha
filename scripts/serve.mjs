@@ -1,0 +1,18 @@
+import http from 'node:http';
+import { readFile, stat } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+const root = fileURLToPath(new URL('../', import.meta.url));
+if (!process.argv.includes('--built')) { const built = spawnSync(process.execPath, [path.join(root, 'scripts/build.mjs')], { stdio: 'inherit' }); if (built.status !== 0) process.exit(1); }
+const directory = path.join(root, 'dist'); const port = Number(process.env.PORT || 4173);
+const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json' };
+http.createServer(async (req, res) => {
+  try {
+    const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    const file = path.resolve(directory, `.${pathname === '/' ? '/index.html' : pathname}`);
+    if (!file.startsWith(directory + path.sep)) { res.writeHead(403); res.end(); return; }
+    if (!(await stat(file)).isFile()) throw new Error('not found');
+    res.writeHead(200, { 'Content-Type': (types[path.extname(file)] || 'application/octet-stream') + '; charset=utf-8', 'Cache-Control': 'no-store' }); res.end(await readFile(file));
+  } catch { res.writeHead(404); res.end('Not found'); }
+}).listen(port, '0.0.0.0', () => console.log(`Aetheria Alpha 0.1: http://localhost:${port}/`));

@@ -1,0 +1,43 @@
+import type { ActionIntent, ActionResult, GameState } from '../core/types.ts';
+import { clone, freeze, stableJson } from '../core/types.ts';
+import type { Registry } from '../content/registry.ts';
+import { RuleError } from '../core/errors.ts';
+import { actionOptions, selectGameView } from './selectors.ts';
+import { applyEffects } from './effects.ts';
+import type { EffectContext } from './effects.ts';
+/** 唯一写入权威。存档恢复建立新的 executor，不能通过可写 snapshot 绕过事务。 */
+export class ActionExecutor {
+  #state: GameState;
+  readonly registry: Registry;
+  constructor(registry: Registry, state: GameState) { this.registry = registry; this.#state = clone(state); }
+  snapshot(): GameState { return freeze(clone(this.#state)); }
+  view() { return selectGameView(this.#state, this.registry); }
+  performAction(intent: ActionIntent, expectedRevision: number, requestId: string): ActionResult {
+    const fail = (code: string, message: string): ActionResult => ({ ok: false, code, message, revision: this.#state.meta.revision, requestId, text: '', changes: [] });
+    if (!requestId || requestId.length > 128) return fail('INVALID_REQUEST', '行动请求 ID 无效。');
+    if (Object.keys(intent).some(k => k !== 'actionId' && k !== 'params') || (intent.params && Object.keys(intent.params).length)) return fail('INVALID_INTENT', '本版本未登记该行动参数。');
+    const fingerprint = stableJson(intent);
+    const previous = this.#state.ledger.transactions.find(x => x.requestId === requestId);
+    // 必须先检查幂等，再检查旧 revision；网络重试可以获得原结果，但不同请求不能冒用 ID。
+    if (previous) return previous.fingerprint === fingerprint ? clone(previous.result) : fail('REQUEST_ID_REUSED', '相同请求 ID 不能用于另一个行动。');
+    if (expectedRevision !== this.#state.meta.revision) return fail('STALE_REVISION', '状态已改变，请重新选择行动。');
+    const option = actionOptions(this.#state, this.registry).find(x => x.definition.id === intent.actionId);
+    if (!option) return fail('ACTION_NOT_AVAILABLE', '该行动不属于当前地点或事件。');
+    if (!option.available) return fail('CONDITION_FAILED', option.reason);
+    const draft = clone(this.#state);
+    const context: EffectContext = { budget: 64, changes: [], resolvedTexts: [], transactionId: requestId };
+    try {
+      applyEffects(option.definition.effects, draft, this.registry, context);
+      draft.meta.revision++;
+      const result: ActionResult = { ok: true, code: 'COMMITTED', message: '行动完成。', requestId,
+        revision: draft.meta.revision, text: [this.registry.text(option.definition.resultText), ...context.resolvedTexts].join('\n\n'), changes: context.changes };
+      draft.ledger.transactions.push({ requestId, fingerprint, result: clone(result) });
+      // 只有所有效果成功之后才替换权威状态；渲染、IO、AI 都不参与此次提交。
+      this.#state = draft;
+      return result;
+    } catch (error) {
+      if (error instanceof RuleError) return fail(error.code, error.message);
+      return fail('TRANSACTION_FAILED', '行动结算异常，本次状态没有改变。');
+    }
+  }
+}

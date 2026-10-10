@@ -1,0 +1,474 @@
+{
+  "manifest": {
+    "id": "aetheria/world",
+    "namespace": "aetheria",
+    "version": "0.1.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "Alpha 0.1 first-stage",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "hook.action.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [
+    {
+      "id": "aetheria:flag.notice_helped",
+      "initial": false
+    }
+  ],
+  "hooks": [
+    {
+      "id": "aetheria:hook.apartment.actions",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "aetheria:hook.street.actions",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "aetheria:hook.market.actions",
+      "accepts": "action",
+      "visibility": "public"
+    }
+  ],
+  "locations": [
+    {
+      "id": "aetheria:location.apartment",
+      "name": "公寓",
+      "subtitle": "窗外的城，刚刚醒来",
+      "textKey": "aetheria:text.apartment",
+      "actionHook": "aetheria:hook.apartment.actions",
+      "map": {
+        "x": 20,
+        "y": 56
+      }
+    },
+    {
+      "id": "aetheria:location.street",
+      "name": "主街",
+      "subtitle": "人流、灯牌与往来的车辆",
+      "textKey": "aetheria:text.street",
+      "actionHook": "aetheria:hook.street.actions",
+      "map": {
+        "x": 50,
+        "y": 56
+      }
+    },
+    {
+      "id": "aetheria:location.market",
+      "name": "集市",
+      "subtitle": "棚布下的日常",
+      "textKey": "aetheria:text.market",
+      "actionHook": "aetheria:hook.market.actions",
+      "map": {
+        "x": 80,
+        "y": 56
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "aetheria:route.apartment_street",
+      "from": "aetheria:location.apartment",
+      "to": "aetheria:location.street"
+    },
+    {
+      "id": "aetheria:route.street_apartment",
+      "from": "aetheria:location.street",
+      "to": "aetheria:location.apartment"
+    },
+    {
+      "id": "aetheria:route.street_market",
+      "from": "aetheria:location.street",
+      "to": "aetheria:location.market"
+    },
+    {
+      "id": "aetheria:route.market_street",
+      "from": "aetheria:location.market",
+      "to": "aetheria:location.street"
+    }
+  ],
+  "actions": [
+    {
+      "id": "aetheria:action.travel.apartment_street",
+      "label": "前往主街",
+      "hint": "步行 · 10 分钟",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria:route.apartment_street"
+        }
+      ],
+      "resultText": "aetheria:text.result.travel.apartment_street"
+    },
+    {
+      "id": "aetheria:action.travel.street_apartment",
+      "label": "前往公寓",
+      "hint": "步行 · 10 分钟",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria:route.street_apartment"
+        }
+      ],
+      "resultText": "aetheria:text.result.travel.street_apartment"
+    },
+    {
+      "id": "aetheria:action.travel.street_market",
+      "label": "前往集市",
+      "hint": "步行 · 10 分钟",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria:route.street_market"
+        }
+      ],
+      "resultText": "aetheria:text.result.travel.street_market"
+    },
+    {
+      "id": "aetheria:action.travel.market_street",
+      "label": "前往主街",
+      "hint": "步行 · 10 分钟",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria:route.market_street"
+        }
+      ],
+      "resultText": "aetheria:text.result.travel.market_street"
+    },
+    {
+      "id": "aetheria:action.rest",
+      "label": "在床边歇一会儿",
+      "hint": "60 分钟 · 精力 +25",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        }
+      ],
+      "resultText": "aetheria:text.result.rest"
+    },
+    {
+      "id": "aetheria:action.street.wait",
+      "label": "在路边等一会儿",
+      "hint": "15 分钟",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        }
+      ],
+      "resultText": "aetheria:text.result.street.wait"
+    },
+    {
+      "id": "aetheria:action.market.wait",
+      "label": "在棚下歇脚",
+      "hint": "15 分钟",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        }
+      ],
+      "resultText": "aetheria:text.result.market.wait"
+    },
+    {
+      "id": "aetheria:action.market.work",
+      "label": "帮摊位整理货箱",
+      "hint": "30 分钟 · 精力 −10 · 零钱 +12",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:energy",
+          "comparison": "gte",
+          "value": 10
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -10
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 12
+        }
+      ],
+      "resultText": "aetheria:text.result.market.work"
+    },
+    {
+      "id": "aetheria:action.market.meal",
+      "label": "买一份热食",
+      "hint": "15 分钟 · 零钱 −8 · 精力 +18",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:money",
+          "comparison": "gte",
+          "value": 8
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": -8
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 18
+        }
+      ],
+      "resultText": "aetheria:text.result.market.meal"
+    },
+    {
+      "id": "aetheria:action.street.notice",
+      "label": "看看被风掀起的告示",
+      "hint": "5 分钟 · 一件街头小事",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "event.state",
+          "id": "aetheria:event.notice",
+          "state": "unseen"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.start",
+          "id": "aetheria:event.notice"
+        }
+      ],
+      "resultText": "aetheria:text.result.street.notice"
+    },
+    {
+      "id": "aetheria:action.notice.help",
+      "label": "替摊位把告示固定好",
+      "hint": "10 分钟 · 精力 −5 · 零钱 +6",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:energy",
+          "comparison": "gte",
+          "value": 5
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "helped"
+        }
+      ],
+      "resultText": "aetheria:text.result.notice.help",
+      "context": {
+        "eventId": "aetheria:event.notice",
+        "nodeId": "choice"
+      }
+    },
+    {
+      "id": "aetheria:action.notice.leave",
+      "label": "把夹子放回去，继续走",
+      "hint": "不收报酬 · 结束这件小事",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "left"
+        }
+      ],
+      "resultText": "aetheria:text.result.notice.leave",
+      "context": {
+        "eventId": "aetheria:event.notice",
+        "nodeId": "choice"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "aetheria:event.notice",
+      "startNode": "choice",
+      "nodes": [
+        {
+          "id": "choice",
+          "type": "choice",
+          "textVariants": [
+            "aetheria:text.notice.a",
+            "aetheria:text.notice.b"
+          ],
+          "actionIds": [
+            "aetheria:action.notice.help",
+            "aetheria:action.notice.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "helped",
+          "type": "exit",
+          "textVariants": [
+            "aetheria:text.notice.helped"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "var.change",
+              "id": "core:energy",
+              "amount": -5
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            },
+            {
+              "op": "var.change",
+              "id": "core:money",
+              "amount": 6
+            },
+            {
+              "op": "flag.set",
+              "id": "aetheria:flag.notice_helped",
+              "value": true
+            },
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "left",
+          "type": "exit",
+          "textVariants": [
+            "aetheria:text.notice.left"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "aetheria:text.apartment": "你租住的公寓不大。靠窗的小桌上放着一只水杯，衣物搭在椅背上。楼道里传来开关门的声音。\n\n透过窗户，可以看见主街一截亮起的招牌。今天还很长，你可以先歇一会儿，也可以下楼。",
+    "aetheria:text.street": "主街横在公寓和集市之间。送货车贴着路边停下，一位装着机械前臂的行人把袖口卷起来，避开车门。有人露着经改造的兽类耳朵，也有人把兜帽拉得很低。\n\n这座城市容纳各种改造后的身体；他们仍是过自己的日子的人。路口的告示板旁，有几张纸被风掀了起来。",
+    "aetheria:text.market": "集市的棚布把光切成一块一块。食物摊冒着热气，旁边的柜台摆着拆下来的义体接头和旧零件。讨价还价的声音盖过了远处的车声。\n\n一家摊位正在收拾货箱。你可以帮忙赚一点零钱，或买些热食。回主街的路始终开着。",
+    "aetheria:text.result.travel.apartment_street": "你沿着熟悉的路走到主街。身后的声音渐渐散开，眼前换了一番景象。",
+    "aetheria:text.result.travel.street_apartment": "你沿着熟悉的路走到公寓。身后的声音渐渐散开，眼前换了一番景象。",
+    "aetheria:text.result.travel.street_market": "你沿着熟悉的路走到集市。身后的声音渐渐散开，眼前换了一番景象。",
+    "aetheria:text.result.travel.market_street": "你沿着熟悉的路走到主街。身后的声音渐渐散开，眼前换了一番景象。",
+    "aetheria:text.result.rest": "你把门关上，坐到床边。楼道里的脚步声远了，窗外偶尔有车驶过。再站起来时，身体松快了一些。",
+    "aetheria:text.result.street.wait": "你避开人流，站到一块褪色的灯牌下。车辆放行了几轮，街对面的招牌也换了一次颜色。",
+    "aetheria:text.result.market.wait": "你在棚布投下的阴影里停了一会儿。摊主们各自忙着，没有人催你。",
+    "aetheria:text.result.market.work": "你把空箱摞好，再将零件按标记分到柜台下面。搬完最后一箱，摊位终于空出一条通道。报酬当场付清，手臂有些发酸。",
+    "aetheria:text.result.market.meal": "你付过钱，捧着热食找了个不碍事的角落。棚上的雨水印还没干透。吃完后，你把空盒丢进桶里。",
+    "aetheria:text.result.street.notice": "你走近路口的告示板。",
+    "aetheria:text.result.notice.help": "你答应搭把手。",
+    "aetheria:text.result.notice.leave": "你把地上的夹子放到板沿。",
+    "aetheria:text.notice.a": "告示板边掉了一只夹子。你捡起来时，附近摊位有人探过身子：“能帮我把下面那几张也夹好么？我这边腾不出手。”\n\n纸上写的都是日常消息：维修、招工、旧物换卖。最下面那张正一下下拍在铁框上。",
+    "aetheria:text.notice.b": "一张招工告示被风卷到了你脚边。你把它捡起，旁边摊位的人隔着货箱朝你喊：“谢谢。夹子在板沿，你要有空，顺便把松的几张固定一下？算你一小笔工钱。”\n\n风还在吹。你看看纸角，又看看压在货箱下的那一把备用夹子。",
+    "aetheria:text.notice.helped": "你把几张松脱的告示重新夹好。摊位那边递来零钱，又朝还在晃动的铁框看了一眼：“这下能撑到晚上了。”\n\n你收好报酬，回到主街的人流里。",
+    "aetheria:text.notice.left": "你把夹子和纸交回板边，没有接这份活。摊位那边应了一声，又低头忙自己的事。\n\n这只是早晨路口的一件小事。你重新迈开脚步。"
+  },
+  "contributions": [
+    {
+      "hookId": "aetheria:hook.apartment.actions",
+      "actionIds": [
+        "aetheria:action.travel.apartment_street",
+        "aetheria:action.rest"
+      ]
+    },
+    {
+      "hookId": "aetheria:hook.street.actions",
+      "actionIds": [
+        "aetheria:action.travel.street_apartment",
+        "aetheria:action.travel.street_market",
+        "aetheria:action.street.wait",
+        "aetheria:action.street.notice"
+      ]
+    },
+    {
+      "hookId": "aetheria:hook.market.actions",
+      "actionIds": [
+        "aetheria:action.travel.market_street",
+        "aetheria:action.market.wait",
+        "aetheria:action.market.work",
+        "aetheria:action.market.meal"
+      ]
+    }
+  ],
+  "start": {
+    "locationId": "aetheria:location.apartment",
+    "minutes": 480
+  }
+}
