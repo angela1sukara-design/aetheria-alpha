@@ -48,7 +48,7 @@ export async function prepare() {
   required:['format','schemaVersion','scope','batches'],properties:{format:{const:'aetheria-lexicon-delivery'},schemaVersion:{const:1},
    scope:{enum:['all','npc','body','world','daily','text']},batches:{type:'array',minItems:1,maxItems:214,items:{$ref:'batch.schema.json'}}},
  });
- for(const [scope,label]of Object.entries({all:'全部词库',...groups}))await doc(`prompts/整包-${label}.md`,wholePrompt(scope,scope==='all'?'ai-main':`ai-${scope}`));
+ for(const [scope,label]of Object.entries({all:'全部词库',...groups}))await doc(`prompts/整包-${label}.md`,wholePrompt(scope,scope==='all'?'ai-main':`ai-${scope}`).trimEnd());
  await atomicJSON(path.join(root,'production-plan.json'),{format:'aetheria-lexicon-plan',schemaVersion:1,target:total,standardBatchSize:50,tasks:plan});
  for(const c of catalog) {
   const ts=plan.filter(t=>t.library===c.code);
