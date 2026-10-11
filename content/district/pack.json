@@ -1,0 +1,7215 @@
+{
+  "manifest": {
+    "id": "aetheria/district",
+    "namespace": "district",
+    "version": "0.2.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "GPT · PROPOSED 街区试运行内容",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/recovery",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "hook.action.v1",
+      "npc.fixed.v1",
+      "body.graph.v1",
+      "tf.pipeline.v1",
+      "district.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [
+    {
+      "id": "district:flag.road_report",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.rain",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.rain.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.parcel",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.parcel.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.stove",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.stove.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.scale",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.scale.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.ice",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.ice.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.raincoat",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.raincoat.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.cup",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.cup.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.nightshift",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.nightshift.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.lamp",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.lamp.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.lever",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.lever.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.steps",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.steps.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.water",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.water.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.ledger",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.ledger.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.address",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.address.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.queue",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.queue.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.bench",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.bench.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.filter",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.filter.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.hearing",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.hearing.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.curtain",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.curtain.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.question",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.question.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.sign",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.sign.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.tailchair",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.tailchair.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.scent",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.scent.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.ink",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.ink.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.tidebell",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.tidebell.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.oil",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.oil.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.gloss",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.gloss.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.return",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.return.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.dawn",
+      "initial": false
+    },
+    {
+      "id": "district:flag.story.dawn.alternative",
+      "initial": false
+    },
+    {
+      "id": "district:flag.lostpass.returned",
+      "initial": false
+    },
+    {
+      "id": "district:flag.lostpass.witnessed",
+      "initial": false
+    }
+  ],
+  "hooks": [
+    {
+      "id": "district:hook.cafe",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "district:hook.workshop",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "district:hook.canal",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "district:hook.archive",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "district:hook.station",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "district:hook.runtime",
+      "accepts": "action",
+      "visibility": "public"
+    }
+  ],
+  "locations": [
+    {
+      "id": "district:location.cafe",
+      "name": "雨棚茶馆",
+      "subtitle": "雨声与热茶 · 休息、夜间社交",
+      "textKey": "district:text.location.cafe",
+      "actionHook": "district:hook.cafe",
+      "map": {
+        "x": 16,
+        "y": 24
+      }
+    },
+    {
+      "id": "district:location.workshop",
+      "name": "回声机械工坊",
+      "subtitle": "修理台与油灯 · 机械工作、莱克",
+      "textKey": "district:text.location.workshop",
+      "actionHook": "district:hook.workshop",
+      "map": {
+        "x": 88,
+        "y": 65
+      }
+    },
+    {
+      "id": "district:location.canal",
+      "name": "旧渠步道",
+      "subtitle": "水位线下 · 探索与风险",
+      "textKey": "district:text.location.canal",
+      "actionHook": "district:hook.canal",
+      "map": {
+        "x": 60,
+        "y": 89
+      }
+    },
+    {
+      "id": "district:location.archive",
+      "name": "街区档案室",
+      "subtitle": "纸张与旧终端 · 调查、公共工作",
+      "textKey": "district:text.location.archive",
+      "actionHook": "district:hook.archive",
+      "map": {
+        "x": 15,
+        "y": 68
+      }
+    },
+    {
+      "id": "district:location.station",
+      "name": "下城检查站",
+      "subtitle": "秩序与通行 · 风险报告",
+      "textKey": "district:text.location.station",
+      "actionHook": "district:hook.station",
+      "map": {
+        "x": 40,
+        "y": 48
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "district:route.cafe.out",
+      "from": "aetheria:location.street",
+      "to": "district:location.cafe"
+    },
+    {
+      "id": "district:route.cafe.back",
+      "from": "district:location.cafe",
+      "to": "aetheria:location.street"
+    },
+    {
+      "id": "district:route.workshop.out",
+      "from": "aetheria:location.market",
+      "to": "district:location.workshop"
+    },
+    {
+      "id": "district:route.workshop.back",
+      "from": "district:location.workshop",
+      "to": "aetheria:location.market"
+    },
+    {
+      "id": "district:route.canal.out",
+      "from": "district:location.workshop",
+      "to": "district:location.canal"
+    },
+    {
+      "id": "district:route.canal.back",
+      "from": "district:location.canal",
+      "to": "district:location.workshop"
+    },
+    {
+      "id": "district:route.archive.out",
+      "from": "aetheria:location.street",
+      "to": "district:location.archive"
+    },
+    {
+      "id": "district:route.archive.back",
+      "from": "district:location.archive",
+      "to": "aetheria:location.street"
+    },
+    {
+      "id": "district:route.station.out",
+      "from": "district:location.canal",
+      "to": "district:location.station"
+    },
+    {
+      "id": "district:route.station.back",
+      "from": "district:location.station",
+      "to": "district:location.canal"
+    },
+    {
+      "id": "district:route.station.street",
+      "from": "district:location.station",
+      "to": "aetheria:location.street"
+    },
+    {
+      "id": "district:route.street.station",
+      "from": "aetheria:location.street",
+      "to": "district:location.station"
+    },
+    {
+      "id": "district:route.archive.clinic",
+      "from": "district:location.archive",
+      "to": "aetheria-tf:location.clinic"
+    },
+    {
+      "id": "district:route.clinic.archive",
+      "from": "aetheria-tf:location.clinic",
+      "to": "district:location.archive"
+    }
+  ],
+  "actions": [
+    {
+      "id": "district:action.travel.cafe.out",
+      "label": "前往雨棚茶馆",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.cafe.out"
+        }
+      ],
+      "resultText": "district:text.travel.cafe.out"
+    },
+    {
+      "id": "district:action.travel.cafe.back",
+      "label": "前往主街",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.cafe.back"
+        }
+      ],
+      "resultText": "district:text.travel.cafe.back"
+    },
+    {
+      "id": "district:action.travel.workshop.out",
+      "label": "前往回声机械工坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.workshop.out"
+        }
+      ],
+      "resultText": "district:text.travel.workshop.out"
+    },
+    {
+      "id": "district:action.travel.workshop.back",
+      "label": "前往集市",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.workshop.back"
+        }
+      ],
+      "resultText": "district:text.travel.workshop.back"
+    },
+    {
+      "id": "district:action.travel.canal.out",
+      "label": "前往旧渠步道",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.canal.out"
+        }
+      ],
+      "resultText": "district:text.travel.canal.out"
+    },
+    {
+      "id": "district:action.travel.canal.back",
+      "label": "前往回声机械工坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.canal.back"
+        }
+      ],
+      "resultText": "district:text.travel.canal.back"
+    },
+    {
+      "id": "district:action.travel.archive.out",
+      "label": "前往街区档案室",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.archive.out"
+        }
+      ],
+      "resultText": "district:text.travel.archive.out"
+    },
+    {
+      "id": "district:action.travel.archive.back",
+      "label": "前往主街",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.archive.back"
+        }
+      ],
+      "resultText": "district:text.travel.archive.back"
+    },
+    {
+      "id": "district:action.travel.station.out",
+      "label": "前往下城检查站",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.station.out"
+        }
+      ],
+      "resultText": "district:text.travel.station.out"
+    },
+    {
+      "id": "district:action.travel.station.back",
+      "label": "前往旧渠步道",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.station.back"
+        }
+      ],
+      "resultText": "district:text.travel.station.back"
+    },
+    {
+      "id": "district:action.travel.station.street",
+      "label": "前往主街",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.station.street"
+        }
+      ],
+      "resultText": "district:text.travel.station.street"
+    },
+    {
+      "id": "district:action.travel.street.station",
+      "label": "前往下城检查站",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.street.station"
+        }
+      ],
+      "resultText": "district:text.travel.street.station"
+    },
+    {
+      "id": "district:action.travel.archive.clinic",
+      "label": "前往改造诊室",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.archive.clinic"
+        }
+      ],
+      "resultText": "district:text.travel.archive.clinic"
+    },
+    {
+      "id": "district:action.travel.clinic.archive",
+      "label": "前往街区档案室",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "district:route.clinic.archive"
+        }
+      ],
+      "resultText": "district:text.travel.clinic.archive"
+    },
+    {
+      "id": "district:action.observe.location.apartment",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.apartment"
+    },
+    {
+      "id": "district:action.resident.talk.location.apartment",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.apartment"
+    },
+    {
+      "id": "district:action.resident.help.location.apartment",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.apartment"
+    },
+    {
+      "id": "district:action.observe.location.street",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.street"
+    },
+    {
+      "id": "district:action.resident.talk.location.street",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.street"
+    },
+    {
+      "id": "district:action.resident.help.location.street",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.street"
+    },
+    {
+      "id": "district:action.rest.location.street",
+      "label": "找个安全位置歇息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        }
+      ],
+      "resultText": "district:text.rest.location.street"
+    },
+    {
+      "id": "district:action.observe.location.market",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.market"
+    },
+    {
+      "id": "district:action.resident.talk.location.market",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.market"
+    },
+    {
+      "id": "district:action.resident.help.location.market",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.market"
+    },
+    {
+      "id": "district:action.observe.location.clinic",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.clinic"
+    },
+    {
+      "id": "district:action.resident.talk.location.clinic",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.clinic"
+    },
+    {
+      "id": "district:action.resident.help.location.clinic",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.clinic"
+    },
+    {
+      "id": "district:action.observe.location.salon",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.salon"
+    },
+    {
+      "id": "district:action.resident.talk.location.salon",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.salon"
+    },
+    {
+      "id": "district:action.resident.help.location.salon",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.salon"
+    },
+    {
+      "id": "district:action.observe.location.cafe",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.cafe"
+    },
+    {
+      "id": "district:action.resident.talk.location.cafe",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.cafe"
+    },
+    {
+      "id": "district:action.resident.help.location.cafe",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.cafe"
+    },
+    {
+      "id": "district:action.rest.location.cafe",
+      "label": "找个安全位置歇息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        }
+      ],
+      "resultText": "district:text.rest.location.cafe"
+    },
+    {
+      "id": "district:action.observe.location.workshop",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.workshop"
+    },
+    {
+      "id": "district:action.resident.talk.location.workshop",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.workshop"
+    },
+    {
+      "id": "district:action.resident.help.location.workshop",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.workshop"
+    },
+    {
+      "id": "district:action.rest.location.workshop",
+      "label": "找个安全位置歇息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        }
+      ],
+      "resultText": "district:text.rest.location.workshop"
+    },
+    {
+      "id": "district:action.observe.location.canal",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.canal"
+    },
+    {
+      "id": "district:action.resident.talk.location.canal",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.canal"
+    },
+    {
+      "id": "district:action.resident.help.location.canal",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.canal"
+    },
+    {
+      "id": "district:action.rest.location.canal",
+      "label": "找个安全位置歇息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        }
+      ],
+      "resultText": "district:text.rest.location.canal"
+    },
+    {
+      "id": "district:action.observe.location.archive",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.archive"
+    },
+    {
+      "id": "district:action.resident.talk.location.archive",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.archive"
+    },
+    {
+      "id": "district:action.resident.help.location.archive",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.archive"
+    },
+    {
+      "id": "district:action.rest.location.archive",
+      "label": "找个安全位置歇息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        }
+      ],
+      "resultText": "district:text.rest.location.archive"
+    },
+    {
+      "id": "district:action.observe.location.station",
+      "label": "留意街区与附近的人",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "world.encounter"
+        }
+      ],
+      "resultText": "district:text.observe.location.station"
+    },
+    {
+      "id": "district:action.resident.talk.location.station",
+      "label": "与附近路人交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "resident.talk"
+        }
+      ],
+      "resultText": "district:text.resident.talk.location.station"
+    },
+    {
+      "id": "district:action.resident.help.location.station",
+      "label": "协助这位街坊",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "resident.help"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        }
+      ],
+      "resultText": "district:text.resident.help.location.station"
+    },
+    {
+      "id": "district:action.rest.location.station",
+      "label": "找个安全位置歇息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        }
+      ],
+      "resultText": "district:text.rest.location.station"
+    },
+    {
+      "id": "district:action.create",
+      "label": "签下租约，开始生活",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "player.created",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "player.create",
+          "name": "旅人",
+          "ageYears": 25
+        }
+      ],
+      "resultText": "district:text.create"
+    },
+    {
+      "id": "district:action.cafe.tea",
+      "label": "喝茶，听听店里的近况",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 20
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        }
+      ],
+      "resultText": "district:text.cafe.tea"
+    },
+    {
+      "id": "district:action.archive.work",
+      "label": "整理公共档案",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -10
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 90
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 14
+        }
+      ],
+      "resultText": "district:text.archive.work"
+    },
+    {
+      "id": "district:action.workshop.work",
+      "label": "帮工坊整理零件",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 480,
+          "end": 1200
+        },
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 90
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 18
+        }
+      ],
+      "resultText": "district:text.workshop.work"
+    },
+    {
+      "id": "district:action.station.report",
+      "label": "核对危险路段通报",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.road_report",
+          "value": true
+        }
+      ],
+      "resultText": "district:text.station.report"
+    },
+    {
+      "id": "district:action.waitday.location.apartment",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.apartment"
+    },
+    {
+      "id": "district:action.waitday.location.street",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.street"
+    },
+    {
+      "id": "district:action.waitday.location.market",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.market"
+    },
+    {
+      "id": "district:action.waitday.location.clinic",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.clinic"
+    },
+    {
+      "id": "district:action.waitday.location.salon",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.salon"
+    },
+    {
+      "id": "district:action.waitday.location.cafe",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.cafe"
+    },
+    {
+      "id": "district:action.waitday.location.workshop",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.workshop"
+    },
+    {
+      "id": "district:action.waitday.location.canal",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.canal"
+    },
+    {
+      "id": "district:action.waitday.location.archive",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.archive"
+    },
+    {
+      "id": "district:action.waitday.location.station",
+      "label": "休息到次日同一时刻",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "district:text.waitday.location.station"
+    },
+    {
+      "id": "district:action.event.rain.0",
+      "label": "拦起路口",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -4
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.rain",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.rain.0",
+      "context": {
+        "eventId": "district:event.rain",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.rain.1",
+      "label": "向窗口报修",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.rain.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.rain.1",
+      "context": {
+        "eventId": "district:event.rain",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.rain.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.rain.2",
+      "context": {
+        "eventId": "district:event.rain",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.parcel.0",
+      "label": "送回值班台",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -3
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 4
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.parcel",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.parcel.0",
+      "context": {
+        "eventId": "district:event.parcel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.parcel.1",
+      "label": "留下清楚的地址便条",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.parcel.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.parcel.1",
+      "context": {
+        "eventId": "district:event.parcel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.parcel.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.parcel.2",
+      "context": {
+        "eventId": "district:event.parcel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.stove.0",
+      "label": "帮忙搬运",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -3
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.stove",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.stove.0",
+      "context": {
+        "eventId": "district:event.stove",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.stove.1",
+      "label": "借出公共厨房的钥匙",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.stove.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.stove.1",
+      "context": {
+        "eventId": "district:event.stove",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.stove.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.stove.2",
+      "context": {
+        "eventId": "district:event.stove",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.scale.0",
+      "label": "把秤放平再核对",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 3
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.scale",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.scale.0",
+      "context": {
+        "eventId": "district:event.scale",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.scale.1",
+      "label": "请市场值班员见证",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.scale.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.scale.1",
+      "context": {
+        "eventId": "district:event.scale",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.scale.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.scale.2",
+      "context": {
+        "eventId": "district:event.scale",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ice.0",
+      "label": "搭起遮阳棚",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -5
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 5
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.ice",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.ice.0",
+      "context": {
+        "eventId": "district:event.ice",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ice.1",
+      "label": "联络诊室接货",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.ice.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.ice.1",
+      "context": {
+        "eventId": "district:event.ice",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ice.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.ice.2",
+      "context": {
+        "eventId": "district:event.ice",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.raincoat.0",
+      "label": "帮忙测量活动范围",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 2
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.raincoat",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.raincoat.0",
+      "context": {
+        "eventId": "district:event.raincoat",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.raincoat.1",
+      "label": "找来样衣作参考",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.raincoat.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.raincoat.1",
+      "context": {
+        "eventId": "district:event.raincoat",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.raincoat.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.raincoat.2",
+      "context": {
+        "eventId": "district:event.raincoat",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.cup.0",
+      "label": "在杯底写下今天的日期",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 0
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.cup",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.cup.0",
+      "context": {
+        "eventId": "district:event.cup",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.cup.1",
+      "label": "把杯子交给店员保管",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.cup.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.cup.1",
+      "context": {
+        "eventId": "district:event.cup",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.cup.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.cup.2",
+      "context": {
+        "eventId": "district:event.cup",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nightshift.0",
+      "label": "陪着等一会",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 0
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.nightshift",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.nightshift.0",
+      "context": {
+        "eventId": "district:event.nightshift",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nightshift.1",
+      "label": "帮忙询问路况",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.nightshift.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.nightshift.1",
+      "context": {
+        "eventId": "district:event.nightshift",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nightshift.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.nightshift.2",
+      "context": {
+        "eventId": "district:event.nightshift",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lamp.0",
+      "label": "帮忙逐个测触点",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -5
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 5
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.lamp",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.lamp.0",
+      "context": {
+        "eventId": "district:event.lamp",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lamp.1",
+      "label": "整理可用的替换件",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.lamp.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.lamp.1",
+      "context": {
+        "eventId": "district:event.lamp",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lamp.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.lamp.2",
+      "context": {
+        "eventId": "district:event.lamp",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lever.0",
+      "label": "用机械尾稳住支架",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 4
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.lever",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.lever.0",
+      "context": {
+        "eventId": "district:event.lever",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lever.1",
+      "label": "先给支架加临时楔块",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.lever.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.lever.1",
+      "context": {
+        "eventId": "district:event.lever",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lever.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.lever.2",
+      "context": {
+        "eventId": "district:event.lever",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.steps.0",
+      "label": "沿栏杆取回记录",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -4
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 4
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.steps",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.steps.0",
+      "context": {
+        "eventId": "district:event.steps",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.steps.1",
+      "label": "用长杆把记录勾过来",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.steps.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.steps.1",
+      "context": {
+        "eventId": "district:event.steps",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.steps.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.steps.2",
+      "context": {
+        "eventId": "district:event.steps",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.water.0",
+      "label": "先劝人退到高处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -4
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.water",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.water.0",
+      "context": {
+        "eventId": "district:event.water",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.water.1",
+      "label": "核对水位并报告",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.water.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.water.1",
+      "context": {
+        "eventId": "district:event.water",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.water.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.water.2",
+      "context": {
+        "eventId": "district:event.water",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ledger.0",
+      "label": "查找装订残页",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -3
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 6
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.ledger",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.ledger.0",
+      "context": {
+        "eventId": "district:event.ledger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ledger.1",
+      "label": "登记缺页等待核实",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.ledger.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.ledger.1",
+      "context": {
+        "eventId": "district:event.ledger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ledger.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.ledger.2",
+      "context": {
+        "eventId": "district:event.ledger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.address.0",
+      "label": "核对公开地图",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 3
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.address",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.address.0",
+      "context": {
+        "eventId": "district:event.address",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.address.1",
+      "label": "陪同走到路口",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.address.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.address.1",
+      "context": {
+        "eventId": "district:event.address",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.address.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.address.2",
+      "context": {
+        "eventId": "district:event.address",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.queue.0",
+      "label": "指明凭据编号",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -1
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.queue",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.queue.0",
+      "context": {
+        "eventId": "district:event.queue",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.queue.1",
+      "label": "请维修窗口核验",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.queue.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.queue.1",
+      "context": {
+        "eventId": "district:event.queue",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.queue.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.queue.2",
+      "context": {
+        "eventId": "district:event.queue",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.bench.0",
+      "label": "协助叫接驳车",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.bench",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.bench.0",
+      "context": {
+        "eventId": "district:event.bench",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.bench.1",
+      "label": "找值班护理员",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.bench.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.bench.1",
+      "context": {
+        "eventId": "district:event.bench",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.bench.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.bench.2",
+      "context": {
+        "eventId": "district:event.bench",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.filter.0",
+      "label": "帮忙清洁外层滤网",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -4
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 4
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.filter",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.filter.0",
+      "context": {
+        "eventId": "district:event.filter",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.filter.1",
+      "label": "递交故障位置记录",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.filter.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.filter.1",
+      "context": {
+        "eventId": "district:event.filter",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.filter.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.filter.2",
+      "context": {
+        "eventId": "district:event.filter",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.hearing.0",
+      "label": "协助调低广播",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -1
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.hearing",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.hearing.0",
+      "context": {
+        "eventId": "district:event.hearing",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.hearing.1",
+      "label": "陪对方移到安静座位",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.hearing.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.hearing.1",
+      "context": {
+        "eventId": "district:event.hearing",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.hearing.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.hearing.2",
+      "context": {
+        "eventId": "district:event.hearing",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.curtain.0",
+      "label": "协助重新固定",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -3
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 2
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.curtain",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.curtain.0",
+      "context": {
+        "eventId": "district:event.curtain",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.curtain.1",
+      "label": "找出临时遮光布",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.curtain.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.curtain.1",
+      "context": {
+        "eventId": "district:event.curtain",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.curtain.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.curtain.2",
+      "context": {
+        "eventId": "district:event.curtain",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.question.0",
+      "label": "帮忙整理公开说明",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 0
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.question",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.question.0",
+      "context": {
+        "eventId": "district:event.question",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.question.1",
+      "label": "留下诊室的公开地址",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.question.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.question.1",
+      "context": {
+        "eventId": "district:event.question",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.question.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.question.2",
+      "context": {
+        "eventId": "district:event.question",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.sign.0",
+      "label": "把招工牌重新固定",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -1
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.sign",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.sign.0",
+      "context": {
+        "eventId": "district:event.sign",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.sign.1",
+      "label": "向值班台抄一份招工信息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.sign.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.sign.1",
+      "context": {
+        "eventId": "district:event.sign",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.sign.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.sign.2",
+      "context": {
+        "eventId": "district:event.sign",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tailchair.0",
+      "label": "试坐并说明差别",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 0
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.tailchair",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.tailchair.0",
+      "context": {
+        "eventId": "district:event.tailchair",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tailchair.1",
+      "label": "改坐长凳",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.tailchair.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.tailchair.1",
+      "context": {
+        "eventId": "district:event.tailchair",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tailchair.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.tailchair.2",
+      "context": {
+        "eventId": "district:event.tailchair",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.scent.0",
+      "label": "提醒摊主加固篷布",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -3
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 3
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.scent",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.scent.0",
+      "context": {
+        "eventId": "district:event.scent",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.scent.1",
+      "label": "帮忙把货物移开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.scent.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.scent.1",
+      "context": {
+        "eventId": "district:event.scent",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.scent.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.scent.2",
+      "context": {
+        "eventId": "district:event.scent",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ink.0",
+      "label": "逐页对照旧复印件",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -3
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 3
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.ink",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.ink.0",
+      "context": {
+        "eventId": "district:event.ink",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ink.1",
+      "label": "登记疑点，不猜日期",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.ink.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.ink.1",
+      "context": {
+        "eventId": "district:event.ink",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.ink.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.ink.2",
+      "context": {
+        "eventId": "district:event.ink",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tidebell.0",
+      "label": "把浮标固定在标尺旁",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -4
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 4
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.tidebell",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.tidebell.0",
+      "context": {
+        "eventId": "district:event.tidebell",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tidebell.1",
+      "label": "把声音来源报告给巡查员",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.tidebell.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.tidebell.1",
+      "context": {
+        "eventId": "district:event.tidebell",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tidebell.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.tidebell.2",
+      "context": {
+        "eventId": "district:event.tidebell",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.oil.0",
+      "label": "重新分柜标识",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -3
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 4
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.oil",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.oil.0",
+      "context": {
+        "eventId": "district:event.oil",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.oil.1",
+      "label": "请技师复核再动手",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.oil.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.oil.1",
+      "context": {
+        "eventId": "district:event.oil",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.oil.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.oil.2",
+      "context": {
+        "eventId": "district:event.oil",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.gloss.0",
+      "label": "帮忙记录清洁剂的反应",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 2
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.gloss",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.gloss.0",
+      "context": {
+        "eventId": "district:event.gloss",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.gloss.1",
+      "label": "查阅安全的护理说明",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.gloss.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.gloss.1",
+      "context": {
+        "eventId": "district:event.gloss",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.gloss.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.gloss.2",
+      "context": {
+        "eventId": "district:event.gloss",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.return.0",
+      "label": "登记借用再归还",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -1
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 0
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.return",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.return.0",
+      "context": {
+        "eventId": "district:event.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.return.1",
+      "label": "修好松动的伞架",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.return.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.return.1",
+      "context": {
+        "eventId": "district:event.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.return.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.return.2",
+      "context": {
+        "eventId": "district:event.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.dawn.0",
+      "label": "协助核对现场记录",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 3
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.dawn",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.dawn.0",
+      "context": {
+        "eventId": "district:event.dawn",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.dawn.1",
+      "label": "请值班守卫确认",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.story.dawn.alternative",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.dawn.1",
+      "context": {
+        "eventId": "district:event.dawn",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.dawn.2",
+      "label": "暂时离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.dawn.2",
+      "context": {
+        "eventId": "district:event.dawn",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lostpass.0",
+      "label": "送交失物台",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.lostpass.returned",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end0"
+        }
+      ],
+      "resultText": "district:text.event.lostpass.0",
+      "context": {
+        "eventId": "district:event.lostpass",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lostpass.1",
+      "label": "请附近守卫收妥",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.lostpass.witnessed",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end1"
+        }
+      ],
+      "resultText": "district:text.event.lostpass.1",
+      "context": {
+        "eventId": "district:event.lostpass",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.lostpass.2",
+      "label": "留在原处并记下位置",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end2"
+        }
+      ],
+      "resultText": "district:text.event.lostpass.2",
+      "context": {
+        "eventId": "district:event.lostpass",
+        "nodeId": "start"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "district:event.rain",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.rain.start"
+          ],
+          "actionIds": [
+            "district:action.event.rain.0",
+            "district:action.event.rain.1",
+            "district:action.event.rain.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.rain.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.rain.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.rain.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.parcel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.parcel.start"
+          ],
+          "actionIds": [
+            "district:action.event.parcel.0",
+            "district:action.event.parcel.1",
+            "district:action.event.parcel.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.parcel.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.parcel.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.parcel.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.stove",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.stove.start"
+          ],
+          "actionIds": [
+            "district:action.event.stove.0",
+            "district:action.event.stove.1",
+            "district:action.event.stove.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.stove.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.stove.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.stove.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.scale",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.scale.start"
+          ],
+          "actionIds": [
+            "district:action.event.scale.0",
+            "district:action.event.scale.1",
+            "district:action.event.scale.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.scale.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.scale.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.scale.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.ice",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.ice.start"
+          ],
+          "actionIds": [
+            "district:action.event.ice.0",
+            "district:action.event.ice.1",
+            "district:action.event.ice.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ice.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ice.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ice.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.raincoat",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.raincoat.start"
+          ],
+          "actionIds": [
+            "district:action.event.raincoat.0",
+            "district:action.event.raincoat.1",
+            "district:action.event.raincoat.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.raincoat.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.raincoat.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.raincoat.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.cup",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.cup.start"
+          ],
+          "actionIds": [
+            "district:action.event.cup.0",
+            "district:action.event.cup.1",
+            "district:action.event.cup.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.cup.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.cup.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.cup.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.nightshift",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nightshift.start"
+          ],
+          "actionIds": [
+            "district:action.event.nightshift.0",
+            "district:action.event.nightshift.1",
+            "district:action.event.nightshift.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nightshift.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nightshift.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nightshift.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.lamp",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.lamp.start"
+          ],
+          "actionIds": [
+            "district:action.event.lamp.0",
+            "district:action.event.lamp.1",
+            "district:action.event.lamp.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lamp.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lamp.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lamp.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.lever",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.lever.start"
+          ],
+          "actionIds": [
+            "district:action.event.lever.0",
+            "district:action.event.lever.1",
+            "district:action.event.lever.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lever.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lever.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lever.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.steps",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.steps.start"
+          ],
+          "actionIds": [
+            "district:action.event.steps.0",
+            "district:action.event.steps.1",
+            "district:action.event.steps.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.steps.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.steps.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.steps.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.water",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.water.start"
+          ],
+          "actionIds": [
+            "district:action.event.water.0",
+            "district:action.event.water.1",
+            "district:action.event.water.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.water.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.water.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.water.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.ledger",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.ledger.start"
+          ],
+          "actionIds": [
+            "district:action.event.ledger.0",
+            "district:action.event.ledger.1",
+            "district:action.event.ledger.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ledger.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ledger.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ledger.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.address",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.address.start"
+          ],
+          "actionIds": [
+            "district:action.event.address.0",
+            "district:action.event.address.1",
+            "district:action.event.address.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.address.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.address.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.address.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.queue",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.queue.start"
+          ],
+          "actionIds": [
+            "district:action.event.queue.0",
+            "district:action.event.queue.1",
+            "district:action.event.queue.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.queue.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.queue.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.queue.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.bench",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.bench.start"
+          ],
+          "actionIds": [
+            "district:action.event.bench.0",
+            "district:action.event.bench.1",
+            "district:action.event.bench.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.bench.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.bench.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.bench.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.filter",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.filter.start"
+          ],
+          "actionIds": [
+            "district:action.event.filter.0",
+            "district:action.event.filter.1",
+            "district:action.event.filter.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.filter.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.filter.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.filter.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.hearing",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.hearing.start"
+          ],
+          "actionIds": [
+            "district:action.event.hearing.0",
+            "district:action.event.hearing.1",
+            "district:action.event.hearing.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.hearing.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.hearing.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.hearing.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.curtain",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.curtain.start"
+          ],
+          "actionIds": [
+            "district:action.event.curtain.0",
+            "district:action.event.curtain.1",
+            "district:action.event.curtain.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.curtain.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.curtain.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.curtain.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.question",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.question.start"
+          ],
+          "actionIds": [
+            "district:action.event.question.0",
+            "district:action.event.question.1",
+            "district:action.event.question.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.question.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.question.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.question.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.sign",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.sign.start"
+          ],
+          "actionIds": [
+            "district:action.event.sign.0",
+            "district:action.event.sign.1",
+            "district:action.event.sign.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.sign.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.sign.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.sign.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.tailchair",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.tailchair.start"
+          ],
+          "actionIds": [
+            "district:action.event.tailchair.0",
+            "district:action.event.tailchair.1",
+            "district:action.event.tailchair.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tailchair.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tailchair.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tailchair.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.scent",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.scent.start"
+          ],
+          "actionIds": [
+            "district:action.event.scent.0",
+            "district:action.event.scent.1",
+            "district:action.event.scent.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.scent.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.scent.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.scent.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.ink",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.ink.start"
+          ],
+          "actionIds": [
+            "district:action.event.ink.0",
+            "district:action.event.ink.1",
+            "district:action.event.ink.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ink.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ink.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.ink.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.tidebell",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.tidebell.start"
+          ],
+          "actionIds": [
+            "district:action.event.tidebell.0",
+            "district:action.event.tidebell.1",
+            "district:action.event.tidebell.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tidebell.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tidebell.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tidebell.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.oil",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.oil.start"
+          ],
+          "actionIds": [
+            "district:action.event.oil.0",
+            "district:action.event.oil.1",
+            "district:action.event.oil.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.oil.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.oil.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.oil.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.gloss",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.gloss.start"
+          ],
+          "actionIds": [
+            "district:action.event.gloss.0",
+            "district:action.event.gloss.1",
+            "district:action.event.gloss.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.gloss.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.gloss.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.gloss.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.return",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.return.start"
+          ],
+          "actionIds": [
+            "district:action.event.return.0",
+            "district:action.event.return.1",
+            "district:action.event.return.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.return.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.return.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.return.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.dawn",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.dawn.start"
+          ],
+          "actionIds": [
+            "district:action.event.dawn.0",
+            "district:action.event.dawn.1",
+            "district:action.event.dawn.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.dawn.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.dawn.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.dawn.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.lostpass",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.lostpass.start"
+          ],
+          "actionIds": [
+            "district:action.event.lostpass.0",
+            "district:action.event.lostpass.1",
+            "district:action.event.lostpass.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end0",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lostpass.end0"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end1",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lostpass.end1"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        },
+        {
+          "id": "end2",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.lostpass.end2"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "district:text.location.cafe": "茶壶的水声盖过街道上的电流。这里允许你只点一杯水坐到雨停；夜班人把未说完的话留在桌角。",
+    "district:text.scene.cafe.day": "天亮时，杯底倒映着拉起的卷帘。店员开始为早班准备热水。",
+    "district:text.scene.cafe.night": "夜班的收据压在糖罐下。有人等搭档下工，也有人只需要一张安静的椅子。",
+    "district:text.location.workshop": "驱动轴在台钳里缓慢旋转。墙上挂着旧义肢，每一件都贴着归还给原主的日期。这里修理的是生活的工具。",
+    "district:text.scene.workshop.day": "莱克把磨损零件一件件排开，白天的委托按紧急程度等候。",
+    "district:text.scene.workshop.night": "工坊夜间只保留一盏值班灯。借用台旁的安全椅一直可供休息。",
+    "district:text.location.canal": "步道下的黑水映着远处城区。维护牌上写着水位与巡查时间，侧门后隐约有失灵机械的碰撞声。",
+    "district:text.scene.canal.day": "白天的巡查员在栏杆上补漆，行人沿干燥的内侧通过。",
+    "district:text.scene.canal.night": "警示灯把积水染成深红。无人接管的搬运机沿着旧轨道继续工作。",
+    "district:text.location.archive": "矮柜里装着修缮图、招工单和居民留下的投诉。值班员把公开材料放在最外层，私人病历不在这里。",
+    "district:text.scene.archive.day": "公开终端逐个启动。你可以核对记录、整理档案或找出任务中的地点。",
+    "district:text.scene.archive.night": "夜间自助窗口仍能查询公开记录。封存柜的锁保持关闭。",
+    "district:text.location.station": "守卫核验货物与身份，旁边留着供受伤者坐下的长凳。登记窗口记录道路危险；机械身体同样使用居民通道。",
+    "district:text.scene.station.day": "早班货车排成短队。路况栏上贴着今日能正常通行的街道。",
+    "district:text.scene.station.night": "值班守卫收起例行盘问。夜间窗口优先处理求助和道路事故。",
+    "district:text.travel.cafe.out": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.cafe.back": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.workshop.out": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.workshop.back": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.canal.out": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.canal.back": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.archive.out": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.archive.back": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.station.out": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.station.back": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.station.street": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.street.station": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.archive.clinic": "你沿着有灯的道路抵达目的地。",
+    "district:text.travel.clinic.archive": "你沿着有灯的道路抵达目的地。",
+    "district:text.observe.location.apartment": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.apartment": "你先询问对方是否方便。",
+    "district:text.resident.help.location.apartment": "你和对方一起处理眼前的小事。",
+    "district:text.observe.location.street": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.street": "你先询问对方是否方便。",
+    "district:text.resident.help.location.street": "你和对方一起处理眼前的小事。",
+    "district:text.rest.location.street": "你坐在公共休息位，等呼吸平稳。城市没有催你立刻赶路。",
+    "district:text.observe.location.market": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.market": "你先询问对方是否方便。",
+    "district:text.resident.help.location.market": "你和对方一起处理眼前的小事。",
+    "district:text.observe.location.clinic": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.clinic": "你先询问对方是否方便。",
+    "district:text.resident.help.location.clinic": "你和对方一起处理眼前的小事。",
+    "district:text.observe.location.salon": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.salon": "你先询问对方是否方便。",
+    "district:text.resident.help.location.salon": "你和对方一起处理眼前的小事。",
+    "district:text.observe.location.cafe": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.cafe": "你先询问对方是否方便。",
+    "district:text.resident.help.location.cafe": "你和对方一起处理眼前的小事。",
+    "district:text.rest.location.cafe": "你坐在公共休息位，等呼吸平稳。城市没有催你立刻赶路。",
+    "district:text.observe.location.workshop": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.workshop": "你先询问对方是否方便。",
+    "district:text.resident.help.location.workshop": "你和对方一起处理眼前的小事。",
+    "district:text.rest.location.workshop": "你坐在公共休息位，等呼吸平稳。城市没有催你立刻赶路。",
+    "district:text.observe.location.canal": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.canal": "你先询问对方是否方便。",
+    "district:text.resident.help.location.canal": "你和对方一起处理眼前的小事。",
+    "district:text.rest.location.canal": "你坐在公共休息位，等呼吸平稳。城市没有催你立刻赶路。",
+    "district:text.observe.location.archive": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.archive": "你先询问对方是否方便。",
+    "district:text.resident.help.location.archive": "你和对方一起处理眼前的小事。",
+    "district:text.rest.location.archive": "你坐在公共休息位，等呼吸平稳。城市没有催你立刻赶路。",
+    "district:text.observe.location.station": "你放慢脚步，让街区的日常进入视野。",
+    "district:text.resident.talk.location.station": "你先询问对方是否方便。",
+    "district:text.resident.help.location.station": "你和对方一起处理眼前的小事。",
+    "district:text.rest.location.station": "你坐在公共休息位，等呼吸平稳。城市没有催你立刻赶路。",
+    "district:text.create": "城市在窗外醒来。",
+    "district:text.cafe.tea": "热茶把寒意驱散。店员告诉你：工坊缺帮手，档案室也在招人整理公共记录。",
+    "district:text.archive.work": "你把雨损的门牌记录重新排序。一张张纸背后都是有人住着的家；值班员核对后付清工钱。",
+    "district:text.workshop.work": "你按型号分好轴套，给危险零件贴上红签。莱克检查了工作台，让你收好当天的工钱。",
+    "district:text.station.report": "窗口把你带来的路况登记为公开消息。你知道了几处能安全休息的位置。",
+    "district:text.waitday.location.apartment": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.street": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.market": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.clinic": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.salon": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.cafe": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.workshop": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.canal": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.archive": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.waitday.location.station": "你在安全休息区安顿下来。一个游戏日过去，街坊重新开始各自的生活。",
+    "district:text.event.rain.start": "积水中的绝缘线\n\n电线垂在积水上方。维修工还没赶到，一位提菜的居民正准备跨过去。你可以把围栏推到路口，也可以绕去窗口报告。",
+    "district:text.event.rain.0": "你架好围栏，居民绕行。维护队接手时向你点头，今后夜路多了一盏可靠的灯。",
+    "district:text.event.rain.end0": "你架好围栏，居民绕行。维护队接手时向你点头，今后夜路多了一盏可靠的灯。",
+    "district:text.event.rain.1": "登记员记录了准确门牌。道路通报增加了一条绕行消息。",
+    "district:text.event.rain.end1": "登记员记录了准确门牌。道路通报增加了一条绕行消息。",
+    "district:text.event.rain.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.rain.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.parcel.start": "错投的包裹\n\n门边放着一只印错楼号的药品箱，封条还完整。楼梯上的老住户说收件人就在隔壁街。",
+    "district:text.event.parcel.0": "值班台核对后收妥包裹，向你支付了送还的小费。",
+    "district:text.event.parcel.end0": "值班台核对后收妥包裹，向你支付了送还的小费。",
+    "district:text.event.parcel.1": "你没有拆箱。晚归的收件人能沿便条找到值班台。",
+    "district:text.event.parcel.end1": "你没有拆箱。晚归的收件人能沿便条找到值班台。",
+    "district:text.event.parcel.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.parcel.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.stove.start": "楼道里的早餐香\n\n邻居的炉子熄火了，面糊却已经调好。对方苦笑着问你有没有时间帮忙搬到公共厨房。",
+    "district:text.event.stove.0": "两人分担重量，早餐赶上早班。邻居给你留了一份温热的薄饼。",
+    "district:text.event.stove.end0": "两人分担重量，早餐赶上早班。邻居给你留了一份温热的薄饼。",
+    "district:text.event.stove.1": "你登记借用，让邻居自己安排。楼道里很快又有了食物香。",
+    "district:text.event.stove.end1": "你登记借用，让邻居自己安排。楼道里很快又有了食物香。",
+    "district:text.event.stove.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.stove.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.scale.start": "差半格的秤\n\n摊主和顾客盯着秤盘争论。你发现秤脚卡进砖缝，货物倒没有问题。",
+    "district:text.event.scale.0": "争执化成一声笑。摊主把找零一枚枚数清，你也得到协助的报酬。",
+    "district:text.event.scale.end0": "争执化成一声笑。摊主把找零一枚枚数清，你也得到协助的报酬。",
+    "district:text.event.scale.1": "值班员做了公开核验，双方各自道谢，摊位继续营业。",
+    "district:text.event.scale.end1": "值班员做了公开核验，双方各自道谢，摊位继续营业。",
+    "district:text.event.scale.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.scale.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.ice.start": "将要融化的冰箱\n\n送货车迟了，临时冰箱里装着诊室的冷藏材料。摊主需要有人帮忙找一张遮阳布。",
+    "district:text.event.ice.0": "材料保住了温度。临时搬运的工钱交到你手上。",
+    "district:text.event.ice.end0": "材料保住了温度。临时搬运的工钱交到你手上。",
+    "district:text.event.ice.1": "诊室派人提前来接，摊主不必继续守着发愁。",
+    "district:text.event.ice.end1": "诊室派人提前来接，摊主不必继续守着发愁。",
+    "district:text.event.ice.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.ice.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.raincoat.start": "没有尾口的雨衣\n\n一名刚完成改造的顾客摸着新尾巴，试穿的雨衣总会鼓起一块。裁缝请你帮忙量好活动余量。",
+    "district:text.event.raincoat.0": "裁缝剪开新的尾口，顾客终于能自然坐下。你学会了留意身体与衣物的适配。",
+    "district:text.event.raincoat.end0": "裁缝剪开新的尾口，顾客终于能自然坐下。你学会了留意身体与衣物的适配。",
+    "district:text.event.raincoat.1": "你找出有可调节开口的样衣，避免让顾客反复尴尬地试穿。",
+    "district:text.event.raincoat.end1": "你找出有可调节开口的样衣，避免让顾客反复尴尬地试穿。",
+    "district:text.event.raincoat.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.raincoat.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.cup.start": "被留在桌上的杯子\n\n店员准备收走一只刻着名字的杯子。纸条说明主人已经搬走，却想让常坐这里的人继续使用。",
+    "district:text.event.cup.0": "你留下一句祝愿。茶馆的旧物有了新的故事，精力也随着热水恢复。",
+    "district:text.event.cup.end0": "你留下一句祝愿。茶馆的旧物有了新的故事，精力也随着热水恢复。",
+    "district:text.event.cup.1": "店员把它放进公共杯架。下一位淋雨的人会收到这份善意。",
+    "district:text.event.cup.end1": "店员把它放进公共杯架。下一位淋雨的人会收到这份善意。",
+    "district:text.event.cup.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.cup.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.nightshift.start": "夜班人的空椅\n\n信使把两份茶摆好，搭档却还没有到。雨越来越密，对方忍不住看向路口。",
+    "district:text.event.nightshift.0": "搭档最终带着湿透的帽子赶来。你们都松了口气，信使记下这张有人守过的桌子。",
+    "district:text.event.nightshift.end0": "搭档最终带着湿透的帽子赶来。你们都松了口气，信使记下这张有人守过的桌子。",
+    "district:text.event.nightshift.1": "窗口确认道路安全。对方终于安心坐下，不再把每一次门响都当成坏消息。",
+    "district:text.event.nightshift.end1": "窗口确认道路安全。对方终于安心坐下，不再把每一次门响都当成坏消息。",
+    "district:text.event.nightshift.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.nightshift.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.lamp.start": "旧灯的第二次使用\n\n莱克正在拆一只会偶尔闪烁的灯。整件换新很容易，但原主人希望保留外壳上的刻痕。",
+    "district:text.event.lamp.0": "灯重新亮起，刻痕也完整留下。工坊把细致的工时计入了你的报酬。",
+    "district:text.event.lamp.end0": "灯重新亮起，刻痕也完整留下。工坊把细致的工时计入了你的报酬。",
+    "district:text.event.lamp.1": "你选好兼容的触点，替换清单让下一次修理更快。",
+    "district:text.event.lamp.end1": "你选好兼容的触点，替换清单让下一次修理更快。",
+    "district:text.event.lamp.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.lamp.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.lever.start": "卡在台下的螺母\n\n小螺母滚进维修台底部。必须稳住一块晃动的支架，同时把它取出来。机械尾的抓握端恰好够得着。",
+    "district:text.event.lever.0": "尾部给了支架稳定的第三个支点，你腾出抓握资源取回零件。莱克称赞的是操作的分寸。",
+    "district:text.event.lever.end0": "尾部给了支架稳定的第三个支点，你腾出抓握资源取回零件。莱克称赞的是操作的分寸。",
+    "district:text.event.lever.1": "你选择更慢但稳妥的办法，确认固定后才探入维修台。",
+    "district:text.event.lever.end1": "你选择更慢但稳妥的办法，确认固定后才探入维修台。",
+    "district:text.event.lever.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.lever.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.steps.start": "断了一半的踏板\n\n检修踏板在水上摇晃。栏杆后卡着一份防水维护记录；有额外平衡部位能更安全地跨过去。",
+    "district:text.event.steps.0": "你让重心慢慢转移，取回尚可辨认的记录，维护员因此能补齐当天数据。",
+    "district:text.event.steps.end0": "你让重心慢慢转移，取回尚可辨认的记录，维护员因此能补齐当天数据。",
+    "district:text.event.steps.1": "你留在干燥一侧，利用工具取回纸袋。两条路径都让记录免于沉底。",
+    "district:text.event.steps.end1": "你留在干燥一侧，利用工具取回纸袋。两条路径都让记录免于沉底。",
+    "district:text.event.steps.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.steps.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.water.start": "上涨的水位线\n\n一道新水痕超过昨日刻度。老维护牌上的报警电话已模糊，远处仍有行人在低处通行。",
+    "district:text.event.water.0": "你喊回低处的人，再把现场记下来。日后的巡查会采用新的警戒水位。",
+    "district:text.event.water.end0": "你喊回低处的人，再把现场记下来。日后的巡查会采用新的警戒水位。",
+    "district:text.event.water.1": "你把准确刻度送到检查站，通报栏增加临时避让提醒。",
+    "district:text.event.water.end1": "你把准确刻度送到检查站，通报栏增加临时避让提醒。",
+    "district:text.event.water.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.water.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.ledger.start": "被撕开的工时记录\n\n同一份公共工时登记少了半页。急着结账的工人说补一张很快，值班员却坚持先找原件。",
+    "district:text.event.ledger.0": "你从旧夹层找出残页，工人的工资终于按实际时间登记。值班员付清协查工钱。",
+    "district:text.event.ledger.end0": "你从旧夹层找出残页，工人的工资终于按实际时间登记。值班员付清协查工钱。",
+    "district:text.event.ledger.1": "你保留疑点，没有替任何人编数字。下一班会接着处理。",
+    "district:text.event.ledger.end1": "你保留疑点，没有替任何人编数字。下一班会接着处理。",
+    "district:text.event.ledger.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.ledger.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.address.start": "改名后的门牌\n\n一位居民拿着旧地址寻找诊室。新门牌和旧地图各有一半信息，需要有人核对街道变更。",
+    "district:text.event.address.0": "你画出能走通的路线。对方不必在雨中继续绕圈。",
+    "district:text.event.address.end0": "你画出能走通的路线。对方不必在雨中继续绕圈。",
+    "district:text.event.address.1": "你把方向说清，再带到能看见诊室招牌的位置。",
+    "district:text.event.address.end1": "你把方向说清，再带到能看见诊室招牌的位置。",
+    "district:text.event.address.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.address.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.queue.start": "被误读的通行单\n\n扫描器把一位义体居民的维修凭据识别成货物清单。守卫停下例行检查，愿意听完整说明。",
+    "district:text.event.queue.0": "窗口更正了记录，没有把身体当成货品。那位居民郑重道谢。",
+    "district:text.event.queue.end0": "窗口更正了记录，没有把身体当成货品。那位居民郑重道谢。",
+    "district:text.event.queue.1": "你提供了公开核验渠道，检查顺利完成，队伍继续前进。",
+    "district:text.event.queue.end1": "你提供了公开核验渠道，检查顺利完成，队伍继续前进。",
+    "district:text.event.queue.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.queue.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.bench.start": "长凳上的求助者\n\n一位成年人扶着磨伤的足部坐下。对方有诊室地址，却害怕错过最后一班接驳车。",
+    "district:text.event.bench.0": "值班员安排了恢复运输。你看着车辆驶向有灯的诊室。",
+    "district:text.event.bench.end0": "值班员安排了恢复运输。你看着车辆驶向有灯的诊室。",
+    "district:text.event.bench.1": "护理员先处理擦伤，再安排安全路线。求助者终于不再独自硬撑。",
+    "district:text.event.bench.end1": "护理员先处理擦伤，再安排安全路线。求助者终于不再独自硬撑。",
+    "district:text.event.bench.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.bench.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.filter.start": "发出异响的滤网\n\n候诊区的滤网发出不均匀的声音。工作人员忙着照顾病人，故障本身还没有危险。",
+    "district:text.event.filter.0": "你只处理允许接触的外层，医护确认设备恢复。空气安静下来，你收到协助报酬。",
+    "district:text.event.filter.end0": "你只处理允许接触的外层，医护确认设备恢复。空气安静下来，你收到协助报酬。",
+    "district:text.event.filter.1": "你写清时间与位置，让维护工不必在病人之间反复寻找。",
+    "district:text.event.filter.end1": "你写清时间与位置，让维护工不必在病人之间反复寻找。",
+    "district:text.event.filter.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.filter.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.hearing.start": "改造后的第一阵噪声\n\n一个刚换过耳部结构的人捂住耳侧。护士说适应需要时间，可以先把候诊广播调低。",
+    "district:text.event.hearing.0": "护士确认后调低音量，候诊者慢慢放松。你记住了变化之后还需要照顾日常生活。",
+    "district:text.event.hearing.end0": "护士确认后调低音量，候诊者慢慢放松。你记住了变化之后还需要照顾日常生活。",
+    "district:text.event.hearing.1": "你先征得同意，指向远离喇叭的位置。身体变化没有抹掉对方决定距离的权利。",
+    "district:text.event.hearing.end1": "你先征得同意，指向远离喇叭的位置。身体变化没有抹掉对方决定距离的权利。",
+    "district:text.event.hearing.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.hearing.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.curtain.start": "挂歪的窗帘\n\n新送来的窗帘偏短了一截。薇尔维特看看尺寸单，说今天开门前至少得遮住强烈的侧光。",
+    "district:text.event.curtain.0": "帘子遮住了刺眼光线，沙龙恢复柔和。她说处理生活细节的人值得信赖。",
+    "district:text.event.curtain.end0": "帘子遮住了刺眼光线，沙龙恢复柔和。她说处理生活细节的人值得信赖。",
+    "district:text.event.curtain.1": "你提出可撤回的办法，等正确尺寸送来再替换。她把这件事记进值班簿。",
+    "district:text.event.curtain.end1": "你提出可撤回的办法，等正确尺寸送来再替换。她把这件事记进值班簿。",
+    "district:text.event.curtain.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.curtain.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.question.start": "一张没有签名的咨询单\n\n咨询单只问“变化以后还能回来吗”。薇尔维特没有替陌生人决定答案，而是把可逆与不可逆服务分开写清。",
+    "district:text.event.question.0": "你把风险和恢复渠道排在前面。提问的人可以按自己的意愿选择。",
+    "district:text.event.question.end0": "你把风险和恢复渠道排在前面。提问的人可以按自己的意愿选择。",
+    "district:text.event.question.1": "你补上能继续咨询的路径，没有把匿名的问题当作邀请。",
+    "district:text.event.question.end1": "你补上能继续咨询的路径，没有把匿名的问题当作邀请。",
+    "district:text.event.question.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.question.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.sign.start": "被风掀起的招工牌\n\n临时招工牌打在路灯上。它写着档案整理与零件搬运两种工作，工资和时长都很清楚。",
+    "district:text.event.sign.0": "你读过工时与报酬，把它固定在行人能看见的位置。街区工作线索已记下。",
+    "district:text.event.sign.end0": "你读过工时与报酬，把它固定在行人能看见的位置。街区工作线索已记下。",
+    "district:text.event.sign.1": "你核对了条件，知道两种工作的实际入口。今天的生活有了下一步。",
+    "district:text.event.sign.end1": "你核对了条件，知道两种工作的实际入口。今天的生活有了下一步。",
+    "district:text.event.sign.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.sign.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.tailchair.start": "椅背与新的重心\n\n店里的圆背椅让尾部无处安放。店员推来一把开背椅，愿意听你说哪一种更舒服。",
+    "district:text.event.tailchair.0": "你慢慢调整重心，说明开背的余量。店员把这把椅子留给有相似需要的客人。",
+    "district:text.event.tailchair.end0": "你慢慢调整重心，说明开背的余量。店员把这把椅子留给有相似需要的客人。",
+    "district:text.event.tailchair.1": "长凳让你自由安排姿态。适应后的身体也需要合适的家具。",
+    "district:text.event.tailchair.end1": "长凳让你自由安排姿态。适应后的身体也需要合适的家具。",
+    "district:text.event.tailchair.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.tailchair.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.scent.start": "风里不同的层次\n\n兽耳捕捉到篷布后的细响。你发现支杆快要滑出固定孔，附近摊主还没注意。",
+    "district:text.event.scent.0": "你指出了听见异响的位置，支杆及时加固。身体带来的细微感受有了实际用途。",
+    "district:text.event.scent.end0": "你指出了听见异响的位置，支杆及时加固。身体带来的细微感受有了实际用途。",
+    "district:text.event.scent.1": "你先把人和货物移到安全一侧，再交给专业维护人员。",
+    "district:text.event.scent.end1": "你先把人和货物移到安全一侧，再交给专业维护人员。",
+    "district:text.event.scent.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.scent.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.ink.start": "被墨水遮住的日期\n\n公开维修图上有一块墨渍。日期仍能从下层复印件辨认，仓促猜测则可能找错版本。",
+    "district:text.event.ink.0": "你找出真实日期，并在旁边注明来源。以后调查这条线路的人能沿记录追溯。",
+    "district:text.event.ink.end0": "你找出真实日期，并在旁边注明来源。以后调查这条线路的人能沿记录追溯。",
+    "district:text.event.ink.1": "你保留原件，写明缺失的信息。准确的疑点比漂亮的假答案更有价值。",
+    "district:text.event.ink.end1": "你保留原件，写明缺失的信息。准确的疑点比漂亮的假答案更有价值。",
+    "district:text.event.ink.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.ink.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.tidebell.start": "水下的旧铃\n\n水面下传来一声规律的敲击。它不是呼救，而是旧排水浮标碰在护栏上。夜间很容易被误解。",
+    "district:text.event.tidebell.0": "规律的噪声停止了，水位标志也更容易辨认。你记下这个不该当成怪谈的声音。",
+    "district:text.event.tidebell.end0": "规律的噪声停止了，水位标志也更容易辨认。你记下这个不该当成怪谈的声音。",
+    "district:text.event.tidebell.1": "巡查员确认位置，在夜班记录中补上说明。",
+    "district:text.event.tidebell.end1": "巡查员确认位置，在夜班记录中补上说明。",
+    "district:text.event.tidebell.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.tidebell.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.oil.start": "不该混装的润滑油\n\n两罐相似的润滑油被放在一起，标签说明其中一种只适用于机械外壳，不能接触有机连接。",
+    "district:text.event.oil.0": "你按适用材质分开存放。莱克确认无误后计入额外工钱。",
+    "district:text.event.oil.end0": "你按适用材质分开存放。莱克确认无误后计入额外工钱。",
+    "district:text.event.oil.1": "你没有靠颜色猜测。技师花了几分钟解释连接处的维护常识。",
+    "district:text.event.oil.end1": "你没有靠颜色猜测。技师花了几分钟解释连接处的维护常识。",
+    "district:text.event.oil.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.oil.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.gloss.start": "黑胶表面的清洁测试\n\n护理台上是一片黑胶共生材料的脱落外层。护士说明它只是样本，接触不会替你做出任何改造决定。",
+    "district:text.event.gloss.0": "样本保持稳定，你记住了护理顺序与停用征兆。身体仍然由自己的决定支配。",
+    "district:text.event.gloss.end0": "样本保持稳定，你记住了护理顺序与停用征兆。身体仍然由自己的决定支配。",
+    "district:text.event.gloss.1": "你读完可逆处理与复诊条件，把正式咨询留到准备好时。",
+    "district:text.event.gloss.end1": "你读完可逆处理与复诊条件，把正式咨询留到准备好时。",
+    "district:text.event.gloss.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.gloss.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.return.start": "门口多出来的伞\n\n公共伞架多了一把补过的伞。纸条说谁需要就借走，只要回来时把水抖干。",
+    "district:text.event.return.0": "你走过一段有雨的楼道又把伞归位。记录上多了你的名字，公用物品没有少。",
+    "district:text.event.return.end0": "你走过一段有雨的楼道又把伞归位。记录上多了你的名字，公用物品没有少。",
+    "district:text.event.return.1": "你把螺丝拧紧，让每一把借来的伞都有地方放。",
+    "district:text.event.return.end1": "你把螺丝拧紧，让每一把借来的伞都有地方放。",
+    "district:text.event.return.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.return.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.dawn.start": "第一班清洁车\n\n清洁车准备进入步道，司机需要知道昨夜留下的围栏有没有解除。通报板与现场记录互相印证。",
+    "district:text.event.dawn.0": "司机按仍有效的封路标记绕行。早班没有撞进夜班留下的危险。",
+    "district:text.event.dawn.end0": "司机按仍有效的封路标记绕行。早班没有撞进夜班留下的危险。",
+    "district:text.event.dawn.1": "守卫核实后签名，让工作交接清楚地完成。",
+    "district:text.event.dawn.end1": "守卫核实后签名，让工作交接清楚地完成。",
+    "district:text.event.dawn.2": "你记下眼前的情况，回到街区。",
+    "district:text.event.dawn.end2": "你记下眼前的情况，回到街区。",
+    "district:text.event.lostpass.start": "路灯下的证件夹\n\n一只证件夹卡在路灯底座旁。封面留着公用失物台的编号；你不需要翻看私人资料，也能把它交到正确的地方。",
+    "district:text.event.lostpass.0": "值班员按封面编号登记，你拿到一张可追踪的交接回执。",
+    "district:text.event.lostpass.end0": "值班员按封面编号登记，你拿到一张可追踪的交接回执。",
+    "district:text.event.lostpass.1": "你请守卫当面记录拾取位置，然后继续自己的路。",
+    "district:text.event.lostpass.end1": "你请守卫当面记录拾取位置，然后继续自己的路。",
+    "district:text.event.lostpass.2": "你暂不接触证件，回到街道。",
+    "district:text.event.lostpass.end2": "你暂不接触证件，回到街道。"
+  },
+  "contributions": [
+    {
+      "hookId": "aetheria:hook.street.actions",
+      "actionIds": [
+        "district:action.travel.cafe.out",
+        "district:action.travel.archive.out",
+        "district:action.travel.street.station",
+        "district:action.observe.location.street",
+        "district:action.resident.talk.location.street",
+        "district:action.resident.help.location.street",
+        "district:action.rest.location.street",
+        "district:action.waitday.location.street"
+      ]
+    },
+    {
+      "hookId": "district:hook.cafe",
+      "actionIds": [
+        "district:action.travel.cafe.back",
+        "district:action.observe.location.cafe",
+        "district:action.resident.talk.location.cafe",
+        "district:action.resident.help.location.cafe",
+        "district:action.rest.location.cafe",
+        "district:action.cafe.tea",
+        "district:action.waitday.location.cafe"
+      ]
+    },
+    {
+      "hookId": "aetheria:hook.market.actions",
+      "actionIds": [
+        "district:action.travel.workshop.out",
+        "district:action.observe.location.market",
+        "district:action.resident.talk.location.market",
+        "district:action.resident.help.location.market",
+        "district:action.waitday.location.market"
+      ]
+    },
+    {
+      "hookId": "district:hook.workshop",
+      "actionIds": [
+        "district:action.travel.workshop.back",
+        "district:action.travel.canal.out",
+        "district:action.observe.location.workshop",
+        "district:action.resident.talk.location.workshop",
+        "district:action.resident.help.location.workshop",
+        "district:action.rest.location.workshop",
+        "district:action.workshop.work",
+        "district:action.waitday.location.workshop"
+      ]
+    },
+    {
+      "hookId": "district:hook.canal",
+      "actionIds": [
+        "district:action.travel.canal.back",
+        "district:action.travel.station.out",
+        "district:action.observe.location.canal",
+        "district:action.resident.talk.location.canal",
+        "district:action.resident.help.location.canal",
+        "district:action.rest.location.canal",
+        "district:action.waitday.location.canal"
+      ]
+    },
+    {
+      "hookId": "district:hook.archive",
+      "actionIds": [
+        "district:action.travel.archive.back",
+        "district:action.travel.archive.clinic",
+        "district:action.observe.location.archive",
+        "district:action.resident.talk.location.archive",
+        "district:action.resident.help.location.archive",
+        "district:action.rest.location.archive",
+        "district:action.archive.work",
+        "district:action.waitday.location.archive"
+      ]
+    },
+    {
+      "hookId": "district:hook.station",
+      "actionIds": [
+        "district:action.travel.station.back",
+        "district:action.travel.station.street",
+        "district:action.observe.location.station",
+        "district:action.resident.talk.location.station",
+        "district:action.resident.help.location.station",
+        "district:action.rest.location.station",
+        "district:action.station.report",
+        "district:action.waitday.location.station"
+      ]
+    },
+    {
+      "hookId": "aetheria-tf:hook.clinic",
+      "actionIds": [
+        "district:action.travel.clinic.archive",
+        "district:action.observe.location.clinic",
+        "district:action.resident.talk.location.clinic",
+        "district:action.resident.help.location.clinic",
+        "district:action.waitday.location.clinic"
+      ]
+    },
+    {
+      "hookId": "aetheria:hook.apartment.actions",
+      "actionIds": [
+        "district:action.observe.location.apartment",
+        "district:action.resident.talk.location.apartment",
+        "district:action.resident.help.location.apartment",
+        "district:action.create",
+        "district:action.waitday.location.apartment"
+      ]
+    },
+    {
+      "hookId": "aetheria-social:hook.salon.actions",
+      "actionIds": [
+        "district:action.observe.location.salon",
+        "district:action.resident.talk.location.salon",
+        "district:action.resident.help.location.salon",
+        "district:action.waitday.location.salon"
+      ]
+    }
+  ],
+  "storylets": [
+    {
+      "id": "district:storylet.rain",
+      "locationId": "aetheria:location.street",
+      "conditions": [],
+      "eventId": "district:event.rain",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.rain",
+      "repeat": "repeat",
+      "hidden": false,
+      "tags": [
+        "城市",
+        "协助"
+      ]
+    },
+    {
+      "id": "district:storylet.parcel",
+      "locationId": "aetheria:location.apartment",
+      "conditions": [],
+      "eventId": "district:event.parcel",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.parcel",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "生活",
+        "身份"
+      ]
+    },
+    {
+      "id": "district:storylet.stove",
+      "locationId": "aetheria:location.apartment",
+      "conditions": [],
+      "eventId": "district:event.stove",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.stove",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "生活",
+        "邻里"
+      ]
+    },
+    {
+      "id": "district:storylet.scale",
+      "locationId": "aetheria:location.market",
+      "conditions": [],
+      "eventId": "district:event.scale",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.scale",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "工作",
+        "交易"
+      ]
+    },
+    {
+      "id": "district:storylet.ice",
+      "locationId": "aetheria:location.market",
+      "conditions": [],
+      "eventId": "district:event.ice",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.ice",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "工作",
+        "诊疗"
+      ]
+    },
+    {
+      "id": "district:storylet.raincoat",
+      "locationId": "aetheria:location.market",
+      "conditions": [],
+      "eventId": "district:event.raincoat",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.raincoat",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "装备",
+        "适配"
+      ]
+    },
+    {
+      "id": "district:storylet.cup",
+      "locationId": "district:location.cafe",
+      "conditions": [],
+      "eventId": "district:event.cup",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.cup",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "社交",
+        "休息"
+      ]
+    },
+    {
+      "id": "district:storylet.nightshift",
+      "locationId": "district:location.cafe",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 1080,
+          "end": 360
+        }
+      ],
+      "eventId": "district:event.nightshift",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.nightshift",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "夜间",
+        "社交"
+      ]
+    },
+    {
+      "id": "district:storylet.lamp",
+      "locationId": "district:location.workshop",
+      "conditions": [],
+      "eventId": "district:event.lamp",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.lamp",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "机械",
+        "工作"
+      ]
+    },
+    {
+      "id": "district:storylet.lever",
+      "locationId": "district:location.workshop",
+      "conditions": [
+        {
+          "op": "body.hasCapability",
+          "capability": "tailGrip",
+          "count": 1
+        }
+      ],
+      "eventId": "district:event.lever",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.lever",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "身体能力",
+        "机械"
+      ]
+    },
+    {
+      "id": "district:storylet.steps",
+      "locationId": "district:location.canal",
+      "conditions": [
+        {
+          "op": "body.hasCapability",
+          "capability": "balance",
+          "count": 1
+        }
+      ],
+      "eventId": "district:event.steps",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.steps",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "探索",
+        "平衡"
+      ]
+    },
+    {
+      "id": "district:storylet.water",
+      "locationId": "district:location.canal",
+      "conditions": [],
+      "eventId": "district:event.water",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.water",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "风险",
+        "调查"
+      ]
+    },
+    {
+      "id": "district:storylet.ledger",
+      "locationId": "district:location.archive",
+      "conditions": [],
+      "eventId": "district:event.ledger",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.ledger",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "调查",
+        "经济"
+      ]
+    },
+    {
+      "id": "district:storylet.address",
+      "locationId": "district:location.archive",
+      "conditions": [],
+      "eventId": "district:event.address",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.address",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "调查",
+        "协助"
+      ]
+    },
+    {
+      "id": "district:storylet.queue",
+      "locationId": "district:location.station",
+      "conditions": [],
+      "eventId": "district:event.queue",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.queue",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "身份",
+        "机械"
+      ]
+    },
+    {
+      "id": "district:storylet.bench",
+      "locationId": "district:location.station",
+      "conditions": [],
+      "eventId": "district:event.bench",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.bench",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "恢复",
+        "协助"
+      ]
+    },
+    {
+      "id": "district:storylet.filter",
+      "locationId": "aetheria-tf:location.clinic",
+      "conditions": [],
+      "eventId": "district:event.filter",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.filter",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "诊疗",
+        "工作"
+      ]
+    },
+    {
+      "id": "district:storylet.hearing",
+      "locationId": "aetheria-tf:location.clinic",
+      "conditions": [],
+      "eventId": "district:event.hearing",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.hearing",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "TF",
+        "适应"
+      ]
+    },
+    {
+      "id": "district:storylet.curtain",
+      "locationId": "aetheria-social:location.salon",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 540,
+          "end": 1080
+        }
+      ],
+      "eventId": "district:event.curtain",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.curtain",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "沙龙",
+        "生活"
+      ]
+    },
+    {
+      "id": "district:storylet.question",
+      "locationId": "aetheria-social:location.salon",
+      "conditions": [],
+      "eventId": "district:event.question",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.question",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "边界",
+        "TF"
+      ]
+    },
+    {
+      "id": "district:storylet.sign",
+      "locationId": "aetheria:location.street",
+      "conditions": [],
+      "eventId": "district:event.sign",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.sign",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "工作",
+        "发现"
+      ]
+    },
+    {
+      "id": "district:storylet.tailchair",
+      "locationId": "district:location.cafe",
+      "conditions": [
+        {
+          "op": "body.hasCapability",
+          "capability": "balance",
+          "count": 1
+        }
+      ],
+      "eventId": "district:event.tailchair",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.tailchair",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "TF",
+        "生活反馈"
+      ]
+    },
+    {
+      "id": "district:storylet.scent",
+      "locationId": "aetheria:location.market",
+      "conditions": [
+        {
+          "op": "body.hasPart",
+          "definitionId": "aetheria-tf:part.ear.wolf"
+        }
+      ],
+      "eventId": "district:event.scent",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.scent",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "兽化",
+        "感官"
+      ]
+    },
+    {
+      "id": "district:storylet.ink",
+      "locationId": "district:location.archive",
+      "conditions": [],
+      "eventId": "district:event.ink",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.ink",
+      "repeat": "once",
+      "hidden": true,
+      "tags": [
+        "隐藏",
+        "调查"
+      ]
+    },
+    {
+      "id": "district:storylet.tidebell",
+      "locationId": "district:location.canal",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 1080,
+          "end": 360
+        }
+      ],
+      "eventId": "district:event.tidebell",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.tidebell",
+      "repeat": "once",
+      "hidden": true,
+      "tags": [
+        "隐藏",
+        "夜间"
+      ]
+    },
+    {
+      "id": "district:storylet.oil",
+      "locationId": "district:location.workshop",
+      "conditions": [],
+      "eventId": "district:event.oil",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.oil",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "机械",
+        "适配"
+      ]
+    },
+    {
+      "id": "district:storylet.gloss",
+      "locationId": "aetheria-tf:location.clinic",
+      "conditions": [],
+      "eventId": "district:event.gloss",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.gloss",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "黑胶",
+        "诊疗"
+      ]
+    },
+    {
+      "id": "district:storylet.return",
+      "locationId": "aetheria:location.apartment",
+      "conditions": [],
+      "eventId": "district:event.return",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.return",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "邻里",
+        "生活"
+      ]
+    },
+    {
+      "id": "district:storylet.dawn",
+      "locationId": "district:location.station",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 300,
+          "end": 600
+        }
+      ],
+      "eventId": "district:event.dawn",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.dawn",
+      "repeat": "daily",
+      "hidden": false,
+      "tags": [
+        "跨日",
+        "工作"
+      ]
+    },
+    {
+      "id": "district:storylet.lostpass",
+      "locationId": "aetheria:location.street",
+      "conditions": [],
+      "eventId": "district:event.lostpass",
+      "weight": 10,
+      "priority": 1,
+      "cooldownMinutes": 120,
+      "cooldownGroup": "streetlife.lostpass",
+      "repeat": "once",
+      "hidden": false,
+      "tags": [
+        "身份",
+        "失物"
+      ]
+    }
+  ],
+  "residentTemplates": [
+    {
+      "id": "district:resident.vendor",
+      "locationIds": [
+        "aetheria:location.market",
+        "district:location.cafe"
+      ],
+      "start": 360,
+      "end": 1320,
+      "names": [
+        "阿澄",
+        "黎湾",
+        "温芦"
+      ],
+      "profession": "摊贩",
+      "appearance": [
+        "袖口有面粉，兽耳上挂着雨滴",
+        "穿着改过尾口的工作围裙"
+      ],
+      "personality": [
+        "爽快，喜欢把账目说清楚",
+        "谨慎，会先问你的来意"
+      ],
+      "behavior": "trade",
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ]
+    },
+    {
+      "id": "district:resident.electrician",
+      "locationIds": [
+        "aetheria:location.street",
+        "district:location.workshop",
+        "district:location.station"
+      ],
+      "start": 420,
+      "end": 1260,
+      "names": [
+        "岑路",
+        "夏砾",
+        "季弦"
+      ],
+      "profession": "维护电工",
+      "appearance": [
+        "提着绝缘工具箱，手套边缘有磨痕",
+        "机械尾缠着反光安全带"
+      ],
+      "personality": [
+        "简短直接",
+        "温和，解释时很耐心"
+      ],
+      "behavior": "repair",
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.tail.organic"
+      ]
+    },
+    {
+      "id": "district:resident.courier",
+      "locationIds": [
+        "district:location.canal",
+        "district:location.archive",
+        "aetheria:location.apartment",
+        "aetheria-social:location.salon",
+        "aetheria-tf:location.clinic",
+        "district:location.cafe"
+      ],
+      "start": 1080,
+      "end": 600,
+      "names": [
+        "洛页",
+        "安汐",
+        "闻舟"
+      ],
+      "profession": "夜班信使",
+      "appearance": [
+        "肩上有褪色邮包，狼耳避开风口",
+        "靴子沾着旧渠的灰，眼神清醒"
+      ],
+      "personality": [
+        "幽默，但不会打听私人事",
+        "寡言，熟了会主动打招呼"
+      ],
+      "behavior": "guide",
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.wolf"
+      ]
+    }
+  ],
+  "enemies": [],
+  "interactions": [],
+  "textSlots": [],
+  "sceneTexts": [
+    {
+      "id": "district:scene.cafe.day",
+      "locationId": "district:location.cafe",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 360,
+          "end": 1080
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.cafe.day"
+    },
+    {
+      "id": "district:scene.cafe.night",
+      "locationId": "district:location.cafe",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 1080,
+          "end": 360
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.cafe.night"
+    },
+    {
+      "id": "district:scene.workshop.day",
+      "locationId": "district:location.workshop",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 360,
+          "end": 1080
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.workshop.day"
+    },
+    {
+      "id": "district:scene.workshop.night",
+      "locationId": "district:location.workshop",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 1080,
+          "end": 360
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.workshop.night"
+    },
+    {
+      "id": "district:scene.canal.day",
+      "locationId": "district:location.canal",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 360,
+          "end": 1080
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.canal.day"
+    },
+    {
+      "id": "district:scene.canal.night",
+      "locationId": "district:location.canal",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 1080,
+          "end": 360
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.canal.night"
+    },
+    {
+      "id": "district:scene.archive.day",
+      "locationId": "district:location.archive",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 360,
+          "end": 1080
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.archive.day"
+    },
+    {
+      "id": "district:scene.archive.night",
+      "locationId": "district:location.archive",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 1080,
+          "end": 360
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.archive.night"
+    },
+    {
+      "id": "district:scene.station.day",
+      "locationId": "district:location.station",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 360,
+          "end": 1080
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.station.day"
+    },
+    {
+      "id": "district:scene.station.night",
+      "locationId": "district:location.station",
+      "conditions": [
+        {
+          "op": "time.window",
+          "start": 1080,
+          "end": 360
+        }
+      ],
+      "priority": 1,
+      "textKey": "district:text.scene.station.night"
+    }
+  ],
+  "equipment": []
+}

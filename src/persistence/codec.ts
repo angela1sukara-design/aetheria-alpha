@@ -7,6 +7,8 @@ import { STAGE3_PACKS, STAGE3_FIX1_PACKS } from './stage3-packs.ts';
 import { validateTFState } from './tf-validation.ts';
 import { validateNPCState } from './npc-validation.ts';
 import { createNPCStates } from '../engine/npc.ts';
+import { validateDistrictState } from './district-validation.ts';
+import { initialDistrict } from '../engine/district.ts';
 import type { Registry } from '../content/registry.ts';
 export const MAX_SAVE_BYTES = 4 * 1024 * 1024;
 export type DecodeResult = { status: 'ready'; state: GameState; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
@@ -29,7 +31,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const array = (x: unknown): unknown[] => { if (!Array.isArray(x)) bad('状态数组无效。'); return x as unknown[]; };
   const string = (x: unknown): string => { if (typeof x !== 'string' || !x.length) bad('状态字符串无效。'); return x as string; };
   const unique = (x: unknown[]): void => { if (new Set(x).size !== x.length) bad('状态中存在重复条目。'); };
-  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs']);
+  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs', ...((value as GameState)?.district ? ['district'] : [])]);
   const meta = object(state.meta, ['schemaVersion', 'engineVersion', 'revision', 'packs']);
   if (meta.schemaVersion !== 3 || meta.engineVersion !== '0.1-stage3') bad('存档版本尚不支持；没有自动降级或迁移。');
   const revision = int(meta.revision);
@@ -95,6 +97,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   unique(requests);
   validateTFState(value as GameState, registry);
   validateNPCState(value as GameState, registry);
+  validateDistrictState(value as GameState, registry);
 }
 function sortedRefs(refs: unknown): string {
   if (!Array.isArray(refs)) throw new Error('PACK_MISMATCH：存档内容包记录无效。');
@@ -148,6 +151,18 @@ export class SaveCodec {
       if (await checksum(envelope.payload) !== envelope.checksum) throw new Error('存档校验和不符，可能损坏。');
       if (!Number.isFinite(Date.parse(envelope.payload.savedAt))) throw new Error('存档日期格式不合法。');
       const version = envelope.payload.schemaVersion;
+      if (this.registry.legacyRegistry && !envelope.payload.state.district) {
+        const old = await new SaveCodec(this.registry.legacyRegistry).decode(text);
+        if (old.status !== 'ready') return old;
+        const state = clone(old.state);
+        state.meta.packs = clone(this.registry.packs);
+        for (const v of this.registry.variables) if (!(v.id in state.player.variables)) state.player.variables[v.id] = v.initial;
+        for (const f of this.registry.flags) if (!(f.id in state.player.flags)) state.player.flags[f.id] = f.initial;
+        state.npcs.push(...createNPCStates(this.registry).filter(n => !state.npcs.some(x => x.definitionId === n.definitionId)));
+        state.district = initialDistrict();
+        validateState(state,this.registry);
+        return {status:'ready',state,migration:'旧版存档已追加街区模块，原有经历、身体与事务保持。点击保存后写入 Alpha 0.2。'};
+      }
       const migrated = version < 3;
       const repair = migrated ? undefined : upgradeStage3(envelope.payload.state, this.registry);
       const state = migrated ? migrateLegacy(envelope.payload.state, this.registry, version) : repair!.state;

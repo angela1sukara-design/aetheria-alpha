@@ -5,12 +5,18 @@ import { advanceTransformationTime, performTransformation } from './transformati
 import { formatClock } from './clock.ts';
 import { draw } from './rng.ts';
 import { activeEvent } from './events.ts';
+import { encounter, residentInteraction } from './district.ts';
+import { applyDistrictEffect } from './district-effects.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
 export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
   for (const effect of effects) {
     if (--context.budget < 0) throw new RuleError('EFFECT_BUDGET', '单次事务效果超过安全上限。');
     switch (effect.op) {
+      case 'world.encounter': { const id = encounter(draft,registry); if(id) applyEffects([{op:'event.start',id}],draft,registry,context); else context.resolvedTexts.push('街区暂时平静。你留意了周围的人与路况。'); break; }
+      case 'resident.talk': case 'resident.help': context.resolvedTexts.push(residentInteraction(draft,registry,effect.op === 'resident.help')); break;
+      case 'combat.start': case 'combat.turn': case 'scene.start': case 'scene.act': case 'equipment.wear': case 'equipment.remove': case 'player.create': case 'preference.set':
+        applyDistrictEffect(effect,draft,registry,context,applyEffects); break;
       case 'var.change': {
         const def = registry.variable(effect.id); const before = draft.player.variables[effect.id];
         const after = Math.min(def.max, before + effect.amount);
@@ -21,6 +27,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       }
       case 'flag.set': {
         registry.flag(effect.id); const before = draft.player.flags[effect.id]; draft.player.flags[effect.id] = effect.value;
+        if (effect.value && draft.district && draft.district.factsAt[effect.id] === undefined) draft.district.factsAt[effect.id] = draft.clock.totalMinutes;
         if (before !== effect.value) context.changes.push({ label: '记录已更新', before, after: effect.value });
         break;
       }

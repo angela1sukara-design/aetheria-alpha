@@ -2,6 +2,7 @@ import { clone, freeze } from '../core/types.ts';
 import type { ActionDef, ContentPack, EventDef, FlagDef, HookDef, Id, LocationDef, PackRef, RouteDef, VariableDef } from '../core/types.ts';
 import type { BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef } from '../core/body-types.ts';
 import type { NPCDef, NPCMemoryDef, SpeciesDef } from '../core/npc-types.ts';
+import type { StoryletDef, ResidentTemplate, EnemyDef, InteractionDef, TextSlotDef, SceneTextDef, EquipmentDef } from '../core/district-types.ts';
 import { RuleError } from '../core/errors.ts';
 export class Registry {
   #definitions = new Map<string, { kind: string; value: unknown }>();
@@ -17,9 +18,17 @@ export class Registry {
   readonly globalActionHooks: Id[];
   readonly npcs: NPCDef[];
   readonly npcMemories: NPCMemoryDef[];
+  readonly legacyRegistry?: Registry;
+  readonly storylets: StoryletDef[]; readonly residentTemplates: ResidentTemplate[];
+  readonly enemies: EnemyDef[]; readonly interactions: InteractionDef[]; readonly textSlots: TextSlotDef[];
+  readonly sceneTexts: SceneTextDef[]; readonly equipment: EquipmentDef[];
   constructor(packs: ContentPack[], references: PackRef[]) {
     // 私有 Map 永远不暴露；深冻结所有定义，避免 UI/扩展包直接改注册表。
     const data = freeze(clone(packs));
+    if (packs.some(p => p.manifest.requiresCapabilities.includes('district.v1'))) {
+      const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1'));
+      this.legacyRegistry = new Registry(legacy, references.filter(ref => legacy.some(p => p.manifest.id === ref.id)));
+    }
     this.packs = freeze(clone(references));
     this.start = freeze(data.find(x => x.start)!.start!);
     this.variables = freeze(data.flatMap(x => x.variables)); this.flags = freeze(data.flatMap(x => x.flags));
@@ -29,8 +38,15 @@ export class Registry {
     this.globalActionHooks = freeze(data.flatMap(x => x.globalActionHooks ?? []).sort());
     this.npcs = freeze(data.flatMap(x => x.npcs ?? []).sort((a, b) => a.id.localeCompare(b.id, 'en')));
     this.npcMemories = freeze(data.flatMap(x => x.npcMemories ?? []));
+    this.storylets = freeze(data.flatMap(x => x.storylets ?? []).sort((a,b) => a.id.localeCompare(b.id,'en')));
+    this.residentTemplates = freeze(data.flatMap(x => x.residentTemplates ?? []));
+    this.enemies = freeze(data.flatMap(x => x.enemies ?? []));
+    this.interactions = freeze(data.flatMap(x => x.interactions ?? []));
+    this.textSlots = freeze(data.flatMap(x => x.textSlots ?? []));
+    this.sceneTexts = freeze(data.flatMap(x => x.sceneTexts ?? []));
+    this.equipment = freeze(data.flatMap(x => x.equipment ?? []));
     for (const pack of data) {
-      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
+      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
       for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text });
       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);
     }

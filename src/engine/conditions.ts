@@ -9,6 +9,10 @@ export interface Check { pass: boolean; reason: string }
 export function evaluate(condition: Condition, state: GameState, registry: Registry): Check {
   let pass: boolean; let reason = '条件尚未满足。';
   switch (condition.op) {
+    case 'day.after': { const at = state.district?.factsAt[condition.flagId]; pass = at !== undefined && Math.floor(state.clock.totalMinutes / 1440) >= Math.floor(at / 1440) + condition.days; reason = '需要等到下一个约定的游戏日。'; break; }
+    case 'scene.state': pass = (state.district?.scene?.phase ?? 'none') === condition.value; break;
+    case 'resident.available': pass = !!state.district?.residents.some(r => r.id === state.district?.currentResidentId && r.locationId === state.world.locationId); break;
+    case 'player.created': pass = (state.district?.profile.created ?? false) === condition.value; break;
     case 'all': {
       const failed = condition.conditions.map(x => evaluate(x, state, registry)).find(x => !x.pass);
       return failed ?? { pass: true, reason: '' };

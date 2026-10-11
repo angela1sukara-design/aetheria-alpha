@@ -1,9 +1,10 @@
+import { parseDistrict } from './district-schema.ts';
 import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
 import { RELATION_FIELDS } from '../core/npc-types.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import type { ContentPack } from '../core/types.ts';
-export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1', 'npc.fixed.v1'] as const;
+export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1', 'npc.fixed.v1', 'district.v1'] as const;
 type Obj = Record<string, unknown>;
 /** 只冻结本切片实际使用的契约；未实现操作符必须导入失败，不能静默跳过。 */
 export function parsePack(input: unknown): ContentPack {
@@ -43,6 +44,10 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'npc.present') { const x = obj(value, path, ['op', 'npcId']); id(x.npcId, `${path}/npcId`); }
     else if (op === 'npc.memory') { const x = obj(value, path, ['op', 'npcId', 'memoryId', 'value']); id(x.npcId, `${path}/npcId`); id(x.memoryId, `${path}/memoryId`); boolean(x.value, `${path}/value`); }
     else if (op === 'npc.relation') { const x = obj(value, path, ['op', 'npcId', 'field', 'comparison', 'value']); id(x.npcId, `${path}/npcId`); choice(x.field, `${path}/field`, [...RELATION_FIELDS]); choice(x.comparison, `${path}/comparison`, ['eq', 'gte', 'lte']); integer(x.value, `${path}/value`, -100, 100); }
+    else if (op === 'day.after') { const x = obj(value,path,['op','flagId','days']); id(x.flagId,path); integer(x.days,path,1,30); }
+    else if (op === 'scene.state') { const x = obj(value,path,['op','value']); choice(x.value,path,['active','paused','none']); }
+    else if (op === 'resident.available') obj(value,path,['op']);
+    else if (op === 'player.created') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
     else fail(`${path}/op`, '未知或未实现的条件操作符。', 'UNSUPPORTED_OPCODE');
   }
   function effect(value: unknown, path: string): void {
@@ -56,9 +61,15 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'event.exit') obj(value, path, ['op']);
     else if (['tf.apply', 'tf.enqueue', 'tf.pause', 'tf.resume', 'tf.cancel'].includes(String(op))) { const x = obj(value, path, ['op', 'id']); id(x.id, `${path}/id`); }
     else if (op === 'npc.remember') { const x = obj(value, path, ['op', 'npcId', 'memoryId', 'relationship']); id(x.npcId, `${path}/npcId`); id(x.memoryId, `${path}/memoryId`); const d = obj(x.relationship, `${path}/relationship`, [...RELATION_FIELDS]); for (const field of RELATION_FIELDS) integer(d[field], `${path}/relationship/${field}`, -100, 100); }
+    else if (['world.encounter','resident.talk','resident.help','equipment.remove'].includes(String(op))) obj(value,path,['op']);
+    else if (['combat.start','scene.start','equipment.wear'].includes(String(op))) { const x = obj(value,path,['op','id']); id(x.id,path); }
+    else if (op === 'combat.turn') { const x = obj(value,path,['op','move']); choice(x.move,path,['attack','guard','recover','flee']); }
+    else if (op === 'scene.act') { const x = obj(value,path,['op','move','poseId']); choice(x.move,path,['pose','contact','release','pause','resume','exit']); if(x.poseId !== undefined) str(x.poseId,path); }
+    else if (op === 'player.create') { const x = obj(value,path,['op','name','ageYears']); str(x.name,path); integer(x.ageYears,path,18,120); }
+    else if (op === 'preference.set') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
     else fail(`${path}/op`, '未知或未实现的效果操作符。', 'UNSUPPORTED_OPCODE');
   }
-  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories']);
+  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment']);
   const m = obj(root.manifest, '/manifest', ['id', 'namespace', 'version', 'schemaVersion', 'engineApiVersion', 'author', 'status', 'dependencies', 'requiresCapabilities', 'migrations']);
   if (typeof m.id === 'string') packId = m.id;
   str(m.id, '/manifest/id'); str(m.author, '/manifest/author');
@@ -119,6 +130,7 @@ export function parsePack(input: unknown): ContentPack {
     if (x.source === 'story' && Number(stages[0]?.atMinutes) <= 0) fail(p, '剧情变化从正数分钟边界开始。');
   });
   list(root.globalActionHooks ?? [], '/globalActionHooks', id);
+  parseDistrict(input, { obj, str, id, integer, boolean, list, choice, condition });
   if (issues.length) throw new PackError(issues);
   return input as ContentPack;
 }

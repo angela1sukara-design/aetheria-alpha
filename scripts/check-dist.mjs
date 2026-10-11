@@ -43,7 +43,7 @@ assert.equal(legacy.status, 'ready'); assert.equal(legacy.state.meta.schemaVersi
 const stage2 = await codec.decode(await readFile(new URL('../tests/fixtures/stage2-save.json', import.meta.url), 'utf8'));
 assert.equal(stage2.status, 'ready'); assert.equal(stage2.state.tfQueues[0].status, 'paused'); assert.equal(stage2.state.tfQueues[0].elapsedMinutes, 15);
 const stage3 = await codec.decode(await readFile(new URL('../tests/fixtures/stage3-npc-save.json', import.meta.url), 'utf8'));
-assert.equal(stage3.status, 'ready'); assert.match(stage3.migration, /第三阶段/); assert.equal(stage3.state.npcs[0].relationship.trust, 7);
+assert.equal(stage3.status, 'ready'); assert.match(stage3.migration, /第三阶段|街区模块/); assert.equal(stage3.state.npcs[0].relationship.trust, 7);
 const exhausted = await codec.decode(await readFile(new URL('../tests/fixtures/stage3-exhausted-save.json', import.meta.url), 'utf8'));
 assert.equal(exhausted.status, 'ready'); const recovered = new ActionExecutor(registry, exhausted.state);
 assert.equal(recovered.view().actions.find(a => a.definition.id === 'aetheria-social:action.travel.salon_street').available, false);

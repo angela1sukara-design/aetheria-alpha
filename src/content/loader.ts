@@ -1,3 +1,4 @@
+import { validateDistrictDefinitions } from './district-schema.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import { clone, stableJson } from '../core/types.ts';
@@ -31,7 +32,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   for (const p of [...packs].sort((a, b) => a.manifest.id.localeCompare(b.manifest.id, 'en'))) visit(p);
   const definitions = new Map<string, { type: string; pack: ContentPack; value: unknown }>();
   for (const p of sorted) {
-    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories'] as const) {
+    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment'] as const) {
       for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
@@ -50,6 +51,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (c.op === 'all' || c.op === 'any') c.conditions.forEach((x, i) => checkCondition(p, x, `${path}/${i}`));
     else if (c.op === 'not') checkCondition(p, c.condition, `${path}/condition`);
     else if (c.op === 'var.compare') ref(p, c.id, 'variables', path);
+    else if (c.op === 'day.after') ref(p,c.flagId,'flags',path);
     else if (c.op === 'flag.has') ref(p, c.id, 'flags', path);
     else if (c.op === 'location.is') ref(p, c.id, 'locations', path);
     else if (c.op === 'event.state') ref(p, c.id, 'events', path);
@@ -63,6 +65,9 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
     if (e.op === 'var.change') ref(p, e.id, 'variables', path);
+    else if (e.op === 'combat.start') ref(p,e.id,'enemies',path);
+    else if (e.op === 'scene.start') ref(p,e.id,'interactions',path);
+    else if (e.op === 'equipment.wear') ref(p,e.id,'equipment',path);
     else if (e.op === 'flag.set') ref(p, e.id, 'flags', path);
     else if (e.op === 'location.move') ref(p, e.routeId, 'routes', path);
     else if (e.op === 'event.start') ref(p, e.id, 'events', path);
@@ -173,6 +178,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     references.push({ id: p.manifest.id, version: p.manifest.version, hash: [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2, '0')).join('') });
   }
   const registry = new Registry(sorted, references);
+  validateDistrictDefinitions(sorted, registry, fail, checkCondition);
   for (const p of sorted) for (const template of p.bodyTemplates ?? []) {
     try { validateBody(instantiateBody(template), registry); }
     catch (error) { fail(p, 'BODY_TOPOLOGY', `/bodyTemplates/${template.id}`, error instanceof Error ? error.message : '身体模板无效。', template.id); }

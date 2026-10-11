@@ -1,8 +1,10 @@
 import type { BodyGraph, BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef, TFInstance, TFState, BodyCapability } from './body-types.ts';
 import type { NPCDef, NPCState, NPCMemoryDef, SpeciesDef, RelationField } from './npc-types.ts';
+import type { DistrictDefinitions, DistrictEffect, DistrictCondition, DistrictState } from './district-types.ts';
 export type Id = `${string}:${string}`;
 export type Scalar = string | number | boolean;
 export type Condition =
+  | DistrictCondition
   | { op: 'all' | 'any'; conditions: Condition[] }
   | { op: 'not'; condition: Condition }
   | { op: 'var.compare'; id: Id; comparison: 'eq' | 'gte' | 'lte'; value: number }
@@ -17,6 +19,7 @@ export type Condition =
   | { op: 'npc.memory'; npcId: Id; memoryId: Id; value: boolean }
   | { op: 'npc.relation'; npcId: Id; field: RelationField; comparison: 'eq' | 'gte' | 'lte'; value: number };
 export type Effect =
+  | DistrictEffect
   | { op: 'var.change'; id: Id; amount: number }
   | { op: 'flag.set'; id: Id; value: boolean }
   | { op: 'clock.advance'; minutes: number }
@@ -46,7 +49,7 @@ export interface PackManifest {
   requiresCapabilities: string[];
   migrations: []; // 通用内容包迁移未实现；仅存档codec允许已发布官方版本的精确升级。
 }
-export interface ContentPack {
+export interface ContentPack extends DistrictDefinitions {
   manifest: PackManifest; variables: VariableDef[]; flags: FlagDef[]; hooks: HookDef[];
   locations: LocationDef[]; routes: RouteDef[]; actions: ActionDef[]; events: EventDef[];
   texts: Record<Id, string>; contributions: { hookId: Id; actionIds: Id[] }[];
@@ -68,6 +71,7 @@ export interface ActionResult {
 }
 export interface Transaction { requestId: string; fingerprint: string; result: ActionResult }
 export interface GameState {
+  district?: DistrictState;
   meta: { schemaVersion: 3; engineVersion: '0.1-stage3'; revision: number; packs: PackRef[] };
   clock: { totalMinutes: number; crossedDays: number[] };
   world: { locationId: Id; knownLocationIds: Id[] };
