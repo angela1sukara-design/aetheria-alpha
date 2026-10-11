@@ -1,0 +1,5904 @@
+{
+  "format": "aetheria-reference",
+  "schemaVersion": 1,
+  "id": "aetheria/neighborhood-lexicon-reference",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.environment.wet",
+      "kind": "environment",
+      "data": {
+        "name": "雾潮街区",
+        "description": "潮雾绕着高架水槽流动，蕨叶从砖缝探出来。屋檐、排水沟和共用雨棚把日常活动串在一起。",
+        "tags": [
+          "climate.wet",
+          "ecology.fern",
+          "waterways"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "灰瓦排屋"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。公共厨房与休息区分开，住宅维护记录贴在门边。\n\n一排共用山墙的灰瓦小屋，门前石阶高度略有不同。\n窗台外侧粉刷层起皮处露出旧年浅蓝底色。",
+        "economy": [
+          "住宅排水维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.wet.home",
+      "kind": "event",
+      "data": {
+        "label": "整理轮值记录",
+        "prompt": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。\n\n公共厨房的轮值卡需要重新按日期归档。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原有署名，按日期把轮值卡放回夹册。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.home.annex",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "天井小院"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。公共厨房与休息区分开，住宅维护记录贴在门边。连廊边设置了短时交接台，与主通道相接。\n\n四面房围出天井，天井中央有接雨水的石槽。\n门垫上印着干了的泥点，鞋底花纹还能辨认。",
+        "economy": [
+          "住宅排水维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "集市廊棚"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。称量台、收据夹和短时存放架排在公共通道两旁。\n\n长廊式棚下摆摊，雨天也不妨碍买卖。\n告示板下沿钉孔密布，旧钉眼已锈成褐斑。",
+        "economy": [
+          "食物防潮分装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.wet.market",
+      "kind": "event",
+      "data": {
+        "label": "核对空筐与收据",
+        "prompt": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。\n\n市场公共区的空筐编号需要与交接收据核对。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你核对了编号，把待确认的收据交回值班桌。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.market.annex",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "早市蔬果行"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。称量台、收据夹和短时存放架排在公共通道两旁。连廊边设置了短时交接台，与主通道相接。\n\n竹筐沿街排开，价牌用石块压住，秤砣挂在摊主腕绳上。\n桌面水杯圈叠成半环，最新一圈还泛潮。",
+        "economy": [
+          "食物防潮分装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "修补桌边"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。工具按用途放在可够到的架上，接单区与设备区分开。\n\n靠墙的修补桌，抽屉分装钉子、线、胶水。\n信箱口边缘被信封角磨出浅白豁口。",
+        "economy": [
+          "水泵检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.wet.workshop",
+      "kind": "event",
+      "data": {
+        "label": "整理工具借用卡",
+        "prompt": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。\n\n工坊的公共工具借用卡需要按编号归位。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你将借用卡与空位标记一一对应，留下清楚的交接记录。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.workshop.annex",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "楼下裁缝铺"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。工具按用途放在可够到的架上，接单区与设备区分开。连廊边设置了短时交接台，与主通道相接。\n\n楼下临街作裁缝铺，楼上住人，橱窗挂着样衣。\n黑板下方粉笔灰积成一小堆，鞋尖蹭过散开。",
+        "economy": [
+          "水泵检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.wet.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "药堂候诊室"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。护理座位、清洁用品架和公开适配流程各有标识。\n\n药堂候诊室放着草药香囊，座椅之间距离适中。\n长凳两端坐面比中间更深凹，边缘圆滑。",
+        "economy": [
+          "护理用品消毒",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.wet.clinic",
+      "kind": "event",
+      "data": {
+        "label": "整理公开适配说明",
+        "prompt": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。\n\n护理站的公开说明册需要按版本号整理。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原册，将新版和存档版分别放进标识清楚的格子。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.wet.clinic.annex",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "邻里诊疗廊"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。护理座位、清洁用品架和公开适配流程各有标识。连廊边设置了短时交接台，与主通道相接。\n\n长廊设隔帘诊位，药柜矮柜方便取用，等候椅间距疏朗。\n窗框内侧夹着未读完的小报，页角折起。",
+        "economy": [
+          "护理用品消毒",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "共用客厅"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。公共消息板只登记可公开的信息，旁边有路线与资料桌。\n\n几户共用的客厅，长凳靠墙，正中小桌放茶壶。\n长椅扶手上刻着浅浅的井字，线条发旧。",
+        "economy": [
+          "公共路标核对",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.wet.commons",
+      "kind": "event",
+      "data": {
+        "label": "更新公共资料索引",
+        "prompt": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。\n\n公共厅的资料索引需要核对页码。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你补全核实过的页码，未找到的资料单独记在待查栏。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.wet.commons.annex",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "义学旧堂"
+        ],
+        "description": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。公共消息板只登记可公开的信息，旁边有路线与资料桌。连廊边设置了短时交接台，与主通道相接。\n\n旧义学堂改为公共读书处，桌椅不齐但擦得很净。\n门口贴过春联的位置留下浅浅的胶痕方框。",
+        "economy": [
+          "公共路标核对",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.wet.care",
+      "kind": "faction",
+      "data": {
+        "name": "潮汐互助会",
+        "activities": [
+          "免费座位维护",
+          "公共照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.wet.trade",
+      "kind": "faction",
+      "data": {
+        "name": "水槽工联",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.wet",
+      "kind": "event",
+      "data": {
+        "label": "一起检查防雨棚扣",
+        "prompt": "当班人想请你核对棚扣编号与登记册，避免下一场雨来时混淆。你可以帮忙，也可以先离开。",
+        "completeText": "你把实际编号写进登记册，交接人核对后结清报酬。",
+        "minutes": 15,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.wet.maintenance",
+      "kind": "event",
+      "data": {
+        "label": "复核公共通道标识",
+        "prompt": "宽檐把细雨引向沟渠，走廊内侧留有干燥的通道。\n\n值班人请你对照公开图纸检查通道标识，沿途不需要进入私人区域。也可以先离开。",
+        "completeText": "你只记录了实际看到的标识，将待核实的部分交回值班桌。",
+        "minutes": 20,
+        "reward": 4
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.wet",
+      "kind": "activity",
+      "data": {
+        "label": "沿水槽观察排水",
+        "description": "你沿公共水槽走了一段，辨认了排水口与避雨处，回到起点。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "walk"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.environment.dry",
+      "kind": "environment",
+      "data": {
+        "name": "晴砾街区",
+        "description": "日光照亮挡风棚，旱生灌木沿石墙生长。厚墙、镜板和遮阳帘在石路上分出明暗不同的空间。",
+        "tags": [
+          "climate.dry",
+          "ecology.shrub",
+          "solar"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "邻墙借光屋"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。公共厨房与休息区分开，住宅维护记录贴在门边。\n\n侧墙开高窗借邻院光线，窗下摆着缝纫桌。\n窗台外侧粉刷层起皮处露出旧年浅蓝底色。",
+        "economy": [
+          "遮阳帘维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.dry.home",
+      "kind": "event",
+      "data": {
+        "label": "整理轮值记录",
+        "prompt": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。\n\n公共厨房的轮值卡需要重新按日期归档。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原有署名，按日期把轮值卡放回夹册。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.home.annex",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "合住厢房"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。公共厨房与休息区分开，住宅维护记录贴在门边。连廊边设置了短时交接台，与主通道相接。\n\n大宅分租的厢房，隔墙薄，能听见隔壁轻轻说话。\n门垫上印着干了的泥点，鞋底花纹还能辨认。",
+        "economy": [
+          "遮阳帘维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "布头零剪摊"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。称量台、收据夹和短时存放架排在公共通道两旁。\n\n木箱分色装布头，剪刀挂绳防丢，顾客可自行比对色差。\n告示板下沿钉孔密布，旧钉眼已锈成褐斑。",
+        "economy": [
+          "干货封装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.dry.market",
+      "kind": "event",
+      "data": {
+        "label": "核对空筐与收据",
+        "prompt": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。\n\n市场公共区的空筐编号需要与交接收据核对。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你核对了编号，把待确认的收据交回值班桌。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.market.annex",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "集市廊棚"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。称量台、收据夹和短时存放架排在公共通道两旁。连廊边设置了短时交接台，与主通道相接。\n\n长廊式棚下摆摊，雨天也不妨碍买卖。\n桌面水杯圈叠成半环，最新一圈还泛潮。",
+        "economy": [
+          "干货封装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "篾编敞开间"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。工具按用途放在可够到的架上，接单区与设备区分开。\n\n三面敞开的篾编间，方便搬运竹料，顶棚遮阳。\n信箱口边缘被信封角磨出浅白豁口。",
+        "economy": [
+          "镜板检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.dry.workshop",
+      "kind": "event",
+      "data": {
+        "label": "整理工具借用卡",
+        "prompt": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。\n\n工坊的公共工具借用卡需要按编号归位。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你将借用卡与空位标记一一对应，留下清楚的交接记录。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.workshop.annex",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "修补桌边"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。工具按用途放在可够到的架上，接单区与设备区分开。连廊边设置了短时交接台，与主通道相接。\n\n靠墙的修补桌，抽屉分装钉子、线、胶水。\n黑板下方粉笔灰积成一小堆，鞋尖蹭过散开。",
+        "economy": [
+          "镜板检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.dry.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "复健扶手廊"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。护理座位、清洁用品架和公开适配流程各有标识。\n\n两侧木扶手高度不一，地面画脚位提示但不强制。\n长凳两端坐面比中间更深凹，边缘圆滑。",
+        "economy": [
+          "护理用品分装",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.dry.clinic",
+      "kind": "event",
+      "data": {
+        "label": "整理公开适配说明",
+        "prompt": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。\n\n护理站的公开说明册需要按版本号整理。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原册，将新版和存档版分别放进标识清楚的格子。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.dry.clinic.annex",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "药堂候诊室"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。护理座位、清洁用品架和公开适配流程各有标识。连廊边设置了短时交接台，与主通道相接。\n\n药堂候诊室放着草药香囊，座椅之间距离适中。\n窗框内侧夹着未读完的小报，页角折起。",
+        "economy": [
+          "护理用品分装",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "议事厅"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。公共消息板只登记可公开的信息，旁边有路线与资料桌。\n\n村里议事的厅屋，正中长桌，四壁挂着旧年历。\n长椅扶手上刻着浅浅的井字，线条发旧。",
+        "economy": [
+          "公共遮阳时段记录",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.dry.commons",
+      "kind": "event",
+      "data": {
+        "label": "更新公共资料索引",
+        "prompt": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。\n\n公共厅的资料索引需要核对页码。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你补全核实过的页码，未找到的资料单独记在待查栏。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.dry.commons.annex",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "邮驿小站"
+        ],
+        "description": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。公共消息板只登记可公开的信息，旁边有路线与资料桌。连廊边设置了短时交接台，与主通道相接。\n\n收发信件的小站，柜台后排着鸽笼式信格。\n门口贴过春联的位置留下浅浅的胶痕方框。",
+        "economy": [
+          "公共遮阳时段记录",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.dry.care",
+      "kind": "faction",
+      "data": {
+        "name": "凉荫互助会",
+        "activities": [
+          "免费座位维护",
+          "公共照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.dry.trade",
+      "kind": "faction",
+      "data": {
+        "name": "镜板工联",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.dry",
+      "kind": "event",
+      "data": {
+        "label": "帮助标记遮阳时段",
+        "prompt": "公共板上的遮阳记录有些模糊，当班人请你核对墙边刻度。你可以帮忙，也可以先离开。",
+        "completeText": "你按刻度补齐记录，并明确标出尚未核实的部分。",
+        "minutes": 15,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.dry.maintenance",
+      "kind": "event",
+      "data": {
+        "label": "复核公共通道标识",
+        "prompt": "遮阳帘之间留着通风的缝，门边有拂去鞋底浮沙的垫子。\n\n值班人请你对照公开图纸检查通道标识，沿途不需要进入私人区域。也可以先离开。",
+        "completeText": "你只记录了实际看到的标识，将待核实的部分交回值班桌。",
+        "minutes": 20,
+        "reward": 4
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.dry",
+      "kind": "activity",
+      "data": {
+        "label": "观察石墙与遮阳通道",
+        "description": "你沿阴影连续的公共通道慢行，记住了相邻院落的入口。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "walk"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.environment.garden",
+      "kind": "environment",
+      "data": {
+        "name": "林荫街区",
+        "description": "树冠跨过连廊，雨水从叶片流向种植槽。住舍、苗圃和食物摊围绕几条透光的步道排列。",
+        "tags": [
+          "climate.garden",
+          "ecology.canopy",
+          "horticulture"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "灰瓦排屋"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。公共厨房与休息区分开，住宅维护记录贴在门边。\n\n一排共用山墙的灰瓦小屋，门前石阶高度略有不同。\n窗台外侧粉刷层起皮处露出旧年浅蓝底色。",
+        "economy": [
+          "种植槽轮值",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.garden.home",
+      "kind": "event",
+      "data": {
+        "label": "整理轮值记录",
+        "prompt": "树根旁有透气护栏，落叶收集箱与步行通道分开。\n\n公共厨房的轮值卡需要重新按日期归档。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原有署名，按日期把轮值卡放回夹册。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.home.annex",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "天井小院"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。公共厨房与休息区分开，住宅维护记录贴在门边。连廊边设置了短时交接台，与主通道相接。\n\n四面房围出天井，天井中央有接雨水的石槽。\n门垫上印着干了的泥点，鞋底花纹还能辨认。",
+        "economy": [
+          "种植槽轮值",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "早市蔬果行"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。称量台、收据夹和短时存放架排在公共通道两旁。\n\n竹筐沿街排开，价牌用石块压住，秤砣挂在摊主腕绳上。\n告示板下沿钉孔密布，旧钉眼已锈成褐斑。",
+        "economy": [
+          "食材分拣",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.garden.market",
+      "kind": "event",
+      "data": {
+        "label": "核对空筐与收据",
+        "prompt": "树根旁有透气护栏，落叶收集箱与步行通道分开。\n\n市场公共区的空筐编号需要与交接收据核对。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你核对了编号，把待确认的收据交回值班桌。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.market.annex",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "布头零剪摊"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。称量台、收据夹和短时存放架排在公共通道两旁。连廊边设置了短时交接台，与主通道相接。\n\n木箱分色装布头，剪刀挂绳防丢，顾客可自行比对色差。\n桌面水杯圈叠成半环，最新一圈还泛潮。",
+        "economy": [
+          "食材分拣",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "楼下裁缝铺"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。工具按用途放在可够到的架上，接单区与设备区分开。\n\n楼下临街作裁缝铺，楼上住人，橱窗挂着样衣。\n信箱口边缘被信封角磨出浅白豁口。",
+        "economy": [
+          "种植支架修补",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.garden.workshop",
+      "kind": "event",
+      "data": {
+        "label": "整理工具借用卡",
+        "prompt": "树根旁有透气护栏，落叶收集箱与步行通道分开。\n\n工坊的公共工具借用卡需要按编号归位。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你将借用卡与空位标记一一对应，留下清楚的交接记录。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.workshop.annex",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "篾编敞开间"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。工具按用途放在可够到的架上，接单区与设备区分开。连廊边设置了短时交接台，与主通道相接。\n\n三面敞开的篾编间，方便搬运竹料，顶棚遮阳。\n黑板下方粉笔灰积成一小堆，鞋尖蹭过散开。",
+        "economy": [
+          "种植支架修补",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.garden.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "邻里诊疗廊"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。护理座位、清洁用品架和公开适配流程各有标识。\n\n长廊设隔帘诊位，药柜矮柜方便取用，等候椅间距疏朗。\n长凳两端坐面比中间更深凹，边缘圆滑。",
+        "economy": [
+          "公共护理",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.garden.clinic",
+      "kind": "event",
+      "data": {
+        "label": "整理公开适配说明",
+        "prompt": "树根旁有透气护栏，落叶收集箱与步行通道分开。\n\n护理站的公开说明册需要按版本号整理。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原册，将新版和存档版分别放进标识清楚的格子。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.garden.clinic.annex",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "复健扶手廊"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。护理座位、清洁用品架和公开适配流程各有标识。连廊边设置了短时交接台，与主通道相接。\n\n两侧木扶手高度不一，地面画脚位提示但不强制。\n窗框内侧夹着未读完的小报，页角折起。",
+        "economy": [
+          "公共护理",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "共用客厅"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。公共消息板只登记可公开的信息，旁边有路线与资料桌。\n\n几户共用的客厅，长凳靠墙，正中小桌放茶壶。\n长椅扶手上刻着浅浅的井字，线条发旧。",
+        "economy": [
+          "种子资料整理",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.garden.commons",
+      "kind": "event",
+      "data": {
+        "label": "更新公共资料索引",
+        "prompt": "树根旁有透气护栏，落叶收集箱与步行通道分开。\n\n公共厅的资料索引需要核对页码。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你补全核实过的页码，未找到的资料单独记在待查栏。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.garden.commons.annex",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "义学旧堂"
+        ],
+        "description": "树根旁有透气护栏，落叶收集箱与步行通道分开。公共消息板只登记可公开的信息，旁边有路线与资料桌。连廊边设置了短时交接台，与主通道相接。\n\n旧义学堂改为公共读书处，桌椅不齐但擦得很净。\n门口贴过春联的位置留下浅浅的胶痕方框。",
+        "economy": [
+          "种子资料整理",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.garden.care",
+      "kind": "faction",
+      "data": {
+        "name": "绿廊照护会",
+        "activities": [
+          "免费座位维护",
+          "公共照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.garden.trade",
+      "kind": "faction",
+      "data": {
+        "name": "枝架合作社",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.garden",
+      "kind": "event",
+      "data": {
+        "label": "核对苗圃标牌",
+        "prompt": "公共种植槽的标牌顺序需要核对，当班人请你对照原始记录。你可以帮忙，也可以先离开。",
+        "completeText": "你保留了原记录，把已经核实的标牌重新排好。",
+        "minutes": 15,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.garden.maintenance",
+      "kind": "event",
+      "data": {
+        "label": "复核公共通道标识",
+        "prompt": "树根旁有透气护栏，落叶收集箱与步行通道分开。\n\n值班人请你对照公开图纸检查通道标识，沿途不需要进入私人区域。也可以先离开。",
+        "completeText": "你只记录了实际看到的标识，将待核实的部分交回值班桌。",
+        "minutes": 20,
+        "reward": 4
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.garden"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.garden",
+      "kind": "activity",
+      "data": {
+        "label": "走过树冠步道",
+        "description": "你沿有护栏的步道观察叶影和种植槽，回程时避开了维护区。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "walk"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.environment.frost",
+      "kind": "environment",
+      "data": {
+        "name": "霜港街区",
+        "description": "浅霜覆着码头边的栏杆，地衣在背风墙角生长。保温廊道将住舍、储藏市场和热水护理站连在一起。",
+        "tags": [
+          "climate.frost",
+          "ecology.lichen",
+          "insulation"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "邻墙借光屋"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。公共厨房与休息区分开，住宅维护记录贴在门边。\n\n侧墙开高窗借邻院光线，窗下摆着缝纫桌。\n窗台外侧粉刷层起皮处露出旧年浅蓝底色。",
+        "economy": [
+          "门帘维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.frost.home",
+      "kind": "event",
+      "data": {
+        "label": "整理轮值记录",
+        "prompt": "入口设有融霜垫，保温门帘后方留着可以停步的位置。\n\n公共厨房的轮值卡需要重新按日期归档。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原有署名，按日期把轮值卡放回夹册。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.home.annex",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "合住厢房"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。公共厨房与休息区分开，住宅维护记录贴在门边。连廊边设置了短时交接台，与主通道相接。\n\n大宅分租的厢房，隔墙薄，能听见隔壁轻轻说话。\n门垫上印着干了的泥点，鞋底花纹还能辨认。",
+        "economy": [
+          "门帘维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "集市廊棚"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。称量台、收据夹和短时存放架排在公共通道两旁。\n\n长廊式棚下摆摊，雨天也不妨碍买卖。\n告示板下沿钉孔密布，旧钉眼已锈成褐斑。",
+        "economy": [
+          "保温货物分装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.frost.market",
+      "kind": "event",
+      "data": {
+        "label": "核对空筐与收据",
+        "prompt": "入口设有融霜垫，保温门帘后方留着可以停步的位置。\n\n市场公共区的空筐编号需要与交接收据核对。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你核对了编号，把待确认的收据交回值班桌。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.market.annex",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "早市蔬果行"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。称量台、收据夹和短时存放架排在公共通道两旁。连廊边设置了短时交接台，与主通道相接。\n\n竹筐沿街排开，价牌用石块压住，秤砣挂在摊主腕绳上。\n桌面水杯圈叠成半环，最新一圈还泛潮。",
+        "economy": [
+          "保温货物分装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "修补桌边"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。工具按用途放在可够到的架上，接单区与设备区分开。\n\n靠墙的修补桌，抽屉分装钉子、线、胶水。\n信箱口边缘被信封角磨出浅白豁口。",
+        "economy": [
+          "热水管检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.frost.workshop",
+      "kind": "event",
+      "data": {
+        "label": "整理工具借用卡",
+        "prompt": "入口设有融霜垫，保温门帘后方留着可以停步的位置。\n\n工坊的公共工具借用卡需要按编号归位。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你将借用卡与空位标记一一对应，留下清楚的交接记录。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.workshop.annex",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "楼下裁缝铺"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。工具按用途放在可够到的架上，接单区与设备区分开。连廊边设置了短时交接台，与主通道相接。\n\n楼下临街作裁缝铺，楼上住人，橱窗挂着样衣。\n黑板下方粉笔灰积成一小堆，鞋尖蹭过散开。",
+        "economy": [
+          "热水管检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.frost.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "药堂候诊室"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。护理座位、清洁用品架和公开适配流程各有标识。\n\n药堂候诊室放着草药香囊，座椅之间距离适中。\n长凳两端坐面比中间更深凹，边缘圆滑。",
+        "economy": [
+          "恢复用品整理",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.frost.clinic",
+      "kind": "event",
+      "data": {
+        "label": "整理公开适配说明",
+        "prompt": "入口设有融霜垫，保温门帘后方留着可以停步的位置。\n\n护理站的公开说明册需要按版本号整理。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原册，将新版和存档版分别放进标识清楚的格子。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.frost.clinic.annex",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "邻里诊疗廊"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。护理座位、清洁用品架和公开适配流程各有标识。连廊边设置了短时交接台，与主通道相接。\n\n长廊设隔帘诊位，药柜矮柜方便取用，等候椅间距疏朗。\n窗框内侧夹着未读完的小报，页角折起。",
+        "economy": [
+          "恢复用品整理",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "议事厅"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。公共消息板只登记可公开的信息，旁边有路线与资料桌。\n\n村里议事的厅屋，正中长桌，四壁挂着旧年历。\n长椅扶手上刻着浅浅的井字，线条发旧。",
+        "economy": [
+          "公共通道标记",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.frost.commons",
+      "kind": "event",
+      "data": {
+        "label": "更新公共资料索引",
+        "prompt": "入口设有融霜垫，保温门帘后方留着可以停步的位置。\n\n公共厅的资料索引需要核对页码。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你补全核实过的页码，未找到的资料单独记在待查栏。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.frost.commons.annex",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "邮驿小站"
+        ],
+        "description": "入口设有融霜垫，保温门帘后方留着可以停步的位置。公共消息板只登记可公开的信息，旁边有路线与资料桌。连廊边设置了短时交接台，与主通道相接。\n\n收发信件的小站，柜台后排着鸽笼式信格。\n门口贴过春联的位置留下浅浅的胶痕方框。",
+        "economy": [
+          "公共通道标记",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.frost.care",
+      "kind": "faction",
+      "data": {
+        "name": "背风互助会",
+        "activities": [
+          "免费座位维护",
+          "公共照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.frost.trade",
+      "kind": "faction",
+      "data": {
+        "name": "暖管工联",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.frost",
+      "kind": "event",
+      "data": {
+        "label": "检查保温门帘编号",
+        "prompt": "当班人请你对照保温门帘的编号和维护记录，不需要进入设备区。你可以帮忙，也可以先离开。",
+        "completeText": "你完成编号核对，将缺失记录单独列出并交接。",
+        "minutes": 15,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.frost.maintenance",
+      "kind": "event",
+      "data": {
+        "label": "复核公共通道标识",
+        "prompt": "入口设有融霜垫，保温门帘后方留着可以停步的位置。\n\n值班人请你对照公开图纸检查通道标识，沿途不需要进入私人区域。也可以先离开。",
+        "completeText": "你只记录了实际看到的标识，将待核实的部分交回值班桌。",
+        "minutes": 20,
+        "reward": 4
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.frost"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.frost",
+      "kind": "activity",
+      "data": {
+        "label": "辨认保温廊道入口",
+        "description": "你沿公共廊道慢行，记下保温门帘和融霜垫的位置。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "walk"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.environment.forge",
+      "kind": "environment",
+      "data": {
+        "name": "炉巷街区",
+        "description": "回收金属在棚架下分门别类，耐热苔藓沿冷却渠生长。工坊的隔热门与住宅的通风庭院隔着宽阔公共通道。",
+        "tags": [
+          "climate.forge",
+          "ecology.moss",
+          "reclamation"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "灰瓦排屋"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。公共厨房与休息区分开，住宅维护记录贴在门边。\n\n一排共用山墙的灰瓦小屋，门前石阶高度略有不同。\n窗台外侧粉刷层起皮处露出旧年浅蓝底色。",
+        "economy": [
+          "庭院通风维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.forge.home",
+      "kind": "event",
+      "data": {
+        "label": "整理轮值记录",
+        "prompt": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。\n\n公共厨房的轮值卡需要重新按日期归档。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原有署名，按日期把轮值卡放回夹册。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.home.annex",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "天井小院"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。公共厨房与休息区分开，住宅维护记录贴在门边。连廊边设置了短时交接台，与主通道相接。\n\n四面房围出天井，天井中央有接雨水的石槽。\n门垫上印着干了的泥点，鞋底花纹还能辨认。",
+        "economy": [
+          "庭院通风维护",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "布头零剪摊"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。称量台、收据夹和短时存放架排在公共通道两旁。\n\n木箱分色装布头，剪刀挂绳防丢，顾客可自行比对色差。\n告示板下沿钉孔密布，旧钉眼已锈成褐斑。",
+        "economy": [
+          "回收材料分拣",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.forge.market",
+      "kind": "event",
+      "data": {
+        "label": "核对空筐与收据",
+        "prompt": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。\n\n市场公共区的空筐编号需要与交接收据核对。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你核对了编号，把待确认的收据交回值班桌。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.market.annex",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "集市廊棚"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。称量台、收据夹和短时存放架排在公共通道两旁。连廊边设置了短时交接台，与主通道相接。\n\n长廊式棚下摆摊，雨天也不妨碍买卖。\n桌面水杯圈叠成半环，最新一圈还泛潮。",
+        "economy": [
+          "回收材料分拣",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "篾编敞开间"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。工具按用途放在可够到的架上，接单区与设备区分开。\n\n三面敞开的篾编间，方便搬运竹料，顶棚遮阳。\n信箱口边缘被信封角磨出浅白豁口。",
+        "economy": [
+          "工具与冷却管检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.forge.workshop",
+      "kind": "event",
+      "data": {
+        "label": "整理工具借用卡",
+        "prompt": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。\n\n工坊的公共工具借用卡需要按编号归位。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你将借用卡与空位标记一一对应，留下清楚的交接记录。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.workshop.annex",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "修补桌边"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。工具按用途放在可够到的架上，接单区与设备区分开。连廊边设置了短时交接台，与主通道相接。\n\n靠墙的修补桌，抽屉分装钉子、线、胶水。\n黑板下方粉笔灰积成一小堆，鞋尖蹭过散开。",
+        "economy": [
+          "工具与冷却管检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.forge.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "复健扶手廊"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。护理座位、清洁用品架和公开适配流程各有标识。\n\n两侧木扶手高度不一，地面画脚位提示但不强制。\n长凳两端坐面比中间更深凹，边缘圆滑。",
+        "economy": [
+          "用品清洁",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.forge.clinic",
+      "kind": "event",
+      "data": {
+        "label": "整理公开适配说明",
+        "prompt": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。\n\n护理站的公开说明册需要按版本号整理。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原册，将新版和存档版分别放进标识清楚的格子。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.forge.clinic.annex",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "药堂候诊室"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。护理座位、清洁用品架和公开适配流程各有标识。连廊边设置了短时交接台，与主通道相接。\n\n药堂候诊室放着草药香囊，座椅之间距离适中。\n窗框内侧夹着未读完的小报，页角折起。",
+        "economy": [
+          "用品清洁",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "共用客厅"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。公共消息板只登记可公开的信息，旁边有路线与资料桌。\n\n几户共用的客厅，长凳靠墙，正中小桌放茶壶。\n长椅扶手上刻着浅浅的井字，线条发旧。",
+        "economy": [
+          "共享工具登记",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.forge.commons",
+      "kind": "event",
+      "data": {
+        "label": "更新公共资料索引",
+        "prompt": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。\n\n公共厅的资料索引需要核对页码。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你补全核实过的页码，未找到的资料单独记在待查栏。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.forge.commons.annex",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "义学旧堂"
+        ],
+        "description": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。公共消息板只登记可公开的信息，旁边有路线与资料桌。连廊边设置了短时交接台，与主通道相接。\n\n旧义学堂改为公共读书处，桌椅不齐但擦得很净。\n门口贴过春联的位置留下浅浅的胶痕方框。",
+        "economy": [
+          "共享工具登记",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.forge.care",
+      "kind": "faction",
+      "data": {
+        "name": "净尘照护会",
+        "activities": [
+          "免费座位维护",
+          "公共照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.forge.trade",
+      "kind": "faction",
+      "data": {
+        "name": "回炉合作社",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.forge",
+      "kind": "event",
+      "data": {
+        "label": "核对共享工具登记",
+        "prompt": "公共工具架的归还记录需要复核，当班人请你整理清楚的编号。你可以帮忙，也可以先离开。",
+        "completeText": "你把已归还和待核实的工具分栏记录，没有擅自处置任何物件。",
+        "minutes": 15,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.forge.maintenance",
+      "kind": "event",
+      "data": {
+        "label": "复核公共通道标识",
+        "prompt": "材料箱与步行区之间划着清楚的边界，入口放着擦拭用具。\n\n值班人请你对照公开图纸检查通道标识，沿途不需要进入私人区域。也可以先离开。",
+        "completeText": "你只记录了实际看到的标识，将待核实的部分交回值班桌。",
+        "minutes": 20,
+        "reward": 4
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.forge"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.forge",
+      "kind": "activity",
+      "data": {
+        "label": "观察回收巷的公共路线",
+        "description": "你沿标出的步行区绕过材料棚，辨认了回程用的公共出口。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "walk"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.environment.tidal",
+      "kind": "environment",
+      "data": {
+        "name": "咸汐街区",
+        "description": "盐雾越过护栏，海藻在低处的水道里摇动。高脚住舍和防潮库房沿抬高的木石通道分布。",
+        "tags": [
+          "climate.tidal",
+          "ecology.kelp",
+          "saltwater"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "邻墙借光屋"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。公共厨房与休息区分开，住宅维护记录贴在门边。\n\n侧墙开高窗借邻院光线，窗下摆着缝纫桌。\n窗台外侧粉刷层起皮处露出旧年浅蓝底色。",
+        "economy": [
+          "住宅防潮轮值",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.tidal.home",
+      "kind": "event",
+      "data": {
+        "label": "整理轮值记录",
+        "prompt": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。\n\n公共厨房的轮值卡需要重新按日期归档。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原有署名，按日期把轮值卡放回夹册。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.home.annex",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "合住厢房"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。公共厨房与休息区分开，住宅维护记录贴在门边。连廊边设置了短时交接台，与主通道相接。\n\n大宅分租的厢房，隔墙薄，能听见隔壁轻轻说话。\n门垫上印着干了的泥点，鞋底花纹还能辨认。",
+        "economy": [
+          "住宅防潮轮值",
+          "共享厨房轮值"
+        ],
+        "professions": [
+          "交接信使",
+          "烘焙师",
+          "缝补工"
+        ],
+        "ambience": {
+          "morning": "晨光落在公共餐桌边，轮值板上的日期清楚可见。",
+          "day": "院内晾架投下短影，厨房用品按格归位。",
+          "evening": "公共灯照着走廊，门边的收纳箱留有空位。",
+          "night": "住舍的灯光调暗，公共座位与通道仍然可以使用。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "早市蔬果行"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。称量台、收据夹和短时存放架排在公共通道两旁。\n\n竹筐沿街排开，价牌用石块压住，秤砣挂在摊主腕绳上。\n告示板下沿钉孔密布，旧钉眼已锈成褐斑。",
+        "economy": [
+          "食物密封分装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.tidal.market",
+      "kind": "event",
+      "data": {
+        "label": "核对空筐与收据",
+        "prompt": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。\n\n市场公共区的空筐编号需要与交接收据核对。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你核对了编号，把待确认的收据交回值班桌。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.market.annex",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "布头零剪摊"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。称量台、收据夹和短时存放架排在公共通道两旁。连廊边设置了短时交接台，与主通道相接。\n\n木箱分色装布头，剪刀挂绳防丢，顾客可自行比对色差。\n桌面水杯圈叠成半环，最新一圈还泛潮。",
+        "economy": [
+          "食物密封分装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩",
+          "烘焙师"
+        ],
+        "ambience": {
+          "morning": "遮棚下的价目板与空货筐都放在容易看见的位置。",
+          "day": "称量台上的刻度反着光，收据夹用绳子固定。",
+          "evening": "储货架旁亮起低灯，封口工具收在台边。",
+          "night": "摊架合拢了部分围板，公共通道和休息座位仍留着。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "楼下裁缝铺"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。工具按用途放在可够到的架上，接单区与设备区分开。\n\n楼下临街作裁缝铺，楼上住人，橱窗挂着样衣。\n信箱口边缘被信封角磨出浅白豁口。",
+        "economy": [
+          "浮架连接检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.tidal.workshop",
+      "kind": "event",
+      "data": {
+        "label": "整理工具借用卡",
+        "prompt": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。\n\n工坊的公共工具借用卡需要按编号归位。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你将借用卡与空位标记一一对应，留下清楚的交接记录。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.workshop.annex",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "篾编敞开间"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。工具按用途放在可够到的架上，接单区与设备区分开。连廊边设置了短时交接台，与主通道相接。\n\n三面敞开的篾编间，方便搬运竹料，顶棚遮阳。\n黑板下方粉笔灰积成一小堆，鞋尖蹭过散开。",
+        "economy": [
+          "浮架连接检修",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工",
+          "缝补工",
+          "水务工"
+        ],
+        "ambience": {
+          "morning": "斜光照在工具轮廓板上，工单夹按编号排列。",
+          "day": "工作灯照亮检视台，公共区与设备区的标线清晰。",
+          "evening": "工具轮廓板旁亮起交接灯，柜门上的编号没有变化。",
+          "night": "设备区的门关着，公共前廊仍然留有照明与座位。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.tidal.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "邻里诊疗廊"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。护理座位、清洁用品架和公开适配流程各有标识。\n\n长廊设隔帘诊位，药柜矮柜方便取用，等候椅间距疏朗。\n长凳两端坐面比中间更深凹，边缘圆滑。",
+        "economy": [
+          "护理用品防潮整理",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.tidal.clinic",
+      "kind": "event",
+      "data": {
+        "label": "整理公开适配说明",
+        "prompt": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。\n\n护理站的公开说明册需要按版本号整理。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你保留原册，将新版和存档版分别放进标识清楚的格子。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "lexicon.place.tidal.clinic.annex",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "复健扶手廊"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。护理座位、清洁用品架和公开适配流程各有标识。连廊边设置了短时交接台，与主通道相接。\n\n两侧木扶手高度不一，地面画脚位提示但不强制。\n窗框内侧夹着未读完的小报，页角折起。",
+        "economy": [
+          "护理用品防潮整理",
+          "身体适配"
+        ],
+        "professions": [
+          "护理员",
+          "交接信使"
+        ],
+        "ambience": {
+          "morning": "护理区的窗帘透进柔光，公开说明册摆在桌边。",
+          "day": "清洁用品的封签清晰，恢复座位旁留有饮水。",
+          "evening": "走廊灯光渐暖，公开适配流程仍可查阅。",
+          "night": "护理区外廊亮着低灯，免费恢复座位仍然开放。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "议事厅"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。公共消息板只登记可公开的信息，旁边有路线与资料桌。\n\n村里议事的厅屋，正中长桌，四壁挂着旧年历。\n长椅扶手上刻着浅浅的井字，线条发旧。",
+        "economy": [
+          "栈桥去向核对",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.tidal.commons",
+      "kind": "event",
+      "data": {
+        "label": "更新公共资料索引",
+        "prompt": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。\n\n公共厅的资料索引需要核对页码。你可以协助，也可以先继续自己的安排。",
+        "completeText": "你补全核实过的页码，未找到的资料单独记在待查栏。",
+        "minutes": 20,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.place.tidal.commons.annex",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "邮驿小站"
+        ],
+        "description": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。公共消息板只登记可公开的信息，旁边有路线与资料桌。连廊边设置了短时交接台，与主通道相接。\n\n收发信件的小站，柜台后排着鸽笼式信格。\n门口贴过春联的位置留下浅浅的胶痕方框。",
+        "economy": [
+          "栈桥去向核对",
+          "公共资料交接"
+        ],
+        "professions": [
+          "交接信使",
+          "档案整理员",
+          "园艺工"
+        ],
+        "ambience": {
+          "morning": "消息板旁的晨光照出纸张的纹理，路线图固定在框内。",
+          "day": "公共桌面留着阅读空位，资料卡分门别类。",
+          "evening": "交接灯亮起来，消息板边缘的阴影缓缓移动。",
+          "night": "公共厅降低灯光，出入口标识和长凳仍能辨认。"
+        }
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.tidal.care",
+      "kind": "faction",
+      "data": {
+        "name": "栈桥互助会",
+        "activities": [
+          "免费座位维护",
+          "公共照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.faction.tidal.trade",
+      "kind": "faction",
+      "data": {
+        "name": "浮架工联",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.tidal",
+      "kind": "event",
+      "data": {
+        "label": "复核防潮箱编号",
+        "prompt": "值班人请你在公共区对照防潮箱编号和交接单，箱内物件不需要打开。你可以帮忙，也可以先离开。",
+        "completeText": "你核对了编号与交接去向，标出不一致项交给值班人。",
+        "minutes": 15,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.event.tidal.maintenance",
+      "kind": "event",
+      "data": {
+        "label": "复核公共通道标识",
+        "prompt": "抬高的公共通道设有排水缝，栏杆旁留出搬运与停步的空位。\n\n值班人请你对照公开图纸检查通道标识，沿途不需要进入私人区域。也可以先离开。",
+        "completeText": "你只记录了实际看到的标识，将待核实的部分交回值班桌。",
+        "minutes": 20,
+        "reward": 4
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.tidal"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.tidal",
+      "kind": "activity",
+      "data": {
+        "label": "沿高脚通道辨认路口",
+        "description": "你沿有护栏的公共通道观察路口与排水缝，回到干燥的平台。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "walk"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.home.meal",
+      "kind": "activity",
+      "data": {
+        "label": "吃一份公共厨房简餐",
+        "description": "你按公开价目取了一份简餐，在指定座位慢慢吃完并收好餐具。",
+        "minutes": 20,
+        "energyChange": 8,
+        "moneyChange": -2,
+        "healthChange": 2,
+        "capabilities": []
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.home.laundry",
+      "kind": "activity",
+      "data": {
+        "label": "整理衣物与工作用品",
+        "description": "你整理工作用品，把暂时用不到的物件收好，留出活动空间。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.home"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.home.kitchen",
+      "kind": "activity",
+      "data": {
+        "label": "协助清点厨房用品",
+        "description": "你按轮值要求清点公用餐具，核对结果后收到约定的报酬。",
+        "minutes": 25,
+        "energyChange": -4,
+        "moneyChange": 3,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.market.food",
+      "kind": "activity",
+      "data": {
+        "label": "尝一份摊位热食",
+        "description": "你按标价买了热食，坐在公共座位吃完，精力逐渐恢复。",
+        "minutes": 15,
+        "energyChange": 8,
+        "moneyChange": -3,
+        "healthChange": 1,
+        "capabilities": []
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.market.sorting",
+      "kind": "activity",
+      "data": {
+        "label": "参与空筐分类",
+        "description": "你将公共区的空筐按编号分类，与值班人核对后领取报酬。",
+        "minutes": 25,
+        "energyChange": -5,
+        "moneyChange": 5,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.market"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.market.prices",
+      "kind": "activity",
+      "data": {
+        "label": "阅读公开价目与交接板",
+        "description": "你看过公开价目和交接信息，对市场眼下的安排多了一点了解。",
+        "minutes": 15,
+        "energyChange": 2,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": []
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.workshop.labels",
+      "kind": "activity",
+      "data": {
+        "label": "核对公共工具标签",
+        "description": "你在公共区核对工具标签，记录不一致项，完成后收到报酬。",
+        "minutes": 30,
+        "energyChange": -6,
+        "moneyChange": 6,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.workshop.bench",
+      "kind": "activity",
+      "data": {
+        "label": "清理公共检视台",
+        "description": "你收好不用的夹具，按要求擦拭检视台，完成一段有报酬的整理工作。",
+        "minutes": 25,
+        "energyChange": -4,
+        "moneyChange": 4,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.workshop.manual",
+      "kind": "activity",
+      "data": {
+        "label": "阅读工具使用说明",
+        "description": "你在公共阅读区看过工具说明，合上册子后活动了一下身体。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": []
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.clinic.recovery",
+      "kind": "activity",
+      "data": {
+        "label": "使用免费恢复座位",
+        "description": "你按公开说明使用恢复座位，补充饮水后慢慢恢复体况。",
+        "minutes": 45,
+        "energyChange": 8,
+        "moneyChange": 0,
+        "healthChange": 6,
+        "capabilities": []
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.clinic.supplies",
+      "kind": "activity",
+      "data": {
+        "label": "协助清点封装用品",
+        "description": "你在公共区域核对未拆封用品的编号，交接后收到报酬。",
+        "minutes": 30,
+        "energyChange": -4,
+        "moneyChange": 4,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.clinic.care",
+      "kind": "activity",
+      "data": {
+        "label": "了解当前身体的日常照护",
+        "description": "你阅读与日常照护有关的公开说明，在座位上休息了一会儿。",
+        "minutes": 20,
+        "energyChange": 4,
+        "moneyChange": 0,
+        "healthChange": 2,
+        "capabilities": []
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.commons.reading",
+      "kind": "activity",
+      "data": {
+        "label": "在公共资料桌阅读",
+        "description": "你选了公开的资料卡，安静读过一段，再把它放回原位。",
+        "minutes": 25,
+        "energyChange": 5,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": []
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.commons.archive",
+      "kind": "activity",
+      "data": {
+        "label": "协助整理公共索引",
+        "description": "你按索引号归置资料卡，交给轮值人复核并领取报酬。",
+        "minutes": 30,
+        "energyChange": -3,
+        "moneyChange": 4,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [
+        "service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.activity.commons.walk",
+      "kind": "activity",
+      "data": {
+        "label": "沿公共通道散步",
+        "description": "你沿有标识的公共通道走过一段，在座位上停下来整理思绪。",
+        "minutes": 20,
+        "energyChange": 3,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "walk"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.vendor",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.vendor"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.electrician",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.electrician"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.courier",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.courier"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.baker",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.baker"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.stitcher",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.stitcher"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.nurse",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.nurse"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.archivist",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.archivist"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.gardener",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.gardener"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 20,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/neighborhood-lexicon"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "lexicon.npc.neighborhood.waterworker",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lexicon:resident.waterworker"
+      }
+    }
+  ]
+}

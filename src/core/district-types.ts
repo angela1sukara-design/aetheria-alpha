@@ -9,6 +9,8 @@ export interface ResidentTemplate {
   appearance: string[]; personality: string[]; behavior: 'trade' | 'repair' | 'guide';
   speciesId: Id; ageYears: number; bodyTemplateId: Id; patchIds: Id[];
   dialogue?: { intro: string; repeat: string; help: string };
+  /** 经编辑适配的服装文字；不定义身体部件、装备属性或能力。生成时抽定并保存。 */
+  attire?: string[];
 }
 export interface Resident {
   id: string; templateId: Id; name: string; locationId: Id; profession: string; appearance: string; personality: string;

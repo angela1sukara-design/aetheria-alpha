@@ -67,5 +67,6 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
   if (r.lastTalkDay !== day) { r.visits++; r.trust++; r.lastTalkDay = day; r.memories.push(`talk:${day}`); }
   r.persistent = r.visits >= 2 || r.trust >= 2;
   const speech = r.visits > 1 ? t.dialogue?.repeat ?? '“又见面了。上次那条路还好走吗？”对方记得你们曾经的交谈。' : t.dialogue?.intro ?? '对方报出名字，说这片街区总有人需要搭一把手。';
-  return `${r.name}，${r.profession}，${r.appearance}，说话${r.personality}。${speech}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : '你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
+  const sentence = (text: string) => /[。！？]$/.test(text) ? text : text + '。';
+  return `${r.name}，${r.profession}，${sentence(r.appearance)}性情：${sentence(r.personality)}${speech}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : '你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
 }

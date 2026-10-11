@@ -39,19 +39,19 @@ export async function inventory(project) {
   refs.sceneText.push(...(p.sceneTexts??[]).map(s=>s.textKey));
  }
  const textUses=Object.fromEntries(Object.entries(refs).map(([k,v])=>[k,{references:v.length,uniqueTextKeys:new Set(v).size}]));
- const referenceFiles=['content/generation/reference.json','content/generation/addon-reference.json'];
+ const referenceFiles=['content/generation/reference.json','content/generation/lexicon-reference.json','content/generation/addon-reference.json'];
  const references=[];
  for(const file of referenceFiles) {
   const p=await load(file);
   const templates=p.templates,places=templates.filter(t=>t.kind==='place'),environments=templates.filter(t=>t.kind==='environment');
   references.push({file,id:p.id,version:p.version,templates:templates.length,
-   byKind:Object.fromEntries(['environment','place','npc','faction','event'].map(k=>[k,templates.filter(t=>t.kind===k).length])),
+   byKind:Object.fromEntries(['environment','place','npc','faction','event','activity'].map(k=>[k,templates.filter(t=>t.kind===k).length])),
    textFields:{placeNames:count(places.flatMap(t=>t.data.names)),placeDescriptions:count(places.map(t=>t.data.description)),
     environmentDescriptions:count(environments.map(t=>t.data.description)),professions:count(places.flatMap(t=>t.data.professions)),economicActivities:count(places.flatMap(t=>t.data.economy))},
   });
  }
  const optional=[];
- for(const file of ['content/extension-event/pack.json','content/generation/addon-content.json']) {
+ for(const file of ['content/extension-event/pack.json','content/generation/neighborhood-content.json','content/generation/lexicon-content.json','content/generation/addon-content.json']) {
   const p=await load(file);optional.push({file,id:p.manifest.id,version:p.manifest.version,textKeys:Object.keys(p.texts).length,events:p.events.length,residentTemplates:(p.residentTemplates??[]).length,loadedByDefault:false});
  }
  const prose=await load('content/author-example/text-pack.json');
@@ -62,6 +62,6 @@ export async function inventory(project) {
    'uniqueNormalized 仅合并 Unicode/空白/标点/大小写相同的文本，不等于语义去重。不同字段的独立计数不能直接相加。',
    '事件节点正文包含上下文，不能直接随机拼接。NPC/身体定义数量表示机制定义数，不表示基础词条数。',
    '参考包有规则字段，不能整包搬进新词库；本轮没有自动拆解、抄入或改写任何既有剧情。',
-   '新增词库正式收录与游戏使用均从零计；示例另存，不冒充生产成果。',
+   '正式词库收录、审定与使用另见 management/index.json；本盘点统计运行内容字段，示例不计入词库库存。',
   ]};
 }

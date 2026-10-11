@@ -10,7 +10,7 @@ import { advanceWorldSimulation } from './simulation.ts';
 import { hash, integer, parseReference, parseRules } from './schema.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
-export const GENERATOR_VERSION = '0.2.0';
+export const GENERATOR_VERSION = '0.2.1';
 const id = (key: string): Id => `worldgen:${key}`;
 
 /** 生成器只创建初始快照。所有玩法编译成已有内容 DSL，并经过同一个 loader。 */
@@ -173,6 +173,11 @@ export class WorldGenerator {
       // 旧模板外观可能包含与补丁无关的肢体描写；生成外观从真实图读取，避免虚构部件。
       const parts = initialBody.parts.map(p => input.registry.bodyPart(p.definitionId));
       template.appearance = [`${[...new Set(parts.filter(p => p.kind === 'ear' || p.kind === 'tail').map(p => p.label))].join('、') || input.registry.bodyTemplate(template.bodyTemplateId).label}，带着${template.profession}的工作用品`];
+      if (source.attire) {
+        // 服装与真实身体描述分开：不把外观词条误当成已安装的器官或 TF。
+        template.attire = [pick(source.attire, `npc.attire.${i}`)];
+        template.appearance[0] += `。衣着：${template.attire[0]}`;
+      }
       pack.residentTemplates!.push(template);
       const home = pick(residences, `home.${i}`), rest = pick(leisure, `leisure.${i}`);
       agents.push({ residentId: `resident:${work.id}:${template.id}`, originLocationId: work.id, factionId: work.factionId, relationships: [], schedule: schedule(rules, home.id, work.id, rest.id) });

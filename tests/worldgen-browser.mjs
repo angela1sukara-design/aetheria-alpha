@@ -25,6 +25,8 @@ try {
     await snapshot(page,'fixed-initial');
     await click(page, '世界'); await page.locator('#world-seed').fill('42'); await click(page, '生成并进入街区');
     await page.locator('#scene-subtitle').filter({hasText:worldName(42)}).waitFor(); initial = await snapshot(page,'seed42-initial'); assert.equal(initial.worldInstance.generation.seed,42);assert.equal(initial.district.residents.length,9);
+    assert.ok(initial.worldInstance.generation.contentPacks.some(p=>p.id==='aetheria/neighborhood-lexicon'));
+    assert.ok(initial.district.residents.every(r=>r.appearance.includes('衣着：')));
   });
   await check('地图只显示本世界7个地点，查看地图和人物不改状态，手机菜单可用', async () => {
     await click(page,'地图'); assert.equal(await page.locator('#map-content .map-label').count(),7);assert.doesNotMatch(await page.locator('#map-content').innerText(),/薇尔维特|回声机械/);await click(page,'关闭地图');
@@ -46,6 +48,8 @@ try {
     const before=await snapshot(page,'before-browsing');
     await act('worldgen:action.meet.0');await act('worldgen:action.meet.0');
     const browsed=await snapshot(page,'after-browsing');
+    assert.match(await page.locator('#resident-nearby').innerText(),/衣着：.*性情：/s);
+    assert.doesNotMatch(await page.locator('#resident-nearby').innerText(),/。。|。；/);
     assert.equal(browsed.activeEventStack.length,0);assert.ok(browsed.district.currentResidentId);
     assert.deepEqual(browsed.rng,before.rng);assert.deepEqual(browsed.clock,before.clock);assert.deepEqual(browsed.district.storyletHistory,before.district.storyletHistory);
     assert.match(await page.locator('#resident-nearby').innerText(),/位居民停留/);

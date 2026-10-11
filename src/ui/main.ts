@@ -39,7 +39,7 @@ async function boot(): Promise<void> {
     registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry, fixedRegistry); saves = new SaveRepository(codec, store);
     engine = new ActionExecutor(registry, loaded.state, texts);
   }
-  const generation = embedded?.generation ?? { rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/reference.json', import.meta.url)), content: [await fetchJSON(new URL('../../content/generation/neighborhood-content.json', import.meta.url))] };
+  const generation = embedded?.generation ?? { rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/lexicon-reference.json', import.meta.url)), content: await Promise.all(['neighborhood-content','lexicon-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))) };
   mountWorldControls({ source: () => fixedRegistry, defaults: generation, isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {
     if (generated) adopt({ state: generated.state, registry: generated.registry });
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });

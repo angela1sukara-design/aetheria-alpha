@@ -244,35 +244,72 @@
     {
       "file": "content/generation/reference.json",
       "id": "aetheria/neighborhood-reference",
-      "version": "0.1.0",
-      "templates": 21,
+      "version": "0.2.0",
+      "templates": 152,
       "byKind": {
-        "environment": 2,
-        "place": 10,
-        "npc": 3,
-        "faction": 4,
-        "event": 2
+        "environment": 6,
+        "place": 60,
+        "npc": 11,
+        "faction": 12,
+        "event": 42,
+        "activity": 21
       },
       "textFields": {
         "placeNames": {
-          "occurrences": 20,
-          "uniqueNormalized": 20
+          "occurrences": 120,
+          "uniqueNormalized": 120
         },
         "placeDescriptions": {
-          "occurrences": 10,
-          "uniqueNormalized": 10
+          "occurrences": 60,
+          "uniqueNormalized": 60
         },
         "environmentDescriptions": {
-          "occurrences": 2,
-          "uniqueNormalized": 2
+          "occurrences": 6,
+          "uniqueNormalized": 6
         },
         "professions": {
-          "occurrences": 10,
-          "uniqueNormalized": 3
+          "occurrences": 156,
+          "uniqueNormalized": 9
         },
         "economicActivities": {
-          "occurrences": 20,
-          "uniqueNormalized": 18
+          "occurrences": 120,
+          "uniqueNormalized": 35
+        }
+      }
+    },
+    {
+      "file": "content/generation/lexicon-reference.json",
+      "id": "aetheria/neighborhood-lexicon-reference",
+      "version": "1.0.0",
+      "templates": 150,
+      "byKind": {
+        "environment": 6,
+        "place": 60,
+        "npc": 9,
+        "faction": 12,
+        "event": 42,
+        "activity": 21
+      },
+      "textFields": {
+        "placeNames": {
+          "occurrences": 60,
+          "uniqueNormalized": 17
+        },
+        "placeDescriptions": {
+          "occurrences": 60,
+          "uniqueNormalized": 60
+        },
+        "environmentDescriptions": {
+          "occurrences": 6,
+          "uniqueNormalized": 6
+        },
+        "professions": {
+          "occurrences": 156,
+          "uniqueNormalized": 9
+        },
+        "economicActivities": {
+          "occurrences": 120,
+          "uniqueNormalized": 35
         }
       }
     },
@@ -286,7 +323,8 @@
         "place": 1,
         "npc": 1,
         "faction": 0,
-        "event": 0
+        "event": 0,
+        "activity": 0
       },
       "textFields": {
         "placeNames": {
@@ -320,6 +358,24 @@
       "textKeys": 3,
       "events": 1,
       "residentTemplates": 0,
+      "loadedByDefault": false
+    },
+    {
+      "file": "content/generation/neighborhood-content.json",
+      "id": "aetheria/neighborhood-content",
+      "version": "0.2.0",
+      "textKeys": 0,
+      "events": 0,
+      "residentTemplates": 9,
+      "loadedByDefault": false
+    },
+    {
+      "file": "content/generation/lexicon-content.json",
+      "id": "aetheria/neighborhood-lexicon",
+      "version": "1.0.0",
+      "textKeys": 0,
+      "events": 0,
+      "residentTemplates": 9,
       "loadedByDefault": false
     },
     {
@@ -367,7 +423,11 @@
     },
     {
       "file": "content/generation/reference.json",
-      "sha256": "1bbaee36fe5171dcd365187341ccb47d4fef19263859aacc9b725056768b9c14"
+      "sha256": "b2a85839eb78f537c8270e7dc95b6403591f178c9f66b51c5ca8d11ae31c3d8d"
+    },
+    {
+      "file": "content/generation/lexicon-reference.json",
+      "sha256": "8da282bb6d039b839fa32f97e780d98c3c13c726b977b25411ffba6dc9c75524"
     },
     {
       "file": "content/generation/addon-reference.json",
@@ -376,6 +436,14 @@
     {
       "file": "content/extension-event/pack.json",
       "sha256": "bb21aa627a70cfe9eb3b62eda5e10cd19a1c9b64ac884de98875597fcf08174b"
+    },
+    {
+      "file": "content/generation/neighborhood-content.json",
+      "sha256": "3511486ac6335ea87c471c6540d60ae43ca7c9f7e1a93e428efeb25dc63f6a6d"
+    },
+    {
+      "file": "content/generation/lexicon-content.json",
+      "sha256": "7d5a848fafee92543f1b73c8b908be7ea92f133fd86d47b0e482bf0c03fb2a8e"
     },
     {
       "file": "content/generation/addon-content.json",
@@ -391,6 +459,6 @@
     "uniqueNormalized 仅合并 Unicode/空白/标点/大小写相同的文本，不等于语义去重。不同字段的独立计数不能直接相加。",
     "事件节点正文包含上下文，不能直接随机拼接。NPC/身体定义数量表示机制定义数，不表示基础词条数。",
     "参考包有规则字段，不能整包搬进新词库；本轮没有自动拆解、抄入或改写任何既有剧情。",
-    "新增词库正式收录与游戏使用均从零计；示例另存，不冒充生产成果。"
+    "正式词库收录、审定与使用另见 management/index.json；本盘点统计运行内容字段，示例不计入词库库存。"
   ]
 }

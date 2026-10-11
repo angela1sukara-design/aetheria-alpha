@@ -11,7 +11,7 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (w.version !== 1) throw Error('世界实例版本不支持。');
   const g = w.generation;
   object(g, ['generatorVersion', 'seed', 'rules', 'rulesHash', 'references', 'contentPacks', 'parameters', 'selectedTemplateIds']);
-  if (!['0.1.0', '0.2.0'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
+  if (!['0.1.0', '0.2.0', '0.2.1'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
   integer(g.seed, 0, 0xffffffff); if (g.seed !== state.rng.seed) throw Error('世界种子不一致。');
   parseRules(g.rules); const hashString = (v: unknown) => { if (typeof v !== 'string' || !/^[a-f0-9]{64}$/.test(v)) throw Error('世界来源哈希无效。'); };
   hashString(g.rulesHash);

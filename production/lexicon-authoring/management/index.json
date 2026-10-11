@@ -4,7 +4,7 @@
   "totals": {
     "collected": 10700,
     "approved": 108,
-    "used": 0
+    "used": 108
   },
   "libraries": [
     {
@@ -12,7 +12,7 @@
       "target": 400,
       "collected": 400,
       "approved": 40,
-      "used": 0
+      "used": 40
     },
     {
       "library": "npc-alias",
@@ -54,7 +54,7 @@
       "target": 200,
       "collected": 200,
       "approved": 20,
-      "used": 0
+      "used": 20
     },
     {
       "library": "npc-habit",
@@ -180,7 +180,7 @@
       "target": 200,
       "collected": 200,
       "approved": 17,
-      "used": 0
+      "used": 17
     },
     {
       "library": "body-accessory",
@@ -201,14 +201,14 @@
       "target": 200,
       "collected": 200,
       "approved": 10,
-      "used": 0
+      "used": 10
     },
     {
       "library": "world-room",
       "target": 150,
       "collected": 150,
       "approved": 3,
-      "used": 0
+      "used": 3
     },
     {
       "library": "world-district",
@@ -243,7 +243,7 @@
       "target": 200,
       "collected": 200,
       "approved": 4,
-      "used": 0
+      "used": 4
     },
     {
       "library": "world-object",
@@ -264,7 +264,7 @@
       "target": 300,
       "collected": 300,
       "approved": 10,
-      "used": 0
+      "used": 10
     },
     {
       "library": "world-scent",
@@ -348,7 +348,7 @@
       "target": 200,
       "collected": 200,
       "approved": 4,
-      "used": 0
+      "used": 4
     },
     {
       "library": "text-reply",
@@ -4919,7 +4919,7 @@
       "subcategory": "短名",
       "summary": "桐溪",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0002",
@@ -4927,7 +4927,7 @@
       "subcategory": "短名",
       "summary": "晏秋",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0003",
@@ -4935,7 +4935,7 @@
       "subcategory": "短名",
       "summary": "禾岸",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0004",
@@ -4943,7 +4943,7 @@
       "subcategory": "短名",
       "summary": "岑白",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0005",
@@ -4951,7 +4951,7 @@
       "subcategory": "短名",
       "summary": "琚宁",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0006",
@@ -4959,7 +4959,7 @@
       "subcategory": "短名",
       "summary": "沐衡",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0007",
@@ -4967,7 +4967,7 @@
       "subcategory": "短名",
       "summary": "荇舟",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0008",
@@ -4975,7 +4975,7 @@
       "subcategory": "短名",
       "summary": "砚澄",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0009",
@@ -4983,7 +4983,7 @@
       "subcategory": "短名",
       "summary": "苔青",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0010",
@@ -4991,7 +4991,7 @@
       "subcategory": "短名",
       "summary": "岚川",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0011",
@@ -5159,7 +5159,7 @@
       "subcategory": "全名",
       "summary": "沈桐溪",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0032",
@@ -5167,7 +5167,7 @@
       "subcategory": "全名",
       "summary": "顾晏秋",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0033",
@@ -5175,7 +5175,7 @@
       "subcategory": "全名",
       "summary": "陆禾岸",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0034",
@@ -5183,7 +5183,7 @@
       "subcategory": "全名",
       "summary": "裴岑白",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0035",
@@ -5191,7 +5191,7 @@
       "subcategory": "全名",
       "summary": "贺琚宁",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0036",
@@ -5199,7 +5199,7 @@
       "subcategory": "全名",
       "summary": "尹沐衡",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0037",
@@ -5207,7 +5207,7 @@
       "subcategory": "全名",
       "summary": "祁荇舟",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0038",
@@ -5215,7 +5215,7 @@
       "subcategory": "全名",
       "summary": "蓝砚澄",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0039",
@@ -5223,7 +5223,7 @@
       "subcategory": "全名",
       "summary": "温苔青",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0040",
@@ -5231,7 +5231,7 @@
       "subcategory": "全名",
       "summary": "方岚川",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0001.0041",
@@ -5719,7 +5719,7 @@
       "subcategory": "短名",
       "summary": "苔舟",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0002",
@@ -5727,7 +5727,7 @@
       "subcategory": "短名",
       "summary": "渠青",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0003",
@@ -5735,7 +5735,7 @@
       "subcategory": "短名",
       "summary": "雨汀",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0004",
@@ -5743,7 +5743,7 @@
       "subcategory": "短名",
       "summary": "蕨白",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0005",
@@ -5751,7 +5751,7 @@
       "subcategory": "短名",
       "summary": "萍衡",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0006",
@@ -5759,7 +5759,7 @@
       "subcategory": "短名",
       "summary": "潮宁",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0007",
@@ -5767,7 +5767,7 @@
       "subcategory": "短名",
       "summary": "芦溪",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0008",
@@ -5959,7 +5959,7 @@
       "subcategory": "全名",
       "summary": "江苔舟",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0032",
@@ -5967,7 +5967,7 @@
       "subcategory": "全名",
       "summary": "池渠青",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0033",
@@ -5975,7 +5975,7 @@
       "subcategory": "全名",
       "summary": "浦雨汀",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0034",
@@ -5983,7 +5983,7 @@
       "subcategory": "全名",
       "summary": "泽蕨白",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0035",
@@ -5991,7 +5991,7 @@
       "subcategory": "全名",
       "summary": "杭萍衡",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0036",
@@ -5999,7 +5999,7 @@
       "subcategory": "全名",
       "summary": "闵潮宁",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0037",
@@ -6007,7 +6007,7 @@
       "subcategory": "全名",
       "summary": "荀芦溪",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0003.0038",
@@ -6119,7 +6119,7 @@
       "subcategory": "短名",
       "summary": "石衡",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0004.0002",
@@ -6151,7 +6151,7 @@
       "subcategory": "短名",
       "summary": "风宁",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0004.0006",
@@ -6191,7 +6191,7 @@
       "subcategory": "短名",
       "summary": "远青",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0004.0011",
@@ -6359,7 +6359,7 @@
       "subcategory": "全名",
       "summary": "岳石衡",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0004.0032",
@@ -6391,7 +6391,7 @@
       "subcategory": "全名",
       "summary": "边风宁",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0004.0036",
@@ -6431,7 +6431,7 @@
       "subcategory": "全名",
       "summary": "乔远青",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-name.b0004.0041",
@@ -15719,7 +15719,7 @@
       "subcategory": "处事倾向",
       "summary": "先问再帮",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0002",
@@ -15727,7 +15727,7 @@
       "subcategory": "处事倾向",
       "summary": "小事立刻做",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0003",
@@ -15735,7 +15735,7 @@
       "subcategory": "处事倾向",
       "summary": "排队不插话",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0004",
@@ -15743,7 +15743,7 @@
       "subcategory": "处事倾向",
       "summary": "留余量安排",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0005",
@@ -15751,7 +15751,7 @@
       "subcategory": "处事倾向",
       "summary": "公开场合低调",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0006",
@@ -15759,7 +15759,7 @@
       "subcategory": "处事倾向",
       "summary": "记录再决定",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0007",
@@ -15767,7 +15767,7 @@
       "subcategory": "处事倾向",
       "summary": "先照顾弱者",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0008",
@@ -15775,7 +15775,7 @@
       "subcategory": "处事倾向",
       "summary": "错了即改口",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0009",
@@ -15783,7 +15783,7 @@
       "subcategory": "处事倾向",
       "summary": "分工说清楚",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0010",
@@ -15791,7 +15791,7 @@
       "subcategory": "处事倾向",
       "summary": "结束要收尾",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0011",
@@ -15799,7 +15799,7 @@
       "subcategory": "表达倾向",
       "summary": "短句说重点",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0012",
@@ -15807,7 +15807,7 @@
       "subcategory": "表达倾向",
       "summary": "比喻用日常物",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0013",
@@ -15815,7 +15815,7 @@
       "subcategory": "表达倾向",
       "summary": "先听完再答",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0014",
@@ -15823,7 +15823,7 @@
       "subcategory": "表达倾向",
       "summary": "语气偏温和",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0015",
@@ -15831,7 +15831,7 @@
       "subcategory": "表达倾向",
       "summary": "爱用确认问句",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0016",
@@ -15839,7 +15839,7 @@
       "subcategory": "表达倾向",
       "summary": "书面更清楚",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0017",
@@ -15847,7 +15847,7 @@
       "subcategory": "表达倾向",
       "summary": "沉默当思考",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0018",
@@ -15855,7 +15855,7 @@
       "subcategory": "表达倾向",
       "summary": "举例说明习惯",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0019",
@@ -15863,7 +15863,7 @@
       "subcategory": "表达倾向",
       "summary": "夸奖具体化",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0020",
@@ -15871,7 +15871,7 @@
       "subcategory": "表达倾向",
       "summary": "道歉不含糊",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.npc-trait.b0001.0021",
@@ -40919,7 +40919,7 @@
       "subcategory": "工作服",
       "summary": "多袋帆布褂",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0002",
@@ -40927,7 +40927,7 @@
       "subcategory": "工作服",
       "summary": "护肘厚袖衣",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0003",
@@ -40935,7 +40935,7 @@
       "subcategory": "工作服",
       "summary": "开叉站柜裙",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0004",
@@ -40943,7 +40943,7 @@
       "subcategory": "工作服",
       "summary": "绑带厨围",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0005",
@@ -40959,7 +40959,7 @@
       "subcategory": "工作服",
       "summary": "膝垫工作裤",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0007",
@@ -40967,7 +40967,7 @@
       "subcategory": "工作服",
       "summary": "袖箍清洁衣",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0008",
@@ -40975,7 +40975,7 @@
       "subcategory": "工作服",
       "summary": "肩袢搬运背心",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0009",
@@ -40983,7 +40983,7 @@
       "subcategory": "工作服",
       "summary": "防溅店员袍",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0010",
@@ -40999,7 +40999,7 @@
       "subcategory": "日常服",
       "summary": "圆领棉家衫",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0012",
@@ -41007,7 +41007,7 @@
       "subcategory": "日常服",
       "summary": "侧扣便装褂",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0013",
@@ -41015,7 +41015,7 @@
       "subcategory": "日常服",
       "summary": "松腰散步裤",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0014",
@@ -41023,7 +41023,7 @@
       "subcategory": "日常服",
       "summary": "短袖邻里衫",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0015",
@@ -41031,7 +41031,7 @@
       "subcategory": "日常服",
       "summary": "开襟午休袍",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0016",
@@ -41039,7 +41039,7 @@
       "subcategory": "日常服",
       "summary": "套头软毛衣",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0017",
@@ -41055,7 +41055,7 @@
       "subcategory": "日常服",
       "summary": "半袖对襟衫",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0019",
@@ -41063,7 +41063,7 @@
       "subcategory": "日常服",
       "summary": "家常束脚裤",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0020",
@@ -41071,7 +41071,7 @@
       "subcategory": "日常服",
       "summary": "贴袋日常裙",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.body-clothing.b0001.0021",
@@ -44919,7 +44919,7 @@
       "subcategory": "住宅",
       "summary": "灰瓦排屋",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0002",
@@ -44927,7 +44927,7 @@
       "subcategory": "住宅",
       "summary": "天井小院",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0003",
@@ -44951,7 +44951,7 @@
       "subcategory": "住宅",
       "summary": "邻墙借光屋",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0006",
@@ -44975,7 +44975,7 @@
       "subcategory": "住宅",
       "summary": "合住厢房",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0009",
@@ -45015,7 +45015,7 @@
       "subcategory": "作坊",
       "summary": "楼下裁缝铺",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0014",
@@ -45071,7 +45071,7 @@
       "subcategory": "作坊",
       "summary": "篾编敞开间",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0021",
@@ -45087,7 +45087,7 @@
       "subcategory": "公共建筑",
       "summary": "义学旧堂",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0023",
@@ -45095,7 +45095,7 @@
       "subcategory": "公共建筑",
       "summary": "集市廊棚",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0024",
@@ -45111,7 +45111,7 @@
       "subcategory": "公共建筑",
       "summary": "议事厅",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0026",
@@ -45135,7 +45135,7 @@
       "subcategory": "公共建筑",
       "summary": "邮驿小站",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-building.b0001.0029",
@@ -46615,7 +46615,7 @@
       "subcategory": "工作间",
       "summary": "修补桌边",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-room.b0001.0014",
@@ -46679,7 +46679,7 @@
       "subcategory": "公共内室",
       "summary": "共用客厅",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-room.b0001.0022",
@@ -46735,7 +46735,7 @@
       "subcategory": "公共内室",
       "summary": "药堂候诊室",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-room.b0001.0029",
@@ -53399,7 +53399,7 @@
       "subcategory": "交易场所",
       "summary": "早市蔬果行",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-workplace.b0001.0012",
@@ -53407,7 +53407,7 @@
       "subcategory": "交易场所",
       "summary": "布头零剪摊",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-workplace.b0001.0013",
@@ -53479,7 +53479,7 @@
       "subcategory": "照护场所",
       "summary": "邻里诊疗廊",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-workplace.b0001.0022",
@@ -53527,7 +53527,7 @@
       "subcategory": "照护场所",
       "summary": "复健扶手廊",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-workplace.b0001.0028",
@@ -57743,7 +57743,7 @@
       "subcategory": "磨损痕迹",
       "summary": "长凳两端坐面比中间更深凹，边缘圆滑。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0005",
@@ -57759,7 +57759,7 @@
       "subcategory": "磨损痕迹",
       "summary": "窗台外侧粉刷层起皮处露出旧年浅蓝底色。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0007",
@@ -57775,7 +57775,7 @@
       "subcategory": "磨损痕迹",
       "summary": "告示板下沿钉孔密布，旧钉眼已锈成褐斑。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0009",
@@ -57871,7 +57871,7 @@
       "subcategory": "临时摆放",
       "summary": "窗框内侧夹着未读完的小报，页角折起。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0021",
@@ -58039,7 +58039,7 @@
       "subcategory": "人类活动痕迹",
       "summary": "门垫上印着干了的泥点，鞋底花纹还能辨认。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0042",
@@ -58047,7 +58047,7 @@
       "subcategory": "人类活动痕迹",
       "summary": "桌面水杯圈叠成半环，最新一圈还泛潮。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0043",
@@ -58063,7 +58063,7 @@
       "subcategory": "人类活动痕迹",
       "summary": "信箱口边缘被信封角磨出浅白豁口。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0045",
@@ -58079,7 +58079,7 @@
       "subcategory": "人类活动痕迹",
       "summary": "长椅扶手上刻着浅浅的井字，线条发旧。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0047",
@@ -58087,7 +58087,7 @@
       "subcategory": "人类活动痕迹",
       "summary": "黑板下方粉笔灰积成一小堆，鞋尖蹭过散开。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0048",
@@ -58095,7 +58095,7 @@
       "subcategory": "人类活动痕迹",
       "summary": "门口贴过春联的位置留下浅浅的胶痕方框。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.world-detail.b0001.0049",
@@ -74839,7 +74839,7 @@
       "subcategory": "试探话题",
       "summary": "不知道你对旧地图上的记号感不感兴趣，我偶尔会描一描。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.text-opening.b0001.0042",
@@ -74863,7 +74863,7 @@
       "subcategory": "试探话题",
       "summary": "你平时更喜欢清早出门，还是傍晚散步？我只是随便问问。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.text-opening.b0001.0045",
@@ -74895,7 +74895,7 @@
       "subcategory": "试探话题",
       "summary": "有时候会想，住得近的人是不是更容易互相照应，你怎么看？",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.text-opening.b0001.0049",
@@ -74911,7 +74911,7 @@
       "subcategory": "试探话题",
       "summary": "若你愿意听，我可以说说上周集市上的一件小事；不愿意就算了。",
       "review": "approved",
-      "usageRecorded": false
+      "usageRecorded": true
     },
     {
       "id": "lx.text-opening.b0002.0001",
