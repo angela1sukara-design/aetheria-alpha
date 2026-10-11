@@ -1,0 +1,104 @@
+{
+  "manifest": {
+    "id": "slot-integration/example",
+    "namespace": "slotdemo",
+    "version": "1.0.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "Neutral slot integration fixture",
+    "status": "draft",
+    "dependencies": [
+      { "id": "engine/core", "version": "0.1.0", "optional": false },
+      { "id": "aetheria/world", "version": "0.1.0", "optional": false },
+      { "id": "aetheria/social", "version": "0.1.0", "optional": false },
+      { "id": "aetheria/district", "version": "0.2.0", "optional": false }
+    ],
+    "requiresCapabilities": ["condition.v1", "effect.v1", "event.choice.v1", "hook.action.v1", "npc.fixed.v1", "district.v1"],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [{ "id": "slotdemo:flag.ready", "initial": true }],
+  "hooks": [{ "id": "slotdemo:hook.tester", "accepts": "action", "visibility": "public" }],
+  "locations": [],
+  "routes": [],
+  "actions": [
+    {
+      "id": "slotdemo:action.open",
+      "label": "验证可选正文槽",
+      "hint": "进入中性接口测试；可随时结束",
+      "group": "daily",
+      "conditions": [
+        { "op": "npc.present", "npcId": "slotdemo:npc.tester" },
+        { "op": "player.created", "value": true },
+        { "op": "flag.has", "id": "slotdemo:flag.ready", "value": true }
+      ],
+      "effects": [{ "op": "event.start", "id": "slotdemo:event.placeholder" }],
+      "resultText": "slotdemo:text.open"
+    },
+    {
+      "id": "slotdemo:action.close",
+      "label": "结束验证",
+      "hint": "无条件返回原有游戏",
+      "group": "event",
+      "context": { "eventId": "slotdemo:event.placeholder", "nodeId": "start" },
+      "conditions": [],
+      "effects": [{ "op": "event.advance", "nodeId": "end" }],
+      "resultText": "slotdemo:text.close"
+    }
+  ],
+  "events": [
+    {
+      "id": "slotdemo:event.placeholder",
+      "startNode": "start",
+      "participantIds": ["slotdemo:npc.tester"],
+      "rating": "general",
+      "nodes": [
+        { "id": "start", "type": "choice", "textVariants": ["slotdemo:text.fallback"], "actionIds": ["slotdemo:action.close"], "onEnter": [] },
+        { "id": "end", "type": "exit", "textVariants": ["slotdemo:text.close"], "actionIds": [], "onEnter": [{ "op": "event.exit" }] }
+      ]
+    }
+  ],
+  "texts": {
+    "slotdemo:text.open": "测试节点已打开。",
+    "slotdemo:text.close": "验证结束，返回原有游戏。",
+    "slotdemo:text.fallback": "【槽位回退】这是中性占位正文，可选择结束。",
+    "slotdemo:text.tester": "仅在接口验证中使用的成年占位角色，不包含正式人物情节。",
+    "slotdemo:text.activity": "整理接口测试记录。"
+  },
+  "contributions": [{ "hookId": "aetheria:hook.apartment.actions", "actionIds": ["slotdemo:action.open"] }],
+  "npcs": [
+    {
+      "id": "slotdemo:npc.tester",
+      "canonKey": "slotdemo.tester",
+      "name": "槽位测试员",
+      "role": "接入验证占位角色",
+      "descriptionText": "slotdemo:text.tester",
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 30,
+      "topicHook": "slotdemo:hook.tester",
+      "schedule": [
+        { "start": 0, "end": 720, "locationId": "aetheria:location.apartment", "activityText": "slotdemo:text.activity" },
+        { "start": 720, "end": 0, "locationId": "aetheria:location.apartment", "activityText": "slotdemo:text.activity" }
+      ]
+    }
+  ],
+  "textSlots": [
+    {
+      "id": "slotdemo:textslot.placeholder",
+      "owner": { "eventId": "slotdemo:event.placeholder", "nodeId": "start" },
+      "contentTier": "adult_optional",
+      "fallbackTextKey": "slotdemo:text.fallback",
+      "participants": ["player", "slotdemo:npc.tester"],
+      "allowedVariables": ["player.name", "npc.displayName"],
+      "requiredFacts": ["slotdemo:flag.ready"],
+      "sceneRequirements": [],
+      "before": "已通过正式行动进入中性测试节点。",
+      "after": "由无条件结束按钮返回原有游戏。",
+      "purpose": "验证可选正文的注册、替换、回退和存档。",
+      "requiredBeats": ["明确这是接口验证占位展示。"],
+      "nextNodeId": "end",
+      "exitActionIds": ["slotdemo:action.close"],
+      "allowedReplacement": "prose_only"
+    }
+  ]
+}
