@@ -19,7 +19,7 @@ async function fetchJSON(url: URL): Promise<unknown> {
 }
 async function boot(): Promise<void> {
   const indexUrl = new URL('../../content/index.json', import.meta.url);
-  const embedded = (globalThis as unknown as {aetheriaEmbedded?:{packs:unknown[];journal:JournalEntry[];generation:{rules:unknown;reference:unknown}}}).aetheriaEmbedded;
+  const embedded = (globalThis as unknown as {aetheriaEmbedded?:{packs:unknown[];journal:JournalEntry[];generation:{rules:unknown;reference:unknown;content?:unknown[]}}}).aetheriaEmbedded;
   const index = embedded ? {packs:[]} : await fetchJSON(indexUrl) as { packs: string[] };
   if (!Array.isArray(index.packs) || index.packs.some(x => typeof x !== 'string')) throw new Error('内容包目录格式错误。');
   const basePacks=embedded?.packs??await Promise.all(index.packs.map(x => fetchJSON(new URL(x, indexUrl))));
@@ -39,7 +39,7 @@ async function boot(): Promise<void> {
     registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry, fixedRegistry); saves = new SaveRepository(codec, store);
     engine = new ActionExecutor(registry, loaded.state, texts);
   }
-  const generation = embedded?.generation ?? { rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/reference.json', import.meta.url)) };
+  const generation = embedded?.generation ?? { rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/reference.json', import.meta.url)), content: [await fetchJSON(new URL('../../content/generation/neighborhood-content.json', import.meta.url))] };
   mountWorldControls({ source: () => fixedRegistry, defaults: generation, isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {
     if (generated) adopt({ state: generated.state, registry: generated.registry });
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });

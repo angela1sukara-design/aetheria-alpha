@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.ts",
     "test:browser": "node tests/browser.mjs",
-    "test:worldgen": "node --test tests/worldgen.test.ts",
+    "test:worldgen": "node --test tests/worldgen.test.ts tests/worldgen-v02.test.ts",
     "test:worldgen:browser": "node tests/worldgen-browser.mjs",
     "check": "npm run typecheck && npm test && npm run build && node scripts/check-dist.mjs"
   },

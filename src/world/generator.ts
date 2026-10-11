@@ -27,6 +27,7 @@ export class WorldGenerator {
     if (new Set(templates.map(t => t.id)).size !== templates.length) throw Error('跨包模板 ID 必须唯一。');
     for (const t of templates) for (const ref of [...t.combination.requiresTemplates, ...t.combination.excludesTemplates]) if (!templates.some(x => x.id === ref)) throw Error('组合规则引用未知模板。');
     // 模板贡献的原型同样遵守父模板条件；只有父模板实际被选中后才能参与抽样。
+    if (templates.length + templates.reduce((count, t) => count + t.contributes.npcTemplateIds.length, 0) > 2000) throw Error('贡献原型展开后超过2000个模板限制。');
     const contributedNPCs: ReferenceTemplate[] = templates.flatMap(t => t.contributes.npcTemplateIds.map((npcId, i) => ({ ...clone(t), id: `${t.id}.contributed-npc.${i}`, kind: 'npc' as const, data: { residentTemplateId: npcId }, combination: { ...clone(t.combination), requiresTemplates: [...new Set([...t.combination.requiresTemplates, t.id])] }, contributes: { tags: [], npcTemplateIds: [], eventIds: [], tfIds: [] } })));
     templates.push(...contributedNPCs); templates.sort((a, b) => a.id.localeCompare(b.id, 'en'));
     if (new Set(templates.map(t => t.id)).size !== templates.length) throw Error('自动贡献模板 ID 与参考库冲突。');
@@ -96,6 +97,7 @@ export class WorldGenerator {
       }
       // 所有地点免费恢复，旅行不扣精力，保证贫穷/耗尽时仍可继续游玩。
       action(`rest.${i}`, '找个座位休息', hook, [{ op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:energy', amount: 12 }], [], 'daily', '你在公共座位休息。精力逐渐恢复，街区的日程仍在推进。');
+      if (t.data.service === 'clinic') action(`care.${i}`, '使用免费体况恢复座位', hook, [{ op: 'clock.advance', minutes: 45 }, { op: 'var.change', id: 'core:energy', amount: 6 }, { op: 'var.change', id: 'core:health', amount: 8 }], [], 'daily', '你在开放的护理座位补充饮水并休息，体况逐渐恢复。');
       action(`wait.${i}`, '等候一小时', hook, [{ op: 'clock.advance', minutes: 60 }]);
       action(`wait.short.${i}`, '在附近等候一刻钟', hook, [{ op: 'clock.advance', minutes: 15 }], [], 'daily', '你等候了一刻钟，居民按原来的日程活动。');
       action(`work.${i}`, `参与${t.data.economy[0]}`, hook, [{ op: 'var.change', id: 'core:energy', amount: -5 }, { op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:money', amount: 5 }], [{ op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你按现场约定完成了一段工作，收到报酬。');
@@ -110,6 +112,7 @@ export class WorldGenerator {
         if (!templates.some(candidate => candidate.kind === 'activity' && eligible(candidate, context) && filter(candidate))) break;
         const a = choose('activity', `activity.${i}.${j}`, filter, context); if (a.kind !== 'activity') throw Error();
         activities.push(a); localContributors.push(a);
+        for (const tag of a.contributes.tags) { context.add(tag); if (!localTags.includes(tag)) localTags.push(tag); }
         const resources = [{ id: 'core:energy' as Id, amount: a.data.energyChange }, { id: 'core:money' as Id, amount: a.data.moneyChange }, { id: 'core:health' as Id, amount: a.data.healthChange }];
         const changes = (positive: boolean): Effect[] => resources.filter(r => positive ? r.amount > 0 : r.amount < 0).map(r => ({ op: 'var.change', ...r }));
         action(`activity.${i}.${j}`, a.data.label, hook, [...changes(false), { op: 'clock.advance', minutes: a.data.minutes }, ...changes(true)], a.data.capabilities.map(capability => ({ op: 'body.hasCapability', capability, count: 1 })), 'daily', a.data.description);
@@ -120,6 +123,7 @@ export class WorldGenerator {
       if (j > 0 && !templates.some(candidate => candidate.kind === 'event' && eligible(candidate, context) && filter(candidate))) break;
       const e = choose('event', `event.${i}.${j}`, filter, context); if (e.kind !== 'event') throw Error();
       events.push(e); localContributors.push(e);
+      for (const tag of e.contributes.tags) { context.add(tag); if (!localTags.includes(tag)) localTags.push(tag); }
       const suffix = j ? `${i}.${j}` : `${i}`;
       const eid = id(`event.${suffix}`), endText = id(`text.event.end.${suffix}`), prompt = id(`text.event.prompt.${suffix}`);
       const finish = action(`event.finish.${suffix}`, e.data.label, hook, [{ op: 'clock.advance', minutes: e.data.minutes }, { op: 'var.change', id: 'core:money', amount: e.data.reward }, { op: 'event.advance', nodeId: 'end' }], [], 'event', e.data.completeText);

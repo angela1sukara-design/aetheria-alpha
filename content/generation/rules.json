@@ -2,7 +2,7 @@
   "format": "aetheria-generation-rules",
   "schemaVersion": 1,
   "id": "aetheria/neighborhood-rules",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "requiredServices": [
     "home",
     "market",
@@ -16,5 +16,7 @@
   "startMinutes": 540,
   "workStart": 480,
   "workEnd": 1080,
-  "leisureEnd": 1320
+  "leisureEnd": 1320,
+  "eventsPerLocation": 2,
+  "activitiesPerLocation": 2
 }

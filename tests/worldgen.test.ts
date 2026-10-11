@@ -13,7 +13,7 @@ import { clone, stableJson } from '../src/core/types.ts';
 import type { Id } from '../src/core/types.ts';
 import { validateBody } from '../src/engine/body.ts';
 const json = async (name: string) => JSON.parse(await readFile(new URL(`../content/${name}.json`, import.meta.url), 'utf8'));
-const registry = await loadPacks([...await packs(), await json('district/pack')]);
+const registry = await loadPacks([...await packs(), await json('district/pack'), await json('generation/neighborhood-content')]);
 const rules = await json('generation/rules'), reference = await json('generation/reference');
 const generator = new WorldGenerator();
 const generate = (seed = 42, options = {}) => generator.generate({ seed, registry, rules, references: [reference], ...options });
@@ -98,7 +98,7 @@ test('运行中追加事件包可存读，但不篡改生成时内容包来源�
 test('原TF、事件选择、工作与免费恢复可在生成街区结算，零资源仍能旅行', async () => {
   const g = await generate(), engine = new ActionExecutor(g.registry, g.state);
   act(engine, 'worldgen:action.work.0'); act(engine, 'worldgen:action.rest.0'); act(engine, 'worldgen:action.look.0');
-  act(engine, 'worldgen:action.event.finish.0');
+  act(engine, engine.view().actions.find(a => a.definition.id.startsWith('worldgen:action.event.finish.'))!.definition.id);
   const body = engine.view().actions.find(a => a.definition.id === 'aetheria-tf:action.free.ears.cat'); assert.ok(body); act(engine, body.definition.id);
   const s = clone(engine.snapshot()); s.world.locationId = 'worldgen:location.3'; s.world.knownLocationIds.push('worldgen:location.3');
   const clinic = new ActionExecutor(g.registry, s); act(clinic, 'worldgen:action.tf.3.0'); act(clinic, 'worldgen:action.wait.3');

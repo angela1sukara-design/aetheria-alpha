@@ -6,12 +6,13 @@ import type { GeneratedWorld } from '../world/types.ts';
 import { byId } from './render.ts';
 
 /** 参考库导入只影响下一次创建；不能写正在游玩的世界或未保存进度。 */
-export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown }; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void }): void {
+export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown; content?: unknown[] }; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void }): void {
   let rules = options.defaults.rules, references: unknown[] = [options.defaults.reference], extraContent: unknown[] = [];
   const message = (text: string) => { byId('world-message').textContent = text; };
   const persist = () => { try { localStorage.setItem('aetheria-generation-library', JSON.stringify({ rules, references, extraContent })); } catch { message('参考库已在当前会话启用；本地持久化暂不可用。'); } };
   try { const saved = JSON.parse(localStorage.getItem('aetheria-generation-library') ?? 'null'); if (saved && Array.isArray(saved.references) && Array.isArray(saved.extraContent)) { rules = parseRules(saved.rules); references = saved.references; extraContent = saved.extraContent; } } catch { message('本地参考库无效，已使用默认示例。'); }
-  const library = async () => loadPacks([...options.source().contentPacks, ...extraContent]);
+  const defaultContent = () => (options.defaults.content ?? []).filter(p => !options.source().packs.some(s => s.id === (p as { manifest: { id: string } }).manifest.id));
+  const library = async () => loadPacks([...options.source().contentPacks, ...defaultContent(), ...extraContent]);
   let generating = false;
   async function start(seed: number): Promise<void> {
     if (generating || options.isBusy()) return; generating = true; options.setBusy(true); byId<HTMLButtonElement>('world-generate').disabled = true;
@@ -33,7 +34,7 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
       const raw = JSON.parse(await file.text());
       if (type === 'reference') { const pack = parseReference(raw, await library()); references = references.filter(r => (r as { id: string }).id !== pack.id); references.push(pack); }
       else if (type === 'generation-rules') { rules = parseRules(raw); byId<HTMLInputElement>('world-size').value = String((rules as { locationCount: number }).locationCount); byId<HTMLInputElement>('world-population').value = String((rules as { npcCount: number }).npcCount); }
-      else { if (extraContent.length >= 20) throw Error('首版最多安装20个生成用内容包。'); await loadPacks([...options.source().contentPacks, ...extraContent, raw]); extraContent.push(raw); }
+      else { if (extraContent.length >= 20) throw Error('首版最多安装20个生成用内容包。'); await loadPacks([...options.source().contentPacks, ...defaultContent(), ...extraContent, raw]); extraContent.push(raw); }
       persist(); message('校验通过，参考库已更新。下一次生成时使用，当前世界继续保持。');
     } catch (error) { message(`未导入：${error instanceof Error ? error.message : error}`); }
     finally { generating = false; options.setBusy(false); }
