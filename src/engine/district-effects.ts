@@ -73,6 +73,7 @@ export function districtText(s:GameState,r:Registry,base:string):string {
  if(!s.district)return base;
  if(s.district.combat){const b=s.district.combat,e=r.enemies.find(x=>x.id===b.enemyId)!;return `交锋：${e.name}\n\n对方体力 ${b.hp}/${e.hp} · 第${b.turn+1}回合\n\n下一步意图：${e.intents[b.turn%e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;}
  if(s.district.scene){const scene=s.district.scene,i=r.interactions.find(x=>x.id===scene.definitionId)!,p=i.poses.find(p=>p.id===scene.poseId)!;return `${r.npc(i.npcId).name}与你 · ${scene.phase==='paused'?'暂停中':'正在相处'}\n\n姿态：${p.label}；朝向：${p.facing==='front'?'面向对方':'背向对方'}；位置：${p.zone==='near'?'近处':'桌子另一侧'}。\n\n${scene.contacts.length?`已建立${scene.contacts.length}条手部接触；对应动作资源被占用。`:'尚未建立接触，身体部位空闲。'}\n\n${base}`;}
- const variants=r.sceneTexts.filter(v=>v.locationId===s.world.locationId&&v.conditions.every(c=>evaluate(c,s,r).pass)).sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id,'en'));
- return base+(s.activeEventStack.length?'':variants[0]?'\n\n'+r.text(variants[0].textKey):'');
+ const event=s.eventInstances.find(x=>x.instanceId===s.activeEventStack.at(-1));
+ const variants=r.sceneTexts.filter(v=>v.locationId===s.world.locationId&&(v.owner?v.owner.eventId===event?.definitionId&&v.owner.nodeId===event.nodeId:!event)&&v.conditions.every(c=>evaluate(c,s,r).pass)).sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id,'en'));
+ return base+(variants[0]?'\n\n'+r.text(variants[0].textKey):'');
 }

@@ -7,7 +7,7 @@ export interface NPCDef {
   speciesId: Id; ageYears: number | null; topicHook: Id;
   schedule: { start: number; end: number; locationId: Id | null; activityText: Id }[];
 }
-export interface NPCMemoryDef { id: Id; npcId: Id; textKey: Id }
+export interface NPCMemoryDef { id: Id; npcId: Id; textKey: Id; relationshipStage?: 'introduced' | 'familiar' | 'trusted' | 'private' | 'closed' }
 export interface NPCMemory {
   definitionId: Id; recordedAt: number; sourceActionId: Id; sourceRequestId: string;
 }

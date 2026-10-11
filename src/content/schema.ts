@@ -101,7 +101,7 @@ export function parsePack(input: unknown): ContentPack {
     list(x.schedule, `${p}/schedule`, (v, p) => { const s = obj(v, p, ['start', 'end', 'locationId', 'activityText']); integer(s.start, `${p}/start`, 0, 1439); integer(s.end, `${p}/end`, 0, 1439); if (s.start === s.end) fail(p, '日程时间窗口不可为空。'); if (s.locationId !== null) id(s.locationId, `${p}/locationId`); id(s.activityText, `${p}/activityText`); });
     if (!Array.isArray(x.schedule) || !x.schedule.length || x.schedule.length > 32) fail(p, '日程需有1–32个时段。');
   });
-  list(root.npcMemories ?? [], '/npcMemories', (v, p) => { const x = obj(v, p, ['id', 'npcId', 'textKey']); id(x.id, `${p}/id`); id(x.npcId, `${p}/npcId`); id(x.textKey, `${p}/textKey`); });
+  list(root.npcMemories ?? [], '/npcMemories', (v, p) => { const x = obj(v, p, ['id', 'npcId', 'textKey', 'relationshipStage']); if(x.relationshipStage!==undefined)choice(x.relationshipStage,p,['introduced','familiar','trusted','private','closed']); id(x.id, `${p}/id`); id(x.npcId, `${p}/npcId`); id(x.textKey, `${p}/textKey`); });
   list(root.bodyParts ?? [], '/bodyParts', (v, p) => {
     const x = obj(v, p, ['id', 'label', 'kind', 'material', 'capabilities', 'anchors']); id(x.id, `${p}/id`); str(x.label, `${p}/label`);
     choice(x.kind, `${p}/kind`, [...PART_KINDS]); choice(x.material, `${p}/material`, ['organic', 'mechanical']);

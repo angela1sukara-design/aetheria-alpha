@@ -28,7 +28,7 @@ export interface TextSlotDef {
   sceneRequirements: string[]; before: string; after: string; purpose: string; requiredBeats: string[];
   nextNodeId: string; exitActionIds: Id[]; allowedReplacement: 'prose_only';
 }
-export interface SceneTextDef { id: Id; locationId: Id; conditions: Condition[]; priority: number; textKey: Id }
+export interface SceneTextDef { id: Id; locationId: Id; conditions: Condition[]; priority: number; textKey: Id; owner?:{eventId:Id;nodeId:string} }
 export interface EquipmentDef { id: Id; name: string; requires: Condition[]; description: string }
 export interface DistrictDefinitions {
   storylets?: StoryletDef[]; residentTemplates?: ResidentTemplate[]; enemies?: EnemyDef[];

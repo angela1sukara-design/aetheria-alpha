@@ -8400,6 +8400,96 @@
       ],
       "resultText": "district:text.preference.off",
       "surface": "body"
+    },
+    {
+      "id": "district:action.tf.gel.pause",
+      "label": "暂停黑胶适应",
+      "hint": "保留真实阶段与来源",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.pause",
+          "id": "district:tf.gel"
+        }
+      ],
+      "resultText": "district:text.tf.gel.pause",
+      "surface": "body"
+    },
+    {
+      "id": "district:action.tf.gel.resume",
+      "label": "恢复黑胶适应",
+      "hint": "保留真实阶段与来源",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.resume",
+          "id": "district:tf.gel"
+        }
+      ],
+      "resultText": "district:text.tf.gel.resume",
+      "surface": "body"
+    },
+    {
+      "id": "district:action.tf.gel.cancel",
+      "label": "停止后续黑胶适应",
+      "hint": "保留真实阶段与来源",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.cancel",
+          "id": "district:tf.gel"
+        }
+      ],
+      "resultText": "district:text.tf.gel.cancel",
+      "surface": "body"
+    },
+    {
+      "id": "district:action.tf.wolf.pause",
+      "label": "暂停兽耳适应",
+      "hint": "保留真实阶段与来源",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.pause",
+          "id": "district:tf.wolf"
+        }
+      ],
+      "resultText": "district:text.tf.wolf.pause",
+      "surface": "body"
+    },
+    {
+      "id": "district:action.tf.wolf.resume",
+      "label": "恢复兽耳适应",
+      "hint": "保留真实阶段与来源",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.resume",
+          "id": "district:tf.wolf"
+        }
+      ],
+      "resultText": "district:text.tf.wolf.resume",
+      "surface": "body"
+    },
+    {
+      "id": "district:action.tf.wolf.cancel",
+      "label": "停止后续兽耳适应",
+      "hint": "保留真实阶段与来源",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "tf.cancel",
+          "id": "district:tf.wolf"
+        }
+      ],
+      "resultText": "district:text.tf.wolf.cancel",
+      "surface": "body"
     }
   ],
   "events": [
@@ -12127,7 +12217,20 @@
     "district:text.event.velvet.body.gel.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
     "district:text.velvet.body.gel": "薇尔维特递来防滑杯托，不擅自碰你的手。“方便的时候，告诉我哪种杯子更舒服。”",
     "district:text.preference.on": "内容偏好已更新；当前节点与玩法效果没有改变。",
-    "district:text.preference.off": "内容偏好已更新；当前节点与玩法效果没有改变。"
+    "district:text.preference.off": "内容偏好已更新；当前节点与玩法效果没有改变。",
+    "district:text.tf.gel.pause": "你按护理说明调整变化进程，已经经过的阶段不会重复发生。",
+    "district:text.tf.gel.resume": "你按护理说明调整变化进程，已经经过的阶段不会重复发生。",
+    "district:text.tf.gel.cancel": "你按护理说明停止后续变化。已经发生的结构保留，可通过正式恢复入口处理；停止不假装自动逆转已发生的事实。",
+    "district:text.tf.wolf.pause": "你按护理说明调整变化进程，已经经过的阶段不会重复发生。",
+    "district:text.tf.wolf.resume": "你按护理说明调整变化进程，已经经过的阶段不会重复发生。",
+    "district:text.tf.wolf.cancel": "你按护理说明停止后续变化。已经发生的结构保留，可通过正式恢复入口处理；停止不假装自动逆转已发生的事实。",
+    "district:text.follow.riker.repaired": "莱克指了指已经归还原主的义肢留下的空位。“上次那只手回家了。你带回授权和接口的事，我没有忘。”他问你，今天有没有需要按自己方式安排的事。",
+    "district:text.follow.riker.closed": "莱克把话题留在公开工作上。“修理可以继续，私人安排就到这里。”他记得那笔补贴，也把双方仍可遵守的职业边界说清楚。",
+    "district:text.follow.riker.private": "莱克在茶馆认出你，给桌边留出空间。“今天不用谈工单。上次那封回信，我又读了一遍。”他没有把邀请当作你必须接受的义务。",
+    "district:text.follow.nara.follow": "娜拉说起你们整理的护理卡。“你允许公开的部分仍保持匿名。有人按里面的方法调整了椅子，终于能自己休息好。”她记得你对公开范围的选择。",
+    "district:text.story.after.rain": "你曾经拦起围栏的路口已经补好绝缘层。维修队留下了一张公开验收单，那次协助并没有随着页面关闭而消失。",
+    "district:text.story.after.water": "新的警戒刻度对应你协助记录过的水位。低处行人开始沿更安全的路线通过。",
+    "district:text.story.after.ledger": "补齐的工时残页已经装订归档。公开索引注明了核对来源，工人的工时不再只靠口头争辩。"
   },
   "contributions": [
     {
@@ -12331,6 +12434,17 @@
         "district:action.velvet.quiet",
         "district:action.velvet.body.mechanical",
         "district:action.velvet.body.gel"
+      ]
+    },
+    {
+      "hookId": "aetheria-tf:hook.body",
+      "actionIds": [
+        "district:action.tf.gel.pause",
+        "district:action.tf.gel.resume",
+        "district:action.tf.gel.cancel",
+        "district:action.tf.wolf.pause",
+        "district:action.tf.wolf.resume",
+        "district:action.tf.wolf.cancel"
       ]
     }
   ],
@@ -12649,6 +12763,10 @@
           "op": "time.window",
           "start": 540,
           "end": 1080
+        },
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
         }
       ],
       "eventId": "district:event.curtain",
@@ -12743,7 +12861,7 @@
       "locationId": "district:location.archive",
       "conditions": [],
       "eventId": "district:event.ink",
-      "weight": 10,
+      "weight": 5,
       "priority": 1,
       "cooldownMinutes": 120,
       "cooldownGroup": "streetlife.ink",
@@ -12765,7 +12883,7 @@
         }
       ],
       "eventId": "district:event.tidebell",
-      "weight": 10,
+      "weight": 5,
       "priority": 1,
       "cooldownMinutes": 120,
       "cooldownGroup": "streetlife.tidebell",
@@ -13522,6 +13640,115 @@
       ],
       "priority": 20,
       "textKey": "district:text.canal.feedback.open"
+    },
+    {
+      "id": "district:scene.follow.riker.repaired",
+      "locationId": "district:location.workshop",
+      "owner": {
+        "eventId": "district:event.riker.daily",
+        "nodeId": "start"
+      },
+      "conditions": [
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.repaired",
+          "value": true
+        }
+      ],
+      "priority": 30,
+      "textKey": "district:text.follow.riker.repaired"
+    },
+    {
+      "id": "district:scene.follow.riker.closed",
+      "locationId": "district:location.workshop",
+      "owner": {
+        "eventId": "district:event.riker.daily",
+        "nodeId": "start"
+      },
+      "conditions": [
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.breach",
+          "value": true
+        }
+      ],
+      "priority": 30,
+      "textKey": "district:text.follow.riker.closed"
+    },
+    {
+      "id": "district:scene.follow.riker.private",
+      "locationId": "district:location.cafe",
+      "owner": {
+        "eventId": "district:event.riker.daily",
+        "nodeId": "start"
+      },
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.willing",
+          "value": true
+        }
+      ],
+      "priority": 30,
+      "textKey": "district:text.follow.riker.private"
+    },
+    {
+      "id": "district:scene.follow.nara.follow",
+      "locationId": "aetheria-tf:location.clinic",
+      "owner": {
+        "eventId": "district:event.nara.daily",
+        "nodeId": "start"
+      },
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.done",
+          "value": true
+        }
+      ],
+      "priority": 30,
+      "textKey": "district:text.follow.nara.follow"
+    },
+    {
+      "id": "district:scene.story.after.rain",
+      "locationId": "aetheria:location.street",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.story.rain",
+          "value": true
+        }
+      ],
+      "priority": 15,
+      "textKey": "district:text.story.after.rain"
+    },
+    {
+      "id": "district:scene.story.after.water",
+      "locationId": "district:location.canal",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.story.water",
+          "value": true
+        }
+      ],
+      "priority": 15,
+      "textKey": "district:text.story.after.water"
+    },
+    {
+      "id": "district:scene.story.after.ledger",
+      "locationId": "district:location.archive",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.story.ledger",
+          "value": true
+        }
+      ],
+      "priority": 15,
+      "textKey": "district:text.story.after.ledger"
     }
   ],
   "equipment": [
@@ -13734,17 +13961,20 @@
     {
       "id": "district:memory.riker.introduced",
       "npcId": "district:npc.riker",
-      "textKey": "district:text.memory.riker.introduced"
+      "textKey": "district:text.memory.riker.introduced",
+      "relationshipStage": "introduced"
     },
     {
       "id": "district:memory.nara.introduced",
       "npcId": "district:npc.nara",
-      "textKey": "district:text.memory.nara.introduced"
+      "textKey": "district:text.memory.nara.introduced",
+      "relationshipStage": "introduced"
     },
     {
       "id": "district:memory.riker.promise",
       "npcId": "district:npc.riker",
-      "textKey": "district:text.memory.riker.promise"
+      "textKey": "district:text.memory.riker.promise",
+      "relationshipStage": "familiar"
     },
     {
       "id": "district:memory.riker.declined",
@@ -13754,17 +13984,20 @@
     {
       "id": "district:memory.riker.repaired",
       "npcId": "district:npc.riker",
-      "textKey": "district:text.memory.riker.repaired"
+      "textKey": "district:text.memory.riker.repaired",
+      "relationshipStage": "trusted"
     },
     {
       "id": "district:memory.riker.breach",
       "npcId": "district:npc.riker",
-      "textKey": "district:text.memory.riker.breach"
+      "textKey": "district:text.memory.riker.breach",
+      "relationshipStage": "closed"
     },
     {
       "id": "district:memory.riker.invited",
       "npcId": "district:npc.riker",
-      "textKey": "district:text.memory.riker.invited"
+      "textKey": "district:text.memory.riker.invited",
+      "relationshipStage": "private"
     },
     {
       "id": "district:memory.riker.friend",
@@ -13774,7 +14007,8 @@
     {
       "id": "district:memory.nara.promise",
       "npcId": "district:npc.nara",
-      "textKey": "district:text.memory.nara.promise"
+      "textKey": "district:text.memory.nara.promise",
+      "relationshipStage": "familiar"
     },
     {
       "id": "district:memory.nara.boundary",
@@ -13784,37 +14018,44 @@
     {
       "id": "district:memory.nara.shared",
       "npcId": "district:npc.nara",
-      "textKey": "district:text.memory.nara.shared"
+      "textKey": "district:text.memory.nara.shared",
+      "relationshipStage": "trusted"
     },
     {
       "id": "district:memory.nara.private",
       "npcId": "district:npc.nara",
-      "textKey": "district:text.memory.nara.private"
+      "textKey": "district:text.memory.nara.private",
+      "relationshipStage": "trusted"
     },
     {
       "id": "district:memory.nara.invited",
       "npcId": "district:npc.nara",
-      "textKey": "district:text.memory.nara.invited"
+      "textKey": "district:text.memory.nara.invited",
+      "relationshipStage": "private"
     },
     {
       "id": "district:memory.velvet.personal",
       "npcId": "aetheria-social:npc.velvet",
-      "textKey": "district:text.memory.velvet.personal"
+      "textKey": "district:text.memory.velvet.personal",
+      "relationshipStage": "trusted"
     },
     {
       "id": "district:memory.riker.quiet",
       "npcId": "district:npc.riker",
-      "textKey": "district:text.memory.riker.quiet"
+      "textKey": "district:text.memory.riker.quiet",
+      "relationshipStage": "private"
     },
     {
       "id": "district:memory.nara.quiet",
       "npcId": "district:npc.nara",
-      "textKey": "district:text.memory.nara.quiet"
+      "textKey": "district:text.memory.nara.quiet",
+      "relationshipStage": "private"
     },
     {
       "id": "district:memory.velvet.quiet",
       "npcId": "aetheria-social:npc.velvet",
-      "textKey": "district:text.memory.velvet.quiet"
+      "textKey": "district:text.memory.velvet.quiet",
+      "relationshipStage": "private"
     },
     {
       "id": "district:memory.riker.body.mechanical",
