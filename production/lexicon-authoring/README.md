@@ -1,25 +1,24 @@
-# 基础词条生产工具包 v0.1
+# 基础词条生产工具包 v0.2
 
-基于Alpha 0.2最新源码的独立素材生产工作区。包含58类、首期10700条/214批的计划、每分类与每批次可直接派发的AI指令，以及58份正确格式示例。这里没有批量生成正文，数量均是目标。当前正式收录0条、游戏使用0条（后续实际数据以management/index.json为准）。
+基于Alpha 0.2最新源码的独立素材生产工作区。包含58类、首期10700条的计划与58份正确格式示例。数量均为生产目标，尚未量产正文。实际库存见management/index.json。
 
-## 直接交给其他AI
+## 一次委派完成大部分或全部素材
 
-从tasks/挑一个未领取的任务，先登记领取，再把对应.md全文发给GPT、Claude、Gemini或其他写作AI。任务已写明类别、子类、数量、主题、多样性、格式与自查；无需让AI读引擎源码或设计规则。详见03-批次与多AI流程.md。
+直接把本资料压缩包交给其他AI，让它执行“prompts/整包-全部词库.md”。一个AI可连续完成全部10700条；也可让少数AI各负责NPC、身体与外观、世界与环境、行为与日常、文字素材中的一个大类。每大类有独立整包总指令。你不需要逐50条派任务或确认继续。
+
+内部仍用214个批号记录ID与来源，由写作AI自行管理；最后一次交回lexicon-delivery.json和生产报告，可打成一个压缩包。详见交给AI快速开始.md和07-整包生产与接收.md。旧的试产/分批指南保留为可选制作方式，不限制整包委派。
 
 先读01-分类目录.md了解范围；02-格式与示例.md说明简单格式；04-存储与游戏边界.md区分收录和实装；05-现有素材盘点.md列出现有工程统计。
 
 ## 本地工具
 
+- npm run lexicon -- assign-scope all ai-main
+- npm run lexicon -- validate-delivery 整包交付.json
+- npm run lexicon -- import-delivery 整包交付.json
 - npm run lexicon -- index
-- npm run lexicon -- assign npc-trait.b0001 claude-a
-- npm run lexicon -- validate 交付文件.json
-- npm run lexicon -- import 交付文件.json
 - npm run lexicon -- review 审稿文件.json
 - npm run lexicon -- export 新输出文件.json
-- npm run lexicon -- extend npc-trait gemini-b '补充主题'
-- npm run lexicon -- duplicates
-- npm run lexicon -- inventory
 
-validate不等于审定，import不等于实装。任务可以任意分配给模型，题材分工与批次编号相互独立。长JSON若模型难以一次完整输出，先由整理者将任务改分小批并同步登记数量，不允许随意截断、拼接或借号。当前标准工具默认50条；首期任务没有自动拆批命令。
+原assign、validate、import等单批工具继续可用。收录不是审定，也不等于实装。
 
-运行npm run lexicon:prepare可重建静态任务和盘点，不覆盖已收录与审稿数据。运行npm run test:lexicon验证工具本身。完整工程交付验收另见ACCEPTANCE.md。
+运行npm run lexicon:prepare可重建静态任务和盘点，不覆盖已收录与审稿数据。运行npm run test:lexicon验证工具本身。验收记录见ACCEPTANCE.md与WHOLE-PACK-ACCEPTANCE.md。

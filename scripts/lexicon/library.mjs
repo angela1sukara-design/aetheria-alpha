@@ -204,3 +204,59 @@ export async function contextSummary(root,library) {
   note:'供写作AI避开已收录名称、核心意象与表达骨架；不是游戏上下文，不含秘密剧情或生成规则。'};
  const output=path.join(root,'outbox',`context-${library}.json`);await atomicJSON(output,summary);return {output,count:summary.entries.length};
 }
+
+// 整包委派只改变编辑工作流，内部词条ID和原有批次格式保持不变。
+export function scopeTasks(scope) {
+ if(!['all','npc','body','world','daily','text'].includes(scope))fail('范围必须为 all、npc、body、world、daily 或 text。');
+ const codes=new Set(catalog.filter(c=>scope==='all'||c.group===scope).map(c=>c.code));
+ return initialPlan().filter(t=>codes.has(t.library));
+}
+export async function assignScope(root,scope,producer) {
+ string(producer,100,'领取人');const selected=scopeTasks(scope);
+ return locked(root,async()=>{
+  const owners=await assignments(root);
+  const conflicts=selected.filter(t=>owners[t.batchId]&&owners[t.batchId]!==producer);
+  if(conflicts.length)fail(`范围内 ${conflicts.length} 个批次已由其他工作单元领取，未改动领取记录。`);
+  for(const t of selected)owners[t.batchId]=producer;
+  await atomicJSON(path.join(root,'management','assignments.json'),owners);
+  await rebuildIndexUnlocked(root);
+  return {scope,producer,batches:selected.length,entries:selected.reduce((n,t)=>n+t.size,0)};
+ });
+}
+export function validateDelivery(raw) {
+ exact(raw,['format','schemaVersion','scope','batches']);
+ if(raw.format!=='aetheria-lexicon-delivery'||raw.schemaVersion!==1)fail('不是整包词条交付 v1。');
+ const expected=scopeTasks(raw.scope),byId=new Map(expected.map(t=>[t.batchId,t]));
+ if(!Array.isArray(raw.batches)||raw.batches.length<1||raw.batches.length>initialPlan().length)fail('整包 batches 数量不合法。');
+ const seen=new Set();
+ const batches=raw.batches.map(b=>{
+  if(!b||!byId.has(b.batchId)||seen.has(b.batchId))fail('存在重复批次或超出委派范围的批次。');
+  seen.add(b.batchId);return validateBatch(b,{expected:byId.get(b.batchId)});
+ });
+ const missing=expected.filter(t=>!seen.has(t.batchId));
+ if(missing.length)fail(`整包未完成：缺少 ${missing.length} 个内部文件（例如 ${missing.slice(0,3).map(t=>t.batchId).join('、')}）。不得当作完整交付。`);
+ return {...raw,batches};
+}
+export async function readDelivery(file) {
+ const {stat}=await import('node:fs/promises');if((await stat(file)).size>32*1024*1024)fail('整包交付超过32 MiB。');
+ return validateDelivery(await readJSON(file));
+}
+export async function importDelivery(root,file) {
+ return locked(root,async()=>{
+  const d=await readDelivery(file),owners=await assignments(root),stored=await collection(root),old=new Map(stored.batches.map(b=>[b.batchId,b])),fresh=[];
+  // 全包先预检，包括最后一批；任一格式/归属/重复错误都不写入任何词条。
+  for(const b of d.batches) {
+   if(!owners[b.batchId]||owners[b.batchId]!==b.source.producer)fail(`批次 ${b.batchId} 来源与整包领取记录不符。`);
+   if(old.has(b.batchId)) {if(digest(old.get(b.batchId))!==digest(b))fail('已收录批次不可覆盖：'+b.batchId);} else fresh.push(b);
+  }
+  if(!fresh.length){await rebuildIndexUnlocked(root);return {status:'unchanged',scope:d.scope,batches:0,entries:0};}
+  const newEntries=fresh.flatMap(b=>b.entries),ids=new Set(newEntries.map(e=>e.id)),report=duplicateReport([...stored.entries,...newEntries]);
+  const exact=report.exact.filter(g=>g.some(id=>ids.has(id)));
+  if(exact.length)fail('整包有精确重复，未写入：'+JSON.stringify(exact.slice(0,10)));
+  const index=await buildIndex(root,{batches:[...stored.batches,...fresh]});
+  for(const b of fresh)await atomicJSON(path.join(root,'collections',b.library,b.batchId+'.json'),b);
+  await atomicJSON(path.join(root,'management','index.json'),index);
+  return {status:'collected',scope:d.scope,batches:fresh.length,entries:newEntries.length,
+   sameName:report.sameName.filter(g=>g.some(id=>ids.has(id))),near:report.near.filter(p=>ids.has(p.b))};
+ });
+}
