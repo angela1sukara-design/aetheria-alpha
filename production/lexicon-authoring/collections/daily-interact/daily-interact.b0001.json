@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-interact",
+  "batchId": "daily-interact.b0001",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-interact.b0001.0001",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把伞柄朝你递出一半，另一手仍握着布袋带。",
+      "description": "递伞供借，未断言对方已接。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0002",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方拍了拍口袋，取出一把公用剪刀放到台面中间。",
+      "description": "把剪刀放到共享位置供取用。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0003",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把借来的簸箕倒干净，擦了擦沿口才送回。",
+      "description": "归还前清理所借簸箕。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0004",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方指了指墙上的备用钥匙钩，示意你可以先用那串。",
+      "description": "示意备用钥匙可借用。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0005",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把量杯洗净沥干，连同借条一起放回原主篮里。",
+      "description": "归还量杯并附借条。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0006",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方解下自己的围裙递过来，袖口还带着皂香。",
+      "description": "递围裙供临时借用。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0007",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把梯子靠稳后拍了拍横档，示意可以上去。",
+      "description": "示意梯子可供暂用。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0008",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方归还手推车时把轮子朝外停好，方便主人再推。",
+      "description": "归还手推车并摆好朝向。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0009",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方从布包抽出一卷线，问你是否只需要一小段。",
+      "description": "出示线卷并确认需求量。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0010",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把借出的锅盖单独包好，避免与锅身磕碰。",
+      "description": "包好锅盖准备归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0011",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指了指巷口那盏黄灯，说再往前两个门就是。",
+      "description": "用灯与门数指引路径。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0012",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方在地上用鞋尖划了个弯，示意你该在桥前左转。",
+      "description": "用鞋尖划线示意转弯。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0013",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方抬头看了看自己方向，又摇头指向相反一侧。",
+      "description": "先自检方向再改正指引。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0014",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方把地图摊在膝上，用指甲点住你要去的记号。",
+      "description": "在地图上点出目标。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0015",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说跟着运水的推车走，到水站就看见邮局。",
+      "description": "以推车与水站为路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0016",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方侧身让你看见墙角编号，说双号在河那边。",
+      "description": "用墙号奇偶指引过河。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0017",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方掏出小本撕下一角，草绘三个转弯后递给你。",
+      "description": "手绘简图指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0018",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指着远处烟囱，说看见蓝烟囱就到市场后门。",
+      "description": "以烟囱颜色为路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0019",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方提醒你别抄近路进工地，绕围挡更稳妥。",
+      "description": "提示避开工地近路。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0020",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说如果你听见钟声，就说明已经靠近广场了。",
+      "description": "以钟声作为接近信号。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0021",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把桌面空出一块，把共用抹布叠好放在角上。",
+      "description": "为协作清出桌面与抹布。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0022",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方数好钉子分两小堆，把锤子柄朝外摆好。",
+      "description": "分堆钉子并摆好锤子。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0023",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先试了试门闩松紧，再示意你可以抬另一头。",
+      "description": "先检门闩再示意抬门。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0024",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把水桶提到台阶下，留出你站稳的位置。",
+      "description": "预放水桶并留站位。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0025",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把说明书翻到图示页，用石子压住防风掀。",
+      "description": "固定说明书便于共看。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0026",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方系紧袖口，把袖箍也递了一副到你这边。",
+      "description": "自备并提供袖箍。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0027",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先清扫通道，把绊脚的筐挪到墙根。",
+      "description": "清扫并挪筐以利协作。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0028",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把量好的木条按长短排好，短的放你手边。",
+      "description": "按长短排木条分工。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0029",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方打开放手套的盒子，自己先戴一副示范。",
+      "description": "开盒并示范戴手套。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0030",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把灯移到两人都能看见接缝的角度。",
+      "description": "调整灯光便于共视接缝。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0031",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方侧身贴墙，把走廊中间让给推车的人。",
+      "description": "侧身贴墙让出走廊。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0032",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把摊开的布收回膝上，腾出对面坐位。",
+      "description": "收布腾出对面坐位。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0033",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把脚从过道收回桌下，点头示意你可以过。",
+      "description": "收脚让过道畅通。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0034",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把晾杆往上抬一截，让高个子不必低头。",
+      "description": "抬晾杆让出头部空间。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0035",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把椅子转九十度，背对通道以免挡路。",
+      "description": "转椅避免挡通道。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0036",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把伞收短夹在腋下，在拥挤处缩小占地。",
+      "description": "收伞减小占地。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0037",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把货物箱往里推半尺，留出并肩走过的宽度。",
+      "description": "推箱留出并肩宽度。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0038",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方从窗口退回室内，把窗台让给要取物的人。",
+      "description": "退回让出窗台。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0039",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把背包从身前转到身后，方便与人对面交谈。",
+      "description": "背包挪后减少遮挡。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0040",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方蹲下系鞋带时挪到墙边，不在路心停留。",
+      "description": "墙边系带不占路心。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0041",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方拍了拍身旁空出的台阶，目光在你与台阶间一顿。",
+      "description": "拍台阶示意可坐，未断言已坐。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0042",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把第二只杯子放在桌沿，壶嘴朝向你这边。",
+      "description": "放杯与壶嘴朝向示意可饮。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0043",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方掀开帘子一角，侧身让出进门的宽度。",
+      "description": "掀帘侧身示意可进。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0044",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把棋盘转正，黑白子分到两侧等待。",
+      "description": "摆棋示意可开局。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0045",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方举起手中的面包掰开，把较大的一半朝你递。",
+      "description": "掰面包递一半示意分享。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0046",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方指了指屋檐下干爽处，又朝你扬了扬下巴。",
+      "description": "指干爽处扬下巴示意避雨。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0047",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方拉开长凳一端的空位，手掌在空位上方停一下。",
+      "description": "拉开空位并以手势标明。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0048",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把暖炉旁的矮凳抽出一点，不看你却停住等。",
+      "description": "抽矮凳等待是否靠近。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0049",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把故事书合到一半，指尖仍夹着页，看向你。",
+      "description": "夹页停读示意可同听。"
+    },
+    {
+      "id": "lx.daily-interact.b0001.0050",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把跳绳的另一端抛到你脚边，自己仍握着一端。",
+      "description": "抛绳端示意可同跳。"
+    }
+  ]
+}

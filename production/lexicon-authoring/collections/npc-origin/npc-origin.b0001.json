@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-origin",
+  "batchId": "npc-origin.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-origin.b0001.0001",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "市场巷弄长大",
+      "description": "童年穿行于早市巷弄，熟悉摊布升起与收摊的节奏。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0002",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "车站广场附近",
+      "description": "住处靠近长途车站，习惯人流噪声与昼夜灯火。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0003",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "旧校区平房区",
+      "description": "在连排平房长大，放学后常在公共操场玩到灯亮。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0004",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "工厂宿舍大院",
+      "description": "父母住厂区宿舍，院子里有共用水龙头与黑板报。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0005",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "河边洗衣台旁",
+      "description": "小时候常跟大人去河边洗衣台，学会辨水流缓急。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0006",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "城中村楼顶层",
+      "description": "住在加盖楼顶，爬楼梯当日常锻炼，视野很开阔。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0007",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "公交总站对街",
+      "description": "对街就是总站，认得末班车熄灯的时间。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0008",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "粮店后街长大",
+      "description": "后街常有粮袋装卸，地面的糠屑味记到现在。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0009",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "公园围墙内侧",
+      "description": "家门对着公园侧门，清晨能听见环卫车倒车声。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0010",
+      "category": "npc-origin",
+      "subcategory": "地理出身",
+      "name": "十字路口角楼",
+      "description": "角楼四面来风，习惯关严朝街的窗再睡觉。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0011",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "多代同堂小家",
+      "description": "祖辈与晚辈同住，饭桌永远多摆两双筷子备用。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0012",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "双职工钥匙孩",
+      "description": "放学自己开门，桌上常留一张晚饭加热说明。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0013",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "单亲细心照料",
+      "description": "家长把药盒与课表贴在冰箱，周末一起补衣服。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0014",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "亲戚轮流照看",
+      "description": "家长忙时由亲戚轮流接送，书包里总备换洗衣。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0015",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "合住亲戚大屋",
+      "description": "大屋里隔出几个小间，过道堆着共用的米缸。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0016",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "安静读书型家",
+      "description": "晚饭后各自看书，说话压低，灯只开一盏主灯。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0017",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "爱请客的家风",
+      "description": "客人多，碗筷常多备一套，剩菜习惯分装带走。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0018",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "节俭记账家庭",
+      "description": "开支写在墙历背面，月底一起对一遍数字。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0019",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "早起忙碌人家",
+      "description": "天不亮就有人出门，早餐常是隔夜热好的粥。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0020",
+      "category": "npc-origin",
+      "subcategory": "家庭环境",
+      "name": "重视界限的家",
+      "description": "各房间敲门再进，公用物品用完归位到原处。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0021",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "随父母进城落户",
+      "description": "小学时迁入城市，口音慢慢改，旧玩具仍留着。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0022",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "因工作换区居住",
+      "description": "换工作后搬到另一区，周末才回旧邻里坐坐。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0023",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "合租数年再独居",
+      "description": "多年合租后终于独居，仍保留分格冰箱的习惯。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0024",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "灾后重建回迁",
+      "description": "旧屋拆除后回迁新楼，门牌号变了人情还在。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0025",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "求学寄宿再回城",
+      "description": "外地寄宿数年回来，对家乡路名一度要重新认。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0026",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "照顾家人迁近",
+      "description": "为方便照料迁到医院附近，行李精简到两箱。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0027",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "短租辗转多处",
+      "description": "一年换过几处短租，对装箱顺序已很熟练。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0028",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "从平房搬上楼",
+      "description": "告别院子后学会用电梯，想念晾衣绳的日照。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0029",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "两城来回定居中",
+      "description": "户口与住处不在同城，证件与换洗衣分两处放。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0030",
+      "category": "npc-origin",
+      "subcategory": "迁居背景",
+      "name": "邻区小幅搬迁",
+      "description": "只搬过两条街，仍去原来的早市买菜。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0031",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "社区技能夜校生",
+      "description": "晚上在社区教室学记账与缝纫，周末交作业。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0032",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "图书馆自学者",
+      "description": "靠借阅手册自学，把重点抄在旧练习簿上。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0033",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "店铺见习收银",
+      "description": "先从理货与找零学起，师傅要求唱收唱付。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0034",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "厨房帮工起步",
+      "description": "从洗菜切菜开始，逐渐学会看火候与备料单。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0035",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "维修站打杂起",
+      "description": "先学递工具与清扫，再被允许拆简单外壳。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0036",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "农忙季帮工经历",
+      "description": "暑期去亲戚地里帮忙，学会认时令与打包。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0037",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "公共讲座常听者",
+      "description": "社区免费讲座场场到，笔记用不同颜色标注。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0038",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "师徒口头传授生",
+      "description": "没有讲义，全靠口头与示范，回家再默画步骤。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0039",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "证件考取备考生",
+      "description": "为考从业证件夜读，墙上贴着考试日倒数。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0040",
+      "category": "npc-origin",
+      "subcategory": "学徒背景",
+      "name": "轮岗体验新人",
+      "description": "新人期在各部门轮岗，每人教一段基础流程。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0041",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "楼道互助长大",
+      "description": "谁家缺盐缺醋就敲墙，孩子在楼道学会打招呼。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0042",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "居委会黑板报旁",
+      "description": "常帮擦黑板换粉笔，公告内容几乎都能背。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0043",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "公共花园值日童",
+      "description": "小时候轮流浇公共花坛，记住哪种花怕涝。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0044",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "暑期托管班出身",
+      "description": "家长上班时被放在托管班，学会排队与分享。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0045",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "邻里纠纷调解旁听",
+      "description": "大人调解时坐在旁边听，明白先说清事实。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0046",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "节日巷宴常客",
+      "description": "逢节在巷口拼桌吃饭，每人带一道家常菜。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0047",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "失物招领墙常看",
+      "description": "放学路过招领墙，帮同学认过丢失的手套。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0048",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "夜间巡逻跟随者",
+      "description": "偶尔跟着大人巡巷，学会报出门牌与异常。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0049",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "社区广播听众",
+      "description": "晚饭时听广播通知，养成对时与记事习惯。"
+    },
+    {
+      "id": "lx.npc-origin.b0001.0050",
+      "category": "npc-origin",
+      "subcategory": "社区背景",
+      "name": "公共球场球童",
+      "description": "捡球换入场，认得每块场地的开放时段。"
+    }
+  ]
+}

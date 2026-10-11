@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-address",
+  "batchId": "npc-address.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-address.b0002.0001",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我是来取修好的旧椅的。",
+      "description": "初见取件时的礼貌开场。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0002",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "打扰，请问学徒工位在哪一侧？",
+      "description": "初见询问作坊布局的客气问。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0003",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我想请人看看这条裂缝。",
+      "description": "初见求助修补的简短称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0004",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "不好意思，胶水味有点冲，我站远一点。",
+      "description": "初见时顾及对方空间的礼貌说法。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0005",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我带了旧布，想问能不能补。",
+      "description": "初见携带材料求助的开场。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0006",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "请问，小店下午还接活吗？",
+      "description": "初见询问接单时间的客气句。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0007",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我是来送还借出的锉刀的。",
+      "description": "初见归还工具的礼貌说明。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0008",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "打扰了，量尺寸需要我配合站哪儿？",
+      "description": "初见配合测量的询问。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0009",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，墙上的告示说可以排队学补缝。",
+      "description": "初见按告示来访的称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0010",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "请问，废料箱可以让我翻找边角料吗？",
+      "description": "初见请求使用废料的礼貌问。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0011",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，您的尺借我比一下行吗？",
+      "description": "作坊内向同行借尺的客气称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0012",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "这边光线好，我让半个台面。",
+      "description": "同行间让出工作空间的说法。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0013",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，胶罐盖还没盖。",
+      "description": "提醒同行注意细节的简短称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0014",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "我们是不是在抢同一盒钉子？",
+      "description": "发现资源冲突时的轻松同行问。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0015",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，打磨的粉往您那边飘了，我换个角度。",
+      "description": "同行间顾及对方的礼貌说明。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0016",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "您也是学徒班的吗？",
+      "description": "确认是否同学徒身份的同行寒暄。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0017",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，工具墙上的钩子空了，我先挂这儿。",
+      "description": "共用工具区对同行的告知。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0018",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "我可以帮您按住这条边吗？",
+      "description": "同行间主动协助的客气提议。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0019",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，出风口在您背后，小心纸被吹走。",
+      "description": "提醒环境细节的同行称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0020",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "这位，我们量的是同一件旧物吗？",
+      "description": "确认工作对象的同行问法。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0021",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你那把细锉还我桌上了，谢。",
+      "description": "熟人归还工具的简短告知。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0022",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "今晚灯油够吗？不够我分一点。",
+      "description": "熟人关心作坊物资的说法。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0023",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你缝的那道边真齐，改天教我。",
+      "description": "熟人夸赞手艺的亲近称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0024",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "胶干了再动，别急。",
+      "description": "熟人间提醒工序的日常说法。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0025",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你柜子上的半成品我没动。",
+      "description": "熟人说明未动他人物品的告知。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0026",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "一起抬这张桌？你喊号子。",
+      "description": "熟人协作时的轻松称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0027",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你袖口沾胶了，水盆在左边。",
+      "description": "熟人提醒污渍的关心说法。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0028",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "收摊了？门口那盏灯我帮你熄。",
+      "description": "熟人收工时的互助称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0029",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你量三遍的习惯我学了。",
+      "description": "熟人提及对方习惯的轻松说法。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0030",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "旧布条你还留吗？我想剪两条。",
+      "description": "熟人索要边角料的日常问。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0031",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "尊敬的店主，这件旧物已按约定修好。",
+      "description": "向店主正式交付成果的称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0032",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位学徒，今日练习以补缝为主。",
+      "description": "对学徒群体的正式安排说明。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0033",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "请问工位主管，废料如何分类投放？",
+      "description": "对岗位负责人的正式询问（如「请问工位主管，废…」这类场景）。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0034",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "受委托送修，单号在此，请核验。",
+      "description": "正式送修时的身份与单据说明。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0035",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位顾客，今日接单已满，明日请早。",
+      "description": "对顾客发布限额的正式告知。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0036",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "材料清单已备妥，请核对签字。",
+      "description": "递交材料清单时的正式用语。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0037",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "恳请值班学徒协助开启工具柜。",
+      "description": "对值班学徒的正式请求。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0038",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位同行，安全告示请再阅一遍。",
+      "description": "对同行提醒安全的正式称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0039",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "送修人已到场，等候估价。",
+      "description": "正式估价流程中的到场说明。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0040",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "请允许我说明这件旧物的原有接缝。",
+      "description": "正式场合补充技术说明的请求。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0041",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫针衡，今天来学补缝。",
+      "description": "报姓名并说明学艺目的的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0042",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是邻店借工具的，很快还。",
+      "description": "以借还工具说明身份的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0043",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我带旧椅来修，裂缝在左侧腿。",
+      "description": "以送修对象开场的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0044",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是新学徒，还不太会认工具墙。",
+      "description": "新学徒的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0045",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫补川，专做小件缝补。",
+      "description": "报姓名与擅长范围的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0046",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我替家人取件，单号写在纸条上。",
+      "description": "以代取身份开场的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0047",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我在门口摆摊修伞，有事可喊。",
+      "description": "以摊位位置定位的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0048",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是来送边角料的，不收费。",
+      "description": "说明赠送材料来意的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0049",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫线汀，想观摩一下磨边。",
+      "description": "报姓名并说明观摩意图的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0002.0050",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我刚过学徒期，接活仍偏慢。",
+      "description": "如实说明进度的自我介绍。"
+    }
+  ]
+}

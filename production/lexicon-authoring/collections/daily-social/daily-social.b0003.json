@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-social",
+  "batchId": "daily-social.b0003",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-social.b0003.0001",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "抖蓑衣致意",
+      "description": "雨中见面抖一下蓑衣水珠当招呼。",
+      "examples": [
+        "蓑衣一抖，算打过。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0002",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "桨点水面",
+      "description": "船上相遇用桨尖轻点水面致意，不喊。",
+      "examples": [
+        "桨尖一点，船错开。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0003",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "斗笠沿一抬",
+      "description": "戴斗笠时抬沿露出半目再放下。",
+      "examples": [
+        "沿抬一寸就够。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0004",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "蛙鸣里举手",
+      "description": "夜堤见面怕惊蛙，只举手不喊名。",
+      "examples": [
+        "手举过肩，人影对上。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0005",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "潮声里短句",
+      "description": "潮大时招呼压成两字，靠口型辅助。",
+      "examples": [
+        "安——走。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0006",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "浣衣点头",
+      "description": "浣衣石边相遇点头，继续搓洗不停手。",
+      "examples": [
+        "头一点，板还在响。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0007",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "雨棚下让先",
+      "description": "同钻雨棚先抬手让对方进干处。",
+      "examples": [
+        "您先，里头干。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0008",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "渔灯晃一下",
+      "description": "夜航见面把渔灯晃一下再归位。",
+      "examples": [
+        "灯晃一弧，认船。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0009",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "湿手不握",
+      "description": "手湿时改抬肘致意，避免湿握。",
+      "examples": [
+        "肘抬一下，手还湿。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0010",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "晨雾里报向",
+      "description": "雾中相遇先报自己来向，减少惊吓。",
+      "examples": [
+        "上游来——早。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0011",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "湿伞挂廊钉",
+      "description": "客人湿伞挂廊钉，不进灶间。",
+      "examples": [
+        "伞挂钉上，水滴在外。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0012",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "脚布先备",
+      "description": "门口常备擦脚布，客人进吊脚楼先踩。",
+      "examples": [
+        "布在门槛，踩一下。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0013",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "姜汤不问辛",
+      "description": "雨寒待客姜汤默认淡，另放辣碟自取。",
+      "examples": [
+        "汤淡，辣在碟里。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0014",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "坐位避滴水",
+      "description": "请客人坐到不滴檐水的内侧。",
+      "examples": [
+        "往里，檐不滴这儿。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0015",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "鱼干小份",
+      "description": "待客鱼干先小碟，怕对方不喜腥。",
+      "examples": [
+        "先这一碟，不喜就收。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0016",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "灯笼送至桥",
+      "description": "夜送客人送到桥头灯亮处为止。",
+      "examples": [
+        "桥灯亮了，我回。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0017",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "草药味先说",
+      "description": "屋里晒药会先说明气味，允许开窗。",
+      "examples": [
+        "药味重，要开窗说。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0018",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "孩玩水浅处",
+      "description": "有孩到访指浅滩玩水界，深水自己守。",
+      "examples": [
+        "浅到那石，深我看着。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0019",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "借斗笠不问还时",
+      "description": "雨急借出斗笠不问确切还时，挂条即可。",
+      "examples": [
+        "挂条在，晴还就行。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0020",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "道别不拦舟",
+      "description": "客人要开船不拦缆，只帮解近岸绳。",
+      "examples": [
+        "绳我解，您撑。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0021",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "渠边不扔渣",
+      "description": "渠边约定果皮回筐，不顺手抛水。",
+      "examples": [
+        "渣进筐，水干净。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0022",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "渡口排队标",
+      "description": "渡口按地上石线排，不抢跳板。",
+      "examples": [
+        "脚后石线，别越。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0023",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "雨棚滴水让",
+      "description": "站雨棚下避开滴水线，给后来者干位。",
+      "examples": [
+        "滴线外站，干位让人。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0024",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "渔网不拦路",
+      "description": "晒网抬高或靠边，桥心留通行。",
+      "examples": [
+        "网抬高，桥心空。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0025",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "浣衣时段错开",
+      "description": "大件浣衣错开晨炊高峰，减争水。",
+      "examples": [
+        "炊后再浣大件。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0026",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "闸口不嬉水",
+      "description": "闸口石上不追逐，防滑倒挡操作。",
+      "examples": [
+        "闸口只过，不跑。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0027",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "夜堤少火把",
+      "description": "夜行堤用罩灯，少举明火怕惊鸟巢。",
+      "examples": [
+        "罩灯低照脚。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0028",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "药草架标名",
+      "description": "公共晾药架挂名牌，不混他人束。",
+      "examples": [
+        "名牌在，别混束。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0029",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "船位绳短系",
+      "description": "临时泊船绳系短，不横拦他人进出。",
+      "examples": [
+        "绳短系，口子让开。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0030",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "蛙季轻步",
+      "description": "蛙卵季岸边轻步，不踩草丛湿洼。",
+      "examples": [
+        "轻点脚，草里有卵。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0031",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "浅滩探杆先",
+      "description": "过浅滩一人探杆，另一人看水位喊。",
+      "examples": [
+        "我探，你看标。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0032",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "雨布共披边",
+      "description": "共披雨布各握一边，中缝不扯破。",
+      "examples": [
+        "你握那边，中缝松。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0033",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "船过口令",
+      "description": "同舟靠岸有口令，桨停步齐。",
+      "examples": [
+        "停桨——脚上岸。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0034",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "湿滑互指点",
+      "description": "见青苔湿石会指给同伴，不默认对方看见。",
+      "examples": [
+        "左脚青苔，滑。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0035",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "休息可蹲各处",
+      "description": "休息允许一人蹲渠一人坐石，不强同聊。",
+      "examples": [
+        "我蹲这儿听水，你随意。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0036",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "网具轮换背",
+      "description": "湿网沉时提议轮换背，不硬撑。",
+      "examples": [
+        "换我背一段。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0037",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "潮汛提前提",
+      "description": "临涨潮前提醒同伴收低处物，不吵。",
+      "examples": [
+        "潮要上来，低处收。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0038",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "话题避渔获夸",
+      "description": "不比渔获多少，改谈水路与天气。",
+      "examples": [
+        "今水清，别比篓。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0039",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "分手在干地",
+      "description": "分手前走到干地再道别，避免泥里握手。",
+      "examples": [
+        "到干处再说再见。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0040",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "归途报灯",
+      "description": "日落前报各自归途灯火方位，防走散。",
+      "examples": [
+        "我家灯在东堤。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0041",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "瓶信只写事",
+      "description": "瓶或竹筒传信只写事与日期，不写私怨。",
+      "examples": [
+        "三日到，为借网。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0042",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "渡口口信簿",
+      "description": "托渡口簿留言，写清取信人名。",
+      "examples": [
+        "簿上第三行，姓周取。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0043",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "旗语短约定",
+      "description": "远堤用旗色短约定：白安、红需助、黄等。",
+      "examples": [
+        "白旗，今日安。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0044",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "潮期改约",
+      "description": "约会被潮汛耽误会提前改日，不硬等。",
+      "examples": [
+        "潮大改后日，勿等。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0045",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "渔获价信短",
+      "description": "远程问价回短数与单位，不附闲话。",
+      "examples": [
+        "鲫十二一斤，今。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0046",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "雨停再送",
+      "description": "急件雨大则注明雨停再送，防湿毁。",
+      "examples": [
+        "雨停送，纸怕湿。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0047",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "灯语三短",
+      "description": "夜航约定三短灯为呼叫，长灯为靠岸。",
+      "examples": [
+        "三短，我呼叫。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0048",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "草药缺告替",
+      "description": "缺药先告可替种类，不擅自换方。",
+      "examples": [
+        "菖蒲缺，艾可替否？"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0049",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "桥毁绕路图",
+      "description": "桥毁时在公共栏贴绕路简图与有效期。",
+      "examples": [
+        "图贴栏，五日有效。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0003.0050",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "收网回一声",
+      "description": "约定外出收网归岸回一声锣或短讯。",
+      "examples": [
+        "锣一响，人已上岸。"
+      ]
+    }
+  ]
+}

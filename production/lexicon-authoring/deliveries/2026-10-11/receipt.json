@@ -1,0 +1,168 @@
+{
+  "format": "aetheria-lexicon-receipt",
+  "schemaVersion": 1,
+  "archive": "all-lexicon-delivery.zip",
+  "archiveSha256": "032b13849bb87505bb1a982cb92da6ff352512204247305d29e4b55a2f9f7c6d",
+  "sourceDeclaredModel": "Grok Bot (external report; not independently verified)",
+  "scope": "all",
+  "libraries": 58,
+  "batches": 214,
+  "collected": 10700,
+  "approved": 108,
+  "hold": 12,
+  "unreviewed": 10580,
+  "exactDuplicateGroups": 0,
+  "sameNameGroups": 6,
+  "nearPairs": 1205,
+  "npcNameNearPairs": 1183,
+  "findings": [
+    {
+      "id": "lx.body-color.b0003.0050",
+      "kind": "身体部位错配",
+      "note": "颧骨描述接上袖口，且“遮住它可见”语意冲突。",
+      "entry": {
+        "id": "lx.body-color.b0003.0050",
+        "category": "body-color",
+        "subcategory": "局部配色",
+        "name": "颧骨夕照暖",
+        "description": "颧骨在水岸夕照下偏暖，其余仍冷调，袖口常遮住它可见。"
+      }
+    },
+    {
+      "id": "lx.body-organ.b0003.0033",
+      "kind": "身体部位错配",
+      "note": "下颌的突起接上鞋口磨损，空间关系不成立。",
+      "entry": {
+        "id": "lx.body-organ.b0003.0033",
+        "category": "body-organ",
+        "subcategory": "冠与突起",
+        "name": "下颌卵石突",
+        "description": "下颌双突圆如小卵石，润泽，鞋口磨出亮边可见。"
+      }
+    },
+    {
+      "id": "lx.body-organ.b0004.0026",
+      "kind": "身体部位错配",
+      "note": "腰窝的储袋接上鞋口磨损，需重写部位关系。",
+      "entry": {
+        "id": "lx.body-organ.b0004.0026",
+        "category": "body-organ",
+        "subcategory": "囊与腔",
+        "name": "腰窝水壶形",
+        "description": "腰窝储袋扁圆如行军水壶侧面，鞋口磨出亮边。"
+      }
+    },
+    {
+      "id": "lx.body-beast.b0002.0009",
+      "kind": "身体部位错配",
+      "note": "耳部特征写成袖口常遮住，需重写。",
+      "entry": {
+        "id": "lx.body-beast.b0002.0009",
+        "category": "body-beast",
+        "subcategory": "耳部特征",
+        "name": "前倾听嘱耳",
+        "description": "耳位更前倾，像随时听工头嘱咐，袖口常遮住它。"
+      }
+    },
+    {
+      "id": "lx.world-room.b0001.0032",
+      "kind": "错字或漏字",
+      "note": "“柜门贴着个月标签”语句残缺。",
+      "entry": {
+        "id": "lx.world-room.b0001.0032",
+        "category": "world-room",
+        "subcategory": "储藏空间",
+        "name": "被褥柜房",
+        "description": "被褥按季节分柜，柜门贴着个月标签。"
+      }
+    },
+    {
+      "id": "lx.world-nature.b0002.0050",
+      "kind": "错字或漏字",
+      "note": "“会被轻轻请到窗外交”末尾明显多字。",
+      "entry": {
+        "id": "lx.world-nature.b0002.0050",
+        "category": "world-nature",
+        "subcategory": "季节痕迹",
+        "name": "开市第一蜂",
+        "description": "开春第一只蜂进作坊，会被轻轻请到窗外交。"
+      }
+    },
+    {
+      "id": "lx.body-build.b0003.0050",
+      "kind": "分类偏移",
+      "note": "碾贝壳是生活动作，不是体型或支撑外形。",
+      "entry": {
+        "id": "lx.body-build.b0003.0050",
+        "category": "body-build",
+        "subcategory": "支撑外形",
+        "name": "踵碾碎壳",
+        "description": "岸边碎贝壳用脚跟轻轻碾开，以免扎脚。"
+      }
+    },
+    {
+      "id": "lx.body-form.b0003.0033",
+      "kind": "分类偏移",
+      "note": "擦过苇尖的动作无法独立描述整体形态。",
+      "entry": {
+        "id": "lx.body-form.b0003.0033",
+        "category": "body-form",
+        "subcategory": "悬浮形态",
+        "name": "苇尖擦足",
+        "description": "足底柔垫擦过苇尖，苇叶只微微弯一下。"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b0001.0034",
+      "kind": "名称与描述不符",
+      "note": "名称强调拆包装，描述强调先看说明书，核心倾向需要统一。",
+      "entry": {
+        "id": "lx.npc-trait.b0001.0034",
+        "category": "npc-trait",
+        "subcategory": "好奇倾向",
+        "name": "喜欢拆开包装看",
+        "description": "对新到的公用物先看说明书再动手。",
+        "examples": [
+          "说明书折好塞回盒底。"
+        ]
+      }
+    },
+    {
+      "id": "lx.text-tf-adapt.b0001.0001",
+      "kind": "文本与说明不符",
+      "note": "正文已写练到一次通过，说明却写不承诺成功。正文与说明应一致。",
+      "entry": {
+        "id": "lx.text-tf-adapt.b0001.0001",
+        "category": "text-tf-adapt",
+        "subcategory": "动作练习",
+        "text": "你反复练习侧身过门，肩背擦框时调整角度，直到能一次通过。",
+        "description": "侧身过门的反复练习，不承诺成功。"
+      }
+    },
+    {
+      "id": "lx.npc-address.b0001.0024",
+      "kind": "分类过泛",
+      "note": "归还碗的通知句更适合事务对白，需与称呼素材区分。",
+      "entry": {
+        "id": "lx.npc-address.b0001.0024",
+        "category": "npc-address",
+        "subcategory": "熟人称呼",
+        "text": "你昨天借的碗我洗好放门口了。",
+        "description": "熟人归还物品的简短告知。"
+      }
+    },
+    {
+      "id": "lx.npc-address.b0002.0026",
+      "kind": "分类过泛",
+      "note": "抬桌邀请句更适合协作对白，需与称呼素材区分。",
+      "entry": {
+        "id": "lx.npc-address.b0002.0026",
+        "category": "npc-address",
+        "subcategory": "熟人称呼",
+        "text": "一起抬这张桌？你喊号子。",
+        "description": "熟人协作时的轻松称呼。"
+      }
+    }
+  ],
+  "note": "完整格式检查、机器查重和分层抽查；仅对适配清单的选定条目逐条批准。未声称人工通读全部10700条。外部报告没有审定权限。"
+}

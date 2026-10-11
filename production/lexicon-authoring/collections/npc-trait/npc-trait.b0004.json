@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-trait",
+  "batchId": "npc-trait.b0004",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-trait.b0004.0001",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "防晒先于赶路",
+      "description": "再急也先戴帽披巾，再开始爬坡。",
+      "examples": [
+        "帽檐压低再迈第一步。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0002",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "分水不独饮",
+      "description": "路上水壶分享前先问对方是否需要。",
+      "examples": [
+        "你要不要先润一下。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0003",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "石阶内侧走",
+      "description": "上下阶走相对稳的一侧，给负重者让道。",
+      "examples": [
+        "侧身停步让对方过。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0004",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "遮阳位轮换",
+      "description": "休息时遮阳处座位主动轮换，不长时间独占。",
+      "examples": [
+        "我晒一会，你坐阴处。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0005",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "问路先报来意",
+      "description": "向本地人问路先说明目的地与是否过夜。",
+      "examples": [
+        "去驿站，今晚住。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0006",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "尘土入户即清",
+      "description": "进门先拍鞋拍巾，再踏室内地面。",
+      "examples": [
+        "门外石台上拍两下。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0007",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "夜行结伴优先",
+      "description": "天黑下山尽量结伴，单独走会改计划。",
+      "examples": [
+        "一起走？灯我来提。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0008",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "布帘轻掀慢放",
+      "description": "进出挂帘店铺动作轻，避免扬尘呛人。",
+      "examples": [
+        "掀帘只开一条缝。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0009",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "补给按程分配",
+      "description": "干粮按路段分袋，不在起点吃光。",
+      "examples": [
+        "这袋留到垭口。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0010",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "感谢说具体",
+      "description": "接受帮助后说出对方做了哪一步。",
+      "examples": [
+        "谢谢你指了那条阴坡路。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0011",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "风向作开场",
+      "description": "寒暄常先谈风从哪边来，再切入正题。",
+      "examples": [
+        "今天北风干，路上要捂口。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0012",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "比喻偏地貌",
+      "description": "说明难易爱用坡陡缓、垭口远近来比。",
+      "examples": [
+        "这件事像慢坡，不急。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0013",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "口音不强改",
+      "description": "外地口音保留，只把关键词说清楚。",
+      "examples": [
+        "驿站，那个挂黄布的。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0014",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "少抱怨日晒",
+      "description": "晒得难受也少抱怨，改说找荫与补水。",
+      "examples": [
+        "前面有布棚，过去喝水。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0015",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "指路用手势大",
+      "description": "野外指路手臂挥得开，配合地标名称。",
+      "examples": [
+        "看见那排石桩再右转。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0016",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "告别看日头",
+      "description": "道别常看日头位置，提醒对方赶在凉前到。",
+      "examples": [
+        "趁阴坡还有光。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0017",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "故事留白多",
+      "description": "讲迁居见闻点到为止，细节等人追问。",
+      "examples": [
+        "那条路我走过一次。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0018",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "笑声被风吹散",
+      "description": "风口说话要贴近，笑声短促。",
+      "examples": [
+        "侧过头靠近再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0019",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "夸景色克制",
+      "description": "赞风景用短句，不堆华丽形容词。",
+      "examples": [
+        "这光不错。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0020",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "争议先降温",
+      "description": "争执时建议找荫处坐下再说，避免暴晒抬杠。",
+      "examples": [
+        "先到帘子下，慢慢说。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0021",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不擅入石棚住户",
+      "description": "路边石棚若有住人迹象，绕行不探头。",
+      "examples": [
+        "帘动也不掀开看。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0022",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "借水先问井规",
+      "description": "使用公共井或水窖先问取用规矩与时段。",
+      "examples": [
+        "现在可以打水吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0023",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "帐篷距住人远",
+      "description": "露营与住家保持距离，烟火也避开下风。",
+      "examples": [
+        "再退到那块平石后。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0024",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不问迁徙原委",
+      "description": "对远行者不追问为何离开，等对方自愿说。",
+      "examples": [
+        "话题转到路况。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0025",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "摄影避门帘内",
+      "description": "拍街景避开半开布帘内的起居细节。",
+      "examples": [
+        "镜头转向石阶纹理。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0026",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "负重不让人硬扛",
+      "description": "请人帮忙先问能否，不把重物硬塞。",
+      "examples": [
+        "这包你方便吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0027",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "夜宿报行踪",
+      "description": "在他人屋檐借宿会说明大致离开时间。",
+      "examples": [
+        "天亮就走，不打扰。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0028",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不采保护植物",
+      "description": "高地标注保护的植株只看不折。",
+      "examples": [
+        "手缩回，只拍照。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0029",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "牲口道让行",
+      "description": "遇驮队主动下坡侧让，不抢窄道。",
+      "examples": [
+        "贴崖壁停步。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0030",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "火种彻底熄灭",
+      "description": "休息用火离开前浇灭确认无火星。",
+      "examples": [
+        "拨开灰看一遍。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0031",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "辨石阶磨损",
+      "description": "喜欢看石阶被脚磨出的凹槽判断常用路。",
+      "examples": [
+        "深槽那条人多。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0032",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "问布帘颜色含义",
+      "description": "不同颜色门帘会问是否代表行业或姓氏。",
+      "examples": [
+        "黄帘是驿站吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0033",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "追风向变化",
+      "description": "一日内多次抬头看旗或草伏倒方向。",
+      "examples": [
+        "风转了，该加衣。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0034",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "收集地名别称",
+      "description": "同一地点的新旧称呼都想记下。",
+      "examples": [
+        "本地还怎么叫这里。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0035",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "试不同遮阳物",
+      "description": "帽、巾、伞哪种更适合坡路会亲自试。",
+      "examples": [
+        "换成头巾再走一段。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0036",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "问水源远近",
+      "description": "到新歇脚点先问最近可靠水源在哪。",
+      "examples": [
+        "水窖还是山泉。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0037",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "观察驮具绑法",
+      "description": "看驮队怎么绑绳，想学省力结。",
+      "examples": [
+        "那个活结怎么解。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0038",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "日影估时刻",
+      "description": "少看表时用日影与已知地标估时间。",
+      "examples": [
+        "影到那条缝大概申时。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0039",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "迁居见闻追问路",
+      "description": "听人说迁居必问走了几天、哪段最难。",
+      "examples": [
+        "垭口要不要过夜。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0040",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "星空辨方向兴趣",
+      "description": "晴夜爱认方位星，向老行路人请教。",
+      "examples": [
+        "哪颗对着下山口。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0041",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "口干更少话",
+      "description": "焦虑叠加干燥时话更少，只做手势。",
+      "examples": [
+        "指前方，点头示意走。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0042",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "反复紧帽带",
+      "description": "紧张时把帽带或头巾结越拉越紧。",
+      "examples": [
+        "结又被拽短一截。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0043",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "停步看来路",
+      "description": "压力大时频繁回头确认同伴是否跟上。",
+      "examples": [
+        "站在石阶转弯处等。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0044",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "补给清点多次",
+      "description": "担心物资不够就蹲下把袋子重数。",
+      "examples": [
+        "数完又打开看一眼。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0045",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "晒伤处乱抓",
+      "description": "烦躁时无意识抓晒红的皮肤，被提醒才停。",
+      "examples": [
+        "手放下，涂点油。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0046",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "找荫逃避对话",
+      "description": "争执时先钻进布棚，用喝水打断冲突。",
+      "examples": [
+        "喝完再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0047",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "脚步变碎急",
+      "description": "赶时间在陡坡上步子碎而急，需别人提醒慢。",
+      "examples": [
+        "慢点，膝别锁死。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0048",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "夜不能寐听风",
+      "description": "借宿不安时听风声到很晚，白天眼皮沉。",
+      "examples": [
+        "晨起说话带沙哑。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0049",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "拒绝新路自保",
+      "description": "已经疲惫会拒走未知捷径，语气生硬。",
+      "examples": [
+        "不抄近，原路回。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0004.0050",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "到达后久坐",
+      "description": "抵达目的地先坐着缓，不立刻安排下一程。",
+      "examples": [
+        "背包扔脚边闭眼。"
+      ]
+    }
+  ]
+}

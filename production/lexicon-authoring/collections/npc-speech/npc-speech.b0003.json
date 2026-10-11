@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-speech",
+  "batchId": "npc-speech.b0003",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-speech.b0003.0001",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "先报水位天气",
+      "description": "谈事开头常先报水位或天气，再入正题。",
+      "examples": [
+        "水位涨了两指。网今晚别下。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0002",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "用潮汐作时间",
+      "description": "时间常用潮汐窗口说，钟点作补充。",
+      "examples": [
+        "退潮那两小时做，大约午后。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0003",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "短句适合喊话",
+      "description": "水面喊话用极短句，重复关键词。",
+      "examples": [
+        "左！左！停！缆！"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0004",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "湿滑必口头警告",
+      "description": "看见湿滑会立刻口头警告靠近的人。",
+      "examples": [
+        "青苔，慢点，扶我。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0005",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "去向说水名",
+      "description": "说去哪常用湾名滩名，少用抽象方位。",
+      "examples": [
+        "我去雾嘴采苔，日落前归。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0006",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "商量多过命令",
+      "description": "船上协作也多用商量句，紧急才改命令。",
+      "examples": [
+        "要不要先避进湾？我觉得风不对。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0007",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "数字带单位",
+      "description": "报量必带单位：升、筐、指、刻。",
+      "examples": [
+        "再加两指水，别超过标。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0008",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "结束用‘靠岸’",
+      "description": "事情告一段落爱说“先靠岸”，表示暂停。",
+      "examples": [
+        "争论先靠岸，把人安置了再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0009",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "问句确认安全",
+      "description": "行动前短问安全确认，成习惯。",
+      "examples": [
+        "人齐了吗？救生拿了吗？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0010",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "少说吓小孩",
+      "description": "孩童在场少渲染险情，改说具体注意。",
+      "examples": [
+        "水深，拉着手，别跑。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0011",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用潮涨潮落比情绪",
+      "description": "情绪起伏用潮涨潮落、有退有进来说。",
+      "examples": [
+        "我这阵潮退了，别硬推。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0012",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用锚比稳定",
+      "description": "稳定与牵挂用抛锚、起锚、缆绳来比。",
+      "examples": [
+        "先抛锚，心定了再谈搬。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0013",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用雾比不明",
+      "description": "情况不明用雾、能见度低来形容。",
+      "examples": [
+        "这事还在雾里，别下定论。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0014",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用渔网比计划",
+      "description": "计划疏漏用网眼大小、会不会漏鱼来比。",
+      "examples": [
+        "网眼太大，细节都漏了。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0015",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用雨棚比庇护",
+      "description": "庇护与界限用雨棚能遮多少来讲。",
+      "examples": [
+        "我棚只够两人，再来就挤湿。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0016",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用水流比传话",
+      "description": "消息传播用顺流、回漩、别推波来讲。",
+      "examples": [
+        "这话别顺流乱传，易变味。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0017",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用苔比慢生长",
+      "description": "慢工与耐心用苔怎么长来比。",
+      "examples": [
+        "像养苔，急喷会死。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0018",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用渡船比过渡",
+      "description": "人生阶段用过渡、换船、别误班来讲。",
+      "examples": [
+        "这阵只是换船，不是沉。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0019",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用芦苇比柔韧",
+      "description": "柔韧不折用芦苇、随风弯来比。",
+      "examples": [
+        "学芦苇，风大就弯，别硬抗。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0020",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用灯塔比提醒",
+      "description": "提醒与边界用灯塔明灭、别靠太近来比。",
+      "examples": [
+        "我只做灯塔，路你自己走。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0021",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "风大就更短",
+      "description": "风大浪响时句子更短，靠手势辅助。",
+      "examples": [
+        "收！快！进湾！"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0022",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "雨棚下放松",
+      "description": "雨棚下闲聊语速放松，夹杂听雨停顿。",
+      "examples": [
+        "雨还大……茶续上……你刚才说？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0023",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "教水性时极慢",
+      "description": "教近水规则时语速极慢，并要回说。",
+      "examples": [
+        "水深过膝……拉手……回说一遍。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0024",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "报水位平稳",
+      "description": "报水位与预警时平稳，不带惊悚腔。",
+      "examples": [
+        "比昨高一指，低洼注意。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0025",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "夜里压低",
+      "description": "夜岸谈话压低，怕惊人或惊鸟。",
+      "examples": [
+        "（低）灯往左，别照脸。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0026",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "争执不隔水喊",
+      "description": "隔水争执改为靠岸再说，不隔水互吼。",
+      "examples": [
+        "靠过来谈，喊不清。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0027",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "湿冷时咬字紧",
+      "description": "湿冷时咬字更紧，像怕牙打颤影响意思。",
+      "examples": [
+        "回——屋——先换衣。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0028",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "讲故事就拉长",
+      "description": "讲水边旧事时语速拉长，允许停顿回忆。",
+      "examples": [
+        "那年水……漫到石阶第三级……"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0029",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "点名清点加快",
+      "description": "清点人名时加快成节奏，漏了立刻重来。",
+      "examples": [
+        "阿杉、小渠、苔姐——齐。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0030",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "安慰用匀速",
+      "description": "安慰落水受惊者用匀速低声，不连珠炮。",
+      "examples": [
+        "呼吸。毯子来了。不怪你。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0031",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "上船先问空位",
+      "description": "上船先问是否还有空位与是否超载。",
+      "examples": [
+        "还有空吗？我一个人一筐。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0032",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "借船留条规范",
+      "description": "借船按规范留条，归还报损如实。",
+      "examples": [
+        "去上游，日落归，尾舵有旧伤我知。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0033",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "渔讯分享不炫耀",
+      "description": "分享渔讯不炫耀自己多得，只报安全与位置。",
+      "examples": [
+        "上游浑，别下；雾嘴今晚可试。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0034",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "湿衣进屋先说",
+      "description": "带着湿衣进屋先说明，避免拖泥进屋。",
+      "examples": [
+        "我湿，在廊上拧干再进。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0035",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "小孩落水不笑",
+      "description": "有人落水尴尬时不笑，先协助保暖。",
+      "examples": [
+        "先喝热的，衣裳我去拿。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0036",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "占用阴凉限时",
+      "description": "稀缺干爽阴凉处占用说明时限。",
+      "examples": [
+        "我晒网一小时，随后让位。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0037",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "排污协商书面",
+      "description": "涉及排污先协商书面，少当众羞辱。",
+      "examples": [
+        "我们写联名，请上游看时段。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0038",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "教外地人读潮",
+      "description": "对外地人耐心读潮，不讥“旱鸭子”。",
+      "examples": [
+        "看那石标，过线就回。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0039",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "谢送灯具体到桥",
+      "description": "道谢点明地点与夜色，让帮助被看见。",
+      "examples": [
+        "谢谢送灯过第三桥，雨真大。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0040",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "共餐让时令鲜",
+      "description": "共餐时让时令鲜给访客或体弱者。",
+      "examples": [
+        "新藕先给您，我们吃旧的。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0041",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "用石标对错",
+      "description": "航线争议用石标与水位尺对，不靠嗓门。",
+      "examples": [
+        "看石标，我们偏了半船。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0042",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "落水复盘不责骂",
+      "description": "复盘落水事件先流程后人身，责骂延后。",
+      "examples": [
+        "先改救生位置，人的事私下谈。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0043",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "潮汐口诀共校",
+      "description": "口诀过时就共校更新，不坚持错的旧句。",
+      "examples": [
+        "旧口诀不适用新坝，改墙上这版。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0044",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "超载当场点数",
+      "description": "怀疑超载当场点数下人下货，不赌运气。",
+      "examples": [
+        "超了，两筐先留岸。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0045",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "网破画位置",
+      "description": "网破处在简图上画位置，方便补与避礁。",
+      "examples": [
+        "破在左下，对应雾嘴暗石。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0046",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "外地读音轻纠",
+      "description": "地名读错轻声纠正并示范，不让人难堪。",
+      "examples": [
+        "雾嘴，嘴轻声，我再念。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0047",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "雨具归还查损",
+      "description": "雨具归还当场查损，损坏照章说清。",
+      "examples": [
+        "伞骨断一根，按牌价赔半。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0048",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "水质误判公开",
+      "description": "水质误判公开说明，避免他人沿用错判。",
+      "examples": [
+        "我早判错了，以试纸为准。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0049",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "孩子错近水界",
+      "description": "孩子越过近水界线，拉回后讲清界线含义。",
+      "examples": [
+        "界内玩，界外拉手大人。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0003.0050",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "感谢报险者",
+      "description": "报险或指出险情者先谢，再处理细节。",
+      "examples": [
+        "谢谢你喊停，我们差点超载。"
+      ]
+    }
+  ]
+}

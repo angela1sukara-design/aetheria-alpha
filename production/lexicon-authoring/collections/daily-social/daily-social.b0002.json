@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-social",
+  "batchId": "daily-social.b0002",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-social.b0002.0001",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "敲台沿示到",
+      "description": "进店习惯轻敲台沿两下，代替大声喊有人吗。",
+      "examples": [
+        "台沿笃笃，人就抬头。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0002",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "看手不看脸",
+      "description": "工忙时招呼看对方手上活，不问闲话。",
+      "examples": [
+        "缝到哪儿了——早。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0003",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "递工具当礼",
+      "description": "短聚时把刚擦净的工具递一下当见面礼。",
+      "examples": [
+        "锉借你先用着。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0004",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "粉尘里挥袖",
+      "description": "打磨间见面用挥袖挡尘兼打招呼。",
+      "examples": [
+        "袖一甩，算打过招呼。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0005",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "学徒称师兄",
+      "description": "对先入门者固定称师兄师姐，不论年龄差。",
+      "examples": [
+        "师兄，胶在哪格？"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0006",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "收工点灯别",
+      "description": "收工遇见只点一下灯开关当道别。",
+      "examples": [
+        "灯一灭一亮，走了。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0007",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "隔着噪声举手",
+      "description": "机器响时举手过肩代替喊名字。",
+      "examples": [
+        "手举过耳，对方就看见。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0008",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "量尺点额",
+      "description": "双手占满时用量尺轻点额角致意。",
+      "examples": [
+        "尺尖点一下帽沿空位。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0009",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "胶味里短句",
+      "description": "溶剂味重处招呼压成单字，少张口。",
+      "examples": [
+        "嗯——你来了。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0010",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "送修件点名",
+      "description": "送修时先报物件名再报己名，方便台账。",
+      "examples": [
+        "椅腿，我姓陈。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0011",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "先看伤处",
+      "description": "客人带坏件进门，先看物件再寒暄。",
+      "examples": [
+        "先搁软布上，我瞧缝。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0012",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "报价写纸上",
+      "description": "口头报价后写在纸上留给客人带走比对。",
+      "examples": [
+        "纸给你，不着急定。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0013",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "茶放工作台外",
+      "description": "待客茶放远离漆与胶的侧桌，防沾味。",
+      "examples": [
+        "茶在侧桌，这边有味。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0014",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "试坐不催",
+      "description": "修好的椅让客人试坐，自己去干别的不盯。",
+      "examples": [
+        "您慢慢试，我磨那边。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0015",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "学徒端水",
+      "description": "有学徒时由学徒端水，自己继续说明工序。",
+      "examples": [
+        "水他端，我讲步骤。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0016",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "坏件编号签",
+      "description": "寄存坏件贴编号，联单给客人一联。",
+      "examples": [
+        "联单捏好，取件凭它。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0017",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "不贬前任修",
+      "description": "评论旧修补只谈材料，不贬先前匠人。",
+      "examples": [
+        "旧胶受潮了，常见。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0018",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "完工亮灯照",
+      "description": "交件时把灯拉近，让客人自己看接缝。",
+      "examples": [
+        "灯给你，您瞄这儿。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0019",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "边角料可选",
+      "description": "边角料问客人是否带走，不强塞。",
+      "examples": [
+        "剩料您要不要？不要我收。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0020",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "出门提醒漆",
+      "description": "未干漆件送客时口头提醒勿靠墙。",
+      "examples": [
+        "漆未干，别贴门框。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0021",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "工具不横放通道",
+      "description": "公共工位工具用完收回，不横在别人脚边。",
+      "examples": [
+        "锉收回槽，过道清。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0022",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "共用台擦半边",
+      "description": "用完共用台擦自己那半，留给下一位干面。",
+      "examples": [
+        "我这半擦了，您接着。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0023",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "噪音时段避谈",
+      "description": "砂轮开时不在旁大声谈价，等停机。",
+      "examples": [
+        "等它停，我出外头说。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0024",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "废料进指定桶",
+      "description": "边角进指定桶，不混可回收与沾胶废。",
+      "examples": [
+        "沾胶的走红桶。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0025",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "借梯写名",
+      "description": "借公梯在板上写名与预计还时。",
+      "examples": [
+        "名写上，申时还。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0026",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "通风口不堵",
+      "description": "材料不堆在排风扇前，留给全屋换气。",
+      "examples": [
+        "风扇前留两尺空。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0027",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "试音室轻关",
+      "description": "进出试音或喷漆间轻关门，减气压响。",
+      "examples": [
+        "门慢合，少砰一声。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0028",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "公告栏只加不盖",
+      "description": "新告示贴旁边，不覆盖他人未到期条。",
+      "examples": [
+        "贴边上，别盖旧的。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0029",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "电源盘轮用",
+      "description": "高峰时电源盘轮流，插完拔掉让下家。",
+      "examples": [
+        "我拔了，您插。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0030",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "午休低语区",
+      "description": "午休角约定低语，打鼾者被轻拍醒挪位。",
+      "examples": [
+        "这儿午睡，话少点。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0031",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "传工具柄朝外",
+      "description": "递工具给同伴柄朝对方，刃口向自己。",
+      "examples": [
+        "柄给你，刃我这边。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0032",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "喊尺寸复述",
+      "description": "报尺寸后等对方复述一遍再动手。",
+      "examples": [
+        "十八——你再说一遍。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0033",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "胶干前提醒",
+      "description": "协作涂胶后提醒对方可活动时间窗。",
+      "examples": [
+        "还有一盏茶功夫能调。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0034",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "学徒先做易步",
+      "description": "带学徒时把易错步留给自己，简单步给对方。",
+      "examples": [
+        "你钉，我来对缝。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0035",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "失手不责名",
+      "description": "协作失手先护件，不点名责备。",
+      "examples": [
+        "先扶住，再说怎么补。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0036",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "收工对清单",
+      "description": "收工两人对照清单，缺项当场找。",
+      "examples": [
+        "第三项——钳子呢？"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0037",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "粉尘轮换上风",
+      "description": "打磨时轮换上风位，不让一人总吃灰。",
+      "examples": [
+        "换我站上风。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0038",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "意见画在木上",
+      "description": "争执尺寸时画在废木上比划，不抬声音。",
+      "examples": [
+        "画这儿，比划完再定。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0039",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "重件喊起落",
+      "description": "抬重件有起落口令，中间不突然松手。",
+      "examples": [
+        "起——稳——落。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0040",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "夸具体针脚",
+      "description": "称赞同伴只说具体针脚或榫口，不空夸厉害。",
+      "examples": [
+        "这排针脚匀。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0041",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "修单邮寄联",
+      "description": "远程客户用邮寄联单，照片另附尺寸表。",
+      "examples": [
+        "联单先走，图后发。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0042",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "进度三日一信",
+      "description": "约定长修每三日一短信报进度，无事也报平安。",
+      "examples": [
+        "今无变，榫已干。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0043",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "材料缺货先告",
+      "description": "缺货先告可选替代，不擅自换料开做。",
+      "examples": [
+        "原木缺，榆可替，等回。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0044",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "托运写易碎",
+      "description": "托运箱写明易碎与向上，照片发给对方存底。",
+      "examples": [
+        "箱照发你，字已写。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0045",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "报价有效期注",
+      "description": "书面报价注有效天数，过期需重量。",
+      "examples": [
+        "价五日有效，过期重量。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0046",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "学徒代接注明",
+      "description": "学徒代接询价会注明师傅复核后再定。",
+      "examples": [
+        "代接，师傅晚些核。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0047",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "完工照带尺",
+      "description": "远程交件照旁放尺子，方便对方核对。",
+      "examples": [
+        "尺在旁，缝清晰。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0048",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "拒修也回因",
+      "description": "做不了的话回短因，并建议别处方向。",
+      "examples": [
+        "此料我司不熟，可问河东。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0049",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "加急费单列",
+      "description": "加急费用单列一行，方便对方决定是否要。",
+      "examples": [
+        "加急另列，不要可划。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0002.0050",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "收件回执章",
+      "description": "收到对方寄件立刻回执盖章或回短讯。",
+      "examples": [
+        "件到，章已盖。"
+      ]
+    }
+  ]
+}

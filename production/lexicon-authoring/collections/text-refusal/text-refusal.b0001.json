@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-refusal",
+  "batchId": "text-refusal.b0001",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.text-refusal.b0001.0001",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "这事我想自己收尾，你先顾你的就好，谢谢问起。",
+      "description": "温和划清自理边界，不暗示稍后会接受帮助。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0002",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "搬箱子我自己来就好，你手头也忙。",
+      "description": "拒绝并体谅对方。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0003",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "擦门牌我能搞定，不必专程过来。",
+      "description": "拒绝专程协助。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0004",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "水费单我自己填，格式我熟。",
+      "description": "因熟练而拒绝代劳。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0005",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "贴告示就我一个人够了，人多反而挤。",
+      "description": "以空间理由拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0006",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "清扫我按轮值来，今天不劳你额外插手。",
+      "description": "坚持轮值边界。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0007",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "钥匙我自己去取，顺路。",
+      "description": "拒绝陪同取物。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0008",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "报修我亲自去说，转述容易漏。",
+      "description": "拒绝代为转述。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0009",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "粮站我一个人去听就行，谢谢邀请同行。",
+      "description": "拒绝同行。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0010",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "便条我自己送到，不麻烦你转。",
+      "description": "拒绝转交请托。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0011",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "今晚的粥摊聚会我就不去了，想早些歇。",
+      "description": "因休息拒绝邀请。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0012",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "长椅闲聊改日吧，我还有单据要抄。",
+      "description": "因事务拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0013",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "南市看布我有兴趣，今天去不了。",
+      "description": "兴趣与时间分离的拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0014",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "井边坐一会儿挺好，我得先把水送回家。",
+      "description": "优先级拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0015",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "广场晒席我路过就行，不坐下了。",
+      "description": "缩短停留的拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0016",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "麦饼谢谢，我刚吃过，留给更饿的人。",
+      "description": "婉拒食物分享。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0017",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "公共厨房聚餐我这次缺席，下次再说。",
+      "description": "单次缺席，不关死门。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0018",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "告示栏那边人多，我站远一点就好，不凑近。",
+      "description": "拒绝靠近人群。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0019",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "牌局我不参加，看着就行。",
+      "description": "拒绝参与保留旁观。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0020",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "傍晚散步你先走，我收拾完桌子再出门。",
+      "description": "不同步出发的拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0021",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "住哪一户我就不多说了，巷口遇见打招呼就好。",
+      "description": "保留住址细节。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0022",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "水费多少属于私事，我只确认门牌。",
+      "description": "保留费用信息。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0023",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "家里几口人不必细问，我能自理就行。",
+      "description": "保留家庭构成。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0024",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "寄存柜里放的是什么，我想先自己知道就好。",
+      "description": "保留物品内容。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0025",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "报修原因我写在单上了，口头就不多展开。",
+      "description": "以书面代替口述。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0026",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "今天心情一般，具体原因不想讲。",
+      "description": "保留情绪原因。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0027",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "旧地图我自己描着玩，不公开给别人看。",
+      "description": "保留个人爱好细节。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0028",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "轮值对调找的是谁，我私下解决就行。",
+      "description": "保留协商对象。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0029",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "口袋里的粗糖是留给指定的人的，先不散。",
+      "description": "保留赠予对象。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0030",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "关于身体不适，我只跟医师说，谢谢关心。",
+      "description": "保留健康细节。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0031",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "这个话题到此为止，我们换一件事说。",
+      "description": "明确停止并建议换题。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0032",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "路灯通知的事我听懂了，别的就不多聊了。",
+      "description": "信息收束后停止。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0033",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "门牌对完就好，住址细节请不要再问。",
+      "description": "停止追问。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0034",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "粥摊好不好吃，说到这够了，口味因人而异。",
+      "description": "停止评价争论。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0035",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "邻居练琴的事我不想继续议论。",
+      "description": "停止邻里议论。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0036",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "旧纽扣收集听着有趣，但我今天不展开。",
+      "description": "礼貌收束兴趣话题。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0037",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "轮值累不累，别再劝我多承担了。",
+      "description": "停止劝说。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0038",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "天气聊完了，我们各自忙吧。",
+      "description": "寒暄结束。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0039",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "关于谁更早到粮站，这类比较到此打住。",
+      "description": "停止比较。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0040",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "我不太想听巷口传闻，请换个话题。",
+      "description": "拒绝传闻话题。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0041",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "搬箱子我自己来；若你想帮忙，可以帮我开一下门。",
+      "description": "拒绝主请托并提出轻量替代。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0042",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "今晚聚会我不去；你若带回一点粥渣，我可以明早还碗。",
+      "description": "缺席并提出间接参与。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0043",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "南市我今天不去；布样你若顺路捎一块回来，我看看色。",
+      "description": "提出捎带替代。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0044",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "清扫你不必帮；工具用完放回原处就够。",
+      "description": "缩小帮助范围。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0045",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "钥匙我不劳你取；你只要提醒我柜子编号就行。",
+      "description": "信息替代行动。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0046",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "报修我不请你代说；你可以陪我走到管事门口。",
+      "description": "陪同替代代言。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0047",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "长椅闲聊改日；你若有空，帮我看一眼椅腿稳不稳。",
+      "description": "改约并提出观察小忙。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0048",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "麦饼我不吃；你放桌上，留给后来的人。",
+      "description": "转赠替代接受。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0049",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "住址我不细说；需要联系时，留字条在公共板就好。",
+      "description": "公共渠道替代私密。"
+    },
+    {
+      "id": "lx.text-refusal.b0001.0050",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "这个话题停；如果你想继续聊，我们说井台维修进度。",
+      "description": "换题替代原话题。"
+    }
+  ]
+}

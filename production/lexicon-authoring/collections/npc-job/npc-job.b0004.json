@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-job",
+  "batchId": "npc-job.b0004",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-job.b0004.0001",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "遮阳帘缝边工",
+      "description": "为遮阳帘缝边并加坠角的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0002",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "石阶缺口填补工",
+      "description": "填补石阶缺口并打磨齐平的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0003",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "布帘挂钩锻工",
+      "description": "锻制并安装布帘挂钩的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0004",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "晒绳编结工",
+      "description": "编结耐晒绳并测试拉力的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0005",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "迁居箱加固工",
+      "description": "加固迁居木箱角铁的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0006",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "遮阳桩削平工",
+      "description": "削平遮阳桩顶便于张布的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0007",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "尘帽缝制工",
+      "description": "缝制防尘软帽并锁边的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0008",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "石凳托脚修工",
+      "description": "修理石凳松动托脚的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0009",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "帘轨滑轮换工",
+      "description": "更换帘轨滑轮使拉动顺畅的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0010",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "行囊缝补工",
+      "description": "缝补远行行囊破口的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0011",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "迁居包裹看管员",
+      "description": "短时看管迁居包裹并核对标签的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0012",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "遮阳位引导员",
+      "description": "引导行人到遮阳位休息的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0013",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "石阶休息凳擦拭员",
+      "description": "擦拭石阶旁休息凳的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0014",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "远路饮水点值守员",
+      "description": "值守远路饮水点并提醒节约的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0015",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "布帘开合提醒员",
+      "description": "提醒按时开合公共布帘的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0016",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "行囊过磅员",
+      "description": "为行囊过磅并报数的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0017",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "高台观景秩序员",
+      "description": "维持高台观景处礼貌距离的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0018",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "尘路洗靴点协调员",
+      "description": "协调尘路旁洗靴点排队的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0019",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "遮阳布租借登记员",
+      "description": "登记短时租借遮阳布的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0020",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "迁居路线口头说明员",
+      "description": "用平常话说明迁居常用路线的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0021",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "迁居清单模板提供员",
+      "description": "提供迁居物品清单模板的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0022",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "石阶编号校对员",
+      "description": "校对石阶路段编号与地图的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0023",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "遮阳时段表更新员",
+      "description": "更新公共遮阳布开合时段表的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0024",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "远路见闻摘要员",
+      "description": "把远路见闻整理成短摘要供张贴的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0025",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "尘暴注意短句改写员",
+      "description": "把尘暴注意点改写成易读短句的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0026",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "布帘破损建档员",
+      "description": "为破损布帘建立位置档案的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0027",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "迁居手续辅导员",
+      "description": "辅导新迁入者填写必要表格的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0028",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "高台容量记录员",
+      "description": "记录高台同时停留人数供参考的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0029",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "行囊标签规范讲解员",
+      "description": "讲解行囊标签写法规范的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0030",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "石阶养护日志抄录员",
+      "description": "抄录石阶养护日志的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0031",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "石阶积尘清扫员",
+      "description": "清扫石阶积尘的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0032",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "遮阳布张挂员",
+      "description": "按日照张挂公共遮阳布的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0033",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "布帘除尘员",
+      "description": "抖除尘土并整理布帘褶皱的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0034",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "晒台地面刮尘员",
+      "description": "刮去晒台地面浮尘的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0035",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "迁居车辙填平员",
+      "description": "填平迁居车辙浅坑的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0036",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "路旁碎石归堆员",
+      "description": "把路旁散碎石归堆的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0037",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "遮阳桩松动检查员",
+      "description": "检查遮阳桩是否松动的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0038",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "高台护栏擦拭员",
+      "description": "擦拭高台护栏便于扶持的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0039",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "尘路洒水员",
+      "description": "在尘路适量洒水降尘的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0040",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "行囊临时堆放整理员",
+      "description": "整理行囊临时堆放区的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0041",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "迁居备案窗口员",
+      "description": "受理迁居备案并盖章的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0042",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "高台开放时段公示员",
+      "description": "公示高台开放时段的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0043",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "遮阳设施报修接待员",
+      "description": "接待遮阳设施报修的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0044",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "远路义工调度员",
+      "description": "调度远路维护义工的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0045",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "石阶封闭告示员",
+      "description": "张贴石阶临时封闭告示的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0046",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "公共行囊柜管理员",
+      "description": "管理公共行囊寄存柜的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0047",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "尘路通行协调员",
+      "description": "协调尘路双向让行的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0048",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "布帘公约宣讲员",
+      "description": "宣讲公共布帘使用公约的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0049",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "迁居纠纷转办员",
+      "description": "转办迁居相关书面纠纷的人。"
+    },
+    {
+      "id": "lx.npc-job.b0004.0050",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "高台夜间巡灯协调员",
+      "description": "协调高台夜间巡灯的人。"
+    }
+  ]
+}

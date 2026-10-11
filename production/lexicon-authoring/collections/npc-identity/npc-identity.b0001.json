@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-identity",
+  "batchId": "npc-identity.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-identity.b0001.0001",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "合租楼层住户",
+      "description": "与几户人家合用楼梯与晾衣台，轮流清扫公共转角。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0002",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "巷口小院主户",
+      "description": "住在窄巷尽头小院，门口常放借还的扫帚与水桶。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0003",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "市场楼上居民",
+      "description": "住在早市铺面上方，晨间习惯压低脚步声。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0004",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "公共厨房共住人",
+      "description": "与邻舍共用灶台与储物柜，自备标签贴在罐子上。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0005",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "阳台邻接住户",
+      "description": "阳台隔着矮墙相望，偶尔递过晾衣夹或几句闲话。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0006",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "临时床位租户",
+      "description": "在驿站式短租房过夜，行李始终收在一只布袋里。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0007",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "屋顶棚户住客",
+      "description": "住在加盖的轻质棚屋，雨天要检查接缝是否渗水。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0008",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "街角铺后住人",
+      "description": "白天照看门面，晚上睡在铺后隔出的窄间。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0009",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "工棚合住人",
+      "description": "与同事同住简易工棚，各自用布帘隔出一小块空间。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0010",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "公共浴室常客户",
+      "description": "没有独立浴室，每周固定时段去社区公共浴室。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0011",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "早市摊主互助会",
+      "description": "摊主们约定互相照看摊位，谁请假就代收摊布。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0012",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "巷道清扫轮值组",
+      "description": "几户轮流扫巷，用粉笔在墙上记下下次轮到谁。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0013",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "茶摊闲谈常客",
+      "description": "固定坐同一条长凳，听新闻也分享自家琐事。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0014",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "邻里借物簿成员",
+      "description": "名字写在公共借物簿上，借还工具都留一行字。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0015",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "社区告示板维护人",
+      "description": "负责换图钉、撕旧告示，把过期纸条收进回收箱。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0016",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "晚饭后散步圈",
+      "description": "晚饭后沿同一条路慢走，碰面就点头或并肩走一段。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0017",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "雨天借伞联络网",
+      "description": "熟人留下备用伞，下雨时按名单互相通知可取。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0018",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "院子晾衣协调组",
+      "description": "约定晾衣绳分区，避免被单挡住别人的日照。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0019",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "公共水槽值日生",
+      "description": "轮流清理水槽残渣，保持洗碗区不积水。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0020",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "楼道灯报修联络人",
+      "description": "灯坏了由一人汇总报修，避免多人重复上门。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0021",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "同住兄妹",
+      "description": "共用厨房与客厅，各自房间门上贴不同颜色的便签。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0022",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "隔代共住人",
+      "description": "与长辈同住一层，负责买菜与整理药盒标签。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0023",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "合住室友",
+      "description": "分摊房租与清洁日，冰箱格子用磁贴标名。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0024",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "周末探访亲属",
+      "description": "周末带回自家做的酱菜，顺便帮换窗帘挂钩。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0025",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "远亲借住者",
+      "description": "短期借住客房，尽量不占用主家常用的橱柜。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0026",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "同屋照看宠物者",
+      "description": "轮流喂食与清砂，门旁挂着喂食时间的小牌。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0027",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "分户同院亲属",
+      "description": "同院不同门牌，过年时一起擦共用门廊。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0028",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "照料幼弟妹者",
+      "description": "放学后先陪写作业，再去市场买晚饭食材。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0029",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "外住仍回餐者",
+      "description": "另租住处，却常回老家吃晚饭并带走剩菜。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0030",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "新婚同住筹备者",
+      "description": "正收拾旧房做新居，墙角堆着未拆的纸箱。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0031",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "社区意见收集员",
+      "description": "把住户对公区安排的意见记进小本，再转达给管事人。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0032",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共桌椅保管员",
+      "description": "负责把折叠桌椅搬进棚屋，雨前检查是否收齐。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0033",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "告示张贴协调人",
+      "description": "统一告示高度与边距，避免墙面被随意覆盖。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0034",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "失物招领柜台值日",
+      "description": "把捡到的钥匙与手套登记编号，放进透明格子柜。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0035",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共饮水处看护",
+      "description": "留意水龙头是否关紧，地上积水就铺防滑垫。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0036",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "巷口安全提醒员",
+      "description": "傍晚提醒孩子远离车流，自己站在视野开阔处。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0037",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共信箱整理人",
+      "description": "按户号分拣信件，退回写错地址的信封。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0038",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "节日布置志愿者",
+      "description": "用旧布与彩纸装点巷口，活动后负责拆回收纳。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0039",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "噪声协调调解人",
+      "description": "在施工与休息时段之间传话，尽量让双方改时间。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0040",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共储物柜钥匙托管",
+      "description": "替外出住户保管备用钥匙，取用时留签名。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0041",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "新迁入试住者",
+      "description": "试住两周，观察上下楼噪声与采光是否合适。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0042",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "等候空房排队者",
+      "description": "名字写在候租名单上，每周去问一次空房进度。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0043",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "短期借住周转人",
+      "description": "在朋友家沙发过夜，白天把铺盖叠好靠边。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0044",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "搬迁装箱中住户",
+      "description": "屋里半空半满，吃饭用纸箱当临时桌。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0045",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "退房清点待离者",
+      "description": "对照入住清单逐项清点，墙钉孔用腻子抹平。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0046",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "合租换房协商中",
+      "description": "正与室友商量谁留下谁搬走，租约尚未改签。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0047",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "寄宿等待分配者",
+      "description": "临时睡在接待站床位，等正式宿舍床位名单。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0048",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "探亲延长停留者",
+      "description": "原定短住，因家事多留几日，每天重叠被褥。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0049",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "工地临近退场住客",
+      "description": "工程收尾，工棚即将拆除，正收拾个人箱包。"
+    },
+    {
+      "id": "lx.npc-identity.b0001.0050",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "候补入住登记人",
+      "description": "已交意向金，钥匙尚未到手，仍住在别处。"
+    }
+  ]
+}

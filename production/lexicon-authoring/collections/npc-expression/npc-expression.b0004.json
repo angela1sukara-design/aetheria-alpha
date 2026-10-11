@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-expression",
+  "batchId": "npc-expression.b0004",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-expression.b0004.0001",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方远望坡上尘柱，目光追着移动直到辨出是畜群。",
+      "description": "远望尘柱辨畜群。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0002",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方在强光下用手搭棚，目光从石阶一级级往下数。",
+      "description": "搭棚数石阶。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0003",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方看路标石刻时侧头借阴影，指尖描着凹痕。",
+      "description": "侧头借阴影读石刻。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0004",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方听见驼铃，目光先寻声源再看你的反应。",
+      "description": "闻铃寻源并看对方。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0005",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方盯着地平线热浪扭曲，眨眼驱走幻觉似的晃。",
+      "description": "盯热浪眨眼。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0006",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方检查宿营点时目光扫过低洼与风口。",
+      "description": "扫低洼与风口的选址目光。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0007",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方被布帘晃影打断，目光追着帘边又拉回谈话。",
+      "description": "追帘影再拉回。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0008",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方夜路借星，抬下巴对准一颗亮星校正方向。",
+      "description": "抬颌对星定向。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0009",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方看你的水囊余量，目光在囊袋褶皱上停了一拍。",
+      "description": "注视水囊褶皱估量。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0010",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方目送同伴下坡，直到拐过岩壁才收拾自己的包。",
+      "description": "目送至拐弯再收拾。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0011",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方被干风吹得嘴唇起皮，无意识地用齿缘轻蹭。",
+      "description": "唇起皮齿蹭。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0012",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方防晒帽檐下，脸颊仍晒出一道浅色分界。",
+      "description": "帽檐下晒痕分界。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0013",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方干渴时说话，舌面可见发白，停顿去润喉。",
+      "description": "干渴舌白润喉。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0014",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方笑时眼角挤出干纹，很快又被风吹平表情。",
+      "description": "笑出干纹又被风吹平。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0015",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方闻见干草香，鼻翼放松，神情柔了一瞬。",
+      "description": "闻干草鼻翼放松。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0016",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方沙尘扑面，紧闭口鼻，只留一道眼缝视路。",
+      "description": "闭口留眼缝视路。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0017",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方听完加价，面肌绷紧又强行松成礼貌笑。",
+      "description": "绷紧改礼貌笑。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0018",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方夜寒中哈气暖手，白雾短暂遮住下半脸。",
+      "description": "哈气暖手遮面。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0019",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方被晒得额头脱细屑，抬手轻轻搓掉。",
+      "description": "搓额细屑。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0020",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方沉默赶路时下颌绷紧，只有喝水时松开。",
+      "description": "绷颌赶路喝水松开。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0021",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方手杖点地的节奏与步幅咬合，上坡时加密。",
+      "description": "手杖点地节奏随坡变。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0022",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方负重时把胸带收紧，双肩前倾切入风里。",
+      "description": "收胸带前倾迎风。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0023",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方在石阶上外侧落脚，内侧留给下行的人。",
+      "description": "外侧落脚让行。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0024",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方放下驮物后，双手撑膝喘了两轮才直腰。",
+      "description": "撑膝喘息再直腰。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0025",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方把布帘撩起一角钻入，侧身不让风灌进棚。",
+      "description": "撩帘侧身入棚。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0026",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方蹲着调辐条，另一手肘撑在膝上固定。",
+      "description": "蹲调辐条肘撑膝。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0027",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方逆光行走时把帽檐压低，肩线跟着帽沿走。",
+      "description": "压帽檐肩线跟随。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0028",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方过独木桥时横向迈步，眼睛盯着对面固定点。",
+      "description": "横步盯固定点过桥。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0029",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方歇脚时把一只脚蹬在石上，解开鞋带透气。",
+      "description": "蹬石解带透气。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0030",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方扛水时重心随桶晃左右微调，步子碎而稳。",
+      "description": "扛水碎步稳重心。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0031",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方在叉路石堆前停下，掏出地图对了又对。",
+      "description": "叉路反复对地图。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0032",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把水囊递到一半，看了眼自己余量又收回半口。",
+      "description": "递水又留半口。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0033",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方想抄坡近道，踢了踢浮石，改走之字形主路。",
+      "description": "试浮石改走主路。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0034",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方进镇前整理衣领，手到一半又把沙尘拍净。",
+      "description": "整领改拍尘。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0035",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方报价还价时石子在掌心转，最终报出整数。",
+      "description": "转石子后报整数。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0036",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方夜宿想独自走远方便，听风声又折回营边。",
+      "description": "欲走远又折回营。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0037",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方写驿站路况，写到危险处删了形容词改成事实。",
+      "description": "删修辞改事实。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0038",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方伸手扶老人下阶，先问了一句能否碰臂。",
+      "description": "扶人前先问可否触碰。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0039",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方点火前看了看风向，挪了两次灶位才点燃。",
+      "description": "看风挪灶再点燃。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0040",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把明信片投进驿筒又敲筒壁，确认掉进去。",
+      "description": "投信敲筒确认。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0041",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方卸下负重，仰躺在布帘阴影里盯着布纹。",
+      "description": "卸负仰躺看布纹。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0042",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把靴子倒出沙砾，听沙打在石上的细响。",
+      "description": "倒靴沙听细响。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0043",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方背靠石壁，把草茎咬在齿间慢慢嚼。",
+      "description": "靠壁嚼草茎。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0044",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方打了个长长的哈欠，眼泪被干风立刻吹干。",
+      "description": "哈欠泪被风干。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0045",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把帽檐推高，让前额透风，呼出一声畅气。",
+      "description": "推高帽檐透风。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0046",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方用指尖在沙上画路线，画完又抹平。",
+      "description": "沙上画线再抹平。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0047",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把水洒一点在腕上拍开，降温后笑了笑。",
+      "description": "腕上拍水降温。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0048",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方听远处羊群铃，跟着轻轻哼出同一节拍。",
+      "description": "跟铃哼拍。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0049",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方盘腿坐定，把酸胀的脚踝缓缓转圈。",
+      "description": "盘腿转踝。"
+    },
+    {
+      "id": "lx.npc-expression.b0004.0050",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把旅行毯盖到鼻下，只留眼睛看晚霞收尽。",
+      "description": "毯盖鼻下看晚霞。"
+    }
+  ]
+}

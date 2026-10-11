@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-identity",
+  "batchId": "npc-identity.b0003",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-identity.b0003.0001",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "水渠边吊脚住户",
+      "description": "房屋架在水渠边桩上，雨季要加高门槛挡水。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0002",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "雨棚下排屋住人",
+      "description": "连片雨棚遮着窄巷，屋檐滴水声成了日常背景。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0003",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "苔阶小楼住客",
+      "description": "石阶常生薄苔，进出习惯轻踩防滑。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0004",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "渡口栈道旁住人",
+      "description": "夜里听得到船缆摩擦声，窗常糊防潮纸。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0005",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "湿货仓库侧室住",
+      "description": "住在干湿分区的侧室，鞋底进门必换。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0006",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "浮桥附近合租户",
+      "description": "合租屋离浮桥很近，涨水时互相提醒收阳台物。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0007",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "蕨墙庭院住户",
+      "description": "院墙被蕨类覆绿，晴天也湿润，衣物要阴干。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0008",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "抽水泵房邻住人",
+      "description": "泵房定期启动，习惯在噪声段关门读报。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0009",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "船屋停靠住客",
+      "description": "船屋系在固定桩，生活用水靠岸上水站。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0010",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "潮湿底层转上层者",
+      "description": "从易潮底层搬到上层，仍留着除湿机习惯。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0011",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "雨季排水互助队",
+      "description": "暴雨前清沟，暴雨中轮流察看低洼户门口。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0012",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "共用水龙头排班组",
+      "description": "高峰时段按楼层取水，避免水管空抽。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0013",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "苔径养护志愿圈",
+      "description": "定期清落叶但不刮光苔面，保留防滑湿度。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0014",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "渡口候船闲聊班",
+      "description": "等船时站同一避雨角，交换水位与班次消息。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0015",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "雨棚修补协作组",
+      "description": "发现漏点就标记，周末一起换油布与绳扣。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0016",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "湿伞晾架共用网",
+      "description": "公共伞架分区，湿伞与干伞不混挂。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0017",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "水生植物照看组",
+      "description": "轮流给公共水生盆栽换水，捞走枯叶。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0018",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "防潮物资借贷簿",
+      "description": "除湿机与干燥剂可借，归还时记下剩余量。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0019",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "晨雾散步同伴",
+      "description": "雾重的早晨沿堤慢走，雾散才各自去忙。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0020",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "涨水预警传话链",
+      "description": "上游有人观察水位，消息沿巷口一人传一人。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0021",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "水岸同住兄妹",
+      "description": "抢着做晒被日，谁先起谁开窗透气。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0022",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "湿季照看长辈者",
+      "description": "雨天帮长辈擦门槛积水，药盒放干燥高处。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0023",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "合租防潮分工户",
+      "description": "一人负责除湿机排水，一人检查墙角返潮。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0024",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "船家亲属共住人",
+      "description": "岸上与船上两边住，吃饭常在码头板屋。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0025",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "隔代讲潮汐故事",
+      "description": "晚饭后听长辈讲旧年涨水线，墙上留着记号。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0026",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "雨棚下儿时玩伴",
+      "description": "长大仍同院，雨停就一起清排水口落叶。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0027",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "外住仍回晒被者",
+      "description": "另租干爽楼层，周末回老家帮忙晒被褥。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0028",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "情侣合租水岸屋",
+      "description": "选了临水小屋，门口放两双防滑拖鞋。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0029",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "亲友临时避水住",
+      "description": "自家进水时来借住，带来的湿衣先挂外廊。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0030",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "同屋轮流守夜者",
+      "description": "暴雨夜轮流起来看门槛，听到水声就叫醒对方。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0031",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "水位标尺读报员",
+      "description": "每天读一次渠边标尺，把数字写在告示板上。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0032",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共雨靴架管理员",
+      "description": "雨靴按尺码挂齐，破洞的单独放修补篮。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0033",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "渡口秩序引导员",
+      "description": "上下船时提醒抓稳扶手，湿滑处撒粗砂。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0034",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "排水口清障值日",
+      "description": "清走堵口的枝叶，把落叶倒进指定堆肥处。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0035",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共烘干房排号人",
+      "description": "阴雨天分时段烘干衣被，超时轻敲门提醒。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0036",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "水岸路灯报修联络",
+      "description": "灯灭就记杆号，避免夜路过暗。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0037",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "防滑垫巡查员",
+      "description": "检查栈道防滑垫是否卷边，卷了就钉回。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0038",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共苔景讲解志愿",
+      "description": "周末给访客介绍可踩与不可踩的苔区。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0039",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "湿货市场卫生监督",
+      "description": "提醒摊主污水不直排渠，用水桶集中倒。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0040",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "避雨亭座椅保管",
+      "description": "亭内座椅傍晚收回棚屋，防止整夜受潮开裂。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0041",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "雨季临时上迁者",
+      "description": "低洼屋进水风险高，暂搬到亲友上层房间。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0042",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "等干爽房源者",
+      "description": "指名要通风好的屋，暂时住潮屋过渡。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0043",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "船屋转岸上候住人",
+      "description": "决定上岸定居，岸上钥匙还没批下来。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0044",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "涨水撤离暂宿者",
+      "description": "撤离到社区接待点，白天回去看自家水位。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0045",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "防潮改造施工中户",
+      "description": "墙面做防潮层期间借住别处，周末回来验收。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0046",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "新迁水岸适应者",
+      "description": "刚搬来，还在学怎么收阳台与看水位。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0047",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "季节性回水岸者",
+      "description": "旱季住高处，雨季才回水岸旧屋短期住。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0048",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "合租潮屋试住中",
+      "description": "试住观察返潮与噪声，尚未签长约。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0049",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "排水工程旁暂离户",
+      "description": "沟渠施工吵，短期借住市场楼上。"
+    },
+    {
+      "id": "lx.npc-identity.b0003.0050",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "候补干仓床位人",
+      "description": "申请公共干爽床位，名单还在公示。"
+    }
+  ]
+}

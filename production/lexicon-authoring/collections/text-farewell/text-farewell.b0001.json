@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-farewell",
+  "batchId": "text-farewell.b0001",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.text-farewell.b0001.0001",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "我去井边打一桶水，马上回来，凳子帮我看着就行。",
+      "description": "短时离开并轻托。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0002",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "告示栏我贴一下就回，你先喝口茶。",
+      "description": "短时事务离开。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0003",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "我去对面问一声门牌，五分钟内到。",
+      "description": "短时核实离开。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0004",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "粮票忘在外套里，我回去拿，你先排着。",
+      "description": "取物短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0005",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "炉子响了一声，我去看一眼，不长聊。",
+      "description": "突发短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0006",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "我去公共板留个字，片刻就回这条凳。",
+      "description": "留字短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0007",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "鞋带松了，我到墙根系一下，你先说。",
+      "description": "整理短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0008",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "猫又跟着来了，我把它送出巷口，立刻回。",
+      "description": "送猫短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0009",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "水开了，我关一下火，话先搁这儿。",
+      "description": "家务短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0010",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "我去取寄存柜钥匙，很快，你不用跟着。",
+      "description": "取钥短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0011",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "轮值清扫我做完了，先回去，工具放原处。",
+      "description": "完工告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0012",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "水费单交掉了，我下班，告示有更新你自己看。",
+      "description": "办完事告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0013",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "贴完最后一张，我收工，浆糊桶盖好了。",
+      "description": "收工交代。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0014",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "报修我登过记，今日职责到此，先走了。",
+      "description": "职责结束告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0015",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "粮站说明听完，我回岗位，笔记你要可抄。",
+      "description": "听会后回岗。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0016",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "寄存柜班次结束，钥匙交下一班了，我先撤。",
+      "description": "交班告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0017",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "清扫名单对完，我回自己巷口值班。",
+      "description": "对完表回岗。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0018",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "公共厨房收摊了，灶灭了，我先回家。",
+      "description": "收摊告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0019",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "路灯巡查走完一圈，记录本放下，明天见班。",
+      "description": "巡查结束。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0020",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "便条送到了，外勤结束，我回驿站销单。",
+      "description": "外勤销单告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0021",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "我先回家把碗收了，你慢些走，巷口石板还沾着水。",
+      "description": "带路况关照的日常告别，不约定再遇。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0022",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "那就先这样，巷口见，不必特意送。",
+      "description": "轻松道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0023",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "聊得差不多了，我回家烧水，你也早些歇。",
+      "description": "互相关照道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0024",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "日安收尾，我走东侧，你走西侧也行。",
+      "description": "分路道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0025",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "谢谢提醒，我先走了，井盖记得留神。",
+      "description": "回谢并道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0026",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "告辞。风不小，帽子按稳些。",
+      "description": "简短关照。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0027",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "先别了，粥摊要是还开，你自己看着买。",
+      "description": "不强求同行。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0028",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "我回了，长椅留给后来的人坐。",
+      "description": "让出空间道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0029",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "再见。门牌擦亮后我会再路过看看。",
+      "description": "普通再见。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0030",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "走了。今天话不多，但够用。",
+      "description": "克制风格道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0031",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "也许还会在粮站碰到，不碰到也正常。",
+      "description": "不约定的可能再见。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0032",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "巷口人来人往，缘分到了就点头。",
+      "description": "开放偶遇。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0033",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "我不约具体日子，住得近总会遇见。",
+      "description": "近邻不约。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0034",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "告示栏见不见得到你，随缘。",
+      "description": "场所偶遇。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0035",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "各忙各的吧，有事再在公共板留言。",
+      "description": "以留言替代约定。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0036",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "下次若还聊得上，也好；聊不上，也没亏欠。",
+      "description": "无亏欠收束。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0037",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "我不拦你行程，走哪算哪。",
+      "description": "尊重自由离开。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0038",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "井边未必天天遇，遇到了再问声好。",
+      "description": "低频偶遇预期。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0039",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "今天就到这儿，将来如何，先不说满。",
+      "description": "不承诺未来。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0040",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "散了。世界大，小巷也深。",
+      "description": "诗意未约定。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0041",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "先走了；若你改了主意要帮手，字条贴门外我看得到。",
+      "description": "离开但留联系余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0042",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "今晚不去聚会；你若觉得冷清，明早可以敲我窗一下。",
+      "description": "拒绝当下留后路。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0043",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "门牌事先搁下；你想继续对，明天同一时段我大概率在。",
+      "description": "时间窗口余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0044",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "清扫对调我暂不定；你有新方案，放到轮值盒里。",
+      "description": "决策余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0045",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "告辞；余盐你若还留着，后天我可能来问一声。",
+      "description": "交易余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0046",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "先回；长椅闲聊改日也行，不改也行。",
+      "description": "弹性再约。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0047",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "我不送你到路口；需要我时，廊灯下喊一声就行。",
+      "description": "呼叫余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0048",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "话题先停；你若换了说法再提，我愿意听。",
+      "description": "话题重启余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0049",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "寄存钥匙我先拿着；你方便时来取，不必道歉晚。",
+      "description": "取物时间余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0001.0050",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "走了；若路上地砖更湿，回头告诉我一声。",
+      "description": "信息反馈余地。"
+    }
+  ]
+}

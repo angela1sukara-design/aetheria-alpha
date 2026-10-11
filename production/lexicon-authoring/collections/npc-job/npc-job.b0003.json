@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-job",
+  "batchId": "npc-job.b0003",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-job.b0003.0001",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "篷布缝补工",
+      "description": "缝补雨棚篷布破口并加固角的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0002",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "木桩削尖工",
+      "description": "削尖水岸木桩便于打入软土的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0003",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "滤网编织工",
+      "description": "编织与修补渠口滤网的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0004",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "湿靴底钉工",
+      "description": "为湿靴更换防滑钉的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0005",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "闸板刮泥工",
+      "description": "刮净小闸板泥垢并上薄油的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0006",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "苔石嵌缝工",
+      "description": "为苔石路嵌缝防松动的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0007",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "芦苇帘编工",
+      "description": "编织芦苇帘作遮挡的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0008",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "水管接头缠布工",
+      "description": "用布条缠紧临时水管接头的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0009",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "防滑垫缝边工",
+      "description": "为防滑垫缝边防散开的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0010",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "篷绳打结工",
+      "description": "为篷绳打防脱结并测试的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0011",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "避雨篷位引导员",
+      "description": "引导避雨者轮换使用公共篷位的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0012",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "湿靴架看管员",
+      "description": "看管公共湿靴架并提醒取走的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0013",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "滤网出借登记员",
+      "description": "登记出借滤网并核对归还的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0014",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "潮位口头播报员",
+      "description": "用口头播报提醒当日潮位高低的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0015",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "雨棚下座位协调员",
+      "description": "协调雨棚下短暂座位的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0016",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "清渠工具分发员",
+      "description": "分发清渠耙子与手套的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0017",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "湿阶扶手擦拭员",
+      "description": "擦拭湿阶扶手防滑腻的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0018",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "晾苔架预约员",
+      "description": "为晾苔架做短时预约登记的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0019",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "闸板启闭提醒员",
+      "description": "提醒闸板即将启闭的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0020",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "泥靴冲洗点值守员",
+      "description": "值守泥靴冲洗点并保持通畅的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0021",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "渠务日志抄录员",
+      "description": "抄录每日渠务巡查日志的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0022",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "潮位对照表更新员",
+      "description": "更新简易潮位对照表供张贴的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0023",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "篷布破损建档员",
+      "description": "为破损篷布建立位置与面积档案的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0024",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "湿路安全短句改写员",
+      "description": "把湿路注意点改写成易读短句的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0025",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "义工清渠名单员",
+      "description": "整理清渠义工名单与到岗记录的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0026",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "苔石路段标注员",
+      "description": "在地图上标注易滑苔石路段的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0027",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "滤网更换周期记录员",
+      "description": "记录滤网更换周期供查阅的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0028",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "雨棚承重说明讲解员",
+      "description": "用平常话讲解雨棚承重注意的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0029",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "植物共居告示校对员",
+      "description": "校对植物共居相关告示用词的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0030",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "闸板操作步骤抄录员",
+      "description": "抄录闸板操作步骤贴于现场的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0031",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "渠岸落叶清理员",
+      "description": "清理渠岸落叶避免堵塞的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0032",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "苔石路扫水员",
+      "description": "扫去苔石路表面积水的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0033",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "芦苇过高修剪员",
+      "description": "修剪过高芦苇以免挡路的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0034",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "木桩松动检查员",
+      "description": "检查水岸木桩是否松动的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0035",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "篷绳收放员",
+      "description": "按雨势收放公共篷绳的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0036",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "湿阶泥痕冲刷员",
+      "description": "冲刷湿阶泥痕的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0037",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "蕨丛边杂物拾捡员",
+      "description": "拾捡蕨丛边丢弃杂物的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0038",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "滤网前漂浮物捞取员",
+      "description": "捞取滤网前漂浮物的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0039",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "雨棚排水槽疏通员",
+      "description": "疏通雨棚排水槽的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0040",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "公共冲洗点地面刮水员",
+      "description": "刮去冲洗点地面积水的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0041",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "渠务报修接待员",
+      "description": "接待渠务报修并开回执的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0042",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "雨棚使用公约宣讲员",
+      "description": "宣讲雨棚轮换使用公约的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0043",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "潮汛临时通知员",
+      "description": "逐段通知潮汛临时安排的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0044",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "水岸义工调度员",
+      "description": "调度水岸清理义工的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0045",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "闸板钥匙保管员",
+      "description": "保管小闸板操作钥匙的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0046",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "湿路封闭告示员",
+      "description": "张贴并撤除湿路临时封闭告示的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0047",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "公共滤网台账员",
+      "description": "维护公共滤网出入台账的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0048",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "避雨点容量监控员",
+      "description": "监控避雨点人数并引导分流的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0049",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "植物种植许可核对员",
+      "description": "核对公共区域植物种植许可的人。"
+    },
+    {
+      "id": "lx.npc-job.b0003.0050",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "水岸夜间巡灯协调员",
+      "description": "协调水岸夜间巡灯时段的人。"
+    }
+  ]
+}

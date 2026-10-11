@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-reply",
+  "batchId": "text-reply.b0002",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.text-reply.b0002.0001",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "刃口确实能磨回来，交给我，明天下午取。",
+      "description": "认可修补可行性。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0002",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "半卷布线我要，原价就好，谢了。",
+      "description": "认可材料分享。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0003",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "人手紧我知道了，今天不添新单。",
+      "description": "认可店务限制。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0004",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "凳腿尺寸我对过了，缝宽和你量的一样。",
+      "description": "认可测量结果。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0005",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "工具箱钥匙位置记住了，用完会锁回。",
+      "description": "认可交接规则。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0006",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "铆钉我先试一只，手感对了再做剩下的。",
+      "description": "认可试做流程。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0007",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "第二层油漆要，颜色和上次一致就行。",
+      "description": "认可补漆决定。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0008",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "废料我挑两枚垫片，其余你清掉吧。",
+      "description": "认可清理并取留件。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0009",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "周五前能好，我们时间够，放心。",
+      "description": "认可交期判断。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0010",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "胶水我没牌子偏好，你进常用的就行。",
+      "description": "认可进货自主。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0011",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "钝剪能不能磨回来，我得先看缺口深不深。",
+      "description": "需检查后判断。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0012",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "布线我可能只要四分之一卷，整半卷有点多。",
+      "description": "用量迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0013",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "学徒请假这几天，我怕赶工质量会滑。",
+      "description": "对质量风险迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0014",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "凳腿裂缝我看着像能钉，又怕越钉越裂。",
+      "description": "方法选择迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0015",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "钥匙我暂时不拿，今天不做活。",
+      "description": "暂不用具的迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0016",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "铆钉我手生，先看你示范一只再决定接不接。",
+      "description": "学习后再定。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0017",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "第二层油漆……颜色干了会不会偏深，我有点拿不准。",
+      "description": "效果不确定。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0018",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "废料里那枚齿轮我想留，又不知道以后用不用得上。",
+      "description": "去留迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0019",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "周五交期紧，若中途缺钉，可能要延一天。",
+      "description": "有条件风险提示。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0020",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "胶水牌子我其实有偏好，只是一时叫不上名。",
+      "description": "记忆不清的迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0021",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "你说的旧款接缝，是指双明线，还是暗缝？",
+      "description": "澄清缝法。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0022",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "磨剪是只磨刃口，还是连轴也要上油？",
+      "description": "澄清工序范围。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0023",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "布线是棉线还是麻线？我听成同一种了。",
+      "description": "澄清材料。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0024",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "凳腿裂的是外腿还是靠墙那条？",
+      "description": "澄清位置。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0025",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "工具箱第二格，是从上数还是从下数？",
+      "description": "澄清位置编码。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0026",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "铆钉试做，你要的是平头还是圆头？",
+      "description": "澄清规格。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0027",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "油漆补第二层，是整面，还是只补起皮处？",
+      "description": "澄清范围。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0028",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "废料清理，金属和木头是分开倒，还是一起？",
+      "description": "澄清分类规则。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0029",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "灯罩交期周五，是周五早上，还是日落前？",
+      "description": "澄清截止时刻。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0030",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "进胶是小瓶还是罐装？店里搁得下吗？",
+      "description": "澄清包装与空间。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0031",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "我不赞成把裂痕完全填平，留一点痕迹也无妨。",
+      "description": "审美不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0032",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "磨太锋利反而伤布，我觉得保持略钝更好。",
+      "description": "功能取向不同。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0033",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "学徒请假不该把急单全压给一个人。",
+      "description": "劳动分配不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0034",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "凳腿与其钉死，不如换一条，更省心。",
+      "description": "方案不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0035",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "钥匙放抽屉不如挂墙上，找起来快。",
+      "description": "存放方式不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0036",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "铆钉我建议先钻孔再铆，硬砸容易歪。",
+      "description": "工序不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0037",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "第二层油漆可以省，第一层已经够匀。",
+      "description": "节省材料的不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0038",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "废料不该全清，有些垫片以后修灯用得着。",
+      "description": "保留意见。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0039",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "周五交期太紧，我主张先跟顾客说实话。",
+      "description": "沟通策略不同。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0040",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "胶水我更信旧牌子，新的气味太冲。",
+      "description": "品牌偏好不同。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0041",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "钝剪能不能修，我拆开看过再答。",
+      "description": "拆检后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0042",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "布线分量我盘点完库存再定要多少。",
+      "description": "盘点后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0043",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "人手安排我跟店主商量后再回你。",
+      "description": "需协商暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0044",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "凳腿修法我今晚画个草图，明天说。",
+      "description": "设计后再答。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0045",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "铆钉接不接，我先看示范再定。",
+      "description": "观摩后决定。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0046",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "油漆颜色样板干透前，我暂不点头。",
+      "description": "等样品再答。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0047",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "废料去留列个单子，你过目后再清。",
+      "description": "清单确认后。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0048",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "交期能不能周五，我算完工时再答复。",
+      "description": "工时核算暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0049",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "进哪种胶，我问过老主顾再告诉你。",
+      "description": "征询后再答。"
+    },
+    {
+      "id": "lx.text-reply.b0002.0050",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "你问‘为什么不换新的’，这个问题我想想再答学徒。",
+      "description": "教学措辞暂缓。"
+    }
+  ]
+}

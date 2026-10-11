@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-talk",
+  "batchId": "daily-talk.b0002",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "subcategory": "倾听",
+      "text": "对方放下锉刀，侧耳听学徒描述哪里卡住。",
+      "description": "放锉侧耳听卡住处。",
+      "id": "lx.daily-talk.b0002.0001",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把耳朵靠近运转的旧钟，听齿啮合的节奏。",
+      "description": "近钟听齿啮合。",
+      "id": "lx.daily-talk.b0002.0002",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方在敲打间隙停锤，听委托人把需求说完。",
+      "description": "停锤听完需求。",
+      "id": "lx.daily-talk.b0002.0003",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方点头听完邻店借工具的理由，才去开柜。",
+      "description": "听完借由再开柜。",
+      "id": "lx.daily-talk.b0002.0004",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把砂纸搁下，双手撑台边认真听报价争议。",
+      "description": "搁砂纸听报价争议。",
+      "id": "lx.daily-talk.b0002.0005",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方闭眼听木头被敲的回声，判断内部是否空。",
+      "description": "闭眼听木回声判空。",
+      "id": "lx.daily-talk.b0002.0006",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把徒弟的汇报听完才提问，不中途打断。",
+      "description": "听完汇报再提问。",
+      "id": "lx.daily-talk.b0002.0007",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方蹲在修好的椅旁，听客人试坐后的感受。",
+      "description": "听客人试坐感受。",
+      "id": "lx.daily-talk.b0002.0008",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把收音机关掉，专听门外叫修的短句。",
+      "description": "关收音听门外叫修。",
+      "id": "lx.daily-talk.b0002.0009",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方用听骨贴箱壁，听里面零件有无松动声。",
+      "description": "听骨贴壁检松动。",
+      "id": "lx.daily-talk.b0002.0010",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把成本谈僵时，转问对方喜欢哪种木纹。",
+      "description": "僵时转问木纹偏好。",
+      "id": "lx.daily-talk.b0002.0011",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方夸完学徒一针，顺势把话题引到下一件活。",
+      "description": "夸针引下一件活。",
+      "id": "lx.daily-talk.b0002.0012",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把抱怨旧设备的话岔到“以前那批料”。",
+      "description": "岔怨到以前那批料。",
+      "id": "lx.daily-talk.b0002.0013",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方递过一杯水，借喝水空隙换到交货日期。",
+      "description": "递水换谈交货日期。",
+      "id": "lx.daily-talk.b0002.0014",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方指着墙上的旧招贴，把闲聊引到店史。",
+      "description": "指旧招贴引店史。",
+      "id": "lx.daily-talk.b0002.0015",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把争执的价签翻面，提议先看样品再说。",
+      "description": "翻价签提议看样品。",
+      "id": "lx.daily-talk.b0002.0016",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方提起共用磨刀石该不该换，岔开人事闲话。",
+      "description": "提磨石岔开人事闲话。",
+      "id": "lx.daily-talk.b0002.0017",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把坏掉的样品举起来，话题回到技术本身。",
+      "description": "举坏样回到技术。",
+      "id": "lx.daily-talk.b0002.0018",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方问“下午谁值班”，把聚谈拆回各自岗位。",
+      "description": "问值班拆回岗位。",
+      "id": "lx.daily-talk.b0002.0019",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把账本合上，说“活比账要紧”，转回手头。",
+      "description": "合账转回手头活。",
+      "id": "lx.daily-talk.b0002.0020",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把尺寸再念一遍：“长四十，宽二十，对吗？”",
+      "description": "念尺寸确认对吗。",
+      "id": "lx.daily-talk.b0002.0021",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方用木条比出长度，请对方看是不是这个。",
+      "description": "木条比长请看确认。",
+      "id": "lx.daily-talk.b0002.0022",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方复述工序顺序，等师傅点头再动手。",
+      "description": "复述工序等点头。",
+      "id": "lx.daily-talk.b0002.0023",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把颜色样板并排放，问要偏深还是偏浅。",
+      "description": "并排放色板确认深浅。",
+      "id": "lx.daily-talk.b0002.0024",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把“明天午前取”写在纸条，推给对方过目。",
+      "description": "写取件时间推过目。",
+      "id": "lx.daily-talk.b0002.0025",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方指着裂口问：“是修到看不见，还是留痕迹？”",
+      "description": "问修法留痕与否。",
+      "id": "lx.daily-talk.b0002.0026",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把报价拆成材料与工时两项，分别核对。",
+      "description": "拆报价两项分别核。",
+      "id": "lx.daily-talk.b0002.0027",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方用粉笔在地上画安装位置，问偏左还是偏右。",
+      "description": "粉笔地画位确认左右。",
+      "id": "lx.daily-talk.b0002.0028",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把委托人的原话记在本上读回，等改正。",
+      "description": "记原话读回等改正。",
+      "id": "lx.daily-talk.b0002.0029",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方举起两把不同锉，问要用粗的还是细的。",
+      "description": "举两锉确认粗细。",
+      "id": "lx.daily-talk.b0002.0030",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方比划着空气中的弧线，寻找描述弧度的词。",
+      "description": "比弧线寻描述词。",
+      "id": "lx.daily-talk.b0002.0031",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方说“那种……有回弹的手感”，努力描述皮革。",
+      "description": "有回弹手感描皮革。",
+      "id": "lx.daily-talk.b0002.0032",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方用“别太亮、也别哑”绕着说理想光泽。",
+      "description": "绕说理想光泽措辞。",
+      "id": "lx.daily-talk.b0002.0033",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方抓了抓头，把行话翻成客人能懂的白话。",
+      "description": "行话翻白话寻措辞。",
+      "id": "lx.daily-talk.b0002.0034",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方指着接缝说“要咬紧但不咬死”，自造比喻。",
+      "description": "咬紧不咬死自造喻。",
+      "id": "lx.daily-talk.b0002.0035",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方先说错一个型号，摆手改口说出正确编号。",
+      "description": "说错型号改口正确。",
+      "id": "lx.daily-talk.b0002.0036",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方用“像旧桌那种黄”来描述想要的漆色。",
+      "description": "旧桌黄描漆色。",
+      "id": "lx.daily-talk.b0002.0037",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方停顿时敲了敲台面，敲定“加固”这个词。",
+      "description": "敲台敲定加固一词。",
+      "id": "lx.daily-talk.b0002.0038",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方把难听的“坏了”改成“需要再护理一下”。",
+      "description": "坏了改成再护理。",
+      "id": "lx.daily-talk.b0002.0039",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方用手势画圆，嘴里找“同心”还是“对齐”。",
+      "description": "画圆寻同心或对齐。",
+      "id": "lx.daily-talk.b0002.0040",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把工具收回匣：“今天先到这。”话与活同收。",
+      "description": "收工具说到这结束。",
+      "id": "lx.daily-talk.b0002.0041",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方撕下收据递给对方，谈话随交易收束。",
+      "description": "撕收据随交易收束。",
+      "id": "lx.daily-talk.b0002.0042",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方说“胶还要干”，起身去干别的，话题自然断。",
+      "description": "胶要干起身断话题。",
+      "id": "lx.daily-talk.b0002.0043",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把店门半掩，对外的闲聊随之结束。",
+      "description": "半掩店门结束闲聊。",
+      "id": "lx.daily-talk.b0002.0044",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方点头说“就按这个做”，拍掌定案收口。",
+      "description": "拍掌定案收口。",
+      "id": "lx.daily-talk.b0002.0045",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把学徒支去扫地，自己与客人的话也收住。",
+      "description": "支扫地亦收客人话。",
+      "id": "lx.daily-talk.b0002.0046",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方看了看炉火：“该封炉了。”把夜话收掉。",
+      "description": "该封炉收夜话。",
+      "id": "lx.daily-talk.b0002.0047",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把样品柜锁上，表示展示与讲解都结束。",
+      "description": "锁样品柜结束讲解。",
+      "id": "lx.daily-talk.b0002.0048",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方说“有消息我叫你”，挥手让对方先走。",
+      "description": "有消息叫你挥手结束。",
+      "id": "lx.daily-talk.b0002.0049",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把围裙解下挂好，身体语言宣告收工停谈。",
+      "description": "解围裙挂好停谈。",
+      "id": "lx.daily-talk.b0002.0050",
+      "category": "daily-talk"
+    }
+  ]
+}

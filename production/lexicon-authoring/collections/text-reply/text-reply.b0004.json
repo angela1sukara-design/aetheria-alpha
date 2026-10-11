@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-reply",
+  "batchId": "text-reply.b0004",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定"
+  },
+  "entries": [
+    {
+      "id": "lx.text-reply.b0004.0001",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "松台阶我来试踩，你在旁边看着。",
+      "description": "认可安全试踩。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0002",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "遮阳挂钩我闲时挂，备用钩我看见了。",
+      "description": "认可维护请托。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0003",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "迁居清单我对过了，漏项没有。",
+      "description": "认可核对结果。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0004",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "饮水预约帮我问一下，谢谢。",
+      "description": "认可代问。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0005",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "脏帘下午我送洗涤点。",
+      "description": "认可洗涤安排。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0006",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "扶手缠麻绳我参加，材料够就开干。",
+      "description": "认可协作。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0007",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "远行登记表我填，笔在桌上就行。",
+      "description": "认可填表。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0008",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "红点标记清楚，螺丝位置找得到。",
+      "description": "认可标记方式。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0009",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "储物间新负责人我知道了，东侧第二户。",
+      "description": "认可交接信息。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0010",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "迁居车队空位我占一个，明早到。",
+      "description": "认可占位。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0011",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "试踩可以，但我腿劲一般，怕踩不准。",
+      "description": "表达犹豫与顾虑，呼应「试踩可以但我腿劲一般」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0012",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "挂钩我能挂，梯子有点晃，想再找人扶。",
+      "description": "安全迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0013",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "清单我对了，有一项不确定算不算必需。",
+      "description": "标准迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0014",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "饮水预约帮问可以，名额可能已经没了。",
+      "description": "结果不确定。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0015",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "脏帘要送，今天风沙大，怕路上更脏。",
+      "description": "天气顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0016",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "缠麻绳我参加，手起泡了，可能缠不快。",
+      "description": "身体状态迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0017",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "登记表我填，目的地还没最后定。",
+      "description": "信息未全。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0018",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "红点看见了，就是日照下有点看不清。",
+      "description": "可见性顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0019",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "新负责人我记下了，怕认错门。",
+      "description": "认路迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0020",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "空位我想占，行李体积还没量准。",
+      "description": "条件未备。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0021",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "第三级松，是从上数还是从下数？",
+      "description": "澄清台阶编号。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0022",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "挂钩掉的是左角还是右角？",
+      "description": "追问以对齐信息，呼应「挂钩掉的是左角还是右角？」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0023",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "清单漏项，你指的是衣物，还是饮水器具？",
+      "description": "澄清类别。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0024",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "饮水预约是按人，还是按壶数？",
+      "description": "澄清规则。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0025",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "洗涤点收件到下午几点截止？",
+      "description": "澄清时限。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0026",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "麻绳是缠满整根扶手，还是只缠易滑段？",
+      "description": "追问以对齐信息，呼应「麻绳是缠满整根扶手还是」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0027",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "预计归日是填确定日，还是大致区间？",
+      "description": "澄清填法。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0028",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "红点画在螺丝上，还是画在旁边石面？",
+      "description": "澄清标记处。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0029",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "东侧第二户，是从驿站数，还是从坡顶数？",
+      "description": "澄清门牌基准。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0030",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "车队空位是坐人，还是放行李也算一席？",
+      "description": "澄清空位含义。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0031",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "松台阶与其垫木，不如先换石，更长久。",
+      "description": "提出相左看法，呼应「松台阶与其垫木不如先换」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0032",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "挂钩我主张改金属环，布钩太容易掉。",
+      "description": "材料不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0033",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "清单里炊具可以少带，驿站有公用的。",
+      "description": "减负不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0034",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "饮水预约不该只靠口头问，应看告示栏。",
+      "description": "信息渠道不同。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0035",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "脏帘先抖沙再送洗，省得洗涤点加价。",
+      "description": "提出相左看法，呼应「脏帘先抖沙再送洗省得洗」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0036",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "扶手缠绳前应先打磨毛刺，不然会磨破皮。",
+      "description": "预处理意见。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0037",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "远行登记不该强制填归日，变数太多。",
+      "description": "规则观不同。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0038",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "红点在日照下看不清，该换成刻痕。",
+      "description": "标记方式不同。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0039",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "储物钥匙轮值太勤，容易乱，我赞成半月一换。",
+      "description": "频率不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0040",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "车队空位该优先给带孩子的，我可以让。",
+      "description": "优先序不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0041",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "试不试踩，我绑紧鞋带再定。",
+      "description": "准备后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0042",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "挂钩几点挂，我看完风势再回你。",
+      "description": "暂不决断并说明原因，呼应「挂钩几点挂我看完风势再」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0043",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "清单最后一项，我回家对一眼再确认。",
+      "description": "暂不决断并说明原因，呼应「清单最后一项我回家对一」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0044",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "饮水名额，我问到确切数再转告。",
+      "description": "问清后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0045",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "送帘时间，我看完洗涤点排队再定。",
+      "description": "现场观察暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0046",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "缠绳参不参加，我处理完手上水泡再说。",
+      "description": "身体恢复暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0047",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "归日怎么填，我想一夜再写。",
+      "description": "思考暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0048",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "螺丝松不松，我傍晚阴凉时再摸一次。",
+      "description": "再检暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0049",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "新负责人门牌，我走去认一次再答你认没认对。",
+      "description": "实地确认。"
+    },
+    {
+      "id": "lx.text-reply.b0004.0050",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "占不占空位，我量完行李体积明早前答复。",
+      "description": "测量后答复。"
+    }
+  ]
+}

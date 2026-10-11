@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-value",
+  "batchId": "npc-value.b0003",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-value.b0003.0001",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "潮天改工序",
+      "description": "潮湿天改做不怕潮的工序，不硬拼天气。",
+      "examples": [
+        "今天补网，油漆改晴天。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0002",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "水位也算工期",
+      "description": "把水位与潮汐算进工期，不怪天气耽误。",
+      "examples": [
+        "退潮两小时窗口，抓紧绑桩。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0003",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "湿手不碰利器",
+      "description": "手湿时先擦干再碰利器，安全优先于赶工。",
+      "examples": [
+        "手擦干了再拿梭。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0004",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "雨棚下也能工",
+      "description": "承认雨棚下的工作同样正经，不必等到晴天才算劳动。",
+      "examples": [
+        "雨棚下织完这一片再收。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0005",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "藻滑要喊停",
+      "description": "地面藻滑就暂停搬运，先清再走。",
+      "examples": [
+        "地滑，箱子先放下。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0006",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "渔获按力分配",
+      "description": "重活按体力轮换，不默认谁更该扛。",
+      "examples": [
+        "大筐轮流抬，别总是你。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0007",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "晒场要留通路",
+      "description": "晒场再满也留人行通路，方便互助与紧急通行。",
+      "examples": [
+        "中间留一条道，别堵死。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0008",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "夜工点双灯",
+      "description": "夜工至少两处光源，减少踩空与误伤。",
+      "examples": [
+        "船头船尾都亮，再下网。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0009",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "湿衣先换再干",
+      "description": "湿透先换干衣，再继续，不把硬扛当勤快。",
+      "examples": [
+        "先换衣服，别感冒硬干。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0010",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "收网后清点",
+      "description": "收网后清点工具与人员，确认都上岸。",
+      "examples": [
+        "人齐了吗？梭子数一下。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0011",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "雨夜互送灯",
+      "description": "雨夜互相送一段路的灯火，再各自回家。",
+      "examples": [
+        "我送你到桥头，灯给你。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0012",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "涨水先搬公共",
+      "description": "涨水时先搬公共物资与行动不便者的物品。",
+      "examples": [
+        "先搬药柜，再搬各自的。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0013",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "渡口排队互助",
+      "description": "渡口拥挤时互相照应老人与带物者上船。",
+      "examples": [
+        "您先上，我帮您扶筐。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0014",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "苔径共维护",
+      "description": "共走的苔径一起清扫保湿，不单方面破坏。",
+      "examples": [
+        "这段苔我们留着，别铲光。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0015",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "借船写去向",
+      "description": "借船写清去向与归时，方便寻找与安心。",
+      "examples": [
+        "我去上游采苔，日落前归。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0016",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "落水不笑人",
+      "description": "有人落水先救与保暖，不把窘态当笑料。",
+      "examples": [
+        "先裹毯，笑话以后再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0017",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "菜畦水共享",
+      "description": "灌溉沟共享时协商水量，不截断下游。",
+      "examples": [
+        "我灌半小时，再放给你。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0018",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "雨具可转借",
+      "description": "雨具可短借，归还时擦干并道谢。",
+      "examples": [
+        "伞借你到家，干了挂回门廊。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0019",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "孩童戏水有人看",
+      "description": "戏水时有人轮值看护，不是谁家孩子谁家事。",
+      "examples": [
+        "这小时我看，下一小时换你。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0020",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "渔讯互通",
+      "description": "渔讯与危险水位互通，不靠封锁信息获利。",
+      "examples": [
+        "上游浑了，告诉下游别下。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0021",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "上岸可换活",
+      "description": "不想再水上劳作可以换岸上活，不被视为背叛。",
+      "examples": [
+        "我想改去管苗圃，水上太晃。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0022",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "居所可近水可远",
+      "description": "住近水或搬高一点，由自己身体与偏好决定。",
+      "examples": [
+        "我膝盖怕潮，想搬高两级。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0023",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "采摘量自定",
+      "description": "采摘量按自己需要与体力，不被攀比推动。",
+      "examples": [
+        "今天采半篮就够，不凑整。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0024",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "静坐可对水",
+      "description": "允许自己对水静坐，不解释成偷懒。",
+      "examples": [
+        "我在岸边坐一会，别叫我。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0025",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "可不下船社交",
+      "description": "社交可以在岸上完成，不必每次都登船应酬。",
+      "examples": [
+        "我在码头等你们回来聊。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0026",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "湿季作息自调",
+      "description": "湿季可自调作息，早起或晚做按身体来。",
+      "examples": [
+        "雨季我改午后开工。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0027",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "种植失败可停",
+      "description": "某畦总失败可以停，改种或改作他用。",
+      "examples": [
+        "这畦盐重，改种别的或空着。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0028",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "拒绝夜航",
+      "description": "觉得夜航不安全可以说不，不硬撑面子。",
+      "examples": [
+        "今晚风大，我不走夜航。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0029",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "收藏湿物有度",
+      "description": "喜欢收藏湿生物也有度，不为癖好挤占生活空间。",
+      "examples": [
+        "贝壳收两盒封顶，多的送人。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0030",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "搬家理由够了就够",
+      "description": "搬家理由不必说服所有人，够自己就够。",
+      "examples": [
+        "我想离渠近一点，就这样。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0031",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "开渔可简祭",
+      "description": "开渔仪式可简，重点提醒安全与共享规则。",
+      "examples": [
+        "一杯水洒河，嘱咐别超载。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0032",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "雨神故事可听可不信",
+      "description": "雨神故事可当文化听，不必强制信仰。",
+      "examples": [
+        "故事好听，伞还是要带。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0033",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "水边命名从俗",
+      "description": "水边地名从当地俗称，外来者先学再改。",
+      "examples": [
+        "那湾叫雾嘴，别硬改官名。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0034",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "旧渡口碑可留",
+      "description": "废渡口石碑可留作记忆，不急着拆。",
+      "examples": [
+        "碑留着，旁人路过能看见旧路。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0035",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "祭水不扰鱼",
+      "description": "祭水从简，避免污染与惊扰鱼群。",
+      "examples": [
+        "花瓣就够，别倒油。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0036",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "潮汐口诀共背",
+      "description": "潮汐口诀可更新并共背，服务安全而非神秘。",
+      "examples": [
+        "新口诀墙上有，童谣也能记。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0037",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "湿季歌会自愿",
+      "description": "湿季歌会自愿参加，不去也不被议论。",
+      "examples": [
+        "想听就来，不想听在家也行。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0038",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "渔网纹样可传",
+      "description": "网边纹样可传给愿学的人，不限血缘。",
+      "examples": [
+        "纹样我教你，你再教别人。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0039",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "桥修记得旧工",
+      "description": "修桥时记下旧工匠名，让记忆不断档。",
+      "examples": [
+        "旧工名字刻侧面，新工写年份。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0040",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "水井故事并存",
+      "description": "关于水井的多种说法可并存，不强求统一。",
+      "examples": [
+        "两说都记，谁信哪说随人。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0041",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "雨水可收集",
+      "description": "雨水收集浇园与冲地，清水留给饮用。",
+      "examples": [
+        "桶接屋檐水，浇花正好。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0042",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "漂木先捡再用",
+      "description": "岸边漂木可捡作柴或材，注意产权与安全。",
+      "examples": [
+        "这根能做桩，先晾干。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0043",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "渔网修补优先",
+      "description": "破网先补再买新，补丁也算资源智慧。",
+      "examples": [
+        "破三处，今晚补完还能用。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0044",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "河泥可肥田",
+      "description": "适量河泥可肥田，取用不过度掏空河床。",
+      "examples": [
+        "取薄层，别挖深坑。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0045",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "灯油防潮存",
+      "description": "灯油与火柴防潮存放，湿季尤其珍惜。",
+      "examples": [
+        "油罐垫高，火柴密封。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0046",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "藻类可作肥",
+      "description": "打捞藻类可堆肥，减少水道堵塞。",
+      "examples": [
+        "藻捞起来堆角上，腐了肥菜。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0047",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "旧蓑翻新",
+      "description": "旧蓑衣可翻新缝补，比整件换更省。",
+      "examples": [
+        "肩部换棕，下摆还能用。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0048",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "渡费可物换",
+      "description": "渡费可用物换时写清折算，避免含糊。",
+      "examples": [
+        "一篮菜抵一次渡，记本上。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0049",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "水位尺共护",
+      "description": "水位尺是公共资源，不涂改、不遮挡。",
+      "examples": [
+        "尺旁别堆筐，要看得见。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0003.0050",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "湿柴分干湿堆",
+      "description": "湿柴与干柴分堆，先烧干的，湿的继续晾。",
+      "examples": [
+        "干的进灶，湿的靠棚边。"
+      ]
+    }
+  ]
+}

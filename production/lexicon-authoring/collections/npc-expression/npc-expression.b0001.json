@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-expression",
+  "batchId": "npc-expression.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-expression.b0001.0001",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方抬眼对上你的视线，很快又落到你手中的物件上。",
+      "description": "目光短暂接触后转向物品；眼部描写仅供有相应外观者适配。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0002",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方顺着你手指的方向望去，眉心微微聚了一下。",
+      "description": "跟随指向的注视；眉部描写可选适配。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0003",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方盯着门槛上的水渍看了两秒，才把话题接回去。",
+      "description": "短暂盯视地面细节再回谈话。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0004",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方把目光停在窗缝透进的光带上，像在数尘粒。",
+      "description": "目光滞留在光线；不断言在想什么。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0005",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方听你说话时看着你的肩线，不直视面部。",
+      "description": "回避直视面部的听讲习惯。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0006",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方被远处的吆喝分走目光，随即抱歉地收回。",
+      "description": "注意力被远处声音拉开再收回。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0007",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方上下扫过你的鞋面与裤脚，很快恢复平视。",
+      "description": "迅速扫视着装下部后恢复交流视线。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0008",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方闭了一下眼再睁开，像把眼前画面重新对焦。",
+      "description": "短暂闭眼再睁；可表现疲惫或整理注意。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0009",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方把视线贴着墙根挪到门口，确认有没有人进来。",
+      "description": "沿墙根挪移的警戒式扫视。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0010",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方望向你身后片刻，你回头时那里空无一人。",
+      "description": "望向对方身后的空位；不解释原因。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0011",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方嘴角抽动一下，终究没笑出声，只呼出一口气。",
+      "description": "未完成的笑意与呼气；口部描写可选。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0012",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方鼻翼轻轻翕动，像在辨别空气里的气味。",
+      "description": "鼻翼微动；嗅觉相关外观可适配。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0013",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方咬了咬内侧颊肉，腮边出现一道浅沟。",
+      "description": "咬颊形成的浅沟；面部结构可适配。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0014",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方额头渗出细汗，抬腕用袖口按了按。",
+      "description": "出汗与擦拭动作同现。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0015",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方耳朵微微发红，仍保持语调平稳。",
+      "description": "耳部颜色变化；不直接断言情绪名称。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0016",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方下唇被齿缘轻轻蹭过，留下一瞬的白印。",
+      "description": "唇部短暂压痕；有唇结构者可选用。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0017",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方打了个短呵欠，立刻用手背挡在前面。",
+      "description": "呵欠与遮挡的礼貌动作。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0018",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方面颊因冷风泛起浅粉，说话时哈出白气。",
+      "description": "冷风下面部颜色与呼气可见。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0019",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方太阳穴的血管跳得更显眼，手却仍稳。",
+      "description": "颞侧血管更显；不断言情绪名称。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0020",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方挤出一个礼节性的笑，眼睛并未一起弯起。",
+      "description": "口部笑意与眼部不一致的礼节笑。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0021",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方把重心移到左脚，右脚脚尖点地轻敲。",
+      "description": "重心与轻点脚尖的站姿细节。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0022",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方双臂交叠抱在腹前，袖口相互攥紧。",
+      "description": "抱臂与攥袖的封闭姿态。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0023",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方侧身让路时，肩膀几乎贴墙才停住。",
+      "description": "侧身让路贴墙的幅度。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0024",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方蹲下去系鞋带，起来时膝头发出轻响。",
+      "description": "蹲起与关节轻响；有膝结构者可选用。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0025",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方把下巴搁在交叉的手背上，听你把话说完。",
+      "description": "下巴搁手的倾听姿态。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0026",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方踮脚探看货架上层，随即平稳落下。",
+      "description": "踮脚探看后落下。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0027",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方走路时习惯性避开砖缝积水，步幅忽大忽小。",
+      "description": "避水导致的步幅变化。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0028",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方坐下先拂了拂凳面，才把重量放上去。",
+      "description": "拂凳再坐的洁癖或习惯动作。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0029",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方把后背离开椅背，上身微微前倾。",
+      "description": "离靠背前倾的倾听或紧张姿态。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0030",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方单肩挎包滑到肘弯，又用力甩回肩头。",
+      "description": "挎包下滑再甩回的重复小动作。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0031",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方伸手去推门，指尖触到门板又缩回半寸。",
+      "description": "触门又缩的片刻停顿。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0032",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把钱袋从怀里掏出一半，又按了回去。",
+      "description": "掏钱又按回的犹豫。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0033",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方张口吸气，像要反驳，最终只点了点头。",
+      "description": "吸气欲言又止改为点头。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0034",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方在岔路口站定，左右张望后才选了较亮的一侧。",
+      "description": "岔路张望后选择。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0035",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把写好的字条对折又展开，最终塞回衣袋。",
+      "description": "字条折展后收回。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0036",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方抬手想拍你肩，在半空改成了挥手致意。",
+      "description": "拍肩改挥手的距离调整。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0037",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把钥匙对准锁孔，手抖了一下才推进去。",
+      "description": "钥匙对准时的轻抖。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0038",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方已迈出半步追问，又停住改口说没事。",
+      "description": "迈步追问又改口收回。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0039",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方在名单上的笔尖悬着，迟迟未落下第一划。",
+      "description": "笔尖悬空未落。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0040",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把杯沿送到唇边又放下，先把话问完。",
+      "description": "举杯又放下，优先把话说清。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0041",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方靠墙滑坐到门槛高度，长长吐出一口气。",
+      "description": "靠墙下滑与长呼气。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0042",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把紧绷的肩绕了两圈，骨节轻轻响了一下。",
+      "description": "绕肩与骨节轻响。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0043",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方踢掉一只鞋，脚趾在鞋垫上蜷了蜷。",
+      "description": "踢鞋与脚趾蜷动；有足部结构可适配。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0044",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把后脑勺抵着柱子，眼睛眯成一条缝。",
+      "description": "后脑抵柱眯眼的歇息。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0045",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方搓热掌心，捂住自己的后颈片刻。",
+      "description": "搓掌捂后颈的取暖放松。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0046",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把辫梢或发绳绕在指上转了又转。",
+      "description": "绕发绳转指的小动作。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0047",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方打了个舒服的懒腰，袖口滑到肘上。",
+      "description": "懒腰与袖口滑动。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0048",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把下巴埋进衣领，只露出一双眼睛看街。",
+      "description": "埋领观街的蜷缩放松。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0049",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方用指节敲了敲桌面，敲出一小段无意义节奏。",
+      "description": "无意义节奏敲桌。"
+    },
+    {
+      "id": "lx.npc-expression.b0001.0050",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把双脚从鞋里抽出一半，脚跟踩着鞋后跟晃。",
+      "description": "半脱鞋晃脚跟的闲适。"
+    }
+  ]
+}

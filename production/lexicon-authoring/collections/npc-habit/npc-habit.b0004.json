@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-habit",
+  "batchId": "npc-habit.b0004",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-habit.b0004.0001",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "尘土拍在门外",
+      "description": "衣帽进门前在石台上拍净再入。",
+      "examples": [
+        "拍完再脱鞋。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0002",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "水罐标余量",
+      "description": "水罐外壁划线标余量，方便分配。",
+      "examples": [
+        "每喝一格就记。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0003",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "布帘定期抖尘",
+      "description": "门帘拿到室外抖尘，避免扬进屋里。",
+      "examples": [
+        "逆风方向抖。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0004",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "帽巾分钩悬挂",
+      "description": "遮阳帽与头巾分钩，取用快。",
+      "examples": [
+        "钩下鞋位对齐。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0005",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "干粮分日袋",
+      "description": "干粮按日分小袋，当日袋放最上。",
+      "examples": [
+        "空袋压扁回收。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0006",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "石阶落叶扫出",
+      "description": "自家石阶落叶扫到堆肥角，不入屋。",
+      "examples": [
+        "扫帚挂廊柱。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0007",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "火塘灰冷透再弃",
+      "description": "灰烬确认冷透才倒指定坑。",
+      "examples": [
+        "手背试温。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0008",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "绳索盘成圈挂",
+      "description": "绳用完盘圈挂钉，防打结沾尘。",
+      "examples": [
+        "圈径大致相同。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0009",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "窗缝沙尘周清",
+      "description": "每周清一次窗缝积沙。",
+      "examples": [
+        "旧布蘸水擦。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0010",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "背包分区固定",
+      "description": "包内分区：水、粮、衣、工具不混。",
+      "examples": [
+        "盲摸也能取。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0011",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "日出前补水",
+      "description": "上路前强制喝一小杯，减少途中虚脱。",
+      "examples": [
+        "杯底见才出门。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0012",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "烈日歇阴坡",
+      "description": "日头正毒时找阴坡歇，不硬赶。",
+      "examples": [
+        "帽盖脸短憩。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0013",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "黄昏赶最后段",
+      "description": "酷热日把最后上坡留到黄昏。",
+      "examples": [
+        "看影长再出发。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0014",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "夜凉整理行装",
+      "description": "夜里凉快时整理次日包，少出汗。",
+      "examples": [
+        "灯罩防蚊。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0015",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "午间少饮酒习惯",
+      "description": "干燥路途午间拒酒，改汤或水。",
+      "examples": [
+        "汤罐保温。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0016",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "换袜防磨点",
+      "description": "感觉起热就换袜，不等起泡。",
+      "examples": [
+        "旧袜透气晾。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0017",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "星出再夜谈",
+      "description": "重要夜谈等风小星出，少扬尘呛喉。",
+      "examples": [
+        "帘内坐定再开口。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0018",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "顺风安排晾衣",
+      "description": "晾衣选扬尘少的风向时段。",
+      "examples": [
+        "夹子加固下摆。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0019",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "早市趁凉采购",
+      "description": "采购赶早，避开热尘高峰。",
+      "examples": [
+        "布袋罩菜。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0020",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "月圆夜早歇",
+      "description": "过亮的月夜若易醒就提前歇。",
+      "examples": [
+        "帘加一层布。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0021",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "路程用垭口计",
+      "description": "远近用几个垭口衡量，比里数好记。",
+      "examples": [
+        "还剩两个垭口。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0022",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "水资源优先序",
+      "description": "决策先问水够不够，再问别的。",
+      "examples": [
+        "水不够就改期。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0023",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "风向变即复盘",
+      "description": "风向突变就短复盘装备是否要加。",
+      "examples": [
+        "头巾是否改罩口。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0024",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "捷径三问",
+      "description": "抄近前问：陡否、水否、独行否。",
+      "examples": [
+        "一否就放弃。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0025",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "迁居利弊两列",
+      "description": "想迁居时写利弊两列，隔夜再看。",
+      "examples": [
+        "利弊都要具体。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0026",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "向导经验加权",
+      "description": "本地说法权重大于地图臆测。",
+      "examples": [
+        "先问再走。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0027",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "体力曲线自知",
+      "description": "知道自己哪段路易垮，提前分负担。",
+      "examples": [
+        "陡处让同伴先。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0028",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "失败路写入记忆",
+      "description": "走过的坏路记特征，下次避开。",
+      "examples": [
+        "碎石多加陡。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0029",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "到达定义清晰",
+      "description": "何谓到了写清：见黄帘驿站即到。",
+      "examples": [
+        "不追模糊地标。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0030",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "感恩具体化复盘",
+      "description": "每日结束回忆谁帮过什么具体忙。",
+      "examples": [
+        "本子写人名动作。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0031",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "宽檐帽不离手",
+      "description": "帽不戴时也提在手里，不夹包底难取。",
+      "examples": [
+        "风大时手压帽檐。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0032",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "头巾可当绷带",
+      "description": "头巾材料选可应急包扎的。",
+      "examples": [
+        "洗净再作他用前隔离。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0033",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "小镜观后方",
+      "description": "窄道用小镜瞥后方驮队。",
+      "examples": [
+        "照完收进硬盒。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0034",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "盐糖分装纸包",
+      "description": "盐糖小纸包防中暑乏力时补。",
+      "examples": [
+        "溶进水里喝。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0035",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "唇膏鼻翼也涂",
+      "description": "风干时鼻翼与唇都薄涂。",
+      "examples": [
+        "余量擦指节。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0036",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "哨子应急挂扣",
+      "description": "离队可能时哨子挂扣可及处。",
+      "examples": [
+        "约定哨声含义。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0037",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "鞋垫备用薄片",
+      "description": "薄鞋垫备用，原垫皱了就换。",
+      "examples": [
+        "旧垫卷起外绑。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0038",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "布袋防尘罩包",
+      "description": "大包外罩薄布袋，进村再解。",
+      "examples": [
+        "罩上打活结。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0039",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "记路粉笔短枝",
+      "description": "岔路用粉笔在石背做私记。",
+      "examples": [
+        "不破坏公共标识。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0040",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "针线补帘缘",
+      "description": "帘缘开线随时缝，防尘灌入。",
+      "examples": [
+        "线色接近帘布。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0041",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "喜干风清爽",
+      "description": "干爽风让人精神，阴湿反而闷。",
+      "examples": [
+        "迎风站一会。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0042",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "厌扬尘呛喉",
+      "description": "扬尘重就罩巾，能绕路就绕。",
+      "examples": [
+        "涎液都觉得苦。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0043",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "石温午烫警惕",
+      "description": "脚底感觉石烫就知该歇荫。",
+      "examples": [
+        "鞋底拍两下散热。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0044",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "布帘阴影悦目",
+      "description": "斑驳帘影让人愿多坐片刻。",
+      "examples": [
+        "光斑移才起身。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0045",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "水声稀缺更珍",
+      "description": "高地听流水会停下多听几秒。",
+      "examples": [
+        "灌满再离开。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0046",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "夜寒需添衣敏感",
+      "description": "日落后体感骤降，添衣动作快。",
+      "examples": [
+        "外套提前绑腰。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0047",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "拒刺鼻燃料味",
+      "description": "燃料味重就退后上风处说话。",
+      "examples": [
+        "手扇两下再近。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0048",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "日出金色偏好",
+      "description": "偏爱日出金光多于正午白光。",
+      "examples": [
+        "早起不为赶只为光。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0049",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "靴内沙粒零容忍",
+      "description": "进沙立刻倒出，不忍着走。",
+      "examples": [
+        "单脚倚石倒沙。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0004.0050",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "星空开阔感上瘾",
+      "description": "无云夜抬头会站很久。",
+      "examples": [
+        "被唤才回神。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-interact",
+  "batchId": "daily-interact.b0002",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-interact.b0002.0001",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把备用锉刀用布卷好，放到你工具卷旁。",
+      "description": "递备用锉刀供借用。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0002",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方归还借来的卡尺前，用布擦净量爪再合拢。",
+      "description": "擦净卡尺后归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0003",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把店里的共用胶枪插回底座，标签朝外。",
+      "description": "归位共用胶枪。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0004",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方拆下一截自己的遮光布，卷好递给你遮工件。",
+      "description": "拆布供临时遮光借用。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0005",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把放大镜连同镜盒一起推到台中。",
+      "description": "推放大镜到共享位。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0006",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方归还电钻时附上一张纸条，写明已充电。",
+      "description": "归还电钻并注明状态。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0007",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把夹具弹簧单独装小袋，避免与主体磕碰归还。",
+      "description": "分装夹具零件归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0008",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方指着墙上的号码牌，说三号柜的扳手可以先用。",
+      "description": "示意编号柜扳手可借。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0009",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把借出的錾子磨了一下刃口才递回原主。",
+      "description": "归还前轻磨錾刃。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0010",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把色卡夹借出时抽出空白页，方便对方做记号。",
+      "description": "借出色卡并备空白页。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0011",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指着车间后门，说材料库在晾漆棚的左手。",
+      "description": "以晾漆棚为路标指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0012",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说跟着木屑最多的那条廊走，尽头是锯床间。",
+      "description": "以木屑痕迹指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0013",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方在粉尘地上画了个箭头，指向学徒休息角。",
+      "description": "地上画箭指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0014",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方提醒你绕开打磨房，噪声大会听不清喊话。",
+      "description": "提示绕开噪声区。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0015",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说闻见松节油味就到了修补台附近。",
+      "description": "以气味为近距路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0016",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指着二楼亮着的窗，说返修单在那间登记。",
+      "description": "以亮窗指示登记处。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0017",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方把钥匙串晃了一下，说跟我到工具间门口即可。",
+      "description": "示意同行至工具间门。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0018",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说出后门后看见蓝雨棚，那就是协作台。",
+      "description": "以蓝雨棚为路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0019",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方在纸片上写了三个门牌号，按顺序递给你。",
+      "description": "写门牌序号指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0020",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说如果看见墙上挂着废皮带，就说明走对了。",
+      "description": "以废皮带挂饰为路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0021",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把旧椅子翻过来，先卸下松动的横档给你扶。",
+      "description": "翻椅卸档准备共修。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0022",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方按工序摆好砂纸从粗到细，粗的放你右手边。",
+      "description": "按粗细摆砂纸分工。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0023",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先试夹具开合，确认不会夹手再示意你扶件。",
+      "description": "试夹具后示意扶件。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0024",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把胶水瓶盖拧松到将开未开，方便你随时取。",
+      "description": "预松胶盖利协作。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0025",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方清出工作台一侧，铺上旧报纸防漆溅。",
+      "description": "清台铺纸防溅。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0026",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把量好的补片按编号夹好，短号先做。",
+      "description": "编号夹补片定序。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0027",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方戴上护目后，把另一副干净的推到你手边。",
+      "description": "自戴并提供护目。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0028",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把灯罩转向接缝，自己的影子让到侧面。",
+      "description": "调灯并让开影子。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0029",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先把螺丝按长度分碟，长的留给加固步骤。",
+      "description": "分碟螺丝按步骤。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0030",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把抹布浸湿拧到半干，挂在你们都能够到的钩上。",
+      "description": "备半干抹布挂共用钩。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0031",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把锯木架挪到墙角，让出中间走路宽度。",
+      "description": "挪锯架让出通道。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0032",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方侧开半步，让学徒能看清台钳操作。",
+      "description": "侧身让学徒视线。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0033",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把工具车推进凹位，不占主通道。",
+      "description": "工具车进凹位。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0034",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方蹲着打磨时收膝，给身后过人留缝。",
+      "description": "收膝留过人缝。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0035",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把晾漆架推高一格，方便矮个儿从下经过。",
+      "description": "抬晾架让出通行。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0036",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把材料捆竖放贴墙，减少占地面积。",
+      "description": "竖放材料捆贴墙。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0037",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方从狭窄工位退出，让你先量尺寸。",
+      "description": "退出窄位让测量。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0038",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把凳子收到桌下，过道立刻宽了一肩。",
+      "description": "收凳拓宽过道。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0039",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把电线卷起挂钉，避免绊到协作的人。",
+      "description": "卷线挂钉防绊。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0040",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把风扇转向空地，风不再直吹对方面部。",
+      "description": "转风扇避开直吹面部。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0041",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方拍了拍空着的工作凳，示意你可以坐下帮忙扶。",
+      "description": "拍凳示意可坐扶件。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0042",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把第二副手套摊开，掌心向上放在台边。",
+      "description": "摊手套示意可戴可帮。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0043",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方掀开半掩的工棚帘，侧身让出进棚宽度。",
+      "description": "掀帘示意可进工棚。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0044",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把废料筐推近你脚边，点了点里头还能用的边角。",
+      "description": "推筐示意可拣边角。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0045",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把茶缸盖打开，又放了只干净杯在旁边。",
+      "description": "开茶缸放杯示意可饮。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0046",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把示范件转到你面前，指尖点着要看的榫口。",
+      "description": "转示范件示意共看。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0047",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把砂纸撕成两半，一半递到你够得到的位置。",
+      "description": "撕砂纸分半示意共磨。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0048",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方朝里屋扬了扬下巴，那里亮着灯放着待修件。",
+      "description": "扬下巴示意可进看件。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0049",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把记事板翻到空白面，笔帽朝你这边一搁。",
+      "description": "翻空白板示意可记。"
+    },
+    {
+      "id": "lx.daily-interact.b0002.0050",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方拉开工具卷另一侧绑带，露出空位给你放工具。",
+      "description": "开绑带留位示意可放。"
+    }
+  ]
+}

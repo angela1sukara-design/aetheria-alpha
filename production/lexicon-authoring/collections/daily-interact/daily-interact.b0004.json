@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-interact",
+  "batchId": "daily-interact.b0004",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-interact.b0004.0001",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把遮阳帽摘下拍灰，帽檐朝你递出。",
+      "description": "拍灰递遮阳帽供借。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0002",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方归还水囊前灌到标记线，拧紧盖再交还。",
+      "description": "灌水至标线后归还水囊。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0003",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把折叠手杖展开试了试，再收短递给你。",
+      "description": "试展手杖后递借。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0004",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把借来的地图用布包好，角上的磨损处贴了纸条。",
+      "description": "包图并标磨损后归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0005",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方指着驿站墙上的公用水壶钩，说那只可先用。",
+      "description": "示意公用壶可借。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0006",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把石阶防滑砂袋用完，空袋叠好送回堆处。",
+      "description": "叠空袋归还砂袋位。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0007",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方拆下自己帐篷的遮光帘一角，卷好用绳扎。",
+      "description": "拆帘供临时遮阳借用。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0008",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把望远镜镜盖盖好，连同背带一起递回。",
+      "description": "盖盖连带归还望远镜。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0009",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把借出的睡垫拍打灰尘，卷紧用带子固定。",
+      "description": "拍灰卷垫后归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0010",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把指南针外壳擦净，确认指针还能摆动才还。",
+      "description": "擦净并试指针后归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0011",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指着高处的石阶转折，说上到第三平台再问。",
+      "description": "以石阶平台数指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0012",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说跟着遮阳布帘最多的那条巷走，尽头是客栈。",
+      "description": "以布帘密度指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0013",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方在沙地上画了个叉，表示别走塌方那段。",
+      "description": "沙地画叉示禁行段。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0014",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方提醒午后走西侧有荫，东侧石壁反光很烤。",
+      "description": "提示择荫侧路径。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0015",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说看见风车就靠近集市，集市后是迁居登记处。",
+      "description": "以风车为集市路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0016",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指着远处旗杆，说旗是黄的就是驿站。",
+      "description": "以旗色辨驿站。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0017",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说顺着驮队脚印走，脚印稀处就是岔去高地的路。",
+      "description": "以驮队脚印辨岔路。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0018",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方把方向比成迎风与背风，让你走背风的石阶。",
+      "description": "以迎背风择石阶。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0019",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说若看见成排的陶罐墙，就到了远行者歇脚院。",
+      "description": "以陶罐墙为院落路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0020",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方撕下帽檐内侧纸条，写了两个地名递给你。",
+      "description": "帽内纸条写地名指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0021",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把遮阳篷支柱插稳，示意你去拉对角的缆。",
+      "description": "插篷柱示意拉对角缆。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0022",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把石阶清扫工具分两边，扫把在你手边。",
+      "description": "分置清扫工具。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0023",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先试驮架平衡，再让你把包袱递上左侧。",
+      "description": "试驮架后接包协作。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0024",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把水袋口朝上排好，塞子松到一拧即开。",
+      "description": "排好水袋备启封。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0025",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方清出帐篷门口一块平地，铺上草席防沙。",
+      "description": "铺席作协作落脚点。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0026",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把绳结按用途分两堆，活结堆标了红线。",
+      "description": "分堆绳结标用途。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0027",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方戴上纱巾防沙后，把另一条干净的递到你够处。",
+      "description": "自戴并备纱巾。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0028",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把灯挂到布帘内侧，两人都能看见地图。",
+      "description": "挂灯便于共看地图。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0029",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先把石阶缝里的碎石抠出，再示意你铺防滑砂。",
+      "description": "清缝后示意铺砂。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0030",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把背带长度预调两档，短档留给临时换人。",
+      "description": "预调背带档位。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0031",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把驮包挪到石阶外侧，让出上行中间线。",
+      "description": "挪驮包让上行线。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0032",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方侧身贴着遮阳柱，让挑担的人先过。",
+      "description": "贴柱让挑担者过。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0033",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把布帘撩起钩住，过道不再被帘脚绊。",
+      "description": "钩帘免绊过道。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0034",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方蹲着绑鞋时挪到平台边，不在阶心停留。",
+      "description": "平台边绑鞋不占阶心。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0035",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把水桶提到荫处墙根，主路留给行人。",
+      "description": "水桶置荫处让主路。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0036",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把地图卷起夹腋下，双手腾出让路。",
+      "description": "卷图夹腋腾手让路。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0037",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方从窄崖径退到宽处，示意对方先过。",
+      "description": "退宽处让对方先过。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0038",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把帐篷绳往里收半尺，过道宽出一肩。",
+      "description": "收帐篷绳拓宽道。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0039",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把扇子收起别在腰后，拥挤处缩小挥动范围。",
+      "description": "收扇减占用。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0040",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把行李竖靠墙，横躺改竖放少占地。",
+      "description": "行李改竖放贴墙。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0041",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方拍了拍荫下空出的石阶，目光在你与阶面间一顿。",
+      "description": "拍荫阶示意可坐。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0042",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把第二只水碗放到布帘旁矮桌上，壶嘴朝你。",
+      "description": "放碗壶嘴朝向示意可饮。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0043",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方掀开帐篷门帘，侧身让出进帐宽度。",
+      "description": "掀帘示意可进帐。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0044",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把棋盘式的沙盘转正，小石子分到两侧。",
+      "description": "转沙盘示意可同推演。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0045",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把干粮掰开，较大一半放到你够得到的布上。",
+      "description": "掰干粮放置示意分享。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0046",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方指了指风小的凹壁，又朝你扬了扬下巴。",
+      "description": "指凹壁扬下巴示意避风。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0047",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把长凳一端的包袱挪开，手掌在空位上方停。",
+      "description": "挪包袱标空位示意可坐。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0048",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把暖炉旁的毡垫抽出一点，不看你却停住等。",
+      "description": "抽毡垫等待是否靠近。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0049",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把行路笔记合到半页，指尖夹着，看向你。",
+      "description": "夹页停记示意可同听。"
+    },
+    {
+      "id": "lx.daily-interact.b0004.0050",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把另一根登山杖顿在你脚边沙上，自己仍握着一根。",
+      "description": "顿杖示意可同行借力。"
+    }
+  ]
+}

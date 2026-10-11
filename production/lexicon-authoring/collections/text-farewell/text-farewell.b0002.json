@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-farewell",
+  "batchId": "text-farewell.b0002",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.text-farewell.b0002.0001",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "我去里屋取油石，马上回来继续磨。",
+      "description": "取工具短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0002",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "砂纸用完了，我去货架拿两张，你先量尺寸。",
+      "description": "补料短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0003",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "胶水盖没拧紧，我去处理一下气味，片刻回。",
+      "description": "处理气味短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0004",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "学徒喊我一声，我去门口应一下，不长。",
+      "description": "应门短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0005",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "灯罩样板在橱里，我取来对照，等我。",
+      "description": "取样短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0006",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "扳手不在挂钩上，我去工作台找，很快。",
+      "description": "找工具短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0007",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "废料箱满了，我先倒一趟，你先挑零件。",
+      "description": "清废短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0008",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "我去刷一下手，松脂味太重，马上接着聊。",
+      "description": "洗手短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0009",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "订单本在抽屉，我翻一页确认交期，稍等。",
+      "description": "查单短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0010",
+      "category": "text-farewell",
+      "subcategory": "短暂离开",
+      "text": "火熄了吗？我去看一眼炉子，话搁这儿。",
+      "description": "安检短离。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0011",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "今日台面擦完，店打烊，钥匙我锁上。",
+      "description": "打烊告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0012",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "灯罩单做完入库，我交班，下一班看标签。",
+      "description": "职责结束后的告别，呼应「灯罩单做完入库我交班」情境。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0013",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "铆钉试做记录写好了，我收工。",
+      "description": "记录后收工。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0014",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "油漆第二层刷完，通风留着，我先走。",
+      "description": "工序结束告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0015",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "材料盘点结束，进货单贴柜门，我下班。",
+      "description": "盘点下班。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0016",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "学徒作业我批完，今日教学到此。",
+      "description": "教学结束。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0017",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "顾客取件手续完，外勤结束，回店销号。",
+      "description": "外勤结束。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0018",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "工具墙上挂齐了，巡检完成，我撤。",
+      "description": "巡检告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0019",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "加急件交付签字了，今日职责清零。",
+      "description": "交付后告别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0020",
+      "category": "text-farewell",
+      "subcategory": "工作告别",
+      "text": "废料分类倒完，清洁班次结束。",
+      "description": "清洁结束。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0021",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "先这样，刃口磨好你再来取，路上慢些。",
+      "description": "含取件提醒道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0022",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "店门口见，不必进里屋送。",
+      "description": "界限清晰道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0023",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "收工快乐，你回，我把灯再留一刻。",
+      "description": "互祝收工。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0024",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "告辞。木屑别踩进鞋里，出门蹬两下。",
+      "description": "关照道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0025",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "聊完了，我回工作台，你慢慢看陈列。",
+      "description": "分头道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0026",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "再见。线轴绕整齐再走，强迫症犯了。",
+      "description": "自嘲道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0027",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "走了。胶味散一点再关窗。",
+      "description": "收尾叮嘱。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0028",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "那扇吱呀门我修好了，你走时轻带。",
+      "description": "成果相关道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0029",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "日安收束，锤子放回原位，我走了。",
+      "description": "物归原位道别。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0030",
+      "category": "text-farewell",
+      "subcategory": "普通道别",
+      "text": "先别。旧物故事下次续，也不强求。",
+      "description": "开放续聊。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0031",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "小店还开着，路过就进，不路过也行。",
+      "description": "开放到访。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0032",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "交期到了你会来，不到期不必特意露面。",
+      "description": "事务驱动再见。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0033",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "学徒满师礼我不邀人，遇见了再招呼。",
+      "description": "不邀约。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0034",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "废料改造日若再办，告示会贴；不办就算。",
+      "description": "告示替代约定。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0035",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "工具交换随缘，我不记谁欠谁。",
+      "description": "无账再见。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0036",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "也许柜台再见，也许只在巷口点头。",
+      "description": "多种可能。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0037",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "活做完各走各的，不绑下次协作。",
+      "description": "协作不绑定。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0038",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "油漆干透你来看不看，随你。",
+      "description": "自愿查看。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0039",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "我不约喝茶，口渴了自己知道找水。",
+      "description": "拒软性约定。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0040",
+      "category": "text-farewell",
+      "subcategory": "未约定再见",
+      "text": "散摊。手艺人的路，窄处会再挤到一起。",
+      "description": "行业偶遇感。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0041",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "先锁门；你若忘了取件，明早敲侧窗三下。",
+      "description": "取件暗号余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0042",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "试做我先收工；你有新想法，纸条塞门缝。",
+      "description": "反馈余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0043",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "加急费暂不定；价目更新后我会贴出来。",
+      "description": "信息公开余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0044",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "走了；砂纸目数你若改主意，改单即可。",
+      "description": "改单余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0045",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "教学今日停；学徒问到难处，可以再来找我。",
+      "description": "答疑余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0046",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "废料先不清光；你明天还想挑，留一格。",
+      "description": "保留余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0047",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "话题先搁；裂痕审美你若写成一小段，我愿意读。",
+      "description": "书面延续余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0048",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "打烊了；急件铃还通，真急再按。",
+      "description": "紧急通道。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0049",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "协作告一段落；下一步你若要并工，提前说声。",
+      "description": "再协作余地。"
+    },
+    {
+      "id": "lx.text-farewell.b0002.0050",
+      "category": "text-farewell",
+      "subcategory": "留有余地",
+      "text": "先回；锤子沉不沉，你用两天再告诉我观感。",
+      "description": "体验反馈余地。"
+    }
+  ]
+}

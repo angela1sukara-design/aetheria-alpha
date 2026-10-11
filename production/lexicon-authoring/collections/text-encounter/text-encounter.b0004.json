@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-encounter",
+  "batchId": "text-encounter.b0004",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定"
+  },
+  "entries": [
+    {
+      "id": "lx.text-encounter.b0004.0001",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "上下石阶的人侧肩错开，喘气声交错。两人都用手扶了一下内侧壁，继续各自方向。",
+      "description": "石阶侧肩扶壁错开。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0002",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "驮队经过，行人贴崖壁。驼铃远去，过道重新热闹，尘土慢慢落回。",
+      "description": "驮队过贴壁尘落。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0003",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "门帘外问路的人与出门的人撞个满怀，帘子荡了两下。双方道歉，问路的人重问。",
+      "description": "门帘撞怀道歉重问。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0004",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "扛行囊的人与打水的人在井台边错开，水荡出几点打在囊面。打水人致歉，扛囊人摆手。",
+      "description": "井台扛囊打水错开。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0005",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "风口相遇，眼神确认谁先过。先过的人压低帽檐，后过的人等风小一瞬。",
+      "description": "风口眼神让路压帽。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0006",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "孩子们干渠边跳远，大人侧步让开。尘土扬起，跳远的人自己也咳了一声。",
+      "description": "干渠跳远大人侧让。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0007",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "夜提灯下阶，与上阶的灯火交会，光斑叠了一下。点头后各自沿光斑落脚。",
+      "description": "夜灯上下阶交会。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0008",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "遮阳廊下歇脚的人伸腿，与过路的人鞋尖差点碰上。伸腿的人收回，过路的人道谢。",
+      "description": "廊下伸腿鞋尖让。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0009",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "迁居抬家具的人与下坡的人侧肩，家具角擦过对方衣摆。双方停半息，确认无碍。",
+      "description": "迁居抬物下坡侧肩。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0010",
+      "category": "text-encounter",
+      "subcategory": "擦肩场景",
+      "text": "卖水人歇肩，扁担尾扫过路人。连声道歉，路人拍尘继续上坡。",
+      "description": "卖水扁担扫人拍尘。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0011",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "驿站井边排队，前后距离能放下空罐。有人把罐垫鞋边，有人闭目听风。",
+      "description": "井边排队罐垫鞋。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0012",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "石阶中段有人歇脚让道，后面的人停步等，直到歇脚的人起身挥手。",
+      "description": "阶中歇脚让道等挥。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0013",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "遮阳廊下等风小的人疏疏坐着。有人喝水，有人整理面巾，很少交谈。",
+      "description": "廊下等风少交谈。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0014",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "门帘外站着打听路的人，帘内答两句又垂下。等候的人把问题又想了一遍。",
+      "description": "门帘外等答再想问。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0015",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "取水高峰错开后，晚到的人仍排短列。日头毒，有人把帽檐压到不能再低。",
+      "description": "错峰仍排短列压帽。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0016",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "夜班交接靠石柱站列，灯火映干靴。哈欠声比说话多，无人插队。",
+      "description": "夜班石柱干靴列。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0017",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "渡旱沟的临时板前，有人等对向过完再上。板微晃，等候的人把行囊抱紧。",
+      "description": "旱沟板等对向抱囊。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0018",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "诊棚外沙地上画了等候圈，人站圈外。叫号时才跨进圈，交过布条。",
+      "description": "诊棚沙地等候圈。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0019",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "粮铺开门前，人影在遮阳布下疏站。铃响，队伍收成一线，尘里脚步轻。",
+      "description": "粮铺遮阳下疏站。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0020",
+      "category": "text-encounter",
+      "subcategory": "公共等候",
+      "text": "高台边有人等同伴，坐在防滑纹上悬腿。同伴出现时挥帽，起身拍净石灰。",
+      "description": "高台等伴挥帽拍灰。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0021",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "同路上坡的人闲聊前方还有无遮阳，得到的是：有，不远。步频稍齐。",
+      "description": "上坡聊遮阳步稍齐。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0022",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "井边互问水甜不甜，有人说淡，有人说正好。打完水话题结束。",
+      "description": "井边聊水味打完止。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0023",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "廊下歇脚闲聊迁居累不累，有人说累，有人说身体也在搬家。双方笑。",
+      "description": "廊下聊迁居身体搬家。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0024",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "风口等风小，闲聊帽绳怎么系才不飞。有人示范，有人学不会，仍道谢。",
+      "description": "风口聊帽绳示范。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0025",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "夜灯下闲聊三句：还远吗、快了、灯借看阶。灯还，人继续错身。",
+      "description": "夜灯借看阶还灯。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0026",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "驮队歇处，行人与脚夫闲聊路程，脚夫指前方山影，行人点头道谢离开。",
+      "description": "驮队歇处问路指山。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0027",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "门帘内外隔帘闲聊有无空房，帘内说满了，帘外说没事，转向下一家。",
+      "description": "隔帘问房满转下家。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0028",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "干渠边看孩子跳远的人互评远近，评完各自喊自己的孩子回来喝水。",
+      "description": "干渠评跳远喊喝水。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0029",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "收工下坡并肩闲聊明日风大不大，到岔路分开，互道小心。",
+      "description": "下坡聊风岔路互道。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0030",
+      "category": "text-encounter",
+      "subcategory": "临时闲聊",
+      "text": "遮阳布下陌生人让座，闲聊布是谁家的。结论：公家的，坐就行。",
+      "description": "布下让座聊公家布。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0031",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "有人停看石匠凿阶，火花少，粉尘多。石匠歇手喝水，看客才问工钱大概。",
+      "description": "观凿阶歇手问价。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0032",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "搭遮阳布的人拉绳，旁观怕被扫到，站开，仍抬头看布影落下。",
+      "description": "搭遮阳旁观看布影。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0033",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "井台清淤的人铲沙，旁观捂口鼻。清完一层，旁观评了句深，散开。",
+      "description": "清井淤旁观评深散。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0034",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "孩子们看驮队卸货，被大人唤走。驼铃仍响，孩子一步三回头。",
+      "description": "童观卸货三回头。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0035",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "修门帘的人换绳，帘起帘落。看客站半圈，换完才散，无人催。",
+      "description": "修门帘换绳半圈散。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0036",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "夜灯下补鞋的人影投在棚布，路过的人停两步，辨不出补的哪一只。",
+      "description": "夜补鞋棚影停两步。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0037",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "垒石矮墙的人放平石，路过的人估高度，说了句稳，继续赶路。",
+      "description": "垒矮墙评稳赶路。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0038",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "量坡的人拉绳放尺，旁观帮按住尺端。量完，旁观松手，没有讨报酬。",
+      "description": "量坡旁观按尺不讨酬。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0039",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "染晒布挂满坡架，颜色在干风里抖。旁观站上风，怕沾色，仍看完一片。",
+      "description": "上风观晒布一片。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0040",
+      "category": "text-encounter",
+      "subcategory": "工作旁观",
+      "text": "磨刀人在驿站角拉磨，看客围半圈。磨完散，有人留下刀，有人只看。",
+      "description": "驿站磨刀半圈散。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0041",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "水罐从石台边沿滑，被路过的人托住。罐主连声谢，托罐的人把罐举还。",
+      "description": "托住滑罐举还谢。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0042",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "风掀未压住的告示，有人停步用石重新压好，拍净手上干灰。",
+      "description": "压回告示拍干灰。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0043",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "帽被风吹落滚向坡下，主人追，路人伸脚一挡，帽停住，三人都笑。",
+      "description": "帽滚坡下脚挡同笑。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0044",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "干渠边孩子跳远落地不稳，旁人扶了一把。孩子道谢，继续跳，旁人退后。",
+      "description": "跳远不稳旁扶后退。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0045",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "夜阶灯灭，窗内递火，过路人点着走完暗段，把余火小心还回。",
+      "description": "夜阶灭灯递火还余。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0046",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "有人把拾到的帽绳压在门帘凹槽，炭写半个“拾”，小石压防风。",
+      "description": "拾帽绳留字压石。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0047",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "行囊带崩开，东西散落。路人帮捡，主人道谢，一起把带临时系死。",
+      "description": "囊带崩共捡临时系。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0048",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "骤风掀遮阳布，棚下人一起按布角。风过后互道没事，布坠重新挂上。",
+      "description": "骤风按布角重挂坠。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0049",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "井绳卡结，打水人愣。旁人递刀割旧结，两人重系，手沾着凉水。",
+      "description": "井绳卡结共重系。"
+    },
+    {
+      "id": "lx.text-encounter.b0004.0050",
+      "category": "text-encounter",
+      "subcategory": "生活小插曲",
+      "text": "高台老人打盹，帽被风吹到台缘。路过的人捡起轻放回，老人未醒，风还在。",
+      "description": "台缘捡帽放回未醒。"
+    }
+  ]
+}

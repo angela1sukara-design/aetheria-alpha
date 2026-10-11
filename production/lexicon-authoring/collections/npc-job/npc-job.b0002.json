@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-job",
+  "batchId": "npc-job.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-job.b0002.0001",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "旧椅缝隙填补工",
+      "description": "填补旧椅缝隙并打磨表面的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0002",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "鞋面补丁缝工",
+      "description": "为旧鞋缝补丁并压平线迹的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0003",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "木榫复位工",
+      "description": "复位松动木榫并涂适量胶的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0004",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "布边锁边工",
+      "description": "为散边布料锁边防脱线的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0005",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "漆面点修补工",
+      "description": "点补细小漆面缺损的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0006",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "刀刃磨砺工",
+      "description": "磨砺刀具刃口并擦油防锈的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0007",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "伞骨复位工",
+      "description": "复位弯曲伞骨并换系绳的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0008",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "绳结重编工",
+      "description": "重编磨损绳结并测试拉力的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0009",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "抽屉滑轨修工",
+      "description": "修理卡顿抽屉滑轨的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0010",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "镜框托底工",
+      "description": "加固镜框托底防脱落的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0011",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "送修接待员",
+      "description": "接待送修顾客并登记品名的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0012",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "取件叫号员",
+      "description": "按单号叫号发放修好物品的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0013",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "工具出借登记员",
+      "description": "登记出借工具并核对归还的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0014",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "学徒工位引导员",
+      "description": "引导新学徒找到工位与工具墙的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0015",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "废料分类指导员",
+      "description": "指导把废料投入正确分类箱的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0016",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "估价说明员",
+      "description": "用平常话说明估价构成的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0017",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "小店排队协调员",
+      "description": "协调小店内排队与试坐空间的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0018",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "完工通知投递员",
+      "description": "把完工通知送到取件人处的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0019",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "胶水味通风提醒员",
+      "description": "提醒开窗通风减轻胶水味的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0020",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "旧物寄存看管员",
+      "description": "看管待修旧物寄存架的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0021",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "修补工序记录员",
+      "description": "记录每道修补工序与用料的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0022",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "材料用量核算员",
+      "description": "核算边角料与主材用量的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0023",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "学徒练习批注员",
+      "description": "在练习件上批注改进点的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0024",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "旧物档案建档员",
+      "description": "为送修旧物建立简明档案的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0025",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "工具保养手册抄录员",
+      "description": "抄录工具保养要点供张贴的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0026",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "接单日历编排员",
+      "description": "编排小店接单日历避免超载的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0027",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "安全告示改写员",
+      "description": "把安全要点改写成易读短句的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0028",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "价格对照表更新员",
+      "description": "更新常见修补项目价格对照表的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0029",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "学徒考勤登记员",
+      "description": "登记学徒到岗与练习时长的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0030",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "客户偏好备注员",
+      "description": "备注客户对颜色线迹等偏好的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0031",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "作坊门口清屑员",
+      "description": "清扫作坊门口木屑与线头的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0032",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "晾胶架巡看员",
+      "description": "巡看户外晾胶架是否稳固的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0033",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "废料箱外运员",
+      "description": "把分类废料箱运到回收点的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0034",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "遮阳布张挂工",
+      "description": "为作坊门口张挂遮阳布的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0035",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "送修推车推行员",
+      "description": "推行送修推车往返街巷的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0036",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "招牌除尘员",
+      "description": "清除小店招牌灰尘的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0037",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "门外试坐凳摆放员",
+      "description": "摆放并收回门外试坐凳的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0038",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "雨天门口防滑铺设员",
+      "description": "雨天铺设门口防滑垫的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0039",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "边角料晾晒员",
+      "description": "把可回收边角料摊开晾晒的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0040",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "工具箱户外移交员",
+      "description": "在户外点把工具箱移交给外勤的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0041",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "作坊执照窗口员",
+      "description": "受理作坊相关证照咨询与收件的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0042",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "学徒备案登记员",
+      "description": "为学徒办理备案登记的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0043",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "消防巡查陪同员",
+      "description": "陪同消防巡查并记录整改项的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0044",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "噪声投诉转办员",
+      "description": "转办作坊噪声相关投诉的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0045",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "废料投放规范员",
+      "description": "督促废料投放符合街区规范的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0046",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "小店营业时段公示员",
+      "description": "公示并更新小店营业时段的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0047",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "公共工具柜管理员",
+      "description": "管理街区共享工具柜钥匙与名册的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0048",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "修补义工调度员",
+      "description": "调度修补类义工到岗的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0049",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "安全演练通知员",
+      "description": "通知作坊参与安全演练的人。"
+    },
+    {
+      "id": "lx.npc-job.b0002.0050",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "旧物交易备案员",
+      "description": "为合法旧物交易做简易备案的人。"
+    }
+  ]
+}

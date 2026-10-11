@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-refusal",
+  "batchId": "text-refusal.b0003",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.text-refusal.b0003.0001",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "雨棚钉子我自己钉，你把着伞就行，别伸手。",
+      "description": "限定对方角色。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0002",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "闸板我来拨，水花大，你站远点更安全。",
+      "description": "以安全拒绝靠近帮忙。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0003",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "滤网我换，培植箱里的株距我清楚。",
+      "description": "因熟悉拒绝代劳。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0004",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "斗笠我自己取晒，路不远。",
+      "description": "拒绝陪同。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0005",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "洗衣台疏通我预约了专人，不必邻居上手。",
+      "description": "交给专人。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0006",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "蕨苗浇水按轮值来，今天不劳你代班。",
+      "description": "坚持轮值。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0007",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "浮板钉子我钉，你只要帮忙递钉就好——不，连递也不用，我够得着。",
+      "description": "先提后收回，明确独自完成。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0008",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "雨衣柜钥匙我自己拿，抽屉层我记得。",
+      "description": "拒绝代取。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0009",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "绕路牌子我立好了，加固也我来，谢谢。",
+      "description": "拒绝加固协助。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0010",
+      "category": "text-refusal",
+      "subcategory": "拒绝帮忙",
+      "text": "摊位费说明我自己读，不麻烦你讲解。",
+      "description": "拒绝代读。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0011",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "雨棚下打牌我不参加，听水声就够。",
+      "description": "安静偏好拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0012",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "采蕨野餐改日，今天土太湿。",
+      "description": "因条件拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0013",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "浮萍灯夜观我不去，想早睡。",
+      "description": "因休息拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0014",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "清淤义务劳动我这轮请假，上次已出过力。",
+      "description": "轮换边界。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0015",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "湿货尝鲜我免了，肠胃这阵子娇气。",
+      "description": "健康理由。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0016",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "跳板散步你先走，我鞋还在滴水。",
+      "description": "状态未备。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0017",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "雨中撑伞同行谢了，我习惯自己的节奏。",
+      "description": "节奏不同拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0018",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "苔藓养护课旁听即可，我不报名实操。",
+      "description": "降低参与度。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0019",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "码头茶会缺席，茶渍怕沾到修好的斗笠。",
+      "description": "护物理由。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0020",
+      "category": "text-refusal",
+      "subcategory": "拒绝邀请",
+      "text": "夜里听蛙你去吧，我窗关着也能听见一点。",
+      "description": "间接参与式拒绝。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0021",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "水位标我私下记着，不贴到公共板。",
+      "description": "保留私人记录。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0022",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "培植箱里种的品种，我先不公开名单。",
+      "description": "保留种植清单。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0023",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "斗笠是谁寄存的，柜规不许说。",
+      "description": "遵守柜规保密。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0024",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "身体淋雨后的不适，我只跟医师说。",
+      "description": "保留健康。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0025",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "清淤时看见的漂浮物细节，我不想细讲。",
+      "description": "保留不适细节。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0026",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "住水岸哪一段，巷口点头就好，门牌免问。",
+      "description": "保留精确住址。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0027",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "雨棚漏的那角是谁报的，我不便透露。",
+      "description": "保护报修人。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0028",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "采菇认不认得，我水平一般，不装懂也不细说行踪。",
+      "description": "保留行踪。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0029",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "今晚浇水的具体毫升，我按经验，不必记录给别人。",
+      "description": "保留操作细节。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0030",
+      "category": "text-refusal",
+      "subcategory": "保留隐私",
+      "text": "和谁一起躲雨，属于偶遇，不多介绍。",
+      "description": "保留社交细节。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0031",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "雨棚补布还是换整幅，争论到此，各自保留。",
+      "description": "停止方案争执。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0032",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "蛙声好不好听，因人而异，别再评了。",
+      "description": "停止主观评价。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0033",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "涨水传闻我不想继续听，等官方通知。",
+      "description": "拒绝传闻。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0034",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "谁鞋更湿这类玩笑，请停。",
+      "description": "停止玩笑。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0035",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "苔藓养屋里闷不闷，说到这够了。",
+      "description": "收束话题。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0036",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "摊位费贵不贵，别在棚下公开吵。",
+      "description": "停止公开争执。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0037",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "清淤累不累，别再劝我二次上场。",
+      "description": "收束或拒绝继续该题，呼应「清淤累不累别再劝我二次」情境。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0038",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "天气潮不潮，感受完了，各自忙。",
+      "description": "收束或拒绝继续该题，呼应「天气潮不潮感受完了各」情境。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0039",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "关于谁更会认蕨，比较到此打住。",
+      "description": "收束或拒绝继续该题，呼应「关于谁更会认蕨比较到此」情境。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0040",
+      "category": "text-refusal",
+      "subcategory": "停止话题",
+      "text": "我不想听对浮桥安全性的恐吓式说法。",
+      "description": "拒绝恐吓话术。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0041",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "雨棚你不必帮钉；若想帮忙，帮我挡住侧面的雨丝。",
+      "description": "挡雨替代上手。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0042",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "打牌我不参加；你赢的话给我带句笑话回来就行。",
+      "description": "间接参与。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0043",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "采蕨我不去；你若多采一点可食用的，洗干净分我少量。",
+      "description": "分享替代同行。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0044",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "清淤我请假；工具清洗我可以收工后做。",
+      "description": "后勤替代上场。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0045",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "尝鲜我免了；菜名你告诉我，我回家自己试少量。",
+      "description": "信息替代试吃。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0046",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "同行撑伞谢了；你先走，到跳板口等我不强求。",
+      "description": "不强求会合。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0047",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "实操课不报名；讲义若有余份，我想带回看。",
+      "description": "讲义替代实操。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0048",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "住址不细说；联系请留字条在雨棚告示绳上。",
+      "description": "公共渠道。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0049",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "这个话题停；若还想聊，我们说排水坡度怎么测。",
+      "description": "拒绝主请求并给轻量替代，呼应「这个话题停；若还想聊我」情境。"
+    },
+    {
+      "id": "lx.text-refusal.b0003.0050",
+      "category": "text-refusal",
+      "subcategory": "提出替代",
+      "text": "闸板你别伸手；相机若带着，拍一下卡住的角度给我。",
+      "description": "记录替代上手。"
+    }
+  ]
+}

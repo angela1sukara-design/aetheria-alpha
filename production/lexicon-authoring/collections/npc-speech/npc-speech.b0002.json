@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-speech",
+  "batchId": "npc-speech.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-speech.b0002.0001",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "步骤用序号说",
+      "description": "交代手艺步骤爱用一、二、三，便于跟做。",
+      "examples": [
+        "一量，二切，三试装，别跳。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0002",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "先报风险",
+      "description": "开口先报可能损坏或耗时，再谈做法。",
+      "examples": [
+        "这缝一拆可能更大，你要不要继续？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0003",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "爱说‘手感上’",
+      "description": "描述难言之处常用“手感上”，再补可观察点。",
+      "examples": [
+        "手感上偏软，边要再压一道。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0004",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "客人话复述回",
+      "description": "听完需求会用自己的话复述回给客人确认。",
+      "examples": [
+        "您是要留旧色，只加固，对吗？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0005",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "少用华丽形容词",
+      "description": "用料与效果描述偏朴素，少堆辞藻。",
+      "examples": [
+        "结实、不刺手，颜色偏哑。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0006",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "未完成就标注",
+      "description": "说到半成品会明确说未完成，避免误当交件。",
+      "examples": [
+        "这是半成品，别上油，等我收尾。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0007",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "用‘可以’代替‘必须’",
+      "description": "建议口吻多用“可以”，少用压迫感的“必须”。",
+      "examples": [
+        "可以先打磨，也可以先试色。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0008",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "收尾句固定",
+      "description": "收工或交件有固定收尾句，形成节奏。",
+      "examples": [
+        "试过了，稳，您带走。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0009",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "材料名说全称",
+      "description": "材料尽量说全称与规格，少用“那个”。",
+      "examples": [
+        "用的是细砂180，不是粗砂。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0010",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "问句带选项",
+      "description": "问人时常给两个选项，降低回答难度。",
+      "examples": [
+        "您要快修能看，还是慢修看不见？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0011",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用缝线比关系",
+      "description": "关系深浅用线的松紧、是否打结来比。",
+      "examples": [
+        "这线还松着，别硬拽。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0012",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用木材脾气温",
+      "description": "人的脾气用木材胀缩、节疤来打比方。",
+      "examples": [
+        "他像湿木，急了就拧。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0013",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用刃口比状态",
+      "description": "身心状态用刃口利钝、需不需要磨来讲。",
+      "examples": [
+        "我今天刃钝了，别给我细活。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0014",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用胶干比等待",
+      "description": "等待时效用胶干、漆干、不能碰来比。",
+      "examples": [
+        "现在碰等于毁，等它干透。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0015",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用量尺比边界",
+      "description": "边界与分寸用量尺、刻度、不越线来讲。",
+      "examples": [
+        "我的量尺到这，再过去不接。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0016",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用修补比改错",
+      "description": "改正错误像修补：找裂、清边、再补。",
+      "examples": [
+        "先清干净旧胶，再谈新补。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0017",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用工具各司其职",
+      "description": "合作分工用锤钉锯各干各的来比。",
+      "examples": [
+        "你当锯，我当尺，别抢活。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0018",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用抛光比沟通",
+      "description": "沟通要细活用抛光、去毛刺来形容。",
+      "examples": [
+        "话太毛，抛一抛再讲给客人。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0019",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用库存比精力",
+      "description": "精力与时间用库存、缺货、补货来讲。",
+      "examples": [
+        "我库存见底了，明日再补。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0020",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用报废比止损",
+      "description": "止损用报废、拆料再利用来讲，不戏剧化。",
+      "examples": [
+        "这件报废拆料，别硬救。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0021",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "演示时放极慢",
+      "description": "动手演示时语速放极慢，与动作同步。",
+      "examples": [
+        "看见没……钉尖……垂直下去。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0022",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "估价时平稳",
+      "description": "谈价钱时语速平稳，数字咬死不含糊。",
+      "examples": [
+        "工时四十，材料十二，合计五十二。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0023",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "催单时不提速",
+      "description": "被人催也不把语速变攻击性，只给事实。",
+      "examples": [
+        "最快后日，再快质量我不保。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0024",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "教学时重复两遍",
+      "description": "教新手关键句会原样重复两遍，再换说法。",
+      "examples": [
+        "腕发力。腕发力。别用肩扛。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0025",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "嘈杂里提高清晰度",
+      "description": "车间嘈杂时不靠喊叫，靠更清晰的口型与短句。",
+      "examples": [
+        "停——关闸——再说话。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0026",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "收工叮嘱加快",
+      "description": "收工安全叮嘱反而稍快，像清单扫过。",
+      "examples": [
+        "灭火、断电、锁门、走。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0027",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "犹豫时嗯声拉长",
+      "description": "没想好时嗯声拉长，诚实标出思考中。",
+      "examples": [
+        "嗯——这缝我建议拆，不拆也行。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0028",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "对老客语速轻松",
+      "description": "对熟客语速略轻松，但仍把要点说全。",
+      "examples": [
+        "老规矩，留毛边，三日取。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0029",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "电话里更慢",
+      "description": "电话交代尺寸时更慢，并要求对方回读。",
+      "examples": [
+        "身长六十二，请回读一遍。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0030",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "争论不抬高音",
+      "description": "意见不合时不靠抬高音量，靠放慢讲依据。",
+      "examples": [
+        "我的依据是干缩缝，你听完再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0031",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "进店先看忙闲",
+      "description": "进别店先观察忙闲，忙则短说或改时。",
+      "examples": [
+        "看您忙，我把单子放这，一会再来。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0032",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "夸人夸具体",
+      "description": "称赞手艺夸到具体工序，不空说厉害。",
+      "examples": [
+        "这暗线藏得干净，我学到了。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0033",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "借工具报用途",
+      "description": "借工具说明用途与预计时长，用完即还。",
+      "examples": [
+        "借钻半小时，打定位孔，马上还。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0034",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "拒单给转介",
+      "description": "能力外拒单时给转介，并说明对方所长。",
+      "examples": [
+        "我修不了珐琅，东街阿蓝擅这个。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0035",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "迟到先致歉",
+      "description": "自己迟到先致歉并说明影响，再谈正事。",
+      "examples": [
+        "抱歉晚到，让您空等，工时我压缩。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0036",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "学徒面前留面子",
+      "description": "纠正学徒时注意给面子，重话私下说。",
+      "examples": [
+        "当着客人先这样，回头我们细说。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0037",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "材料浪费先担",
+      "description": "材料浪费先担责任，再谈改进，不先怪助手。",
+      "examples": [
+        "配多了算我估错，余料我收。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0038",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "交件教保养",
+      "description": "交件时附短保养说明，当作服务一部分。",
+      "examples": [
+        "别暴晒，一月上薄油，有问题找我。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0039",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "同行不贬价",
+      "description": "客人面前不贬同行，只说自己做法。",
+      "examples": [
+        "我习惯留原痕，别家或有别法。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0040",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "收谢分给帮手",
+      "description": "客人致谢时把功劳分给当场帮手。",
+      "examples": [
+        "谢我们两人，夹具是对方扶的。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0041",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "用废料演示错",
+      "description": "用废料演示错误操作后果，少在成品上试。",
+      "examples": [
+        "看，这样一掰就裂，所以要垫布。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0042",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "改口写入工单",
+      "description": "关键改口写入工单，避免口头版本打架。",
+      "examples": [
+        "以工单这行为准，刚才那句作废。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0043",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "量错就重量",
+      "description": "尺寸争议时当场重量，不靠嘴赢。",
+      "examples": [
+        "重量一次，以现在数为准。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0044",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "流程卡暂停",
+      "description": "发现错就喊暂停，不带着错做到底。",
+      "examples": [
+        "停，胶号不对，先换瓶。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0045",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "让学徒复述正确",
+      "description": "纠正后让学徒用自己的话复述正确步骤。",
+      "examples": [
+        "你再说一遍正确顺序给我听。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0046",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "成本透明谈返工",
+      "description": "返工涉及费用时透明谈，不偷偷加。",
+      "examples": [
+        "这次返工材料我出，工时对半。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0047",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "照片前后对比",
+      "description": "用前后照片对比说明问题，减少争吵。",
+      "examples": [
+        "这是修前，这是现况，裂在扩大。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0048",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "邀请第三方看",
+      "description": "争执不下可请第三方技工看，服从更清楚的依据。",
+      "examples": [
+        "请隔壁看一眼缝，我们听专业的。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0049",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "自己示范重做",
+      "description": "要求重做时先自己示范一截，再交还对方。",
+      "examples": [
+        "我做这一角，你照这个力度。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0002.0050",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "错题本公开",
+      "description": "店内公开错题本，匿名也可，重在改法。",
+      "examples": [
+        "把这次写进错题本，下次先试小样。"
+      ]
+    }
+  ]
+}

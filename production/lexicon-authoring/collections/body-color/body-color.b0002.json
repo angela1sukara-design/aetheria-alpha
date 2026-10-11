@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "body-color",
+  "batchId": "body-color.b0002",
+  "source": {
+    "producer": "ai-body",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.body-color.b0002.0001",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "染料坊米褐",
+      "description": "均匀米褐，像染坊台面上久浸不褪的底色，近处才见肌理。"
+    },
+    {
+      "id": "lx.body-color.b0002.0002",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "补丁布原灰",
+      "description": "灰得老实，像一叠待缝补丁布的本色，让人想起熟材可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0003",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "木屑浅黄",
+      "description": "浅黄带暖，似刨花落在袖口留下的色感，近灯更易看见可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0004",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "铁锈干褐",
+      "description": "干透的铁锈褐铺满表面，无光却厚实，边缘磨得圆润可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0005",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "胶水晾干白",
+      "description": "偏冷的干白，像胶水风干后结成的膜色，风过有细小变动可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0006",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "砂纸磨痕灰",
+      "description": "细灰均匀，像砂纸反复打磨后的粉末色，像半句未说完可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0007",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "针线盒藏青",
+      "description": "深藏青沉稳，像旧针线盒内衬布的颜色，像摩挲过的旧痕可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0008",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "蜂蜡温黄",
+      "description": "温黄柔和，像刚融化再凝固的蜂蜡色，安静嵌在轮廓。"
+    },
+    {
+      "id": "lx.body-color.b0002.0009",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "麻灰工装色",
+      "description": "麻灰铺展，像工装洗多次后剩下的本色，贴着生活痕迹可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0010",
+      "category": "body-color",
+      "subcategory": "单色",
+      "name": "炭笔浅墨",
+      "description": "浅墨灰匀净，像炭笔在纸上轻轻铺底，人群中不突兀可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0011",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "染缸水位痕",
+      "description": "从深到浅像染缸壁上留下的水位色阶，与衣缘互相映。"
+    },
+    {
+      "id": "lx.body-color.b0002.0012",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "补丁叠色层",
+      "description": "新旧布色层层叠出渐变，缝线处最分明，不必特意展示。"
+    },
+    {
+      "id": "lx.body-color.b0002.0013",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "刨花蹭痕带",
+      "description": "手臂外侧被刨花蹭过，色由深缓缓变浅，活动时色阶微移。"
+    },
+    {
+      "id": "lx.body-color.b0002.0014",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "焊烟熏边",
+      "description": "靠近工作一侧色深，向外淡成正常肤色，像随手留备注。"
+    },
+    {
+      "id": "lx.body-color.b0002.0015",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "浆糊干边晕",
+      "description": "浆糊曾沾过的边缘干后晕开浅色圈，与衣缘互相映。"
+    },
+    {
+      "id": "lx.body-color.b0002.0016",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "磨具握痕色",
+      "description": "握柄处颜色更深，指缝间仍留浅过渡，随呼吸轻起伏。"
+    },
+    {
+      "id": "lx.body-color.b0002.0017",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "晒布绳影痕",
+      "description": "曾被晒布绳压住的部位色浅，两侧渐深，与衣缘互相映。"
+    },
+    {
+      "id": "lx.body-color.b0002.0018",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "油布擦痕带",
+      "description": "油布反复擦过的条带，中心亮两侧暗，衣下只余起伏。"
+    },
+    {
+      "id": "lx.body-color.b0002.0019",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "学徒袖褪区",
+      "description": "袖口到肘的褪色带，像学徒常年俯身的痕迹。"
+    },
+    {
+      "id": "lx.body-color.b0002.0020",
+      "category": "body-color",
+      "subcategory": "渐变",
+      "name": "染料指染晕",
+      "description": "指尖深色向掌心慢慢晕淡，界限不清，近灯更易看见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0021",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "飞溅漆点",
+      "description": "小臂散落干透的细漆点，颜色深浅不一，洗后仍淡留。"
+    },
+    {
+      "id": "lx.body-color.b0002.0022",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "针眼细疤斑",
+      "description": "指侧有针眼般细小色点，排列不规则，风过有细变动。"
+    },
+    {
+      "id": "lx.body-color.b0002.0023",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "锯末黏斑",
+      "description": "肘弯残留锯末黏成的浅斑，边缘毛糙，不必特意展示也自在。"
+    },
+    {
+      "id": "lx.body-color.b0002.0024",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "墨线弹痕点",
+      "description": "前臂有墨斗弹线留下的细点残痕，像半句未说完。"
+    },
+    {
+      "id": "lx.body-color.b0002.0025",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "焊渣灼小斑",
+      "description": "手背几处细小灼斑，色比周围略深，贴着生活痕迹。"
+    },
+    {
+      "id": "lx.body-color.b0002.0026",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "布屑黏附纹",
+      "description": "肩头粘过布屑的部位留下浅色点纹，远融近则独立。"
+    },
+    {
+      "id": "lx.body-color.b0002.0027",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "松脂滴斑",
+      "description": "腕侧有干透的松脂滴斑，微微发黄，不抢眼耐端详。"
+    },
+    {
+      "id": "lx.body-color.b0002.0028",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "粉笔灰指纹",
+      "description": "指腹残留粉笔灰蹭出的浅纹，易被忽略，像随手留下的小备注。"
+    },
+    {
+      "id": "lx.body-color.b0002.0029",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "锈水溅点",
+      "description": "小腿外侧溅着干锈水小点，呈不规则圈，像摩挲旧痕迹。"
+    },
+    {
+      "id": "lx.body-color.b0002.0030",
+      "category": "body-color",
+      "subcategory": "斑纹",
+      "name": "浆斑点点",
+      "description": "衣领对应的皮肤处有浅浆斑点，已淡化，人群中不突兀。"
+    },
+    {
+      "id": "lx.body-color.b0002.0031",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "蜂蜡抛光感",
+      "description": "表面像薄覆蜂蜡，反光温润不刺眼，偶有细碎反光。"
+    },
+    {
+      "id": "lx.body-color.b0002.0032",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "机油薄膜光",
+      "description": "局部有极薄油膜反光，像刚擦过工具，动作大才分明。"
+    },
+    {
+      "id": "lx.body-color.b0002.0033",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "砂光哑亮",
+      "description": "砂光处理后呈均匀哑亮，转折处一线光，雨后短暂加重可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0034",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "浆布干亮边",
+      "description": "曾上浆的边缘干后微亮，中心仍哑，收工才顾得擦。"
+    },
+    {
+      "id": "lx.body-color.b0002.0035",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "铜钮摩擦亮",
+      "description": "常碰铜钮的部位被磨出细窄亮带，随着呼吸轻微起伏。"
+    },
+    {
+      "id": "lx.body-color.b0002.0036",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "皮革护油光",
+      "description": "涂过护油的区域柔光均匀，像旧皮保养，衣物遮住时只余起伏。"
+    },
+    {
+      "id": "lx.body-color.b0002.0037",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "石蜡封边亮",
+      "description": "边缘像封过石蜡，亮线细而整齐，像随身旧物记。"
+    },
+    {
+      "id": "lx.body-color.b0002.0038",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "布轮抛光痕",
+      "description": "布轮打磨过的弧面留下柔和弧光，靠近台灯时更易看见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0039",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "潮布回潮亮",
+      "description": "回潮后短暂发亮，晾干又回成低光，让人想起熟材。"
+    },
+    {
+      "id": "lx.body-color.b0002.0040",
+      "category": "body-color",
+      "subcategory": "光泽色",
+      "name": "树脂薄壳光",
+      "description": "局部像罩着极薄树脂壳，侧光可见，风吹过会有细小变动。"
+    },
+    {
+      "id": "lx.body-color.b0002.0041",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "拇指茧深色",
+      "description": "拇指腹茧色更深，与掌心浅色成对比，边缘磨得圆润。"
+    },
+    {
+      "id": "lx.body-color.b0002.0042",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "食指墨痕区",
+      "description": "食指侧面常留浅墨色区，洗不净却淡，像一句没有说完的话。"
+    },
+    {
+      "id": "lx.body-color.b0002.0043",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "肘垫磨白块",
+      "description": "肘部磨出一块更浅的色区，像垫肘痕迹，湿度变色微调。"
+    },
+    {
+      "id": "lx.body-color.b0002.0044",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "膝补丁映色",
+      "description": "膝前隐约映着补丁布的浅色轮廓，坐立观感不同。"
+    },
+    {
+      "id": "lx.body-color.b0002.0045",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "腕箍压环色",
+      "description": "戴过皮腕箍处留下一圈偏深的环色，像工位小记号可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0046",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "鼻梁镜托痕",
+      "description": "鼻梁两侧浅痕色，像常戴镜托的印记，贴着本人的生活痕迹。"
+    },
+    {
+      "id": "lx.body-color.b0002.0047",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "唇角胶味色",
+      "description": "唇角微偏浅，像工作时抿唇留下的色差，细看有不对称。"
+    },
+    {
+      "id": "lx.body-color.b0002.0048",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "肩带旧压色",
+      "description": "肩窝被工具带压出的旧色带，窄而清晰，像压低口头禅。"
+    },
+    {
+      "id": "lx.body-color.b0002.0049",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "指缝锈渍线",
+      "description": "指缝间细锈渍线，与皮肤本色并置，旅久积薄尘可见。"
+    },
+    {
+      "id": "lx.body-color.b0002.0050",
+      "category": "body-color",
+      "subcategory": "局部配色",
+      "name": "耳后粉笔灰",
+      "description": "耳后一抹浅灰白，像回头蹭过黑板，雨后短暂加重。"
+    }
+  ]
+}

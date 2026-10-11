@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-food",
+  "batchId": "daily-food.b0001",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "subcategory": "准备食物",
+      "text": "对方把米淘了三遍，直到水变清，才倒进锅里。",
+      "description": "淘米至清的备食动作。",
+      "id": "lx.daily-food.b0001.0001",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把葱白拍扁，葱绿斜切，分别放进两个碗。",
+      "description": "葱分部位切备。",
+      "id": "lx.daily-food.b0001.0002",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把豆腐从水里捞出，用干净布轻轻压去多余水。",
+      "description": "压豆腐去水备食。",
+      "id": "lx.daily-food.b0001.0003",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把鸡蛋磕进碗，用筷搅到蛋清蛋黄完全融合。",
+      "description": "搅蛋融合的备食。",
+      "id": "lx.daily-food.b0001.0004",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把土豆削皮后切块，浸在淡盐水里防氧化。",
+      "description": "土豆切块浸盐备食。",
+      "id": "lx.daily-food.b0001.0005",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把面粉开窝倒水，慢慢和成不粘手的面团。",
+      "description": "和面成团的备食。",
+      "id": "lx.daily-food.b0001.0006",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把干香菇用温水泡发，剪去硬蒂留在旁。",
+      "description": "泡菇剪蒂的备食。",
+      "id": "lx.daily-food.b0001.0007",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把肉片用酱汁抓匀，静置一旁入味。",
+      "description": "抓酱静置入味备食。",
+      "id": "lx.daily-food.b0001.0008",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把菜板擦净，生熟分区各用一边。",
+      "description": "擦板分区备切。",
+      "id": "lx.daily-food.b0001.0009",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "准备食物",
+      "text": "对方把油锅烧到微烟，再把备好的料依次靠近灶台。",
+      "description": "热油并拢料备炒。",
+      "id": "lx.daily-food.b0001.0010",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方用勺尖蘸了一点汤，吹凉后轻轻尝咸淡。",
+      "description": "勺尖尝汤咸淡。",
+      "id": "lx.daily-food.b0001.0011",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方掰下一小角饼，细嚼感受层间是否酥。",
+      "description": "掰饼角尝酥度。",
+      "id": "lx.daily-food.b0001.0012",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方把菜叶送入口中，辨别有没有余苦。",
+      "description": "尝菜叶辨余苦。",
+      "id": "lx.daily-food.b0001.0013",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方用指尖沾酱点到舌尖，判断甜度够不够。",
+      "description": "指尖点酱尝甜。",
+      "id": "lx.daily-food.b0001.0014",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方把刚出锅的粥盛半勺，吹两口再入口。",
+      "description": "吹粥半勺品尝。",
+      "id": "lx.daily-food.b0001.0015",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方咬开一颗卤蛋，看蛋黄是否刚好沙心。",
+      "description": "咬卤蛋看沙心。",
+      "id": "lx.daily-food.b0001.0016",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方把蒸好的馒头撕开闻，确认没有夹生味。",
+      "description": "撕馒头闻夹生。",
+      "id": "lx.daily-food.b0001.0017",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方用木筷夹起一条菜，细品油香是否过重。",
+      "description": "夹菜品油香。",
+      "id": "lx.daily-food.b0001.0018",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方把凉粉切小块入口，感受弹牙程度。",
+      "description": "尝凉粉弹牙感。",
+      "id": "lx.daily-food.b0001.0019",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "品尝",
+      "text": "对方把果酱抹薄薄一层试吃，再决定是否加糖。",
+      "description": "试抹果酱品甜。",
+      "id": "lx.daily-food.b0001.0020",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把烙好的饼切开，按人数均分成三角块。",
+      "description": "切饼均分的分享。",
+      "id": "lx.daily-food.b0001.0021",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把热粥分盛到几只碗里，大碗留给胃口好的。",
+      "description": "分粥按胃口盛碗。",
+      "id": "lx.daily-food.b0001.0022",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把水果洗好装盘，推到桌中央任人自取。",
+      "description": "装盘推中自取分享。",
+      "id": "lx.daily-food.b0001.0023",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把多出来的包子用布包好，递给邻桌。",
+      "description": "包剩包递给邻桌。",
+      "id": "lx.daily-food.b0001.0024",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把酱碟分成两小碟，各自放在方便夹取处。",
+      "description": "分酱碟就近放置。",
+      "id": "lx.daily-food.b0001.0025",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把烤红薯掰成两半，递出冒热气的那半。",
+      "description": "掰红薯递热半。",
+      "id": "lx.daily-food.b0001.0026",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把汤里的肉丸挑到客人碗里，自己留青菜。",
+      "description": "挑丸入客碗分享。",
+      "id": "lx.daily-food.b0001.0027",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把饼干筒打开，倾斜筒口方便他人拿取。",
+      "description": "倾筒口便取分享。",
+      "id": "lx.daily-food.b0001.0028",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把刚切的西瓜块插上牙签，摆成一圈。",
+      "description": "插签摆瓜圈分享。",
+      "id": "lx.daily-food.b0001.0029",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "分享",
+      "text": "对方把剩余的面汤兑点水，再分给还想喝的人。",
+      "description": "兑汤再分的分享。",
+      "id": "lx.daily-food.b0001.0030",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把油碗与清碗分开叠，免得串味。",
+      "description": "油清分叠收拾。",
+      "id": "lx.daily-food.b0001.0031",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方用馒头皮把盘底的酱刮净，再送去洗。",
+      "description": "馒头皮刮盘收拾。",
+      "id": "lx.daily-food.b0001.0032",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把筷子根部对齐，插进筷筒干燥处。",
+      "description": "齐筷插筒收拾。",
+      "id": "lx.daily-food.b0001.0033",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把桌布抖到室外，拍净渣屑再铺回。",
+      "description": "抖桌布铺回收拾。",
+      "id": "lx.daily-food.b0001.0034",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把汤锅里的剩汤倒进玻璃瓶冷藏。",
+      "description": "剩汤入瓶冷藏收拾。",
+      "id": "lx.daily-food.b0001.0035",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把砧板立起沥水，刀擦干收回刀架。",
+      "description": "立板收刀收拾。",
+      "id": "lx.daily-food.b0001.0036",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把碗沿的油花用热水冲掉，再入盆洗。",
+      "description": "冲油花再洗收拾。",
+      "id": "lx.daily-food.b0001.0037",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把餐巾叠回原样，放进抽屉压平。",
+      "description": "叠餐巾压屉收拾。",
+      "id": "lx.daily-food.b0001.0038",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把空瓶集中到门边筐，满了再送回收。",
+      "description": "空瓶入筐待回收。",
+      "id": "lx.daily-food.b0001.0039",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "收拾餐具",
+      "text": "对方把桌面先干擦再湿擦，最后用干布抛一下。",
+      "description": "干湿抛三步收拾桌。",
+      "id": "lx.daily-food.b0001.0040",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把热水倒进杯里，捂着杯壁等略凉再喝。",
+      "description": "捂杯等凉再饮。",
+      "id": "lx.daily-food.b0001.0041",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方用陶碗舀井水，吹开水面浮尘后小口饮。",
+      "description": "吹尘小口饮井水。",
+      "id": "lx.daily-food.b0001.0042",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把茶汤分到小盅，先闻香再入口。",
+      "description": "分盅闻香再饮。",
+      "id": "lx.daily-food.b0001.0043",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把豆浆摇匀，倒出上层泡沫再喝。",
+      "description": "摇浆去沫再饮。",
+      "id": "lx.daily-food.b0001.0044",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把酸梅汤加冰，用长勺搅匀后啜饮。",
+      "description": "加冰搅匀啜饮。",
+      "id": "lx.daily-food.b0001.0045",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把水壶嘴擦净，仰头小口接水。",
+      "description": "擦壶嘴小口接饮。",
+      "id": "lx.daily-food.b0001.0046",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把药茶趁温喝完，杯底沉淀不倒出。",
+      "description": "趁温饮药茶留渣。",
+      "id": "lx.daily-food.b0001.0047",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把椰汁插上细管，慢慢吸到底。",
+      "description": "插管慢吸椰汁。",
+      "id": "lx.daily-food.b0001.0048",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把酒杯只倒三分满，双手捧杯轻抿。",
+      "description": "三分满双手轻抿。",
+      "id": "lx.daily-food.b0001.0049",
+      "category": "daily-food"
+    },
+    {
+      "subcategory": "饮用",
+      "text": "对方把凉白开倒进旅行壶，拧紧盖再喝第一口。",
+      "description": "倒凉水入壶再饮。",
+      "id": "lx.daily-food.b0001.0050",
+      "category": "daily-food"
+    }
+  ]
+}

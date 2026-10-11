@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-reply",
+  "batchId": "text-reply.b0003",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.text-reply.b0003.0001",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "雨棚木杆我来扶，你钉就行。",
+      "description": "认可协作分工。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0002",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "水位我帮看着，异常就喊你。",
+      "description": "认可看守任务。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0003",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "滤网我装，你把培植箱掀开就好。",
+      "description": "认可养护分工。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0004",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "斗笠我今天下午取，晒干再还柜。",
+      "description": "认可取物安排。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0005",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "洗衣台排水我知道了，有跟进会回告。",
+      "description": "认可信息同步。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0006",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "蕨苗今晚我浇，轮值没问题。",
+      "description": "认可轮值。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0007",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "浮板翘起那块，我跟你一起钉。",
+      "description": "认可共同修补。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0008",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "雨衣柜新钥匙位置记下了。",
+      "description": "认可交接。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0009",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "清淤绕路牌子我看见了，会照走。",
+      "description": "认可绕行安排。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0010",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "湿货摊位费说明我去棚柱上看。",
+      "description": "认可自行查阅。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0011",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "扶木杆可以，但我力气一般，怕扶不稳。",
+      "description": "能力迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0012",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "看水位行，只是我不太会读刻度。",
+      "description": "技能不足迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0013",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "换滤网我能帮忙，手套有点薄，怕扎手。",
+      "description": "防护顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0014",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "斗笠取是要取，今天雨又大，想再拖半日。",
+      "description": "天气导致迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0015",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "排水报修跟进与否，我消息不灵通，不敢打包票。",
+      "description": "信息不确定。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0016",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "浇蕨苗可以，量多少我没把握。",
+      "description": "剂量迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0017",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "钉浮板我参加，锤子我得先找。",
+      "description": "工具未备迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0018",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "新钥匙我听清了，但怕记混抽屉层。",
+      "description": "记忆顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0019",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "绕路我照走，只是多走的那段泥很滑。",
+      "description": "接受但有顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0020",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "摊位费说明我去看，字太小可能看不清。",
+      "description": "阅读条件迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0021",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "你说松了两颗钉，是棚角那两颗，还是中间的？",
+      "description": "追问以对齐信息，呼应「你说松了两颗钉是棚角那」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0022",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "看水位是盯刻度，还是看有没有漫过石沿？",
+      "description": "澄清标准。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0023",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "滤网是换整张，还是只换破损那一截？",
+      "description": "追问以对齐信息，呼应「滤网是换整张还是只换破」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0024",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "斗笠是竹编那顶，还是涂油布的？",
+      "description": "澄清物件。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0025",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "洗衣台排水慢，是堵了，还是坡度不够？",
+      "description": "澄清原因假设。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0026",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "浇透是指土面湿，还是水从底孔流出？",
+      "description": "澄清操作终点。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0027",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "浮板翘起是靠岸第一块，还是桥心那块？",
+      "description": "追问以对齐信息，呼应「浮板翘起是靠岸第一块还」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0028",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "钥匙在第二层，是从上数还是从下数？",
+      "description": "澄清编码。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0029",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "清淤绕路是走东岸，还是临时搭的跳板？",
+      "description": "澄清路径。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0030",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "摊位费改算法，是按重量，还是按占地？",
+      "description": "澄清计费方式。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0031",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "雨棚支架我主张换新木，旧的再钉也松。",
+      "description": "提出相左看法，呼应「雨棚支架我主张换新木旧」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0032",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "水位与其人工盯，不如先清一次闸板。",
+      "description": "优先级不同。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0033",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "培植箱滤网可以洗了再用，不必次次换新。",
+      "description": "节约不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0034",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "斗笠与其晒，不如先阴干，暴晒容易裂。",
+      "description": "养护方法不同。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0035",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "洗衣台该先查坡度，光报修排水管不够。",
+      "description": "诊断不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0036",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "蕨苗浇透容易烂根，我赞成少量多次。",
+      "description": "浇水观念不同。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0037",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "浮板钉牢前应先垫防水布，不然还会翘。",
+      "description": "工序补充意见。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0038",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "雨衣柜钥匙不该放抽屉，挂墙上更醒目。",
+      "description": "存放不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0039",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "清淤牌子写得太靠里，拐弯处才看得见才对。",
+      "description": "信息位置不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0040",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "摊位费说明只贴棚柱不够，应再抄一份到告示栏。",
+      "description": "传播方式不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0041",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "扶不扶杆，我换完鞋再定，这双太滑。",
+      "description": "条件未备暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0042",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "看水位的事，我问过熟手再答应。",
+      "description": "请教后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0043",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "换滤网我先看破损程度，再决定帮不帮整天。",
+      "description": "评估后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0044",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "取斗笠时间我看雨势，傍晚前给你准话。",
+      "description": "天气观察暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0045",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "报修跟进结果，我下午问管事再回你。",
+      "description": "询问后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0046",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "浇多少水，我查完养护纸条再动手。",
+      "description": "查资料暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0047",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "钉浮板几点集合，我看完轮值表再回。",
+      "description": "日程核对暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0048",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "钥匙层数我回去看标签，确认后再用。",
+      "description": "核实暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0049",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "绕不绕路，我先走去看泥有多滑。",
+      "description": "实地查看暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0003.0050",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "摊位费我看完说明再决定续不续摊。",
+      "description": "阅读后决定。"
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-trait",
+  "batchId": "npc-trait.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-trait.b0002.0001",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "量两次再裁",
+      "description": "动手前反复核对尺寸，宁慢勿返工。",
+      "examples": [
+        "铅笔在材料上轻轻点记。",
+        "问一句确认单位是厘米。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0002",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "先保护现场",
+      "description": "开工铺布垫与挡板，避免损坏周围物品。",
+      "examples": [
+        "把茶杯挪到安全距离外。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0003",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "工具用完归位",
+      "description": "每换一步就收回刚用的工具，台面保持清。",
+      "examples": [
+        "扳手挂回磁条原位。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0004",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "能修就不换新",
+      "description": "优先尝试修补，确认无法修才建议更换。",
+      "examples": [
+        "先听一声哪里松了。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0005",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "进度如实告知",
+      "description": "完工时间说保守值，提前完成再惊喜。",
+      "examples": [
+        "大概后天傍晚能取。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0006",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "学徒错不公开骂",
+      "description": "纠正错误拉到一边轻声说，不在客人前斥责。",
+      "examples": [
+        "过来，我示范一遍。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0007",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "材料浪费心疼",
+      "description": "下料精打细算，边角也想好下一用途。",
+      "examples": [
+        "这块能做垫片先留着。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0008",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "双人协作喊口令",
+      "description": "抬重物或对齐时喊清楚左右，避免碰伤。",
+      "examples": [
+        "我数三，一起抬。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0009",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "收工必断电",
+      "description": "离开前检查电源与火源，形成固定收尾。",
+      "examples": [
+        "手按开关确认已关。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0010",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "客户意见记本",
+      "description": "反馈逐条记下，下次改进不靠记忆。",
+      "examples": [
+        "本子角标日期与姓名首字。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0011",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "用工序讲故事",
+      "description": "解释问题爱按步骤说，像带着人走一遍。",
+      "examples": [
+        "第一步夹紧，第二步找平。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0012",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "手势辅助说明",
+      "description": "说话时用手比划厚度与角度，减少误会。",
+      "examples": [
+        "两指捏出大概缝隙宽。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0013",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "少用行话对外",
+      "description": "对非同行改用口语，必要时才提专名。",
+      "examples": [
+        "就是把松的地方拧紧。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0014",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "示范优于长论",
+      "description": "能做给你看就不空讲，边做边点关键处。",
+      "examples": [
+        "你看我手腕怎么转。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0015",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "承认不会很干脆",
+      "description": "超出能力范围直接说不会，并建议别处。",
+      "examples": [
+        "这个我修不好，别耽误你。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0016",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "夸工艺不夸人",
+      "description": "称赞对象落在针脚或接口，避免空泛吹捧。",
+      "examples": [
+        "这圈缝得匀。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0017",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "失败案例分享",
+      "description": "愿意讲自己翻车经历，让别人少走弯路。",
+      "examples": [
+        "我以前也切歪过。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0018",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "讨价语气平稳",
+      "description": "谈价格不急不压，把工时与材料分开说清。",
+      "examples": [
+        "材料这些，工时那些。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0019",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "收尾说养护法",
+      "description": "交件必交代怎么保养，生怕对方用坏。",
+      "examples": [
+        "别泡水，擦干就行。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0020",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "群里回复简洁",
+      "description": "工匠群消息回短句加照片，少发长语音。",
+      "examples": [
+        "见图，已紧。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0021",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不动他人工具",
+      "description": "未经允许不拿别人工具箱，即使只是借用一秒。",
+      "examples": [
+        "手伸到半空又收回。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0022",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "客人物品先问",
+      "description": "拆修前问可否动装饰件，得到允许再拆。",
+      "examples": [
+        "这个饰片能卸吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0023",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不围观他人失败",
+      "description": "别人返工时不凑近看，需要帮忙才靠近。",
+      "examples": [
+        "侧身走开去干自己的。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0024",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "学徒私人时间尊重",
+      "description": "收工后不强制留人，加班先征询意愿。",
+      "examples": [
+        "今晚你方便留下来吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0025",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "照片不露客户面",
+      "description": "作品照避开可识别面孔与门牌隐私。",
+      "examples": [
+        "镜头只框住接口细节。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0026",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "报价单当面交",
+      "description": "价格写清楚当面给，不背后另议扰乱。",
+      "examples": [
+        "你看这行工时费。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0027",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不贬低别家手艺",
+      "description": "比较时只说差异，不说谁差谁好。",
+      "examples": [
+        "做法不一样，各有习惯。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0028",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "危险区设口头提醒",
+      "description": "有人靠近刃具或砂轮先出声提醒停下。",
+      "examples": [
+        "等等，先停转。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0029",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "夜班不扰邻铺",
+      "description": "晚间作业控制噪声时段，必要时改白天。",
+      "examples": [
+        "太晚了，明天再打。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0030",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "废料不乱丢门外",
+      "description": "废料进自家分箱，不堆到公共过道。",
+      "examples": [
+        "铁屑进铁箱，木屑进袋。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0031",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "拆旧看结构",
+      "description": "遇到报废件忍不住拆开看内部怎么咬合。",
+      "examples": [
+        "螺丝按顺序排放以免乱。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0032",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "追问老物件年代",
+      "description": "修旧时爱问大概哪年做的，便于选材料。",
+      "examples": [
+        "这包浆看着有些年头。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0033",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "新材料小样试",
+      "description": "拿到新胶或新漆先做小样，确认再大面积用。",
+      "examples": [
+        "边角试一厘米看看。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0034",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "旁听别行交流",
+      "description": "茶歇爱听别的行当聊天，记下能借用的点子。",
+      "examples": [
+        "本子写着跨行备忘。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0035",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "较真量具误差",
+      "description": "发现两把尺读数不同会追问哪把已校准。",
+      "examples": [
+        "我们拿标准块对一下。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0036",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "市集翻找零件",
+      "description": "闲时逛旧货摊，专找稀缺规格的螺丝与铰链。",
+      "examples": [
+        "口袋叮当作响。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0037",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "问清失败原因",
+      "description": "看见返工不只同情，还想知道卡在哪一步。",
+      "examples": [
+        "是胶没干透还是受力不均。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0038",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "图纸折痕也看",
+      "description": "读旧图纸连折痕与批注都看，猜修改历史。",
+      "examples": [
+        "这处用另一种笔改过。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0039",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "学冷门保养法",
+      "description": "对生僻材料的保养方式特别上心。",
+      "examples": [
+        "这种藤要避直晒。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0040",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "观察老师傅手势",
+      "description": "同一动作看老师傅如何省力，默默模仿。",
+      "examples": [
+        "手腕角度记在心里。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0041",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "赶工肩颈发紧",
+      "description": "交期临近肩颈僵硬，仍强迫自己放慢关键刀。",
+      "examples": [
+        "停下来转转脖子再继续。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0042",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "出错后反复测量",
+      "description": "一刀切错就连续量很多遍，生怕再错。",
+      "examples": [
+        "尺子在同一点按了三次。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0043",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "压力下少说话",
+      "description": "忙乱时只答必要的是与否，表情紧。",
+      "examples": [
+        "嗯。等会。先别动。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0044",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "清理台面镇静",
+      "description": "焦虑时先把台面清到空无一物再重排工具。",
+      "examples": [
+        "抹布来回擦同一区域。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0045",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "需要旁人确认",
+      "description": "高压时会拉同事再看一眼，求个双保险。",
+      "examples": [
+        "你帮我瞅瞅齐不齐。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0046",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "熬夜后手抖隐瞒",
+      "description": "睡眠不足手微抖，会改做粗活或暂停细活。",
+      "examples": [
+        "今天细活留给明天。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0047",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "把怒气砸在废料",
+      "description": "烦躁时把废料折断或压扁，不冲人发火。",
+      "examples": [
+        "纸箱被压得扁扁的。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0048",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "清单写到溢出",
+      "description": "事务压顶时清单密密麻麻，优先级反而乱。",
+      "examples": [
+        "又在最上头加红圈。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0049",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "拒绝新单自保",
+      "description": "已经满档会明确拒单，语气可能偏硬。",
+      "examples": [
+        "这周接不了，别问了。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0002.0050",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "完工瘫坐一会",
+      "description": "大活结束先坐着发呆，缓过神再收拾。",
+      "examples": [
+        "背靠墙闭眼半分钟。"
+      ]
+    }
+  ]
+}

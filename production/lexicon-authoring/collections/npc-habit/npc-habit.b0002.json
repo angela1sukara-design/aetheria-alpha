@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-habit",
+  "batchId": "npc-habit.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-habit.b0002.0001",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "螺丝按规格入格",
+      "description": "拆下的螺丝按长短分格，绝不混堆。",
+      "examples": [
+        "格盖写着毫米数。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0002",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "砂纸旧新分匣",
+      "description": "用过的砂纸与新砂纸分匣，避免误拿。",
+      "examples": [
+        "旧的角被折一下标记。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0003",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "量具挂墙归位",
+      "description": "尺与角尺用完挂回剪影板对应位。",
+      "examples": [
+        "缺一件墙上立刻看见。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0004",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "布屑当日清扫",
+      "description": "收工扫布屑入袋，不留到第二天。",
+      "examples": [
+        "扫帚挂在门后钉上。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0005",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "胶水盖必擦净",
+      "description": "用完胶水把瓶口余胶擦掉再盖紧。",
+      "examples": [
+        "盖沿无白圈。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0006",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "半成品标工序",
+      "description": "半成品贴纸条写下一道工序与日期。",
+      "examples": [
+        "字迹大到对面可读。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0007",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "刃具刃口朝内收",
+      "description": "收纳时刃口朝安全方向，外套护套。",
+      "examples": [
+        "拿取先看护套在不在。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0008",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "油漆刷吊挂晾",
+      "description": "刷子洗净后吊挂滴干，不倒插桶中。",
+      "examples": [
+        "下方垫报纸接滴。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0009",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "图纸卷筒分类",
+      "description": "常用图与归档图分筒，筒口挂目录卡。",
+      "examples": [
+        "抽图前先读目录。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0010",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "废料箱傍晚倒",
+      "description": "铁木布废料箱傍晚统一倒入大回收点。",
+      "examples": [
+        "倒完把箱复位。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0011",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "晨光下校对尺",
+      "description": "清晨自然光下快速校对常用尺。",
+      "examples": [
+        "标准块放窗台。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0012",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "午间养眼远眺",
+      "description": "近距离活后午间远看树梢放松。",
+      "examples": [
+        "数远处瓦片分心。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0013",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "细活安排上午",
+      "description": "精细缝与刻安排精神好的上午。",
+      "examples": [
+        "下午改做粗磨。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0014",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "茶歇不谈交期",
+      "description": "短歇只聊无关紧要，让脑子离交期。",
+      "examples": [
+        "杯子碰一下算开始歇。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0015",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "收工拉伸手腕",
+      "description": "停工后做手腕与肩的简单拉伸。",
+      "examples": [
+        "靠门框压一下肩。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0016",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "夜班限次数",
+      "description": "连夜赶工自我设限，超过就改明早。",
+      "examples": [
+        "钟指到某点必须停。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0017",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "开工前静立一会",
+      "description": "进作坊先静立看台面，再动手。",
+      "examples": [
+        "深呼吸两次。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0018",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "周末只做保养",
+      "description": "周末不做新单，只保养工具与场地。",
+      "examples": [
+        "油壶走一遍铰链。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0019",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "饭后不碰刃具",
+      "description": "刚吃完不立刻持刃，先散步或洗碗。",
+      "examples": [
+        "刀布仍盖着。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0020",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "换季查胶保质",
+      "description": "换季翻胶与漆的日期，过期隔离。",
+      "examples": [
+        "过期瓶贴红点。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0021",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "故障树简笔画",
+      "description": "排查故障先画简单分支，缩小范围。",
+      "examples": [
+        "纸边写可能原因。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0022",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "先模拟后下料",
+      "description": "复杂件先在废料或纸上模拟开合。",
+      "examples": [
+        "纸模对折看齐否。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0023",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "工时反向推算",
+      "description": "从交期往回推每日须完成量。",
+      "examples": [
+        "日历格子涂色。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0024",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "问材料脾气",
+      "description": "新材料先想它怕什么，再定工艺。",
+      "examples": [
+        "怕潮就先封边。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0025",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "对照旧件学习",
+      "description": "修未知结构先找类似旧件对照。",
+      "examples": [
+        "并排放看咬合点。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0026",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "错误写入案例册",
+      "description": "自己的失误写成短案例供日后翻。",
+      "examples": [
+        "册子不给客人看。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0027",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "三人看法收集",
+      "description": "难题至少问两人不同行当再定。",
+      "examples": [
+        "把说法并列记下。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0028",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "留白不赶满档",
+      "description": "排程故意留空档应对返工。",
+      "examples": [
+        "空档用铅笔淡标。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0029",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "手感优先于图",
+      "description": "图与手感冲突时停手复核，不硬做。",
+      "examples": [
+        "摸接口摇一摇。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0030",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "完成定义先写",
+      "description": "开工前写清怎样算完成，避免扯皮。",
+      "examples": [
+        "客户也看这一行。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0031",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "口袋折叠尺",
+      "description": "常服口袋放短折尺，随时能量。",
+      "examples": [
+        "展开啪一声轻响。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0032",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "粉笔头备用",
+      "description": "小盒装粉笔头，临时标记材料。",
+      "examples": [
+        "画完吹掉浮灰。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0033",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "针线应急包",
+      "description": "微型针线包缝扣应急，线色二三样。",
+      "examples": [
+        "扣子另袋防丢。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0034",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "砂纸小条夹本",
+      "description": "笔记本夹几条细砂纸，修毛刺随手。",
+      "examples": [
+        "用完条退回夹层。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0035",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "护目镜挂颈",
+      "description": "需要时立刻戴，挂绳防随处放丢。",
+      "examples": [
+        "镜片每日呵气擦。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0036",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "磁吸小碟收钉",
+      "description": "膝上磁碟收散落钉，起身倒回盒。",
+      "examples": [
+        "碟面钉子立着。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0037",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "手套按活更换",
+      "description": "粗活细活手套分袋，不混用。",
+      "examples": [
+        "细活手套更薄。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0038",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "耳塞施工备用",
+      "description": "噪声段戴耳塞，沟通时先摘一边。",
+      "examples": [
+        "耳塞盒进侧袋。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0039",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "油石随身片",
+      "description": "薄油石片随时修刃小卷口。",
+      "examples": [
+        "布包着防脏衣。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0040",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "客户卡拍照存",
+      "description": "纸卡拍照备份，原件仍夹回档案。",
+      "examples": [
+        "相册按月建。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0041",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "听声辨松紧",
+      "description": "拧紧零件靠声响与手感，不盲加力。",
+      "examples": [
+        "声变闷就停。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0042",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "厌胶味过重",
+      "description": "胶味刺鼻就开窗或换低味型号。",
+      "examples": [
+        "鼻翼皱一下为信号。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0043",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "木香令人安心",
+      "description": "新刨木香能让情绪稳，愿多留一会。",
+      "examples": [
+        "刨花堆旁深吸。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0044",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "拒刺眼强光直射",
+      "description": "砂轮与焊接旁坚持护目，嫌弃裸眼炫光。",
+      "examples": [
+        "余光也不直视弧光。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0045",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "触感查毛刺",
+      "description": "完工用手背轻扫查毛刺，比眼更准。",
+      "examples": [
+        "发现问题就复磨。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0046",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "室温胶固化敏感",
+      "description": "觉得屋冷就推迟涂胶，怕粘不牢。",
+      "examples": [
+        "温度计贴墙看。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0047",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "节奏声助专注",
+      "description": "适度规律敲击声能帮进入状态。",
+      "examples": [
+        "自己轻敲台沿定拍。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0048",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "色差在自然光看",
+      "description": "对色必须拿到门口自然光，不在灯下定。",
+      "examples": [
+        "两块并排对比。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0049",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "粉尘口罩无妥协",
+      "description": "打磨必戴口罩，嫌闷也坚持。",
+      "examples": [
+        "换班就换芯。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0002.0050",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "完工喜看反光匀",
+      "description": "漆面反光均匀才满意，局部发雾必补。",
+      "examples": [
+        "侧身看一道光。"
+      ]
+    }
+  ]
+}

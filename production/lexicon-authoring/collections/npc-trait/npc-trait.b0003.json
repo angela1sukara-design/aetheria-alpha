@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-trait",
+  "batchId": "npc-trait.b0003",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-trait.b0003.0001",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "雨前先收物",
+      "description": "天色一变就收阳台，动作快但不慌乱。",
+      "examples": [
+        "毛巾一扯，盆罐进廊。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0002",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "水位说数字",
+      "description": "谈涨水只用标尺读数，不渲染恐慌。",
+      "examples": [
+        "今天到黄线下两格。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0003",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "湿滑处让行",
+      "description": "在苔阶或栈道主动让出内侧稳处给他人。",
+      "examples": [
+        "你走里头，我靠边。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0004",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "共伞问一声",
+      "description": "与人共伞先问方向是否同路，不同就分开。",
+      "examples": [
+        "你到渡口还是市场。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0005",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "潮湿天改计划",
+      "description": "原定户外活动遇持续阴雨会爽快改期。",
+      "examples": [
+        "改室内，别硬撑。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0006",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "排水协作积极",
+      "description": "清沟时抢脏活，干完洗手再聊天。",
+      "examples": [
+        "铁锹递给你，我捞叶。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0007",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "防潮提醒轻巧",
+      "description": "提醒别人收衣不带责备，只说现象。",
+      "examples": [
+        "阳台已经滴水了。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0008",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "船次留余量",
+      "description": "赶船会提前一班到，避免湿滑奔跑。",
+      "examples": [
+        "早到就在亭里等。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0009",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "湿物分区放",
+      "description": "进门立刻把湿伞湿靴放到指定区。",
+      "examples": [
+        "伞架第二格空着。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0010",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "暴雨守门槛",
+      "description": "大雨时主动轮值看水，不把责任全推他人。",
+      "examples": [
+        "这小时我守，你睡。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0011",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "用水声作比喻",
+      "description": "心情与节奏常用水流急缓来形容。",
+      "examples": [
+        "今天心里像慢渠。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0012",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "雾天说话更轻",
+      "description": "能见度低时音量也自然放低，贴近说。",
+      "examples": [
+        "侧头靠近对方耳侧。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0013",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "报平安很短",
+      "description": "出门遇风雨只发短讯报平安，不叙细节。",
+      "examples": [
+        "到了。地滑。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0014",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "劝人防滑直接",
+      "description": "看见冒险走法会直接喊停，顾不上委婉。",
+      "examples": [
+        "停下，换鞋再走。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0015",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "潮汐话题自然",
+      "description": "闲聊常扯到潮汐与班次，对访客会解释术语。",
+      "examples": [
+        "满潮大概在晚饭后。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0016",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "安慰偏务实",
+      "description": "安慰受潮损失时先说能做的补救步骤。",
+      "examples": [
+        "先把证件晒干再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0017",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "笑声被雨盖住",
+      "description": "雨大时笑也张口不大，怕呛到水汽。",
+      "examples": [
+        "捂嘴轻笑两声。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0018",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "指路带湿标",
+      "description": "指路会提到哪里积水哪里有棚。",
+      "examples": [
+        "走雨棚那边，别抄近。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0019",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "讲旧堤轻描",
+      "description": "提往事不加惊悚，只留生活细节。",
+      "examples": [
+        "那年门槛进过一指水。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0020",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "告别看天气",
+      "description": "道别常加一句看天带伞之类的叮嘱。",
+      "examples": [
+        "伞借你，明天还我。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0021",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不进他人船舱",
+      "description": "未经邀请不上别人船，岸上招呼即可。",
+      "examples": [
+        "手搭缆桩不跨舷。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0022",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "湿衣不甩旁人",
+      "description": "甩伞水滴避开行人，转向排水沟一侧。",
+      "examples": [
+        "转身朝沟甩三下。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0023",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "借靴先问尺码",
+      "description": "雨靴出借前确认尺码与归还日。",
+      "examples": [
+        "你穿几码，后天还。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0024",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不踩养护苔区",
+      "description": "看见围绳就绕行，不抄近路踩新苔。",
+      "examples": [
+        "绕到石板那一侧。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0025",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "夜间灯不直射窗",
+      "description": "手电或船灯避开住家窗户，改照路面。",
+      "examples": [
+        "光束压低到脚边。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0026",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "烘干房守时换",
+      "description": "超时主动让出，不因自己衣多霸占。",
+      "examples": [
+        "我好了，下一位吧。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0027",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "水位信息不恐吓",
+      "description": "传话不加夸张词，原样传递读数。",
+      "examples": [
+        "就说到蓝线。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0028",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不私开泵房门",
+      "description": "泵房钥匙不外借，需开就走报修流程。",
+      "examples": [
+        "我去找值日拿钥匙。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0029",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "合影避开落水点",
+      "description": "拍照不怂恿人站危险边缘，换安全背景。",
+      "examples": [
+        "退到护栏内侧。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0030",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "湿季串门先约",
+      "description": "泥泞天拜访先问方不方便，避免突然登门。",
+      "examples": [
+        "今天路不好，改明天。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0031",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "盯着水色变",
+      "description": "喜欢观察不同季节渠水颜色与漂浮物。",
+      "examples": [
+        "今天偏绿，像雨后。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0032",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "问船号含义",
+      "description": "看见船舷编号会问代表码头还是用途。",
+      "examples": [
+        "这个头字母是什么意思。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0033",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "摸苔辨干湿",
+      "description": "路过安全苔区会轻轻触一下判断湿度。",
+      "examples": [
+        "指腹按一下立刻抬起。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0034",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "读水位日志",
+      "description": "告示板上的水位记录会从头翻到尾。",
+      "examples": [
+        "对比上周同一天。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0035",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "雨棚结构感兴趣",
+      "description": "漏雨时不只抱怨，还看接缝与绳扣怎么做。",
+      "examples": [
+        "这扣是滑脱还是断线。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0036",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "学辨鸟鸣水岸",
+      "description": "清晨分辨水鸟叫声，向常住者请教名字。",
+      "examples": [
+        "刚才那声是什么鸟。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0037",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "跟泵声判状态",
+      "description": "听泵房声响变化，猜测是否堵塞或空转。",
+      "examples": [
+        "声音发闷，可能有阻。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0038",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "采问防潮偏方",
+      "description": "收集邻居的防潮土法，试之前先问风险。",
+      "examples": [
+        "石灰罐你们怎么放。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0039",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "渡口班次研究",
+      "description": "把船班时刻抄进本，找出空档最少的组合。",
+      "examples": [
+        "本子浸湿过又重抄。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0040",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "追问涨水来源",
+      "description": "涨水时想弄清是雨、潮还是闸门调度。",
+      "examples": [
+        "上游开闸了吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0041",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "听雨声坐立不安",
+      "description": "雨势加大时来回看门槛，难专注谈话。",
+      "examples": [
+        "话讲一半起身去门口。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0042",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "反复关窗确认",
+      "description": "风大时关窗后又回去推一次确认扣牢。",
+      "examples": [
+        "窗扣捏得发白。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0043",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "湿季睡眠变浅",
+      "description": "担心渗水导致易醒，白天显得疲倦。",
+      "examples": [
+        "眼下淡青，说话慢。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0044",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "清理积水发泄",
+      "description": "烦躁时拼命舀水拖地，直到地板反光。",
+      "examples": [
+        "拖把拧得咔咔响。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0045",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "短讯连续发送",
+      "description": "担忧时连续发短讯问家人位置，不打长电话。",
+      "examples": [
+        "到了吗。回我。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0046",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "咬伞柄出神",
+      "description": "等船焦虑时无意识咬伞柄或磨鞋底。",
+      "examples": [
+        "伞柄牙印浅浅的。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0047",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "拒绝出门自保",
+      "description": "连续暴雨日能不出门就不出，语气偏硬。",
+      "examples": [
+        "今天哪也不去。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0048",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "数呼吸压慌",
+      "description": "听见异常水声先停下来数呼吸再行动。",
+      "examples": [
+        "吸四下，再去看。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0049",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "压力后猛喝茶",
+      "description": "紧张过去灌一大杯热茶，手心仍潮。",
+      "examples": [
+        "茶杯磕在桌上轻响。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0003.0050",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "收拾防潮箱解压",
+      "description": "把证件与干燥剂重排一遍，从秩序里找稳。",
+      "examples": [
+        "箱盖扣上才叹气。"
+      ]
+    }
+  ]
+}

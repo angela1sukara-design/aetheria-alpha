@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-job",
+  "batchId": "npc-job.b0006",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "社区记忆与新生活：旧习、新住户、微小愿望与不同代际视角，不借用固定剧情"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-job.b0006.0001",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "旧门牌翻新漆工",
+      "description": "翻新旧门牌漆面保留原号的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0002",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "老相册角加固工",
+      "description": "加固老相册页角防脱落的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0003",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "旧毯织补工",
+      "description": "织补旧毯破洞并尽量接色的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0004",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "回忆盒铰链修工",
+      "description": "修理回忆盒铰链使开合顺畅的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0005",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "旧窗框腻子工",
+      "description": "为旧窗框补腻子并打磨的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0006",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "代际礼物包装工",
+      "description": "为代际赠礼做朴素包装的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0007",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "旧灶台瓷砖嵌缝工",
+      "description": "为旧灶台瓷砖嵌缝的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0008",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "新住户门帘缝工",
+      "description": "为新住户缝制第一道门帘的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0009",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "旧灯罩换骨工",
+      "description": "更换旧灯罩骨架的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0010",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "愿望签木牌刻工",
+      "description": "刻制社区愿望签木牌的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0011",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "新住户迎导员",
+      "description": "引导新住户认识巷口与公共点的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0012",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "旧习讲解员",
+      "description": "用平常话讲解社区旧习不含强迫的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0013",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "代际茶会座位员",
+      "description": "为代际茶会安排舒适座位间距的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0014",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "愿望墙便利贴管理员",
+      "description": "整理愿望墙便利贴避免遮挡的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0015",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "旧物交换登记员",
+      "description": "登记社区旧物交换双方信息的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0016",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "口述史录音预约员",
+      "description": "为口述史录音做时段预约的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0017",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "新住户回访员",
+      "description": "回访新住户是否适应公共设施的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0018",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "邻里祝福转达员",
+      "description": "转达邻里书面祝福给当事人的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0019",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "社区相册翻阅引导员",
+      "description": "引导翻阅社区相册并提醒轻拿的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0020",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "微小愿望倾听员",
+      "description": "倾听并记录可公开的微小愿望的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0021",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "社区年表编纂员",
+      "description": "编纂社区年表大事的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0022",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "旧门牌对照表员",
+      "description": "整理旧新门牌对照表的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0023",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "口述史摘要员",
+      "description": "把口述史整理成短摘要的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0024",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "新住户须知改写员",
+      "description": "把须知改写成易读短句的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0025",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "代际活动纪要员",
+      "description": "记录代际活动纪要的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0026",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "愿望墙分类员",
+      "description": "按主题分类愿望墙条目的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0027",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "旧习来源注释员",
+      "description": "为旧习条目加来源注释不含强制的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0028",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "迁入档案建档员",
+      "description": "为新迁入建简明档案的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0029",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "社区地图记忆标注员",
+      "description": "在地图标注老住户记忆地点的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0030",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "祝福用语校对员",
+      "description": "校对公开祝福用语礼貌得体的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0031",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "愿望树挂签整理员",
+      "description": "整理愿望树挂签避免缠绕的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0032",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "旧井台说明牌擦拭员",
+      "description": "擦拭旧井台说明牌的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0033",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "新住户欢迎旗张挂员",
+      "description": "张挂并按时收回欢迎旗的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0034",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "社区相册户外展板员",
+      "description": "摆放社区相册户外展板的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0035",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "代际花园落叶清扫员",
+      "description": "清扫代际花园落叶的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0036",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "旧墙涂鸦覆盖协调员",
+      "description": "协调覆盖不当涂鸦保留纪念层的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0037",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "记忆路牌扶正员",
+      "description": "扶正记忆路牌的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0038",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "新巷灯巡看员",
+      "description": "巡看新装巷灯是否正常的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0039",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "旧物交换摊位摆放员",
+      "description": "摆放旧物交换临时摊位的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0040",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "社区合影点地面清扫员",
+      "description": "清扫合影点地面的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0041",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "新住户登记窗口员",
+      "description": "受理新住户登记的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0042",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "旧习表决会议记录员",
+      "description": "记录旧习相关公开表决会议的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0043",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "愿望墙公约宣讲员",
+      "description": "宣讲愿望墙公开与隐私边界的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0044",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "代际活动场地审批员",
+      "description": "审批代际活动场地申请的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0045",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "口述史授权保管员",
+      "description": "保管口述史公开授权书的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0046",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "社区义工代际配对员",
+      "description": "协助不同代际义工配对协作的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0047",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "旧物交换纠纷转办员",
+      "description": "转办旧物交换纠纷的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0048",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "记忆场所保护告示员",
+      "description": "张贴记忆场所保护告示的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0049",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "新生活适应回访调度员",
+      "description": "调度新生活适应回访行程的人。"
+    },
+    {
+      "id": "lx.npc-job.b0006.0050",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "社区祝福公开审核员",
+      "description": "审核拟公开祝福是否当事人同意的人。"
+    }
+  ]
+}

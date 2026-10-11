@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-expression",
+  "batchId": "npc-expression.b0003",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-expression.b0003.0001",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方望着水面上的涟漪圈，直到圈散尽才眨眼。",
+      "description": "盯涟漪至散尽的目光。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0002",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方抬眼看雨棚漏点，数着滴落的间隔。",
+      "description": "看漏点并数滴隔。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0003",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方辨认对岸人影时眯眼，手搭在额前遮光。",
+      "description": "眯眼搭额遮光远望。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0004",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方盯着水位尺刻度，嘴唇无声读出数字。",
+      "description": "盯尺读数的目光与唇动。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0005",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方被鱼跃吸引，目光追着水花移动一瞬。",
+      "description": "追水花的短促目光移动。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0006",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方夜岸谈话时看灯影多于看脸。",
+      "description": "看灯影多于对视。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0007",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方检查苔色时把脸凑近石壁，目光贴着绒面。",
+      "description": "近距离贴苔观察。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0008",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方听见渡哨，目光立刻转向码头方向。",
+      "description": "闻哨目光转向码头。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0009",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方避让扁担时目光先看地面湿痕再抬脚。",
+      "description": "先看湿痕再抬脚的目光顺序。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0010",
+      "category": "npc-expression",
+      "subcategory": "目光表现",
+      "text": "对方目送小船出湾，直到帆点变成模糊才转身。",
+      "description": "目送至模糊再转身。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0011",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方被水汽扑湿，颊边挂着细小水珠未擦。",
+      "description": "颊边水珠未擦的湿润面容。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0012",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方尝河风咸味时舌尖点了一下上唇。",
+      "description": "舌点上唇辨味。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0013",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方冷得牙齿轻颤，说话时字句被抖断。",
+      "description": "齿颤导致的语句间断。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0014",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方笑着躲开水花，眼里却进了一滴，连眨。",
+      "description": "躲水花后连眨。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0015",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方闻见藻腥轻轻皱鼻，随即习惯似的展平。",
+      "description": "皱鼻又展平的习惯反应。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0016",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方被湿风吹得鼻尖发红，仍把领口拉高。",
+      "description": "鼻尖发红与拉领。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0017",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方屏息潜入浅水前，面颊鼓起又缓缓吐气。",
+      "description": "屏息鼓颊再吐气。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0018",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方听完涨水消息，脸色沉了一瞬又点头。",
+      "description": "脸色短暂沉下再点头。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0019",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方咬着斗笠系带说话，字从齿缝挤出。",
+      "description": "咬系带说话的口型。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0020",
+      "category": "npc-expression",
+      "subcategory": "面部表现",
+      "text": "对方被雨打在脸上，闭一眼睁一眼地看路。",
+      "description": "雨中单眼交替视路。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0021",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方赤足踩过青石，脚趾分开抓稳湿面。",
+      "description": "赤足抓湿石的趾态。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0022",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方撑篙时腰背成一张弓，脚抵船舷。",
+      "description": "撑篙弓背抵舷。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0023",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方蹲在渠沿浣衣，袖管用绳箍在上臂。",
+      "description": "浣衣袖箍上臂。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0024",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方过跳石时双手平展，像在走看不见的绳。",
+      "description": "过跳石展臂平衡。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0025",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方把裤管挽过膝，水面线印在小腿皮肤上。",
+      "description": "挽裤与水面印痕。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0026",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方背网时身体前倾，步伐跟着网坠的摆动走。",
+      "description": "背网前倾随摆。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0027",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方在雨棚柱边侧站，只留半肩在滴水面外。",
+      "description": "侧站避滴水。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0028",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方捞藻时跪一只腿，另一腿踩稳岸草。",
+      "description": "单膝跪捞的支撑。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0029",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方坐渡船时双脚勾住座下横杆，手扶缘。",
+      "description": "勾杆扶缘的坐船姿态。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0030",
+      "category": "npc-expression",
+      "subcategory": "姿态细节",
+      "text": "对方顶着斗笠逆风走，上身倾斜迎着雨线。",
+      "description": "顶笠倾身迎雨。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0031",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方一脚已踩上跳板，又退回岸等下一班。",
+      "description": "踩跳板又退回。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0032",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把网抛到半空收回，改换站位再抛。",
+      "description": "抛网中途收回改站位。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0033",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方伸手去摸苔，指尖触到湿意又缩回擦干。",
+      "description": "触苔缩回擦指。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0034",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方上船前点数筐数，多出一筐便留在岸。",
+      "description": "点数后留筐。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0035",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方写借船条写到归时，改了两次才定日落。",
+      "description": "归时改写两次。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0036",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方想抄近走草滩，看了眼水深标又绕石路。",
+      "description": "欲抄近又绕石路。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0037",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方把孩童往水边带了两步，自己先站住示范。",
+      "description": "带孩近水又先示范站定。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0038",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方举手要喊对岸，改成挥动布巾示意。",
+      "description": "喊改挥巾。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0039",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方已解开缆绳一扣，听风声又重新系上。",
+      "description": "解缆又系回。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0040",
+      "category": "npc-expression",
+      "subcategory": "犹豫动作",
+      "text": "对方尝了一口收集的雨水，皱眉倒掉改接屋檐。",
+      "description": "尝雨水倒掉改接。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0041",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方躺在晒网架下的荫里，听水声打盹。",
+      "description": "荫下听水打盹。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0042",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把湿发拧干，甩出一道弧线水花。",
+      "description": "拧发甩水弧。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0043",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方坐在桥墩阴影，把双脚浸进浅流轻轻晃。",
+      "description": "浸脚轻晃。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0044",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方靠着船桅哼不成调的段落，手指敲舷。",
+      "description": "靠桅哼拍敲舷。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0045",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方雨停后把脸仰向缝出的阳光，闭眼片刻。",
+      "description": "雨后仰光闭眼。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0046",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把斗笠扣在膝上当小桌，嗑着干豆。",
+      "description": "斗笠当桌嗑豆。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0047",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方用苇秆挑起一缕苔，放在掌心看光。",
+      "description": "挑苔看光的闲适。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0048",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把后背贴着晒热的石墙，慢慢吸热。",
+      "description": "背贴热墙取暖。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0049",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方打完水后坐在井栏，绳索松松绕腕。",
+      "description": "坐井栏绳绕腕。"
+    },
+    {
+      "id": "lx.npc-expression.b0003.0050",
+      "category": "npc-expression",
+      "subcategory": "放松动作",
+      "text": "对方把裤管放下来，拍掉小腿上的沙泥。",
+      "description": "放裤管拍沙泥。"
+    }
+  ]
+}

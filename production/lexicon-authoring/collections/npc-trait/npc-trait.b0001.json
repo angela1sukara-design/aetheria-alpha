@@ -1,0 +1,514 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-trait",
+  "batchId": "npc-trait.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-trait.b0001.0001",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "先问再帮",
+      "description": "愿意伸手，但先确认对方需要的具体帮助。",
+      "examples": [
+        "把请求复述成短句再动手。",
+        "帮忙后问一句够不够。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0002",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "小事立刻做",
+      "description": "能马上完成的琐事不拖延，做完再谈下一件。",
+      "examples": [
+        "站着就把借用的笔还回去。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0003",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "排队不插话",
+      "description": "公共场合耐心等候，不把催促说出口。",
+      "examples": [
+        "低头看通知牌打发时间。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0004",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "留余量安排",
+      "description": "约定时间会提前留缓冲，避免让别人空等。",
+      "examples": [
+        "约见写在手背提醒自己。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0005",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "公开场合低调",
+      "description": "在人群里少争发言，私下再把意见说清。",
+      "examples": [
+        "散场后单独找人补充看法。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0006",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "记录再决定",
+      "description": "重要选择先写利弊，写完才开口表态。",
+      "examples": [
+        "口袋本上画两列对照。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0007",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "先照顾弱者",
+      "description": "发现有人跟不上节奏，会主动放慢自己。",
+      "examples": [
+        "把位置让给行动不便者。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0008",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "错了即改口",
+      "description": "发现说错不掩饰，马上更正并致歉。",
+      "examples": [
+        "停顿一秒再说正确版本。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0009",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "分工说清楚",
+      "description": "合作前先讲清谁做什么，减少事后扯皮。",
+      "examples": [
+        "用手指在桌面比划分工。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0010",
+      "category": "npc-trait",
+      "subcategory": "处事倾向",
+      "name": "结束要收尾",
+      "description": "事情做完会确认现场恢复原样再离开。",
+      "examples": [
+        "回头看一眼椅子是否归位。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0011",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "短句说重点",
+      "description": "说话少铺垫，先讲结论再补必要细节。",
+      "examples": [
+        "第一句往往是能不能。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0012",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "比喻用日常物",
+      "description": "解释时爱拿碗筷天气作比，听起来好懂。",
+      "examples": [
+        "像粥一样慢慢熬就行。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0013",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "先听完再答",
+      "description": "对方说完才开口，中途只点头不应声打断。",
+      "examples": [
+        "手指在膝上轻轻打拍子等。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0014",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "语气偏温和",
+      "description": "即使不同意也压低音量，避免当众抬高。",
+      "examples": [
+        "把反驳改成我有点担心。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0015",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "爱用确认问句",
+      "description": "陈述后常加一句对不对，邀请对方校正。",
+      "examples": [
+        "我这样理解可以吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0016",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "书面更清楚",
+      "description": "口头容易乱时改写纸条，字迹端正少涂改。",
+      "examples": [
+        "递过折叠的便条再解释。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0017",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "沉默当思考",
+      "description": "需要想时会安静一段时间，不急着填空白。",
+      "examples": [
+        "目光落在桌沿几秒。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0018",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "举例说明习惯",
+      "description": "抽象话题必举身边例子，怕对方听空。",
+      "examples": [
+        "就拿昨天借伞那件事说。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0019",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "夸奖具体化",
+      "description": "表扬时点出行为细节，不只说厉害。",
+      "examples": [
+        "你把标签贴正了真清楚。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0020",
+      "category": "npc-trait",
+      "subcategory": "表达倾向",
+      "name": "道歉不含糊",
+      "description": "道歉说清因什么，不把抱歉当成结束语。",
+      "examples": [
+        "刚才抢话是我不对。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0021",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不问薪资隐私",
+      "description": "闲聊避开收入与身体细节，除非对方主动提。",
+      "examples": [
+        "话题转到天气或吃的。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0022",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "敲门再进入",
+      "description": "任何关闭的门都先敲，听到回应才推。",
+      "examples": [
+        "敲三下后停顿等待。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0023",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "借用必归还",
+      "description": "借物当日或约定期限内还，并当面说一声。",
+      "examples": [
+        "归还时展示已擦净。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0024",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不翻他人抽屉",
+      "description": "即使合住也不开别人抽屉，需要就当面问。",
+      "examples": [
+        "手停在拉手处又缩回。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0025",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "拒绝说出口",
+      "description": "不想做的事会明确说不，语气平稳不拖。",
+      "examples": [
+        "今天不行，换明天吧。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0026",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "身体距离留意",
+      "description": "交谈保持一臂左右，拥挤时侧身减少接触。",
+      "examples": [
+        "后退半步让出通道。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0027",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "照片先征询",
+      "description": "想拍照涉及他人面孔时先问可不可以。",
+      "examples": [
+        "镜头朝下等对方点头。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0028",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "不代传闲话",
+      "description": "听到的私事停在自己这里，不向第三人转述。",
+      "examples": [
+        "别人问就说不太清楚。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0029",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "公共物轻拿放",
+      "description": "使用公共椅桌轻拿轻放，离开复位。",
+      "examples": [
+        "椅子腿不拖地响。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0030",
+      "category": "npc-trait",
+      "subcategory": "边界意识",
+      "name": "夜间少扰邻",
+      "description": "夜深走路与关门都放轻，音乐用耳机。",
+      "examples": [
+        "钥匙进门先握紧防响。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0031",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "路牌必读一眼",
+      "description": "到新街口会读路牌与门牌，记下大致方位。",
+      "examples": [
+        "手指在空中比划方向。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0032",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "问清工具用途",
+      "description": "看见不识的工具会礼貌问一句做什么用。",
+      "examples": [
+        "可以问问这是干什么的吗。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0033",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "公告栏逐条看",
+      "description": "路过告示板会停下来把新纸条读完。",
+      "examples": [
+        "有时用手机拍下联系方式。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0034",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "喜欢拆开包装看",
+      "description": "对新到的公用物先看说明书再动手。",
+      "examples": [
+        "说明书折好塞回盒底。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0035",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "追问流程为何",
+      "description": "对规定不只接受，还会问设立的原因。",
+      "examples": [
+        "为什么这里要分两队。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0036",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "收集小常识",
+      "description": "把听到的生活窍门记进本子，偶尔实践。",
+      "examples": [
+        "本子边角写日期来源。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0037",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "观察排队规矩",
+      "description": "到陌生窗口先看别人怎么排，再跟上去。",
+      "examples": [
+        "站在侧后方看清标志。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0038",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "尝新食物谨慎试",
+      "description": "对新口味先小口试，确认无不适再多吃。",
+      "examples": [
+        "先问一句辣不辣。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0039",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "地名来历感兴趣",
+      "description": "听到奇怪地名会追问是否有故事或旧称。",
+      "examples": [
+        "这个名字以前叫什么。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0040",
+      "category": "npc-trait",
+      "subcategory": "好奇倾向",
+      "name": "机器声辨来源",
+      "description": "听见异常声响会循声看一眼是否需要报修。",
+      "examples": [
+        "确认无事后才走开。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0041",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "沉默加快收拾",
+      "description": "一紧张就埋头收拾桌面，用动作代替说话。",
+      "examples": [
+        "把杯子反复擦同一圈。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0042",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "说话变短促",
+      "description": "压力下句子变短，只留必要信息。",
+      "examples": [
+        "行。知道了。稍后。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0043",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "反复确认时间",
+      "description": "担心迟到就反复看表与告示钟。",
+      "examples": [
+        "把表带转正又看一次。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0044",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "肩背不自觉绷紧",
+      "description": "紧张时肩膀上提，被提醒才会放下。",
+      "examples": [
+        "呼气时肩膀明显落回。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0045",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "需要短暂独处",
+      "description": "吵嚷中会找角落站一会再回来继续。",
+      "examples": [
+        "借口倒水离开半分钟。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0046",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "写清单减压",
+      "description": "事务多时先列清单，勾掉一项心情松一点。",
+      "examples": [
+        "本子上画方框逐项勾。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0047",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "干笑带过尴尬",
+      "description": "不知如何回应时轻笑一声再找别的话说。",
+      "examples": [
+        "啊这样……然后换话题。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0048",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "手脚不知放哪",
+      "description": "压力大时搓手或整理衣角，目光难定。",
+      "examples": [
+        "袖口被捏出细褶。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0049",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "提前过度准备",
+      "description": "怕出错就把材料多备一份，显得有些多余。",
+      "examples": [
+        "包里塞着备用笔两支。"
+      ]
+    },
+    {
+      "id": "lx.npc-trait.b0001.0050",
+      "category": "npc-trait",
+      "subcategory": "压力表现",
+      "name": "压力后补觉",
+      "description": "紧张阶段过后会补一长觉，再慢慢恢复交谈。",
+      "examples": [
+        "第二天说话仍偏慢。"
+      ]
+    }
+  ]
+}

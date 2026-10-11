@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-value",
+  "batchId": "npc-value.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-value.b0002.0001",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "工序写在墙上",
+      "description": "重要工序公开写明，减少口头误传与推诿。",
+      "examples": [
+        "第三步在墙上，做完打勾。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0002",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "学徒可提问",
+      "description": "提问不被当成打断，鼓励当场问清楚。",
+      "examples": [
+        "哪里不懂现在问，别闷着做错。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0003",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "一件修好算一件",
+      "description": "修补以真正可用为目标，不追求表面像样。",
+      "examples": [
+        "能承重才算修好，油漆以后再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0004",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "脏活不甩锅",
+      "description": "脏活轮值，不默认新人永远干脏活。",
+      "examples": [
+        "今天轮到我刷槽，你去对色。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0005",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "手感也要练",
+      "description": "承认手感需要时间练出来，不能只靠口头教。",
+      "examples": [
+        "你多摸几块旧皮，手就有数了。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0006",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "失误公开记",
+      "description": "失误记在共享本上，用来改进，不用来羞辱。",
+      "examples": [
+        "这次胶配比记下来，下次少一份。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0007",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "完工要试一次",
+      "description": "交活前自己试用一遍，减少返工尴尬。",
+      "examples": [
+        "门自己开合十次，再交给客人。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0008",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "工具钝了就停",
+      "description": "钝工具硬干最费时，磨利再干才是效率。",
+      "examples": [
+        "刃口咬不住了，先磨再锯。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0009",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "协作要喊节奏",
+      "description": "多人协作时用短语喊节奏，减少碰撞。",
+      "examples": [
+        "我喊抬，你们一起起。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0010",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "收工检查火源",
+      "description": "收工必查火与电源，把安全当成劳动一部分。",
+      "examples": [
+        "炭盆熄了吗？我再看一眼。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0011",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "余料互通有无",
+      "description": "邻店余料可互通，公开价格或互换条件。",
+      "examples": [
+        "我这有半卷线，你那边缺色号吗？"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0012",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "教人不藏私招",
+      "description": "愿意把关键手感讲出来，不靠神秘感维持地位。",
+      "examples": [
+        "力道在腕，不在肩，你再试。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0013",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "代班先交接清",
+      "description": "代班前把未完成事项写清，避免客人吃亏。",
+      "examples": [
+        "未取件三单，名单在抽屉。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0014",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "伤手互相顶",
+      "description": "有人伤手时，同伴主动顶重活，不装没看见。",
+      "examples": [
+        "你包扎，重箱我来搬。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0015",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "点评对事不对人",
+      "description": "给反馈时谈做法与结果，不谈人品。",
+      "examples": [
+        "这缝松了，重来一针就好。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0016",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "新人有人领",
+      "description": "新来的人至少有一个固定可问的人。",
+      "examples": [
+        "前三天有事找我，别自己瞎猜。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0017",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "工具坏了共修",
+      "description": "公用工具坏了一起修，费用与时间共担。",
+      "examples": [
+        "公钻坏了，今晚我们一起拆。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0018",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "客人怒气共挡",
+      "description": "面对客人怒气，同伴可礼貌接话缓冲，不落单。",
+      "examples": [
+        "您先坐，我把情况听完。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0019",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "成果署名共享",
+      "description": "多人完成的活，署名与感谢公开共享。",
+      "examples": [
+        "这件是三人协作，名单写在签上。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0020",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "夜里有人陪收",
+      "description": "晚收工时尽量两人，互相照应关门上路。",
+      "examples": [
+        "我等你锁门，一道走回去。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0021",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "接单可回绝",
+      "description": "订单可以回绝，理由可以是档期或能力边界。",
+      "examples": [
+        "这单超我手艺，我介绍别家。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0022",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "学艺可换师",
+      "description": "学艺不顺可以换路径，不把忍耐当唯一出路。",
+      "examples": [
+        "我想换去学修伞，不是不敬您。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0023",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "作品可匿名",
+      "description": "作品可以选择不署名，保护隐私或安静。",
+      "examples": [
+        "这件不写名，挂出去就行。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0024",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "工位可调整",
+      "description": "工位高低远近可按身体调整，不必迁就旧布局。",
+      "examples": [
+        "台子我垫高了，腰不那么酸。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0025",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "不接羞辱单",
+      "description": "遇到羞辱性要求，可以礼貌拒绝继续服务。",
+      "examples": [
+        "这样说话我做不下去，请换人。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0026",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "休假提前说",
+      "description": "休假提前公开，方便协作，不临时消失。",
+      "examples": [
+        "下周三我歇一天，单子提前排。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0027",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "风格可坚持",
+      "description": "在合理范围内坚持个人风格，不必完全迎合。",
+      "examples": [
+        "我习惯留毛边，您要光边另说。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0028",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "学不会就换方法",
+      "description": "学不会某招就换方法，不把死磕当唯一光荣。",
+      "examples": [
+        "这招我笨，用夹具也能稳。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0029",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "赚钱不是唯一尺",
+      "description": "赚钱重要，但不作为衡量一切选择的唯一尺子。",
+      "examples": [
+        "这单赚少，但我学得到东西。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0030",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "关店权在己",
+      "description": "何时开门关门，最终由经营者自己定。",
+      "examples": [
+        "今天早关，我要去看牙。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0031",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "出师有仪式也可无",
+      "description": "出师可办小仪式，也可只换工位，形式随人。",
+      "examples": [
+        "不想办宴，换个工具袋也行。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0032",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "旧工具可退役",
+      "description": "旧工具可郑重收起，不必硬用到彻底报废。",
+      "examples": [
+        "这锤退休了，挂墙上当纪念。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0033",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "师徒称谓可商量",
+      "description": "称谓可跟习俗，也可双方另定更舒服的叫法。",
+      "examples": [
+        "您叫我小陈就行，别硬叫徒弟。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0034",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "店规可贴可改",
+      "description": "店规公开张贴，也定期讨论是否该改。",
+      "examples": [
+        "这条旧了，我们划掉重写。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0035",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "学徒日记可留",
+      "description": "鼓励学徒记工作日记，作为可传的记忆。",
+      "examples": [
+        "今天学了什么，写三行就够。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0036",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "修复留原痕",
+      "description": "修复时可保留部分原痕，让经历可见。",
+      "examples": [
+        "裂纹我留一截，证明它活过。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0037",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "节庆停工协商",
+      "description": "节庆是否停工，由店内共同协商，不强求一致。",
+      "examples": [
+        "初一停半天，下午轮班。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0038",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "口诀可更新",
+      "description": "旧口诀可随材料更新，不把过时句子当圣旨。",
+      "examples": [
+        "那句对旧胶，新胶改成这样念。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0039",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "旧招牌可修不可弃",
+      "description": "旧招牌能修就修，字迹与记忆一并留下。",
+      "examples": [
+        "缺角补上，原字尽量留。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0040",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "拜师礼从简",
+      "description": "拜师礼从简从实，重点在约定与尊重。",
+      "examples": [
+        "一壶茶两句话，说清彼此期待。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0041",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "边角料分级",
+      "description": "边角料按可用性分级存放，方便取用。",
+      "examples": [
+        "能做小件的放上层，碎的垫箱。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0042",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "胶水不浪费",
+      "description": "胶水按需挤，瓶口及时擦净，避免整瓶报废。",
+      "examples": [
+        "挤一点，用一点，盖紧。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0043",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "磨石共享排班",
+      "description": "昂贵耗材共享并排班，避免抢用与闲置。",
+      "examples": [
+        "磨石下午归你，早上我用完。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0044",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "废钉分类收",
+      "description": "废钉按长短分类，能直的回炉再用。",
+      "examples": [
+        "长钉一盒，短钉一盒，别混。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0045",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "布头论克卖",
+      "description": "布头可论克或论块卖，让小需求也能买到。",
+      "examples": [
+        "这角料按克，你称一下。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0046",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "油布重复用",
+      "description": "油布与包装纸尽量重复使用，写清次数。",
+      "examples": [
+        "这张油布用过两次，还能用。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0047",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "灯油计量",
+      "description": "灯油按日计量，超额先查漏再补。",
+      "examples": [
+        "今天油耗偏高，先查灯罩。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0048",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "旧箱改储物",
+      "description": "旧货箱改储物格，比买新柜更贴店铺节奏。",
+      "examples": [
+        "旧箱钉隔板，螺丝分格放。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0049",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "水槽循环用",
+      "description": "冲洗水可沉淀后用于粗洗，清水留给精洗。",
+      "examples": [
+        "粗洗用回水，精洗才开新水。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0002.0050",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "工具寿终回收",
+      "description": "工具彻底报废也回收金属与可用零件。",
+      "examples": [
+        "废钳拆弹簧，金属进回收筐。"
+      ]
+    }
+  ]
+}

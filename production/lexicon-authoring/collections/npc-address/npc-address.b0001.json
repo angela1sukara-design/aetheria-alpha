@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-address",
+  "batchId": "npc-address.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-address.b0001.0001",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我是新来这片街的。",
+      "description": "初次见面时自报住处范围的客气说法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0002",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "打扰了，请问这附近有公共水井吗？",
+      "description": "初见问路时的礼貌开场。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0003",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "不好意思，我刚搬来，还不太熟路。",
+      "description": "初见时说明新搬来身份的称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0004",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，可以问一下开市时间吗？",
+      "description": "初见询问公共信息的客气句。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0005",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "这位，门口的台阶可以借坐一会儿吗？",
+      "description": "初见请求短暂借用空间的礼貌说法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0006",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我是来交房租收据的。",
+      "description": "初见办事时的简短自我定位。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0007",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "打扰，我好像走错巷了。",
+      "description": "初见迷路时的客气招呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0008",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，这里可以暂时寄放一件小包裹吗？",
+      "description": "初见请托小事的礼貌询问。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0009",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "请问，您是住这排屋的吗？",
+      "description": "初见确认邻里身份的谨慎问法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0010",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我听街坊说可以在这里打听消息。",
+      "description": "初见说明来意的中性称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0011",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "这位也是来排队办事的吗？",
+      "description": "不识姓名的同行间确认目的的客气问。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0012",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，前面好像开始叫号了。",
+      "description": "排队时提醒同行的简短称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0013",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "方便把名单往这边递一下吗？",
+      "description": "同行之间请对方协助传物的说法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0014",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "我们是不是同一窗口？",
+      "description": "确认是否同办一事的同行称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0015",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，您的材料夹到我这边了。",
+      "description": "归还误拿物品时的客气称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0016",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "这边挤，我先让一肩。",
+      "description": "拥挤场合对同行的礼貌让步。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0017",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "您也是下午场吗？",
+      "description": "确认时段的同行寒暄。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0018",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，出口在左手边。",
+      "description": "指路给同行时的简短称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0019",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "我可以帮您看一下包吗？您去填表。",
+      "description": "同行间临时互助的客气提议。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0020",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "这位，我们好像拿错了同一份表格。",
+      "description": "发现差错时对同行的礼貌提醒。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0021",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "又碰面了，今天市集人少。",
+      "description": "熟人街头偶遇的轻松称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0022",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你那盆菜还在门口呢，记得收。",
+      "description": "熟人间提醒琐事的亲近说法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0023",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "晚一点来喝茶？我煮了麦茶。",
+      "description": "熟人邀约的日常称呼，不预设亲密过度。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0024",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你昨天借的碗我洗好放门口了。",
+      "description": "熟人归还物品的简短告知。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0025",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "走路小心，巷口地砖松了。",
+      "description": "熟人提醒路况的关心说法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0026",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你气色还行，忙完了？",
+      "description": "熟人见面的平实问候。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0027",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "帮我看一眼门，我去井边一趟。",
+      "description": "熟人间请托看门的日常称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0028",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你那封信我放窗台上了。",
+      "description": "熟人转交物品的简短说法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0029",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "今晚风大，记得关窗。",
+      "description": "熟人提醒天气的亲近称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0030",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你来得正好，盐刚好用完。",
+      "description": "熟人互借物资时的轻松开场。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0031",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "尊敬的登记员，材料已按序放好。",
+      "description": "对办事人员的正式称呼与说明。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0032",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位在场居民，会议即将开始。",
+      "description": "公共场合对众人的正式开场。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0033",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "请问主管，这份回执需要几联？",
+      "description": "对岗位负责人的正式询问。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0034",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "受委托人在此，请核验身份。",
+      "description": "正式场合自报代理身份的说法。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0035",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位邻居，今晚检修会短暂断电。",
+      "description": "对邻里发布通知的正式称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0036",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "文书已备妥，请查收并签收。",
+      "description": "递交文件时的正式用语。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0037",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "恳请值班人员协助开启侧门。",
+      "description": "对值班岗位的正式请求。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0038",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位来宾，请沿标识线入座。",
+      "description": "对来访人群的正式引导。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0039",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "申请人已到场，等候叫号。",
+      "description": "正式办事时的到场说明。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0040",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "请允许我补充一项口头说明。",
+      "description": "正式会议中请求发言的称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0041",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫桐溪，住灰瓦排屋东侧。",
+      "description": "报姓名与大致住址的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0042",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是来办居住登记的，表填好了。",
+      "description": "以办事目的开场的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0043",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我刚搬到巷口第二家，以后多见。",
+      "description": "新住户对邻里的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0044",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我在早市摆菜摊，有事可来找。",
+      "description": "以日常工作地点定位的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0045",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是租户，房东让我来交回执。",
+      "description": "说明租住身份的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0046",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫晏秋，今天来借用公共桌。",
+      "description": "报姓名并说明来意的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0047",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我住二层，上下楼可能有声响，先打个招呼。",
+      "description": "考虑邻里影响的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0048",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是临时帮忙看摊的，正主稍后到。",
+      "description": "说明临时身份的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0049",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫禾岸，不会久留，只问一句路。",
+      "description": "短暂停留者的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0001.0050",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我在社区读告示栏，有不清楚的想请教。",
+      "description": "以请教姿态开场的自我介绍。"
+    }
+  ]
+}

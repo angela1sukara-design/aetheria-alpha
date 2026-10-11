@@ -1,0 +1,6057 @@
+{
+  "exact": [],
+  "sameName": [
+    [
+      "lx.npc-name.b0002.0049",
+      "lx.npc-alias.b0002.0011"
+    ],
+    [
+      "lx.npc-goal.b0003.0034",
+      "lx.npc-history.b0003.0023"
+    ],
+    [
+      "lx.world-culture.b0003.0006",
+      "lx.daily-social.b0003.0021"
+    ],
+    [
+      "lx.world-culture.b0003.0043",
+      "lx.world-object.b0003.0032"
+    ],
+    [
+      "lx.world-culture.b0004.0042",
+      "lx.world-object.b0004.0035"
+    ],
+    [
+      "lx.world-workplace.b0004.0035",
+      "lx.world-object.b0004.0008"
+    ]
+  ],
+  "near": [
+    {
+      "a": "lx.npc-name.b0001.0001",
+      "b": "lx.npc-name.b0002.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0001.0002",
+      "b": "lx.npc-name.b0002.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0003",
+      "b": "lx.npc-name.b0002.0003",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0004",
+      "b": "lx.npc-name.b0002.0004",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0005",
+      "b": "lx.npc-name.b0002.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0001.0006",
+      "b": "lx.npc-name.b0002.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0007",
+      "b": "lx.npc-name.b0002.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0008",
+      "b": "lx.npc-name.b0002.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0009",
+      "b": "lx.npc-name.b0002.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0010",
+      "b": "lx.npc-name.b0002.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0011",
+      "b": "lx.npc-name.b0002.0011",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0013",
+      "b": "lx.npc-name.b0002.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0014",
+      "b": "lx.npc-name.b0002.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0015",
+      "b": "lx.npc-name.b0002.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0016",
+      "b": "lx.npc-name.b0002.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0018",
+      "b": "lx.npc-name.b0002.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0021",
+      "b": "lx.npc-name.b0002.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0022",
+      "b": "lx.npc-name.b0002.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0023",
+      "b": "lx.npc-name.b0002.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0024",
+      "b": "lx.npc-name.b0002.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0025",
+      "b": "lx.npc-name.b0002.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0026",
+      "b": "lx.npc-name.b0002.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0027",
+      "b": "lx.npc-name.b0002.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0028",
+      "b": "lx.npc-name.b0002.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0029",
+      "b": "lx.npc-name.b0002.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0030",
+      "b": "lx.npc-name.b0002.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0031",
+      "b": "lx.npc-name.b0002.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0032",
+      "b": "lx.npc-name.b0002.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0033",
+      "b": "lx.npc-name.b0002.0033",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0034",
+      "b": "lx.npc-name.b0002.0034",
+      "similarity": 0.652
+    },
+    {
+      "a": "lx.npc-name.b0001.0036",
+      "b": "lx.npc-name.b0002.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0040",
+      "b": "lx.npc-name.b0002.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0041",
+      "b": "lx.npc-name.b0002.0041",
+      "similarity": 0.65
+    },
+    {
+      "a": "lx.npc-name.b0001.0042",
+      "b": "lx.npc-name.b0002.0042",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0043",
+      "b": "lx.npc-name.b0002.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0044",
+      "b": "lx.npc-name.b0002.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0001.0045",
+      "b": "lx.npc-name.b0002.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0047",
+      "b": "lx.npc-name.b0002.0047",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0001.0048",
+      "b": "lx.npc-name.b0002.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0001.0050",
+      "b": "lx.npc-name.b0002.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0001",
+      "b": "lx.npc-name.b0003.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0002.0001",
+      "b": "lx.npc-name.b0003.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0001.0002",
+      "b": "lx.npc-name.b0003.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0002",
+      "b": "lx.npc-name.b0003.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0003",
+      "b": "lx.npc-name.b0003.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0003",
+      "b": "lx.npc-name.b0003.0003",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0004",
+      "b": "lx.npc-name.b0003.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0002.0004",
+      "b": "lx.npc-name.b0003.0004",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0005",
+      "b": "lx.npc-name.b0003.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0002.0005",
+      "b": "lx.npc-name.b0003.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0001.0006",
+      "b": "lx.npc-name.b0003.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0006",
+      "b": "lx.npc-name.b0003.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0007",
+      "b": "lx.npc-name.b0003.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0007",
+      "b": "lx.npc-name.b0003.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0008",
+      "b": "lx.npc-name.b0003.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0008",
+      "b": "lx.npc-name.b0003.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0009",
+      "b": "lx.npc-name.b0003.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0009",
+      "b": "lx.npc-name.b0003.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0010",
+      "b": "lx.npc-name.b0003.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0010",
+      "b": "lx.npc-name.b0003.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0011",
+      "b": "lx.npc-name.b0003.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0011",
+      "b": "lx.npc-name.b0003.0011",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0013",
+      "b": "lx.npc-name.b0003.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0013",
+      "b": "lx.npc-name.b0003.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0014",
+      "b": "lx.npc-name.b0003.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0014",
+      "b": "lx.npc-name.b0003.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0015",
+      "b": "lx.npc-name.b0003.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0015",
+      "b": "lx.npc-name.b0003.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0017",
+      "b": "lx.npc-name.b0003.0017",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0018",
+      "b": "lx.npc-name.b0003.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0018",
+      "b": "lx.npc-name.b0003.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0021",
+      "b": "lx.npc-name.b0003.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0021",
+      "b": "lx.npc-name.b0003.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0022",
+      "b": "lx.npc-name.b0003.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0022",
+      "b": "lx.npc-name.b0003.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0023",
+      "b": "lx.npc-name.b0003.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0023",
+      "b": "lx.npc-name.b0003.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0024",
+      "b": "lx.npc-name.b0003.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0024",
+      "b": "lx.npc-name.b0003.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0025",
+      "b": "lx.npc-name.b0003.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0025",
+      "b": "lx.npc-name.b0003.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0026",
+      "b": "lx.npc-name.b0003.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0002.0026",
+      "b": "lx.npc-name.b0003.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0027",
+      "b": "lx.npc-name.b0003.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0002.0027",
+      "b": "lx.npc-name.b0003.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0028",
+      "b": "lx.npc-name.b0003.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0028",
+      "b": "lx.npc-name.b0003.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0029",
+      "b": "lx.npc-name.b0003.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0029",
+      "b": "lx.npc-name.b0003.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0030",
+      "b": "lx.npc-name.b0003.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0030",
+      "b": "lx.npc-name.b0003.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0031",
+      "b": "lx.npc-name.b0003.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0031",
+      "b": "lx.npc-name.b0003.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0032",
+      "b": "lx.npc-name.b0003.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0032",
+      "b": "lx.npc-name.b0003.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0033",
+      "b": "lx.npc-name.b0003.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0033",
+      "b": "lx.npc-name.b0003.0033",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0034",
+      "b": "lx.npc-name.b0003.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0002.0034",
+      "b": "lx.npc-name.b0003.0034",
+      "similarity": 0.652
+    },
+    {
+      "a": "lx.npc-name.b0001.0036",
+      "b": "lx.npc-name.b0003.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0036",
+      "b": "lx.npc-name.b0003.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0040",
+      "b": "lx.npc-name.b0003.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0040",
+      "b": "lx.npc-name.b0003.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0041",
+      "b": "lx.npc-name.b0003.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0041",
+      "b": "lx.npc-name.b0003.0041",
+      "similarity": 0.65
+    },
+    {
+      "a": "lx.npc-name.b0001.0042",
+      "b": "lx.npc-name.b0003.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0042",
+      "b": "lx.npc-name.b0003.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0001.0043",
+      "b": "lx.npc-name.b0003.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0043",
+      "b": "lx.npc-name.b0003.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0044",
+      "b": "lx.npc-name.b0003.0044",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0002.0044",
+      "b": "lx.npc-name.b0003.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0001.0045",
+      "b": "lx.npc-name.b0003.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0045",
+      "b": "lx.npc-name.b0003.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0047",
+      "b": "lx.npc-name.b0003.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0047",
+      "b": "lx.npc-name.b0003.0047",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0001.0048",
+      "b": "lx.npc-name.b0003.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0002.0048",
+      "b": "lx.npc-name.b0003.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0001",
+      "b": "lx.npc-name.b0004.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0001.0001",
+      "b": "lx.npc-name.b0004.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0003.0001",
+      "b": "lx.npc-name.b0004.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0002.0002",
+      "b": "lx.npc-name.b0004.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0002",
+      "b": "lx.npc-name.b0004.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0002",
+      "b": "lx.npc-name.b0004.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0003",
+      "b": "lx.npc-name.b0004.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0003.0003",
+      "b": "lx.npc-name.b0004.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0003",
+      "b": "lx.npc-name.b0004.0003",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0004",
+      "b": "lx.npc-name.b0004.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0003.0004",
+      "b": "lx.npc-name.b0004.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0002.0004",
+      "b": "lx.npc-name.b0004.0004",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0005",
+      "b": "lx.npc-name.b0004.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0005",
+      "b": "lx.npc-name.b0004.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0003.0005",
+      "b": "lx.npc-name.b0004.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0001.0006",
+      "b": "lx.npc-name.b0004.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0006",
+      "b": "lx.npc-name.b0004.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0006",
+      "b": "lx.npc-name.b0004.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0007",
+      "b": "lx.npc-name.b0004.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0007",
+      "b": "lx.npc-name.b0004.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0007",
+      "b": "lx.npc-name.b0004.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0008",
+      "b": "lx.npc-name.b0004.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0008",
+      "b": "lx.npc-name.b0004.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0008",
+      "b": "lx.npc-name.b0004.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0009",
+      "b": "lx.npc-name.b0004.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0009",
+      "b": "lx.npc-name.b0004.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0003.0009",
+      "b": "lx.npc-name.b0004.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0010",
+      "b": "lx.npc-name.b0004.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0010",
+      "b": "lx.npc-name.b0004.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0010",
+      "b": "lx.npc-name.b0004.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0011",
+      "b": "lx.npc-name.b0004.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0011",
+      "b": "lx.npc-name.b0004.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0011",
+      "b": "lx.npc-name.b0004.0011",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0003.0012",
+      "b": "lx.npc-name.b0004.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0013",
+      "b": "lx.npc-name.b0004.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0013",
+      "b": "lx.npc-name.b0004.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0013",
+      "b": "lx.npc-name.b0004.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0014",
+      "b": "lx.npc-name.b0004.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0014",
+      "b": "lx.npc-name.b0004.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0014",
+      "b": "lx.npc-name.b0004.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0015",
+      "b": "lx.npc-name.b0004.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0015",
+      "b": "lx.npc-name.b0004.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0015",
+      "b": "lx.npc-name.b0004.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0018",
+      "b": "lx.npc-name.b0004.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0018",
+      "b": "lx.npc-name.b0004.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0018",
+      "b": "lx.npc-name.b0004.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0021",
+      "b": "lx.npc-name.b0004.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0021",
+      "b": "lx.npc-name.b0004.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0021",
+      "b": "lx.npc-name.b0004.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0022",
+      "b": "lx.npc-name.b0004.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0022",
+      "b": "lx.npc-name.b0004.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0022",
+      "b": "lx.npc-name.b0004.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0023",
+      "b": "lx.npc-name.b0004.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0023",
+      "b": "lx.npc-name.b0004.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0023",
+      "b": "lx.npc-name.b0004.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0024",
+      "b": "lx.npc-name.b0004.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0024",
+      "b": "lx.npc-name.b0004.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0024",
+      "b": "lx.npc-name.b0004.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0025",
+      "b": "lx.npc-name.b0004.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0025",
+      "b": "lx.npc-name.b0004.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0025",
+      "b": "lx.npc-name.b0004.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0026",
+      "b": "lx.npc-name.b0004.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0002.0026",
+      "b": "lx.npc-name.b0004.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0026",
+      "b": "lx.npc-name.b0004.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0027",
+      "b": "lx.npc-name.b0004.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0002.0027",
+      "b": "lx.npc-name.b0004.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0003.0027",
+      "b": "lx.npc-name.b0004.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0028",
+      "b": "lx.npc-name.b0004.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0028",
+      "b": "lx.npc-name.b0004.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0028",
+      "b": "lx.npc-name.b0004.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0029",
+      "b": "lx.npc-name.b0004.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0029",
+      "b": "lx.npc-name.b0004.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0029",
+      "b": "lx.npc-name.b0004.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0030",
+      "b": "lx.npc-name.b0004.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0030",
+      "b": "lx.npc-name.b0004.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0030",
+      "b": "lx.npc-name.b0004.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0031",
+      "b": "lx.npc-name.b0004.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0031",
+      "b": "lx.npc-name.b0004.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0031",
+      "b": "lx.npc-name.b0004.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0032",
+      "b": "lx.npc-name.b0004.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0032",
+      "b": "lx.npc-name.b0004.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0032",
+      "b": "lx.npc-name.b0004.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0033",
+      "b": "lx.npc-name.b0004.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0033",
+      "b": "lx.npc-name.b0004.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0033",
+      "b": "lx.npc-name.b0004.0033",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0034",
+      "b": "lx.npc-name.b0004.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0003.0034",
+      "b": "lx.npc-name.b0004.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0002.0034",
+      "b": "lx.npc-name.b0004.0034",
+      "similarity": 0.652
+    },
+    {
+      "a": "lx.npc-name.b0001.0035",
+      "b": "lx.npc-name.b0004.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0036",
+      "b": "lx.npc-name.b0004.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0036",
+      "b": "lx.npc-name.b0004.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0036",
+      "b": "lx.npc-name.b0004.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0037",
+      "b": "lx.npc-name.b0004.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0038",
+      "b": "lx.npc-name.b0004.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0040",
+      "b": "lx.npc-name.b0004.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0040",
+      "b": "lx.npc-name.b0004.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0040",
+      "b": "lx.npc-name.b0004.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0041",
+      "b": "lx.npc-name.b0004.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0041",
+      "b": "lx.npc-name.b0004.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0041",
+      "b": "lx.npc-name.b0004.0041",
+      "similarity": 0.65
+    },
+    {
+      "a": "lx.npc-name.b0001.0042",
+      "b": "lx.npc-name.b0004.0042",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0042",
+      "b": "lx.npc-name.b0004.0042",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0042",
+      "b": "lx.npc-name.b0004.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0043",
+      "b": "lx.npc-name.b0004.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0043",
+      "b": "lx.npc-name.b0004.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0043",
+      "b": "lx.npc-name.b0004.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0044",
+      "b": "lx.npc-name.b0004.0044",
+      "similarity": 0.722
+    },
+    {
+      "a": "lx.npc-name.b0002.0044",
+      "b": "lx.npc-name.b0004.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0044",
+      "b": "lx.npc-name.b0004.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0001.0045",
+      "b": "lx.npc-name.b0004.0045",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0045",
+      "b": "lx.npc-name.b0004.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0045",
+      "b": "lx.npc-name.b0004.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0047",
+      "b": "lx.npc-name.b0004.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0047",
+      "b": "lx.npc-name.b0004.0047",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0003.0047",
+      "b": "lx.npc-name.b0004.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0048",
+      "b": "lx.npc-name.b0004.0048",
+      "similarity": 0.813
+    },
+    {
+      "a": "lx.npc-name.b0002.0048",
+      "b": "lx.npc-name.b0004.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0048",
+      "b": "lx.npc-name.b0004.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0050",
+      "b": "lx.npc-name.b0004.0050",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0050",
+      "b": "lx.npc-name.b0004.0050",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0003.0050",
+      "b": "lx.npc-name.b0004.0050",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0001",
+      "b": "lx.npc-name.b0005.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0004.0001",
+      "b": "lx.npc-name.b0005.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0001.0001",
+      "b": "lx.npc-name.b0005.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0003.0001",
+      "b": "lx.npc-name.b0005.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0002.0002",
+      "b": "lx.npc-name.b0005.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0002",
+      "b": "lx.npc-name.b0005.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0002",
+      "b": "lx.npc-name.b0005.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0002",
+      "b": "lx.npc-name.b0005.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0003",
+      "b": "lx.npc-name.b0005.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0003.0003",
+      "b": "lx.npc-name.b0005.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0004.0003",
+      "b": "lx.npc-name.b0005.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0003",
+      "b": "lx.npc-name.b0005.0003",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0004",
+      "b": "lx.npc-name.b0005.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0003.0004",
+      "b": "lx.npc-name.b0005.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0004.0004",
+      "b": "lx.npc-name.b0005.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0002.0004",
+      "b": "lx.npc-name.b0005.0004",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0005",
+      "b": "lx.npc-name.b0005.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0005",
+      "b": "lx.npc-name.b0005.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0005",
+      "b": "lx.npc-name.b0005.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0003.0005",
+      "b": "lx.npc-name.b0005.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0006",
+      "b": "lx.npc-name.b0005.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0006",
+      "b": "lx.npc-name.b0005.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0006",
+      "b": "lx.npc-name.b0005.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0006",
+      "b": "lx.npc-name.b0005.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0007",
+      "b": "lx.npc-name.b0005.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0007",
+      "b": "lx.npc-name.b0005.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0007",
+      "b": "lx.npc-name.b0005.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0007",
+      "b": "lx.npc-name.b0005.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0008",
+      "b": "lx.npc-name.b0005.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0008",
+      "b": "lx.npc-name.b0005.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0008",
+      "b": "lx.npc-name.b0005.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0008",
+      "b": "lx.npc-name.b0005.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0009",
+      "b": "lx.npc-name.b0005.0009",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0002.0009",
+      "b": "lx.npc-name.b0005.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0003.0009",
+      "b": "lx.npc-name.b0005.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0009",
+      "b": "lx.npc-name.b0005.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0010",
+      "b": "lx.npc-name.b0005.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0010",
+      "b": "lx.npc-name.b0005.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0010",
+      "b": "lx.npc-name.b0005.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0010",
+      "b": "lx.npc-name.b0005.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0011",
+      "b": "lx.npc-name.b0005.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0011",
+      "b": "lx.npc-name.b0005.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0011",
+      "b": "lx.npc-name.b0005.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0011",
+      "b": "lx.npc-name.b0005.0011",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0003.0012",
+      "b": "lx.npc-name.b0005.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0012",
+      "b": "lx.npc-name.b0005.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0013",
+      "b": "lx.npc-name.b0005.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0013",
+      "b": "lx.npc-name.b0005.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0013",
+      "b": "lx.npc-name.b0005.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0013",
+      "b": "lx.npc-name.b0005.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0014",
+      "b": "lx.npc-name.b0005.0014",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0004.0014",
+      "b": "lx.npc-name.b0005.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0014",
+      "b": "lx.npc-name.b0005.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0014",
+      "b": "lx.npc-name.b0005.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0015",
+      "b": "lx.npc-name.b0005.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0015",
+      "b": "lx.npc-name.b0005.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0015",
+      "b": "lx.npc-name.b0005.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0015",
+      "b": "lx.npc-name.b0005.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0016",
+      "b": "lx.npc-name.b0005.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0018",
+      "b": "lx.npc-name.b0005.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0018",
+      "b": "lx.npc-name.b0005.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0018",
+      "b": "lx.npc-name.b0005.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0018",
+      "b": "lx.npc-name.b0005.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0020",
+      "b": "lx.npc-name.b0005.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0021",
+      "b": "lx.npc-name.b0005.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0021",
+      "b": "lx.npc-name.b0005.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0021",
+      "b": "lx.npc-name.b0005.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0021",
+      "b": "lx.npc-name.b0005.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0022",
+      "b": "lx.npc-name.b0005.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0022",
+      "b": "lx.npc-name.b0005.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0022",
+      "b": "lx.npc-name.b0005.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0022",
+      "b": "lx.npc-name.b0005.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0023",
+      "b": "lx.npc-name.b0005.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0023",
+      "b": "lx.npc-name.b0005.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0023",
+      "b": "lx.npc-name.b0005.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0023",
+      "b": "lx.npc-name.b0005.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0024",
+      "b": "lx.npc-name.b0005.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0024",
+      "b": "lx.npc-name.b0005.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0024",
+      "b": "lx.npc-name.b0005.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0024",
+      "b": "lx.npc-name.b0005.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0025",
+      "b": "lx.npc-name.b0005.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0025",
+      "b": "lx.npc-name.b0005.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0025",
+      "b": "lx.npc-name.b0005.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0025",
+      "b": "lx.npc-name.b0005.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0026",
+      "b": "lx.npc-name.b0005.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0002.0026",
+      "b": "lx.npc-name.b0005.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0026",
+      "b": "lx.npc-name.b0005.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0026",
+      "b": "lx.npc-name.b0005.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0027",
+      "b": "lx.npc-name.b0005.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0002.0027",
+      "b": "lx.npc-name.b0005.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0003.0027",
+      "b": "lx.npc-name.b0005.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0004.0027",
+      "b": "lx.npc-name.b0005.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0028",
+      "b": "lx.npc-name.b0005.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0028",
+      "b": "lx.npc-name.b0005.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0028",
+      "b": "lx.npc-name.b0005.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0028",
+      "b": "lx.npc-name.b0005.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0029",
+      "b": "lx.npc-name.b0005.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0029",
+      "b": "lx.npc-name.b0005.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0029",
+      "b": "lx.npc-name.b0005.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0029",
+      "b": "lx.npc-name.b0005.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0030",
+      "b": "lx.npc-name.b0005.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0030",
+      "b": "lx.npc-name.b0005.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0030",
+      "b": "lx.npc-name.b0005.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0030",
+      "b": "lx.npc-name.b0005.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0031",
+      "b": "lx.npc-name.b0005.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0031",
+      "b": "lx.npc-name.b0005.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0031",
+      "b": "lx.npc-name.b0005.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0031",
+      "b": "lx.npc-name.b0005.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0032",
+      "b": "lx.npc-name.b0005.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0032",
+      "b": "lx.npc-name.b0005.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0032",
+      "b": "lx.npc-name.b0005.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0032",
+      "b": "lx.npc-name.b0005.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0033",
+      "b": "lx.npc-name.b0005.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0033",
+      "b": "lx.npc-name.b0005.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0033",
+      "b": "lx.npc-name.b0005.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0033",
+      "b": "lx.npc-name.b0005.0033",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0034",
+      "b": "lx.npc-name.b0005.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0003.0034",
+      "b": "lx.npc-name.b0005.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0004.0034",
+      "b": "lx.npc-name.b0005.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0002.0034",
+      "b": "lx.npc-name.b0005.0034",
+      "similarity": 0.652
+    },
+    {
+      "a": "lx.npc-name.b0001.0035",
+      "b": "lx.npc-name.b0005.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0035",
+      "b": "lx.npc-name.b0005.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0036",
+      "b": "lx.npc-name.b0005.0036",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0036",
+      "b": "lx.npc-name.b0005.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0036",
+      "b": "lx.npc-name.b0005.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0036",
+      "b": "lx.npc-name.b0005.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0037",
+      "b": "lx.npc-name.b0005.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0037",
+      "b": "lx.npc-name.b0005.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0038",
+      "b": "lx.npc-name.b0005.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0038",
+      "b": "lx.npc-name.b0005.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0039",
+      "b": "lx.npc-name.b0005.0039",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0001.0040",
+      "b": "lx.npc-name.b0005.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0040",
+      "b": "lx.npc-name.b0005.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0040",
+      "b": "lx.npc-name.b0005.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0040",
+      "b": "lx.npc-name.b0005.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0041",
+      "b": "lx.npc-name.b0005.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0041",
+      "b": "lx.npc-name.b0005.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0041",
+      "b": "lx.npc-name.b0005.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0041",
+      "b": "lx.npc-name.b0005.0041",
+      "similarity": 0.65
+    },
+    {
+      "a": "lx.npc-name.b0001.0042",
+      "b": "lx.npc-name.b0005.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0042",
+      "b": "lx.npc-name.b0005.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0003.0042",
+      "b": "lx.npc-name.b0005.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0042",
+      "b": "lx.npc-name.b0005.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0003.0043",
+      "b": "lx.npc-name.b0005.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0043",
+      "b": "lx.npc-name.b0005.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0043",
+      "b": "lx.npc-name.b0005.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0043",
+      "b": "lx.npc-name.b0005.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0044",
+      "b": "lx.npc-name.b0005.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0002.0044",
+      "b": "lx.npc-name.b0005.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0044",
+      "b": "lx.npc-name.b0005.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0004.0044",
+      "b": "lx.npc-name.b0005.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0045",
+      "b": "lx.npc-name.b0005.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0002.0045",
+      "b": "lx.npc-name.b0005.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0003.0045",
+      "b": "lx.npc-name.b0005.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0004.0045",
+      "b": "lx.npc-name.b0005.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0003.0046",
+      "b": "lx.npc-name.b0005.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0047",
+      "b": "lx.npc-name.b0005.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0047",
+      "b": "lx.npc-name.b0005.0047",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0003.0047",
+      "b": "lx.npc-name.b0005.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0047",
+      "b": "lx.npc-name.b0005.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0048",
+      "b": "lx.npc-name.b0005.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0003.0048",
+      "b": "lx.npc-name.b0005.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0004.0048",
+      "b": "lx.npc-name.b0005.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0001.0050",
+      "b": "lx.npc-name.b0005.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0050",
+      "b": "lx.npc-name.b0005.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0050",
+      "b": "lx.npc-name.b0005.0050",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0001",
+      "b": "lx.npc-name.b0006.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0004.0001",
+      "b": "lx.npc-name.b0006.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0005.0001",
+      "b": "lx.npc-name.b0006.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0001.0001",
+      "b": "lx.npc-name.b0006.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0003.0001",
+      "b": "lx.npc-name.b0006.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0002.0002",
+      "b": "lx.npc-name.b0006.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0002",
+      "b": "lx.npc-name.b0006.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0005.0002",
+      "b": "lx.npc-name.b0006.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0002",
+      "b": "lx.npc-name.b0006.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0002",
+      "b": "lx.npc-name.b0006.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0003",
+      "b": "lx.npc-name.b0006.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0003.0003",
+      "b": "lx.npc-name.b0006.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0004.0003",
+      "b": "lx.npc-name.b0006.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0005.0003",
+      "b": "lx.npc-name.b0006.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0003",
+      "b": "lx.npc-name.b0006.0003",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0004",
+      "b": "lx.npc-name.b0006.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0003.0004",
+      "b": "lx.npc-name.b0006.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0004.0004",
+      "b": "lx.npc-name.b0006.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0005.0004",
+      "b": "lx.npc-name.b0006.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0002.0004",
+      "b": "lx.npc-name.b0006.0004",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0005",
+      "b": "lx.npc-name.b0006.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0005",
+      "b": "lx.npc-name.b0006.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0005",
+      "b": "lx.npc-name.b0006.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0005",
+      "b": "lx.npc-name.b0006.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0003.0005",
+      "b": "lx.npc-name.b0006.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0006",
+      "b": "lx.npc-name.b0006.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0006",
+      "b": "lx.npc-name.b0006.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0006",
+      "b": "lx.npc-name.b0006.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0006",
+      "b": "lx.npc-name.b0006.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0006",
+      "b": "lx.npc-name.b0006.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0007",
+      "b": "lx.npc-name.b0006.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0007",
+      "b": "lx.npc-name.b0006.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0007",
+      "b": "lx.npc-name.b0006.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0007",
+      "b": "lx.npc-name.b0006.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0007",
+      "b": "lx.npc-name.b0006.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0008",
+      "b": "lx.npc-name.b0006.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0008",
+      "b": "lx.npc-name.b0006.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0005.0008",
+      "b": "lx.npc-name.b0006.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0008",
+      "b": "lx.npc-name.b0006.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0008",
+      "b": "lx.npc-name.b0006.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0009",
+      "b": "lx.npc-name.b0006.0009",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0001.0009",
+      "b": "lx.npc-name.b0006.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0009",
+      "b": "lx.npc-name.b0006.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0003.0009",
+      "b": "lx.npc-name.b0006.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0009",
+      "b": "lx.npc-name.b0006.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0010",
+      "b": "lx.npc-name.b0006.0010",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0010",
+      "b": "lx.npc-name.b0006.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0010",
+      "b": "lx.npc-name.b0006.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0010",
+      "b": "lx.npc-name.b0006.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0010",
+      "b": "lx.npc-name.b0006.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0011",
+      "b": "lx.npc-name.b0006.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0011",
+      "b": "lx.npc-name.b0006.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0011",
+      "b": "lx.npc-name.b0006.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0011",
+      "b": "lx.npc-name.b0006.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0011",
+      "b": "lx.npc-name.b0006.0011",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0003.0012",
+      "b": "lx.npc-name.b0006.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0012",
+      "b": "lx.npc-name.b0006.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0012",
+      "b": "lx.npc-name.b0006.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0013",
+      "b": "lx.npc-name.b0006.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0013",
+      "b": "lx.npc-name.b0006.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0013",
+      "b": "lx.npc-name.b0006.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0013",
+      "b": "lx.npc-name.b0006.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0013",
+      "b": "lx.npc-name.b0006.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0014",
+      "b": "lx.npc-name.b0006.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0014",
+      "b": "lx.npc-name.b0006.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0014",
+      "b": "lx.npc-name.b0006.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0014",
+      "b": "lx.npc-name.b0006.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0014",
+      "b": "lx.npc-name.b0006.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0015",
+      "b": "lx.npc-name.b0006.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0015",
+      "b": "lx.npc-name.b0006.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0015",
+      "b": "lx.npc-name.b0006.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0015",
+      "b": "lx.npc-name.b0006.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0015",
+      "b": "lx.npc-name.b0006.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0016",
+      "b": "lx.npc-name.b0006.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0016",
+      "b": "lx.npc-name.b0006.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0017",
+      "b": "lx.npc-name.b0006.0017",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0018",
+      "b": "lx.npc-name.b0006.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0018",
+      "b": "lx.npc-name.b0006.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0018",
+      "b": "lx.npc-name.b0006.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0018",
+      "b": "lx.npc-name.b0006.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0018",
+      "b": "lx.npc-name.b0006.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0019",
+      "b": "lx.npc-name.b0006.0019",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0020",
+      "b": "lx.npc-name.b0006.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0020",
+      "b": "lx.npc-name.b0006.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0021",
+      "b": "lx.npc-name.b0006.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0021",
+      "b": "lx.npc-name.b0006.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0021",
+      "b": "lx.npc-name.b0006.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0021",
+      "b": "lx.npc-name.b0006.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0021",
+      "b": "lx.npc-name.b0006.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0022",
+      "b": "lx.npc-name.b0006.0022",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0002.0022",
+      "b": "lx.npc-name.b0006.0022",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0003.0022",
+      "b": "lx.npc-name.b0006.0022",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0004.0022",
+      "b": "lx.npc-name.b0006.0022",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0005.0022",
+      "b": "lx.npc-name.b0006.0022",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0023",
+      "b": "lx.npc-name.b0006.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0023",
+      "b": "lx.npc-name.b0006.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0023",
+      "b": "lx.npc-name.b0006.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0023",
+      "b": "lx.npc-name.b0006.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0023",
+      "b": "lx.npc-name.b0006.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0024",
+      "b": "lx.npc-name.b0006.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0024",
+      "b": "lx.npc-name.b0006.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0024",
+      "b": "lx.npc-name.b0006.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0024",
+      "b": "lx.npc-name.b0006.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0024",
+      "b": "lx.npc-name.b0006.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0025",
+      "b": "lx.npc-name.b0006.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0025",
+      "b": "lx.npc-name.b0006.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0025",
+      "b": "lx.npc-name.b0006.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0025",
+      "b": "lx.npc-name.b0006.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0025",
+      "b": "lx.npc-name.b0006.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0026",
+      "b": "lx.npc-name.b0006.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0002.0026",
+      "b": "lx.npc-name.b0006.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0026",
+      "b": "lx.npc-name.b0006.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0026",
+      "b": "lx.npc-name.b0006.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0026",
+      "b": "lx.npc-name.b0006.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0027",
+      "b": "lx.npc-name.b0006.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0002.0027",
+      "b": "lx.npc-name.b0006.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0003.0027",
+      "b": "lx.npc-name.b0006.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0004.0027",
+      "b": "lx.npc-name.b0006.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0005.0027",
+      "b": "lx.npc-name.b0006.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0028",
+      "b": "lx.npc-name.b0006.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0028",
+      "b": "lx.npc-name.b0006.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0028",
+      "b": "lx.npc-name.b0006.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0028",
+      "b": "lx.npc-name.b0006.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0005.0028",
+      "b": "lx.npc-name.b0006.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0029",
+      "b": "lx.npc-name.b0006.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0029",
+      "b": "lx.npc-name.b0006.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0029",
+      "b": "lx.npc-name.b0006.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0029",
+      "b": "lx.npc-name.b0006.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0029",
+      "b": "lx.npc-name.b0006.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0030",
+      "b": "lx.npc-name.b0006.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0030",
+      "b": "lx.npc-name.b0006.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0030",
+      "b": "lx.npc-name.b0006.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0030",
+      "b": "lx.npc-name.b0006.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0005.0030",
+      "b": "lx.npc-name.b0006.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0031",
+      "b": "lx.npc-name.b0006.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0031",
+      "b": "lx.npc-name.b0006.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0031",
+      "b": "lx.npc-name.b0006.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0031",
+      "b": "lx.npc-name.b0006.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0031",
+      "b": "lx.npc-name.b0006.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0032",
+      "b": "lx.npc-name.b0006.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0032",
+      "b": "lx.npc-name.b0006.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0032",
+      "b": "lx.npc-name.b0006.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0032",
+      "b": "lx.npc-name.b0006.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0032",
+      "b": "lx.npc-name.b0006.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0033",
+      "b": "lx.npc-name.b0006.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0033",
+      "b": "lx.npc-name.b0006.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0033",
+      "b": "lx.npc-name.b0006.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0033",
+      "b": "lx.npc-name.b0006.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0033",
+      "b": "lx.npc-name.b0006.0033",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0034",
+      "b": "lx.npc-name.b0006.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0003.0034",
+      "b": "lx.npc-name.b0006.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0004.0034",
+      "b": "lx.npc-name.b0006.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0005.0034",
+      "b": "lx.npc-name.b0006.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0002.0034",
+      "b": "lx.npc-name.b0006.0034",
+      "similarity": 0.652
+    },
+    {
+      "a": "lx.npc-name.b0001.0035",
+      "b": "lx.npc-name.b0006.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0035",
+      "b": "lx.npc-name.b0006.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0035",
+      "b": "lx.npc-name.b0006.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0036",
+      "b": "lx.npc-name.b0006.0036",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0036",
+      "b": "lx.npc-name.b0006.0036",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0036",
+      "b": "lx.npc-name.b0006.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0036",
+      "b": "lx.npc-name.b0006.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0036",
+      "b": "lx.npc-name.b0006.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0037",
+      "b": "lx.npc-name.b0006.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0037",
+      "b": "lx.npc-name.b0006.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0037",
+      "b": "lx.npc-name.b0006.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0038",
+      "b": "lx.npc-name.b0006.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0038",
+      "b": "lx.npc-name.b0006.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0038",
+      "b": "lx.npc-name.b0006.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0039",
+      "b": "lx.npc-name.b0006.0039",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0040",
+      "b": "lx.npc-name.b0006.0040",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0040",
+      "b": "lx.npc-name.b0006.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0040",
+      "b": "lx.npc-name.b0006.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0040",
+      "b": "lx.npc-name.b0006.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0040",
+      "b": "lx.npc-name.b0006.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0041",
+      "b": "lx.npc-name.b0006.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0041",
+      "b": "lx.npc-name.b0006.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0041",
+      "b": "lx.npc-name.b0006.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0041",
+      "b": "lx.npc-name.b0006.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0041",
+      "b": "lx.npc-name.b0006.0041",
+      "similarity": 0.65
+    },
+    {
+      "a": "lx.npc-name.b0001.0042",
+      "b": "lx.npc-name.b0006.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0042",
+      "b": "lx.npc-name.b0006.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0003.0042",
+      "b": "lx.npc-name.b0006.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0042",
+      "b": "lx.npc-name.b0006.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0005.0042",
+      "b": "lx.npc-name.b0006.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0002.0043",
+      "b": "lx.npc-name.b0006.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0043",
+      "b": "lx.npc-name.b0006.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0043",
+      "b": "lx.npc-name.b0006.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0043",
+      "b": "lx.npc-name.b0006.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0043",
+      "b": "lx.npc-name.b0006.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0044",
+      "b": "lx.npc-name.b0006.0044",
+      "similarity": 0.722
+    },
+    {
+      "a": "lx.npc-name.b0004.0044",
+      "b": "lx.npc-name.b0006.0044",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0044",
+      "b": "lx.npc-name.b0006.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0044",
+      "b": "lx.npc-name.b0006.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0005.0044",
+      "b": "lx.npc-name.b0006.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0045",
+      "b": "lx.npc-name.b0006.0045",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0001.0045",
+      "b": "lx.npc-name.b0006.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0002.0045",
+      "b": "lx.npc-name.b0006.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0003.0045",
+      "b": "lx.npc-name.b0006.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0004.0045",
+      "b": "lx.npc-name.b0006.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0004.0046",
+      "b": "lx.npc-name.b0006.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0047",
+      "b": "lx.npc-name.b0006.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0047",
+      "b": "lx.npc-name.b0006.0047",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0003.0047",
+      "b": "lx.npc-name.b0006.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0047",
+      "b": "lx.npc-name.b0006.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0047",
+      "b": "lx.npc-name.b0006.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0048",
+      "b": "lx.npc-name.b0006.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0002.0048",
+      "b": "lx.npc-name.b0006.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0048",
+      "b": "lx.npc-name.b0006.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0048",
+      "b": "lx.npc-name.b0006.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0048",
+      "b": "lx.npc-name.b0006.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0005.0049",
+      "b": "lx.npc-name.b0006.0049",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0050",
+      "b": "lx.npc-name.b0006.0050",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0050",
+      "b": "lx.npc-name.b0006.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0050",
+      "b": "lx.npc-name.b0006.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0050",
+      "b": "lx.npc-name.b0006.0050",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0001",
+      "b": "lx.npc-name.b0007.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0004.0001",
+      "b": "lx.npc-name.b0007.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0005.0001",
+      "b": "lx.npc-name.b0007.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0006.0001",
+      "b": "lx.npc-name.b0007.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0001.0001",
+      "b": "lx.npc-name.b0007.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0003.0001",
+      "b": "lx.npc-name.b0007.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0002.0002",
+      "b": "lx.npc-name.b0007.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0002",
+      "b": "lx.npc-name.b0007.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0005.0002",
+      "b": "lx.npc-name.b0007.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0006.0002",
+      "b": "lx.npc-name.b0007.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0002",
+      "b": "lx.npc-name.b0007.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0002",
+      "b": "lx.npc-name.b0007.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0003",
+      "b": "lx.npc-name.b0007.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0003.0003",
+      "b": "lx.npc-name.b0007.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0004.0003",
+      "b": "lx.npc-name.b0007.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0005.0003",
+      "b": "lx.npc-name.b0007.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0006.0003",
+      "b": "lx.npc-name.b0007.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0003",
+      "b": "lx.npc-name.b0007.0003",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0004",
+      "b": "lx.npc-name.b0007.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0003.0004",
+      "b": "lx.npc-name.b0007.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0004.0004",
+      "b": "lx.npc-name.b0007.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0005.0004",
+      "b": "lx.npc-name.b0007.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0006.0004",
+      "b": "lx.npc-name.b0007.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0002.0004",
+      "b": "lx.npc-name.b0007.0004",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0005",
+      "b": "lx.npc-name.b0007.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0005",
+      "b": "lx.npc-name.b0007.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0005",
+      "b": "lx.npc-name.b0007.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0005",
+      "b": "lx.npc-name.b0007.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0005",
+      "b": "lx.npc-name.b0007.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0003.0005",
+      "b": "lx.npc-name.b0007.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0006",
+      "b": "lx.npc-name.b0007.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0006",
+      "b": "lx.npc-name.b0007.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0006",
+      "b": "lx.npc-name.b0007.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0006",
+      "b": "lx.npc-name.b0007.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0006",
+      "b": "lx.npc-name.b0007.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0006",
+      "b": "lx.npc-name.b0007.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0007",
+      "b": "lx.npc-name.b0007.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0007",
+      "b": "lx.npc-name.b0007.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0007",
+      "b": "lx.npc-name.b0007.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0007",
+      "b": "lx.npc-name.b0007.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0007",
+      "b": "lx.npc-name.b0007.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0007",
+      "b": "lx.npc-name.b0007.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0008",
+      "b": "lx.npc-name.b0007.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0008",
+      "b": "lx.npc-name.b0007.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0005.0008",
+      "b": "lx.npc-name.b0007.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0006.0008",
+      "b": "lx.npc-name.b0007.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0008",
+      "b": "lx.npc-name.b0007.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0008",
+      "b": "lx.npc-name.b0007.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0009",
+      "b": "lx.npc-name.b0007.0009",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0006.0009",
+      "b": "lx.npc-name.b0007.0009",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0001.0009",
+      "b": "lx.npc-name.b0007.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0009",
+      "b": "lx.npc-name.b0007.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0003.0009",
+      "b": "lx.npc-name.b0007.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0009",
+      "b": "lx.npc-name.b0007.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0010",
+      "b": "lx.npc-name.b0007.0010",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0010",
+      "b": "lx.npc-name.b0007.0010",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0010",
+      "b": "lx.npc-name.b0007.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0010",
+      "b": "lx.npc-name.b0007.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0010",
+      "b": "lx.npc-name.b0007.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0010",
+      "b": "lx.npc-name.b0007.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0011",
+      "b": "lx.npc-name.b0007.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0011",
+      "b": "lx.npc-name.b0007.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0011",
+      "b": "lx.npc-name.b0007.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0011",
+      "b": "lx.npc-name.b0007.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0006.0011",
+      "b": "lx.npc-name.b0007.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0011",
+      "b": "lx.npc-name.b0007.0011",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0003.0012",
+      "b": "lx.npc-name.b0007.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0012",
+      "b": "lx.npc-name.b0007.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0012",
+      "b": "lx.npc-name.b0007.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0012",
+      "b": "lx.npc-name.b0007.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0013",
+      "b": "lx.npc-name.b0007.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0013",
+      "b": "lx.npc-name.b0007.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0013",
+      "b": "lx.npc-name.b0007.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0013",
+      "b": "lx.npc-name.b0007.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0013",
+      "b": "lx.npc-name.b0007.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0013",
+      "b": "lx.npc-name.b0007.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0014",
+      "b": "lx.npc-name.b0007.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0014",
+      "b": "lx.npc-name.b0007.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0014",
+      "b": "lx.npc-name.b0007.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0014",
+      "b": "lx.npc-name.b0007.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0014",
+      "b": "lx.npc-name.b0007.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0014",
+      "b": "lx.npc-name.b0007.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0015",
+      "b": "lx.npc-name.b0007.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0015",
+      "b": "lx.npc-name.b0007.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0015",
+      "b": "lx.npc-name.b0007.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0015",
+      "b": "lx.npc-name.b0007.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0015",
+      "b": "lx.npc-name.b0007.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0015",
+      "b": "lx.npc-name.b0007.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0016",
+      "b": "lx.npc-name.b0007.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0016",
+      "b": "lx.npc-name.b0007.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0016",
+      "b": "lx.npc-name.b0007.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0017",
+      "b": "lx.npc-name.b0007.0017",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0017",
+      "b": "lx.npc-name.b0007.0017",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0018",
+      "b": "lx.npc-name.b0007.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0018",
+      "b": "lx.npc-name.b0007.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0018",
+      "b": "lx.npc-name.b0007.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0018",
+      "b": "lx.npc-name.b0007.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0018",
+      "b": "lx.npc-name.b0007.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0018",
+      "b": "lx.npc-name.b0007.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0019",
+      "b": "lx.npc-name.b0007.0019",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0006.0019",
+      "b": "lx.npc-name.b0007.0019",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0020",
+      "b": "lx.npc-name.b0007.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0020",
+      "b": "lx.npc-name.b0007.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0006.0020",
+      "b": "lx.npc-name.b0007.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0021",
+      "b": "lx.npc-name.b0007.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0021",
+      "b": "lx.npc-name.b0007.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0021",
+      "b": "lx.npc-name.b0007.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0021",
+      "b": "lx.npc-name.b0007.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0021",
+      "b": "lx.npc-name.b0007.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0021",
+      "b": "lx.npc-name.b0007.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0022",
+      "b": "lx.npc-name.b0007.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0022",
+      "b": "lx.npc-name.b0007.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0022",
+      "b": "lx.npc-name.b0007.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0022",
+      "b": "lx.npc-name.b0007.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0022",
+      "b": "lx.npc-name.b0007.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0022",
+      "b": "lx.npc-name.b0007.0022",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0023",
+      "b": "lx.npc-name.b0007.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0023",
+      "b": "lx.npc-name.b0007.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0023",
+      "b": "lx.npc-name.b0007.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0023",
+      "b": "lx.npc-name.b0007.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0023",
+      "b": "lx.npc-name.b0007.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0023",
+      "b": "lx.npc-name.b0007.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0024",
+      "b": "lx.npc-name.b0007.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0024",
+      "b": "lx.npc-name.b0007.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0024",
+      "b": "lx.npc-name.b0007.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0024",
+      "b": "lx.npc-name.b0007.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0024",
+      "b": "lx.npc-name.b0007.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0024",
+      "b": "lx.npc-name.b0007.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0025",
+      "b": "lx.npc-name.b0007.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0025",
+      "b": "lx.npc-name.b0007.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0025",
+      "b": "lx.npc-name.b0007.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0025",
+      "b": "lx.npc-name.b0007.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0025",
+      "b": "lx.npc-name.b0007.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0025",
+      "b": "lx.npc-name.b0007.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0026",
+      "b": "lx.npc-name.b0007.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0002.0026",
+      "b": "lx.npc-name.b0007.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0026",
+      "b": "lx.npc-name.b0007.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0026",
+      "b": "lx.npc-name.b0007.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0026",
+      "b": "lx.npc-name.b0007.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0026",
+      "b": "lx.npc-name.b0007.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0027",
+      "b": "lx.npc-name.b0007.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0002.0027",
+      "b": "lx.npc-name.b0007.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0003.0027",
+      "b": "lx.npc-name.b0007.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0004.0027",
+      "b": "lx.npc-name.b0007.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0005.0027",
+      "b": "lx.npc-name.b0007.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0006.0027",
+      "b": "lx.npc-name.b0007.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0028",
+      "b": "lx.npc-name.b0007.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0028",
+      "b": "lx.npc-name.b0007.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0028",
+      "b": "lx.npc-name.b0007.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0028",
+      "b": "lx.npc-name.b0007.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0005.0028",
+      "b": "lx.npc-name.b0007.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0006.0028",
+      "b": "lx.npc-name.b0007.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0029",
+      "b": "lx.npc-name.b0007.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0029",
+      "b": "lx.npc-name.b0007.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0029",
+      "b": "lx.npc-name.b0007.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0029",
+      "b": "lx.npc-name.b0007.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0029",
+      "b": "lx.npc-name.b0007.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0029",
+      "b": "lx.npc-name.b0007.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0030",
+      "b": "lx.npc-name.b0007.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0030",
+      "b": "lx.npc-name.b0007.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0030",
+      "b": "lx.npc-name.b0007.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0030",
+      "b": "lx.npc-name.b0007.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0005.0030",
+      "b": "lx.npc-name.b0007.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0006.0030",
+      "b": "lx.npc-name.b0007.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0031",
+      "b": "lx.npc-name.b0007.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0031",
+      "b": "lx.npc-name.b0007.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0031",
+      "b": "lx.npc-name.b0007.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0031",
+      "b": "lx.npc-name.b0007.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0031",
+      "b": "lx.npc-name.b0007.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0031",
+      "b": "lx.npc-name.b0007.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0032",
+      "b": "lx.npc-name.b0007.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0032",
+      "b": "lx.npc-name.b0007.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0032",
+      "b": "lx.npc-name.b0007.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0032",
+      "b": "lx.npc-name.b0007.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0032",
+      "b": "lx.npc-name.b0007.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0032",
+      "b": "lx.npc-name.b0007.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0033",
+      "b": "lx.npc-name.b0007.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0033",
+      "b": "lx.npc-name.b0007.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0033",
+      "b": "lx.npc-name.b0007.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0033",
+      "b": "lx.npc-name.b0007.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0006.0033",
+      "b": "lx.npc-name.b0007.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0033",
+      "b": "lx.npc-name.b0007.0033",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0034",
+      "b": "lx.npc-name.b0007.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0003.0034",
+      "b": "lx.npc-name.b0007.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0004.0034",
+      "b": "lx.npc-name.b0007.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0005.0034",
+      "b": "lx.npc-name.b0007.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0006.0034",
+      "b": "lx.npc-name.b0007.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0002.0034",
+      "b": "lx.npc-name.b0007.0034",
+      "similarity": 0.652
+    },
+    {
+      "a": "lx.npc-name.b0001.0036",
+      "b": "lx.npc-name.b0007.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0036",
+      "b": "lx.npc-name.b0007.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0036",
+      "b": "lx.npc-name.b0007.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0036",
+      "b": "lx.npc-name.b0007.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0036",
+      "b": "lx.npc-name.b0007.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0036",
+      "b": "lx.npc-name.b0007.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0039",
+      "b": "lx.npc-name.b0007.0039",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0005.0039",
+      "b": "lx.npc-name.b0007.0039",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0001.0040",
+      "b": "lx.npc-name.b0007.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0040",
+      "b": "lx.npc-name.b0007.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0040",
+      "b": "lx.npc-name.b0007.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0040",
+      "b": "lx.npc-name.b0007.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0040",
+      "b": "lx.npc-name.b0007.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0040",
+      "b": "lx.npc-name.b0007.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0041",
+      "b": "lx.npc-name.b0007.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0041",
+      "b": "lx.npc-name.b0007.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0041",
+      "b": "lx.npc-name.b0007.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0041",
+      "b": "lx.npc-name.b0007.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0006.0041",
+      "b": "lx.npc-name.b0007.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0041",
+      "b": "lx.npc-name.b0007.0041",
+      "similarity": 0.65
+    },
+    {
+      "a": "lx.npc-name.b0001.0042",
+      "b": "lx.npc-name.b0007.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0042",
+      "b": "lx.npc-name.b0007.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0003.0042",
+      "b": "lx.npc-name.b0007.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0042",
+      "b": "lx.npc-name.b0007.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0005.0042",
+      "b": "lx.npc-name.b0007.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0006.0042",
+      "b": "lx.npc-name.b0007.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0043",
+      "b": "lx.npc-name.b0007.0043",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0002.0043",
+      "b": "lx.npc-name.b0007.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0043",
+      "b": "lx.npc-name.b0007.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0043",
+      "b": "lx.npc-name.b0007.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0043",
+      "b": "lx.npc-name.b0007.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0043",
+      "b": "lx.npc-name.b0007.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0044",
+      "b": "lx.npc-name.b0007.0044",
+      "similarity": 0.722
+    },
+    {
+      "a": "lx.npc-name.b0004.0044",
+      "b": "lx.npc-name.b0007.0044",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0044",
+      "b": "lx.npc-name.b0007.0044",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0044",
+      "b": "lx.npc-name.b0007.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0044",
+      "b": "lx.npc-name.b0007.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0005.0044",
+      "b": "lx.npc-name.b0007.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0045",
+      "b": "lx.npc-name.b0007.0045",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0045",
+      "b": "lx.npc-name.b0007.0045",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0045",
+      "b": "lx.npc-name.b0007.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0045",
+      "b": "lx.npc-name.b0007.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0045",
+      "b": "lx.npc-name.b0007.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0006.0045",
+      "b": "lx.npc-name.b0007.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0004.0046",
+      "b": "lx.npc-name.b0007.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0046",
+      "b": "lx.npc-name.b0007.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0047",
+      "b": "lx.npc-name.b0007.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0047",
+      "b": "lx.npc-name.b0007.0047",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0003.0047",
+      "b": "lx.npc-name.b0007.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0047",
+      "b": "lx.npc-name.b0007.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0047",
+      "b": "lx.npc-name.b0007.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0006.0047",
+      "b": "lx.npc-name.b0007.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0048",
+      "b": "lx.npc-name.b0007.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0002.0048",
+      "b": "lx.npc-name.b0007.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0048",
+      "b": "lx.npc-name.b0007.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0048",
+      "b": "lx.npc-name.b0007.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0048",
+      "b": "lx.npc-name.b0007.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0006.0048",
+      "b": "lx.npc-name.b0007.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0049",
+      "b": "lx.npc-name.b0007.0049",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0049",
+      "b": "lx.npc-name.b0007.0049",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0050",
+      "b": "lx.npc-name.b0007.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0050",
+      "b": "lx.npc-name.b0007.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0050",
+      "b": "lx.npc-name.b0007.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0006.0050",
+      "b": "lx.npc-name.b0007.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0050",
+      "b": "lx.npc-name.b0007.0050",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0001",
+      "b": "lx.npc-name.b0008.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0004.0001",
+      "b": "lx.npc-name.b0008.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0005.0001",
+      "b": "lx.npc-name.b0008.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0006.0001",
+      "b": "lx.npc-name.b0008.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0007.0001",
+      "b": "lx.npc-name.b0008.0001",
+      "similarity": 0.852
+    },
+    {
+      "a": "lx.npc-name.b0001.0001",
+      "b": "lx.npc-name.b0008.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0003.0001",
+      "b": "lx.npc-name.b0008.0001",
+      "similarity": 0.786
+    },
+    {
+      "a": "lx.npc-name.b0002.0002",
+      "b": "lx.npc-name.b0008.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0002",
+      "b": "lx.npc-name.b0008.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0005.0002",
+      "b": "lx.npc-name.b0008.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0006.0002",
+      "b": "lx.npc-name.b0008.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0007.0002",
+      "b": "lx.npc-name.b0008.0002",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0002",
+      "b": "lx.npc-name.b0008.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0002",
+      "b": "lx.npc-name.b0008.0002",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0003",
+      "b": "lx.npc-name.b0008.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0003.0003",
+      "b": "lx.npc-name.b0008.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0004.0003",
+      "b": "lx.npc-name.b0008.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0005.0003",
+      "b": "lx.npc-name.b0008.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0006.0003",
+      "b": "lx.npc-name.b0008.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0007.0003",
+      "b": "lx.npc-name.b0008.0003",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0001.0003",
+      "b": "lx.npc-name.b0008.0003",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0004",
+      "b": "lx.npc-name.b0008.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0003.0004",
+      "b": "lx.npc-name.b0008.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0004.0004",
+      "b": "lx.npc-name.b0008.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0005.0004",
+      "b": "lx.npc-name.b0008.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0006.0004",
+      "b": "lx.npc-name.b0008.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0007.0004",
+      "b": "lx.npc-name.b0008.0004",
+      "similarity": 0.765
+    },
+    {
+      "a": "lx.npc-name.b0002.0004",
+      "b": "lx.npc-name.b0008.0004",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0005",
+      "b": "lx.npc-name.b0008.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0005",
+      "b": "lx.npc-name.b0008.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0005",
+      "b": "lx.npc-name.b0008.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0005",
+      "b": "lx.npc-name.b0008.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0007.0005",
+      "b": "lx.npc-name.b0008.0005",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0005",
+      "b": "lx.npc-name.b0008.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0003.0005",
+      "b": "lx.npc-name.b0008.0005",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0006",
+      "b": "lx.npc-name.b0008.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0006",
+      "b": "lx.npc-name.b0008.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0006",
+      "b": "lx.npc-name.b0008.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0007.0006",
+      "b": "lx.npc-name.b0008.0006",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0006",
+      "b": "lx.npc-name.b0008.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0006",
+      "b": "lx.npc-name.b0008.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0006",
+      "b": "lx.npc-name.b0008.0006",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0007",
+      "b": "lx.npc-name.b0008.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0007",
+      "b": "lx.npc-name.b0008.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0007",
+      "b": "lx.npc-name.b0008.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0007",
+      "b": "lx.npc-name.b0008.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0007.0007",
+      "b": "lx.npc-name.b0008.0007",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0007",
+      "b": "lx.npc-name.b0008.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0007",
+      "b": "lx.npc-name.b0008.0007",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0008",
+      "b": "lx.npc-name.b0008.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0004.0008",
+      "b": "lx.npc-name.b0008.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0005.0008",
+      "b": "lx.npc-name.b0008.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0006.0008",
+      "b": "lx.npc-name.b0008.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0007.0008",
+      "b": "lx.npc-name.b0008.0008",
+      "similarity": 0.789
+    },
+    {
+      "a": "lx.npc-name.b0001.0008",
+      "b": "lx.npc-name.b0008.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0002.0008",
+      "b": "lx.npc-name.b0008.0008",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0009",
+      "b": "lx.npc-name.b0008.0009",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0006.0009",
+      "b": "lx.npc-name.b0008.0009",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0007.0009",
+      "b": "lx.npc-name.b0008.0009",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0001.0009",
+      "b": "lx.npc-name.b0008.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0009",
+      "b": "lx.npc-name.b0008.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0003.0009",
+      "b": "lx.npc-name.b0008.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0009",
+      "b": "lx.npc-name.b0008.0009",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0010",
+      "b": "lx.npc-name.b0008.0010",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0010",
+      "b": "lx.npc-name.b0008.0010",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0007.0010",
+      "b": "lx.npc-name.b0008.0010",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0010",
+      "b": "lx.npc-name.b0008.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0010",
+      "b": "lx.npc-name.b0008.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0010",
+      "b": "lx.npc-name.b0008.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0010",
+      "b": "lx.npc-name.b0008.0010",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0011",
+      "b": "lx.npc-name.b0008.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0011",
+      "b": "lx.npc-name.b0008.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0011",
+      "b": "lx.npc-name.b0008.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0011",
+      "b": "lx.npc-name.b0008.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0006.0011",
+      "b": "lx.npc-name.b0008.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0007.0011",
+      "b": "lx.npc-name.b0008.0011",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0011",
+      "b": "lx.npc-name.b0008.0011",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0003.0012",
+      "b": "lx.npc-name.b0008.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0012",
+      "b": "lx.npc-name.b0008.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0012",
+      "b": "lx.npc-name.b0008.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0012",
+      "b": "lx.npc-name.b0008.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0007.0012",
+      "b": "lx.npc-name.b0008.0012",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0013",
+      "b": "lx.npc-name.b0008.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0013",
+      "b": "lx.npc-name.b0008.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0013",
+      "b": "lx.npc-name.b0008.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0013",
+      "b": "lx.npc-name.b0008.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0007.0013",
+      "b": "lx.npc-name.b0008.0013",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0013",
+      "b": "lx.npc-name.b0008.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0013",
+      "b": "lx.npc-name.b0008.0013",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0014",
+      "b": "lx.npc-name.b0008.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0014",
+      "b": "lx.npc-name.b0008.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0014",
+      "b": "lx.npc-name.b0008.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0014",
+      "b": "lx.npc-name.b0008.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0007.0014",
+      "b": "lx.npc-name.b0008.0014",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0014",
+      "b": "lx.npc-name.b0008.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0014",
+      "b": "lx.npc-name.b0008.0014",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0015",
+      "b": "lx.npc-name.b0008.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0015",
+      "b": "lx.npc-name.b0008.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0015",
+      "b": "lx.npc-name.b0008.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0015",
+      "b": "lx.npc-name.b0008.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0007.0015",
+      "b": "lx.npc-name.b0008.0015",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0015",
+      "b": "lx.npc-name.b0008.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0015",
+      "b": "lx.npc-name.b0008.0015",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0016",
+      "b": "lx.npc-name.b0008.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0016",
+      "b": "lx.npc-name.b0008.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0016",
+      "b": "lx.npc-name.b0008.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0007.0016",
+      "b": "lx.npc-name.b0008.0016",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0017",
+      "b": "lx.npc-name.b0008.0017",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0017",
+      "b": "lx.npc-name.b0008.0017",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0017",
+      "b": "lx.npc-name.b0008.0017",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0018",
+      "b": "lx.npc-name.b0008.0018",
+      "similarity": 0.778
+    },
+    {
+      "a": "lx.npc-name.b0001.0018",
+      "b": "lx.npc-name.b0008.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0018",
+      "b": "lx.npc-name.b0008.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0007.0018",
+      "b": "lx.npc-name.b0008.0018",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0002.0018",
+      "b": "lx.npc-name.b0008.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0018",
+      "b": "lx.npc-name.b0008.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0018",
+      "b": "lx.npc-name.b0008.0018",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0019",
+      "b": "lx.npc-name.b0008.0019",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0006.0019",
+      "b": "lx.npc-name.b0008.0019",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0007.0019",
+      "b": "lx.npc-name.b0008.0019",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0007.0020",
+      "b": "lx.npc-name.b0008.0020",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0020",
+      "b": "lx.npc-name.b0008.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0020",
+      "b": "lx.npc-name.b0008.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0006.0020",
+      "b": "lx.npc-name.b0008.0020",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0021",
+      "b": "lx.npc-name.b0008.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0021",
+      "b": "lx.npc-name.b0008.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0021",
+      "b": "lx.npc-name.b0008.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0021",
+      "b": "lx.npc-name.b0008.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0021",
+      "b": "lx.npc-name.b0008.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0021",
+      "b": "lx.npc-name.b0008.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0007.0021",
+      "b": "lx.npc-name.b0008.0021",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0022",
+      "b": "lx.npc-name.b0008.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0022",
+      "b": "lx.npc-name.b0008.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0022",
+      "b": "lx.npc-name.b0008.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0022",
+      "b": "lx.npc-name.b0008.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0022",
+      "b": "lx.npc-name.b0008.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0022",
+      "b": "lx.npc-name.b0008.0022",
+      "similarity": 0.8
+    },
+    {
+      "a": "lx.npc-name.b0007.0022",
+      "b": "lx.npc-name.b0008.0022",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0023",
+      "b": "lx.npc-name.b0008.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0023",
+      "b": "lx.npc-name.b0008.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0023",
+      "b": "lx.npc-name.b0008.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0023",
+      "b": "lx.npc-name.b0008.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0023",
+      "b": "lx.npc-name.b0008.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0023",
+      "b": "lx.npc-name.b0008.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0007.0023",
+      "b": "lx.npc-name.b0008.0023",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0024",
+      "b": "lx.npc-name.b0008.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0024",
+      "b": "lx.npc-name.b0008.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0024",
+      "b": "lx.npc-name.b0008.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0024",
+      "b": "lx.npc-name.b0008.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0024",
+      "b": "lx.npc-name.b0008.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0024",
+      "b": "lx.npc-name.b0008.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0007.0024",
+      "b": "lx.npc-name.b0008.0024",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0025",
+      "b": "lx.npc-name.b0008.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0002.0025",
+      "b": "lx.npc-name.b0008.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0003.0025",
+      "b": "lx.npc-name.b0008.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0004.0025",
+      "b": "lx.npc-name.b0008.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0005.0025",
+      "b": "lx.npc-name.b0008.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0006.0025",
+      "b": "lx.npc-name.b0008.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0007.0025",
+      "b": "lx.npc-name.b0008.0025",
+      "similarity": 0.75
+    },
+    {
+      "a": "lx.npc-name.b0001.0026",
+      "b": "lx.npc-name.b0008.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0002.0026",
+      "b": "lx.npc-name.b0008.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0026",
+      "b": "lx.npc-name.b0008.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0026",
+      "b": "lx.npc-name.b0008.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0026",
+      "b": "lx.npc-name.b0008.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0026",
+      "b": "lx.npc-name.b0008.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0007.0026",
+      "b": "lx.npc-name.b0008.0026",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0001.0027",
+      "b": "lx.npc-name.b0008.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0002.0027",
+      "b": "lx.npc-name.b0008.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0003.0027",
+      "b": "lx.npc-name.b0008.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0004.0027",
+      "b": "lx.npc-name.b0008.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0005.0027",
+      "b": "lx.npc-name.b0008.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0006.0027",
+      "b": "lx.npc-name.b0008.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0007.0027",
+      "b": "lx.npc-name.b0008.0027",
+      "similarity": 0.714
+    },
+    {
+      "a": "lx.npc-name.b0001.0028",
+      "b": "lx.npc-name.b0008.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0028",
+      "b": "lx.npc-name.b0008.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0028",
+      "b": "lx.npc-name.b0008.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0028",
+      "b": "lx.npc-name.b0008.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0005.0028",
+      "b": "lx.npc-name.b0008.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0006.0028",
+      "b": "lx.npc-name.b0008.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0007.0028",
+      "b": "lx.npc-name.b0008.0028",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0001.0029",
+      "b": "lx.npc-name.b0008.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0002.0029",
+      "b": "lx.npc-name.b0008.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0003.0029",
+      "b": "lx.npc-name.b0008.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0004.0029",
+      "b": "lx.npc-name.b0008.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0005.0029",
+      "b": "lx.npc-name.b0008.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0006.0029",
+      "b": "lx.npc-name.b0008.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0007.0029",
+      "b": "lx.npc-name.b0008.0029",
+      "similarity": 0.733
+    },
+    {
+      "a": "lx.npc-name.b0001.0030",
+      "b": "lx.npc-name.b0008.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0030",
+      "b": "lx.npc-name.b0008.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0003.0030",
+      "b": "lx.npc-name.b0008.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0004.0030",
+      "b": "lx.npc-name.b0008.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0005.0030",
+      "b": "lx.npc-name.b0008.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0006.0030",
+      "b": "lx.npc-name.b0008.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0007.0030",
+      "b": "lx.npc-name.b0008.0030",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-name.b0002.0031",
+      "b": "lx.npc-name.b0008.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0031",
+      "b": "lx.npc-name.b0008.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0031",
+      "b": "lx.npc-name.b0008.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0031",
+      "b": "lx.npc-name.b0008.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0007.0031",
+      "b": "lx.npc-name.b0008.0031",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0031",
+      "b": "lx.npc-name.b0008.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0031",
+      "b": "lx.npc-name.b0008.0031",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0032",
+      "b": "lx.npc-name.b0008.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0004.0032",
+      "b": "lx.npc-name.b0008.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0032",
+      "b": "lx.npc-name.b0008.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0032",
+      "b": "lx.npc-name.b0008.0032",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0032",
+      "b": "lx.npc-name.b0008.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0032",
+      "b": "lx.npc-name.b0008.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0032",
+      "b": "lx.npc-name.b0008.0032",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0033",
+      "b": "lx.npc-name.b0008.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0033",
+      "b": "lx.npc-name.b0008.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0033",
+      "b": "lx.npc-name.b0008.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0033",
+      "b": "lx.npc-name.b0008.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0006.0033",
+      "b": "lx.npc-name.b0008.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0007.0033",
+      "b": "lx.npc-name.b0008.0033",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0033",
+      "b": "lx.npc-name.b0008.0033",
+      "similarity": 0.619
+    },
+    {
+      "a": "lx.npc-name.b0001.0034",
+      "b": "lx.npc-name.b0008.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0003.0034",
+      "b": "lx.npc-name.b0008.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0004.0034",
+      "b": "lx.npc-name.b0008.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0005.0034",
+      "b": "lx.npc-name.b0008.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0006.0034",
+      "b": "lx.npc-name.b0008.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0007.0034",
+      "b": "lx.npc-name.b0008.0034",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.npc-name.b0002.0034",
+      "b": "lx.npc-name.b0008.0034",
+      "similarity": 0.652
+    },
+    {
+      "a": "lx.npc-name.b0001.0035",
+      "b": "lx.npc-name.b0008.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0035",
+      "b": "lx.npc-name.b0008.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0035",
+      "b": "lx.npc-name.b0008.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0035",
+      "b": "lx.npc-name.b0008.0035",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0036",
+      "b": "lx.npc-name.b0008.0036",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0036",
+      "b": "lx.npc-name.b0008.0036",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0036",
+      "b": "lx.npc-name.b0008.0036",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0036",
+      "b": "lx.npc-name.b0008.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0036",
+      "b": "lx.npc-name.b0008.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0036",
+      "b": "lx.npc-name.b0008.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0036",
+      "b": "lx.npc-name.b0008.0036",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0037",
+      "b": "lx.npc-name.b0008.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0004.0037",
+      "b": "lx.npc-name.b0008.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0005.0037",
+      "b": "lx.npc-name.b0008.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0006.0037",
+      "b": "lx.npc-name.b0008.0037",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.npc-name.b0003.0038",
+      "b": "lx.npc-name.b0008.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0038",
+      "b": "lx.npc-name.b0008.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0038",
+      "b": "lx.npc-name.b0008.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0006.0038",
+      "b": "lx.npc-name.b0008.0038",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0039",
+      "b": "lx.npc-name.b0008.0039",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0006.0039",
+      "b": "lx.npc-name.b0008.0039",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0040",
+      "b": "lx.npc-name.b0008.0040",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0006.0040",
+      "b": "lx.npc-name.b0008.0040",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0040",
+      "b": "lx.npc-name.b0008.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0040",
+      "b": "lx.npc-name.b0008.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0040",
+      "b": "lx.npc-name.b0008.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0040",
+      "b": "lx.npc-name.b0008.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0040",
+      "b": "lx.npc-name.b0008.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0041",
+      "b": "lx.npc-name.b0008.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0003.0041",
+      "b": "lx.npc-name.b0008.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0004.0041",
+      "b": "lx.npc-name.b0008.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0005.0041",
+      "b": "lx.npc-name.b0008.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0006.0041",
+      "b": "lx.npc-name.b0008.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0007.0041",
+      "b": "lx.npc-name.b0008.0041",
+      "similarity": 0.7
+    },
+    {
+      "a": "lx.npc-name.b0001.0041",
+      "b": "lx.npc-name.b0008.0041",
+      "similarity": 0.65
+    },
+    {
+      "a": "lx.npc-name.b0001.0042",
+      "b": "lx.npc-name.b0008.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0002.0042",
+      "b": "lx.npc-name.b0008.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0003.0042",
+      "b": "lx.npc-name.b0008.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0004.0042",
+      "b": "lx.npc-name.b0008.0042",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-name.b0005.0042",
+      "b": "lx.npc-name.b0008.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0006.0042",
+      "b": "lx.npc-name.b0008.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0007.0042",
+      "b": "lx.npc-name.b0008.0042",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.npc-name.b0003.0043",
+      "b": "lx.npc-name.b0008.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0005.0043",
+      "b": "lx.npc-name.b0008.0043",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0043",
+      "b": "lx.npc-name.b0008.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0043",
+      "b": "lx.npc-name.b0008.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0043",
+      "b": "lx.npc-name.b0008.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0043",
+      "b": "lx.npc-name.b0008.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0043",
+      "b": "lx.npc-name.b0008.0043",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0044",
+      "b": "lx.npc-name.b0008.0044",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0044",
+      "b": "lx.npc-name.b0008.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0002.0044",
+      "b": "lx.npc-name.b0008.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0044",
+      "b": "lx.npc-name.b0008.0044",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0004.0044",
+      "b": "lx.npc-name.b0008.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0044",
+      "b": "lx.npc-name.b0008.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0044",
+      "b": "lx.npc-name.b0008.0044",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0002.0045",
+      "b": "lx.npc-name.b0008.0045",
+      "similarity": 0.684
+    },
+    {
+      "a": "lx.npc-name.b0001.0045",
+      "b": "lx.npc-name.b0008.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0003.0045",
+      "b": "lx.npc-name.b0008.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0045",
+      "b": "lx.npc-name.b0008.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0005.0045",
+      "b": "lx.npc-name.b0008.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0006.0045",
+      "b": "lx.npc-name.b0008.0045",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.npc-name.b0007.0045",
+      "b": "lx.npc-name.b0008.0045",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0004.0046",
+      "b": "lx.npc-name.b0008.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0046",
+      "b": "lx.npc-name.b0008.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0046",
+      "b": "lx.npc-name.b0008.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0047",
+      "b": "lx.npc-name.b0008.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0047",
+      "b": "lx.npc-name.b0008.0047",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0003.0047",
+      "b": "lx.npc-name.b0008.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0047",
+      "b": "lx.npc-name.b0008.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0047",
+      "b": "lx.npc-name.b0008.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0006.0047",
+      "b": "lx.npc-name.b0008.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0007.0047",
+      "b": "lx.npc-name.b0008.0047",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0001.0048",
+      "b": "lx.npc-name.b0008.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0002.0048",
+      "b": "lx.npc-name.b0008.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0003.0048",
+      "b": "lx.npc-name.b0008.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0048",
+      "b": "lx.npc-name.b0008.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0048",
+      "b": "lx.npc-name.b0008.0048",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-name.b0006.0048",
+      "b": "lx.npc-name.b0008.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0007.0048",
+      "b": "lx.npc-name.b0008.0048",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0049",
+      "b": "lx.npc-name.b0008.0049",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0006.0049",
+      "b": "lx.npc-name.b0008.0049",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0007.0049",
+      "b": "lx.npc-name.b0008.0049",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-name.b0001.0050",
+      "b": "lx.npc-name.b0008.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0002.0050",
+      "b": "lx.npc-name.b0008.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0005.0050",
+      "b": "lx.npc-name.b0008.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0006.0050",
+      "b": "lx.npc-name.b0008.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0007.0050",
+      "b": "lx.npc-name.b0008.0050",
+      "similarity": 0.647
+    },
+    {
+      "a": "lx.npc-name.b0004.0050",
+      "b": "lx.npc-name.b0008.0050",
+      "similarity": 0.588
+    },
+    {
+      "a": "lx.npc-alias.b0003.0038",
+      "b": "lx.npc-alias.b0004.0038",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-alias.b0003.0042",
+      "b": "lx.npc-alias.b0004.0042",
+      "similarity": 0.636
+    },
+    {
+      "a": "lx.npc-alias.b0003.0046",
+      "b": "lx.npc-alias.b0004.0046",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-address.b0002.0007",
+      "b": "lx.npc-address.b0003.0007",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-address.b0002.0036",
+      "b": "lx.npc-address.b0003.0036",
+      "similarity": 0.692
+    },
+    {
+      "a": "lx.npc-address.b0002.0038",
+      "b": "lx.npc-address.b0003.0038",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.npc-job.b0002.0013",
+      "b": "lx.npc-job.b0003.0013",
+      "similarity": 0.636
+    },
+    {
+      "a": "lx.npc-job.b0003.0024",
+      "b": "lx.npc-job.b0004.0025",
+      "similarity": 0.583
+    },
+    {
+      "a": "lx.npc-job.b0003.0034",
+      "b": "lx.npc-job.b0004.0037",
+      "similarity": 0.611
+    },
+    {
+      "a": "lx.npc-job.b0001.0034",
+      "b": "lx.npc-job.b0005.0038",
+      "similarity": 0.625
+    },
+    {
+      "a": "lx.body-clothing.b0001.0030",
+      "b": "lx.body-clothing.b0003.0030",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.body-clothing.b0003.0035",
+      "b": "lx.body-clothing.b0004.0035",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.body-clothing.b0003.0043",
+      "b": "lx.body-clothing.b0004.0043",
+      "similarity": 0.583
+    },
+    {
+      "a": "lx.body-accessory.b0001.0045",
+      "b": "lx.body-accessory.b0002.0045",
+      "similarity": 0.696
+    },
+    {
+      "a": "lx.body-accessory.b0001.0048",
+      "b": "lx.body-accessory.b0002.0048",
+      "similarity": 0.583
+    },
+    {
+      "a": "lx.body-accessory.b0002.0016",
+      "b": "lx.body-accessory.b0003.0016",
+      "similarity": 0.632
+    },
+    {
+      "a": "lx.body-accessory.b0001.0017",
+      "b": "lx.body-accessory.b0003.0017",
+      "similarity": 0.591
+    },
+    {
+      "a": "lx.body-accessory.b0002.0017",
+      "b": "lx.body-accessory.b0003.0017",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.body-accessory.b0002.0040",
+      "b": "lx.body-accessory.b0003.0040",
+      "similarity": 0.6
+    },
+    {
+      "a": "lx.daily-interact.b0001.0048",
+      "b": "lx.daily-interact.b0004.0048",
+      "similarity": 0.727
+    },
+    {
+      "a": "lx.daily-life.b0003.0033",
+      "b": "lx.daily-life.b0004.0033",
+      "similarity": 0.667
+    },
+    {
+      "a": "lx.text-tf-adapt.b0003.0050",
+      "b": "lx.text-tf-adapt.b0004.0050",
+      "similarity": 0.667
+    }
+  ],
+  "note": "精确项用于阻止重复收录；同名与字面近似只供编辑审查。近义改写、语义雷同、错字仍需人工/审稿 AI 检查。"
+}

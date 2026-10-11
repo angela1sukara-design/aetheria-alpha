@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-goal",
+  "batchId": "npc-goal.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-goal.b0002.0001",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "把订单积压清一半",
+      "description": "想在本周内把积压订单清掉一半，喘口气。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0002",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "给磨石换新面",
+      "description": "想把磨钝的磨石翻面或更换，刃口才稳。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0003",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "重排工具抽屉",
+      "description": "想按使用频率重排工具抽屉，减少翻找。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0004",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "补齐常用线色",
+      "description": "想把常缺的线色补齐，接单不再临时借。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0005",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "修好店门口阶",
+      "description": "想把松动的门口石阶垫稳，客人进出安全。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0006",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "更新价目小牌",
+      "description": "想把过时价目牌更新，避免口头争议。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0007",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "给学徒备材料包",
+      "description": "想为新学徒备好一套基础材料包。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0008",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "清理胶枪喷嘴",
+      "description": "想把堵塞的胶枪喷嘴彻底清理或更换。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0009",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "把退货原因归档",
+      "description": "想把近期退货原因归档，方便改进。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0010",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "换亮工位灯",
+      "description": "想换一盏更稳的工位灯，对色少出错。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0011",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "独立完成一把椅",
+      "description": "想从选料到完工独立完成一把能坐的椅。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0012",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "掌握隐形织补",
+      "description": "想把破洞织补到远看几乎看不见。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0013",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "写出失误案例十则",
+      "description": "想整理十则真实失误与改法，供店内传阅。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0014",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "能估价不慌",
+      "description": "想练到常见修补能当面给出合理估价。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0015",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "掌握三种木材性格",
+      "description": "想熟悉三种常用木材的胀缩与上漆脾气。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0016",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "学会客制量体",
+      "description": "想把量体步骤练到客人放松、尺寸准。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0017",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "修复一座旧钟",
+      "description": "想完整修复一座停摆旧钟并走时稳定。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0018",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "带出一个能独当的学徒",
+      "description": "想在约定期限内带出能独立接简单单的学徒。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0019",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "建材料样本柜",
+      "description": "想建一个可触摸的材料样本柜供对色选型。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0020",
+      "category": "npc-goal",
+      "subcategory": "长期手艺目标",
+      "name": "把祖传口诀写成文",
+      "description": "想把只靠口述的口诀写成可修订的文字。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0021",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "与客户保持礼貌距离",
+      "description": "想在熟客热情中仍保持清晰的服务边界。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0022",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "和邻店互荐不互踩",
+      "description": "想与邻店建立互荐机制，不贬低对方。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0023",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "师徒定期对谈",
+      "description": "想固定与学徒短对谈，谈进度也谈难处。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0024",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "客人投诉不结仇",
+      "description": "想把投诉谈成改进，而不是结下怨气。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0025",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "同行交流不藏私",
+      "description": "想参加小范围同行交流，互换可公开技巧。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0026",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "感谢说出口",
+      "description": "想把平时想感谢的人名单列出来并说出口。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0027",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "少拿忙当挡箭牌",
+      "description": "想少用“太忙”推开人，改成给具体可约时间。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0028",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "合伙账目透明",
+      "description": "想让合伙账目每周可见，减少猜忌。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0029",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "与家人解释晚归",
+      "description": "想提前与家人说清晚归原因与归时。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0030",
+      "category": "npc-goal",
+      "subcategory": "关系愿望",
+      "name": "给帮手公正署名",
+      "description": "想在作品与招牌上给帮手公正署名。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0031",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "工住分开一点",
+      "description": "想把睡觉处与粉尘工位稍微分开。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0032",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "店面换采光更好的",
+      "description": "想换到白天少开灯也能看清的店面。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0033",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "仓库靠近店后",
+      "description": "想把仓库挪到店后几步可达，少搬冤枉路。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0034",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "学徒宿舍就近",
+      "description": "想为远道学徒找到就近、规矩清楚的住处。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0035",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "搬进手艺街",
+      "description": "想搬进同行集中的手艺街，方便协作。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0036",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "楼上作坊楼下住",
+      "description": "想试住上作坊下居住的布局，减少通勤。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0037",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "远离易燃堆场",
+      "description": "想把居所与作坊远离易燃堆场。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0038",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "有独立试衣帘",
+      "description": "想店内有独立试衣或量体帘，保护隐私。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0039",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "短租摊位试水",
+      "description": "想先短租摊位试水，再决定是否长租店面。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0040",
+      "category": "npc-goal",
+      "subcategory": "迁居愿望",
+      "name": "把家搬离夜锤声",
+      "description": "想搬离夜间仍有敲击声的区块，睡稳。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0041",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "记录手感进步",
+      "description": "想每周记三条手感进步，看见自己的变化。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0042",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "试做非接单作品",
+      "description": "想做一件不为卖、只为自己喜欢的作品。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0043",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "问自己为何学这行",
+      "description": "想认真写清当初与如今学这行的理由。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0044",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "体验一天别的工种",
+      "description": "想在许可下体验一天相邻工种，扩视野。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0045",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "整理出师前的恐惧",
+      "description": "想把出师前的恐惧写下来，逐条看能否应对。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0046",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "给失败作品办小展",
+      "description": "想把失败作品办一场仅内部的小展，谈教训。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0047",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "学画简单爆炸图",
+      "description": "想学画零件爆炸图，把脑子里的结构画清。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0048",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "练十分钟公开讲解",
+      "description": "想练到能对陌生人讲清一个修补步骤。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0049",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "分辨喜欢与擅长",
+      "description": "想分清自己喜欢的工序与真正擅长的工序。"
+    },
+    {
+      "id": "lx.npc-goal.b0002.0050",
+      "category": "npc-goal",
+      "subcategory": "自我探索",
+      "name": "为身体选更顺的姿势",
+      "description": "想请人看工位姿势，改到肩颈少疼。"
+    }
+  ]
+}

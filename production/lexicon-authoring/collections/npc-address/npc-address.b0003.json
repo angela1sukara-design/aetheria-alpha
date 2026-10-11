@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-address",
+  "batchId": "npc-address.b0003",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-address.b0003.0001",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，雨棚底下可以躲一会儿吗？",
+      "description": "初见请求暂避雨水的礼貌问。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0002",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "打扰，请问水渠往哪边走最干？",
+      "description": "初见询问路线干湿的客气问。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0003",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我想问问苔石路滑不滑。",
+      "description": "初见询问路况的简短称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0004",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "不好意思，我靴底有泥，站门口说。",
+      "description": "初见顾及洁净的礼貌说法。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0005",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，蕨丛边的告示还能看清吗？",
+      "description": "初见询问告示可见度的开场。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0006",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "请问，雨停前还有公共篷位吗？",
+      "description": "初见询问公共避雨空间的客气句。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0007",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，我是来送还借出的滤网的。",
+      "description": "初见归还水岸用具的礼貌说明。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0008",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "打扰了，湿阶边缘可以借扶一下吗？",
+      "description": "初见请求短暂搀扶借力的询问。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0009",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "您好，听声好像闸板在响，是正常的吗？",
+      "description": "初见确认环境声响的称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0010",
+      "category": "npc-address",
+      "subcategory": "初见称呼",
+      "text": "请问，晾苔的架子还空着吗？",
+      "description": "初见询问共用架子的礼貌问。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0011",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，篷绳我帮您扯紧一点。",
+      "description": "雨棚下对同行协助的客气称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0012",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "这边水花大，我让内侧。",
+      "description": "同行间让出较干位置的说法。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0013",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，您的靴印到滤网边了。",
+      "description": "提醒同行注意洁净的简短称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0014",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "我们是不是都在等闸板放下？",
+      "description": "确认共同等待事项的同行问。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0015",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，苔滑，我先探一步。",
+      "description": "同行间提醒路滑的礼貌说明。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0016",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "您也是来清渠叶的吗？",
+      "description": "确认是否同劳作的同行寒暄。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0017",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，公共水桶我用完放回原处。",
+      "description": "共用器具后对同行的告知。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0018",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "我可以帮您抬一端木桩吗？",
+      "description": "同行间主动协助的客气提议（如「我可以帮您抬一端…」这类场景）。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0019",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "同行，芦苇挡眼，我帮您拨开。",
+      "description": "提醒并协助视野的同行称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0020",
+      "category": "npc-address",
+      "subcategory": "同行称呼",
+      "text": "这位，我们是不是拿错了同一条篷绳？",
+      "description": "发现差错时对同行的礼貌提醒（如「这位，我们是不是…」这类场景）。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0021",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你篷布角又松了，我帮你系。",
+      "description": "熟人帮忙系篷的亲近说法。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0022",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "渠声今天偏大，夜里小心门。",
+      "description": "熟人提醒水声与门窗的说法。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0023",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你湿靴架空着，我先放一双。",
+      "description": "熟人借用置物架的日常告知。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0024",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "蕨边别走太快，新长的嫩叶脆。",
+      "description": "熟人提醒植物与步速的关心。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0025",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "雨停了，一起收绳？",
+      "description": "熟人邀请协作收工的轻松称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0026",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你听潮的习惯我知道，不吵你。",
+      "description": "熟人尊重对方节奏的说法。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0027",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "滤网我洗了，挂在原钩上。",
+      "description": "熟人代劳后的简短告知。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0028",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "今晚潮位高，门槛垫好。",
+      "description": "熟人提醒潮位的关心称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0029",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "你篷下那盏灯油快没了。",
+      "description": "熟人提醒物资的日常说法。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0030",
+      "category": "npc-address",
+      "subcategory": "熟人称呼",
+      "text": "湿袖先拧一下，水盆在左边。",
+      "description": "熟人提醒衣物的亲近称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0031",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "尊敬的渠务员，落叶已清至指定点。",
+      "description": "向渠务岗位正式汇报的称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0032",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位住户，今晚小闸试开十分钟。",
+      "description": "对住户发布试开通知的正式说法。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0033",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "请问棚务主管，破损篷布如何登记？",
+      "description": "对岗位负责人的正式询问（如「请问棚务主管，破…」这类场景）。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0034",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "受委托巡查湿阶，情况记录在此。",
+      "description": "正式巡查时的身份与记录说明。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0035",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位避雨者，公共篷位请轮换使用。",
+      "description": "对避雨人群的正式引导。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0036",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "维护清单已备妥，请核对签字。",
+      "description": "递交维护清单时的正式用语。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0037",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "恳请值班人员协助抬起滤网盖。",
+      "description": "对值班岗位的正式请求（如「恳请值班人员协助…」这类场景）。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0038",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "各位同行，防滑告示请再阅一遍。",
+      "description": "对同行提醒防滑的正式称呼。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0039",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "送修雨棚者已到场，等候查验。",
+      "description": "正式查验流程中的到场说明。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0040",
+      "category": "npc-address",
+      "subcategory": "正式称呼",
+      "text": "请允许我说明这段渠岸的松动处。",
+      "description": "正式场合补充现场说明的请求。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0041",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫苔舟，住雨棚巷第二家。",
+      "description": "报姓名与水岸住址的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0042",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是来清渠叶的义工，带了耙子。",
+      "description": "以义工身份开场的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0043",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我靴底泥多，就站在门外说。",
+      "description": "顾及洁净的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0044",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫渠青，想借公共篷躲雨。",
+      "description": "报姓名并说明避雨来意的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0045",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是新搬来的，还不太识闸板声。",
+      "description": "新住户对水岸环境的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0046",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我替邻家送还滤网，人稍后到。",
+      "description": "以代送身份开场的自我介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0047",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我在蕨丛边读告示，有疑问想请教。",
+      "description": "以请教姿态开场的自我介绍（如「我在蕨丛边读告示…」这类场景）。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0048",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我叫雨汀，平时走苔石路上下班。",
+      "description": "报姓名与日常路线的介绍。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0049",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我是临时看篷的，正主去取绳了。",
+      "description": "说明临时身份的自我介绍（如「我是临时看篷的，…」这类场景）。"
+    },
+    {
+      "id": "lx.npc-address.b0003.0050",
+      "category": "npc-address",
+      "subcategory": "自我介绍",
+      "text": "我刚学会收篷绳，动作还慢。",
+      "description": "如实说明熟练度的自我介绍。"
+    }
+  ]
+}

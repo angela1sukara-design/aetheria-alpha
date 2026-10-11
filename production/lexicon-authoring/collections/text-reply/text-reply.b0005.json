@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-reply",
+  "batchId": "text-reply.b0005",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "有机与机械共存：个体审美、维护痕迹、不同身体轮廓，不赋予能力或优劣"
+  },
+  "entries": [
+    {
+      "id": "lx.text-reply.b0005.0001",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "你的维护痕迹留着挺好看，我赞成不必打磨掉。",
+      "description": "认可个体审美。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0002",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "接缝处的铆钉我看见了，排列整齐，没问题。",
+      "description": "认可外观细节。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0003",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "不同轮廓坐同一条凳，本来就该如此，我同意加软垫。",
+      "description": "认可包容措施。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0004",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "润滑油气味淡一点更好，你选的牌子可以。",
+      "description": "认可维护用品。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0005",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "外壳刮痕当使用记录，我喜欢这个说法。",
+      "description": "认可叙事态度。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0006",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "衣襟开口改宽了，活动起来顺，改得对。",
+      "description": "认可衣物调整。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0007",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "关节护套颜色素一点好，你挑的灰我赞成。",
+      "description": "认可配色。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0008",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "工作台高度分开两档，我举手同意。",
+      "description": "认可设施多样。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0009",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "保养日志公开贴着，方便提醒，好。",
+      "description": "认可信息公开。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0010",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "镜像前多留一步空间，这个改动实用。",
+      "description": "认可空间调整。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0011",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "打磨掉痕迹……我还没想好，或许再留几天。",
+      "description": "审美决定迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0012",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "铆钉排列我看着齐，又怕有一颗松了听不出。",
+      "description": "安全顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0013",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "软垫加是好事，厚度多少我拿不准。",
+      "description": "规格迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0014",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "润滑油淡是淡，持续时间够不够，我不确定。",
+      "description": "表达犹豫与顾虑，呼应「润滑油淡是淡持续时间够」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0015",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "刮痕当记录可以，公开给谁看，我想想。",
+      "description": "隐私边界迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0016",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "衣襟改宽我赞成，针脚会不会太显眼，有点纠结。",
+      "description": "外观顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0017",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "灰色护套好，会不会沾灰更显脏？",
+      "description": "实用顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0018",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "两档高度好，会不会占地方太多。",
+      "description": "空间顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0019",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "保养日志公开，有人可能不想写太细。",
+      "description": "他人意愿顾虑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0020",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "镜像前空间加大，过道会不会变窄。",
+      "description": "权衡迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0021",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "你说的维护痕迹，是指焊点，还是漆面磨损？",
+      "description": "澄清对象。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0022",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "铆钉松不松，你是听声音判断，还是用手扳？",
+      "description": "澄清检测方法。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0023",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "软垫是给所有座位，还是只给加高椅？",
+      "description": "追问以对齐信息，呼应「软垫是给所有座位还是只」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0024",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "润滑周期是每周，还是按使用次数？",
+      "description": "追问以对齐信息，呼应「润滑周期是每周还是按使」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0025",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "刮痕记录是自用，还是愿意给修缮者看？",
+      "description": "澄清受众。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0026",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "衣襟开口改到哪条线，胸线还是肋线？",
+      "description": "澄清改动位置。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0027",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "护套是可拆洗，还是固定式？",
+      "description": "澄清类型。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0028",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "两档高度差多少，一掌还是半掌？",
+      "description": "澄清尺寸。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0029",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "保养日志写到哪一级细节，日期还是步骤？",
+      "description": "澄清详略。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0030",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "镜像前多留的一步，是按谁的步幅量的？",
+      "description": "澄清度量基准。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0031",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "我不赞成把所有刮痕都留着，影响关节活动的还是该磨。",
+      "description": "安全优先不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0032",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "铆钉不必追求完全对称，能用比好看重要。",
+      "description": "提出相左看法，呼应「铆钉不必追求完全对称能」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0033",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "软垫不如调椅腿高度，一劳永逸。",
+      "description": "方案不同。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0034",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "润滑油淡可以，但关键轴还是该用浓一点的。",
+      "description": "分区策略不同。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0035",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "刮痕当记录可以，可不该用来比较谁更‘旧’。",
+      "description": "反对比较。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0036",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "衣襟开口再宽就不好扣了，适可而止。",
+      "description": "限度不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0037",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "护套颜色我更想要与外壳接近，而不是统一灰。",
+      "description": "个性审美不同。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0038",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "工作台两档不够，至少三档才照顾得过来。",
+      "description": "数量不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0039",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "保养日志不该强制公开，自愿即可。",
+      "description": "隐私不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0040",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "镜像空间加大不如加一面可移动镜，更灵活。",
+      "description": "替代方案。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0041",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "打不打磨，我对着镜子再看两天。",
+      "description": "观察后决定。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0042",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "铆钉紧不紧，我借力矩扳手测过再答。",
+      "description": "暂不决断并说明原因，呼应「铆钉紧不紧我借力矩扳手」情境。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0043",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "软垫厚度，我坐不同样品后再选。",
+      "description": "试用后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0044",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "润滑牌子，我闻过几瓶再定。",
+      "description": "比较后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0045",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "刮痕给谁看，我想清楚边界再公开。",
+      "description": "边界思考暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0046",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "衣襟改多宽，我活动一天再告诉裁缝。",
+      "description": "体验后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0047",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "护套颜色，我拿到日光下比对再选。",
+      "description": "光线比对暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0048",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "高度分几档，我量完常用者身高再提方案。",
+      "description": "调研后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0049",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "日志公开范围，我问过几位邻居再定。",
+      "description": "征询后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0005.0050",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "镜像布局，我画张草图给你看了再议。",
+      "description": "方案后再议。"
+    }
+  ]
+}

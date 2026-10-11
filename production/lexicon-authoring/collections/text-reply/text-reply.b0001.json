@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-reply",
+  "batchId": "text-reply.b0001",
+  "source": {
+    "producer": "ai-text",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.text-reply.b0001.0001",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "行，就按你说的时间去粮站，我到门口等。",
+      "description": "明确接受时间安排。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0002",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "这个办法简单，我赞成，先试一天看看。",
+      "description": "有限认可并保留观察。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0003",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "嗯，门牌确实该擦了，我下午就动手。",
+      "description": "认可并承诺行动。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0004",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "你提醒得对，井盖开着确实不安全。",
+      "description": "认可安全提醒。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0005",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "好，余盐我要一袋，钱我按平时价给。",
+      "description": "认可交易条件。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0006",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "轮值名单我看过了，没意见，按这个走。",
+      "description": "认可公共安排。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0007",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "寄存柜钥匙我收下了，谢谢你带回来。",
+      "description": "认可并收物。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0008",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "报修单是我提的，描述没错。",
+      "description": "确认事务归属。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0009",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "一起去听说明也好，省得各听各的。",
+      "description": "认可同行提议。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0010",
+      "category": "text-reply",
+      "subcategory": "认可",
+      "text": "便条我可以转，见到人就说。",
+      "description": "认可转达请托。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0011",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "这个时间我可能赶不上，让我想想有没有别的空档。",
+      "description": "对时间表示迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0012",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "余盐我还不确定要不要，家里还剩一点。",
+      "description": "对购买犹豫。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0013",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "清扫轮值……我这周事情有点多，能不能对调？",
+      "description": "对轮值迟疑并试探对调。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0014",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "钥匙我先不急着取，这两天可能出门。",
+      "description": "延迟取物的迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0015",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "报修是不是我提的，我有点记不清了。",
+      "description": "对事实记忆迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0016",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "一起去可以，不过我可能中途要离开。",
+      "description": "有条件的迟疑同意。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0017",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "转达可以，但我不保证今天能遇见那人。",
+      "description": "能力边界内的迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0018",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "贴告示我能帮，就是手有点抖，贴不齐。",
+      "description": "能力顾虑导致迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0019",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "水费单门牌……我得回去对一下才敢说准。",
+      "description": "需核实的迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0020",
+      "category": "text-reply",
+      "subcategory": "迟疑",
+      "text": "路灯熄两盏，我听着有点担心，但又说不上具体怕什么。",
+      "description": "模糊不安的迟疑。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0021",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "你说的旧款，是指领口那种宽缝，还是袖口细缝？",
+      "description": "澄清工艺细节。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0022",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "你说‘下午’，是午饭后，还是日落前？",
+      "description": "澄清时间范围。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0023",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "余盐是粗粒还是细粒？我听岔了一次。",
+      "description": "澄清货物规格。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0024",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "轮值是清扫巷道，还是包括井台？",
+      "description": "澄清任务范围。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0025",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "寄存柜是东侧那排，还是西侧靠墙的？",
+      "description": "澄清地点。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0026",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "报修单上写的是炉子，还是烟道？我想确认。",
+      "description": "澄清报修对象。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0027",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "你说一起去，是并肩走，还是门口汇合？",
+      "description": "澄清同行方式。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0028",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "便条是口头转一句，还是要把纸也交过去？",
+      "description": "澄清转达形式。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0029",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "贴告示是贴满整栏，还是只盖住过期的那几张？",
+      "description": "澄清操作范围。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0030",
+      "category": "text-reply",
+      "subcategory": "澄清",
+      "text": "你说‘按平时价’，是上月的价，还是去年冬的价？",
+      "description": "澄清价格基准。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0031",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "我认为先擦门牌不如先修门槛，踩空更危险。",
+      "description": "提出优先级不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0032",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "余盐我建议少买，最近潮，容易结块。",
+      "description": "基于经验的不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0033",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "轮值对调可以，但我不赞成连续值两周，太累。",
+      "description": "有条件反对。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0034",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "路灯熄两盏的通知我觉得写得太笼统，该标清哪两盏。",
+      "description": "对信息充分性提不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0035",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "一起去听说明也好，不过我更想自己先看告示再决定。",
+      "description": "偏好独立了解。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0036",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "转达可以，但我不想替人做主答应什么。",
+      "description": "划清转达边界。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0037",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "贴告示我能帮，可不赞成用湿布硬擦，会破纸。",
+      "description": "方法上的不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0038",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "水费单我填过，格式和你说的不太一样，或许换过版。",
+      "description": "质疑信息时效。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0039",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "粥摊开得早不代表味道好，我更信下午那一锅。",
+      "description": "口味上的不同意见。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0040",
+      "category": "text-reply",
+      "subcategory": "不同意见",
+      "text": "长椅多坐一会儿挺好，只是那张椅腿我看着不稳。",
+      "description": "局部保留意见。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0041",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "这件事我现在答不上来，让我回去想一夜。",
+      "description": "明确暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0042",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "价我还没问清，暂时不能点头，也暂不拒绝。",
+      "description": "信息不足暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0043",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "轮值对调我得先问家里人，明天给你答复。",
+      "description": "需协商后答复。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0044",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "钥匙什么时候取，我看完行程再定。",
+      "description": "行程未定暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0045",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "报修是不是我提的，我翻翻纸条再确认。",
+      "description": "需查证暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0046",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "一起去的事先挂着，我午后才知道有没有空。",
+      "description": "时间未明暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0047",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "转达我先应下，具体怎么说等我见到人再斟酌。",
+      "description": "部分接受、措辞暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0048",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "贴不贴告示，我看完内容再决定帮不帮。",
+      "description": "先审内容再答。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0049",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "门牌三号对不对，我回家对一眼再回你。",
+      "description": "地理核实暂缓。"
+    },
+    {
+      "id": "lx.text-reply.b0001.0050",
+      "category": "text-reply",
+      "subcategory": "暂缓回答",
+      "text": "你这个问题有点突然，给我一点时间整理想法。",
+      "description": "情绪与思考暂缓。"
+    }
+  ]
+}

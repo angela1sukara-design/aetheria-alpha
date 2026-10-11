@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-job",
+  "batchId": "npc-job.b0005",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "有机与机械共存：个体审美、维护痕迹、不同身体轮廓，不赋予能力或优劣"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-job.b0005.0001",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "接缝加固缝工",
+      "description": "加固衣物或外壳接缝的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0002",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "表面擦痕抛光工",
+      "description": "抛光表面浅擦痕不改外形的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0003",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "铆点复位工",
+      "description": "复位松动铆点并检查平整的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0004",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "膜面贴补工",
+      "description": "为膜面贴补小破口的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0005",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "轴套润滑工",
+      "description": "为日常轴套加适量润滑的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0006",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "织带更换工",
+      "description": "更换磨损织带并调整松紧的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0007",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "壳面贴饰定制工",
+      "description": "按个体审美定制壳面贴饰的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0008",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "纹理描边工",
+      "description": "为维护痕迹描边标记便于复查的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0009",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "软垫轮廓修边工",
+      "description": "按不同身体轮廓修边软垫的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0010",
+      "category": "npc-job",
+      "subcategory": "手工职业",
+      "name": "连接环打磨工",
+      "description": "打磨连接环毛刺的手艺人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0011",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "维护痕迹讲解员",
+      "description": "用平常话讲解维护痕迹含义的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0012",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "审美贴饰选样员",
+      "description": "协助挑选审美贴饰样品的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0013",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "轮廓测量预约员",
+      "description": "为轮廓软垫测量做预约的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0014",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "润滑点位提醒员",
+      "description": "提醒常见润滑点位勿遗漏的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0015",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "共处空间座位协调员",
+      "description": "协调不同轮廓者座位间距的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0016",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "维护件取件叫号员",
+      "description": "按单号发放维护件的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0017",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "膜面清洁指导员",
+      "description": "指导温和清洁膜面的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0018",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "工具出借适配员",
+      "description": "按手部轮廓建议合适工具握柄的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0019",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "铆点检查排队员",
+      "description": "协调铆点检查排队的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0020",
+      "category": "npc-job",
+      "subcategory": "服务职业",
+      "name": "审美方案口头说明员",
+      "description": "口头说明可选审美方案无推销压迫的服务者。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0021",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "维护日志建档员",
+      "description": "为个体维护记录建简明档案的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0022",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "轮廓尺寸对照表员",
+      "description": "整理常见轮廓尺寸对照表的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0023",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "材料相容性短句员",
+      "description": "把材料相容注意改写成短句的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0024",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "审美偏好备注员",
+      "description": "备注个体审美偏好供下次参考的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0025",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "接缝类型图示抄录员",
+      "description": "抄录接缝类型图示供张贴的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0026",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "维护周期提醒编写员",
+      "description": "编写维护周期口头提醒词的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0027",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "共处礼仪短文改写员",
+      "description": "改写共处礼仪为易读短文的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0028",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "膜面破损分级员",
+      "description": "按面积分级记录膜面破损的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0029",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "轴套型号核对员",
+      "description": "核对照轴套型号与库存的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0030",
+      "category": "npc-job",
+      "subcategory": "知识职业",
+      "name": "无优劣用语校对员",
+      "description": "校对对外文案避免优劣措辞的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0031",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "维护点门口清屑员",
+      "description": "清扫维护点门口碎屑的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0032",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "共处广场遮阳张挂员",
+      "description": "为共处广场张挂遮阳的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0033",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "轮廓软垫户外晾晒员",
+      "description": "晾晒清洁后的轮廓软垫的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0034",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "膜面户外冲洗指导员",
+      "description": "在冲洗点指导膜面冲洗角度的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0035",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "连接件防锈巡看员",
+      "description": "巡看户外连接件是否需防锈的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0036",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "审美展板搬运员",
+      "description": "搬运审美贴饰展板到户外展位的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0037",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "维护推车推行员",
+      "description": "推行装有维护件的推车的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0038",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "共处步道积水疏导员",
+      "description": "疏导共处步道浅积水的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0039",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "工具箱户外清点员",
+      "description": "在户外点清点归还工具的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0040",
+      "category": "npc-job",
+      "subcategory": "户外职业",
+      "name": "遮挡帘张挂员",
+      "description": "为需要隐私维护的户外位张挂遮挡帘的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0041",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "维护备案窗口员",
+      "description": "受理维护相关备案与咨询的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0042",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "共处空间公约宣讲员",
+      "description": "宣讲共处空间公约的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0043",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "无歧视用语培训记录员",
+      "description": "记录对外服务用语培训到岗的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0044",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "轮廓适配设施报修员",
+      "description": "接待轮廓适配设施报修的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0045",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "公共维护柜管理员",
+      "description": "管理公共维护件寄存柜的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0046",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "审美展位审批员",
+      "description": "审批临时审美展位申请的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0047",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "共处义工调度员",
+      "description": "调度共处空间服务义工的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0048",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "维护安全演练通知员",
+      "description": "通知参与维护安全演练的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0049",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "投诉转办脱敏员",
+      "description": "转办投诉并脱敏个体特征描述的人。"
+    },
+    {
+      "id": "lx.npc-job.b0005.0050",
+      "category": "npc-job",
+      "subcategory": "公共事务",
+      "name": "夜间维护点巡灯协调员",
+      "description": "协调维护点夜间巡灯的人。"
+    }
+  ]
+}

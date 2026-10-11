@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-value",
+  "batchId": "npc-value.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-value.b0001.0001",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "先把眼前做完",
+      "description": "相信把眼前一件事做完，比同时摊开三件更踏实。",
+      "examples": [
+        "桌上只留这一件，做完再开下一件。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0002",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "允许慢工",
+      "description": "不把速度当成唯一标准，愿意给细致留时间。",
+      "examples": [
+        "这针脚急不得，晚半日交也行。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0003",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "分工也算本事",
+      "description": "承认有人擅长前台、有人擅长收尾，不必人人全能。",
+      "examples": [
+        "你来招呼，我来收拾，这样更快。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0004",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "休息也是工",
+      "description": "把歇口气当成继续做事的一部分，不把硬撑当美德。",
+      "examples": [
+        "先坐十分钟，手稳了再继续。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0005",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "公开自己的限度",
+      "description": "宁可早说做不到的部分，也不硬撑到出错才坦白。",
+      "examples": [
+        "这步我还生，换你来，我在旁边学。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0006",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "工具要归位",
+      "description": "用完物归原处，是对下一个人与明天自己的尊重。",
+      "examples": [
+        "剪子挂回钉子上，别让下一班找。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0007",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "小成就也记账",
+      "description": "愿意把完成的小事记下来，用来对抗徒劳感。",
+      "examples": [
+        "今天修了三处漏，写在板子上。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0008",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "不拿忙碌炫耀",
+      "description": "忙碌可以发生，但不用来压人，也不用来证明自己更重要。",
+      "examples": [
+        "我忙归忙，你的事一样排进今天。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0009",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "学徒有试错权",
+      "description": "认为初学者应当被允许在安全范围内试错。",
+      "examples": [
+        "这块废料给你练，错了再来。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0010",
+      "category": "npc-value",
+      "subcategory": "劳动观",
+      "name": "收尾才算完",
+      "description": "把清扫、核对、交代清楚，视作工作真正结束的标志。",
+      "examples": [
+        "东西交了，地也扫了，才算这一单完。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0011",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "先问需要什么",
+      "description": "帮忙前先问对方真正缺什么，而不是自作主张。",
+      "examples": [
+        "你要我递工具，还是先帮你看一眼？"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0012",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "不欠人情账",
+      "description": "帮助可以发生，但不把人情变成长期债务。",
+      "examples": [
+        "这回我帮你，下次你方便再帮别人就行。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0013",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "边界内互助",
+      "description": "愿意伸手，也守住自己的精力与时间边界。",
+      "examples": [
+        "今晚我能帮一小时，再多我明天撑不住。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0014",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "公开求助不难为情",
+      "description": "认为开口求助是常态，不是丢脸。",
+      "examples": [
+        "我搬不动，谁顺路搭一手？"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0015",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "把方法留下",
+      "description": "帮完不只带走结果，也尽量留下可复用的做法。",
+      "examples": [
+        "我画张简图，下次你自己也能对。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0016",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "轮流扛重活",
+      "description": "重活轮换，避免总是同一人默默承担。",
+      "examples": [
+        "今天你扛袋，明天换我。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0017",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "替沉默者说话",
+      "description": "当有人被打断或忽视，愿意礼貌地让对方把话说完。",
+      "examples": [
+        "等一下，让对方把刚才那句说完。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0018",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "分享信息不藏私",
+      "description": "对公共有用的信息愿意分享，不拿来换特权。",
+      "examples": [
+        "水路今晚封，我刚听说，转告你们。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0019",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "失败后一起收拾",
+      "description": "出事不急着追责，先一起把现场收拾到能继续。",
+      "examples": [
+        "先擦干净，原因回头再慢慢对。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0020",
+      "category": "npc-value",
+      "subcategory": "互助观",
+      "name": "邻里小忙常在",
+      "description": "把邻里之间的小忙当成日常，不戏剧化。",
+      "examples": [
+        "门口扫把借我一下，马上还。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0021",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "决定前留空隙",
+      "description": "重要决定前给自己一点安静，不急着被气氛推着走。",
+      "examples": [
+        "让我想一晚，明早再回你。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0022",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "拒绝不必抱歉过多",
+      "description": "可以说不，并把理由说清楚，而不反复道歉。",
+      "examples": [
+        "这次我接不了，下周末再问我。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0023",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "路径可以换",
+      "description": "目标可留，路径可改，不把固执当成坚持。",
+      "examples": [
+        "原路湿滑，我们改走石阶那条。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0024",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "不替人做决定",
+      "description": "可以给建议，但不替别人拍板他的生活。",
+      "examples": [
+        "利弊我讲完了，选哪边你定。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0025",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "保留私人角落",
+      "description": "认为每个人需要不被打扰的角落，哪怕很小。",
+      "examples": [
+        "这半小时我关上门，别敲门。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0026",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "兴趣不必有用",
+      "description": "允许自己做当下看来“没用”但让人安稳的事。",
+      "examples": [
+        "我就是想织一会儿，不卖也不送。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0027",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "公开改主意",
+      "description": "改了主意就直说，不假装一直如此计划。",
+      "examples": [
+        "我改主意了，今天不加班。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0028",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "身体信号优先",
+      "description": "累、疼、饿时先处理身体，再谈效率。",
+      "examples": [
+        "手抖了，先吃饭，活往后挪。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0029",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "不问也能离开",
+      "description": "社交场合里，感到不适就可以安静离开。",
+      "examples": [
+        "我先走一步，你们继续聊。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0030",
+      "category": "npc-value",
+      "subcategory": "自主观",
+      "name": "自我节奏可见",
+      "description": "把自己的作息与节奏说清楚，方便他人协作。",
+      "examples": [
+        "我习惯午后做事，早上别约重活。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0031",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "旧习可商量",
+      "description": "尊重旧习，也愿意商量哪些该留、哪些可改。",
+      "examples": [
+        "祭台摆法按旧，座位可以更松。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0032",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "仪式要有人懂",
+      "description": "认为仪式该有人解释含义，而不是只剩形式。",
+      "examples": [
+        "这一步是谢水，不是赶人。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0033",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "新人不被考校",
+      "description": "欢迎新人参与旧习，不拿“不懂规矩”压人。",
+      "examples": [
+        "第一次来，跟我做就行，别紧张。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0034",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "名字要被念对",
+      "description": "在意人名、地名被正确称呼，当作基本尊重。",
+      "examples": [
+        "这个音读轻声，我再说一遍。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0035",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "节日可简可繁",
+      "description": "节日可热闹也可安静，形式服从参与者状态。",
+      "examples": [
+        "今年人少，煮一锅汤也算过节。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0036",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "口头史要核对",
+      "description": "口耳相传的故事愿意与多方核对，不独占真假。",
+      "examples": [
+        "我听过另一版本，我们也记下来。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0037",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "器物有来处",
+      "description": "旧器物使用前想一想它从哪来、谁用过。",
+      "examples": [
+        "这碗是邻家留下的，轻拿轻放。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0038",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "告别要留痕迹",
+      "description": "离别时愿意留下可看见的痕迹，而不是假装没事。",
+      "examples": [
+        "门楣写一行字，下次路过能看见。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0039",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "长辈意见可听可辩",
+      "description": "听长辈，也敢礼貌地提出不同做法。",
+      "examples": [
+        "您的法子我懂，我想试另一边。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0040",
+      "category": "npc-value",
+      "subcategory": "传统观",
+      "name": "公共记忆共管",
+      "description": "社区记忆该共管，不由一人说了算。",
+      "examples": [
+        "墙上年表大家一起补，谁漏了再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0041",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "够用即可",
+      "description": "追求够用，不把囤积等同于安全感。",
+      "examples": [
+        "米还够两周，先不囤。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0042",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "坏了再修",
+      "description": "先尝试修理，再考虑替换，但不无限硬撑。",
+      "examples": [
+        "铰链松了，上油看看，不行再换。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0043",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "共享清单公开",
+      "description": "共享物资用公开清单，减少误会与猜忌。",
+      "examples": [
+        "公仓本子在桌上，取用写清楚。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0044",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "余料不当垃圾",
+      "description": "边角余料先想二次用途，再决定丢弃。",
+      "examples": [
+        "布头还能做抹布，先收下。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0045",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "水要省着用",
+      "description": "用水有数，洗刷水可浇，不浪费视为礼貌。",
+      "examples": [
+        "洗菜水倒进花槽，别直接泼街。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0046",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "借出写清楚",
+      "description": "借出物品写清归还日与品相，保护双方。",
+      "examples": [
+        "借锯三天，刃口现状我画一下。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0047",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "空间也是资源",
+      "description": "不把公共空间长期私占，用完归还通行。",
+      "examples": [
+        "货箱靠墙半小时，过时我挪开。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0048",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "光线按需开",
+      "description": "灯火按需，明亮处做事，暗处可省。",
+      "examples": [
+        "这边够亮，那边灯先关。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0049",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "食物先近后远",
+      "description": "优先用将到期与近处产的食材，减少浪费。",
+      "examples": [
+        "先吃今天的叶菜，根茎可留。"
+      ]
+    },
+    {
+      "id": "lx.npc-value.b0001.0050",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "时间可交换",
+      "description": "时间也可以交换协助，不一定总用钱结算。",
+      "examples": [
+        "你帮我守店，我帮你搬箱。"
+      ]
+    }
+  ]
+}

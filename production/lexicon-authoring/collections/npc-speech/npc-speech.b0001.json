@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-speech",
+  "batchId": "npc-speech.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-speech.b0001.0001",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "先结论后理由",
+      "description": "开口先给结论，再补两三句理由，少绕弯。",
+      "examples": [
+        "去不成。雨大，路滑，改明天。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0002",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "爱用短问句",
+      "description": "习惯用短问句推进谈话，一次只问一件事。",
+      "examples": [
+        "几点到？带伞了吗？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0003",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "重复关键词确认",
+      "description": "听完会把关键词重复一遍确认，减少听错。",
+      "examples": [
+        "你是说巷口那盏灯，对吗？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0004",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "句子常留半拍",
+      "description": "话说到关键处会留半拍，让对方有插话空隙。",
+      "examples": [
+        "这件事……你要是忙，我们往后放。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0005",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "喜欢并列三条",
+      "description": "说明情况时常并列三条，不多不少。",
+      "examples": [
+        "缺米、缺油、还缺火柴。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0006",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "用‘我们’拉近",
+      "description": "谈公共事务时倾向用“我们”，少用指责的“你们”。",
+      "examples": [
+        "我们把走道清一下，大家都方便。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0007",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "结尾爱加商量",
+      "description": "陈述后常加一句商量，避免命令感。",
+      "examples": [
+        "门先关着，好不好？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0008",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "少用绝对词",
+      "description": "尽量少说“一定”“绝对”，改成更可改口的说法。",
+      "examples": [
+        "大概下午能好，变卦我再喊你。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0009",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "先说看见的",
+      "description": "描述时先说看见的事实，少一上来下判断。",
+      "examples": [
+        "台阶上有水，我刚差点滑。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0010",
+      "category": "npc-speech",
+      "subcategory": "句式习惯",
+      "name": "口头禅是‘回头’",
+      "description": "常用“回头”表示稍后处理，语气不推诿。",
+      "examples": [
+        "回头我把名单抄给你。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0011",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用做饭打比方",
+      "description": "爱把事情比作切菜、开火、出锅等家常步骤。",
+      "examples": [
+        "火候到了再翻，早了就粘。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0012",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用天气形容心情",
+      "description": "心情起伏常借晴雨阴风来说，不直接贴标签。",
+      "examples": [
+        "我这阵子像连阴天，提不起劲。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0013",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用走路比进度",
+      "description": "进度快慢用走路、爬山、歇脚来比。",
+      "examples": [
+        "这事才走到半坡，别催冲顶。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0014",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用收拾房间比",
+      "description": "把理清问题比作收拾乱房间：分类、丢掉、归位。",
+      "examples": [
+        "先把要紧的拣出来，杂物靠边。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0015",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用排队形容等待",
+      "description": "等待与秩序爱用排队、叫号来形容。",
+      "examples": [
+        "你的事先排后面，叫到再说。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0016",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用缝补比修复关系",
+      "description": "关系裂痕爱用缝补、加固、留白来讲。",
+      "examples": [
+        "裂了也能缝，别硬撕大。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0017",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用秤砣比公平",
+      "description": "公平与分量常用秤、秤砣、两头平来比。",
+      "examples": [
+        "两边说话都听听，秤才平。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0018",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用灯火比注意",
+      "description": "注意力与照看用点灯、拨亮、别熄来形容。",
+      "examples": [
+        "这事你多留点心灯，别全黑。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0019",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用钥匙比权限",
+      "description": "能不能做某事用有没有钥匙、能不能开门来比。",
+      "examples": [
+        "这门钥匙不在我这，我开不了。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0020",
+      "category": "npc-speech",
+      "subcategory": "比喻来源",
+      "name": "用果实成熟比时机",
+      "description": "时机不到用青果、熟透、落地来讲。",
+      "examples": [
+        "再等等，现在摘太青。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0021",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "慢而清楚",
+      "description": "语速偏慢，字咬清楚，适合交代步骤。",
+      "examples": [
+        "第一步，关闸。第二步，放水。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0022",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "快但会刹住",
+      "description": "平时说得快，看到对方茫然会立刻刹住重说。",
+      "examples": [
+        "等等，我重说慢一点。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0023",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "句间常换气",
+      "description": "长句会在中间换气，听感像一段一段送出。",
+      "examples": [
+        "巷口……灯坏了……我已经报修。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0024",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "紧张时加速",
+      "description": "一紧张就加速，事后会自己道歉说太快。",
+      "examples": [
+        "抱歉我刚才太快，要点是改期。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0025",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "讲重点才放慢",
+      "description": "闲聊正常速，讲到钱、安全、日期会明显放慢。",
+      "examples": [
+        "归还日——周五——日落前。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0026",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "喜欢拖尾音",
+      "description": "句尾偶尔拖一点，像在确认对方是否听完。",
+      "examples": [
+        "那就这样啊——你再想想。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0027",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "问答节奏干脆",
+      "description": "一问一答干脆利落，少加情绪铺垫。",
+      "examples": [
+        "在吗？在。钥匙呢？桌上。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0028",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "说完会静两秒",
+      "description": "说完重要话会静两秒，给对方消化。",
+      "examples": [
+        "我明天搬走。（停）你有话就现在说。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0029",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "并行话题切换快",
+      "description": "能从物价跳到天气再跳回正事，切换偏快。",
+      "examples": [
+        "菜贵了——对了雨——你的箱子我放哪？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0030",
+      "category": "npc-speech",
+      "subcategory": "语速印象",
+      "name": "低声也能听清",
+      "description": "习惯压低音量但咬字清，近处交流不吵四周。",
+      "examples": [
+        "（轻声）后门开着，别让风灌。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0031",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "先谢后请",
+      "description": "提出请求前先致谢已有帮助，再提新请求。",
+      "examples": [
+        "谢谢你刚帮忙，还能再抬一下吗？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0032",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "拒绝带替代",
+      "description": "拒绝时尽量给替代方案，不只丢下一个不。",
+      "examples": [
+        "我去不了，你可以找巷口老周。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0033",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "称呼留余地",
+      "description": "不确定亲疏时用中性称呼，不擅自更亲热。",
+      "examples": [
+        "麻烦这位，路让一下。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0034",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "打断先致歉",
+      "description": "必须打断时先短致歉，再说事由。",
+      "examples": [
+        "抱歉打断，药锅开了。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0035",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "借物说明归时",
+      "description": "借东西必报归还时间，归还时再道谢。",
+      "examples": [
+        "锯借到黄昏，用完擦干净还。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0036",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "排队不插话催",
+      "description": "排队时少催前面的人，有事轻声问工作人员。",
+      "examples": [
+        "请问还要多久？我可以先让急症。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0037",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "进门先问在吗",
+      "description": "进别人门先问在不在，不直接闯。",
+      "examples": [
+        "在吗？我把菜放门口就走。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0038",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "谈钱说数目",
+      "description": "涉及钱把数目说清，少用“一点”“随便”。",
+      "examples": [
+        "工钱二十，材料另算八。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0039",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "离开说去向",
+      "description": "离开小聚会时说清去向，减少牵挂。",
+      "examples": [
+        "我先回，去添炭，不远。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0040",
+      "category": "npc-speech",
+      "subcategory": "礼貌表达",
+      "name": "受助记具体",
+      "description": "道谢时提具体帮了什么，不空说谢谢。",
+      "examples": [
+        "谢谢你把灯送过桥，那晚真黑。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0041",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "轻声复述改正",
+      "description": "对方说错时轻声复述正确说法，不公开嘲讽。",
+      "examples": [
+        "是东巷，不是西巷，我陪你指一下。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0042",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "用提问引导",
+      "description": "用提问让对方自己发现错处，而不是直接斥。",
+      "examples": [
+        "你量的是内径还是外径？"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0043",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "先认共同失误",
+      "description": "涉及双方时先认可能的共同失误，再对细节。",
+      "examples": [
+        "咱俩都可能听岔了，核对一下单子。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0044",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "写下来对",
+      "description": "口头争执不清就写下来对，减少越说越偏。",
+      "examples": [
+        "我们把步骤写墙上，逐条勾。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0045",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "私下再谈",
+      "description": "公开场合少纠正，等私下再把关键说清。",
+      "examples": [
+        "这事回头单独说，现在先把活做完。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0046",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "给台阶下",
+      "description": "纠正时给人台阶，强调下次如何即可。",
+      "examples": [
+        "这回算我没讲清，下次我们先复述。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0047",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "用对比示范",
+      "description": "少说“你错了”，多用对与错的对比示范。",
+      "examples": [
+        "这样会松，这样扣紧，你看差别。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0048",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "允许当场改口",
+      "description": "鼓励对方当场改口，不揪住刚才的错不放。",
+      "examples": [
+        "改口没事，以现在这句为准。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0049",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "错在流程不在人",
+      "description": "把错归到流程缺口，推动补流程而非骂人。",
+      "examples": [
+        "缺复检这一步，我们补上签字栏。"
+      ]
+    },
+    {
+      "id": "lx.npc-speech.b0001.0050",
+      "category": "npc-speech",
+      "subcategory": "纠错方式",
+      "name": "感谢指出者",
+      "description": "自己被纠正时先谢，再确认理解。",
+      "examples": [
+        "谢谢指出，我重做这一步。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-social",
+  "batchId": "daily-social.b0001",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-social.b0001.0001",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "点头不喊名",
+      "description": "路上遇见熟人只点头，不喊出名字以免惊扰旁人。",
+      "examples": [
+        "巷口对上眼，下巴轻轻一抬。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0002",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "先让路再问好",
+      "description": "窄路相遇先侧身让过，过后才补一句短问候。",
+      "examples": [
+        "您先——早。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0003",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "提手中物致意",
+      "description": "双手占满时用抬高物件代替挥手。",
+      "examples": [
+        "篮子举高一点当招呼。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0004",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "看天气开场",
+      "description": "习惯用一句天气作招呼，不深问私事。",
+      "examples": [
+        "今儿风倒是软。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0005",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "摸帽檐示意",
+      "description": "戴帽时习惯轻触帽檐代替鞠躬。",
+      "examples": [
+        "指尖点一下帽边就过。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0006",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "短停不等答",
+      "description": "打招呼后继续走，不强迫对方停下回话。",
+      "examples": [
+        "嗨——人已经走过去了。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0007",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "对小孩蹲一点",
+      "description": "对矮小的孩子打招呼会微微屈膝平视。",
+      "examples": [
+        "蹲半步，声也放轻。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0008",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "晚归轻声",
+      "description": "夜里归来遇邻只低声，怕惊醒窗内。",
+      "examples": [
+        "夜安，门缝里的气音。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0009",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "雨天缩句",
+      "description": "雨天招呼压成两三个字，省得对方撑伞久站。",
+      "examples": [
+        "快进——伞歪了。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0010",
+      "category": "daily-social",
+      "subcategory": "打招呼",
+      "name": "隔窗手势",
+      "description": "隔着玻璃见熟人，抬手画个小圈代替喊。",
+      "examples": [
+        "窗上哈气前先挥一下。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0011",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "先递干布",
+      "description": "客人进门湿手湿伞，先递干布再让座。",
+      "examples": [
+        "布在门边钩上，随手就够。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0012",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "问水温偏好",
+      "description": "倒水前先问要温的还是凉的，不强求同款。",
+      "examples": [
+        "家里两种壶，您挑。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0013",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "坐位不靠门",
+      "description": "习惯把客人让到里侧座，自己坐近门方便起身。",
+      "examples": [
+        "您往里靠，我好应门。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0014",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "茶点小份上",
+      "description": "点心先上小碟，吃完再添，避免浪费与压力。",
+      "examples": [
+        "先这一碟，不够再说。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0015",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "离开前提灯",
+      "description": "客人要走时先把廊灯打开，送到门阶为止。",
+      "examples": [
+        "灯亮了，台阶小心。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0016",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "不翻客物",
+      "description": "客人衣物包袋放指定凳，自己不解开不翻看。",
+      "examples": [
+        "包放这儿就好，我不动。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0017",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "备空白纸笔",
+      "description": "桌上常备纸笔，方便客人记地址或画路。",
+      "examples": [
+        "笔在罐里，纸压着杯垫。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0018",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "烟味先开窗",
+      "description": "有人想抽烟会先开窗，也允许对方拒绝同屋。",
+      "examples": [
+        "我开条缝，您要是介意我就到廊上。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0019",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "孩子玩具分区",
+      "description": "有孩到访时把易碎物收高，玩具放低处一角。",
+      "examples": [
+        "车子在筐里，随便拿。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0020",
+      "category": "daily-social",
+      "subcategory": "待客",
+      "name": "道别不挽留硬",
+      "description": "客人起身即送，不连说再坐会儿造成负担。",
+      "examples": [
+        "慢走，门我开着。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0021",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "排队留半步",
+      "description": "排队与前人保持半步，不贴背不踩跟。",
+      "examples": [
+        "脚尖停在地砖缝后。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0022",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "说话压音量",
+      "description": "在候车亭与诊所压低音量，避免整亭听见。",
+      "examples": [
+        "手遮一点再讲。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0023",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "垃圾随身暂存",
+      "description": "找不到投放点时先装自带袋，不随手搁栏杆。",
+      "examples": [
+        "袋口扎一下塞包侧。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0024",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "让座先看需求",
+      "description": "让座时先观察是否有人更需要，不强塞。",
+      "examples": [
+        "我可以站，您看着坐。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0025",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "门帘双手扶",
+      "description": "进出有帘的店门，扶住帘让后一人过再松。",
+      "examples": [
+        "帘我托着，您先。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0026",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "共享桌清一角",
+      "description": "合用长桌时只占一角，托盘不横摆挡路。",
+      "examples": [
+        "我的盘靠边缘。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0027",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "雨伞尖朝下",
+      "description": "撑伞收伞时伞尖朝下，避免戳到人。",
+      "examples": [
+        "收伞转个向再抖水。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0028",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "公告只看不撕",
+      "description": "看布告用手按边，不撕角不作记号。",
+      "examples": [
+        "看完边角复位。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0029",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "宠物绳缩短",
+      "description": "牵绳动物过人群时主动收短绳距。",
+      "examples": [
+        "绳绕腕一圈靠近点。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0030",
+      "category": "daily-social",
+      "subcategory": "公共空间",
+      "name": "夜间少回声",
+      "description": "夜里过空巷少喊人，改用手势或走近说。",
+      "examples": [
+        "招手比喊名字好。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0031",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "步速问一句",
+      "description": "同行出发前问对方习惯快还是慢。",
+      "examples": [
+        "我跟你的步子就行。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0032",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "岔路先停",
+      "description": "到岔路先停步，等对方看清再一起选。",
+      "examples": [
+        "这儿停一下，你看哪边。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0033",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "背包不甩撞",
+      "description": "肩包习惯抱到身前，避免甩到并肩的人。",
+      "examples": [
+        "包转到腹前靠紧。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0034",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "分享路况",
+      "description": "看见坑洼或积水会提前指一下，不默认对方看见。",
+      "examples": [
+        "右脚那儿有坑。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0035",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "休息可分开",
+      "description": "休息时允许各做各的，不强迫同聊。",
+      "examples": [
+        "我去买水，你坐着就好。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0036",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "照相先问",
+      "description": "想合影或拍对方背影会先问一句。",
+      "examples": [
+        "拍不拍随你，我收着。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0037",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "负重轮换提",
+      "description": "重物同行时会提议轮换，不硬扛逞能。",
+      "examples": [
+        "换我提一段。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0038",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "话题可跳过",
+      "description": "对方不想谈的线索点到为止，换下一件小事。",
+      "examples": [
+        "行，那说回菜价。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0039",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "到站先确认",
+      "description": "临近分手前确认对方下一站是否还熟。",
+      "examples": [
+        "后头那段你熟不熟？"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0040",
+      "category": "daily-social",
+      "subcategory": "同行相处",
+      "name": "告别定下次虚",
+      "description": "告别时下次见面说得宽松，不订死钟点。",
+      "examples": [
+        "有空巷口见就行。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0041",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "留言写清事由",
+      "description": "不在时留言只写事由与回访时间窗，不写情绪长文。",
+      "examples": [
+        "午后在，为借盆。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0042",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "回信先答问",
+      "description": "回信先逐条答对方的问，再写自己的事。",
+      "examples": [
+        "你问的伞——还在。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0043",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "语音短促",
+      "description": "语音说事控制在短段，重要地址另写文字。",
+      "examples": [
+        "地址我另条发。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0044",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "托人带口信",
+      "description": "托人带话只传事实，不传评价与猜测。",
+      "examples": [
+        "就说货到了，别加别的。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0045",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "节日短卡",
+      "description": "节日寄短卡，不期待立刻回，卡片写清寄件名。",
+      "examples": [
+        "安好即好，名在角上。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0046",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "电话先报己",
+      "description": "接通先报自己是谁，再问对方是否方便。",
+      "examples": [
+        "我是巷口那家，方便吗？"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0047",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "延期主动说",
+      "description": "答应的事要晚到会先传一句，不沉默消失。",
+      "examples": [
+        "晚半日，别等门口。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0048",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "地址复核一遍",
+      "description": "远途寄物前把地址读给对方听一遍核对。",
+      "examples": [
+        "门牌是十二还是二十？"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0049",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "公共栏字条",
+      "description": "用公共栏联络时字条写截止日期与取回方式。",
+      "examples": [
+        "周五后撕，回条塞缝。"
+      ]
+    },
+    {
+      "id": "lx.daily-social.b0001.0050",
+      "category": "daily-social",
+      "subcategory": "远距离联络",
+      "name": "忙时迟复说明",
+      "description": "忙时回复会加一句迟了的原因，短而不辩。",
+      "examples": [
+        "店里忙，刚看见。"
+      ]
+    }
+  ]
+}

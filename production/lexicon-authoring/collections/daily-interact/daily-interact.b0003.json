@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-interact",
+  "batchId": "daily-interact.b0003",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-interact.b0003.0001",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把竹篮递过来，篮沿还滴着刚洗过的水。",
+      "description": "递竹篮供借用。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0002",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方归还水瓢前把柄擦干，避免滑手还回。",
+      "description": "擦干瓢柄后归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0003",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把备用斗笠摘下，晃掉雨水再递出。",
+      "description": "晃干斗笠供借。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0004",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把渠边共用撬棍放回石缝原位，泥先磕掉。",
+      "description": "磕泥归位共用撬棍。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0005",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把湿绳盘好，连同借牌一起挂回钉上。",
+      "description": "盘绳挂还并附借牌。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0006",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方指了指雨棚下的折叠凳，说可以先搬去用。",
+      "description": "示意折叠凳可借。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0007",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把滤网筒冲洗后倒扣沥干，才送回邻家。",
+      "description": "冲沥滤筒后归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0008",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方拆下一截自家防水布，卷紧用草绳扎好递出。",
+      "description": "拆防水布供临时借用。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0009",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把鱼篓倒空洗净，篓口朝上还给主人。",
+      "description": "洗净鱼篓归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0010",
+      "category": "daily-interact",
+      "subcategory": "借还物件",
+      "text": "对方把借来的灯笼油添到半满，再连灯送回。",
+      "description": "添油后连灯归还。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0011",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指着水渠流向，说顺着水流走到第三座小桥。",
+      "description": "以水流与桥数指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0012",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说看见长满蕨的石壁就左转，渡口在后面。",
+      "description": "以蕨石壁为路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0013",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方用竹枝在泥上画了个分汊，指出该走浅的一侧。",
+      "description": "泥上画汊示意走浅侧。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0014",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方提醒雨天别抄田埂，泥滑，绕雨棚走廊更稳。",
+      "description": "提示雨天绕雨棚廊。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0015",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说听见水车响就靠近磨坊，磨坊后是药铺。",
+      "description": "以水车声为近距路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0016",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方指着下游白烟，说那是烘干房，邮局在它左边。",
+      "description": "以烘干房白烟指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0017",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说跟着浣衣石一路的脚印走，到闸口再问一次。",
+      "description": "以浣衣石足迹指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0018",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方把方向比成涨潮侧与退潮侧，让你走退潮侧干路。",
+      "description": "以潮侧区分干路。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0019",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方说若看见成排的苔阶，就说明到了吊脚楼区。",
+      "description": "以苔阶为区域路标。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0020",
+      "category": "daily-interact",
+      "subcategory": "问路",
+      "text": "对方撕下一片芭蕉叶，用汁画了三个转弯记号给你。",
+      "description": "叶汁画弯指路。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0021",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把雨棚支柱先扶正，示意你去拉对角绳。",
+      "description": "扶柱并示意拉对角绳。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0022",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把捞草网与长竿并排放好，网在你够得到处。",
+      "description": "摆网竿便于共捞。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0023",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先试踏石稳不稳，再让你把水桶递过来。",
+      "description": "试踏石后接桶协作。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0024",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把苔藓刮刀浸湿，刀背朝外搁在石上。",
+      "description": "备刮刀搁石上。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0025",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方清出渠边一块干地，铺上麻袋防滑。",
+      "description": "铺麻袋作协作立足点。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0026",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把竹钉按长短分两堆，短的先用于临时固定。",
+      "description": "分堆竹钉定序。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0027",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把斗笠绳系紧示范，另一顶放你脚边。",
+      "description": "示范系绳并备斗笠。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0028",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把灯笼挂到两人都能看见水面的高度。",
+      "description": "挂灯便于共视水面。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0029",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方先把闸板槽里的淤泥掏一锹，再示意你抬闸。",
+      "description": "清槽后示意抬闸。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0030",
+      "category": "daily-interact",
+      "subcategory": "协作准备",
+      "text": "对方把绳子浸湿防滑，盘成双人可拉的两端。",
+      "description": "浸绳盘两端备共拉。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0031",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把浣衣盆往岸上挪，让出下阶的窄道。",
+      "description": "挪盆让出下阶道。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0032",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方侧身贴着雨棚柱，让撑伞的人先过。",
+      "description": "贴柱让撑伞者过。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0033",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把渔网收拢到脚边，不占桥面中间。",
+      "description": "收网不占桥心。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0034",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方蹲着洗菜时收膝，给挑水的人留缝。",
+      "description": "收膝留挑水缝。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0035",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把竹排往外撑一点，腾出码头停靠位。",
+      "description": "撑竹排腾码头位。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0036",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把湿衣往晾绳高处推，低处留给后来者。",
+      "description": "湿衣推高让低处。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0037",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方从石径退到草丛边，让出抬担架的宽度。",
+      "description": "退草丛让抬物宽。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0038",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把水桶提到台阶外侧，内侧留给上下人。",
+      "description": "水桶外置让内侧。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0039",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方收起脚下的草席一角，过道立刻宽一肩。",
+      "description": "收席拓宽过道。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0040",
+      "category": "daily-interact",
+      "subcategory": "让出空间",
+      "text": "对方把船桨平放舱内，避免横在别人腿边。",
+      "description": "桨平放免挡腿。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0041",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方拍了拍雨棚下的干石墩，目光在你与石墩间一顿。",
+      "description": "拍石墩示意可坐避雨。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0042",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把第二只陶碗放到石台上，舀了一勺清汤不递出手。",
+      "description": "放碗舀汤等待是否取。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0043",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方掀开船篷布一角，侧身让出进舱的缝。",
+      "description": "掀篷示意可进舱。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0044",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把捞草网柄朝你转了半圈，自己仍握着中段。",
+      "description": "转网柄示意可同捞。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0045",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方指了指暖和的灶沿，又朝你扬了扬下巴。",
+      "description": "指灶沿扬下巴示意可靠近。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0046",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把草席展开一半，空出的一半朝向你。",
+      "description": "展席一半示意可坐。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0047",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把茶罐盖揭开，热气升起后看向你。",
+      "description": "揭茶罐示意可饮。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0048",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方朝吊脚楼下的灯火点了点，那里有人在编筐。",
+      "description": "点灯火处示意可同去看。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0049",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把蛙鸣正密的堤段让出一截站位，偏身等待。",
+      "description": "让站位示意可同听蛙。"
+    },
+    {
+      "id": "lx.daily-interact.b0003.0050",
+      "category": "daily-interact",
+      "subcategory": "示意邀请",
+      "text": "对方把备用蓑衣抖开搭在栏上，袖口朝着你一侧。",
+      "description": "搭蓑衣示意可披。"
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-talk",
+  "batchId": "daily-talk.b0001",
+  "source": {
+    "producer": "ai-daily",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "subcategory": "倾听",
+      "text": "对方微微侧头，目光落在说话人肩后，并不打断。",
+      "description": "侧头不打断的倾听。",
+      "id": "lx.daily-talk.b0001.0001",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把碗搁下，双手交叠在桌上专心听完。",
+      "description": "搁碗交叠手倾听。",
+      "id": "lx.daily-talk.b0001.0002",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方点了两下头，节奏跟着对方语速，表示还在听。",
+      "description": "点头跟语速示倾听。",
+      "id": "lx.daily-talk.b0001.0003",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把耳朵朝向声源，另一侧用手掌稍挡噪音。",
+      "description": "侧耳挡噪的倾听。",
+      "id": "lx.daily-talk.b0001.0004",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方停下手里的活，抬眼对上说话人，听完整句。",
+      "description": "停活抬眼听完整句。",
+      "id": "lx.daily-talk.b0001.0005",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方靠着门框听邻人诉说，偶尔应一声短促的嗯。",
+      "description": "靠门框应嗯倾听。",
+      "id": "lx.daily-talk.b0001.0006",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把茶杯捧在手心，目光温和地跟着叙述起伏。",
+      "description": "捧杯目光随叙倾听。",
+      "id": "lx.daily-talk.b0001.0007",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方蹲下与坐着的人平视，方便听清低声细语。",
+      "description": "蹲下平视听低语。",
+      "id": "lx.daily-talk.b0001.0008",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方把收音机音量拧小，腾出耳朵给当面的话。",
+      "description": "拧小收音听当面话。",
+      "id": "lx.daily-talk.b0001.0009",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "倾听",
+      "text": "对方闭了一下眼再睁开，像在脑子里把话过一遍。",
+      "description": "闭眼过话的倾听。",
+      "id": "lx.daily-talk.b0001.0010",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方用“对了”轻轻拐到天气，把尴尬岔开。",
+      "description": "用对了拐到天气。",
+      "id": "lx.daily-talk.b0001.0011",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方提起刚路过的摊位，把话题从牢骚引开。",
+      "description": "提摊位引开牢骚。",
+      "id": "lx.daily-talk.b0001.0012",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方问了一句“你们那边怎样”，把发言权递出。",
+      "description": "问那边怎样递发言权。",
+      "id": "lx.daily-talk.b0001.0013",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把桌上的报纸指一下，借标题换个说法。",
+      "description": "指报纸标题换话题。",
+      "id": "lx.daily-talk.b0001.0014",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方笑着说“换件事”，主动把沉闷话头收住。",
+      "description": "笑说换件事收话头。",
+      "id": "lx.daily-talk.b0001.0015",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方提起共同认识的人近况，话题自然转向。",
+      "description": "提熟人近况转话题。",
+      "id": "lx.daily-talk.b0001.0016",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把空碗推向对方，借添饭的动作换轻松话。",
+      "description": "推碗添饭换轻松话。",
+      "id": "lx.daily-talk.b0001.0017",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方忽然问时间，把冗长抱怨截在合适处。",
+      "description": "问时间截冗长抱怨。",
+      "id": "lx.daily-talk.b0001.0018",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方把孩子的涂鸦举起来，大家的视线随之转移。",
+      "description": "举涂鸦转移视线话题。",
+      "id": "lx.daily-talk.b0001.0019",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "轮换话题",
+      "text": "对方说“回头再说这个”，把争执留到以后。",
+      "description": "回头再说搁置争执。",
+      "id": "lx.daily-talk.b0001.0020",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方复述：“你是说后天，不是明天？”等点头。",
+      "description": "复述日期等确认。",
+      "id": "lx.daily-talk.b0001.0021",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方竖起两根手指比划数量，核对有没有听错。",
+      "description": "竖指比数核对。",
+      "id": "lx.daily-talk.b0001.0022",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把关键词重复一遍，语调上扬征求同意。",
+      "description": "重复关键词上扬确认。",
+      "id": "lx.daily-talk.b0001.0023",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方用下巴指了指方向：“是往东那条？”等待回应。",
+      "description": "指方向确认路径。",
+      "id": "lx.daily-talk.b0001.0024",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把听到的步骤按一二三再说一遍给对方听。",
+      "description": "步骤一二三复述确认。",
+      "id": "lx.daily-talk.b0001.0025",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方歪头问：“我理解成这样，对吗？”停顿等答。",
+      "description": "歪头问理解是否对。",
+      "id": "lx.daily-talk.b0001.0026",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把名字的读音缓慢念出，等对方纠正或点头。",
+      "description": "慢念名字等纠正。",
+      "id": "lx.daily-talk.b0001.0027",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方用手在桌上画简单路线，问是不是这个意思。",
+      "description": "画路线确认意思。",
+      "id": "lx.daily-talk.b0001.0028",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方把价码写在纸上推过去，指着数字问对不对。",
+      "description": "写价码指数字确认。",
+      "id": "lx.daily-talk.b0001.0029",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "确认意思",
+      "text": "对方说“我再听一遍”，请对方把关键句重说。",
+      "description": "请重说关键句确认。",
+      "id": "lx.daily-talk.b0001.0030",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方张了张嘴又合上，用“那个……”争取时间。",
+      "description": "那个争取措辞时间。",
+      "id": "lx.daily-talk.b0001.0031",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方目光向上偏了一秒，像在货架上找合适的词。",
+      "description": "目光上偏寻词。",
+      "id": "lx.daily-talk.b0001.0032",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方用两手比划形状，嘴里还在找准确名称。",
+      "description": "比划形状边寻名称。",
+      "id": "lx.daily-talk.b0001.0033",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方说了半句近义词，自己否定再换一个。",
+      "description": "近义词自否再换。",
+      "id": "lx.daily-talk.b0001.0034",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方轻咳一声，把想说的请求改得更委婉。",
+      "description": "轻咳改委婉措辞。",
+      "id": "lx.daily-talk.b0001.0035",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方用手指在掌心写字，试着记下难念的音。",
+      "description": "掌心写字记难音。",
+      "id": "lx.daily-talk.b0001.0036",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方先用方言蹦出一个词，再翻译成通用话。",
+      "description": "方言词再译通用话。",
+      "id": "lx.daily-talk.b0001.0037",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方停顿时转着手里的杯盖，词到了才开口。",
+      "description": "转杯盖待词开口。",
+      "id": "lx.daily-talk.b0001.0038",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方借用手边物件当比喻，把抽象事说清楚。",
+      "description": "借物件比喻寻措辞。",
+      "id": "lx.daily-talk.b0001.0039",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "寻找措辞",
+      "text": "对方把想说的话先在喉咙里默念一遍再出声。",
+      "description": "喉中默念再出声。",
+      "id": "lx.daily-talk.b0001.0040",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方拍了拍膝盖站起：“我先去忙。”话头收住。",
+      "description": "拍膝站起收话题。",
+      "id": "lx.daily-talk.b0001.0041",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方看了眼天色：“不早了。”把叙旧轻轻放下。",
+      "description": "看天色放下叙旧。",
+      "id": "lx.daily-talk.b0001.0042",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把空杯扣在桌上，表示再坐也不续水了。",
+      "description": "扣空杯示结束坐谈。",
+      "id": "lx.daily-talk.b0001.0043",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方说“回头聊”，同时朝门口挪了半步。",
+      "description": "回头聊并挪向门口。",
+      "id": "lx.daily-talk.b0001.0044",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把文件合上推回，身体已转向下一件事。",
+      "description": "合文件转向下件事。",
+      "id": "lx.daily-talk.b0001.0045",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方点头微笑却不再接话，沉默自然收尾。",
+      "description": "微笑不接话自然收尾。",
+      "id": "lx.daily-talk.b0001.0046",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把椅子往后挪一点，起身的意图已经明显。",
+      "description": "挪椅示意起身结束。",
+      "id": "lx.daily-talk.b0001.0047",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方说“知道了，谢谢”，把信息确认并收口。",
+      "description": "知道了谢谢收口。",
+      "id": "lx.daily-talk.b0001.0048",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方把话题最后一句重复成结论，然后住嘴。",
+      "description": "复述结论后住嘴。",
+      "id": "lx.daily-talk.b0001.0049",
+      "category": "daily-talk"
+    },
+    {
+      "subcategory": "结束话题",
+      "text": "对方伸手去够自己的包，谈话随动作自然结束。",
+      "description": "够包动作结束谈话。",
+      "id": "lx.daily-talk.b0001.0050",
+      "category": "daily-talk"
+    }
+  ]
+}

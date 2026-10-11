@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-habit",
+  "batchId": "npc-habit.b0001",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-habit.b0001.0001",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "出门前对齐鞋尖",
+      "description": "离家前把门口鞋子摆成一排尖朝外。",
+      "examples": [
+        "回头看一眼才锁门。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0002",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "信件按日叠放",
+      "description": "收到的纸质通知按日期从上往下叠。",
+      "examples": [
+        "旧的抽到最下层。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0003",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "抹布分区使用",
+      "description": "厨具与桌面用不同抹布，挂在固定钩。",
+      "examples": [
+        "湿的摊开晾，不团着。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0004",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "钥匙挂固定钉",
+      "description": "进门钥匙立刻挂钉上，不随手塞口袋。",
+      "examples": [
+        "钉旁贴着小标签。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0005",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "冰箱格贴名条",
+      "description": "合用冰箱用名条分区，过期物及时清。",
+      "examples": [
+        "周末固定清一层。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0006",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "桌面只留今日物",
+      "description": "工作桌只放当天要用的，其余进抽屉。",
+      "examples": [
+        "水杯永远在右上角。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0007",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "垃圾袋扎口即丢",
+      "description": "满袋立刻扎紧送到投放点，不隔夜。",
+      "examples": [
+        "下楼顺便就丢。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0008",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "衣架同向悬挂",
+      "description": "衣柜衣架钩统一朝一个方向，取衣顺手。",
+      "examples": [
+        "季节换衣一次理完。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0009",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "插座线收束圈",
+      "description": "闲置电线绕成圈用束带固定，防绊脚。",
+      "examples": [
+        "标签写着用途。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0010",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "出门关小灯巡视",
+      "description": "离开前顺走廊看一遍小灯与水龙头。",
+      "examples": [
+        "手按开关确认。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0011",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "晨起先开窗一线",
+      "description": "醒来先开窗一条缝通风，再去洗漱。",
+      "examples": [
+        "帘子只掀半幅。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0012",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "午后短坐不躺",
+      "description": "午饭后坐着闭目一小会，避免深睡。",
+      "examples": [
+        "靠背垫着薄毯。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0013",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "晚饭后慢走一圈",
+      "description": "吃完沿熟悉路线慢走，不赶速度。",
+      "examples": [
+        "遇熟人点头即过。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0014",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "睡前写三行日记",
+      "description": "只写三行今日事，写完就关灯。",
+      "examples": [
+        "本子放枕边下层。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0015",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "闹钟放远处",
+      "description": "闹钟放房间另一头，迫使起身去关。",
+      "examples": [
+        "关后顺手叠被。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0016",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "固定泡茶时段",
+      "description": "下午某一时刻泡一杯，作为分段信号。",
+      "examples": [
+        "杯垫永远同一位置。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0017",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "周末晚起有限",
+      "description": "周末可比平日起晚一点，仍定上限。",
+      "examples": [
+        "超过就主动下床。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0018",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "夜间少看亮屏",
+      "description": "睡前改看纸页或关灯听声，少盯屏幕。",
+      "examples": [
+        "灯调到最暗一档。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0019",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "换季提前调被厚",
+      "description": "体感变化前就加减被褥，不等难受。",
+      "examples": [
+        "备用被叠在柜顶。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0020",
+      "category": "npc-habit",
+      "subcategory": "作息细节",
+      "name": "出门看天再穿衣",
+      "description": "下楼前探头看云与风，再决定外衣。",
+      "examples": [
+        "门廊挂着备用薄衫。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0021",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "走路时理思路",
+      "description": "边走边把待办在心里排先后。",
+      "examples": [
+        "到站时已有顺序。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0022",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "大事隔夜再答",
+      "description": "重要答复拖到睡一觉后，减少冲动。",
+      "examples": [
+        "先说我明天回你。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0023",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "用草稿挖空填",
+      "description": "复杂事写成填空题，缺信息就标问号。",
+      "examples": [
+        "问号处单独列表。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0024",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "反方先自辩",
+      "description": "决定前先替反对意见说话一遍。",
+      "examples": [
+        "小声自问如果不行呢。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0025",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "比喻辅助记忆",
+      "description": "难记流程编成生活比喻帮助回想。",
+      "examples": [
+        "像叠被子的三步。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0026",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "数字落纸才信",
+      "description": "涉及钱与数量必须写下来核对。",
+      "examples": [
+        "指尖点着每个数字。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0027",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "复盘只改一处",
+      "description": "事后复盘只选一个改进点，避免贪多。",
+      "examples": [
+        "本子写下周只改这个。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0028",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "问句推动思考",
+      "description": "卡住时给自己提三个具体问题。",
+      "examples": [
+        "谁、何时、缺什么。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0029",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "沉默中等答案",
+      "description": "对话中给自己留静默，不急着填空白。",
+      "examples": [
+        "目光落在杯沿。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0030",
+      "category": "npc-habit",
+      "subcategory": "思考习惯",
+      "name": "结论写给明天看",
+      "description": "当天结论抄到明日页，睡醒再确认。",
+      "examples": [
+        "页角画个小勾位。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0031",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "袋中永远有笔",
+      "description": "出门包里固定放一支笔与小纸片。",
+      "examples": [
+        "借人写地址也能应。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0032",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "折叠手帕常备",
+      "description": "手帕叠方放内侧袋，脏了换干净的。",
+      "examples": [
+        "擦手后折回原痕。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0033",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "零钱分装小盒",
+      "description": "硬币装小铁盒，付车费不用翻整包。",
+      "examples": [
+        "盒盖咔哒一声关。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0034",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "水瓶刻度朝外",
+      "description": "水瓶刻度朝自己可见，随时知余量。",
+      "examples": [
+        "喝一口就看一眼。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0035",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "备用扣别在边",
+      "description": "衣服边别一枚备用扣，以备脱落。",
+      "examples": [
+        "线缠在扣孔里。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0036",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "清单别夹包口",
+      "description": "当日清单用夹子夹在包口，随手可翻。",
+      "examples": [
+        "做完一项划掉。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0037",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "伞挂包侧钩",
+      "description": "折叠伞挂专用钩，取用不翻包底。",
+      "examples": [
+        "钩上套防刮胶圈。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0038",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "通讯录纸质备份",
+      "description": "重要号码手写备份在薄本，防没电。",
+      "examples": [
+        "本子用皮筋箍着。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0039",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "口香糖应急用",
+      "description": "饭后或紧张时嚼无糖的，包装收好不乱扔。",
+      "examples": [
+        "纸壳揉小塞回袋。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0040",
+      "category": "npc-habit",
+      "subcategory": "随身习惯",
+      "name": "擦镜布固定袋",
+      "description": "眼镜布放固定小袋，绝不与钥匙混。",
+      "examples": [
+        "掏出前先摸袋形。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0041",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "喜淡茶不喜浓",
+      "description": "日常茶水偏淡，浓了就兑热水。",
+      "examples": [
+        "第一泡常倒掉一点。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0042",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "厌刺耳金属刮擦",
+      "description": "听见金属刮地会皱眉，尽快挪开物。",
+      "examples": [
+        "椅子腿加了垫。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0043",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "爱闻干净皂香",
+      "description": "洗衣与洗手偏好清淡皂香，不喜刺鼻香精。",
+      "examples": [
+        "皂盒沥干不积水。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0044",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "灯光偏暖黄",
+      "description": "室内灯选暖黄，白光只用在读写短时。",
+      "examples": [
+        "阅读角单独一盏。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0045",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "织物喜触棉麻",
+      "description": "贴身与沙发套偏爱棉麻触感，少用滑面料。",
+      "examples": [
+        "手掌抚过才坐下。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0046",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "饭菜温度中等",
+      "description": "过烫过冷都少动筷，等适温再吃。",
+      "examples": [
+        "吹两口再试。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0047",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "走路避碎石路",
+      "description": "可选时走平整路段，减少脚底不适。",
+      "examples": [
+        "绕开施工散落区。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0048",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "喜雨声厌雷暴",
+      "description": "小雨声可助眠，雷暴则关窗戴耳塞。",
+      "examples": [
+        "耳塞盒放床头。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0049",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "颜色环境求稳",
+      "description": "住处主色克制，点缀色只用少量。",
+      "examples": [
+        "靠垫不超过两种色。"
+      ]
+    },
+    {
+      "id": "lx.npc-habit.b0001.0050",
+      "category": "npc-habit",
+      "subcategory": "感官偏好",
+      "name": "气味重就开窗",
+      "description": "油烟或消毒水味重立刻开窗换气。",
+      "examples": [
+        "扇几下再讲话。"
+      ]
+    }
+  ]
+}

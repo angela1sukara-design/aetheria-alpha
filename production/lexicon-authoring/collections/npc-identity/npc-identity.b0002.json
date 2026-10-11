@@ -1,0 +1,363 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-identity",
+  "batchId": "npc-identity.b0002",
+  "source": {
+    "producer": "ai-npc",
+    "model": "Grok Bot",
+    "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-identity.b0002.0001",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "作坊楼上住户",
+      "description": "白天楼下叮当作响，夜里习惯在耳塞旁再放一杯水。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0002",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "修鞋摊后住人",
+      "description": "铺面收摊后把工具锁进柜，睡在隔板后的窄床。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0003",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "学徒宿舍合住人",
+      "description": "与同门学徒同屋，工具箱各自贴名字以免拿错。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0004",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "旧物店阁楼住客",
+      "description": "住在店上方阁楼，楼梯旁堆着待修的藤椅。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0005",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "木工棚侧间住人",
+      "description": "侧间用杉木板隔出，锯末味白天重、夜里淡。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0006",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "补锅匠流动住点",
+      "description": "按季节换住点，每处只留一只折叠床与工具卷。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0007",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "染坊后院住户",
+      "description": "后院晾着色布，进出要绕开滴水色的竹竿。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0008",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "钟表店二楼住人",
+      "description": "楼下修表，楼上住，走路特意避开会响的木板。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0009",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "陶窑旁小屋住客",
+      "description": "小屋离窑口有一段距离，风口常挂湿布挡灰。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0010",
+      "category": "npc-identity",
+      "subcategory": "居住身份",
+      "name": "布匹仓库看守住",
+      "description": "夜里住在库房侧室，开门前先听库内有无异响。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0011",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "巷口修修补补互助会",
+      "description": "谁家椅子腿松了，就约个晚上去帮忙加固。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0012",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "工具共享柜成员",
+      "description": "电钻与扳手放公共柜，用完擦净并写归还时间。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0013",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "旧物交换墙常客",
+      "description": "把用不上的零件挂墙上，换别人的螺丝与铰链。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0014",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "学徒午休拼桌组",
+      "description": "午休拼两张小桌吃饭，轮流带酱菜分享。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0015",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "小店主联防轮值",
+      "description": "夜里轮流巡视相邻几家门面，确认卷帘落锁。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0016",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "手作市集搭棚队",
+      "description": "市集前一起搭雨棚，收摊时分工拆架收绳。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0017",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "废料分类协作组",
+      "description": "把铁屑、布头、木屑分箱，方便下一家再利用。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0018",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "量具校准互助圈",
+      "description": "定期拿尺子与水平仪互相校对，避免尺寸走偏。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0019",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "学徒出师观摩会",
+      "description": "出师那天围观最后一件作品，只鼓掌不打断。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0020",
+      "category": "npc-identity",
+      "subcategory": "群体身份",
+      "name": "夜班守炉轮换班",
+      "description": "窑火或胶水需过夜照看时，按名单轮流值夜。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0021",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "父传手艺同门",
+      "description": "家里长辈教徒弟也教自家晚辈，称呼仍按师门。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0022",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "夫妻共营小店",
+      "description": "一人收银一人修活，账本用同一本蓝皮簿。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0023",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "兄妹分摊学徒费",
+      "description": "一人先学，另一人打工补贴材料与食宿。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0024",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "隔代教针线者",
+      "description": "长辈坐在窗边教缝扣，针脚慢但讲得清楚。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0025",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "同住师兄妹",
+      "description": "同门不同姓，合租时仍按作坊规矩分清洁日。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0026",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "外姓入门学艺者",
+      "description": "住进师父家侧房，饭桌有固定位置却不多话。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0027",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "手作家庭记账人",
+      "description": "负责记材料进货与工时，周末对一次现金。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0028",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "照看作坊孩童者",
+      "description": "忙时把孩子放在安全角玩木块，视线不离刃具。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0029",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "返乡继承铺面者",
+      "description": "从外地回来接手旧铺，先学清点库存与老客户。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0030",
+      "category": "npc-identity",
+      "subcategory": "家庭身份",
+      "name": "师徒共餐桌成员",
+      "description": "晚饭同桌，先谈今日失误再谈闲话。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0031",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "社区工具借还管理员",
+      "description": "登记借出的锯子与梯子，逾期用粉笔提醒。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0032",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共工作台维护人",
+      "description": "擦净台面蜡油，检查台虎钳是否松动。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0033",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "废料投放指引员",
+      "description": "告诉居民铁木分箱位置，纠正混投的布袋。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0034",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "手作公开课志愿者",
+      "description": "帮忙发材料包，提醒新手戴护目镜。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0035",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "旧物义修日接待",
+      "description": "排队取号，把待修物拍照编号避免拿错。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0036",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "作坊排污口巡查员",
+      "description": "检查排水是否堵塞，发现油污就通知清理。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0037",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "学徒住房协调联络",
+      "description": "帮新来的学徒对接空床位与合租信息。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0038",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "市集摊位划线员",
+      "description": "用粉笔划出摊位边界，留给行人通道。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0039",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "公共砂轮机安全监督",
+      "description": "提醒排队者戴护具，砂轮用完盖好防护罩。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0040",
+      "category": "npc-identity",
+      "subcategory": "公共身份",
+      "name": "修补预约登记员",
+      "description": "把上门修补请求按街区排程，避免撞车。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0041",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "试工学徒暂住者",
+      "description": "试工期间住在宿舍角床，工具箱尚未贴名。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0042",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "出师待迁铺者",
+      "description": "已出师，正找独立铺面，行李仍放师父家。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0043",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "转行学艺过渡人",
+      "description": "白天学新手艺，晚上仍做旧工补贴房租。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0044",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "季节流动匠人",
+      "description": "随忙季换城，每到一处先登记临时床位。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0045",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "合股开店筹备者",
+      "description": "三人合租一间谈合伙，墙上贴着预算草表。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0046",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "铺面装修暂离户",
+      "description": "装修期间借住亲戚家，每天回来看进度。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0047",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "学徒期满待聘者",
+      "description": "合同将满，简历贴在作坊告示角等人问询。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0048",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "旧店交接旁观者",
+      "description": "帮上一任盘点货架，自己尚未决定是否接手。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0049",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "借住作坊见习生",
+      "description": "短期见习，睡在工具架旁的折叠床。"
+    },
+    {
+      "id": "lx.npc-identity.b0002.0050",
+      "category": "npc-identity",
+      "subcategory": "过渡身份",
+      "name": "候补学徒名单人",
+      "description": "名字在候补栏，每周去作坊门口看是否有空缺。"
+    }
+  ]
+}
