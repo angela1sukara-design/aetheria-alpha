@@ -10,7 +10,7 @@ export function initialDistrict(): DistrictState {
     storyletHistory: [], factsAt: {}, discovered: [], inventory: [], equipped: null, combat: null, scene: null };
 }
 export function district(state: GameState): DistrictState { if (!state.district) throw new RuleError('MODULE_ABSENT', '未安装街区内容。'); return state.district; }
-export function encounter(state: GameState, registry: Registry): Id | undefined {
+export function encounter(state: GameState, registry: Registry, includeEvents = true): Id | undefined {
   const d = district(state), now = state.clock.totalMinutes, day = Math.floor(now / 1440);
   const templates = registry.residentTemplates.filter(t => t.locationIds.includes(state.world.locationId) && (t.start < t.end ? now % 1440 >= t.start && now % 1440 < t.end : now % 1440 >= t.start || now % 1440 < t.end));
   if (state.worldInstance) {
@@ -35,6 +35,9 @@ export function encounter(state: GameState, registry: Registry): Id | undefined 
     }
     d.currentResidentId = resident.id;
   } else d.currentResidentId = null;
+  // Browsing residents is a separate public hook: it must not consume a storylet,
+  // draw its RNG stream, or trap a conversation behind another event.
+  if (!includeEvents) return undefined;
   let candidates = registry.storylets.filter(s => s.locationId === state.world.locationId && s.conditions.every(c => evaluate(c, state, registry).pass)
     && !d.storyletHistory.some(h => (h.id === s.id && (s.repeat === 'once' || (s.repeat === 'daily' && Math.floor(h.at / 1440) === day)))
       || (registry.storylets.find(x => x.id === h.id)?.cooldownGroup === s.cooldownGroup && now - h.at < s.cooldownMinutes)));
@@ -59,9 +62,10 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
     r.memories.push(`help:${day}`); r.trust += 2; r.persistent = true;
     const line = { trade: '你帮忙核对称重与收据。对方把一份摊位余粮交给你，叮嘱雨前记得带回家。', repair: '你托稳松动的灯罩，对方接好电线。街角重新亮起来，你们约好有故障可以互相照应。', guide: '你们把模糊的路标重新擦亮。对方在你的路线纸上补了一条能避开积水的通道。' }[t.behavior];
     state.player.variables['core:money'] = Math.min(registry.variable('core:money').max,state.player.variables['core:money']!+3);
-    return `${r.name}认出了你。${line}（精力−5，零钱+3；今天只能协助一次。）`;
+    return `${r.name}与你确认了手边的事情。${t.dialogue?.help ?? line}（精力−5，零钱+3；今天只能协助一次。）`;
   }
   if (r.lastTalkDay !== day) { r.visits++; r.trust++; r.lastTalkDay = day; r.memories.push(`talk:${day}`); }
   r.persistent = r.visits >= 2 || r.trust >= 2;
-  return `${r.name}，${r.profession}，${r.appearance}，说话${r.personality}。${r.visits > 1 ? '“又见面了。上次那条路还好走吗？”对方记得你们曾经的交谈。' : '对方报出名字，说这片街区总有人需要搭一把手。'}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : '你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
+  const speech = r.visits > 1 ? t.dialogue?.repeat ?? '“又见面了。上次那条路还好走吗？”对方记得你们曾经的交谈。' : t.dialogue?.intro ?? '对方报出名字，说这片街区总有人需要搭一把手。';
+  return `${r.name}，${r.profession}，${r.appearance}，说话${r.personality}。${speech}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : '你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
 }

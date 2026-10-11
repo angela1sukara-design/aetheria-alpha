@@ -61,7 +61,8 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'event.exit') obj(value, path, ['op']);
     else if (['tf.apply', 'tf.enqueue', 'tf.pause', 'tf.resume', 'tf.cancel'].includes(String(op))) { const x = obj(value, path, ['op', 'id']); id(x.id, `${path}/id`); }
     else if (op === 'npc.remember') { const x = obj(value, path, ['op', 'npcId', 'memoryId', 'relationship']); id(x.npcId, `${path}/npcId`); id(x.memoryId, `${path}/memoryId`); const d = obj(x.relationship, `${path}/relationship`, [...RELATION_FIELDS]); for (const field of RELATION_FIELDS) integer(d[field], `${path}/relationship/${field}`, -100, 100); }
-    else if (['world.encounter','resident.talk','resident.help','equipment.remove'].includes(String(op))) obj(value,path,['op']);
+    else if (op === 'world.encounter') { const x = obj(value,path,['op','events']); if (x.events !== undefined) boolean(x.events,path); }
+    else if (['resident.talk','resident.help','equipment.remove'].includes(String(op))) obj(value,path,['op']);
     else if (['combat.start','scene.start','equipment.wear'].includes(String(op))) { const x = obj(value,path,['op','id']); id(x.id,path); }
     else if (op === 'combat.turn') { const x = obj(value,path,['op','move']); choice(x.move,path,['attack','guard','recover','flee']); }
     else if (op === 'scene.act') { const x = obj(value,path,['op','move','poseId']); choice(x.move,path,['pose','contact','release','pause','resume','exit']); if(x.poseId !== undefined) str(x.poseId,path); }

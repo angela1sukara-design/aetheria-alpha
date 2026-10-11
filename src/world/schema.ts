@@ -2,6 +2,7 @@ import type { Registry } from '../content/registry.ts';
 import { clone, stableJson } from '../core/types.ts';
 import type { Id } from '../core/types.ts';
 import type { GenerationRulePack, ReferencePack } from './types.ts';
+import { BODY_CAPABILITIES } from '../core/body-types.ts';
 
 export const services = ['home', 'market', 'workshop', 'clinic', 'commons'] as const;
 export function object(value: unknown, keys: string[]): Record<string, unknown> {
@@ -9,6 +10,9 @@ export function object(value: unknown, keys: string[]): Record<string, unknown> 
   const x = value as Record<string, unknown>;
   if (Object.keys(x).sort().join('|') !== [...keys].sort().join('|')) throw Error('生成数据含未知或缺失字段。');
   return x;
+}
+function withOptional(value: unknown, required: string[], optional: string[]): Record<string, unknown> {
+  return object(value, [...required, ...optional.filter(key => !!value && typeof value === 'object' && Object.hasOwn(value, key))]);
 }
 export function integer(v: unknown, min: number, max: number): void {
   if (!Number.isSafeInteger(v) || (v as number) < min || (v as number) > max) throw Error('生成整数超出范围。');
@@ -24,13 +28,15 @@ export async function hash(value: unknown): Promise<string> {
   return [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2, '0')).join('');
 }
 export function parseRules(raw: unknown): GenerationRulePack {
-  const x = object(raw, ['format', 'schemaVersion', 'id', 'version', 'requiredServices', 'locationCount', 'npcCount', 'extraConnections', 'startMinutes', 'workStart', 'workEnd', 'leisureEnd']);
+  const x = withOptional(raw, ['format', 'schemaVersion', 'id', 'version', 'requiredServices', 'locationCount', 'npcCount', 'extraConnections', 'startMinutes', 'workStart', 'workEnd', 'leisureEnd'], ['eventsPerLocation', 'activitiesPerLocation']);
   if (x.format !== 'aetheria-generation-rules' || x.schemaVersion !== 1) throw Error('不支持的生成规则格式。');
   string(x.id); version(x.version); strings(x.requiredServices, 5);
   if (stableJson([...(x.requiredServices as string[])].sort()) !== stableJson([...services].sort())) throw Error('首版必须覆盖住宿、市场、工坊、诊所、公共空间。');
   integer(x.locationCount, 5, 20); integer(x.npcCount, 3, 40); integer(x.extraConnections, 0, 30);
   integer(x.startMinutes, 0, 1439); integer(x.workStart, 1, 1000); integer(x.workEnd, 1, 1438); integer(x.leisureEnd, 1, 1439);
   if (!(Number(x.workStart) < Number(x.workEnd) && Number(x.workEnd) < Number(x.leisureEnd))) throw Error('工作和休闲日程必须按时间排序。');
+  if (x.eventsPerLocation !== undefined) integer(x.eventsPerLocation, 1, 3);
+  if (x.activitiesPerLocation !== undefined) integer(x.activitiesPerLocation, 0, 3);
   return clone(raw) as GenerationRulePack;
 }
 function version(v: unknown): void { if (typeof v !== 'string' || !/^\d+\.\d+\.\d+$/.test(v)) throw Error('生成版本必须为三段版本。'); }
@@ -49,10 +55,11 @@ export function parseReference(raw: unknown, registry: Registry): ReferencePack 
     const c = object(t.contributes, ['tags', 'npcTemplateIds', 'eventIds', 'tfIds']);
     for (const k of Object.keys(c)) strings(c[k]);
     if (t.kind === 'environment') { const d = object(t.data, ['name', 'description', 'tags']); string(d.name); string(d.description); strings(d.tags, 1); }
-    else if (t.kind === 'place') { const d = object(t.data, ['service', 'names', 'description', 'economy', 'professions']); if (!(services as readonly unknown[]).includes(d.service)) throw Error('地点用途无效。'); strings(d.names, 1); string(d.description); strings(d.economy, 1); strings(d.professions, 1); }
+    else if (t.kind === 'place') { const d = withOptional(t.data, ['service', 'names', 'description', 'economy', 'professions'], ['ambience']); if (!(services as readonly unknown[]).includes(d.service)) throw Error('地点用途无效。'); strings(d.names, 1); string(d.description); strings(d.economy, 1); strings(d.professions, 1); if (d.ambience !== undefined) { const a = object(d.ambience, ['morning','day','evening','night']); Object.values(a).forEach(string); } }
     else if (t.kind === 'npc') { const d = object(t.data, ['residentTemplateId']); string(d.residentTemplateId); }
     else if (t.kind === 'faction') { const d = object(t.data, ['name', 'activities']); string(d.name); strings(d.activities, 1); }
     else if (t.kind === 'event') { const d = object(t.data, ['label', 'prompt', 'completeText', 'minutes', 'reward']); for (const k of ['label', 'prompt', 'completeText']) string(d[k]); integer(d.minutes, 1, 120); integer(d.reward, 0, 20); }
+    else if (t.kind === 'activity') { const d = object(t.data, ['label','description','minutes','energyChange','moneyChange','healthChange','capabilities']); string(d.label); string(d.description); integer(d.minutes, 5, 120); integer(d.energyChange, -12, 12); integer(d.moneyChange, -8, 8); integer(d.healthChange, 0, 8); strings(d.capabilities); if ((d.capabilities as string[]).some(c => !(BODY_CAPABILITIES as readonly string[]).includes(c))) throw Error('活动身体能力未实现。'); }
     else throw Error('未支持的参考模板类型。');
     // 缺少所需包的模板可保留在库里，但不能进入候选池。
     if ((t.requiresPacks as string[]).every(id => registry.packs.some(p => p.id === id))) {

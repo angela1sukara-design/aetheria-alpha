@@ -8,6 +8,7 @@ export interface ResidentTemplate {
   id: Id; locationIds: Id[]; start: number; end: number; names: string[]; profession: string;
   appearance: string[]; personality: string[]; behavior: 'trade' | 'repair' | 'guide';
   speciesId: Id; ageYears: number; bodyTemplateId: Id; patchIds: Id[];
+  dialogue?: { intro: string; repeat: string; help: string };
 }
 export interface Resident {
   id: string; templateId: Id; name: string; locationId: Id; profession: string; appearance: string; personality: string;
@@ -35,7 +36,8 @@ export interface DistrictDefinitions {
   interactions?: InteractionDef[]; textSlots?: TextSlotDef[]; sceneTexts?: SceneTextDef[]; equipment?: EquipmentDef[];
 }
 export type DistrictEffect =
-  | { op: 'world.encounter' | 'resident.talk' | 'resident.help' }
+  | { op: 'world.encounter'; events?: boolean }
+  | { op: 'resident.talk' | 'resident.help' }
   | { op: 'combat.start'; id: Id }
   | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' }
   | { op: 'scene.start'; id: Id }

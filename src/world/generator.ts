@@ -10,7 +10,7 @@ import { advanceWorldSimulation } from './simulation.ts';
 import { hash, integer, parseReference, parseRules } from './schema.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
-export const GENERATOR_VERSION = '0.1.0';
+export const GENERATOR_VERSION = '0.2.0';
 const id = (key: string): Id => `worldgen:${key}`;
 
 /** 生成器只创建初始快照。所有玩法编译成已有内容 DSL，并经过同一个 loader。 */
@@ -68,7 +68,7 @@ export class WorldGenerator {
         if (effect.op === 'clock.advance') return [`${effect.minutes}分钟`];
         if (effect.op === 'var.change') { const variable = input.registry.variable(effect.id); return [`${variable.label}${effect.amount >= 0 ? '+' : '−'}${Math.abs(effect.amount)}${variable.unit}`]; }
         if (effect.op === 'resident.help') return ['精力−5', '零钱+3', '每天一次'];
-        if (effect.op === 'world.encounter') return ['认识在场居民', '留意当天的事'];
+        if (effect.op === 'world.encounter') return effect.events === false ? ['切换在场居民', '不会触发事件'] : ['留意当天的事'];
         if (effect.op === 'tf.enqueue') return ['确认后开始渐进变化'];
         if (effect.op === 'tf.apply') return ['立即改变当前形态'];
         return [];
@@ -76,33 +76,59 @@ export class WorldGenerator {
       pack.actions.push({ id: aid, label, hint: hints.join(' · ') || '继续在街区生活', group, conditions, effects, resultText: textKey });
       if (group !== 'event') pack.contributions.push({ hookId: hook, actionIds: [aid] }); return aid;
     }
+    // Draw distinct cells, then jitter inside each cell. Even at the 20-place
+    // limit dots remain apart; sampling coordinates independently can overlap.
+    const mapCells = Array.from({ length: 20 }, (_, cell) => cell);
     for (let i = 0; i < parameters.locationCount; i++) {
       const service = rules.requiredServices[i];
       const t = choose('place', `place.${i}`, t => t.kind === 'place' && (!service || t.data.service === service)); if (t.kind !== 'place') throw Error();
       const lid = id(`location.${i}`), hook = id(`hook.${i}`), textKey = id(`text.location.${i}`), faction = definition.factions[i % 2]!;
       const name = pick(t.data.names, `name.${i}`) + (i >= 5 ? `·${i + 1}` : '');
-      const localTags = [...new Set([...tags, ...t.contributes.tags])];
+      const localTags = [...new Set([...tags, `service.${t.data.service}`, ...t.contributes.tags])];
       pack.hooks.push({ id: hook, accepts: 'action', visibility: 'public' });
       pack.texts[textKey] = `${environment.data.description}\n\n${t.data.description}\n\n这里以${t.data.economy.join('、')}维持生计，由${faction.name}协调。你可以休息、找工作或留意附近的人。`;
-      pack.locations.push({ id: lid, name, subtitle: `${t.data.economy.join(' / ')} · ${environment.data.name}`, textKey, actionHook: hook, map: { x: 12 + Math.floor(draw(randomState, `generation:map.x.${i}`) * 77), y: 10 + Math.floor(draw(randomState, `generation:map.y.${i}`) * 80) } });
+      const cell = pick(mapCells, `map.cell.${i}`); mapCells.splice(mapCells.indexOf(cell), 1);
+      pack.locations.push({ id: lid, name, subtitle: `${t.data.economy.join(' / ')} · ${environment.data.name}`, textKey, actionHook: hook, map: { x: 12 + cell % 5 * 18 + Math.floor(draw(randomState, `generation:map.x.${i}`) * 5) - 2, y: 12 + Math.floor(cell / 5) * 24 + Math.floor(draw(randomState, `generation:map.y.${i}`) * 5) - 2 } });
       definition.locations.push({ id: lid, regionId: 'region-0', templateId: t.id, service: t.data.service, tags: localTags, economy: clone(t.data.economy), professions: clone(t.data.professions), factionId: faction.id }); faction.locationIds.push(lid);
+      if (t.data.ambience) for (const [key, start, end] of [['morning', 360, 600], ['day', 600, 1080], ['evening', 1080, 1320], ['night', 1320, 360]] as const) {
+        const textKey = id(`text.ambience.${i}.${key}`); pack.texts[textKey] = t.data.ambience[key];
+        (pack.sceneTexts ??= []).push({ id: id(`ambience.${i}.${key}`), locationId: lid, conditions: [{ op: 'time.window', start, end }], priority: 1, textKey });
+      }
       // 所有地点免费恢复，旅行不扣精力，保证贫穷/耗尽时仍可继续游玩。
       action(`rest.${i}`, '找个座位休息', hook, [{ op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:energy', amount: 12 }], [], 'daily', '你在公共座位休息。精力逐渐恢复，街区的日程仍在推进。');
       action(`wait.${i}`, '等候一小时', hook, [{ op: 'clock.advance', minutes: 60 }]);
+      action(`wait.short.${i}`, '在附近等候一刻钟', hook, [{ op: 'clock.advance', minutes: 15 }], [], 'daily', '你等候了一刻钟，居民按原来的日程活动。');
       action(`work.${i}`, `参与${t.data.economy[0]}`, hook, [{ op: 'var.change', id: 'core:energy', amount: -5 }, { op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:money', amount: 5 }], [{ op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你按现场约定完成了一段工作，收到报酬。');
       action(`look.${i}`, '留意街区与附近的人', hook, [{ op: 'world.encounter' }], [], 'explore', '你留意周围的人与路况。');
+      action(`meet.${i}`, '看看在场居民', hook, [{ op: 'world.encounter', events: false }], [], 'explore', '你向身边的人打了个招呼。');
       action(`talk.${i}`, '与眼前的居民交谈', hook, [{ op: 'resident.talk' }, { op: 'clock.advance', minutes: 5 }], [{ op: 'resident.available' }], 'daily', '你们聊了聊今天的生活。');
       action(`help.${i}`, '帮居民处理手边的事', hook, [{ op: 'resident.help' }, { op: 'clock.advance', minutes: 15 }], [{ op: 'resident.available' }, { op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你先问清楚需要什么，再伸手帮忙。');
-      const e = choose('event', `event.${i}`, () => true, new Set(localTags)); if (e.kind !== 'event') throw Error();
-      contributionsAt.set(lid, [t, e]);
-      const eid = id(`event.${i}`), endText = id(`text.event.end.${i}`), prompt = id(`text.event.prompt.${i}`);
-      const finish = action(`event.finish.${i}`, e.data.label, hook, [{ op: 'clock.advance', minutes: e.data.minutes }, { op: 'var.change', id: 'core:money', amount: e.data.reward }, { op: 'event.advance', nodeId: 'end' }], [], 'event', e.data.completeText);
-      const leave = action(`event.leave.${i}`, '先继续自己的安排', hook, [{ op: 'event.advance', nodeId: 'end' }], [], 'event', '你向值班人说明稍后再说，走回公共通道。');
+      const localContributors: ReferenceTemplate[] = [t]; contributionsAt.set(lid, localContributors);
+      const context = new Set(localTags), activities: ReferenceTemplate[] = [];
+      for (let j = 0; j < (rules.activitiesPerLocation ?? 0); j++) {
+        const filter = (candidate: ReferenceTemplate) => !activities.some(a => a.id === candidate.id);
+        if (!templates.some(candidate => candidate.kind === 'activity' && eligible(candidate, context) && filter(candidate))) break;
+        const a = choose('activity', `activity.${i}.${j}`, filter, context); if (a.kind !== 'activity') throw Error();
+        activities.push(a); localContributors.push(a);
+        const resources = [{ id: 'core:energy' as Id, amount: a.data.energyChange }, { id: 'core:money' as Id, amount: a.data.moneyChange }, { id: 'core:health' as Id, amount: a.data.healthChange }];
+        const changes = (positive: boolean): Effect[] => resources.filter(r => positive ? r.amount > 0 : r.amount < 0).map(r => ({ op: 'var.change', ...r }));
+        action(`activity.${i}.${j}`, a.data.label, hook, [...changes(false), { op: 'clock.advance', minutes: a.data.minutes }, ...changes(true)], a.data.capabilities.map(capability => ({ op: 'body.hasCapability', capability, count: 1 })), 'daily', a.data.description);
+      }
+      const events: ReferenceTemplate[] = [];
+      for (let j = 0; j < (rules.eventsPerLocation ?? 1); j++) {
+      const filter = (candidate: ReferenceTemplate) => !events.some(e => e.id === candidate.id);
+      if (j > 0 && !templates.some(candidate => candidate.kind === 'event' && eligible(candidate, context) && filter(candidate))) break;
+      const e = choose('event', `event.${i}.${j}`, filter, context); if (e.kind !== 'event') throw Error();
+      events.push(e); localContributors.push(e);
+      const suffix = j ? `${i}.${j}` : `${i}`;
+      const eid = id(`event.${suffix}`), endText = id(`text.event.end.${suffix}`), prompt = id(`text.event.prompt.${suffix}`);
+      const finish = action(`event.finish.${suffix}`, e.data.label, hook, [{ op: 'clock.advance', minutes: e.data.minutes }, { op: 'var.change', id: 'core:money', amount: e.data.reward }, { op: 'event.advance', nodeId: 'end' }], [], 'event', e.data.completeText);
+      const leave = action(`event.leave.${suffix}`, '先继续自己的安排', hook, [{ op: 'event.advance', nodeId: 'end' }], [], 'event', '你向值班人说明稍后再说，走回公共通道。');
       for (const aid of [finish, leave]) pack.actions.find(a => a.id === aid)!.context = { eventId: eid, nodeId: 'start' };
       pack.texts[prompt] = e.data.prompt; pack.texts[endText] = '交接已记录。你可以继续探索街区。';
       pack.events.push({ id: eid, startNode: 'start', rating: 'general', nodes: [{ id: 'start', type: 'choice', textVariants: [prompt], actionIds: [finish, leave], onEnter: [] }, { id: 'end', type: 'exit', textVariants: [endText], actionIds: [], onEnter: [{ op: 'event.exit' }] }] });
-      const eventIds = [eid];
-      for (const [j, eventId] of eventIds.entries()) { pack.storylets!.push({ id: id(`storylet.${i}.${j}`), locationId: lid, conditions: [], eventId, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: ['neighborhood'] }); definition.eventPool.push(eventId); }
+      pack.storylets!.push({ id: id(`storylet.${i}.${j}`), locationId: lid, conditions: [], eventId: eid, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: ['neighborhood'] }); definition.eventPool.push(eid);
+      }
     }
     const pairs = new Set<string>();
     const connect = (a: number, b: number) => {
@@ -120,8 +146,14 @@ export class WorldGenerator {
     for (let i = 0; i < rules.extraConnections && extras.length; i++) { const chosen = pick(extras, `extra.${i}`); connect(...chosen); extras.splice(extras.indexOf(chosen), 1); }
     const agents: WorldInstance['agents'] = [];
     const residences = definition.locations.filter(l => l.service === 'home'), leisure = definition.locations.filter(l => l.service === 'commons');
+    const workplaces = definition.locations.filter(l => templates.some(t => t.kind === 'npc' && eligible(t, new Set(l.tags)) && l.professions.includes(input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!.profession)));
+    if (!workplaces.length) throw Error('街区没有适合已加载居民职业的工作地点。');
+    const unstaffed = [...workplaces];
     for (let i = 0; i < parameters.npcCount; i++) {
-      const work = pick(definition.locations.filter(l => ['market', 'workshop', 'commons'].includes(l.service)), `workplace.${i}`);
+      // Cover eligible workplaces before assigning a second worker. Clinics and
+      // homes are legitimate workplaces when their profession rules allow it.
+      const work = pick(unstaffed.length ? unstaffed : workplaces, `workplace.${i}`);
+      if (unstaffed.includes(work)) unstaffed.splice(unstaffed.indexOf(work), 1);
       const localTags = new Set(work.tags);
       const t = choose('npc', `npc.${i}`, t => t.kind === 'npc' && work.professions.includes(input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!.profession), localTags); if (t.kind !== 'npc') throw Error();
       contributionsAt.get(work.id)!.push(t);

@@ -1,4 +1,5 @@
 import type { ContentPack, GameState, Id, PackRef } from '../core/types.ts';
+import type { BodyCapability } from '../core/body-types.ts';
 
 export type Service = 'home' | 'market' | 'workshop' | 'clinic' | 'commons';
 export interface TemplateRules {
@@ -9,16 +10,18 @@ export interface TemplateRules {
 }
 export type ReferenceTemplate = TemplateRules & { id: string } & (
   | { kind: 'environment'; data: { name: string; description: string; tags: string[] } }
-  | { kind: 'place'; data: { service: Service; names: string[]; description: string; economy: string[]; professions: string[] } }
+  | { kind: 'place'; data: { service: Service; names: string[]; description: string; economy: string[]; professions: string[]; ambience?: { morning: string; day: string; evening: string; night: string } } }
   | { kind: 'npc'; data: { residentTemplateId: Id } }
   | { kind: 'faction'; data: { name: string; activities: string[] } }
   | { kind: 'event'; data: { label: string; prompt: string; completeText: string; minutes: number; reward: number } }
+  | { kind: 'activity'; data: { label: string; description: string; minutes: number; energyChange: number; moneyChange: number; healthChange: number; capabilities: BodyCapability[] } }
 );
 export interface ReferencePack { format: 'aetheria-reference'; schemaVersion: 1; id: string; version: string; templates: ReferenceTemplate[] }
 export interface GenerationRulePack {
   format: 'aetheria-generation-rules'; schemaVersion: 1; id: string; version: string;
   requiredServices: Service[]; locationCount: number; npcCount: number; extraConnections: number;
   startMinutes: number; workStart: number; workEnd: number; leisureEnd: number;
+  eventsPerLocation?: number; activitiesPerLocation?: number;
 }
 export interface WorldDef {
   id: string; name: string; startLocationId: Id;

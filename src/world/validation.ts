@@ -11,7 +11,7 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (w.version !== 1) throw Error('世界实例版本不支持。');
   const g = w.generation;
   object(g, ['generatorVersion', 'seed', 'rules', 'rulesHash', 'references', 'contentPacks', 'parameters', 'selectedTemplateIds']);
-  if (g.generatorVersion !== '0.1.0') throw Error('生成器快照版本不支持。');
+  if (!['0.1.0', '0.2.0'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
   integer(g.seed, 0, 0xffffffff); if (g.seed !== state.rng.seed) throw Error('世界种子不一致。');
   parseRules(g.rules); const hashString = (v: unknown) => { if (typeof v !== 'string' || !/^[a-f0-9]{64}$/.test(v)) throw Error('世界来源哈希无效。'); };
   hashString(g.rulesHash);
@@ -51,11 +51,13 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
     const a = raw as typeof w.agents[number]; object(a, ['residentId', 'originLocationId', 'factionId', 'schedule', ...('relationships' in a ? ['relationships'] : [])]); string(a.residentId);
     const resident = state.district!.residents.find(r => r.id === a.residentId);
     if (!resident || residents.has(a.residentId) || !locationIds.has(a.originLocationId) || !factions.has(a.factionId)) throw Error('世界居民身份不符。'); residents.add(a.residentId);
+    if (d.locations.find(l => l.id === a.originLocationId)?.factionId !== a.factionId) throw Error('居民组织与工作地点不符。');
     const traits = bodyTraits(resident.body, registry); if (traits.grasp < 1 || traits.walk < 1) throw Error('居民身体与首版职业能力规则不符。');
     let end = 0;
     list(a.schedule, raw => { const slot = raw as typeof a.schedule[number]; object(slot, ['start', 'end', 'locationId', 'activity']); integer(slot.start, 0, 1439); integer(slot.end, 1, 1440); if (slot.start !== end || slot.end <= slot.start || !locationIds.has(slot.locationId) || !['home', 'work', 'leisure'].includes(slot.activity)) throw Error('居民日程必须连续覆盖全天。'); end = slot.end;
       const location = d.locations.find(l => l.id === slot.locationId)!;
       if (slot.activity === 'work' && !location.professions.includes(resident.profession)) throw Error('居民职业与地点不兼容。');
+      if ((slot.activity === 'home' && location.service !== 'home') || (slot.activity === 'leisure' && location.service !== 'commons')) throw Error('居民休息与公共活动地点用途不符。');
     }, 1, 20);
     if (end !== 1440 || a.schedule.find(s => state.clock.totalMinutes % 1440 >= s.start && state.clock.totalMinutes % 1440 < s.end)?.locationId !== resident.locationId) throw Error('居民活动位置与时钟不符。');
   }, g.parameters.npcCount, g.parameters.npcCount);
