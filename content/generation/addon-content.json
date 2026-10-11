@@ -1,0 +1,74 @@
+{
+  "manifest": {
+    "id": "example/lamplighters",
+    "namespace": "lamplighter",
+    "version": "1.0.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "PROPOSED generation example",
+    "status": "reviewed",
+    "dependencies": [
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "body.graph.v1",
+      "npc.fixed.v1",
+      "district.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": [],
+  "species": [
+    {
+      "id": "lamplighter:species.citizen",
+      "label": "灯匠社群成员",
+      "intelligent": true,
+      "adultAgeYears": 18
+    }
+  ],
+  "residentTemplates": [
+    {
+      "id": "lamplighter:resident.artisan",
+      "locationIds": [
+        "aetheria:location.street"
+      ],
+      "start": 480,
+      "end": 1080,
+      "names": [
+        "陶灯",
+        "苏焰"
+      ],
+      "profession": "灯匠",
+      "appearance": [
+        "工具袋装着透明灯罩"
+      ],
+      "personality": [
+        "耐心，重视交接"
+      ],
+      "behavior": "repair",
+      "speciesId": "lamplighter:species.citizen",
+      "ageYears": 32,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ]
+    }
+  ]
+}

@@ -71,6 +71,7 @@ export interface ActionResult {
 }
 export interface Transaction { requestId: string; fingerprint: string; result: ActionResult }
 export interface GameState {
+  worldInstance?: import('../world/types.ts').WorldInstance;
   district?: DistrictState;
   meta: { schemaVersion: 3; engineVersion: '0.1-stage3'; revision: number; packs: PackRef[] };
   clock: { totalMinutes: number; crossedDays: number[] };

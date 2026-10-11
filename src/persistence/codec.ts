@@ -10,8 +10,11 @@ import { createNPCStates } from '../engine/npc.ts';
 import { validateDistrictState } from './district-validation.ts';
 import { initialDistrict } from '../engine/district.ts';
 import type { Registry } from '../content/registry.ts';
+import { loadPacks } from '../content/loader.ts';
+import { hash, parseRules } from '../world/schema.ts';
+import { validateWorldInstance } from '../world/validation.ts';
 export const MAX_SAVE_BYTES = 4 * 1024 * 1024;
-export type DecodeResult = { status: 'ready'; state: GameState; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
+export type DecodeResult = { status: 'ready'; state: GameState; registry?: Registry; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
 interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 3; savedAt: string; state: GameState }
 async function checksum(value: unknown): Promise<string> {
   const bytes = new TextEncoder().encode(stableJson(value));
@@ -31,7 +34,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const array = (x: unknown): unknown[] => { if (!Array.isArray(x)) bad('状态数组无效。'); return x as unknown[]; };
   const string = (x: unknown): string => { if (typeof x !== 'string' || !x.length) bad('状态字符串无效。'); return x as string; };
   const unique = (x: unknown[]): void => { if (new Set(x).size !== x.length) bad('状态中存在重复条目。'); };
-  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs', ...((value as GameState)?.district ? ['district'] : [])]);
+  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs', ...((value as GameState)?.district ? ['district'] : []), ...((value as GameState)?.worldInstance ? ['worldInstance'] : [])]);
   const meta = object(state.meta, ['schemaVersion', 'engineVersion', 'revision', 'packs']);
   if (meta.schemaVersion !== 3 || meta.engineVersion !== '0.1-stage3') bad('存档版本尚不支持；没有自动降级或迁移。');
   const revision = int(meta.revision);
@@ -98,6 +101,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   validateTFState(value as GameState, registry);
   validateNPCState(value as GameState, registry);
   validateDistrictState(value as GameState, registry);
+  validateWorldInstance(value as GameState, registry);
 }
 function sortedRefs(refs: unknown): string {
   if (!Array.isArray(refs)) throw new Error('PACK_MISMATCH：存档内容包记录无效。');
@@ -139,6 +143,7 @@ export class SaveCodec {
   constructor(registry: Registry) { this.registry = registry; }
   async encode(state: GameState): Promise<string> {
     validateState(state, this.registry);
+    if (state.worldInstance && await hash(state.worldInstance.generation.rules) !== state.worldInstance.generation.rulesHash) throw Error('世界规则哈希不符。');
     const payload: SavePayload = { format: 'aetheria-alpha', schemaVersion: 3, savedAt: new Date().toISOString(), state: clone(state) };
     const text = JSON.stringify({ payload, checksum: await checksum(payload) }, null, 2);
     if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB；本版本不会截断账本或删除进度。');
@@ -152,6 +157,21 @@ export class SaveCodec {
       if (await checksum(envelope.payload) !== envelope.checksum) throw new Error('存档校验和不符，可能损坏。');
       if (!Number.isFinite(Date.parse(envelope.payload.savedAt))) throw new Error('存档日期格式不合法。');
       const version = envelope.payload.schemaVersion;
+      if (envelope.payload.state?.worldInstance) {
+        if (version !== 3) throw Error('生成世界存档版本无效。');
+        const state = envelope.payload.state as GameState;
+        const world = state.worldInstance!;
+        const packs = world.definition?.packs;
+        if (!Array.isArray(packs) || packs.length > 100) throw Error('世界包快照无效。');
+        const restored = await loadPacks(packs);
+        parseRules(world.generation.rules);
+        if (await hash(world.generation.rules) !== world.generation.rulesHash) throw Error('世界规则哈希不符。');
+        validateState(state, restored);
+        return { status: 'ready', state: clone(state), registry: restored };
+      }
+      if (this.registry.packs.some(p => p.id === 'generated/neighborhood')) {
+        return new SaveCodec(await loadPacks(this.registry.contentPacks.filter(p => p.manifest.id !== 'generated/neighborhood'))).decode(text);
+      }
       if (this.registry.legacyRegistry && !envelope.payload.state.district) {
         const old = await new SaveCodec(this.registry.legacyRegistry).decode(text);
         if (old.status !== 'ready') return old;
@@ -162,13 +182,13 @@ export class SaveCodec {
         state.npcs.push(...createNPCStates(this.registry).filter(n => !state.npcs.some(x => x.definitionId === n.definitionId)));
         state.district = initialDistrict();
         validateState(state,this.registry);
-        return {status:'ready',state,migration:'旧版存档已追加街区模块，原有经历、身体与事务保持。点击保存后写入 Alpha 0.2。'};
+        return {status:'ready',state,registry:this.registry,migration:'旧版存档已升级：追加街区模块，原有经历、身体与事务保持。点击保存后写入 Alpha 0.2。'};
       }
       const migrated = version < 3;
       const repair = migrated ? undefined : upgradeStage3(envelope.payload.state, this.registry);
       const state = migrated ? migrateLegacy(envelope.payload.state, this.registry, version) : repair!.state;
       validateState(state, this.registry);
-      return { status: 'ready', state: clone(state), ...(migrated ? { migration: `${version === 1 ? '第一' : '第二'}阶段存档已升级：保留原进度${version === 1 ? '并新增初始身体' : '、身体与改造进度'}，新增人物记录。点击保存后写入新版存档。` } : repair?.upgraded ? { migration: '第三阶段存档已修复升级：原人物、任务、身体与改造进度完整保留。点击保存后写入修复版存档。' } : {}) };
+      return { status: 'ready', state: clone(state), registry: this.registry, ...(migrated ? { migration: `${version === 1 ? '第一' : '第二'}阶段存档已升级：保留原进度${version === 1 ? '并新增初始身体' : '、身体与改造进度'}，新增人物记录。点击保存后写入新版存档。` } : repair?.upgraded ? { migration: '第三阶段存档已修复升级：原人物、任务、身体与改造进度完整保留。点击保存后写入修复版存档。' } : {}) };
     } catch (error) {
       const reason = error instanceof Error ? error.message : '存档格式无效。';
       return { status: 'quarantined', code: reason.includes('PACK_MISMATCH') ? 'PACK_MISMATCH' : 'SAVE_INVALID', reason, original: text };

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#11131b"><title>以太都市：深渊重塑 · Alpha 0.1</title>
+  <meta name="theme-color" content="#11131b"><title>以太都市：深渊重塑 · Alpha 0.2 · 世界生成器 v0.1</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./src/ui/game.css">
 </head>
@@ -13,7 +13,7 @@
       <span class="version">ALPHA 0.2 · 街区沙盒</span>
       <nav aria-label="游戏菜单"><button id="map-open" type="button">地图</button><button id="body-open" type="button">身体</button><button id="people-open" type="button">人物</button><button id="save-open" type="button">存档</button><button id="log-open" type="button">记录</button></nav>
     </header>
-    <div class="quick-menu"><span id="player-name">新来的住户</span><button id="quest-open">任务</button><button id="bag-open">背包</button><button id="discovery-open">发现与互动</button><button id="pack-open">内容偏好</button></div>
+    <div class="quick-menu"><span id="player-name">新来的住户</span><button id="quest-open">任务</button><button id="bag-open">背包</button><button id="discovery-open">发现与互动</button><button id="pack-open">内容偏好</button><button id="world-open">世界</button></div>
     <div class="game-layout">
       <aside class="status-panel" aria-label="玩家状态"><div class="eyebrow">你的状态</div><div id="status"></div><div class="status-note">城市还在运转。<br>决定下一步的人是你。</div></aside>
       <main>
@@ -39,6 +39,7 @@
   <dialog id="log-dialog" aria-labelledby="log-title"><div class="dialog-heading"><h2 id="log-title">行动记录</h2><button data-close="log-dialog" aria-label="关闭记录">×</button></div><div id="log-content"></div></dialog>
   <dialog id="body-dialog" aria-labelledby="body-title"><div class="dialog-heading"><h2 id="body-title">你的身体</h2><button data-close="body-dialog" aria-label="关闭身体">×</button></div><div id="body-content"></div></dialog>
   <dialog id="people-dialog" aria-labelledby="people-title"><div class="dialog-heading"><h2 id="people-title">你认识的人</h2><button data-close="people-dialog" aria-label="关闭人物">×</button></div><div id="people-content"></div></dialog>
+  <dialog id="world-dialog" aria-labelledby="world-title"><div class="dialog-heading"><h2 id="world-title">探索一个新街区</h2><button data-close="world-dialog" aria-label="关闭世界">×</button></div><p id="world-current"></p><p>生成有住处、工作、居民和日常事件的街区。同一套参考库与种子可以重现初始世界。</p><p class="muted">进入新世界会替换当前未保存进度。手动存档槽会保留，直到你再次保存。</p><div class="world-fields"><label>世界种子 <input id="world-seed" type="number" min="0" max="4294967295" step="1" value="42"></label><button id="world-random">换一个种子</button><label>地点数量 <input id="world-size" type="number" min="5" max="20" value="7"></label><label>居民数量 <input id="world-population" type="number" min="3" max="40" value="9"></label></div><div class="dialog-buttons"><button id="world-generate">生成并进入街区</button><button id="world-fixed">开始固定以太都市测试世界</button></div><details><summary>管理生成参考库</summary><p class="muted">只接收经过结构和引用校验的 JSON。导入内容影响下一次生成；已经保存的世界保留原快照。添加新原型时，先导入生成用内容包，再导入引用它的参考包。</p><label class="file-button">导入参考包<input id="world-reference-import" type="file" accept="application/json,.json"></label><label class="file-button">导入生成规则<input id="world-generation-rules-import" type="file" accept="application/json,.json"></label><label class="file-button">导入生成用内容包<input id="world-generation-content-import" type="file" accept="application/json,.json"></label><button id="world-library-reset">恢复默认生成库</button></details><p id="world-message" role="status"></p></dialog>
   <script type="module" src="./src/ui/main.ts"></script>
   <dialog id="quest-dialog"><div class="dialog-heading"><h2>正在经历的事情</h2><button data-close="quest-dialog">关闭任务</button></div><div id="quest-content"></div></dialog>
   <dialog id="bag-dialog"><div class="dialog-heading"><h2>随身物品</h2><button data-close="bag-dialog">关闭背包</button></div><div id="bag-content"></div></dialog>

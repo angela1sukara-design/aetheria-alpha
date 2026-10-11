@@ -58,19 +58,22 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   if (!log.childElementCount) log.append(element('p', 'muted', '你还没有行动。'));
 }
 function renderMap(view: GameView, registry: Registry): void {
+  const generatedIds = view.state.worldInstance?.definition.locations.map(l => l.id);
+  const locations = registry.locations.filter(l => !generatedIds || generatedIds.includes(l.id));
+  const routes = registry.routes.filter(r => !generatedIds || (generatedIds.includes(r.from) && generatedIds.includes(r.to)));
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.classList.add('map-art'); svg.setAttribute('viewBox', '0 0 100 100'); svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('aria-hidden', 'true');
   const pair = new Set<string>();
-  for (const route of registry.routes) {
+  for (const route of routes) {
     const key = [route.from, route.to].sort().join('|'); if (pair.has(key)) continue; pair.add(key);
     const from = registry.location(route.from).map; const to = registry.location(route.to).map;
     const line = document.createElementNS(svg.namespaceURI, 'line'); for (const [name, value] of Object.entries({ x1: from.x, y1: from.y, x2: to.x, y2: to.y })) line.setAttribute(name, String(value));
     line.setAttribute('stroke', '#5b5368'); line.setAttribute('stroke-width', '.7'); line.setAttribute('stroke-dasharray', '2 2'); svg.append(line);
   }
-  for (const place of registry.locations) {
+  for (const place of locations) {
     const circle = document.createElementNS(svg.namespaceURI, 'circle'); circle.setAttribute('cx', String(place.map.x)); circle.setAttribute('cy', String(place.map.y)); circle.setAttribute('r', '2'); circle.setAttribute('fill', place.id === view.location.id ? '#b9a1eb' : '#8fcbc4'); svg.append(circle);
   }
   const links = element('div', 'map-links');
-  for (const place of registry.locations) {
+  for (const place of locations) {
     const option = view.actions.find(x => x.definition.effects.some(fx => fx.op === 'location.move' && registry.route(fx.routeId).to === place.id));
     if (option) links.append(actionButton(option, true));
     else { const label = element('div', `map-label ${place.id === view.location.id ? 'current' : ''}`, place.name); label.append(element('small', '', place.id === view.location.id ? '当前位置' : view.eventTitle ? '当前事件进行中' : '需经相邻街道')); links.append(label); }

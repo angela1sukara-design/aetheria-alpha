@@ -13,28 +13,40 @@ import { isAppendOnlyEventPack } from '../content/append-only.ts';
 import { renderDistrict } from './district-panel.ts';
 import type { JournalEntry } from './district-panel.ts';
 import { writingContext } from '../engine/writing-context.ts';
+import { mountWorldControls } from './world-panel.ts';
 async function fetchJSON(url: URL): Promise<unknown> {
   const response = await fetch(url); if (!response.ok) throw new Error(`无法读取内容包（${response.status}）。`); return response.json();
 }
 async function boot(): Promise<void> {
   const indexUrl = new URL('../../content/index.json', import.meta.url);
-  const embedded = (globalThis as unknown as {aetheriaEmbedded?:{packs:unknown[];journal:JournalEntry[]}}).aetheriaEmbedded;
+  const embedded = (globalThis as unknown as {aetheriaEmbedded?:{packs:unknown[];journal:JournalEntry[];generation:{rules:unknown;reference:unknown}}}).aetheriaEmbedded;
   const index = embedded ? {packs:[]} : await fetchJSON(indexUrl) as { packs: string[] };
   if (!Array.isArray(index.packs) || index.packs.some(x => typeof x !== 'string')) throw new Error('内容包目录格式错误。');
   const basePacks=embedded?.packs??await Promise.all(index.packs.map(x => fetchJSON(new URL(x, indexUrl))));
   let rulePacks:unknown[]=[];let storedTexts:unknown[]=[];
   try {rulePacks=JSON.parse(localStorage.getItem('aetheria-alpha02-rules')??'[]');storedTexts=JSON.parse(localStorage.getItem('aetheria-alpha02-texts')??'[]');if(!Array.isArray(rulePacks)||!Array.isArray(storedTexts))throw Error();}catch{rulePacks=[];storedTexts=[];}
   let registry = await loadPacks([...basePacks,...rulePacks]);
+  let fixedRegistry = registry;
   const texts=new TextLibrary();for(const p of storedTexts){try{texts.install(p,registry);}catch{ /* invalid prose stays disabled */ }}
   const journal=embedded?.journal??await fetchJSON(new URL('../../content/journal.json',import.meta.url)) as JournalEntry[];
   let codec = new SaveCodec(registry); const store=new IndexedDBSaveStore();let saves = new SaveRepository(codec,store);
   let engine = new ActionExecutor(registry, createGameState(registry, newSeed()),texts);
   let result: ActionResult | undefined; let busy = false;
-  function redraw(): void { const view=engine.view();renderGame(view, registry, result);renderDistrict(view,registry,texts,journal); }
+  function redraw(): void { const view=engine.view();renderGame(view, registry, result);renderDistrict(view,registry,texts,journal); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
+  function adopt(loaded: { state: import('../core/types.ts').GameState; registry?: import('../content/registry.ts').Registry }): void {
+    registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry); saves = new SaveRepository(codec, store);
+    engine = new ActionExecutor(registry, loaded.state, texts);
+  }
+  const generation = embedded?.generation ?? { rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/reference.json', import.meta.url)) };
+  mountWorldControls({ source: () => fixedRegistry, defaults: generation, isBusy: () => busy, replace: generated => {
+    if (generated) adopt({ state: generated.state, registry: generated.registry });
+    else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });
+    result = undefined; redraw(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');
+  } });
   async function refreshSlot(): Promise<void> {
     const saved = await saves.load();
     byId<HTMLButtonElement>('save-read').disabled = saved.status !== 'ready';
-    byId('save-info').textContent = saved.status === 'ready' ? `${registry.location(saved.state.world.locationId).name} · ${formatClock(saved.state.clock.totalMinutes)} · ${saved.state.meta.revision} 次行动` : saved.status === 'empty' ? '尚无存档' : `已隔离：${saved.reason}`;
+    byId('save-info').textContent = saved.status === 'ready' ? `${(saved.registry??registry).location(saved.state.world.locationId).name} · ${formatClock(saved.state.clock.totalMinutes)} · ${saved.state.meta.revision} 次行动` : saved.status === 'empty' ? '尚无存档' : `已隔离：${saved.reason}`;
   }
   document.addEventListener('click', event => {
     const button = (event.target as Element).closest<HTMLButtonElement>('button[data-action]');
@@ -52,7 +64,7 @@ async function boot(): Promise<void> {
     } else { feedback(actionResult.message, true); redraw(); }
     setTimeout(() => { busy = false; }, 250);
   });
-  const dialogNames = ['map', 'body', 'people', 'save', 'log', 'quest', 'bag', 'discovery', 'pack'];
+  const dialogNames = ['map', 'body', 'people', 'save', 'log', 'quest', 'bag', 'discovery', 'pack', 'world'];
   async function openDialog(name: string): Promise<void> {
     if (!dialogNames.includes(name)) return;
     for (const other of dialogNames) if (other !== name && byId<HTMLDialogElement>(`${other}-dialog`).open) byId<HTMLDialogElement>(`${other}-dialog`).close();
@@ -75,7 +87,7 @@ async function boot(): Promise<void> {
   byId('save-read').addEventListener('click', () => storageAction(async () => {
     const loaded = await saves.load();
     if (loaded.status !== 'ready') { byId('save-message').textContent = loaded.status === 'empty' ? '没有可读取的存档。' : `存档已隔离：${loaded.reason}`; return; }
-    engine = new ActionExecutor(registry, loaded.state,texts); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = loaded.migration ?? '已恢复保存时的进度。';
+    adopt(loaded); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = loaded.migration ?? '已恢复保存时的进度。';
   }));
   byId('save-export').addEventListener('click', () => storageAction(async () => {
     const text = await codec.encode(engine.snapshot()); const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
@@ -88,19 +100,35 @@ async function boot(): Promise<void> {
     const decoded = await codec.decode(await file.text());
     if (decoded.status === 'quarantined') { byId('save-message').textContent = `未导入，原进度保留：${decoded.reason}`; return; }
     // 仅载入到游戏，玩家点击“保存”后才覆盖手动存档。
-    engine = new ActionExecutor(registry, decoded.state,texts); result = decoded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = `已导入到当前游戏。${decoded.migration ?? '要写入手动存档，请点击保存。'}`;
+    adopt(decoded); result = decoded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = `已导入到当前游戏。${decoded.migration ?? '要写入手动存档，请点击保存。'}`;
   }));
   function persistTexts():void{try{localStorage.setItem('aetheria-alpha02-texts',JSON.stringify(storedTexts));}catch{byId('pack-message').textContent='文本已在当前会话启用；浏览器不允许持久化扩展文件。';}}
   byId('discovery-search').addEventListener('input',redraw);
   byId('adult-preference').addEventListener('change',()=>{const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(x.ok)result=x;redraw();});
   byId<HTMLInputElement>('pack-import').addEventListener('change',async event=>{const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file)return;try{if(file.size>1024*1024)throw Error('文本包超过1 MiB。');const raw=JSON.parse(await file.text()),id=texts.install(raw,registry);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);storedTexts.push(raw);persistTexts();redraw();byId('pack-message').textContent='可选文本包已启用。当前进度与效果没有改变。';}catch(error){byId('pack-message').textContent='未导入：'+(error instanceof Error?error.message:error);}});
   document.addEventListener('click',event=>{const b=(event.target as Element).closest<HTMLButtonElement>('button[data-pack]');if(!b)return;const id=b.dataset.pack!;if(b.dataset.packMove==='delete'){texts.remove(id);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);persistTexts();}else texts.setEnabled(id,!texts.list().find(x=>x.id===id)!.enabled);redraw();byId('pack-message').textContent='文本显示已更新；角色与事件状态保留。';});
-  byId<HTMLInputElement>('rules-import').addEventListener('change',async event=>{const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file||busy)return;busy=true;try{if(file.size>1024*1024)throw Error('事件包超过1 MiB。');const raw=JSON.parse(await file.text()),pack=parsePack(raw);if(!isAppendOnlyEventPack(pack))throw Error('当前导入入口只接收追加动作/事件/文本/公开Hook的事件包。');const next=await loadPacks([...basePacks,...rulePacks,raw]),state=structuredClone(engine.snapshot());state.meta.packs=structuredClone(next.packs);const nextCodec=new SaveCodec(next);await nextCodec.encode(state);registry=next;codec=nextCodec;saves=new SaveRepository(codec,store);engine=new ActionExecutor(registry,state,texts);rulePacks.push(raw);try{localStorage.setItem('aetheria-alpha02-rules',JSON.stringify(rulePacks));}catch{}redraw();byId('pack-message').textContent='追加事件包校验通过并已启用。公开入口已更新，存档会记录包版本。';}catch(error){byId('pack-message').textContent='未导入，原进度保留：'+(error instanceof Error?error.message:error);}finally{busy=false;}});
+  byId<HTMLInputElement>('rules-import').addEventListener('change',async event=>{
+    const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file||busy)return;busy=true;
+    try {
+      if(file.size>1024*1024)throw Error('事件包超过1 MiB。');
+      const raw=JSON.parse(await file.text()),pack=parsePack(raw);
+      if(!isAppendOnlyEventPack(pack))throw Error('当前导入入口只接收追加动作/事件/文本/公开Hook的事件包。');
+      const fixedNext=await loadPacks([...basePacks,...rulePacks,raw]);
+      const state=structuredClone(engine.snapshot());
+      const next=state.worldInstance?await loadPacks([...registry.contentPacks,raw]):fixedNext;
+      state.meta.packs=structuredClone(next.packs);
+      if(state.worldInstance){state.worldInstance.definition.packs=structuredClone(next.contentPacks);state.worldInstance.generation.contentPacks=structuredClone(next.packs.filter(p=>p.id!=='generated/neighborhood'));}
+      const nextCodec=new SaveCodec(next);await nextCodec.encode(state);
+      fixedRegistry=fixedNext;adopt({state,registry:next});rulePacks.push(raw);
+      try{localStorage.setItem('aetheria-alpha02-rules',JSON.stringify(rulePacks));}catch{}
+      redraw();byId('pack-message').textContent='追加事件包校验通过并已启用。公开入口已更新，存档会记录包版本。';
+    } catch(error){byId('pack-message').textContent='未导入，原进度保留：'+(error instanceof Error?error.message:error);}finally{busy=false;}
+  });
   byId('brief-export').addEventListener('click',()=>{try{const context=writingContext(engine.snapshot(),registry),url=URL.createObjectURL(new Blob([JSON.stringify(context,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='runtime-context.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);byId('pack-message').textContent='已导出当前槽的真实参与者、身体、姿态和接触上下文。';}catch(error){byId('pack-message').textContent=error instanceof Error?error.message:'当前没有写作槽。';}});
   redraw();
   try {
     const loaded = await saves.load();
-    if (loaded.status === 'ready') { engine = new ActionExecutor(registry, loaded.state,texts); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); feedback(loaded.migration ?? '已恢复手动存档。之后的行动仍需手动保存。'); }
+    if (loaded.status === 'ready') { adopt(loaded); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); feedback(loaded.migration ?? '已恢复手动存档。之后的行动仍需手动保存。'); }
     else if (loaded.status === 'quarantined') feedback(`旧存档已隔离并保留：${loaded.reason}`, true);
   } catch { feedback('本地存档暂不可用，进度可以通过 JSON 导出。', true); }
 }

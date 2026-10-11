@@ -1,0 +1,766 @@
+{
+  "format": "aetheria-reference",
+  "schemaVersion": 1,
+  "id": "aetheria/neighborhood-reference",
+  "version": "0.1.0",
+  "templates": [
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.environment.wet",
+      "kind": "environment",
+      "data": {
+        "name": "雾潮街区",
+        "description": "潮雾绕着高架水槽流动，蕨叶从砖缝探出来。人们按雨势安排工作。",
+        "tags": [
+          "climate.wet",
+          "ecology.fern",
+          "waterways"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.wet.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "滴檐合住院",
+          "苔阶公寓"
+        ],
+        "description": "共用厨房飘着热汤气味。合住院保留了免费休息座位。",
+        "economy": [
+          "公共厨房轮值",
+          "住宅维护"
+        ],
+        "professions": [
+          "夜班信使"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.wet.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "浮棚食集",
+          "水槽交易巷"
+        ],
+        "description": "防雨棚下交换食物、修理材料与准确的送货时间。",
+        "economy": [
+          "食物分拣",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.wet.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "水泵维修所",
+          "铜叶工坊"
+        ],
+        "description": "泵件按接口大小摆开，工具架让不同身体的工人都够得到。",
+        "economy": [
+          "水泵维护",
+          "工具修理"
+        ],
+        "professions": [
+          "维护电工"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "base.place.wet.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "雾灯护理站",
+          "蕨廊适配室"
+        ],
+        "description": "护理站提供身体适配、恢复座位和公开的改装流程。",
+        "economy": [
+          "适配器消毒",
+          "身体护理"
+        ],
+        "professions": [
+          "夜班信使"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.wet.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "雨声公共厅",
+          "渠畔信使站"
+        ],
+        "description": "交接板记录可公开的消息。夜班信使在此核对路标。",
+        "economy": [
+          "路线核对",
+          "公共信息交接"
+        ],
+        "professions": [
+          "夜班信使"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.faction.wet.care",
+      "kind": "faction",
+      "data": {
+        "name": "潮汐互助会",
+        "activities": [
+          "恢复座位维护",
+          "照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.faction.wet.trade",
+      "kind": "faction",
+      "data": {
+        "name": "水槽工联",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.wet"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.event.wet",
+      "kind": "event",
+      "data": {
+        "label": "一起检查防雨棚扣",
+        "prompt": "当班人发现雨棚扣有些松动，问你是否愿意花一小段时间核对编号。也可以先离开。",
+        "completeText": "你核对了扣件并把实际情况写进交接册。值班人按约定付了报酬。",
+        "minutes": 15,
+        "reward": 3
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.environment.dry",
+      "kind": "environment",
+      "data": {
+        "name": "晴砾街区",
+        "description": "日光照亮挡风棚，旱生灌木沿石墙生长。居民把重活放在阴凉时段。",
+        "tags": [
+          "climate.dry",
+          "ecology.shrub",
+          "solar"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.home"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.dry.home",
+      "kind": "place",
+      "data": {
+        "service": "home",
+        "names": [
+          "遮阳共享院",
+          "石阶住舍"
+        ],
+        "description": "厚墙隔开正午热气，公共长凳向每个旅人开放。",
+        "economy": [
+          "遮阳棚轮值",
+          "住宅维护"
+        ],
+        "professions": [
+          "夜班信使"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.market"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.dry.market",
+      "kind": "place",
+      "data": {
+        "service": "market",
+        "names": [
+          "晴棚干货市",
+          "风井商街"
+        ],
+        "description": "粮袋和密封容器整齐排开，摊贩反复核对防尘封口。",
+        "economy": [
+          "干货分装",
+          "日用品交易"
+        ],
+        "professions": [
+          "摊贩"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.workshop"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.dry.workshop",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "镜板维修坊",
+          "风井电工铺"
+        ],
+        "description": "反光板为室内引光，维护电工在阴影下测试接头。",
+        "economy": [
+          "镜板检修",
+          "线路维护"
+        ],
+        "professions": [
+          "维护电工"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.clinic"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": [
+          "aetheria-tf:tf.tail.mechanical"
+        ]
+      },
+      "id": "base.place.dry.clinic",
+      "kind": "place",
+      "data": {
+        "service": "clinic",
+        "names": [
+          "凉荫适配室",
+          "晴石护理站"
+        ],
+        "description": "通风的走廊留着恢复座位，护理员按登记流程接受改装预约。",
+        "economy": [
+          "护理用品分装",
+          "身体适配"
+        ],
+        "professions": [
+          "夜班信使"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [
+          "service.commons"
+        ],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.place.dry.commons",
+      "kind": "place",
+      "data": {
+        "service": "commons",
+        "names": [
+          "风影交接厅",
+          "石墙信使所"
+        ],
+        "description": "人们把路牌移到阴凉处，再把准确的去向写在公共板上。",
+        "economy": [
+          "公共路标维护",
+          "邮件交接"
+        ],
+        "professions": [
+          "夜班信使"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.faction.dry.care",
+      "kind": "faction",
+      "data": {
+        "name": "凉荫互助会",
+        "activities": [
+          "恢复座位维护",
+          "照护轮值"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.faction.dry.trade",
+      "kind": "faction",
+      "data": {
+        "name": "镜板工联",
+        "activities": [
+          "工具共享",
+          "工单交接"
+        ]
+      }
+    },
+    {
+      "environmentTags": [
+        "climate.dry"
+      ],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.event.dry",
+      "kind": "event",
+      "data": {
+        "label": "帮助标记遮阳时段",
+        "prompt": "公共板上的遮阳时间被风沙磨淡。当班人想请你核对阴影边界，也尊重你今天另有安排。",
+        "completeText": "你按实际观察补全了遮阳时段。居民能据此安排搬运，当班人结清报酬。",
+        "minutes": 20,
+        "reward": 4
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.npc.vendor",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "district:resident.vendor"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.npc.electrician",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "district:resident.electrician"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 10,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/district"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "base.npc.courier",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "district:resident.courier"
+      }
+    }
+  ]
+}

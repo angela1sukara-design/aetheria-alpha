@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-generation-rules",
+  "schemaVersion": 1,
+  "id": "aetheria/neighborhood-rules",
+  "version": "0.1.0",
+  "requiredServices": [
+    "home",
+    "market",
+    "workshop",
+    "clinic",
+    "commons"
+  ],
+  "locationCount": 7,
+  "npcCount": 9,
+  "extraConnections": 3,
+  "startMinutes": 540,
+  "workStart": 480,
+  "workEnd": 1080,
+  "leisureEnd": 1320
+}

@@ -1,0 +1,71 @@
+{
+  "format": "aetheria-reference",
+  "schemaVersion": 1,
+  "id": "example/lamplighter-reference",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "example/lamplighters"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "addon.place.lamps",
+      "kind": "place",
+      "data": {
+        "service": "workshop",
+        "names": [
+          "灯罩修配所"
+        ],
+        "description": "灯匠测试公共灯的散热和防雨性能，接受实际修理工单。",
+        "economy": [
+          "灯罩检修"
+        ],
+        "professions": [
+          "灯匠",
+          "维护电工"
+        ]
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "example/lamplighters"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "addon.npc.artisan",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "lamplighter:resident.artisan"
+      }
+    }
+  ]
+}

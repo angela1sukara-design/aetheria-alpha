@@ -1,5 +1,6 @@
 import { RuleError } from '../core/errors.ts';
 import type { GameState } from '../core/types.ts';
+import { advanceWorldSimulation } from '../world/simulation.ts';
 export const MINUTES_PER_DAY = 1440;
 export function formatClock(totalMinutes: number): string {
   const minute = totalMinutes % MINUTES_PER_DAY;
@@ -15,4 +16,5 @@ export function advanceClock(state: GameState, minutes: number): void {
     if (!state.clock.crossedDays.includes(day)) state.clock.crossedDays.push(day);
   }
   state.clock.totalMinutes = after;
+  advanceWorldSimulation(state);
 }

@@ -6,6 +6,7 @@ import type { StoryletDef, ResidentTemplate, EnemyDef, InteractionDef, TextSlotD
 import { RuleError } from '../core/errors.ts';
 import { isAppendOnlyEventPack } from './append-only.ts';
 export class Registry {
+  readonly contentPacks: ContentPack[];
   #definitions = new Map<string, { kind: string; value: unknown }>();
   #actionsByHook = new Map<Id, Id[]>();
   readonly packs: PackRef[];
@@ -27,6 +28,7 @@ export class Registry {
   constructor(packs: ContentPack[], references: PackRef[]) {
     // 私有 Map 永远不暴露；深冻结所有定义，避免 UI/扩展包直接改注册表。
     const data = freeze(clone(packs));
+    this.contentPacks = data;
     this.appendOnlyPackIds = freeze(data.filter(isAppendOnlyEventPack).map(p=>p.manifest.id));
     if (packs.some(p => p.manifest.requiresCapabilities.includes('district.v1'))) {
       const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1'));

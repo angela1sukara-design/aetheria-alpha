@@ -13,7 +13,12 @@ export function district(state: GameState): DistrictState { if (!state.district)
 export function encounter(state: GameState, registry: Registry): Id | undefined {
   const d = district(state), now = state.clock.totalMinutes, day = Math.floor(now / 1440);
   const templates = registry.residentTemplates.filter(t => t.locationIds.includes(state.world.locationId) && (t.start < t.end ? now % 1440 >= t.start && now % 1440 < t.end : now % 1440 >= t.start || now % 1440 < t.end));
-  if (templates.length) {
+  if (state.worldInstance) {
+    // 生成居民已经拥有稳定实例与日程；遭遇只选择在场者，不能复制或重抽身份。
+    const present = d.residents.filter(r => r.locationId === state.world.locationId);
+    const previous = present.findIndex(r => r.id === d.currentResidentId);
+    d.currentResidentId = present.length ? present[(previous + 1) % present.length]!.id : null;
+  } else if (templates.length) {
     // 每个地点与职业实例稳定；跨日与读档不重建已生成的人。
     const stream = `residents:${state.world.locationId}`;
     const t = templates[Math.floor(draw(state, stream) * templates.length)]!;
