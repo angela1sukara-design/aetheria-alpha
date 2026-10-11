@@ -1,0 +1,195 @@
+[
+  {
+    "id": "canal",
+    "title": "排水门的公开核查",
+    "unlock": [
+      {
+        "op": "flag.has",
+        "id": "district:flag.canal.accepted",
+        "value": true
+      }
+    ],
+    "steps": [
+      {
+        "conditions": [],
+        "text": "去旧渠步道核查水位与排水门。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.canal.inspected",
+            "value": true
+          }
+        ],
+        "text": "去回声机械工坊核对维护记录。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.canal.parts",
+            "value": true
+          }
+        ],
+        "text": "等待下一游戏日，回街区档案室提交观察，选择维护方案。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.canal.closed",
+            "value": true
+          }
+        ],
+        "text": "已完成：集中维护。居民记得夜班绕行，现场通报已改变。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.canal.open",
+            "value": true
+          }
+        ],
+        "text": "已完成：分段维护。保留夜路，工时增加、报酬减少。"
+      }
+    ]
+  },
+  {
+    "id": "riker",
+    "title": "莱克：旧物与原主",
+    "unlock": [
+      {
+        "op": "flag.has",
+        "id": "district:flag.riker.accepted",
+        "value": true
+      }
+    ],
+    "steps": [
+      {
+        "conditions": [],
+        "text": "在街区档案室核对旧义肢的原主授权。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.riker.authorized",
+            "value": true
+          }
+        ],
+        "text": "去旧渠回收点找兼容接口，仔细考虑授权与补贴。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.riker.salvaged",
+            "value": true
+          }
+        ],
+        "text": "亲自把接口带回工坊，交给莱克。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.riker.sold",
+            "value": true
+          }
+        ],
+        "text": "亲自告诉莱克接受补贴的决定；他不会隔空知道这件事。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "npc.memory",
+            "npcId": "district:npc.riker",
+            "memoryId": "district:memory.riker.repaired",
+            "value": true
+          }
+        ],
+        "text": "修复已登记。下一游戏日与莱克看实际使用回信。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.riker.willing",
+            "value": true
+          }
+        ],
+        "text": "莱克愿意在工作之外相处。日程在人物册，当前意愿仍需重新确认。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "npc.memory",
+            "npcId": "district:npc.riker",
+            "memoryId": "district:memory.riker.breach",
+            "value": true
+          }
+        ],
+        "text": "已完成另一分支：补贴改变了信任，私人路线关闭，公开服务仍在。"
+      }
+    ]
+  },
+  {
+    "id": "nara",
+    "title": "娜拉：能自己生活的护理卡",
+    "unlock": [
+      {
+        "op": "flag.has",
+        "id": "district:flag.nara.accepted",
+        "value": true
+      }
+    ],
+    "steps": [
+      {
+        "conditions": [],
+        "text": "去雨棚茶馆记录实际日用品与座位适配。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.nara.observed",
+            "value": true
+          }
+        ],
+        "text": "去回声机械工坊核对工具兼容。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.nara.tools",
+            "value": true
+          }
+        ],
+        "text": "与娜拉说明你允许公开的范围；她按日程在诊室或茶馆。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.nara.done",
+            "value": true
+          }
+        ],
+        "text": "等到下一个游戏日，听护理卡的实际使用反馈。"
+      },
+      {
+        "conditions": [
+          {
+            "op": "flag.has",
+            "id": "district:flag.nara.willing",
+            "value": true
+          }
+        ],
+        "text": "路线已完成。娜拉愿意在下班后继续相处，日常对话仍可重复。"
+      }
+    ]
+  }
+]

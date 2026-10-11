@@ -12,7 +12,7 @@ async function compile(dir) {
     if (entry.name.endsWith('.ts')) {
       const source = stripTypeScriptTypes(await readFile(path.join(root, relative), 'utf8'));
       // 原生 ESM 构建：只移除类型并转换静态模块扩展名，不把 JSON 内容塞进 HTML。
-      await writeFile(output, source.replace(/(from\s+['"][^'"]+)\.ts(['"])/g, '$1.js$2'));
+      await writeFile(output, source.replace(/(from\s*['"][^'"]+)\.ts(['"])/g, '$1.js$2'));
     } else await cp(path.join(root, relative), output);
   }
 }

@@ -1,0 +1,143 @@
+{
+  "manifest": {
+    "id": "example/public-lamp",
+    "namespace": "lamp-author",
+    "version": "1.0.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "GPT non-explicit append-only verification pack",
+    "status": "reviewed",
+    "dependencies": [
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "hook.action.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [
+    {
+      "id": "lamp-author:action.start",
+      "label": "查看新张贴的公共灯维修单",
+      "hint": "可导入扩展事件 · 一次经历",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "event.state",
+          "id": "lamp-author:event.lamp",
+          "state": "unseen"
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "lamp-author:event.lamp"
+        }
+      ],
+      "resultText": "lamp-author:text.start"
+    },
+    {
+      "id": "lamp-author:action.finish",
+      "label": "按维修单记录灯光故障",
+      "hint": "20分钟 · 零钱+2",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 2
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "lamp-author:text.end",
+      "context": {
+        "eventId": "lamp-author:event.lamp",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "lamp-author:action.leave",
+      "label": "今天先不处理维修单",
+      "hint": "合法离开",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "lamp-author:text.leave",
+      "context": {
+        "eventId": "lamp-author:event.lamp",
+        "nodeId": "start"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "lamp-author:event.lamp",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "lamp-author:text.start"
+          ],
+          "actionIds": [
+            "lamp-author:action.finish",
+            "lamp-author:action.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "lamp-author:text.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "lamp-author:text.start": "新张贴的维修单说明，公共灯在雨天会闪烁。你可以帮维护队记录准确的时间与位置，让下一班直接带来需要的零件。",
+    "lamp-author:text.end": "维修窗口保留了交接记录。你从灯下走回主街，这条新增事件通过公开入口运行。",
+    "lamp-author:text.leave": "你记下公告位置，暂时继续自己的安排。"
+  },
+  "contributions": [
+    {
+      "hookId": "aetheria:hook.street.actions",
+      "actionIds": [
+        "lamp-author:action.start"
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import type { BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef } from '../core/
 import type { NPCDef, NPCMemoryDef, SpeciesDef } from '../core/npc-types.ts';
 import type { StoryletDef, ResidentTemplate, EnemyDef, InteractionDef, TextSlotDef, SceneTextDef, EquipmentDef } from '../core/district-types.ts';
 import { RuleError } from '../core/errors.ts';
+import { isAppendOnlyEventPack } from './append-only.ts';
 export class Registry {
   #definitions = new Map<string, { kind: string; value: unknown }>();
   #actionsByHook = new Map<Id, Id[]>();
@@ -19,12 +20,14 @@ export class Registry {
   readonly npcs: NPCDef[];
   readonly npcMemories: NPCMemoryDef[];
   readonly legacyRegistry?: Registry;
+  readonly appendOnlyPackIds: string[];
   readonly storylets: StoryletDef[]; readonly residentTemplates: ResidentTemplate[];
   readonly enemies: EnemyDef[]; readonly interactions: InteractionDef[]; readonly textSlots: TextSlotDef[];
   readonly sceneTexts: SceneTextDef[]; readonly equipment: EquipmentDef[];
   constructor(packs: ContentPack[], references: PackRef[]) {
     // 私有 Map 永远不暴露；深冻结所有定义，避免 UI/扩展包直接改注册表。
     const data = freeze(clone(packs));
+    this.appendOnlyPackIds = freeze(data.filter(isAppendOnlyEventPack).map(p=>p.manifest.id));
     if (packs.some(p => p.manifest.requiresCapabilities.includes('district.v1'))) {
       const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1'));
       this.legacyRegistry = new Registry(legacy, references.filter(ref => legacy.some(p => p.manifest.id === ref.id)));

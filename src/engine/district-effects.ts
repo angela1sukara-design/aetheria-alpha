@@ -42,6 +42,7 @@ export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:Ef
  else if(e.op==='combat.turn') {
   const battle=d.combat;if(!battle)throw new RuleError('NO_COMBAT','当前没有战斗。');
   const enemy=r.enemies.find(x=>x.id===battle.enemyId)!,intent=enemy.intents[battle.turn%enemy.intents.length]!;
+  apply([{op:'clock.advance',minutes:5}],s,r,c);
   const end=(result:'victory'|'defeat'|'escape')=>{d.combat=null;c.resolvedTexts.push(result==='victory'?'你赢得了交锋。':result==='defeat'?'你失去继续战斗的力气，后续仍有恢复路径。':'你找到空隙离开了交锋。');apply([{op:'event.start',id:result==='victory'?enemy.victoryEventId:result==='defeat'?enemy.defeatEventId:enemy.escapeEventId}],s,r,c);};
   const energy=s.player.variables['core:energy']!,health=s.player.variables['district:health']!;
   let line='';
@@ -62,9 +63,11 @@ export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:Ef
  else throw new RuleError('MODULE_PENDING','该模块尚未接入。');
 }
 export function districtOptions(s:GameState,r:Registry,actions:ActionDef[]):ActionDef[] {
- if(s.district?.combat)return r.actionsForHook('district:hook.runtime').filter(a=>a.effects.some(e=>e.op==='combat.turn'));
- if(s.district?.scene)return [...r.actionsForHook('district:hook.runtime').filter(a=>a.effects.some(e=>e.op==='scene.act'&&(s.district!.scene!.phase==='active'?e.move!=='resume':['resume','exit'].includes(e.move)))),...r.globalActions()];
- return actions;
+ if(!s.district)return actions;
+ const runtime=r.actionsForHook('district:hook.runtime'),settings=runtime.filter(a=>a.effects.some(e=>e.op==='preference.set'));
+ if(s.district.combat)return [...runtime.filter(a=>a.effects.some(e=>e.op==='combat.turn')),...settings];
+ if(s.district.scene)return [...runtime.filter(a=>a.effects.some(e=>e.op==='scene.act'&&(s.district!.scene!.phase==='active'?e.move!=='resume':['resume','exit'].includes(e.move)))),...r.globalActions(),...settings];
+ return [...actions,...settings];
 }
 export function districtText(s:GameState,r:Registry,base:string):string {
  if(!s.district)return base;

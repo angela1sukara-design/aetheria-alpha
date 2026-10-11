@@ -16,6 +16,12 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   const allActions = [...new Map([...actions, ...topics, ...registry.globalActions()].map(a => [a.id, a])).values()];
   return districtOptions(state,registry,allActions).map(definition => {
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
+    for (const e of definition.effects) {
+      if(e.op==='scene.start')checks.push({pass:!!state.district?.profile.created,reason:'先在公寓签下租约，确认成年角色身份。'});
+      if(e.op==='combat.turn'&&e.move==='attack')checks.push({pass:state.player.variables['core:energy']!>=3,reason:'进攻需要3点精力，防守可恢复。'});
+      if(e.op==='combat.turn'&&e.move==='recover')checks.push({pass:state.player.variables['core:energy']!>=6,reason:'临时包扎需要6点精力。'});
+      if(e.op==='scene.act'&&e.move==='contact') {const scene=state.district?.scene,def=registry.interactions.find(i=>i.id===scene?.definitionId),pose=def?.poses.find(p=>p.id===scene?.poseId);checks.push({pass:pose?.facing==='front'&&pose.zone==='near',reason:'面对面坐近后才可建立接触。'});checks.push({pass:!!state.player.body?.parts.some(p=>registry.bodyPart(p.definitionId).kind==='hand'&&!scene?.contacts.some(c=>c.playerPartId===p.instanceId)),reason:'没有空闲的手部资源，先释放接触。'});}
+    }
     checks.push(directResourceCheck(definition.effects, state, registry));
     for (const e of definition.effects) if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') checks.push(transformationCheck(state, registry, e.id, e.op));
     for (const e of definition.effects) if (e.op === 'event.start') for (const npcId of registry.event(e.id).participantIds ?? []) checks.push({ pass: npcPresent(state, registry, npcId), reason: `${registry.npc(npcId).name}此刻不在这里。` });

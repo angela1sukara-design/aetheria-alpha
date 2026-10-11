@@ -12,8 +12,8 @@ async function imports(dir) {
     const file = path.join(dir, e.name); if (e.isDirectory()) { await imports(file); continue; }
     if (!e.name.endsWith('.js')) continue;
     const text = await readFile(file, 'utf8');
-    assert.ok(!/from\s+['"][^'"]+\.ts['"]/.test(text), `Unconverted import: ${file}`);
-    for (const match of text.matchAll(/from\s+['"](\.\.?\/[^'"]+)['"]/g)) assert.ok((await stat(path.resolve(path.dirname(file), match[1]))).isFile());
+    assert.ok(!/from\s*['"][^'"]+\.ts['"]/.test(text), `Unconverted import: ${file}`);
+    for (const match of text.matchAll(/from\s*['"](\.\.?\/[^'"]+)['"]/g)) assert.ok((await stat(path.resolve(path.dirname(file), match[1]))).isFile());
   }
 }
 await imports(path.join(root, 'src'));

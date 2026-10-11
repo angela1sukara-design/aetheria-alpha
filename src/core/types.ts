@@ -63,7 +63,7 @@ export interface EventInstance {
   instanceId: string; definitionId: Id; nodeId: string; status: 'active' | 'completed';
   textByNode: Record<string, Id>; draws: { nodeId: string; value: number }[]; locals: Record<string, Scalar>;
 }
-export interface ActionIntent { actionId: Id; params?: Record<string, never> }
+export interface ActionIntent { actionId: Id; params?: { name?: string; ageYears?: number } }
 export interface Change { label: string; before: string | number | boolean; after: string | number | boolean }
 export interface ActionResult {
   ok: boolean; code: string; message: string; revision: number;

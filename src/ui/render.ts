@@ -20,7 +20,7 @@ function actionButton(option: ActionOption, compact = false): HTMLButtonElement 
 }
 export function renderGame(view: GameView, registry: Registry, result?: ActionResult): void {
   byId('scene-title').textContent = view.location.name; byId('scene-subtitle').textContent = view.location.subtitle;
-  byId('scene-mode').textContent = view.eventTitle ?? '当前所在'; byId('clock').textContent = formatClock(view.state.clock.totalMinutes);
+  byId('scene-mode').textContent = view.state.district?.combat?'正在交锋':view.state.district?.scene?'私人相处':view.eventTitle ?? '当前所在'; byId('clock').textContent = formatClock(view.state.clock.totalMinutes);
   prose(byId('scene-text'), view.sceneText);
   const status = byId('status'); status.replaceChildren();
   for (const def of registry.variables) {

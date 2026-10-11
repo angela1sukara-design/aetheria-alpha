@@ -8370,6 +8370,36 @@
         }
       ],
       "resultText": "district:text.velvet.body.gel"
+    },
+    {
+      "id": "district:action.preference.on",
+      "label": "开启合资格可选文本",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "preference.set",
+          "value": true
+        }
+      ],
+      "resultText": "district:text.preference.on",
+      "surface": "body"
+    },
+    {
+      "id": "district:action.preference.off",
+      "label": "使用基础文本",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "preference.set",
+          "value": false
+        }
+      ],
+      "resultText": "district:text.preference.off",
+      "surface": "body"
     }
   ],
   "events": [
@@ -12095,7 +12125,9 @@
     "district:text.event.velvet.body.gel.start.0": "你做出了选择。",
     "district:text.event.velvet.body.gel.start.1": "你做出了选择。",
     "district:text.event.velvet.body.gel.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
-    "district:text.velvet.body.gel": "薇尔维特递来防滑杯托，不擅自碰你的手。“方便的时候，告诉我哪种杯子更舒服。”"
+    "district:text.velvet.body.gel": "薇尔维特递来防滑杯托，不擅自碰你的手。“方便的时候，告诉我哪种杯子更舒服。”",
+    "district:text.preference.on": "内容偏好已更新；当前节点与玩法效果没有改变。",
+    "district:text.preference.off": "内容偏好已更新；当前节点与玩法效果没有改变。"
   },
   "contributions": [
     {
@@ -12248,7 +12280,9 @@
         "district:action.scene.release",
         "district:action.scene.pause",
         "district:action.scene.resume",
-        "district:action.scene.exit"
+        "district:action.scene.exit",
+        "district:action.preference.on",
+        "district:action.preference.off"
       ]
     },
     {

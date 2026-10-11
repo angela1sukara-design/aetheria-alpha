@@ -86,7 +86,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
     const tx = object(raw, ['requestId', 'fingerprint', 'result']); const requestId = string(tx.requestId); if (requestId.length > 128) bad('事务 ID 过长。'); requests.push(requestId);
     const intent = JSON.parse(string(tx.fingerprint)); const intentObj = object(intent);
     if (Object.keys(intentObj).some(k => k !== 'actionId' && k !== 'params')) bad('事务 intent 包含未知字段。');
-    if (intentObj.params && Object.keys(object(intentObj.params)).length) bad('事务参数未登记。');
+    if (intentObj.params && Object.keys(object(intentObj.params)).length) { const p=object(intentObj.params,['name','ageYears']);if(intentObj.actionId!=='district:action.create'||typeof p.name!=='string'||!p.name.trim()||p.name.length>40)bad('事务参数未登记。');int(p.ageYears,18,120); }
     registry.action(string(intentObj.actionId) as Id);
     if (stableJson(intent) !== tx.fingerprint) bad('事务指纹无效。');
     const result = object(tx.result, ['ok', 'code', 'message', 'revision', 'requestId', 'text', 'changes']);
@@ -110,6 +110,7 @@ function officialRepairInstalled(registry: Registry): boolean {
 function upgradeStage3(raw: unknown, registry: Registry): { state: unknown; upgraded: boolean } {
   const meta = (raw as GameState | null)?.meta;
   if (meta && Array.isArray(meta.packs) && sortedRefs(meta.packs) === sortedRefs(registry.packs)) return { state: raw, upgraded: false };
+  if ((raw as GameState)?.district && meta?.packs?.every(ref=>registry.packs.some(p=>p.id===ref.id&&p.version===ref.version&&p.hash===ref.hash)) && registry.packs.filter(p=>!meta.packs.some(ref=>ref.id===p.id)).every(p=>registry.appendOnlyPackIds.includes(p.id))) { const state=clone(raw) as GameState;state.meta.packs=clone(registry.packs);return {state,upgraded:true}; }
   if (!meta || !Array.isArray(meta.packs) || sortedRefs(meta.packs) !== sortedRefs(STAGE3_PACKS)) return { state: raw, upgraded: false };
   if (!officialRepairInstalled(registry)) throw new Error('PACK_MISMATCH：第三阶段修复只支持官方原始包精确升级。');
   const state = clone(raw) as GameState;

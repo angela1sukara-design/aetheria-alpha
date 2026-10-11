@@ -53,7 +53,7 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
     state.player.variables['core:energy'] -= 5;
     r.memories.push(`help:${day}`); r.trust += 2; r.persistent = true;
     const line = { trade: '你帮忙核对称重与收据。对方把一份摊位余粮交给你，叮嘱雨前记得带回家。', repair: '你托稳松动的灯罩，对方接好电线。街角重新亮起来，你们约好有故障可以互相照应。', guide: '你们把模糊的路标重新擦亮。对方在你的路线纸上补了一条能避开积水的通道。' }[t.behavior];
-    state.player.variables['core:money'] += 3;
+    state.player.variables['core:money'] = Math.min(registry.variable('core:money').max,state.player.variables['core:money']!+3);
     return `${r.name}认出了你。${line}（精力−5，零钱+3；今天只能协助一次。）`;
   }
   if (r.lastTalkDay !== day) { r.visits++; r.trust++; r.lastTalkDay = day; r.memories.push(`talk:${day}`); }
