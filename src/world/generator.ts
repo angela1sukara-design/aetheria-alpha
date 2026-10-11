@@ -3,7 +3,7 @@ import type { Registry } from '../content/registry.ts';
 import type { ActionDef, ContentPack, Effect, Id } from '../core/types.ts';
 import { clone } from '../core/types.ts';
 import { createGameState } from '../engine/state.ts';
-import { instantiateBody, patchedBody } from '../engine/body.ts';
+import { instantiateBody, patchedBody, bodyTraits } from '../engine/body.ts';
 import { draw } from '../engine/rng.ts';
 import { initialDistrict } from '../engine/district.ts';
 import { advanceWorldSimulation } from './simulation.ts';
@@ -17,12 +17,19 @@ const id = (key: string): Id => `worldgen:${key}`;
 export class WorldGenerator {
   async generate(input: { seed: number; registry: Registry; rules: unknown; references: unknown[]; parameters?: { locationCount?: number; npcCount?: number } }): Promise<GeneratedWorld> {
     integer(input.seed, 0, 0xffffffff);
+    if (!Array.isArray(input.references) || input.references.length < 1 || input.references.length > 20) throw Error('参考包数量必须为1–20。');
+    if (input.parameters && Object.keys(input.parameters).some(k => !['locationCount', 'npcCount'].includes(k))) throw Error('未知生成参数。');
     if (input.registry.packs.some(p => p.id === 'generated/neighborhood')) throw Error('请用源内容库创建新世界。');
     const rules = parseRules(input.rules), references = input.references.map(p => parseReference(p, input.registry)).sort((a, b) => a.id.localeCompare(b.id, 'en'));
     if (!references.length || new Set(references.map(p => p.id)).size !== references.length) throw Error('参考包集合为空或重复。');
     const templates = references.flatMap(p => p.templates).sort((a, b) => a.id.localeCompare(b.id, 'en'));
+    if (templates.length > 2000) throw Error('参考模板总量超过首版限制。');
     if (new Set(templates.map(t => t.id)).size !== templates.length) throw Error('跨包模板 ID 必须唯一。');
     for (const t of templates) for (const ref of [...t.combination.requiresTemplates, ...t.combination.excludesTemplates]) if (!templates.some(x => x.id === ref)) throw Error('组合规则引用未知模板。');
+    // 模板贡献的原型同样遵守父模板条件；只有父模板实际被选中后才能参与抽样。
+    const contributedNPCs: ReferenceTemplate[] = templates.flatMap(t => t.contributes.npcTemplateIds.map((npcId, i) => ({ ...clone(t), id: `${t.id}.contributed-npc.${i}`, kind: 'npc' as const, data: { residentTemplateId: npcId }, combination: { ...clone(t.combination), requiresTemplates: [...new Set([...t.combination.requiresTemplates, t.id])] }, contributes: { tags: [], npcTemplateIds: [], eventIds: [], tfIds: [] } })));
+    templates.push(...contributedNPCs); templates.sort((a, b) => a.id.localeCompare(b.id, 'en'));
+    if (new Set(templates.map(t => t.id)).size !== templates.length) throw Error('自动贡献模板 ID 与参考库冲突。');
     const parameters = { locationCount: input.parameters?.locationCount ?? rules.locationCount, npcCount: input.parameters?.npcCount ?? rules.npcCount };
     integer(parameters.locationCount, 5, 20); integer(parameters.npcCount, 3, 40);
     const randomState = createGameState(input.registry, input.seed), selected: ReferenceTemplate[] = [], tags = new Set<string>();
@@ -47,15 +54,26 @@ export class WorldGenerator {
       manifest: { id: 'generated/neighborhood', namespace: 'worldgen', version: GENERATOR_VERSION, schemaVersion: 1, engineApiVersion: '0.1', author: 'WorldGenerator · PROPOSED', status: 'draft', dependencies: input.registry.packs.map(p => ({ id: p.id, version: p.version, optional: false })), requiresCapabilities: ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'district.v1', 'body.graph.v1', 'tf.pipeline.v1'], migrations: [] },
       variables: [], flags: [], hooks: [], locations: [], routes: [], actions: [], events: [], texts: {}, contributions: [], residentTemplates: [], storylets: [],
     };
+    const contributionsAt = new Map<Id, ReferenceTemplate[]>();
     const definition: WorldDef = { id: `neighborhood-${input.seed}`, name: environment.data.name, startLocationId: id('location.0'), regions: [{ id: 'region-0', name: environment.data.name, environmentTags: [...tags], ecologyTags: [...tags].filter(t => t.startsWith('ecology.')) }], locations: [], factions: [], eventPool: [], packs: [] };
     for (let i = 0; i < 2; i++) {
       const t = choose('faction', `faction.${i}`, t => !selected.some(s => s.kind === 'faction' && s.id === t.id)); if (t.kind !== 'faction') throw Error();
+      t.contributes.tags.forEach(tag => tags.add(tag));
       definition.factions.push({ id: `faction-${i}`, templateId: t.id, name: t.data.name, activities: clone(t.data.activities), locationIds: [] });
     }
     function action(key: string, label: string, hook: Id, effects: Effect[], conditions: ActionDef['conditions'] = [], group: ActionDef['group'] = 'daily', text = '你完成了眼前的事情。'): Id {
       const aid = id(`action.${key}`), textKey = id(`text.${key}`);
       pack.texts[textKey] = text;
-      pack.actions.push({ id: aid, label, hint: '按本地时间结算 · 可保存进度', group, conditions, effects, resultText: textKey });
+      const hints = effects.flatMap(effect => {
+        if (effect.op === 'clock.advance') return [`${effect.minutes}分钟`];
+        if (effect.op === 'var.change') { const variable = input.registry.variable(effect.id); return [`${variable.label}${effect.amount >= 0 ? '+' : '−'}${Math.abs(effect.amount)}${variable.unit}`]; }
+        if (effect.op === 'resident.help') return ['精力−5', '零钱+3', '每天一次'];
+        if (effect.op === 'world.encounter') return ['认识在场居民', '留意当天的事'];
+        if (effect.op === 'tf.enqueue') return ['确认后开始渐进变化'];
+        if (effect.op === 'tf.apply') return ['立即改变当前形态'];
+        return [];
+      });
+      pack.actions.push({ id: aid, label, hint: hints.join(' · ') || '继续在街区生活', group, conditions, effects, resultText: textKey });
       if (group !== 'event') pack.contributions.push({ hookId: hook, actionIds: [aid] }); return aid;
     }
     for (let i = 0; i < parameters.locationCount; i++) {
@@ -76,16 +94,15 @@ export class WorldGenerator {
       action(`talk.${i}`, '与眼前的居民交谈', hook, [{ op: 'resident.talk' }, { op: 'clock.advance', minutes: 5 }], [{ op: 'resident.available' }], 'daily', '你们聊了聊今天的生活。');
       action(`help.${i}`, '帮居民处理手边的事', hook, [{ op: 'resident.help' }, { op: 'clock.advance', minutes: 15 }], [{ op: 'resident.available' }, { op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你先问清楚需要什么，再伸手帮忙。');
       const e = choose('event', `event.${i}`, () => true, new Set(localTags)); if (e.kind !== 'event') throw Error();
+      contributionsAt.set(lid, [t, e]);
       const eid = id(`event.${i}`), endText = id(`text.event.end.${i}`), prompt = id(`text.event.prompt.${i}`);
       const finish = action(`event.finish.${i}`, e.data.label, hook, [{ op: 'clock.advance', minutes: e.data.minutes }, { op: 'var.change', id: 'core:money', amount: e.data.reward }, { op: 'event.advance', nodeId: 'end' }], [], 'event', e.data.completeText);
       const leave = action(`event.leave.${i}`, '先继续自己的安排', hook, [{ op: 'event.advance', nodeId: 'end' }], [], 'event', '你向值班人说明稍后再说，走回公共通道。');
       for (const aid of [finish, leave]) pack.actions.find(a => a.id === aid)!.context = { eventId: eid, nodeId: 'start' };
       pack.texts[prompt] = e.data.prompt; pack.texts[endText] = '交接已记录。你可以继续探索街区。';
       pack.events.push({ id: eid, startNode: 'start', rating: 'general', nodes: [{ id: 'start', type: 'choice', textVariants: [prompt], actionIds: [finish, leave], onEnter: [] }, { id: 'end', type: 'exit', textVariants: [endText], actionIds: [], onEnter: [{ op: 'event.exit' }] }] });
-      const eventIds = [...new Set([eid, ...t.contributes.eventIds, ...e.contributes.eventIds])];
+      const eventIds = [eid];
       for (const [j, eventId] of eventIds.entries()) { pack.storylets!.push({ id: id(`storylet.${i}.${j}`), locationId: lid, conditions: [], eventId, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: ['neighborhood'] }); definition.eventPool.push(eventId); }
-      const tfIds = [...new Set([...t.contributes.tfIds, ...e.contributes.tfIds])];
-      for (const [j, tfId] of tfIds.entries()) { const tf = input.registry.transformation(tfId); action(`tf.${i}.${j}`, `体验${tf.label}`, hook, [{ op: tf.source === 'free' ? 'tf.apply' : 'tf.enqueue', id: tfId }], [], 'daily', '你按公开流程确认了这次身体变化。'); }
     }
     const pairs = new Set<string>();
     const connect = (a: number, b: number) => {
@@ -107,14 +124,41 @@ export class WorldGenerator {
       const work = pick(definition.locations.filter(l => ['market', 'workshop', 'commons'].includes(l.service)), `workplace.${i}`);
       const localTags = new Set(work.tags);
       const t = choose('npc', `npc.${i}`, t => t.kind === 'npc' && work.professions.includes(input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!.profession), localTags); if (t.kind !== 'npc') throw Error();
+      contributionsAt.get(work.id)!.push(t);
       const source = input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!;
       const template = clone(source); template.id = id(`resident.${i}`); template.locationIds = pack.locations.map(l => l.id); template.start = 0; template.end = 1439;
       // 抽样只在生成时完成；单值实例模板继续受原居民存档校验保护。
-      template.names = [`${pick(source.names, `npc.name.${i}`)}·${i + 1}`]; template.appearance = [pick(source.appearance, `npc.appearance.${i}`)]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
+      template.names = [`${pick(source.names, `npc.name.${i}`)}·${i + 1}`]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
       template.patchIds = source.patchIds.length ? [pick(source.patchIds, `npc.patch.${i}`)] : [];
+      let initialBody = instantiateBody(input.registry.bodyTemplate(template.bodyTemplateId));
+      for (const patch of template.patchIds) initialBody = patchedBody(initialBody, input.registry.bodyPatch(patch), input.registry);
+      const traits = bodyTraits(initialBody, input.registry);
+      if (traits.grasp < 1 || traits.walk < 1) throw Error('居民身体不满足首版劳动与移动能力规则。');
+      // 旧模板外观可能包含与补丁无关的肢体描写；生成外观从真实图读取，避免虚构部件。
+      const parts = initialBody.parts.map(p => input.registry.bodyPart(p.definitionId));
+      template.appearance = [`${[...new Set(parts.filter(p => p.kind === 'ear' || p.kind === 'tail').map(p => p.label))].join('、') || input.registry.bodyTemplate(template.bodyTemplateId).label}，带着${template.profession}的工作用品`];
       pack.residentTemplates!.push(template);
       const home = pick(residences, `home.${i}`), rest = pick(leisure, `leisure.${i}`);
-      agents.push({ residentId: `resident:${work.id}:${template.id}`, originLocationId: work.id, factionId: work.factionId, schedule: schedule(rules, home.id, work.id, rest.id) });
+      agents.push({ residentId: `resident:${work.id}:${template.id}`, originLocationId: work.id, factionId: work.factionId, relationships: [], schedule: schedule(rules, home.id, work.id, rest.id) });
+    }
+    // 最小社交网络只记录真实共同住处/工作关系；后续变化属于模拟器。
+    for (let i = 0; i < agents.length; i++) {
+      const a = agents[i]!, b = agents[(i + 1) % agents.length]!;
+      const kind = a.originLocationId === b.originLocationId ? 'coworker' : a.schedule[0]!.locationId === b.schedule[0]!.locationId ? 'neighbor' : 'acquaintance';
+      a.relationships!.push({ otherResidentId: b.residentId, kind, strength: 10 });
+      b.relationships!.push({ otherResidentId: a.residentId, kind, strength: 10 });
+    }
+    const globalContributors = selected.filter(t => t.kind === 'environment' || t.kind === 'faction');
+    for (const [i, l] of definition.locations.entries()) {
+      const contributions = [...globalContributors, ...contributionsAt.get(l.id)!].map(t => t.contributes);
+      l.tags = [...new Set([...l.tags, ...contributions.flatMap(c => c.tags)])];
+      for (const [j, eventId] of [...new Set(contributions.flatMap(c => c.eventIds))].entries()) {
+        pack.storylets!.push({ id: id(`storylet.contributed.${i}.${j}`), locationId: l.id, conditions: [], eventId, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: ['neighborhood'] }); definition.eventPool.push(eventId);
+      }
+      for (const [j, tfId] of [...new Set(contributions.flatMap(c => c.tfIds))].entries()) {
+        const tf = input.registry.transformation(tfId);
+        action(`tf.${i}.${j}`, `体验${tf.label}`, pack.locations[i]!.actionHook, [{ op: tf.source === 'free' ? 'tf.apply' : 'tf.enqueue', id: tfId }], [], 'daily', '你按公开流程确认了这次身体变化。');
+      }
     }
     definition.eventPool = [...new Set(definition.eventPool)];
     definition.packs = [...clone(input.registry.contentPacks), pack];

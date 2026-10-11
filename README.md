@@ -1,4 +1,16 @@
-# 以太都市：深渊重塑 · Alpha 0.1 第三阶段修复版
+# 以太都市：深渊重塑 · Alpha 0.2 · 世界生成器 v0.1
+
+继续既有 Alpha 0.2，固定以太都市保留为框架测试世界。新增可以实际进入游玩的随机街区，复用原行动、居民、事件、BodyGraph/TF、时间与存档系统。
+
+直接打开 `dist/Aetheria-Alpha-0.2.html`，通过「世界」菜单生成。两份独立试玩：`dist/WorldGenerator-Seed-7.html`（晴砾街区）、`dist/WorldGenerator-Seed-42.html`（雾潮街区）。原 `start_game.bat` 启动方式继续保留。游戏不依赖实时 AI API。
+
+详细架构、参考库格式、扩展示例、复现、存档规则、测试和未实现清单见 [世界生成器说明](docs/world-generator-v0.1.md)。审计与检查点见 [审计记录](docs/worldgen-audit.md)。生成存档快照保存原内容定义；更新参考库只影响之后的新世界。
+
+`npm run check` 完成类型检查、全部规则回归和构建；`npm run test:worldgen:browser` 执行生成器实玩与离线验证。
+
+下面保留 Alpha 0.1 第三阶段历史说明，版本范围以各段标注为准；它不是 Alpha 0.2 当前未实现清单。
+
+## Alpha 0.1 第三阶段历史说明
 
 独立 TypeScript 工程的新阶段更新：增加薇尔维特沙龙、固定 NPC 日程、多轮交谈、关系与记忆，以及一件可完成的跨地点小委托。此前三个地点的日常行动、改造诊室、真实身体图与机械尾进度全部保留。旧 HTML Demo 只作设定参考，没有参与代码或存档。
 

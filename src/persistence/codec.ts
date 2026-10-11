@@ -140,7 +140,8 @@ function migrateLegacy(raw: unknown, registry: Registry, version: 1 | 2): GameSt
 }
 export class SaveCodec {
   readonly registry: Registry;
-  constructor(registry: Registry) { this.registry = registry; }
+  readonly fixedRegistry?: Registry;
+  constructor(registry: Registry, fixedRegistry?: Registry) { this.registry = registry; this.fixedRegistry = fixedRegistry; }
   async encode(state: GameState): Promise<string> {
     validateState(state, this.registry);
     if (state.worldInstance && await hash(state.worldInstance.generation.rules) !== state.worldInstance.generation.rulesHash) throw Error('世界规则哈希不符。');
@@ -170,7 +171,8 @@ export class SaveCodec {
         return { status: 'ready', state: clone(state), registry: restored };
       }
       if (this.registry.packs.some(p => p.id === 'generated/neighborhood')) {
-        return new SaveCodec(await loadPacks(this.registry.contentPacks.filter(p => p.manifest.id !== 'generated/neighborhood'))).decode(text);
+        // 生成参考库可能额外装了种族/原型包；它们不能成为读取原固定世界的必需包。
+        return new SaveCodec(this.fixedRegistry ?? await loadPacks(this.registry.contentPacks.filter(p => p.manifest.id !== 'generated/neighborhood'))).decode(text);
       }
       if (this.registry.legacyRegistry && !envelope.payload.state.district) {
         const old = await new SaveCodec(this.registry.legacyRegistry).decode(text);

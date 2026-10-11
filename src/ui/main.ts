@@ -30,21 +30,23 @@ async function boot(): Promise<void> {
   const texts=new TextLibrary();for(const p of storedTexts){try{texts.install(p,registry);}catch{ /* invalid prose stays disabled */ }}
   const journal=embedded?.journal??await fetchJSON(new URL('../../content/journal.json',import.meta.url)) as JournalEntry[];
   let codec = new SaveCodec(registry); const store=new IndexedDBSaveStore();let saves = new SaveRepository(codec,store);
+  const launch = globalThis as unknown as { aetheriaInitialSave?: string; aetheriaSaveSlot?: string };
+  const saveSlot = launch.aetheriaSaveSlot ?? 'manual';
   let engine = new ActionExecutor(registry, createGameState(registry, newSeed()),texts);
   let result: ActionResult | undefined; let busy = false;
   function redraw(): void { const view=engine.view();renderGame(view, registry, result);renderDistrict(view,registry,texts,journal); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
   function adopt(loaded: { state: import('../core/types.ts').GameState; registry?: import('../content/registry.ts').Registry }): void {
-    registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry); saves = new SaveRepository(codec, store);
+    registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry, fixedRegistry); saves = new SaveRepository(codec, store);
     engine = new ActionExecutor(registry, loaded.state, texts);
   }
   const generation = embedded?.generation ?? { rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/reference.json', import.meta.url)) };
-  mountWorldControls({ source: () => fixedRegistry, defaults: generation, isBusy: () => busy, replace: generated => {
+  mountWorldControls({ source: () => fixedRegistry, defaults: generation, isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {
     if (generated) adopt({ state: generated.state, registry: generated.registry });
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });
     result = undefined; redraw(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');
   } });
   async function refreshSlot(): Promise<void> {
-    const saved = await saves.load();
+    const saved = await saves.load(saveSlot);
     byId<HTMLButtonElement>('save-read').disabled = saved.status !== 'ready';
     byId('save-info').textContent = saved.status === 'ready' ? `${(saved.registry??registry).location(saved.state.world.locationId).name} · ${formatClock(saved.state.clock.totalMinutes)} · ${saved.state.meta.revision} 次行动` : saved.status === 'empty' ? '尚无存档' : `已隔离：${saved.reason}`;
   }
@@ -83,9 +85,9 @@ async function boot(): Promise<void> {
     try { await run(); } catch (error) { byId('save-message').textContent = `操作失败：${error instanceof Error ? error.message : error}`; }
     finally { busy = false; buttons.forEach(x => { x.disabled = false; }); try { await refreshSlot(); } catch { byId<HTMLButtonElement>('save-read').disabled = true; } }
   }
-  byId('save-write').addEventListener('click', () => storageAction(async () => { await saves.save(engine.snapshot()); byId('save-message').textContent = '保存完成。'; }));
+  byId('save-write').addEventListener('click', () => storageAction(async () => { await saves.save(engine.snapshot(), saveSlot); byId('save-message').textContent = '保存完成。'; }));
   byId('save-read').addEventListener('click', () => storageAction(async () => {
-    const loaded = await saves.load();
+    const loaded = await saves.load(saveSlot);
     if (loaded.status !== 'ready') { byId('save-message').textContent = loaded.status === 'empty' ? '没有可读取的存档。' : `存档已隔离：${loaded.reason}`; return; }
     adopt(loaded); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = loaded.migration ?? '已恢复保存时的进度。';
   }));
@@ -117,7 +119,7 @@ async function boot(): Promise<void> {
       const state=structuredClone(engine.snapshot());
       const next=state.worldInstance?await loadPacks([...registry.contentPacks,raw]):fixedNext;
       state.meta.packs=structuredClone(next.packs);
-      if(state.worldInstance){state.worldInstance.definition.packs=structuredClone(next.contentPacks);state.worldInstance.generation.contentPacks=structuredClone(next.packs.filter(p=>p.id!=='generated/neighborhood'));}
+      if(state.worldInstance)state.worldInstance.definition.packs=structuredClone(next.contentPacks);
       const nextCodec=new SaveCodec(next);await nextCodec.encode(state);
       fixedRegistry=fixedNext;adopt({state,registry:next});rulePacks.push(raw);
       try{localStorage.setItem('aetheria-alpha02-rules',JSON.stringify(rulePacks));}catch{}
@@ -127,8 +129,9 @@ async function boot(): Promise<void> {
   byId('brief-export').addEventListener('click',()=>{try{const context=writingContext(engine.snapshot(),registry),url=URL.createObjectURL(new Blob([JSON.stringify(context,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='runtime-context.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);byId('pack-message').textContent='已导出当前槽的真实参与者、身体、姿态和接触上下文。';}catch(error){byId('pack-message').textContent=error instanceof Error?error.message:'当前没有写作槽。';}});
   redraw();
   try {
-    const loaded = await saves.load();
+    const loaded = await saves.load(saveSlot);
     if (loaded.status === 'ready') { adopt(loaded); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); feedback(loaded.migration ?? '已恢复手动存档。之后的行动仍需手动保存。'); }
+    else if (loaded.status === 'empty' && launch.aetheriaInitialSave) { const initial = await codec.decode(launch.aetheriaInitialSave); if(initial.status!=='ready')throw Error(initial.reason);adopt(initial);redraw();feedback('已进入示例随机街区。可继续探索并手动保存。'); }
     else if (loaded.status === 'quarantined') feedback(`旧存档已隔离并保留：${loaded.reason}`, true);
   } catch { feedback('本地存档暂不可用，进度可以通过 JSON 导出。', true); }
 }

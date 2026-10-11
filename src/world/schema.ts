@@ -63,8 +63,29 @@ export function parseReference(raw: unknown, registry: Registry): ReferencePack 
       for (const id of c.eventIds as Id[]) {
         // 需要固定人物在场的剧情不能移植成无参与者的随机地点故事。
         if (registry.event(id).participantIds?.length) throw Error('地点事件贡献必须不依赖固定人物。');
+        validatePortableEvent(id, registry);
       }
     }
   }, 1, 500);
   return clone(raw) as ReferencePack;
+}
+
+/** v0.1 只移植自足事件：避免把固定城市的移动/战斗后续或付费唯一出口带入随机街区。 */
+function validatePortableEvent(id: Id, registry: Registry): void {
+  const event = registry.event(id);
+  if (event.rating === 'adult') throw Error('首版参考事件只接受通用评级。');
+  const forbidden = new Set(['location.move', 'event.start', 'scene.start', 'combat.start', 'player.create']);
+  for (const node of event.nodes) {
+    if (node.onEnter.some(e => !['event.exit', 'flag.set', 'clock.advance', 'var.change'].includes(e.op) || (e.op === 'var.change' && e.amount < 0))) throw Error('参考事件进入节点不能有阻断退出的效果。');
+    for (const aid of node.actionIds) if (registry.action(aid).effects.some(e => forbidden.has(e.op))) throw Error('参考事件不能依赖固定地图、固定人物或嵌套后续。');
+  }
+  const exits = new Set(event.nodes.filter(n => n.onEnter.some(e => e.op === 'event.exit')).map(n => n.id));
+  for (let size = -1; size !== exits.size;) {
+    size = exits.size;
+    for (const node of event.nodes) if (node.actionIds.some(aid => {
+      const a = registry.action(aid);
+      return !a.conditions.length && a.effects.length > 0 && a.effects.every(e => e.op === 'event.exit' || (e.op === 'event.advance' && exits.has(e.nodeId)));
+    })) exits.add(node.id);
+  }
+  if (event.nodes.some(n => !exits.has(n.id))) throw Error('参考事件的每个节点必须有无条件、免费退出路径。');
 }

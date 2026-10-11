@@ -31,6 +31,7 @@ export interface WorldDef {
 }
 export interface WorldAgent {
   residentId: string; originLocationId: Id; factionId: string;
+  relationships?: { otherResidentId: string; kind: 'coworker' | 'neighbor' | 'acquaintance'; strength: number }[];
   schedule: { start: number; end: number; locationId: Id; activity: 'home' | 'work' | 'leisure' }[];
 }
 export interface WorldInstance {

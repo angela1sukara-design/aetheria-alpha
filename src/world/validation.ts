@@ -2,6 +2,7 @@ import type { GameState, Id } from '../core/types.ts';
 import { stableJson } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { integer, list, object, parseRules, services, string, strings } from './schema.ts';
+import { bodyTraits } from '../engine/body.ts';
 
 /** 快照仍是不可信输入；恢复需先经过内容 loader，再检查实例和日程约束。 */
 export function validateWorldInstance(state: GameState, registry: Registry): void {
@@ -18,7 +19,8 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   refs(g.references); refs(g.contentPacks); strings(g.selectedTemplateIds, 1);
   object(g.parameters, ['locationCount', 'npcCount']); integer(g.parameters.locationCount, 5, 20); integer(g.parameters.npcCount, 3, 40);
   const installedSources = registry.packs.filter(p => p.id !== 'generated/neighborhood');
-  if (stableJson(g.contentPacks) !== stableJson(installedSources)) throw Error('世界内容来源与快照不一致。');
+  const originalSources = installedSources.filter(p => g.contentPacks.some(ref => ref.id === p.id));
+  if (stableJson(g.contentPacks) !== stableJson(originalSources) || installedSources.some(p => !g.contentPacks.some(ref => ref.id === p.id) && !registry.appendOnlyPackIds.includes(p.id))) throw Error('世界内容来源与快照不一致。');
   const d = w.definition;
   object(d, ['id', 'name', 'startLocationId', 'regions', 'locations', 'factions', 'eventPool', 'packs']); string(d.id); string(d.name); registry.location(d.startLocationId);
   if (stableJson(d.packs) !== stableJson(registry.contentPacks)) {
@@ -46,9 +48,10 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (!state.district || state.district.residents.length !== g.parameters.npcCount) throw Error('生成居民数量不符。');
   const residents = new Set<string>();
   list(w.agents, raw => {
-    const a = raw as typeof w.agents[number]; object(a, ['residentId', 'originLocationId', 'factionId', 'schedule']); string(a.residentId);
+    const a = raw as typeof w.agents[number]; object(a, ['residentId', 'originLocationId', 'factionId', 'schedule', ...('relationships' in a ? ['relationships'] : [])]); string(a.residentId);
     const resident = state.district!.residents.find(r => r.id === a.residentId);
     if (!resident || residents.has(a.residentId) || !locationIds.has(a.originLocationId) || !factions.has(a.factionId)) throw Error('世界居民身份不符。'); residents.add(a.residentId);
+    const traits = bodyTraits(resident.body, registry); if (traits.grasp < 1 || traits.walk < 1) throw Error('居民身体与首版职业能力规则不符。');
     let end = 0;
     list(a.schedule, raw => { const slot = raw as typeof a.schedule[number]; object(slot, ['start', 'end', 'locationId', 'activity']); integer(slot.start, 0, 1439); integer(slot.end, 1, 1440); if (slot.start !== end || slot.end <= slot.start || !locationIds.has(slot.locationId) || !['home', 'work', 'leisure'].includes(slot.activity)) throw Error('居民日程必须连续覆盖全天。'); end = slot.end;
       const location = d.locations.find(l => l.id === slot.locationId)!;
@@ -56,5 +59,15 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
     }, 1, 20);
     if (end !== 1440 || a.schedule.find(s => state.clock.totalMinutes % 1440 >= s.start && state.clock.totalMinutes % 1440 < s.end)?.locationId !== resident.locationId) throw Error('居民活动位置与时钟不符。');
   }, g.parameters.npcCount, g.parameters.npcCount);
+  for (const a of w.agents) {
+    const peers = new Set<string>();
+    list(a.relationships ?? [], raw => {
+      const edge = raw as NonNullable<typeof a.relationships>[number]; object(edge, ['otherResidentId', 'kind', 'strength']); integer(edge.strength, 0, 100);
+      if (!['coworker', 'neighbor', 'acquaintance'].includes(edge.kind) || edge.otherResidentId === a.residentId || peers.has(edge.otherResidentId)) throw Error('居民关系无效。'); peers.add(edge.otherResidentId);
+      const b = w.agents.find(b => b.residentId === edge.otherResidentId);
+      if (!b?.relationships?.some(back => back.otherResidentId === a.residentId && back.kind === edge.kind && back.strength === edge.strength)) throw Error('居民关系必须指向已存在人物并双向一致。');
+      if ((edge.kind === 'coworker' && a.originLocationId !== b.originLocationId) || (edge.kind === 'neighbor' && a.schedule[0].locationId !== b.schedule[0].locationId)) throw Error('居民共同经历关系与地点不符。');
+    }, 0, 40);
+  }
   object(w.simulation, ['version', 'lastMinute']); if (w.simulation.version !== 1 || w.simulation.lastMinute !== state.clock.totalMinutes) throw Error('世界模拟时钟不符。');
 }
