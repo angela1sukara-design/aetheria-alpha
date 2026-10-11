@@ -28,18 +28,28 @@ async function boot(): Promise<void> {
     const button = (event.target as Element).closest<HTMLButtonElement>('button[data-action]');
     if (!button || button.disabled || busy) return;
     busy = true; button.disabled = true;
+    const fromPeople = !!button.closest('#people-dialog');
     const revision = engine.snapshot().meta.revision;
     // 先锁按钮再提交；同一轮快速点击携带旧请求不会悄悄执行下一项行动。
     const actionResult = engine.performAction({ actionId: asId(button.dataset.action!) }, revision, crypto.randomUUID());
     if (actionResult.ok) {
       result = actionResult; redraw(); feedback('');
       if (byId<HTMLDialogElement>('map-dialog').open) byId<HTMLDialogElement>('map-dialog').close();
+      if (fromPeople && byId<HTMLDialogElement>('people-dialog').open) byId<HTMLDialogElement>('people-dialog').close();
     } else { feedback(actionResult.message, true); redraw(); }
     setTimeout(() => { busy = false; }, 250);
   });
-  for (const name of ['map', 'body', 'people', 'save', 'log']) byId(`${name}-open`).addEventListener('click', async () => {
+  const dialogNames = ['map', 'body', 'people', 'save', 'log'];
+  async function openDialog(name: string): Promise<void> {
+    if (!dialogNames.includes(name)) return;
+    for (const other of dialogNames) if (other !== name && byId<HTMLDialogElement>(`${other}-dialog`).open) byId<HTMLDialogElement>(`${other}-dialog`).close();
     const dialog = byId<HTMLDialogElement>(`${name}-dialog`); if (!dialog.open) dialog.showModal();
     if (name === 'save') { try { await refreshSlot(); } catch (error) { byId('save-message').textContent = `本地存档不可用：${error instanceof Error ? error.message : error}。你仍可导出 JSON。`; } }
+  }
+  for (const name of dialogNames) byId(`${name}-open`).addEventListener('click', () => { void openDialog(name); });
+  document.addEventListener('click', event => {
+    const opener = (event.target as Element).closest<HTMLButtonElement>('button[data-dialog-open]');
+    if (opener && !opener.disabled) void openDialog(opener.dataset.dialogOpen!);
   });
   for (const button of document.querySelectorAll<HTMLButtonElement>('[data-close]')) button.addEventListener('click', () => byId<HTMLDialogElement>(button.dataset.close!).close());
   async function storageAction(run: () => Promise<void>): Promise<void> {

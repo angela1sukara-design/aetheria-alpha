@@ -42,4 +42,12 @@ const legacy = await codec.decode(await readFile(new URL('../tests/fixtures/stag
 assert.equal(legacy.status, 'ready'); assert.equal(legacy.state.meta.schemaVersion, 3);
 const stage2 = await codec.decode(await readFile(new URL('../tests/fixtures/stage2-save.json', import.meta.url), 'utf8'));
 assert.equal(stage2.status, 'ready'); assert.equal(stage2.state.tfQueues[0].status, 'paused'); assert.equal(stage2.state.tfQueues[0].elapsedMinutes, 15);
-console.log('Distribution check passed: ESM imports, JSON loading, daily/event/BodyGraph/TF/NPC quest execution, schema-3 save round trip, stage-1 and stage-2 migration. This is not browser QA.');
+const stage3 = await codec.decode(await readFile(new URL('../tests/fixtures/stage3-npc-save.json', import.meta.url), 'utf8'));
+assert.equal(stage3.status, 'ready'); assert.match(stage3.migration, /第三阶段/); assert.equal(stage3.state.npcs[0].relationship.trust, 7);
+const exhausted = await codec.decode(await readFile(new URL('../tests/fixtures/stage3-exhausted-save.json', import.meta.url), 'utf8'));
+assert.equal(exhausted.status, 'ready'); const recovered = new ActionExecutor(registry, exhausted.state);
+assert.equal(recovered.view().actions.find(a => a.definition.id === 'aetheria-social:action.travel.salon_street').available, false);
+assert.equal(recovered.performAction({ actionId: 'aetheria-recovery:action.salon.rest' }, recovered.snapshot().meta.revision, 'compiled-recover').ok, true);
+assert.equal(recovered.snapshot().player.variables['core:energy'], 10);
+assert.equal(recovered.performAction({ actionId: 'aetheria-social:action.travel.salon_street' }, recovered.snapshot().meta.revision, 'compiled-leave').ok, true);
+console.log('Distribution check passed: ESM imports, JSON loading, daily/event/BodyGraph/TF/NPC quest execution, schema-3 save round trip, stage-1/2/3 exact migration, exhausted-salon recovery. This is not browser QA.');

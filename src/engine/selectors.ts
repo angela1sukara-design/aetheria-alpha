@@ -5,6 +5,7 @@ import { evaluate } from './conditions.ts';
 import { transformationCheck } from './transformations.ts';
 import { eventNode } from './events.ts';
 import { npcPresent } from './npc.ts';
+import { directResourceCheck } from './resource-check.ts';
 /** 所有可执行入口同一个选择器：UI 可见动作与引擎授权集合完全一致。 */
 export function actionOptions(state: GameState, registry: Registry): ActionOption[] {
   const current = eventNode(state, registry);
@@ -13,6 +14,7 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   const allActions = [...new Map([...actions, ...topics, ...registry.globalActions()].map(a => [a.id, a])).values()];
   return allActions.map(definition => {
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
+    checks.push(directResourceCheck(definition.effects, state, registry));
     for (const e of definition.effects) if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') checks.push(transformationCheck(state, registry, e.id, e.op));
     for (const e of definition.effects) if (e.op === 'event.start') for (const npcId of registry.event(e.id).participantIds ?? []) checks.push({ pass: npcPresent(state, registry, npcId), reason: `${registry.npc(npcId).name}此刻不在这里。` });
     const failed = checks.find(x => !x.pass);

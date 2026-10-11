@@ -3,6 +3,7 @@ import type { Change, GameState, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
 import { activeEvent } from './events.ts';
+import { formatClock } from './clock.ts';
 export function createNPCStates(registry: Registry): NPCState[] {
   return registry.npcs.map(def => ({ instanceId: `fixed:${def.id}`, definitionId: def.id, discovered: false, relationship: { familiarity: 0, trust: 0 }, memories: [] }));
 }
@@ -20,6 +21,36 @@ export function npcLocation(state: GameState, registry: Registry, npcId: Id): Id
 }
 export function npcPresent(state: GameState, registry: Registry, npcId: Id): boolean {
   return npcLocation(state, registry, npcId) === state.world.locationId;
+}
+export interface NPCAppearance { locationId: Id; totalMinutes: number; activityText: Id }
+/** 只查询下一次公开日程，不快进时间、不写实例，也不把离场地点虚构成地图节点。 */
+export function nextNPCAppearance(state: GameState, registry: Registry, npcId: Id, locationId?: Id): NPCAppearance | undefined {
+  const now = state.clock.totalMinutes, dayStart = Math.floor(now / 1440) * 1440;
+  const visits = registry.npc(npcId).schedule.filter(s => s.locationId !== null && (!locationId || s.locationId === locationId)).map(s => {
+    const today = dayStart + s.start;
+    return { locationId: s.locationId!, totalMinutes: today > now ? today : today + 1440, activityText: s.activityText };
+  });
+  return visits.filter(v => Number.isSafeInteger(v.totalMinutes)).sort((a, b) => a.totalMinutes - b.totalMinutes)[0];
+}
+/** 行动的最终状态与原状态比较。玩家自己离开不算NPC离场；回滚/重绘没有通知。 */
+export function npcPresenceTransitions(before: GameState, after: GameState, registry: Registry): { changes: Change[]; texts: string[] } {
+  const changes: Change[] = [], texts: string[] = [];
+  if (before.world.locationId !== after.world.locationId) return { changes, texts };
+  for (const def of registry.npcs) {
+    const from = npcLocation(before, registry, def.id), to = npcLocation(after, registry, def.id), here = after.world.locationId;
+    if (from === to) continue;
+    if (from === here) {
+      const destination = to ? registry.location(to).name : '暂不在公开场所';
+      changes.push({ label: `${def.name}·去向`, before: registry.location(here).name, after: destination });
+      texts.push(`${def.name}结束在这里的停留，${to ? `现在在${destination}。` : '暂时离开了公开场所。'}`);
+      const next = nextNPCAppearance(after, registry, def.id);
+      if (next) texts.push(`下次可在${registry.location(next.locationId).name}遇见${def.name}：${formatClock(next.totalMinutes)}。`);
+    } else if (to === here) {
+      changes.push({ label: `${def.name}·去向`, before: from ? registry.location(from).name : '暂不在公开场所', after: registry.location(here).name });
+      texts.push(`${def.name}来到${registry.location(here).name}，现在可以在这里遇见。`);
+    }
+  }
+  return { changes, texts };
 }
 export function hasMemory(state: GameState, npcId: Id, memoryId: Id): boolean {
   return npcState(state, npcId).memories.some(x => x.definitionId === memoryId);

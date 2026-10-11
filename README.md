@@ -1,6 +1,8 @@
-# 以太都市：深渊重塑 · Alpha 0.1 第三阶段
+# 以太都市：深渊重塑 · Alpha 0.1 第三阶段修复版
 
 独立 TypeScript 工程的新阶段更新：增加薇尔维特沙龙、固定 NPC 日程、多轮交谈、关系与记忆，以及一件可完成的跨地点小委托。此前三个地点的日常行动、改造诊室、真实身体图与机械尾进度全部保留。旧 HTML Demo 只作设定参考，没有参与代码或存档。
+
+当前版本 `0.1.0-alpha.3.1`：补足任务后离场提示、人物去向、最早再会与档案中的真实交谈入口；沙龙精力耗尽时可免费休息恢复，返程不足精力会提前显示原因。日程仍为09:00–18:00在沙龙、18:00–19:00在集市、其他时间离开公开场所，任务完成不会删除人物。这里只修复第三阶段，不扩展下一阶段玩法。
 
 ## 直接启动
 
@@ -23,13 +25,17 @@
 
 薇尔维特及沙龙经营者身份来自既有设定。日程、小委托、对白与所有新数值为 **PROPOSED试运行内容**。不是完整角色攻略线或已冻结正史。
 
+精力不足时可执行「在门厅休息恢复精力」：免费，30分钟、精力+10。时钟与正在进行的改造照常推进，不增加NPC关系或任务报酬。此恢复数值同为PROPOSED。
+
 ## 存档
 
 仍为一个手动存档槽。刷新恢复最近一次手动保存；未保存操作不会自动写入。JSON导入只恢复当前游戏，点击保存才覆盖手动槽。
 
-同一浏览器、同一地址和端口下，可以读取前两阶段的IndexedDB。更换浏览器/地址时，先在旧版导出JSON，再在本版导入。请维持 `localhost:4173`；`127.0.0.1` 是另一个存档来源。
+同一浏览器、同一地址和端口下，可以读取前三阶段的IndexedDB。更换浏览器/地址时，先在旧版导出JSON，再在本版导入。请维持 `localhost:4173`；`127.0.0.1` 是另一个存档来源。
 
 精确官方 Stage1/Stage2 存档会升级到schema3。Stage2已完成/暂停/阻塞中的身体与TF、金钱、事件、时间、RNG和账本保留；Stage1新增初始身体。两者新增默认人物记录。升级读取不会覆盖旧记录，点击保存后才写新版；新版不能返回旧版引擎。未知包、哈希变化、损坏旧档保留并隔离；尚无通用包迁移。
+
+原第三阶段的四包存档只追加官方恢复包引用；原身体、TF、NPC身份/记忆/关系、任务、事件、时间、RNG与事务账本全部保留，schema仍为3。升级仅支持精确已发布的官方包指纹；读取不会覆盖手动槽，点击保存才写入修复版。此后保存的五包存档不能由旧四包引擎读取。
 
 ## 开发与验证
 
@@ -40,7 +46,7 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-测试环境使用 Chromium 153.0.8010.0。脚本支持 `BROWSER_EXECUTABLE_PATH`、`BROWSER_ARGS_JSON` 和可选测试字体 `BROWSER_FONT_CSS`。交付不包含浏览器与测试字体，不增加游戏运行依赖。实际结果：77项规则测试与35项真实浏览器检查通过；详见 `docs/phase-3-report.md`，完整日志在 `artifacts/stage3-check-output.txt` 与 `stage3-browser-output.txt`；历史报告保留。
+测试环境使用 Chromium 153.0.8010.0。脚本支持 `BROWSER_EXECUTABLE_PATH`、`BROWSER_ARGS_JSON` 和可选测试字体 `BROWSER_FONT_CSS`。交付不包含浏览器与测试字体，不增加游戏运行依赖。原第三阶段77项规则与35项浏览器检查见 `docs/phase-3-report.md`；本次修复结果见 `docs/phase-3-fix1-report.md`，日志在 `artifacts/stage3-fix1-check-output.txt` 与 `stage3-fix1-browser-output.txt`，历史报告保留。
 
 | 目录 | 职责 |
 | --- | --- |
@@ -51,6 +57,7 @@ npm run test:browser
 | src/ui | 场景/地图/身体/人物/存档显示与intent入口 |
 | content/core、world、reshaping | 前两阶段原包；内容与哈希保持 |
 | content/social | 官方世界子包，公开Hook追加沙龙路线、NPC话题和小委托 |
+| content/recovery | 官方修复子包，通过沙龙公开Hook追加实际恢复行动，原四包不改 |
 | tests、docs | 自动化回归、真实浏览器流程、阶段协议与报告 |
 
 本轮不实现随机路人、完整个人攻略、装备/Slot、InteractionScene、战斗、完整Storylet/EventGraph；不宣称M1/M2/M3全部完成。未覆盖或发布旧试玩站。Git历史随包保存在 `artifacts/repository.bundle`，可用 `git clone artifacts/repository.bundle <new-folder>` 恢复独立仓库。

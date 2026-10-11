@@ -142,13 +142,70 @@ try {
   await check('真实等候到关店：交谈跨时段暂留NPC，退出后去集市还能遇见', async () => {
     while (await minute() < 1050) await npcClick('在门厅等候半小时');
     await npcClick('与薇尔维特继续交谈'); while (await minute() < 1080) { await npcClick('问问沙龙的服务'); await npcClick('接着聊别的话题'); }
-    assert.match(await npcPage.locator('#people-nearby').innerText(), /薇尔维特/); await npcClick('结束交谈'); assert.equal(await npcPage.getByRole('button', { name: /与薇尔维特继续交谈/ }).count(), 0); await npcClick('前往主街'); await npcClick('前往集市'); assert.equal(await npcPage.getByRole('button', { name: /与薇尔维特继续交谈/ }).isEnabled(), true);
+    assert.match(await npcPage.locator('#people-nearby').innerText(), /薇尔维特/); await npcClick('结束交谈'); assert.equal(await npcPage.getByRole('button', { name: /与薇尔维特继续交谈/ }).count(), 0);
+    assert.match(await npcPage.locator('#result-text').innerText(), /现在在集市/); assert.match(await npcPage.locator('#people-nearby').innerText(), /第 2 天 · 09:00/); assert.equal(await npcPage.locator('#people-nearby [data-present="false"]').count(), 1);
+    await npcClick('前往主街'); await npcClick('前往集市'); assert.equal(await npcPage.getByRole('button', { name: /与薇尔维特继续交谈/ }).isEnabled(), true);
   });
   await check('第二阶段IndexedDB启动精确升级，猫耳/暂停TF原样恢复且原槽不覆盖', async () => {
     const ctx = await browser.newContext({ viewport: { width: 1360, height: 1000 } }); await addFonts(ctx); const p = await ctx.newPage(); p.on('pageerror', error => errors.push(error.message)); p.on('requestfailed', request => failedRequests.push(request.url())); await p.goto(url); await p.locator('#scene-title').filter({ hasText: '公寓' }).waitFor(); const original = await readFile(path.join(root, 'tests/fixtures/stage2-save.json'), 'utf8');
     await p.evaluate(text => new Promise((resolve, reject) => { const r = indexedDB.open('aetheria-alpha-0.1', 1); r.onerror = () => reject(r.error); r.onsuccess = () => { const db = r.result, tx = db.transaction('slots', 'readwrite'); tx.objectStore('slots').put(text, 'manual'); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => reject(tx.error); }; }), original);
     await p.reload(); await p.locator('#feedback').filter({ hasText: '第二阶段存档已升级' }).waitFor(); assert.match(await p.locator('#scene-title').innerText(), /改造诊室/); await p.getByRole('button', { name: '身体', exact: true }).click(); assert.match(await p.locator('#body-content').innerText(), /已暂停/); assert.match(await p.locator('#body-content').innerText(), /15 \/ 45 分钟/); assert.match(await p.locator('.body-summary').innerText(), /猫耳.*待校准/);
     const raw = await p.evaluate(() => new Promise((resolve, reject) => { const r = indexedDB.open('aetheria-alpha-0.1', 1); r.onerror = () => reject(r.error); r.onsuccess = () => { const db = r.result, tx = db.transaction('slots', 'readonly'), q = tx.objectStore('slots').get('manual'); let text; q.onsuccess = () => { text = q.result; }; tx.oncomplete = () => { db.close(); resolve(text); }; tx.onerror = () => reject(tx.error); }; })); assert.equal(raw, original); await ctx.close();
+  });
+  await check('白天交差后人物档案仍有真实再访入口，执行后关闭面板', async () => {
+    await npcClick('存档'); await npcPage.locator('#save-import').setInputFiles(npcDownload); await npcPage.locator('#save-message').filter({ hasText: '已导入' }).waitFor(); await npcClick('关闭存档');
+    assert.equal(await npcPage.locator('#people-nearby [data-present="true"]').count(), 1);
+    await npcClick('人物'); await npcPage.locator('#people-content button[data-action="aetheria-social:action.velvet.return"]').click(); await npcPage.waitForTimeout(300);
+    assert.equal(await npcPage.locator('#people-dialog').isVisible(), false); assert.equal(await npcPage.locator('#scene-mode').innerText(), '正在发生'); await npcClick('结束交谈');
+  });
+  const repairContext = await browser.newContext({ viewport: { width: 1360, height: 1000 }, acceptDownloads: true }); await addFonts(repairContext);
+  const repairPage = await repairContext.newPage(); repairPage.on('pageerror', error => errors.push(error.message)); repairPage.on('requestfailed', request => failedRequests.push(request.url()));
+  await repairPage.goto(url); await repairPage.locator('#scene-title').filter({ hasText: '公寓' }).waitFor();
+  const repairClick = async name => { await repairPage.getByRole('button', { name, exact: false }).first().click(); await repairPage.waitForTimeout(300); };
+  const repairMinute = async () => { const time = await repairPage.locator('#clock').innerText(), match = time.match(/(\d\d):(\d\d)/); return Number(match[1]) * 60 + Number(match[2]); };
+  const repairReadSlot = () => repairPage.evaluate(() => new Promise((resolve, reject) => { const r = indexedDB.open('aetheria-alpha-0.1', 1); r.onerror = () => reject(r.error); r.onsuccess = () => { const db = r.result, tx = db.transaction('slots', 'readonly'), q = tx.objectStore('slots').get('manual'); let text; q.onsuccess = () => { text = q.result; }; tx.oncomplete = () => { db.close(); resolve(text); }; tx.onerror = () => reject(tx.error); }; }));
+  const stage3Original = await readFile(path.join(root, 'tests/fixtures/stage3-npc-save.json'), 'utf8');
+  await check('第三阶段真实任务旧档启动升级，离场卡/关系/记忆保留且不覆盖原槽', async () => {
+    await repairPage.evaluate(text => new Promise((resolve, reject) => { const r = indexedDB.open('aetheria-alpha-0.1', 1); r.onerror = () => reject(r.error); r.onsuccess = () => { const db = r.result, tx = db.transaction('slots', 'readwrite'); tx.objectStore('slots').put(text, 'manual'); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => reject(tx.error); }; }), stage3Original);
+    await repairPage.reload(); await repairPage.locator('#feedback').filter({ hasText: '第三阶段存档已修复升级' }).waitFor();
+    assert.match(await repairPage.locator('#clock').innerText(), /18:05/); assert.match(await repairPage.locator('#people-nearby').innerText(), /此刻在集市/); assert.match(await repairPage.locator('#people-nearby').innerText(), /第 2 天 · 09:00/);
+    await repairClick('查看去向与再会'); assert.equal(await repairPage.locator('[data-relation="trust"]').innerText(), '信任 7'); assert.equal(await repairPage.locator('.npc-memories li').count(), 3); assert.equal(await repairReadSlot(), stage3Original);
+  });
+  await check('去向入口打开真实地图并关闭人物面板，查看不推进时间', async () => {
+    const before = await repairPage.locator('#clock').innerText(); await repairClick('打开地图'); assert.equal(await repairPage.locator('#people-dialog').isVisible(), false); assert.equal(await repairPage.locator('#map-dialog').isVisible(), true);
+    assert.match(await repairPage.locator('#map-people').innerText(), /薇尔维特 · 此刻在集市/); assert.equal(await repairPage.locator('#clock').innerText(), before); await repairClick('关闭地图');
+  });
+  await check('按去向实际追到集市继续交谈，19点后离场有说明和次日会面', async () => {
+    await repairClick('前往主街'); await repairClick('前往集市'); await repairClick('人物');
+    await repairPage.locator('#people-content button[data-action="aetheria-social:action.velvet.return"]').click(); await repairPage.waitForTimeout(300); assert.equal(await repairPage.locator('#people-dialog').isVisible(), false);
+    while (await repairMinute() < 1140) { await repairClick('问问沙龙的服务'); await repairClick('接着聊别的话题'); }
+    assert.equal(await repairPage.locator('#people-nearby [data-present="true"]').count(), 1); await repairClick('结束交谈');
+    assert.match(await repairPage.locator('#result-text').innerText(), /离开了公开场所/); assert.match(await repairPage.locator('#people-nearby').innerText(), /此刻不在公开场所/); assert.match(await repairPage.locator('#people-nearby').innerText(), /第 2 天 · 09:00/);
+    assert.equal(await repairPage.getByRole('button', { name: /与薇尔维特继续交谈/ }).count(), 0);
+  });
+  await check('离场后390px人物去向/再会/地图可操作，均无横向溢出', async () => {
+    await repairPage.setViewportSize({ width: 390, height: 844 }); assert.ok(await repairPage.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+    await repairClick('查看去向与再会'); assert.match(await repairPage.locator('#people-content').innerText(), /第 2 天 · 09:00/); assert.ok(await repairPage.locator('#people-dialog').evaluate(d => d.scrollWidth <= d.clientWidth));
+    await repairPage.screenshot({ path: path.join(artifacts, 'npc-absence-mobile.png'), fullPage: true }); await repairClick('打开地图'); assert.match(await repairPage.locator('#map-people').innerText(), /09:00/); assert.ok(await repairPage.locator('#map-dialog').evaluate(d => d.scrollWidth <= d.clientWidth)); await repairClick('关闭地图'); await repairPage.setViewportSize({ width: 1360, height: 1000 });
+  });
+  await check('离场存档刷新保留关系；真实等到次日同一人物重新出现', async () => {
+    await repairClick('存档'); await repairClick('保存当前进度'); await repairPage.reload(); await repairPage.locator('#scene-title').filter({ hasText: '集市' }).waitFor();
+    await repairClick('人物'); assert.equal(await repairPage.locator('[data-relation="trust"]').innerText(), '信任 7'); assert.equal(await repairPage.locator('.npc-memories li').count(), 4); await repairClick('关闭人物');
+    await repairClick('前往主街'); await repairClick('前往薇尔维特沙龙');
+    while (!/第 2 天/.test(await repairPage.locator('#clock').innerText()) || await repairMinute() < 540) await repairClick('在门厅等候半小时');
+    assert.equal(await repairPage.locator('#people-nearby [data-present="true"]').count(), 1); assert.match(await repairPage.locator('#result-text').innerText(), /来到薇尔维特沙龙/); assert.equal(await repairPage.getByRole('button', { name: /与薇尔维特继续交谈/ }).isEnabled(), true);
+    await repairClick('与薇尔维特继续交谈'); await repairClick('结束交谈');
+  });
+  await check('导入尚未认识NPC的旧档会清空地图人物，原手动槽保留', async () => {
+    const before = await repairReadSlot(); await repairClick('存档'); await repairPage.locator('#save-import').setInputFiles(path.join(root, 'tests/fixtures/stage1-save.json')); await repairPage.locator('#save-message').filter({ hasText: '已导入' }).waitFor(); await repairClick('关闭存档');
+    await repairClick('地图'); assert.equal(await repairPage.locator('#map-people').innerText(), ''); await repairClick('关闭地图'); assert.equal(await repairReadSlot(), before);
+  });
+  await check('原版零精力沙龙旧档：返程预先禁用，真实免费休息后返回公寓', async () => {
+    await repairClick('存档'); await repairPage.locator('#save-import').setInputFiles(path.join(root, 'tests/fixtures/stage3-exhausted-save.json')); await repairPage.locator('#save-message').filter({ hasText: '已导入' }).waitFor(); await repairClick('关闭存档');
+    assert.equal(await repairPage.locator('[data-stat="core:energy"]').innerText(), '0'); assert.equal(await repairPage.getByRole('button', { name: /前往主街/ }).isEnabled(), false); assert.match(await repairPage.locator('#actions').innerText(), /精力不足/);
+    const cash = await repairPage.locator('[data-stat="core:money"]').innerText(), time = await repairMinute(); await repairClick('在门厅休息恢复精力'); assert.equal(await repairPage.locator('[data-stat="core:energy"]').innerText(), '10'); assert.equal(await repairPage.locator('[data-stat="core:money"]').innerText(), cash); assert.equal(await repairMinute(), time + 30);
+    await repairClick('前往主街'); await repairClick('前往公寓'); assert.equal(await repairPage.locator('#scene-title').innerText(), '公寓');
+    await repairClick('在床边歇一会儿'); assert.ok(parseInt(await repairPage.locator('[data-stat="core:energy"]').innerText()) > 8);
   });
   await check('浏览器没有未捕获错误或失败网络请求', async () => { assert.deepEqual(errors, []); assert.deepEqual(failedRequests, []); });
   await writeFile(path.join(artifacts, 'browser-results.json'), JSON.stringify({ status: 'passed', browser: browser.version(), results }, null, 2));

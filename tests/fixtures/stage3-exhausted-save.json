@@ -1,0 +1,586 @@
+{
+  "payload": {
+    "format": "aetheria-alpha",
+    "schemaVersion": 3,
+    "savedAt": "2026-10-11T03:27:59.889Z",
+    "state": {
+      "meta": {
+        "schemaVersion": 3,
+        "engineVersion": "0.1-stage3",
+        "revision": 14,
+        "packs": [
+          {
+            "id": "engine/core",
+            "version": "0.1.0",
+            "hash": "aab3c415bcccdd459d21e7a0d0f4f3d636008b6e6809860452ec89787a7400f7"
+          },
+          {
+            "id": "aetheria/world",
+            "version": "0.1.0",
+            "hash": "01ea5d235f7762c6e99ca9080c4390d02bdf9796208acab15a3437d615f2feb8"
+          },
+          {
+            "id": "aetheria/reshaping",
+            "version": "0.1.0",
+            "hash": "90a0fd948b069cdf62257b650f6fdfe2f2ef7f619a00efd1bef8d3baf4aab7a2"
+          },
+          {
+            "id": "aetheria/social",
+            "version": "0.1.0",
+            "hash": "06ef44297b2fd8361925cc66dc041fd6a7c3d8236f5fcf140f182c5bce36c9d6"
+          }
+        ]
+      },
+      "clock": {
+        "totalMinutes": 740,
+        "crossedDays": []
+      },
+      "world": {
+        "locationId": "aetheria-social:location.salon",
+        "knownLocationIds": [
+          "aetheria:location.apartment",
+          "aetheria:location.street",
+          "aetheria:location.market",
+          "aetheria-social:location.salon"
+        ]
+      },
+      "player": {
+        "variables": {
+          "core:money": 132,
+          "core:energy": 0,
+          "core:health": 100
+        },
+        "flags": {
+          "aetheria:flag.notice_helped": false,
+          "aetheria-social:flag.order_checked": false
+        },
+        "body": {
+          "templateId": "aetheria-tf:body.human",
+          "rootPartId": "torso",
+          "parts": [
+            {
+              "instanceId": "torso",
+              "definitionId": "aetheria-tf:part.torso"
+            },
+            {
+              "instanceId": "head",
+              "definitionId": "aetheria-tf:part.head"
+            },
+            {
+              "instanceId": "ear.left",
+              "definitionId": "aetheria-tf:part.ear.human"
+            },
+            {
+              "instanceId": "arm.left",
+              "definitionId": "aetheria-tf:part.arm"
+            },
+            {
+              "instanceId": "hand.left",
+              "definitionId": "aetheria-tf:part.hand"
+            },
+            {
+              "instanceId": "leg.left",
+              "definitionId": "aetheria-tf:part.leg"
+            },
+            {
+              "instanceId": "foot.left",
+              "definitionId": "aetheria-tf:part.foot"
+            },
+            {
+              "instanceId": "ear.right",
+              "definitionId": "aetheria-tf:part.ear.human"
+            },
+            {
+              "instanceId": "arm.right",
+              "definitionId": "aetheria-tf:part.arm"
+            },
+            {
+              "instanceId": "hand.right",
+              "definitionId": "aetheria-tf:part.hand"
+            },
+            {
+              "instanceId": "leg.right",
+              "definitionId": "aetheria-tf:part.leg"
+            },
+            {
+              "instanceId": "foot.right",
+              "definitionId": "aetheria-tf:part.foot"
+            }
+          ],
+          "edges": [
+            {
+              "parentPartId": "torso",
+              "childPartId": "head",
+              "anchorId": "neck"
+            },
+            {
+              "parentPartId": "head",
+              "childPartId": "ear.left",
+              "anchorId": "ear.left"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "arm.left",
+              "anchorId": "shoulder.left"
+            },
+            {
+              "parentPartId": "arm.left",
+              "childPartId": "hand.left",
+              "anchorId": "wrist"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "leg.left",
+              "anchorId": "hip.left"
+            },
+            {
+              "parentPartId": "leg.left",
+              "childPartId": "foot.left",
+              "anchorId": "ankle"
+            },
+            {
+              "parentPartId": "head",
+              "childPartId": "ear.right",
+              "anchorId": "ear.right"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "arm.right",
+              "anchorId": "shoulder.right"
+            },
+            {
+              "parentPartId": "arm.right",
+              "childPartId": "hand.right",
+              "anchorId": "wrist"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "leg.right",
+              "anchorId": "hip.right"
+            },
+            {
+              "parentPartId": "leg.right",
+              "childPartId": "foot.right",
+              "anchorId": "ankle"
+            }
+          ]
+        }
+      },
+      "npcs": [
+        {
+          "instanceId": "fixed:aetheria-social:npc.velvet",
+          "definitionId": "aetheria-social:npc.velvet",
+          "discovered": false,
+          "relationship": {
+            "familiarity": 0,
+            "trust": 0
+          },
+          "memories": []
+        }
+      ],
+      "tfQueues": [],
+      "eventInstances": [],
+      "activeEventStack": [],
+      "rng": {
+        "seed": 123456,
+        "streams": {}
+      },
+      "ledger": {
+        "transactions": [
+          {
+            "requestId": "3ca2b684-e999-4ddd-bd4a-9de813bdbe2c",
+            "fingerprint": "{\"actionId\":\"aetheria:action.travel.apartment_street\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "3ca2b684-e999-4ddd-bd4a-9de813bdbe2c",
+              "revision": 1,
+              "text": "你沿着熟悉的路走到主街。身后的声音渐渐散开，眼前换了一番景象。",
+              "changes": [
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:00",
+                  "after": "第 1 天 · 08:10"
+                },
+                {
+                  "label": "地点",
+                  "before": "公寓",
+                  "after": "主街"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "ae7b77e6-a268-4b71-8580-8134fc0a23a2",
+            "fingerprint": "{\"actionId\":\"aetheria:action.travel.street_market\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "ae7b77e6-a268-4b71-8580-8134fc0a23a2",
+              "revision": 2,
+              "text": "你沿着熟悉的路走到集市。身后的声音渐渐散开，眼前换了一番景象。",
+              "changes": [
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:10",
+                  "after": "第 1 天 · 08:20"
+                },
+                {
+                  "label": "地点",
+                  "before": "主街",
+                  "after": "集市"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "c5b5a6f8-a586-4e9f-932a-9a2c64afc930",
+            "fingerprint": "{\"actionId\":\"aetheria:action.market.work\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "c5b5a6f8-a586-4e9f-932a-9a2c64afc930",
+              "revision": 3,
+              "text": "你把空箱摞好，再将零件按标记分到柜台下面。搬完最后一箱，摊位终于空出一条通道。报酬当场付清，手臂有些发酸。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 70,
+                  "after": 60
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:20",
+                  "after": "第 1 天 · 08:50"
+                },
+                {
+                  "label": "零钱",
+                  "before": 60,
+                  "after": 72
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "fa335f5e-212d-48e7-a05e-2306f36a9cb0",
+            "fingerprint": "{\"actionId\":\"aetheria:action.market.work\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "fa335f5e-212d-48e7-a05e-2306f36a9cb0",
+              "revision": 4,
+              "text": "你把空箱摞好，再将零件按标记分到柜台下面。搬完最后一箱，摊位终于空出一条通道。报酬当场付清，手臂有些发酸。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 60,
+                  "after": 50
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:50",
+                  "after": "第 1 天 · 09:20"
+                },
+                {
+                  "label": "零钱",
+                  "before": 72,
+                  "after": 84
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "82134112-4b09-4aea-89f7-0a7884da4f19",
+            "fingerprint": "{\"actionId\":\"aetheria:action.market.work\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "82134112-4b09-4aea-89f7-0a7884da4f19",
+              "revision": 5,
+              "text": "你把空箱摞好，再将零件按标记分到柜台下面。搬完最后一箱，摊位终于空出一条通道。报酬当场付清，手臂有些发酸。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 50,
+                  "after": 40
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 09:20",
+                  "after": "第 1 天 · 09:50"
+                },
+                {
+                  "label": "零钱",
+                  "before": 84,
+                  "after": 96
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "541b5123-7e71-4330-bb4c-a5cead460503",
+            "fingerprint": "{\"actionId\":\"aetheria:action.market.work\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "541b5123-7e71-4330-bb4c-a5cead460503",
+              "revision": 6,
+              "text": "你把空箱摞好，再将零件按标记分到柜台下面。搬完最后一箱，摊位终于空出一条通道。报酬当场付清，手臂有些发酸。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 40,
+                  "after": 30
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 09:50",
+                  "after": "第 1 天 · 10:20"
+                },
+                {
+                  "label": "零钱",
+                  "before": 96,
+                  "after": 108
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "a9e63311-e26b-4c77-bfdf-0c82a1829e98",
+            "fingerprint": "{\"actionId\":\"aetheria:action.market.work\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "a9e63311-e26b-4c77-bfdf-0c82a1829e98",
+              "revision": 7,
+              "text": "你把空箱摞好，再将零件按标记分到柜台下面。搬完最后一箱，摊位终于空出一条通道。报酬当场付清，手臂有些发酸。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 30,
+                  "after": 20
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 10:20",
+                  "after": "第 1 天 · 10:50"
+                },
+                {
+                  "label": "零钱",
+                  "before": 108,
+                  "after": 120
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "8fd6da03-b114-4448-bf53-396ccb007385",
+            "fingerprint": "{\"actionId\":\"aetheria:action.market.work\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "8fd6da03-b114-4448-bf53-396ccb007385",
+              "revision": 8,
+              "text": "你把空箱摞好，再将零件按标记分到柜台下面。搬完最后一箱，摊位终于空出一条通道。报酬当场付清，手臂有些发酸。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 20,
+                  "after": 10
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 10:50",
+                  "after": "第 1 天 · 11:20"
+                },
+                {
+                  "label": "零钱",
+                  "before": 120,
+                  "after": 132
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "e9beae3a-3399-4c07-a8df-54b2cf71a2c4",
+            "fingerprint": "{\"actionId\":\"aetheria:action.travel.market_street\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "e9beae3a-3399-4c07-a8df-54b2cf71a2c4",
+              "revision": 9,
+              "text": "你沿着熟悉的路走到主街。身后的声音渐渐散开，眼前换了一番景象。",
+              "changes": [
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 11:20",
+                  "after": "第 1 天 · 11:30"
+                },
+                {
+                  "label": "地点",
+                  "before": "集市",
+                  "after": "主街"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "d6d8d156-cd93-4b9b-a386-4ea70539a2e5",
+            "fingerprint": "{\"actionId\":\"aetheria-social:action.travel.street_salon\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "d6d8d156-cd93-4b9b-a386-4ea70539a2e5",
+              "revision": 10,
+              "text": "你穿过主街，来到薇尔维特沙龙的门厅。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 10,
+                  "after": 8
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 11:30",
+                  "after": "第 1 天 · 11:40"
+                },
+                {
+                  "label": "地点",
+                  "before": "主街",
+                  "after": "薇尔维特沙龙"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "d43646b6-aad3-4623-85ca-78fd9b0d07d7",
+            "fingerprint": "{\"actionId\":\"aetheria-social:action.travel.salon_street\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "d43646b6-aad3-4623-85ca-78fd9b0d07d7",
+              "revision": 11,
+              "text": "你推开门，重新走进主街的灯光。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 8,
+                  "after": 6
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 11:40",
+                  "after": "第 1 天 · 11:50"
+                },
+                {
+                  "label": "地点",
+                  "before": "薇尔维特沙龙",
+                  "after": "主街"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "1d65f3dd-edad-4847-ad1e-754f50ccbc0e",
+            "fingerprint": "{\"actionId\":\"aetheria-social:action.travel.street_salon\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "1d65f3dd-edad-4847-ad1e-754f50ccbc0e",
+              "revision": 12,
+              "text": "你穿过主街，来到薇尔维特沙龙的门厅。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 6,
+                  "after": 4
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 11:50",
+                  "after": "第 1 天 · 12:00"
+                },
+                {
+                  "label": "地点",
+                  "before": "主街",
+                  "after": "薇尔维特沙龙"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "77454731-446f-4ee1-992f-8c0e8bc15ed2",
+            "fingerprint": "{\"actionId\":\"aetheria-social:action.travel.salon_street\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "77454731-446f-4ee1-992f-8c0e8bc15ed2",
+              "revision": 13,
+              "text": "你推开门，重新走进主街的灯光。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 4,
+                  "after": 2
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 12:00",
+                  "after": "第 1 天 · 12:10"
+                },
+                {
+                  "label": "地点",
+                  "before": "薇尔维特沙龙",
+                  "after": "主街"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "63301919-5d40-46ce-8cb8-b13aba6afb20",
+            "fingerprint": "{\"actionId\":\"aetheria-social:action.travel.street_salon\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "63301919-5d40-46ce-8cb8-b13aba6afb20",
+              "revision": 14,
+              "text": "你穿过主街，来到薇尔维特沙龙的门厅。",
+              "changes": [
+                {
+                  "label": "精力",
+                  "before": 2,
+                  "after": 0
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 12:10",
+                  "after": "第 1 天 · 12:20"
+                },
+                {
+                  "label": "地点",
+                  "before": "主街",
+                  "after": "薇尔维特沙龙"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "checksum": "3e8ff22167318df5c7c9114b572eb5835797cd9f327b5be018cafd86c48bbbac"
+}

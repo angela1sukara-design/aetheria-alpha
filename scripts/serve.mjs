@@ -6,6 +6,7 @@ import { spawn, spawnSync } from 'node:child_process';
 const root = fileURLToPath(new URL('../', import.meta.url));
 if (!process.argv.includes('--built')) { const built = spawnSync(process.execPath, [path.join(root, 'scripts/build.mjs')], { stdio: 'inherit' }); if (built.status !== 0) process.exit(1); }
 const directory = path.join(root, 'dist'); const port = Number(process.env.PORT || 4173);
+const packageInfo = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json' };
 const server = http.createServer(async (req, res) => {
   try {
@@ -22,6 +23,6 @@ server.on('error', error => {
 });
 server.listen(port, '0.0.0.0', () => {
   const url = `http://localhost:${port}/`;
-  console.log(`Aetheria Alpha 0.1 stage 2: ${url}`);
+  console.log(`Aetheria Alpha ${packageInfo.version}: ${url}`);
   if (process.argv.includes('--open') && process.platform === 'win32') spawn('cmd.exe', ['/c', 'start', '', url], { stdio: 'ignore' });
 });

@@ -3,6 +3,7 @@ import type { GameState, Id } from '../core/types.ts';
 import { validateBody, instantiateBody } from '../engine/body.ts';
 import { STAGE1_PACKS } from './stage1-packs.ts';
 import { STAGE2_PACKS } from './stage2-packs.ts';
+import { STAGE3_PACKS, STAGE3_FIX1_PACKS } from './stage3-packs.ts';
 import { validateTFState } from './tf-validation.ts';
 import { validateNPCState } from './npc-validation.ts';
 import { createNPCStates } from '../engine/npc.ts';
@@ -95,6 +96,23 @@ export function validateState(value: unknown, registry: Registry): asserts value
   validateTFState(value as GameState, registry);
   validateNPCState(value as GameState, registry);
 }
+function sortedRefs(refs: unknown): string {
+  if (!Array.isArray(refs)) throw new Error('PACK_MISMATCH：存档内容包记录无效。');
+  return stableJson([...refs].sort((a, b) => String(a?.id).localeCompare(String(b?.id), 'en')));
+}
+/** 只允许已发布官方指纹精确升级，不能借补丁接纳改过内容的存档。 */
+function officialRepairInstalled(registry: Registry): boolean {
+  return sortedRefs(registry.packs) === sortedRefs(STAGE3_FIX1_PACKS);
+}
+function upgradeStage3(raw: unknown, registry: Registry): { state: unknown; upgraded: boolean } {
+  const meta = (raw as GameState | null)?.meta;
+  if (meta && Array.isArray(meta.packs) && sortedRefs(meta.packs) === sortedRefs(registry.packs)) return { state: raw, upgraded: false };
+  if (!meta || !Array.isArray(meta.packs) || sortedRefs(meta.packs) !== sortedRefs(STAGE3_PACKS)) return { state: raw, upgraded: false };
+  if (!officialRepairInstalled(registry)) throw new Error('PACK_MISMATCH：第三阶段修复只支持官方原始包精确升级。');
+  const state = clone(raw) as GameState;
+  state.meta.packs = clone(registry.packs);
+  return { state, upgraded: true };
+}
 /** 精确迁移只增加新模块；旧状态仍需通过完整校验，存储 IO 不在此函数。 */
 function migrateLegacy(raw: unknown, registry: Registry, version: 1 | 2): GameState {
   const old = clone(raw) as Record<string, unknown>;
@@ -103,12 +121,8 @@ function migrateLegacy(raw: unknown, registry: Registry, version: 1 | 2): GameSt
   const meta = old.meta as GameState['meta'];
   const player = old.player as GameState['player'];
   if (!meta || Object.keys(meta).sort().join('|') !== ['schemaVersion', 'engineVersion', 'revision', 'packs'].sort().join('|') || (meta.schemaVersion as number) !== version || (meta.engineVersion as string) !== (version === 1 ? '0.1' : '0.1-stage2') || !player || Object.keys(player).sort().join('|') !== (version === 1 ? 'flags|variables' : 'body|flags|variables')) throw new Error('旧存档版本或玩家字段不合法。');
-  const sortedRefs = (refs: unknown): string => {
-    if (!Array.isArray(refs)) throw new Error('PACK_MISMATCH：旧存档内容包记录无效。');
-    return stableJson([...refs].sort((a, b) => String(a?.id).localeCompare(String(b?.id), 'en')));
-  };
   const expectedRefs = version === 1 ? STAGE1_PACKS : STAGE2_PACKS;
-  if (sortedRefs(meta.packs) !== sortedRefs(expectedRefs) || expectedRefs.some(ref => !registry.packs.some(p => stableJson(p) === stableJson(ref))) || registry.packs.length !== 4 || registry.packs.some(p => !['engine/core', 'aetheria/world', 'aetheria/reshaping', 'aetheria/social'].includes(p.id))) throw new Error('PACK_MISMATCH：只支持官方已发布原始包的精确升级，其他存档保留并隔离。');
+  if (sortedRefs(meta.packs) !== sortedRefs(expectedRefs) || !officialRepairInstalled(registry)) throw new Error('PACK_MISMATCH：只支持官方已发布原始包的精确升级，其他存档保留并隔离。');
   const oldFlags = registry.flags.filter(f => !f.id.startsWith('aetheria-social:'));
   if (!player.flags || typeof player.flags !== 'object' || Array.isArray(player.flags) || Object.keys(player.flags).sort().join('|') !== oldFlags.map(f => f.id).sort().join('|')) throw new Error('旧标记集合不符合迁移协议。');
   const flags = { ...player.flags, ...Object.fromEntries(registry.flags.filter(f => f.id.startsWith('aetheria-social:')).map(f => [f.id, f.initial])) };
@@ -135,9 +149,10 @@ export class SaveCodec {
       if (!Number.isFinite(Date.parse(envelope.payload.savedAt))) throw new Error('存档日期格式不合法。');
       const version = envelope.payload.schemaVersion;
       const migrated = version < 3;
-      const state = migrated ? migrateLegacy(envelope.payload.state, this.registry, version) : envelope.payload.state;
+      const repair = migrated ? undefined : upgradeStage3(envelope.payload.state, this.registry);
+      const state = migrated ? migrateLegacy(envelope.payload.state, this.registry, version) : repair!.state;
       validateState(state, this.registry);
-      return { status: 'ready', state: clone(state), ...(migrated ? { migration: `${version === 1 ? '第一' : '第二'}阶段存档已升级：保留原进度${version === 1 ? '并新增初始身体' : '、身体与改造进度'}，新增人物记录。点击保存后写入新版存档。` } : {}) };
+      return { status: 'ready', state: clone(state), ...(migrated ? { migration: `${version === 1 ? '第一' : '第二'}阶段存档已升级：保留原进度${version === 1 ? '并新增初始身体' : '、身体与改造进度'}，新增人物记录。点击保存后写入新版存档。` } : repair?.upgraded ? { migration: '第三阶段存档已修复升级：原人物、任务、身体与改造进度完整保留。点击保存后写入修复版存档。' } : {}) };
     } catch (error) {
       const reason = error instanceof Error ? error.message : '存档格式无效。';
       return { status: 'quarantined', code: reason.includes('PACK_MISMATCH') ? 'PACK_MISMATCH' : 'SAVE_INVALID', reason, original: text };

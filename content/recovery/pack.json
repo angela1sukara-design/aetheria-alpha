@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "id": "aetheria/recovery",
+    "namespace": "aetheria-recovery",
+    "version": "0.1.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria project — stage3 recovery fix",
+    "status": "draft",
+    "dependencies": [
+      { "id": "engine/core", "version": "0.1.0", "optional": false },
+      { "id": "aetheria/social", "version": "0.1.0", "optional": false }
+    ],
+    "requiresCapabilities": ["condition.v1", "effect.v1", "hook.action.v1"],
+    "migrations": []
+  },
+  "variables": [], "flags": [], "hooks": [], "locations": [], "routes": [], "events": [],
+  "actions": [{
+    "id": "aetheria-recovery:action.salon.rest",
+    "label": "在门厅休息恢复精力",
+    "hint": "30分钟 · 精力+10 · 免费",
+    "group": "daily",
+    "conditions": [],
+    "effects": [
+      { "op": "clock.advance", "minutes": 30 },
+      { "op": "var.change", "id": "core:energy", "amount": 10 }
+    ],
+    "resultText": "aetheria-recovery:text.salon.rest"
+  }],
+  "texts": { "aetheria-recovery:text.salon.rest": "你在门厅坐下休息，缓过一口气。精力恢复后，可以继续行动。" },
+  "contributions": [{
+    "hookId": "aetheria-social:hook.salon.actions",
+    "actionIds": ["aetheria-recovery:action.salon.rest"]
+  }]
+}
