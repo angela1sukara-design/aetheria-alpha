@@ -1,0 +1,156 @@
+{
+  "briefId": "district:brief.velvet.quiet",
+  "targetSlotId": "district:textslot.velvet.quiet",
+  "version": "0.2.0",
+  "owner": {
+    "eventId": "district:event.velvet.quiet",
+    "nodeId": "private"
+  },
+  "author": "external writer; GPT review required",
+  "contentTier": "mature_fade",
+  "trigger": {
+    "facts": [
+      "district:flag.velvet.willing"
+    ],
+    "conditions": [
+      {
+        "op": "npc.present",
+        "npcId": "aetheria-social:npc.velvet"
+      },
+      {
+        "op": "flag.has",
+        "id": "district:flag.velvet.willing",
+        "value": true
+      }
+    ],
+    "location": "由NPC日程与事件参与者位置确定",
+    "cause": "你们完成过补货委托，并谈到薇尔维特下班后的自主安排。"
+  },
+  "participants": [
+    {
+      "id": "player",
+      "identity": "玩家自建，年龄18–120，经引擎校验",
+      "body": "任意已支持BodyGraph；不得假设固定肢体数。必须读取当前快照。"
+    },
+    {
+      "id": "aetheria-social:npc.velvet",
+      "name": "薇尔维特",
+      "ageYears": null,
+      "ageRule": "旧包年龄未知；只允许普通非成人文本",
+      "personality": "沙龙经营者；职业分寸、个人时间与边界均应受到尊重。"
+    }
+  ],
+  "context": {
+    "before": "你们完成过补货委托，并谈到薇尔维特下班后的自主安排。",
+    "after": "释放接触，进入after节点，普通交谈后合法退出。",
+    "requiredFacts": [
+      "district:flag.velvet.willing"
+    ]
+  },
+  "bodyContext": {
+    "player": "以 runtime-context.json 的实际部件/边/材质为准",
+    "npc": "以InteractionScene.actors对应身体图为准",
+    "equipment": "读取当前装备，不凭空增加"
+  },
+  "interactionScene": {
+    "poses": [
+      {
+        "id": "face",
+        "label": "面对面坐近",
+        "facing": "front",
+        "zone": "near",
+        "requires": null
+      },
+      {
+        "id": "across",
+        "label": "隔桌而坐",
+        "facing": "front",
+        "zone": "across",
+        "requires": null
+      },
+      {
+        "id": "turn",
+        "label": "转身看向窗外",
+        "facing": "away",
+        "zone": "near",
+        "requires": null
+      },
+      {
+        "id": "balance",
+        "label": "借尾部平衡站定",
+        "facing": "front",
+        "zone": "near",
+        "requires": "balance"
+      }
+    ],
+    "entry": "面对面、近处、无接触",
+    "contacts": "只允许引用运行快照中已经存在的边；进入文本时可能尚无任何接触",
+    "resources": "每条手部接触独占真实端点；转身/暂停/退出会释放"
+  },
+  "narrativePurpose": "把共同经历自然转向私人谈话，保留经营者身份与工作之外的个人生活。",
+  "requiredBeats": [
+    "承接共同经历，不重写前情",
+    "展现角色特有口吻与日常目标",
+    "只描述状态快照保证的身体、姿态与接触",
+    "自然衔接普通交谈，保留退出路径"
+  ],
+  "style": {
+    "viewpoint": "第二人称中文",
+    "tone": "克制、生活化、角色口吻鲜明",
+    "lengthChineseChars": {
+      "min": 350,
+      "max": 800
+    }
+  },
+  "forbidInventing": [
+    "永久身体变化",
+    "奖励、货币、物品",
+    "新增关系阶段或意愿",
+    "未经历的秘密",
+    "未建立的接触",
+    "未经同意的行为",
+    "规则或事件选项"
+  ],
+  "allowedVariables": [
+    "player.name",
+    "npc.displayName"
+  ],
+  "allowedReplacement": "仅此槽的正文段落；不含标题、选择、结算、动作、姿态状态或后续",
+  "exit": {
+    "nextNode": "after",
+    "actionIds": [
+      "district:action.event.velvet.quiet.private.1"
+    ],
+    "skipText": "仅折叠正文，不结算任何效果"
+  },
+  "fallback": {
+    "textKey": "district:text.event.velvet.quiet.private",
+    "text": "薇尔维特收起工作簿，给你留了一处安静的位置。“我们都不用再替今天找一个有用的结尾。”你们确认可以随时暂停，再把话题留给各自真正想说的事。片刻相处完整地发生在普通生活里，不以任何尚未同意的行为作为后续。"
+  },
+  "delivery": {
+    "file": "content/author-example/text-pack.json",
+    "textKey": "author-example:text.velvet.quiet",
+    "schema": {
+      "slotId": "district:textslot.velvet.quiet",
+      "textKey": "author-example:text.example",
+      "text": "提交正文",
+      "tier": "general",
+      "priority": 20,
+      "reviewStatus": "approved"
+    },
+    "authorSubmission": {
+      "reviewStatus": "draft",
+      "usedFactIds": [
+        "district:flag.velvet.willing"
+      ],
+      "usedVariables": [],
+      "proposedRuleChanges": [],
+      "issues": [],
+      "selfCheck": [
+        "身体/姿态/接触与快照一致",
+        "没有新增规则或越界知识",
+        "前后自然衔接"
+      ]
+    }
+  }
+}

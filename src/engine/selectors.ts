@@ -7,6 +7,7 @@ import { eventNode } from './events.ts';
 import { npcPresent } from './npc.ts';
 import { districtOptions, districtText } from './district-effects.ts';
 import { directResourceCheck } from './resource-check.ts';
+import type { TextLibrary } from '../content/text-variants.ts';
 /** 所有可执行入口同一个选择器：UI 可见动作与引擎授权集合完全一致。 */
 export function actionOptions(state: GameState, registry: Registry): ActionOption[] {
   const current = eventNode(state, registry);
@@ -22,10 +23,12 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
     return { definition, available: !failed, reason: failed?.reason ?? '' };
   });
 }
-export function selectGameView(state: GameState, registry: Registry): GameView {
+export function selectGameView(state: GameState, registry: Registry, texts?: TextLibrary): GameView {
   const current = eventNode(state, registry); const location = registry.location(state.world.locationId);
+  const slot=current?registry.textSlots.find(s=>s.owner.eventId===current.event.definitionId&&s.owner.nodeId===current.node.id):undefined;
+  const base=slot&&texts?texts.resolve(slot.id,state,registry):current?registry.text(current.event.textByNode[current.node.id]):registry.text(location.textKey);
   return freeze({ location, state: clone(state), actions: actionOptions(state, registry),
-    sceneText: districtText(state,registry,current ? registry.text(current.event.textByNode[current.node.id]) : registry.text(location.textKey)),
+    sceneText: districtText(state,registry,base),
     ...(current ? { eventTitle: '正在发生' } : {}),
   });
 }

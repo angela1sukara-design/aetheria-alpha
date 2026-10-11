@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';import {readFile}from'node:fs/promises';import {packs}from'./helpers.ts';import{loadPacks}from'../src/content/loader.ts';import{createGameState}from'../src/engine/state.ts';import{ActionExecutor}from'../src/engine/executor.ts';import type{Id,ContentPack}from'../src/core/types.ts';
+export async function districtGame(seed=52){const extra=JSON.parse(await readFile(new URL('../content/district/pack.json',import.meta.url),'utf8')) as ContentPack;const registry=await loadPacks([...await packs(),extra]);return {registry,engine:new ActionExecutor(registry,createGameState(registry,seed))};}
+export function must(e:ActionExecutor,id:Id){const result=e.performAction({actionId:id},e.snapshot().meta.revision,crypto.randomUUID());assert.equal(result.ok,true,`${id}: ${result.message}`);return result;}
+export function da(e:ActionExecutor,key:string){return must(e,`district:action.${key}`);}
+export async function rikerRoute(branch:'repair'|'sell'='repair'){
+ const {registry:r,engine:e}=await districtGame();da(e,'create');must(e,'aetheria:action.travel.apartment_street');must(e,'aetheria:action.travel.street_market');da(e,'travel.workshop.out');da(e,'riker.meet');da(e,'event.riker.meet.start.0');da(e,'riker.goal');da(e,'event.riker.goal.start.0');da(e,'travel.workshop.back');must(e,'aetheria:action.travel.market_street');da(e,'travel.archive.out');da(e,'riker.archive');da(e,'travel.archive.back');must(e,'aetheria:action.travel.street_market');da(e,'travel.workshop.out');da(e,'travel.canal.out');da(e,'riker.salvage');da(e,'event.riker.salvage.start.'+(branch==='repair'?0:1));da(e,'travel.canal.back');
+ if(branch==='repair'){da(e,'riker.return');da(e,'event.riker.return.start.0');da(e,'waitday.location.workshop');da(e,'riker.bond');da(e,'event.riker.bond.start.0');}else{da(e,'riker.confess');da(e,'event.riker.sold.start.0');}
+ return {r,e};
+}

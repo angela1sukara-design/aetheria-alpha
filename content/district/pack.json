@@ -352,6 +352,58 @@
     {
       "id": "district:flag.canal.open",
       "initial": false
+    },
+    {
+      "id": "district:flag.riker.accepted",
+      "initial": false
+    },
+    {
+      "id": "district:flag.riker.authorized",
+      "initial": false
+    },
+    {
+      "id": "district:flag.riker.salvaged",
+      "initial": false
+    },
+    {
+      "id": "district:flag.riker.sold",
+      "initial": false
+    },
+    {
+      "id": "district:flag.riker.done",
+      "initial": false
+    },
+    {
+      "id": "district:flag.riker.willing",
+      "initial": false
+    },
+    {
+      "id": "district:flag.nara.accepted",
+      "initial": false
+    },
+    {
+      "id": "district:flag.nara.observed",
+      "initial": false
+    },
+    {
+      "id": "district:flag.nara.tools",
+      "initial": false
+    },
+    {
+      "id": "district:flag.nara.done",
+      "initial": false
+    },
+    {
+      "id": "district:flag.nara.public",
+      "initial": false
+    },
+    {
+      "id": "district:flag.nara.willing",
+      "initial": false
+    },
+    {
+      "id": "district:flag.velvet.willing",
+      "initial": false
     }
   ],
   "hooks": [
@@ -382,6 +434,16 @@
     },
     {
       "id": "district:hook.runtime",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "district:hook.riker",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "district:hook.nara",
       "accepts": "action",
       "visibility": "public"
     }
@@ -5809,6 +5871,2505 @@
         }
       ],
       "resultText": "district:text.canal.decide"
+    },
+    {
+      "id": "district:action.event.riker.meet.start.0",
+      "label": "认真听完，记下联络方式",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.meet.start.0",
+      "context": {
+        "eventId": "district:event.riker.meet",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.meet.start.1",
+      "label": "先结束这次交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.meet.start.1",
+      "context": {
+        "eventId": "district:event.riker.meet",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.meet",
+      "label": "与莱克正式认识",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.introduced",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.meet"
+        }
+      ],
+      "resultText": "district:text.riker.meet"
+    },
+    {
+      "id": "district:action.event.riker.daily.start.0",
+      "label": "谈谈今天的生活",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 3
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.daily.start.0",
+      "context": {
+        "eventId": "district:event.riker.daily",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.daily.start.1",
+      "label": "尊重对方的休息时间，告辞",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.daily.start.1",
+      "context": {
+        "eventId": "district:event.riker.daily",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.daily",
+      "label": "和莱克聊近况",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.introduced",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.daily"
+        }
+      ],
+      "resultText": "district:text.riker.daily"
+    },
+    {
+      "id": "district:action.event.riker.morning.start.0",
+      "label": "陪对方坐一会",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 4
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.morning.start.0",
+      "context": {
+        "eventId": "district:event.riker.morning",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.morning.start.1",
+      "label": "道别，继续自己的安排",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.morning.start.1",
+      "context": {
+        "eventId": "district:event.riker.morning",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.morning",
+      "label": "聊早班准备",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.introduced",
+          "value": true
+        },
+        {
+          "op": "time.window",
+          "start": 480,
+          "end": 720
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.morning"
+        }
+      ],
+      "resultText": "district:text.riker.morning"
+    },
+    {
+      "id": "district:action.event.riker.evening.start.0",
+      "label": "陪对方坐一会",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 4
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.evening.start.0",
+      "context": {
+        "eventId": "district:event.riker.evening",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.evening.start.1",
+      "label": "道别，继续自己的安排",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.evening.start.1",
+      "context": {
+        "eventId": "district:event.riker.evening",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.evening",
+      "label": "聊晚间休息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.introduced",
+          "value": true
+        },
+        {
+          "op": "time.window",
+          "start": 1200,
+          "end": 1320
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.evening"
+        }
+      ],
+      "resultText": "district:text.riker.evening"
+    },
+    {
+      "id": "district:action.event.nara.meet.start.0",
+      "label": "认真听完，记下联络方式",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.meet.start.0",
+      "context": {
+        "eventId": "district:event.nara.meet",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.meet.start.1",
+      "label": "先结束这次交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.meet.start.1",
+      "context": {
+        "eventId": "district:event.nara.meet",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.meet",
+      "label": "与娜拉正式认识",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.introduced",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.meet"
+        }
+      ],
+      "resultText": "district:text.nara.meet"
+    },
+    {
+      "id": "district:action.event.nara.daily.start.0",
+      "label": "谈谈今天的生活",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 3
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.daily.start.0",
+      "context": {
+        "eventId": "district:event.nara.daily",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.daily.start.1",
+      "label": "尊重对方的休息时间，告辞",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.daily.start.1",
+      "context": {
+        "eventId": "district:event.nara.daily",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.daily",
+      "label": "和娜拉聊近况",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.introduced",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.daily"
+        }
+      ],
+      "resultText": "district:text.nara.daily"
+    },
+    {
+      "id": "district:action.event.nara.morning.start.0",
+      "label": "陪对方坐一会",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 4
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.morning.start.0",
+      "context": {
+        "eventId": "district:event.nara.morning",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.morning.start.1",
+      "label": "道别，继续自己的安排",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.morning.start.1",
+      "context": {
+        "eventId": "district:event.nara.morning",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.morning",
+      "label": "聊早班准备",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.introduced",
+          "value": true
+        },
+        {
+          "op": "time.window",
+          "start": 480,
+          "end": 720
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.morning"
+        }
+      ],
+      "resultText": "district:text.nara.morning"
+    },
+    {
+      "id": "district:action.event.nara.evening.start.0",
+      "label": "陪对方坐一会",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 4
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.evening.start.0",
+      "context": {
+        "eventId": "district:event.nara.evening",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.evening.start.1",
+      "label": "道别，继续自己的安排",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.evening.start.1",
+      "context": {
+        "eventId": "district:event.nara.evening",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.evening",
+      "label": "聊晚间休息",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.introduced",
+          "value": true
+        },
+        {
+          "op": "time.window",
+          "start": 1200,
+          "end": 1320
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.evening"
+        }
+      ],
+      "resultText": "district:text.nara.evening"
+    },
+    {
+      "id": "district:action.event.riker.goal.start.0",
+      "label": "答应先找原主的授权",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.accepted",
+          "value": true
+        },
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.promise",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 2
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.goal.start.0",
+      "context": {
+        "eventId": "district:event.riker.goal",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.goal.start.1",
+      "label": "今天无法承担，坦白说明",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.declined",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 0
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.goal.start.1",
+      "context": {
+        "eventId": "district:event.riker.goal",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.goal",
+      "label": "问莱克为何留着那只旧义肢",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.introduced",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.accepted",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.goal"
+        }
+      ],
+      "resultText": "district:text.riker.goal"
+    },
+    {
+      "id": "district:action.riker.archive",
+      "label": "核对莱克委托的维修授权",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.accepted",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.authorized",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.authorized",
+          "value": true
+        }
+      ],
+      "resultText": "district:text.riker.archive"
+    },
+    {
+      "id": "district:action.event.riker.salvage.start.0",
+      "label": "取回兼容接口，尊重原授权",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.salvaged",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.salvage.start.0",
+      "context": {
+        "eventId": "district:event.riker.salvage",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.salvage.start.1",
+      "label": "接受供应商补贴，放弃修复路线",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.sold",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.salvage.start.1",
+      "context": {
+        "eventId": "district:event.riker.salvage",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.salvage.start.2",
+      "label": "暂时离开，不作决定",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.salvage.start.2",
+      "context": {
+        "eventId": "district:event.riker.salvage",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.salvage",
+      "label": "调查旧渠回收点的兼容接口",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.authorized",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.salvaged",
+          "value": false
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.sold",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.salvage"
+        }
+      ],
+      "resultText": "district:text.riker.salvage"
+    },
+    {
+      "id": "district:action.event.riker.return.start.0",
+      "label": "交回接口，一起完成登记",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.repaired",
+          "relationship": {
+            "familiarity": 4,
+            "trust": 5
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.done",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 8
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.return.start.0",
+      "context": {
+        "eventId": "district:event.riker.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.return.start.1",
+      "label": "先离开，之后再交接",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.return.start.1",
+      "context": {
+        "eventId": "district:event.riker.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.return",
+      "label": "把兼容接口交给莱克",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.salvaged",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.done",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.return"
+        }
+      ],
+      "resultText": "district:text.riker.return"
+    },
+    {
+      "id": "district:action.event.riker.sold.start.0",
+      "label": "承认违背了授权，不再争辩",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.breach",
+          "relationship": {
+            "familiarity": 1,
+            "trust": -6
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.sold.start.0",
+      "context": {
+        "eventId": "district:event.riker.sold",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.sold.start.1",
+      "label": "结束交谈，保留公开服务",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.breach",
+          "relationship": {
+            "familiarity": 1,
+            "trust": -6
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.sold.start.1",
+      "context": {
+        "eventId": "district:event.riker.sold",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.confess",
+      "label": "告诉莱克接受补贴的决定",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.sold",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.done",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.sold"
+        }
+      ],
+      "resultText": "district:text.riker.confess"
+    },
+    {
+      "id": "district:action.event.riker.bond.start.0",
+      "label": "接受邀请，也说明随时可以暂停",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.invited",
+          "relationship": {
+            "familiarity": 3,
+            "trust": 4
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.riker.willing",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.bond.start.0",
+      "context": {
+        "eventId": "district:event.riker.bond",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.bond.start.1",
+      "label": "感谢邀请，暂时保持朋友距离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.friend",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 1
+          }
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.bond.start.1",
+      "context": {
+        "eventId": "district:event.riker.bond",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.bond",
+      "label": "看修复次日的回信",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.repaired",
+          "value": true
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.invited",
+          "value": false
+        },
+        {
+          "op": "day.after",
+          "flagId": "district:flag.riker.done",
+          "days": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.bond"
+        }
+      ],
+      "resultText": "district:text.riker.bond"
+    },
+    {
+      "id": "district:action.event.nara.goal.start.0",
+      "label": "答应记录一件实际生活困难",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.promise",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 2
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.nara.accepted",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.goal.start.0",
+      "context": {
+        "eventId": "district:event.nara.goal",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.goal.start.1",
+      "label": "暂不公开个人经验",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.boundary",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.goal.start.1",
+      "context": {
+        "eventId": "district:event.nara.goal",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.goal",
+      "label": "问娜拉在整理什么护理卡",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.introduced",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.accepted",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.goal"
+        }
+      ],
+      "resultText": "district:text.nara.goal"
+    },
+    {
+      "id": "district:action.nara.observe",
+      "label": "记录茶馆中的身体适配",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.accepted",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.observed",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.nara.observed",
+          "value": true
+        }
+      ],
+      "resultText": "district:text.nara.observe"
+    },
+    {
+      "id": "district:action.nara.tools",
+      "label": "核对工作用具的兼容性",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.observed",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.tools",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.nara.tools",
+          "value": true
+        }
+      ],
+      "resultText": "district:text.nara.tools"
+    },
+    {
+      "id": "district:action.event.nara.return.start.0",
+      "label": "公开匿名的适配经验",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.shared",
+          "relationship": {
+            "familiarity": 3,
+            "trust": 4
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.nara.done",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.nara.public",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 6
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.return.start.0",
+      "context": {
+        "eventId": "district:event.nara.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.return.start.1",
+      "label": "保留私人记录，允许她参考通用办法",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.private",
+          "relationship": {
+            "familiarity": 3,
+            "trust": 3
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.nara.done",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.return.start.1",
+      "context": {
+        "eventId": "district:event.nara.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.return.start.2",
+      "label": "先带回去再检查一遍",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.return.start.2",
+      "context": {
+        "eventId": "district:event.nara.return",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.return",
+      "label": "和娜拉确认护理卡的公开范围",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.tools",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.done",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.return"
+        }
+      ],
+      "resultText": "district:text.nara.return"
+    },
+    {
+      "id": "district:action.event.nara.follow.start.0",
+      "label": "接受下班后相处的邀请",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.invited",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 3
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.nara.willing",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.follow.start.0",
+      "context": {
+        "eventId": "district:event.nara.follow",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.follow.start.1",
+      "label": "继续以朋友身份往来",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.follow.start.1",
+      "context": {
+        "eventId": "district:event.nara.follow",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.follow",
+      "label": "听护理卡次日的实际反馈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.done",
+          "value": true
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.invited",
+          "value": false
+        },
+        {
+          "op": "day.after",
+          "flagId": "district:flag.nara.done",
+          "days": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.follow"
+        }
+      ],
+      "resultText": "district:text.nara.follow"
+    },
+    {
+      "id": "district:action.event.velvet.after.start.0",
+      "label": "听她说自己的安排，不把帮忙当作索取理由",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "district:memory.velvet.personal",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 3
+          }
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.velvet.willing",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 20
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.after.start.0",
+      "context": {
+        "eventId": "district:event.velvet.after",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.velvet.after.start.1",
+      "label": "今天只聊日常，之后再谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.after.start.1",
+      "context": {
+        "eventId": "district:event.velvet.after",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.velvet.after",
+      "label": "问薇尔维特下班后的打算",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.reported",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.velvet.willing",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.velvet.after"
+        }
+      ],
+      "resultText": "district:text.velvet.after"
+    },
+    {
+      "id": "district:action.event.riker.quiet.private.0",
+      "label": "确认愿意，进入相处场景",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.start",
+          "id": "district:interaction.riker.quiet"
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "private"
+        }
+      ],
+      "resultText": "district:text.event.riker.quiet.private.0",
+      "context": {
+        "eventId": "district:event.riker.quiet",
+        "nodeId": "private"
+      }
+    },
+    {
+      "id": "district:action.event.riker.quiet.private.1",
+      "label": "今天先到这里",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.quiet.private.1",
+      "context": {
+        "eventId": "district:event.riker.quiet",
+        "nodeId": "private"
+      }
+    },
+    {
+      "id": "district:action.event.riker.quiet.after.0",
+      "label": "互道再会，结束这次相处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.quiet",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 2
+          }
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.quiet.after.0",
+      "context": {
+        "eventId": "district:event.riker.quiet",
+        "nodeId": "after"
+      }
+    },
+    {
+      "id": "district:action.riker.quiet",
+      "label": "邀请莱克安静相处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.willing",
+          "value": true
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.repaired",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.sold",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.quiet"
+        }
+      ],
+      "resultText": "district:text.riker.quiet"
+    },
+    {
+      "id": "district:action.event.nara.quiet.private.0",
+      "label": "确认愿意，进入相处场景",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.start",
+          "id": "district:interaction.nara.quiet"
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "private"
+        }
+      ],
+      "resultText": "district:text.event.nara.quiet.private.0",
+      "context": {
+        "eventId": "district:event.nara.quiet",
+        "nodeId": "private"
+      }
+    },
+    {
+      "id": "district:action.event.nara.quiet.private.1",
+      "label": "今天先到这里",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.quiet.private.1",
+      "context": {
+        "eventId": "district:event.nara.quiet",
+        "nodeId": "private"
+      }
+    },
+    {
+      "id": "district:action.event.nara.quiet.after.0",
+      "label": "互道再会，结束这次相处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.quiet",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 2
+          }
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.quiet.after.0",
+      "context": {
+        "eventId": "district:event.nara.quiet",
+        "nodeId": "after"
+      }
+    },
+    {
+      "id": "district:action.nara.quiet",
+      "label": "邀请娜拉安静相处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.willing",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.done",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.quiet"
+        }
+      ],
+      "resultText": "district:text.nara.quiet"
+    },
+    {
+      "id": "district:action.event.velvet.quiet.private.0",
+      "label": "确认愿意，进入相处场景",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.start",
+          "id": "district:interaction.velvet.quiet"
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "private"
+        }
+      ],
+      "resultText": "district:text.event.velvet.quiet.private.0",
+      "context": {
+        "eventId": "district:event.velvet.quiet",
+        "nodeId": "private"
+      }
+    },
+    {
+      "id": "district:action.event.velvet.quiet.private.1",
+      "label": "今天先到这里",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.quiet.private.1",
+      "context": {
+        "eventId": "district:event.velvet.quiet",
+        "nodeId": "private"
+      }
+    },
+    {
+      "id": "district:action.event.velvet.quiet.after.0",
+      "label": "互道再会，结束这次相处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "district:memory.velvet.quiet",
+          "relationship": {
+            "familiarity": 2,
+            "trust": 2
+          }
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.quiet.after.0",
+      "context": {
+        "eventId": "district:event.velvet.quiet",
+        "nodeId": "after"
+      }
+    },
+    {
+      "id": "district:action.velvet.quiet",
+      "label": "邀请薇尔维特安静相处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.velvet.willing",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.velvet.quiet"
+        }
+      ],
+      "resultText": "district:text.velvet.quiet"
+    },
+    {
+      "id": "district:action.scene.face",
+      "label": "面对面坐近",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "pose",
+          "poseId": "face"
+        }
+      ],
+      "resultText": "district:text.scene.face"
+    },
+    {
+      "id": "district:action.scene.across",
+      "label": "隔桌而坐",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "pose",
+          "poseId": "across"
+        }
+      ],
+      "resultText": "district:text.scene.across"
+    },
+    {
+      "id": "district:action.scene.turn",
+      "label": "转身看窗外",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "pose",
+          "poseId": "turn"
+        }
+      ],
+      "resultText": "district:text.scene.turn"
+    },
+    {
+      "id": "district:action.scene.balance",
+      "label": "借尾部平衡站定",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "body.hasCapability",
+          "capability": "balance",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "pose",
+          "poseId": "balance"
+        }
+      ],
+      "resultText": "district:text.scene.balance"
+    },
+    {
+      "id": "district:action.scene.contact",
+      "label": "询问并建立手部接触",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "contact"
+        }
+      ],
+      "resultText": "district:text.scene.contact"
+    },
+    {
+      "id": "district:action.scene.release",
+      "label": "松开接触",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "release"
+        }
+      ],
+      "resultText": "district:text.scene.release"
+    },
+    {
+      "id": "district:action.scene.pause",
+      "label": "暂停相处",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "pause"
+        }
+      ],
+      "resultText": "district:text.scene.pause"
+    },
+    {
+      "id": "district:action.scene.resume",
+      "label": "重新确认并继续",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "resume"
+        }
+      ],
+      "resultText": "district:text.scene.resume"
+    },
+    {
+      "id": "district:action.scene.exit",
+      "label": "结束相处，回到交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "scene.act",
+          "move": "exit"
+        }
+      ],
+      "resultText": "district:text.scene.exit"
+    },
+    {
+      "id": "district:action.wear.raincoat",
+      "label": "试穿合身的封背雨衣",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "not",
+          "condition": {
+            "op": "body.hasCapability",
+            "capability": "balance",
+            "count": 1
+          }
+        }
+      ],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "district:equipment.raincoat"
+        }
+      ],
+      "resultText": "district:text.wear.raincoat"
+    },
+    {
+      "id": "district:action.wear.tailcoat",
+      "label": "试穿可调尾口工作衣",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "body.hasCapability",
+          "capability": "balance",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "district:equipment.tailcoat"
+        }
+      ],
+      "resultText": "district:text.wear.tailcoat"
+    },
+    {
+      "id": "district:action.equipment.remove",
+      "label": "收起已穿装备",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.remove"
+        }
+      ],
+      "resultText": "district:text.equipment.remove"
+    },
+    {
+      "id": "district:action.event.riker.body.mechanical.start.0",
+      "label": "说明实际体验，并结束交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.body.mechanical",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.body.mechanical.start.0",
+      "context": {
+        "eventId": "district:event.riker.body.mechanical",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.body.mechanical.start.1",
+      "label": "今天不谈身体，保持距离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.body.mechanical.start.1",
+      "context": {
+        "eventId": "district:event.riker.body.mechanical",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.body.mechanical",
+      "label": "聊机械尾的适应",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "body.hasCapability",
+          "capability": "tailGrip",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.body.mechanical"
+        }
+      ],
+      "resultText": "district:text.riker.body.mechanical"
+    },
+    {
+      "id": "district:action.event.riker.body.gel.start.0",
+      "label": "说明实际体验，并结束交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.body.gel",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.body.gel.start.0",
+      "context": {
+        "eventId": "district:event.riker.body.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.riker.body.gel.start.1",
+      "label": "今天不谈身体，保持距离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.riker.body.gel.start.1",
+      "context": {
+        "eventId": "district:event.riker.body.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.riker.body.gel",
+      "label": "聊共生手部的生活",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "body.hasPart",
+          "definitionId": "district:part.hand.gel"
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.riker.body.gel"
+        }
+      ],
+      "resultText": "district:text.riker.body.gel"
+    },
+    {
+      "id": "district:action.event.nara.body.mechanical.start.0",
+      "label": "说明实际体验，并结束交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.body.mechanical",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.body.mechanical.start.0",
+      "context": {
+        "eventId": "district:event.nara.body.mechanical",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.body.mechanical.start.1",
+      "label": "今天不谈身体，保持距离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.body.mechanical.start.1",
+      "context": {
+        "eventId": "district:event.nara.body.mechanical",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.body.mechanical",
+      "label": "聊机械尾的适应",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "body.hasCapability",
+          "capability": "tailGrip",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.body.mechanical"
+        }
+      ],
+      "resultText": "district:text.nara.body.mechanical"
+    },
+    {
+      "id": "district:action.event.nara.body.gel.start.0",
+      "label": "说明实际体验，并结束交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "npc.remember",
+          "npcId": "district:npc.nara",
+          "memoryId": "district:memory.nara.body.gel",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.body.gel.start.0",
+      "context": {
+        "eventId": "district:event.nara.body.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.nara.body.gel.start.1",
+      "label": "今天不谈身体，保持距离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.nara.body.gel.start.1",
+      "context": {
+        "eventId": "district:event.nara.body.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.nara.body.gel",
+      "label": "聊共生手部的生活",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "body.hasPart",
+          "definitionId": "district:part.hand.gel"
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.nara.body.gel"
+        }
+      ],
+      "resultText": "district:text.nara.body.gel"
+    },
+    {
+      "id": "district:action.event.velvet.body.mechanical.start.0",
+      "label": "说明实际体验，并结束交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "district:memory.velvet.body.mechanical",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.body.mechanical.start.0",
+      "context": {
+        "eventId": "district:event.velvet.body.mechanical",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.velvet.body.mechanical.start.1",
+      "label": "今天不谈身体，保持距离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.body.mechanical.start.1",
+      "context": {
+        "eventId": "district:event.velvet.body.mechanical",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.velvet.body.mechanical",
+      "label": "聊机械尾的适应",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
+        },
+        {
+          "op": "body.hasCapability",
+          "capability": "tailGrip",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.velvet.body.mechanical"
+        }
+      ],
+      "resultText": "district:text.velvet.body.mechanical"
+    },
+    {
+      "id": "district:action.event.velvet.body.gel.start.0",
+      "label": "说明实际体验，并结束交谈",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "district:memory.velvet.body.gel",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.body.gel.start.0",
+      "context": {
+        "eventId": "district:event.velvet.body.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.velvet.body.gel.start.1",
+      "label": "今天不谈身体，保持距离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.velvet.body.gel.start.1",
+      "context": {
+        "eventId": "district:event.velvet.body.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.velvet.body.gel",
+      "label": "聊共生手部的生活",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
+        },
+        {
+          "op": "body.hasPart",
+          "definitionId": "district:part.hand.gel"
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.velvet.body.gel"
+        }
+      ],
+      "resultText": "district:text.velvet.body.gel"
     }
   ],
   "events": [
@@ -8024,6 +10585,942 @@
           ]
         }
       ]
+    },
+    {
+      "id": "district:event.riker.meet",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.meet.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.meet.start.0",
+            "district:action.event.riker.meet.start.1"
+          ],
+          "onEnter": [
+            {
+              "op": "npc.remember",
+              "npcId": "district:npc.riker",
+              "memoryId": "district:memory.riker.introduced",
+              "relationship": {
+                "familiarity": 2,
+                "trust": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.meet.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.riker.daily",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.daily.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.daily.start.0",
+            "district:action.event.riker.daily.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.daily.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.riker.morning",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.morning.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.morning.start.0",
+            "district:action.event.riker.morning.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.morning.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.riker.evening",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.evening.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.evening.start.0",
+            "district:action.event.riker.evening.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.evening.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.nara.meet",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.meet.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.meet.start.0",
+            "district:action.event.nara.meet.start.1"
+          ],
+          "onEnter": [
+            {
+              "op": "npc.remember",
+              "npcId": "district:npc.nara",
+              "memoryId": "district:memory.nara.introduced",
+              "relationship": {
+                "familiarity": 2,
+                "trust": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.meet.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.nara.daily",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.daily.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.daily.start.0",
+            "district:action.event.nara.daily.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.daily.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.nara.morning",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.morning.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.morning.start.0",
+            "district:action.event.nara.morning.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.morning.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.nara.evening",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.evening.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.evening.start.0",
+            "district:action.event.nara.evening.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.evening.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.riker.goal",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.goal.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.goal.start.0",
+            "district:action.event.riker.goal.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.goal.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.riker.salvage",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.salvage.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.salvage.start.0",
+            "district:action.event.riker.salvage.start.1",
+            "district:action.event.riker.salvage.start.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.salvage.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.riker.return",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.return.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.return.start.0",
+            "district:action.event.riker.return.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.return.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.riker.sold",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.sold.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.sold.start.0",
+            "district:action.event.riker.sold.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.sold.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.riker.bond",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.bond.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.bond.start.0",
+            "district:action.event.riker.bond.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.bond.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.nara.goal",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.goal.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.goal.start.0",
+            "district:action.event.nara.goal.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.goal.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.nara.return",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.return.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.return.start.0",
+            "district:action.event.nara.return.start.1",
+            "district:action.event.nara.return.start.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.return.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.nara.follow",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.follow.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.follow.start.0",
+            "district:action.event.nara.follow.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.follow.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.velvet.after",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.velvet.after.start"
+          ],
+          "actionIds": [
+            "district:action.event.velvet.after.start.0",
+            "district:action.event.velvet.after.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.velvet.after.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "aetheria-social:npc.velvet"
+      ]
+    },
+    {
+      "id": "district:event.riker.quiet",
+      "startNode": "private",
+      "nodes": [
+        {
+          "id": "private",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.quiet.private"
+          ],
+          "actionIds": [
+            "district:action.event.riker.quiet.private.0",
+            "district:action.event.riker.quiet.private.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "after",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.quiet.after"
+          ],
+          "actionIds": [
+            "district:action.event.riker.quiet.after.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.quiet.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.nara.quiet",
+      "startNode": "private",
+      "nodes": [
+        {
+          "id": "private",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.quiet.private"
+          ],
+          "actionIds": [
+            "district:action.event.nara.quiet.private.0",
+            "district:action.event.nara.quiet.private.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "after",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.quiet.after"
+          ],
+          "actionIds": [
+            "district:action.event.nara.quiet.after.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.quiet.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.velvet.quiet",
+      "startNode": "private",
+      "nodes": [
+        {
+          "id": "private",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.velvet.quiet.private"
+          ],
+          "actionIds": [
+            "district:action.event.velvet.quiet.private.0",
+            "district:action.event.velvet.quiet.private.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "after",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.velvet.quiet.after"
+          ],
+          "actionIds": [
+            "district:action.event.velvet.quiet.after.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.velvet.quiet.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "aetheria-social:npc.velvet"
+      ]
+    },
+    {
+      "id": "district:event.riker.body.mechanical",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.body.mechanical.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.body.mechanical.start.0",
+            "district:action.event.riker.body.mechanical.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.body.mechanical.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.riker.body.gel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.riker.body.gel.start"
+          ],
+          "actionIds": [
+            "district:action.event.riker.body.gel.start.0",
+            "district:action.event.riker.body.gel.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.riker.body.gel.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.riker"
+      ]
+    },
+    {
+      "id": "district:event.nara.body.mechanical",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.body.mechanical.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.body.mechanical.start.0",
+            "district:action.event.nara.body.mechanical.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.body.mechanical.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.nara.body.gel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.nara.body.gel.start"
+          ],
+          "actionIds": [
+            "district:action.event.nara.body.gel.start.0",
+            "district:action.event.nara.body.gel.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.nara.body.gel.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "district:npc.nara"
+      ]
+    },
+    {
+      "id": "district:event.velvet.body.mechanical",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.velvet.body.mechanical.start"
+          ],
+          "actionIds": [
+            "district:action.event.velvet.body.mechanical.start.0",
+            "district:action.event.velvet.body.mechanical.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.velvet.body.mechanical.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "aetheria-social:npc.velvet"
+      ]
+    },
+    {
+      "id": "district:event.velvet.body.gel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.velvet.body.gel.start"
+          ],
+          "actionIds": [
+            "district:action.event.velvet.body.gel.start.0",
+            "district:action.event.velvet.body.gel.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.velvet.body.gel.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ],
+      "participantIds": [
+        "aetheria-social:npc.velvet"
+      ]
     }
   ],
   "texts": {
@@ -8414,7 +11911,191 @@
     "district:text.event.canal.decision.end": "窗口保留了你提交的事实与选择。道路的日常反馈会反映最终方案；工单没有因为关闭页面而消失。",
     "district:text.canal.decide": "你带着核查材料回到档案室。",
     "district:text.canal.feedback.closed": "新告示写着集中维护已经结束。夜班绕行的痕迹仍在，居民谈到这次处理时会提起少走的一段与多绕的一圈。",
-    "district:text.canal.feedback.open": "分段维护后，旧渠夜间仍留着通道。信使在新的路标旁等同伴，把这次公开交接当作可以信任的承诺。"
+    "district:text.canal.feedback.open": "分段维护后，旧渠夜间仍留着通道。信使在新的路标旁等同伴，把这次公开交接当作可以信任的承诺。",
+    "district:text.riker.activity": "莱克在处理今天的公共委托。",
+    "district:text.riker.rest": "莱克已经结束公开工作。",
+    "district:text.riker.description": "莱克（34岁，成年）习惯先把损坏部位放在灯下，再谈修理的价格。他希望工坊能留下每一位居民原有生活的痕迹，而不是只卖新零件。\n\n“能修我就说能修，不能也不会哄你。决定装什么的人是你。”",
+    "district:text.riker.cafe": "莱克坐在茶馆靠窗的桌边，愿意聊一会当天的事。",
+    "district:text.memory.riker.introduced": "你们交换过姓名，明确了对方的工作与边界。",
+    "district:text.event.riker.meet.start": "莱克（34岁，成年）习惯先把损坏部位放在灯下，再谈修理的价格。他希望工坊能留下每一位居民原有生活的痕迹，而不是只卖新零件。\n\n“能修我就说能修，不能也不会哄你。决定装什么的人是你。”",
+    "district:text.event.riker.meet.start.0": "你做出了选择。",
+    "district:text.event.riker.meet.start.1": "你做出了选择。",
+    "district:text.event.riker.meet.end": "莱克说下次可以从近况聊起。你回到所在地点，已经发生的介绍留在人物记忆里。",
+    "district:text.riker.meet": "你先确认对方现在方便交谈。",
+    "district:text.event.riker.daily.start": "莱克把安全椅转向你。“今天修的是门锁。零件很小，没它的人却进不了家门。你呢，今天的路顺不顺？”",
+    "district:text.event.riker.daily.start.0": "对方听完你的近况，也分享了一件没有写进工作记录的小事。",
+    "district:text.event.riker.daily.start.1": "你做出了选择。",
+    "district:text.event.riker.daily.end": "交谈自然结束。你们保留各自的生活，也知道下一次可以再从这里说起。",
+    "district:text.riker.daily": "你在熟悉的招呼之后停下脚步。",
+    "district:text.event.riker.morning.start": "莱克把最紧急的工单留在桌面上。“早上脑子清楚，先把会影响别人出门的修好。”",
+    "district:text.event.riker.morning.start.0": "你做出了选择。",
+    "district:text.event.riker.morning.start.1": "你做出了选择。",
+    "district:text.event.riker.morning.end": "你们按眼前的时间与处境结束交谈。",
+    "district:text.riker.morning": "莱克把最紧急的工单留在桌面上。“早上脑子清楚，先把会影响别人出门的修好。”",
+    "district:text.event.riker.evening.start": "莱克终于放下工具。“这时候我不接新活。坐一会，说点跟工单无关的。”",
+    "district:text.event.riker.evening.start.0": "你做出了选择。",
+    "district:text.event.riker.evening.start.1": "你做出了选择。",
+    "district:text.event.riker.evening.end": "你们按眼前的时间与处境结束交谈。",
+    "district:text.riker.evening": "莱克终于放下工具。“这时候我不接新活。坐一会，说点跟工单无关的。”",
+    "district:text.nara.activity": "娜拉在处理今天的公共委托。",
+    "district:text.nara.rest": "娜拉已经结束公开工作。",
+    "district:text.nara.description": "娜拉（31岁，成年）负责变化后的生活适应。她把日常难处写成可读的护理卡，希望居民无需每次出问题都依赖诊室。\n\n“先说哪里不舒服。你不必证明自己已经适应了。”",
+    "district:text.nara.cafe": "娜拉坐在茶馆靠窗的桌边，愿意聊一会当天的事。",
+    "district:text.memory.nara.introduced": "你们交换过姓名，明确了对方的工作与边界。",
+    "district:text.event.nara.meet.start": "娜拉（31岁，成年）负责变化后的生活适应。她把日常难处写成可读的护理卡，希望居民无需每次出问题都依赖诊室。\n\n“先说哪里不舒服。你不必证明自己已经适应了。”",
+    "district:text.event.nara.meet.start.0": "你做出了选择。",
+    "district:text.event.nara.meet.start.1": "你做出了选择。",
+    "district:text.event.nara.meet.end": "娜拉说下次可以从近况聊起。你回到所在地点，已经发生的介绍留在人物记忆里。",
+    "district:text.nara.meet": "你先确认对方现在方便交谈。",
+    "district:text.event.nara.daily.start": "娜拉收好空白护理卡。“有人今天第一次能用新的身体自己做早餐。这种进展比我说多少建议都有用。你最近有没有遇到日常不便？”",
+    "district:text.event.nara.daily.start.0": "对方听完你的近况，也分享了一件没有写进工作记录的小事。",
+    "district:text.event.nara.daily.start.1": "你做出了选择。",
+    "district:text.event.nara.daily.end": "交谈自然结束。你们保留各自的生活，也知道下一次可以再从这里说起。",
+    "district:text.nara.daily": "你在熟悉的招呼之后停下脚步。",
+    "district:text.event.nara.morning.start": "娜拉把今天的护理卡放进公开架。“早上有人刚开始适应，先别急着催进度。”",
+    "district:text.event.nara.morning.start.0": "你做出了选择。",
+    "district:text.event.nara.morning.start.1": "你做出了选择。",
+    "district:text.event.nara.morning.end": "你们按眼前的时间与处境结束交谈。",
+    "district:text.nara.morning": "娜拉把今天的护理卡放进公开架。“早上有人刚开始适应，先别急着催进度。”",
+    "district:text.event.nara.evening.start": "娜拉把笔扣上。“今天已经下班。可以聊你的生活，不必把每句话都当作问诊。”",
+    "district:text.event.nara.evening.start.0": "你做出了选择。",
+    "district:text.event.nara.evening.start.1": "你做出了选择。",
+    "district:text.event.nara.evening.end": "你们按眼前的时间与处境结束交谈。",
+    "district:text.nara.evening": "娜拉把笔扣上。“今天已经下班。可以聊你的生活，不必把每句话都当作问诊。”",
+    "district:text.memory.riker.promise": "你答应核对旧义肢的原主授权。",
+    "district:text.memory.riker.declined": "你没有勉强许诺，说明今天无法承担委托。",
+    "district:text.event.riker.goal.start": "莱克指着墙上的旧义肢。“原主人想保留这只手的磨痕。供应商愿意用一整套新件换走它，我不想替人做这个决定。档案室应该还留着维修授权，你能帮我核对吗？”\n\n他在意的是授权与旧物的归属，熟悉数值并不能替代这件事。",
+    "district:text.event.riker.goal.start.0": "你做出了选择。",
+    "district:text.event.riker.goal.start.1": "你做出了选择。",
+    "district:text.event.riker.goal.end": "莱克把授权编号写给你。接下委托后，先去档案室，再去旧渠回收点找对应的连接件。",
+    "district:text.riker.goal": "你留意到那件始终没有卖出的旧物。",
+    "district:text.riker.archive": "你找到原主签过的授权：可以修复，可以借出观察，但不能把整只义肢转卖。你抄下公开授权编号，私人身份仍留在封存柜。",
+    "district:text.event.riker.salvage.start": "旧渠回收点保留着对应接口，一旁的供应商留下了高价收购单。按原主授权修复会保留旧物；接受新件交换更省工，却必须先承认授权不允许这么做。",
+    "district:text.event.riker.salvage.start.0": "你取回可用接口，记录磨损程度，没有转卖整件旧物。",
+    "district:text.event.riker.salvage.start.1": "你收下补贴，但知道这会改变莱克是否愿意继续私人来往。",
+    "district:text.event.riker.salvage.start.2": "你做出了选择。",
+    "district:text.event.riker.salvage.end": "回收点保留你的选择。结果需要亲自带回工坊，莱克不会隔空知道发生了什么。",
+    "district:text.riker.salvage": "你沿公开编号找到回收点。",
+    "district:text.memory.riker.repaired": "你尊重原主授权，带回了兼容接口并完成修复登记。",
+    "district:text.event.riker.return.start": "莱克听完你的核查，先对照授权，再看接口。“你没有替原主人决定这只手该不该留下。”他把修复后的动作一点点校准，约你次日再来看实际使用记录。",
+    "district:text.event.riker.return.start.0": "你做出了选择。",
+    "district:text.event.riker.return.start.1": "你做出了选择。",
+    "district:text.event.riker.return.end": "修复进入试用。等到下一个游戏日，再与莱克谈它如何回到生活中。",
+    "district:text.riker.return": "你把核对结果与接口一起摆到台上。",
+    "district:text.memory.riker.breach": "你接受补贴，违背原主授权；莱克明确关闭私人路线。",
+    "district:text.event.riker.sold.start": "莱克听完交换补贴的事，静了片刻。“授权写得很清楚。我能理解你缺钱，但这不代表我愿意把私人生活也交给同样的判断。”\n\n他仍提供公开服务，私人路线在这次选择后停止。",
+    "district:text.event.riker.sold.start.0": "你做出了选择。",
+    "district:text.event.riker.sold.start.1": "你做出了选择。",
+    "district:text.event.riker.sold.end": "你们结束了这次委托。日常工作仍可继续，私人入口不会被反复刷熟悉度重新打开。",
+    "district:text.riker.confess": "你决定亲自说明发生的事。",
+    "district:text.memory.riker.invited": "修复次日，莱克主动邀请你在休息时私人相处。",
+    "district:text.memory.riker.friend": "你感谢邀请，选择暂时保持朋友距离。",
+    "district:text.event.riker.bond.start": "次日，莱克给你看一张简短回信：原主人用修复后的义肢打开了家门。他把纸折回原样。“今晚我想去茶馆坐坐。你可以来，也可以改天；这不是修理的报酬。”",
+    "district:text.event.riker.bond.start.0": "你做出了选择。",
+    "district:text.event.riker.bond.start.1": "你做出了选择。",
+    "district:text.event.riker.bond.end": "共同经历成为关系的新阶段。愿意继续时，可以从双方在场的私人交谈入口开始；任何时候都可以离开。",
+    "district:text.riker.bond": "莱克留了实际使用的回信给你。",
+    "district:text.memory.nara.promise": "你自愿参与公共护理卡的生活记录。",
+    "district:text.memory.nara.boundary": "你说明暂时不愿公开经验，娜拉尊重了边界。",
+    "district:text.event.nara.goal.start": "娜拉想把变化后的生活经验写进公共护理卡。“不能只有一句‘请适应新身体’。拿杯子、穿工作服、听广播，每件事都可能需要换一种办法。”她邀请你做一次自愿记录，不要求接受任何改造。",
+    "district:text.event.nara.goal.start.0": "你做出了选择。",
+    "district:text.event.nara.goal.start.1": "你做出了选择。",
+    "district:text.event.nara.goal.end": "参与后，去茶馆体验日用品，再到工坊核对适配办法。记录只写你愿意公开的部分。",
+    "district:text.nara.goal": "你注意到她把日常问题放在数值之前。",
+    "district:text.nara.observe": "你比较了开背椅、长凳与防滑杯，不把任何一种身体当作唯一默认。店员同意把合适的日用品放在公开可取的位置。",
+    "district:text.nara.tools": "你和工坊核对抓握空间与衣物开口。工具应当配合实际身体，不能要求每个人先变回同一模板才能工作。",
+    "district:text.memory.nara.shared": "你选择公开匿名适配经验，公共护理卡增加可操作的日常建议。",
+    "district:text.memory.nara.private": "你保留个人记录，娜拉尊重公开边界并参考通用办法。",
+    "district:text.event.nara.return.start": "娜拉逐条读过记录，划掉可能暴露个人身份的细节。“这张卡应该帮人自己生活，不该把人送回无止境的检查里。”你可以公开匿名办法，也可以只留下自己的一份。",
+    "district:text.event.nara.return.start.0": "你做出了选择。",
+    "district:text.event.nara.return.start.1": "你做出了选择。",
+    "district:text.event.nara.return.start.2": "你做出了选择。",
+    "district:text.event.nara.return.end": "记录没有替任何人规定身体。下一天再见面时，娜拉会告诉你实际使用的反馈。",
+    "district:text.nara.return": "你带回茶馆与工坊的记录。",
+    "district:text.memory.nara.invited": "次日使用反馈得到确认，娜拉邀请你下班后相处。",
+    "district:text.event.nara.follow.start": "娜拉说，有位居民按护理卡调整了工具，今天第一次独立完成了工作。“你留下的是办法。以后我们也可以在下班后聊点自己的事。”",
+    "district:text.event.nara.follow.start.0": "你做出了选择。",
+    "district:text.event.nara.follow.start.1": "你做出了选择。",
+    "district:text.event.nara.follow.end": "护理卡路线结束，日常往来继续。角色意愿与公开边界都保留在经历中。",
+    "district:text.nara.follow": "娜拉留着一份经过匿名处理的回访记录。",
+    "district:text.memory.velvet.personal": "你听薇尔维特谈下班后的生活，尊重她的自主安排。",
+    "district:text.event.velvet.after.start": "薇尔维特翻过补货清单，确认当天该做的事都已完成。“你上次把清单带回来，我就知道你会说明自己实际做到了哪一步。今天我想谈的不是委托，是下班后还能怎样保留一点自己的时间。”",
+    "district:text.event.velvet.after.start.0": "你做出了选择。",
+    "district:text.event.velvet.after.start.1": "你做出了选择。",
+    "district:text.event.velvet.after.end": "薇尔维特将私人相处与工作服务分开。愿意继续时，你们可以在双方方便的时刻再确认。",
+    "district:text.velvet.after": "你从共同完成的小委托聊到她自己的时间。",
+    "district:text.memory.riker.quiet": "你们在明确边界下相处过，所有接触都在离开前释放。",
+    "district:text.event.riker.quiet.private": "莱克把惯常紧握的工具袋放到一旁。“今天不用修什么。你想坐近一点就说，不想也没关系。”你们先确认各自舒服的位置，再让话题慢慢离开工单。灯下的安静不是承诺的代价，也没有把任何人推向尚未同意的事情。",
+    "district:text.event.riker.quiet.private.0": "你做出了选择。",
+    "district:text.event.riker.quiet.private.1": "你做出了选择。",
+    "district:text.event.riker.quiet.after": "你们从安静的相处回到普通交谈，确认接下来各自的安排。新的日常仍会继续；离开不取消已经建立的信任。",
+    "district:text.event.riker.quiet.after.0": "你做出了选择。",
+    "district:text.event.riker.quiet.end": "你们结束这次私人交谈。之后仍可聊近况、再次相处或各自继续工作。",
+    "district:text.riker.quiet": "你重新询问对方今天是否方便。",
+    "district:text.memory.nara.quiet": "你们在明确边界下相处过，所有接触都在离开前释放。",
+    "district:text.event.nara.quiet.private": "娜拉把护理卡收进包里。“现在不是问诊。你可以说自己的事，也可以只是安静坐着。”你们为彼此留出可退开的空间。熟悉让沉默更轻松，而每一次接触仍然需要当下的确认。",
+    "district:text.event.nara.quiet.private.0": "你做出了选择。",
+    "district:text.event.nara.quiet.private.1": "你做出了选择。",
+    "district:text.event.nara.quiet.after": "你们从安静的相处回到普通交谈，确认接下来各自的安排。新的日常仍会继续；离开不取消已经建立的信任。",
+    "district:text.event.nara.quiet.after.0": "你做出了选择。",
+    "district:text.event.nara.quiet.end": "你们结束这次私人交谈。之后仍可聊近况、再次相处或各自继续工作。",
+    "district:text.nara.quiet": "你重新询问对方今天是否方便。",
+    "district:text.memory.velvet.quiet": "你们在明确边界下相处过，所有接触都在离开前释放。",
+    "district:text.event.velvet.quiet.private": "薇尔维特收起工作簿，给你留了一处安静的位置。“我们都不用再替今天找一个有用的结尾。”你们确认可以随时暂停，再把话题留给各自真正想说的事。片刻相处完整地发生在普通生活里，不以任何尚未同意的行为作为后续。",
+    "district:text.event.velvet.quiet.private.0": "你做出了选择。",
+    "district:text.event.velvet.quiet.private.1": "你做出了选择。",
+    "district:text.event.velvet.quiet.after": "你们从安静的相处回到普通交谈，确认接下来各自的安排。新的日常仍会继续；离开不取消已经建立的信任。",
+    "district:text.event.velvet.quiet.after.0": "你做出了选择。",
+    "district:text.event.velvet.quiet.end": "你们结束这次私人交谈。之后仍可聊近况、再次相处或各自继续工作。",
+    "district:text.velvet.quiet": "你重新询问对方今天是否方便。",
+    "district:text.scene.face": "你按照彼此的确认调整互动。",
+    "district:text.scene.across": "你按照彼此的确认调整互动。",
+    "district:text.scene.turn": "你按照彼此的确认调整互动。",
+    "district:text.scene.balance": "你按照彼此的确认调整互动。",
+    "district:text.scene.contact": "你按照彼此的确认调整互动。",
+    "district:text.scene.release": "你按照彼此的确认调整互动。",
+    "district:text.scene.pause": "你按照彼此的确认调整互动。",
+    "district:text.scene.resume": "你按照彼此的确认调整互动。",
+    "district:text.scene.exit": "你按照彼此的确认调整互动。",
+    "district:text.wear.raincoat": "这件雨衣适合没有尾部结构的身体。新增尾部后将自动卸下并保留。",
+    "district:text.wear.tailcoat": "尾口留出活动空间，适配具有尾部平衡能力的身体。",
+    "district:text.equipment.remove": "你把装备放回背包。",
+    "district:text.memory.riker.body.mechanical": "对方亲眼看到你的机械尾，听过实际生活反馈。",
+    "district:text.event.riker.body.mechanical.start": "莱克先问尾部校准后是否能自然坐下。“抓握只是一个功能。你每天用它过得怎么样，才是保养的依据。”",
+    "district:text.event.riker.body.mechanical.start.0": "你做出了选择。",
+    "district:text.event.riker.body.mechanical.start.1": "你做出了选择。",
+    "district:text.event.riker.body.mechanical.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
+    "district:text.riker.body.mechanical": "莱克先问尾部校准后是否能自然坐下。“抓握只是一个功能。你每天用它过得怎么样，才是保养的依据。”",
+    "district:text.memory.riker.body.gel": "对方亲眼看到你的共生手部，听过实际生活反馈。",
+    "district:text.event.riker.body.gel.start": "莱克换上适合共生表层的工具垫，先询问你是否方便操作，再讨论今天的修理。",
+    "district:text.event.riker.body.gel.start.0": "你做出了选择。",
+    "district:text.event.riker.body.gel.start.1": "你做出了选择。",
+    "district:text.event.riker.body.gel.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
+    "district:text.riker.body.gel": "莱克换上适合共生表层的工具垫，先询问你是否方便操作，再讨论今天的修理。",
+    "district:text.memory.nara.body.mechanical": "对方亲眼看到你的机械尾，听过实际生活反馈。",
+    "district:text.event.nara.body.mechanical.start": "娜拉询问你拿杯、坐下与工作时的分寸，建议先减少负重再慢慢增加。她没有把一次校准当作适应已经完成。",
+    "district:text.event.nara.body.mechanical.start.0": "你做出了选择。",
+    "district:text.event.nara.body.mechanical.start.1": "你做出了选择。",
+    "district:text.event.nara.body.mechanical.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
+    "district:text.nara.body.mechanical": "娜拉询问你拿杯、坐下与工作时的分寸，建议先减少负重再慢慢增加。她没有把一次校准当作适应已经完成。",
+    "district:text.memory.nara.body.gel": "对方亲眼看到你的共生手部，听过实际生活反馈。",
+    "district:text.event.nara.body.gel.start": "娜拉问新表层有没有不适，提醒你护理卡上的停用条件。她没有把共生说成性格变化。",
+    "district:text.event.nara.body.gel.start.0": "你做出了选择。",
+    "district:text.event.nara.body.gel.start.1": "你做出了选择。",
+    "district:text.event.nara.body.gel.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
+    "district:text.nara.body.gel": "娜拉问新表层有没有不适，提醒你护理卡上的停用条件。她没有把共生说成性格变化。",
+    "district:text.memory.velvet.body.mechanical": "对方亲眼看到你的机械尾，听过实际生活反馈。",
+    "district:text.event.velvet.body.mechanical.start": "薇尔维特给椅后留出尾部活动空间。“上次是看改造，今天是看你怎么过日子。”",
+    "district:text.event.velvet.body.mechanical.start.0": "你做出了选择。",
+    "district:text.event.velvet.body.mechanical.start.1": "你做出了选择。",
+    "district:text.event.velvet.body.mechanical.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
+    "district:text.velvet.body.mechanical": "薇尔维特给椅后留出尾部活动空间。“上次是看改造，今天是看你怎么过日子。”",
+    "district:text.memory.velvet.body.gel": "对方亲眼看到你的共生手部，听过实际生活反馈。",
+    "district:text.event.velvet.body.gel.start": "薇尔维特递来防滑杯托，不擅自碰你的手。“方便的时候，告诉我哪种杯子更舒服。”",
+    "district:text.event.velvet.body.gel.start.0": "你做出了选择。",
+    "district:text.event.velvet.body.gel.start.1": "你做出了选择。",
+    "district:text.event.velvet.body.gel.end": "身体反馈结束。对方只记住亲眼看到并经你说明的事情。",
+    "district:text.velvet.body.gel": "薇尔维特递来防滑杯托，不擅自碰你的手。“方便的时候，告诉我哪种杯子更舒服。”"
   },
   "contributions": [
     {
@@ -8440,7 +12121,8 @@
         "district:action.rest.location.cafe",
         "district:action.cafe.tea",
         "district:action.waitday.location.cafe",
-        "district:action.heal.cafe"
+        "district:action.heal.cafe",
+        "district:action.nara.observe"
       ]
     },
     {
@@ -8450,7 +12132,10 @@
         "district:action.observe.location.market",
         "district:action.resident.talk.location.market",
         "district:action.resident.help.location.market",
-        "district:action.waitday.location.market"
+        "district:action.waitday.location.market",
+        "district:action.wear.raincoat",
+        "district:action.wear.tailcoat",
+        "district:action.equipment.remove"
       ]
     },
     {
@@ -8466,7 +12151,8 @@
         "district:action.waitday.location.workshop",
         "district:action.heal.workshop",
         "district:action.gel.work",
-        "district:action.canal.parts"
+        "district:action.canal.parts",
+        "district:action.nara.tools"
       ]
     },
     {
@@ -8482,7 +12168,8 @@
         "district:action.battle.scavenger",
         "district:action.battle.gel",
         "district:action.heal.canal",
-        "district:action.canal.inspect"
+        "district:action.canal.inspect",
+        "district:action.riker.salvage"
       ]
     },
     {
@@ -8498,7 +12185,8 @@
         "district:action.waitday.location.archive",
         "district:action.heal.archive",
         "district:action.canal.accept",
-        "district:action.canal.decide"
+        "district:action.canal.decide",
+        "district:action.riker.archive"
       ]
     },
     {
@@ -8551,7 +12239,16 @@
         "district:action.combat.attack",
         "district:action.combat.guard",
         "district:action.combat.recover",
-        "district:action.combat.flee"
+        "district:action.combat.flee",
+        "district:action.scene.face",
+        "district:action.scene.across",
+        "district:action.scene.turn",
+        "district:action.scene.balance",
+        "district:action.scene.contact",
+        "district:action.scene.release",
+        "district:action.scene.pause",
+        "district:action.scene.resume",
+        "district:action.scene.exit"
       ]
     },
     {
@@ -8560,6 +12257,46 @@
         "district:action.tfconsult.gel",
         "district:action.tfconsult.wolf",
         "district:action.restore.hands"
+      ]
+    },
+    {
+      "hookId": "district:hook.riker",
+      "actionIds": [
+        "district:action.riker.meet",
+        "district:action.riker.daily",
+        "district:action.riker.morning",
+        "district:action.riker.evening",
+        "district:action.riker.goal",
+        "district:action.riker.return",
+        "district:action.riker.confess",
+        "district:action.riker.bond",
+        "district:action.riker.quiet",
+        "district:action.riker.body.mechanical",
+        "district:action.riker.body.gel"
+      ]
+    },
+    {
+      "hookId": "district:hook.nara",
+      "actionIds": [
+        "district:action.nara.meet",
+        "district:action.nara.daily",
+        "district:action.nara.morning",
+        "district:action.nara.evening",
+        "district:action.nara.goal",
+        "district:action.nara.return",
+        "district:action.nara.follow",
+        "district:action.nara.quiet",
+        "district:action.nara.body.mechanical",
+        "district:action.nara.body.gel"
+      ]
+    },
+    {
+      "hookId": "aetheria-social:hook.velvet.topics",
+      "actionIds": [
+        "district:action.velvet.after",
+        "district:action.velvet.quiet",
+        "district:action.velvet.body.mechanical",
+        "district:action.velvet.body.gel"
       ]
     }
   ],
@@ -9278,8 +13015,299 @@
       "escapeEventId": "district:event.escape.gel"
     }
   ],
-  "interactions": [],
-  "textSlots": [],
+  "interactions": [
+    {
+      "id": "district:interaction.riker.quiet",
+      "npcId": "district:npc.riker",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.riker"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.willing",
+          "value": true
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "district:npc.riker",
+          "memoryId": "district:memory.riker.repaired",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.riker.sold",
+          "value": false
+        }
+      ],
+      "textSlotId": "district:textslot.riker.quiet",
+      "endEventId": "district:event.riker.quiet",
+      "poses": [
+        {
+          "id": "face",
+          "label": "面对面坐近",
+          "facing": "front",
+          "zone": "near",
+          "requires": null
+        },
+        {
+          "id": "across",
+          "label": "隔桌而坐",
+          "facing": "front",
+          "zone": "across",
+          "requires": null
+        },
+        {
+          "id": "turn",
+          "label": "转身看向窗外",
+          "facing": "away",
+          "zone": "near",
+          "requires": null
+        },
+        {
+          "id": "balance",
+          "label": "借尾部平衡站定",
+          "facing": "front",
+          "zone": "near",
+          "requires": "balance"
+        }
+      ],
+      "contact": {
+        "playerKind": "hand",
+        "npcKind": "hand",
+        "label": "经同意的手部接触"
+      }
+    },
+    {
+      "id": "district:interaction.nara.quiet",
+      "npcId": "district:npc.nara",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "district:npc.nara"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.willing",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.nara.done",
+          "value": true
+        }
+      ],
+      "textSlotId": "district:textslot.nara.quiet",
+      "endEventId": "district:event.nara.quiet",
+      "poses": [
+        {
+          "id": "face",
+          "label": "面对面坐近",
+          "facing": "front",
+          "zone": "near",
+          "requires": null
+        },
+        {
+          "id": "across",
+          "label": "隔桌而坐",
+          "facing": "front",
+          "zone": "across",
+          "requires": null
+        },
+        {
+          "id": "turn",
+          "label": "转身看向窗外",
+          "facing": "away",
+          "zone": "near",
+          "requires": null
+        },
+        {
+          "id": "balance",
+          "label": "借尾部平衡站定",
+          "facing": "front",
+          "zone": "near",
+          "requires": "balance"
+        }
+      ],
+      "contact": {
+        "playerKind": "hand",
+        "npcKind": "hand",
+        "label": "经同意的手部接触"
+      }
+    },
+    {
+      "id": "district:interaction.velvet.quiet",
+      "npcId": "aetheria-social:npc.velvet",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.velvet.willing",
+          "value": true
+        }
+      ],
+      "textSlotId": "district:textslot.velvet.quiet",
+      "endEventId": "district:event.velvet.quiet",
+      "poses": [
+        {
+          "id": "face",
+          "label": "面对面坐近",
+          "facing": "front",
+          "zone": "near",
+          "requires": null
+        },
+        {
+          "id": "across",
+          "label": "隔桌而坐",
+          "facing": "front",
+          "zone": "across",
+          "requires": null
+        },
+        {
+          "id": "turn",
+          "label": "转身看向窗外",
+          "facing": "away",
+          "zone": "near",
+          "requires": null
+        },
+        {
+          "id": "balance",
+          "label": "借尾部平衡站定",
+          "facing": "front",
+          "zone": "near",
+          "requires": "balance"
+        }
+      ],
+      "contact": {
+        "playerKind": "hand",
+        "npcKind": "hand",
+        "label": "经同意的手部接触"
+      }
+    }
+  ],
+  "textSlots": [
+    {
+      "id": "district:textslot.riker.quiet",
+      "owner": {
+        "eventId": "district:event.riker.quiet",
+        "nodeId": "private"
+      },
+      "contentTier": "adult_optional",
+      "fallbackTextKey": "district:text.event.riker.quiet.private",
+      "participants": [
+        "player",
+        "district:npc.riker"
+      ],
+      "allowedVariables": [
+        "player.name",
+        "npc.displayName"
+      ],
+      "requiredFacts": [
+        "district:flag.riker.willing"
+      ],
+      "sceneRequirements": [
+        "双方已明确意愿；接触只可描述当前ContactGraph",
+        "默认进入时面对面、近处、无接触；其他姿态按运行快照",
+        "不得默认玩家固定两手两足或未登记身体结构"
+      ],
+      "before": "你们经历了旧义肢授权、修复与次日回信。莱克主动提出工作之外的相处。",
+      "after": "释放接触，进入after节点，普通交谈后合法退出。",
+      "purpose": "让莱克在日常职责之外表现私人信任，同时保留彼此暂停和离开的自由。",
+      "requiredBeats": [
+        "承接共同经历，不重写前情",
+        "展现角色特有口吻与日常目标",
+        "只描述状态快照保证的身体、姿态与接触",
+        "自然衔接普通交谈，保留退出路径"
+      ],
+      "nextNodeId": "after",
+      "exitActionIds": [
+        "district:action.event.riker.quiet.private.1"
+      ],
+      "allowedReplacement": "prose_only"
+    },
+    {
+      "id": "district:textslot.nara.quiet",
+      "owner": {
+        "eventId": "district:event.nara.quiet",
+        "nodeId": "private"
+      },
+      "contentTier": "adult_optional",
+      "fallbackTextKey": "district:text.event.nara.quiet.private",
+      "participants": [
+        "player",
+        "district:npc.nara"
+      ],
+      "allowedVariables": [
+        "player.name",
+        "npc.displayName"
+      ],
+      "requiredFacts": [
+        "district:flag.nara.willing"
+      ],
+      "sceneRequirements": [
+        "双方已明确意愿；接触只可描述当前ContactGraph",
+        "默认进入时面对面、近处、无接触；其他姿态按运行快照",
+        "不得默认玩家固定两手两足或未登记身体结构"
+      ],
+      "before": "你们完成护理卡记录，明确了公开范围，并听过次日使用反馈。",
+      "after": "释放接触，进入after节点，普通交谈后合法退出。",
+      "purpose": "表现尊重边界后的信任；私人相处不冒充医疗服务或新的身体变化。",
+      "requiredBeats": [
+        "承接共同经历，不重写前情",
+        "展现角色特有口吻与日常目标",
+        "只描述状态快照保证的身体、姿态与接触",
+        "自然衔接普通交谈，保留退出路径"
+      ],
+      "nextNodeId": "after",
+      "exitActionIds": [
+        "district:action.event.nara.quiet.private.1"
+      ],
+      "allowedReplacement": "prose_only"
+    },
+    {
+      "id": "district:textslot.velvet.quiet",
+      "owner": {
+        "eventId": "district:event.velvet.quiet",
+        "nodeId": "private"
+      },
+      "contentTier": "mature_fade",
+      "fallbackTextKey": "district:text.event.velvet.quiet.private",
+      "participants": [
+        "player",
+        "aetheria-social:npc.velvet"
+      ],
+      "allowedVariables": [
+        "player.name",
+        "npc.displayName"
+      ],
+      "requiredFacts": [
+        "district:flag.velvet.willing"
+      ],
+      "sceneRequirements": [
+        "双方已明确意愿；接触只可描述当前ContactGraph",
+        "默认进入时面对面、近处、无接触；其他姿态按运行快照",
+        "不得默认玩家固定两手两足或未登记身体结构"
+      ],
+      "before": "你们完成过补货委托，并谈到薇尔维特下班后的自主安排。",
+      "after": "释放接触，进入after节点，普通交谈后合法退出。",
+      "purpose": "把共同经历自然转向私人谈话，保留经营者身份与工作之外的个人生活。",
+      "requiredBeats": [
+        "承接共同经历，不重写前情",
+        "展现角色特有口吻与日常目标",
+        "只描述状态快照保证的身体、姿态与接触",
+        "自然衔接普通交谈，保留退出路径"
+      ],
+      "nextNodeId": "after",
+      "exitActionIds": [
+        "district:action.event.velvet.quiet.private.1"
+      ],
+      "allowedReplacement": "prose_only"
+    }
+  ],
   "sceneTexts": [
     {
       "id": "district:scene.cafe.day",
@@ -9462,7 +13490,35 @@
       "textKey": "district:text.canal.feedback.open"
     }
   ],
-  "equipment": [],
+  "equipment": [
+    {
+      "id": "district:equipment.raincoat",
+      "name": "合身的封背雨衣",
+      "requires": [
+        {
+          "op": "not",
+          "condition": {
+            "op": "body.hasCapability",
+            "capability": "balance",
+            "count": 1
+          }
+        }
+      ],
+      "description": "这件雨衣适合没有尾部结构的身体。新增尾部后将自动卸下并保留。"
+    },
+    {
+      "id": "district:equipment.tailcoat",
+      "name": "可调尾口工作衣",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "balance",
+          "count": 1
+        }
+      ],
+      "description": "尾口留出活动空间，适配具有尾部平衡能力的身体。"
+    }
+  ],
   "bodyParts": [
     {
       "id": "district:part.hand.gel",
@@ -9576,6 +13632,185 @@
           "patchId": "district:patch.hands.restore"
         }
       ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "district:npc.riker",
+      "canonKey": "riker",
+      "name": "莱克",
+      "role": "机械工坊技师",
+      "descriptionText": "district:text.riker.description",
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 34,
+      "topicHook": "district:hook.riker",
+      "schedule": [
+        {
+          "start": 480,
+          "end": 1200,
+          "locationId": "district:location.workshop",
+          "activityText": "district:text.riker.activity"
+        },
+        {
+          "start": 1200,
+          "end": 1320,
+          "locationId": "district:location.cafe",
+          "activityText": "district:text.riker.cafe"
+        },
+        {
+          "start": 1320,
+          "end": 480,
+          "locationId": null,
+          "activityText": "district:text.riker.rest"
+        }
+      ]
+    },
+    {
+      "id": "district:npc.nara",
+      "canonKey": "nara",
+      "name": "娜拉",
+      "role": "诊室适应指导员",
+      "descriptionText": "district:text.nara.description",
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 31,
+      "topicHook": "district:hook.nara",
+      "schedule": [
+        {
+          "start": 480,
+          "end": 960,
+          "locationId": "aetheria-tf:location.clinic",
+          "activityText": "district:text.nara.activity"
+        },
+        {
+          "start": 960,
+          "end": 1320,
+          "locationId": "district:location.cafe",
+          "activityText": "district:text.nara.cafe"
+        },
+        {
+          "start": 1320,
+          "end": 480,
+          "locationId": null,
+          "activityText": "district:text.nara.rest"
+        }
+      ]
+    }
+  ],
+  "npcMemories": [
+    {
+      "id": "district:memory.riker.introduced",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.introduced"
+    },
+    {
+      "id": "district:memory.nara.introduced",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.introduced"
+    },
+    {
+      "id": "district:memory.riker.promise",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.promise"
+    },
+    {
+      "id": "district:memory.riker.declined",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.declined"
+    },
+    {
+      "id": "district:memory.riker.repaired",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.repaired"
+    },
+    {
+      "id": "district:memory.riker.breach",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.breach"
+    },
+    {
+      "id": "district:memory.riker.invited",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.invited"
+    },
+    {
+      "id": "district:memory.riker.friend",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.friend"
+    },
+    {
+      "id": "district:memory.nara.promise",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.promise"
+    },
+    {
+      "id": "district:memory.nara.boundary",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.boundary"
+    },
+    {
+      "id": "district:memory.nara.shared",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.shared"
+    },
+    {
+      "id": "district:memory.nara.private",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.private"
+    },
+    {
+      "id": "district:memory.nara.invited",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.invited"
+    },
+    {
+      "id": "district:memory.velvet.personal",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "district:text.memory.velvet.personal"
+    },
+    {
+      "id": "district:memory.riker.quiet",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.quiet"
+    },
+    {
+      "id": "district:memory.nara.quiet",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.quiet"
+    },
+    {
+      "id": "district:memory.velvet.quiet",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "district:text.memory.velvet.quiet"
+    },
+    {
+      "id": "district:memory.riker.body.mechanical",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.body.mechanical"
+    },
+    {
+      "id": "district:memory.riker.body.gel",
+      "npcId": "district:npc.riker",
+      "textKey": "district:text.memory.riker.body.gel"
+    },
+    {
+      "id": "district:memory.nara.body.mechanical",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.body.mechanical"
+    },
+    {
+      "id": "district:memory.nara.body.gel",
+      "npcId": "district:npc.nara",
+      "textKey": "district:text.memory.nara.body.gel"
+    },
+    {
+      "id": "district:memory.velvet.body.mechanical",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "district:text.memory.velvet.body.mechanical"
+    },
+    {
+      "id": "district:memory.velvet.body.gel",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "district:text.memory.velvet.body.gel"
     }
   ]
 }

@@ -121,7 +121,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
         if (n.type === 'choice' && (!n.actionIds.length || n.onEnter.some(x => x.op === 'event.exit'))) fail(p, 'INVALID_CHOICE', `/events/${e.id}/${n.id}`, '选择节点需要真实行动且不能进入后即退出。');
       }
       const seen = new Set<string>();
-      function reachable(id: string): void { if (seen.has(id)) return; seen.add(id); const n = nodes.get(id); for (const a of n?.actionIds ?? []) { const action = definitions.get(a)?.value as ContentPack['actions'][number] | undefined; for (const fx of action?.effects ?? []) if (fx.op === 'event.advance') reachable(fx.nodeId); } }
+      function reachable(id: string): void { if (seen.has(id)) return; seen.add(id); const n = nodes.get(id); for (const a of n?.actionIds ?? []) { const action = definitions.get(a)?.value as ContentPack['actions'][number] | undefined; for (const fx of action?.effects ?? []) { if (fx.op === 'event.advance') reachable(fx.nodeId); if (fx.op === 'scene.start') { const scene = sorted.flatMap(p=>p.interactions??[]).find(i=>i.id===fx.id);const slot = sorted.flatMap(p=>p.textSlots??[]).find(s=>s.id===scene?.textSlotId);if(slot?.owner.eventId===e.id)reachable(slot.nextNodeId); } } } }
       reachable(e.startNode);
       if (seen.size !== nodes.size || !e.nodes.some(x => seen.has(x.id) && x.type === 'exit')) fail(p, 'EVENT_UNREACHABLE', `/events/${e.id}`, '存在不可达节点或没有退出路径。');
       // 每一个选择节点都需要无条件出口；条件分支可存在，但不能把玩家锁死。

@@ -1,0 +1,26 @@
+[
+  {
+    "slotId": "district:textslot.riker.quiet",
+    "eventId": "district:event.riker.quiet",
+    "nodeId": "private",
+    "tier": "adult_optional",
+    "fallbackTextKey": "district:text.event.riker.quiet.private",
+    "brief": "briefs/textslot.riker.quiet.json"
+  },
+  {
+    "slotId": "district:textslot.nara.quiet",
+    "eventId": "district:event.nara.quiet",
+    "nodeId": "private",
+    "tier": "adult_optional",
+    "fallbackTextKey": "district:text.event.nara.quiet.private",
+    "brief": "briefs/textslot.nara.quiet.json"
+  },
+  {
+    "slotId": "district:textslot.velvet.quiet",
+    "eventId": "district:event.velvet.quiet",
+    "nodeId": "private",
+    "tier": "mature_fade",
+    "fallbackTextKey": "district:text.event.velvet.quiet.private",
+    "brief": "briefs/textslot.velvet.quiet.json"
+  }
+]

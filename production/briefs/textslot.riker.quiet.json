@@ -1,0 +1,167 @@
+{
+  "briefId": "district:brief.riker.quiet",
+  "targetSlotId": "district:textslot.riker.quiet",
+  "version": "0.2.0",
+  "owner": {
+    "eventId": "district:event.riker.quiet",
+    "nodeId": "private"
+  },
+  "author": "external writer; GPT review required",
+  "contentTier": "adult_optional",
+  "trigger": {
+    "facts": [
+      "district:flag.riker.willing"
+    ],
+    "conditions": [
+      {
+        "op": "npc.present",
+        "npcId": "district:npc.riker"
+      },
+      {
+        "op": "flag.has",
+        "id": "district:flag.riker.willing",
+        "value": true
+      },
+      {
+        "op": "npc.memory",
+        "npcId": "district:npc.riker",
+        "memoryId": "district:memory.riker.repaired",
+        "value": true
+      },
+      {
+        "op": "flag.has",
+        "id": "district:flag.riker.sold",
+        "value": false
+      }
+    ],
+    "location": "由NPC日程与事件参与者位置确定",
+    "cause": "你们经历了旧义肢授权、修复与次日回信。莱克主动提出工作之外的相处。"
+  },
+  "participants": [
+    {
+      "id": "player",
+      "identity": "玩家自建，年龄18–120，经引擎校验",
+      "body": "任意已支持BodyGraph；不得假设固定肢体数。必须读取当前快照。"
+    },
+    {
+      "id": "district:npc.riker",
+      "name": "莱克",
+      "ageYears": 34,
+      "ageRule": "已通过成年智慧角色验证",
+      "personality": "莱克（34岁，成年）习惯先把损坏部位放在灯下，再谈修理的价格。他希望工坊能留下每一位居民原有生活的痕迹，而不是只卖新零件。\n\n“能修我就说能修，不能也不会哄你。决定装什么的人是你。”"
+    }
+  ],
+  "context": {
+    "before": "你们经历了旧义肢授权、修复与次日回信。莱克主动提出工作之外的相处。",
+    "after": "释放接触，进入after节点，普通交谈后合法退出。",
+    "requiredFacts": [
+      "district:flag.riker.willing"
+    ]
+  },
+  "bodyContext": {
+    "player": "以 runtime-context.json 的实际部件/边/材质为准",
+    "npc": "以InteractionScene.actors对应身体图为准",
+    "equipment": "读取当前装备，不凭空增加"
+  },
+  "interactionScene": {
+    "poses": [
+      {
+        "id": "face",
+        "label": "面对面坐近",
+        "facing": "front",
+        "zone": "near",
+        "requires": null
+      },
+      {
+        "id": "across",
+        "label": "隔桌而坐",
+        "facing": "front",
+        "zone": "across",
+        "requires": null
+      },
+      {
+        "id": "turn",
+        "label": "转身看向窗外",
+        "facing": "away",
+        "zone": "near",
+        "requires": null
+      },
+      {
+        "id": "balance",
+        "label": "借尾部平衡站定",
+        "facing": "front",
+        "zone": "near",
+        "requires": "balance"
+      }
+    ],
+    "entry": "面对面、近处、无接触",
+    "contacts": "只允许引用运行快照中已经存在的边；进入文本时可能尚无任何接触",
+    "resources": "每条手部接触独占真实端点；转身/暂停/退出会释放"
+  },
+  "narrativePurpose": "让莱克在日常职责之外表现私人信任，同时保留彼此暂停和离开的自由。",
+  "requiredBeats": [
+    "承接共同经历，不重写前情",
+    "展现角色特有口吻与日常目标",
+    "只描述状态快照保证的身体、姿态与接触",
+    "自然衔接普通交谈，保留退出路径"
+  ],
+  "style": {
+    "viewpoint": "第二人称中文",
+    "tone": "克制、生活化、角色口吻鲜明",
+    "lengthChineseChars": {
+      "min": 350,
+      "max": 800
+    }
+  },
+  "forbidInventing": [
+    "永久身体变化",
+    "奖励、货币、物品",
+    "新增关系阶段或意愿",
+    "未经历的秘密",
+    "未建立的接触",
+    "未经同意的行为",
+    "规则或事件选项"
+  ],
+  "allowedVariables": [
+    "player.name",
+    "npc.displayName"
+  ],
+  "allowedReplacement": "仅此槽的正文段落；不含标题、选择、结算、动作、姿态状态或后续",
+  "exit": {
+    "nextNode": "after",
+    "actionIds": [
+      "district:action.event.riker.quiet.private.1"
+    ],
+    "skipText": "仅折叠正文，不结算任何效果"
+  },
+  "fallback": {
+    "textKey": "district:text.event.riker.quiet.private",
+    "text": "莱克把惯常紧握的工具袋放到一旁。“今天不用修什么。你想坐近一点就说，不想也没关系。”你们先确认各自舒服的位置，再让话题慢慢离开工单。灯下的安静不是承诺的代价，也没有把任何人推向尚未同意的事情。"
+  },
+  "delivery": {
+    "file": "content/author-example/text-pack.json",
+    "textKey": "author-example:text.riker.quiet",
+    "schema": {
+      "slotId": "district:textslot.riker.quiet",
+      "textKey": "author-example:text.example",
+      "text": "提交正文",
+      "tier": "adult_optional",
+      "priority": 20,
+      "reviewStatus": "approved"
+    },
+    "authorSubmission": {
+      "reviewStatus": "draft",
+      "usedFactIds": [
+        "district:flag.riker.willing"
+      ],
+      "usedVariables": [],
+      "proposedRuleChanges": [],
+      "issues": [],
+      "selfCheck": [
+        "身体/姿态/接触与快照一致",
+        "没有新增规则或越界知识",
+        "前后自然衔接"
+      ]
+    }
+  }
+}

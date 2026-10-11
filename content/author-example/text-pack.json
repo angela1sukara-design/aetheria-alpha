@@ -1,0 +1,18 @@
+{
+  "manifest": {
+    "id": "author-example/quiet",
+    "namespace": "author-example",
+    "version": "1.0.0",
+    "worldVersion": "0.2.0"
+  },
+  "variants": [
+    {
+      "slotId": "district:textslot.riker.quiet",
+      "textKey": "author-example:text.riker.quiet",
+      "text": "【非露骨测试扩展】{npc.displayName}把工具袋收好，对{player.name}说：“今晚我们可以不赶任何一张工单。”你们在约定的位置停下来，给彼此保留随时暂停的余地。窗外的灯亮着，明天的生活仍然值得期待。",
+      "tier": "general",
+      "priority": 20,
+      "reviewStatus": "approved"
+    }
+  ]
+}
