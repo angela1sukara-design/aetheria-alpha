@@ -54,10 +54,13 @@ export function transformationCheck(state: GameState, registry: Registry, id: Id
 function applyStage(job: TFInstance, stage: TFDef['stages'][number], state: GameState, registry: Registry, changes: Change[]): void {
   if (stage.patchId) {
     const patch = registry.bodyPatch(stage.patchId);
+    const occupied = state.district?.scene?.contacts.map(x => x.playerPartId) ?? [];
+    if (patch.operations.some(op => occupied.includes(op.partId))) throw new RuleError('TF_CONTACT_OCCUPIED', '变化部位正在接触中。释放接触并恢复改造后继续。');
     state.player.body = patchedBody(requireBody(state), patch, registry);
     changes.push({ label: '身体变化', before: registry.transformation(job.definitionId).label, after: patch.summary });
   }
   job.completedStageIds.push(stage.id);
+  if (stage.textKey) changes.push({ label: '变化感受', before: '此刻', after: registry.text(stage.textKey) });
   changes.push({ label: registry.transformation(job.definitionId).label, before: '阶段推进', after: stage.label });
 }
 export function performTransformation(op: 'tf.apply' | 'tf.enqueue' | 'tf.pause' | 'tf.resume' | 'tf.cancel', id: Id, state: GameState, registry: Registry, requestId: string, sourceActionId: Id, changes: Change[]): void {

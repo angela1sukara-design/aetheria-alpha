@@ -122,7 +122,7 @@ export function parsePack(input: unknown): ContentPack {
   });
   list(root.transformations ?? [], '/transformations', (v, p) => {
     const x = obj(v, p, ['id', 'label', 'source', 'stages']); id(x.id, `${p}/id`); str(x.label, `${p}/label`); choice(x.source, `${p}/source`, ['free', 'story']);
-    list(x.stages, `${p}/stages`, (v, p) => { const s = obj(v, p, ['id', 'atMinutes', 'label', 'patchId']); token(s.id, `${p}/id`); str(s.label, `${p}/label`); integer(s.atMinutes, `${p}/atMinutes`, 0, 10080); if (s.patchId !== undefined) id(s.patchId, `${p}/patchId`); });
+    list(x.stages, `${p}/stages`, (v, p) => { const s = obj(v, p, ['id', 'atMinutes', 'label', 'patchId', 'textKey']); token(s.id, `${p}/id`); str(s.label, `${p}/label`); integer(s.atMinutes, `${p}/atMinutes`, 0, 10080); if (s.textKey !== undefined) id(s.textKey, p); if (s.patchId !== undefined) id(s.patchId, `${p}/patchId`); });
     const stages = Array.isArray(x.stages) ? x.stages as Obj[] : [];
     if (!stages.length || stages.length > 32 || !stages.some(s => s.patchId)) fail(p, '变化需有1–32个阶段，且实际改变身体。');
     if (new Set(stages.map(s => s.id)).size !== stages.length || stages.some((s, i) => i > 0 && Number(s.atMinutes) <= Number(stages[i - 1].atMinutes))) fail(p, '阶段 ID 重复或时间边界没有严格递增。');

@@ -46,7 +46,16 @@
     ],
     "migrations": []
   },
-  "variables": [],
+  "variables": [
+    {
+      "id": "district:health",
+      "label": "体力",
+      "initial": 40,
+      "min": 0,
+      "max": 40,
+      "unit": ""
+    }
+  ],
   "flags": [
     {
       "id": "district:flag.road_report",
@@ -290,6 +299,58 @@
     },
     {
       "id": "district:flag.lostpass.witnessed",
+      "initial": false
+    },
+    {
+      "id": "district:flag.injury",
+      "initial": false
+    },
+    {
+      "id": "district:flag.defeat.reported",
+      "initial": false
+    },
+    {
+      "id": "district:flag.victory.scavenger",
+      "initial": false
+    },
+    {
+      "id": "district:flag.victory.collector",
+      "initial": false
+    },
+    {
+      "id": "district:flag.victory.gel",
+      "initial": false
+    },
+    {
+      "id": "district:flag.tf.gel.accepted",
+      "initial": false
+    },
+    {
+      "id": "district:flag.tf.wolf.accepted",
+      "initial": false
+    },
+    {
+      "id": "district:flag.canal.accepted",
+      "initial": false
+    },
+    {
+      "id": "district:flag.canal.inspected",
+      "initial": false
+    },
+    {
+      "id": "district:flag.canal.parts",
+      "initial": false
+    },
+    {
+      "id": "district:flag.canal.closed",
+      "initial": false
+    },
+    {
+      "id": "district:flag.canal.done",
+      "initial": false
+    },
+    {
+      "id": "district:flag.canal.open",
       "initial": false
     }
   ],
@@ -4297,6 +4358,1457 @@
         "eventId": "district:event.lostpass",
         "nodeId": "start"
       }
+    },
+    {
+      "id": "district:action.combat.attack",
+      "label": "进攻 · 精力−3",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.turn",
+          "move": "attack"
+        }
+      ],
+      "resultText": "district:text.combat.attack"
+    },
+    {
+      "id": "district:action.combat.guard",
+      "label": "防守 · 减伤8、精力+4",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.turn",
+          "move": "guard"
+        }
+      ],
+      "resultText": "district:text.combat.guard"
+    },
+    {
+      "id": "district:action.combat.recover",
+      "label": "临时包扎 · 精力−6、体力+10",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.turn",
+          "move": "recover"
+        }
+      ],
+      "resultText": "district:text.combat.recover"
+    },
+    {
+      "id": "district:action.combat.flee",
+      "label": "寻找出口撤离",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.turn",
+          "move": "flee"
+        }
+      ],
+      "resultText": "district:text.combat.flee"
+    },
+    {
+      "id": "district:action.event.defeat.scavenger.start.0",
+      "label": "发出求助信号",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "help"
+        }
+      ],
+      "resultText": "district:text.event.defeat.scavenger.start.0",
+      "context": {
+        "eventId": "district:event.defeat.scavenger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.scavenger.start.1",
+      "label": "先检查可活动部位",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "assess"
+        }
+      ],
+      "resultText": "district:text.event.defeat.scavenger.start.1",
+      "context": {
+        "eventId": "district:event.defeat.scavenger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.scavenger.start.2",
+      "label": "沿安全绳缓慢退出",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 8
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 10
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 45
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.scavenger.start.2",
+      "context": {
+        "eventId": "district:event.defeat.scavenger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.scavenger.help.0",
+      "label": "接受基础护理，留下事故记录",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.defeat.reported",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.scavenger.help.0",
+      "context": {
+        "eventId": "district:event.defeat.scavenger",
+        "nodeId": "help"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.scavenger.help.1",
+      "label": "只接受脱离危险的协助",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.scavenger.help.1",
+      "context": {
+        "eventId": "district:event.defeat.scavenger",
+        "nodeId": "help"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.scavenger.assess.0",
+      "label": "呼叫值班员",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "help"
+        }
+      ],
+      "resultText": "district:text.event.defeat.scavenger.assess.0",
+      "context": {
+        "eventId": "district:event.defeat.scavenger",
+        "nodeId": "assess"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.scavenger.assess.1",
+      "label": "自行转移到安全休息区",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.scavenger.assess.1",
+      "context": {
+        "eventId": "district:event.defeat.scavenger",
+        "nodeId": "assess"
+      }
+    },
+    {
+      "id": "district:action.event.victory.scavenger.start.0",
+      "label": "记下现场，回到安全入口",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.victory.scavenger",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.victory.scavenger.start.0",
+      "context": {
+        "eventId": "district:event.victory.scavenger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.escape.scavenger.start.0",
+      "label": "确认没有追击后离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.escape.scavenger.start.0",
+      "context": {
+        "eventId": "district:event.escape.scavenger",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.battle.scavenger",
+      "label": "调查危险：失控搬运机",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "district:enemy.scavenger"
+        }
+      ],
+      "resultText": "district:text.battle.scavenger"
+    },
+    {
+      "id": "district:action.event.defeat.collector.start.0",
+      "label": "发出求助信号",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "help"
+        }
+      ],
+      "resultText": "district:text.event.defeat.collector.start.0",
+      "context": {
+        "eventId": "district:event.defeat.collector",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.collector.start.1",
+      "label": "先检查可活动部位",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "assess"
+        }
+      ],
+      "resultText": "district:text.event.defeat.collector.start.1",
+      "context": {
+        "eventId": "district:event.defeat.collector",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.collector.start.2",
+      "label": "沿安全绳缓慢退出",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 8
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 10
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 45
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.collector.start.2",
+      "context": {
+        "eventId": "district:event.defeat.collector",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.collector.help.0",
+      "label": "接受基础护理，留下事故记录",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.defeat.reported",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.collector.help.0",
+      "context": {
+        "eventId": "district:event.defeat.collector",
+        "nodeId": "help"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.collector.help.1",
+      "label": "只接受脱离危险的协助",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.collector.help.1",
+      "context": {
+        "eventId": "district:event.defeat.collector",
+        "nodeId": "help"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.collector.assess.0",
+      "label": "呼叫值班员",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "help"
+        }
+      ],
+      "resultText": "district:text.event.defeat.collector.assess.0",
+      "context": {
+        "eventId": "district:event.defeat.collector",
+        "nodeId": "assess"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.collector.assess.1",
+      "label": "自行转移到安全休息区",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.collector.assess.1",
+      "context": {
+        "eventId": "district:event.defeat.collector",
+        "nodeId": "assess"
+      }
+    },
+    {
+      "id": "district:action.event.victory.collector.start.0",
+      "label": "记下现场，回到安全入口",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.victory.collector",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.victory.collector.start.0",
+      "context": {
+        "eventId": "district:event.victory.collector",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.escape.collector.start.0",
+      "label": "确认没有追击后离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.escape.collector.start.0",
+      "context": {
+        "eventId": "district:event.escape.collector",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.battle.collector",
+      "label": "调查危险：拦路收债客",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "district:enemy.collector"
+        }
+      ],
+      "resultText": "district:text.battle.collector"
+    },
+    {
+      "id": "district:action.event.defeat.gel.start.0",
+      "label": "发出求助信号",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "help"
+        }
+      ],
+      "resultText": "district:text.event.defeat.gel.start.0",
+      "context": {
+        "eventId": "district:event.defeat.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.gel.start.1",
+      "label": "先检查可活动部位",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "assess"
+        }
+      ],
+      "resultText": "district:text.event.defeat.gel.start.1",
+      "context": {
+        "eventId": "district:event.defeat.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.gel.start.2",
+      "label": "沿安全绳缓慢退出",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.injury",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 8
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 10
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 45
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.gel.start.2",
+      "context": {
+        "eventId": "district:event.defeat.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.gel.help.0",
+      "label": "接受基础护理，留下事故记录",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.defeat.reported",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.gel.help.0",
+      "context": {
+        "eventId": "district:event.defeat.gel",
+        "nodeId": "help"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.gel.help.1",
+      "label": "只接受脱离危险的协助",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.gel.help.1",
+      "context": {
+        "eventId": "district:event.defeat.gel",
+        "nodeId": "help"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.gel.assess.0",
+      "label": "呼叫值班员",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "help"
+        }
+      ],
+      "resultText": "district:text.event.defeat.gel.assess.0",
+      "context": {
+        "eventId": "district:event.defeat.gel",
+        "nodeId": "assess"
+      }
+    },
+    {
+      "id": "district:action.event.defeat.gel.assess.1",
+      "label": "自行转移到安全休息区",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.defeat.gel.assess.1",
+      "context": {
+        "eventId": "district:event.defeat.gel",
+        "nodeId": "assess"
+      }
+    },
+    {
+      "id": "district:action.event.victory.gel.start.0",
+      "label": "记下现场，回到安全入口",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.victory.gel",
+          "value": true
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.victory.gel.start.0",
+      "context": {
+        "eventId": "district:event.victory.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.escape.gel.start.0",
+      "label": "确认没有追击后离开",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.escape.gel.start.0",
+      "context": {
+        "eventId": "district:event.escape.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.battle.gel",
+      "label": "调查危险：渠底黑胶群落",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "district:enemy.gel"
+        }
+      ],
+      "resultText": "district:text.battle.gel"
+    },
+    {
+      "id": "district:action.heal.cafe",
+      "label": "在安全区处理伤势",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 40
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        }
+      ],
+      "resultText": "district:text.heal.cafe"
+    },
+    {
+      "id": "district:action.heal.workshop",
+      "label": "在安全区处理伤势",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 40
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        }
+      ],
+      "resultText": "district:text.heal.workshop"
+    },
+    {
+      "id": "district:action.heal.canal",
+      "label": "在安全区处理伤势",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 40
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        }
+      ],
+      "resultText": "district:text.heal.canal"
+    },
+    {
+      "id": "district:action.heal.archive",
+      "label": "在安全区处理伤势",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 40
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        }
+      ],
+      "resultText": "district:text.heal.archive"
+    },
+    {
+      "id": "district:action.heal.station",
+      "label": "在安全区处理伤势",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 60
+        },
+        {
+          "op": "var.change",
+          "id": "district:health",
+          "amount": 40
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 25
+        }
+      ],
+      "resultText": "district:text.heal.station"
+    },
+    {
+      "id": "district:action.event.tfconsult.gel.start.0",
+      "label": "确认风险并接受适应过程",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:money",
+          "comparison": "gte",
+          "value": 10
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": -10
+        },
+        {
+          "op": "tf.enqueue",
+          "id": "district:tf.gel"
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.tf.gel.accepted",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.tfconsult.gel.start.0",
+      "context": {
+        "eventId": "district:event.tfconsult.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tfconsult.gel.start.1",
+      "label": "今天先不开始",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.tfconsult.gel.start.1",
+      "context": {
+        "eventId": "district:event.tfconsult.gel",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.tfconsult.gel",
+      "label": "了解受控黑胶共生",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.tfconsult.gel"
+        }
+      ],
+      "resultText": "district:text.tfconsult.gel"
+    },
+    {
+      "id": "district:action.event.tfconsult.wolf.start.0",
+      "label": "确认风险并接受适应过程",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:money",
+          "comparison": "gte",
+          "value": 10
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": -10
+        },
+        {
+          "op": "tf.enqueue",
+          "id": "district:tf.wolf"
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.tf.wolf.accepted",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.tfconsult.wolf.start.0",
+      "context": {
+        "eventId": "district:event.tfconsult.wolf",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.tfconsult.wolf.start.1",
+      "label": "今天先不开始",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.tfconsult.wolf.start.1",
+      "context": {
+        "eventId": "district:event.tfconsult.wolf",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.tfconsult.wolf",
+      "label": "了解渐进式兽耳适应",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.tfconsult.wolf"
+        }
+      ],
+      "resultText": "district:text.tfconsult.wolf"
+    },
+    {
+      "id": "district:action.restore.hands",
+      "label": "按护理卡恢复有机手部",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "body.hasPart",
+          "definitionId": "district:part.hand.gel"
+        }
+      ],
+      "effects": [
+        {
+          "op": "tf.apply",
+          "id": "district:tf.hands.restore"
+        }
+      ],
+      "resultText": "district:text.restore.hands"
+    },
+    {
+      "id": "district:action.gel.work",
+      "label": "用共生手部清理顽固污层",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "body.hasPart",
+          "definitionId": "district:part.hand.gel"
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -8
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 12
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 45
+        }
+      ],
+      "resultText": "district:text.gel.work"
+    },
+    {
+      "id": "district:action.event.canal.task.start.0",
+      "label": "接下核查工单",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.canal.accepted",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.canal.task.start.0",
+      "context": {
+        "eventId": "district:event.canal.task",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.canal.task.start.1",
+      "label": "暂不承担",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.canal.task.start.1",
+      "context": {
+        "eventId": "district:event.canal.task",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.canal.accept",
+      "label": "查看排水门核查工单",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.accepted",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.canal.task"
+        }
+      ],
+      "resultText": "district:text.canal.accept"
+    },
+    {
+      "id": "district:action.canal.inspect",
+      "label": "核查排水门与水位",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.accepted",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.inspected",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.canal.inspected",
+          "value": true
+        }
+      ],
+      "resultText": "district:text.canal.inspect"
+    },
+    {
+      "id": "district:action.canal.parts",
+      "label": "核对工坊维护记录",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.inspected",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.parts",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.canal.parts",
+          "value": true
+        }
+      ],
+      "resultText": "district:text.canal.parts"
+    },
+    {
+      "id": "district:action.event.canal.decision.start.0",
+      "label": "公开封路，集中维护",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.canal.closed",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.canal.done",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 18
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.canal.decision.start.0",
+      "context": {
+        "eventId": "district:event.canal.decision",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.canal.decision.start.1",
+      "label": "选择分段维护，保留夜路",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "district:flag.canal.open",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "district:flag.canal.done",
+          "value": true
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 10
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 90
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.canal.decision.start.1",
+      "context": {
+        "eventId": "district:event.canal.decision",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.event.canal.decision.start.2",
+      "label": "先离开，再考虑方案",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.event.canal.decision.start.2",
+      "context": {
+        "eventId": "district:event.canal.decision",
+        "nodeId": "start"
+      }
+    },
+    {
+      "id": "district:action.canal.decide",
+      "label": "提交跨日观察，选择维护方案",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.parts",
+          "value": true
+        },
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.done",
+          "value": false
+        },
+        {
+          "op": "day.after",
+          "flagId": "district:flag.canal.parts",
+          "days": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "district:event.canal.decision"
+        }
+      ],
+      "resultText": "district:text.canal.decide"
     }
   ],
   "events": [
@@ -6039,6 +7551,479 @@
           ]
         }
       ]
+    },
+    {
+      "id": "district:event.defeat.scavenger",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.scavenger.start"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.scavenger.start.0",
+            "district:action.event.defeat.scavenger.start.1",
+            "district:action.event.defeat.scavenger.start.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "help",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.scavenger.help"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.scavenger.help.0",
+            "district:action.event.defeat.scavenger.help.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "assess",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.scavenger.assess"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.scavenger.assess.0",
+            "district:action.event.defeat.scavenger.assess.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.defeat.scavenger.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.victory.scavenger",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.victory.scavenger.start"
+          ],
+          "actionIds": [
+            "district:action.event.victory.scavenger.start.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.victory.scavenger.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.escape.scavenger",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.escape.scavenger.start"
+          ],
+          "actionIds": [
+            "district:action.event.escape.scavenger.start.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.escape.scavenger.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.defeat.collector",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.collector.start"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.collector.start.0",
+            "district:action.event.defeat.collector.start.1",
+            "district:action.event.defeat.collector.start.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "help",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.collector.help"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.collector.help.0",
+            "district:action.event.defeat.collector.help.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "assess",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.collector.assess"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.collector.assess.0",
+            "district:action.event.defeat.collector.assess.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.defeat.collector.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.victory.collector",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.victory.collector.start"
+          ],
+          "actionIds": [
+            "district:action.event.victory.collector.start.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.victory.collector.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.escape.collector",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.escape.collector.start"
+          ],
+          "actionIds": [
+            "district:action.event.escape.collector.start.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.escape.collector.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.defeat.gel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.gel.start"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.gel.start.0",
+            "district:action.event.defeat.gel.start.1",
+            "district:action.event.defeat.gel.start.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "help",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.gel.help"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.gel.help.0",
+            "district:action.event.defeat.gel.help.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "assess",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.defeat.gel.assess"
+          ],
+          "actionIds": [
+            "district:action.event.defeat.gel.assess.0",
+            "district:action.event.defeat.gel.assess.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.defeat.gel.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.victory.gel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.victory.gel.start"
+          ],
+          "actionIds": [
+            "district:action.event.victory.gel.start.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.victory.gel.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.escape.gel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.escape.gel.start"
+          ],
+          "actionIds": [
+            "district:action.event.escape.gel.start.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.escape.gel.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.tfconsult.gel",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.tfconsult.gel.start"
+          ],
+          "actionIds": [
+            "district:action.event.tfconsult.gel.start.0",
+            "district:action.event.tfconsult.gel.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tfconsult.gel.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.tfconsult.wolf",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.tfconsult.wolf.start"
+          ],
+          "actionIds": [
+            "district:action.event.tfconsult.wolf.start.0",
+            "district:action.event.tfconsult.wolf.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.tfconsult.wolf.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.canal.task",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.canal.task.start"
+          ],
+          "actionIds": [
+            "district:action.event.canal.task.start.0",
+            "district:action.event.canal.task.start.1"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.canal.task.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "district:event.canal.decision",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.event.canal.decision.start"
+          ],
+          "actionIds": [
+            "district:action.event.canal.decision.start.0",
+            "district:action.event.canal.decision.start.1",
+            "district:action.event.canal.decision.start.2"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.event.canal.decision.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
     }
   ],
   "texts": {
@@ -6331,7 +8316,105 @@
     "district:text.event.lostpass.1": "你请守卫当面记录拾取位置，然后继续自己的路。",
     "district:text.event.lostpass.end1": "你请守卫当面记录拾取位置，然后继续自己的路。",
     "district:text.event.lostpass.2": "你暂不接触证件，回到街道。",
-    "district:text.event.lostpass.end2": "你暂不接触证件，回到街道。"
+    "district:text.event.lostpass.end2": "你暂不接触证件，回到街道。",
+    "district:text.combat.attack": "你根据对方的意图行动。",
+    "district:text.combat.guard": "你根据对方的意图行动。",
+    "district:text.combat.recover": "你根据对方的意图行动。",
+    "district:text.combat.flee": "你根据对方的意图行动。",
+    "district:text.event.defeat.scavenger.start": "搬运机将你的退路推到排水栏杆边。你失去力气，却仍能发出求助信号。\n\n你摸到应急呼叫器。可以呼叫值班员，也能先检查自己的伤处。没有图像时，这段正式文字承担完整演出。",
+    "district:text.event.defeat.scavenger.start.0": "你做出了选择。",
+    "district:text.event.defeat.scavenger.start.1": "你做出了选择。",
+    "district:text.event.defeat.scavenger.start.2": "你沿安全线抵达休息处，保留伤后恢复记录。",
+    "district:text.event.defeat.scavenger.help": "值班员找到你，先问你能否清楚回应。你说明现场情况，对方确认安全后才扶你离开危险位置。你可以接受完整处理，也可以仅要求脱离现场。",
+    "district:text.event.defeat.scavenger.help.0": "护理员处理了擦伤，事故记入道路通报。",
+    "district:text.event.defeat.scavenger.help.1": "你在安全位置休息，后续仍可前往诊室。",
+    "district:text.event.defeat.scavenger.assess": "你确认自己仍能控制身体。最糟的疼痛来自疲劳和擦伤；需要恢复，却没有任何未经选择的永久变形。求助器还在手边。",
+    "district:text.event.defeat.scavenger.assess.0": "你做出了选择。",
+    "district:text.event.defeat.scavenger.assess.1": "你用更慢的方式回到安全区，记下以后要避开的路线。",
+    "district:text.event.defeat.scavenger.end": "危险已经结束。你的伤后经历留在记录中；可以休息、去诊室，或按自己的节奏继续生活。你回到所在地点的安全入口。",
+    "district:text.event.victory.scavenger.start": "失控搬运机失去了继续交锋的能力。你检查退路，确认周围的人没有受伤。报酬只在战斗结束时结算一次。",
+    "district:text.event.victory.scavenger.start.0": "你做出了选择。",
+    "district:text.event.victory.scavenger.end": "你离开交锋区域，街区的日常仍在继续。",
+    "district:text.event.escape.scavenger.start": "你离开了敌人的攻击范围。出口灯还亮着，前方是能歇脚的安全区域。没有胜利报酬，但你保住了继续生活的机会。",
+    "district:text.event.escape.scavenger.start.0": "你做出了选择。",
+    "district:text.event.escape.scavenger.end": "你回到安全入口。接下来可以休息或重新规划路线。",
+    "district:text.battle.scavenger": "你进入标有风险警示的区域，遇到了失控搬运机。",
+    "district:text.event.defeat.collector.start": "收债客没有得到合法凭据，转身避开巡查。你坐在检查站外，衣物与力气都需要整理。\n\n你摸到应急呼叫器。可以呼叫值班员，也能先检查自己的伤处。没有图像时，这段正式文字承担完整演出。",
+    "district:text.event.defeat.collector.start.0": "你做出了选择。",
+    "district:text.event.defeat.collector.start.1": "你做出了选择。",
+    "district:text.event.defeat.collector.start.2": "你沿安全线抵达休息处，保留伤后恢复记录。",
+    "district:text.event.defeat.collector.help": "值班员找到你，先问你能否清楚回应。你说明现场情况，对方确认安全后才扶你离开危险位置。你可以接受完整处理，也可以仅要求脱离现场。",
+    "district:text.event.defeat.collector.help.0": "护理员处理了擦伤，事故记入道路通报。",
+    "district:text.event.defeat.collector.help.1": "你在安全位置休息，后续仍可前往诊室。",
+    "district:text.event.defeat.collector.assess": "你确认自己仍能控制身体。最糟的疼痛来自疲劳和擦伤；需要恢复，却没有任何未经选择的永久变形。求助器还在手边。",
+    "district:text.event.defeat.collector.assess.0": "你做出了选择。",
+    "district:text.event.defeat.collector.assess.1": "你用更慢的方式回到安全区，记下以后要避开的路线。",
+    "district:text.event.defeat.collector.end": "危险已经结束。你的伤后经历留在记录中；可以休息、去诊室，或按自己的节奏继续生活。你回到所在地点的安全入口。",
+    "district:text.event.victory.collector.start": "拦路收债客失去了继续交锋的能力。你检查退路，确认周围的人没有受伤。报酬只在战斗结束时结算一次。",
+    "district:text.event.victory.collector.start.0": "你做出了选择。",
+    "district:text.event.victory.collector.end": "你离开交锋区域，街区的日常仍在继续。",
+    "district:text.event.escape.collector.start": "你离开了敌人的攻击范围。出口灯还亮着，前方是能歇脚的安全区域。没有胜利报酬，但你保住了继续生活的机会。",
+    "district:text.event.escape.collector.start.0": "你做出了选择。",
+    "district:text.event.escape.collector.end": "你回到安全入口。接下来可以休息或重新规划路线。",
+    "district:text.battle.collector": "你进入标有风险警示的区域，遇到了拦路收债客。",
+    "district:text.event.defeat.gel.start": "黑胶外层粘住了外衣，你暂时无法起身。你仍然保持清醒；这不是自动的永久共生或人格变化。\n\n你摸到应急呼叫器。可以呼叫值班员，也能先检查自己的伤处。没有图像时，这段正式文字承担完整演出。",
+    "district:text.event.defeat.gel.start.0": "你做出了选择。",
+    "district:text.event.defeat.gel.start.1": "你做出了选择。",
+    "district:text.event.defeat.gel.start.2": "你沿安全线抵达休息处，保留伤后恢复记录。",
+    "district:text.event.defeat.gel.help": "值班员找到你，先问你能否清楚回应。你说明现场情况，对方确认安全后才扶你离开危险位置。你可以接受完整处理，也可以仅要求脱离现场。",
+    "district:text.event.defeat.gel.help.0": "护理员处理了擦伤，事故记入道路通报。",
+    "district:text.event.defeat.gel.help.1": "你在安全位置休息，后续仍可前往诊室。",
+    "district:text.event.defeat.gel.assess": "你确认自己仍能控制身体。最糟的疼痛来自疲劳和擦伤；需要恢复，却没有任何未经选择的永久变形。求助器还在手边。",
+    "district:text.event.defeat.gel.assess.0": "你做出了选择。",
+    "district:text.event.defeat.gel.assess.1": "你用更慢的方式回到安全区，记下以后要避开的路线。",
+    "district:text.event.defeat.gel.end": "危险已经结束。你的伤后经历留在记录中；可以休息、去诊室，或按自己的节奏继续生活。你回到所在地点的安全入口。",
+    "district:text.event.victory.gel.start": "渠底黑胶群落失去了继续交锋的能力。你检查退路，确认周围的人没有受伤。报酬只在战斗结束时结算一次。",
+    "district:text.event.victory.gel.start.0": "你做出了选择。",
+    "district:text.event.victory.gel.end": "你离开交锋区域，街区的日常仍在继续。",
+    "district:text.event.escape.gel.start": "你离开了敌人的攻击范围。出口灯还亮着，前方是能歇脚的安全区域。没有胜利报酬，但你保住了继续生活的机会。",
+    "district:text.event.escape.gel.start.0": "你做出了选择。",
+    "district:text.event.escape.gel.end": "你回到安全入口。接下来可以休息或重新规划路线。",
+    "district:text.battle.gel": "你进入标有风险警示的区域，遇到了渠底黑胶群落。",
+    "district:text.heal.cafe": "你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。",
+    "district:text.heal.workshop": "你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。",
+    "district:text.heal.canal": "你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。",
+    "district:text.heal.archive": "你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。",
+    "district:text.heal.station": "你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。",
+    "district:text.tf.gel.premonition": "你感到掌面多了一层轻微弹性。护理记录里的停用条件仍在，变化还没有替你做出任何决定。",
+    "district:text.tf.gel.change": "黑亮的外层沿原有手部轮廓稳定下来。你逐一尝试松开与握紧，动作依然来自自己的意愿。",
+    "district:text.tf.gel.adapt": "纸杯起初容易滑脱。你放轻力度，让触觉沿新的表层重新建立，终于能稳稳拿起水杯。",
+    "district:text.tf.wolf.premonition": "远处轮轴的轻响第一次分出高低层次。你先找安静的位置，给变化留出余地。",
+    "district:text.tf.wolf.change": "耳侧的轮廓缓慢向上延展。你听见衣领擦过发梢的声音，没有急着回到吵闹街道。",
+    "district:text.tf.wolf.adapt": "你让注意力停在茶壶的水声，再慢慢放开。新感官终于不再把每个声音都推到眼前。",
+    "district:text.event.tfconsult.gel.start": "护士将可逆护理、可能的不适和自主停止写在同一张卡上。“变化不会替你决定身份。先读完，再说愿不愿意。”",
+    "district:text.event.tfconsult.gel.start.0": "你确认自主接受，并把护理卡收好。",
+    "district:text.event.tfconsult.gel.start.1": "你保留咨询资料，变化没有开始。",
+    "district:text.event.tfconsult.gel.end": "咨询结束。你可以在诊室等候，也可以在安全的生活行动中让时间推进；任何改造阶段都保留来源与进度。",
+    "district:text.tfconsult.gel": "你提出一次正式咨询。",
+    "district:text.event.tfconsult.wolf.start": "护士先降低室内广播。“新的感官要慢慢适应，今天不要把自己放进最吵的工作环境里。”",
+    "district:text.event.tfconsult.wolf.start.0": "你确认自主接受，并把护理卡收好。",
+    "district:text.event.tfconsult.wolf.start.1": "你保留咨询资料，变化没有开始。",
+    "district:text.event.tfconsult.wolf.end": "咨询结束。你可以在诊室等候，也可以在安全的生活行动中让时间推进；任何改造阶段都保留来源与进度。",
+    "district:text.tfconsult.wolf": "你提出一次正式咨询。",
+    "district:text.restore.hands": "你按已经了解的流程解除共生表层，逐步恢复原有抓握感。",
+    "district:text.gel.work": "你使用适合共生表层的清洁剂，按护理卡确认温度与接触时间。工作完成后先检查自己，再领取报酬。",
+    "district:text.gel.reaction.cafe": "店员递来带防滑套的杯子，没有擅自触碰你的手。“新的表层也值得有合适的日用品。”",
+    "district:text.gel.reaction.workshop": "莱克把共生结构与机械触点的清洁剂分开放好。“材质会变，保养要跟着变。你说停，我们就停。”",
+    "district:text.event.canal.task.start": "档案室的公开工单记着一扇反复卡住的排水门。问题不是单纯缺零件：旧渠水位、工坊维护记录与检查站的通行安排没有对上。你可以做一次独立核查。",
+    "district:text.event.canal.task.start.0": "你做出了选择。",
+    "district:text.event.canal.task.start.1": "你做出了选择。",
+    "district:text.event.canal.task.end": "你离开窗口。接下工单后，可先到旧渠核查水位，再去机械工坊对照零件，次日回来选择公开方案。",
+    "district:text.canal.accept": "你来到公开工单窗口。",
+    "district:text.canal.inspect": "你在安全线内读出水位和齿轮编号。门不是完全损坏，而是旧调度仍按已经变化的水位工作。",
+    "district:text.canal.parts": "莱克把旧齿轮编号对上工单，建议留出整夜观察周期。他不愿为了赶工让夜班居民冒险。",
+    "district:text.event.canal.decision.start": "一个游戏日的观察记录已齐。短期封路能尽快换掉调度器；分段维护更慢，却能保留夜班通行。两种方案都有人承担代价。",
+    "district:text.event.canal.decision.start.0": "你把封路日期公开，集中维护很快结束，夜班绕行仍会留在居民记忆中。",
+    "district:text.event.canal.decision.start.1": "你为分段交接多花时间。信使仍有夜路可走，报酬因此较少。",
+    "district:text.event.canal.decision.start.2": "你做出了选择。",
+    "district:text.event.canal.decision.end": "窗口保留了你提交的事实与选择。道路的日常反馈会反映最终方案；工单没有因为关闭页面而消失。",
+    "district:text.canal.decide": "你带着核查材料回到档案室。",
+    "district:text.canal.feedback.closed": "新告示写着集中维护已经结束。夜班绕行的痕迹仍在，居民谈到这次处理时会提起少走的一段与多绕的一圈。",
+    "district:text.canal.feedback.open": "分段维护后，旧渠夜间仍留着通道。信使在新的路标旁等同伴，把这次公开交接当作可以信任的承诺。"
   },
   "contributions": [
     {
@@ -6356,7 +8439,8 @@
         "district:action.resident.help.location.cafe",
         "district:action.rest.location.cafe",
         "district:action.cafe.tea",
-        "district:action.waitday.location.cafe"
+        "district:action.waitday.location.cafe",
+        "district:action.heal.cafe"
       ]
     },
     {
@@ -6379,7 +8463,10 @@
         "district:action.resident.help.location.workshop",
         "district:action.rest.location.workshop",
         "district:action.workshop.work",
-        "district:action.waitday.location.workshop"
+        "district:action.waitday.location.workshop",
+        "district:action.heal.workshop",
+        "district:action.gel.work",
+        "district:action.canal.parts"
       ]
     },
     {
@@ -6391,7 +8478,11 @@
         "district:action.resident.talk.location.canal",
         "district:action.resident.help.location.canal",
         "district:action.rest.location.canal",
-        "district:action.waitday.location.canal"
+        "district:action.waitday.location.canal",
+        "district:action.battle.scavenger",
+        "district:action.battle.gel",
+        "district:action.heal.canal",
+        "district:action.canal.inspect"
       ]
     },
     {
@@ -6404,7 +8495,10 @@
         "district:action.resident.help.location.archive",
         "district:action.rest.location.archive",
         "district:action.archive.work",
-        "district:action.waitday.location.archive"
+        "district:action.waitday.location.archive",
+        "district:action.heal.archive",
+        "district:action.canal.accept",
+        "district:action.canal.decide"
       ]
     },
     {
@@ -6417,7 +8511,9 @@
         "district:action.resident.help.location.station",
         "district:action.rest.location.station",
         "district:action.station.report",
-        "district:action.waitday.location.station"
+        "district:action.waitday.location.station",
+        "district:action.battle.collector",
+        "district:action.heal.station"
       ]
     },
     {
@@ -6447,6 +8543,23 @@
         "district:action.resident.talk.location.salon",
         "district:action.resident.help.location.salon",
         "district:action.waitday.location.salon"
+      ]
+    },
+    {
+      "hookId": "district:hook.runtime",
+      "actionIds": [
+        "district:action.combat.attack",
+        "district:action.combat.guard",
+        "district:action.combat.recover",
+        "district:action.combat.flee"
+      ]
+    },
+    {
+      "hookId": "aetheria-tf:hook.clinic",
+      "actionIds": [
+        "district:action.tfconsult.gel",
+        "district:action.tfconsult.wolf",
+        "district:action.restore.hands"
       ]
     }
   ],
@@ -7076,7 +9189,95 @@
       ]
     }
   ],
-  "enemies": [],
+  "enemies": [
+    {
+      "id": "district:enemy.scavenger",
+      "name": "失控搬运机",
+      "hp": 30,
+      "reward": 12,
+      "intents": [
+        {
+          "label": "转动机械臂横扫",
+          "damage": 9,
+          "guard": 0,
+          "drain": 0
+        },
+        {
+          "label": "收拢装甲蓄力",
+          "damage": 3,
+          "guard": 7,
+          "drain": 0
+        },
+        {
+          "label": "向前撞击",
+          "damage": 14,
+          "guard": 0,
+          "drain": 1
+        }
+      ],
+      "victoryEventId": "district:event.victory.scavenger",
+      "defeatEventId": "district:event.defeat.scavenger",
+      "escapeEventId": "district:event.escape.scavenger"
+    },
+    {
+      "id": "district:enemy.collector",
+      "name": "拦路收债客",
+      "hp": 38,
+      "reward": 16,
+      "intents": [
+        {
+          "label": "观察并护住要害",
+          "damage": 4,
+          "guard": 9,
+          "drain": 0
+        },
+        {
+          "label": "逼近，试图耗尽你的精力",
+          "damage": 8,
+          "guard": 1,
+          "drain": 5
+        },
+        {
+          "label": "抢先重击",
+          "damage": 12,
+          "guard": 0,
+          "drain": 0
+        }
+      ],
+      "victoryEventId": "district:event.victory.collector",
+      "defeatEventId": "district:event.defeat.collector",
+      "escapeEventId": "district:event.escape.collector"
+    },
+    {
+      "id": "district:enemy.gel",
+      "name": "渠底黑胶群落",
+      "hp": 26,
+      "reward": 10,
+      "intents": [
+        {
+          "label": "缓慢靠近，堵住低处",
+          "damage": 5,
+          "guard": 3,
+          "drain": 3
+        },
+        {
+          "label": "回缩并凝成坚硬外层",
+          "damage": 2,
+          "guard": 11,
+          "drain": 0
+        },
+        {
+          "label": "甩出黏性外层",
+          "damage": 11,
+          "guard": 0,
+          "drain": 2
+        }
+      ],
+      "victoryEventId": "district:event.victory.gel",
+      "defeatEventId": "district:event.defeat.gel",
+      "escapeEventId": "district:event.escape.gel"
+    }
+  ],
   "interactions": [],
   "textSlots": [],
   "sceneTexts": [
@@ -7209,7 +9410,172 @@
       ],
       "priority": 1,
       "textKey": "district:text.scene.station.night"
+    },
+    {
+      "id": "district:scene.gel.cafe",
+      "locationId": "district:location.cafe",
+      "conditions": [
+        {
+          "op": "body.hasPart",
+          "definitionId": "district:part.hand.gel"
+        }
+      ],
+      "priority": 10,
+      "textKey": "district:text.gel.reaction.cafe"
+    },
+    {
+      "id": "district:scene.gel.workshop",
+      "locationId": "district:location.workshop",
+      "conditions": [
+        {
+          "op": "body.hasPart",
+          "definitionId": "district:part.hand.gel"
+        }
+      ],
+      "priority": 10,
+      "textKey": "district:text.gel.reaction.workshop"
+    },
+    {
+      "id": "district:scene.canal.closed",
+      "locationId": "district:location.canal",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.closed",
+          "value": true
+        }
+      ],
+      "priority": 20,
+      "textKey": "district:text.canal.feedback.closed"
+    },
+    {
+      "id": "district:scene.canal.open",
+      "locationId": "district:location.canal",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "district:flag.canal.open",
+          "value": true
+        }
+      ],
+      "priority": 20,
+      "textKey": "district:text.canal.feedback.open"
     }
   ],
-  "equipment": []
+  "equipment": [],
+  "bodyParts": [
+    {
+      "id": "district:part.hand.gel",
+      "label": "稳定的黑胶共生手部",
+      "kind": "hand",
+      "material": "organic",
+      "capabilities": [
+        "grasp"
+      ],
+      "anchors": []
+    }
+  ],
+  "bodyPatches": [
+    {
+      "id": "district:patch.gel",
+      "label": "黑胶共生手部适应",
+      "summary": "双手表层与黑胶共生，保留自主控制",
+      "operations": [
+        {
+          "type": "replace",
+          "partId": "hand.left",
+          "definitionId": "district:part.hand.gel"
+        },
+        {
+          "type": "replace",
+          "partId": "hand.right",
+          "definitionId": "district:part.hand.gel"
+        }
+      ]
+    },
+    {
+      "id": "district:patch.hands.restore",
+      "label": "恢复有机手部",
+      "summary": "手部恢复有机结构",
+      "operations": [
+        {
+          "type": "replace",
+          "partId": "hand.left",
+          "definitionId": "aetheria-tf:part.hand"
+        },
+        {
+          "type": "replace",
+          "partId": "hand.right",
+          "definitionId": "aetheria-tf:part.hand"
+        }
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "id": "district:tf.gel",
+      "label": "受控黑胶共生适应",
+      "source": "story",
+      "stages": [
+        {
+          "id": "premonition",
+          "atMinutes": 10,
+          "label": "前兆：表层温度开始均匀",
+          "textKey": "district:text.tf.gel.premonition"
+        },
+        {
+          "id": "change",
+          "atMinutes": 30,
+          "label": "变化：共生外层稳定",
+          "patchId": "district:patch.gel",
+          "textKey": "district:text.tf.gel.change"
+        },
+        {
+          "id": "adapt",
+          "atMinutes": 60,
+          "label": "适应：重新掌握抓握分寸",
+          "textKey": "district:text.tf.gel.adapt"
+        }
+      ]
+    },
+    {
+      "id": "district:tf.wolf",
+      "label": "受控兽耳渐进适应",
+      "source": "story",
+      "stages": [
+        {
+          "id": "premonition",
+          "atMinutes": 10,
+          "label": "前兆：声音的层次变清楚",
+          "textKey": "district:text.tf.wolf.premonition"
+        },
+        {
+          "id": "change",
+          "atMinutes": 25,
+          "label": "变化：耳部结构重塑",
+          "patchId": "aetheria-tf:patch.ears.wolf",
+          "textKey": "district:text.tf.wolf.change"
+        },
+        {
+          "id": "adapt",
+          "atMinutes": 50,
+          "label": "适应：学会筛去背景噪声",
+          "textKey": "district:text.tf.wolf.adapt"
+        }
+      ]
+    },
+    {
+      "id": "district:tf.hands.restore",
+      "label": "恢复有机手部",
+      "source": "free",
+      "stages": [
+        {
+          "id": "done",
+          "atMinutes": 0,
+          "label": "手部恢复",
+          "patchId": "district:patch.hands.restore"
+        }
+      ]
+    }
+  ]
 }

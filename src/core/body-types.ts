@@ -19,7 +19,7 @@ export type GraphOperation =
   | { type: 'attach'; partId: string; definitionId: Id; parentPartId: string; anchorId: string }
   | { type: 'remove'; partId: string };
 export interface BodyPatchDef { id: Id; label: string; summary: string; operations: GraphOperation[] }
-export interface TFStage { id: string; atMinutes: number; label: string; patchId?: Id }
+export interface TFStage { id: string; atMinutes: number; label: string; patchId?: Id; textKey?: Id }
 export interface TFDef { id: Id; label: string; source: 'free' | 'story'; stages: TFStage[] }
 export type TFState = 'active' | 'paused' | 'blocked' | 'completed' | 'cancelled';
 export interface TFInstance {
