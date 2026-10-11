@@ -3,6 +3,7 @@ import type { Registry } from '../content/registry.ts';
 import { npcLocation, npcPresent, nextNPCAppearance } from '../engine/npc.ts';
 import { formatClock } from '../engine/clock.ts';
 import { byId, element } from './render.ts';
+import { activeEvent } from '../engine/events.ts';
 function shortTime(n: number): string { return `${String(Math.floor(n / 60)).padStart(2, '0')}:${String(n % 60).padStart(2, '0')}`; }
 function locationText(view: GameView, registry: Registry, id: Id): string {
   const location = npcLocation(view.state, registry, id);
@@ -17,7 +18,10 @@ function openButton(label: string, dialog: 'people' | 'map'): HTMLButtonElement 
 }
 export function renderNPCPanel(view: GameView, registry: Registry, makeAction: (option: ActionOption) => HTMLButtonElement): void {
   const nearby = byId('people-nearby'); nearby.replaceChildren();
-  const visible = registry.npcs.filter(n => npcPresent(view.state, registry, n.id) || (view.state.npcs.some(s => s.definitionId === n.id && s.discovered) && n.schedule.some(s => s.locationId === view.location.id)));
+  const event = activeEvent(view.state);
+  const participants = event ? registry.event(event.definitionId).participantIds ?? [] : [];
+  const privateOrCombat = !!view.state.district?.combat || !!view.state.district?.scene;
+  const visible = registry.npcs.filter(n => !privateOrCombat && (!event || participants.includes(n.id)) && (npcPresent(view.state, registry, n.id) || (view.state.npcs.some(s => s.definitionId === n.id && s.discovered) && n.schedule.some(s => s.locationId === view.location.id))));
   for (const def of visible) {
     const present = npcPresent(view.state, registry, def.id);
     const card = element('div', `npc-presence${present ? '' : ' npc-absent'}`); card.dataset.npc = def.id; card.dataset.present = String(present);

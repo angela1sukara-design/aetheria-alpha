@@ -7,7 +7,7 @@ export async function clickUI(page, name, exact = false) {
   }
   const closingProfile = (name === '关闭人物') && (await page.locator('#people-content').getAttribute('data-view')) === 'detail';
   await target.click(); await page.waitForTimeout(300);
-  if (closingProfile) { await page.locator('#people-dialog [data-close]').click(); await page.waitForTimeout(300); }
+  if (closingProfile && await page.locator('#people-dialog').isVisible()) { await page.locator('#people-dialog [data-close]').click(); await page.waitForTimeout(300); }
   if (name === '人物' && await page.locator('#people-content .profile-open:visible').count()) {
     await page.locator('#people-content .profile-open:visible').first().click(); await page.waitForTimeout(300);
   }

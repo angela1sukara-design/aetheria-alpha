@@ -15,13 +15,19 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
   const library = async () => loadPacks([...options.source().contentPacks, ...defaultContent(), ...extraContent]);
   let generating = false;
   async function start(seed: number): Promise<void> {
-    if (generating || options.isBusy()) return; generating = true; options.setBusy(true); byId<HTMLButtonElement>('world-generate').disabled = true;
+    if (generating || options.isBusy()) return;
+    for (const id of ['world-seed', 'world-size', 'world-population']) {
+      const input = byId<HTMLInputElement>(id);
+      if (!input.value.trim() || !input.checkValidity()) { message('请填写有效的世界种子、地点数量和居民数量。'); input.focus(); input.reportValidity(); return; }
+    }
+    generating = true; options.setBusy(true); byId<HTMLButtonElement>('world-generate').disabled = true;
+    byId('world-generate').textContent = '正在生成…';
     try {
       message('正在生成街区并校验路线与人物…');
       const world = await new WorldGenerator().generate({ seed, registry: await library(), rules, references, parameters: { locationCount: Number(byId<HTMLInputElement>('world-size').value), npcCount: Number(byId<HTMLInputElement>('world-population').value) } });
       options.replace(world); byId<HTMLDialogElement>('world-dialog').close(); message('街区已生成。请手动保存你想保留的进度。');
     } catch (error) { message(`生成失败，当前进度保留：${error instanceof Error ? error.message : error}`); }
-    finally { generating = false; options.setBusy(false); byId<HTMLButtonElement>('world-generate').disabled = false; }
+    finally { generating = false; options.setBusy(false); byId<HTMLButtonElement>('world-generate').disabled = false; byId('world-generate').textContent = '生成并进入街区'; }
   }
   byId('world-generate').addEventListener('click', () => { void start(Number(byId<HTMLInputElement>('world-seed').value)); });
   byId('world-random').addEventListener('click', () => { byId<HTMLInputElement>('world-seed').value = String(crypto.getRandomValues(new Uint32Array(1))[0]); });

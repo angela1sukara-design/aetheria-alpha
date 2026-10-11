@@ -35,7 +35,13 @@ async function boot(): Promise<void> {
   const saveSlot = launch.aetheriaSaveSlot ?? 'manual';
   let engine = new ActionExecutor(registry, createGameState(registry, newSeed()),texts);
   let result: ActionResult | undefined; let busy = false; let browsing = false;
-  function redraw(): void { const view=engine.view();renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); pages.refresh(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
+  let savedSnapshot: string | undefined;
+  function updateSaveStatus(): void {
+    const saved = savedSnapshot === JSON.stringify(engine.snapshot());
+    const status = byId('save-state'); status.dataset.state = saved ? 'saved' : savedSnapshot ? 'dirty' : 'new';
+    status.textContent = saved ? '进度已保存' : savedSnapshot ? '有未保存进度' : '尚未保存';
+  }
+  function redraw(): void { const view=engine.view();renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); pages.refresh(); updateSaveStatus(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
   function adopt(loaded: { state: import('../core/types.ts').GameState; registry?: import('../content/registry.ts').Registry }): void {
     registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry, fixedRegistry); saves = new SaveRepository(codec, store);
     engine = new ActionExecutor(registry, loaded.state, texts);
@@ -77,9 +83,13 @@ async function boot(): Promise<void> {
     const actionResult = engine.performAction({ actionId: asId(button.dataset.action!),...(params?{params}:{}) }, revision, crypto.randomUUID());
     if (actionResult.ok) {
       result = actionResult; browsing = false; redraw(); feedback('');
-      if (keepBodyPage) byId('page-action-feedback').textContent = actionResult.text;
+      if (keepBodyPage) {
+        byId('page-action-feedback').textContent = actionResult.text;
+        byId('page-action-feedback').classList.remove('error');
+        byId('body-content').querySelector<HTMLButtonElement>(`[data-action="${CSS.escape(button.dataset.action!)}"]`)?.focus({preventScroll:true});
+      }
       else { pages.game(); focusScene(); }
-    } else { feedback(actionResult.message, true); byId('page-action-feedback').textContent = actionResult.message; redraw(); }
+    } else { feedback(actionResult.message, true); byId('page-action-feedback').textContent = actionResult.message; byId('page-action-feedback').classList.add('error'); redraw(); }
     setTimeout(() => { busy = false; }, 250);
   });
   const dialogNames = ['map', 'body', 'people', 'save', 'log', 'quest', 'bag', 'discovery', 'pack', 'world'];
@@ -89,19 +99,25 @@ async function boot(): Promise<void> {
   for (const name of dialogNames) byId(`${name}-open`).addEventListener('click', () => { void openDialog(name); });
   document.addEventListener('click', event => {
     const opener = (event.target as Element).closest<HTMLButtonElement>('button[data-dialog-open]');
-    if (opener && !opener.disabled) void openDialog(opener.dataset.dialogOpen!);
+    if (opener && !opener.disabled) pages.open(opener.dataset.dialogOpen!, true);
   });
   async function storageAction(run: () => Promise<void>): Promise<void> {
     if (busy) return; busy = true;
+    byId<HTMLButtonElement>('save-quick').disabled = true;
     const buttons = [...byId('save-dialog').querySelectorAll<HTMLButtonElement>('button:not([data-close])')]; buttons.forEach(x => { x.disabled = true; });
-    try { await run(); } catch (error) { byId('save-message').textContent = `操作失败：${error instanceof Error ? error.message : error}`; }
-    finally { busy = false; buttons.forEach(x => { x.disabled = false; }); try { await refreshSlot(); } catch { byId<HTMLButtonElement>('save-read').disabled = true; } }
+    try { await run(); } catch (error) { const message = `操作失败：${error instanceof Error ? error.message : error}`; byId('save-message').textContent = message; feedback(message, true); }
+    finally { busy = false; byId<HTMLButtonElement>('save-quick').disabled = false; buttons.forEach(x => { x.disabled = false; }); updateSaveStatus(); try { await refreshSlot(); } catch { byId<HTMLButtonElement>('save-read').disabled = true; } }
   }
-  byId('save-write').addEventListener('click', () => storageAction(async () => { await saves.save(engine.snapshot(), saveSlot); byId('save-message').textContent = '保存完成。'; }));
+  const saveCurrent = () => storageAction(async () => {
+    const snapshot = engine.snapshot(); await saves.save(snapshot, saveSlot); savedSnapshot = JSON.stringify(snapshot);
+    byId('save-message').textContent = '保存完成。'; feedback('保存完成。');
+  });
+  byId('save-write').addEventListener('click', saveCurrent);
+  byId('save-quick').addEventListener('click', saveCurrent);
   byId('save-read').addEventListener('click', () => storageAction(async () => {
     const loaded = await saves.load(saveSlot);
     if (loaded.status !== 'ready') { byId('save-message').textContent = loaded.status === 'empty' ? '没有可读取的存档。' : `存档已隔离：${loaded.reason}`; return; }
-    adopt(loaded); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = loaded.migration ?? '已恢复保存时的进度。';
+    adopt(loaded); savedSnapshot = JSON.stringify(loaded.state); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = loaded.migration ?? '已恢复保存时的进度。';
   }));
   byId('save-export').addEventListener('click', () => storageAction(async () => {
     const text = await codec.encode(engine.snapshot()); const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
@@ -118,7 +134,7 @@ async function boot(): Promise<void> {
   }));
   function persistTexts():void{try{localStorage.setItem('aetheria-alpha02-texts',JSON.stringify(storedTexts));}catch{byId('pack-message').textContent='文本已在当前会话启用；浏览器不允许持久化扩展文件。';}}
   byId('discovery-search').addEventListener('input',redraw);
-  byId('adult-preference').addEventListener('change',()=>{const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(x.ok)result=x;redraw();});
+  byId('adult-preference').addEventListener('change',()=>{if(busy)return;const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(!x.ok)byId('pack-message').textContent=x.message;redraw();});
   byId<HTMLInputElement>('pack-import').addEventListener('change',async event=>{const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file)return;try{if(file.size>1024*1024)throw Error('文本包超过1 MiB。');const raw=JSON.parse(await file.text()),id=texts.install(raw,registry);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);storedTexts.push(raw);persistTexts();redraw();byId('pack-message').textContent='可选文本包已启用。当前进度与效果没有改变。';}catch(error){byId('pack-message').textContent='未导入：'+(error instanceof Error?error.message:error);}});
   document.addEventListener('click',event=>{const b=(event.target as Element).closest<HTMLButtonElement>('button[data-pack]');if(!b)return;const id=b.dataset.pack!;if(b.dataset.packMove==='delete'){texts.remove(id);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);persistTexts();}else texts.setEnabled(id,!texts.list().find(x=>x.id===id)!.enabled);redraw();byId('pack-message').textContent='文本显示已更新；角色与事件状态保留。';});
   byId<HTMLInputElement>('rules-import').addEventListener('change',async event=>{
@@ -142,7 +158,7 @@ async function boot(): Promise<void> {
   redraw();
   try {
     const loaded = await saves.load(saveSlot);
-    if (loaded.status === 'ready') { adopt(loaded); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); feedback(loaded.migration ?? '已恢复手动存档。之后的行动仍需手动保存。'); }
+    if (loaded.status === 'ready') { adopt(loaded); savedSnapshot = JSON.stringify(loaded.state); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); feedback(loaded.migration ?? '已恢复手动存档。之后的行动仍需手动保存。'); }
     else if (loaded.status === 'empty' && launch.aetheriaInitialSave) { const initial = await codec.decode(launch.aetheriaInitialSave); if(initial.status!=='ready')throw Error(initial.reason);adopt(initial);redraw();feedback('已进入示例随机街区。可继续探索并手动保存。'); }
     else if (loaded.status === 'quarantined') feedback(`旧存档已隔离并保留：${loaded.reason}`, true);
   } catch { feedback('本地存档暂不可用，进度可以通过 JSON 导出。', true); }

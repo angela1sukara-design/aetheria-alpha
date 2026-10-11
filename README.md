@@ -2,7 +2,7 @@
 
 继续既有 Alpha 0.2，固定以太都市保留为框架测试世界。新增可以实际进入游玩的随机街区，复用原行动、居民、事件、BodyGraph/TF、时间与存档系统。
 
-界面已合入完整子页导航：地图、身体、人物、存档、记录、任务、背包、发现、内容偏好和世界均可独立进入与返回；对话、事件和行动结果占据主区，地点介绍只在抵达时展示或主动回看。详情见 [UI 与子页更新](docs/ui-pages-update.md)，界面回归验证运行 `npm run test:ui`。
+界面已合入完整子页导航：地图、身体、人物、存档、记录、任务、背包、发现、内容偏好和世界均可独立进入与返回；对话、事件和行动结果占据主区，地点介绍只在抵达时展示或主动回看。详情见 [UI 与子页更新](docs/ui-pages-update.md)，界面回归验证运行 `npm run test:ui`。最新的 [UI 与操作流程优化](docs/ui-ux-2026-10-12.md) 增加快捷保存、保存状态、入口返回与行动筛选，运行 `npm run test:ux` 验证。
 
 直接打开 `dist/Aetheria-Alpha-0.2.html`，通过「世界」菜单生成。两份独立试玩：`dist/WorldGenerator-Seed-7.html`（晴砾街区）、`dist/WorldGenerator-Seed-42.html`（林荫街区）。原 `start_game.bat` 启动方式继续保留。游戏不依赖实时 AI API。
 

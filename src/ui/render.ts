@@ -4,6 +4,7 @@ import { formatClock } from '../engine/clock.ts';
 import { renderBodyPanel } from './body-panel.ts';
 import { renderNPCPanel } from './npc-panel.ts';
 import { scenePresentation } from './scene-presentation.ts';
+import { actionPreview } from './action-preview.ts';
 export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag); node.className = className; if (text) node.textContent = text; return node;
 }
@@ -11,13 +12,24 @@ export function byId<T extends HTMLElement = HTMLElement>(id: string): T {
   const node = document.getElementById(id); if (!node) throw new Error(`缺少 UI 元素 ${id}`); return node as T;
 }
 function prose(target: HTMLElement, text: string): void { target.replaceChildren(...text.split('\n\n').map(t => element('p', '', t))); }
-function actionButton(option: ActionOption, compact = false): HTMLButtonElement {
+function actionButton(option: ActionOption, registry: Registry, compact = false): HTMLButtonElement {
   const button = element('button', compact ? 'map-label' : 'action-button'); button.type = 'button';
   button.dataset.action = option.definition.id; button.dataset.group = option.definition.group;
   button.disabled = !option.available;
   button.append(element('span', 'action-label', option.definition.label));
-  const hint = option.available ? option.definition.hint : option.reason;
-  if (hint && hint !== '选择会推进经历 · 查看行动反馈') button.append(element('span', 'action-hint', hint));
+  const preview = actionPreview(option.definition, registry);
+  const rawHint = option.available ? option.definition.hint : option.reason;
+  const normalize = (text: string) => text.replace(/\s/g, '');
+  const hint = option.available ? rawHint.split(' · ').filter(part => {
+    if (part === '选择会推进经历 · 查看行动反馈' || part === '选择会推进经历' || part === '查看行动反馈') return false;
+    if (preview.some(tag => normalize(tag) === normalize(part))) return false;
+    return !(preview.length && option.definition.effects.some(effect => effect.op === 'clock.advance') && /^(?:步行\s*)?\d+\s*(?:分钟|小时)$/.test(part));
+  }).join(' · ') : rawHint;
+  if (hint) button.append(element('span', 'action-hint', hint));
+  if (preview.length) {
+    const costs = element('span', 'action-costs');
+    costs.append(...preview.map(text => element('span', '', text))); button.append(costs);
+  }
   if (!option.available) button.title = option.reason;
   return button;
 }
@@ -26,6 +38,8 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   byId('scene-panel').dataset.mode = scene.mode;
   byId('scene-title').textContent = scene.title; byId('scene-subtitle').textContent = scene.subtitle;
   byId('scene-mode').textContent = scene.label; byId('clock').textContent = formatClock(view.state.clock.totalMinutes);
+  byId('session-context').textContent = `${view.location.name} · ${scene.label}`;
+  byId('action-context').textContent = scene.active ? '查看人物、身体或存档后，点“继续故事”即可回到这里。' : '选择行动前，可查看耗时与数值变化；实际恢复受状态上限影响。';
   byId('location-name').textContent = view.location.name;
   prose(byId('location-description'), registry.text(view.location.textKey));
   prose(byId('scene-text'), view.sceneText);
@@ -42,24 +56,30 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     if (def.max <= 100) { const meter = element('div', 'meter'); const fill = element('div', 'meter-fill'); fill.style.width = `${(value - def.min) / (def.max - def.min) * 100}%`; meter.append(fill); stat.append(meter); }
     status.append(stat);
   }
-  const actions = byId('actions'); actions.replaceChildren();
-  const groups = scene.active ? { event: '眼下的选择', daily: '当前互动', explore: '当前互动', travel: '离开' } : { event: '与人物交谈', daily: '做些什么', explore: '留意周围', travel: '前往其他地点' };
+  const actions = byId('actions');
+  const expanded = new Set([...actions.querySelectorAll<HTMLDetailsElement>('.locked-actions[open]')].map(node => node.dataset.group));
+  const filterKey = `${view.location.id}:${scene.active}:${scene.mode === 'conversation'}`;
+  if (actions.dataset.filterKey !== filterKey) actions.dataset.filter = 'all';
+  actions.dataset.filterKey = filterKey; actions.replaceChildren();
+  const groups = scene.active ? { event: '眼下的选择', daily: '当前互动', explore: '当前互动', travel: '离开' } : { event: '人物与故事', daily: '生活与工作', explore: '探索与遇见', travel: '前往其他地点' };
   for (const [group, label] of Object.entries(groups)) {
     const options = view.actions.filter(x => x.definition.group === group && x.definition.surface !== 'body'
       && !x.definition.effects.some(effect => effect.op === 'preference.set' || effect.op === 'player.create')
       && (!(scene.mode === 'conversation' && !scene.active) || x.definition.effects.some(effect => effect.op === 'resident.talk' || effect.op === 'resident.help')));
     if (!options.length) continue;
-    const section = element('div', 'action-group'); const grid = element('div', 'action-grid');
+    const section = element('div', 'action-group'); section.dataset.group = group; const grid = element('div', 'action-grid');
     section.append(element('div', 'action-group-title', label));
-    grid.append(...options.filter(option => option.available).map(x => actionButton(x))); section.append(grid);
+    grid.append(...options.filter(option => option.available).map(x => actionButton(x, registry))); section.append(grid);
     const locked = options.filter(option => !option.available);
     if (locked.length) {
       const details = element('details', 'locked-actions');
+      details.dataset.group = group; details.open = expanded.has(group);
       details.append(element('summary', '', `暂不可用 · ${locked.length} 项`));
-      const lockedGrid = element('div', 'action-grid'); lockedGrid.append(...locked.map(x => actionButton(x))); details.append(lockedGrid); section.append(details);
+      const lockedGrid = element('div', 'action-grid'); lockedGrid.append(...locked.map(x => actionButton(x, registry))); details.append(lockedGrid); section.append(details);
     }
     actions.append(section);
   }
+  renderActionFilters(scene.active);
   byId('district-location').textContent = `你在${view.location.name}。`;
   const nearby = byId('nearby'); nearby.replaceChildren();
   for (const route of registry.routes.filter(x => x.from === view.location.id)) {
@@ -80,8 +100,8 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     byId('result-changes').replaceChildren(...result.changes.map(x => element('span', 'change', `${x.label} ${x.before} → ${x.after}`)));
   }
   renderMap(view, registry);
-  renderBodyPanel(view, registry, byId('body-content'), option => actionButton(option));
-  renderNPCPanel(view, registry, option => actionButton(option));
+  renderBodyPanel(view, registry, byId('body-content'), option => actionButton(option, registry));
+  renderNPCPanel(view, registry, option => actionButton(option, registry));
   const log = byId('log-content'); log.replaceChildren();
   for (const tx of [...view.state.ledger.transactions].reverse().slice(0, 20)) {
     const item = element('article', 'log-item'); item.append(element('small', '', `行动 ${tx.result.revision}`), element('p', '', tx.result.text)); log.append(item);
@@ -106,11 +126,35 @@ function renderMap(view: GameView, registry: Registry): void {
   const links = element('div', 'map-links');
   for (const place of locations) {
     const option = view.actions.find(x => x.definition.effects.some(fx => fx.op === 'location.move' && registry.route(fx.routeId).to === place.id));
-    if (option) links.append(actionButton(option, true));
+    if (option) links.append(actionButton(option, registry, true));
     else { const label = element('div', `map-label ${place.id === view.location.id ? 'current' : ''}`, place.name); label.append(element('small', '', place.id === view.location.id ? '当前位置' : view.eventTitle ? '当前事件进行中' : '需经相邻街道')); links.append(label); }
   }
   byId('map-content').replaceChildren(svg, links);
 }
-export function feedback(text: string, error = false): void { const target = byId('feedback'); target.textContent = text; target.classList.toggle('error', error); }
+function renderActionFilters(active: boolean): void {
+  const host = byId('action-filters'), actions = byId('actions'); host.replaceChildren();
+  const categories = [...actions.querySelectorAll<HTMLElement>('.action-group')];
+  host.hidden = active || categories.length < 2;
+  if (host.hidden) actions.dataset.filter = 'all';
+  let selected = actions.dataset.filter ?? 'all';
+  if (selected !== 'all' && !categories.some(node => node.dataset.group === selected)) { selected = 'all'; actions.dataset.filter = selected; }
+  for (const [group, label] of [['all', '全部'], ['event', '故事'], ['daily', '生活'], ['explore', '探索'], ['travel', '出行']]) {
+    const category = categories.find(node => node.dataset.group === group);
+    if (group !== 'all' && !category) continue;
+    const count = (group === 'all' ? actions : category!).querySelectorAll('button[data-action]:enabled').length;
+    const button = element('button', '', `${label} ${count}`); button.type = 'button'; button.dataset.actionFilter = group;
+    button.setAttribute('aria-pressed', String(selected === group));
+    button.addEventListener('click', () => { actions.dataset.filter = group; renderActionFilters(active); byId('action-filters').querySelector<HTMLButtonElement>(`[data-action-filter="${group}"]`)?.focus({preventScroll:true}); });
+    host.append(button);
+  }
+  for (const category of categories) category.hidden = selected !== 'all' && category.dataset.group !== selected;
+}
+let feedbackTimer: ReturnType<typeof setTimeout> | undefined;
+export function feedback(text: string, error = false): void {
+  if (feedbackTimer) clearTimeout(feedbackTimer);
+  const target = byId('feedback'); target.textContent = text; target.classList.toggle('error', error);
+  target.setAttribute('role', error ? 'alert' : 'status');
+  if (text && !error) feedbackTimer = setTimeout(() => { target.textContent = ''; }, 6000);
+}
 export function newSeed(): number { return crypto.getRandomValues(new Uint32Array(1))[0]; }
 export function asId(text: string): Id { return text as Id; }
