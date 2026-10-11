@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#11131b"><title>以太都市：深渊重塑 · Alpha 0.2 · 世界生成器 v0.1</title>
+  <meta name="theme-color" content="#11131b"><title>以太都市：深渊重塑 · 世界生成器 v0.2.1</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./src/ui/game.css">
 </head>
@@ -16,18 +16,24 @@
     <div class="quick-menu"><span id="player-name">新来的住户</span><button id="quest-open">任务</button><button id="bag-open">背包</button><button id="discovery-open">发现与互动</button><button id="pack-open">内容偏好</button><button id="world-open">世界</button></div>
     <div class="game-layout">
       <aside class="status-panel" aria-label="玩家状态"><div class="eyebrow">你的状态</div><div id="status"></div><div class="status-note">城市还在运转。<br>决定下一步的人是你。</div></aside>
-      <main>
-        <section class="scene-panel" aria-labelledby="scene-title">
+      <main id="game-main">
+       <div id="play-page">
+        <div class="location-bar"><span class="location-pin" aria-hidden="true">◇</span><span id="location-name"></span><button id="location-review" aria-expanded="false" aria-controls="location-details">地点介绍</button><button data-dialog-open="map">查看地图 ↗</button></div>
+        <section id="location-details" class="location-details" aria-label="地点介绍" hidden><div id="location-description" class="prose"></div></section>
+        <section id="scene-panel" class="scene-panel" aria-labelledby="scene-title">
           <div class="scene-topline"><span id="scene-mode" class="eyebrow">当前所在</span><time id="clock"></time></div>
           <h1 id="scene-title">正在进入城市…</h1><p id="scene-subtitle" class="subtitle"></p>
           <div class="scene-divider" aria-hidden="true"><span></span><i>◈</i><span></span></div>
           <div id="scene-text" class="prose"></div>
           <div id="character-intro" class="character-intro" hidden><h2>在这座城市开始生活</h2><p>你租下一间公寓。先写下姓名和成年年龄，再到身体面板选择自由塑形。</p><label>姓名 <input id="character-name" maxlength="40" value="旅人"></label><label>年龄 <input id="character-age" type="number" min="18" max="120" value="25"></label><button data-action="district:action.create">签下租约，创建角色</button></div>
+          <section id="action-result" class="result-panel" aria-label="行动结果" hidden><details id="result-detail" open><summary id="result-label">刚刚的行动</summary><div id="result-text" class="prose"></div></details><div id="result-changes" class="changes"></div></section>
           <div id="resident-nearby" class="resident-card"></div>
           <div id="people-nearby" aria-label="在场人物" hidden></div>
-          <section id="action-result" class="result-panel" aria-label="上次行动结果" hidden><div class="eyebrow">刚刚</div><div id="result-text" class="prose"></div><div id="result-changes" class="changes"></div></section>
+          <button id="scene-return" class="scene-return" hidden>← 返回地点</button>
         </section>
         <section class="actions-panel" aria-labelledby="actions-title"><h2 id="actions-title">下一步</h2><div id="actions"></div></section>
+       </div>
+       <div id="subpage-host" hidden><div class="page-path"><button id="page-home">游戏</button><span aria-hidden="true">/</span><span id="page-label"></span><span id="page-breadcrumb"></span></div><p id="page-action-feedback" role="status" class="page-action-feedback"></p></div>
       </main>
       <aside class="district-panel" aria-label="周边路线"><div class="eyebrow">身处城中</div><div class="city-silhouette" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><p id="district-location"></p><div id="nearby"></div><p class="district-caption">灯光之外，是你还没有走过的路。</p></aside>
     </div>

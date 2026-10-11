@@ -22,13 +22,21 @@ export function renderNPCPanel(view: GameView, registry: Registry, makeAction: (
     const present = npcPresent(view.state, registry, def.id);
     const card = element('div', `npc-presence${present ? '' : ' npc-absent'}`); card.dataset.npc = def.id; card.dataset.present = String(present);
     const description = element('div', 'npc-presence-text'); description.append(element('p', '', `${def.name} · ${def.role}`));
-    description.append(element('p', 'muted', present ? (view.eventTitle ? '就在这里。当前事件正在进行。' : '就在这里，可以从行动区域交谈。') : locationText(view, registry, def.id)));
+    description.append(element('p', 'muted', present ? (view.eventTitle ? '正在与你交谈。' : '就在这里。') : locationText(view, registry, def.id)));
     if (!present) {
       description.append(element('p', 'npc-next-visit', nextVisitText(view, registry, def.id)));
       const next = nextNPCAppearance(view.state, registry, def.id);
       if (next && next.locationId !== view.location.id) description.append(element('p', 'muted', nextVisitText(view, registry, def.id, true)));
     }
-    description.append(openButton(present ? '查看人物' : '查看去向与再会', 'people'));
+    if (view.state.npcs.some(npc => npc.definitionId === def.id && npc.discovered)) {
+      const profile = openButton(present ? '查看人物' : '查看去向与再会', 'people');
+      delete profile.dataset.dialogOpen; profile.dataset.npcOpen = def.id; description.append(profile);
+    }
+    if (present && !view.eventTitle && !view.state.district?.combat && !view.state.district?.scene) {
+      const topics = registry.actionsForHook(def.topicHook);
+      const entrance = view.actions.find(option => option.available && topics.some(topic => topic.id === option.definition.id));
+      if (entrance) { const button = makeAction(entrance); button.classList.add('npc-talk'); description.append(button); }
+    }
     card.append(element('span', 'npc-avatar', def.name.slice(0, 1)), description); nearby.append(card);
   }
   nearby.hidden = !visible.length;
@@ -39,6 +47,7 @@ export function renderNPCPanel(view: GameView, registry: Registry, makeAction: (
   for (const npc of known) {
     const def = registry.npc(npc.definitionId), card = element('article', 'npc-card'); card.dataset.npc = def.id;
     card.append(element('h3', '', def.name), element('p', 'muted', def.role), element('p', 'npc-location', locationText(view, registry, def.id)), element('p', 'muted', registry.text(def.descriptionText)));
+    const profile = element('button', 'profile-open', '查看人物档案 →'); profile.dataset.npcOpen = def.id; card.append(profile);
     const present = npcPresent(view.state, registry, def.id);
     if (!present) {
       card.append(element('p', 'npc-next-visit', nextVisitText(view, registry, def.id)), openButton('打开地图', 'map'));

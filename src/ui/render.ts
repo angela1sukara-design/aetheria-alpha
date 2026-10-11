@@ -3,6 +3,7 @@ import type { Registry } from '../content/registry.ts';
 import { formatClock } from '../engine/clock.ts';
 import { renderBodyPanel } from './body-panel.ts';
 import { renderNPCPanel } from './npc-panel.ts';
+import { scenePresentation } from './scene-presentation.ts';
 export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag); node.className = className; if (text) node.textContent = text; return node;
 }
@@ -14,14 +15,24 @@ function actionButton(option: ActionOption, compact = false): HTMLButtonElement 
   const button = element('button', compact ? 'map-label' : 'action-button'); button.type = 'button';
   button.dataset.action = option.definition.id; button.dataset.group = option.definition.group;
   button.disabled = !option.available;
-  button.append(element('span', 'action-label', option.definition.label), element('span', 'action-hint', option.available ? option.definition.hint : option.reason));
+  button.append(element('span', 'action-label', option.definition.label));
+  const hint = option.available ? option.definition.hint : option.reason;
+  if (hint && hint !== '选择会推进经历 · 查看行动反馈') button.append(element('span', 'action-hint', hint));
   if (!option.available) button.title = option.reason;
   return button;
 }
-export function renderGame(view: GameView, registry: Registry, result?: ActionResult): void {
-  byId('scene-title').textContent = view.location.name; byId('scene-subtitle').textContent = view.location.subtitle;
-  byId('scene-mode').textContent = view.state.district?.combat?'正在交锋':view.state.district?.scene?'私人相处':view.eventTitle ?? '当前所在'; byId('clock').textContent = formatClock(view.state.clock.totalMinutes);
+export function renderGame(view: GameView, registry: Registry, result?: ActionResult, browsing = false): void {
+  const scene = scenePresentation(view, registry, result, browsing);
+  byId('scene-panel').dataset.mode = scene.mode;
+  byId('scene-title').textContent = scene.title; byId('scene-subtitle').textContent = scene.subtitle;
+  byId('scene-mode').textContent = scene.label; byId('clock').textContent = formatClock(view.state.clock.totalMinutes);
+  byId('location-name').textContent = view.location.name;
+  prose(byId('location-description'), registry.text(view.location.textKey));
   prose(byId('scene-text'), view.sceneText);
+  byId('scene-text').hidden = scene.primaryResult || scene.mode === 'hub';
+  byId('scene-return').hidden = scene.active || scene.mode === 'arrival' || scene.mode === 'hub';
+  byId('scene-return').textContent = scene.mode === 'conversation' ? '← 结束交谈，返回地点' : '← 返回地点';
+  byId('actions-title').textContent = scene.active ? '你的选择' : scene.mode === 'conversation' ? '继续交谈' : '下一步';
   const status = byId('status'); status.replaceChildren();
   for (const def of registry.variables) {
     const value = view.state.player.variables[def.id]; const stat = element('div', 'stat');
@@ -32,18 +43,38 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     status.append(stat);
   }
   const actions = byId('actions'); actions.replaceChildren();
-  const groups = { event: '眼下的选择', travel: '去哪儿', daily: '做些什么', explore: '留意周围' } as const;
+  const groups = scene.active ? { event: '眼下的选择', daily: '当前互动', explore: '当前互动', travel: '离开' } : { event: '与人物交谈', daily: '做些什么', explore: '留意周围', travel: '前往其他地点' };
   for (const [group, label] of Object.entries(groups)) {
-    const options = view.actions.filter(x => x.definition.group === group && x.definition.surface !== 'body'); if (!options.length) continue;
+    const options = view.actions.filter(x => x.definition.group === group && x.definition.surface !== 'body'
+      && !x.definition.effects.some(effect => effect.op === 'preference.set' || effect.op === 'player.create')
+      && (!(scene.mode === 'conversation' && !scene.active) || x.definition.effects.some(effect => effect.op === 'resident.talk' || effect.op === 'resident.help')));
+    if (!options.length) continue;
     const section = element('div', 'action-group'); const grid = element('div', 'action-grid');
-    section.append(element('div', 'action-group-title', label)); grid.append(...options.map(x => actionButton(x))); section.append(grid); actions.append(section);
+    section.append(element('div', 'action-group-title', label));
+    grid.append(...options.filter(option => option.available).map(x => actionButton(x))); section.append(grid);
+    const locked = options.filter(option => !option.available);
+    if (locked.length) {
+      const details = element('details', 'locked-actions');
+      details.append(element('summary', '', `暂不可用 · ${locked.length} 项`));
+      const lockedGrid = element('div', 'action-grid'); lockedGrid.append(...locked.map(x => actionButton(x))); details.append(lockedGrid); section.append(details);
+    }
+    actions.append(section);
   }
   byId('district-location').textContent = `你在${view.location.name}。`;
   const nearby = byId('nearby'); nearby.replaceChildren();
   for (const route of registry.routes.filter(x => x.from === view.location.id)) {
-    const item = element('div', 'nearby-route', registry.location(route.to).name); item.append(element('span', '', view.eventTitle ? '结束当前事件后可以前往' : '沿路步行即可到达')); nearby.append(item);
+    const travel = view.actions.find(option => option.definition.effects.some(effect => effect.op === 'location.move' && effect.routeId === route.id));
+    const item = element('button', 'nearby-route', registry.location(route.to).name); item.type = 'button';
+    item.disabled = !travel?.available || scene.active;
+    if (travel) item.dataset.action = travel.definition.id;
+    item.append(element('span', '', scene.active ? '结束当前互动后可以前往' : travel && !travel.available ? travel.reason : '前往这里 →')); nearby.append(item);
   }
-  byId('action-result').hidden = !result?.ok;
+  byId('action-result').hidden = !result?.ok || browsing;
+  byId('action-result').classList.toggle('result-primary', scene.primaryResult);
+  const detail = byId<HTMLDetailsElement>('result-detail');
+  const resultKey = `${result?.requestId ?? ''}:${scene.primaryResult}`;
+  if (detail.dataset.result !== resultKey) { detail.open = scene.primaryResult; detail.dataset.result = resultKey; }
+  byId('result-label').textContent = scene.primaryResult ? '行动经过' : '刚刚的行动';
   if (result?.ok) {
     prose(byId('result-text'), result.text);
     byId('result-changes').replaceChildren(...result.changes.map(x => element('span', 'change', `${x.label} ${x.before} → ${x.after}`)));

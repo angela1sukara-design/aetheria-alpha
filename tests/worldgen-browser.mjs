@@ -1,3 +1,4 @@
+import { clickUI } from './ui-navigation.mjs';
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 import { spawn } from 'node:child_process';
@@ -16,15 +17,15 @@ try {
   browser = await chromium.launch({ headless: true, executablePath: process.env.BROWSER_EXECUTABLE_PATH ?? 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' });
   const context = await browser.newContext({ viewport: { width: 1360, height: 1000 }, acceptDownloads: true });
   const page = await context.newPage(); page.setDefaultTimeout(12000); page.on('pageerror', e => errors.push(e.message)); page.on('response', r => { if(r.status()>=400)errors.push(r.status()+' '+r.url()); });
-  const click = async (p, name) => { await p.getByRole('button', { name, exact: true }).first().click(); await p.waitForTimeout(300); };
-  const act = async id => { await page.locator(`button[data-action="${id}"]`).first().click(); await page.waitForTimeout(300); assert.ok(!await page.locator('#feedback').evaluate(el => el.classList.contains('error')), await page.locator('#feedback').innerText()); };
+  const click = (p, name) => clickUI(p, name, true);
+  const act = async id => { const button = page.locator(`button[data-action="${id}"]`).first(); if (!await button.isVisible() && await page.locator('#subpage-host').isVisible()) await page.locator('#page-home').click(); await button.click(); await page.waitForTimeout(300); assert.ok(!await page.locator('#feedback').evaluate(el => el.classList.contains('error')), await page.locator('#feedback').innerText()); };
   const snapshot = async (p = page, filename = 'current') => { await click(p, '存档'); const pending = p.waitForEvent('download'); await click(p, '导出 JSON'); const download = await pending, dest = path.join(out, filename + '.json'); await download.saveAs(dest); await click(p, '关闭存档'); return JSON.parse(await readFile(dest, 'utf8')).payload.state; };
-  await page.goto('http://localhost:4197/'); await page.locator('#scene-title').filter({ hasText: '公寓' }).waitFor();
+  await page.goto('http://localhost:4197/'); await page.locator('#location-name').filter({ hasText: '公寓' }).waitFor({state:"attached"});
   let initial, remembered;
   await check('固定世界保留；通过世界菜单实际生成并进入种子42街区', async () => {
     await snapshot(page,'fixed-initial');
     await click(page, '世界'); await page.locator('#world-seed').fill('42'); await click(page, '生成并进入街区');
-    await page.locator('#scene-subtitle').filter({hasText:worldName(42)}).waitFor(); initial = await snapshot(page,'seed42-initial'); assert.equal(initial.worldInstance.generation.seed,42);assert.equal(initial.district.residents.length,9);
+    await page.locator('#world-current').filter({hasText:worldName(42)}).waitFor({state:"attached"}); initial = await snapshot(page,'seed42-initial'); assert.equal(initial.worldInstance.generation.seed,42);assert.equal(initial.district.residents.length,9);
     assert.ok(initial.worldInstance.generation.contentPacks.some(p=>p.id==='aetheria/neighborhood-lexicon'));
     assert.ok(initial.district.residents.every(r=>r.appearance.includes('衣着：')));
   });
@@ -39,6 +40,7 @@ try {
     const s=await snapshot();assert.ok(s.player.variables['core:money']>initial.player.variables['core:money']);assert.equal(s.eventInstances[0].status,'completed');
   });
   const travelTo = async to => {
+    if (await page.locator('#scene-return').isVisible()) await page.locator('#scene-return').click();
     const state=await snapshot(),routes=state.worldInstance.definition.packs.find(p=>p.manifest.id==='generated/neighborhood').routes;
     const queue=[[state.world.locationId,[]]],seen=new Set();let found;
     while(queue.length){const [loc,steps]=queue.shift();if(loc===to){found=steps;break;}if(seen.has(loc))continue;seen.add(loc);for(const r of routes.filter(r=>r.from===loc))queue.push([r.to,[...steps,r]]);}
@@ -48,11 +50,11 @@ try {
     const before=await snapshot(page,'before-browsing');
     await act('worldgen:action.meet.0');await act('worldgen:action.meet.0');
     const browsed=await snapshot(page,'after-browsing');
-    assert.match(await page.locator('#resident-nearby').innerText(),/衣着：.*性情：/s);
-    assert.doesNotMatch(await page.locator('#resident-nearby').innerText(),/。。|。；/);
     assert.equal(browsed.activeEventStack.length,0);assert.ok(browsed.district.currentResidentId);
     assert.deepEqual(browsed.rng,before.rng);assert.deepEqual(browsed.clock,before.clock);assert.deepEqual(browsed.district.storyletHistory,before.district.storyletHistory);
     assert.match(await page.locator('#resident-nearby').innerText(),/位居民停留/);
+    assert.match(await page.locator('#resident-nearby').innerText(),/衣着：.*性情：/s);
+    assert.doesNotMatch(await page.locator('#resident-nearby').innerText(),/。。|。；/);
     await act('worldgen:action.activity.0.0');
     const after=await snapshot(page,'after-activity');assert.ok(after.clock.totalMinutes>browsed.clock.totalMinutes);
   });
@@ -68,26 +70,26 @@ try {
     await act('worldgen:action.talk.'+i);await act('worldgen:action.help.'+i);
     remembered=await snapshot();const n=remembered.district.residents.find(r=>r.id===remembered.district.currentResidentId);assert.ok(n.persistent);assert.ok(n.memories.length>=2);
     await click(page,'人物');assert.match(await page.locator('#people-content').innerText(),new RegExp(n.name));assert.match(await page.locator('#people-content').innerText(),/08:00/);await click(page,'关闭人物');
-    await click(page,'存档');await click(page,'保存当前进度');await page.reload();await page.locator('#scene-subtitle').filter({hasText:worldName(42)}).waitFor();assert.deepEqual(await snapshot(),remembered);
+    await click(page,'存档');await click(page,'保存当前进度');await page.reload();await page.locator('#world-current').filter({hasText:worldName(42)}).waitFor({state:"attached"});assert.deepEqual(await snapshot(),remembered);
   });
   await check('更新参考库及加载新内容包不改当前世界，新世界实际包含扩展职业',async()=>{
     await click(page,'世界');await page.getByText('管理生成参考库',{exact:true}).click();
     await page.locator('#world-generation-content-import').setInputFiles(path.join(root,'content/generation/addon-content.json'));await page.locator('#world-message').filter({hasText:'校验通过'}).waitFor();
     await page.locator('#world-reference-import').setInputFiles(path.join(root,'content/generation/addon-reference.json'));await page.locator('#world-message').filter({hasText:'校验通过'}).waitFor();await click(page,'关闭世界');assert.deepEqual(await snapshot(),remembered);
     await click(page,'世界');await click(page,'生成并进入街区');const next=await snapshot(page,'addon-world');assert.ok(next.district.residents.some(r=>r.profession==='灯匠'));assert.equal(next.worldInstance.generation.contentPacks.length,initial.worldInstance.generation.contentPacks.length+1);
-    await click(page,'存档');await page.locator('#save-import').setInputFiles(path.join(out,'fixed-initial.json'));await page.locator('#save-message').filter({hasText:'已导入'}).waitFor();assert.equal(await page.locator('#scene-title').innerText(),'公寓');
+    await click(page,'存档');await page.locator('#save-import').setInputFiles(path.join(out,'fixed-initial.json'));await page.locator('#save-message').filter({hasText:'已导入'}).waitFor();assert.equal(await page.locator('#location-name').innerText(),'公寓');
     await page.locator('#save-import').setInputFiles(path.join(out,'current.json'));await page.locator('#save-message').filter({hasText:'已导入'}).waitFor();await click(page,'关闭存档');assert.deepEqual(await snapshot(),remembered);
     await page.screenshot({path:path.join(out,'desktop.png'),fullPage:true});
   });
   await check('进入固定测试世界后仍能读回生成存档，未保存切换不覆盖手动槽',async()=>{
-    await click(page,'世界');await click(page,'开始固定以太都市测试世界');assert.equal(await page.locator('#scene-title').innerText(),'公寓');await click(page,'存档');await click(page,'读取存档');await click(page,'关闭存档');assert.deepEqual(await snapshot(),remembered);
+    await click(page,'世界');await click(page,'开始固定以太都市测试世界');assert.equal(await page.locator('#location-name').innerText(),'公寓');await click(page,'存档');await click(page,'读取存档');await click(page,'关闭存档');assert.deepEqual(await snapshot(),remembered);
   });
   for(const seed of [7,42])await check(`种子${seed}独立HTML直接离线运行、行动、保存和刷新`,async()=>{
     const offline=await browser.newContext({viewport:{width:1280,height:900},acceptDownloads:true});const requests=[];
     await offline.route(/^https?:/,r=>{requests.push(r.request().url());return r.abort();});const op=await offline.newPage();op.on('pageerror',e=>errors.push(e.message));
-    await op.goto(pathToFileURL(path.join(root,`dist/WorldGenerator-Seed-${seed}.html`)).href);await op.locator('#scene-subtitle').filter({hasText:worldName(seed)}).waitFor();
+    await op.goto(pathToFileURL(path.join(root,`dist/WorldGenerator-Seed-${seed}.html`)).href);await op.locator('#world-current').filter({hasText:worldName(seed)}).waitFor({state:"attached"});
     await op.locator('[data-action="worldgen:action.rest.0"]').click();await op.waitForTimeout(300);const before=await snapshot(op,`offline-${seed}`);assert.equal(before.worldInstance.generation.seed,seed);
-    await click(op,'存档');await click(op,'保存当前进度');await op.reload();await op.locator('#scene-subtitle').filter({hasText:worldName(seed)}).waitFor();assert.deepEqual(await snapshot(op,`offline-${seed}-restored`),before);assert.deepEqual(requests,[]);await op.screenshot({path:path.join(out,`seed-${seed}.png`),fullPage:true});await offline.close();
+    await click(op,'存档');await click(op,'保存当前进度');await op.reload();await op.locator('#world-current').filter({hasText:worldName(seed)}).waitFor({state:"attached"});assert.deepEqual(await snapshot(op,`offline-${seed}-restored`),before);assert.deepEqual(requests,[]);await op.screenshot({path:path.join(out,`seed-${seed}.png`),fullPage:true});await offline.close();
   });
   assert.deepEqual(errors,[]);console.log(`World generator browser checks passed: ${results.length}`);
 }catch(error){results.push({name:'failure',status:'failed',reason:error.stack??String(error)});console.error(error);process.exitCode=1;}

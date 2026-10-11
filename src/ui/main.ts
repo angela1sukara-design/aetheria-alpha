@@ -14,6 +14,7 @@ import { renderDistrict } from './district-panel.ts';
 import type { JournalEntry } from './district-panel.ts';
 import { writingContext } from '../engine/writing-context.ts';
 import { mountWorldControls } from './world-panel.ts';
+import { mountPages } from './pages.ts';
 async function fetchJSON(url: URL): Promise<unknown> {
   const response = await fetch(url); if (!response.ok) throw new Error(`无法读取内容包（${response.status}）。`); return response.json();
 }
@@ -33,52 +34,63 @@ async function boot(): Promise<void> {
   const launch = globalThis as unknown as { aetheriaInitialSave?: string; aetheriaSaveSlot?: string };
   const saveSlot = launch.aetheriaSaveSlot ?? 'manual';
   let engine = new ActionExecutor(registry, createGameState(registry, newSeed()),texts);
-  let result: ActionResult | undefined; let busy = false;
-  function redraw(): void { const view=engine.view();renderGame(view, registry, result);renderDistrict(view,registry,texts,journal); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
+  let result: ActionResult | undefined; let busy = false; let browsing = false;
+  function redraw(): void { const view=engine.view();renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); pages.refresh(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
   function adopt(loaded: { state: import('../core/types.ts').GameState; registry?: import('../content/registry.ts').Registry }): void {
     registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry, fixedRegistry); saves = new SaveRepository(codec, store);
     engine = new ActionExecutor(registry, loaded.state, texts);
+    browsing = false;
   }
   const generation = embedded?.generation ?? { rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/lexicon-reference.json', import.meta.url)), content: await Promise.all(['neighborhood-content','lexicon-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))) };
   mountWorldControls({ source: () => fixedRegistry, defaults: generation, isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {
     if (generated) adopt({ state: generated.state, registry: generated.registry });
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });
-    result = undefined; redraw(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');
+    result = undefined; redraw(); pages.game(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');
   } });
   async function refreshSlot(): Promise<void> {
     const saved = await saves.load(saveSlot);
     byId<HTMLButtonElement>('save-read').disabled = saved.status !== 'ready';
     byId('save-info').textContent = saved.status === 'ready' ? `${(saved.registry??registry).location(saved.state.world.locationId).name} · ${formatClock(saved.state.clock.totalMinutes)} · ${saved.state.meta.revision} 次行动` : saved.status === 'empty' ? '尚无存档' : `已隔离：${saved.reason}`;
   }
+  const pages = mountPages(name => {
+    byId('page-action-feedback').textContent = '';
+    if (name === 'save') void refreshSlot().catch(error => { byId('save-message').textContent = `本地存档不可用：${error instanceof Error ? error.message : error}。你仍可导出 JSON。`; });
+  });
+  byId('location-review').addEventListener('click', () => {
+    const details = byId('location-details'); details.hidden = !details.hidden;
+    byId('location-review').setAttribute('aria-expanded', String(!details.hidden));
+  });
+  byId('scene-return').addEventListener('click', () => { browsing = true; redraw(); focusScene(); });
+  function focusScene(): void {
+    const heading = byId('scene-title'); heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true });
+    byId('location-details').hidden = true; byId('location-review').setAttribute('aria-expanded', 'false');
+    byId('location-name').scrollIntoView({ block: 'start', behavior: 'instant' });
+  }
   document.addEventListener('click', event => {
     const button = (event.target as Element).closest<HTMLButtonElement>('button[data-action]');
     if (!button || button.disabled || busy) return;
     busy = true; button.disabled = true;
-    const fromPeople = !!button.closest('#people-dialog');
+    const keepBodyPage = !!button.closest('#body-dialog');
     const revision = engine.snapshot().meta.revision;
     // 先锁按钮再提交；同一轮快速点击携带旧请求不会悄悄执行下一项行动。
     const params=button.dataset.action==='district:action.create'?{name:byId<HTMLInputElement>('character-name').value,ageYears:Number(byId<HTMLInputElement>('character-age').value)}:undefined;
     const actionResult = engine.performAction({ actionId: asId(button.dataset.action!),...(params?{params}:{}) }, revision, crypto.randomUUID());
     if (actionResult.ok) {
-      result = actionResult; redraw(); feedback('');
-      if (byId<HTMLDialogElement>('map-dialog').open) byId<HTMLDialogElement>('map-dialog').close();
-      if (fromPeople && byId<HTMLDialogElement>('people-dialog').open) byId<HTMLDialogElement>('people-dialog').close();
-    } else { feedback(actionResult.message, true); redraw(); }
+      result = actionResult; browsing = false; redraw(); feedback('');
+      if (keepBodyPage) byId('page-action-feedback').textContent = actionResult.text;
+      else { pages.game(); focusScene(); }
+    } else { feedback(actionResult.message, true); byId('page-action-feedback').textContent = actionResult.message; redraw(); }
     setTimeout(() => { busy = false; }, 250);
   });
   const dialogNames = ['map', 'body', 'people', 'save', 'log', 'quest', 'bag', 'discovery', 'pack', 'world'];
   async function openDialog(name: string): Promise<void> {
-    if (!dialogNames.includes(name)) return;
-    for (const other of dialogNames) if (other !== name && byId<HTMLDialogElement>(`${other}-dialog`).open) byId<HTMLDialogElement>(`${other}-dialog`).close();
-    const dialog = byId<HTMLDialogElement>(`${name}-dialog`); if (!dialog.open) dialog.showModal();
-    if (name === 'save') { try { await refreshSlot(); } catch (error) { byId('save-message').textContent = `本地存档不可用：${error instanceof Error ? error.message : error}。你仍可导出 JSON。`; } }
+    pages.open(name);
   }
   for (const name of dialogNames) byId(`${name}-open`).addEventListener('click', () => { void openDialog(name); });
   document.addEventListener('click', event => {
     const opener = (event.target as Element).closest<HTMLButtonElement>('button[data-dialog-open]');
     if (opener && !opener.disabled) void openDialog(opener.dataset.dialogOpen!);
   });
-  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-close]')) button.addEventListener('click', () => byId<HTMLDialogElement>(button.dataset.close!).close());
   async function storageAction(run: () => Promise<void>): Promise<void> {
     if (busy) return; busy = true;
     const buttons = [...byId('save-dialog').querySelectorAll<HTMLButtonElement>('button:not([data-close])')]; buttons.forEach(x => { x.disabled = true; });
