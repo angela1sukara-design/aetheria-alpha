@@ -1,0 +1,23 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-habit",
+  "batchId": "npc-habit.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-habit.b0001.0001",
+      "category": "npc-habit",
+      "subcategory": "整理习惯",
+      "name": "收工擦标牌",
+      "description": "忙完手边工作后，会把门口标牌上的灰尘擦掉。",
+      "examples": [
+        "临走又回头看一眼字迹是否清楚。"
+      ]
+    }
+  ]
+}

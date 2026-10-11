@@ -1,0 +1,1057 @@
+{
+  "format": "aetheria-lexicon-catalog",
+  "schemaVersion": 1,
+  "groups": {
+    "npc": "NPC",
+    "body": "身体与外观",
+    "world": "世界与环境",
+    "daily": "行为与日常",
+    "text": "文字素材"
+  },
+  "categories": [
+    {
+      "group": "npc",
+      "code": "npc-name",
+      "label": "姓名",
+      "kind": "named",
+      "target": 400,
+      "batchSize": 50,
+      "subcategories": [
+        "短名",
+        "复名",
+        "姓氏",
+        "全名",
+        "艺名"
+      ],
+      "variation": "音节节奏、文化来源、长短、正式程度；避免套用现有主角姓名",
+      "exampleSubcategory": "短名",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "npc",
+      "code": "npc-alias",
+      "label": "外号",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "手艺外号",
+        "生活外号",
+        "自选别称",
+        "熟人昵称",
+        "旧称"
+      ],
+      "variation": "外号来源与情感温度，不以身体差异取笑人物",
+      "exampleSubcategory": "手艺外号",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-address",
+      "label": "称呼",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "初见称呼",
+        "同行称呼",
+        "熟人称呼",
+        "正式称呼",
+        "自我介绍"
+      ],
+      "variation": "礼貌距离、亲疏与职业语域；不预设恋爱或服从关系",
+      "exampleSubcategory": "同行称呼",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-job",
+      "label": "职业",
+      "kind": "named",
+      "target": 300,
+      "batchSize": 50,
+      "subcategories": [
+        "手工职业",
+        "服务职业",
+        "知识职业",
+        "户外职业",
+        "公共事务"
+      ],
+      "variation": "工作对象、具体工序、工具与日常责任；不是职业技能表",
+      "exampleSubcategory": "手工职业",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "npc",
+      "code": "npc-identity",
+      "label": "社会身份",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "居住身份",
+        "群体身份",
+        "家庭身份",
+        "公共身份",
+        "过渡身份"
+      ],
+      "variation": "处境、归属与日常视角；不指定阵营敌友",
+      "exampleSubcategory": "公共身份",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-origin",
+      "label": "出身",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "地理出身",
+        "家庭环境",
+        "迁居背景",
+        "学徒背景",
+        "社区背景"
+      ],
+      "variation": "物质环境、教育经历与成长声音；避免阶层刻板印象",
+      "exampleSubcategory": "地理出身",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-trait",
+      "label": "性格",
+      "kind": "trait",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "处事倾向",
+        "表达倾向",
+        "边界意识",
+        "好奇倾向",
+        "压力表现"
+      ],
+      "variation": "关注对象、表达方式、矛盾面；不用同一性格换近义词",
+      "exampleSubcategory": "处事倾向",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "npc",
+      "code": "npc-habit",
+      "label": "习惯",
+      "kind": "trait",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "整理习惯",
+        "作息细节",
+        "思考习惯",
+        "随身习惯",
+        "感官偏好"
+      ],
+      "variation": "频率用日常语言描述，不写数值或时间表条件",
+      "exampleSubcategory": "整理习惯",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-interest",
+      "label": "兴趣",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "收藏兴趣",
+        "创作兴趣",
+        "研究兴趣",
+        "户外兴趣",
+        "社群兴趣"
+      ],
+      "variation": "兴趣对象、投入方式与欣赏角度",
+      "exampleSubcategory": "收藏兴趣",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-value",
+      "label": "价值观",
+      "kind": "trait",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "劳动观",
+        "互助观",
+        "自主观",
+        "传统观",
+        "资源观"
+      ],
+      "variation": "价值取向与生活中的取舍；不要直接赋予道德阵营",
+      "exampleSubcategory": "资源观",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-goal",
+      "label": "个人目标",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "短期生活目标",
+        "长期手艺目标",
+        "关系愿望",
+        "迁居愿望",
+        "自我探索"
+      ],
+      "variation": "具体期待、个人意义与不同生活规模；不写任务奖励",
+      "exampleSubcategory": "短期生活目标",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-history",
+      "label": "生活经历",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "求学经历",
+        "工作经历",
+        "搬迁经历",
+        "共同生活",
+        "失败与重来"
+      ],
+      "variation": "自足的经历种子，不写当前世界秘密或完整剧情",
+      "exampleSubcategory": "工作经历",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-speech",
+      "label": "语言风格",
+      "kind": "trait",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "句式习惯",
+        "比喻来源",
+        "语速印象",
+        "礼貌表达",
+        "纠错方式"
+      ],
+      "variation": "句长、停顿、词汇来源与谈话目的；不模仿真实作者",
+      "exampleSubcategory": "比喻来源",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "npc",
+      "code": "npc-expression",
+      "label": "表情与小动作",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "目光表现",
+        "面部表现",
+        "姿态细节",
+        "犹豫动作",
+        "放松动作"
+      ],
+      "variation": "单个可观察细节，不替观察者断言内心秘密",
+      "exampleSubcategory": "犹豫动作",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "body",
+      "code": "body-build",
+      "label": "体型",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "轮廓",
+        "比例",
+        "体态",
+        "体量印象",
+        "支撑外形"
+      ],
+      "variation": "轮廓与姿态的可见差异，不关联智力或价值高低",
+      "exampleSubcategory": "轮廓",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-form",
+      "label": "整体形态与种族概念",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "人形变体",
+        "多足形态",
+        "游水形态",
+        "悬浮形态",
+        "混合形态"
+      ],
+      "variation": "整体轮廓、生活质感与文化中性；不要求引擎已支持",
+      "exampleSubcategory": "游水形态",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-surface",
+      "label": "皮肤与表面",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "皮肤质感",
+        "角质表面",
+        "膜质表面",
+        "纹理",
+        "表面光泽"
+      ],
+      "variation": "触觉联想、光线表现与纹理尺度，不写抗性",
+      "exampleSubcategory": "皮肤质感",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-hair",
+      "label": "毛发",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "短绒",
+        "长毛",
+        "鬃毛",
+        "发丝",
+        "羽绒"
+      ],
+      "variation": "长度、走向、蓬松度与护理痕迹",
+      "exampleSubcategory": "短绒",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-scale",
+      "label": "鳞片与甲片",
+      "kind": "named",
+      "target": 100,
+      "batchSize": 50,
+      "subcategories": [
+        "细鳞",
+        "大片鳞",
+        "叠甲",
+        "局部鳞",
+        "鳞缘细节"
+      ],
+      "variation": "排列、边缘、磨损与色泽，不写防御效果",
+      "exampleSubcategory": "细鳞",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-color",
+      "label": "颜色与纹样",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "单色",
+        "渐变",
+        "斑纹",
+        "光泽色",
+        "局部配色"
+      ],
+      "variation": "色相、分布、明暗与命名意象，不只排列颜色组合",
+      "exampleSubcategory": "渐变",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-organ",
+      "label": "特殊器官",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "感知外观",
+        "附肢外观",
+        "囊与腔",
+        "冠与突起",
+        "发光外观"
+      ],
+      "variation": "形状、位置与感受性意象；不提供能力值、连接拓扑",
+      "exampleSubcategory": "囊与腔",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-beast",
+      "label": "兽化特征",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "耳部特征",
+        "尾部特征",
+        "爪蹄特征",
+        "吻部特征",
+        "羽翼特征"
+      ],
+      "variation": "局部轮廓、毛羽排列与生活细节；不假定完整动物人格",
+      "exampleSubcategory": "耳部特征",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-mechanical",
+      "label": "机械改装外观",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "义肢外壳",
+        "关节细节",
+        "维护痕迹",
+        "装饰改件",
+        "接口外观"
+      ],
+      "variation": "材料、工艺、使用痕迹与个人审美，不承诺功能",
+      "exampleSubcategory": "关节细节",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-anomaly",
+      "label": "异化特征",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "透明结构",
+        "非对称轮廓",
+        "流体外观",
+        "矿物外观",
+        "影光异常"
+      ],
+      "variation": "陌生感、可观察现象与审美变化；不是异常状态脚本",
+      "exampleSubcategory": "影光异常",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "body",
+      "code": "body-clothing",
+      "label": "服装",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "工作服",
+        "日常服",
+        "礼仪服",
+        "气候衣着",
+        "改制衣物"
+      ],
+      "variation": "剪裁、材质、穿用痕迹及不同身体的审美可能",
+      "exampleSubcategory": "工作服",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "body",
+      "code": "body-accessory",
+      "label": "装饰与佩件",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "首饰",
+        "布饰",
+        "工具佩件",
+        "纪念饰品",
+        "身体装饰"
+      ],
+      "variation": "制作方式、旧新程度与携带感，不赋予属性",
+      "exampleSubcategory": "首饰",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-terrain",
+      "label": "地形",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "坡地",
+        "岸线",
+        "洞隙",
+        "高台",
+        "平地"
+      ],
+      "variation": "地表材料、起伏尺度与行走观感；不定义可达性",
+      "exampleSubcategory": "坡地",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-building",
+      "label": "建筑",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "住宅",
+        "作坊",
+        "公共建筑",
+        "临时建筑",
+        "遗留建筑"
+      ],
+      "variation": "结构材料、入口、用途与修补历史，不写功能脚本",
+      "exampleSubcategory": "作坊",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "world",
+      "code": "world-room",
+      "label": "房间",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "居室",
+        "工作间",
+        "公共内室",
+        "储藏空间",
+        "过渡空间"
+      ],
+      "variation": "空间布局、日常用途与生活痕迹",
+      "exampleSubcategory": "公共内室",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "world",
+      "code": "world-district",
+      "label": "街区与地名",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "街名",
+        "巷名",
+        "街区名",
+        "聚落名",
+        "空间印象"
+      ],
+      "variation": "地名来历的生活意象与空间特征，不占用固定地图",
+      "exampleSubcategory": "巷名",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "world",
+      "code": "world-nature",
+      "label": "自然生态素材",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "植物外观",
+        "动物迹象",
+        "菌藻",
+        "生态景观",
+        "季节痕迹"
+      ],
+      "variation": "物种概念、共处景象与感官细节，不写繁殖模拟",
+      "exampleSubcategory": "植物外观",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-weather",
+      "label": "天气氛围",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "雨雾",
+        "晴光",
+        "风",
+        "冷热感",
+        "天气过渡"
+      ],
+      "variation": "光、声、触感与生活影响，避免每条都阴沉危险",
+      "exampleSubcategory": "雨雾",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "world",
+      "code": "world-culture",
+      "label": "社会文化",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "礼节",
+        "节庆",
+        "互助习俗",
+        "公共艺术",
+        "组织文化"
+      ],
+      "variation": "参与方式与日常意义；完整政治制度另列未来内容",
+      "exampleSubcategory": "互助习俗",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-workplace",
+      "label": "职业环境",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "制作场所",
+        "交易场所",
+        "照护场所",
+        "运输场所",
+        "知识场所"
+      ],
+      "variation": "工序痕迹、工具摆放、协作声音与环境气味",
+      "exampleSubcategory": "制作场所",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-object",
+      "label": "日用物件",
+      "kind": "named",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "容器",
+        "手工具",
+        "食器",
+        "记录物",
+        "食材与成品"
+      ],
+      "variation": "形状、材质与实际用途；不是道具数值定义",
+      "exampleSubcategory": "容器",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-facility",
+      "label": "公共设施",
+      "kind": "named",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "照明",
+        "供水",
+        "休息",
+        "告示",
+        "维护设施"
+      ],
+      "variation": "可见构造、普通用途与维护痕迹，不承诺可用交互",
+      "exampleSubcategory": "休息",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-detail",
+      "label": "环境细节",
+      "kind": "phrase",
+      "target": 300,
+      "batchSize": 50,
+      "subcategories": [
+        "磨损痕迹",
+        "临时摆放",
+        "光影",
+        "小型生长",
+        "人类活动痕迹"
+      ],
+      "variation": "单个清楚的观察焦点，不复制整段场景",
+      "exampleSubcategory": "磨损痕迹",
+      "currentUse": "可经编辑适配现有文本字段；尚未自动接入"
+    },
+    {
+      "group": "world",
+      "code": "world-scent",
+      "label": "气味",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "食物气味",
+        "植物气味",
+        "材料气味",
+        "潮湿气味",
+        "混合气味"
+      ],
+      "variation": "来源、浓淡与空间层次，不只换香味名",
+      "exampleSubcategory": "材料气味",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "world",
+      "code": "world-sound",
+      "label": "声音",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "工作声",
+        "生活声",
+        "自然声",
+        "机械声",
+        "远近层次"
+      ],
+      "variation": "节奏、远近与声源，不暗示必然事件",
+      "exampleSubcategory": "生活声",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-work",
+      "label": "工作动作",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "准备",
+        "制作",
+        "检查",
+        "整理",
+        "交接"
+      ],
+      "variation": "一个微小工序；不结算报酬或成功失败",
+      "exampleSubcategory": "整理",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-rest",
+      "label": "休息",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "坐歇",
+        "放松",
+        "独处",
+        "短暂停顿",
+        "睡前整理"
+      ],
+      "variation": "节奏与生活质感，不写精力恢复数值",
+      "exampleSubcategory": "坐歇",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-food",
+      "label": "进食与烹调",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "准备食物",
+        "品尝",
+        "分享",
+        "收拾餐具",
+        "饮用"
+      ],
+      "variation": "食材处理、习惯与感官；不假定所有形态以口进食",
+      "exampleSubcategory": "分享",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-move",
+      "label": "移动",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "步行细节",
+        "攀行意象",
+        "游动",
+        "滑行",
+        "搬运途中"
+      ],
+      "variation": "移动质感与空间关系；保留非人形素材不写寻路规则",
+      "exampleSubcategory": "游动",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-talk",
+      "label": "交谈动作",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "倾听",
+        "轮换话题",
+        "确认意思",
+        "寻找措辞",
+        "结束话题"
+      ],
+      "variation": "交谈过程的微动作，与对白句子库分开",
+      "exampleSubcategory": "倾听",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-observe",
+      "label": "观察动作",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "近看",
+        "远望",
+        "比较",
+        "侧听",
+        "翻查"
+      ],
+      "variation": "观察过程，不能凭动作自动发现秘密",
+      "exampleSubcategory": "比较",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-interact",
+      "label": "普通互动",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "借还物件",
+        "问路",
+        "协作准备",
+        "让出空间",
+        "示意邀请"
+      ],
+      "variation": "可拒绝的轻量互动；不替另一方决定回应或接触",
+      "exampleSubcategory": "让出空间",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-social",
+      "label": "社交习惯",
+      "kind": "trait",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "打招呼",
+        "待客",
+        "公共空间",
+        "同行相处",
+        "远距离联络"
+      ],
+      "variation": "习惯模式与表现，不重复单次互动片段",
+      "exampleSubcategory": "同行相处",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "daily",
+      "code": "daily-life",
+      "label": "普通生活动作",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "清洁",
+        "修补",
+        "收纳",
+        "购物准备",
+        "个人照料"
+      ],
+      "variation": "小而具体的生活过程，不写完成任务",
+      "exampleSubcategory": "清洁",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-opening",
+      "label": "对话开场",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "事务开场",
+        "闲聊开场",
+        "共同环境",
+        "礼貌问候",
+        "试探话题"
+      ],
+      "variation": "谈话目的与语气变化，不泄露主线信息",
+      "exampleSubcategory": "共同环境",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-reply",
+      "label": "回应",
+      "kind": "phrase",
+      "target": 300,
+      "batchSize": 50,
+      "subcategories": [
+        "认可",
+        "迟疑",
+        "澄清",
+        "不同意见",
+        "暂缓回答"
+      ],
+      "variation": "真实立场、信息需求与表达力度，不只替换是的",
+      "exampleSubcategory": "澄清",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-refusal",
+      "label": "拒绝与边界",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "拒绝帮忙",
+        "拒绝邀请",
+        "保留隐私",
+        "停止话题",
+        "提出替代"
+      ],
+      "variation": "边界清晰、语气多样，不强迫解释或嘲讽拒绝",
+      "exampleSubcategory": "拒绝帮忙",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-farewell",
+      "label": "告别",
+      "kind": "phrase",
+      "target": 150,
+      "batchSize": 50,
+      "subcategories": [
+        "短暂离开",
+        "工作告别",
+        "普通道别",
+        "未约定再见",
+        "留有余地"
+      ],
+      "variation": "时间感与关系距离，不创建日程或约会事实",
+      "exampleSubcategory": "普通道别",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-emotion",
+      "label": "情绪表达",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "高兴",
+        "烦闷",
+        "惋惜",
+        "释然",
+        "复杂心情"
+      ],
+      "variation": "情绪对象、强度与表达媒介，不强制玩家情绪",
+      "exampleSubcategory": "复杂心情",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-body",
+      "label": "身体动作短描",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "舒展",
+        "整理姿态",
+        "适应空间",
+        "静止细节",
+        "重心变化"
+      ],
+      "variation": "可嵌入正文的动作短描；与表情库、工作工序库保持焦点区别",
+      "exampleSubcategory": "适应空间",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-environment",
+      "label": "环境观察短描",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "空间印象",
+        "光线观察",
+        "使用痕迹",
+        "人群印象",
+        "视角变化"
+      ],
+      "variation": "两到三句围绕一个空间关系展开；区别单点环境细节",
+      "exampleSubcategory": "视角变化",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-tf-sense",
+      "label": "TF 感受",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "轮廓陌生感",
+        "感官变化",
+        "材质触感",
+        "重心感觉",
+        "情绪混合"
+      ],
+      "variation": "主观体验与细节，不写变化阶段、时长、永久性或效果",
+      "exampleSubcategory": "材质触感",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-tf-adapt",
+      "label": "TF 后适应",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "动作练习",
+        "衣物适应",
+        "日常工具",
+        "镜像认识",
+        "向他人表达"
+      ],
+      "variation": "尝试与学习过程，不承诺能力解锁或适应成功",
+      "exampleSubcategory": "日常工具",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    },
+    {
+      "group": "text",
+      "code": "text-encounter",
+      "label": "普通遭遇片段",
+      "kind": "phrase",
+      "target": 200,
+      "batchSize": 50,
+      "subcategories": [
+        "擦肩场景",
+        "公共等候",
+        "临时闲聊",
+        "工作旁观",
+        "生活小插曲"
+      ],
+      "variation": "自足的单幕观察，不能有选项分支、固定角色秘密或结算",
+      "exampleSubcategory": "生活小插曲",
+      "currentUse": "可先收录；具体场景与机制适配另行制作"
+    }
+  ]
+}

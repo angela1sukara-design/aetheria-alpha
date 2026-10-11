@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-talk",
+  "batchId": "daily-talk.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-talk.b0001.0001",
+      "category": "daily-talk",
+      "subcategory": "倾听",
+      "text": "对方没有急着接话，等旁边的机器声停下才重新看向你。",
+      "description": "等待噪声减弱后的交谈动作。"
+    }
+  ]
+}

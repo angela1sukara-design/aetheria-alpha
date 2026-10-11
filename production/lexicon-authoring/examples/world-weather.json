@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "world-weather",
+  "batchId": "world-weather.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.world-weather.b0001.0001",
+      "category": "world-weather",
+      "subcategory": "雨雾",
+      "text": "细雨贴着棚边落下，远处的招牌像隔了一层磨砂玻璃。",
+      "description": "偏柔和的细雨氛围，没有规定天气状态或持续时间。"
+    }
+  ]
+}

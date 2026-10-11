@@ -1,0 +1,1720 @@
+{
+  "format": "aetheria-lexicon-plan",
+  "schemaVersion": 1,
+  "target": 10700,
+  "standardBatchSize": 50,
+  "tasks": [
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-name/b0001.md"
+    },
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-name/b0002.md"
+    },
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-name/b0003.md"
+    },
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-name/b0004.md"
+    },
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0005",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "有机与机械共存：个体审美、维护痕迹、不同身体轮廓，不赋予能力或优劣",
+      "prompt": "tasks/npc-name/b0005.md"
+    },
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0006",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "社区记忆与新生活：旧习、新住户、微小愿望与不同代际视角，不借用固定剧情",
+      "prompt": "tasks/npc-name/b0006.md"
+    },
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0007",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "开阔生态与陌生形态：水生、羽膜、矿物、共生意象，保持具体生活触感",
+      "prompt": "tasks/npc-name/b0007.md"
+    },
+    {
+      "library": "npc-name",
+      "batchId": "npc-name.b0008",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "克制幽默与日常反差：轻巧而不嘲弄，兼顾严肃、直率、含蓄、健谈的表达",
+      "prompt": "tasks/npc-name/b0008.md"
+    },
+    {
+      "library": "npc-alias",
+      "batchId": "npc-alias.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-alias/b0001.md"
+    },
+    {
+      "library": "npc-alias",
+      "batchId": "npc-alias.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-alias/b0002.md"
+    },
+    {
+      "library": "npc-alias",
+      "batchId": "npc-alias.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-alias/b0003.md"
+    },
+    {
+      "library": "npc-alias",
+      "batchId": "npc-alias.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-alias/b0004.md"
+    },
+    {
+      "library": "npc-address",
+      "batchId": "npc-address.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-address/b0001.md"
+    },
+    {
+      "library": "npc-address",
+      "batchId": "npc-address.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-address/b0002.md"
+    },
+    {
+      "library": "npc-address",
+      "batchId": "npc-address.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-address/b0003.md"
+    },
+    {
+      "library": "npc-job",
+      "batchId": "npc-job.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-job/b0001.md"
+    },
+    {
+      "library": "npc-job",
+      "batchId": "npc-job.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-job/b0002.md"
+    },
+    {
+      "library": "npc-job",
+      "batchId": "npc-job.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-job/b0003.md"
+    },
+    {
+      "library": "npc-job",
+      "batchId": "npc-job.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-job/b0004.md"
+    },
+    {
+      "library": "npc-job",
+      "batchId": "npc-job.b0005",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "有机与机械共存：个体审美、维护痕迹、不同身体轮廓，不赋予能力或优劣",
+      "prompt": "tasks/npc-job/b0005.md"
+    },
+    {
+      "library": "npc-job",
+      "batchId": "npc-job.b0006",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "社区记忆与新生活：旧习、新住户、微小愿望与不同代际视角，不借用固定剧情",
+      "prompt": "tasks/npc-job/b0006.md"
+    },
+    {
+      "library": "npc-identity",
+      "batchId": "npc-identity.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-identity/b0001.md"
+    },
+    {
+      "library": "npc-identity",
+      "batchId": "npc-identity.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-identity/b0002.md"
+    },
+    {
+      "library": "npc-identity",
+      "batchId": "npc-identity.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-identity/b0003.md"
+    },
+    {
+      "library": "npc-origin",
+      "batchId": "npc-origin.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-origin/b0001.md"
+    },
+    {
+      "library": "npc-origin",
+      "batchId": "npc-origin.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-origin/b0002.md"
+    },
+    {
+      "library": "npc-origin",
+      "batchId": "npc-origin.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-origin/b0003.md"
+    },
+    {
+      "library": "npc-trait",
+      "batchId": "npc-trait.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-trait/b0001.md"
+    },
+    {
+      "library": "npc-trait",
+      "batchId": "npc-trait.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-trait/b0002.md"
+    },
+    {
+      "library": "npc-trait",
+      "batchId": "npc-trait.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-trait/b0003.md"
+    },
+    {
+      "library": "npc-trait",
+      "batchId": "npc-trait.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-trait/b0004.md"
+    },
+    {
+      "library": "npc-habit",
+      "batchId": "npc-habit.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-habit/b0001.md"
+    },
+    {
+      "library": "npc-habit",
+      "batchId": "npc-habit.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-habit/b0002.md"
+    },
+    {
+      "library": "npc-habit",
+      "batchId": "npc-habit.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-habit/b0003.md"
+    },
+    {
+      "library": "npc-habit",
+      "batchId": "npc-habit.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-habit/b0004.md"
+    },
+    {
+      "library": "npc-interest",
+      "batchId": "npc-interest.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-interest/b0001.md"
+    },
+    {
+      "library": "npc-interest",
+      "batchId": "npc-interest.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-interest/b0002.md"
+    },
+    {
+      "library": "npc-interest",
+      "batchId": "npc-interest.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-interest/b0003.md"
+    },
+    {
+      "library": "npc-value",
+      "batchId": "npc-value.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-value/b0001.md"
+    },
+    {
+      "library": "npc-value",
+      "batchId": "npc-value.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-value/b0002.md"
+    },
+    {
+      "library": "npc-value",
+      "batchId": "npc-value.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-value/b0003.md"
+    },
+    {
+      "library": "npc-goal",
+      "batchId": "npc-goal.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-goal/b0001.md"
+    },
+    {
+      "library": "npc-goal",
+      "batchId": "npc-goal.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-goal/b0002.md"
+    },
+    {
+      "library": "npc-goal",
+      "batchId": "npc-goal.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-goal/b0003.md"
+    },
+    {
+      "library": "npc-goal",
+      "batchId": "npc-goal.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-goal/b0004.md"
+    },
+    {
+      "library": "npc-history",
+      "batchId": "npc-history.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-history/b0001.md"
+    },
+    {
+      "library": "npc-history",
+      "batchId": "npc-history.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-history/b0002.md"
+    },
+    {
+      "library": "npc-history",
+      "batchId": "npc-history.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-history/b0003.md"
+    },
+    {
+      "library": "npc-history",
+      "batchId": "npc-history.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-history/b0004.md"
+    },
+    {
+      "library": "npc-speech",
+      "batchId": "npc-speech.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-speech/b0001.md"
+    },
+    {
+      "library": "npc-speech",
+      "batchId": "npc-speech.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-speech/b0002.md"
+    },
+    {
+      "library": "npc-speech",
+      "batchId": "npc-speech.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-speech/b0003.md"
+    },
+    {
+      "library": "npc-expression",
+      "batchId": "npc-expression.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/npc-expression/b0001.md"
+    },
+    {
+      "library": "npc-expression",
+      "batchId": "npc-expression.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/npc-expression/b0002.md"
+    },
+    {
+      "library": "npc-expression",
+      "batchId": "npc-expression.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/npc-expression/b0003.md"
+    },
+    {
+      "library": "npc-expression",
+      "batchId": "npc-expression.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/npc-expression/b0004.md"
+    },
+    {
+      "library": "body-build",
+      "batchId": "body-build.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-build/b0001.md"
+    },
+    {
+      "library": "body-build",
+      "batchId": "body-build.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-build/b0002.md"
+    },
+    {
+      "library": "body-build",
+      "batchId": "body-build.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-build/b0003.md"
+    },
+    {
+      "library": "body-form",
+      "batchId": "body-form.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-form/b0001.md"
+    },
+    {
+      "library": "body-form",
+      "batchId": "body-form.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-form/b0002.md"
+    },
+    {
+      "library": "body-form",
+      "batchId": "body-form.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-form/b0003.md"
+    },
+    {
+      "library": "body-form",
+      "batchId": "body-form.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/body-form/b0004.md"
+    },
+    {
+      "library": "body-surface",
+      "batchId": "body-surface.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-surface/b0001.md"
+    },
+    {
+      "library": "body-surface",
+      "batchId": "body-surface.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-surface/b0002.md"
+    },
+    {
+      "library": "body-surface",
+      "batchId": "body-surface.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-surface/b0003.md"
+    },
+    {
+      "library": "body-surface",
+      "batchId": "body-surface.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/body-surface/b0004.md"
+    },
+    {
+      "library": "body-hair",
+      "batchId": "body-hair.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-hair/b0001.md"
+    },
+    {
+      "library": "body-hair",
+      "batchId": "body-hair.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-hair/b0002.md"
+    },
+    {
+      "library": "body-hair",
+      "batchId": "body-hair.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-hair/b0003.md"
+    },
+    {
+      "library": "body-scale",
+      "batchId": "body-scale.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-scale/b0001.md"
+    },
+    {
+      "library": "body-scale",
+      "batchId": "body-scale.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-scale/b0002.md"
+    },
+    {
+      "library": "body-color",
+      "batchId": "body-color.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-color/b0001.md"
+    },
+    {
+      "library": "body-color",
+      "batchId": "body-color.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-color/b0002.md"
+    },
+    {
+      "library": "body-color",
+      "batchId": "body-color.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-color/b0003.md"
+    },
+    {
+      "library": "body-organ",
+      "batchId": "body-organ.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-organ/b0001.md"
+    },
+    {
+      "library": "body-organ",
+      "batchId": "body-organ.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-organ/b0002.md"
+    },
+    {
+      "library": "body-organ",
+      "batchId": "body-organ.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-organ/b0003.md"
+    },
+    {
+      "library": "body-organ",
+      "batchId": "body-organ.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/body-organ/b0004.md"
+    },
+    {
+      "library": "body-beast",
+      "batchId": "body-beast.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-beast/b0001.md"
+    },
+    {
+      "library": "body-beast",
+      "batchId": "body-beast.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-beast/b0002.md"
+    },
+    {
+      "library": "body-beast",
+      "batchId": "body-beast.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-beast/b0003.md"
+    },
+    {
+      "library": "body-beast",
+      "batchId": "body-beast.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/body-beast/b0004.md"
+    },
+    {
+      "library": "body-mechanical",
+      "batchId": "body-mechanical.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-mechanical/b0001.md"
+    },
+    {
+      "library": "body-mechanical",
+      "batchId": "body-mechanical.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-mechanical/b0002.md"
+    },
+    {
+      "library": "body-mechanical",
+      "batchId": "body-mechanical.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-mechanical/b0003.md"
+    },
+    {
+      "library": "body-mechanical",
+      "batchId": "body-mechanical.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/body-mechanical/b0004.md"
+    },
+    {
+      "library": "body-anomaly",
+      "batchId": "body-anomaly.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-anomaly/b0001.md"
+    },
+    {
+      "library": "body-anomaly",
+      "batchId": "body-anomaly.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-anomaly/b0002.md"
+    },
+    {
+      "library": "body-anomaly",
+      "batchId": "body-anomaly.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-anomaly/b0003.md"
+    },
+    {
+      "library": "body-clothing",
+      "batchId": "body-clothing.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-clothing/b0001.md"
+    },
+    {
+      "library": "body-clothing",
+      "batchId": "body-clothing.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-clothing/b0002.md"
+    },
+    {
+      "library": "body-clothing",
+      "batchId": "body-clothing.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-clothing/b0003.md"
+    },
+    {
+      "library": "body-clothing",
+      "batchId": "body-clothing.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/body-clothing/b0004.md"
+    },
+    {
+      "library": "body-accessory",
+      "batchId": "body-accessory.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/body-accessory/b0001.md"
+    },
+    {
+      "library": "body-accessory",
+      "batchId": "body-accessory.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/body-accessory/b0002.md"
+    },
+    {
+      "library": "body-accessory",
+      "batchId": "body-accessory.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/body-accessory/b0003.md"
+    },
+    {
+      "library": "world-terrain",
+      "batchId": "world-terrain.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-terrain/b0001.md"
+    },
+    {
+      "library": "world-terrain",
+      "batchId": "world-terrain.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-terrain/b0002.md"
+    },
+    {
+      "library": "world-terrain",
+      "batchId": "world-terrain.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-terrain/b0003.md"
+    },
+    {
+      "library": "world-building",
+      "batchId": "world-building.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-building/b0001.md"
+    },
+    {
+      "library": "world-building",
+      "batchId": "world-building.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-building/b0002.md"
+    },
+    {
+      "library": "world-building",
+      "batchId": "world-building.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-building/b0003.md"
+    },
+    {
+      "library": "world-building",
+      "batchId": "world-building.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/world-building/b0004.md"
+    },
+    {
+      "library": "world-room",
+      "batchId": "world-room.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-room/b0001.md"
+    },
+    {
+      "library": "world-room",
+      "batchId": "world-room.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-room/b0002.md"
+    },
+    {
+      "library": "world-room",
+      "batchId": "world-room.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-room/b0003.md"
+    },
+    {
+      "library": "world-district",
+      "batchId": "world-district.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-district/b0001.md"
+    },
+    {
+      "library": "world-district",
+      "batchId": "world-district.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-district/b0002.md"
+    },
+    {
+      "library": "world-district",
+      "batchId": "world-district.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-district/b0003.md"
+    },
+    {
+      "library": "world-nature",
+      "batchId": "world-nature.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-nature/b0001.md"
+    },
+    {
+      "library": "world-nature",
+      "batchId": "world-nature.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-nature/b0002.md"
+    },
+    {
+      "library": "world-nature",
+      "batchId": "world-nature.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-nature/b0003.md"
+    },
+    {
+      "library": "world-weather",
+      "batchId": "world-weather.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-weather/b0001.md"
+    },
+    {
+      "library": "world-weather",
+      "batchId": "world-weather.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-weather/b0002.md"
+    },
+    {
+      "library": "world-weather",
+      "batchId": "world-weather.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-weather/b0003.md"
+    },
+    {
+      "library": "world-weather",
+      "batchId": "world-weather.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/world-weather/b0004.md"
+    },
+    {
+      "library": "world-culture",
+      "batchId": "world-culture.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-culture/b0001.md"
+    },
+    {
+      "library": "world-culture",
+      "batchId": "world-culture.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-culture/b0002.md"
+    },
+    {
+      "library": "world-culture",
+      "batchId": "world-culture.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-culture/b0003.md"
+    },
+    {
+      "library": "world-culture",
+      "batchId": "world-culture.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/world-culture/b0004.md"
+    },
+    {
+      "library": "world-workplace",
+      "batchId": "world-workplace.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-workplace/b0001.md"
+    },
+    {
+      "library": "world-workplace",
+      "batchId": "world-workplace.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-workplace/b0002.md"
+    },
+    {
+      "library": "world-workplace",
+      "batchId": "world-workplace.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-workplace/b0003.md"
+    },
+    {
+      "library": "world-workplace",
+      "batchId": "world-workplace.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/world-workplace/b0004.md"
+    },
+    {
+      "library": "world-object",
+      "batchId": "world-object.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-object/b0001.md"
+    },
+    {
+      "library": "world-object",
+      "batchId": "world-object.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-object/b0002.md"
+    },
+    {
+      "library": "world-object",
+      "batchId": "world-object.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-object/b0003.md"
+    },
+    {
+      "library": "world-object",
+      "batchId": "world-object.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/world-object/b0004.md"
+    },
+    {
+      "library": "world-facility",
+      "batchId": "world-facility.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-facility/b0001.md"
+    },
+    {
+      "library": "world-facility",
+      "batchId": "world-facility.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-facility/b0002.md"
+    },
+    {
+      "library": "world-facility",
+      "batchId": "world-facility.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-facility/b0003.md"
+    },
+    {
+      "library": "world-detail",
+      "batchId": "world-detail.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-detail/b0001.md"
+    },
+    {
+      "library": "world-detail",
+      "batchId": "world-detail.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-detail/b0002.md"
+    },
+    {
+      "library": "world-detail",
+      "batchId": "world-detail.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-detail/b0003.md"
+    },
+    {
+      "library": "world-detail",
+      "batchId": "world-detail.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/world-detail/b0004.md"
+    },
+    {
+      "library": "world-detail",
+      "batchId": "world-detail.b0005",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "有机与机械共存：个体审美、维护痕迹、不同身体轮廓，不赋予能力或优劣",
+      "prompt": "tasks/world-detail/b0005.md"
+    },
+    {
+      "library": "world-detail",
+      "batchId": "world-detail.b0006",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "社区记忆与新生活：旧习、新住户、微小愿望与不同代际视角，不借用固定剧情",
+      "prompt": "tasks/world-detail/b0006.md"
+    },
+    {
+      "library": "world-scent",
+      "batchId": "world-scent.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-scent/b0001.md"
+    },
+    {
+      "library": "world-scent",
+      "batchId": "world-scent.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-scent/b0002.md"
+    },
+    {
+      "library": "world-scent",
+      "batchId": "world-scent.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-scent/b0003.md"
+    },
+    {
+      "library": "world-sound",
+      "batchId": "world-sound.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/world-sound/b0001.md"
+    },
+    {
+      "library": "world-sound",
+      "batchId": "world-sound.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/world-sound/b0002.md"
+    },
+    {
+      "library": "world-sound",
+      "batchId": "world-sound.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/world-sound/b0003.md"
+    },
+    {
+      "library": "daily-work",
+      "batchId": "daily-work.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-work/b0001.md"
+    },
+    {
+      "library": "daily-work",
+      "batchId": "daily-work.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-work/b0002.md"
+    },
+    {
+      "library": "daily-work",
+      "batchId": "daily-work.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-work/b0003.md"
+    },
+    {
+      "library": "daily-work",
+      "batchId": "daily-work.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/daily-work/b0004.md"
+    },
+    {
+      "library": "daily-rest",
+      "batchId": "daily-rest.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-rest/b0001.md"
+    },
+    {
+      "library": "daily-rest",
+      "batchId": "daily-rest.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-rest/b0002.md"
+    },
+    {
+      "library": "daily-rest",
+      "batchId": "daily-rest.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-rest/b0003.md"
+    },
+    {
+      "library": "daily-food",
+      "batchId": "daily-food.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-food/b0001.md"
+    },
+    {
+      "library": "daily-food",
+      "batchId": "daily-food.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-food/b0002.md"
+    },
+    {
+      "library": "daily-food",
+      "batchId": "daily-food.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-food/b0003.md"
+    },
+    {
+      "library": "daily-move",
+      "batchId": "daily-move.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-move/b0001.md"
+    },
+    {
+      "library": "daily-move",
+      "batchId": "daily-move.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-move/b0002.md"
+    },
+    {
+      "library": "daily-move",
+      "batchId": "daily-move.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-move/b0003.md"
+    },
+    {
+      "library": "daily-talk",
+      "batchId": "daily-talk.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-talk/b0001.md"
+    },
+    {
+      "library": "daily-talk",
+      "batchId": "daily-talk.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-talk/b0002.md"
+    },
+    {
+      "library": "daily-talk",
+      "batchId": "daily-talk.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-talk/b0003.md"
+    },
+    {
+      "library": "daily-observe",
+      "batchId": "daily-observe.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-observe/b0001.md"
+    },
+    {
+      "library": "daily-observe",
+      "batchId": "daily-observe.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-observe/b0002.md"
+    },
+    {
+      "library": "daily-observe",
+      "batchId": "daily-observe.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-observe/b0003.md"
+    },
+    {
+      "library": "daily-interact",
+      "batchId": "daily-interact.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-interact/b0001.md"
+    },
+    {
+      "library": "daily-interact",
+      "batchId": "daily-interact.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-interact/b0002.md"
+    },
+    {
+      "library": "daily-interact",
+      "batchId": "daily-interact.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-interact/b0003.md"
+    },
+    {
+      "library": "daily-interact",
+      "batchId": "daily-interact.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/daily-interact/b0004.md"
+    },
+    {
+      "library": "daily-social",
+      "batchId": "daily-social.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-social/b0001.md"
+    },
+    {
+      "library": "daily-social",
+      "batchId": "daily-social.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-social/b0002.md"
+    },
+    {
+      "library": "daily-social",
+      "batchId": "daily-social.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-social/b0003.md"
+    },
+    {
+      "library": "daily-life",
+      "batchId": "daily-life.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/daily-life/b0001.md"
+    },
+    {
+      "library": "daily-life",
+      "batchId": "daily-life.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/daily-life/b0002.md"
+    },
+    {
+      "library": "daily-life",
+      "batchId": "daily-life.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/daily-life/b0003.md"
+    },
+    {
+      "library": "daily-life",
+      "batchId": "daily-life.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/daily-life/b0004.md"
+    },
+    {
+      "library": "text-opening",
+      "batchId": "text-opening.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-opening/b0001.md"
+    },
+    {
+      "library": "text-opening",
+      "batchId": "text-opening.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-opening/b0002.md"
+    },
+    {
+      "library": "text-opening",
+      "batchId": "text-opening.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-opening/b0003.md"
+    },
+    {
+      "library": "text-opening",
+      "batchId": "text-opening.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-opening/b0004.md"
+    },
+    {
+      "library": "text-reply",
+      "batchId": "text-reply.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-reply/b0001.md"
+    },
+    {
+      "library": "text-reply",
+      "batchId": "text-reply.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-reply/b0002.md"
+    },
+    {
+      "library": "text-reply",
+      "batchId": "text-reply.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-reply/b0003.md"
+    },
+    {
+      "library": "text-reply",
+      "batchId": "text-reply.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-reply/b0004.md"
+    },
+    {
+      "library": "text-reply",
+      "batchId": "text-reply.b0005",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "有机与机械共存：个体审美、维护痕迹、不同身体轮廓，不赋予能力或优劣",
+      "prompt": "tasks/text-reply/b0005.md"
+    },
+    {
+      "library": "text-reply",
+      "batchId": "text-reply.b0006",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "社区记忆与新生活：旧习、新住户、微小愿望与不同代际视角，不借用固定剧情",
+      "prompt": "tasks/text-reply/b0006.md"
+    },
+    {
+      "library": "text-refusal",
+      "batchId": "text-refusal.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-refusal/b0001.md"
+    },
+    {
+      "library": "text-refusal",
+      "batchId": "text-refusal.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-refusal/b0002.md"
+    },
+    {
+      "library": "text-refusal",
+      "batchId": "text-refusal.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-refusal/b0003.md"
+    },
+    {
+      "library": "text-farewell",
+      "batchId": "text-farewell.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-farewell/b0001.md"
+    },
+    {
+      "library": "text-farewell",
+      "batchId": "text-farewell.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-farewell/b0002.md"
+    },
+    {
+      "library": "text-farewell",
+      "batchId": "text-farewell.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-farewell/b0003.md"
+    },
+    {
+      "library": "text-emotion",
+      "batchId": "text-emotion.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-emotion/b0001.md"
+    },
+    {
+      "library": "text-emotion",
+      "batchId": "text-emotion.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-emotion/b0002.md"
+    },
+    {
+      "library": "text-emotion",
+      "batchId": "text-emotion.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-emotion/b0003.md"
+    },
+    {
+      "library": "text-emotion",
+      "batchId": "text-emotion.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-emotion/b0004.md"
+    },
+    {
+      "library": "text-body",
+      "batchId": "text-body.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-body/b0001.md"
+    },
+    {
+      "library": "text-body",
+      "batchId": "text-body.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-body/b0002.md"
+    },
+    {
+      "library": "text-body",
+      "batchId": "text-body.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-body/b0003.md"
+    },
+    {
+      "library": "text-body",
+      "batchId": "text-body.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-body/b0004.md"
+    },
+    {
+      "library": "text-environment",
+      "batchId": "text-environment.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-environment/b0001.md"
+    },
+    {
+      "library": "text-environment",
+      "batchId": "text-environment.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-environment/b0002.md"
+    },
+    {
+      "library": "text-environment",
+      "batchId": "text-environment.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-environment/b0003.md"
+    },
+    {
+      "library": "text-environment",
+      "batchId": "text-environment.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-environment/b0004.md"
+    },
+    {
+      "library": "text-tf-sense",
+      "batchId": "text-tf-sense.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-tf-sense/b0001.md"
+    },
+    {
+      "library": "text-tf-sense",
+      "batchId": "text-tf-sense.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-tf-sense/b0002.md"
+    },
+    {
+      "library": "text-tf-sense",
+      "batchId": "text-tf-sense.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-tf-sense/b0003.md"
+    },
+    {
+      "library": "text-tf-sense",
+      "batchId": "text-tf-sense.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-tf-sense/b0004.md"
+    },
+    {
+      "library": "text-tf-adapt",
+      "batchId": "text-tf-adapt.b0001",
+      "size": 50,
+      "stage": "trial",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-tf-adapt/b0001.md"
+    },
+    {
+      "library": "text-tf-adapt",
+      "batchId": "text-tf-adapt.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-tf-adapt/b0002.md"
+    },
+    {
+      "library": "text-tf-adapt",
+      "batchId": "text-tf-adapt.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-tf-adapt/b0003.md"
+    },
+    {
+      "library": "text-tf-adapt",
+      "batchId": "text-tf-adapt.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-tf-adapt/b0004.md"
+    },
+    {
+      "library": "text-encounter",
+      "batchId": "text-encounter.b0001",
+      "size": 50,
+      "stage": "coverage",
+      "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定",
+      "prompt": "tasks/text-encounter/b0001.md"
+    },
+    {
+      "library": "text-encounter",
+      "batchId": "text-encounter.b0002",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "手艺与修补：旧物、协作、小店、学徒、细致操作，避免全部采用机械隐喻",
+      "prompt": "tasks/text-encounter/b0002.md"
+    },
+    {
+      "library": "text-encounter",
+      "batchId": "text-encounter.b0003",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "潮湿水岸与植物共居：雨棚、水渠、苔蕨、生活节奏，包含明快和安静面",
+      "prompt": "tasks/text-encounter/b0003.md"
+    },
+    {
+      "library": "text-encounter",
+      "batchId": "text-encounter.b0004",
+      "size": 50,
+      "stage": "expansion",
+      "theme": "晴燥高地与远行者：石阶、遮阳、布帘、迁居见闻，避免地域与性格刻板绑定",
+      "prompt": "tasks/text-encounter/b0004.md"
+    }
+  ]
+}

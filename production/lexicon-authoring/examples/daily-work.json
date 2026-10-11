@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "daily-work",
+  "batchId": "daily-work.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-work.b0001.0001",
+      "category": "daily-work",
+      "subcategory": "整理",
+      "text": "对方把不同粗细的线分别绕好，在每束末端夹上小纸片。",
+      "description": "绕线与标记的工作动作，不包含任务结算。"
+    }
+  ]
+}

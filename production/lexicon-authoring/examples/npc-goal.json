@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-goal",
+  "batchId": "npc-goal.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-goal.b0001.0001",
+      "category": "npc-goal",
+      "subcategory": "短期生活目标",
+      "name": "留出一间安静工位",
+      "description": "想把拥挤的工作角整理好，让学徒也能坐下来练习。"
+    }
+  ]
+}

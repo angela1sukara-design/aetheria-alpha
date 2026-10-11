@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-body",
+  "batchId": "text-body.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.text-body.b0001.0001",
+      "category": "text-body",
+      "subcategory": "适应空间",
+      "text": "你调整站姿，让拖在身后的尾梢绕过门槛，衣摆随之轻轻一晃。",
+      "description": "带尾形态的动作素材，不声称当前玩家具备尾部。"
+    }
+  ]
+}

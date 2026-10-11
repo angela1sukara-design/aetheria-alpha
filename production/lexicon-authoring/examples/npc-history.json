@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-history",
+  "batchId": "npc-history.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-history.b0001.0001",
+      "category": "npc-history",
+      "subcategory": "工作经历",
+      "name": "第一次独自守店",
+      "description": "曾在搭档外出时独自照看小店，学会坦率地告诉客人哪些事还不会做。"
+    }
+  ]
+}

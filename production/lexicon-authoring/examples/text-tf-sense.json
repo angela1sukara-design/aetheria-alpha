@@ -1,0 +1,20 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "text-tf-sense",
+  "batchId": "text-tf-sense.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.text-tf-sense.b0001.0001",
+      "category": "text-tf-sense",
+      "subcategory": "材质触感",
+      "text": "新生的鳞缘擦过衣料，那种细密的触感让你停下来，慢慢辨认身体与布面的界线。",
+      "description": "鳞片变化后的候选感受；不表示游戏已经执行变化。"
+    }
+  ]
+}

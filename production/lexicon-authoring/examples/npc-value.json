@@ -1,0 +1,23 @@
+{
+  "format": "aetheria-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "npc-value",
+  "batchId": "npc-value.b0001",
+  "source": {
+    "producer": "填写领取任务时登记的名称",
+    "model": "填写实际使用的模型或 unknown",
+    "theme": "普通居民与公共生活：朴素材料、平常心情、不同礼貌距离，减少稀奇设定"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-value.b0001.0001",
+      "category": "npc-value",
+      "subcategory": "资源观",
+      "name": "物尽其用",
+      "description": "珍惜可修复的旧物，也愿意承认有些东西应当放下。",
+      "examples": [
+        "先看旧件还能怎样使用，再讨论买新的。"
+      ]
+    }
+  ]
+}

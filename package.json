@@ -7,6 +7,9 @@
     "node": ">=24"
   },
   "scripts": {
+    "lexicon": "node scripts/lexicon/cli.mjs",
+    "lexicon:prepare": "node scripts/lexicon/prepare.mjs",
+    "test:lexicon": "node --test tests/lexicon.test.ts",
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs && node scripts/build-standalone.mjs && node scripts/build-world-samples.mjs",
     "typecheck": "tsc --noEmit",
