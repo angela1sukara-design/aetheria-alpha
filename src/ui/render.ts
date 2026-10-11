@@ -2,6 +2,7 @@ import type { ActionOption, ActionResult, GameView, Id } from '../core/types.ts'
 import type { Registry } from '../content/registry.ts';
 import { formatClock } from '../engine/clock.ts';
 import { renderBodyPanel } from './body-panel.ts';
+import { renderNPCPanel } from './npc-panel.ts';
 export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag); node.className = className; if (text) node.textContent = text; return node;
 }
@@ -49,6 +50,7 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   }
   renderMap(view, registry);
   renderBodyPanel(view, registry, byId('body-content'), option => actionButton(option));
+  renderNPCPanel(view, registry);
   const log = byId('log-content'); log.replaceChildren();
   for (const tx of [...view.state.ledger.transactions].reverse().slice(0, 20)) {
     const item = element('article', 'log-item'); item.append(element('small', '', `行动 ${tx.result.revision}`), element('p', '', tx.result.text)); log.append(item);

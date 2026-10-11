@@ -5,6 +5,7 @@ import { advanceTransformationTime, performTransformation } from './transformati
 import { formatClock } from './clock.ts';
 import { draw } from './rng.ts';
 import { activeEvent } from './events.ts';
+import { npcPresent, rememberNPC } from './npc.ts';
 export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
   for (const effect of effects) {
@@ -41,6 +42,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       case 'event.start': {
         if (activeEvent(draft)) throw new RuleError('EVENT_ACTIVE', '本切片暂不支持嵌套事件。');
         const def = registry.event(effect.id);
+        for (const id of def.participantIds ?? []) if (!npcPresent(draft, registry, id)) throw new RuleError('NPC_ABSENT', `${registry.npc(id).name}不在这里。`);
         const instance: EventInstance = {
           instanceId: `event-${context.transactionId}`, definitionId: def.id, nodeId: def.startNode,
           status: 'active', textByNode: {}, draws: [], locals: {},
@@ -61,6 +63,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       }
       case 'tf.apply': case 'tf.enqueue': case 'tf.pause': case 'tf.resume': case 'tf.cancel':
         performTransformation(effect.op, effect.id, draft, registry, context.transactionId, context.actionId, context.changes); break;
+      case 'npc.remember': rememberNPC(draft, registry, effect.npcId, effect.memoryId, effect.relationship, context.actionId, context.transactionId, context.changes); break;
       default: throw new RuleError('UNSUPPORTED_EFFECT', '效果未实现，事务未提交。');
     }
   }

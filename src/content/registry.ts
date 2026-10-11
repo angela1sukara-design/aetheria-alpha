@@ -1,6 +1,7 @@
 import { clone, freeze } from '../core/types.ts';
 import type { ActionDef, ContentPack, EventDef, FlagDef, HookDef, Id, LocationDef, PackRef, RouteDef, VariableDef } from '../core/types.ts';
 import type { BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef } from '../core/body-types.ts';
+import type { NPCDef, NPCMemoryDef, SpeciesDef } from '../core/npc-types.ts';
 import { RuleError } from '../core/errors.ts';
 export class Registry {
   #definitions = new Map<string, { kind: string; value: unknown }>();
@@ -14,6 +15,8 @@ export class Registry {
   readonly bodyTemplates: BodyTemplateDef[];
   readonly transformations: TFDef[];
   readonly globalActionHooks: Id[];
+  readonly npcs: NPCDef[];
+  readonly npcMemories: NPCMemoryDef[];
   constructor(packs: ContentPack[], references: PackRef[]) {
     // 私有 Map 永远不暴露；深冻结所有定义，避免 UI/扩展包直接改注册表。
     const data = freeze(clone(packs));
@@ -24,8 +27,10 @@ export class Registry {
     this.bodyTemplates = freeze(data.flatMap(x => x.bodyTemplates ?? []));
     this.transformations = freeze(data.flatMap(x => x.transformations ?? []));
     this.globalActionHooks = freeze(data.flatMap(x => x.globalActionHooks ?? []).sort());
+    this.npcs = freeze(data.flatMap(x => x.npcs ?? []).sort((a, b) => a.id.localeCompare(b.id, 'en')));
+    this.npcMemories = freeze(data.flatMap(x => x.npcMemories ?? []));
     for (const pack of data) {
-      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
+      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
       for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text });
       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);
     }
@@ -48,6 +53,10 @@ export class Registry {
   bodyTemplate(id: Id): BodyTemplateDef { return this.get(id, 'bodyTemplates'); }
   bodyPatch(id: Id): BodyPatchDef { return this.get(id, 'bodyPatches'); }
   transformation(id: Id): TFDef { return this.get(id, 'transformations'); }
+  npc(id: Id): NPCDef { return this.get(id, 'npcs'); }
+  npcMemory(id: Id): NPCMemoryDef { return this.get(id, 'npcMemories'); }
+  species(id: Id): SpeciesDef { return this.get(id, 'species'); }
+  actionsForHook(id: Id): ActionDef[] { this.hook(id); return (this.#actionsByHook.get(id) ?? []).map(x => this.action(x)); }
   globalActions(): ActionDef[] { return this.globalActionHooks.flatMap(h => (this.#actionsByHook.get(h) ?? []).map(x => this.action(x))); }
   text(id: Id): string { return this.get(id, 'texts'); }
   actionsAt(id: Id): ActionDef[] { return (this.#actionsByHook.get(this.location(id).actionHook) ?? []).map(x => this.action(x)); }

@@ -31,7 +31,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   for (const p of [...packs].sort((a, b) => a.manifest.id.localeCompare(b.manifest.id, 'en'))) visit(p);
   const definitions = new Map<string, { type: string; pack: ContentPack; value: unknown }>();
   for (const p of sorted) {
-    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations'] as const) {
+    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories'] as const) {
       for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
@@ -55,12 +55,25 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     else if (c.op === 'event.state') ref(p, c.id, 'events', path);
     else if (c.op === 'body.hasPart') ref(p, c.definitionId, 'bodyParts', path);
     else if (c.op === 'tf.state') ref(p, c.id, 'transformations', path);
+    else if (c.op === 'npc.present' || c.op === 'npc.memory' || c.op === 'npc.relation') {
+      ref(p, c.npcId, 'npcs', path);
+      if (c.op === 'npc.memory') { ref(p, c.memoryId, 'npcMemories', path); const memory = definitions.get(c.memoryId)?.value as NonNullable<ContentPack['npcMemories']>[number] | undefined; if (memory && memory.npcId !== c.npcId) fail(p, 'NPC_MEMORY_OWNER', path, '记忆与人物不匹配。'); }
+      if (!p.manifest.requiresCapabilities.includes('npc.fixed.v1')) fail(p, 'CAPABILITY_UNDECLARED', path, 'NPC 条件需声明 npc.fixed.v1。');
+    }
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
     if (e.op === 'var.change') ref(p, e.id, 'variables', path);
     else if (e.op === 'flag.set') ref(p, e.id, 'flags', path);
     else if (e.op === 'location.move') ref(p, e.routeId, 'routes', path);
     else if (e.op === 'event.start') ref(p, e.id, 'events', path);
+    else if (e.op === 'npc.remember') {
+      ref(p, e.npcId, 'npcs', path); ref(p, e.memoryId, 'npcMemories', path);
+      const memory = definitions.get(e.memoryId)?.value as NonNullable<ContentPack['npcMemories']>[number] | undefined;
+      const event = context ? definitions.get(context.eventId)?.value as ContentPack['events'][number] | undefined : undefined;
+      if (memory && memory.npcId !== e.npcId) fail(p, 'NPC_MEMORY_OWNER', path, '记忆与人物不匹配。');
+      if (!event?.participantIds?.includes(e.npcId)) fail(p, 'NPC_MEMORY_CONTEXT', path, 'NPC 记忆只能由有该参与者的事件写入。');
+      if (!p.manifest.requiresCapabilities.includes('npc.fixed.v1')) fail(p, 'CAPABILITY_UNDECLARED', path, 'NPC 效果需声明 npc.fixed.v1。');
+    }
     else if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') {
       ref(p, e.id, 'transformations', path);
       const def = definitions.get(e.id)?.value as NonNullable<ContentPack['transformations']>[number] | undefined;
@@ -90,6 +103,9 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       a.effects.forEach((x, i) => checkEffect(p, x, `/actions/${a.id}/effects/${i}`, a.context));
     }
     for (const e of p.events) {
+      for (const npcId of e.participantIds ?? []) ref(p, npcId, 'npcs', `/events/${e.id}/participantIds`);
+      // 玩家年龄协议尚未实现；不能因为 NPC 有年龄就开放成人事件。
+      if (e.rating === 'adult') fail(p, 'ADULT_PLAYER_UNVERIFIED', `/events/${e.id}/rating`, '本阶段尚无玩家成年资格协议，成人事件不可加载。');
       const nodes = new Map(e.nodes.map(x => [x.id, x]));
       if (nodes.size !== e.nodes.length || !nodes.has(e.startNode)) fail(p, 'INVALID_EVENT_NODES', `/events/${e.id}`, '节点重复或缺开局节点。');
       for (const n of e.nodes) {
@@ -111,6 +127,20 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
   }
   const templates = sorted.flatMap(p => p.bodyTemplates ?? []);
+  const canonKeys = new Set<string>();
+  for (const p of sorted) {
+    if ((p.npcs?.length || p.npcMemories?.length || p.species?.length) && !p.manifest.requiresCapabilities.includes('npc.fixed.v1')) fail(p, 'CAPABILITY_UNDECLARED', '/npcs', '人物定义需声明 npc.fixed.v1。');
+    for (const npc of p.npcs ?? []) {
+      if (canonKeys.has(npc.canonKey)) fail(p, 'NPC_CANON_DUPLICATE', `/npcs/${npc.id}`, '固定人物身份键重复。'); canonKeys.add(npc.canonKey);
+      ref(p, npc.speciesId, 'species', `/npcs/${npc.id}/speciesId`); ref(p, npc.descriptionText, 'texts', `/npcs/${npc.id}/descriptionText`); ref(p, npc.topicHook, 'hooks', `/npcs/${npc.id}/topicHook`);
+      if (npc.topicHook.split(':')[0] !== p.manifest.namespace) fail(p, 'NPC_HOOK_OWNERSHIP', `/npcs/${npc.id}/topicHook`, '人物话题 Hook 必须由人物包拥有。');
+      for (const s of npc.schedule) { if (s.locationId) ref(p, s.locationId, 'locations', `/npcs/${npc.id}/schedule`); ref(p, s.activityText, 'texts', `/npcs/${npc.id}/schedule`); }
+      // 每分钟恰好一个日程；locationId:null 明确表示不公开的离场，缺省不是瞬移。
+      for (let now = 0; now < 1440; now++) if (npc.schedule.filter(s => s.start < s.end ? now >= s.start && now < s.end : now >= s.start || now < s.end).length !== 1) { fail(p, 'NPC_SCHEDULE_COVERAGE', `/npcs/${npc.id}/schedule`, '日程存在重叠或未覆盖的分钟。'); break; }
+    }
+    for (const memory of p.npcMemories ?? []) { ref(p, memory.npcId, 'npcs', `/npcMemories/${memory.id}/npcId`); ref(p, memory.textKey, 'texts', `/npcMemories/${memory.id}/textKey`); }
+    for (const e of p.events) if (e.participantIds?.length && !p.manifest.requiresCapabilities.includes('npc.fixed.v1')) fail(p, 'CAPABILITY_UNDECLARED', `/events/${e.id}/participantIds`, '事件参与者需声明 npc.fixed.v1。');
+  }
   if (templates.length && templates.filter(x => x.initial).length !== 1) fail(sorted[0], 'BODY_ENTRYPOINT', '/bodyTemplates', '身体模板需有且只有一个默认入口。');
   for (const p of sorted) {
     if ((p.bodyParts?.length || p.bodyTemplates?.length || p.bodyPatches?.length) && !p.manifest.requiresCapabilities.includes('body.graph.v1')) fail(p, 'CAPABILITY_UNDECLARED', '/manifest/requiresCapabilities', '身体定义需要声明 body.graph.v1。');

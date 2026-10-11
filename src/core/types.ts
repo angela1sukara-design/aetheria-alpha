@@ -1,4 +1,5 @@
 import type { BodyGraph, BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef, TFInstance, TFState, BodyCapability } from './body-types.ts';
+import type { NPCDef, NPCState, NPCMemoryDef, SpeciesDef, RelationField } from './npc-types.ts';
 export type Id = `${string}:${string}`;
 export type Scalar = string | number | boolean;
 export type Condition =
@@ -11,7 +12,10 @@ export type Condition =
   | { op: 'event.state'; id: Id; state: 'active' | 'completed' | 'unseen' }
   | { op: 'body.hasPart'; definitionId: Id }
   | { op: 'body.hasCapability'; capability: BodyCapability; count: number }
-  | { op: 'tf.state'; id: Id; state: TFState | 'idle' };
+  | { op: 'tf.state'; id: Id; state: TFState | 'idle' }
+  | { op: 'npc.present'; npcId: Id }
+  | { op: 'npc.memory'; npcId: Id; memoryId: Id; value: boolean }
+  | { op: 'npc.relation'; npcId: Id; field: RelationField; comparison: 'eq' | 'gte' | 'lte'; value: number };
 export type Effect =
   | { op: 'var.change'; id: Id; amount: number }
   | { op: 'flag.set'; id: Id; value: boolean }
@@ -20,7 +24,8 @@ export type Effect =
   | { op: 'event.start'; id: Id }
   | { op: 'event.advance'; nodeId: string }
   | { op: 'event.exit' }
-  | { op: 'tf.apply' | 'tf.enqueue' | 'tf.pause' | 'tf.resume' | 'tf.cancel'; id: Id };
+  | { op: 'tf.apply' | 'tf.enqueue' | 'tf.pause' | 'tf.resume' | 'tf.cancel'; id: Id }
+  | { op: 'npc.remember'; npcId: Id; memoryId: Id; relationship: Record<RelationField, number> };
 export interface VariableDef { id: Id; label: string; initial: number; min: number; max: number; unit: string }
 export interface FlagDef { id: Id; initial: boolean }
 export interface HookDef { id: Id; accepts: 'action'; visibility: 'public' }
@@ -33,13 +38,13 @@ export interface ActionDef {
   surface?: 'scene' | 'body';
 }
 export interface EventNode { id: string; type: 'choice' | 'exit'; textVariants: Id[]; actionIds: Id[]; onEnter: Effect[] }
-export interface EventDef { id: Id; startNode: string; nodes: EventNode[] }
+export interface EventDef { id: Id; startNode: string; nodes: EventNode[]; participantIds?: Id[]; rating?: 'general' | 'adult' }
 export interface PackManifest {
   id: string; namespace: string; version: string; schemaVersion: 1; engineApiVersion: '0.1';
   author: string; status: 'draft' | 'reviewed' | 'approved';
   dependencies: { id: string; version: string; optional: boolean }[];
   requiresCapabilities: string[];
-  migrations: []; // Alpha 不伪装有迁移功能；版本不匹配必须隔离。
+  migrations: []; // 通用内容包迁移未实现；仅存档codec允许已发布官方版本的精确升级。
 }
 export interface ContentPack {
   manifest: PackManifest; variables: VariableDef[]; flags: FlagDef[]; hooks: HookDef[];
@@ -48,6 +53,7 @@ export interface ContentPack {
   start?: { locationId: Id; minutes: number };
   bodyParts?: BodyPartDef[]; bodyTemplates?: BodyTemplateDef[]; bodyPatches?: BodyPatchDef[];
   transformations?: TFDef[]; globalActionHooks?: Id[];
+  species?: SpeciesDef[]; npcs?: NPCDef[]; npcMemories?: NPCMemoryDef[];
 }
 export interface PackRef { id: string; version: string; hash: string }
 export interface EventInstance {
@@ -62,11 +68,12 @@ export interface ActionResult {
 }
 export interface Transaction { requestId: string; fingerprint: string; result: ActionResult }
 export interface GameState {
-  meta: { schemaVersion: 2; engineVersion: '0.1-stage2'; revision: number; packs: PackRef[] };
+  meta: { schemaVersion: 3; engineVersion: '0.1-stage3'; revision: number; packs: PackRef[] };
   clock: { totalMinutes: number; crossedDays: number[] };
   world: { locationId: Id; knownLocationIds: Id[] };
   player: { variables: Record<Id, number>; flags: Record<Id, boolean>; body: BodyGraph | null };
   tfQueues: TFInstance[];
+  npcs: NPCState[];
   eventInstances: EventInstance[]; activeEventStack: string[];
   rng: { seed: number; streams: Record<string, { state: number; draws: number }> };
   ledger: { transactions: Transaction[] };

@@ -29,9 +29,17 @@ for (const suffix of ['travel.street_clinic', 'clinic.consult', 'consult.offer.a
 }
 assert.equal(engine.snapshot().tfQueues.at(-1).status, 'completed');
 assert.ok(engine.snapshot().player.body.parts.some(p => p.definitionId === 'aetheria-tf:part.tail.mechanical'));
+assert.equal(engine.performAction({ actionId: 'aetheria-tf:action.travel.clinic_street' }, engine.snapshot().meta.revision, 'compiled-return').ok, true);
+for (const actionId of ['aetheria-social:action.travel.street_salon', 'aetheria-social:action.velvet.meet', 'aetheria-social:action.talk.order', 'aetheria-social:action.talk.order.accept', 'aetheria-social:action.travel.salon_street', 'aetheria:action.travel.street_market', 'aetheria-social:action.market.order', 'aetheria:action.travel.market_street', 'aetheria-social:action.travel.street_salon', 'aetheria-social:action.velvet.return', 'aetheria-social:action.talk.report']) {
+  const result = engine.performAction({ actionId }, engine.snapshot().meta.revision, `compiled-npc-${engine.snapshot().meta.revision}`);
+  assert.equal(result.ok, true, `${actionId}: ${result.message}`);
+}
+assert.equal(engine.snapshot().npcs[0].relationship.trust, 7);
 const codec = new SaveCodec(registry); const decoded = await codec.decode(await codec.encode(engine.snapshot()));
 assert.equal(decoded.status, 'ready'); assert.deepEqual(decoded.state, engine.snapshot());
 const html = await readFile(path.join(root, 'index.html'), 'utf8'); assert.ok(html.includes('./src/ui/main.js'));
 const legacy = await codec.decode(await readFile(new URL('../tests/fixtures/stage1-save.json', import.meta.url), 'utf8'));
-assert.equal(legacy.status, 'ready'); assert.equal(legacy.state.meta.schemaVersion, 2);
-console.log('Distribution check passed: ESM imports, JSON loading, daily/event/BodyGraph/TF execution, schema-2 save round trip, stage-1 migration. This is not browser QA.');
+assert.equal(legacy.status, 'ready'); assert.equal(legacy.state.meta.schemaVersion, 3);
+const stage2 = await codec.decode(await readFile(new URL('../tests/fixtures/stage2-save.json', import.meta.url), 'utf8'));
+assert.equal(stage2.status, 'ready'); assert.equal(stage2.state.tfQueues[0].status, 'paused'); assert.equal(stage2.state.tfQueues[0].elapsedMinutes, 15);
+console.log('Distribution check passed: ESM imports, JSON loading, daily/event/BodyGraph/TF/NPC quest execution, schema-3 save round trip, stage-1 and stage-2 migration. This is not browser QA.');

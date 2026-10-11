@@ -4,7 +4,7 @@ import { ActionExecutor } from '../src/engine/executor.ts';
 import { createGameState } from '../src/engine/state.ts';
 import type { ContentPack, Id } from '../src/core/types.ts';
 export async function packs(): Promise<ContentPack[]> {
-  return Promise.all(['core', 'world', 'reshaping'].map(async name => JSON.parse(await readFile(new URL(`../content/${name}/pack.json`, import.meta.url), 'utf8'))));
+  return Promise.all(['core', 'world', 'reshaping', 'social'].map(async name => JSON.parse(await readFile(new URL(`../content/${name}/pack.json`, import.meta.url), 'utf8'))));
 }
 export async function game(seed = 123456) { const registry = await loadPacks(await packs()); return { registry, engine: new ActionExecutor(registry, createGameState(registry, seed)) }; }
 export function act(engine: ActionExecutor, suffix: string, requestId = crypto.randomUUID()) {

@@ -1,8 +1,9 @@
 import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
+import { RELATION_FIELDS } from '../core/npc-types.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import type { ContentPack } from '../core/types.ts';
-export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1'] as const;
+export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1', 'npc.fixed.v1'] as const;
 type Obj = Record<string, unknown>;
 /** 只冻结本切片实际使用的契约；未实现操作符必须导入失败，不能静默跳过。 */
 export function parsePack(input: unknown): ContentPack {
@@ -39,6 +40,9 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'body.hasPart') { const x = obj(value, path, ['op', 'definitionId']); id(x.definitionId, `${path}/definitionId`); }
     else if (op === 'body.hasCapability') { const x = obj(value, path, ['op', 'capability', 'count']); choice(x.capability, `${path}/capability`, [...BODY_CAPABILITIES]); integer(x.count, `${path}/count`, 1, 128); }
     else if (op === 'tf.state') { const x = obj(value, path, ['op', 'id', 'state']); id(x.id, `${path}/id`); choice(x.state, `${path}/state`, ['idle', 'active', 'paused', 'blocked', 'completed', 'cancelled']); }
+    else if (op === 'npc.present') { const x = obj(value, path, ['op', 'npcId']); id(x.npcId, `${path}/npcId`); }
+    else if (op === 'npc.memory') { const x = obj(value, path, ['op', 'npcId', 'memoryId', 'value']); id(x.npcId, `${path}/npcId`); id(x.memoryId, `${path}/memoryId`); boolean(x.value, `${path}/value`); }
+    else if (op === 'npc.relation') { const x = obj(value, path, ['op', 'npcId', 'field', 'comparison', 'value']); id(x.npcId, `${path}/npcId`); choice(x.field, `${path}/field`, [...RELATION_FIELDS]); choice(x.comparison, `${path}/comparison`, ['eq', 'gte', 'lte']); integer(x.value, `${path}/value`, -100, 100); }
     else fail(`${path}/op`, '未知或未实现的条件操作符。', 'UNSUPPORTED_OPCODE');
   }
   function effect(value: unknown, path: string): void {
@@ -51,9 +55,10 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'event.advance') { const x = obj(value, path, ['op', 'nodeId']); str(x.nodeId, `${path}/nodeId`); }
     else if (op === 'event.exit') obj(value, path, ['op']);
     else if (['tf.apply', 'tf.enqueue', 'tf.pause', 'tf.resume', 'tf.cancel'].includes(String(op))) { const x = obj(value, path, ['op', 'id']); id(x.id, `${path}/id`); }
+    else if (op === 'npc.remember') { const x = obj(value, path, ['op', 'npcId', 'memoryId', 'relationship']); id(x.npcId, `${path}/npcId`); id(x.memoryId, `${path}/memoryId`); const d = obj(x.relationship, `${path}/relationship`, [...RELATION_FIELDS]); for (const field of RELATION_FIELDS) integer(d[field], `${path}/relationship/${field}`, -100, 100); }
     else fail(`${path}/op`, '未知或未实现的效果操作符。', 'UNSUPPORTED_OPCODE');
   }
-  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks']);
+  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories']);
   const m = obj(root.manifest, '/manifest', ['id', 'namespace', 'version', 'schemaVersion', 'engineApiVersion', 'author', 'status', 'dependencies', 'requiresCapabilities', 'migrations']);
   if (typeof m.id === 'string') packId = m.id;
   str(m.id, '/manifest/id'); str(m.author, '/manifest/author');
@@ -70,12 +75,22 @@ export function parsePack(input: unknown): ContentPack {
   list(root.locations, '/locations', (v, p) => { const x = obj(v, p, ['id', 'name', 'subtitle', 'textKey', 'actionHook', 'map']); for (const k of ['id', 'textKey', 'actionHook']) id(x[k], `${p}/${k}`); str(x.name, `${p}/name`); str(x.subtitle, `${p}/subtitle`); const map = obj(x.map, `${p}/map`, ['x', 'y']); integer(map.x, `${p}/map/x`, 0, 100); integer(map.y, `${p}/map/y`, 0, 100); });
   list(root.routes, '/routes', (v, p) => { const x = obj(v, p, ['id', 'from', 'to']); for (const k of ['id', 'from', 'to']) id(x[k], `${p}/${k}`); });
   list(root.actions, '/actions', (v, p) => { const x = obj(v, p, ['id', 'label', 'hint', 'group', 'conditions', 'effects', 'resultText', 'context', 'surface']); id(x.id, `${p}/id`); id(x.resultText, `${p}/resultText`); if (x.surface !== undefined) choice(x.surface, `${p}/surface`, ['scene', 'body']); str(x.label, `${p}/label`); str(x.hint, `${p}/hint`); choice(x.group, `${p}/group`, ['travel', 'daily', 'explore', 'event']); list(x.conditions, `${p}/conditions`, condition); list(x.effects, `${p}/effects`, effect); if (x.context) { const c = obj(x.context, `${p}/context`, ['eventId', 'nodeId']); id(c.eventId, `${p}/context/eventId`); str(c.nodeId, `${p}/context/nodeId`); } if (x.group === 'event' && !x.context) fail(`${p}/context`, '事件动作必须绑定事件及节点。'); if (!Array.isArray(x.effects) || !x.effects.length) fail(`${p}/effects`, '没有可执行效果的按钮不可注册。'); });
-  list(root.events, '/events', (v, p) => { const x = obj(v, p, ['id', 'startNode', 'nodes']); id(x.id, `${p}/id`); str(x.startNode, `${p}/startNode`); list(x.nodes, `${p}/nodes`, (v, p) => { const n = obj(v, p, ['id', 'type', 'textVariants', 'actionIds', 'onEnter']); str(n.id, `${p}/id`); choice(n.type, `${p}/type`, ['choice', 'exit']); list(n.textVariants, `${p}/textVariants`, id); list(n.actionIds, `${p}/actionIds`, id); list(n.onEnter, `${p}/onEnter`, effect); if (!Array.isArray(n.textVariants) || !n.textVariants.length) fail(`${p}/textVariants`, '必须有回退文字。'); }); });
+  list(root.events, '/events', (v, p) => { const x = obj(v, p, ['id', 'startNode', 'nodes', 'participantIds', 'rating']); id(x.id, `${p}/id`); str(x.startNode, `${p}/startNode`); if (x.participantIds !== undefined) { list(x.participantIds, `${p}/participantIds`, id); if (Array.isArray(x.participantIds) && new Set(x.participantIds).size !== x.participantIds.length) fail(p, '事件参与者重复。'); } if (x.rating !== undefined) choice(x.rating, `${p}/rating`, ['general', 'adult']); list(x.nodes, `${p}/nodes`, (v, p) => { const n = obj(v, p, ['id', 'type', 'textVariants', 'actionIds', 'onEnter']); str(n.id, `${p}/id`); choice(n.type, `${p}/type`, ['choice', 'exit']); list(n.textVariants, `${p}/textVariants`, id); list(n.actionIds, `${p}/actionIds`, id); list(n.onEnter, `${p}/onEnter`, effect); if (!Array.isArray(n.textVariants) || !n.textVariants.length) fail(`${p}/textVariants`, '必须有回退文字。'); }); });
   if (!root.texts || typeof root.texts !== 'object' || Array.isArray(root.texts)) fail('/texts', '需要文字字典。');
   else for (const [k, v] of Object.entries(root.texts)) { id(k, `/texts/${k}`); str(v, `/texts/${k}`); }
   list(root.contributions, '/contributions', (v, p) => { const x = obj(v, p, ['hookId', 'actionIds']); id(x.hookId, `${p}/hookId`); list(x.actionIds, `${p}/actionIds`, id); });
   if (root.start) { const x = obj(root.start, '/start', ['locationId', 'minutes']); id(x.locationId, '/start/locationId'); integer(x.minutes, '/start/minutes', 0); }
   function token(value: unknown, path: string): void { if (typeof value !== 'string' || !/^[a-z][a-z0-9_.-]{0,79}$/.test(value)) fail(path, '需要稳定的局部实例/锚点 ID。'); }
+  list(root.species ?? [], '/species', (v, p) => { const x = obj(v, p, ['id', 'label', 'intelligent', 'adultAgeYears']); id(x.id, `${p}/id`); str(x.label, `${p}/label`); boolean(x.intelligent, `${p}/intelligent`); integer(x.adultAgeYears, `${p}/adultAgeYears`, 1, 10000); });
+  list(root.npcs ?? [], '/npcs', (v, p) => {
+    const x = obj(v, p, ['id', 'canonKey', 'name', 'role', 'descriptionText', 'speciesId', 'ageYears', 'topicHook', 'schedule']);
+    for (const k of ['id', 'descriptionText', 'speciesId', 'topicHook']) id(x[k], `${p}/${k}`);
+    token(x.canonKey, `${p}/canonKey`); for (const k of ['name', 'role']) str(x[k], `${p}/${k}`);
+    if (x.ageYears !== null) integer(x.ageYears, `${p}/ageYears`, 0, 10000);
+    list(x.schedule, `${p}/schedule`, (v, p) => { const s = obj(v, p, ['start', 'end', 'locationId', 'activityText']); integer(s.start, `${p}/start`, 0, 1439); integer(s.end, `${p}/end`, 0, 1439); if (s.start === s.end) fail(p, '日程时间窗口不可为空。'); if (s.locationId !== null) id(s.locationId, `${p}/locationId`); id(s.activityText, `${p}/activityText`); });
+    if (!Array.isArray(x.schedule) || !x.schedule.length || x.schedule.length > 32) fail(p, '日程需有1–32个时段。');
+  });
+  list(root.npcMemories ?? [], '/npcMemories', (v, p) => { const x = obj(v, p, ['id', 'npcId', 'textKey']); id(x.id, `${p}/id`); id(x.npcId, `${p}/npcId`); id(x.textKey, `${p}/textKey`); });
   list(root.bodyParts ?? [], '/bodyParts', (v, p) => {
     const x = obj(v, p, ['id', 'label', 'kind', 'material', 'capabilities', 'anchors']); id(x.id, `${p}/id`); str(x.label, `${p}/label`);
     choice(x.kind, `${p}/kind`, [...PART_KINDS]); choice(x.material, `${p}/material`, ['organic', 'mechanical']);

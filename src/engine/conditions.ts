@@ -3,6 +3,7 @@ import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
 import { bodyTraits } from './body.ts';
 import { MINUTES_PER_DAY } from './clock.ts';
+import { npcPresent, npcState, hasMemory } from './npc.ts';
 export interface Check { pass: boolean; reason: string }
 /** 条件求值是纯读取：不能在这里抽 RNG，也不能推进时钟。 */
 export function evaluate(condition: Condition, state: GameState, registry: Registry): Check {
@@ -40,6 +41,9 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     case 'body.hasPart': pass = state.player.body?.parts.some(x => x.definitionId === condition.definitionId) ?? false; reason = `需要${registry.bodyPart(condition.definitionId).label}。`; break;
     case 'body.hasCapability': { const n = bodyTraits(state.player.body, registry)[condition.capability]; pass = n >= condition.count; reason = `需要 ${condition.count} 个可用${{ grasp: '抓握部位', walk: '行走部位', hear: '听觉部位', balance: '平衡部位', tailGrip: '尾部抓握部位' }[condition.capability]}（当前 ${n}）。`; break; }
     case 'tf.state': { const jobs = state.tfQueues.filter(x => x.definitionId === condition.id); pass = condition.state === 'idle' ? !jobs.some(x => ['active', 'paused', 'blocked'].includes(x.status)) : jobs.some(x => x.status === condition.state); reason = '当前改造进度不符合这项行动。'; break; }
+    case 'npc.present': pass = npcPresent(state, registry, condition.npcId); reason = `${registry.npc(condition.npcId).name}此刻不在这里。`; break;
+    case 'npc.memory': pass = hasMemory(state, condition.npcId, condition.memoryId) === condition.value; reason = condition.value ? '还没有一起经历这件事。' : '这件事已经记住了。'; break;
+    case 'npc.relation': { const value = npcState(state, condition.npcId).relationship[condition.field]; pass = condition.comparison === 'eq' ? value === condition.value : condition.comparison === 'gte' ? value >= condition.value : value <= condition.value; reason = `${registry.npc(condition.npcId).name}与你还不够熟悉。`; break; }
     default: throw new RuleError('UNSUPPORTED_CONDITION', '内容包使用了未实现的 Condition。');
   }
   return { pass, reason: pass ? '' : reason };

@@ -1,0 +1,1030 @@
+{
+  "manifest": {
+    "id": "aetheria/social",
+    "namespace": "aetheria-social",
+    "version": "0.1.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria project — official world subpack, trial content",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "hook.action.v1",
+      "npc.fixed.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [
+    {
+      "id": "aetheria-social:flag.order_checked",
+      "initial": false
+    }
+  ],
+  "hooks": [
+    {
+      "id": "aetheria-social:hook.salon.actions",
+      "accepts": "action",
+      "visibility": "public"
+    },
+    {
+      "id": "aetheria-social:hook.velvet.topics",
+      "accepts": "action",
+      "visibility": "public"
+    }
+  ],
+  "locations": [
+    {
+      "id": "aetheria-social:location.salon",
+      "name": "薇尔维特沙龙",
+      "subtitle": "柜台旁的灯光 · 话题还可以继续",
+      "textKey": "aetheria-social:text.salon",
+      "actionHook": "aetheria-social:hook.salon.actions",
+      "map": {
+        "x": 80,
+        "y": 26
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "aetheria-social:route.street_salon",
+      "from": "aetheria:location.street",
+      "to": "aetheria-social:location.salon"
+    },
+    {
+      "id": "aetheria-social:route.salon_street",
+      "from": "aetheria-social:location.salon",
+      "to": "aetheria:location.street"
+    }
+  ],
+  "actions": [
+    {
+      "id": "aetheria-social:action.travel.street_salon",
+      "label": "前往薇尔维特沙龙",
+      "hint": "步行10分钟 · 精力−2",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria-social:route.street_salon"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.travel.street_salon"
+    },
+    {
+      "id": "aetheria-social:action.travel.salon_street",
+      "label": "前往主街",
+      "hint": "步行10分钟 · 精力−2",
+      "group": "travel",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "location.move",
+          "routeId": "aetheria-social:route.salon_street"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.travel.salon_street"
+    },
+    {
+      "id": "aetheria-social:action.salon.wait",
+      "label": "在门厅等候半小时",
+      "hint": "30分钟 · 时间与正在进行的改造一起推进",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        }
+      ],
+      "resultText": "aetheria-social:text.result.salon.wait"
+    },
+    {
+      "id": "aetheria-social:action.velvet.meet",
+      "label": "与薇尔维特打招呼",
+      "hint": "5分钟 · 认识沙龙的经营者",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.met",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "aetheria-social:event.velvet.talk"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        }
+      ],
+      "resultText": "aetheria-social:text.result.velvet.meet"
+    },
+    {
+      "id": "aetheria-social:action.velvet.return",
+      "label": "与薇尔维特继续交谈",
+      "hint": "5分钟 · 接上先前的话题",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "npc.present",
+          "npcId": "aetheria-social:npc.velvet"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.met",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "aetheria-social:event.velvet.talk"
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        }
+      ],
+      "resultText": "aetheria-social:text.result.velvet.return"
+    },
+    {
+      "id": "aetheria-social:action.talk.leave",
+      "label": "结束交谈",
+      "hint": "回到日常场景；她会恢复自己的日程",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.leave",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "hub"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.services",
+      "label": "问问沙龙的服务",
+      "hint": "5分钟 · 先听说明，不购买任何改造",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.services",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 0
+          }
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "services"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.services",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "hub"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.order",
+      "label": "问她是否需要帮忙",
+      "hint": "5分钟 · 听完委托后仍可拒绝",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.accepted",
+          "value": false
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.reported",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "order"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.order",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "hub"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.order.accept",
+      "label": "答应去集市核对清单",
+      "hint": "记录承诺 · 去集市完成真实行动后回来",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.accepted",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.accepted",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 1
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.order.accept",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "order"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.order.decline",
+      "label": "这次先不接委托",
+      "hint": "不扣钱，不封锁以后再来",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.declined",
+          "relationship": {
+            "familiarity": 0,
+            "trust": 0
+          }
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.order.decline",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "order"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.report",
+      "label": "交回集市核对结果",
+      "hint": "奖励8币 · 同一委托只结算一次",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.accepted",
+          "value": true
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.reported",
+          "value": false
+        },
+        {
+          "op": "flag.has",
+          "id": "aetheria-social:flag.order_checked",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.reported",
+          "relationship": {
+            "familiarity": 3,
+            "trust": 6
+          }
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 8
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "report"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.report",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "hub"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.progress",
+      "label": "说说核对清单的进度",
+      "hint": "5分钟 · 未核对就不会得到报酬",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.accepted",
+          "value": true
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.reported",
+          "value": false
+        },
+        {
+          "op": "flag.has",
+          "id": "aetheria-social:flag.order_checked",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "progress"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.progress",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "hub"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.tail",
+      "label": "请她看看已经校准的机械尾",
+      "hint": "5分钟 · 她只记住亲眼看到的变化",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "body.hasPart",
+          "definitionId": "aetheria-tf:part.tail.mechanical"
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.tail_seen",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.tail_seen",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 0
+          }
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "tail"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.tail",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "hub"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.familiar",
+      "label": "聊聊近况",
+      "hint": "5分钟 · 完成委托后有了更熟悉的话题",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "npc.relation",
+          "npcId": "aetheria-social:npc.velvet",
+          "field": "trust",
+          "comparison": "gte",
+          "value": 6
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.reported",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "npc.remember",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.familiar_chat",
+          "relationship": {
+            "familiarity": 1,
+            "trust": 0
+          }
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "familiar"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.familiar",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "hub"
+      }
+    },
+    {
+      "id": "aetheria-social:action.market.order",
+      "label": "替薇尔维特核对补货清单",
+      "hint": "15分钟 · 精力−2 · 完成后回去交代",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.accepted",
+          "value": true
+        },
+        {
+          "op": "npc.memory",
+          "npcId": "aetheria-social:npc.velvet",
+          "memoryId": "aetheria-social:memory.velvet.reported",
+          "value": false
+        },
+        {
+          "op": "flag.has",
+          "id": "aetheria-social:flag.order_checked",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 15
+        },
+        {
+          "op": "flag.set",
+          "id": "aetheria-social:flag.order_checked",
+          "value": true
+        }
+      ],
+      "resultText": "aetheria-social:text.result.market.order"
+    },
+    {
+      "id": "aetheria-social:action.talk.services.back",
+      "label": "接着聊别的话题",
+      "hint": "回到谈话选择；不重复结算刚才的效果",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "hub"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.services.back",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "services"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.services.leave",
+      "label": "结束交谈",
+      "hint": "返回场景",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.services.leave",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "services"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.report.back",
+      "label": "接着聊别的话题",
+      "hint": "回到谈话选择；不重复结算刚才的效果",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "hub"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.report.back",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "report"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.report.leave",
+      "label": "结束交谈",
+      "hint": "返回场景",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.report.leave",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "report"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.progress.back",
+      "label": "接着聊别的话题",
+      "hint": "回到谈话选择；不重复结算刚才的效果",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "hub"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.progress.back",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "progress"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.progress.leave",
+      "label": "结束交谈",
+      "hint": "返回场景",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.progress.leave",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "progress"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.tail.back",
+      "label": "接着聊别的话题",
+      "hint": "回到谈话选择；不重复结算刚才的效果",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "hub"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.tail.back",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "tail"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.tail.leave",
+      "label": "结束交谈",
+      "hint": "返回场景",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.tail.leave",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "tail"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.familiar.back",
+      "label": "接着聊别的话题",
+      "hint": "回到谈话选择；不重复结算刚才的效果",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "hub"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.familiar.back",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "familiar"
+      }
+    },
+    {
+      "id": "aetheria-social:action.talk.familiar.leave",
+      "label": "结束交谈",
+      "hint": "返回场景",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "exit"
+        }
+      ],
+      "resultText": "aetheria-social:text.result.talk.familiar.leave",
+      "context": {
+        "eventId": "aetheria-social:event.velvet.talk",
+        "nodeId": "familiar"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "aetheria-social:event.velvet.talk",
+      "startNode": "hub",
+      "participantIds": [
+        "aetheria-social:npc.velvet"
+      ],
+      "rating": "general",
+      "nodes": [
+        {
+          "id": "hub",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-social:text.node.hub"
+          ],
+          "actionIds": [
+            "aetheria-social:action.talk.services",
+            "aetheria-social:action.talk.order",
+            "aetheria-social:action.talk.progress",
+            "aetheria-social:action.talk.report",
+            "aetheria-social:action.talk.tail",
+            "aetheria-social:action.talk.familiar",
+            "aetheria-social:action.talk.leave"
+          ],
+          "onEnter": [
+            {
+              "op": "npc.remember",
+              "npcId": "aetheria-social:npc.velvet",
+              "memoryId": "aetheria-social:memory.velvet.met",
+              "relationship": {
+                "familiarity": 1,
+                "trust": 0
+              }
+            }
+          ]
+        },
+        {
+          "id": "order",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-social:text.node.order"
+          ],
+          "actionIds": [
+            "aetheria-social:action.talk.order.accept",
+            "aetheria-social:action.talk.order.decline"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "services",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-social:text.node.services"
+          ],
+          "actionIds": [
+            "aetheria-social:action.talk.services.back",
+            "aetheria-social:action.talk.services.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "report",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-social:text.node.report"
+          ],
+          "actionIds": [
+            "aetheria-social:action.talk.report.back",
+            "aetheria-social:action.talk.report.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "progress",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-social:text.node.progress"
+          ],
+          "actionIds": [
+            "aetheria-social:action.talk.progress.back",
+            "aetheria-social:action.talk.progress.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "tail",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-social:text.node.tail"
+          ],
+          "actionIds": [
+            "aetheria-social:action.talk.tail.back",
+            "aetheria-social:action.talk.tail.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "familiar",
+          "type": "choice",
+          "textVariants": [
+            "aetheria-social:text.node.familiar"
+          ],
+          "actionIds": [
+            "aetheria-social:action.talk.familiar.back",
+            "aetheria-social:action.talk.familiar.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "exit",
+          "type": "exit",
+          "textVariants": [
+            "aetheria-social:text.node.exit"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "aetheria-social:text.memory.met": "你与薇尔维特正式认识了。",
+    "aetheria-social:text.memory.services": "你们聊过沙龙服务与改造前的咨询。",
+    "aetheria-social:text.memory.accepted": "你答应去集市核对一份补货清单。",
+    "aetheria-social:text.memory.declined": "你曾婉拒核对清单；她接受了你的决定。",
+    "aetheria-social:text.memory.reported": "你带回了核对结果，委托已完成。",
+    "aetheria-social:text.memory.tail_seen": "她亲眼见过你已经校准的机械尾。",
+    "aetheria-social:text.memory.familiar_chat": "你们在完成委托后聊过一次近况。",
+    "aetheria-social:text.result.travel.street_salon": "你穿过主街，来到薇尔维特沙龙的门厅。",
+    "aetheria-social:text.result.travel.salon_street": "你推开门，重新走进主街的灯光。",
+    "aetheria-social:text.result.salon.wait": "你在门厅坐了一会儿。外面的行人换了一批。",
+    "aetheria-social:text.result.velvet.meet": "她把桌边的清单合上，给你留出说话的位置。",
+    "aetheria-social:text.result.velvet.return": "她认出了你。谈话可以从上次留下的话题继续。",
+    "aetheria-social:text.result.talk.leave": "你向她道别。",
+    "aetheria-social:text.result.talk.services": "你们把服务和改造的选择谈清楚了一些。",
+    "aetheria-social:text.result.talk.order": "她从桌边抽出一张补货核对单。",
+    "aetheria-social:text.result.talk.order.accept": "你记下需要核对的几项货物。到集市后可以向摊位核对清单，回来交代结果。",
+    "aetheria-social:text.result.talk.order.decline": "“没关系，等你有空再说。”她收回了清单。",
+    "aetheria-social:text.result.talk.report": "她对照核对结果，把约定的报酬交给你。",
+    "aetheria-social:text.result.talk.progress": "你坦白还没有去集市核对，她没有把未完成的委托算作成功。",
+    "aetheria-social:text.result.talk.tail": "你展示了机械尾的稳定动作。她记下的是这次见面时看到的状态。",
+    "aetheria-social:text.result.talk.familiar": "你们聊起在城里做事的节奏。重复闲聊不会反复增加熟悉或信任。",
+    "aetheria-social:text.result.market.order": "你逐项核对了摊位提供的货物与价格，记下差异。薇尔维特还不知道结果；需要你亲自回去告诉她。",
+    "aetheria-social:text.node.hub": "薇尔维特把手边的事情暂时放下。身边仍有来往的脚步声，你可以选一个话题，也可以把话说到一半后换个方向。\n\n她没有催你做决定。",
+    "aetheria-social:text.node.order": "“如果你恰好要去集市，可以帮我核对这张补货单。”她点了点纸面，“看货物和标价是否对得上，回来告诉我就行。报酬是八币。”\n\n这是一件可以慢慢完成的小事。你可以答应，也可以拒绝；无需先付钱。",
+    "aetheria-social:text.result.talk.services.back": "你把谈话接回另一个话题。",
+    "aetheria-social:text.result.talk.services.leave": "你向她道别。",
+    "aetheria-social:text.node.services": "“先弄清楚自己想保留什么，再考虑改变什么。”她说。\n\n你们谈的是服务与选择。改造诊室仍有独立的咨询入口，任何付费或身体改变都需要你另行确认；这次谈话没有替你预约。",
+    "aetheria-social:text.result.talk.report.back": "你把谈话接回另一个话题。",
+    "aetheria-social:text.result.talk.report.leave": "你向她道别。",
+    "aetheria-social:text.node.report": "她把你记录的差异逐项勾出来，没有把事情当作从没发生过。\n\n“下次再见，我们就不用从互相介绍开始了。”报酬已经结算，你仍可以继续谈别的话题。",
+    "aetheria-social:text.result.talk.progress.back": "你把谈话接回另一个话题。",
+    "aetheria-social:text.result.talk.progress.leave": "你向她道别。",
+    "aetheria-social:text.node.progress": "“没去就先别急着交差。”她把核对单留给你。\n\n委托不会因为这次谈话被自动完成。到集市核对后，再回来给她看结果即可。",
+    "aetheria-social:text.result.talk.tail.back": "你把谈话接回另一个话题。",
+    "aetheria-social:text.result.talk.tail.leave": "你向她道别。",
+    "aetheria-social:text.node.tail": "你让已经校准的机械尾完成了一次稳稳的抓握。薇尔维特在近处看完了整个动作。\n\n“结构已经稳定了。”她没有把外形变化当作身份或性格的改变。这次观察会留在她的记忆里，今后的变化仍需重新见面才能知道。",
+    "aetheria-social:text.result.talk.familiar.back": "你把谈话接回另一个话题。",
+    "aetheria-social:text.result.talk.familiar.leave": "你向她道别。",
+    "aetheria-social:text.node.familiar": "她这次没有先问你是谁，而是接着上次核对清单的事聊了几句。\n\n你们还只是相识渐深的关系。几次问候不会跳过她的个人经历，信任也不是对任何请求的自动同意。",
+    "aetheria-social:text.node.exit": "谈话结束。你回到街区的日常节奏。",
+    "aetheria-social:text.salon": "门厅里留着几张座椅，柜台上摆着待处理的清单。街上的灯光透过玻璃落进来。\n\n你可以在这里等候，也可以回主街。是否能见到薇尔维特，取决于她此刻的行程。\n\n柜台旁的告示写着：薇尔维特通常09:00–18:00在沙龙，18:00–19:00会去集市。提前到了可以坐下等候。",
+    "aetheria-social:text.velvet": "薇尔维特经营着沙龙。你们共同经历的事情会留在她的记忆里；她也有自己的工作和离场时间。",
+    "aetheria-social:text.schedule.private": "离场时间",
+    "aetheria-social:text.schedule.counter": "在沙龙柜台处理事务",
+    "aetheria-social:text.schedule.market": "在集市核对日常采购"
+  },
+  "contributions": [
+    {
+      "hookId": "aetheria:hook.street.actions",
+      "actionIds": [
+        "aetheria-social:action.travel.street_salon"
+      ]
+    },
+    {
+      "hookId": "aetheria-social:hook.salon.actions",
+      "actionIds": [
+        "aetheria-social:action.travel.salon_street",
+        "aetheria-social:action.salon.wait"
+      ]
+    },
+    {
+      "hookId": "aetheria-social:hook.velvet.topics",
+      "actionIds": [
+        "aetheria-social:action.velvet.meet",
+        "aetheria-social:action.velvet.return"
+      ]
+    },
+    {
+      "hookId": "aetheria:hook.market.actions",
+      "actionIds": [
+        "aetheria-social:action.market.order"
+      ]
+    }
+  ],
+  "species": [
+    {
+      "id": "aetheria-social:species.person",
+      "label": "智慧人物（来源与具体形态未定）",
+      "intelligent": true,
+      "adultAgeYears": 18
+    }
+  ],
+  "npcs": [
+    {
+      "id": "aetheria-social:npc.velvet",
+      "canonKey": "velvet",
+      "name": "薇尔维特",
+      "role": "沙龙经营者",
+      "descriptionText": "aetheria-social:text.velvet",
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": null,
+      "topicHook": "aetheria-social:hook.velvet.topics",
+      "schedule": [
+        {
+          "start": 0,
+          "end": 540,
+          "locationId": null,
+          "activityText": "aetheria-social:text.schedule.private"
+        },
+        {
+          "start": 540,
+          "end": 1080,
+          "locationId": "aetheria-social:location.salon",
+          "activityText": "aetheria-social:text.schedule.counter"
+        },
+        {
+          "start": 1080,
+          "end": 1140,
+          "locationId": "aetheria:location.market",
+          "activityText": "aetheria-social:text.schedule.market"
+        },
+        {
+          "start": 1140,
+          "end": 0,
+          "locationId": null,
+          "activityText": "aetheria-social:text.schedule.private"
+        }
+      ]
+    }
+  ],
+  "npcMemories": [
+    {
+      "id": "aetheria-social:memory.velvet.met",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "aetheria-social:text.memory.met"
+    },
+    {
+      "id": "aetheria-social:memory.velvet.services",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "aetheria-social:text.memory.services"
+    },
+    {
+      "id": "aetheria-social:memory.velvet.accepted",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "aetheria-social:text.memory.accepted"
+    },
+    {
+      "id": "aetheria-social:memory.velvet.declined",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "aetheria-social:text.memory.declined"
+    },
+    {
+      "id": "aetheria-social:memory.velvet.reported",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "aetheria-social:text.memory.reported"
+    },
+    {
+      "id": "aetheria-social:memory.velvet.tail_seen",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "aetheria-social:text.memory.tail_seen"
+    },
+    {
+      "id": "aetheria-social:memory.velvet.familiar_chat",
+      "npcId": "aetheria-social:npc.velvet",
+      "textKey": "aetheria-social:text.memory.familiar_chat"
+    }
+  ]
+}

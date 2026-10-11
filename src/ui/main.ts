@@ -37,7 +37,7 @@ async function boot(): Promise<void> {
     } else { feedback(actionResult.message, true); redraw(); }
     setTimeout(() => { busy = false; }, 250);
   });
-  for (const name of ['map', 'body', 'save', 'log']) byId(`${name}-open`).addEventListener('click', async () => {
+  for (const name of ['map', 'body', 'people', 'save', 'log']) byId(`${name}-open`).addEventListener('click', async () => {
     const dialog = byId<HTMLDialogElement>(`${name}-dialog`); if (!dialog.open) dialog.showModal();
     if (name === 'save') { try { await refreshSlot(); } catch (error) { byId('save-message').textContent = `本地存档不可用：${error instanceof Error ? error.message : error}。你仍可导出 JSON。`; } }
   });

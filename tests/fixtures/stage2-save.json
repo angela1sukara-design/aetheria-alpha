@@ -1,0 +1,396 @@
+{
+  "payload": {
+    "format": "aetheria-alpha",
+    "schemaVersion": 2,
+    "savedAt": "2026-10-10T19:16:18.679Z",
+    "state": {
+      "meta": {
+        "schemaVersion": 2,
+        "engineVersion": "0.1-stage2",
+        "revision": 7,
+        "packs": [
+          {
+            "id": "engine/core",
+            "version": "0.1.0",
+            "hash": "aab3c415bcccdd459d21e7a0d0f4f3d636008b6e6809860452ec89787a7400f7"
+          },
+          {
+            "id": "aetheria/world",
+            "version": "0.1.0",
+            "hash": "01ea5d235f7762c6e99ca9080c4390d02bdf9796208acab15a3437d615f2feb8"
+          },
+          {
+            "id": "aetheria/reshaping",
+            "version": "0.1.0",
+            "hash": "90a0fd948b069cdf62257b650f6fdfe2f2ef7f619a00efd1bef8d3baf4aab7a2"
+          }
+        ]
+      },
+      "clock": {
+        "totalMinutes": 515,
+        "crossedDays": []
+      },
+      "world": {
+        "locationId": "aetheria-tf:location.clinic",
+        "knownLocationIds": [
+          "aetheria:location.apartment",
+          "aetheria:location.street",
+          "aetheria-tf:location.clinic"
+        ]
+      },
+      "player": {
+        "variables": {
+          "core:money": 42,
+          "core:energy": 70,
+          "core:health": 100
+        },
+        "flags": {
+          "aetheria:flag.notice_helped": false
+        },
+        "body": {
+          "templateId": "aetheria-tf:body.human",
+          "rootPartId": "torso",
+          "parts": [
+            {
+              "instanceId": "torso",
+              "definitionId": "aetheria-tf:part.torso"
+            },
+            {
+              "instanceId": "head",
+              "definitionId": "aetheria-tf:part.head"
+            },
+            {
+              "instanceId": "ear.left",
+              "definitionId": "aetheria-tf:part.ear.cat"
+            },
+            {
+              "instanceId": "arm.left",
+              "definitionId": "aetheria-tf:part.arm"
+            },
+            {
+              "instanceId": "hand.left",
+              "definitionId": "aetheria-tf:part.hand"
+            },
+            {
+              "instanceId": "leg.left",
+              "definitionId": "aetheria-tf:part.leg"
+            },
+            {
+              "instanceId": "foot.left",
+              "definitionId": "aetheria-tf:part.foot"
+            },
+            {
+              "instanceId": "ear.right",
+              "definitionId": "aetheria-tf:part.ear.cat"
+            },
+            {
+              "instanceId": "arm.right",
+              "definitionId": "aetheria-tf:part.arm"
+            },
+            {
+              "instanceId": "hand.right",
+              "definitionId": "aetheria-tf:part.hand"
+            },
+            {
+              "instanceId": "leg.right",
+              "definitionId": "aetheria-tf:part.leg"
+            },
+            {
+              "instanceId": "foot.right",
+              "definitionId": "aetheria-tf:part.foot"
+            },
+            {
+              "instanceId": "tail",
+              "definitionId": "aetheria-tf:part.tail.trial"
+            }
+          ],
+          "edges": [
+            {
+              "parentPartId": "torso",
+              "childPartId": "head",
+              "anchorId": "neck"
+            },
+            {
+              "parentPartId": "head",
+              "childPartId": "ear.left",
+              "anchorId": "ear.left"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "arm.left",
+              "anchorId": "shoulder.left"
+            },
+            {
+              "parentPartId": "arm.left",
+              "childPartId": "hand.left",
+              "anchorId": "wrist"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "leg.left",
+              "anchorId": "hip.left"
+            },
+            {
+              "parentPartId": "leg.left",
+              "childPartId": "foot.left",
+              "anchorId": "ankle"
+            },
+            {
+              "parentPartId": "head",
+              "childPartId": "ear.right",
+              "anchorId": "ear.right"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "arm.right",
+              "anchorId": "shoulder.right"
+            },
+            {
+              "parentPartId": "arm.right",
+              "childPartId": "hand.right",
+              "anchorId": "wrist"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "leg.right",
+              "anchorId": "hip.right"
+            },
+            {
+              "parentPartId": "leg.right",
+              "childPartId": "foot.right",
+              "anchorId": "ankle"
+            },
+            {
+              "parentPartId": "torso",
+              "childPartId": "tail",
+              "anchorId": "pelvis.back"
+            }
+          ]
+        }
+      },
+      "tfQueues": [
+        {
+          "instanceId": "tf-stage2-fixture-3/aetheria-tf:tf.tail.mechanical",
+          "definitionId": "aetheria-tf:tf.tail.mechanical",
+          "sourceActionId": "aetheria-tf:action.consult.offer.accept",
+          "idempotencyKey": "stage2-fixture-3/aetheria-tf:tf.tail.mechanical",
+          "elapsedMinutes": 15,
+          "completedStageIds": [
+            "fit"
+          ],
+          "status": "paused",
+          "startedAt": 500,
+          "blocker": ""
+        },
+        {
+          "instanceId": "tf-stage2-fixture-6/aetheria-tf:tf.ears.cat",
+          "definitionId": "aetheria-tf:tf.ears.cat",
+          "sourceActionId": "aetheria-tf:action.free.ears.cat",
+          "idempotencyKey": "stage2-fixture-6/aetheria-tf:tf.ears.cat",
+          "elapsedMinutes": 0,
+          "completedStageIds": [
+            "done"
+          ],
+          "status": "completed",
+          "startedAt": 515,
+          "blocker": ""
+        }
+      ],
+      "eventInstances": [
+        {
+          "instanceId": "event-stage2-fixture-2",
+          "definitionId": "aetheria-tf:event.consult",
+          "nodeId": "booked",
+          "status": "completed",
+          "textByNode": {
+            "offer": "aetheria-tf:text.consult.offer",
+            "booked": "aetheria-tf:text.consult.booked"
+          },
+          "draws": [
+            {
+              "nodeId": "offer",
+              "value": 0.9155301260761917
+            },
+            {
+              "nodeId": "booked",
+              "value": 0.09775876719504595
+            }
+          ],
+          "locals": {}
+        }
+      ],
+      "activeEventStack": [],
+      "rng": {
+        "seed": 123456,
+        "streams": {
+          "event:event-stage2-fixture-2": {
+            "state": 419870708,
+            "draws": 2
+          }
+        }
+      },
+      "ledger": {
+        "transactions": [
+          {
+            "requestId": "stage2-travel",
+            "fingerprint": "{\"actionId\":\"aetheria:action.travel.apartment_street\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "stage2-travel",
+              "revision": 1,
+              "text": "你沿着熟悉的路走到主街。身后的声音渐渐散开，眼前换了一番景象。",
+              "changes": [
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:00",
+                  "after": "第 1 天 · 08:10"
+                },
+                {
+                  "label": "地点",
+                  "before": "公寓",
+                  "after": "主街"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "stage2-fixture-1",
+            "fingerprint": "{\"actionId\":\"aetheria-tf:action.travel.street_clinic\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "stage2-fixture-1",
+              "revision": 2,
+              "text": "你沿着主街的指示走到诊室，推开玻璃门。",
+              "changes": [
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:10",
+                  "after": "第 1 天 · 08:20"
+                },
+                {
+                  "label": "地点",
+                  "before": "主街",
+                  "after": "改造诊室"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "stage2-fixture-2",
+            "fingerprint": "{\"actionId\":\"aetheria-tf:action.clinic.consult\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "stage2-fixture-2",
+              "revision": 3,
+              "text": "你拿起机械尾试用改造的说明。",
+              "changes": []
+            }
+          },
+          {
+            "requestId": "stage2-fixture-3",
+            "fingerprint": "{\"actionId\":\"aetheria-tf:action.consult.offer.accept\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "stage2-fixture-3",
+              "revision": 4,
+              "text": "你确认了费用与过程。\n\n改造预约已经开始。你可以在诊室等候，或继续安排日常行动。身体面板会显示试装与校准进度。",
+              "changes": [
+                {
+                  "label": "机械尾改造",
+                  "before": "未开始",
+                  "after": "改造准备中"
+                },
+                {
+                  "label": "零钱",
+                  "before": 60,
+                  "after": 42
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "stage2-fixture-4",
+            "fingerprint": "{\"actionId\":\"aetheria-tf:action.clinic.wait\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "stage2-fixture-4",
+              "revision": 5,
+              "text": "你在等候区坐了一会儿。窗外有人推着货车经过，诊室的校准灯安静地亮着。",
+              "changes": [
+                {
+                  "label": "身体变化",
+                  "before": "机械尾改造",
+                  "after": "机械尾已接入，等待校准"
+                },
+                {
+                  "label": "机械尾改造",
+                  "before": "阶段推进",
+                  "after": "试装完成，进入校准"
+                },
+                {
+                  "label": "时间",
+                  "before": "第 1 天 · 08:20",
+                  "after": "第 1 天 · 08:35"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "stage2-fixture-5",
+            "fingerprint": "{\"actionId\":\"aetheria-tf:action.tf.pause\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "stage2-fixture-5",
+              "revision": 6,
+              "text": "你暂停了机械尾改造，已经完成的步骤保持原样。",
+              "changes": [
+                {
+                  "label": "机械尾改造",
+                  "before": "进行中",
+                  "after": "已暂停"
+                }
+              ]
+            }
+          },
+          {
+            "requestId": "stage2-fixture-6",
+            "fingerprint": "{\"actionId\":\"aetheria-tf:action.free.ears.cat\"}",
+            "result": {
+              "ok": true,
+              "code": "COMMITTED",
+              "message": "行动完成。",
+              "requestId": "stage2-fixture-6",
+              "revision": 7,
+              "text": "双耳变得小巧而尖，耳尖随你的注意轻轻转动。",
+              "changes": [
+                {
+                  "label": "身体变化",
+                  "before": "猫耳塑形",
+                  "after": "双耳为猫耳"
+                },
+                {
+                  "label": "猫耳塑形",
+                  "before": "阶段推进",
+                  "after": "塑形完成"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "checksum": "a742c5ff481703c577402da26541e2a68e60c6e34264df804f78cf768dd877f8"
+}

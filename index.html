@@ -10,8 +10,8 @@
   <div class="game-shell">
     <header class="topbar">
       <a class="wordmark" href="#"><span class="sigil" aria-hidden="true">◈</span><span>以太都市<small>深渊重塑</small></span></a>
-      <span class="version">ALPHA 0.1 · II</span>
-      <nav aria-label="游戏菜单"><button id="map-open" type="button">地图</button><button id="body-open" type="button">身体</button><button id="save-open" type="button">存档</button><button id="log-open" type="button">记录</button></nav>
+      <span class="version">ALPHA 0.1 · III</span>
+      <nav aria-label="游戏菜单"><button id="map-open" type="button">地图</button><button id="body-open" type="button">身体</button><button id="people-open" type="button">人物</button><button id="save-open" type="button">存档</button><button id="log-open" type="button">记录</button></nav>
     </header>
     <div class="game-layout">
       <aside class="status-panel" aria-label="玩家状态"><div class="eyebrow">你的状态</div><div id="status"></div><div class="status-note">城市还在运转。<br>决定下一步的人是你。</div></aside>
@@ -21,6 +21,7 @@
           <h1 id="scene-title">正在进入城市…</h1><p id="scene-subtitle" class="subtitle"></p>
           <div class="scene-divider" aria-hidden="true"><span></span><i>◈</i><span></span></div>
           <div id="scene-text" class="prose"></div>
+          <div id="people-nearby" aria-label="在场人物" hidden></div>
           <section id="action-result" class="result-panel" aria-label="上次行动结果" hidden><div class="eyebrow">刚刚</div><div id="result-text" class="prose"></div><div id="result-changes" class="changes"></div></section>
         </section>
         <section class="actions-panel" aria-labelledby="actions-title"><h2 id="actions-title">下一步</h2><div id="actions"></div></section>
@@ -28,12 +29,13 @@
       <aside class="district-panel" aria-label="周边路线"><div class="eyebrow">身处城中</div><div class="city-silhouette" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><p id="district-location"></p><div id="nearby"></div><p class="district-caption">灯光之外，是你还没有走过的路。</p></aside>
     </div>
     <p id="feedback" role="status" aria-live="polite" class="feedback"></p>
-    <footer>第二阶段 · 身体与改造 <span>本版数值与新增内容为试运行内容</span></footer>
+    <footer>第三阶段 · 相识与记忆 <span>本版数值与新增内容为试运行内容</span></footer>
   </div>
   <dialog id="map-dialog" aria-labelledby="map-title"><div class="dialog-heading"><h2 id="map-title">街区地图</h2><button data-close="map-dialog" aria-label="关闭地图">×</button></div><p class="muted">选择相邻地点前往。地图本身不会推进时间。</p><div id="map-content"></div></dialog>
   <dialog id="save-dialog" aria-labelledby="save-title"><div class="dialog-heading"><h2 id="save-title">存档</h2><button data-close="save-dialog" aria-label="关闭存档">×</button></div><p class="muted">手动保存当前进度。读取会恢复地点、时间和正在进行的事件。</p><div class="save-slot"><span>手动存档</span><p id="save-info">尚无存档</p><div class="dialog-buttons"><button id="save-write">保存当前进度</button><button id="save-read" disabled>读取存档</button></div></div><div class="dialog-buttons file-tools"><button id="save-export">导出 JSON</button><label class="file-button">导入 JSON<input id="save-import" type="file" accept="application/json,.json"></label></div><p id="save-message" role="status" class="muted"></p></dialog>
   <dialog id="log-dialog" aria-labelledby="log-title"><div class="dialog-heading"><h2 id="log-title">行动记录</h2><button data-close="log-dialog" aria-label="关闭记录">×</button></div><div id="log-content"></div></dialog>
   <dialog id="body-dialog" aria-labelledby="body-title"><div class="dialog-heading"><h2 id="body-title">你的身体</h2><button data-close="body-dialog" aria-label="关闭身体">×</button></div><div id="body-content"></div></dialog>
+  <dialog id="people-dialog" aria-labelledby="people-title"><div class="dialog-heading"><h2 id="people-title">你认识的人</h2><button data-close="people-dialog" aria-label="关闭人物">×</button></div><div id="people-content"></div></dialog>
   <script type="module" src="./src/ui/main.ts"></script>
 </body>
 </html>
