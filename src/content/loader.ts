@@ -1,3 +1,4 @@
+import { validateFoundation } from './foundation-validation.ts';
 import { validateDistrictDefinitions } from './district-schema.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
@@ -32,7 +33,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   for (const p of [...packs].sort((a, b) => a.manifest.id.localeCompare(b.manifest.id, 'en'))) visit(p);
   const definitions = new Map<string, { type: string; pack: ContentPack; value: unknown }>();
   for (const p of sorted) {
-    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment'] as const) {
+    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags'] as const) {
       for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
@@ -48,6 +49,9 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (d.pack !== p && !p.manifest.dependencies.some(x => x.id === d.pack.manifest.id)) fail(p, 'UNDECLARED_DEPENDENCY', path, `引用 ${id} 需要显式依赖其包。`, id);
   }
   function checkCondition(p: ContentPack, c: Condition, path: string): void {
+    if('target'in c&&c.target?.kind==='npc')ref(p,c.target.id,'npcs',path+'/target');
+    if(c.op==='body.matches'){if(c.part.materialId)ref(p,c.part.materialId,'materials',path);if(c.part.morphologyId)ref(p,c.part.morphologyId,'morphologies',path);}
+    if((c.op==='environment.light'||c.op==='environment.service')&&c.locationId)ref(p,c.locationId,'locations',path);
     if (c.op === 'all' || c.op === 'any') c.conditions.forEach((x, i) => checkCondition(p, x, `${path}/${i}`));
     else if (c.op === 'not') checkCondition(p, c.condition, `${path}/condition`);
     else if (c.op === 'var.compare') ref(p, c.id, 'variables', path);
@@ -64,6 +68,8 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
+    if('target'in e&&e.target?.kind==='npc')ref(p,e.target.id,'npcs',path+'/target');
+    if(e.op==='environment.setLight')ref(p,e.locationId,'locations',path);
     if (e.op === 'var.change') ref(p, e.id, 'variables', path);
     else if (e.op === 'combat.start') ref(p,e.id,'enemies',path);
     else if (e.op === 'scene.start') ref(p,e.id,'interactions',path);
@@ -152,7 +158,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (p.transformations?.length && !p.manifest.requiresCapabilities.includes('tf.pipeline.v1')) fail(p, 'CAPABILITY_UNDECLARED', '/manifest/requiresCapabilities', 'TF 定义需要声明 tf.pipeline.v1。');
     for (const t of p.bodyTemplates ?? []) for (const part of t.parts) ref(p, part.definitionId, 'bodyParts', `/bodyTemplates/${t.id}/parts`);
     for (const patch of p.bodyPatches ?? []) for (const op of patch.operations) {
-      if (op.type !== 'remove') ref(p, op.definitionId, 'bodyParts', `/bodyPatches/${patch.id}/operations`);
+      if (op.type !== 'remove' && op.type !== 'attributes') ref(p, op.definitionId, 'bodyParts', `/bodyPatches/${patch.id}/operations`);
       if (op.type === 'attach') {
         const part = definitions.get(op.definitionId)?.value as NonNullable<ContentPack['bodyParts']>[number] | undefined;
         const parents = sorted.flatMap(pack => pack.bodyParts ?? []);
@@ -178,6 +184,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     references.push({ id: p.manifest.id, version: p.manifest.version, hash: [...new Uint8Array(digest)].map(x => x.toString(16).padStart(2, '0')).join('') });
   }
   const registry = new Registry(sorted, references);
+  validateFoundation(sorted, registry, ref, checkCondition);
   validateDistrictDefinitions(sorted, registry, fail, checkCondition);
   for (const p of sorted) for (const template of p.bodyTemplates ?? []) {
     try { validateBody(instantiateBody(template), registry); }

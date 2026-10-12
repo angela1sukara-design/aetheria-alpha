@@ -1,3 +1,4 @@
+import { validateAttributes } from '../content/foundation-validation.ts';
 import { clone } from '../core/types.ts';
 import type { BodyCapability, BodyGraph, BodyPatchDef, BodyTemplateDef } from '../core/body-types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -19,7 +20,10 @@ export function validateBody(value: unknown, registry: Registry): asserts value 
   if (!Array.isArray(graph.parts) || graph.parts.length < 1 || graph.parts.length > 128 || !Array.isArray(graph.edges) || graph.edges.length !== graph.parts.length - 1) fail('身体图节点/边数量无效。');
   const parts = new Map<string, ReturnType<Registry['bodyPart']>>();
   for (const raw of graph.parts as unknown[]) {
-    const p = obj(raw, ['instanceId', 'definitionId']); const id = token(p.instanceId);
+    const extra = raw as Record<string,unknown>;
+    const p = obj(raw, ['instanceId', 'definitionId', ...('overrides' in extra?['overrides']:[]), ...('provenance' in extra?['provenance']:[])]); const id = token(p.instanceId);
+    if(p.overrides)validateAttributes(p.overrides as never,registry,registry.bodyPart(p.definitionId as never).kind);
+    if(p.provenance){const v=obj(p.provenance,['tfInstanceId','stageId','patchId']);if(typeof v.tfInstanceId!=='string'||!v.tfInstanceId.length)fail('改造来源无效。');token(v.stageId);registry.bodyPatch(v.patchId as never);}
     if (parts.has(id)) fail('身体部件实例 ID 重复。');
     parts.set(id, registry.bodyPart(p.definitionId as never));
   }
@@ -53,13 +57,14 @@ export function patchedBody(body: BodyGraph, patch: BodyPatchDef, registry: Regi
   for (const op of patch.operations) {
     const part = next.parts.find(x => x.instanceId === op.partId);
     if (op.type === 'attach') {
-      if (part) fail(`这个位置已有「${registry.bodyPart(part.definitionId).label}」，请先处理现有结构。`);
+      if (part) fail(`这个位置已有「${registry.bodyPart(part!.definitionId).label}」，请先处理现有结构。`);
       registry.bodyPart(op.definitionId);
       next.parts.push({ instanceId: op.partId, definitionId: op.definitionId });
       next.edges.push({ parentPartId: op.parentPartId, childPartId: op.partId, anchorId: op.anchorId });
     } else {
-      if (!part || part.instanceId === next.rootPartId) fail('当前没有可处理的对应部件，或它是身体根部件。');
-      if (op.type === 'replace') { registry.bodyPart(op.definitionId); part!.definitionId = op.definitionId; }
+      if (!part || (part.instanceId === next.rootPartId && op.type !== 'attributes')) fail('当前没有可处理的对应部件，或它是身体根部件。');
+      if(op.type==='attributes') { const overrides={...part!.overrides,...op.set};for(const key of op.unset)delete overrides[key];validateAttributes(overrides,registry,registry.bodyPart(part!.definitionId).kind);if(Object.keys(overrides).length)part!.overrides=overrides;else delete part!.overrides; }
+      else if (op.type === 'replace') { registry.bodyPart(op.definitionId); part!.definitionId = op.definitionId; delete part!.overrides;delete part!.provenance; }
       else {
         if (next.edges.some(e => e.parentPartId === op.partId)) fail('请先处理这个部件上仍连接的子部件。');
         next.parts = next.parts.filter(x => x !== part); next.edges = next.edges.filter(e => e.childPartId !== op.partId);

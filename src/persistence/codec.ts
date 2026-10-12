@@ -1,3 +1,5 @@
+import { upgradeFoundation, foundationAddition } from './foundation-migration.ts';
+import { shape } from '../content/foundation-schema.ts';
 import { clone, stableJson } from '../core/types.ts';
 import type { GameState, Id } from '../core/types.ts';
 import { validateBody, instantiateBody } from '../engine/body.ts';
@@ -15,7 +17,7 @@ import { hash, parseRules } from '../world/schema.ts';
 import { validateWorldInstance } from '../world/validation.ts';
 export const MAX_SAVE_BYTES = 4 * 1024 * 1024;
 export type DecodeResult = { status: 'ready'; state: GameState; registry?: Registry; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
-interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 3; savedAt: string; state: GameState }
+interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 3 | 4; savedAt: string; state: GameState }
 async function checksum(value: unknown): Promise<string> {
   const bytes = new TextEncoder().encode(stableJson(value));
   const hash = await crypto.subtle.digest('SHA-256', bytes);
@@ -34,9 +36,11 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const array = (x: unknown): unknown[] => { if (!Array.isArray(x)) bad('状态数组无效。'); return x as unknown[]; };
   const string = (x: unknown): string => { if (typeof x !== 'string' || !x.length) bad('状态字符串无效。'); return x as string; };
   const unique = (x: unknown[]): void => { if (new Set(x).size !== x.length) bad('状态中存在重复条目。'); };
-  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs', ...((value as GameState)?.district ? ['district'] : []), ...((value as GameState)?.worldInstance ? ['worldInstance'] : [])]);
+  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs', ...((value as GameState)?.district ? ['district'] : []), ...((value as GameState)?.worldInstance ? ['worldInstance'] : []), ...((value as GameState)?.meta?.schemaVersion===4?['environment']:[])]);
   const meta = object(state.meta, ['schemaVersion', 'engineVersion', 'revision', 'packs']);
-  if (meta.schemaVersion !== 3 || meta.engineVersion !== '0.1-stage3') bad('存档版本尚不支持；没有自动降级或迁移。');
+  if (!(meta.schemaVersion===3&&meta.engineVersion==='0.1-stage3'||meta.schemaVersion===4&&meta.engineVersion==='0.2-foundation')) bad('存档版本尚不支持；没有自动降级或迁移。');
+  if(meta.schemaVersion===4){const env=object(state.environment);for(const [id,raw]of Object.entries(env)){registry.location(id as Id);const p=shape(raw,[],['light']);if(p.light!==undefined&&!['lit','dark'].includes(p.light))bad('光照覆盖无效。');}}
+  else {const reject=(v:unknown):void=>{if(v&&typeof v==='object'){for(const [k,x]of Object.entries(v)){if(['overrides','provenance','target','environment','entity'].includes(k))bad('v3 不接受 v4 新字段。');reject(x);}}};reject(state.player);reject(state.tfQueues);}
   const revision = int(meta.revision);
   const refs = array(meta.packs);
   if (refs.length !== registry.packs.length) bad('PACK_MISMATCH：存档与已安装内容包集合不一致。');
@@ -145,7 +149,7 @@ export class SaveCodec {
   async encode(state: GameState): Promise<string> {
     validateState(state, this.registry);
     if (state.worldInstance && await hash(state.worldInstance.generation.rules) !== state.worldInstance.generation.rulesHash) throw Error('世界规则哈希不符。');
-    const payload: SavePayload = { format: 'aetheria-alpha', schemaVersion: 3, savedAt: new Date().toISOString(), state: clone(state) };
+    const payload: SavePayload = { format: 'aetheria-alpha', schemaVersion: state.meta.schemaVersion, savedAt: new Date().toISOString(), state: clone(state) };
     const text = JSON.stringify({ payload, checksum: await checksum(payload) }, null, 2);
     if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB；本版本不会截断账本或删除进度。');
     return text;
@@ -154,12 +158,12 @@ export class SaveCodec {
     try {
       if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB。');
       const envelope = JSON.parse(text);
-      if (envelope?.payload?.format !== 'aetheria-alpha' || ![1, 2, 3].includes(envelope.payload.schemaVersion)) throw new Error('文件不是受支持的 Alpha 0.1 存档。');
+      if (envelope?.payload?.format !== 'aetheria-alpha' || ![1, 2, 3, 4].includes(envelope.payload.schemaVersion)) throw new Error('文件不是受支持的 Alpha 0.1 存档。');
       if (await checksum(envelope.payload) !== envelope.checksum) throw new Error('存档校验和不符，可能损坏。');
       if (!Number.isFinite(Date.parse(envelope.payload.savedAt))) throw new Error('存档日期格式不合法。');
       const version = envelope.payload.schemaVersion;
       if (envelope.payload.state?.worldInstance) {
-        if (version !== 3) throw Error('生成世界存档版本无效。');
+        if (![3,4].includes(version)) throw Error('生成世界存档版本无效。');
         const state = envelope.payload.state as GameState;
         const world = state.worldInstance!;
         const packs = world.definition?.packs;
@@ -177,14 +181,20 @@ export class SaveCodec {
       if (this.registry.legacyRegistry && !envelope.payload.state.district) {
         const old = await new SaveCodec(this.registry.legacyRegistry).decode(text);
         if (old.status !== 'ready') return old;
-        const state = clone(old.state);
+        let state = clone(old.state);
         state.meta.packs = clone(this.registry.packs);
         for (const v of this.registry.variables) if (!(v.id in state.player.variables)) state.player.variables[v.id] = v.initial;
         for (const f of this.registry.flags) if (!(f.id in state.player.flags)) state.player.flags[f.id] = f.initial;
         state.npcs.push(...createNPCStates(this.registry).filter(n => !state.npcs.some(x => x.definitionId === n.definitionId)));
         state.district = initialDistrict();
+        if(this.registry.npcBodies.length)state=upgradeFoundation(state,this.registry);
         validateState(state,this.registry);
         return {status:'ready',state,registry:this.registry,migration:'旧版存档已升级：追加街区模块，原有经历、身体与事务保持。点击保存后写入 Alpha 0.2。'};
+      }
+      if(version>=3&&this.registry.contentPacks.some(p=>p.manifest.id==='aetheria/foundation')&&foundationAddition(envelope.payload.state,this.registry)){
+        const before=envelope.payload.state as GameState;const oldRegistry=await loadPacks(this.registry.contentPacks.filter(p=>before.meta.packs.some(ref=>ref.id===p.manifest.id)));
+        validateState(before,oldRegistry);const upgraded=upgradeFoundation(before,this.registry);upgraded.meta.packs=clone(this.registry.packs);validateState(upgraded,this.registry);
+        return {status:'ready',state:upgraded,registry:this.registry,...(version===3||oldRegistry.packs.length!==this.registry.packs.length?{migration:'旧版存档已升级：新增底层参数接口；原身体、记忆、阶段、账本和事件进度保留。旧场景副本不作为 NPC 身体。'}:{})};
       }
       const migrated = version < 3;
       const repair = migrated ? undefined : upgradeStage3(envelope.payload.state, this.registry);

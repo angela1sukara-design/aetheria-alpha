@@ -1,3 +1,4 @@
+import { validateBody } from '../engine/body.ts';
 import type { GameState, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import type { NPCMemory, NPCState } from '../core/npc-types.ts';
@@ -10,8 +11,10 @@ export function validateNPCState(value: GameState, registry: Registry): void {
   if (!Array.isArray(value.npcs) || value.npcs.length !== registry.npcs.length) bad('固定人物集合不符。');
   const ids = new Set<string>();
   for (const raw of value.npcs) {
-    const o = object(raw, ['instanceId', 'definitionId', 'discovered', 'relationship', 'memories']);
+    const o = object(raw, ['instanceId', 'definitionId', 'discovered', 'relationship', 'memories', ...(value.meta.schemaVersion===4&&Object.hasOwn(raw,'body')?['body']:[])]);
     const def = registry.npc(o.definitionId as Id);
+    if(o.body!==undefined&&o.body!==null){if(!registry.npcBodies.some(b=>b.npcId===def.id))bad('人物没有显式身体声明。');validateBody(o.body,registry);}
+    if(registry.npcBodies.some(b=>b.npcId===def.id)&&!o.body)bad('已声明的 NPC 身体缺失。');
     if (ids.has(def.id) || o.instanceId !== `fixed:${def.id}` || typeof o.discovered !== 'boolean') bad('身份或发现标记不符。'); ids.add(def.id);
     const rel = object(o.relationship, ['familiarity', 'trust']);
     for (const v of Object.values(rel)) if (!Number.isSafeInteger(v) || (v as number) < -100 || (v as number) > 100) bad('关系数值越界。');

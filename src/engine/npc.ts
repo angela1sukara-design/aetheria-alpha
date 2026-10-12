@@ -1,3 +1,4 @@
+import { instantiateBody, patchedBody } from './body.ts';
 import type { NPCState } from '../core/npc-types.ts';
 import type { Change, GameState, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -5,8 +6,9 @@ import { RuleError } from '../core/errors.ts';
 import { activeEvent } from './events.ts';
 import { formatClock } from './clock.ts';
 export function createNPCStates(registry: Registry): NPCState[] {
-  return registry.npcs.map(def => ({ instanceId: `fixed:${def.id}`, definitionId: def.id, discovered: false, relationship: { familiarity: 0, trust: 0 }, memories: [] }));
+  return registry.npcs.map(def => ({ instanceId: `fixed:${def.id}`, definitionId: def.id, discovered: false, relationship: { familiarity: 0, trust: 0 }, memories: [], ...(registry.npcBodies.length?{body:initialNPCBody(registry,def.id)}:{}) }));
 }
+export function initialNPCBody(r:Registry,id:Id){const def=r.npcBodies.find(n=>n.npcId===id);if(!def)return null;let body=instantiateBody(r.bodyTemplate(def.bodyTemplateId));for(const patch of def.patchIds)body=patchedBody(body,r.bodyPatch(patch),r);return body;}
 export function npcState(state: GameState, npcId: Id): NPCState {
   const npc = state.npcs.find(x => x.definitionId === npcId);
   if (!npc) throw new RuleError('NPC_MISSING', '人物实例缺失。');
@@ -74,6 +76,6 @@ export function rememberNPC(state: GameState, registry: Registry, npcId: Id, mem
 export function adultNPCEligibility(registry: Registry, npcId: Id): { pass: boolean; reason: string } {
   const def = registry.npc(npcId), species = registry.species(def.speciesId);
   if (def.ageYears === null) return { pass: false, reason: '人物年龄尚未确认。' };
-  if (!species.intelligent || def.ageYears < species.adultAgeYears) return { pass: false, reason: '未通过成年智慧人物资格。' };
+  if (!species.intelligent || def.ageYears < Math.max(18,species.adultAgeYears)) return { pass: false, reason: '未通过成年智慧人物资格。' };
   return { pass: true, reason: '' };
 }

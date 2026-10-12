@@ -1,3 +1,4 @@
+import type { BodyGraph } from './body-types.ts';
 import type { Id } from './types.ts';
 export const RELATION_FIELDS = ['familiarity', 'trust'] as const;
 export type RelationField = typeof RELATION_FIELDS[number];
@@ -12,6 +13,7 @@ export interface NPCMemory {
   definitionId: Id; recordedAt: number; sourceActionId: Id; sourceRequestId: string;
 }
 export interface NPCState {
+  body?: BodyGraph | null;
   instanceId: string; definitionId: Id; discovered: boolean;
   relationship: Record<RelationField, number>; memories: NPCMemory[];
 }

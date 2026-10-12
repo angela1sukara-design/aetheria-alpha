@@ -1,3 +1,4 @@
+import type { FoundationDefinitions, PartAttributes, TagDef } from '../core/query-types.ts';
 import { clone, freeze } from '../core/types.ts';
 import type { ActionDef, ContentPack, EventDef, FlagDef, HookDef, Id, LocationDef, PackRef, RouteDef, VariableDef } from '../core/types.ts';
 import type { BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef } from '../core/body-types.ts';
@@ -25,15 +26,29 @@ export class Registry {
   readonly storylets: StoryletDef[]; readonly residentTemplates: ResidentTemplate[];
   readonly enemies: EnemyDef[]; readonly interactions: InteractionDef[]; readonly textSlots: TextSlotDef[];
   readonly sceneTexts: SceneTextDef[]; readonly equipment: EquipmentDef[];
+  readonly tags: TagDef[];
+  readonly derivedTags: NonNullable<FoundationDefinitions['derivedTags']>;
+  readonly locationProfiles: NonNullable<FoundationDefinitions['locationProfiles']>;
+  readonly npcBodies: NonNullable<FoundationDefinitions['npcBodies']>;
+  readonly residentAdaptations: NonNullable<FoundationDefinitions['residentAdaptations']>;
+  readonly tagReferences: Readonly<Record<string, {packId:string;version:string;pointer:string}[]>>;
   constructor(packs: ContentPack[], references: PackRef[]) {
     // 私有 Map 永远不暴露；深冻结所有定义，避免 UI/扩展包直接改注册表。
     const data = freeze(clone(packs));
     this.contentPacks = data;
     this.appendOnlyPackIds = freeze(data.filter(isAppendOnlyEventPack).map(p=>p.manifest.id));
     if (packs.some(p => p.manifest.requiresCapabilities.includes('district.v1'))) {
-      const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1'));
+      const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1') && p.manifest.schemaVersion!==2);
       this.legacyRegistry = new Registry(legacy, references.filter(ref => legacy.some(p => p.manifest.id === ref.id)));
     }
+    this.tags=freeze(data.flatMap(p=>p.tags??[]));
+    this.derivedTags=freeze(data.flatMap(p=>p.derivedTags??[]));
+    this.locationProfiles=freeze(data.flatMap(p=>p.locationProfiles??[]));
+    this.npcBodies=freeze(data.flatMap(p=>p.npcBodies??[]));
+    this.residentAdaptations=freeze(data.flatMap(p=>p.residentAdaptations??[]));
+    const refs:Record<string,{packId:string;version:string;pointer:string}[]>={};
+    for(const pack of data){const scan=(v:unknown,path:string)=>{if(Array.isArray(v))v.forEach((x,i)=>scan(x,path+'/'+i));else if(v&&typeof v==='object')Object.entries(v).forEach(([k,x])=>{if(k!=='tags'||path!=='')scan(x,path+'/'+k);});else if(typeof v==='string'){const tag=this.tags.find(t=>t.id===v||t.aliases.some(a=>a.value===v));if(tag)(refs[tag.id]??=[]).push({packId:pack.manifest.id,version:pack.manifest.version,pointer:path});}};scan(pack,'');}
+    this.tagReferences=freeze(refs);
     this.packs = freeze(clone(references));
     this.start = freeze(data.find(x => x.start)!.start!);
     this.variables = freeze(data.flatMap(x => x.variables)); this.flags = freeze(data.flatMap(x => x.flags));
@@ -51,7 +66,7 @@ export class Registry {
     this.sceneTexts = freeze(data.flatMap(x => x.sceneTexts ?? []));
     this.equipment = freeze(data.flatMap(x => x.equipment ?? []));
     for (const pack of data) {
-      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
+      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
       for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text });
       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);
     }
@@ -63,6 +78,10 @@ export class Registry {
     if (!entry || entry.kind !== kind) throw new RuleError('UNKNOWN_DEFINITION', `${id} 不是已注册的 ${kind}。`);
     return entry.value as T;
   }
+  tag(id:Id):TagDef{return this.get(id,'tags');}
+  material(id:Id):NonNullable<FoundationDefinitions['materials']>[number]{return this.get(id,'materials');}
+  morphology(id:Id):NonNullable<FoundationDefinitions['morphologies']>[number]{return this.get(id,'morphologies');}
+  partDefaults(id:Id):PartAttributes {return {...this.bodyPart(id).defaults,...this.contentPacks.flatMap(p=>p.partProfiles??[]).find(p=>p.partId===id)?.defaults};}
   variable(id: Id): VariableDef { return this.get(id, 'variables'); }
   flag(id: Id): FlagDef { return this.get(id, 'flags'); }
   hook(id: Id): HookDef { return this.get(id, 'hooks'); }

@@ -1,0 +1,1131 @@
+{
+  "manifest": {
+    "id": "aetheria/foundation",
+    "namespace": "foundation",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria foundation increment",
+    "status": "reviewed",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/recovery",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/district",
+        "version": "0.2.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "foundation.v2",
+      "body.graph.v1",
+      "npc.fixed.v1",
+      "condition.v1",
+      "effect.v1",
+      "tf.pipeline.v1",
+      "hook.action.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": [],
+  "tags": [
+    {
+      "id": "foundation:setting.dry",
+      "label": "旱光街区",
+      "definition": "旱光街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.dry"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.forge",
+      "label": "炉巷街区",
+      "definition": "炉巷街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.forge"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.frost",
+      "label": "霜港街区",
+      "definition": "霜港街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.frost"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.garden",
+      "label": "林荫街区",
+      "definition": "林荫街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.garden"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.tidal",
+      "label": "咸汐街区",
+      "definition": "咸汐街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.tidal"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.wet",
+      "label": "湿雾街区",
+      "definition": "湿雾街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.wet"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.canopy",
+      "label": "树冠生态",
+      "definition": "树冠生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.canopy"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.fern",
+      "label": "蕨类生态",
+      "definition": "蕨类生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.fern"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.kelp",
+      "label": "海藻生态",
+      "definition": "海藻生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.kelp"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.lichen",
+      "label": "地衣生态",
+      "definition": "地衣生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.lichen"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.moss",
+      "label": "苔藓生态",
+      "definition": "苔藓生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.moss"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.shrub",
+      "label": "灌木生态",
+      "definition": "灌木生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.shrub"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.horticulture",
+      "label": "园艺背景",
+      "definition": "园艺背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "horticulture"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.insulation",
+      "label": "保温背景",
+      "definition": "保温背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "insulation"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.reclamation",
+      "label": "回收背景",
+      "definition": "回收背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "reclamation"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.saltwater",
+      "label": "盐水背景",
+      "definition": "盐水背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "saltwater"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.clinic",
+      "label": "诊疗服务",
+      "definition": "诊疗服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.clinic"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.commons",
+      "label": "公共空间",
+      "definition": "公共空间语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.commons"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.home",
+      "label": "住宿服务",
+      "definition": "住宿服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.home"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.market",
+      "label": "市场服务",
+      "definition": "市场服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.market"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.workshop",
+      "label": "工坊服务",
+      "definition": "工坊服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.workshop"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.solar",
+      "label": "日照利用背景",
+      "definition": "日照利用背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "solar"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.waterways",
+      "label": "水道背景",
+      "definition": "水道背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "waterways"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.city",
+      "label": "城市",
+      "definition": "关于城市的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "城市"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.assistance",
+      "label": "协助",
+      "definition": "关于协助的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "协助"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.life",
+      "label": "生活",
+      "definition": "关于生活的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "生活"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.identity",
+      "label": "身份",
+      "definition": "关于身份的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "身份"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.neighborhood",
+      "label": "邻里",
+      "definition": "关于邻里的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "邻里"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.work",
+      "label": "工作",
+      "definition": "关于工作的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "工作"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.trade",
+      "label": "交易",
+      "definition": "关于交易的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "交易"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.care",
+      "label": "诊疗",
+      "definition": "关于诊疗的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "诊疗"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.equipment",
+      "label": "装备",
+      "definition": "关于装备的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "装备"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.fit",
+      "label": "适配",
+      "definition": "关于适配的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "适配"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.social",
+      "label": "社交",
+      "definition": "关于社交的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "社交"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.rest",
+      "label": "休息",
+      "definition": "关于休息的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "休息"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.night",
+      "label": "夜间",
+      "definition": "关于夜间的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "夜间"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.mechanical",
+      "label": "机械",
+      "definition": "关于机械的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "机械"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.body-capability",
+      "label": "身体能力",
+      "definition": "关于身体能力的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "身体能力"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.exploration",
+      "label": "探索",
+      "definition": "关于探索的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "探索"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.balance",
+      "label": "平衡",
+      "definition": "关于平衡的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "平衡"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.risk",
+      "label": "风险",
+      "definition": "关于风险的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "风险"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.investigation",
+      "label": "调查",
+      "definition": "关于调查的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "调查"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.economy",
+      "label": "经济",
+      "definition": "关于经济的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "经济"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.recovery",
+      "label": "恢复",
+      "definition": "关于恢复的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "恢复"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.transformation",
+      "label": "身体变化主题",
+      "definition": "关于TF的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "TF"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.adaptation",
+      "label": "适应",
+      "definition": "关于适应的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "适应"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.salon",
+      "label": "沙龙",
+      "definition": "关于沙龙的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "沙龙"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.boundary",
+      "label": "边界",
+      "definition": "关于边界的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "边界"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.discovery",
+      "label": "发现",
+      "definition": "关于发现的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "发现"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.life-feedback",
+      "label": "生活反馈",
+      "definition": "关于生活反馈的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "生活反馈"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.beast-form",
+      "label": "兽化",
+      "definition": "关于兽化的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "兽化"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.senses",
+      "label": "感官",
+      "definition": "关于感官的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "感官"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.gel",
+      "label": "黑胶",
+      "definition": "关于黑胶的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "黑胶"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.cross-day",
+      "label": "跨日",
+      "definition": "关于跨日的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "跨日"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.lost-property",
+      "label": "失物",
+      "definition": "关于失物的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "失物"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.gen-neighbor",
+      "label": "生成街区题材",
+      "definition": "关于neighborhood的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "neighborhood"
+        }
+      ]
+    },
+    {
+      "id": "foundation:legacy.hidden",
+      "label": "旧隐藏标记",
+      "definition": "仅保留旧故事域映射；显示策略由 hidden 字段决定。",
+      "facets": [
+        "theme"
+      ],
+      "status": "deprecated",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "隐藏"
+        }
+      ]
+    },
+    {
+      "id": "foundation:body.has-tail",
+      "label": "有尾部",
+      "definition": "真实身体存在尾部。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "foundation:body.mechanical-tail",
+      "label": "机械尾部",
+      "definition": "同一个真实尾部的有效材料族为 mechanical。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "foundation:body.can-grasp",
+      "label": "具备抓握能力",
+      "definition": "真实部件定义提供至少一个抓握能力。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "foundation:time.night",
+      "label": "当前夜间",
+      "definition": "当前时钟处于 22:00–06:00；区别于剧情夜间主题。",
+      "facets": [
+        "retrieval"
+      ],
+      "status": "active",
+      "aliases": []
+    }
+  ],
+  "materials": [
+    {
+      "id": "foundation:material.gel",
+      "label": "黑胶",
+      "family": "organic"
+    },
+    {
+      "id": "foundation:material.alloy",
+      "label": "机械合金",
+      "family": "mechanical"
+    }
+  ],
+  "morphologies": [
+    {
+      "id": "foundation:morphology.wolf-ear",
+      "label": "狼形耳部",
+      "kinds": [
+        "ear"
+      ]
+    },
+    {
+      "id": "foundation:morphology.tail",
+      "label": "尾部原型",
+      "kinds": [
+        "tail"
+      ]
+    }
+  ],
+  "partProfiles": [
+    {
+      "id": "foundation:profile.gel-hand",
+      "partId": "district:part.hand.gel",
+      "defaults": {
+        "materialId": "foundation:material.gel",
+        "color": "black"
+      }
+    },
+    {
+      "id": "foundation:profile.wolf-ear",
+      "partId": "aetheria-tf:part.ear.wolf",
+      "defaults": {
+        "morphologyId": "foundation:morphology.wolf-ear"
+      }
+    }
+  ],
+  "npcBodies": [
+    {
+      "id": "foundation:npc-body.0",
+      "npcId": "aetheria-social:npc.velvet",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": []
+    },
+    {
+      "id": "foundation:npc-body.1",
+      "npcId": "district:npc.riker",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": []
+    },
+    {
+      "id": "foundation:npc-body.2",
+      "npcId": "district:npc.nara",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": []
+    }
+  ],
+  "locationProfiles": [
+    {
+      "id": "foundation:location.workshop",
+      "locationId": "district:location.workshop",
+      "service": "workshop",
+      "light": "lit"
+    }
+  ],
+  "derivedTags": [
+    {
+      "id": "foundation:derive.tail",
+      "tagId": "foundation:body.has-tail",
+      "subject": "entity",
+      "when": {
+        "op": "body.matches",
+        "target": {
+          "kind": "player"
+        },
+        "part": {
+          "kind": "tail"
+        }
+      }
+    },
+    {
+      "id": "foundation:derive.mechanical-tail",
+      "tagId": "foundation:body.mechanical-tail",
+      "subject": "entity",
+      "when": {
+        "op": "body.matches",
+        "target": {
+          "kind": "player"
+        },
+        "part": {
+          "kind": "tail",
+          "materialFamily": "mechanical"
+        }
+      }
+    },
+    {
+      "id": "foundation:derive.grasp",
+      "tagId": "foundation:body.can-grasp",
+      "subject": "entity",
+      "when": {
+        "op": "body.hasCapability",
+        "target": {
+          "kind": "player"
+        },
+        "capability": "grasp",
+        "count": 1
+      }
+    },
+    {
+      "id": "foundation:derive.night",
+      "tagId": "foundation:time.night",
+      "subject": "world",
+      "when": {
+        "op": "time.window",
+        "start": 1320,
+        "end": 360
+      }
+    },
+    {
+      "id": "foundation:derive.service.home",
+      "tagId": "foundation:service.home",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "home"
+      }
+    },
+    {
+      "id": "foundation:derive.service.market",
+      "tagId": "foundation:service.market",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "market"
+      }
+    },
+    {
+      "id": "foundation:derive.service.workshop",
+      "tagId": "foundation:service.workshop",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "workshop"
+      }
+    },
+    {
+      "id": "foundation:derive.service.clinic",
+      "tagId": "foundation:service.clinic",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "clinic"
+      }
+    },
+    {
+      "id": "foundation:derive.service.commons",
+      "tagId": "foundation:service.commons",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "commons"
+      }
+    }
+  ]
+}

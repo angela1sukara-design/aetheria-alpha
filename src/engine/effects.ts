@@ -17,6 +17,10 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       case 'resident.talk': case 'resident.help': context.resolvedTexts.push(residentInteraction(draft,registry,effect.op === 'resident.help')); break;
       case 'combat.start': case 'combat.turn': case 'scene.start': case 'scene.act': case 'equipment.wear': case 'equipment.remove': case 'player.create': case 'preference.set':
         applyDistrictEffect(effect,draft,registry,context,applyEffects); break;
+      case 'environment.setLight': {
+        if(draft.meta.schemaVersion!==4)throw new RuleError('STATE_VERSION','环境覆盖需要存档 v4。');
+        registry.location(effect.locationId);(draft.environment??={})[effect.locationId]={light:effect.value};break;
+      }
       case 'var.change': {
         const def = registry.variable(effect.id); const before = draft.player.variables[effect.id];
         const after = Math.min(def.max, before + effect.amount);
@@ -69,7 +73,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
         instance.status = 'completed'; draft.activeEventStack.pop(); break;
       }
       case 'tf.apply': case 'tf.enqueue': case 'tf.pause': case 'tf.resume': case 'tf.cancel':
-        performTransformation(effect.op, effect.id, draft, registry, context.transactionId, context.actionId, context.changes); break;
+        performTransformation(effect.op, effect.id, draft, registry, context.transactionId, context.actionId, context.changes,effect.target); break;
       case 'npc.remember': rememberNPC(draft, registry, effect.npcId, effect.memoryId, effect.relationship, context.actionId, context.transactionId, context.changes); break;
       default: throw new RuleError('UNSUPPORTED_EFFECT', '效果未实现，事务未提交。');
     }

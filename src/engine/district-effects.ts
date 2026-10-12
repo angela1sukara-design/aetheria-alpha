@@ -1,3 +1,4 @@
+import { entityBody, PLAYER } from './query.ts';
 import type { ActionDef, Effect, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import type { DistrictEffect } from '../core/district-types.ts';
@@ -7,7 +8,6 @@ import { evaluate } from './conditions.ts';
 import { RuleError } from '../core/errors.ts';
 import { bodyTraits } from './body.ts';
 import { draw } from './rng.ts';
-import { instantiateBody } from './body.ts';
 import { npcPresent, adultNPCEligibility } from './npc.ts';
 export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:EffectContext,apply:(e:Effect[],s:GameState,r:Registry,c:EffectContext)=>void):void {
  const d=district(s);
@@ -19,8 +19,9 @@ export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:Ef
   const def=r.interactions.find(x=>x.id===e.id);if(!def||d.scene||d.combat||!npcPresent(s,r,def.npcId)||!def.conditions.every(x=>evaluate(x,s,r).pass)||!d.profile.created||d.profile.ageYears<18||(r.textSlots.find(x=>x.id===def.textSlotId)?.contentTier==='adult_optional'&&!adultNPCEligibility(r,def.npcId).pass))throw new RuleError('SCENE_UNWILLING','当前身份、意愿或处境不适合继续。');
   const owner=r.textSlots.find(x=>x.id===def.textSlotId)!;const current=s.eventInstances.find(x=>x.instanceId===s.activeEventStack.at(-1));if(current?.definitionId!==owner.owner.eventId||current.nodeId!==owner.owner.nodeId)throw new RuleError('SCENE_CONTEXT','互动必须从约定的事件节点进入。');
   const pose=def.poses.find(p=>!p.requires||bodyTraits(s.player.body,r)[p.requires]>0);if(!pose||!s.player.body)throw new RuleError('SCENE_BODY','没有兼容的姿态。');
-  const npcBody=instantiateBody(r.bodyTemplates.find(x=>x.initial)!);
-  d.scene={definitionId:e.id,phase:'active',poseId:pose.id,turn:0,actors:[{id:'player',body:structuredClone(s.player.body),facing:pose.facing,zone:pose.zone},{id:def.npcId,body:npcBody,facing:'front',zone:'near'}],contacts:[]};
+  const npcBody=entityBody(s,{kind:'npc',id:def.npcId});if(!npcBody.known)throw new RuleError('SCENE_BODY_UNKNOWN',npcBody.reason);
+  s.meta.schemaVersion=4;s.meta.engineVersion='0.2-foundation';s.environment??={};
+  d.scene={definitionId:e.id,phase:'active',poseId:pose.id,turn:0,actors:[{id:'player',entity:PLAYER,facing:pose.facing,zone:pose.zone},{id:def.npcId,entity:{kind:'npc',id:def.npcId},facing:'front',zone:'near'}],contacts:[]};
   if(!d.discovered.includes(def.id))d.discovered.push(def.id);c.resolvedTexts.push('双方确认可以暂停或离开。你们在约定的位置坐定，尚未建立接触。');
  }
  else if(e.op==='scene.act') {
@@ -31,8 +32,8 @@ export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:Ef
   if(scene.phase!=='active')throw new RuleError('SCENE_PAUSED','先恢复场景或退出。');
   if(e.move==='pose'){const pose=def.poses.find(p=>p.id===e.poseId);if(!pose||(pose.requires&&bodyTraits(s.player.body,r)[pose.requires]<1))throw new RuleError('POSE_BODY','身体不具备该姿态的稳定条件。');scene.contacts=[];scene.poseId=pose.id;scene.actors[0]!.facing=pose.facing;scene.actors[0]!.zone=pose.zone;c.resolvedTexts.push(`先松开接触，再调整位置：${pose.label}。`);}
   else if(e.move==='release'){scene.contacts=[];c.resolvedTexts.push('你松开接触，对方也收回动作。');}
-  else if(e.move==='contact'){const pose=def.poses.find(p=>p.id===scene.poseId)!;if(pose.facing!=='front'||pose.zone!=='near')throw new RuleError('CONTACT_POSITION','需要面对面且处于近处。');const free=s.player.body?.parts.find(p=>r.bodyPart(p.definitionId).kind==='hand'&&!scene.contacts.some(c=>c.playerPartId===p.instanceId));const target=scene.actors[1]!.body.parts.find(p=>r.bodyPart(p.definitionId).kind==='hand'&&!scene.contacts.some(c=>c.npcPartId===p.instanceId));if(!free||!target)throw new RuleError('CONTACT_RESOURCE','没有空闲的抓握部位。');scene.contacts.push({playerPartId:free.instanceId,npcPartId:target.instanceId,sinceTurn:scene.turn});c.resolvedTexts.push('对方点头后，你们建立短暂的手部接触。双方的对应部位被占用，直到释放、转身、暂停或退出。');}
-  scene.turn++;scene.actors[0]!.body=structuredClone(s.player.body!);
+  else if(e.move==='contact'){const pose=def.poses.find(p=>p.id===scene.poseId)!;if(pose.facing!=='front'||pose.zone!=='near')throw new RuleError('CONTACT_POSITION','需要面对面且处于近处。');const free=s.player.body?.parts.find(p=>r.bodyPart(p.definitionId).kind==='hand'&&!scene.contacts.some(c=>c.playerPartId===p.instanceId));const npc=entityBody(s,scene.actors[1]!.entity!);const target=(npc.known?npc.value.parts:[]).find(p=>r.bodyPart(p.definitionId).kind==='hand'&&!scene.contacts.some(c=>c.npcPartId===p.instanceId));if(!free||!target)throw new RuleError('CONTACT_RESOURCE','没有空闲的抓握部位。');scene.contacts.push({playerPartId:free.instanceId,npcPartId:target.instanceId,sinceTurn:scene.turn});c.resolvedTexts.push('对方点头后，你们建立短暂的手部接触。双方的对应部位被占用，直到释放、转身、暂停或退出。');}
+  scene.turn++;
  }
  else if(e.op==='combat.start') {
   const enemy=r.enemies.find(x=>x.id===e.id);if(!enemy||d.combat||d.scene||s.activeEventStack.length)throw new RuleError('COMBAT_CONTEXT','现在不能开始战斗。');

@@ -7,7 +7,7 @@ import {createGameState} from '../src/engine/state.ts';
 import {ActionExecutor} from '../src/engine/executor.ts';
 import {SaveCodec} from '../src/persistence/codec.ts';
 import type {Id, ContentPack} from '../src/core/types.ts';
-export async function districtGame(seed=52){const extra=JSON.parse(await readFile(new URL('../content/district/pack.json',import.meta.url),'utf8')) as ContentPack;const registry=await loadPacks([...await packs(),extra]);return {registry,engine:new ActionExecutor(registry,createGameState(registry,seed))};}
+export async function districtGame(seed=52){const extra=JSON.parse(await readFile(new URL('../content/district/pack.json',import.meta.url),'utf8')) as ContentPack;const registry=await loadPacks([...await packs(),extra,JSON.parse(await readFile(new URL('../content/foundation/pack.json',import.meta.url),'utf8'))]);return {registry,engine:new ActionExecutor(registry,createGameState(registry,seed))};}
 export function must(e:ActionExecutor,id:Id){const result=e.performAction({actionId:id},e.snapshot().meta.revision,crypto.randomUUID());assert.equal(result.ok,true,`${id}: ${result.message}`);return result;}
 export function da(e:ActionExecutor,key:string){return must(e,`district:action.${key}`);}
 test('A: ten useful places and thirty distinct storylets load through one added pack',async()=>{const {registry}=await districtGame();assert.equal(registry.locations.length,10);assert.equal(registry.storylets.length,30);assert.equal(new Set(registry.storylets.map(s=>s.eventId)).size,30);});

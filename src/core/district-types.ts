@@ -1,3 +1,4 @@
+import type { EntityRef } from './query-types.ts';
 import type { Id, Condition } from './types.ts';
 import type { BodyGraph, BodyCapability } from './body-types.ts';
 export interface StoryletDef {
@@ -59,6 +60,6 @@ export interface DistrictState {
   factsAt: Record<Id, number>; discovered: Id[]; inventory: Id[]; equipped: Id | null;
   combat: { enemyId: Id; hp: number; turn: number; log: string[] } | null;
   scene: { definitionId: Id; phase: 'active' | 'paused'; poseId: string; turn: number;
-    actors: { id: string; body: BodyGraph; facing: 'front' | 'away'; zone: 'near' | 'across' }[];
+    actors: { id: string; entity?: EntityRef; body?: BodyGraph; facing: 'front' | 'away'; zone: 'near' | 'across' }[];
     contacts: { playerPartId: string; npcPartId: string; sinceTurn: number }[] } | null;
 }
