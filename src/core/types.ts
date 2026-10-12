@@ -1,9 +1,11 @@
+import type { EntityRef, FoundationDefinitions, QueryCondition } from './query-types.ts';
 import type { BodyGraph, BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef, TFInstance, TFState, BodyCapability } from './body-types.ts';
 import type { NPCDef, NPCState, NPCMemoryDef, SpeciesDef, RelationField } from './npc-types.ts';
 import type { DistrictDefinitions, DistrictEffect, DistrictCondition, DistrictState } from './district-types.ts';
 export type Id = `${string}:${string}`;
 export type Scalar = string | number | boolean;
 export type Condition =
+  | QueryCondition
   | DistrictCondition
   | { op: 'all' | 'any'; conditions: Condition[] }
   | { op: 'not'; condition: Condition }
@@ -12,13 +14,14 @@ export type Condition =
   | { op: 'location.is'; id: Id }
   | { op: 'time.window'; start: number; end: number }
   | { op: 'event.state'; id: Id; state: 'active' | 'completed' | 'unseen' }
-  | { op: 'body.hasPart'; definitionId: Id }
-  | { op: 'body.hasCapability'; capability: BodyCapability; count: number }
-  | { op: 'tf.state'; id: Id; state: TFState | 'idle' }
+  | { op: 'body.hasPart'; definitionId: Id; target?: EntityRef }
+  | { op: 'body.hasCapability'; capability: BodyCapability; count: number; target?: EntityRef }
+  | { op: 'tf.state'; id: Id; state: TFState | 'idle'; target?: EntityRef }
   | { op: 'npc.present'; npcId: Id }
   | { op: 'npc.memory'; npcId: Id; memoryId: Id; value: boolean }
   | { op: 'npc.relation'; npcId: Id; field: RelationField; comparison: 'eq' | 'gte' | 'lte'; value: number };
 export type Effect =
+  | { op: 'environment.setLight'; locationId: Id; value: 'lit' | 'dark' }
   | DistrictEffect
   | { op: 'var.change'; id: Id; amount: number }
   | { op: 'flag.set'; id: Id; value: boolean }
@@ -27,7 +30,7 @@ export type Effect =
   | { op: 'event.start'; id: Id }
   | { op: 'event.advance'; nodeId: string }
   | { op: 'event.exit' }
-  | { op: 'tf.apply' | 'tf.enqueue' | 'tf.pause' | 'tf.resume' | 'tf.cancel'; id: Id }
+  | { op: 'tf.apply' | 'tf.enqueue' | 'tf.pause' | 'tf.resume' | 'tf.cancel'; id: Id; target?: EntityRef }
   | { op: 'npc.remember'; npcId: Id; memoryId: Id; relationship: Record<RelationField, number> };
 export interface VariableDef { id: Id; label: string; initial: number; min: number; max: number; unit: string }
 export interface FlagDef { id: Id; initial: boolean }
@@ -43,13 +46,13 @@ export interface ActionDef {
 export interface EventNode { id: string; type: 'choice' | 'exit'; textVariants: Id[]; actionIds: Id[]; onEnter: Effect[] }
 export interface EventDef { id: Id; startNode: string; nodes: EventNode[]; participantIds?: Id[]; rating?: 'general' | 'adult' }
 export interface PackManifest {
-  id: string; namespace: string; version: string; schemaVersion: 1; engineApiVersion: '0.1';
+  id: string; namespace: string; version: string; schemaVersion: 1 | 2; engineApiVersion: '0.1';
   author: string; status: 'draft' | 'reviewed' | 'approved';
   dependencies: { id: string; version: string; optional: boolean }[];
   requiresCapabilities: string[];
   migrations: []; // 通用内容包迁移未实现；仅存档codec允许已发布官方版本的精确升级。
 }
-export interface ContentPack extends DistrictDefinitions {
+export interface ContentPack extends DistrictDefinitions, FoundationDefinitions {
   manifest: PackManifest; variables: VariableDef[]; flags: FlagDef[]; hooks: HookDef[];
   locations: LocationDef[]; routes: RouteDef[]; actions: ActionDef[]; events: EventDef[];
   texts: Record<Id, string>; contributions: { hookId: Id; actionIds: Id[] }[];
@@ -71,9 +74,10 @@ export interface ActionResult {
 }
 export interface Transaction { requestId: string; fingerprint: string; result: ActionResult }
 export interface GameState {
+  environment?: Record<Id, { light?: 'lit' | 'dark' }>;
   worldInstance?: import('../world/types.ts').WorldInstance;
   district?: DistrictState;
-  meta: { schemaVersion: 3; engineVersion: '0.1-stage3'; revision: number; packs: PackRef[] };
+  meta: { schemaVersion: 3 | 4; engineVersion: '0.1-stage3' | '0.2-foundation'; revision: number; packs: PackRef[] };
   clock: { totalMinutes: number; crossedDays: number[] };
   world: { locationId: Id; knownLocationIds: Id[] };
   player: { variables: Record<Id, number>; flags: Record<Id, boolean>; body: BodyGraph | null };

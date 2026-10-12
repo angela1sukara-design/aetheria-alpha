@@ -2,6 +2,20 @@ node_modules/
 dist/
 artifacts/*
 !artifacts/.gitkeep
+!artifacts/README.md
 
 .npm-cache/
-deliverables/
+deliverables/*
+!deliverables/README.md
+!deliverables/current/
+deliverables/current/*
+!deliverables/current/README.md
+!deliverables/archive/
+deliverables/archive/*
+!deliverables/archive/README.md
+!deliverables/tools/
+deliverables/tools/*
+!deliverables/tools/README.md
+!deliverables/checkpoints/
+deliverables/checkpoints/*
+!deliverables/checkpoints/README.md

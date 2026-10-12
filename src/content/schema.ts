@@ -1,3 +1,4 @@
+import { projectV2 } from './foundation-schema.ts';
 import { parseDistrict } from './district-schema.ts';
 import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
 import { RELATION_FIELDS } from '../core/npc-types.ts';
@@ -8,6 +9,7 @@ export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'ho
 type Obj = Record<string, unknown>;
 /** 只冻结本切片实际使用的契约；未实现操作符必须导入失败，不能静默跳过。 */
 export function parsePack(input: unknown): ContentPack {
+  if ((input as ContentPack)?.manifest?.schemaVersion === 2) return projectV2(input, parsePack);
   const issues: PackIssue[] = [];
   let packId = 'unknown';
   function fail(pointer: string, reason: string, code = 'SCHEMA_INVALID'): void {
