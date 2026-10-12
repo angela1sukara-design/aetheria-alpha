@@ -15,7 +15,11 @@ export function validateDistrictState(s:GameState,r:Registry):void {
  for(const [id,at]of Object.entries(d.factsAt)){r.flag(id as `${string}:${string}`);int(at,0,s.clock.totalMinutes);}
  for(const id of d.discovered)if(!r.storylets.some(x=>x.id===id)&&!r.interactions.some(x=>x.id===id))throw Error('发现记录无效。');
  for(const id of d.inventory)if(!r.equipment.some(x=>x.id===id))throw Error('装备缺失。');if(d.equipped&&!d.inventory.includes(d.equipped))throw Error('装备不在背包中。');
- if(d.combat){const e=r.enemies.find(x=>x.id===d.combat!.enemyId);if(!e)throw Error('敌人缺失。');int(d.combat.hp,1,e.hp);int(d.combat.turn);if(s.activeEventStack.length)throw Error('战斗与事件状态冲突。');}
+ if(d.combat){const e=r.enemies.find(x=>x.id===d.combat!.enemyId);if(!e)throw Error('敌人缺失。');int(d.combat.hp,1,e.hp);int(d.combat.turn);if(s.activeEventStack.length)throw Error('战斗与事件状态冲突。');
+  const c=d.combat as unknown as {enemy?:Record<string,unknown>;playerAp?:number;guarding?:boolean};
+  if(c.enemy){for(const k of ['hpMax','attack','defense','speed','skillPower','crit','hit','evasion','skillResource','actionsPerTurn','defenseBonus','fleeBonus'] as const){const v=c.enemy[k];if(typeof v!=='number'||!Number.isSafeInteger(v))throw Error('战斗敌方运行时无效。');}
+   if(!['S','M','L','boss'].includes(String(c.enemy.tier)))throw Error('战斗敌方档位无效。');}
+  if(c.playerAp!==undefined)int(c.playerAp,0,10);if(c.guarding!==undefined&&typeof c.guarding!=='boolean')throw Error('战斗防守标记无效。');}
  if(d.scene){
   const scene=d.scene,i=r.interactions.find(x=>x.id===scene.definitionId),pose=i?.poses.find(p=>p.id===scene.poseId);
   if(!i||!pose||!['active','paused'].includes(scene.phase))throw Error('互动状态无效。');

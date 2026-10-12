@@ -1,6 +1,7 @@
 import type { EntityRef } from './query-types.ts';
 import type { Id, Condition } from './types.ts';
 import type { BodyGraph, BodyCapability } from './body-types.ts';
+export type EnemyTier = 'S' | 'M' | 'L' | 'boss';
 export interface StoryletDef {
   id: Id; locationId: Id; conditions: Condition[]; eventId: Id; weight: number; priority: number;
   cooldownMinutes: number; cooldownGroup: string; repeat: 'once' | 'daily' | 'repeat'; hidden: boolean; tags: string[];
@@ -17,8 +18,24 @@ export interface Resident {
   id: string; templateId: Id; name: string; locationId: Id; profession: string; appearance: string; personality: string;
   speciesId: Id; ageYears: number; body: BodyGraph; persistent: boolean; visits: number; trust: number; lastTalkDay: number; memories: string[];
 }
+/** 敌方八维与行动经济；不写玩家 VariableDef。 */
+export interface EnemyCombatStats {
+  attack: number; defense: number; speed: number; skillPower: number;
+  crit: number; hit: number; evasion: number;
+  actionsPerTurn: number; skillResource: number;
+}
+export interface EnemyPhaseDef {
+  /** HP 比例阈值，如 0.5 表示 ≤50% */
+  hpRatio: number; defenseBonus: number; extraActions: number;
+}
 export interface EnemyDef {
-  id: Id; name: string; hp: number; reward: number; intents: { label: string; damage: number; guard: number; drain: number }[];
+  id: Id; name: string; hp: number; reward: number;
+  /** S/M/L 三类或 boss 专表；缺省时由 combat/hp 推断。 */
+  tier?: EnemyTier;
+  combat?: EnemyCombatStats;
+  /** Boss 阶段；非 boss 勿填。 */
+  phases?: EnemyPhaseDef[];
+  intents: { label: string; damage: number; guard: number; drain: number }[];
   victoryEventId: Id; defeatEventId: Id; escapeEventId: Id;
 }
 export interface InteractionDef {
@@ -54,14 +71,32 @@ export type DistrictCondition =
   | { op: 'scene.state'; value: 'active' | 'paused' | 'none' }
   | { op: 'resident.available' }
   | { op: 'player.created'; value: boolean };
+/** 战斗运行时敌方快照（开打时从模板拷入）。 */
+export interface CombatEnemyRuntime {
+  hpMax: number;
+  attack: number; defense: number; speed: number; skillPower: number;
+  crit: number; hit: number; evasion: number;
+  skillResource: number; actionsPerTurn: number;
+  /** 本回合临时 DEF 加成（来自 intent.guard / 阶段） */
+  defenseBonus: number;
+  tier: EnemyTier;
+  fleeBonus: number;
+}
+export interface CombatState {
+  enemyId: Id; hp: number; turn: number; log: string[];
+  enemy: CombatEnemyRuntime;
+  /** 本回合剩余 AP；开回合 = min(10, core:actionPoints) */
+  playerAp: number;
+  guarding: boolean;
+}
 export interface DistrictState {
   version: 1; profile: { name: string; ageYears: number; created: boolean; adultOptional: boolean };
   residents: Resident[]; currentResidentId: string | null; storyletHistory: { id: Id; at: number }[];
   factsAt: Record<Id, number>; discovered: Id[]; inventory: Id[]; equipped: Id | null;
-  combat: { enemyId: Id; hp: number; turn: number; log: string[] } | null;
+  combat: CombatState | null;
   scene: { definitionId: Id; phase: 'active' | 'paused'; poseId: string; turn: number;
     actors: { id: string; entity?: EntityRef; body?: BodyGraph; facing: 'front' | 'away'; zone: 'near' | 'across' }[];
     contacts: { playerPartId: string; npcPartId: string; sinceTurn: number }[];
-    /** 场景临时：离场清零；衰减公式待接。 */
+    /** 场景临时：exit 前写入 aftertaste，再随 scene=null 丢弃。 */
     arousal: number; restraint: number } | null;
 }

@@ -1,7 +1,7 @@
 # 数值属性实装说明（vars / engine）
 
 > 日期：2026-10-12 · 仓库：aetheria-alpha  
-> 状态：已入库 VariableDef + 战斗/事件统一 HP；部分结算仍为占位。
+> 状态：VariableDef 已入库；深设计公式已接线（见 DESIGN-deep-numerics + NOTES-deep-numerics-impl-2026-10-12）。
 
 ## 1. 拍板摘要
 
@@ -26,11 +26,11 @@
 | `core:money` | 零钱 | 60 | 0–999999 | 已有 |
 | `core:energy` | 精力 | 70 | 0–100 | 已有 |
 | `core:health` | 生命 | 100 | 0–100 | **统一 HP**；原「体况」改名 |
-| `core:stamina` | 体力 | 100 | 0–100 | 日常；结算待接 |
-| `core:sanity` | 理智 | 0 | 0–100 | 战败 +10 占位；满值 Bad End stub |
-| `core:skillResource` | 技能资源 | 100 | 0–100 | 放技能；结算待接 |
+| `core:stamina` | 体力 | 100 | 0–100 | 赶路/劳动/战斗负荷；低体力门槛已接 |
+| `core:sanity` | 理智 | 0 | 0–100 | 正式公式；满值 flag + district:event.sanity_break |
+| `core:skillResource` | 技能资源 | 100 | 0–100 | 战斗回合+5；喘息+8；出战斗每30min+10 |
 
-### B 战斗八维（VariableDef 已入库，结算未接）
+### B 战斗八维（VariableDef 已入库，命中/伤害/暴击已接）
 
 `core:attack` / `defense` / `speed` / `skillPower` / `crit` / `hit` / `evasion`
 
@@ -47,8 +47,8 @@
 
 挂在 `DistrictState.scene`：
 
-- `arousal` / `restraint`：进场初始化为 0；`scene.act exit` 时随 `scene=null` 清零  
-- **离场衰减公式**：未实装（代码注释 TODO）
+- `arousal` / `restraint`：进场 0；exit 前写入 `core:aftertaste`，再随 scene 清零  
+- 余韵自然衰减：时钟每 60min −5
 
 ### Flag
 
@@ -79,16 +79,14 @@
 
 ## 4. 未完成 / 需用户拍板
 
-1. **战斗平衡**：统一 HP 上限 100（原交锋条 40），敌方伤害未重配；是否保持 100、或改回更短战、或按八维结算？
-2. **理智公式**：当前战败固定 `+10`；满值仅打 flag + 占位文案。Bad End 事件 ID、继续互动是否也涨理智、涨幅曲线？
-3. **stamina 消耗点**：赶路 / 挣扎 / worldgen 活动尚未扣 `core:stamina`（仍可能只扣 energy）
-4. **skillResource / 八维 / actionPoints**：仅 VariableDef；技能与战斗公式未接
-5. **倾向值**：仅入库；文风挂钩与是否允许 content 直接 `var.change` 需约定
-6. **场景衰减**：`arousal`/`restraint` 离场清零已有；按回合/时钟衰减未做
-7. **transformPerception**：stub 恒返回 0
-8. **skillResource 显示名**：世界观定稿后改 label
-9. **HUD**：是否要可配置展示战斗维/倾向，或加 VariableDef 可选 `hud` 字段
-10. **治疗量**：安全区 `+100` 拉满是否过强；诊所以 `+8` 是否要改口径
+详见 `NOTES-deep-numerics-impl-2026-10-12.md`。摘要：
+
+1. 多卡同回 AP 手牌经济（现一动一回合）
+2. 远路 route 标签（−5）
+3. Boss 内容遭遇
+4. 场景 arousal/restraint 拍点写入
+5. **skillResource 显示名** / HUD 可配置
+6. **治疗量**：安全区 `+100` 是否改 `+40`
 
 ## 5. 原则备忘
 

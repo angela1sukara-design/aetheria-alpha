@@ -7,6 +7,8 @@ import { draw } from './rng.ts';
 import { activeEvent } from './events.ts';
 import { encounter, residentInteraction } from './district.ts';
 import { applyDistrictEffect } from './district-effects.ts';
+import { aftertasteDecay, sanityRestDelta, skillResourceOutOfCombatRegen, STAMINA_COST } from './numerics.ts';
+import { SANITY_ID } from '../persistence/vars-migration.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
 export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
@@ -38,12 +40,46 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       case 'clock.advance': {
         const before = draft.clock.totalMinutes; advanceTransformationTime(draft, effect.minutes, registry, context.changes);
         if (effect.minutes) context.changes.push({ label: '时间', before: formatClock(before), after: formatClock(draft.clock.totalMinutes) });
+        if (effect.minutes > 0 && !draft.district?.combat) {
+          const atDef = registry.variables.find(v => v.id === 'core:aftertaste');
+          const srDef = registry.variables.find(v => v.id === 'core:skillResource');
+          if (atDef && 'core:aftertaste' in draft.player.variables) {
+            const b = draft.player.variables[atDef.id]!;
+            const a = aftertasteDecay(b, effect.minutes);
+            if (a !== b) { draft.player.variables[atDef.id] = a; context.changes.push({ label: atDef.label, before: b, after: a }); }
+          }
+          if (srDef && 'core:skillResource' in draft.player.variables) {
+            const b = draft.player.variables[srDef.id]!;
+            const a = skillResourceOutOfCombatRegen(b, effect.minutes, srDef.max);
+            if (a !== b) { draft.player.variables[srDef.id] = a; context.changes.push({ label: srDef.label, before: b, after: a }); }
+          }
+        }
+        const restLike = /(?:^|:)action\.(?:rest|waitday)\b/.test(context.actionId) || context.actionId.includes('.rest.') || context.actionId.includes('.waitday.');
+        if (restLike && effect.minutes >= 30) {
+          const def = registry.variables.find(v => v.id === SANITY_ID);
+          const delta = sanityRestDelta(effect.minutes);
+          if (def && delta && SANITY_ID in draft.player.variables) {
+            const b = draft.player.variables[SANITY_ID]!;
+            const a = Math.max(def.min, b + delta);
+            if (a !== b) { draft.player.variables[SANITY_ID] = a; context.changes.push({ label: def.label, before: b, after: a }); }
+          }
+        }
         break;
       }
       case 'location.move': {
         if (activeEvent(draft)) throw new RuleError('EVENT_ACTIVE', '先完成或退出当前事件。');
         const route = registry.route(effect.routeId);
         if (route.from !== draft.world.locationId) throw new RuleError('INVALID_ROUTE_ORIGIN', '当前地点不是这条路线的起点。');
+        const staminaId = 'core:stamina' as import('../core/types.ts').Id;
+        const staminaCost = STAMINA_COST.moveShort; // 跨区远路标签待接；现行路线按邻接 −2
+        if (staminaId in draft.player.variables) {
+          const def = registry.variable(staminaId);
+          const beforeSt = draft.player.variables[staminaId]!;
+          const afterSt = beforeSt - staminaCost;
+          if (afterSt < def.min) throw new RuleError('INSUFFICIENT_RESOURCE', `${def.label}不足：当前 ${beforeSt}，本次需要 ${staminaCost}。`);
+          draft.player.variables[staminaId] = afterSt;
+          context.changes.push({ label: def.label, before: beforeSt, after: afterSt });
+        }
         const before = registry.location(route.from).name;
         draft.world.locationId = route.to;
         if (!draft.world.knownLocationIds.includes(route.to)) draft.world.knownLocationIds.push(route.to);

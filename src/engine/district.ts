@@ -59,13 +59,16 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
   if (help) {
     if(!activityEligibility(r.body,t,registry).pass)throw new RuleError('RESIDENT_ACTIVITY_BODY','对方当前身体不满足这项工作的适配。');
     if (r.memories.includes(`help:${day}`)) throw new RuleError('ALREADY_HELPED', '今天的事情已经处理好。明天再见。');
-    const energy = state.player.variables['core:energy'];
-    if (energy < 5) throw new RuleError('EXHAUSTED', '需要5点精力。');
-    state.player.variables['core:energy'] -= 5;
+    const stamina = state.player.variables['core:stamina'] ?? 0;
+    const energy = state.player.variables['core:energy'] ?? 0;
+    if (stamina < 8) throw new RuleError('EXHAUSTED', '需要8点体力。');
+    state.player.variables['core:stamina'] = stamina - 8;
+    // 脑力疲劳可选 −2 energy
+    if (energy >= 2) state.player.variables['core:energy'] = energy - 2;
     r.memories.push(`help:${day}`); r.trust += 2; r.persistent = true;
     const line = { trade: '你帮忙核对称重与收据。对方把一份摊位余粮交给你，叮嘱雨前记得带回家。', repair: '你托稳松动的灯罩，对方接好电线。街角重新亮起来，你们约好有故障可以互相照应。', guide: '你们把模糊的路标重新擦亮。对方在你的路线纸上补了一条能避开积水的通道。' }[t.behavior];
     state.player.variables['core:money'] = Math.min(registry.variable('core:money').max,state.player.variables['core:money']!+3);
-    return `${r.name}与你确认了手边的事情。${t.dialogue?.help ?? line}（精力−5，零钱+3；今天只能协助一次。）`;
+    return `${r.name}与你确认了手边的事情。${t.dialogue?.help ?? line}（体力−8，零钱+3；今天只能协助一次。）`;
   }
   if (r.lastTalkDay !== day) { r.visits++; r.trust++; r.lastTalkDay = day; r.memories.push(`talk:${day}`); }
   r.persistent = r.visits >= 2 || r.trust >= 2;

@@ -63,5 +63,5 @@ export function normalizeSceneTemps(state: GameState): void {
 export const PLAYER_HP_ID = 'core:health' as Id;
 export const SANITY_ID = 'core:sanity' as Id;
 export const SANITY_BREAK_FLAG = 'core:flag.sanity_break' as Id;
-/** 战败理智增量占位（正式公式待拍板）。 */
-export const SANITY_DEFEAT_DELTA = 10;
+/** @deprecated 已由 numerics.sanityGain 正式公式取代；保留以免旧测试/脚本引用断裂。 */
+export const SANITY_DEFEAT_DELTA = 6;

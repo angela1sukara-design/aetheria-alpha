@@ -953,7 +953,12 @@
         {
           "op": "var.change",
           "id": "core:energy",
-          "amount": 15
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 12
         }
       ],
       "resultText": "district:text.rest.location.street"
@@ -1208,7 +1213,12 @@
         {
           "op": "var.change",
           "id": "core:energy",
-          "amount": 15
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 12
         }
       ],
       "resultText": "district:text.rest.location.cafe"
@@ -1286,7 +1296,12 @@
         {
           "op": "var.change",
           "id": "core:energy",
-          "amount": 15
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 12
         }
       ],
       "resultText": "district:text.rest.location.workshop"
@@ -1364,7 +1379,12 @@
         {
           "op": "var.change",
           "id": "core:energy",
-          "amount": 15
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 12
         }
       ],
       "resultText": "district:text.rest.location.canal"
@@ -1442,7 +1462,12 @@
         {
           "op": "var.change",
           "id": "core:energy",
-          "amount": 15
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 12
         }
       ],
       "resultText": "district:text.rest.location.archive"
@@ -1520,7 +1545,12 @@
         {
           "op": "var.change",
           "id": "core:energy",
-          "amount": 15
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 12
         }
       ],
       "resultText": "district:text.rest.location.station"
@@ -1662,6 +1692,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.apartment"
@@ -1681,6 +1716,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.street"
@@ -1700,6 +1740,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.market"
@@ -1719,6 +1764,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.clinic"
@@ -1738,6 +1788,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.salon"
@@ -1757,6 +1812,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.cafe"
@@ -1776,6 +1836,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.workshop"
@@ -1795,6 +1860,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.canal"
@@ -1814,6 +1884,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.archive"
@@ -1833,6 +1908,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 70
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
         }
       ],
       "resultText": "district:text.waitday.location.station"
@@ -4414,7 +4494,7 @@
     },
     {
       "id": "district:action.combat.attack",
-      "label": "进攻 · 精力−3",
+      "label": "进攻 · 体力−3",
       "hint": "选择会推进经历 · 查看行动反馈",
       "group": "daily",
       "conditions": [],
@@ -4428,7 +4508,7 @@
     },
     {
       "id": "district:action.combat.guard",
-      "label": "防守 · 减伤8、精力+4",
+      "label": "防守 · 承伤减半、精力+2",
       "hint": "选择会推进经历 · 查看行动反馈",
       "group": "daily",
       "conditions": [],
@@ -4442,7 +4522,7 @@
     },
     {
       "id": "district:action.combat.recover",
-      "label": "临时包扎 · 精力−6、体力+10",
+      "label": "临时包扎 · 体力−4、生命+8",
       "hint": "选择会推进经历 · 查看行动反馈",
       "group": "daily",
       "conditions": [],
@@ -4456,7 +4536,7 @@
     },
     {
       "id": "district:action.combat.flee",
-      "label": "寻找出口撤离",
+      "label": "寻找出口撤离 · 体力−4",
       "hint": "选择会推进经历 · 查看行动反馈",
       "group": "daily",
       "conditions": [],
@@ -5609,8 +5689,13 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "core:energy",
+          "id": "core:stamina",
           "amount": -8
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -2
         },
         {
           "op": "var.change",
@@ -8481,6 +8566,24 @@
       ],
       "resultText": "district:text.tf.wolf.cancel",
       "surface": "body"
+    },
+    {
+      "id": "district:action.event.sanity_break.start.0",
+      "label": "接受崩坏结局",
+      "hint": "选择会推进经历 · 查看行动反馈",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "district:text.sanity_break.choice",
+      "context": {
+        "eventId": "district:event.sanity_break",
+        "nodeId": "start"
+      }
     }
   ],
   "events": [
@@ -11632,6 +11735,36 @@
       "participantIds": [
         "aetheria-social:npc.velvet"
       ]
+    },
+    {
+      "id": "district:event.sanity_break",
+      "startNode": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "district:text.sanity_break.start"
+          ],
+          "actionIds": [
+            "district:action.event.sanity_break.start.0"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "district:text.sanity_break.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
     }
   ],
   "texts": {
@@ -12221,7 +12354,10 @@
     "district:text.follow.nara.follow": "娜拉说起你们整理的护理卡。“你允许公开的部分仍保持匿名。有人按里面的方法调整了椅子，终于能自己休息好。”她记得你对公开范围的选择。",
     "district:text.story.after.rain": "你曾经拦起围栏的路口已经补好绝缘层。维修队留下了一张公开验收单，那次协助并没有随着页面关闭而消失。",
     "district:text.story.after.water": "新的警戒刻度对应你协助记录过的水位。低处行人开始沿更安全的路线通过。",
-    "district:text.story.after.ledger": "补齐的工时残页已经装订归档。公开索引注明了核对来源，工人的工时不再只靠口头争辩。"
+    "district:text.story.after.ledger": "补齐的工时残页已经装订归档。公开索引注明了核对来源，工人的工时不再只靠口头争辩。",
+    "district:text.sanity_break.start": "崩坏积蓄已满。意识像潮水一样漫过边界：你仍能感到身体，却再也分不清哪些念头属于自己。\n\n这是理智阈值的 Bad End。你可以读档、从安全点重来，或把这次沉沦记进经历。",
+    "district:text.sanity_break.end": "故事在这里停住。标记 core:flag.sanity_break 已留下；重新开始前，世界不会自动抹去这次崩坏。",
+    "district:text.sanity_break.choice": "你没有反抗潮水。结局已定。"
   },
   "contributions": [
     {
@@ -13073,7 +13209,7 @@
     {
       "id": "district:enemy.scavenger",
       "name": "失控搬运机",
-      "hp": 30,
+      "hp": 40,
       "reward": 12,
       "intents": [
         {
@@ -13097,12 +13233,24 @@
       ],
       "victoryEventId": "district:event.victory.scavenger",
       "defeatEventId": "district:event.defeat.scavenger",
-      "escapeEventId": "district:event.escape.scavenger"
+      "escapeEventId": "district:event.escape.scavenger",
+      "tier": "S",
+      "combat": {
+        "attack": 9,
+        "defense": 5,
+        "speed": 9,
+        "skillPower": 6,
+        "hit": 72,
+        "evasion": 5,
+        "crit": 3,
+        "actionsPerTurn": 1,
+        "skillResource": 0
+      }
     },
     {
       "id": "district:enemy.collector",
       "name": "拦路收债客",
-      "hp": 38,
+      "hp": 60,
       "reward": 16,
       "intents": [
         {
@@ -13112,7 +13260,7 @@
           "drain": 0
         },
         {
-          "label": "逼近，试图耗尽你的精力",
+          "label": "逼近，试图拖垮你的体力",
           "damage": 8,
           "guard": 1,
           "drain": 5
@@ -13126,19 +13274,31 @@
       ],
       "victoryEventId": "district:event.victory.collector",
       "defeatEventId": "district:event.defeat.collector",
-      "escapeEventId": "district:event.escape.collector"
+      "escapeEventId": "district:event.escape.collector",
+      "tier": "M",
+      "combat": {
+        "attack": 12,
+        "defense": 8,
+        "speed": 10,
+        "skillPower": 10,
+        "hit": 75,
+        "evasion": 10,
+        "crit": 5,
+        "actionsPerTurn": 1,
+        "skillResource": 30
+      }
     },
     {
       "id": "district:enemy.gel",
       "name": "渠底黑胶群落",
-      "hp": 26,
+      "hp": 35,
       "reward": 10,
       "intents": [
         {
           "label": "缓慢靠近，堵住低处",
           "damage": 5,
           "guard": 3,
-          "drain": 3
+          "drain": 2
         },
         {
           "label": "回缩并凝成坚硬外层",
@@ -13150,12 +13310,24 @@
           "label": "甩出黏性外层",
           "damage": 11,
           "guard": 0,
-          "drain": 2
+          "drain": 1
         }
       ],
       "victoryEventId": "district:event.victory.gel",
       "defeatEventId": "district:event.defeat.gel",
-      "escapeEventId": "district:event.escape.gel"
+      "escapeEventId": "district:event.escape.gel",
+      "tier": "S",
+      "combat": {
+        "attack": 8,
+        "defense": 4,
+        "speed": 8,
+        "skillPower": 6,
+        "hit": 70,
+        "evasion": 5,
+        "crit": 3,
+        "actionsPerTurn": 1,
+        "skillResource": 0
+      }
     }
   ],
   "interactions": [
