@@ -1,0 +1,22 @@
+{
+  "format": "aetheria-generation-rules",
+  "schemaVersion": 1,
+  "id": "authoring/tag-coexistence-playtest-rules",
+  "version": "1.0.0",
+  "requiredServices": [
+    "home",
+    "market",
+    "workshop",
+    "clinic",
+    "commons"
+  ],
+  "locationCount": 5,
+  "npcCount": 3,
+  "extraConnections": 1,
+  "startMinutes": 1320,
+  "workStart": 480,
+  "workEnd": 1080,
+  "leisureEnd": 1320,
+  "eventsPerLocation": 1,
+  "activitiesPerLocation": 2
+}
