@@ -1,0 +1,87 @@
+{
+  "format": "aetheria-reference",
+  "schemaVersion": 2,
+  "id": "authoring/reference-tag-coexistence-v013",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "tagcoexist.activity.workshop-tool-check",
+      "kind": "activity",
+      "data": {
+        "label": "核对工坊工具",
+        "description": "你按清单核对手边工具，缺项交回登记处。适用条件来自真实工坊服务与抓握能力，不以题材 Tag 冒充材料或时段。",
+        "minutes": 10,
+        "energyChange": -1,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      },
+      "environmentTags": [],
+      "weight": 100,
+      "requiresTags": [
+        "foundation:service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/foundation"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [
+          "tagcoexist.activity.commons-quiet-observe"
+        ],
+        "boosts": [
+          {
+            "tag": "foundation:setting.forge",
+            "multiplier": 2
+          }
+        ]
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      }
+    },
+    {
+      "id": "tagcoexist.activity.commons-quiet-observe",
+      "kind": "activity",
+      "data": {
+        "label": "公共空间静观",
+        "description": "你在公共空间短暂停留观察环境。本模板与工坊核对活动互斥，用于示范模板层 combination.excludesTemplates；不是通用 58 类或 NSFW 库际硬互斥表。题材 Tag（黑胶/TF/机械/夜间）不写入 requiresTags，避免被误读为身体材料或真实时段。",
+        "minutes": 8,
+        "energyChange": 0,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": []
+      },
+      "environmentTags": [],
+      "weight": 80,
+      "requiresTags": [
+        "foundation:service.commons"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/foundation"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [
+          "tagcoexist.activity.workshop-tool-check"
+        ],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      }
+    }
+  ]
+}

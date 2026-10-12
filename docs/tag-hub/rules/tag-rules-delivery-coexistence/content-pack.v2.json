@@ -1,0 +1,140 @@
+{
+  "manifest": {
+    "id": "authoring/tag-coexistence-v013",
+    "namespace": "tagcoexist",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Tag共存规则 · Angla",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/recovery",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/district",
+        "version": "0.2.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/foundation",
+        "version": "1.0.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "foundation.v2",
+      "body.graph.v1",
+      "condition.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": [],
+  "tags": [],
+  "derivedTags": [],
+  "proseSelections": [
+    {
+      "id": "tagcoexist:selection.mechanical-tail-by-material",
+      "entryId": "foundation:prose.1.mechanical-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "materialFamily": "mechanical"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.long-tail-by-length",
+      "entryId": "foundation:prose.0.long-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "minLengthMm": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.organic-tail-by-family",
+      "entryId": "foundation:prose.2.organic-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "materialFamily": "organic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.environment-dark",
+      "entryId": "foundation:prose.light.dark",
+      "channel": "environment",
+      "when": [
+        {
+          "op": "environment.light",
+          "value": "dark"
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.environment-lit",
+      "entryId": "foundation:prose.light.lit",
+      "channel": "environment",
+      "when": [
+        {
+          "op": "environment.light",
+          "value": "lit"
+        }
+      ]
+    }
+  ]
+}
