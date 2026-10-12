@@ -1,0 +1,174 @@
+{
+  "format": "aetheria-external-tag-delivery",
+  "receivedDate": "2026-10-12",
+  "timezone": "Asia/Singapore",
+  "status": "received-for-review",
+  "scope": "Archive preservation and readable documents only; no runtime import or review approval",
+  "declaredCounts": {
+    "generalLexicon": 10700,
+    "nsfwLexicon": 1190
+  },
+  "declaredCountsVerifiedAgainstOriginalJson": false,
+  "missingMachineReadableData": [
+    "External NSFW batches JSON; referenced in delivery but not supplied"
+  ],
+  "originals": [
+    {
+      "path": "originals/2026-10-12-交给用户-已收集tag汇总.md",
+      "bytes": 3045,
+      "sha256": "35442eefbb100480b13e59f85af97b629ce899b1d0d15bb0230ee9d13f9cf3e8"
+    },
+    {
+      "path": "originals/2026-10-12-已写好tag-正文交付说明.md",
+      "bytes": 2032,
+      "sha256": "e08392610c5adcc18b382d10dbcec32b5b2bcc8f5bfe3fa17cea587bc1ac705c"
+    },
+    {
+      "path": "originals/2026-10-12-已写好tag-正文交付.tar.gz",
+      "bytes": 371196,
+      "sha256": "db4284655bcd618a98635c6db879cdaf60c92bc53c03d75b9c3f2078de2ce0b3"
+    }
+  ],
+  "extractedFiles": [
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/00-目录.md",
+      "bytes": 6100,
+      "sha256": "2baadff3e298a13004bcf661de00166e3b63a760137db1b0c2d59595ea8255b1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺-剩余待入库-全加上.md",
+      "bytes": 8018,
+      "sha256": "1ce65b4400f4f4a18b20be060c3975c3042df5b2af6473901d4bb37f44fbe7f9"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/NSFW扩缺-待入库-v2-加量.md",
+      "bytes": 49741,
+      "sha256": "8784146e0d1dd69bbb2999f5c9871680d15fe07ddb2b48b00c3362c08556f322"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/候选待入库-色图批AB-v0.13.md",
+      "bytes": 7846,
+      "sha256": "690bb1efca80948b3cb24384c0845d6ff1eaf997bf1f908704cef70259276f3e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/NSFW扩缺-v2-摘要.md",
+      "bytes": 919,
+      "sha256": "d1d626c0e56f896a42b5f1b72584b52dccbe0ebdc82648b4484e5c81473e6da3"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v2-加量.md",
+      "bytes": 88898,
+      "sha256": "fe785beba7420f2b81c5b8fdbb52317309f8947494c7298f9fec53ffb50a4ea4"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-v2-摘要.md",
+      "bytes": 900,
+      "sha256": "ae0dfa8d64744f6264294d0254a470b951901c00e707add13b8fdeabad251727"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺候选-待入库-v1.md",
+      "bytes": 29982,
+      "sha256": "3083685636c5f73b7e6aad2c6566a4bece4a00e87a148106c99c835dc61d4431"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺候选-摘要.md",
+      "bytes": 880,
+      "sha256": "9e928c8211346fcfb8f6d77746ad6c64bd3194a584ebacc1caafa172c015093e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v1.md",
+      "bytes": 29570,
+      "sha256": "8212ba5702352cada1eb50bc41fbd9f18666345146f82f4d70b956a7c5ab59df"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-摘要.md",
+      "bytes": 880,
+      "sha256": "78cec4e5b6cdd6cfee516222403d0d8df91d28a8996e21b80a789498ae114e47"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺-本波收口说明.md",
+      "bytes": 626,
+      "sha256": "7d169c3ec6d3eef7095be06b857d8eb558a4693800574dc8566317bf3269d98e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条清单-10700.md",
+      "bytes": 903482,
+      "sha256": "3c1e288ba206e9fe849a9a2b30691073c7cdca2bf1ffff827b26cfebdedfa6dd"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条-按库摘要.md",
+      "bytes": 1750,
+      "sha256": "b9aec64f9bb5bf9ab775b231453e37ceca95582be448f4c2e1e687bbfa3007c0"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/README-全量说明.md",
+      "bytes": 409,
+      "sha256": "295b5994a499107d95f5c8dc43d6233c8ec69f444e3138bebb2ff74806d8184c"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有-各库条数与样例-b0001至b0016.md",
+      "bytes": 4213,
+      "sha256": "03bf6a98f1b5ee10cabd2af58d0a68357c4a553b1b79586baf0783605a595019"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有词条清单-全量-b0001至b0016.md",
+      "bytes": 164896,
+      "sha256": "03a2429e2704dc22b3bf739dfeac785e00e321476cd324006c1819efcb2d91c1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有词条清单-b0001.md",
+      "bytes": 38848,
+      "sha256": "8f6b79f4b6180f8507edeffd9b8489196e8b9ac6447f5c5bbccb96bfa1a4c30d"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/README.md",
+      "bytes": 6100,
+      "sha256": "2baadff3e298a13004bcf661de00166e3b63a760137db1b0c2d59595ea8255b1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/04-试跑种子/INDEX.md",
+      "bytes": 420,
+      "sha256": "771941a02bba7b37dd203768f539065ed39994185ed6bed1fd8c0f3910c7a1c1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/04-试跑种子/2026-10-12-接tag试跑-研究员触手黏液黑胶.md",
+      "bytes": 4751,
+      "sha256": "ec1c20549d95045f3a692c4c5a06abba3e3eab919d070cd6b6c15f32f8172442"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0003-production-report.md",
+      "bytes": 797,
+      "sha256": "083102ef50556de4aa43c3a45ae18c7233cb5394087c68c0fccecbd63eee95dc"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/production-report.md",
+      "bytes": 5949,
+      "sha256": "8e1f95d3f25fdb05cc656c2124db6fe6875f443d0fc569dbe839a50fa8d6ad57"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0002-production-report.md",
+      "bytes": 1038,
+      "sha256": "72b8812c604f6b0ff1dd72366d812615c0cf2965afd0397648576721d4d10d6e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0004-production-report.md",
+      "bytes": 541,
+      "sha256": "ccd7c5a3b795927bab330dbc4d17a9af8ab745e78da72acf6d0f227fd898458c"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0010-b0016-production-report.md",
+      "bytes": 4452,
+      "sha256": "79f30ef68ea4847e25a03f00060540b714330cb7c647dae24f2795de9c2369e7"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0005-b0009-production-report.md",
+      "bytes": 3720,
+      "sha256": "b5c3de0ed639c9e56d85af2ca16473828c5120662ff57315f0d9f69bc0f7076d"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付说明.md",
+      "bytes": 2032,
+      "sha256": "e08392610c5adcc18b382d10dbcec32b5b2bcc8f5bfe3fa17cea587bc1ac705c"
+    }
+  ]
+}
