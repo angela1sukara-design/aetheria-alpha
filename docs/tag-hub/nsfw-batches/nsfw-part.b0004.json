@@ -1,0 +1,37 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-part",
+  "batchId": "nsfw-part.b0004",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "孕/产卵/胀腹 · b0004"
+  },
+  "entries": [
+    {
+      "subcategory": "腔道开口（通用）",
+      "name": "泄殖腔",
+      "description": "泄殖腔开口部位（成人向可指向目标）；公开解剖外观的 SFW 种子由通用 body-* 平行，本条供 NSFW 组合。",
+      "tags": [
+        "开口"
+      ],
+      "id": "lx.nsfw-part.b0004.0001",
+      "category": "nsfw-part"
+    },
+    {
+      "subcategory": "腹/腰/脐",
+      "name": "孕腹",
+      "description": "妊娠或胀腹情境下可触的隆起腹部部位目标。",
+      "tags": [
+        "孕",
+        "腹"
+      ],
+      "id": "lx.nsfw-part.b0004.0002",
+      "category": "nsfw-part",
+      "synonyms": [
+        "孕肚"
+      ]
+    }
+  ]
+}

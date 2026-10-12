@@ -1,0 +1,23 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-sensation",
+  "batchId": "nsfw-sensation.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓场景体感补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "紧绷",
+      "name": "挣扎紧绷",
+      "description": "挣扎时肌肉与筋腱绷紧的体感。",
+      "tags": [
+        "挣扎"
+      ],
+      "id": "lx.nsfw-sensation.b0002.0001",
+      "category": "nsfw-sensation"
+    }
+  ]
+}

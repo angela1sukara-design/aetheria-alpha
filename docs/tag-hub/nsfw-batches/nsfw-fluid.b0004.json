@@ -1,0 +1,24 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-fluid",
+  "batchId": "nsfw-fluid.b0004",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "孕/产卵/胀腹 · b0004"
+  },
+  "entries": [
+    {
+      "subcategory": "产相关",
+      "name": "羊水样液",
+      "description": "娩出/产卵前后伴随的清澈或微浊体液（虚构成人向）；≠普通爱液。",
+      "tags": [
+        "产"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0004.0001",
+      "category": "nsfw-fluid"
+    }
+  ]
+}

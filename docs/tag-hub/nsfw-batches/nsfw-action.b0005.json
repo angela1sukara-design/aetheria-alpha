@@ -1,0 +1,54 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-action",
+  "batchId": "nsfw-action.b0005",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "虫寄生+触手寄生 · b0005"
+  },
+  "entries": [
+    {
+      "subcategory": "束缚类",
+      "name": "虫肢缠缚",
+      "description": "以虫肢为载体缠绕固定肢体或躯干；与触手缠绕分立。",
+      "tags": [
+        "虫寄生",
+        "束缚"
+      ],
+      "id": "lx.nsfw-action.b0005.0001",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "感染传递",
+      "name": "寄生钻入",
+      "description": "寄生生物钻入体表或腔道的动作；≠ tf 寄生定居结果。",
+      "tags": [
+        "虫寄生"
+      ],
+      "id": "lx.nsfw-action.b0005.0002",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "插入类",
+      "name": "触肢探入",
+      "description": "细触肢探入腔道或缝隙的动作；形态侧见细触探器。",
+      "tags": [
+        "触手寄生"
+      ],
+      "id": "lx.nsfw-action.b0005.0003",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "触碰类",
+      "name": "吸盘吸附",
+      "description": "以吸盘贴附固定于体表或器物；≠ 吸盘触茎形态。",
+      "tags": [
+        "触手寄生"
+      ],
+      "id": "lx.nsfw-action.b0005.0004",
+      "category": "nsfw-action"
+    }
+  ]
+}

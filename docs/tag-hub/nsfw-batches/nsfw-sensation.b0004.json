@@ -1,0 +1,33 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-sensation",
+  "batchId": "nsfw-sensation.b0004",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "孕/产卵/胀腹 · b0004"
+  },
+  "entries": [
+    {
+      "subcategory": "胀感",
+      "name": "腹内涨满",
+      "description": "腹腔被卵、液或胎感撑满的体感。",
+      "tags": [
+        "胀腹"
+      ],
+      "id": "lx.nsfw-sensation.b0004.0001",
+      "category": "nsfw-sensation"
+    },
+    {
+      "subcategory": "产道",
+      "name": "娩出压迫",
+      "description": "产卵或娩出时通道被撑开推移的压迫感。",
+      "tags": [
+        "产卵"
+      ],
+      "id": "lx.nsfw-sensation.b0004.0002",
+      "category": "nsfw-sensation"
+    }
+  ]
+}

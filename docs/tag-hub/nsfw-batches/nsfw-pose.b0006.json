@@ -1,0 +1,47 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-pose",
+  "batchId": "nsfw-pose.b0006",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "束缚载体 · b0006"
+  },
+  "entries": [
+    {
+      "subcategory": "绳艺束缚",
+      "name": "龟甲缚",
+      "description": "绳艺型躯干菱格束缚姿势粗类；不默认插入。",
+      "tags": [
+        "束缚"
+      ],
+      "precise": "绳索在躯干前后交叉成菱格或龟甲纹，限制上身活动；腿姿与插入另组合。",
+      "id": "lx.nsfw-pose.b0006.0001",
+      "category": "nsfw-pose"
+    },
+    {
+      "subcategory": "绳艺束缚",
+      "name": "驷马缚",
+      "description": "四肢收拢捆缚的姿势粗类；与蛙缚敞开分立。",
+      "tags": [
+        "束缚"
+      ],
+      "precise": "双腕与双踝收拢并拢捆缚，躯干可俯或侧；不默认敞开分腿或插入。",
+      "id": "lx.nsfw-pose.b0006.0002",
+      "category": "nsfw-pose"
+    },
+    {
+      "subcategory": "吊缚展示",
+      "name": "吊缚展示位",
+      "description": "悬吊展示姿势粗类；与吊缚后入分立，不默认插入。",
+      "tags": [
+        "束缚",
+        "展示"
+      ],
+      "precise": "身体被吊具悬离地面呈可观览姿态；着力点与开口朝向另组合，不默认进入。",
+      "id": "lx.nsfw-pose.b0006.0003",
+      "category": "nsfw-pose"
+    }
+  ]
+}

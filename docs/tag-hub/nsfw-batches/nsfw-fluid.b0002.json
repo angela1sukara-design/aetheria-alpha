@@ -1,0 +1,37 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-fluid",
+  "batchId": "nsfw-fluid.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓黏液液态用法"
+  },
+  "entries": [
+    {
+      "subcategory": "黏液",
+      "name": "黏液",
+      "description": "蛞蝓黏液呈液态时的浸染、滴落、渡液用法；与 material 主定义同名分挂，usage 仅提示。",
+      "tags": [
+        "蛞蝓定词",
+        "液态"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0002.0001",
+      "category": "nsfw-fluid"
+    },
+    {
+      "subcategory": "涎液",
+      "name": "发光涎",
+      "description": "带微光的口涎或腔口垂滴；可用 mod「发光」叠在口涎上，本条便于检索蛞蝓场景的发光涎。",
+      "tags": [
+        "发光",
+        "涎"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0002.0002",
+      "category": "nsfw-fluid"
+    }
+  ]
+}

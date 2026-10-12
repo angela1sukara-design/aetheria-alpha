@@ -1,0 +1,43 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0016",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "器具收口及其他剩余 · b0016"
+  },
+  "entries": [
+    {
+      "subcategory": "外观修饰",
+      "name": "油膜覆层",
+      "description": "油膜覆层外观修饰；≠油亮性器可泛化。待审",
+      "tags": [
+        "油脂"
+      ],
+      "id": "lx.nsfw-mod.b0016.0001",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "外观修饰",
+      "name": "泡沫覆层",
+      "description": "泡沫覆层外观修饰窄条。待审定窄条。待审定",
+      "tags": [
+        "泡沫"
+      ],
+      "id": "lx.nsfw-mod.b0016.0002",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "蜡修饰",
+      "name": "蜡滴冷却",
+      "description": "蜡滴冷却程度修饰窄条。待审定窄条。待审定",
+      "tags": [
+        "蜡"
+      ],
+      "id": "lx.nsfw-mod.b0016.0003",
+      "category": "nsfw-mod"
+    }
+  ]
+}

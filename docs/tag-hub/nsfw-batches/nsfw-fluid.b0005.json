@@ -1,0 +1,37 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-fluid",
+  "batchId": "nsfw-fluid.b0005",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "虫寄生+触手寄生 · b0005"
+  },
+  "entries": [
+    {
+      "subcategory": "定词黏液",
+      "name": "虫巢黏液",
+      "description": "虫巢定词黏液的液态用法；与 material 主定义分挂，勿顶替黑胶。",
+      "tags": [
+        "虫寄生",
+        "定词挂前"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0005.0001",
+      "category": "nsfw-fluid"
+    },
+    {
+      "subcategory": "定词黏液",
+      "name": "触手黏液",
+      "description": "触手定词黏液的液态用法；usage 仅提示，不能唯一定位主定义。",
+      "tags": [
+        "触手寄生",
+        "定词挂前"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0005.0002",
+      "category": "nsfw-fluid"
+    }
+  ]
+}

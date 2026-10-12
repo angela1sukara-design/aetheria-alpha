@@ -1,0 +1,43 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0015",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "展示公开多人+pose/locus · b0015"
+  },
+  "entries": [
+    {
+      "subcategory": "可见度",
+      "name": "公开可视",
+      "description": "场景公开可见度修饰窄条。待审定窄条。待审",
+      "tags": [
+        "展示公开"
+      ],
+      "id": "lx.nsfw-mod.b0015.0001",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "可见度",
+      "name": "半遮半露",
+      "description": "半遮半露可见度修饰窄条。待审定窄条。待审",
+      "tags": [
+        "展示公开"
+      ],
+      "id": "lx.nsfw-mod.b0015.0002",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "着衣修饰",
+      "name": "全裸展示级",
+      "description": "全裸展示着衣程度；≠暴露kink。待审定",
+      "tags": [
+        "展示公开"
+      ],
+      "id": "lx.nsfw-mod.b0015.0003",
+      "category": "nsfw-mod"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓场景修饰补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "透明度",
+      "name": "半透明",
+      "description": "可透出内部轮廓或色泽的透明度修饰。",
+      "tags": [
+        "视觉"
+      ],
+      "id": "lx.nsfw-mod.b0002.0001",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "质感",
+      "name": "拉丝",
+      "description": "拉开时成丝不断的质感修饰。",
+      "tags": [
+        "黏液"
+      ],
+      "id": "lx.nsfw-mod.b0002.0002",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "质感",
+      "name": "黏稠",
+      "description": "浓稠难甩开的黏滞修饰；可与既有「黏」近义并存，不强制合并。",
+      "tags": [
+        "黏"
+      ],
+      "id": "lx.nsfw-mod.b0002.0003",
+      "category": "nsfw-mod"
+    }
+  ]
+}

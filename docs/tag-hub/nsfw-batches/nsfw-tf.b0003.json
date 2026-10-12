@@ -1,0 +1,103 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-tf",
+  "batchId": "nsfw-tf.b0003",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "性转TF+催眠 · b0003"
+  },
+  "entries": [
+    {
+      "subcategory": "性别向重塑",
+      "name": "雌化",
+      "description": "性别特征向雌侧重塑的转化结果；≠动作，≠发情等状态。",
+      "tags": [
+        "性转"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0003.0001",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "性别向重塑",
+      "name": "雄化",
+      "description": "性别特征向雄侧重塑的转化结果；与雌化分立。",
+      "tags": [
+        "性转"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0003.0002",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "性别向重塑",
+      "name": "双性化",
+      "description": "获得双性器/双性特征的转化结果；形态侧已有双性人型等，本条为转化结果。",
+      "tags": [
+        "性转",
+        "双性"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0003.0003",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "性别向重塑",
+      "name": "女体化",
+      "description": "小说高频 TS 定词：整体女体化结果；与雌化近义，审稿可合并或互链 synonyms。",
+      "tags": [
+        "性转",
+        "TS"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0003.0004",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "局部生长",
+      "name": "乳增长",
+      "description": "新长出或显著增大乳房的转化结果；≠修饰「硕大」。",
+      "tags": [
+        "expansion"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0003.0005",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "范围",
+      "name": "部分转化",
+      "description": "身体仅局部完成转化、其余保留原形的结果/过程描述条；≠全兽态，≠瞬时动作。",
+      "tags": [
+        "性转"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0003.0006",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "相位",
+      "name": "中转化",
+      "description": "转化进行中的过程相位；≠ state「转化失神」。",
+      "tags": [
+        "性转"
+      ],
+      "phase": "rising",
+      "id": "lx.nsfw-tf.b0003.0007",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "相位",
+      "name": "转化完成",
+      "description": "非黑胶专属的转化完成结果相位；与「熔铸完成」分立。",
+      "tags": [
+        "性转"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0003.0008",
+      "category": "nsfw-tf"
+    }
+  ]
+}

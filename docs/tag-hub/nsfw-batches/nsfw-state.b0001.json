@@ -1,0 +1,536 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0001",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "首轮通用原子覆盖"
+  },
+  "entries": [
+    {
+      "id": "lx.nsfw-state.b0001.0001",
+      "category": "nsfw-state",
+      "subcategory": "兴奋",
+      "name": "兴奋",
+      "description": "性唤起明显、呼吸与充血上升的当下状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "兴奋"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0002",
+      "category": "nsfw-state",
+      "subcategory": "兴奋",
+      "name": "高度兴奋",
+      "description": "接近临界、前液/爱液明显的状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "兴奋"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0003",
+      "category": "nsfw-state",
+      "subcategory": "兴奋",
+      "name": "发情态",
+      "description": "兽化或激素驱动的持续发情状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "兴奋",
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0004",
+      "category": "nsfw-state",
+      "subcategory": "不应期",
+      "name": "不应期",
+      "description": "高潮后暂时无法再高潮的恢复态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "不应期"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0005",
+      "category": "nsfw-state",
+      "subcategory": "不应期",
+      "name": "敏感不应",
+      "description": "不应期内触碰仍过敏发颤，此时此刻身体或关系所处状态。",
+      "tags": [
+        "不应期"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0006",
+      "category": "nsfw-state",
+      "subcategory": "不应期",
+      "name": "强制延续",
+      "description": "不应期仍被继续刺激的状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "不应期"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0007",
+      "category": "nsfw-state",
+      "subcategory": "失神",
+      "name": "失神",
+      "description": "高潮或过载后眼神放空的状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "失神"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0008",
+      "category": "nsfw-state",
+      "subcategory": "失神",
+      "name": "白眼翻起",
+      "description": "极度刺激下眼球上翻，此时此刻身体或关系所处状态。",
+      "tags": [
+        "失神"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0009",
+      "category": "nsfw-state",
+      "subcategory": "失神",
+      "name": "叫不出声",
+      "description": "过载到发声中断，此时此刻身体或关系所处状态。",
+      "tags": [
+        "失神"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0010",
+      "category": "nsfw-state",
+      "subcategory": "强制保持插入",
+      "name": "强制保持插入",
+      "description": "被要求或被结构卡住不能拔出，此时此刻身体或关系所处状态。",
+      "tags": [
+        "插入中"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0011",
+      "category": "nsfw-state",
+      "subcategory": "强制保持插入",
+      "name": "根部锁死",
+      "description": "根部或球结使双方无法分离，此时此刻身体或关系所处状态。",
+      "tags": [
+        "插入中",
+        "knot"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0012",
+      "category": "nsfw-state",
+      "subcategory": "强制保持插入",
+      "name": "命令不准拔",
+      "description": "主导者以命令维持插入，此时此刻身体或关系所处状态。",
+      "tags": [
+        "插入中",
+        "主导"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0013",
+      "category": "nsfw-state",
+      "subcategory": "挂住未拔",
+      "name": "挂住未拔",
+      "description": "悬挂固定同时保持插入未拔出，此时此刻身体或关系所处状态。",
+      "tags": [
+        "挂住"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0014",
+      "category": "nsfw-state",
+      "subcategory": "挂住未拔",
+      "name": "飞行中挂住",
+      "description": "飞行颠簸中仍挂住未拔，此时此刻身体或关系所处状态。",
+      "tags": [
+        "挂住",
+        "飞行"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0015",
+      "category": "nsfw-state",
+      "subcategory": "挂住未拔",
+      "name": "步态颠入",
+      "description": "行走或步伐导致被动抽送，此时此刻身体或关系所处状态。",
+      "tags": [
+        "挂住"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0016",
+      "category": "nsfw-state",
+      "subcategory": "正在改造",
+      "name": "正在改造",
+      "description": "改造手术或转化操作进行中，此时此刻身体或关系所处状态。",
+      "tags": [
+        "改造"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0017",
+      "category": "nsfw-state",
+      "subcategory": "正在改造",
+      "name": "校准中",
+      "description": "义肢或接口正在校准，此时此刻身体或关系所处状态。",
+      "tags": [
+        "改造",
+        "义肢"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0018",
+      "category": "nsfw-state",
+      "subcategory": "正在改造",
+      "name": "切开未合",
+      "description": "改造切口尚未闭合的中间态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "改造",
+        "soft-gore"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0019",
+      "category": "nsfw-state",
+      "subcategory": "感染潜伏/爆发",
+      "name": "感染潜伏",
+      "description": "已感染但外形尚未大变，此时此刻身体或关系所处状态。",
+      "tags": [
+        "感染"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0020",
+      "category": "nsfw-state",
+      "subcategory": "感染潜伏/爆发",
+      "name": "感染爆发中",
+      "description": "症状与形态正在剧烈显现，此时此刻身体或关系所处状态。",
+      "tags": [
+        "感染"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0021",
+      "category": "nsfw-state",
+      "subcategory": "感染潜伏/爆发",
+      "name": "带毒情热",
+      "description": "感染与情热同时存在的状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "感染",
+        "兴奋"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0022",
+      "category": "nsfw-state",
+      "subcategory": "束缚中",
+      "name": "束缚中",
+      "description": "肢体或躯干正被绳具限制，此时此刻身体或关系所处状态。",
+      "tags": [
+        "束缚"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0023",
+      "category": "nsfw-state",
+      "subcategory": "束缚中",
+      "name": "吊缚中",
+      "description": "正处于吊缚悬空，此时此刻身体或关系所处状态。",
+      "tags": [
+        "束缚",
+        "悬吊"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0024",
+      "category": "nsfw-state",
+      "subcategory": "束缚中",
+      "name": "胶衣密封中",
+      "description": "全身胶衣封闭行动受限，此时此刻身体或关系所处状态。",
+      "tags": [
+        "束缚",
+        "胶衣"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0025",
+      "category": "nsfw-state",
+      "subcategory": "展示中",
+      "name": "展示中",
+      "description": "被陈列、观看或铭牌展示的状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "展示"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0026",
+      "category": "nsfw-state",
+      "subcategory": "展示中",
+      "name": "公开使用中",
+      "description": "在可被他人看见的情况下被使用，此时此刻身体或关系所处状态。",
+      "tags": [
+        "展示",
+        "公开"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0027",
+      "category": "nsfw-state",
+      "subcategory": "展示中",
+      "name": "镜前展示中",
+      "description": "被迫面对镜子观看自己，此时此刻身体或关系所处状态。",
+      "tags": [
+        "展示"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0028",
+      "category": "nsfw-state",
+      "subcategory": "兴奋",
+      "name": "边控临界",
+      "description": "被维持在高潮边缘的兴奋态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "兴奋",
+        "边控"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0029",
+      "category": "nsfw-state",
+      "subcategory": "失神",
+      "name": "转化失神",
+      "description": "转化高潮叠加导致的短暂失神，此时此刻身体或关系所处状态。",
+      "tags": [
+        "失神",
+        "TF"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0030",
+      "category": "nsfw-state",
+      "subcategory": "强制保持插入",
+      "name": "双穴锁插",
+      "description": "两处同时保持插入无法退出，此时此刻身体或关系所处状态。",
+      "tags": [
+        "插入中",
+        "夹心"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0031",
+      "category": "nsfw-state",
+      "subcategory": "挂住未拔",
+      "name": "缰绳挂胯",
+      "description": "被缰绳挂在对方胯下未拔，此时此刻身体或关系所处状态。",
+      "tags": [
+        "挂住",
+        "缰绳"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0032",
+      "category": "nsfw-state",
+      "subcategory": "正在改造",
+      "name": "黑胶塑形中",
+      "description": "活体黑胶正在体表/性器塑形，此时此刻身体或关系所处状态。",
+      "tags": [
+        "改造",
+        "黑胶"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0033",
+      "category": "nsfw-state",
+      "subcategory": "感染潜伏/爆发",
+      "name": "纹路透皮",
+      "description": "感染纹路自皮下透出可见，此时此刻身体或关系所处状态。",
+      "tags": [
+        "感染"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0034",
+      "category": "nsfw-state",
+      "subcategory": "束缚中",
+      "name": "短链跪侍中",
+      "description": "短链固定下保持跪侍姿势，此时此刻身体或关系所处状态。",
+      "tags": [
+        "束缚",
+        "服从"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0035",
+      "category": "nsfw-state",
+      "subcategory": "展示中",
+      "name": "铭牌待阅",
+      "description": "戴铭牌等待被阅读/点名，此时此刻身体或关系所处状态。",
+      "tags": [
+        "展示"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0036",
+      "category": "nsfw-state",
+      "subcategory": "兴奋",
+      "name": "充血硬挺",
+      "description": "性器充血硬挺的现场状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "兴奋"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0037",
+      "category": "nsfw-state",
+      "subcategory": "不应期",
+      "name": "余精滴落期",
+      "description": "不应期初仍有余精外滴，此时此刻身体或关系所处状态。",
+      "tags": [
+        "不应期"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0038",
+      "category": "nsfw-state",
+      "subcategory": "失神",
+      "name": "涎流失焦",
+      "description": "失神伴随口涎与目光失焦，此时此刻身体或关系所处状态。",
+      "tags": [
+        "失神"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0039",
+      "category": "nsfw-state",
+      "subcategory": "强制保持插入",
+      "name": "结胀锁腔",
+      "description": "球结膨胀将腔口锁住，此时此刻身体或关系所处状态。",
+      "tags": [
+        "插入中",
+        "knot"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0040",
+      "category": "nsfw-state",
+      "subcategory": "挂住未拔",
+      "name": "空中颠楔",
+      "description": "悬空颠簸使楔入物被动研磨，此时此刻身体或关系所处状态。",
+      "tags": [
+        "挂住"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0041",
+      "category": "nsfw-state",
+      "subcategory": "正在改造",
+      "name": "对接未上锁",
+      "description": "接口已对接但尚未上锁，此时此刻身体或关系所处状态。",
+      "tags": [
+        "改造",
+        "接口"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0042",
+      "category": "nsfw-state",
+      "subcategory": "感染潜伏/爆发",
+      "name": "渡液后潜伏",
+      "description": "刚被渡液、外表仍正常的潜伏态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "感染"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0043",
+      "category": "nsfw-state",
+      "subcategory": "束缚中",
+      "name": "腕过顶缚",
+      "description": "双腕缚于头顶的束缚态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "束缚"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0044",
+      "category": "nsfw-state",
+      "subcategory": "展示中",
+      "name": "陈列架固定中",
+      "description": "被固定在陈列架上的展示态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "展示"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0045",
+      "category": "nsfw-state",
+      "subcategory": "兴奋",
+      "name": "腔壁吮吸态",
+      "description": "腔壁主动吮吸插入物的状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "兴奋",
+        "体内"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0046",
+      "category": "nsfw-state",
+      "subcategory": "不应期",
+      "name": "颤抖不应",
+      "description": "不应期全身细抖，此时此刻身体或关系所处状态。",
+      "tags": [
+        "不应期"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0047",
+      "category": "nsfw-state",
+      "subcategory": "失神",
+      "name": "高潮空白",
+      "description": "高潮顶点思维短暂空白，此时此刻身体或关系所处状态。",
+      "tags": [
+        "失神",
+        "高潮"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0048",
+      "category": "nsfw-state",
+      "subcategory": "强制保持插入",
+      "name": "命令夹紧",
+      "description": "被命令夹紧不让抽出或流出，此时此刻身体或关系所处状态。",
+      "tags": [
+        "插入中",
+        "主导"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0049",
+      "category": "nsfw-state",
+      "subcategory": "正在改造",
+      "name": "义肢初通电",
+      "description": "义肢刚通电感官过载的状态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "改造",
+        "义肢"
+      ]
+    },
+    {
+      "id": "lx.nsfw-state.b0001.0050",
+      "category": "nsfw-state",
+      "subcategory": "感染潜伏/爆发",
+      "name": "兽征将现",
+      "description": "兽耳尾等即将顶出的临界态，此时此刻身体或关系所处状态。",
+      "tags": [
+        "感染",
+        "兽化"
+      ]
+    }
+  ]
+}

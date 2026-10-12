@@ -1,0 +1,24 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-kink",
+  "batchId": "nsfw-kink.b0015",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "展示公开多人+pose/locus · b0015"
+  },
+  "entries": [
+    {
+      "subcategory": "展示偏好",
+      "name": "被围观偏好",
+      "description": "偏好被围观；≠观众环伺中(state)。",
+      "tags": [
+        "展示公开"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0015.0001",
+      "category": "nsfw-kink"
+    }
+  ]
+}

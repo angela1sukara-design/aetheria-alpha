@@ -1,0 +1,47 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-creature",
+  "batchId": "nsfw-creature.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓/黏液主题补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "软体缠覆特征",
+      "name": "蛞蝓",
+      "description": "影响情色互动的软体生物特征：可贴覆、分泌黏液、缓慢缠裹躯体；定词用蛞蝓，不与黑胶生物混名。",
+      "tags": [
+        "软体",
+        "缠覆",
+        "定词"
+      ],
+      "id": "lx.nsfw-creature.b0002.0001",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "黏液形态特征",
+      "name": "黏液躯体形态",
+      "description": "转化后全身或大部呈黏液质的形态特征；可塑、可拉丝，≠凝胶体或黑胶生物。",
+      "tags": [
+        "转化后",
+        "黏液"
+      ],
+      "id": "lx.nsfw-creature.b0002.0002",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "附加头颅特征",
+      "name": "副蝠头",
+      "description": "躯干或肩颈侧额外长出的蝠类头颅，可舔舐、喘息或注视，属互动形态特征。",
+      "tags": [
+        "蝠",
+        "附加头"
+      ],
+      "id": "lx.nsfw-creature.b0002.0003",
+      "category": "nsfw-creature"
+    }
+  ]
+}

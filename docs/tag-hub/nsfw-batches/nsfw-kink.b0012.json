@@ -1,0 +1,46 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-kink",
+  "batchId": "nsfw-kink.b0012",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "服装半脱 · b0012"
+  },
+  "entries": [
+    {
+      "subcategory": "服装偏好",
+      "name": "半脱偏好",
+      "description": "偏好半脱或衣物不整；≠state半脱挂身中。",
+      "tags": [
+        "服装半脱"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0012.0001",
+      "category": "nsfw-kink"
+    },
+    {
+      "subcategory": "服装偏好",
+      "name": "撕衣偏好",
+      "description": "偏好撕衣过程；≠撕裂衣料(action)。",
+      "tags": [
+        "服装半脱"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0012.0002",
+      "category": "nsfw-kink"
+    },
+    {
+      "subcategory": "服装偏好",
+      "name": "服装勒入偏好",
+      "description": "偏好衣料勒入股沟或乳沟。待审定窄条。待审",
+      "tags": [
+        "服装半脱"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0012.0003",
+      "category": "nsfw-kink"
+    }
+  ]
+}

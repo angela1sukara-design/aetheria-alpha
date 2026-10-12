@@ -1,0 +1,47 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-fluid",
+  "batchId": "nsfw-fluid.b0008",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "群P+露出+机械奸+史莱姆+杂项 · b0008"
+  },
+  "entries": [
+    {
+      "subcategory": "润滑",
+      "name": "润滑液",
+      "description": "人工或外用润滑流体；固体凝胶另挂 material。",
+      "tags": [
+        "润滑"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0008.0001",
+      "category": "nsfw-fluid"
+    },
+    {
+      "subcategory": "积液",
+      "name": "爱液池",
+      "description": "爱液积聚成池的可见流体形态；对齐已有爱液系列。",
+      "tags": [
+        "爱液"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0008.0002",
+      "category": "nsfw-fluid"
+    },
+    {
+      "subcategory": "定词黏液",
+      "name": "史莱姆黏液",
+      "description": "史莱姆定词黏液的液态用法；与 material 分挂，勿 synonyms 互充黑胶。",
+      "tags": [
+        "史莱姆",
+        "定词挂前"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0008.0003",
+      "category": "nsfw-fluid"
+    }
+  ]
+}

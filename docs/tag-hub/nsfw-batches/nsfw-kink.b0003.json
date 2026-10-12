@@ -1,0 +1,75 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-kink",
+  "batchId": "nsfw-kink.b0003",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "性转TF+催眠 · b0003"
+  },
+  "entries": [
+    {
+      "subcategory": "转化偏好",
+      "name": "合意转化",
+      "description": "偏好自愿接受身体/性别转化；≠转化结果本身，≠现场状态。",
+      "tags": [
+        "性转",
+        "TF"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0003.0001",
+      "category": "nsfw-kink"
+    },
+    {
+      "subcategory": "转化偏好",
+      "name": "强制转化偏好",
+      "description": "偏好非自愿转化幻想；属成人合意虚构框，≠实装强制，≠现场态。",
+      "tags": [
+        "性转",
+        "TF"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0003.0002",
+      "category": "nsfw-kink"
+    },
+    {
+      "subcategory": "转化偏好",
+      "name": "性转边控",
+      "description": "偏好在性转/性别向转化过程中配合边缘控制；可与「TF边做边变」分立审稿。",
+      "tags": [
+        "性转",
+        "边控"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0003.0003",
+      "category": "nsfw-kink"
+    },
+    {
+      "subcategory": "精神操控",
+      "name": "精神操控偏好",
+      "description": "偏好精神层面的操控与暗示总称；可与 b0001「催眠暗示」互链 synonyms 审稿。",
+      "tags": [
+        "催眠"
+      ],
+      "tier": "non-gore",
+      "synonyms": [
+        "催眠暗示"
+      ],
+      "id": "lx.nsfw-kink.b0003.0004",
+      "category": "nsfw-kink"
+    },
+    {
+      "subcategory": "精神操控",
+      "name": "洗脑偏好",
+      "description": "偏好人格或记忆被改写的幻想；非 gore 档。",
+      "tags": [
+        "催眠",
+        "洗脑"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0003.0005",
+      "category": "nsfw-kink"
+    }
+  ]
+}

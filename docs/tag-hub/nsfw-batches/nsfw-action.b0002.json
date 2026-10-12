@@ -1,0 +1,99 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-action",
+  "batchId": "nsfw-action.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓缠覆/倒挂动作补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "束缚",
+      "name": "缠绕",
+      "description": "软体或触肢绕体周圈收紧的动作；可与修饰「死死」组合。",
+      "tags": [
+        "软体",
+        "束缚"
+      ],
+      "synonyms": [
+        "缠裹"
+      ],
+      "id": "lx.nsfw-action.b0002.0001",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "涂抹/包覆",
+      "name": "涂覆",
+      "description": "将黏液或软体分泌物铺满体表的动作。",
+      "tags": [
+        "黏液"
+      ],
+      "id": "lx.nsfw-action.b0002.0002",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "涂抹/包覆",
+      "name": "滴落包覆",
+      "description": "自上方滴落后逐渐包住局部或全身的动作。",
+      "tags": [
+        "滴落",
+        "包覆"
+      ],
+      "id": "lx.nsfw-action.b0002.0003",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "涂抹/包覆",
+      "name": "封口包覆",
+      "description": "用黏液或软体封住口腔、鼻腔或腔口的包覆动作。",
+      "tags": [
+        "封口"
+      ],
+      "id": "lx.nsfw-action.b0002.0004",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "滴落",
+      "name": "丝状滴落",
+      "description": "拉成细丝后断续下垂滴落的动作。",
+      "tags": [
+        "拉丝",
+        "滴落"
+      ],
+      "id": "lx.nsfw-action.b0002.0005",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "体位相关",
+      "name": "倒挂",
+      "description": "使对象头下脚上固定的动作（动词原子）；姿势细节见 pose。",
+      "tags": [
+        "倒置"
+      ],
+      "id": "lx.nsfw-action.b0002.0006",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "翼相关",
+      "name": "展翼",
+      "description": "将翼膜完全展开的动作。",
+      "tags": [
+        "翼"
+      ],
+      "id": "lx.nsfw-action.b0002.0007",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "抵住",
+      "name": "顶住",
+      "description": "用性器或身体部位抵紧贴住某处、暂不深入抽送的动作。",
+      "tags": [
+        "抵紧"
+      ],
+      "id": "lx.nsfw-action.b0002.0008",
+      "category": "nsfw-action"
+    }
+  ]
+}

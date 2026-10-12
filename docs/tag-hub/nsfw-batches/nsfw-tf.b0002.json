@@ -1,0 +1,25 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-tf",
+  "batchId": "nsfw-tf.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "黏液化结果态"
+  },
+  "entries": [
+    {
+      "subcategory": "黏液化",
+      "name": "黏液化",
+      "description": "身体已转化为黏液质的结果；≠黑胶化或凝胶肢体过程条。",
+      "tags": [
+        "黏液",
+        "结果"
+      ],
+      "phase": "result",
+      "id": "lx.nsfw-tf.b0002.0001",
+      "category": "nsfw-tf"
+    }
+  ]
+}

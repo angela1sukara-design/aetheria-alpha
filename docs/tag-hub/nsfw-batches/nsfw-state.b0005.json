@@ -1,0 +1,33 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0005",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "虫寄生+触手寄生 · b0005"
+  },
+  "entries": [
+    {
+      "subcategory": "寄生关系",
+      "name": "寄生共生中",
+      "description": "宿主与寄生体已建立共生/寄生关系的现场态；≠ kink。",
+      "tags": [
+        "虫寄生"
+      ],
+      "id": "lx.nsfw-state.b0005.0001",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "腔巢",
+      "name": "腔巢占据",
+      "description": "体内腔巢正被寄生体或触手占据的现场态；≠ tf 寄生腔巢过程。",
+      "tags": [
+        "触手寄生"
+      ],
+      "id": "lx.nsfw-state.b0005.0002",
+      "category": "nsfw-state"
+    }
+  ]
+}

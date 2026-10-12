@@ -1,0 +1,49 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-tf",
+  "batchId": "nsfw-tf.b0009",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "goo范式缺口 · b0009"
+  },
+  "entries": [
+    {
+      "subcategory": "黑胶化范围",
+      "name": "物化黑胶化",
+      "description": "对象为物品/非生物的黑胶化过程；不按物件枚举专条。",
+      "tags": [
+        "黑胶",
+        "goo"
+      ],
+      "phase": "rising",
+      "id": "lx.nsfw-tf.b0009.0001",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "黑胶化范围",
+      "name": "局部黑胶化",
+      "description": "身体或物件局部范围的黑胶化；对齐局部写法。",
+      "tags": [
+        "黑胶",
+        "goo"
+      ],
+      "phase": "rising",
+      "id": "lx.nsfw-tf.b0009.0002",
+      "category": "nsfw-tf"
+    },
+    {
+      "subcategory": "黑胶化过程",
+      "name": "可逆黑胶化",
+      "description": "可逆回的黑胶化过程；喜欢可逆则另开 kink。",
+      "tags": [
+        "黑胶",
+        "goo"
+      ],
+      "phase": "rising",
+      "id": "lx.nsfw-tf.b0009.0003",
+      "category": "nsfw-tf"
+    }
+  ]
+}

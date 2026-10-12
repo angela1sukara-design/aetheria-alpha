@@ -1,0 +1,572 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-material",
+  "batchId": "nsfw-material.b0001",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "首轮通用原子覆盖"
+  },
+  "entries": [
+    {
+      "id": "lx.nsfw-material.b0001.0001",
+      "category": "nsfw-material",
+      "subcategory": "活体黑胶",
+      "name": "活体黑胶",
+      "description": "仍具活性的黑胶材质，可爬行、塑形与浸染；颜色可用 tags。",
+      "tags": [
+        "黑红",
+        "活性"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0002",
+      "category": "nsfw-material",
+      "subcategory": "活体黑胶",
+      "name": "黑红活体黑胶",
+      "description": "带黑红光泽的活体黑胶变体，常用于构筑性器外壳。",
+      "tags": [
+        "黑红"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0003",
+      "category": "nsfw-material",
+      "subcategory": "硬化黑胶",
+      "name": "硬化黑胶",
+      "description": "已硬化的黑胶，常与装备固定、挂住用途连用。",
+      "tags": [
+        "硬化"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0004",
+      "category": "nsfw-material",
+      "subcategory": "硬化黑胶",
+      "name": "半硬化黑胶",
+      "description": "外硬内韧的过渡态黑胶，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "半硬"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0005",
+      "category": "nsfw-material",
+      "subcategory": "粘液/爱液/前液",
+      "name": "生物粘液",
+      "description": "厚稠润滑粘液材质，可拉丝覆体，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "粘液"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0006",
+      "category": "nsfw-material",
+      "subcategory": "粘液/爱液/前液",
+      "name": "凝胶膜",
+      "description": "薄层凝胶覆盖体表形成膜，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "凝胶"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0007",
+      "category": "nsfw-material",
+      "subcategory": "血液/淋巴",
+      "name": "凝血膜",
+      "description": "浅层血迹干燥后的薄膜质感（美学向），材质属性，决定触感与转化媒介。",
+      "tags": [
+        "血液",
+        "soft-gore"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0008",
+      "category": "nsfw-material",
+      "subcategory": "血液/淋巴",
+      "name": "淋巴渗液",
+      "description": "组织渗出的清亮液体材质表现，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "淋巴"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0009",
+      "category": "nsfw-material",
+      "subcategory": "金属/合金",
+      "name": "金属",
+      "description": "冷硬金属材质，用于义肢外壳或拘束件，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "机械"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0010",
+      "category": "nsfw-material",
+      "subcategory": "金属/合金",
+      "name": "合金甲片",
+      "description": "轻合金鳞片状甲，可贴肤拼接，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "机械"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0011",
+      "category": "nsfw-material",
+      "subcategory": "金属/合金",
+      "name": "钛合金接口",
+      "description": "高强度接口用合金环面，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "机械"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0012",
+      "category": "nsfw-material",
+      "subcategory": "陶瓷/玻璃",
+      "name": "玻璃",
+      "description": "光滑透明硬质，常见于器具表面，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "硬质"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0013",
+      "category": "nsfw-material",
+      "subcategory": "陶瓷/玻璃",
+      "name": "釉面陶瓷",
+      "description": "温润釉面，器具或植入外观，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "硬质"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0014",
+      "category": "nsfw-material",
+      "subcategory": "皮革/绳纤",
+      "name": "皮革",
+      "description": "鞣制皮料，项圈、束带常用，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "束缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0015",
+      "category": "nsfw-material",
+      "subcategory": "皮革/绳纤",
+      "name": "绳纤",
+      "description": "编织绳纤维材质，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "束缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0016",
+      "category": "nsfw-material",
+      "subcategory": "皮革/绳纤",
+      "name": "麂皮",
+      "description": "柔软绒面皮，贴肤束缚向，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "束缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0017",
+      "category": "nsfw-material",
+      "subcategory": "硅胶/橡胶",
+      "name": "硅胶",
+      "description": "柔韧仿真触感材质，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "假体"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0018",
+      "category": "nsfw-material",
+      "subcategory": "硅胶/橡胶",
+      "name": "乳胶",
+      "description": "高弹贴身橡胶，胶衣常用，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "胶衣"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0019",
+      "category": "nsfw-material",
+      "subcategory": "硅胶/橡胶",
+      "name": "热塑橡胶",
+      "description": "受热可变软再定型的橡胶，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "可变"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0020",
+      "category": "nsfw-material",
+      "subcategory": "鳞/甲/角质",
+      "name": "生物甲壳",
+      "description": "生物质硬甲，覆盖局部或全身，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "兽化"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0021",
+      "category": "nsfw-material",
+      "subcategory": "鳞/甲/角质",
+      "name": "细鳞",
+      "description": "细密鳞片层，触感凉滑，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "鳞化"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0022",
+      "category": "nsfw-material",
+      "subcategory": "鳞/甲/角质",
+      "name": "角质板",
+      "description": "角质增厚板状结构，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "角质"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0023",
+      "category": "nsfw-material",
+      "subcategory": "绒毛/羽",
+      "name": "短绒",
+      "description": "密生短毛，摩擦生热，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "兽化"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0024",
+      "category": "nsfw-material",
+      "subcategory": "绒毛/羽",
+      "name": "羽簇",
+      "description": "局部羽毛簇，可被捋顺或弄乱，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "飞行态"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0025",
+      "category": "nsfw-material",
+      "subcategory": "绒毛/羽",
+      "name": "绒羽",
+      "description": "底层柔软绒羽材质，贴肤温暖可被拨弄，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "兽化"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0026",
+      "category": "nsfw-material",
+      "subcategory": "水晶/矿物生长",
+      "name": "晶簇",
+      "description": "体表生长的水晶簇，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "矿物"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0027",
+      "category": "nsfw-material",
+      "subcategory": "水晶/矿物生长",
+      "name": "矿物脉",
+      "description": "皮下可见的矿物纹脉，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "矿物"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0028",
+      "category": "nsfw-material",
+      "subcategory": "水晶/矿物生长",
+      "name": "盐晶霜",
+      "description": "体表析出的细晶霜层，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "矿物"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0029",
+      "category": "nsfw-material",
+      "subcategory": "纳米机械群",
+      "name": "纳米机械群",
+      "description": "微观机械群集材质，可重组表面，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "机械"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0030",
+      "category": "nsfw-material",
+      "subcategory": "纳米机械群",
+      "name": "液态金属群",
+      "description": "可流动重组的金属微粒群，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "机械"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0031",
+      "category": "nsfw-material",
+      "subcategory": "寄生组织",
+      "name": "寄生组织",
+      "description": "依附宿主生长的异质组织，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "寄生"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0032",
+      "category": "nsfw-material",
+      "subcategory": "寄生组织",
+      "name": "共生菌毯",
+      "description": "体表共生菌形成的湿毯层，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "寄生"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0033",
+      "category": "nsfw-material",
+      "subcategory": "可食/可溶材质",
+      "name": "可溶糖膜",
+      "description": "可舔溶的薄糖膜涂层，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "可食"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0034",
+      "category": "nsfw-material",
+      "subcategory": "可食/可溶材质",
+      "name": "可食凝胶",
+      "description": "可咬食的弹性凝胶块，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "可食"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0035",
+      "category": "nsfw-material",
+      "subcategory": "活体黑胶",
+      "name": "活体黑胶薄壳",
+      "description": "活体黑胶在体表构筑的发亮薄壳，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "黑红",
+        "构筑"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0036",
+      "category": "nsfw-material",
+      "subcategory": "硬化黑胶",
+      "name": "硬化黑胶束带",
+      "description": "以硬化黑胶成型的固定束带材质，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "硬化",
+        "束缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0037",
+      "category": "nsfw-material",
+      "subcategory": "金属/合金",
+      "name": "抛光钢",
+      "description": "镜面抛光钢材，展示与拘束件，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "机械"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0038",
+      "category": "nsfw-material",
+      "subcategory": "硅胶/橡胶",
+      "name": "双层硅胶",
+      "description": "外软内硬的双层仿真硅胶，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "假体"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0039",
+      "category": "nsfw-material",
+      "subcategory": "鳞/甲/角质",
+      "name": "龙鳞",
+      "description": "大型厚鳞，甲化常用，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "龙",
+        "鳞化"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0040",
+      "category": "nsfw-material",
+      "subcategory": "粘液/爱液/前液",
+      "name": "发光粘液",
+      "description": "带微光的粘液材质，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "粘液",
+        "发光"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0041",
+      "category": "nsfw-material",
+      "subcategory": "水晶/矿物生长",
+      "name": "黑曜石壳",
+      "description": "玻璃质黑矿物外壳，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "矿物"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0042",
+      "category": "nsfw-material",
+      "subcategory": "纳米机械群",
+      "name": "自修复纳米层",
+      "description": "受损可自行填补的纳米涂层，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "机械"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0043",
+      "category": "nsfw-material",
+      "subcategory": "寄生组织",
+      "name": "触手芽基",
+      "description": "可长出细触手的寄生芽组织，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "寄生",
+        "触手"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0044",
+      "category": "nsfw-material",
+      "subcategory": "可食/可溶材质",
+      "name": "温热蜜蜡",
+      "description": "低熔点可浇淋的蜡质（温度玩法），材质属性，决定触感与转化媒介。",
+      "tags": [
+        "可食",
+        "热"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0045",
+      "category": "nsfw-material",
+      "subcategory": "皮革/绳纤",
+      "name": "湿皮革",
+      "description": "浸湿后收紧的皮革触感，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "束缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0046",
+      "category": "nsfw-material",
+      "subcategory": "绒毛/羽",
+      "name": "潮湿绒毛",
+      "description": "被体液浸湿的绒毛团，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "兽化"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0047",
+      "category": "nsfw-material",
+      "subcategory": "血液/淋巴",
+      "name": "荧光淋巴",
+      "description": "带荧光的淋巴样渗出材质，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "淋巴"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0048",
+      "category": "nsfw-material",
+      "subcategory": "陶瓷/玻璃",
+      "name": "磨砂玻璃",
+      "description": "半透明磨砂硬质表面，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "硬质"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0049",
+      "category": "nsfw-material",
+      "subcategory": "活体黑胶",
+      "name": "脉动黑胶",
+      "description": "随脉搏起伏的活性黑胶层，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "黑红",
+        "脉冲"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0001.0050",
+      "category": "nsfw-material",
+      "subcategory": "硬化黑胶",
+      "name": "黑胶甲片",
+      "description": "硬化黑胶切成的甲片拼接层，材质属性，决定触感与转化媒介。",
+      "tags": [
+        "硬化"
+      ],
+      "usage": "material"
+    }
+  ]
+}
