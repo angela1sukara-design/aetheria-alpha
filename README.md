@@ -1,89 +1,63 @@
-# 以太都市：深渊重塑 · Alpha 0.2 · 世界生成器 v0.2.1
+# 以太都市：深渊重塑
 
-继续既有 Alpha 0.2，固定以太都市保留为框架测试世界。新增可以实际进入游玩的随机街区，复用原行动、居民、事件、BodyGraph/TF、时间与存档系统。
+这里是唯一的当前开发工程，包含固定都市、随机街区、BodyGraph / TF、人物、事件及存档系统。游戏包版本为 `0.2.0-alpha`，已加入 foundation v0.4 增量接口。旧交付目录是历史快照，继续开发使用本目录。
 
-界面已合入完整子页导航：地图、身体、人物、存档、记录、任务、背包、发现、内容偏好和世界均可独立进入与返回；对话、事件和行动结果占据主区，地点介绍只在抵达时展示或主动回看。详情见 [UI 与子页更新](docs/ui-pages-update.md)，界面回归验证运行 `npm run test:ui`。最新的 [UI 与操作流程优化](docs/ui-ux-2026-10-12.md) 增加快捷保存、保存状态、入口返回与行动筛选，运行 `npm run test:ux` 验证。
+## 启动与验证
 
-直接打开 `dist/Aetheria-Alpha-0.2.html`，通过「世界」菜单生成。两份独立试玩：`dist/WorldGenerator-Seed-7.html`（晴砾街区）、`dist/WorldGenerator-Seed-42.html`（林荫街区）。原 `start_game.bat` 启动方式继续保留。游戏不依赖实时 AI API。
-
-当前默认库有6种生态、60个地点模板、21类日常活动、42个事件模板及9类生成专用职业原型。居民浏览与事件分开，公共活动时段可查询，地点具备分时环境描写；保留v0.1已生成世界的原存档。
-
-首批外部词库已收录10,700条；108条经过审阅进入新街区的姓名、性情、服装、地点与对白候选，12条标记返修，其余待审。详细问题、接入范围及后续管理见[词条验收记录](docs/lexicon-delivery-2026-10-11.md)。v0.1、v0.2旧世界存档继续使用原快照。
-
-当前格式、试玩、验证与未实现清单见 [v0.2说明](docs/world-generator-v0.2.md)，词条交付后的使用方式见 [词条接入说明](docs/worldgen-lexicon-integration.md)。v0.1架构和历史限制见 [v0.1说明](docs/world-generator-v0.1.md)，本轮审计与检查点见 [v0.2审计](docs/worldgen-v0.2-audit.md)。生成存档快照保存原内容定义；更新参考库只影响之后的新世界。
-
-`npm run check` 完成类型检查、全部规则回归和构建；`npm run test:worldgen:browser` 执行生成器实玩与离线验证。
-
-下面保留 Alpha 0.1 第三阶段历史说明，版本范围以各段标注为准；它不是 Alpha 0.2 当前未实现清单。
-
-## 独立基础词条生产工具包
-
-[基础词条生产工具包](production/lexicon-authoring/README.md)包含58类素材、214个独立AI任务、首期10700条生产计划，以及格式示例、领取登记、合并去重、审稿和收录/使用分账工具。词库独立于游戏规则和存档；收录不代表玩法已经实现。
-
-默认采用[整包生产总指令](production/lexicon-authoring/prompts/整包-全部词库.md)：一次委派全部词库或某个大类，AI自行维护内部批号，最后一次交回结果，不需要用户逐50条派任务。支持整包领取、校验与合并收录。
-
-运行 `npm run lexicon` 查看管理命令，`npm run test:lexicon` 验证工具。工程现有素材的统计见工具包内盘点文档。
-
-## Alpha 0.1 第三阶段历史说明
-
-独立 TypeScript 工程的新阶段更新：增加薇尔维特沙龙、固定 NPC 日程、多轮交谈、关系与记忆，以及一件可完成的跨地点小委托。此前三个地点的日常行动、改造诊室、真实身体图与机械尾进度全部保留。旧 HTML Demo 只作设定参考，没有参与代码或存档。
-
-当前版本 `0.1.0-alpha.3.1`：补足任务后离场提示、人物去向、最早再会与档案中的真实交谈入口；沙龙精力耗尽时可免费休息恢复，返程不足精力会提前显示原因。日程仍为09:00–18:00在沙龙、18:00–19:00在集市、其他时间离开公开场所，任务完成不会删除人物。这里只修复第三阶段，不扩展下一阶段玩法。
-
-## 直接启动
-
-需要已安装 Node.js 24或更新版本。包内包含 `dist/`，试玩不需要 `npm install`。
-
-1. 关闭上一版游戏的黑色服务器窗口。
-2. 本包解压到新的文件夹。
-3. Windows 双击 `start_game.bat`，服务成功启动后自动打开浏览器。
-
-浏览器地址：`http://localhost:4173/`。保持服务器窗口开着。也可运行 `node scripts/serve.mjs --built`。端口被占用时先关闭旧版窗口；不能直接双击 `index.html` 用 file:// 加载游戏。
-
-## 本轮试玩路线
-
-1. 公寓 → 主街 → 薇尔维特沙龙。09:00前她还没到，可在门厅等候半小时；09:00–18:00在沙龙，18:00–19:00在集市。
-2. 与薇尔维特打招呼，问沙龙服务，接着聊别的话题，或随时结束。人物菜单可看熟悉、信任与已经发生的经历。
-3. 询问是否需要帮忙。答应去集市核对补货清单；也可拒绝，以后再来。
-4. 回主街 → 集市，执行「替薇尔维特核对补货清单」。她此时还不知道结果。
-5. 回沙龙找她继续交谈，交回结果，得到一次8币报酬与关系变化。之后可聊近况；相同委托不能再次领取。
-6. 交谈中或完成后保存并刷新，检查节点、关系、记忆和日程恢复。机械尾校准完成后也可以主动展示给她看；她只记住亲眼看到的变化。
-
-薇尔维特及沙龙经营者身份来自既有设定。日程、小委托、对白与所有新数值为 **PROPOSED试运行内容**。不是完整角色攻略线或已冻结正史。
-
-精力不足时可执行「在门厅休息恢复精力」：免费，30分钟、精力+10。时钟与正在进行的改造照常推进，不增加NPC关系或任务报酬。此恢复数值同为PROPOSED。
-
-## 存档
-
-仍为一个手动存档槽。刷新恢复最近一次手动保存；未保存操作不会自动写入。JSON导入只恢复当前游戏，点击保存才覆盖手动槽。
-
-同一浏览器、同一地址和端口下，可以读取前三阶段的IndexedDB。更换浏览器/地址时，先在旧版导出JSON，再在本版导入。请维持 `localhost:4173`；`127.0.0.1` 是另一个存档来源。
-
-精确官方 Stage1/Stage2 存档会升级到schema3。Stage2已完成/暂停/阻塞中的身体与TF、金钱、事件、时间、RNG和账本保留；Stage1新增初始身体。两者新增默认人物记录。升级读取不会覆盖旧记录，点击保存后才写新版；新版不能返回旧版引擎。未知包、哈希变化、损坏旧档保留并隔离；尚无通用包迁移。
-
-原第三阶段的四包存档只追加官方恢复包引用；原身体、TF、NPC身份/记忆/关系、任务、事件、时间、RNG与事务账本全部保留，schema仍为3。升级仅支持精确已发布的官方包指纹；读取不会覆盖手动槽，点击保存才写入修复版。此后保存的五包存档不能由旧四包引擎读取。
-
-## 开发与验证
+需要 Node.js 24 或更新版本。首次从 Git 克隆后运行：
 
 ```sh
 npm ci
-npm run check
-npx playwright install chromium
-npm run test:browser
+npm run build
 ```
 
-测试环境使用 Chromium 153.0.8010.0。脚本支持 `BROWSER_EXECUTABLE_PATH`、`BROWSER_ARGS_JSON` 和可选测试字体 `BROWSER_FONT_CSS`。交付不包含浏览器与测试字体，不增加游戏运行依赖。原第三阶段77项规则与35项浏览器检查见 `docs/phase-3-report.md`；本次修复结果见 `docs/phase-3-fix1-report.md`，日志在 `artifacts/stage3-fix1-check-output.txt` 与 `stage3-fix1-browser-output.txt`，历史报告保留。
+Windows 双击 `start_game.bat`，浏览器打开 `http://localhost:4173/`。也可运行 `npm run dev`。`dist/` 是本地构建结果，Git 仓库不附带构建、依赖和浏览器。
 
-| 目录 | 职责 |
+构建后，可直接打开 `dist/Aetheria-Alpha-0.2.html`；两个离线街区在 `dist/WorldGenerator-Seed-7.html` 和 `dist/WorldGenerator-Seed-42.html`。开发模板 `index.html` 需通过服务器加载。
+
+```sh
+npm run check
+```
+
+该命令执行类型检查、规则回归、构建和产物检查。浏览器流程分别使用 `npm run test:browser`、`npm run test:ui`、`npm run test:ux` 和 `npm run test:worldgen:browser`。首次运行浏览器测试需要 `npx playwright install chromium`；脚本的浏览器路径配置见相应测试文件。
+
+## 文件与资料入口
+
+| 位置 | 用途 |
 | --- | --- |
-| src/core | DSL与BodyGraph/TF/NPC数据类型 |
-| src/content | 只读Registry、依赖/引用/能力/日程校验 |
-| src/engine | 唯一行动事务、时钟/RNG、身体/TF、NPC日程/记忆、事件与选择器 |
-| src/persistence | schema3、官方旧档精确升级、状态/来源校验与IndexedDB |
-| src/ui | 场景/地图/身体/人物/存档显示与intent入口 |
-| content/core、world、reshaping | 前两阶段原包；内容与哈希保持 |
-| content/social | 官方世界子包，公开Hook追加沙龙路线、NPC话题和小委托 |
-| content/recovery | 官方修复子包，通过沙龙公开Hook追加实际恢复行动，原四包不改 |
-| tests、docs | 自动化回归、真实浏览器流程、阶段协议与报告 |
+| `src/` | 主游戏源码：内容加载、引擎、人物、身体、世界生成、存档和 UI |
+| `content/` | 正式游戏内容、foundation 定义和生成参考库 |
+| `scripts/`、`tests/` | 构建、服务、词库工具及回归验证 |
+| [基础词条制作](production/lexicon-authoring/README.md) | 58 类基础素材、原始批次、审稿和用途账本 |
+| [v2 格式与创作接口](production/lexicon-authoring/formats/v2/README.md) | 当前 foundation 的版本化交换格式、分类和字典约束 |
+| [Tag 与组合规则 AI 任务](production/lexicon-authoring/formats/v2/TAG-RULES-AI-PROMPT.md) | 完整规则创作任务与验证示例 |
+| [外部 Tag 资料](production/tag-deliveries/README.md) | 已接收的原始交付、整理结果和候选；收到不等于审定或实装 |
+| [可选文本槽工具](production/text-slot-integration/README.md) | 独立接口说明和示例验证 |
+| `docs/` | 当前接口说明、历史设计、阶段验收和审计证据 |
 
-本轮不实现随机路人、完整个人攻略、装备/Slot、InteractionScene、战斗、完整Storylet/EventGraph；不宣称M1/M2/M3全部完成。未覆盖或发布旧试玩站。Git历史随包保存在 `artifacts/repository.bundle`，可用 `git clone artifacts/repository.bundle <new-folder>` 恢复独立仓库。
+工具包内的 README 负责该工具的独立用法；本文件集中提供项目导航。
+
+## 当前规范与历史记录
+
+- [foundation v0.4](docs/foundation-v0.4.md)、[Tag 映射](docs/foundation-tag-mapping.md)、[兼容性与验证](docs/foundation-v0.4-validation.md)：当前实体、参数、语义查询及存档增量接口。
+- [世界生成器 v0.2](docs/world-generator-v0.2.md)、[词库接入](docs/worldgen-lexicon-integration.md)、[首批词条验收](docs/lexicon-delivery-2026-10-11.md)：生成与原始词库接入范围。
+- [UI 子页](docs/ui-pages-update.md)、[操作流程优化](docs/ui-ux-2026-10-12.md)：导航、保存状态与行动展示。
+- [内容、Tag 与固定故事规范](docs/content-tag-story-standard.md)：Alpha 0.2 阶段的制作参考；涉及 Tag 注册表、参数与存档的旧描述，以当前 foundation 和 v2 文档为准。
+- [实施前 Tag 审计](docs/tag-audit-2026-10-12/decision-summary.md)：保留问题来源与证据；其中“待实现”描述对应审计时点，不能作为当前功能清单。
+
+早期 `docs/phase-*`、`docs/alpha02-*`、`docs/worldgen-*-acceptance.md` 和 `docs/design-sources/` 用于历史追溯，按文件标注的版本阅读。旧 README 已保存在 Git 历史中。
+
+## 本地文件与 Git
+
+| 本地位置 | 保存方式 |
+| --- | --- |
+| `dist/`、`node_modules/`、`.npm-cache/` | 可重建的构建、依赖及缓存，不提交 |
+| `artifacts/` | 测试截图、日志、核验副本和整理记录，不提交 |
+| `deliverables/current/` | 已交付试玩、源码 ZIP 和发布元数据，本地保留 |
+| `deliverables/archive/`、`deliverables/checkpoints/` | 旧版本与 Git bundle，本地保留 |
+| `deliverables/tools/` | 外发工具压缩包，本地保留；当前工具源码位于 `production/` |
+| `docs/故事/` | 独立故事参考原稿，保留本地，不纳入工程提交 |
+
+GitHub 保留三个分支：`main`、当前工程开发 `codex/foundation-v0.4`、grok 的 `codex/tag-effect-preview`。两个工作分支分别维护，不自动混合实现。
+
+根目录名称 `aetheria-alpha-0.1` 是历史命名。服务器试玩继续使用 `localhost:4173`；更换浏览器、域名、端口或独立 HTML 入口前，可导出 JSON 再导入。刷新恢复最近一次手动保存，导出文件不会代替手动保存。
