@@ -1,0 +1,285 @@
+{
+  "format": "aetheria-vocabulary-supplement-package",
+  "schemaVersion": 1,
+  "type": "supplement-requires-existing-project-not-full-game",
+  "sourceCheckpoint": "c340a6be3221a6800c8392281edf5dddfbb2481a",
+  "counts": {
+    "previousMaterials": 11755,
+    "candidates": 820,
+    "newCommon": 787,
+    "excludedLabelCollisions": 33,
+    "totalMaterials": 12542,
+    "previousConcepts": 1145,
+    "newConcepts": 787,
+    "totalConcepts": 1932,
+    "groups": 41,
+    "numericParameters": 20,
+    "previousNeedsCoreReview": 3064,
+    "validatedV2Batches": 30,
+    "verifiedOriginalReceipts": 31
+  },
+  "files": [
+    {
+      "path": "docs/general-vocabulary-expansion-v2.md",
+      "bytes": 3721,
+      "sha256": "45a480f4ce2bfacb6d18fe74a81db549d162914a4b0fc44d5a47a148f2cc2c02"
+    },
+    {
+      "path": "docs/general-vocabulary-rule-plan.md",
+      "bytes": 8433,
+      "sha256": "f24acc7bc70c47601dfe4cf4c2e6f198006d84f0988ddaaf9ea85333596aa59c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/规则用途说明.md",
+      "bytes": 2566,
+      "sha256": "2e7eb307122d8ac9fabed2d9f81c0e4f909b23652777058fcaa43ecd6255c744"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/新增通用词条.md",
+      "bytes": 109502,
+      "sha256": "01bb70ef940f2d523dc2a32ab0ccc47f62c84c5f496076016acc9b387046dd9e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/验证/类型检查.txt",
+      "bytes": 70,
+      "sha256": "bb0f0f889d9de729390324d6b84bc742cc89e67eef4a30cfeab7da420459d4b9"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/验证/自动化测试.txt",
+      "bytes": 22961,
+      "sha256": "986925ea62bf123adbf09a21ba86eca5a505008ab5f6c365a50d0559d367f9be"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/验证与完成状态.md",
+      "bytes": 3721,
+      "sha256": "45a480f4ce2bfacb6d18fe74a81db549d162914a4b0fc44d5a47a148f2cc2c02"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/common-additions.json",
+      "bytes": 576946,
+      "sha256": "efe0e0a466ed36eebd5c4f6b75a9312be9ba06fbf79c80e58a2cb69a703d0b8b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/entries.jsonl",
+      "bytes": 17106972,
+      "sha256": "77b0eee9c2fed99d7675aba2a296cf19a0b4683f2822f4674aac115f7bd6cdc3"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/export-links.json",
+      "bytes": 95352,
+      "sha256": "94232135fb3619037adaa08bcb343143d0592d6cfbd7012cd8f658deb583192e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/groups.json",
+      "bytes": 56150,
+      "sha256": "6a815e99fd432434463be739fbb9a63a531995e93e526470e9df71ae67dd4273"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/index.json",
+      "bytes": 29818,
+      "sha256": "1c0b5c79abed443e9c3a828325838bfe20b0a295e7471b0df68ac945bdbc7991"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/label-collisions.json",
+      "bytes": 16713,
+      "sha256": "9d7ab53c0b44b377f0819ba1537b99824d22b440e9cfbfc66f498b618dabec7e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/new-entries.jsonl",
+      "bytes": 459680,
+      "sha256": "28000d9c15e342b52507cd08cb7c405a89f8832255588a1832f627d08bf3a3ff"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/README.md",
+      "bytes": 1510,
+      "sha256": "9251e450e1a880cb0e4c113d35fb9436265db60110a4497c6b7ea6ce288600bf"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/rule-hints.json",
+      "bytes": 634786,
+      "sha256": "9f1edd8da87897c46125a04fcb528cae610268fa838d52659bc80440b434fbbf"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/taxonomy.json",
+      "bytes": 1136097,
+      "sha256": "09961f57f5746d496174ae02addad7188b3a765341e902edb07b26d1466045ea"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/body-accessory.b9201.json",
+      "bytes": 8069,
+      "sha256": "6dd037263e3e03da9ae0ed01ef0c1de5292255f351e0d5436c0790fffa176dd9"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/body-adaptation.b9201.json",
+      "bytes": 7463,
+      "sha256": "7d821cd35b5832d76aac7de9f9f6ce58b3d3438c164cfe2663297da06e577dea"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/body-clothing.b9201.json",
+      "bytes": 7992,
+      "sha256": "28a01d29b146c255c8822ddb2ddc3750e311ec0ce7999c190f12983bab9803d2"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/body-parameter.b9201.json",
+      "bytes": 8063,
+      "sha256": "502fcdf0959ded1fdf6c875707916f61ddd57247594520f2305b2cd083012dd1"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/body-part.b9201.json",
+      "bytes": 7337,
+      "sha256": "e67f43ed2d22aa247653b6319387952fe578b86e1da6ec229f6d1b8b0a6fffc1"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/daily-action.b9201.json",
+      "bytes": 19100,
+      "sha256": "0f4c612fa7d53fb4a7b8ffcac2339e3fb9040b119ea6863b66f584820f335b31"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/daily-action.b9202.json",
+      "bytes": 3809,
+      "sha256": "253e96bae16fe5c5b78de6da228efac41ddcfcacf6c25b7f37619dddcb364d32"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/daily-work.b9201.json",
+      "bytes": 14399,
+      "sha256": "996257a6d668f5778656e56760a343f7e20c83e0c43cf877d88455e60945a2b0"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/material.b9201.json",
+      "bytes": 7372,
+      "sha256": "fd0a3985d96bce742f6c5a779934e8485f09e5bcaeaa08f332cf5799e420aa75"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-emotion.b9201.json",
+      "bytes": 7441,
+      "sha256": "62465e1c3cdaae61008b46ca39efab47fe5955331196052034ff753980b7af47"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-goal.b9201.json",
+      "bytes": 7799,
+      "sha256": "dcb7d3dcde376397fc86b690f07f77213dd4f1d047c0961b5e65e6f26f4577fe"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-habit.b9201.json",
+      "bytes": 7829,
+      "sha256": "68bd9076c651c466998e5ec7d592ef051ac79aee30518a10c9f0ee4983626d50"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-history.b9201.json",
+      "bytes": 7546,
+      "sha256": "68772579fd7dc2f3c3a0f785f75d0ab46fd188caa8b2011e1f52958a611a9dca"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-interest.b9201.json",
+      "bytes": 7154,
+      "sha256": "5785301c7bcc16f5071d3cdc611ad06ed843125c94558bb330df21dc870278f7"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-job.b9201.json",
+      "bytes": 6725,
+      "sha256": "726b3d51d9bbde803ef794dd4e193838b7df1dfa84300d5278d19985756dfd30"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-trait.b9201.json",
+      "bytes": 6995,
+      "sha256": "92392325efac7232362967841e51ba4aa263ad9ca3a9eb8c745f10e4af99dbd3"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/npc-value.b9201.json",
+      "bytes": 7781,
+      "sha256": "551e8329434ed572d3c85b53069aad36a800f966ef53bf67a16a66d98cd6e178"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/social-action.b9201.json",
+      "bytes": 11761,
+      "sha256": "1afc96055b05718028dd7ab8a7cceb8a3176e68fd75b0b7bddb0b94034074505"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-building.b9201.json",
+      "bytes": 8189,
+      "sha256": "83a778346a063587b250bd4a0fa8f70b51a0c146ea1acd0cdcd14792dd7f6133"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-culture.b9201.json",
+      "bytes": 7423,
+      "sha256": "9a9a585b4748e0d4c754ab2120eb8d8c996c2d797c10ae54e2c35b895a178330"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-environment.b9201.json",
+      "bytes": 8156,
+      "sha256": "f4387193dd1b96a9057caf38a4e3f100a2d50bee6d2cfd59ad912a9a47a2844c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-facility.b9201.json",
+      "bytes": 15502,
+      "sha256": "2ead0668645356ec3762ee467799a2ae0ce1b34c88f87ce7ae46d8eaa688064b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-nature.b9201.json",
+      "bytes": 15437,
+      "sha256": "fe8e2fbcc9ae27730fe6b0a0cb7a724efe63b0c439e69f3449ae4d414f672261"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-object.b9201.json",
+      "bytes": 19022,
+      "sha256": "d7ec611a0c894d8a8f70b5f200406b5e930449572aa076621e43717d4a4c878f"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-object.b9202.json",
+      "bytes": 18917,
+      "sha256": "c1e9f88d9cb4726f017ac7c40a73d1c68de06f80be96d34b8bbe6213e8e5a50d"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-object.b9203.json",
+      "bytes": 19328,
+      "sha256": "08d121bf5c60518102cd2b04495f4cc1a2a562c2310a2c79ef85aac5ae1671f5"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-object.b9204.json",
+      "bytes": 10241,
+      "sha256": "9751b1ce7494c61e68058a2c6a8944f016ee7e6452598f42ffae1bcda06aa7ab"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-space.b9201.json",
+      "bytes": 7877,
+      "sha256": "bf79d783ca4d47185dc1c33d83a601b2ef94d5aa34a493ebe79f31ab938fea0e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-terrain.b9201.json",
+      "bytes": 7931,
+      "sha256": "06f0076c92c0f067e2c2c4b9cfdf955274a8af4717bcdc23f95ffe3bc0fd1f79"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expansion-v2/v2-material-batches/world-weather.b9201.json",
+      "bytes": 15181,
+      "sha256": "d9eae75ca0b300839e69205158c87c3a3ea42e50062e41739e2c5dbd8f3b99c6"
+    },
+    {
+      "path": "scripts/lexicon/build-general-expansion-v2.mjs",
+      "bytes": 17678,
+      "sha256": "5a76bd9b0c5041d8c75c4266eee82641d121b77b37ce61909577804b246cb212"
+    },
+    {
+      "path": "scripts/lexicon/common-general-seeds-v2.mjs",
+      "bytes": 69465,
+      "sha256": "b3feb2cdc29ad29e32ccef1f96041ac6a0ea2c483bb94f677241f6456d95ff6c"
+    },
+    {
+      "path": "scripts/lexicon/package-general-expansion-v2.mjs",
+      "bytes": 5990,
+      "sha256": "f0aafd62270887e19efe96ee23b8ce5775fec1d3ea2592341df4b0d4920f09a7"
+    },
+    {
+      "path": "tests/general-expansion-v2.test.ts",
+      "bytes": 11001,
+      "sha256": "29677c13a70eea8f8168f663f3bbebb49722d415878ae97d36738a3117393633"
+    }
+  ],
+  "archive": {
+    "path": "deliverables/tools/General-Vocabulary-Expansion-v2-2026-10-12.zip",
+    "bytes": 1555755,
+    "sha256": "a530d7368679415ab394d30c63b028d138d9c71c336228ed0c12d48227930ed6",
+    "members": 52,
+    "allMembersVerified": true
+  }
+}
