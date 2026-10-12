@@ -1,0 +1,691 @@
+{
+  "format": "aetheria-rule-authoring-context",
+  "schemaVersion": 1,
+  "usage": "只读创作目录，不是运行时内容包，不含完整隐藏故事资料。",
+  "snapshot": {
+    "sourceCommit": "05c7cac81e6d00d448e5b6be4657664b77d2117a",
+    "generatorVersion": "0.3.0",
+    "contentPacks": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "hash": "aab3c415bcccdd459d21e7a0d0f4f3d636008b6e6809860452ec89787a7400f7"
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "hash": "01ea5d235f7762c6e99ca9080c4390d02bdf9796208acab15a3437d615f2feb8"
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "hash": "90a0fd948b069cdf62257b650f6fdfe2f2ef7f619a00efd1bef8d3baf4aab7a2"
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "hash": "06ef44297b2fd8361925cc66dc041fd6a7c3d8236f5fcf140f182c5bce36c9d6"
+      },
+      {
+        "id": "aetheria/recovery",
+        "version": "0.1.0",
+        "hash": "b7b3e778b810eed16cae4a9eea59d4a4c06c3f511123957905fe7735c36375e1"
+      },
+      {
+        "id": "aetheria/district",
+        "version": "0.2.0",
+        "hash": "ff66ad68e3f759f6cfbd6e8e856dd10c5aa037d1656db1a1c0911df985143797"
+      },
+      {
+        "id": "aetheria/foundation",
+        "version": "1.0.0",
+        "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+      },
+      {
+        "id": "aetheria/neighborhood-content",
+        "version": "0.2.0",
+        "hash": "968a9f0e7a2ffb2027274b39f318e11de9928f204e11585d1d32d73eb2be6818"
+      },
+      {
+        "id": "aetheria/neighborhood-lexicon",
+        "version": "1.0.0",
+        "hash": "128b13d8eaaaabb0c5337a44d5dba45f421076be034828e3be8905002b9612cb"
+      }
+    ]
+  },
+  "body": {
+    "partKinds": [
+      "root",
+      "head",
+      "ear",
+      "arm",
+      "hand",
+      "leg",
+      "foot",
+      "tail"
+    ],
+    "capabilities": [
+      "grasp",
+      "walk",
+      "hear",
+      "balance",
+      "tailGrip"
+    ],
+    "parts": [
+      {
+        "id": "aetheria-tf:part.torso",
+        "label": "人类躯干",
+        "kind": "root",
+        "material": "organic",
+        "capabilities": [],
+        "anchors": [
+          {
+            "id": "neck",
+            "accepts": [
+              "head"
+            ],
+            "capacity": 1
+          },
+          {
+            "id": "shoulder.left",
+            "accepts": [
+              "arm"
+            ],
+            "capacity": 1
+          },
+          {
+            "id": "shoulder.right",
+            "accepts": [
+              "arm"
+            ],
+            "capacity": 1
+          },
+          {
+            "id": "hip.left",
+            "accepts": [
+              "leg"
+            ],
+            "capacity": 1
+          },
+          {
+            "id": "hip.right",
+            "accepts": [
+              "leg"
+            ],
+            "capacity": 1
+          },
+          {
+            "id": "pelvis.back",
+            "accepts": [
+              "tail"
+            ],
+            "capacity": 1
+          },
+          {
+            "id": "aux",
+            "accepts": [
+              "arm",
+              "hand"
+            ],
+            "capacity": 2
+          }
+        ]
+      },
+      {
+        "id": "aetheria-tf:part.head",
+        "label": "人类头部",
+        "kind": "head",
+        "material": "organic",
+        "capabilities": [],
+        "anchors": [
+          {
+            "id": "ear.left",
+            "accepts": [
+              "ear"
+            ],
+            "capacity": 1
+          },
+          {
+            "id": "ear.right",
+            "accepts": [
+              "ear"
+            ],
+            "capacity": 1
+          }
+        ]
+      },
+      {
+        "id": "aetheria-tf:part.arm",
+        "label": "人类手臂",
+        "kind": "arm",
+        "material": "organic",
+        "capabilities": [],
+        "anchors": [
+          {
+            "id": "wrist",
+            "accepts": [
+              "hand"
+            ],
+            "capacity": 1
+          }
+        ]
+      },
+      {
+        "id": "aetheria-tf:part.hand",
+        "label": "人类手掌",
+        "kind": "hand",
+        "material": "organic",
+        "capabilities": [
+          "grasp"
+        ],
+        "anchors": []
+      },
+      {
+        "id": "aetheria-tf:part.leg",
+        "label": "人类腿部",
+        "kind": "leg",
+        "material": "organic",
+        "capabilities": [],
+        "anchors": [
+          {
+            "id": "ankle",
+            "accepts": [
+              "foot"
+            ],
+            "capacity": 1
+          }
+        ]
+      },
+      {
+        "id": "aetheria-tf:part.foot",
+        "label": "人类足部",
+        "kind": "foot",
+        "material": "organic",
+        "capabilities": [
+          "walk"
+        ],
+        "anchors": []
+      },
+      {
+        "id": "aetheria-tf:part.ear.human",
+        "label": "人类耳",
+        "kind": "ear",
+        "material": "organic",
+        "capabilities": [
+          "hear"
+        ],
+        "anchors": []
+      },
+      {
+        "id": "aetheria-tf:part.ear.wolf",
+        "label": "狼耳",
+        "kind": "ear",
+        "material": "organic",
+        "capabilities": [
+          "hear"
+        ],
+        "anchors": []
+      },
+      {
+        "id": "aetheria-tf:part.ear.cat",
+        "label": "猫耳",
+        "kind": "ear",
+        "material": "organic",
+        "capabilities": [
+          "hear"
+        ],
+        "anchors": []
+      },
+      {
+        "id": "aetheria-tf:part.tail.organic",
+        "label": "生物长尾",
+        "kind": "tail",
+        "material": "organic",
+        "capabilities": [
+          "balance"
+        ],
+        "anchors": []
+      },
+      {
+        "id": "aetheria-tf:part.tail.trial",
+        "label": "待校准的机械尾",
+        "kind": "tail",
+        "material": "mechanical",
+        "capabilities": [],
+        "anchors": []
+      },
+      {
+        "id": "aetheria-tf:part.tail.mechanical",
+        "label": "已校准的机械尾",
+        "kind": "tail",
+        "material": "mechanical",
+        "capabilities": [
+          "balance",
+          "tailGrip"
+        ],
+        "anchors": []
+      },
+      {
+        "id": "district:part.hand.gel",
+        "label": "稳定的黑胶共生手部",
+        "kind": "hand",
+        "material": "organic",
+        "capabilities": [
+          "grasp"
+        ],
+        "anchors": []
+      }
+    ],
+    "templates": [
+      {
+        "id": "aetheria-tf:body.human",
+        "label": "人类基础身体"
+      }
+    ],
+    "partProfiles": [
+      {
+        "id": "foundation:profile.gel-hand",
+        "partId": "district:part.hand.gel",
+        "defaults": {
+          "materialId": "foundation:material.gel",
+          "color": "black"
+        }
+      },
+      {
+        "id": "foundation:profile.wolf-ear",
+        "partId": "aetheria-tf:part.ear.wolf",
+        "defaults": {
+          "morphologyId": "foundation:morphology.wolf-ear"
+        }
+      }
+    ],
+    "materials": [
+      {
+        "id": "foundation:material.gel",
+        "label": "黑胶",
+        "family": "organic"
+      },
+      {
+        "id": "foundation:material.alloy",
+        "label": "机械合金",
+        "family": "mechanical"
+      }
+    ],
+    "morphologies": [
+      {
+        "id": "foundation:morphology.wolf-ear",
+        "label": "狼形耳部",
+        "kinds": [
+          "ear"
+        ]
+      },
+      {
+        "id": "foundation:morphology.tail",
+        "label": "尾部原型",
+        "kinds": [
+          "tail"
+        ]
+      }
+    ]
+  },
+  "fixedNpcIds": [
+    "aetheria-social:npc.velvet",
+    "district:npc.nara",
+    "district:npc.riker"
+  ],
+  "residentTemplates": [
+    {
+      "id": "district:resident.vendor",
+      "profession": "摊贩",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28
+    },
+    {
+      "id": "district:resident.electrician",
+      "profession": "维护电工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.tail.organic"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28
+    },
+    {
+      "id": "district:resident.courier",
+      "profession": "夜班信使",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.wolf"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28
+    },
+    {
+      "id": "neighborhood:resident.vendor",
+      "profession": "摊贩",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 24
+    },
+    {
+      "id": "neighborhood:resident.electrician",
+      "profession": "维护电工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 26
+    },
+    {
+      "id": "neighborhood:resident.courier",
+      "profession": "交接信使",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28
+    },
+    {
+      "id": "neighborhood:resident.baker",
+      "profession": "烘焙师",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 30
+    },
+    {
+      "id": "neighborhood:resident.stitcher",
+      "profession": "缝补工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 32
+    },
+    {
+      "id": "neighborhood:resident.nurse",
+      "profession": "护理员",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 34
+    },
+    {
+      "id": "neighborhood:resident.archivist",
+      "profession": "档案整理员",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 36
+    },
+    {
+      "id": "neighborhood:resident.gardener",
+      "profession": "园艺工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 38
+    },
+    {
+      "id": "neighborhood:resident.waterworker",
+      "profession": "水务工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 40
+    },
+    {
+      "id": "lexicon:resident.vendor",
+      "profession": "摊贩",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 24
+    },
+    {
+      "id": "lexicon:resident.electrician",
+      "profession": "维护电工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 26
+    },
+    {
+      "id": "lexicon:resident.courier",
+      "profession": "交接信使",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 28
+    },
+    {
+      "id": "lexicon:resident.baker",
+      "profession": "烘焙师",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 30
+    },
+    {
+      "id": "lexicon:resident.stitcher",
+      "profession": "缝补工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 32
+    },
+    {
+      "id": "lexicon:resident.nurse",
+      "profession": "护理员",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 34
+    },
+    {
+      "id": "lexicon:resident.archivist",
+      "profession": "档案整理员",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 36
+    },
+    {
+      "id": "lexicon:resident.gardener",
+      "profession": "园艺工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 38
+    },
+    {
+      "id": "lexicon:resident.waterworker",
+      "profession": "水务工",
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "speciesId": "aetheria-social:species.person",
+      "ageYears": 40
+    }
+  ],
+  "locationIds": [
+    "aetheria:location.apartment",
+    "aetheria:location.street",
+    "aetheria:location.market",
+    "aetheria-tf:location.clinic",
+    "aetheria-social:location.salon",
+    "district:location.cafe",
+    "district:location.workshop",
+    "district:location.canal",
+    "district:location.archive",
+    "district:location.station"
+  ],
+  "locationProfiles": [
+    {
+      "id": "foundation:location.workshop",
+      "locationId": "district:location.workshop",
+      "service": "workshop",
+      "light": "lit"
+    }
+  ],
+  "derivedTags": [
+    {
+      "id": "foundation:derive.tail",
+      "tagId": "foundation:body.has-tail",
+      "subject": "entity",
+      "when": {
+        "op": "body.matches",
+        "target": {
+          "kind": "player"
+        },
+        "part": {
+          "kind": "tail"
+        }
+      }
+    },
+    {
+      "id": "foundation:derive.mechanical-tail",
+      "tagId": "foundation:body.mechanical-tail",
+      "subject": "entity",
+      "when": {
+        "op": "body.matches",
+        "target": {
+          "kind": "player"
+        },
+        "part": {
+          "kind": "tail",
+          "materialFamily": "mechanical"
+        }
+      }
+    },
+    {
+      "id": "foundation:derive.grasp",
+      "tagId": "foundation:body.can-grasp",
+      "subject": "entity",
+      "when": {
+        "op": "body.hasCapability",
+        "target": {
+          "kind": "player"
+        },
+        "capability": "grasp",
+        "count": 1
+      }
+    },
+    {
+      "id": "foundation:derive.night",
+      "tagId": "foundation:time.night",
+      "subject": "world",
+      "when": {
+        "op": "time.window",
+        "start": 1320,
+        "end": 360
+      }
+    },
+    {
+      "id": "foundation:derive.service.home",
+      "tagId": "foundation:service.home",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "home"
+      }
+    },
+    {
+      "id": "foundation:derive.service.market",
+      "tagId": "foundation:service.market",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "market"
+      }
+    },
+    {
+      "id": "foundation:derive.service.workshop",
+      "tagId": "foundation:service.workshop",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "workshop"
+      }
+    },
+    {
+      "id": "foundation:derive.service.clinic",
+      "tagId": "foundation:service.clinic",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "clinic"
+      }
+    },
+    {
+      "id": "foundation:derive.service.commons",
+      "tagId": "foundation:service.commons",
+      "subject": "location",
+      "when": {
+        "op": "environment.service",
+        "value": "commons"
+      }
+    }
+  ],
+  "proseMaterials": [
+    {
+      "id": "foundation:prose.0.long-tail",
+      "text": "尾部需要留出足够的转身空间。",
+      "tags": [
+        "foundation:body.has-tail"
+      ],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.1.mechanical-tail",
+      "text": "机械尾部随重心变化调整位置。",
+      "tags": [
+        "foundation:body.mechanical-tail"
+      ],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.2.organic-tail",
+      "text": "尾部随着身体动作轻轻摆动。",
+      "tags": [
+        "foundation:body.has-tail"
+      ],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.light.dark",
+      "text": "工作灯熄灭后，细节暂时隐入暗处。",
+      "tags": [],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.light.lit",
+      "text": "工作灯亮着，细小的刻线仍然清晰。",
+      "tags": [],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    }
+  ]
+}

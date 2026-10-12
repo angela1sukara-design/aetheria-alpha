@@ -1,0 +1,147 @@
+{
+  "manifest": {
+    "id": "authoring/rules-demo",
+    "namespace": "rulesdemo",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Neutral rule authoring example",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/recovery",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/district",
+        "version": "0.2.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/foundation",
+        "version": "1.0.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "foundation.v2",
+      "body.graph.v1",
+      "condition.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": [],
+  "tags": [
+    {
+      "id": "rulesdemo:body.long-tail",
+      "label": "长尾结构",
+      "definition": "查询对象有同一条长度至少600毫米的尾部；长度未知时不能确认。此语义不授予能力。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    }
+  ],
+  "derivedTags": [
+    {
+      "id": "rulesdemo:derive.long-tail",
+      "tagId": "rulesdemo:body.long-tail",
+      "subject": "entity",
+      "when": {
+        "op": "body.matches",
+        "target": {
+          "kind": "player"
+        },
+        "part": {
+          "kind": "tail",
+          "minLengthMm": 600
+        }
+      }
+    }
+  ],
+  "proseSelections": [
+    {
+      "id": "rulesdemo:selection.tail-clearance",
+      "entryId": "foundation:prose.0.long-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "minLengthMm": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "rulesdemo:selection.mechanical-tail",
+      "entryId": "foundation:prose.1.mechanical-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "materialFamily": "mechanical"
+          }
+        },
+        {
+          "op": "body.hasCapability",
+          "target": {
+            "kind": "player"
+          },
+          "capability": "balance",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "rulesdemo:selection.dark",
+      "entryId": "foundation:prose.light.dark",
+      "channel": "environment",
+      "when": [
+        {
+          "op": "environment.light",
+          "value": "dark"
+        }
+      ]
+    }
+  ]
+}

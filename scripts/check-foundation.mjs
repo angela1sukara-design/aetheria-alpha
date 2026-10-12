@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { loadPacks } from '../src/content/loader.ts';
-import { parseReference, hash } from '../src/world/schema.ts';
+import { parseReference, parseRules, hash } from '../src/world/schema.ts';
+import { validateReferenceOrder } from '../src/world/reference-validation.ts';
 import { resolveTag } from '../src/content/tags.ts';
 import { validateSemanticBatch } from './lexicon/semantic-format.mjs';
 const read=async p=>JSON.parse(await readFile(p,'utf8'));
@@ -22,4 +23,8 @@ if(process.argv.includes('--write-examples')){
 }
 for(const domain of ['general','nsfw'])validateSemanticBatch(await read(output+`/${domain}-example.json`),r);
 await loadPacks([...r.contentPacks,await read(output+'/content-pack-example.json')]);
-console.log(`Foundation format checks passed: ${r.tags.length} Tags, ${r.tags.reduce((n,t)=>n+t.aliases.length,0)} scoped legacy aliases, 2 semantic batch examples, 1 content pack example, 2 reference libraries. No prose imported or auto-approved.`);
+const ruleRegistry=await loadPacks([...source.contentPacks,await read(output+'/rule-authoring/rules-content-example.v2.json')]);
+const ruleReference=parseReference(await read(output+'/rule-authoring/reference-addon-example.v2.json'),ruleRegistry);
+parseRules(await read(output+'/rule-authoring/generation-rules-example.v1.json'));
+validateReferenceOrder([...references[0].templates,...ruleReference.templates]);
+console.log(`Foundation format checks passed: ${r.tags.length} Tags, ${r.tags.reduce((n,t)=>n+t.aliases.length,0)} scoped legacy aliases, 2 semantic batch examples, 1 content pack example, 2 reference libraries, 3 rule-authoring examples. No prose imported or auto-approved.`);

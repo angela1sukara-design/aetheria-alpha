@@ -1,0 +1,49 @@
+{
+  "format": "aetheria-reference",
+  "schemaVersion": 2,
+  "id": "authoring/reference-rules-demo",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "rulesdemo.activity.tool-list",
+      "kind": "activity",
+      "data": {
+        "label": "核对工具清单",
+        "description": "你按清单整理工具，将缺项交回登记处核对。",
+        "minutes": 10,
+        "energyChange": -1,
+        "moneyChange": 1,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      },
+      "environmentTags": [],
+      "weight": 100,
+      "requiresTags": [
+        "foundation:service.workshop"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/foundation"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": [
+          {
+            "tag": "foundation:setting.forge",
+            "multiplier": 2
+          }
+        ]
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      }
+    }
+  ]
+}
