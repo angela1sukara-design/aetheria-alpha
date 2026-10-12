@@ -1,0 +1,626 @@
+{
+  "format": "aetheria-general-refinement-index",
+  "schemaVersion": 1,
+  "taxonomyVersion": "1.0.0",
+  "domain": "general",
+  "runtimeImportable": false,
+  "source": {
+    "path": "production/tag-deliveries/2026-10-12/readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条清单-10700.md",
+    "sha256": "3c1e288ba206e9fe849a9a2b30691073c7cdca2bf1ffff827b26cfebdedfa6dd",
+    "columns": [
+      "id",
+      "subcategory",
+      "display-phrase"
+    ],
+    "descriptionsAvailable": false
+  },
+  "counts": {
+    "entries": 10700,
+    "libraries": 58,
+    "sourceBuckets": 290,
+    "definedConcepts": 424,
+    "usedConcepts": 411,
+    "withCore": 5958,
+    "withQualifiers": 466,
+    "protectedNames": 720,
+    "attributeOnly": 75,
+    "needsCoreReview": 3947,
+    "proseExamples": 4500,
+    "duplicateNameGroups": 6
+  },
+  "libraries": [
+    {
+      "library": "npc-name",
+      "label": "姓名",
+      "entries": 400,
+      "withCore": 0,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "npc-alias",
+      "label": "外号",
+      "entries": 200,
+      "withCore": 0,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "npc-address",
+      "label": "称呼",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "npc-job",
+      "label": "职业",
+      "entries": 300,
+      "withCore": 88,
+      "withQualifiers": 57,
+      "needsCoreReview": 212
+    },
+    {
+      "library": "npc-identity",
+      "label": "社会身份",
+      "entries": 150,
+      "withCore": 38,
+      "withQualifiers": 0,
+      "needsCoreReview": 112
+    },
+    {
+      "library": "npc-origin",
+      "label": "出身",
+      "entries": 150,
+      "withCore": 0,
+      "withQualifiers": 0,
+      "needsCoreReview": 150
+    },
+    {
+      "library": "npc-trait",
+      "label": "性格",
+      "entries": 200,
+      "withCore": 18,
+      "withQualifiers": 0,
+      "needsCoreReview": 182
+    },
+    {
+      "library": "npc-habit",
+      "label": "习惯",
+      "entries": 200,
+      "withCore": 0,
+      "withQualifiers": 0,
+      "needsCoreReview": 200
+    },
+    {
+      "library": "npc-interest",
+      "label": "兴趣",
+      "entries": 150,
+      "withCore": 17,
+      "withQualifiers": 0,
+      "needsCoreReview": 133
+    },
+    {
+      "library": "npc-value",
+      "label": "价值观",
+      "entries": 150,
+      "withCore": 3,
+      "withQualifiers": 0,
+      "needsCoreReview": 147
+    },
+    {
+      "library": "npc-goal",
+      "label": "个人目标",
+      "entries": 200,
+      "withCore": 39,
+      "withQualifiers": 0,
+      "needsCoreReview": 161
+    },
+    {
+      "library": "npc-history",
+      "label": "生活经历",
+      "entries": 200,
+      "withCore": 21,
+      "withQualifiers": 0,
+      "needsCoreReview": 179
+    },
+    {
+      "library": "npc-speech",
+      "label": "语言风格",
+      "entries": 150,
+      "withCore": 4,
+      "withQualifiers": 0,
+      "needsCoreReview": 146
+    },
+    {
+      "library": "npc-expression",
+      "label": "表情与小动作",
+      "entries": 200,
+      "withCore": 200,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "body-build",
+      "label": "体型",
+      "entries": 150,
+      "withCore": 37,
+      "withQualifiers": 2,
+      "needsCoreReview": 113
+    },
+    {
+      "library": "body-form",
+      "label": "整体形态与种族概念",
+      "entries": 200,
+      "withCore": 78,
+      "withQualifiers": 4,
+      "needsCoreReview": 122
+    },
+    {
+      "library": "body-surface",
+      "label": "皮肤与表面",
+      "entries": 200,
+      "withCore": 86,
+      "withQualifiers": 5,
+      "needsCoreReview": 114
+    },
+    {
+      "library": "body-hair",
+      "label": "毛发",
+      "entries": 150,
+      "withCore": 97,
+      "withQualifiers": 4,
+      "needsCoreReview": 53
+    },
+    {
+      "library": "body-scale",
+      "label": "鳞片与甲片",
+      "entries": 100,
+      "withCore": 57,
+      "withQualifiers": 6,
+      "needsCoreReview": 43
+    },
+    {
+      "library": "body-color",
+      "label": "颜色与纹样",
+      "entries": 150,
+      "withCore": 0,
+      "withQualifiers": 75,
+      "needsCoreReview": 75
+    },
+    {
+      "library": "body-organ",
+      "label": "特殊器官",
+      "entries": 200,
+      "withCore": 87,
+      "withQualifiers": 7,
+      "needsCoreReview": 113
+    },
+    {
+      "library": "body-beast",
+      "label": "兽化特征",
+      "entries": 200,
+      "withCore": 165,
+      "withQualifiers": 31,
+      "needsCoreReview": 35
+    },
+    {
+      "library": "body-mechanical",
+      "label": "机械改装外观",
+      "entries": 200,
+      "withCore": 76,
+      "withQualifiers": 61,
+      "needsCoreReview": 124
+    },
+    {
+      "library": "body-anomaly",
+      "label": "异化特征",
+      "entries": 150,
+      "withCore": 61,
+      "withQualifiers": 1,
+      "needsCoreReview": 89
+    },
+    {
+      "library": "body-clothing",
+      "label": "服装",
+      "entries": 200,
+      "withCore": 178,
+      "withQualifiers": 31,
+      "needsCoreReview": 22
+    },
+    {
+      "library": "body-accessory",
+      "label": "装饰与佩件",
+      "entries": 150,
+      "withCore": 98,
+      "withQualifiers": 86,
+      "needsCoreReview": 52
+    },
+    {
+      "library": "world-terrain",
+      "label": "地形",
+      "entries": 150,
+      "withCore": 109,
+      "withQualifiers": 0,
+      "needsCoreReview": 41
+    },
+    {
+      "library": "world-building",
+      "label": "建筑",
+      "entries": 200,
+      "withCore": 80,
+      "withQualifiers": 26,
+      "needsCoreReview": 120
+    },
+    {
+      "library": "world-room",
+      "label": "房间",
+      "entries": 150,
+      "withCore": 41,
+      "withQualifiers": 6,
+      "needsCoreReview": 109
+    },
+    {
+      "library": "world-district",
+      "label": "街区与地名",
+      "entries": 150,
+      "withCore": 0,
+      "withQualifiers": 0,
+      "needsCoreReview": 30
+    },
+    {
+      "library": "world-nature",
+      "label": "自然生态素材",
+      "entries": 150,
+      "withCore": 36,
+      "withQualifiers": 0,
+      "needsCoreReview": 114
+    },
+    {
+      "library": "world-weather",
+      "label": "天气氛围",
+      "entries": 200,
+      "withCore": 156,
+      "withQualifiers": 0,
+      "needsCoreReview": 44
+    },
+    {
+      "library": "world-culture",
+      "label": "社会文化",
+      "entries": 200,
+      "withCore": 200,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "world-workplace",
+      "label": "职业环境",
+      "entries": 200,
+      "withCore": 35,
+      "withQualifiers": 16,
+      "needsCoreReview": 165
+    },
+    {
+      "library": "world-object",
+      "label": "日用物件",
+      "entries": 200,
+      "withCore": 64,
+      "withQualifiers": 31,
+      "needsCoreReview": 136
+    },
+    {
+      "library": "world-facility",
+      "label": "公共设施",
+      "entries": 150,
+      "withCore": 39,
+      "withQualifiers": 17,
+      "needsCoreReview": 111
+    },
+    {
+      "library": "world-detail",
+      "label": "环境细节",
+      "entries": 300,
+      "withCore": 300,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "world-scent",
+      "label": "气味",
+      "entries": 150,
+      "withCore": 29,
+      "withQualifiers": 0,
+      "needsCoreReview": 121
+    },
+    {
+      "library": "world-sound",
+      "label": "声音",
+      "entries": 150,
+      "withCore": 31,
+      "withQualifiers": 0,
+      "needsCoreReview": 119
+    },
+    {
+      "library": "daily-work",
+      "label": "工作动作",
+      "entries": 200,
+      "withCore": 200,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "daily-rest",
+      "label": "休息",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "daily-food",
+      "label": "进食与烹调",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "daily-move",
+      "label": "移动",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "daily-talk",
+      "label": "交谈动作",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "daily-observe",
+      "label": "观察动作",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "daily-interact",
+      "label": "普通互动",
+      "entries": 200,
+      "withCore": 160,
+      "withQualifiers": 0,
+      "needsCoreReview": 40
+    },
+    {
+      "library": "daily-social",
+      "label": "社交习惯",
+      "entries": 150,
+      "withCore": 90,
+      "withQualifiers": 0,
+      "needsCoreReview": 60
+    },
+    {
+      "library": "daily-life",
+      "label": "普通生活动作",
+      "entries": 200,
+      "withCore": 200,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "text-opening",
+      "label": "对话开场",
+      "entries": 200,
+      "withCore": 160,
+      "withQualifiers": 0,
+      "needsCoreReview": 40
+    },
+    {
+      "library": "text-reply",
+      "label": "回应",
+      "entries": 300,
+      "withCore": 300,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "text-refusal",
+      "label": "拒绝与边界",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "text-farewell",
+      "label": "告别",
+      "entries": 150,
+      "withCore": 150,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "text-emotion",
+      "label": "情绪表达",
+      "entries": 200,
+      "withCore": 160,
+      "withQualifiers": 0,
+      "needsCoreReview": 40
+    },
+    {
+      "library": "text-body",
+      "label": "身体动作短描",
+      "entries": 200,
+      "withCore": 160,
+      "withQualifiers": 0,
+      "needsCoreReview": 40
+    },
+    {
+      "library": "text-environment",
+      "label": "环境观察短描",
+      "entries": 200,
+      "withCore": 200,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "text-tf-sense",
+      "label": "TF 感受",
+      "entries": 200,
+      "withCore": 160,
+      "withQualifiers": 0,
+      "needsCoreReview": 40
+    },
+    {
+      "library": "text-tf-adapt",
+      "label": "TF 后适应",
+      "entries": 200,
+      "withCore": 200,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    },
+    {
+      "library": "text-encounter",
+      "label": "普通遭遇片段",
+      "entries": 200,
+      "withCore": 200,
+      "withQualifiers": 0,
+      "needsCoreReview": 0
+    }
+  ],
+  "reviewStatus": "proposed-not-approved",
+  "nsfwChanges": 0,
+  "preservedSourceFiles": [
+    {
+      "path": "originals/2026-10-12-交给用户-已收集tag汇总.md",
+      "sha256": "35442eefbb100480b13e59f85af97b629ce899b1d0d15bb0230ee9d13f9cf3e8"
+    },
+    {
+      "path": "originals/2026-10-12-已写好tag-正文交付说明.md",
+      "sha256": "e08392610c5adcc18b382d10dbcec32b5b2bcc8f5bfe3fa17cea587bc1ac705c"
+    },
+    {
+      "path": "originals/2026-10-12-已写好tag-正文交付.tar.gz",
+      "sha256": "db4284655bcd618a98635c6db879cdaf60c92bc53c03d75b9c3f2078de2ce0b3"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/00-目录.md",
+      "sha256": "2baadff3e298a13004bcf661de00166e3b63a760137db1b0c2d59595ea8255b1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺-剩余待入库-全加上.md",
+      "sha256": "1ce65b4400f4f4a18b20be060c3975c3042df5b2af6473901d4bb37f44fbe7f9"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/NSFW扩缺-待入库-v2-加量.md",
+      "sha256": "8784146e0d1dd69bbb2999f5c9871680d15fe07ddb2b48b00c3362c08556f322"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/候选待入库-色图批AB-v0.13.md",
+      "sha256": "690bb1efca80948b3cb24384c0845d6ff1eaf997bf1f908704cef70259276f3e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/NSFW扩缺-v2-摘要.md",
+      "sha256": "d1d626c0e56f896a42b5f1b72584b52dccbe0ebdc82648b4484e5c81473e6da3"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v2-加量.md",
+      "sha256": "fe785beba7420f2b81c5b8fdbb52317309f8947494c7298f9fec53ffb50a4ea4"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-v2-摘要.md",
+      "sha256": "ae0dfa8d64744f6264294d0254a470b951901c00e707add13b8fdeabad251727"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺候选-待入库-v1.md",
+      "sha256": "3083685636c5f73b7e6aad2c6566a4bece4a00e87a148106c99c835dc61d4431"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺候选-摘要.md",
+      "sha256": "9e928c8211346fcfb8f6d77746ad6c64bd3194a584ebacc1caafa172c015093e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v1.md",
+      "sha256": "8212ba5702352cada1eb50bc41fbd9f18666345146f82f4d70b956a7c5ab59df"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-摘要.md",
+      "sha256": "78cec4e5b6cdd6cfee516222403d0d8df91d28a8996e21b80a789498ae114e47"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺-本波收口说明.md",
+      "sha256": "7d169c3ec6d3eef7095be06b857d8eb558a4693800574dc8566317bf3269d98e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条清单-10700.md",
+      "sha256": "3c1e288ba206e9fe849a9a2b30691073c7cdca2bf1ffff827b26cfebdedfa6dd"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条-按库摘要.md",
+      "sha256": "b9aec64f9bb5bf9ab775b231453e37ceca95582be448f4c2e1e687bbfa3007c0"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/README-全量说明.md",
+      "sha256": "295b5994a499107d95f5c8dc43d6233c8ec69f444e3138bebb2ff74806d8184c"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有-各库条数与样例-b0001至b0016.md",
+      "sha256": "03bf6a98f1b5ee10cabd2af58d0a68357c4a553b1b79586baf0783605a595019"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有词条清单-全量-b0001至b0016.md",
+      "sha256": "03a2429e2704dc22b3bf739dfeac785e00e321476cd324006c1819efcb2d91c1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有词条清单-b0001.md",
+      "sha256": "8f6b79f4b6180f8507edeffd9b8489196e8b9ac6447f5c5bbccb96bfa1a4c30d"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/README.md",
+      "sha256": "2baadff3e298a13004bcf661de00166e3b63a760137db1b0c2d59595ea8255b1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/04-试跑种子/INDEX.md",
+      "sha256": "771941a02bba7b37dd203768f539065ed39994185ed6bed1fd8c0f3910c7a1c1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/04-试跑种子/2026-10-12-接tag试跑-研究员触手黏液黑胶.md",
+      "sha256": "ec1c20549d95045f3a692c4c5a06abba3e3eab919d070cd6b6c15f32f8172442"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0003-production-report.md",
+      "sha256": "083102ef50556de4aa43c3a45ae18c7233cb5394087c68c0fccecbd63eee95dc"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/production-report.md",
+      "sha256": "8e1f95d3f25fdb05cc656c2124db6fe6875f443d0fc569dbe839a50fa8d6ad57"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0002-production-report.md",
+      "sha256": "72b8812c604f6b0ff1dd72366d812615c0cf2965afd0397648576721d4d10d6e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0004-production-report.md",
+      "sha256": "ccd7c5a3b795927bab330dbc4d17a9af8ab745e78da72acf6d0f227fd898458c"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0010-b0016-production-report.md",
+      "sha256": "79f30ef68ea4847e25a03f00060540b714330cb7c647dae24f2795de9c2369e7"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0005-b0009-production-report.md",
+      "sha256": "b5c3de0ed639c9e56d85af2ca16473828c5120662ff57315f0d9f69bc0f7076d"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付说明.md",
+      "sha256": "e08392610c5adcc18b382d10dbcec32b5b2bcc8f5bfe3fa17cea587bc1ac705c"
+    }
+  ],
+  "editorialSemantics": "Topics and qualifiers of source wording only; do not infer entity state or modifier attachment."
+}

@@ -1,0 +1,77 @@
+{
+  "format": "aetheria-general-duplicate-audit",
+  "groups": [
+    {
+      "material": "渠边不扔渣",
+      "entryIds": [
+        "lx.daily-social.b0003.0021",
+        "lx.world-culture.b0003.0006"
+      ],
+      "sourceLibraries": [
+        "daily-social",
+        "world-culture"
+      ],
+      "decision": "keep-separate-until-reviewed"
+    },
+    {
+      "material": "学徒灯",
+      "entryIds": [
+        "lx.npc-alias.b0002.0011",
+        "lx.npc-name.b0002.0049"
+      ],
+      "sourceLibraries": [
+        "npc-alias",
+        "npc-name"
+      ],
+      "decision": "keep-separate-until-reviewed"
+    },
+    {
+      "material": "远离排污口",
+      "entryIds": [
+        "lx.npc-goal.b0003.0034",
+        "lx.npc-history.b0003.0023"
+      ],
+      "sourceLibraries": [
+        "npc-goal",
+        "npc-history"
+      ],
+      "decision": "keep-separate-until-reviewed"
+    },
+    {
+      "material": "渔获分享簿",
+      "entryIds": [
+        "lx.world-culture.b0003.0043",
+        "lx.world-object.b0003.0032"
+      ],
+      "sourceLibraries": [
+        "world-culture",
+        "world-object"
+      ],
+      "decision": "keep-separate-until-reviewed"
+    },
+    {
+      "material": "水源轮取表",
+      "entryIds": [
+        "lx.world-culture.b0004.0042",
+        "lx.world-object.b0004.0035"
+      ],
+      "sourceLibraries": [
+        "world-culture",
+        "world-object"
+      ],
+      "decision": "keep-separate-until-reviewed"
+    },
+    {
+      "material": "空壶回流筐",
+      "entryIds": [
+        "lx.world-object.b0004.0008",
+        "lx.world-workplace.b0004.0035"
+      ],
+      "sourceLibraries": [
+        "world-object",
+        "world-workplace"
+      ],
+      "decision": "keep-separate-until-reviewed"
+    }
+  ]
+}
