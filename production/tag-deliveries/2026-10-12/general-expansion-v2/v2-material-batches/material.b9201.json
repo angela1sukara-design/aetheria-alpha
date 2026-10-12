@@ -1,0 +1,266 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "material.b9201",
+  "library": "material",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.material.b9201.0001",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "青铜",
+      "description": "铜合金材料类别，成分与用途由具体物件声明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0002",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "铸铁",
+      "description": "铁基铸造材料类别，具体性能另由材料定义提供。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0003",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "钛",
+      "description": "金属材料类别，不能由银色外观推断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0004",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "锌",
+      "description": "金属材料类别，常作为明示材料或镀层来源。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0005",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "镍",
+      "description": "金属材料类别，与颜色和表面光泽分开。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0006",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "釉",
+      "description": "覆盖在相应制品表面的烧制层材料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0007",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "瓷",
+      "description": "具有相应成型与烧制特征的陶瓷材料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0008",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "炻器",
+      "description": "具有相应坯体与烧制特征的陶瓷制品材料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0009",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "石膏",
+      "description": "供建筑或工艺素材使用的石膏材料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0010",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "石灰",
+      "description": "供建筑等用途使用的石灰材料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0011",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "砂浆",
+      "description": "用于砌筑或表面处理的胶结混合料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0012",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "胶合板",
+      "description": "由多层木质薄片胶合形成的板材类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0013",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "刨花板",
+      "description": "由木质颗粒与胶结材料形成的板材类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0014",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "纤维板",
+      "description": "由纤维原料压制形成的板材类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0015",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "木皮",
+      "description": "以薄木片形成的表面材料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0016",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "牛仔布",
+      "description": "具有相应织造特征的织物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0017",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "绒布",
+      "description": "具有相应绒面结构的织物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0018",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "针织物",
+      "description": "由线圈相互串套形成的织物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9201.0019",
+      "category": "material",
+      "subcategory": "材料细分",
+      "text": "油毡",
+      "description": "经相应处理形成的毡状防水材料类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

@@ -1,0 +1,669 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-object.b9202",
+  "library": "world-object",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-object.b9202.0001",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "醋",
+      "description": "供普通调味使用的酸味液体类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0002",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "酱油",
+      "description": "供普通调味使用的发酵液体类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0003",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "食用油",
+      "description": "按场景已声明用途供食物加工的油脂类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0004",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "甜味",
+      "description": "味觉中的甜感维度，强度需单独描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0005",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "咸味",
+      "description": "味觉中的咸感维度，强度需单独描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0006",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "酸味",
+      "description": "味觉中的酸感维度，不直接判定变质。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0007",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "苦味",
+      "description": "味觉中的苦感维度，不直接判定毒性。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0008",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "鲜味",
+      "description": "味觉中的鲜感维度，与气味和口感区分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0009",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "涩感",
+      "description": "口腔接触时产生的收敛感，与苦味区分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0010",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "酥脆口感",
+      "description": "受压或咀嚼时容易发生细碎断裂的食物质地印象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0011",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "砧板",
+      "description": "供放置食材并进行切分操作的板状器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0012",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "漏勺",
+      "description": "带孔洞、供分离固体与液体的勺状器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0013",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "滤网",
+      "description": "以细孔网面拦截颗粒的器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0014",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "汤勺",
+      "description": "供舀取汤液等食物使用的勺具类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0015",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "锅铲",
+      "description": "供翻动或移取锅内食材使用的器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0016",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "夹具",
+      "description": "通过两侧夹持面抓取物体的器具类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0017",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "打蛋器",
+      "description": "以多根细条或相应结构搅拌混合物的器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0018",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "擀面杖",
+      "description": "以滚压方式改变面团形状的棒状器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0019",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "量杯",
+      "description": "带有容量参照刻度的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0020",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "量勺",
+      "description": "供量取小份物料使用的勺状器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0021",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "厨房秤",
+      "description": "用于称量食材等小件物品的计量器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0022",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "削皮器",
+      "description": "供剥除食材表层使用的手工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0023",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "刨丝器",
+      "description": "以刃口或孔面将食材加工成细片或丝的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0024",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "研钵",
+      "description": "供与杵配合研压物料使用的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0025",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "研杵",
+      "description": "供在研钵内压碎或研磨物料的棒状工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0026",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "蒸笼",
+      "description": "利用蒸汽加热食物的分层或笼式器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0027",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "炉灶",
+      "description": "为食物加工提供受控热源的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0028",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "烤箱",
+      "description": "在封闭空间内对食物等物品加热的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0029",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "隔热垫",
+      "description": "放在热物件与接触面之间的垫具，实际耐热规格另查。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0030",
+      "category": "world-object",
+      "subcategory": "厨房器具",
+      "text": "沥水架",
+      "description": "供洗后器具放置并排出水分的支架。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0031",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "床单",
+      "description": "覆盖床垫等寝具表面的织物用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0032",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "枕套",
+      "description": "包覆枕具外部、可单独整理的织物用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0033",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "被子",
+      "description": "用于睡眠时覆盖身体的寝具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0034",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "蚊帐",
+      "description": "在休息区域周围形成网状遮挡的用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0035",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "窗帘",
+      "description": "供遮挡窗部光线或视线的悬挂用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0036",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "门垫",
+      "description": "放置于出入口附近供踏踩或整理鞋底的垫具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0037",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "洗衣篮",
+      "description": "供集中存放待处理衣物的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0038",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "脸盆",
+      "description": "供盛水并进行一般清洁的盆具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0039",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "肥皂",
+      "description": "用于普通清洁主题的皂类用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0040",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "洗发用品",
+      "description": "按场景声明供头发清洁使用的用品类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0041",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "牙刷",
+      "description": "供一般口腔清洁使用的刷具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0042",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "梳子",
+      "description": "供整理毛发使用的齿状工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0043",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "镜子",
+      "description": "以反射表面供观察影像的物件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0044",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "针线盒",
+      "description": "供整理缝制工具和小件材料的盒具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0045",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "喷壶",
+      "description": "将所盛液体以喷洒方式释放的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0046",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "硬毛刷",
+      "description": "以较硬刷毛清理指定表面的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0047",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "刮水器",
+      "description": "将平面上水分推移集中到一侧的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0048",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "垃圾袋",
+      "description": "按使用用途盛放待处理废弃物的袋具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0049",
+      "category": "world-object",
+      "subcategory": "居家用品",
+      "text": "收纳箱",
+      "description": "供按约定分类存放物件的箱具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9202.0050",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "表格",
+      "description": "按预设栏目收集和呈现信息的文书结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-goal.b9201",
+  "library": "npc-goal",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-goal.b9201.0001",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "寻找工作",
+      "description": "希望获得符合自身条件的工作机会。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0002",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "积累储蓄",
+      "description": "希望逐步留存可供未来使用的资金。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0003",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "偿还债务",
+      "description": "希望履行已确认且尚未完成的债务义务。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0004",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "改善住所",
+      "description": "希望改善当前居住条件或居住安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0005",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "完成学业",
+      "description": "希望完成已参与的学习阶段与必要要求。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0006",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "精进手艺",
+      "description": "希望通过练习提升指定实践技能。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0007",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "筹备搬迁",
+      "description": "希望为改变居住地点准备必要条件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0008",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "寻找伙伴",
+      "description": "希望结识可共同参与指定活动的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0009",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "修复关系",
+      "description": "希望处理既有关系中的误解或损伤。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0010",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "取得资格",
+      "description": "希望满足指定资格的申请与考核要求。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0011",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "更换工具",
+      "description": "希望获得更符合实际工作需要的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0012",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "建立作息",
+      "description": "希望形成适合当前处境的生活时间安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0013",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "安排休假",
+      "description": "希望为休息活动协调时间与资源。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0014",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "完成委托",
+      "description": "希望按已接受委托的条件完成事项。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0015",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "整理家务",
+      "description": "希望处理当前生活空间中的待办事务。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0016",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "参与社群",
+      "description": "希望加入或持续参与特定共同活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0017",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "展示作品",
+      "description": "希望在适合场合向他人展示个人成果。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0018",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "寻找线索",
+      "description": "希望获得与特定疑问相关的有效信息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0019",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "照护亲友",
+      "description": "希望为明确的亲近对象提供合意支持。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-goal.b9201.0020",
+      "category": "npc-goal",
+      "subcategory": "目标概念",
+      "text": "了解变化",
+      "description": "希望理解自身或环境已经出现的变化。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

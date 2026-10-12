@@ -1,0 +1,357 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-object.b9204",
+  "library": "world-object",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-object.b9204.0001",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "燃料电池",
+      "description": "按设计以燃料反应提供电能的组件类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0002",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "光伏组件",
+      "description": "按设计将光照转换为电能的组件类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0003",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "电容器",
+      "description": "供电路按设计储存电场能量的器件类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0004",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "电动机",
+      "description": "按设计将电能转换为机械运动的设备类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0005",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "轴承",
+      "description": "承托相对运动部件并约束其运动关系的组件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0006",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "密封圈",
+      "description": "放置于相应接合处以限制流体通过的环状部件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0007",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "弹性",
+      "description": "对象在一定条件下变形后恢复的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0008",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "可塑性",
+      "description": "对象在一定条件下保持塑性变形的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0009",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "柔韧性",
+      "description": "对象可弯折并承受变形的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0010",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "脆性",
+      "description": "对象在指定条件下容易发生断裂的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0011",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "刚性",
+      "description": "对象抵抗形变的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0012",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "孔隙性",
+      "description": "材料含有内部或表面孔隙的结构性质。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0013",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "渗透性",
+      "description": "流体可否及如何穿过材料的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0014",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "吸水性",
+      "description": "材料吸收并容纳水分的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0015",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "拒水性",
+      "description": "表面对水润湿表现出阻碍的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0016",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "导电性",
+      "description": "材料传导电流的性质维度，需可信材料参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0017",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "电绝缘性",
+      "description": "材料阻碍电流通过的性质维度，需明示适用条件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0018",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "导热性",
+      "description": "材料传递热量的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0019",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "保温性",
+      "description": "结构减少热交换的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0020",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "透气性",
+      "description": "空气可否及如何穿过材料的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0021",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "摩擦性",
+      "description": "两接触面在指定条件下阻碍相对运动的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0022",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "附着性",
+      "description": "材料或表面与其他对象保持结合的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0023",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "耐磨性",
+      "description": "材料抵抗磨耗的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0024",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "耐蚀性",
+      "description": "材料抵抗特定环境腐蚀的性质维度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0025",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "颗粒感",
+      "description": "表面或材料表现出颗粒结构的触觉或视觉印象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9204.0026",
+      "category": "world-object",
+      "subcategory": "物件性质",
+      "text": "纹理方向",
+      "description": "材料纹样或结构延伸的主方向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

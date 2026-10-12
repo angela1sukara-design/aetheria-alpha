@@ -1,0 +1,253 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "body-adaptation.b9201",
+  "library": "body-adaptation",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.body-adaptation.b9201.0001",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "转移重心",
+      "description": "主动改变身体支承与重心相对位置的动作主题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0002",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "试探支撑",
+      "description": "在保留退出条件下检查某个支承位置是否适合。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0003",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "试握",
+      "description": "尝试不同握持位置或角度的动作主题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0004",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "试探可及范围",
+      "description": "在已知空间中尝试能够触及的位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0005",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "检查净空",
+      "description": "观察身体或物件与上方边界之间的可用空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0006",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "检查压迫",
+      "description": "观察穿戴物或接触点是否形成不适当挤压。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0007",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "重新站稳",
+      "description": "调整支撑关系以恢复稳定姿态的动作主题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0008",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "调整步幅",
+      "description": "改变单步跨度以配合当前身体和地面条件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0009",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "试步",
+      "description": "先以有限步数测试行进方式的动作主题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0010",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "换支撑点",
+      "description": "将身体负担转移到另一允许支承的位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0011",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "安置尾部",
+      "description": "为已有尾部选择不妨碍行动与他人的位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0012",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "避让角部",
+      "description": "调整路线或姿态以避免已有角部碰到障碍。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0013",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "安置附肢",
+      "description": "为已有附肢选择适合的休息或收纳位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0014",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "调整衣物开口",
+      "description": "整理已有衣物的允许开口以配合当前结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0015",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "更换握具",
+      "description": "改用与当前握持部位相配的器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0016",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "调整听声距离",
+      "description": "改变与声源的相对位置以便分辨或休息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0017",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "适应明暗",
+      "description": "在不同亮度之间逐步调整观察方式的主题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9201.0018",
+      "category": "body-adaptation",
+      "subcategory": "适配细分",
+      "text": "询问适配条件",
+      "description": "向负责方确认尺寸、设施或帮助范围的交流动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

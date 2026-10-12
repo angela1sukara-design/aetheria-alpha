@@ -1,0 +1,136 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "daily-action.b9202",
+  "library": "daily-action",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-action.b9202.0001",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "注销",
+      "description": "按有效程序结束某项登记或资格。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0002",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "排班",
+      "description": "为工作时段和岗位安排相应参与者。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0003",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "考勤",
+      "description": "记录与核对人员在岗时间的事务。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0004",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "值班",
+      "description": "按约定时段承担指定岗位职责的工作安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0005",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "培训",
+      "description": "围绕明确技能或知识开展学习的活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0006",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "演练",
+      "description": "在受控条件下练习既定流程的活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0007",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "申诉",
+      "description": "向有权受理方请求复查已有决定或处置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0008",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "复核",
+      "description": "按明示标准再次核查已有结论及其依据。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9202.0009",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "调解",
+      "description": "由参与方允许的第三方协助处理分歧。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

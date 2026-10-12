@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "body-parameter.b9201",
+  "library": "body-parameter",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.body-parameter.b9201.0001",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "长度",
+      "description": "沿明确定义方向测得的线性尺寸，不由长短描写填值。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0002",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "宽度",
+      "description": "沿明确定义横向测得的尺寸，须注明测量对象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0003",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "高度",
+      "description": "沿明确定义竖向测得的尺寸。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0004",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "厚度",
+      "description": "两相对表面之间的尺寸，不与体量印象混同。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0005",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "直径",
+      "description": "圆形或近圆截面在指定方式下的尺寸。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0006",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "周长",
+      "description": "沿指定闭合轮廓测得的长度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0007",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "净空高度",
+      "description": "通行或动作空间内可用的竖向尺寸。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0008",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "通道宽度",
+      "description": "指定路段允许使用的横向尺寸。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0009",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "可及距离",
+      "description": "指定身体与姿态下可以触及的距离参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0010",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "转向半径",
+      "description": "指定身体或载具改变方向所需的空间参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0011",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "屈曲角度",
+      "description": "指定关节或连接处相对基准的屈曲角。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0012",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "伸展角度",
+      "description": "指定关节或连接处相对基准的伸展角。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0013",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "旋转范围",
+      "description": "指定结构允许的旋转角度范围参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0014",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "质量",
+      "description": "指定对象包含的物质量计量参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0015",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "容积",
+      "description": "指定容器内部可容纳空间的参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0016",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "承载上限",
+      "description": "指定配置下允许承受的载荷参数，必须有可信来源。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0017",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "握持跨度",
+      "description": "指定握持部位可配合的尺寸范围参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0018",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "开口尺寸",
+      "description": "指定衣物、接口或容器入口的尺寸参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0019",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "接触面积",
+      "description": "指定接触关系实际涉及的表面范围参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-parameter.b9201.0020",
+      "category": "body-parameter",
+      "subcategory": "适配参数",
+      "text": "表面温度",
+      "description": "指定对象表面的温度参数，不从暖色光推断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

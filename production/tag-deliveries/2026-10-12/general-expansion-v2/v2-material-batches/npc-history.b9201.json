@@ -1,0 +1,266 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-history.b9201",
+  "library": "npc-history",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-history.b9201.0001",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "结业",
+      "description": "曾完成指定学习阶段要求的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0002",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "学徒经历",
+      "description": "曾在指导下参与实践学习的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0003",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "转岗",
+      "description": "曾从一个工作岗位调整至另一岗位的经历。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0004",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "失业",
+      "description": "曾结束工作且处于求职阶段的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0005",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "再就业",
+      "description": "曾在离开工作后重新获得工作安排的经历。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0006",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "迁入",
+      "description": "曾将生活或登记地点移入指定地区的经历。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0007",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "迁出",
+      "description": "曾从指定地区迁离的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0008",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "合住",
+      "description": "曾与他人共同居住的生活经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0009",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "独居",
+      "description": "曾独自安排居住生活的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0010",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "返乡",
+      "description": "曾返回原有家乡或长期生活地的经历。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0011",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "旅行",
+      "description": "曾离开日常生活地点前往其他地区的经历。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0012",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "参与志愿",
+      "description": "曾自愿参与无约定薪酬的公共支持活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0013",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "获奖",
+      "description": "曾按明确评选事实获得奖项的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0014",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "遭遇失信",
+      "description": "曾遇到他方未履行有效约定的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0015",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "重建信任",
+      "description": "曾通过后续事实恢复特定信任的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0016",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "项目失败",
+      "description": "曾参与未达到约定目标的项目经历。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0017",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "合作完成",
+      "description": "曾与他人共同完成明确事项的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0018",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "技能学习",
+      "description": "曾接受或进行特定技能练习的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-history.b9201.0019",
+      "category": "npc-history",
+      "subcategory": "经历概念",
+      "text": "重新开始",
+      "description": "曾在明确转折后开启新安排的经历类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

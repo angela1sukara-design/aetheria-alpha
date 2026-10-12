@@ -1,0 +1,266 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-emotion.b9201",
+  "library": "npc-emotion",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-emotion.b9201.0001",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "安心",
+      "description": "对当前处境感到较少威胁或牵挂的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0002",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "紧张",
+      "description": "面对压力或不确定性时出现的绷紧感。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0003",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "担忧",
+      "description": "对可能出现的不利情况有所挂念的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0004",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "期待",
+      "description": "对尚未发生的事项怀有积极盼望的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0005",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "失落",
+      "description": "因期望落空或缺失而出现的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0006",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "沮丧",
+      "description": "在受挫后感到意志低落的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0007",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "惊讶",
+      "description": "对超出预期的信息产生的即时情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0008",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "困惑",
+      "description": "对当前信息或处境暂难理解的感受。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0009",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "羞怯",
+      "description": "在被关注或社交时有所拘束的感受。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0010",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "尴尬",
+      "description": "对当前社交处境感到不自在的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0011",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "愤怒",
+      "description": "对被认为不当的事项产生的强烈不满。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0012",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "宽慰",
+      "description": "因获知支持或风险缓解而感到放松的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0013",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "感激",
+      "description": "对他人的帮助或善意有所感谢的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0014",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "不耐烦",
+      "description": "对等待或重复事项感到耐受下降的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0015",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "倦怠",
+      "description": "对持续活动感到心理疲乏的状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0016",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "振奋",
+      "description": "因积极消息或进展而精神提升的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0017",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "戒备",
+      "description": "对潜在风险保持警惕的当前状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0018",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "怀念",
+      "description": "对过去经历或对象产生牵挂的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-emotion.b9201.0019",
+      "category": "npc-emotion",
+      "subcategory": "情绪概念",
+      "text": "释怀",
+      "description": "对原有牵挂或冲突逐步放下的情绪。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

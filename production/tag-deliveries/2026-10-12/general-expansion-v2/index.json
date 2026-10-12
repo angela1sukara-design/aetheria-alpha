@@ -1,0 +1,649 @@
+{
+  "format": "aetheria-general-expansion-v2",
+  "schemaVersion": 1,
+  "domain": "general",
+  "runtimeImportable": false,
+  "reviewStatus": "authored-proposed",
+  "nsfwChanges": 0,
+  "previousRelease": "production/tag-deliveries/2026-10-12/general-expanded",
+  "previousFiles": [
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-accessory.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "9743e40281b79c77aefb2af1e277b25a2d5f9672cfc92127e2b86c1f037379d8"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-adaptation.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "167bdc1b7deedeb0547d335e08f8dfcd949bb086587e8c5c0133c73666f6f8f9"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-anomaly.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "aed81460cfe4acca343749184e71069da405b4125571d25b0543d7809c069402"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-beast.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "0d6a92e444b5b743a10252365a5b8e1645f720bec6fb5e5b38fb3e312a5072b0"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-build.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "81a4716b8e9370dbd0e8d4c5a6136e610c669d511fe7dc8b6c3c68615768663c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-clothing.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "cc06c6d6f6ce84cfc3c47a060c0c03f9522643f3957023cbf172c2407f98abcd"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-color.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "87ee75a911b271448c58313f8c7b600aa48cbf9c8ae4fbb97f75e282450adc7f"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-form.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "e92cf85133576222ce94cc31b0607c7b6ba90b90fd8e3605b4c0bfcfe8139cb2"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-hair.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "59decc8db82d2e1cb5f02fb0f23a90e600d0267412be7b989266391703dc00bd"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-mechanical.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "6e69a87a47adbad523052cc0bb8c11efb1b5d95aa65910f5762abe8194412770"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-organ.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "f12f87c4a2caa61f5d5a43e9752975c061f64e02407a180e606ef42e17989e99"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-part.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "61ef2a93ea637840e9a5ff855e6d46be08d0053d571d40bc3ad3fec1b1e20878"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-scale.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "905bd041e0d08ec9c276eba7ff48010d030b9337b0a6143a6d45d94d4884ad6c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/body-surface.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "b24d91e7a98922db318a0f592a9aeeb80ac3a2a22b1843e6d0cf16c19bd6f50e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-action.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "fc0ebdbde37dd85999765db6eac409591a441c422414d2d1893682fd89577c62"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-food.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "d887e4138271d6547e800abaeae43caa4a0c4dc2a472776d368ba2df4fd8aaf8"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-interact.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "44df15e08dc4f85a8ed57a6e7352baf92905258ac32232a622d1075fddced04a"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-life.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "ca14bcc66f8291256ac19b92c6a1331339f5728044947db683fd6bfc28d2cabc"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-move.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "2b11a98b29f2d275ca28e191aa43064d984e3319d8855c4626198f6f6ef8d688"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-observe.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "af80266f8f76aa3ea6ef956934e4fabcda0a711a0370c4d78bbd1f76cb860952"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-rest.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "36472636ed1a5c13d92175fd6f9d23e84f8e82ec28b22d9ceb77788818896e4a"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-social.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "9ee098f904737e51b0368de53157a0ef40f5b11ab4969c281ee2392563dc357e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-talk.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "3b97e7eead7a1d626436eb2a5dc2e6fd2c07eeec15eb9710df9283d4564d2db4"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/daily-work.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "c2e85de395f028e101cdc05d3a611d22dfff0e59916f6db04c8d835546dd0854"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/material.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "d83b431cd81a531b46fedc14bb951eb591af201707dbb8b645225a9e18e3a45b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-address.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "bf3f4ffbb10f47c81550de776f93f845d89965d4fa50c5e045f57808986814df"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-alias.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "6428391a83d49c8eda2e6926c3c6fba749cc3e9832687e783b548a97427d8770"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-expression.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "ddbbef2855674a91bf8149693527da6cda6f984bc6f2f39857a56e965334ba70"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-goal.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "9f62ab01f52bd6618db3ecbaaacaf8fc7862e4c0f5840097615d9c708a0abb19"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-habit.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "e880867a6caad751bc0af177b8fd7f6c461a2c4348093425e7f1898bdd9201ed"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-history.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "c42b08e9932b9a79106592e52f0556629e0ecf38b532dd9cfc181bcd6f576e15"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-identity.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "5e9fdc78513ad0abbc2d15dbb7a6c7e944302d3eea04e0a6f870bcbaf29ac77c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-interest.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "8356cd3a02766f492643d959bc06be2ad199fdfd4c0434c834c4403a1320a1f5"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-job.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "165530c08eabc4e362358f9b8934f6be42ad81dc0683f3f69678a17e1300cad2"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-name.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "40835ee4b128feccc19b5e14f21653cf2778c0b04086f4fed07f29ba3ecd68fa"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-origin.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "950dac5f0458d00bb3220459cc9c8faba3a66b63ff5ab68fb9bcd3d2bb72d2bd"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-speech.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "0f9d0e87169fa0c9b7a70e2e1b9fdd6dd089946f847861a154012e7f163869fe"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-trait.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "84e8369921c6689522ec61f598ea5989ac196db8e37a9201bd0e57e32199fa1c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/npc-value.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "6c311e53fed25d395c82d8cf7e926fb87268da4ea421373ca427e325728880b0"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/relationship-context.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "31811ac87a35ccba4fdae81c3516bb89a56146e527bc8d1cbbf164b4c3a20b0c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/social-action.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "d303e958210d0712f260145cee4e22612bb0bc6b9df7d112e5fdb4def4811bc8"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-body.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "4a3808b071ba7b39d7e049db5206a91dd6baf2b383206bc1912d17d37ed3e07b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-emotion.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "803dcd7c90577bc4d7355c1f19256afee3322853078d975cfaa16f3c58468025"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-encounter.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "4c9a8ec1aa608d82ae07222f1c6130e38116ef93855e9dbae257b7feca9c0c69"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-environment.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "f26e4895b4af7bf65029ed6a47748e82f59e2b35874e78ec7608c7364e5b2266"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-farewell.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "421c7b1b6b183b6ddc72aa60edefc55d8bb01142f69a5223fc958ccdcd9b5b6e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-opening.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "792837630c407440a35104fd3604aa5c4bc6a30e486afae23a38cb9ee485e827"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-refusal.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "9fdebab1842565421cd5a2a8a5dfbbc705d7904ab9439f46ee14a2c82ed2052a"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-reply.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "c4c3c3e441c33af8f887464e338d6ba84832b372ccc300258b07b5c22e832246"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-tf-adapt.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "be9eba802dc5d7dea9c33b8d7e5b8ae8e52aaec281b1b130d2bf914da75fa29e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/text-tf-sense.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "caabd8b28155a3647bdc85997543d13fbbbc16bce976c384d0d92464ea3a9659"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-building.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "8ff539f3fe3278d583779cf1f96368300549c9197ea52175b4cff688e78fde9b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-culture.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "bc3b967f208add879e0fc366419a0fe920d891363da17d5c5b00829df9bd401b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-detail.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "d35a7a97273fd9c3960f75a3c1db1f983a706aa3dcf6e967f19de948c13a1d6a"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-district.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "dd405191496714449201881970af20b47c106d7b7cc66bf2f87b8c0189595b42"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-environment.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "bcef0ea6f6c462bec76d5e8bae4d84c8bd36472f79ac345762d4fed26ed3bb26"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-facility.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "63643114ce5c0216c9b3a20fd5036508c8fda9a3e39a9ccdde63a9a1c158d064"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-nature.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "4dfc029ce61fc7fa1c4963c3f0654529cb6b47380944955798223105a91181be"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-object.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "574f1602ea310d3a5bad60fb31eecfd309ddb611434caf44707f53ebd40aae13"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-room.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "339dce59be0250630d38f759c9c83f4cee51f839ddb77d6187d781f86e0de3ab"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-scent.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "769b9e7ea1ec13084373f896d566477c8d1978fb5dbacb4fffa5c83d23680ed2"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-sound.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "96d645d05f4b686e8af25fb5b5ae95570daf42548013e346a9b1654796619ba1"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-space.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "214c21b1bf7db9577bded0c7252308f870ee7ea4ce9048e1b9574eee2d7f7a15"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-state.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "a4f27ab7261fb905e96a8abee0ffb699be4816ccd0f4c8d37fdd73118946ffb7"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-terrain.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "1b71d4de52786e81a978d0e6675cd0e905a761ed76907bef4ae05cd03a6762c9"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-weather.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "47962c2359514c3e093cf92f48df6983bbc911beeeb92a3c8335b7d0705e519f"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/按库/world-workplace.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "c5b39b0e99db01358b56cbdd908ff964386f43cfa6db42ef6b1f57b8aee5858b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/拆分规则与示例.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "910a2e62270384dc2a9e9f6519d11c14484202c83f4476bdc19c1f75355843ae"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/来源全文恢复.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "743f6a91188f05ddb641a1057455e38b0ac755577b1d686299f9ce2d5a8e2a7e"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/世界环境候选整理.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "1af1fe68e746ae94ce8a07513c8aece217dc6717fa9e7a59e47c871ccc5e349a"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/新增常用通用词条.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "4dda826480aa8b5dbd2c64830d28b05675f72eb0ff1a9a04d5a0c267c507cdc8"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/验证/类型检查.txt",
+      "hashing": "lf-text-sha256",
+      "sha256": "d8b55579fe82e84d1e86f77665ef352436b2e7804f812c39026d45819522fe04"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/验证/自动化测试.txt",
+      "hashing": "lf-text-sha256",
+      "sha256": "f655d1f0ab8f721806d3d3b7068c1134335162f19f2e4eb77a112511b5b8dc7b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/验证与完成状态.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "78ca30e0643649d83d024fb4248231763a343cc1e919deff04fcbe715c877a08"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/原子概念字典.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "43c4e757bde2dc2424955ab3a3487d0d07284d1d509aab45372eec0888ac0227"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/base-10700.jsonl",
+      "hashing": "lf-text-sha256",
+      "sha256": "e1f2f02eb59650283616a8928fd21cc5646bec4ade6dc2eed516ba896988165d"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/common-additions.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "611448a851e2b95f5bcf9f4b2c3b2de713b599fc982913ffc952a3e615710109"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/duplicates.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "5ce49ce84eb7a2bfd7f49fdeb65f78958d32be9a1c9be3aac075f6035fe5fdbd"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/entries.jsonl",
+      "hashing": "lf-text-sha256",
+      "sha256": "437924e9f01783bc9b3f82a67becb19936eb4986d8253871104ff43b50b2bb70"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/export-links.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "c9b2d53ea062d93f470c1154ea781f567710f0d18c9f8653066cb270d46242ed"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/index.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "b9c6b1b8a9ae97c4df36e0dd1c738f4abf39ecb46f20d22aafe7112b0762cba1"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/needs-core-review.jsonl",
+      "hashing": "lf-text-sha256",
+      "sha256": "3b8d220436a31189fbf9d016e6a6b08412b6de6ad809e2b5c362bc416fbc9aa7"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/README.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "6ef6a5e09221f0c42ca9697f3e75c9727b39e4d20f3a72b9f4a4b496ad2c9fc3"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/reused-common-labels.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "0d7525a316ba7488e691375d100674ee79c8bb09b204ee1f648f1cc3dffb63d6"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/source-corrections.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "8bc91b5619f6479f5b7c72c072f046a47c13777fdc37ea20d146f20865e0039f"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/taxonomy.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "c70443d263bf20f1b94e57023e2c5f2e839623cbf3418546ac369cfb67ea81aa"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-accessory.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "2138b2155e2e6d929c768db65d4938441371c655037b649509f54296f02dbfe5"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-adaptation.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "128fadb579285b30386b6f88dad4d9c0f2648faf83addbf5aaeca0ef14a50def"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-clothing.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "90c8387d47ce2256befa060f1ab877a949fe7df97268c174ede0e1cf69206f58"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-part.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "4d16cc15201224e84717b38bfecd2d92c1bbb5cafa185d20da7545b42f70d484"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-action.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "d7281461f7c709f2f98568ba3c362dd42ccdc81be2f4da8d56594a6176b145be"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-move.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "b5cce23bfed29c2c72e0660e770ea1c092187bfcc3c35d1d86b4e9b2f20d84cd"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-rest.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "6268a9c9eec76c095eb1bdc39422cc42e69d21ad286f23c44a970e78a89bd48b"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-work.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "0a78ff8c9860cc848c46282b64066fc8f8acf54396c53bf41648bed778803707"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/material.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "2fd3b8491c2ff5094035ecc7f65a08490e4e6fa4d62abaa1ba9effa8d68a31b7"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/npc-job.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "1dd1d77835fe6bae76509a2899be952f81dcd7710d2ac2302b2561a012ff5854"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/README.md",
+      "hashing": "lf-text-sha256",
+      "sha256": "b17f43d52d830a4f9e2cd5eb8c5b448178511c149ab2cbc97c28f0ccc18bce49"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/relationship-context.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "b826e0d6be6e3eea28c3a72d3fa93633aa92ee07ee65bd163c8de72e44c3e896"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/social-action.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "12959e0e58c91de8b2cf3ad261f88568d907b44f0a44d13c0159c542a8514392"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/text-environment.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "2a3a2143df879a619b9f8a3be01561b3dc593c8f02d8c2ca5d1d493738f7e120"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "9da85cd264a7328f23eba08e8183f148a42bbffcb453df0cf265c75132a0ac74"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "7371da58db3b8a3565154be0cbbb36b03a692ddce377919c5a650e51b4b14ad2"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9102.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "9eac81adde4f4e4057e4efbef163b4955d0305b275def2a01e1936c8905ca6ce"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-culture.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "d644de5851ae0b21b560ff1764a6068f8cdc2fcbe4fe383a32793074932be6bb"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-detail.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "fba3d2757e993fc2453b7b121da19806c14021905456bdc21a1d2741cdf840fb"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-district.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "abbe74216d5acdf087970bec1f61fedb39fd5f4454d7ecb73a18cc6eaa3e0f1c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-environment.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "f5db31d47b709d9892f67bb0de23e2ae0e185d4bb63d50981ac5c3784ed3da40"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "49d8fa19677f5d27adfa51a95de4017a26fd2243a1829b86c9af15525403ced3"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "e4ab516396e31e66a0f2fafe749743fb2e4bdd13609b2b22cba2580e427119e0"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9102.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "9ad62c2c524e636ce219062868b300fd0b2789653e398ac3667827489259136c"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-nature.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "43fdc3c5827da306bce3bf3c53641e53e12df1df6f32ffc897f0528e71ec28fe"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "532508fabbd06f7a57f892a8dd399828b6de0838656e5272ff4a62a72cec28f6"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9002.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "e20a1d165c566ec9a90f4a197ae70948d30ff7b5e20daff3f112200de9ea63af"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "4abd8d6c840d3b07d07d1a6f06163842a72dfa7710624b77242af2106db58227"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-room.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "390ecbd1cf06b9a605799ff93cc554d564a7b3ab60faa95ef0b4a890ba0e90e8"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-scent.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "e49b960829cc3b5de4e85a9455b685ca581d10d1d7f067dc44ce63f819141969"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-sound.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "8c4a02ba998bdc6cb26bb92b484e64013ad9a45107a6c3719e2b0bf2cb2629b9"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-space.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "6280a234a420d139f542fb90aa38e2fa35029cc5a1597fb947e3dc2fd6e7e03d"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-state.b9001.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "e988d046af84bd7e20969af4992b3bfd884582db50fe0ca8a3b58417a2efd375"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-terrain.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "5a8aaefbd26c9e633daab84ea269291f52035393971b8d9dfeaa7495b6b742d6"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-weather.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "b8d834674ce5523d994ae843f11d2b4453886b7c53e5814cef372e666a2ea401"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-workplace.b9101.json",
+      "hashing": "json-stringify-sha256",
+      "sha256": "6006c15502653f2c984b035780f5a44b5f5e83689087eed21550dd007de3c62a"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/general-expanded/world-gap-667.jsonl",
+      "hashing": "lf-text-sha256",
+      "sha256": "51a8731d9aaa05efc3d951d3ffafc011c3dee03439a571f53f0842b0e279ccf1"
+    }
+  ],
+  "counts": {
+    "previousMaterials": 11755,
+    "candidates": 820,
+    "newCommon": 787,
+    "excludedLabelCollisions": 33,
+    "totalMaterials": 12542,
+    "previousConcepts": 1145,
+    "newConcepts": 787,
+    "totalConcepts": 1932,
+    "groups": 41,
+    "numericParameters": 20,
+    "previousNeedsCoreReview": 3064,
+    "validatedV2Batches": 30,
+    "verifiedOriginalReceipts": 31
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "idPolicy": "v2 candidate keys are immutable; b9201+ reserved for this frozen release; further additions require a new release",
+  "ruleHintStatus": "authoring-metadata-only-no-runtime-template-compiler",
+  "textImportStatus": "v2 exchange batches validated; not installed; editorial concepts are not runtime TagDef IDs"
+}

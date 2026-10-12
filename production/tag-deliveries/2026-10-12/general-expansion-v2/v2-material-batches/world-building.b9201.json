@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-building.b9201",
+  "library": "world-building",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-building.b9201.0001",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "面包店",
+      "description": "制作或售卖面包及相关烘焙食品的店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0002",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "肉铺",
+      "description": "分装和出售肉类食品的经营场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0003",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "蔬果店",
+      "description": "主要出售蔬菜与水果的零售场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0004",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "粮店",
+      "description": "经营谷物、面粉等主食原料的店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0005",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "五金店",
+      "description": "售卖常用工具、紧固件与修理用品的店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0006",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "布料店",
+      "description": "售卖织物和相关缝制材料的场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0007",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "理发店",
+      "description": "提供一般发型修剪与整理服务的店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0008",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "修鞋铺",
+      "description": "接受鞋履修补、维护和配件更换的店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0009",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "打印店",
+      "description": "提供文书打印、复印或装订服务的场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0010",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "书店",
+      "description": "出售书籍及相关阅读用品的零售场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0011",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "花店",
+      "description": "经营鲜花、盆栽和一般花艺用品的店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0012",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "动物照护站",
+      "description": "接待动物照护事务的场所，服务资格单独定义。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0013",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "公共卫生间",
+      "description": "供公众按管理规则使用的卫生设施空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0014",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "失物招领处",
+      "description": "登记、暂存和核验归还遗失物品的服务点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0015",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "调解室",
+      "description": "供当事人就具体分歧进行协商的接待空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0016",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "培训室",
+      "description": "安排技能课程或工作说明的教学空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0017",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "展览室",
+      "description": "陈列作品、物件或资料供人观看的空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0018",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "音乐室",
+      "description": "用于音乐练习、排练或相关活动的房间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0019",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "公共修理台",
+      "description": "向使用者提供基础修理操作空间的公共设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9201.0020",
+      "category": "world-building",
+      "subcategory": "城市服务场所",
+      "text": "动物收容所",
+      "description": "临时安置与管理动物的机构场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

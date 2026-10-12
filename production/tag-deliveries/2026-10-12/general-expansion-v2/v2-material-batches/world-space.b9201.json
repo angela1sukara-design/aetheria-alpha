@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-space.b9201",
+  "library": "world-space",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-space.b9201.0001",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "相邻",
+      "description": "两个明确对象在空间上接近并列的关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0002",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "相对",
+      "description": "两个对象在指定方向上面对或隔开的关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0003",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "居间",
+      "description": "对象位于两个或多个参照对象之间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0004",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "环绕",
+      "description": "多个对象或一条结构沿某个中心周围分布。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0005",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "重叠",
+      "description": "对象在空间或观察投影上部分覆盖，需注明是哪一种。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0006",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "分隔",
+      "description": "空间或对象之间存在明确分界。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0007",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "连通",
+      "description": "两个空间之间存在可识别连接，不等于当前允许通过。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0008",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "尽端",
+      "description": "路线到达后没有继续向前延伸的通道。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0009",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "交叉",
+      "description": "路线或结构在某处相遇并跨越的关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0010",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "瓶颈",
+      "description": "路线局部可用空间明显小于前后区段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0011",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "内凹",
+      "description": "表面或空间向主体内部退入的形态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0012",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "外凸",
+      "description": "表面或结构超出周围边界的形态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0013",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "悬挑",
+      "description": "构件从支撑范围向外延伸的布置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0014",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "壁龛",
+      "description": "墙面向内凹入形成的小型容置空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0015",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "夹层",
+      "description": "位于主要楼层之间的局部层面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0016",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "门斗",
+      "description": "入口前后用于过渡或遮挡的小型空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0017",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "门槛",
+      "description": "门口横向设置或形成高差的边界构件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0018",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "梯间平台",
+      "description": "楼梯两段之间或出入口前的停留平面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0019",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "转身空间",
+      "description": "供特定身体或物件改变朝向的可用区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9201.0020",
+      "category": "world-space",
+      "subcategory": "布局关系",
+      "text": "避让位",
+      "description": "供一方暂时停靠以让另一方通过的局部空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

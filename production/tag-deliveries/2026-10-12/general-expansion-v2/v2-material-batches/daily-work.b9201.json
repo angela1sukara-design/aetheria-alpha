@@ -1,0 +1,513 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "daily-work.b9201",
+  "library": "daily-work",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-work.b9201.0001",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "勘查",
+      "description": "对指定范围进行有目标的查看与记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0002",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "取样",
+      "description": "按允许方式从对象或环境取得样本。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0003",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "标记",
+      "description": "在允许对象上留下用于识别或操作的标示。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0004",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "对齐",
+      "description": "调整多个对象使其符合指定参照关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0005",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "找平",
+      "description": "调整或检查对象相对基准的平整关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0006",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "切分",
+      "description": "以允许工具将材料分成不同部分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0007",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "修边",
+      "description": "对材料边缘进行有限移除或整形。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0008",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "打磨",
+      "description": "以相应工具改变指定表面的粗糙或形态状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0009",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "钻孔",
+      "description": "以匹配工具在对象上形成指定孔位的工序。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0010",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "缝合",
+      "description": "以线或相应连接方式将允许材料连接。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0011",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "粘接",
+      "description": "通过允许的黏结材料建立连接的工序。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0012",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "装配",
+      "description": "将部件按明示关系组合成指定结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0013",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "拆解",
+      "description": "按允许顺序解除既有结构中的连接。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0014",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "紧固",
+      "description": "将相应连接调整到规定固定状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0015",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "调校",
+      "description": "按目标参数调整设备或结构的工序。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0016",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "试运行",
+      "description": "在规定范围内检查对象运行表现的工序。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0017",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "验收",
+      "description": "按已声明标准检查交付结果的事务动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0018",
+      "category": "daily-work",
+      "subcategory": "工序概念",
+      "text": "盘点",
+      "description": "核对实际物品与记录数量的工序。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0019",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "报价",
+      "description": "向交易对象提出商品或服务的价格。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0020",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "议价",
+      "description": "就尚未确定的交易价格进行协商。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0021",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "订货",
+      "description": "向供给方提出指定物品和数量的订购请求。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0022",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "预付",
+      "description": "在交付或履约前支付明示款项的交易安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0023",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "赊账",
+      "description": "经双方允许将应付款延后结清的交易安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0024",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "结账",
+      "description": "核对并结清本次交易应付费用的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0025",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "找零",
+      "description": "将实收款超出应付款的差额交还付款方。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0026",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "结算",
+      "description": "依据已记录事项计算并处理应收应付款。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0027",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "分账",
+      "description": "按已声明规则在参与者之间分配款项。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0028",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "转账",
+      "description": "将指定资金从一个账户移至另一个账户的事务。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0029",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "兑付",
+      "description": "依有效凭证和条件支付对应款项或物品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0030",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "押金",
+      "description": "为特定履约条件暂时交付且具有退还规则的款项。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0031",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "租金",
+      "description": "取得约定时段使用权所需支付的费用。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0032",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "薪酬",
+      "description": "依据雇佣或工作约定应获得的报酬。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0033",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "计件",
+      "description": "以合格产出数量作为工作结算依据的方式。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0034",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "工时",
+      "description": "某项工作已经记录或约定的时间量。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0035",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "预算",
+      "description": "为指定事项安排的可支出额度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0036",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "储蓄",
+      "description": "留存以供后续使用的资金及相应安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0037",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "债务",
+      "description": "依据有效事实形成且尚未履行的给付义务。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-work.b9201.0038",
+      "category": "daily-work",
+      "subcategory": "交易概念",
+      "text": "补偿",
+      "description": "针对已确认损失或额外付出约定的给付。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

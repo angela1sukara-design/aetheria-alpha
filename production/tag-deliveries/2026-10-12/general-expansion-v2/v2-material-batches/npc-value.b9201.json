@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-value.b9201",
+  "library": "npc-value",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-value.b9201.0001",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "公平",
+      "description": "重视相似情形获得合理一致对待的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0002",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "诚信",
+      "description": "重视真实表达与履行约定的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0003",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "互助",
+      "description": "重视参与者相互提供支持的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0004",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "自主",
+      "description": "重视个人在适当范围内自行选择的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0005",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "隐私",
+      "description": "重视个人信息与私人空间边界的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0006",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "节制",
+      "description": "重视对欲望与资源使用保持适度的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0007",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "责任",
+      "description": "重视承担本人已接受义务的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0008",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "勤勉",
+      "description": "重视持续投入与认真完成事项的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0009",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "守约",
+      "description": "重视遵守明确有效约定的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0010",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "求实",
+      "description": "重视事实依据和可核查信息的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0011",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "传统",
+      "description": "重视传承已有习惯与文化经验的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0012",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "创新",
+      "description": "重视尝试新的方法与表达的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0013",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "资源节约",
+      "description": "重视减少不必要资源消耗的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0014",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "劳动尊重",
+      "description": "重视他人工作付出及其合理回报的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0015",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "多样性",
+      "description": "重视不同经验与生活方式并存的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0016",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "秩序",
+      "description": "重视稳定可预期公共安排的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0017",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "公共利益",
+      "description": "重视共同使用资源与整体福祉的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0018",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "个人选择",
+      "description": "重视当事人自愿作出决定的价值取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0019",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "照护责任",
+      "description": "重视照顾已接受照护对象的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-value.b9201.0020",
+      "category": "npc-value",
+      "subcategory": "价值取向",
+      "text": "技艺传承",
+      "description": "重视保存与教授实践技艺的取向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

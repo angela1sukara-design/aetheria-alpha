@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "body-clothing.b9201",
+  "library": "body-clothing",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.body-clothing.b9201.0001",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "衬衫",
+      "description": "具有相应领襟结构的上身衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0002",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "T恤",
+      "description": "具有相应简式领口和袖部结构的上衣类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0003",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "针织衫",
+      "description": "以针织面料制作的上身衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0004",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "连帽衫",
+      "description": "具有连接式帽部结构的上衣类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0005",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "夹克",
+      "description": "具有相应短外套结构的衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0006",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "风衣",
+      "description": "具有相应外层遮挡用途和衣身结构的外套类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0007",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "马甲",
+      "description": "无袖、用于躯干覆盖的衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0008",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "坎肩",
+      "description": "具有相应肩胸覆盖结构的无袖衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0009",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "连体工装",
+      "description": "上身与下身连接成整体的工作衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0010",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "罩衣",
+      "description": "穿在其他衣物外用于覆盖的衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0011",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "披风",
+      "description": "以肩部支承并向身体周围垂覆的衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0012",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "披肩",
+      "description": "主要覆盖肩背区域的衣物或织物用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0013",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "短裤",
+      "description": "裤腿长度较短的下身衣物类别，实际长度仍需参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0014",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "紧身裤",
+      "description": "贴近下肢轮廓的裤装类别，适配压力另行判断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0015",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "长袍",
+      "description": "以较长衣身覆盖躯干及部分下肢的衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0016",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "袜子",
+      "description": "覆盖足部并可能延伸至腿部的衣物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0017",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "凉鞋",
+      "description": "具有较多开放区域的足部穿戴用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0018",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "拖鞋",
+      "description": "便于穿脱、具有相应后跟开放结构的足部用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0019",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "工靴",
+      "description": "按工作用途设计的靴类用品，防护规格另查。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-clothing.b9201.0020",
+      "category": "body-clothing",
+      "subcategory": "衣着类别",
+      "text": "鞋垫",
+      "description": "置于鞋内、与足底接触的可分离用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

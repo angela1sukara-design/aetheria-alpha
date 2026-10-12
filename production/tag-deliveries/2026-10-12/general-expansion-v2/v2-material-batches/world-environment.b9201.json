@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-environment.b9201",
+  "library": "world-environment",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-environment.b9201.0001",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "硬阴影",
+      "description": "阴影边缘清晰，与柔和过渡的阴影区别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0002",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "柔阴影",
+      "description": "阴影边界渐变，常用于散射光背景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0003",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "剪影",
+      "description": "对象主要以明暗轮廓呈现，内部细节不明显。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0004",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "高光",
+      "description": "表面局部出现较亮的反射区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0005",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "辉光",
+      "description": "光源或发光区域周围呈现柔和扩散亮感。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0006",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "余辉",
+      "description": "主要光照变化后仍可见的残留亮感。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0007",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "半透光",
+      "description": "光能部分穿过对象，但背后细节不清晰。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0008",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "不透光",
+      "description": "在指定观察条件下光线不能明显穿过对象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0009",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "衍射光纹",
+      "description": "光经过细小结构后形成的明暗或色彩纹样。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0010",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "光斑",
+      "description": "光集中落在局部表面形成的亮区。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0011",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "色温",
+      "description": "描述光源偏暖或偏冷的参数维度，不能推断物体温度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0012",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "亮部失细节",
+      "description": "局部过亮使观察到的纹理减少。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0013",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "暗部细节",
+      "description": "阴影中仍可辨认的表面与轮廓信息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0014",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "白噪声",
+      "description": "频谱分布较均匀的连续背景声类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0015",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "低鸣",
+      "description": "以较低音调持续出现的声音印象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0016",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "高音",
+      "description": "声音音调较高，与音量大小区分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0017",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "低音",
+      "description": "声音音调较低，与声音来源体积区分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0018",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "共振",
+      "description": "某个对象对特定振动产生明显响应的现象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0019",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "吸声",
+      "description": "材料或结构减少反射声的特性，实际程度另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9201.0020",
+      "category": "world-environment",
+      "subcategory": "光声细节",
+      "text": "掩蔽声",
+      "description": "一个声音使另一个声音更难被分辨的听觉情境。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

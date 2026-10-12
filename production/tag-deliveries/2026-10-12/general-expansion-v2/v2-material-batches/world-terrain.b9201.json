@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-terrain.b9201",
+  "library": "world-terrain",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-terrain.b9201.0001",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "车行道",
+      "description": "主要供车辆通行的道路部分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0002",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "人行道",
+      "description": "主要供行人通行的道路部分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0003",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "人行横道",
+      "description": "供行人横越车行道的标示区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0004",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "路缘",
+      "description": "道路边界处形成分隔或高差的边缘结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0005",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "隔离带",
+      "description": "分隔不同通行方向或使用区域的条带。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0006",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "卵石路面",
+      "description": "以圆整石块铺成的路面，平整度独立记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0007",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "碎石路面",
+      "description": "由较小碎石构成的通行表面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0008",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "土路",
+      "description": "以压实或自然土壤作为主要表面的道路。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0009",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "木板路",
+      "description": "以板材铺设的通行表面，承载条件另行定义。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0010",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "路堤",
+      "description": "为承托道路等设施而高于周围地面的填筑结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0011",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "洼地",
+      "description": "地势低于相邻区域的地形单元。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0012",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "山脊",
+      "description": "山体上向两侧下降的延伸高线。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0013",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "鞍部",
+      "description": "两处较高地形之间相对较低的连接部位。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0014",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "陡坎",
+      "description": "地面高差较明显且坡面较陡的边缘。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0015",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "阶地",
+      "description": "地表呈阶状分布的平台地形。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0016",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "碎石坡",
+      "description": "由松散碎石覆盖的坡地，通行条件需单独判断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0017",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "泥滩",
+      "description": "由细泥沉积形成、可能受水位影响的平坦岸地。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0018",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "河口",
+      "description": "河流汇入另一水体的出口区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0019",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "半岛",
+      "description": "一部分连接陆地、其余部分临水的陆地区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9201.0020",
+      "category": "world-terrain",
+      "subcategory": "常用地形",
+      "text": "盆地",
+      "description": "周围较高、内部相对低平的地形区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-job.b9201",
+  "library": "npc-job",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-job.b9201.0001",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "厨师",
+      "description": "以食物制作与厨房协作为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0002",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "面包师",
+      "description": "以发酵面食与烘焙制作为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0003",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "裁缝",
+      "description": "以量裁、制作和修改衣物为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0004",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "木匠",
+      "description": "以木材加工与木制结构制作为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0005",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "焊工",
+      "description": "以符合条件的焊接操作为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0006",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "钳工",
+      "description": "以手工具加工、装配与修配为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0007",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "车工",
+      "description": "以车床加工相应工件为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0008",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "管道工",
+      "description": "以管路安装与维护为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0009",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "玻璃工",
+      "description": "以玻璃制品加工与安装为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0010",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "油漆工",
+      "description": "以指定表面涂装为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0011",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "陶工",
+      "description": "以陶质制品成形与烧制为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0012",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "园丁",
+      "description": "以植物栽培与绿地照料为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0013",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "驾驶员",
+      "description": "以操作具有相应许可的交通工具为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0014",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "文员",
+      "description": "以文书记录和日常事务协作为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0015",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "会计",
+      "description": "以账务记录与核算为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0016",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "翻译",
+      "description": "以不同语言间的意义转换为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9201.0017",
+      "category": "npc-job",
+      "subcategory": "职业概念",
+      "text": "保洁员",
+      "description": "以环境清洁与相关日常维护为主要工作的职业。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}
