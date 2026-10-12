@@ -1,0 +1,539 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-nature.b9201",
+  "library": "world-nature",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-nature.b9201.0001",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "柳树",
+      "description": "具有该树种外观特征的木本植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0002",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "杨树",
+      "description": "常用于道路或林地背景的杨属树木概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0003",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "松树",
+      "description": "具有针叶及相应树形特征的松类树木概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0004",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "柏树",
+      "description": "具有相应枝叶特征的柏类树木概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0005",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "桦树",
+      "description": "具有相应树皮和叶形特征的桦类树木概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0006",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "栎树",
+      "description": "具有相应叶形和果实特征的栎类树木概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0007",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "枫树",
+      "description": "具有相应叶形特征的槭类树木概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0008",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "芦苇",
+      "description": "常出现在湿地或水岸的高秆草本植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0009",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "香蒲",
+      "description": "具有长条叶与棒状花序的水岸植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0010",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "三叶草",
+      "description": "具有相应复叶形态的低矮草本植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0011",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "蒲公英",
+      "description": "具有相应花与冠毛种子特征的草本植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0012",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "车前草",
+      "description": "具有相应叶丛与花穗特征的草本植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0013",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "迷迭香",
+      "description": "具有相应细叶与香气特征的植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0014",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "薰衣草",
+      "description": "具有相应花穗和香气特征的植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0015",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "玫瑰",
+      "description": "用于花卉与灌木描写的玫瑰类植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0016",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "菊花",
+      "description": "具有相应花序特征的菊类植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0017",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "向日葵",
+      "description": "具有大型头状花序的植物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0018",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "多肉植物",
+      "description": "以肥厚组织储水为显著外观特征的植物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0019",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "水生植物",
+      "description": "主要在水环境中生长的植物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0020",
+      "category": "world-nature",
+      "subcategory": "植物概念",
+      "text": "附生植物",
+      "description": "依附其他结构生长的植物类别，不等于寄生关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0021",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "猫",
+      "description": "供普通动物与城市生活描写使用的猫类动物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0022",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "犬",
+      "description": "供普通动物与城市生活描写使用的犬类动物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0023",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "鸽",
+      "description": "供鸟类与城市空间描写使用的鸽类概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0024",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "麻雀",
+      "description": "供小型鸟类活动描写使用的麻雀概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0025",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "鸦",
+      "description": "供鸟类活动与声音描写使用的鸦类概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0026",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "燕",
+      "description": "具有相应飞行和筑巢特征的鸟类概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0027",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "海鸥",
+      "description": "常用于水岸与港口背景的鸥类鸟概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0028",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "鸭",
+      "description": "供水禽活动与普通养殖背景使用的动物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0029",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "蛙",
+      "description": "供两栖动物活动与声景使用的动物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0030",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "蜗牛",
+      "description": "具有相应软体和外壳特征的动物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0031",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "蝶",
+      "description": "供昆虫飞行与花丛活动描写使用的概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0032",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "蜂",
+      "description": "供昆虫活动与生态关系描写使用的概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0033",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "蚁",
+      "description": "供地表昆虫活动与群体路径描写使用的概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0034",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "蜘蛛",
+      "description": "具有相应身体与结网活动特征的节肢动物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0035",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "鱼群",
+      "description": "多条鱼在指定水域共同活动的群体概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0036",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "巢",
+      "description": "动物用于停留、繁殖或照护后代的结构概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0037",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "洞穴巢居",
+      "description": "动物使用洞道或洞室作为居所的生态关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0038",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "授粉",
+      "description": "花粉转移到适合部位的生态过程。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0039",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "种子传播",
+      "description": "种子由原生位置移动到其他位置的生态过程。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-nature.b9201.0040",
+      "category": "world-nature",
+      "subcategory": "生态概念",
+      "text": "共生关系",
+      "description": "不同生物之间形成持续相互联系的生态关系类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

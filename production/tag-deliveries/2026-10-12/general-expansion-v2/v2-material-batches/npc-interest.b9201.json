@@ -1,0 +1,253 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-interest.b9201",
+  "library": "npc-interest",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-interest.b9201.0001",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "阅读",
+      "description": "以理解文字或图像内容为目的的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0002",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "书法",
+      "description": "以书写形式与技法为重点的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0003",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "摄影",
+      "description": "以影像记录或创作为目的的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0004",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "作曲",
+      "description": "组织音乐结构并创作乐曲的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0005",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "演奏",
+      "description": "通过乐器表达音乐的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0006",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "棋类",
+      "description": "按相应棋盘规则进行的思考与对弈活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0007",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "园艺",
+      "description": "栽培与照顾植物的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0008",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "烹饪",
+      "description": "将食材加工为食物的兴趣或生活活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0009",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "缝纫",
+      "description": "使用线与相应工具制作或修补物品的活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0010",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "雕刻",
+      "description": "以去除或塑造材料形成造型的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0011",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "模型制作",
+      "description": "按比例或构想制作实体模型的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0012",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "观鸟",
+      "description": "以观察与识别鸟类为目的的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0013",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "垂钓",
+      "description": "在许可条件下使用钓具的休闲活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0014",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "徒步",
+      "description": "以步行探索路线与环境的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0015",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "天文观察",
+      "description": "观察天体与天空现象的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0016",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "地方史",
+      "description": "以特定地区过往经历为对象的兴趣主题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0017",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "解谜",
+      "description": "通过分析线索寻找规则或答案的兴趣活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-interest.b9201.0018",
+      "category": "npc-interest",
+      "subcategory": "兴趣概念",
+      "text": "修理",
+      "description": "恢复物品功能的活动，也可作为个人兴趣。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

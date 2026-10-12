@@ -1,0 +1,3150 @@
+[
+  {
+    "sourceEntryId": "general-common:v2.storage.backpack",
+    "materialEntryId": "lx.body-accessory.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.shoulder-bag",
+    "materialEntryId": "lx.body-accessory.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.waist-bag",
+    "materialEntryId": "lx.body-accessory.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.tool-pouch",
+    "materialEntryId": "lx.body-accessory.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.document-wallet",
+    "materialEntryId": "lx.body-accessory.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.card-holder",
+    "materialEntryId": "lx.body-accessory.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.lanyard",
+    "materialEntryId": "lx.body-accessory.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.strap",
+    "materialEntryId": "lx.body-accessory.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.waistbelt",
+    "materialEntryId": "lx.body-accessory.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.brace",
+    "materialEntryId": "lx.body-accessory.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.buckle",
+    "materialEntryId": "lx.body-accessory.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.zipper",
+    "materialEntryId": "lx.body-accessory.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.button",
+    "materialEntryId": "lx.body-accessory.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.snap",
+    "materialEntryId": "lx.body-accessory.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.hook-loop",
+    "materialEntryId": "lx.body-accessory.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.drawstring",
+    "materialEntryId": "lx.body-accessory.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.loop",
+    "materialEntryId": "lx.body-accessory.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.carabiner",
+    "materialEntryId": "lx.body-accessory.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.name-badge",
+    "materialEntryId": "lx.body-accessory.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.storage.armband",
+    "materialEntryId": "lx.body-accessory.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.weight-shift",
+    "materialEntryId": "lx.body-adaptation.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.stance-test",
+    "materialEntryId": "lx.body-adaptation.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.grip-test",
+    "materialEntryId": "lx.body-adaptation.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.reach-test",
+    "materialEntryId": "lx.body-adaptation.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.clearance-test",
+    "materialEntryId": "lx.body-adaptation.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.pressure-check",
+    "materialEntryId": "lx.body-adaptation.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.balance-rest",
+    "materialEntryId": "lx.body-adaptation.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.pace-adjust",
+    "materialEntryId": "lx.body-adaptation.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.stride-test",
+    "materialEntryId": "lx.body-adaptation.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.posture-rest",
+    "materialEntryId": "lx.body-adaptation.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.tail-placement",
+    "materialEntryId": "lx.body-adaptation.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.horn-clearance",
+    "materialEntryId": "lx.body-adaptation.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.extra-limb-rest",
+    "materialEntryId": "lx.body-adaptation.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.clothing-fit",
+    "materialEntryId": "lx.body-adaptation.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.tool-fit",
+    "materialEntryId": "lx.body-adaptation.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.sound-distance",
+    "materialEntryId": "lx.body-adaptation.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.light-adapt",
+    "materialEntryId": "lx.body-adaptation.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.ask-access",
+    "materialEntryId": "lx.body-adaptation.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.shirt",
+    "materialEntryId": "lx.body-clothing.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.t-shirt",
+    "materialEntryId": "lx.body-clothing.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.sweater",
+    "materialEntryId": "lx.body-clothing.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.hoodie",
+    "materialEntryId": "lx.body-clothing.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.jacket",
+    "materialEntryId": "lx.body-clothing.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.windbreaker",
+    "materialEntryId": "lx.body-clothing.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.vest",
+    "materialEntryId": "lx.body-clothing.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.waistcoat",
+    "materialEntryId": "lx.body-clothing.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.overalls",
+    "materialEntryId": "lx.body-clothing.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.coverall",
+    "materialEntryId": "lx.body-clothing.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.cape",
+    "materialEntryId": "lx.body-clothing.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.shawl",
+    "materialEntryId": "lx.body-clothing.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.shorts",
+    "materialEntryId": "lx.body-clothing.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.leggings",
+    "materialEntryId": "lx.body-clothing.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.robe",
+    "materialEntryId": "lx.body-clothing.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.socks",
+    "materialEntryId": "lx.body-clothing.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.sandals",
+    "materialEntryId": "lx.body-clothing.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.slippers",
+    "materialEntryId": "lx.body-clothing.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.work-boots",
+    "materialEntryId": "lx.body-clothing.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.clothing.insoles",
+    "materialEntryId": "lx.body-clothing.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.length",
+    "materialEntryId": "lx.body-parameter.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.width",
+    "materialEntryId": "lx.body-parameter.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.height",
+    "materialEntryId": "lx.body-parameter.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.thickness",
+    "materialEntryId": "lx.body-parameter.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.diameter",
+    "materialEntryId": "lx.body-parameter.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.circumference",
+    "materialEntryId": "lx.body-parameter.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.clearance",
+    "materialEntryId": "lx.body-parameter.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.passage-width",
+    "materialEntryId": "lx.body-parameter.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.reach",
+    "materialEntryId": "lx.body-parameter.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.turning-radius",
+    "materialEntryId": "lx.body-parameter.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.flexion",
+    "materialEntryId": "lx.body-parameter.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.extension",
+    "materialEntryId": "lx.body-parameter.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.rotation",
+    "materialEntryId": "lx.body-parameter.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.mass",
+    "materialEntryId": "lx.body-parameter.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.capacity",
+    "materialEntryId": "lx.body-parameter.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.load",
+    "materialEntryId": "lx.body-parameter.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.grip-span",
+    "materialEntryId": "lx.body-parameter.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.opening",
+    "materialEntryId": "lx.body-parameter.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.contact-area",
+    "materialEntryId": "lx.body-parameter.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.measurements.surface-temperature",
+    "materialEntryId": "lx.body-parameter.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.skull",
+    "materialEntryId": "lx.body-part.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.temple",
+    "materialEntryId": "lx.body-part.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.eyebrow",
+    "materialEntryId": "lx.body-part.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.eyelid",
+    "materialEntryId": "lx.body-part.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.auricle",
+    "materialEntryId": "lx.body-part.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.earlobe",
+    "materialEntryId": "lx.body-part.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.nape",
+    "materialEntryId": "lx.body-part.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.scapula",
+    "materialEntryId": "lx.body-part.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.forearm",
+    "materialEntryId": "lx.body-part.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.hand-back",
+    "materialEntryId": "lx.body-part.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.knuckle",
+    "materialEntryId": "lx.body-part.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.thumb",
+    "materialEntryId": "lx.body-part.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.ribcage",
+    "materialEntryId": "lx.body-part.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.flank",
+    "materialEntryId": "lx.body-part.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.pelvis",
+    "materialEntryId": "lx.body-part.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.thigh",
+    "materialEntryId": "lx.body-part.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.shin",
+    "materialEntryId": "lx.body-part.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.calf",
+    "materialEntryId": "lx.body-part.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.instep",
+    "materialEntryId": "lx.body-part.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.stand",
+    "materialEntryId": "lx.daily-action.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.sit",
+    "materialEntryId": "lx.daily-action.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.rise",
+    "materialEntryId": "lx.daily-action.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.crouch",
+    "materialEntryId": "lx.daily-action.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.kneel",
+    "materialEntryId": "lx.daily-action.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.lie",
+    "materialEntryId": "lx.daily-action.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.lean",
+    "materialEntryId": "lx.daily-action.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.bend",
+    "materialEntryId": "lx.daily-action.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.straighten",
+    "materialEntryId": "lx.daily-action.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.turn",
+    "materialEntryId": "lx.daily-action.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.side-step",
+    "materialEntryId": "lx.daily-action.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.step-back",
+    "materialEntryId": "lx.daily-action.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.approach",
+    "materialEntryId": "lx.daily-action.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.withdraw",
+    "materialEntryId": "lx.daily-action.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.face",
+    "materialEntryId": "lx.daily-action.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.turn-away",
+    "materialEntryId": "lx.daily-action.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.hands-rest",
+    "materialEntryId": "lx.daily-action.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.fold-arms",
+    "materialEntryId": "lx.daily-action.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.look-down",
+    "materialEntryId": "lx.daily-action.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.postures.look-up",
+    "materialEntryId": "lx.daily-action.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.lift",
+    "materialEntryId": "lx.daily-action.b9201.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.lower",
+    "materialEntryId": "lx.daily-action.b9201.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.push",
+    "materialEntryId": "lx.daily-action.b9201.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.pull",
+    "materialEntryId": "lx.daily-action.b9201.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.carry",
+    "materialEntryId": "lx.daily-action.b9201.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.drag",
+    "materialEntryId": "lx.daily-action.b9201.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.rotate",
+    "materialEntryId": "lx.daily-action.b9201.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.slide",
+    "materialEntryId": "lx.daily-action.b9201.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.insert",
+    "materialEntryId": "lx.daily-action.b9201.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.extract",
+    "materialEntryId": "lx.daily-action.b9201.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.open",
+    "materialEntryId": "lx.daily-action.b9201.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.close",
+    "materialEntryId": "lx.daily-action.b9201.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.hold",
+    "materialEntryId": "lx.daily-action.b9201.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.release",
+    "materialEntryId": "lx.daily-action.b9201.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.hang",
+    "materialEntryId": "lx.daily-action.b9201.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.stack",
+    "materialEntryId": "lx.daily-action.b9201.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.lay-out",
+    "materialEntryId": "lx.daily-action.b9201.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.wrap",
+    "materialEntryId": "lx.daily-action.b9201.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.unfasten",
+    "materialEntryId": "lx.daily-action.b9201.0039"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.declare",
+    "materialEntryId": "lx.daily-action.b9201.0040"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.file",
+    "materialEntryId": "lx.daily-action.b9201.0041"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.verify",
+    "materialEntryId": "lx.daily-action.b9201.0042"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.receive",
+    "materialEntryId": "lx.daily-action.b9201.0043"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.approve",
+    "materialEntryId": "lx.daily-action.b9201.0044"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.authorize",
+    "materialEntryId": "lx.daily-action.b9201.0045"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.entrust",
+    "materialEntryId": "lx.daily-action.b9201.0046"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.forward",
+    "materialEntryId": "lx.daily-action.b9201.0047"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.withdraw",
+    "materialEntryId": "lx.daily-action.b9201.0048"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.renew",
+    "materialEntryId": "lx.daily-action.b9201.0049"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.amend",
+    "materialEntryId": "lx.daily-action.b9201.0050"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.cancel",
+    "materialEntryId": "lx.daily-action.b9202.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.roster",
+    "materialEntryId": "lx.daily-action.b9202.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.attendance",
+    "materialEntryId": "lx.daily-action.b9202.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.duty",
+    "materialEntryId": "lx.daily-action.b9202.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.train",
+    "materialEntryId": "lx.daily-action.b9202.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.drill",
+    "materialEntryId": "lx.daily-action.b9202.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.appeal",
+    "materialEntryId": "lx.daily-action.b9202.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.review",
+    "materialEntryId": "lx.daily-action.b9202.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.administration.mediate",
+    "materialEntryId": "lx.daily-action.b9202.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.survey",
+    "materialEntryId": "lx.daily-work.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.sample",
+    "materialEntryId": "lx.daily-work.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.mark",
+    "materialEntryId": "lx.daily-work.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.align",
+    "materialEntryId": "lx.daily-work.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.level",
+    "materialEntryId": "lx.daily-work.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.cut",
+    "materialEntryId": "lx.daily-work.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.trim",
+    "materialEntryId": "lx.daily-work.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.polish",
+    "materialEntryId": "lx.daily-work.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.drill",
+    "materialEntryId": "lx.daily-work.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.sew",
+    "materialEntryId": "lx.daily-work.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.bond",
+    "materialEntryId": "lx.daily-work.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.assemble",
+    "materialEntryId": "lx.daily-work.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.disassemble",
+    "materialEntryId": "lx.daily-work.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.tighten",
+    "materialEntryId": "lx.daily-work.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.adjust",
+    "materialEntryId": "lx.daily-work.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.test",
+    "materialEntryId": "lx.daily-work.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.accept",
+    "materialEntryId": "lx.daily-work.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.count",
+    "materialEntryId": "lx.daily-work.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.quote",
+    "materialEntryId": "lx.daily-work.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.bargain",
+    "materialEntryId": "lx.daily-work.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.order",
+    "materialEntryId": "lx.daily-work.b9201.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.advance",
+    "materialEntryId": "lx.daily-work.b9201.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.credit",
+    "materialEntryId": "lx.daily-work.b9201.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.checkout",
+    "materialEntryId": "lx.daily-work.b9201.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.change",
+    "materialEntryId": "lx.daily-work.b9201.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.settle",
+    "materialEntryId": "lx.daily-work.b9201.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.split",
+    "materialEntryId": "lx.daily-work.b9201.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.transfer",
+    "materialEntryId": "lx.daily-work.b9201.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.redeem",
+    "materialEntryId": "lx.daily-work.b9201.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.deposit",
+    "materialEntryId": "lx.daily-work.b9201.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.rent",
+    "materialEntryId": "lx.daily-work.b9201.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.wage",
+    "materialEntryId": "lx.daily-work.b9201.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.piecework",
+    "materialEntryId": "lx.daily-work.b9201.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.hours",
+    "materialEntryId": "lx.daily-work.b9201.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.budget",
+    "materialEntryId": "lx.daily-work.b9201.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.saving",
+    "materialEntryId": "lx.daily-work.b9201.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.debt",
+    "materialEntryId": "lx.daily-work.b9201.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.trade.compensation",
+    "materialEntryId": "lx.daily-work.b9201.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.bronze",
+    "materialEntryId": "lx.material.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.cast-iron",
+    "materialEntryId": "lx.material.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.titanium",
+    "materialEntryId": "lx.material.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.zinc",
+    "materialEntryId": "lx.material.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.nickel",
+    "materialEntryId": "lx.material.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.ceramic-glaze",
+    "materialEntryId": "lx.material.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.porcelain",
+    "materialEntryId": "lx.material.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.stoneware",
+    "materialEntryId": "lx.material.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.plaster",
+    "materialEntryId": "lx.material.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.lime",
+    "materialEntryId": "lx.material.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.mortar",
+    "materialEntryId": "lx.material.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.plywood",
+    "materialEntryId": "lx.material.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.particleboard",
+    "materialEntryId": "lx.material.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.fiberboard",
+    "materialEntryId": "lx.material.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.veneer",
+    "materialEntryId": "lx.material.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.denim",
+    "materialEntryId": "lx.material.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.flannel",
+    "materialEntryId": "lx.material.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.knit",
+    "materialEntryId": "lx.material.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.felt-paper",
+    "materialEntryId": "lx.material.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.relief",
+    "materialEntryId": "lx.npc-emotion.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.tension",
+    "materialEntryId": "lx.npc-emotion.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.worry",
+    "materialEntryId": "lx.npc-emotion.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.anticipation",
+    "materialEntryId": "lx.npc-emotion.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.loss",
+    "materialEntryId": "lx.npc-emotion.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.discouragement",
+    "materialEntryId": "lx.npc-emotion.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.surprise",
+    "materialEntryId": "lx.npc-emotion.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.confusion",
+    "materialEntryId": "lx.npc-emotion.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.shyness",
+    "materialEntryId": "lx.npc-emotion.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.awkwardness",
+    "materialEntryId": "lx.npc-emotion.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.anger",
+    "materialEntryId": "lx.npc-emotion.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.comfort",
+    "materialEntryId": "lx.npc-emotion.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.gratitude",
+    "materialEntryId": "lx.npc-emotion.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.impatience",
+    "materialEntryId": "lx.npc-emotion.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.weariness",
+    "materialEntryId": "lx.npc-emotion.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.excitement",
+    "materialEntryId": "lx.npc-emotion.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.guard",
+    "materialEntryId": "lx.npc-emotion.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.nostalgia",
+    "materialEntryId": "lx.npc-emotion.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.release",
+    "materialEntryId": "lx.npc-emotion.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.employment",
+    "materialEntryId": "lx.npc-goal.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.savings",
+    "materialEntryId": "lx.npc-goal.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.repay",
+    "materialEntryId": "lx.npc-goal.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.home",
+    "materialEntryId": "lx.npc-goal.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.study",
+    "materialEntryId": "lx.npc-goal.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.craft",
+    "materialEntryId": "lx.npc-goal.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.move",
+    "materialEntryId": "lx.npc-goal.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.partner",
+    "materialEntryId": "lx.npc-goal.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.relationship",
+    "materialEntryId": "lx.npc-goal.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.qualification",
+    "materialEntryId": "lx.npc-goal.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.tools",
+    "materialEntryId": "lx.npc-goal.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.routine",
+    "materialEntryId": "lx.npc-goal.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.holiday",
+    "materialEntryId": "lx.npc-goal.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.commission",
+    "materialEntryId": "lx.npc-goal.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.housework",
+    "materialEntryId": "lx.npc-goal.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.community",
+    "materialEntryId": "lx.npc-goal.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.exhibit",
+    "materialEntryId": "lx.npc-goal.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.clue",
+    "materialEntryId": "lx.npc-goal.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.care",
+    "materialEntryId": "lx.npc-goal.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.goals.change",
+    "materialEntryId": "lx.npc-goal.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.list",
+    "materialEntryId": "lx.npc-habit.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.early",
+    "materialEntryId": "lx.npc-habit.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.receipt",
+    "materialEntryId": "lx.npc-habit.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.fixed-place",
+    "materialEntryId": "lx.npc-habit.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.breaks",
+    "materialEntryId": "lx.npc-habit.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.night-read",
+    "materialEntryId": "lx.npc-habit.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.morning-walk",
+    "materialEntryId": "lx.npc-habit.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.clean",
+    "materialEntryId": "lx.npc-habit.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.recheck",
+    "materialEntryId": "lx.npc-habit.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.record",
+    "materialEntryId": "lx.npc-habit.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.margin",
+    "materialEntryId": "lx.npc-habit.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.listen",
+    "materialEntryId": "lx.npc-habit.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.contact",
+    "materialEntryId": "lx.npc-habit.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.tools",
+    "materialEntryId": "lx.npc-habit.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.plan",
+    "materialEntryId": "lx.npc-habit.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.water",
+    "materialEntryId": "lx.npc-habit.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.soft-speech",
+    "materialEntryId": "lx.npc-habit.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.collect",
+    "materialEntryId": "lx.npc-habit.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.purpose",
+    "materialEntryId": "lx.npc-habit.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.habits.finish",
+    "materialEntryId": "lx.npc-habit.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.graduate",
+    "materialEntryId": "lx.npc-history.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.apprentice",
+    "materialEntryId": "lx.npc-history.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.transfer",
+    "materialEntryId": "lx.npc-history.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.unemployed",
+    "materialEntryId": "lx.npc-history.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.reemployed",
+    "materialEntryId": "lx.npc-history.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.move-in",
+    "materialEntryId": "lx.npc-history.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.move-out",
+    "materialEntryId": "lx.npc-history.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.shared-home",
+    "materialEntryId": "lx.npc-history.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.solo-home",
+    "materialEntryId": "lx.npc-history.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.return",
+    "materialEntryId": "lx.npc-history.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.travel",
+    "materialEntryId": "lx.npc-history.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.volunteer",
+    "materialEntryId": "lx.npc-history.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.award",
+    "materialEntryId": "lx.npc-history.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.broken-trust",
+    "materialEntryId": "lx.npc-history.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.trust-rebuilt",
+    "materialEntryId": "lx.npc-history.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.failed-project",
+    "materialEntryId": "lx.npc-history.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.cooperation",
+    "materialEntryId": "lx.npc-history.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.skill-learning",
+    "materialEntryId": "lx.npc-history.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.new-start",
+    "materialEntryId": "lx.npc-history.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.read",
+    "materialEntryId": "lx.npc-interest.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.calligraphy",
+    "materialEntryId": "lx.npc-interest.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.photo",
+    "materialEntryId": "lx.npc-interest.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.compose",
+    "materialEntryId": "lx.npc-interest.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.perform",
+    "materialEntryId": "lx.npc-interest.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.boardgame",
+    "materialEntryId": "lx.npc-interest.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.garden",
+    "materialEntryId": "lx.npc-interest.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.cook",
+    "materialEntryId": "lx.npc-interest.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.sew",
+    "materialEntryId": "lx.npc-interest.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.carve",
+    "materialEntryId": "lx.npc-interest.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.model",
+    "materialEntryId": "lx.npc-interest.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.birds",
+    "materialEntryId": "lx.npc-interest.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.fish",
+    "materialEntryId": "lx.npc-interest.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.hike",
+    "materialEntryId": "lx.npc-interest.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.astronomy",
+    "materialEntryId": "lx.npc-interest.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.history",
+    "materialEntryId": "lx.npc-interest.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.puzzle",
+    "materialEntryId": "lx.npc-interest.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.repair",
+    "materialEntryId": "lx.npc-interest.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.cook",
+    "materialEntryId": "lx.npc-job.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.baker",
+    "materialEntryId": "lx.npc-job.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.tailor",
+    "materialEntryId": "lx.npc-job.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.carpenter",
+    "materialEntryId": "lx.npc-job.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.welder",
+    "materialEntryId": "lx.npc-job.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.fitter",
+    "materialEntryId": "lx.npc-job.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.turner",
+    "materialEntryId": "lx.npc-job.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.plumber",
+    "materialEntryId": "lx.npc-job.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.glazier",
+    "materialEntryId": "lx.npc-job.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.painter",
+    "materialEntryId": "lx.npc-job.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.potter",
+    "materialEntryId": "lx.npc-job.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.gardener",
+    "materialEntryId": "lx.npc-job.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.driver",
+    "materialEntryId": "lx.npc-job.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.clerk",
+    "materialEntryId": "lx.npc-job.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.accountant",
+    "materialEntryId": "lx.npc-job.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.translator",
+    "materialEntryId": "lx.npc-job.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.cleaner",
+    "materialEntryId": "lx.npc-job.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.patient",
+    "materialEntryId": "lx.npc-trait.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.meticulous",
+    "materialEntryId": "lx.npc-trait.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.decisive",
+    "materialEntryId": "lx.npc-trait.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.direct",
+    "materialEntryId": "lx.npc-trait.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.reserved",
+    "materialEntryId": "lx.npc-trait.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.talkative",
+    "materialEntryId": "lx.npc-trait.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.quiet",
+    "materialEntryId": "lx.npc-trait.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.punctual",
+    "materialEntryId": "lx.npc-trait.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.frugal",
+    "materialEntryId": "lx.npc-trait.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.generous",
+    "materialEntryId": "lx.npc-trait.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.independent",
+    "materialEntryId": "lx.npc-trait.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.easygoing",
+    "materialEntryId": "lx.npc-trait.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.earnest",
+    "materialEntryId": "lx.npc-trait.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.humorous",
+    "materialEntryId": "lx.npc-trait.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.sensitive",
+    "materialEntryId": "lx.npc-trait.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.stubborn",
+    "materialEntryId": "lx.npc-trait.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.practical",
+    "materialEntryId": "lx.npc-trait.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.optimistic",
+    "materialEntryId": "lx.npc-trait.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.fairness",
+    "materialEntryId": "lx.npc-value.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.honesty",
+    "materialEntryId": "lx.npc-value.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.mutual-aid",
+    "materialEntryId": "lx.npc-value.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.autonomy",
+    "materialEntryId": "lx.npc-value.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.privacy",
+    "materialEntryId": "lx.npc-value.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.moderation",
+    "materialEntryId": "lx.npc-value.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.responsibility",
+    "materialEntryId": "lx.npc-value.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.diligence",
+    "materialEntryId": "lx.npc-value.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.keeping-word",
+    "materialEntryId": "lx.npc-value.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.evidence",
+    "materialEntryId": "lx.npc-value.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.tradition",
+    "materialEntryId": "lx.npc-value.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.innovation",
+    "materialEntryId": "lx.npc-value.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.resource",
+    "materialEntryId": "lx.npc-value.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.labor",
+    "materialEntryId": "lx.npc-value.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.diversity",
+    "materialEntryId": "lx.npc-value.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.order",
+    "materialEntryId": "lx.npc-value.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.public",
+    "materialEntryId": "lx.npc-value.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.choice",
+    "materialEntryId": "lx.npc-value.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.care",
+    "materialEntryId": "lx.npc-value.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.values.craft",
+    "materialEntryId": "lx.npc-value.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.ask",
+    "materialEntryId": "lx.social-action.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.inform",
+    "materialEntryId": "lx.social-action.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.follow-up",
+    "materialEntryId": "lx.social-action.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.repeat",
+    "materialEntryId": "lx.social-action.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.summarize",
+    "materialEntryId": "lx.social-action.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.example",
+    "materialEntryId": "lx.social-action.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.hesitate",
+    "materialEntryId": "lx.social-action.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.decline",
+    "materialEntryId": "lx.social-action.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.farewell",
+    "materialEntryId": "lx.social-action.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.promise",
+    "materialEntryId": "lx.social-action.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.reserve",
+    "materialEntryId": "lx.social-action.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.end-topic",
+    "materialEntryId": "lx.social-action.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.acquainted",
+    "materialEntryId": "lx.social-action.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.familiar",
+    "materialEntryId": "lx.social-action.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.trust",
+    "materialEntryId": "lx.social-action.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.pending",
+    "materialEntryId": "lx.social-action.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.consent",
+    "materialEntryId": "lx.social-action.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.pause",
+    "materialEntryId": "lx.social-action.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.resume",
+    "materialEntryId": "lx.social-action.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.end",
+    "materialEntryId": "lx.social-action.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.turn-taking",
+    "materialEntryId": "lx.social-action.b9201.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.observe",
+    "materialEntryId": "lx.social-action.b9201.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.carry",
+    "materialEntryId": "lx.social-action.b9201.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.offer",
+    "materialEntryId": "lx.social-action.b9201.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.receive",
+    "materialEntryId": "lx.social-action.b9201.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.distance",
+    "materialEntryId": "lx.social-action.b9201.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.yield",
+    "materialEntryId": "lx.social-action.b9201.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.contact-start",
+    "materialEntryId": "lx.social-action.b9201.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.contact-hold",
+    "materialEntryId": "lx.social-action.b9201.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.contact-release",
+    "materialEntryId": "lx.social-action.b9201.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.bakery",
+    "materialEntryId": "lx.world-building.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.butcher",
+    "materialEntryId": "lx.world-building.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.produce-shop",
+    "materialEntryId": "lx.world-building.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.grain-shop",
+    "materialEntryId": "lx.world-building.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.hardware-shop",
+    "materialEntryId": "lx.world-building.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.fabric-shop",
+    "materialEntryId": "lx.world-building.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.barbershop",
+    "materialEntryId": "lx.world-building.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.shoe-repair",
+    "materialEntryId": "lx.world-building.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.print-shop",
+    "materialEntryId": "lx.world-building.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.bookshop",
+    "materialEntryId": "lx.world-building.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.flower-shop",
+    "materialEntryId": "lx.world-building.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.pet-care",
+    "materialEntryId": "lx.world-building.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.public-toilet",
+    "materialEntryId": "lx.world-building.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.lost-property",
+    "materialEntryId": "lx.world-building.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.mediation",
+    "materialEntryId": "lx.world-building.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.training-room",
+    "materialEntryId": "lx.world-building.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.exhibition-room",
+    "materialEntryId": "lx.world-building.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.music-room",
+    "materialEntryId": "lx.world-building.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.repair-bench",
+    "materialEntryId": "lx.world-building.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.services.animal-shelter",
+    "materialEntryId": "lx.world-building.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.public",
+    "materialEntryId": "lx.world-culture.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.private",
+    "materialEntryId": "lx.world-culture.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.shared",
+    "materialEntryId": "lx.world-culture.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.lease",
+    "materialEntryId": "lx.world-culture.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.pass",
+    "materialEntryId": "lx.world-culture.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.business",
+    "materialEntryId": "lx.world-culture.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.limited-hours",
+    "materialEntryId": "lx.world-culture.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.booking",
+    "materialEntryId": "lx.world-culture.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.shift",
+    "materialEntryId": "lx.world-culture.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.piecework",
+    "materialEntryId": "lx.world-culture.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.hourly",
+    "materialEntryId": "lx.world-culture.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.subsidy",
+    "materialEntryId": "lx.world-culture.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.tax",
+    "materialEntryId": "lx.world-culture.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.fee",
+    "materialEntryId": "lx.world-culture.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.deposit",
+    "materialEntryId": "lx.world-culture.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.protected-job",
+    "materialEntryId": "lx.world-culture.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.vote",
+    "materialEntryId": "lx.world-culture.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.appeal",
+    "materialEntryId": "lx.world-culture.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.hard-shadow",
+    "materialEntryId": "lx.world-environment.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.soft-shadow",
+    "materialEntryId": "lx.world-environment.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.silhouette",
+    "materialEntryId": "lx.world-environment.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.highlight",
+    "materialEntryId": "lx.world-environment.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.glow",
+    "materialEntryId": "lx.world-environment.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.afterglow",
+    "materialEntryId": "lx.world-environment.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.translucence",
+    "materialEntryId": "lx.world-environment.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.opacity",
+    "materialEntryId": "lx.world-environment.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.diffraction",
+    "materialEntryId": "lx.world-environment.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.light-pool",
+    "materialEntryId": "lx.world-environment.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.color-temperature",
+    "materialEntryId": "lx.world-environment.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.overexposure",
+    "materialEntryId": "lx.world-environment.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.shadow-detail",
+    "materialEntryId": "lx.world-environment.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.white-noise",
+    "materialEntryId": "lx.world-environment.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.low-hum",
+    "materialEntryId": "lx.world-environment.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.high-pitch",
+    "materialEntryId": "lx.world-environment.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.low-pitch",
+    "materialEntryId": "lx.world-environment.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.resonance",
+    "materialEntryId": "lx.world-environment.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.sound-absorption",
+    "materialEntryId": "lx.world-environment.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.sensory.sound-masking",
+    "materialEntryId": "lx.world-environment.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.traffic-light",
+    "materialEntryId": "lx.world-facility.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.street-light",
+    "materialEntryId": "lx.world-facility.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.drainage-grate",
+    "materialEntryId": "lx.world-facility.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.manhole",
+    "materialEntryId": "lx.world-facility.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.hydrant",
+    "materialEntryId": "lx.world-facility.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.substation",
+    "materialEntryId": "lx.world-facility.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.distribution-box",
+    "materialEntryId": "lx.world-facility.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.switchboard",
+    "materialEntryId": "lx.world-facility.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.sewage-station",
+    "materialEntryId": "lx.world-facility.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.water-meter",
+    "materialEntryId": "lx.world-facility.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.electric-meter",
+    "materialEntryId": "lx.world-facility.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.flow-meter",
+    "materialEntryId": "lx.world-facility.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.loading-bay",
+    "materialEntryId": "lx.world-facility.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.loading-ramp",
+    "materialEntryId": "lx.world-facility.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.queue-barrier",
+    "materialEntryId": "lx.world-facility.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.speed-bump",
+    "materialEntryId": "lx.world-facility.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.convex-mirror",
+    "materialEntryId": "lx.world-facility.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.emergency-phone",
+    "materialEntryId": "lx.world-facility.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.public-clock",
+    "materialEntryId": "lx.world-facility.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.infrastructure.wayfinding-map",
+    "materialEntryId": "lx.world-facility.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.conveyor",
+    "materialEntryId": "lx.world-facility.b9201.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.hoist",
+    "materialEntryId": "lx.world-facility.b9201.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.workbench",
+    "materialEntryId": "lx.world-facility.b9201.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.clamp-vice",
+    "materialEntryId": "lx.world-facility.b9201.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.press",
+    "materialEntryId": "lx.world-facility.b9201.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.lathe",
+    "materialEntryId": "lx.world-facility.b9201.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.drill-press",
+    "materialEntryId": "lx.world-facility.b9201.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.kiln",
+    "materialEntryId": "lx.world-facility.b9201.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.drying-rack",
+    "materialEntryId": "lx.world-facility.b9201.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.drying-cabinet",
+    "materialEntryId": "lx.world-facility.b9201.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.cooling-cabinet",
+    "materialEntryId": "lx.world-facility.b9201.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.freezer",
+    "materialEntryId": "lx.world-facility.b9201.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.storage-bin",
+    "materialEntryId": "lx.world-facility.b9201.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.pallet",
+    "materialEntryId": "lx.world-facility.b9201.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.turntable",
+    "materialEntryId": "lx.world-facility.b9201.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.weighbridge",
+    "materialEntryId": "lx.world-facility.b9201.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.sieve",
+    "materialEntryId": "lx.world-facility.b9201.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.inspection-port",
+    "materialEntryId": "lx.world-facility.b9201.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.sampling-port",
+    "materialEntryId": "lx.world-facility.b9201.0039"
+  },
+  {
+    "sourceEntryId": "general-common:v2.industry.tool-cabinet",
+    "materialEntryId": "lx.world-facility.b9201.0040"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.willow",
+    "materialEntryId": "lx.world-nature.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.poplar",
+    "materialEntryId": "lx.world-nature.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.pine",
+    "materialEntryId": "lx.world-nature.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.cypress",
+    "materialEntryId": "lx.world-nature.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.birch",
+    "materialEntryId": "lx.world-nature.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.oak",
+    "materialEntryId": "lx.world-nature.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.maple",
+    "materialEntryId": "lx.world-nature.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.reed",
+    "materialEntryId": "lx.world-nature.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.cattail",
+    "materialEntryId": "lx.world-nature.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.clover",
+    "materialEntryId": "lx.world-nature.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.dandelion",
+    "materialEntryId": "lx.world-nature.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.plantain",
+    "materialEntryId": "lx.world-nature.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.rosemary",
+    "materialEntryId": "lx.world-nature.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.lavender",
+    "materialEntryId": "lx.world-nature.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.rose",
+    "materialEntryId": "lx.world-nature.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.chrysanthemum",
+    "materialEntryId": "lx.world-nature.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.sunflower",
+    "materialEntryId": "lx.world-nature.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.succulent",
+    "materialEntryId": "lx.world-nature.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.aquatic-plant",
+    "materialEntryId": "lx.world-nature.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.plants.epiphyte",
+    "materialEntryId": "lx.world-nature.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.cat",
+    "materialEntryId": "lx.world-nature.b9201.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.dog",
+    "materialEntryId": "lx.world-nature.b9201.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.pigeon",
+    "materialEntryId": "lx.world-nature.b9201.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.sparrow",
+    "materialEntryId": "lx.world-nature.b9201.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.crow",
+    "materialEntryId": "lx.world-nature.b9201.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.swallow",
+    "materialEntryId": "lx.world-nature.b9201.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.gull",
+    "materialEntryId": "lx.world-nature.b9201.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.duck",
+    "materialEntryId": "lx.world-nature.b9201.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.frog",
+    "materialEntryId": "lx.world-nature.b9201.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.snail",
+    "materialEntryId": "lx.world-nature.b9201.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.butterfly",
+    "materialEntryId": "lx.world-nature.b9201.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.bee",
+    "materialEntryId": "lx.world-nature.b9201.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.ant",
+    "materialEntryId": "lx.world-nature.b9201.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.spider",
+    "materialEntryId": "lx.world-nature.b9201.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.fish-school",
+    "materialEntryId": "lx.world-nature.b9201.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.nest",
+    "materialEntryId": "lx.world-nature.b9201.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.burrow",
+    "materialEntryId": "lx.world-nature.b9201.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.pollination",
+    "materialEntryId": "lx.world-nature.b9201.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.seed-dispersal",
+    "materialEntryId": "lx.world-nature.b9201.0039"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ecology.symbiosis",
+    "materialEntryId": "lx.world-nature.b9201.0040"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.bicycle",
+    "materialEntryId": "lx.world-object.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.tricycle",
+    "materialEntryId": "lx.world-object.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.motorcycle",
+    "materialEntryId": "lx.world-object.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.bus",
+    "materialEntryId": "lx.world-object.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.tram",
+    "materialEntryId": "lx.world-object.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.metro-train",
+    "materialEntryId": "lx.world-object.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.taxi",
+    "materialEntryId": "lx.world-object.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.van",
+    "materialEntryId": "lx.world-object.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.flatbed",
+    "materialEntryId": "lx.world-object.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.forklift",
+    "materialEntryId": "lx.world-object.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.handcart",
+    "materialEntryId": "lx.world-object.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.trolley",
+    "materialEntryId": "lx.world-object.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.wheelchair",
+    "materialEntryId": "lx.world-object.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.mobility-scooter",
+    "materialEntryId": "lx.world-object.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.ferry",
+    "materialEntryId": "lx.world-object.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.rowboat",
+    "materialEntryId": "lx.world-object.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.workboat",
+    "materialEntryId": "lx.world-object.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.lifeboat",
+    "materialEntryId": "lx.world-object.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.sled",
+    "materialEntryId": "lx.world-object.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.transport.cable-car",
+    "materialEntryId": "lx.world-object.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.rice",
+    "materialEntryId": "lx.world-object.b9201.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.porridge",
+    "materialEntryId": "lx.world-object.b9201.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.bread",
+    "materialEntryId": "lx.world-object.b9201.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.steamed-bun",
+    "materialEntryId": "lx.world-object.b9201.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.filled-bun",
+    "materialEntryId": "lx.world-object.b9201.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.dumpling",
+    "materialEntryId": "lx.world-object.b9201.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.flatbread",
+    "materialEntryId": "lx.world-object.b9201.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.soup",
+    "materialEntryId": "lx.world-object.b9201.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.stew",
+    "materialEntryId": "lx.world-object.b9201.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.tofu",
+    "materialEntryId": "lx.world-object.b9201.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.egg",
+    "materialEntryId": "lx.world-object.b9201.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.potato",
+    "materialEntryId": "lx.world-object.b9201.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.sweet-potato",
+    "materialEntryId": "lx.world-object.b9201.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.corn",
+    "materialEntryId": "lx.world-object.b9201.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.cabbage",
+    "materialEntryId": "lx.world-object.b9201.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.tomato",
+    "materialEntryId": "lx.world-object.b9201.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.onion",
+    "materialEntryId": "lx.world-object.b9201.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.apple",
+    "materialEntryId": "lx.world-object.b9201.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.pear",
+    "materialEntryId": "lx.world-object.b9201.0039"
+  },
+  {
+    "sourceEntryId": "general-common:v2.food.orange",
+    "materialEntryId": "lx.world-object.b9201.0040"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.drinking-water",
+    "materialEntryId": "lx.world-object.b9201.0041"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.tea",
+    "materialEntryId": "lx.world-object.b9201.0042"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.coffee",
+    "materialEntryId": "lx.world-object.b9201.0043"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.milk",
+    "materialEntryId": "lx.world-object.b9201.0044"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.soy-milk",
+    "materialEntryId": "lx.world-object.b9201.0045"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.fruit-juice",
+    "materialEntryId": "lx.world-object.b9201.0046"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.sparkling-water",
+    "materialEntryId": "lx.world-object.b9201.0047"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.broth",
+    "materialEntryId": "lx.world-object.b9201.0048"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.salt",
+    "materialEntryId": "lx.world-object.b9201.0049"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.sugar",
+    "materialEntryId": "lx.world-object.b9201.0050"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.vinegar",
+    "materialEntryId": "lx.world-object.b9202.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.soy-sauce",
+    "materialEntryId": "lx.world-object.b9202.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.oil",
+    "materialEntryId": "lx.world-object.b9202.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.sweetness",
+    "materialEntryId": "lx.world-object.b9202.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.saltiness",
+    "materialEntryId": "lx.world-object.b9202.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.sourness",
+    "materialEntryId": "lx.world-object.b9202.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.bitterness",
+    "materialEntryId": "lx.world-object.b9202.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.umami",
+    "materialEntryId": "lx.world-object.b9202.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.astringency",
+    "materialEntryId": "lx.world-object.b9202.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.drink.crispness",
+    "materialEntryId": "lx.world-object.b9202.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.chopping-board",
+    "materialEntryId": "lx.world-object.b9202.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.colander",
+    "materialEntryId": "lx.world-object.b9202.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.strainer",
+    "materialEntryId": "lx.world-object.b9202.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.ladle",
+    "materialEntryId": "lx.world-object.b9202.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.spatula",
+    "materialEntryId": "lx.world-object.b9202.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.tongs",
+    "materialEntryId": "lx.world-object.b9202.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.whisk",
+    "materialEntryId": "lx.world-object.b9202.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.rolling-pin",
+    "materialEntryId": "lx.world-object.b9202.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.measuring-cup",
+    "materialEntryId": "lx.world-object.b9202.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.measuring-spoon",
+    "materialEntryId": "lx.world-object.b9202.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.scale",
+    "materialEntryId": "lx.world-object.b9202.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.peeler",
+    "materialEntryId": "lx.world-object.b9202.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.grater",
+    "materialEntryId": "lx.world-object.b9202.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.mortar",
+    "materialEntryId": "lx.world-object.b9202.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.pestle",
+    "materialEntryId": "lx.world-object.b9202.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.steamer",
+    "materialEntryId": "lx.world-object.b9202.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.stove",
+    "materialEntryId": "lx.world-object.b9202.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.oven",
+    "materialEntryId": "lx.world-object.b9202.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.pot-holder",
+    "materialEntryId": "lx.world-object.b9202.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.kitchen.dish-rack",
+    "materialEntryId": "lx.world-object.b9202.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.sheet",
+    "materialEntryId": "lx.world-object.b9202.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.pillowcase",
+    "materialEntryId": "lx.world-object.b9202.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.quilt",
+    "materialEntryId": "lx.world-object.b9202.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.mosquito-net",
+    "materialEntryId": "lx.world-object.b9202.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.curtain",
+    "materialEntryId": "lx.world-object.b9202.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.doormat",
+    "materialEntryId": "lx.world-object.b9202.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.laundry-basket",
+    "materialEntryId": "lx.world-object.b9202.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.washbasin",
+    "materialEntryId": "lx.world-object.b9202.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.soap",
+    "materialEntryId": "lx.world-object.b9202.0039"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.shampoo",
+    "materialEntryId": "lx.world-object.b9202.0040"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.toothbrush",
+    "materialEntryId": "lx.world-object.b9202.0041"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.comb",
+    "materialEntryId": "lx.world-object.b9202.0042"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.mirror",
+    "materialEntryId": "lx.world-object.b9202.0043"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.sewing-box",
+    "materialEntryId": "lx.world-object.b9202.0044"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.spray-bottle",
+    "materialEntryId": "lx.world-object.b9202.0045"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.scrub-brush",
+    "materialEntryId": "lx.world-object.b9202.0046"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.squeegee",
+    "materialEntryId": "lx.world-object.b9202.0047"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.trash-bag",
+    "materialEntryId": "lx.world-object.b9202.0048"
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.storage-crate",
+    "materialEntryId": "lx.world-object.b9202.0049"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.form",
+    "materialEntryId": "lx.world-object.b9202.0050"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.application",
+    "materialEntryId": "lx.world-object.b9203.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.certificate",
+    "materialEntryId": "lx.world-object.b9203.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.contract",
+    "materialEntryId": "lx.world-object.b9203.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.permit",
+    "materialEntryId": "lx.world-object.b9203.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.work-order",
+    "materialEntryId": "lx.world-object.b9203.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.delivery-note",
+    "materialEntryId": "lx.world-object.b9203.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.invoice",
+    "materialEntryId": "lx.world-object.b9203.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.ledger",
+    "materialEntryId": "lx.world-object.b9203.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.memo",
+    "materialEntryId": "lx.world-object.b9203.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.notice",
+    "materialEntryId": "lx.world-object.b9203.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.brochure",
+    "materialEntryId": "lx.world-object.b9203.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.newspaper",
+    "materialEntryId": "lx.world-object.b9203.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.magazine",
+    "materialEntryId": "lx.world-object.b9203.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.photograph",
+    "materialEntryId": "lx.world-object.b9203.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.voice-recorder",
+    "materialEntryId": "lx.world-object.b9203.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.telephone",
+    "materialEntryId": "lx.world-object.b9203.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.handheld-terminal",
+    "materialEntryId": "lx.world-object.b9203.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.identity-reader",
+    "materialEntryId": "lx.world-object.b9203.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.hex-key",
+    "materialEntryId": "lx.world-object.b9203.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.socket-wrench",
+    "materialEntryId": "lx.world-object.b9203.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.adjustable-wrench",
+    "materialEntryId": "lx.world-object.b9203.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.needle-pliers",
+    "materialEntryId": "lx.world-object.b9203.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.cutting-pliers",
+    "materialEntryId": "lx.world-object.b9203.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.wire-stripper",
+    "materialEntryId": "lx.world-object.b9203.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.crimping-tool",
+    "materialEntryId": "lx.world-object.b9203.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.hand-saw",
+    "materialEntryId": "lx.world-object.b9203.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.hacksaw",
+    "materialEntryId": "lx.world-object.b9203.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.mallet",
+    "materialEntryId": "lx.world-object.b9203.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.awl",
+    "materialEntryId": "lx.world-object.b9203.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.chisel",
+    "materialEntryId": "lx.world-object.b9203.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.plane",
+    "materialEntryId": "lx.world-object.b9203.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.hand-drill",
+    "materialEntryId": "lx.world-object.b9203.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.caliper",
+    "materialEntryId": "lx.world-object.b9203.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.feeler-gauge",
+    "materialEntryId": "lx.world-object.b9203.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.square",
+    "materialEntryId": "lx.world-object.b9203.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.multimeter",
+    "materialEntryId": "lx.world-object.b9203.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.inspection-lamp",
+    "materialEntryId": "lx.world-object.b9203.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.repair-tools.parts-tray",
+    "materialEntryId": "lx.world-object.b9203.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.plug",
+    "materialEntryId": "lx.world-object.b9203.0039"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.socket",
+    "materialEntryId": "lx.world-object.b9203.0040"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.adapter",
+    "materialEntryId": "lx.world-object.b9203.0041"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.extension-cord",
+    "materialEntryId": "lx.world-object.b9203.0042"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.cable-reel",
+    "materialEntryId": "lx.world-object.b9203.0043"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.connector",
+    "materialEntryId": "lx.world-object.b9203.0044"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.terminal",
+    "materialEntryId": "lx.world-object.b9203.0045"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.fuse",
+    "materialEntryId": "lx.world-object.b9203.0046"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.breaker",
+    "materialEntryId": "lx.world-object.b9203.0047"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.switch",
+    "materialEntryId": "lx.world-object.b9203.0048"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.indicator",
+    "materialEntryId": "lx.world-object.b9203.0049"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.power-supply",
+    "materialEntryId": "lx.world-object.b9203.0050"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.fuel-cell",
+    "materialEntryId": "lx.world-object.b9204.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.solar-cell",
+    "materialEntryId": "lx.world-object.b9204.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.capacitor",
+    "materialEntryId": "lx.world-object.b9204.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.motor",
+    "materialEntryId": "lx.world-object.b9204.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.bearing",
+    "materialEntryId": "lx.world-object.b9204.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.seal",
+    "materialEntryId": "lx.world-object.b9204.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.elastic",
+    "materialEntryId": "lx.world-object.b9204.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.plasticity",
+    "materialEntryId": "lx.world-object.b9204.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.flexibility",
+    "materialEntryId": "lx.world-object.b9204.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.brittleness",
+    "materialEntryId": "lx.world-object.b9204.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.rigidity",
+    "materialEntryId": "lx.world-object.b9204.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.porosity",
+    "materialEntryId": "lx.world-object.b9204.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.permeability",
+    "materialEntryId": "lx.world-object.b9204.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.absorbency",
+    "materialEntryId": "lx.world-object.b9204.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.water-repellence",
+    "materialEntryId": "lx.world-object.b9204.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.conductivity",
+    "materialEntryId": "lx.world-object.b9204.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.insulation",
+    "materialEntryId": "lx.world-object.b9204.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.heat-conduction",
+    "materialEntryId": "lx.world-object.b9204.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.heat-retention",
+    "materialEntryId": "lx.world-object.b9204.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.air-permeability",
+    "materialEntryId": "lx.world-object.b9204.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.friction",
+    "materialEntryId": "lx.world-object.b9204.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.surface-adhesion",
+    "materialEntryId": "lx.world-object.b9204.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.wear-resistance",
+    "materialEntryId": "lx.world-object.b9204.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.corrosion-resistance",
+    "materialEntryId": "lx.world-object.b9204.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.texture-grain",
+    "materialEntryId": "lx.world-object.b9204.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.properties.grain-direction",
+    "materialEntryId": "lx.world-object.b9204.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.adjacent",
+    "materialEntryId": "lx.world-space.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.opposite",
+    "materialEntryId": "lx.world-space.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.between",
+    "materialEntryId": "lx.world-space.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.surrounding",
+    "materialEntryId": "lx.world-space.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.overlap",
+    "materialEntryId": "lx.world-space.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.separated",
+    "materialEntryId": "lx.world-space.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.connected",
+    "materialEntryId": "lx.world-space.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.dead-end",
+    "materialEntryId": "lx.world-space.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.intersection",
+    "materialEntryId": "lx.world-space.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.bottleneck",
+    "materialEntryId": "lx.world-space.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.recess",
+    "materialEntryId": "lx.world-space.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.projection",
+    "materialEntryId": "lx.world-space.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.overhang",
+    "materialEntryId": "lx.world-space.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.alcove",
+    "materialEntryId": "lx.world-space.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.mezzanine",
+    "materialEntryId": "lx.world-space.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.vestibule",
+    "materialEntryId": "lx.world-space.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.threshold",
+    "materialEntryId": "lx.world-space.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.landing",
+    "materialEntryId": "lx.world-space.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.turning-space",
+    "materialEntryId": "lx.world-space.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.layout.passing-bay",
+    "materialEntryId": "lx.world-space.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.roadway",
+    "materialEntryId": "lx.world-terrain.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.sidewalk",
+    "materialEntryId": "lx.world-terrain.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.crosswalk",
+    "materialEntryId": "lx.world-terrain.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.curb",
+    "materialEntryId": "lx.world-terrain.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.median",
+    "materialEntryId": "lx.world-terrain.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.cobblestone",
+    "materialEntryId": "lx.world-terrain.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.gravel",
+    "materialEntryId": "lx.world-terrain.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.dirt-track",
+    "materialEntryId": "lx.world-terrain.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.boardwalk",
+    "materialEntryId": "lx.world-terrain.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.embankment",
+    "materialEntryId": "lx.world-terrain.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.depression",
+    "materialEntryId": "lx.world-terrain.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.ridge",
+    "materialEntryId": "lx.world-terrain.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.saddle",
+    "materialEntryId": "lx.world-terrain.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.escarpment",
+    "materialEntryId": "lx.world-terrain.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.terrace",
+    "materialEntryId": "lx.world-terrain.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.scree",
+    "materialEntryId": "lx.world-terrain.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.mudflat",
+    "materialEntryId": "lx.world-terrain.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.river-mouth",
+    "materialEntryId": "lx.world-terrain.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.peninsula",
+    "materialEntryId": "lx.world-terrain.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.ground.basin",
+    "materialEntryId": "lx.world-terrain.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.hail",
+    "materialEntryId": "lx.world-weather.b9201.0001"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.thunderstorm",
+    "materialEntryId": "lx.world-weather.b9201.0002"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.freezing-rain",
+    "materialEntryId": "lx.world-weather.b9201.0003"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.rainbow",
+    "materialEntryId": "lx.world-weather.b9201.0004"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.sunshower",
+    "materialEntryId": "lx.world-weather.b9201.0005"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.cloudburst",
+    "materialEntryId": "lx.world-weather.b9201.0006"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.rain-break",
+    "materialEntryId": "lx.world-weather.b9201.0007"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.rain-front",
+    "materialEntryId": "lx.world-weather.b9201.0008"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.runoff",
+    "materialEntryId": "lx.world-weather.b9201.0009"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.seepage",
+    "materialEntryId": "lx.world-weather.b9201.0010"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.dripping",
+    "materialEntryId": "lx.world-weather.b9201.0011"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.ponding",
+    "materialEntryId": "lx.world-weather.b9201.0012"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.flooding",
+    "materialEntryId": "lx.world-weather.b9201.0013"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.ebbing",
+    "materialEntryId": "lx.world-weather.b9201.0014"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.rising-tide",
+    "materialEntryId": "lx.world-weather.b9201.0015"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.falling-tide",
+    "materialEntryId": "lx.world-weather.b9201.0016"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.frost-thaw",
+    "materialEntryId": "lx.world-weather.b9201.0017"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.snowmelt",
+    "materialEntryId": "lx.world-weather.b9201.0018"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.water-ripple",
+    "materialEntryId": "lx.world-weather.b9201.0019"
+  },
+  {
+    "sourceEntryId": "general-common:v2.hydrology.eddy",
+    "materialEntryId": "lx.world-weather.b9201.0020"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.headwind",
+    "materialEntryId": "lx.world-weather.b9201.0021"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.tailwind",
+    "materialEntryId": "lx.world-weather.b9201.0022"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.updraft",
+    "materialEntryId": "lx.world-weather.b9201.0023"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.downdraft",
+    "materialEntryId": "lx.world-weather.b9201.0024"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.air-turbulence",
+    "materialEntryId": "lx.world-weather.b9201.0025"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.wind-shear",
+    "materialEntryId": "lx.world-weather.b9201.0026"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.wind-lull",
+    "materialEntryId": "lx.world-weather.b9201.0027"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.wind-shelter",
+    "materialEntryId": "lx.world-weather.b9201.0028"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.windward",
+    "materialEntryId": "lx.world-weather.b9201.0029"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.air-stagnation",
+    "materialEntryId": "lx.world-weather.b9201.0030"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.temperature-drop",
+    "materialEntryId": "lx.world-weather.b9201.0031"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.temperature-rise",
+    "materialEntryId": "lx.world-weather.b9201.0032"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.temperature-swing",
+    "materialEntryId": "lx.world-weather.b9201.0033"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.heatwave",
+    "materialEntryId": "lx.world-weather.b9201.0034"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.cold-snap",
+    "materialEntryId": "lx.world-weather.b9201.0035"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.clouding",
+    "materialEntryId": "lx.world-weather.b9201.0036"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.clearing",
+    "materialEntryId": "lx.world-weather.b9201.0037"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.cloud-shadow",
+    "materialEntryId": "lx.world-weather.b9201.0038"
+  },
+  {
+    "sourceEntryId": "general-common:v2.climate.visibility-loss",
+    "materialEntryId": "lx.world-weather.b9201.0039"
+  }
+]

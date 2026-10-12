@@ -1,0 +1,565 @@
+[
+  {
+    "sourceEntryId": "general-common:v2.climate.ventilation",
+    "label": "通风",
+    "proposedRole": "qualifier",
+    "proposedFacet": "airflow",
+    "definition": "空气在空间内外交换的过程，效果需要具体设施信息。",
+    "existingReferences": [
+      {
+        "id": "general-common:action.ventilate",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.action.ventilate",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.household.laundry-clip",
+    "label": "晾衣夹",
+    "proposedRole": "core",
+    "proposedFacet": "household-object",
+    "definition": "将衣物固定在绳或架上的夹具。",
+    "existingReferences": [
+      {
+        "id": "general-common:object.clothes-pin",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.object.clothes-pin",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.communication.intercom",
+    "label": "对讲机",
+    "proposedRole": "core",
+    "proposedFacet": "communication-object",
+    "definition": "供指定使用者之间短程通话的通信设备。",
+    "existingReferences": [
+      {
+        "id": "general-common:facility.intercom",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.facility.intercom",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.charger",
+    "label": "充电器",
+    "proposedRole": "core",
+    "proposedFacet": "component",
+    "definition": "按明示规格向储能设备提供充电过程的设备。",
+    "existingReferences": [
+      {
+        "id": "general-common:object.charger",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.object.charger",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.energy.power-bank",
+    "label": "移动电源",
+    "proposedRole": "core",
+    "proposedFacet": "component",
+    "definition": "供携带并向匹配设备供能的储能装置。",
+    "existingReferences": [
+      {
+        "id": "general-common:object.powerbank",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.object.powerbank",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.materials.canvas",
+    "label": "帆布",
+    "proposedRole": "qualifier",
+    "proposedFacet": "material",
+    "definition": "较厚实的织物类别，具体纤维成分另存。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:material.canvas",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.anatomy.clavicle",
+    "label": "锁骨",
+    "proposedRole": "core",
+    "proposedFacet": "body-part",
+    "definition": "肩胸前方相应连接结构的身体概念。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:expanded.anatomy.collarbone",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.wing-fold",
+    "label": "收拢翼部",
+    "proposedRole": "core",
+    "proposedFacet": "adaptation",
+    "definition": "将已有且可活动的翼部向身体附近收拢。",
+    "existingReferences": [
+      {
+        "id": "general-common:adapt.fold-wing",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.adapt.fold-wing",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.adaptation.sensory-break",
+    "label": "感官休息",
+    "proposedRole": "core",
+    "proposedFacet": "adaptation",
+    "definition": "暂时减少某类感官刺激的休息主题。",
+    "existingReferences": [
+      {
+        "id": "general-common:adapt.sensory-break",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.adapt.sensory-break",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.movement.fold",
+    "label": "折叠",
+    "proposedRole": "core",
+    "proposedFacet": "action",
+    "definition": "将允许弯折对象按折线缩小展开范围。",
+    "existingReferences": [
+      {
+        "id": "general-common:action.fold",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.action.fold",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.measure",
+    "label": "测量",
+    "proposedRole": "core",
+    "proposedFacet": "work-process",
+    "definition": "使用指定方法取得某项参数的动作。",
+    "existingReferences": [
+      {
+        "id": "general-common:action.measure",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.action.measure",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.work-process.handover",
+    "label": "交接",
+    "proposedRole": "core",
+    "proposedFacet": "work-process",
+    "definition": "将工作、物品或责任按明示范围转交另一方。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:action.handover",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.clarify",
+    "label": "澄清",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "说明歧义或纠正既有表达中的误解。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:speech.clarify",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.compare",
+    "label": "比较",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "围绕明确维度陈述对象之间的差异或相似。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:action.compare",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.suggest",
+    "label": "建议",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "提出供对方自主考虑的行动方案。",
+    "existingReferences": [
+      {
+        "id": "general-common:speech.suggest",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.speech.suggest",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.agree",
+    "label": "赞同",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "对明确观点表达支持或认可。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:speech.agree",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.object",
+    "label": "异议",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "对特定观点或安排表达不同意见。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:speech.disagree",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.explain",
+    "label": "解释",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "为明确事项说明原因、过程或含义。",
+    "existingReferences": [
+      {
+        "id": "general-common:speech.explain",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.speech.explain",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.remind",
+    "label": "提醒",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "使对方注意可能遗漏的已有事项。",
+    "existingReferences": [
+      {
+        "id": "general-common:speech.remind",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.speech.remind",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.speech.invite",
+    "label": "邀请",
+    "proposedRole": "core",
+    "proposedFacet": "speech",
+    "definition": "向对方提出可自由回应的共同活动请求。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:speech.invite",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.emotion.regret",
+    "label": "惋惜",
+    "proposedRole": "qualifier",
+    "proposedFacet": "emotion",
+    "definition": "对已经失去的机会或结果感到遗憾的情绪。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:emotion.regret",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.cautious",
+    "label": "谨慎",
+    "proposedRole": "qualifier",
+    "proposedFacet": "disposition",
+    "definition": "作决定前倾向评估风险和信息的特点。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:disposition.caution",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.traits.curious",
+    "label": "好奇",
+    "proposedRole": "qualifier",
+    "proposedFacet": "disposition",
+    "definition": "倾向主动了解未知事物的特点。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:disposition.curiosity",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.paint",
+    "label": "绘画",
+    "proposedRole": "core",
+    "proposedFacet": "interest",
+    "definition": "以绘制图像表达或练习的兴趣活动。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:activity.draw",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.interests.weave",
+    "label": "编织",
+    "proposedRole": "core",
+    "proposedFacet": "interest",
+    "definition": "将条带或线材交错形成结构的兴趣活动。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:shape.woven",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.history.enroll",
+    "label": "入学",
+    "proposedRole": "core",
+    "proposedFacet": "history",
+    "definition": "曾正式进入某个学习安排的经历类别。",
+    "existingReferences": [
+      {
+        "id": "general-taxonomy:occasion.enrolment",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.loan",
+    "label": "借用",
+    "proposedRole": "qualifier",
+    "proposedFacet": "institution",
+    "definition": "经允许暂时使用并负有归还条件的安排。",
+    "existingReferences": [
+      {
+        "id": "general-common:action.borrow",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.action.borrow",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.institutions.consult",
+    "label": "协商",
+    "proposedRole": "qualifier",
+    "proposedFacet": "institution",
+    "definition": "由有关参与者共同讨论安排的程序。",
+    "existingReferences": [
+      {
+        "id": "general-common:speech.negotiate",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.speech.negotiate",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.refusal",
+    "label": "拒绝",
+    "proposedRole": "core",
+    "proposedFacet": "interaction",
+    "definition": "对本次请求给出否定回应的事实或动作。",
+    "existingReferences": [
+      {
+        "id": "general-common:v2.speech.decline",
+        "kind": "new-candidate"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.interaction.revoke",
+    "label": "撤回",
+    "proposedRole": "core",
+    "proposedFacet": "interaction",
+    "definition": "在允许范围内撤销本人此前给出的接受或请求。",
+    "existingReferences": [
+      {
+        "id": "general-common:v2.administration.withdraw",
+        "kind": "new-candidate"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.electrician",
+    "label": "电工",
+    "proposedRole": "core",
+    "proposedFacet": "occupation",
+    "definition": "以电气设施安装与检修为主要工作的职业。",
+    "existingReferences": [
+      {
+        "id": "general-common:job.electrician",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.job.electrician",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.dispatcher",
+    "label": "调度员",
+    "proposedRole": "core",
+    "proposedFacet": "occupation",
+    "definition": "以安排车辆、人员或工作顺序为主要工作的职业。",
+    "existingReferences": [
+      {
+        "id": "general-common:job.dispatcher",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.job.dispatcher",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  },
+  {
+    "sourceEntryId": "general-common:v2.occupations.librarian",
+    "label": "图书管理员",
+    "proposedRole": "core",
+    "proposedFacet": "occupation",
+    "definition": "以馆藏管理与读者服务为主要工作的职业。",
+    "existingReferences": [
+      {
+        "id": "general-common:job.librarian",
+        "kind": "material"
+      },
+      {
+        "id": "general-taxonomy:common.job.librarian",
+        "kind": "concept"
+      }
+    ],
+    "decision": "exclude-new-material-pending-semantic-review",
+    "automaticallyMerged": false
+  }
+]

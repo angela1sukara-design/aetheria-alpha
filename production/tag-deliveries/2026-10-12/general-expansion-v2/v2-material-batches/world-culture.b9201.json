@@ -1,0 +1,253 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-culture.b9201",
+  "library": "world-culture",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-culture.b9201.0001",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "公有",
+      "description": "所属权由设定中的公共主体持有的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0002",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "私有",
+      "description": "所属权由设定中的私人主体持有的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0003",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "共有",
+      "description": "所属权由多个明确主体共同持有的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0004",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "租赁",
+      "description": "按约定期限与费用取得使用权的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0005",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "通行许可",
+      "description": "进入或通过指定范围所需的有效资格。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0006",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "营业许可",
+      "description": "开展指定经营活动所需的有效资格。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0007",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "限时开放",
+      "description": "仅在明确时间范围允许使用的开放方式。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0008",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "预约制",
+      "description": "按事先登记时段安排使用或服务的方式。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0009",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "轮班制",
+      "description": "由不同人员分时承担岗位工作的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0010",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "计件制",
+      "description": "按合格产出数量核算工作报酬的制度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0011",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "计时制",
+      "description": "按有效工作时长核算报酬的制度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0012",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "公共补贴",
+      "description": "由设定中的公共主体按条件提供支持的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0013",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "交易税",
+      "description": "按世界设定对指定交易征收费用的制度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0014",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "服务费",
+      "description": "为明确服务项目收取费用的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0015",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "押金制",
+      "description": "依暂存款项和退还条件保障履约的安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0016",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "保障岗位",
+      "description": "按设定条件提供基本就业支持的岗位安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0017",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "投票",
+      "description": "按明确参与资格表达并统计选择的程序。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-culture.b9201.0018",
+      "category": "world-culture",
+      "subcategory": "制度与使用安排",
+      "text": "申诉渠道",
+      "description": "供当事人向有权主体提出复查请求的途径。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

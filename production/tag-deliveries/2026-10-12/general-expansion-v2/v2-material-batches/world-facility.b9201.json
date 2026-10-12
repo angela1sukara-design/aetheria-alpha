@@ -1,0 +1,539 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-facility.b9201",
+  "library": "world-facility",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-facility.b9201.0001",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "交通信号灯",
+      "description": "以规定信号协调交通参与者行动的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0002",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "路灯",
+      "description": "为道路或公共步行区域提供照明的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0003",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "排水篦",
+      "description": "覆盖排水入口并允许水通过的格栅构件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0004",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "检修井",
+      "description": "供检查地下管线或设施使用的井状空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0005",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "消防栓",
+      "description": "供消防用途取水的固定接口设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0006",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "变电站",
+      "description": "进行电能变换和分配的设施场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0007",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "配电箱",
+      "description": "容纳供电分配与控制部件的箱体设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0008",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "开关柜",
+      "description": "集中容纳开关及控制器件的柜式设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0009",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "污水处理站",
+      "description": "接收并处理污水的设施场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0010",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "水表",
+      "description": "记录供水使用量的计量装置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0011",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "电表",
+      "description": "记录电能使用量的计量装置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0012",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "流量计",
+      "description": "测量某一流路中流量的仪器类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0013",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "装卸位",
+      "description": "供车辆或人员进行货物装卸的指定区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0014",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "装卸坡台",
+      "description": "连接不同高度装卸面的坡形设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0015",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "排队栏",
+      "description": "引导或分隔等候队伍的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0016",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "减速带",
+      "description": "通过路面形态提醒并限制车辆速度的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0017",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "道路反光镜",
+      "description": "帮助观察遮挡转角来向的反射设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0018",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "紧急求助电话",
+      "description": "用于向指定值守方发出求助的通信设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0019",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "公共时钟",
+      "description": "在公共位置显示时间的装置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0020",
+      "category": "world-facility",
+      "subcategory": "基础设施",
+      "text": "导览图",
+      "description": "展示某区域空间与路径信息的图示设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0021",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "传送带",
+      "description": "以连续运动带面转移物品的输送设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0022",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "起重机",
+      "description": "通过起吊机构提升和移动载荷的设备类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0023",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "操作台",
+      "description": "供加工、装配或检查使用的工作表面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0024",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "台钳",
+      "description": "固定在工作面上夹持物件的工具装置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0025",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "压机",
+      "description": "以受控压力完成成形、压合等工序的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0026",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "车床",
+      "description": "主要使工件旋转并进行切削加工的设备类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0027",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "钻床",
+      "description": "为钻孔等工序提供固定结构与进给的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0028",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "窑炉",
+      "description": "供烧制或受控加热材料的炉体设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0029",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "晾架",
+      "description": "供物品展开或悬放以减少水分的支架。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0030",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "烘干柜",
+      "description": "在柜体空间中对物品进行受控干燥的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0031",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "冷藏柜",
+      "description": "在较低温度条件下暂存物品的柜式设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0032",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "冷冻柜",
+      "description": "供物品在冻结条件下储存的柜式设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0033",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "料仓",
+      "description": "集中容纳散装原料或成品的储存结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0034",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "托板",
+      "description": "便于货物集中放置和搬运的承载板。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0035",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "转盘",
+      "description": "可以绕轴转动的工作或承载平面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0036",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "地磅",
+      "description": "供较大载荷或车辆称重的计量设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0037",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "筛网",
+      "description": "以孔隙大小分离或拦截物料的网状构件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0038",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "观察口",
+      "description": "供查看设备内部指定区域的开口或透明窗口。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0039",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "取样口",
+      "description": "供从设备或容器中提取样本的指定接口。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9201.0040",
+      "category": "world-facility",
+      "subcategory": "生产设施",
+      "text": "工具柜",
+      "description": "按管理规则存放和领取工具的柜体。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

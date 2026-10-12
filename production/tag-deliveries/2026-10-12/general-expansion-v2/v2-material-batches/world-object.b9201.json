@@ -1,0 +1,669 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-object.b9201",
+  "library": "world-object",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-object.b9201.0001",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "自行车",
+      "description": "主要依靠骑行者驱动的两轮载具类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0002",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "三轮车",
+      "description": "具有三个主要行走轮的载具，动力来源另行记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0003",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "摩托车",
+      "description": "具有动力驱动的骑乘式载具类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0004",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "公共汽车",
+      "description": "按公共运输安排承载乘客的道路载具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0005",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "有轨电车",
+      "description": "沿城市轨道运行的公共交通车辆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0006",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "地铁列车",
+      "description": "用于城市轨道交通线路的列车类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0007",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "出租车",
+      "description": "按运营规则提供计费载客服务的车辆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0008",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "厢式货车",
+      "description": "以封闭货厢承运物品的道路车辆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0009",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "平板货车",
+      "description": "以开放平板承运物品的道路车辆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0010",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "叉车",
+      "description": "使用货叉等承载部件搬移货物的工作车辆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0011",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "手推车",
+      "description": "主要由人推行的搬运载具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0012",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "行李车",
+      "description": "用于临时承载行李或小件物品的推行载具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0013",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "轮椅",
+      "description": "为乘坐者提供支撑与移动方式的轮式器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0014",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "代步车",
+      "description": "供个人短程移动使用的动力载具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0015",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "渡船",
+      "description": "在既定水域两端或多个停靠点之间运送人员物品的船。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0016",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "划艇",
+      "description": "主要以桨划推进的小型船艇类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0017",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "作业船",
+      "description": "承担巡检、维护或运输等工作任务的船舶。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0018",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "救生艇",
+      "description": "为救助或撤离任务配置的小型船艇。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0019",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "雪橇",
+      "description": "利用滑行部件在适合表面移动的载具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0020",
+      "category": "world-object",
+      "subcategory": "交通载具",
+      "text": "缆车",
+      "description": "由缆索牵引或承托运行的运输载具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0021",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "米饭",
+      "description": "以米经烹调形成的主食概念，品种和份量另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0022",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "粥",
+      "description": "谷物与水等形成的稀软熟食类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0023",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "面包",
+      "description": "以面团烘焙形成的食物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0024",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "馒头",
+      "description": "以发酵面团蒸制形成的主食类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0025",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "包子",
+      "description": "以面皮包裹馅料并蒸制等加工形成的食物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0026",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "饺子",
+      "description": "以面皮包裹馅料形成的食物类别，烹调方式另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0027",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "饼",
+      "description": "以扁平形态加工的面食类别，配料另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0028",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "汤",
+      "description": "以液体为主要形态并可包含食材的熟食类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0029",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "炖菜",
+      "description": "食材在液体中较长时间加热形成的菜品类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0030",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "豆腐",
+      "description": "以豆类原料加工凝成的食物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0031",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "蛋",
+      "description": "供食材描述使用的蛋类概念，来源与处理状态另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0032",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "马铃薯",
+      "description": "具有相应块茎特征的食材概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0033",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "甘薯",
+      "description": "具有相应块根特征的食材概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0034",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "玉米",
+      "description": "供谷物、籽粒和普通食材描写使用的概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0035",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "白菜",
+      "description": "具有相应叶球或叶丛特征的食材概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0036",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "番茄",
+      "description": "具有相应果实特征的食材概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0037",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "洋葱",
+      "description": "具有相应鳞茎特征的食材概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0038",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "苹果",
+      "description": "具有相应果实特征的常见水果概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0039",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "梨",
+      "description": "具有相应果实特征的常见水果概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0040",
+      "category": "world-object",
+      "subcategory": "基础食物",
+      "text": "橙",
+      "description": "具有相应果实和果皮特征的柑橘类水果概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0041",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "饮用水",
+      "description": "按场景已声明用途供饮用的水，来源与质量事实另查。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0042",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "茶",
+      "description": "以茶类原料制作的饮品概念，浓度和温度另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0043",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "咖啡",
+      "description": "以咖啡原料制作的饮品概念，配方另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0044",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "乳饮",
+      "description": "以乳类原料为主要成分的饮品类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0045",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "豆浆",
+      "description": "以豆类原料加工形成的饮品概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0046",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "果汁",
+      "description": "以水果汁液为主要成分的饮品类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0047",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "气泡水",
+      "description": "含有可见或可感气泡的水饮类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0048",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "清汤",
+      "description": "以较清澈汤液为主的食物概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0049",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "食盐",
+      "description": "供普通调味与食材分类使用的盐类概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9201.0050",
+      "category": "world-object",
+      "subcategory": "饮食细分",
+      "text": "糖",
+      "description": "供普通调味与食材分类使用的糖类概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

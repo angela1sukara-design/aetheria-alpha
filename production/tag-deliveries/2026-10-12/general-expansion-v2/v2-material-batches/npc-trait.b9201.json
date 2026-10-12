@@ -1,0 +1,253 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-trait.b9201",
+  "library": "npc-trait",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-trait.b9201.0001",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "耐心",
+      "description": "面对等待或反复过程较能保持稳定的倾向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0002",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "细致",
+      "description": "倾向关注细节并减少遗漏的做事特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0003",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "果断",
+      "description": "信息足够时倾向及时作决定的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0004",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "直率",
+      "description": "倾向较直接表达想法和感受的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0005",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "含蓄",
+      "description": "倾向以较间接方式表达个人意思的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0006",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "健谈",
+      "description": "在适宜社交中倾向较多表达的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0007",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "寡言",
+      "description": "通常倾向较少主动表达的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0008",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "守时",
+      "description": "倾向遵守约定时间的行为特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0009",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "节俭",
+      "description": "使用资源时倾向控制非必要支出的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0010",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "慷慨",
+      "description": "在有能力且愿意时倾向分享资源的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0011",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "独立",
+      "description": "倾向自主处理个人事务的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0012",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "随和",
+      "description": "在个人边界内较易接受不同安排的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0013",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "认真",
+      "description": "面对承担事项倾向投入注意与精力的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0014",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "幽默",
+      "description": "倾向用轻松或诙谐方式表达的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0015",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "敏感",
+      "description": "较易注意或受到特定刺激影响的倾向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0016",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "固执",
+      "description": "对已有立场较不易改变的倾向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0017",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "务实",
+      "description": "倾向考虑现实条件与可执行性的特点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-trait.b9201.0018",
+      "category": "npc-trait",
+      "subcategory": "性格倾向",
+      "text": "乐观",
+      "description": "对未来结果较易持积极预期的倾向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

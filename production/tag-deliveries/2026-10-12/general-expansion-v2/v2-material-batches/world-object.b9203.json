@@ -1,0 +1,669 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-object.b9203",
+  "library": "world-object",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-object.b9203.0001",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "申请书",
+      "description": "表达某项请求并提供相关信息的文书。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0002",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "证明文件",
+      "description": "由明确来源用于证明某项事实的文件类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0003",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "合同",
+      "description": "记录当事方约定事项的文书类别，具体效力由世界规则声明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0004",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "许可凭证",
+      "description": "记录特定许可来源、范围与期限的凭证类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0005",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "工单",
+      "description": "记录待处理工作、责任与进度的单据。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0006",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "交接单",
+      "description": "记录物品或工作在双方之间交付情况的单据。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0007",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "发票",
+      "description": "记录交易计价与开具来源的票据类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0008",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "账册",
+      "description": "按一定顺序记录收支或账项的文书。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0009",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "备忘录",
+      "description": "供记下待办或需要保留信息的文字记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0010",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "通知",
+      "description": "向指定对象发布事项与安排的文书类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0011",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "手册",
+      "description": "围绕一类事务组织说明和索引的读物。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0012",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "报纸",
+      "description": "按期刊载新闻与其他信息的纸面读物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0013",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "杂志",
+      "description": "按期汇集专题或多类文章的读物类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0014",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "照片",
+      "description": "以影像形式保留某次拍摄视图的物件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0015",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "录音器",
+      "description": "采集并保存声音记录的设备类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0016",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "电话机",
+      "description": "供通过通信线路进行通话的设备类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0017",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "手持终端",
+      "description": "供携带操作并查看或输入信息的设备类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0018",
+      "category": "world-object",
+      "subcategory": "文书通信物件",
+      "text": "读证器",
+      "description": "按配置读取身份凭证信息的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0019",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "内六角扳手",
+      "description": "用于匹配内六角接口紧固件的手工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0020",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "套筒扳手",
+      "description": "通过套筒与紧固件头部配合的旋拧工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0021",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "活动扳手",
+      "description": "夹口宽度可调整的旋拧工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0022",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "尖嘴钳",
+      "description": "具有细长夹口、供夹持小件使用的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0023",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "斜口钳",
+      "description": "供剪断适合材料的带刃钳具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0024",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "剥线钳",
+      "description": "按适配规格剥除导线外层的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0025",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "压接钳",
+      "description": "按适配规格压合连接部件的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0026",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "手锯",
+      "description": "以带齿刃条并由手动往复运动切分材料的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0027",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "钢锯",
+      "description": "以相应锯条切分适合材料的工具类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0028",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "木槌",
+      "description": "具有木质或类似较软槌头的敲击工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0029",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "锥子",
+      "description": "供定位、穿孔等操作使用的尖端工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0030",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "凿子",
+      "description": "以刃口移除局部材料的手工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0031",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "刨子",
+      "description": "沿表面削去薄层材料的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0032",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "手钻",
+      "description": "由手动或手持动力方式完成钻孔的工具类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0033",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "卡尺",
+      "description": "以相应量爪测量尺寸的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0034",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "塞尺",
+      "description": "以不同厚度的薄片检查间隙的量具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0035",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "角尺",
+      "description": "供检查或标示角度关系的量具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0036",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "万用表",
+      "description": "按指定量程测量电学量的仪器类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0037",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "检修灯",
+      "description": "为局部检查工作提供照明的灯具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0038",
+      "category": "world-object",
+      "subcategory": "修理工具细分",
+      "text": "零件盘",
+      "description": "供临时分类和暂存小件部件的盘具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0039",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "插头",
+      "description": "与相应插座配合建立连接的部件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0040",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "插座",
+      "description": "供匹配插头插接的接口部件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0041",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "转接器",
+      "description": "按明示规格转换连接形式的部件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0042",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "延长线",
+      "description": "将既有连接范围延伸到另一位置的线缆组件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0043",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "线盘",
+      "description": "供卷放并整理线缆的支承器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0044",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "连接器",
+      "description": "按匹配结构建立可分离连接的部件类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0045",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "接线端子",
+      "description": "供导线按规定方式连接的端部构件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0046",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "熔断器",
+      "description": "按设计条件中断电路的保护部件类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0047",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "断路器",
+      "description": "按配置条件接通或切断电路的器件类别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0048",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "开关",
+      "description": "供改变某条线路或设备工作状态的控制部件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0049",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "指示灯",
+      "description": "以发光状态表示指定信息的部件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9203.0050",
+      "category": "world-object",
+      "subcategory": "能源连接部件",
+      "text": "电源模块",
+      "description": "供设备按规定输出规格使用的供能模块。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

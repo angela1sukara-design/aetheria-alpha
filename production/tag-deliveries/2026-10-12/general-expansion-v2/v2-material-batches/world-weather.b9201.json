@@ -1,0 +1,526 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-weather.b9201",
+  "library": "world-weather",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-weather.b9201.0001",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "冰雹",
+      "description": "空中落下冰粒的天气现象，与地面结冰分别记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0002",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "雷雨",
+      "description": "降雨伴随雷电活动的天气背景，具体危险另由事件定义。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0003",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "冻雨",
+      "description": "雨滴在接触物体后形成冰附着的天气背景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0004",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "彩虹",
+      "description": "雨滴与光线形成的可见色带，可用于远景观察。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0005",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "太阳雨",
+      "description": "日光仍可见时出现降雨，光照与降雨分别查询。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0006",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "骤雨",
+      "description": "短时间突然开始的明显降雨，持续时间需要场景给出。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0007",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "雨歇",
+      "description": "一段降雨暂时停止的时间状态，地面未必已经干燥。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0008",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "雨带",
+      "description": "连续降水区域的空间分布，可用于远行天气描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0009",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "地表径流",
+      "description": "水沿地表流动的现象，不等于已经形成河流。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0010",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "渗水",
+      "description": "水经材料孔隙或接缝缓慢透出的现象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0011",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "滴水",
+      "description": "水以分离水滴落下的状态，来源应绑定具体物件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0012",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "积水",
+      "description": "水停留在低处或平面上，深度与范围需要独立参数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0013",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "漫水",
+      "description": "水越过原有边界进入某片空间的状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0014",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "退水",
+      "description": "原先被水占据的区域水位逐步下降。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0015",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "涨潮",
+      "description": "水域受潮汐影响而水位上升的阶段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0016",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "落潮",
+      "description": "水域受潮汐影响而水位下降的阶段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0017",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "融霜",
+      "description": "表面霜层消退并可能留下水分的变化。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0018",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "融雪",
+      "description": "积雪转化为水的过程，与空中降雪区分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0019",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "涟漪",
+      "description": "水面出现向外传播的细小波纹。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0020",
+      "category": "world-weather",
+      "subcategory": "水文现象",
+      "text": "涡流",
+      "description": "流体在局部围绕中心旋转的运动形态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0021",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "逆风",
+      "description": "气流主要从行进方向前方吹来。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0022",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "顺风",
+      "description": "气流主要沿行进方向向前吹去。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0023",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "上升气流",
+      "description": "空气向较高位置运动的局部气流。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0024",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "下沉气流",
+      "description": "空气向较低位置运动的局部气流。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0025",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "湍流",
+      "description": "气流速度与方向存在不规则局部变化。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0026",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "风切变",
+      "description": "相邻位置的风速或风向发生明显差异。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0027",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "风息",
+      "description": "原有气流暂时减弱到不明显的状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0028",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "背风",
+      "description": "指定位置受到遮挡，来自某方向的风影响较小。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0029",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "迎风",
+      "description": "指定表面或站位直接面对主要来风方向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0030",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "气流停滞",
+      "description": "局部空气流动不明显的环境状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0031",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "冷却",
+      "description": "对象或环境温度下降的过程，终值由参数提供。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0032",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "升温",
+      "description": "对象或环境温度上升的过程，不预设热源。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0033",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "温差",
+      "description": "两个位置或时段的温度存在差异。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0034",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "热浪",
+      "description": "一段持续高温的天气背景，不直接修改人物状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0035",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "寒潮",
+      "description": "较大范围出现明显降温的天气背景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0036",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "转阴",
+      "description": "天空云层增多、直射日光减少的天气过渡。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0037",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "放晴",
+      "description": "云层减少、日光重新明显的天气过渡。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0038",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "云影",
+      "description": "云层遮挡光线而在地表形成的移动阴影。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9201.0039",
+      "category": "world-weather",
+      "subcategory": "气流现象",
+      "text": "能见度下降",
+      "description": "可辨认远处物件的范围缩小，具体范围需提供数值。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

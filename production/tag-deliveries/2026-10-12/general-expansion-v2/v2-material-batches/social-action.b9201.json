@@ -1,0 +1,409 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "social-action.b9201",
+  "library": "social-action",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.social-action.b9201.0001",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "询问",
+      "description": "向另一参与者提出希望其回答的问题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0002",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "告知",
+      "description": "向指定接收者传达明确内容的表达动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0003",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "追问",
+      "description": "围绕已有回答进一步提出关联问题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0004",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "复述",
+      "description": "用自己的表达重述已获得的信息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0005",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "概括",
+      "description": "提取已知内容主要要点的表达动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0006",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "举例",
+      "description": "提供具体事例来说明已有观点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0007",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "犹豫",
+      "description": "暂未就当前选择作出确定表达的表现。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0008",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "拒绝",
+      "description": "表达不接受某项请求或安排的意思。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0009",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "告别",
+      "description": "结束当前会面并表达离开的对话动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0010",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "承诺",
+      "description": "明确表示将在指定条件下承担相应事项。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0011",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "保留意见",
+      "description": "表达尚不赞同且暂不作最终判断的态度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0012",
+      "category": "social-action",
+      "subcategory": "对话动作",
+      "text": "终止话题",
+      "description": "明确结束当前话题的表达动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0013",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "相识",
+      "description": "参与者已经通过有效会面互相认识的关系事实。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0014",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "熟悉",
+      "description": "参与者通过持续了解形成的关系阶段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0015",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "信任",
+      "description": "对指定对象在明确范围内形成的可信预期。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0016",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "邀请待答",
+      "description": "邀请已经发出且尚未收到明确回应的状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0017",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "同意",
+      "description": "对本次明确范围自愿给出肯定回应的事实。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0018",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "暂停",
+      "description": "暂时停止当前互动并保留允许恢复的信息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0019",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "继续",
+      "description": "在重新校验条件后恢复当前互动的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0020",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "结束",
+      "description": "终止当前互动并处理接触与资源清理的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0021",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "轮流发言",
+      "description": "参与者交替取得发言时机的互动方式。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0022",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "共同观察",
+      "description": "多个参与者在允许位置观察同一对象的活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0023",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "协作搬运",
+      "description": "多个参与者按各自能力共同移动对象的活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0024",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "递交物品",
+      "description": "将明确物品交向另一参与者的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0025",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "接过物品",
+      "description": "从明确交付方取得其愿意交付物品的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0026",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "保持距离",
+      "description": "维持双方允许的空间间隔的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0027",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "让出通道",
+      "description": "通过调整位置为他方保留通过空间的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0028",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "接触建立",
+      "description": "经本次条件校验后开始指定部位间的接触。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0029",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "接触保持",
+      "description": "在持续条件仍满足时维持既有接触。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9201.0030",
+      "category": "social-action",
+      "subcategory": "互动概念",
+      "text": "接触释放",
+      "description": "解除指定接触关系并重新计算可用动作资源。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

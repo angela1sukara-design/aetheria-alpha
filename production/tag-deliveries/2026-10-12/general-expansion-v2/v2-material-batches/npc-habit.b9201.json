@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-habit.b9201",
+  "library": "npc-habit",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-habit.b9201.0001",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "列清单",
+      "description": "做事前以列表组织待办内容的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0002",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "提前到场",
+      "description": "为约定活动预留提前抵达时间的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0003",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "留存票据",
+      "description": "将交易或办理凭据保留以备核对的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0004",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "固定物品位置",
+      "description": "将常用物品放回约定位置的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0005",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "分段休息",
+      "description": "在较长活动中安排短暂休息的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0006",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "夜间阅读",
+      "description": "在夜间闲暇时阅读的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0007",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "晨间散步",
+      "description": "在清晨安排轻度步行活动的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0008",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "定期清洁",
+      "description": "按一定周期整理清洁使用空间的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0009",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "重复核对",
+      "description": "在关键操作前后再次检查的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0010",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "先做记录",
+      "description": "先保存要点再处理后续事项的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0011",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "预留余量",
+      "description": "安排时间或资源时保留一定缓冲的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0012",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "先听后答",
+      "description": "听完对方表达后再作回应的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0013",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "保持联络",
+      "description": "与已建立关系的人定期互通近况的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0014",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "整理工具",
+      "description": "工作前后将工具归位检查的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0015",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "睡前规划",
+      "description": "在休息前安排下一日主要事项的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0016",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "饮水提醒",
+      "description": "通过提醒或固定时段照顾饮水需要的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0017",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "轻声说话",
+      "description": "在日常交谈中控制音量的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0018",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "分类收藏",
+      "description": "将收藏物按个人标准分组保存的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0019",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "先问用途",
+      "description": "在接受物品或任务前询问其用途的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-habit.b9201.0020",
+      "category": "npc-habit",
+      "subcategory": "习惯概念",
+      "text": "结束后收尾",
+      "description": "在活动结束后处理归还与清理的习惯。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

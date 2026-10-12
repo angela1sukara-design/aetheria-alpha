@@ -1,0 +1,669 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "daily-action.b9201",
+  "library": "daily-action",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-action.b9201.0001",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "站立",
+      "description": "以身体允许的支承结构保持直立或相应竖向姿态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0002",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "坐下",
+      "description": "将身体转移到允许坐支承的位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0003",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "起身",
+      "description": "从坐卧或其他支承姿态转移到站立等姿态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0004",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "蹲下",
+      "description": "降低身体重心并保持相应下肢或替代支撑的姿态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0005",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "跪姿",
+      "description": "以允许的膝部或相应结构参与支承的姿态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0006",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "卧姿",
+      "description": "以身体较大表面或相应结构接触支承面的姿态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0007",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "倚靠",
+      "description": "让已有支撑面承担部分身体负荷的姿态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0008",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "俯身",
+      "description": "躯干向前或目标方向倾斜的姿态动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0009",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "伸直身体",
+      "description": "将相应结构从弯曲状态向较直姿态调整。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0010",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "转身",
+      "description": "改变身体整体朝向的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0011",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "侧步",
+      "description": "主要向身体侧方移动支承位置的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0012",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "后退",
+      "description": "主要向身体后方改变位置的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0013",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "靠近",
+      "description": "缩小与明确目标之间距离的动作意图。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0014",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "拉开距离",
+      "description": "增大与明确目标之间距离的动作意图。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0015",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "面向",
+      "description": "将身体或观察方向朝向指定对象的姿态关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0016",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "转向别处",
+      "description": "将当前朝向改变到另一个指定方向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0017",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "安放双手",
+      "description": "将已有双手放到允许停留的位置，不创建接触许可。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0018",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "交叠手臂",
+      "description": "将已有上肢以相应方式交叠的姿态动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0019",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "低头",
+      "description": "改变头部方向使观察或姿态向下的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0020",
+      "category": "daily-action",
+      "subcategory": "姿态动作",
+      "text": "抬头",
+      "description": "改变头部方向使观察或姿态向上的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0021",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "提起",
+      "description": "将明确物件向较高位置移动的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0022",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "放低",
+      "description": "将明确物件向较低位置移动的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0023",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "推动",
+      "description": "通过施力使对象向远离接触方的方向移动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0024",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "拉动",
+      "description": "通过施力使对象向接近接触方的方向移动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0025",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "携带",
+      "description": "在移动过程中维持物件与携带者的相对关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0026",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "拖移",
+      "description": "让对象在接触面上滑动并改变位置的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0027",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "转动物件",
+      "description": "使明确对象围绕指定轴或支点改变朝向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0028",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "滑动物件",
+      "description": "使明确对象沿接触表面改变位置的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0029",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "插入",
+      "description": "将对象的一部分或全部送入匹配开口的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0030",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "取出",
+      "description": "将对象从已知容置位置移出的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0031",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "打开",
+      "description": "将可开闭对象移到开放状态的动作意图。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0032",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "合上",
+      "description": "将可开闭对象移到闭合状态的动作意图。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0033",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "握住",
+      "description": "以可用握持结构建立对对象的控制关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0034",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "松开",
+      "description": "结束明确的握持或固定关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0035",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "悬挂",
+      "description": "将对象支承在允许挂接的位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0036",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "堆放",
+      "description": "将多个物件按支承关系逐层放置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0037",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "铺开",
+      "description": "将可展开对象分布到较大的指定表面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0038",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "包裹",
+      "description": "让外层材料围住指定对象的动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0039",
+      "category": "daily-action",
+      "subcategory": "移动操作",
+      "text": "解开固定",
+      "description": "解除已存在且允许解除的固定关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0040",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "申报",
+      "description": "向受理方提交指定事项与必要资料的请求。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0041",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "备案",
+      "description": "将指定资料提交给有权记录方留存的手续。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0042",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "核验",
+      "description": "按规定来源核对身份、凭证或事项的一致性。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0043",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "受理",
+      "description": "确认接收符合入口条件的申请或事务。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0044",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "审批",
+      "description": "由有权主体按明示标准处理待决请求。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0045",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "授权",
+      "description": "在明确范围与期限内授予他方指定权限。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0046",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "委托",
+      "description": "将明确事项交由另一主体按约定代为处理。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0047",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "转交",
+      "description": "将事项或物品交给明确的后续接收方。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0048",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "撤回",
+      "description": "在允许条件下取消本人尚可撤回的请求。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0049",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "续期",
+      "description": "对已有资格或约定申请延长有效期限。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9201.0050",
+      "category": "daily-action",
+      "subcategory": "事务动作",
+      "text": "变更",
+      "description": "按允许程序修改已登记事项的指定字段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}
