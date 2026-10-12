@@ -46,16 +46,7 @@
     ],
     "migrations": []
   },
-  "variables": [
-    {
-      "id": "district:health",
-      "label": "体力",
-      "initial": 40,
-      "min": 0,
-      "max": 40,
-      "unit": ""
-    }
-  ],
+  "variables": [],
   "flags": [
     {
       "id": "district:flag.road_report",
@@ -4545,7 +4536,7 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 8
         },
         {
@@ -4577,7 +4568,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 25
         },
         {
@@ -4614,7 +4605,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 10
         },
         {
@@ -4668,7 +4659,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 12
         },
         {
@@ -4731,7 +4722,7 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 5
         },
         {
@@ -4827,7 +4818,7 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 8
         },
         {
@@ -4859,7 +4850,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 25
         },
         {
@@ -4896,7 +4887,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 10
         },
         {
@@ -4950,7 +4941,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 12
         },
         {
@@ -5013,7 +5004,7 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 5
         },
         {
@@ -5109,7 +5100,7 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 8
         },
         {
@@ -5141,7 +5132,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 25
         },
         {
@@ -5178,7 +5169,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 10
         },
         {
@@ -5232,7 +5223,7 @@
       "effects": [
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 12
         },
         {
@@ -5295,7 +5286,7 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
+          "id": "core:health",
           "amount": 5
         },
         {
@@ -5336,8 +5327,8 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
-          "amount": 40
+          "id": "core:health",
+          "amount": 100
         },
         {
           "op": "var.change",
@@ -5360,8 +5351,8 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
-          "amount": 40
+          "id": "core:health",
+          "amount": 100
         },
         {
           "op": "var.change",
@@ -5384,8 +5375,8 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
-          "amount": 40
+          "id": "core:health",
+          "amount": 100
         },
         {
           "op": "var.change",
@@ -5408,8 +5399,8 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
-          "amount": 40
+          "id": "core:health",
+          "amount": 100
         },
         {
           "op": "var.change",
@@ -5432,8 +5423,8 @@
         },
         {
           "op": "var.change",
-          "id": "district:health",
-          "amount": 40
+          "id": "core:health",
+          "amount": 100
         },
         {
           "op": "var.change",

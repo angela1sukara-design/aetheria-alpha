@@ -35,14 +35,163 @@
     },
     {
       "id": "core:health",
-      "label": "体况",
+      "label": "生命",
       "initial": 100,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:stamina",
+      "label": "体力",
+      "initial": 100,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:sanity",
+      "label": "理智",
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:skillResource",
+      "label": "技能资源",
+      "initial": 100,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:attack",
+      "label": "攻击",
+      "initial": 10,
+      "min": 0,
+      "max": 999,
+      "unit": ""
+    },
+    {
+      "id": "core:defense",
+      "label": "防御",
+      "initial": 10,
+      "min": 0,
+      "max": 999,
+      "unit": ""
+    },
+    {
+      "id": "core:speed",
+      "label": "速度",
+      "initial": 10,
+      "min": 0,
+      "max": 999,
+      "unit": ""
+    },
+    {
+      "id": "core:skillPower",
+      "label": "技能强度",
+      "initial": 10,
+      "min": 0,
+      "max": 999,
+      "unit": ""
+    },
+    {
+      "id": "core:crit",
+      "label": "暴击",
+      "initial": 5,
+      "min": 0,
+      "max": 100,
+      "unit": "%"
+    },
+    {
+      "id": "core:hit",
+      "label": "命中",
+      "initial": 80,
+      "min": 0,
+      "max": 100,
+      "unit": "%"
+    },
+    {
+      "id": "core:evasion",
+      "label": "闪避",
+      "initial": 10,
+      "min": 0,
+      "max": 100,
+      "unit": "%"
+    },
+    {
+      "id": "core:actionPoints",
+      "label": "行动点",
+      "initial": 3,
+      "min": 0,
+      "max": 10,
+      "unit": ""
+    },
+    {
+      "id": "core:desire",
+      "label": "欲望",
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:submissionTendency",
+      "label": "顺从倾向",
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:stress",
+      "label": "压力",
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:confidence",
+      "label": "自信",
+      "initial": 50,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:affection",
+      "label": "爱意",
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:trust",
+      "label": "信任倾向",
+      "initial": 0,
+      "min": 0,
+      "max": 100,
+      "unit": ""
+    },
+    {
+      "id": "core:aftertaste",
+      "label": "余韵",
+      "initial": 0,
       "min": 0,
       "max": 100,
       "unit": ""
     }
   ],
-  "flags": [],
+  "flags": [
+    {
+      "id": "core:flag.sanity_break",
+      "initial": false
+    }
+  ],
   "hooks": [],
   "locations": [],
   "routes": [],

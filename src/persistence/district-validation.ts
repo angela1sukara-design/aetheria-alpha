@@ -20,6 +20,7 @@ export function validateDistrictState(s:GameState,r:Registry):void {
   const scene=d.scene,i=r.interactions.find(x=>x.id===scene.definitionId),pose=i?.poses.find(p=>p.id===scene.poseId);
   if(!i||!pose||!['active','paused'].includes(scene.phase))throw Error('互动状态无效。');
   int(scene.turn);
+  int(scene.arousal,0,100);int(scene.restraint,0,100);
   if(scene.actors.length!==2||scene.actors[0]?.id!=='player'||scene.actors[1]?.id!==i.npcId)throw Error('互动角色无效。');
   for(const a of scene.actors){
    if(s.meta.schemaVersion===3){if(a.entity)throw Error('v3 场景不能带实体引用。');validateBody(a.body,r);}

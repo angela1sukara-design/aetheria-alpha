@@ -1,11 +1,12 @@
 import { upgradeFoundation, foundationAddition } from './foundation-migration.ts';
+import { isCoreExpandUpgradeTarget, normalizePlayerFlags, normalizePlayerVariables, normalizeSceneTemps } from './vars-migration.ts';
 import { shape } from '../content/foundation-schema.ts';
 import { clone, stableJson } from '../core/types.ts';
 import type { GameState, Id } from '../core/types.ts';
 import { validateBody, instantiateBody } from '../engine/body.ts';
 import { STAGE1_PACKS } from './stage1-packs.ts';
 import { STAGE2_PACKS } from './stage2-packs.ts';
-import { STAGE3_PACKS, STAGE3_FIX1_PACKS } from './stage3-packs.ts';
+import { STAGE3_PACKS, STAGE3_FIX1_PACKS, STAGE3_PACKS_LEGACY, STAGE3_FIX1_PACKS_LEGACY } from './stage3-packs.ts';
 import { validateTFState } from './tf-validation.ts';
 import { validateNPCState } from './npc-validation.ts';
 import { createNPCStates } from '../engine/npc.ts';
@@ -113,17 +114,31 @@ function sortedRefs(refs: unknown): string {
 }
 /** 只允许已发布官方指纹精确升级，不能借补丁接纳改过内容的存档。 */
 function officialRepairInstalled(registry: Registry): boolean {
-  return sortedRefs(registry.packs) === sortedRefs(STAGE3_FIX1_PACKS);
+  return sortedRefs(registry.packs) === sortedRefs(STAGE3_FIX1_PACKS)
+    || isCoreExpandUpgradeTarget(registry.packs, STAGE3_FIX1_PACKS)
+    || isCoreExpandUpgradeTarget(registry.packs, STAGE3_FIX1_PACKS_LEGACY);
+}
+function applyVarExpand(state: GameState, registry: Registry): GameState {
+  state.meta.packs = clone(registry.packs);
+  normalizePlayerVariables(state, registry);
+  normalizePlayerFlags(state, registry);
+  normalizeSceneTemps(state);
+  return state;
 }
 function upgradeStage3(raw: unknown, registry: Registry): { state: unknown; upgraded: boolean } {
   const meta = (raw as GameState | null)?.meta;
   if (meta && Array.isArray(meta.packs) && sortedRefs(meta.packs) === sortedRefs(registry.packs)) return { state: raw, upgraded: false };
-  if ((raw as GameState)?.district && meta?.packs?.every(ref=>registry.packs.some(p=>p.id===ref.id&&p.version===ref.version&&p.hash===ref.hash)) && registry.packs.filter(p=>!meta.packs.some(ref=>ref.id===p.id)).every(p=>registry.appendOnlyPackIds.includes(p.id))) { const state=clone(raw) as GameState;state.meta.packs=clone(registry.packs);return {state,upgraded:true}; }
-  if (!meta || !Array.isArray(meta.packs) || sortedRefs(meta.packs) !== sortedRefs(STAGE3_PACKS)) return { state: raw, upgraded: false };
-  if (!officialRepairInstalled(registry)) throw new Error('PACK_MISMATCH：第三阶段修复只支持官方原始包精确升级。');
-  const state = clone(raw) as GameState;
-  state.meta.packs = clone(registry.packs);
-  return { state, upgraded: true };
+  if ((raw as GameState)?.district && meta?.packs?.every(ref=>registry.packs.some(p=>p.id===ref.id&&p.version===ref.version&&p.hash===ref.hash)) && registry.packs.filter(p=>!meta.packs.some(ref=>ref.id===p.id)).every(p=>registry.appendOnlyPackIds.includes(p.id))) { const state=clone(raw) as GameState;return {state:applyVarExpand(state,registry),upgraded:true}; }
+  // 官方第三阶段 / 修复包（含扩表前 legacy 指纹）→ 当前安装
+  if (meta && Array.isArray(meta.packs) && officialRepairInstalled(registry)
+    && (sortedRefs(meta.packs) === sortedRefs(STAGE3_PACKS)
+      || sortedRefs(meta.packs) === sortedRefs(STAGE3_PACKS_LEGACY)
+      || sortedRefs(meta.packs) === sortedRefs(STAGE3_FIX1_PACKS)
+      || sortedRefs(meta.packs) === sortedRefs(STAGE3_FIX1_PACKS_LEGACY)
+      || isCoreExpandUpgradeTarget(registry.packs, meta.packs as {id:string;version:string;hash:string}[]))) {
+    return { state: applyVarExpand(clone(raw) as GameState, registry), upgraded: true };
+  }
+  return { state: raw, upgraded: false };
 }
 /** 精确迁移只增加新模块；旧状态仍需通过完整校验，存储 IO 不在此函数。 */
 function migrateLegacy(raw: unknown, registry: Registry, version: 1 | 2): GameState {
@@ -135,12 +150,15 @@ function migrateLegacy(raw: unknown, registry: Registry, version: 1 | 2): GameSt
   if (!meta || Object.keys(meta).sort().join('|') !== ['schemaVersion', 'engineVersion', 'revision', 'packs'].sort().join('|') || (meta.schemaVersion as number) !== version || (meta.engineVersion as string) !== (version === 1 ? '0.1' : '0.1-stage2') || !player || Object.keys(player).sort().join('|') !== (version === 1 ? 'flags|variables' : 'body|flags|variables')) throw new Error('旧存档版本或玩家字段不合法。');
   const expectedRefs = version === 1 ? STAGE1_PACKS : STAGE2_PACKS;
   if (sortedRefs(meta.packs) !== sortedRefs(expectedRefs) || !officialRepairInstalled(registry)) throw new Error('PACK_MISMATCH：只支持官方已发布原始包的精确升级，其他存档保留并隔离。');
-  const oldFlags = registry.flags.filter(f => !f.id.startsWith('aetheria-social:'));
+  const oldFlags = registry.flags.filter(f => !f.id.startsWith('aetheria-social:') && !f.id.startsWith('core:'));
   if (!player.flags || typeof player.flags !== 'object' || Array.isArray(player.flags) || Object.keys(player.flags).sort().join('|') !== oldFlags.map(f => f.id).sort().join('|')) throw new Error('旧标记集合不符合迁移协议。');
   const flags = { ...player.flags, ...Object.fromEntries(registry.flags.filter(f => f.id.startsWith('aetheria-social:')).map(f => [f.id, f.initial])) };
   const template = registry.bodyTemplates.find(x => x.initial);
   if (!template) throw new Error('升级所需身体模板缺失。');
-  return { ...old, meta: { ...meta, schemaVersion: 3, engineVersion: '0.1-stage3', packs: clone(registry.packs) }, player: { ...player, flags, body: version === 1 ? instantiateBody(template) : player.body }, tfQueues: version === 1 ? [] : old.tfQueues, npcs: createNPCStates(registry) } as unknown as GameState;
+  const migrated = { ...old, meta: { ...meta, schemaVersion: 3, engineVersion: '0.1-stage3', packs: clone(registry.packs) }, player: { ...player, flags, body: version === 1 ? instantiateBody(template) : player.body }, tfQueues: version === 1 ? [] : old.tfQueues, npcs: createNPCStates(registry) } as unknown as GameState;
+  normalizePlayerVariables(migrated, registry);
+  normalizePlayerFlags(migrated, registry);
+  return migrated;
 }
 export class SaveCodec {
   readonly registry: Registry;
@@ -185,22 +203,26 @@ export class SaveCodec {
         if (old.status !== 'ready') return old;
         let state = clone(old.state);
         state.meta.packs = clone(this.registry.packs);
-        for (const v of this.registry.variables) if (!(v.id in state.player.variables)) state.player.variables[v.id] = v.initial;
-        for (const f of this.registry.flags) if (!(f.id in state.player.flags)) state.player.flags[f.id] = f.initial;
+        normalizePlayerVariables(state, this.registry);
+        normalizePlayerFlags(state, this.registry);
         state.npcs.push(...createNPCStates(this.registry).filter(n => !state.npcs.some(x => x.definitionId === n.definitionId)));
         state.district = initialDistrict();
         if(this.registry.npcBodies.length)state=upgradeFoundation(state,this.registry);
+        normalizeSceneTemps(state);
         validateState(state,this.registry);
         return {status:'ready',state,registry:this.registry,migration:'旧版存档已升级：追加街区模块，原有经历、身体与事务保持。点击保存后写入 Alpha 0.2。'};
       }
       if(version>=3&&this.registry.contentPacks.some(p=>p.manifest.id==='aetheria/foundation')&&foundationAddition(envelope.payload.state,this.registry)){
         const before=envelope.payload.state as GameState;const oldRegistry=await loadPacks(this.registry.contentPacks.filter(p=>before.meta.packs.some(ref=>ref.id===p.manifest.id)));
-        validateState(before,oldRegistry);const upgraded=upgradeFoundation(before,this.registry);upgraded.meta.packs=clone(this.registry.packs);validateState(upgraded,this.registry);
+        validateState(before,oldRegistry);const upgraded=upgradeFoundation(before,this.registry);upgraded.meta.packs=clone(this.registry.packs);normalizePlayerVariables(upgraded,this.registry);normalizePlayerFlags(upgraded,this.registry);normalizeSceneTemps(upgraded);validateState(upgraded,this.registry);
         return {status:'ready',state:upgraded,registry:this.registry,...(version===3||oldRegistry.packs.length!==this.registry.packs.length?{migration:'旧版存档已升级：新增底层参数接口；原身体、记忆、阶段、账本和事件进度保留。旧场景副本不作为 NPC 身体。'}:{})};
       }
       const migrated = version < 3;
       const repair = migrated ? undefined : upgradeStage3(envelope.payload.state, this.registry);
       let state = migrated ? migrateLegacy(envelope.payload.state, this.registry, version) : repair!.state;
+      normalizePlayerVariables(state as GameState, this.registry);
+      normalizePlayerFlags(state as GameState, this.registry);
+      normalizeSceneTemps(state as GameState);
       validateState(state, this.registry);
       const sceneUpgrade=(state as GameState).meta.schemaVersion===3&&!!(state as GameState).district?.scene;
       if(sceneUpgrade){state=upgradeFoundation(state as GameState,this.registry);validateState(state,this.registry);}

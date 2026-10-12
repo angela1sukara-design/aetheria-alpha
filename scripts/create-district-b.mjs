@@ -2,23 +2,23 @@ import {readFile,writeFile}from'node:fs/promises';import{kit}from'./content-kit.
 const p=JSON.parse(await readFile('content/district/pack.json','utf8'));
 if(p.enemies.length)throw Error('B content already exists');
 const {id,text,has,set,change,time,hooks,action,graph,go}=kit(p),loc=k=>id('location.'+k),clinic='aetheria-tf:location.clinic';
-p.variables.push({id:id('health'),label:'体力',initial:40,min:0,max:40,unit:''});
+// district:health deprecated — unified HP is core:health (see docs/NOTES-vars-engine.md)
 for(const [move,label]of [['attack','进攻 · 精力−3'],['guard','防守 · 减伤8、精力+4'],['recover','临时包扎 · 精力−6、体力+10'],['flee','寻找出口撤离']])action('combat.'+move,label,'你根据对方的意图行动。',[{op:'combat.turn',move}],[],id('hook.runtime'));
 for(const [key,name,hp,reward,intents,location,defeatIntro]of [
  ['scavenger','失控搬运机',30,12,[{label:'转动机械臂横扫',damage:9,guard:0,drain:0},{label:'收拢装甲蓄力',damage:3,guard:7,drain:0},{label:'向前撞击',damage:14,guard:0,drain:1}],loc('canal'),'搬运机将你的退路推到排水栏杆边。你失去力气，却仍能发出求助信号。'],
  ['collector','拦路收债客',38,16,[{label:'观察并护住要害',damage:4,guard:9,drain:0},{label:'逼近，试图耗尽你的精力',damage:8,guard:1,drain:5},{label:'抢先重击',damage:12,guard:0,drain:0}],loc('station'),'收债客没有得到合法凭据，转身避开巡查。你坐在检查站外，衣物与力气都需要整理。'],
  ['gel','渠底黑胶群落',26,10,[{label:'缓慢靠近，堵住低处',damage:5,guard:3,drain:3},{label:'回缩并凝成坚硬外层',damage:2,guard:11,drain:0},{label:'甩出黏性外层',damage:11,guard:0,drain:2}],loc('canal'),'黑胶外层粘住了外衣，你暂时无法起身。你仍然保持清醒；这不是自动的永久共生或人格变化。']]){
  const defeat=graph('defeat.'+key,[
- {id:'start',text:defeatIntro+'\n\n你摸到应急呼叫器。可以呼叫值班员，也能先检查自己的伤处。没有图像时，这段正式文字承担完整演出。',choices:[go('发出求助信号','help',[set('injury'),time(10)]),go('先检查可活动部位','assess',[set('injury'),time(5)]),go('沿安全绳缓慢退出','end',[set('injury'),change('district:health',8),change('energy',10),time(45)],[],'你沿安全线抵达休息处，保留伤后恢复记录。')]},
- {id:'help',text:'值班员找到你，先问你能否清楚回应。你说明现场情况，对方确认安全后才扶你离开危险位置。你可以接受完整处理，也可以仅要求脱离现场。',choices:[go('接受基础护理，留下事故记录','end',[change('district:health',25),change('energy',25),set('defeat.reported'),time(60)],[],'护理员处理了擦伤，事故记入道路通报。'),go('只接受脱离危险的协助','end',[change('district:health',10),change('energy',15),time(30)],[],'你在安全位置休息，后续仍可前往诊室。')]},
- {id:'assess',text:'你确认自己仍能控制身体。最糟的疼痛来自疲劳和擦伤；需要恢复，却没有任何未经选择的永久变形。求助器还在手边。',choices:[go('呼叫值班员','help',[time(5)]),go('自行转移到安全休息区','end',[change('district:health',12),change('energy',15),time(60)],[],'你用更慢的方式回到安全区，记下以后要避开的路线。')]},
+ {id:'start',text:defeatIntro+'\n\n你摸到应急呼叫器。可以呼叫值班员，也能先检查自己的伤处。没有图像时，这段正式文字承担完整演出。',choices:[go('发出求助信号','help',[set('injury'),time(10)]),go('先检查可活动部位','assess',[set('injury'),time(5)]),go('沿安全绳缓慢退出','end',[set('injury'),change('core:health',8),change('energy',10),time(45)],[],'你沿安全线抵达休息处，保留伤后恢复记录。')]},
+ {id:'help',text:'值班员找到你，先问你能否清楚回应。你说明现场情况，对方确认安全后才扶你离开危险位置。你可以接受完整处理，也可以仅要求脱离现场。',choices:[go('接受基础护理，留下事故记录','end',[change('core:health',25),change('energy',25),set('defeat.reported'),time(60)],[],'护理员处理了擦伤，事故记入道路通报。'),go('只接受脱离危险的协助','end',[change('core:health',10),change('energy',15),time(30)],[],'你在安全位置休息，后续仍可前往诊室。')]},
+ {id:'assess',text:'你确认自己仍能控制身体。最糟的疼痛来自疲劳和擦伤；需要恢复，却没有任何未经选择的永久变形。求助器还在手边。',choices:[go('呼叫值班员','help',[time(5)]),go('自行转移到安全休息区','end',[change('core:health',12),change('energy',15),time(60)],[],'你用更慢的方式回到安全区，记下以后要避开的路线。')]},
  {id:'end',exit:true,text:'危险已经结束。你的伤后经历留在记录中；可以休息、去诊室，或按自己的节奏继续生活。你回到所在地点的安全入口。'}]);
  const victory=graph('victory.'+key,[{id:'start',text:`${name}失去了继续交锋的能力。你检查退路，确认周围的人没有受伤。报酬只在战斗结束时结算一次。`,choices:[go('记下现场，回到安全入口','end',[set('victory.'+key),time(5)])]},{id:'end',exit:true,text:'你离开交锋区域，街区的日常仍在继续。'}]);
- const escape=graph('escape.'+key,[{id:'start',text:'你离开了敌人的攻击范围。出口灯还亮着，前方是能歇脚的安全区域。没有胜利报酬，但你保住了继续生活的机会。',choices:[go('确认没有追击后离开','end',[time(10),change('district:health',5)])]},{id:'end',exit:true,text:'你回到安全入口。接下来可以休息或重新规划路线。'}]);
+ const escape=graph('escape.'+key,[{id:'start',text:'你离开了敌人的攻击范围。出口灯还亮着，前方是能歇脚的安全区域。没有胜利报酬，但你保住了继续生活的机会。',choices:[go('确认没有追击后离开','end',[time(10),change('core:health',5)])]},{id:'end',exit:true,text:'你回到安全入口。接下来可以休息或重新规划路线。'}]);
  p.enemies.push({id:id('enemy.'+key),name,hp,reward,intents,victoryEventId:victory,defeatEventId:defeat,escapeEventId:escape});
  action('battle.'+key,'调查危险：'+name,`你进入标有风险警示的区域，遇到了${name}。`,[{op:'combat.start',id:id('enemy.'+key)}],[],hooks.get(location),null,'explore');
 }
-for(const l of p.locations)action('heal.'+l.id.split('.')[1],'在安全区处理伤势','你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。',[time(60),change('district:health',40),change('energy',25)],[],l.actionHook);
+for(const l of p.locations)action('heal.'+l.id.split('.')[1],'在安全区处理伤势','你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。',[time(60),change('core:health',100),change('energy',25)],[],l.actionHook);
 // Material changes remain actual BodyGraph replacements, independently of identity.
 const hand={id:id('part.hand.gel'),label:'稳定的黑胶共生手部',kind:'hand',material:'organic',capabilities:['grasp'],anchors:[]};p.bodyParts=[hand];
 p.bodyPatches=[{id:id('patch.gel'),label:'黑胶共生手部适应',summary:'双手表层与黑胶共生，保留自主控制',operations:['left','right'].map(side=>({type:'replace',partId:'hand.'+side,definitionId:hand.id}))},{id:id('patch.hands.restore'),label:'恢复有机手部',summary:'手部恢复有机结构',operations:['left','right'].map(side=>({type:'replace',partId:'hand.'+side,definitionId:'aetheria-tf:part.hand'}))}];

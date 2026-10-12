@@ -12,7 +12,7 @@
           {
             "id": "engine/core",
             "version": "0.1.0",
-            "hash": "aab3c415bcccdd459d21e7a0d0f4f3d636008b6e6809860452ec89787a7400f7"
+            "hash": "da552b1fe226a6bdb0bd972a7d7e4535a779b210f96617532214c11322810f3a"
           },
           {
             "id": "aetheria/world",
@@ -48,11 +48,30 @@
         "variables": {
           "core:money": 132,
           "core:energy": 0,
-          "core:health": 100
+          "core:health": 100,
+          "core:stamina": 100,
+          "core:sanity": 0,
+          "core:skillResource": 100,
+          "core:attack": 10,
+          "core:defense": 10,
+          "core:speed": 10,
+          "core:skillPower": 10,
+          "core:crit": 5,
+          "core:hit": 80,
+          "core:evasion": 10,
+          "core:actionPoints": 3,
+          "core:desire": 0,
+          "core:submissionTendency": 0,
+          "core:stress": 0,
+          "core:confidence": 50,
+          "core:affection": 0,
+          "core:trust": 0,
+          "core:aftertaste": 0
         },
         "flags": {
           "aetheria:flag.notice_helped": false,
-          "aetheria-social:flag.order_checked": false
+          "aetheria-social:flag.order_checked": false,
+          "core:flag.sanity_break": false
         },
         "body": {
           "templateId": "aetheria-tf:body.human",
@@ -582,5 +601,5 @@
       }
     }
   },
-  "checksum": "3e8ff22167318df5c7c9114b572eb5835797cd9f327b5be018cafd86c48bbbac"
+  "checksum": "05a4dea8f9a42b0361c228f27a9b2ee45f53a65fc77d7167aafd142ac6a47475"
 }

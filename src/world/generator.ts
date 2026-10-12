@@ -104,7 +104,7 @@ export class WorldGenerator {
       }
       // 所有地点免费恢复，旅行不扣精力，保证贫穷/耗尽时仍可继续游玩。
       action(`rest.${i}`, '找个座位休息', hook, [{ op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:energy', amount: 12 }], [], 'daily', '你在公共座位休息。精力逐渐恢复，街区的日程仍在推进。');
-      if (t.data.service === 'clinic') action(`care.${i}`, '使用免费体况恢复座位', hook, [{ op: 'clock.advance', minutes: 45 }, { op: 'var.change', id: 'core:energy', amount: 6 }, { op: 'var.change', id: 'core:health', amount: 8 }], [], 'daily', '你在开放的护理座位补充饮水并休息，体况逐渐恢复。');
+      if (t.data.service === 'clinic') action(`care.${i}`, '使用免费生命恢复座位', hook, [{ op: 'clock.advance', minutes: 45 }, { op: 'var.change', id: 'core:energy', amount: 6 }, { op: 'var.change', id: 'core:health', amount: 8 }], [], 'daily', '你在开放的护理座位补充饮水并休息，生命逐渐恢复。');
       action(`wait.${i}`, '等候一小时', hook, [{ op: 'clock.advance', minutes: 60 }]);
       action(`wait.short.${i}`, '在附近等候一刻钟', hook, [{ op: 'clock.advance', minutes: 15 }], [], 'daily', '你等候了一刻钟，居民按原来的日程活动。');
       action(`work.${i}`, `参与${t.data.economy[0]}`, hook, [{ op: 'var.change', id: 'core:energy', amount: -5 }, { op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:money', amount: 5 }], [{ op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你按现场约定完成了一段工作，收到报酬。');

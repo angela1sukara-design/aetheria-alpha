@@ -179,7 +179,7 @@ test('第一阶段真实存档精确升级；时间/金钱/事件/随机/账本�
   const store = new MemorySaveStore(); await store.write('manual', text); const repository = new SaveRepository(new SaveCodec(registry), store), result = await repository.load();
   if (result.status !== 'ready') assert.fail('升级未成功'); assert.match(result.migration!, /升级/);
   for (const key of ['clock', 'world', 'eventInstances', 'activeEventStack', 'rng', 'ledger'] as const) assert.deepEqual(result.state[key], old[key]);
-  assert.deepEqual(result.state.player.variables, old.player.variables); for (const [id, value] of Object.entries(old.player.flags)) assert.equal(result.state.player.flags[id as Id], value); assert.equal(result.state.player.flags['aetheria-social:flag.order_checked'], false); assert.equal(result.state.player.body!.parts.length, 12); assert.deepEqual(result.state.tfQueues, []);
+  for (const [id, value] of Object.entries(old.player.variables)) assert.equal(result.state.player.variables[id as Id], value); assert.equal(result.state.player.variables['core:stamina'], 100); for (const [id, value] of Object.entries(old.player.flags)) assert.equal(result.state.player.flags[id as Id], value); assert.equal(result.state.player.flags['aetheria-social:flag.order_checked'], false); assert.equal(result.state.player.flags['core:flag.sanity_break'], false); assert.equal(result.state.player.body!.parts.length, 12); assert.deepEqual(result.state.tfQueues, []);
   assert.equal(await store.read('manual'), text); // 读取/迁移不会覆盖原存档。
   const engine = new ActionExecutor(registry, result.state); assert.equal(act(engine, 'notice.help').ok, true); await repository.save(engine.snapshot()); const next = await repository.load(); assert.equal(next.status, 'ready');
 });

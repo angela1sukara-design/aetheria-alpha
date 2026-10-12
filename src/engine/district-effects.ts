@@ -10,6 +10,21 @@ import { RuleError } from '../core/errors.ts';
 import { bodyTraits } from './body.ts';
 import { draw } from './rng.ts';
 import { npcPresent, adultNPCEligibility } from './npc.ts';
+import { PLAYER_HP_ID, SANITY_BREAK_FLAG, SANITY_DEFEAT_DELTA, SANITY_ID } from '../persistence/vars-migration.ts';
+
+/** 战败理智挂钩：上涨占位公式；满值打 Bad End 标记（事件入口待接）。 */
+function applyDefeatSanity(s: GameState, r: Registry, c: EffectContext): void {
+  const def = r.variable(SANITY_ID);
+  const before = s.player.variables[SANITY_ID] ?? def.initial;
+  const after = Math.min(def.max, before + SANITY_DEFEAT_DELTA);
+  s.player.variables[SANITY_ID] = after;
+  if (before !== after) c.changes.push({ label: def.label, before, after });
+  if (after >= def.max) {
+    s.player.flags[SANITY_BREAK_FLAG] = true;
+    c.resolvedTexts.push('【占位】理智已满：Bad End 入口尚未接入，仅留下标记 core:flag.sanity_break。');
+  }
+}
+
 export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:EffectContext,apply:(e:Effect[],s:GameState,r:Registry,c:EffectContext)=>void):void {
  const d=district(s);
  if(e.op==='player.create') {if(d.profile.created)throw new RuleError('CREATED','角色已经创建。');d.profile={name:e.name,ageYears:e.ageYears,created:true,adultOptional:false};c.resolvedTexts.push(`${e.name}，${e.ageYears}岁。你在租约上签下名字，把这座城市当作新的起点。`);}
@@ -22,7 +37,8 @@ export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:Ef
   const pose=def.poses.find(p=>!p.requires||bodyTraits(s.player.body,r)[p.requires]>0);if(!pose||!s.player.body)throw new RuleError('SCENE_BODY','没有兼容的姿态。');
   const npcBody=entityBody(s,{kind:'npc',id:def.npcId});if(!npcBody.known)throw new RuleError('SCENE_BODY_UNKNOWN',npcBody.reason);
   s.meta.schemaVersion=4;s.meta.engineVersion='0.2-foundation';s.environment??={};
-  d.scene={definitionId:e.id,phase:'active',poseId:pose.id,turn:0,actors:[{id:'player',entity:PLAYER,facing:pose.facing,zone:pose.zone},{id:def.npcId,entity:{kind:'npc',id:def.npcId},facing:'front',zone:'near'}],contacts:[]};
+  // arousal/restraint：场景临时；exit 时随 scene=null 清零。离场衰减公式 TODO。
+  d.scene={definitionId:e.id,phase:'active',poseId:pose.id,turn:0,actors:[{id:'player',entity:PLAYER,facing:pose.facing,zone:pose.zone},{id:def.npcId,entity:{kind:'npc',id:def.npcId},facing:'front',zone:'near'}],contacts:[],arousal:0,restraint:0};
   if(!d.discovered.includes(def.id))d.discovered.push(def.id);c.resolvedTexts.push('双方确认可以暂停或离开。你们在约定的位置坐定，尚未建立接触。');
  }
  else if(e.op==='scene.act') {
@@ -38,29 +54,35 @@ export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:Ef
  }
  else if(e.op==='combat.start') {
   const enemy=r.enemies.find(x=>x.id===e.id);if(!enemy||d.combat||d.scene||s.activeEventStack.length)throw new RuleError('COMBAT_CONTEXT','现在不能开始战斗。');
-  if(s.player.variables['district:health']!<1)throw new RuleError('NEED_RECOVERY','需要先休息恢复。');
+  if(s.player.variables[PLAYER_HP_ID]!<1)throw new RuleError('NEED_RECOVERY','需要先休息恢复。');
   d.combat={enemyId:e.id,hp:enemy.hp,turn:0,log:[`${enemy.name}挡住了你的路线。观察对方的意图，再决定行动。`]};
  }
  else if(e.op==='combat.turn') {
   const battle=d.combat;if(!battle)throw new RuleError('NO_COMBAT','当前没有战斗。');
   const enemy=r.enemies.find(x=>x.id===battle.enemyId)!,intent=enemy.intents[battle.turn%enemy.intents.length]!;
   apply([{op:'clock.advance',minutes:5}],s,r,c);
-  const end=(result:'victory'|'defeat'|'escape')=>{d.combat=null;c.resolvedTexts.push(result==='victory'?'你赢得了交锋。':result==='defeat'?'你失去继续战斗的力气，后续仍有恢复路径。':'你找到空隙离开了交锋。');apply([{op:'event.start',id:result==='victory'?enemy.victoryEventId:result==='defeat'?enemy.defeatEventId:enemy.escapeEventId}],s,r,c);};
-  const energy=s.player.variables['core:energy']!,health=s.player.variables['district:health']!;
+  const end=(result:'victory'|'defeat'|'escape')=>{
+    d.combat=null;
+    c.resolvedTexts.push(result==='victory'?'你赢得了交锋。':result==='defeat'?'你失去继续战斗的力气，后续仍有恢复路径。':'你找到空隙离开了交锋。');
+    if(result==='defeat')applyDefeatSanity(s,r,c);
+    apply([{op:'event.start',id:result==='victory'?enemy.victoryEventId:result==='defeat'?enemy.defeatEventId:enemy.escapeEventId}],s,r,c);
+  };
+  const energy=s.player.variables['core:energy']!,health=s.player.variables[PLAYER_HP_ID]!;
+  const hpMax=r.variable(PLAYER_HP_ID).max;
   let line='';
   if(e.move==='flee'&&(battle.turn>0||draw(s,`combat:${c.transactionId}`)<0.65)){end('escape');return;}
   if(e.move==='attack') {if(energy<3)throw new RuleError('EXHAUSTED','进攻需要3点精力，防守可恢复。');s.player.variables['core:energy']=energy-3;const damage=Math.max(1,12+(bodyTraits(s.player.body,r).tailGrip?3:0)-intent.guard);battle.hp=Math.max(0,battle.hp-damage);line=`你的进攻造成${damage}点伤害。`;}
   else if(e.move==='guard'){s.player.variables['core:energy']=Math.min(r.variable('core:energy').max,energy+4);line='你稳住重心，防守并恢复4点精力。';}
-  else if(e.move==='recover'){if(energy<6)throw new RuleError('EXHAUSTED','临时包扎需要6点精力。');s.player.variables['core:energy']=energy-6;s.player.variables['district:health']=Math.min(40,health+10);line='你抓紧空隙包扎，恢复10点体力。';}
+  else if(e.move==='recover'){if(energy<6)throw new RuleError('EXHAUSTED','临时包扎需要6点精力。');s.player.variables['core:energy']=energy-6;s.player.variables[PLAYER_HP_ID]=Math.min(hpMax,health+10);line='你抓紧空隙包扎，恢复10点生命。';}
   else line='你尝试脱离，第一道出口被挡住；下一回合可以安全撤出。';
   if(battle.hp===0){const before=s.player.variables['core:money']!;s.player.variables['core:money']=Math.min(r.variable('core:money').max,before+enemy.reward);c.changes.push({label:'战斗报酬',before,after:s.player.variables['core:money']!});end('victory');return;}
   const damage=e.move==='guard'?Math.max(0,intent.damage-8):intent.damage;
-  s.player.variables['district:health']=Math.max(0,s.player.variables['district:health']!-damage);
+  s.player.variables[PLAYER_HP_ID]=Math.max(0,s.player.variables[PLAYER_HP_ID]!-damage);
   s.player.variables['core:energy']=Math.max(0,s.player.variables['core:energy']!-intent.drain);
   line+=` ${intent.label}，你受到${damage}点伤害。`;
   battle.log.push(line);battle.log=battle.log.slice(-4);battle.turn++;c.resolvedTexts.push(line);
-  c.changes.push({label:'体力',before:health,after:s.player.variables['district:health']!});
-  if(s.player.variables['district:health']===0)end('defeat');
+  c.changes.push({label:'生命',before:health,after:s.player.variables[PLAYER_HP_ID]!});
+  if(s.player.variables[PLAYER_HP_ID]===0)end('defeat');
  }
  else throw new RuleError('MODULE_PENDING','该模块尚未接入。');
 }

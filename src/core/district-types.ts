@@ -61,5 +61,7 @@ export interface DistrictState {
   combat: { enemyId: Id; hp: number; turn: number; log: string[] } | null;
   scene: { definitionId: Id; phase: 'active' | 'paused'; poseId: string; turn: number;
     actors: { id: string; entity?: EntityRef; body?: BodyGraph; facing: 'front' | 'away'; zone: 'near' | 'across' }[];
-    contacts: { playerPartId: string; npcPartId: string; sinceTurn: number }[] } | null;
+    contacts: { playerPartId: string; npcPartId: string; sinceTurn: number }[];
+    /** 场景临时：离场清零；衰减公式待接。 */
+    arousal: number; restraint: number } | null;
 }

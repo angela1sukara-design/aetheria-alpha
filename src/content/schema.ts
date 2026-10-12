@@ -22,7 +22,7 @@ export function parsePack(input: unknown): ContentPack {
     return result;
   }
   function str(value: unknown, path: string): void { if (typeof value !== 'string' || !value.trim() || value.length > 10000) fail(path, '必须是非空字符串（最多10000字符）。'); }
-  function id(value: unknown, path: string): void { if (typeof value !== 'string' || !/^[a-z][a-z0-9_-]*:[a-z][a-z0-9_.-]*$/.test(value)) fail(path, '需要 namespace:id。'); }
+  function id(value: unknown, path: string): void { if (typeof value !== 'string' || !/^[a-z][a-z0-9_-]*:[a-z][a-zA-Z0-9_.-]*$/.test(value)) fail(path, '需要 namespace:id。'); }
   function integer(value: unknown, path: string, min = -1000000, max = 1000000): void { if (!Number.isSafeInteger(value) || (value as number) < min || (value as number) > max) fail(path, `必须是 ${min}–${max} 整数。`); }
   function boolean(value: unknown, path: string): void { if (typeof value !== 'boolean') fail(path, '必须是布尔值。'); }
   function list(value: unknown, path: string, visit: (x: unknown, p: string) => void): void {

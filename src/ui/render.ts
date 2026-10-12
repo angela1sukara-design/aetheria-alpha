@@ -50,7 +50,10 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   byId('scene-return').textContent = scene.mode === 'conversation' ? '← 结束交谈，返回地点' : '← 返回地点';
   byId('actions-title').textContent = scene.active ? '你的选择' : scene.mode === 'conversation' ? '继续交谈' : '下一步';
   const status = byId('status'); status.replaceChildren();
+  // HUD 只展示硬核心；战斗八维/倾向值在 VariableDef 中但不挤状态栏（见 docs/NOTES-vars-engine.md）
+  const hudIds = new Set(['core:money', 'core:energy', 'core:health', 'core:stamina', 'core:sanity', 'core:skillResource']);
   for (const def of registry.variables) {
+    if (!hudIds.has(def.id)) continue;
     const value = view.state.player.variables[def.id]; const stat = element('div', 'stat');
     const heading = element('div', 'stat-heading'); const number = element('span', 'stat-value', String(value));
     number.dataset.stat = def.id; if (def.unit) number.append(element('small', '', def.unit));
