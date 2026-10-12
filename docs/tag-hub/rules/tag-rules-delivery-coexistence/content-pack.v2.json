@@ -2,7 +2,7 @@
   "manifest": {
     "id": "authoring/tag-coexistence-v013",
     "namespace": "tagcoexist",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "schemaVersion": 2,
     "engineApiVersion": "0.1",
     "author": "Tag共存规则 · Angla",
@@ -60,8 +60,92 @@
   "events": [],
   "texts": {},
   "contributions": [],
-  "tags": [],
-  "derivedTags": [],
+  "tags": [
+    {
+      "id": "tagcoexist:body.gel-foot",
+      "label": "足部黑胶材料",
+      "definition": "查询对象的足部实例材料 ID 为 foundation:material.gel。此语义来自 BodyGraph 材料查询，不等于 foundation:theme.gel 题材，不授予能力，不表示 TF 进度。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "tagcoexist:body.gel-leg",
+      "label": "腿部黑胶材料",
+      "definition": "查询对象的腿部实例材料 ID 为 foundation:material.gel。对应试跑踝→小腿→大腿路径的腿侧材料查询；不等于题材黑胶，不表示已完成全身黑胶化。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    }
+  ],
+  "derivedTags": [
+    {
+      "id": "tagcoexist:derive.gel-foot",
+      "tagId": "tagcoexist:body.gel-foot",
+      "subject": "entity",
+      "when": {
+        "op": "body.matches",
+        "target": {
+          "kind": "player"
+        },
+        "part": {
+          "kind": "foot",
+          "materialId": "foundation:material.gel"
+        }
+      }
+    },
+    {
+      "id": "tagcoexist:derive.gel-leg",
+      "tagId": "tagcoexist:body.gel-leg",
+      "subject": "entity",
+      "when": {
+        "op": "body.matches",
+        "target": {
+          "kind": "player"
+        },
+        "part": {
+          "kind": "leg",
+          "materialId": "foundation:material.gel"
+        }
+      }
+    }
+  ],
+  "proseMaterials": [
+    {
+      "id": "tagcoexist:prose.gel-foot",
+      "text": "足部表面覆有发亮的胶质层；这是材料查询结果，不能用题材「黑胶」代替。",
+      "tags": [
+        "tagcoexist:body.gel-foot"
+      ],
+      "source": "tagcoexist-playtest-draft@1.1.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "tagcoexist:prose.gel-leg",
+      "text": "腿部覆层呈湿亮胶质；材料族为 organic / material.gel，仍不等于题材 Tag 或 TF 完成态。",
+      "tags": [
+        "tagcoexist:body.gel-leg"
+      ],
+      "source": "tagcoexist-playtest-draft@1.1.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "tagcoexist:prose.lab-night-window",
+      "text": "当前时钟落在夜间窗口，培养观察可用；这与故事题材「夜间」不是同一条件。",
+      "tags": [
+        "foundation:time.night"
+      ],
+      "source": "tagcoexist-playtest-draft@1.1.0",
+      "review": "approved",
+      "tier": "general"
+    }
+  ],
   "proseSelections": [
     {
       "id": "tagcoexist:selection.mechanical-tail-by-material",
@@ -133,6 +217,68 @@
         {
           "op": "environment.light",
           "value": "lit"
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.gel-foot-by-material",
+      "entryId": "tagcoexist:prose.gel-foot",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "foot",
+            "materialId": "foundation:material.gel"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.gel-leg-by-material",
+      "entryId": "tagcoexist:prose.gel-leg",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "leg",
+            "materialId": "foundation:material.gel"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.lab-night-by-clock",
+      "entryId": "tagcoexist:prose.lab-night-window",
+      "channel": "environment",
+      "when": [
+        {
+          "op": "time.window",
+          "start": 1320,
+          "end": 360
+        }
+      ]
+    },
+    {
+      "id": "tagcoexist:selection.lab-night-dark-conjoint",
+      "entryId": "foundation:prose.light.dark",
+      "channel": "environment",
+      "when": [
+        {
+          "op": "time.window",
+          "start": 1320,
+          "end": 360
+        },
+        {
+          "op": "environment.light",
+          "value": "dark"
         }
       ]
     }

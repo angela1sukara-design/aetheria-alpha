@@ -8,4 +8,5 @@
 |---|---|---|---|
 | 2026-10-12 15:19 | [共存互斥分维度规则摘要-v0.13-对照库存.md](./共存互斥分维度规则摘要-v0.13-对照库存.md) | Tag共存规则 | foundation-tag-mapping + v0.13 共存/互斥/分维度；已回 Angela（rules/ 有归档副本） |
 | 2026-10-12 15:20 | [2026-10-12-故事试写-研究员触手黏液黑胶.md](./2026-10-12-故事试写-研究员触手黏液黑胶.md) | 故事试写 | tag→短篇样例；配对 `inventory/seeds/2026-10-12-接tag试跑-研究员触手黏液黑胶.md` |
-| 2026-10-12 18:01 | [2026-10-12-tag-rules-delivery-coexistence/](./2026-10-12-tag-rules-delivery-coexistence/) | Tag共存规则 | TAG-RULES 完整交付包（content-pack + reference-pack + 报告）；draft；主指针 README.md |
+| 2026-10-12 18:01 | [2026-10-12-tag-rules-delivery-coexistence/](./2026-10-12-tag-rules-delivery-coexistence/) | Tag共存规则 | TAG-RULES 交付包首版（后由 18:17 行升级为 v1.1.0 试跑切片） |
+| 2026-10-12 18:17 | [2026-10-12-tag-rules-delivery-coexistence/](./2026-10-12-tag-rules-delivery-coexistence/) **v1.1.0 试跑切片** | Tag共存规则 | 补 generation-rules（夜间开局）、gel/night when、clinic 昼夜模板互斥、PLAYTEST-SLICE；全库矩阵仍 TBD |

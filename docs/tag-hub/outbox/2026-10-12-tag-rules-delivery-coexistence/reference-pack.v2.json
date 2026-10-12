@@ -2,14 +2,14 @@
   "format": "aetheria-reference",
   "schemaVersion": 2,
   "id": "authoring/reference-tag-coexistence-v013",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "templates": [
     {
       "id": "tagcoexist.activity.workshop-tool-check",
       "kind": "activity",
       "data": {
         "label": "核对工坊工具",
-        "description": "你按清单核对手边工具，缺项交回登记处。适用条件来自真实工坊服务与抓握能力，不以题材 Tag 冒充材料或时段。",
+        "description": "按清单核对手边工具。白班向；与夜间培养观察互斥。",
         "minutes": 10,
         "energyChange": -1,
         "moneyChange": 0,
@@ -31,7 +31,8 @@
       "combination": {
         "requiresTemplates": [],
         "excludesTemplates": [
-          "tagcoexist.activity.commons-quiet-observe"
+          "tagcoexist.activity.commons-quiet-observe",
+          "tagcoexist.activity.clinic-night-culture-observe"
         ],
         "boosts": [
           {
@@ -52,7 +53,7 @@
       "kind": "activity",
       "data": {
         "label": "公共空间静观",
-        "description": "你在公共空间短暂停留观察环境。本模板与工坊核对活动互斥，用于示范模板层 combination.excludesTemplates；不是通用 58 类或 NSFW 库际硬互斥表。题材 Tag（黑胶/TF/机械/夜间）不写入 requiresTags，避免被误读为身体材料或真实时段。",
+        "description": "公共空间短暂停留。与工坊核对、夜间培养观察互斥（模板层）。",
         "minutes": 8,
         "energyChange": 0,
         "moneyChange": 0,
@@ -72,7 +73,95 @@
       "combination": {
         "requiresTemplates": [],
         "excludesTemplates": [
-          "tagcoexist.activity.workshop-tool-check"
+          "tagcoexist.activity.workshop-tool-check",
+          "tagcoexist.activity.clinic-night-culture-observe"
+        ],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      }
+    },
+    {
+      "id": "tagcoexist.activity.clinic-night-culture-observe",
+      "kind": "activity",
+      "data": {
+        "label": "培养槽夜间观察",
+        "description": "在诊疗/实验服务点做培养观察记录。试跑用 clinic 代理实验室服务；适用靠真实 service.clinic，不以 theme.gel 冒充活体黑胶材料。题材 boost 只调权重。",
+        "minutes": 15,
+        "energyChange": -1,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      },
+      "environmentTags": [],
+      "weight": 120,
+      "requiresTags": [
+        "foundation:service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/foundation"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [
+          "tagcoexist.activity.workshop-tool-check",
+          "tagcoexist.activity.commons-quiet-observe",
+          "tagcoexist.activity.day-shift-intake-log"
+        ],
+        "boosts": [
+          {
+            "tag": "foundation:theme.gel",
+            "multiplier": 2
+          },
+          {
+            "tag": "foundation:theme.transformation",
+            "multiplier": 2
+          }
+        ]
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      }
+    },
+    {
+      "id": "tagcoexist.activity.day-shift-intake-log",
+      "kind": "activity",
+      "data": {
+        "label": "白班接样登记",
+        "description": "白班接样与文书。与夜间培养观察互斥；证明试跑只需模板层昼夜互斥，不编造 58 类矩阵。",
+        "minutes": 10,
+        "energyChange": -1,
+        "moneyChange": 0,
+        "healthChange": 0,
+        "capabilities": [
+          "grasp"
+        ]
+      },
+      "environmentTags": [],
+      "weight": 90,
+      "requiresTags": [
+        "foundation:service.clinic"
+      ],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/foundation"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [
+          "tagcoexist.activity.clinic-night-culture-observe"
         ],
         "boosts": []
       },
