@@ -1,0 +1,604 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-environment.b9001",
+  "library": "world-environment",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-environment.b9001.0001",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "微凉",
+      "description": "能察觉凉意，但不直接表示严寒或伤害。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0002",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "温和",
+      "description": "环境没有明显冷热刺激，具体温度仍由场景参数决定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0003",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "温暖",
+      "description": "周围有持续暖意，可用于室内、日光或人群附近的描写。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0004",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "闷热",
+      "description": "热意不易散去，和单纯阳光强烈分开描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0005",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "寒冷",
+      "description": "明显的冷感背景，不自动结算冻伤。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0006",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "空气干燥",
+      "description": "口鼻或衣料接触空气时有干涩印象，不填写虚构湿度数值。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0007",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "空气潮湿",
+      "description": "空气带湿润感，与物体表面已经积水不同。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0008",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "空气滞闷",
+      "description": "空气交换不足的感受，不等同有毒或缺氧。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0009",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "空气清新",
+      "description": "异味轻、呼吸感舒展的环境印象，不证明空气质量检测合格。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0010",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "穿堂风",
+      "description": "风从相通的门窗或通道间穿过。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0011",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "微风",
+      "description": "轻缓气流能带动发丝或轻薄物件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0012",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "阵风",
+      "description": "气流强弱间歇变化，与持续的大风区别。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0013",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "侧风",
+      "description": "风向横过行进路线，可参与空间与衣着描写。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0014",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "细雨",
+      "description": "雨滴细小、连续，适合描述雨具与路面细节。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0015",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "暴雨",
+      "description": "雨势密集明显，不能仅由这个词判定道路封闭。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0016",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "雨夹雪",
+      "description": "雨滴与雪粒同时出现的天气背景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0017",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "降雪",
+      "description": "雪从空中落下；地面是否积雪另行说明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0018",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "起雾",
+      "description": "空气中可见雾层；能见度须结合具体场景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0019",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "烟霾",
+      "description": "空气中有悬浮烟尘的模糊感，不和水雾混为一谈。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0020",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "结露",
+      "description": "水汽在表面凝成细小水珠的状态。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0021",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "结霜",
+      "description": "物件表面出现霜层，与空中降雪分开。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0022",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "结冰",
+      "description": "液体或湿表面形成冰层，不自动改变角色能力。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0023",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "扬尘",
+      "description": "颗粒随风或活动扬起，来源可以是道路或施工。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0024",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "无明显气味",
+      "description": "当前描写没有突出的气味，不表示化学意义上的无气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0025",
+      "category": "world-environment",
+      "subcategory": "温湿与空气",
+      "text": "烟气",
+      "description": "燃烧或生产活动留下的可见烟气背景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0026",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "自然采光",
+      "description": "光主要来自天空或日光，而非室内灯具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0027",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "人工照明",
+      "description": "光来自灯具、屏幕等设备，色温另作属性。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0028",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "逆光",
+      "description": "观察对象背后较亮，正面细节可能落入阴影。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0029",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "侧光",
+      "description": "光从侧面照来，强调表面与轮廓。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0030",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "散射光",
+      "description": "光线分布柔和，没有清晰的单一投影方向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0031",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "直射光",
+      "description": "光直接落在物体表面，阴影边界较清楚。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0032",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "昏暗",
+      "description": "可见细节减少的光照印象，不等于完全失明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0033",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "无照明",
+      "description": "现场没有可用照明，是否存在自然光另行检查。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0034",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "闪烁",
+      "description": "光源亮度反复变化，可用于灯具和屏幕。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0035",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "眩光",
+      "description": "局部光线刺眼，影响舒适观察的环境印象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0036",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "反光",
+      "description": "表面把入射光反射到观察者方向。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0037",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "遮阴",
+      "description": "物体挡住部分光线形成阴影区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0038",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "安静",
+      "description": "背景声较少，细小声音更容易被注意。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0039",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "嘈杂",
+      "description": "多种声音同时存在，交谈可能需要调整距离。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0040",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "回声",
+      "description": "声音经空间反射后再次传来。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0041",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "声音闷钝",
+      "description": "声音高频细节被遮挡或吸收的听感。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0042",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "持续声",
+      "description": "声音不间断存在，与间歇响声分开。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0043",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "间歇声",
+      "description": "声音断续出现，中间有可辨认的安静间隔。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0044",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "混响",
+      "description": "声音尾部在空间中延续，难以分清单次回声。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-environment.b9001.0045",
+      "category": "world-environment",
+      "subcategory": "光线与声音",
+      "text": "警报声",
+      "description": "用于引起注意的信号声；真实危险仍由事件条件决定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

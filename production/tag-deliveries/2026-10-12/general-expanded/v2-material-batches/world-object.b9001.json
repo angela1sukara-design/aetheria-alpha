@@ -1,0 +1,669 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-object.b9001",
+  "library": "world-object",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-object.b9001.0001",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "伞",
+      "description": "可展开的便携遮挡用品，保护范围与用途由具体物件决定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0002",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "雨衣",
+      "description": "穿戴在外层用于遮雨的衣物。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0003",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "毛巾",
+      "description": "用于擦拭或吸收表面水分的织物。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0004",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "毯子",
+      "description": "可铺盖或包裹的织物，不预设保温数值。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0005",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "枕头",
+      "description": "休息时支撑头部等部位的软垫。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0006",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "床垫",
+      "description": "铺在睡卧支撑面上的垫层。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0007",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "坐垫",
+      "description": "放在座面上改善接触与支撑的垫物。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0008",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "衣架",
+      "description": "悬挂衣物的支架。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0009",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "晾衣夹",
+      "description": "把衣物固定在绳或架上的夹具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0010",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "收纳袋",
+      "description": "用于分类存放物件的袋体。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0011",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "购物袋",
+      "description": "用于携带购买物品的袋子。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0012",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "水杯",
+      "description": "便于饮水的个人容器，材质与温度另作属性。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0013",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "饭盒",
+      "description": "携带或暂存餐食的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0014",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "保温瓶",
+      "description": "具有减少内容物热量交换结构的瓶体。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0015",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "水壶",
+      "description": "盛水或加热水的壶形容器，用途需具体说明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0016",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "锅",
+      "description": "用于烹饪或加热食物的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0017",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "筷子",
+      "description": "成对使用以夹取食物的餐具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0018",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "餐叉",
+      "description": "以叉齿辅助取食的餐具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0019",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "餐盘",
+      "description": "承放餐食的盘状器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0020",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "餐巾",
+      "description": "用餐时用于一般擦拭的纸或织物。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0021",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "温度计",
+      "description": "显示温度读数的器具，读数不能由标签捏造。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0022",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "时钟",
+      "description": "显示时间的器具，不替代游戏世界时钟。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0023",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "钥匙",
+      "description": "开启相应锁具的物件，匹配关系属于规则数据。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0024",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "钱包",
+      "description": "收纳票据、卡片或零钱的随身用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0025",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "证件",
+      "description": "用于记录和出示身份资料的物件，不自动证明年龄资格。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0026",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "交通卡",
+      "description": "用于相应交通服务的凭据载体。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0027",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "收据",
+      "description": "记录一次交易或收付事实的凭证。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0028",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "票券",
+      "description": "对应入场、乘坐或服务资格的凭据。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0029",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "地图",
+      "description": "表达空间位置和路线关系的图示材料。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0030",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "日历",
+      "description": "按日期安排和查看事项的记录用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0031",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "笔",
+      "description": "用于书写或标记的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0032",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "信封",
+      "description": "封装信件或薄纸资料的纸套。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0033",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "夹子",
+      "description": "借夹持力临时固定物件的小工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0034",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "电池",
+      "description": "供兼容设备使用的储能部件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0035",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "手电筒",
+      "description": "可携带并定向照明的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0036",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "通讯器",
+      "description": "供信息发送和接收的随身设备，不绑定特定技术设定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0037",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "耳机",
+      "description": "把声音传递到佩戴者耳部的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0038",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "充电器",
+      "description": "为兼容储能设备提供充电连接的装置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0039",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "移动电源",
+      "description": "可随身携带并向兼容设备供电的储能装置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0040",
+      "category": "world-object",
+      "subcategory": "家庭与随身用品",
+      "text": "药盒",
+      "description": "分类收纳个人护理或药品用品的盒子。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0041",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "螺丝刀",
+      "description": "配合相应螺钉槽口使用的手工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0042",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "扳手",
+      "description": "夹持或转动相应紧固件的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0043",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "钳子",
+      "description": "用于夹持、弯折等操作的铰接手工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0044",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "剪刀",
+      "description": "通过两片相对运动刃口剪切材料的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0045",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "卷尺",
+      "description": "可收卷的长度测量工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0046",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "水平尺",
+      "description": "辅助观察方向是否接近水平的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0047",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "锉刀",
+      "description": "通过表面齿纹修整材料的手工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0048",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "砂纸",
+      "description": "带磨料的片材，用于一般表面修整。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0049",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "刷子",
+      "description": "通过刷毛进行清洁或涂布的工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9001.0050",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "刮板",
+      "description": "用边缘推动或刮除表面物的片状工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

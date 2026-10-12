@@ -1,0 +1,253 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "body-part.b9001",
+  "library": "body-part",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.body-part.b9001.0001",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "皮肤",
+      "description": "身体表面覆盖结构的通用名称，不由触感比喻推定材质。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0002",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "头皮",
+      "description": "头部毛发覆盖区域的表面结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0003",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "额头",
+      "description": "面部上方的区域，可用于外观与接触位置描写。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0004",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "面颊",
+      "description": "面部两侧区域，不自动允许接触。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0005",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "下巴",
+      "description": "面部下缘区域，形状和支撑关系另行描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0006",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "颈部",
+      "description": "连接头部与躯干的区域，具体拓扑以身体图为准。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0007",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "上臂",
+      "description": "肩部与肘部之间的肢段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0008",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "肘部",
+      "description": "上臂与前臂之间的关节区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0009",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "掌心",
+      "description": "手掌内侧表面区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0010",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "指尖",
+      "description": "指部末端区域，具体数量以身体图为准。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0011",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "指甲",
+      "description": "指端的角质覆盖结构，不等同爪的能力。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0012",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "膝部",
+      "description": "腿部的关节区域，结构与活动范围不可从名称推断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0013",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "足底",
+      "description": "足部朝向支撑面的表面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0014",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "足跟",
+      "description": "足部后侧支撑区域。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0015",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "足趾",
+      "description": "足部末端分支，数量与功能以身体图为准。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0016",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "触角",
+      "description": "用于外观或感知描写的附属结构，能力须单独定义。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0017",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "鳃",
+      "description": "身体结构概念，不仅凭词条授予水下呼吸。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-part.b9001.0018",
+      "category": "body-part",
+      "subcategory": "普通身体结构",
+      "text": "吸盘",
+      "description": "具有盘状接触外形的结构，附着能力需真实配置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

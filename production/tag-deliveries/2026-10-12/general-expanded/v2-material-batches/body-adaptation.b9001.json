@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "body-adaptation.b9001",
+  "library": "body-adaptation",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.body-adaptation.b9001.0001",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "调整重心",
+      "description": "依据当前支撑结构重新分配身体重量的动作主题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0002",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "确认净空",
+      "description": "在通过前观察身体或携物是否有足够空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0003",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "调整握持",
+      "description": "改变握持位置或方法以配合当前手部结构。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0004",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "借力支撑",
+      "description": "利用明确可用的支撑点辅助动作。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0005",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "持杖行走",
+      "description": "使用适配手杖辅助行走，不自动恢复身体功能。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0006",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "减少局部负担",
+      "description": "暂时降低某个部位参与动作的程度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0007",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "调整步速",
+      "description": "根据身体状态和环境改变行进节奏。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0008",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "侧身通过",
+      "description": "改变身体朝向以利用通道空间，仍需兼容检查。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0009",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "整理尾部位置",
+      "description": "有真实尾部时调整其与衣物或家具的相对位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0010",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "收拢翼部",
+      "description": "有可收拢翼部时改变姿态，不默认为任何翼都能折叠。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0011",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "试穿适配",
+      "description": "核对衣物与当前身体形状、接口和活动范围。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0012",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "检查装备兼容",
+      "description": "核对装备条件与真实部件，不由描写直接装备成功。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0013",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "调整坐具",
+      "description": "改变座面、位置或支撑物以配合身体需要。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0014",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "练习餐具",
+      "description": "尝试适合当前动作资源的餐具使用方式。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0015",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "感官休息",
+      "description": "暂时减少刺激并停顿，不自动治疗感官问题。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0016",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "清洁接口",
+      "description": "对已定义且允许清洁的接口做护理主题描写。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0017",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "检查贴合",
+      "description": "观察衣物或装置是否压迫、松动或妨碍活动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0018",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "说明适配需求",
+      "description": "向他人表达当前需要的空间、工具或协助。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0019",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "请求辅助",
+      "description": "提出明确协助请求，不等于对方已经同意。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.body-adaptation.b9001.0020",
+      "category": "body-adaptation",
+      "subcategory": "普通适配与行动方式",
+      "text": "试走路线",
+      "description": "在可退出条件下尝试一段路线并记录困难。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

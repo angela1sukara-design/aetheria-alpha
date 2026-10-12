@@ -1,0 +1,344 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-space.b9001",
+  "library": "world-space",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-space.b9001.0001",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "室内",
+      "description": "位于建筑内部的空间背景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0002",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "室外",
+      "description": "位于建筑外部且直接面对室外环境。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0003",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "半室外",
+      "description": "有遮挡但与室外连通，如有顶无墙的连廊。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0004",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "狭窄",
+      "description": "可用横向空间有限，具体通过条件须核对身体与设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0005",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "宽敞",
+      "description": "可用空间较多，不自动保证所有身体形态都能通过。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0006",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "净高受限",
+      "description": "上方空间较低，需要描述或检查实际净高。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0007",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "无台阶",
+      "description": "路线没有高差台阶，不代表整条路线都无障碍。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0008",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "有台阶",
+      "description": "路线包含需要处理的高差。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0009",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "有坡度",
+      "description": "地面存在持续倾斜，坡度数值另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0010",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "平整",
+      "description": "地面高差较少的外观或使用印象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0011",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "凹凸",
+      "description": "地面起伏不均，与倾斜坡面不同。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0012",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "湿滑",
+      "description": "表面有容易打滑的环境线索；是否滑倒由玩法结算。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0013",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "有障碍物",
+      "description": "路线被物件部分占用，障碍物身份应单独记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0014",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "通道畅通",
+      "description": "当前没有明显堵塞，不代表永远保持可通行。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0015",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "单向通行",
+      "description": "管理上限定通行方向的空间约定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0016",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "共享空间",
+      "description": "由多人共同使用，不能据此推定可随意取用物品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0017",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "私人空间",
+      "description": "进入和使用需要尊重持有者边界。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0018",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "公共空间",
+      "description": "面向公众使用，仍可能存在时段和行为规则。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0019",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "有遮蔽",
+      "description": "能挡住部分风雨或视线，遮蔽范围另行描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0020",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "无遮挡",
+      "description": "当前位置缺少遮蔽，和空旷地形不是同一个概念。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0021",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "拥挤",
+      "description": "人或物件密集，不能用此词代替容量计算。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0022",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "稀疏",
+      "description": "人或物件分布较松散的当前印象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0023",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "视野开阔",
+      "description": "观察方向遮挡较少，实际可见对象仍需场景确认。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0024",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "视线盲角",
+      "description": "某处被转角或障碍物遮挡，站位变化后可能看见。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-space.b9001.0025",
+      "category": "world-space",
+      "subcategory": "空间与通行",
+      "text": "隔音",
+      "description": "空间对声音传播有隔离作用的描述，不提供虚构分贝值。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

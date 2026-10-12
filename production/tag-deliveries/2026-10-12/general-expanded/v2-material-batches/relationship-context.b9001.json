@@ -1,0 +1,214 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "relationship-context.b9001",
+  "library": "relationship-context",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.relationship-context.b9001.0001",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "初次见面",
+      "description": "双方当前没有已记录的相识经历，不由台词自行创建。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0002",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "认识",
+      "description": "存在基本身份认识，不等于信任或亲密。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0003",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "邻居",
+      "description": "共享居住区域的关系背景，不自动互知隐私。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0004",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "同事",
+      "description": "共同工作关系，具体分工和权限独立记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0005",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "顾客",
+      "description": "在当前交易或服务中的来访角色。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0006",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "接待方",
+      "description": "负责当前接待安排的角色，不等于掌握所有信息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0007",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "来访者",
+      "description": "进入某个接待情境的人，许可范围需明确。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0008",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "合作伙伴",
+      "description": "就具体事项共同承担工作的关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0009",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "指导者",
+      "description": "在明确范围提供经验或教学的人，不推定服从关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0010",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "学习者",
+      "description": "正在学习某项内容的角色，不由年龄判断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0011",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "多次往来",
+      "description": "有多次可追溯互动记录，不自动增加好感。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0012",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "存在分歧",
+      "description": "对具体事项看法不同，分歧不等于敌对。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0013",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "约定待履行",
+      "description": "已有约定尚待执行，内容和期限独立记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0014",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "约定已履行",
+      "description": "指定约定已有完成事实，不直接结算所有关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.relationship-context.b9001.0015",
+      "category": "relationship-context",
+      "subcategory": "一般关系与相处语境",
+      "text": "约定失信",
+      "description": "指定约定未按事实履行，影响由人物路线判断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

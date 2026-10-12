@@ -1,0 +1,396 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-weather.b9101",
+  "library": "world-weather",
+  "domain": "general",
+  "source": {
+    "producer": "world-gap-source",
+    "model": "not recorded in source",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-weather.b9101.0001",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "沙暴前静压感",
+      "description": "沙暴将至时气压闷、风先停再骤起沙墙。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0002",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "沙风割面感",
+      "description": "干热沙风贴面刮过，唇与眼角迅速发干。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0003",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "稀薄空气喘感",
+      "description": "高空稀薄空气导致短促喘息与耳压变化。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0004",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "干冷鼻腔刺感",
+      "description": "极干冷空气吸入时鼻腔短促刺痛感。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0005",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "极光夜空幕",
+      "description": "极夜时绿紫极光如幕扫过雪原上空。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0006",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "林下湿热雾",
+      "description": "林下白日也湿热蒸腾，雾贴叶背不散。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0007",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "沙暴过后静尘层",
+      "description": "沙暴过后一层细尘静落，脚步先无声后扬起。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0008",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "太阳能板转角眩光",
+      "description": "舷外太阳能板转角时眩光扫过观察窗。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0009",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "沙暴墙前黄幕",
+      "description": "沙暴墙临近时天际呈黄幕推进。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0010",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "夜寒骤降感",
+      "description": "日落后沙漠气温骤降，呼吸可见白汽。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0011",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "侧风切变阵",
+      "description": "两岛之间侧风切变阵发，桥面短时摇晃。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0012",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "乱流胃部失重感",
+      "description": "穿乱流时短暂失重感顶胃，耳压连变。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0013",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "火山灰落尘天",
+      "description": "远方喷发后细灰落尘，天空呈土褐。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0014",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "通风竖井风哨",
+      "description": "通风竖井风哨鸣响表示主风道畅通。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0015",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "回风巷冷气流",
+      "description": "回风巷冷气流贴踝，灰尘反向走。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0016",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "吹雪白化视障",
+      "description": "吹雪造成白化视障，天地一线难辨。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0017",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "极昼不眠天光",
+      "description": "极昼时午夜仍明亮，室内需遮光帘。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0018",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "午后对流暴雨墙",
+      "description": "午后对流暴雨如墙推进，数分钟泻透。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0019",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "雾气贴地晨层",
+      "description": "晨间雾气贴地一膝高，人影齐腰截断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0020",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "煤雾黄褐昼",
+      "description": "燃煤高峰煤雾使白昼呈黄褐。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0021",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "灵雨夜荧光雾",
+      "description": "山中灵雨夜地面起薄荧光雾。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0022",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "雾海开合时机",
+      "description": "山腰雾海午前开合，决定是否放行。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0023",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "内波浑浊带",
+      "description": "内波过境时海水短暂浑浊降温。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0024",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "城霾炊烟层",
+      "description": "晨间城内炊烟聚成低霾层难散。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0025",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "台风预警狂雨",
+      "description": "台风预警日狂雨横打玻璃幕墙。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0026",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "海雾号笛天",
+      "description": "海雾日号笛长鸣，能见度极低。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0027",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "引航艇冲浪感",
+      "description": "引航艇高速时浪花打脸的咸湿冲击。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0028",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "地下霉雾滞留",
+      "description": "无风墓穴霉雾滞留，火把焰缩短。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-weather.b9101.0029",
+      "category": "world-weather",
+      "subcategory": "环境候选",
+      "text": "沙尘暴黄昼",
+      "description": "沙尘暴来时天色黄褐，门窗紧闭。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

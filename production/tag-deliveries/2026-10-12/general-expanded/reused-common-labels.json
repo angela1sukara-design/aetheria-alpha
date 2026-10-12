@@ -1,0 +1,18 @@
+[
+  {
+    "key": "part.wrist",
+    "label": "腕部",
+    "existingIds": [
+      "general-taxonomy:placement.wrist"
+    ],
+    "decision": "label-collision-kept-out-for-review"
+  },
+  {
+    "key": "part.ankle",
+    "label": "踝部",
+    "existingIds": [
+      "general-taxonomy:placement.ankle"
+    ],
+    "decision": "label-collision-kept-out-for-review"
+  }
+]

@@ -1,0 +1,279 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "material.b9001",
+  "library": "material",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.material.b9001.0001",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "钢",
+      "description": "金属材料类别；颜色、状态和具体规格另行描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0002",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "铝",
+      "description": "金属材料类别，不由银白色外观直接推定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0003",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "不锈钢",
+      "description": "耐腐蚀用途的钢材类别，不等于任何环境都不会变化。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0004",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "橡胶",
+      "description": "可用于柔性制品的材料类别，弹性与兼容性另行定义。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0005",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "硅胶",
+      "description": "可用于柔性或密封制品的材料类别，不与活体黑胶混为一谈。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0006",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "塑料",
+      "description": "聚合物制品的宽泛材料类别，具体品种和性质另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0007",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "树脂",
+      "description": "材料或黏结介质类别，不由透明外观自动推定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0008",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "泡棉",
+      "description": "具有孔隙的垫材类别，承重与触感需具体说明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0009",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "毛毡",
+      "description": "纤维毡化形成的片材，可用于衬垫和装饰。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0010",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "羊毛",
+      "description": "纤维来源类别，不推定穿戴者物种或保暖数值。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0011",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "亚麻",
+      "description": "植物纤维材料类别，与具体织法分开。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0012",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "涤纶",
+      "description": "纺织纤维类别，不由光泽推定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0013",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "尼龙",
+      "description": "纤维或工程制品材料类别，规格与用途另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0014",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "纸",
+      "description": "片状纤维材料类别，可用于书写或包装。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0015",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "纸板",
+      "description": "较厚的纸质板材，与薄纸分开归类。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0016",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "软木",
+      "description": "轻质木栓材料类别，不与柔软木纹混为一谈。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0017",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "水泥",
+      "description": "建筑胶结材料概念，与成型混凝土分开。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0018",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "混凝土",
+      "description": "建筑复合材料类别，不代表结构当前安全。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0019",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "砖",
+      "description": "成型建筑块材类别，材料成分可进一步细分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.material.b9001.0020",
+      "category": "material",
+      "subcategory": "普通材料",
+      "text": "沥青",
+      "description": "道路或防水用途的材料类别，不凭气味授予危险效果。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

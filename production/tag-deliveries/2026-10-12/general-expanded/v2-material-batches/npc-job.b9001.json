@@ -1,0 +1,409 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "npc-job.b9001",
+  "library": "npc-job",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.npc-job.b9001.0001",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "收银员",
+      "description": "核对商品与收款记录的工作人员。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0002",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "店员",
+      "description": "负责店面接待、陈列或一般事务的工作人员。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0003",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "服务员",
+      "description": "接待顾客并协调餐饮等现场服务的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0004",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "饮品师",
+      "description": "制作饮品并维护相应用具的工作人员。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0005",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "烘焙师",
+      "description": "制作面包、糕点等烘焙食品的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0006",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "厨房帮工",
+      "description": "协助备料、清洁和一般厨房事务的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0007",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "电工",
+      "description": "从事相应电气设备安装与维护的人；素材不授予职业技能。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0008",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "水管工",
+      "description": "检查和维修供排水管路的工作人员。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0009",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "机械维修员",
+      "description": "负责机械设备检查与维护的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0010",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "快递员",
+      "description": "按收送记录递送包裹的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0011",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "邮递员",
+      "description": "负责信件和邮务物品投递的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0012",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "司机",
+      "description": "驾驶相应交通工具的工作人员，驾驶资格另行记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0013",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "调度员",
+      "description": "协调人员、车辆或工单安排的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0014",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "保安员",
+      "description": "按职责巡查和维持场所秩序的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0015",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "消防员",
+      "description": "承担消防救援职责的人，不能仅凭标签获得行动资格。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0016",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "图书管理员",
+      "description": "整理书刊、借阅记录与阅览空间的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0017",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "档案管理员",
+      "description": "维护档案编目、存取与查阅记录的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0018",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "翻译员",
+      "description": "协助不同语言之间的信息表达与理解的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0019",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "研究员",
+      "description": "从事有明确研究对象与记录方法的工作者，不自带秘密知识。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0020",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "实验助理",
+      "description": "协助准备器材、整理记录与维护工作秩序的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0021",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "园艺工",
+      "description": "照料植物和维护种植空间的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0022",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "理发师",
+      "description": "提供头发整理与修剪服务的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0023",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "物业管理员",
+      "description": "协调建筑公共设施与住户事务的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0024",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "报修接线员",
+      "description": "登记问题、确认地点并转派维修任务的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0025",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "前台接待",
+      "description": "在入口或服务台接待来访并登记事项的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0026",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "仓管员",
+      "description": "核对货物入库、出库与存放记录的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0027",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "分拣员",
+      "description": "按规则把物件归入不同类别或目的地的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0028",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "巡检员",
+      "description": "依照清单检查设施并记录异常的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0029",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "排班员",
+      "description": "整理轮值时间与人员可用安排的人。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.npc-job.b9001.0030",
+      "category": "npc-job",
+      "subcategory": "常见服务与城市工作",
+      "text": "志愿服务者",
+      "description": "自愿参与明确公共事务的人，不表示可无限承担请求。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

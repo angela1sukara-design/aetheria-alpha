@@ -1,0 +1,1246 @@
+{
+  "format": "aetheria-general-expanded-index",
+  "schemaVersion": 1,
+  "taxonomyVersion": "1.1.0",
+  "domain": "general",
+  "runtimeImportable": false,
+  "counts": {
+    "base": 10700,
+    "worldGap": 667,
+    "newCommon": 388,
+    "total": 11755,
+    "exactDescriptionJoins": 10695,
+    "restoredTruncatedProse": 5,
+    "sourceConflicts": 0,
+    "concepts": 1145,
+    "protectedNames": 720,
+    "withCore": 7549,
+    "withQualifiers": 1144,
+    "needsCoreReview": 3064,
+    "seedLabelCollisions": 2,
+    "duplicateLabelGroups": 6,
+    "validatedV2Batches": 35
+  },
+  "reviewStatus": "editorial-proposals-not-runtime-approved",
+  "nsfwChanges": 0,
+  "sources": [
+    {
+      "path": "production/tag-deliveries/2026-10-12/readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条清单-10700.md",
+      "sha256": "3c1e288ba206e9fe849a9a2b30691073c7cdca2bf1ffff827b26cfebdedfa6dd"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v1.md",
+      "sha256": "8212ba5702352cada1eb50bc41fbd9f18666345146f82f4d70b956a7c5ab59df"
+    },
+    {
+      "path": "production/tag-deliveries/2026-10-12/readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v2-加量.md",
+      "sha256": "fe785beba7420f2b81c5b8fdbb52317309f8947494c7298f9fec53ffb50a4ea4"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-accessory/body-accessory.b0001.json",
+      "sha256": "840536ff302f70ddf0ebcf811b08d4f85dec76a2b4c683ccc7e6722c9e0c800e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-accessory/body-accessory.b0002.json",
+      "sha256": "0e0ab93614019a998cf33c999e300201607279335999247d2a38ed803e67aa0a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-accessory/body-accessory.b0003.json",
+      "sha256": "40633d0c0e6d3f62ec050e53fe3d5a98d8d3319722f7c84c30378c0a9f134773",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-anomaly/body-anomaly.b0001.json",
+      "sha256": "6d10ce8bc77f99457e6ab73692c6bd2a94ebd702a63704e8a482d7f894016eca",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-anomaly/body-anomaly.b0002.json",
+      "sha256": "6fcbb807e32ce81f38ce1179885bad1db4628854d1b8b56b665653b5468b6eda",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-anomaly/body-anomaly.b0003.json",
+      "sha256": "f94abff32ebc5924348cce1135714399e703c2170f6ffa1ee2ddc44cc059a993",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-beast/body-beast.b0001.json",
+      "sha256": "2a0203498f833ceb2627e14a69b069f0e7c5084597a38ba0782f4297cb1d3f59",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-beast/body-beast.b0002.json",
+      "sha256": "9f40a6616172398f12f1d6d0fa1c4dc24da30fc1c41f35e7278eb1a52bd830fa",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-beast/body-beast.b0003.json",
+      "sha256": "bedf9fea2322dcb17223421cfc90d9593232a7c8bb52c605a89c14048f59e93b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-beast/body-beast.b0004.json",
+      "sha256": "95d86c6226bcd6ec81e2da9a87d5fb8e1202f9c04519c236d8a1f32181869772",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-build/body-build.b0001.json",
+      "sha256": "7bf0ee6be19c507d111752d897e556e8a9faf7815f2d529e796f94215cc92cd5",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-build/body-build.b0002.json",
+      "sha256": "b3c1d3d21bdc3cf00d0ba9526b556466217c300c63c3c886ba09d36469dad529",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-build/body-build.b0003.json",
+      "sha256": "122a4b30e2595879e1702ce37ee1fa59636c6f065fb242fa97f2dd634fd0ecb9",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-clothing/body-clothing.b0001.json",
+      "sha256": "e3995784c192a441d4adbfe3fe4a0fd1d03c5b6b650020618033b78a90e16611",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-clothing/body-clothing.b0002.json",
+      "sha256": "033dd98ffd39b92b6b5d70360d30d18afa0028f7de1a3a38aa6dfa6b0f7802c6",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-clothing/body-clothing.b0003.json",
+      "sha256": "53eff74f0bcc6393b8a2e4c609dca9a1e80c98917fe99bcb6f48f11285e34924",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-clothing/body-clothing.b0004.json",
+      "sha256": "0034e213c2fa1285d6f665910bb6f9c56d3d1e94fb720fc6dd171dd30566e0db",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-color/body-color.b0001.json",
+      "sha256": "80ddf5042371bf3f9d4af60d1707c4ed653171fc1444a9c0c18a79c12b4b6ca0",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-color/body-color.b0002.json",
+      "sha256": "8d7b7d58ffeeef70c38a838d089c5218f1eb38f457e27dc4fc71df325c0eb73b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-color/body-color.b0003.json",
+      "sha256": "d0c319b7cd8942219ebe7dc42d33a498462f6a3ecc7be1a8071246cbf161bff3",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-form/body-form.b0001.json",
+      "sha256": "1c2db7d56b13042a05dd5a6804f94e8d129509c091febfa55a9198647c4afc78",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-form/body-form.b0002.json",
+      "sha256": "40b13ac09c9e5221c170c5f0e0291597efacc90ae12f86cdbf1e2ab1de2bf55f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-form/body-form.b0003.json",
+      "sha256": "c9a2145ad7f035349a97b8cc285c46a1fe4f14f555337f9ef4963bc5ab3fc23d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-form/body-form.b0004.json",
+      "sha256": "3518837e1bb51143e7066655366bfb7216cddef3eab6021206802045f93977fa",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-hair/body-hair.b0001.json",
+      "sha256": "2165d2975faf60df86382b99df3206a21aa3fe27dfaf7f621777286236bf5498",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-hair/body-hair.b0002.json",
+      "sha256": "79f2b632209ef177488a4388c386dc8e2767b47292e85ddcfe29040f904f1eec",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-hair/body-hair.b0003.json",
+      "sha256": "da5473bd8faa277522c01f62cbf8e34abe6f546a297120f571c2b025ec94ab22",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-mechanical/body-mechanical.b0001.json",
+      "sha256": "d63d43e82d8bf3c32a63eeb19324fd3d78f80fc7f8f30c0e1332b73c1a7f39f0",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-mechanical/body-mechanical.b0002.json",
+      "sha256": "beee3d445ff225ad081148c92cab66231ba1d564d2ba65b5d3f31cd9660e280b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-mechanical/body-mechanical.b0003.json",
+      "sha256": "57e8b16ae5cc14170bf911266204606dd8358899096d21cf37e6b8196eb41fcd",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-mechanical/body-mechanical.b0004.json",
+      "sha256": "ad5cb4576d58e4de7e7f02c12c06d36106e94b358db003c80245f9a1ceba4aaa",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-organ/body-organ.b0001.json",
+      "sha256": "17991846e23f6701b3d48aa54acf6a04e35e9056620a6d3a1e7277eda67f96ce",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-organ/body-organ.b0002.json",
+      "sha256": "0b80fc121285b0ee856e1018ea76cf2b22d0aed613e3622da0917b497aae0957",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-organ/body-organ.b0003.json",
+      "sha256": "18ee5729b1ac6bb6db71ee0eb6445fce5cb3c114f17ecd9228852f9d1c770b14",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-organ/body-organ.b0004.json",
+      "sha256": "61a3e876bbecd6eb82a9a04bf80f1470431a2d147c80041e2c542f75495ad3c7",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-scale/body-scale.b0001.json",
+      "sha256": "0023f73fc6aa1577667caef4d7d0e55f5b3f1931a2018856a94bd95132fda2b9",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-scale/body-scale.b0002.json",
+      "sha256": "ab8d7f6a456c588a5f8748d3b71884f662f8b2f7cbf49dcace02646570ce6e12",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-surface/body-surface.b0001.json",
+      "sha256": "6bf332db538c1d46b34679fe5a92716ef9b8fcc7f6ad3e0e55c81e64404c4a11",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-surface/body-surface.b0002.json",
+      "sha256": "c56de3edea2d94854b7a65fec54f9e2a1592a6b89479dfaa141cc302716c983b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-surface/body-surface.b0003.json",
+      "sha256": "227bb974de7fe21200d0e2adf9c8961b76607cf280c5e9e22746933b3783dbd8",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/body-surface/body-surface.b0004.json",
+      "sha256": "7d17c71f18d5fda6be621795dcb5a753cdabb391e53e5d65dea098b5e396854e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-food/daily-food.b0001.json",
+      "sha256": "47cef22f978e309ebe64e4f00e7b397baf44ac9c2977163a5e71a0caf33861f2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-food/daily-food.b0002.json",
+      "sha256": "3e887e0ba24611f85d4b17e3d80569c144bd4f82121eafebcb0e2ade6bc02765",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-food/daily-food.b0003.json",
+      "sha256": "6251869cfeb11e4ee8c2b5f9b19c88967809f061defc073a5d35b28c532278e2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-interact/daily-interact.b0001.json",
+      "sha256": "78e3af1fd3748b0a8b196724f98c47e432dd8fd07c0723f8d8485c272224805a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-interact/daily-interact.b0002.json",
+      "sha256": "d099e5c803d52cd131917eec9348d109b9dfb935ffbe331fc5cfa050d6935e45",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-interact/daily-interact.b0003.json",
+      "sha256": "bcaea77b4f77e8abe0605a7d518acbc1b49950016aee41bbfc5d4162cf3da458",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-interact/daily-interact.b0004.json",
+      "sha256": "48752009a2b55e6c30d75e7687627f1c44b1b16a7a4ea9228bed360ced076448",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-life/daily-life.b0001.json",
+      "sha256": "3d88ff3ad5ed69e064118c71c07da7428c4b570cc5c9b0e3478c4fb6d20152ec",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-life/daily-life.b0002.json",
+      "sha256": "30dd5ae64d145624ffd8a82024d4d660c7ea5fb1e972a3d8959fe67050966c68",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-life/daily-life.b0003.json",
+      "sha256": "7cada70dfc17084cc6a9e425c70172c8a4c821756b3f368a95cd0bf2a5feb70d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-life/daily-life.b0004.json",
+      "sha256": "42c76fc94b83f58143e0b55ab1e965d74a78c0e84c94c63d2f29ca15ab56a0f2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-move/daily-move.b0001.json",
+      "sha256": "6ece31cbf1bf9b3cb149b7809afe73d70417e5e929d393e3e1c122971ed51e3b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-move/daily-move.b0002.json",
+      "sha256": "5680f21c416515a2bec2c757a94f06290c49446ebc1b87ffe61f497b5f3c72f5",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-move/daily-move.b0003.json",
+      "sha256": "2fc0985995cfa765384cc7d6e6f350cc6050037aeaafc9ae44c166f702f38a3f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-observe/daily-observe.b0001.json",
+      "sha256": "a23f48f2317703ff68fb9b29a2a17615c5ff72dfb619edb4354a9df547cb3c8e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-observe/daily-observe.b0002.json",
+      "sha256": "966a3d8b6fc473965a9238bab48cd7704b3f9502a476444dbfe05af59bda731a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-observe/daily-observe.b0003.json",
+      "sha256": "aa45cf610ff97901a2a41f0de7d93cfc5f811b30895b47a2a374df0c0d445169",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-rest/daily-rest.b0001.json",
+      "sha256": "4d30fd5bf7be7b1d72b6e0f7299fcfb5151ad98a005da546bd4fb34ca6698652",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-rest/daily-rest.b0002.json",
+      "sha256": "17134f3410bfbbf4a386927f5478b6192b183039c63f2b4c4b44254458cace00",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-rest/daily-rest.b0003.json",
+      "sha256": "85dd1999f8bba7405bfa9aebb050e43384594b6ea1f61af8bf21f215bd0d510d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-social/daily-social.b0001.json",
+      "sha256": "30b0f0c012841ed55225836f22b3fea7c21984969daeb8f9595ae98b16ce4c9c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-social/daily-social.b0002.json",
+      "sha256": "49a1a30b0f1d35421c6afa9197cfe27b3055f3d2ec1c6ecfc7d50cd3901f4e8f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-social/daily-social.b0003.json",
+      "sha256": "30c81dbd73049c362805c485053ffc35cf8784563102bb01236899429ad59726",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-talk/daily-talk.b0001.json",
+      "sha256": "6c831a0a744349546e4970475332608ec08d943e73fa2822d5cf1ce6e0d50661",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-talk/daily-talk.b0002.json",
+      "sha256": "e462c0ddc2f3324a1591d15934ccf96c96fb1461ae62c93b90f1651cbcc60440",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-talk/daily-talk.b0003.json",
+      "sha256": "daa872011896bb7551ba50e238ec6615841afe3c83c37424387f61e8ea04cb2f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-work/daily-work.b0001.json",
+      "sha256": "7e2c8c3d80a91cccfa2a1c27a3097304655462ff481c74aa4a3d1294dd9c8f09",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-work/daily-work.b0002.json",
+      "sha256": "7ad28db7122b9a9539f1fd859392a83bcbce1a0a709d63fde60194e74363330a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-work/daily-work.b0003.json",
+      "sha256": "246c41aadcc639d3846a5a2966138ce6b032053a5607f20f16b35d1bd66ef8fe",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/daily-work/daily-work.b0004.json",
+      "sha256": "28375cc2085ad28e5c53e62b683f1c0ba73cb4cf612791ff6e0f0f697d7b67a1",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-address/npc-address.b0001.json",
+      "sha256": "851ee19ea235c169890e659a6db8cde9e3cb2e8a1bd07945b265de4c179874d7",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-address/npc-address.b0002.json",
+      "sha256": "7dc11313f037ff57a99630b29461528b1d18461c89fbd7e399e7ff64d634c0f3",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-address/npc-address.b0003.json",
+      "sha256": "90c5e3a8d7a215a409b4d0062393fe32714782095d29c12ab0e31c4c0e9c0f8a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-alias/npc-alias.b0001.json",
+      "sha256": "bd426350ac3f2420d0b3f2617bd1a5cefb585d1baa36e8b920142135ac4ee607",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-alias/npc-alias.b0002.json",
+      "sha256": "f8b1db59648b637387b67c8d689a300114a73788067660b9f0ee85e392cc4362",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-alias/npc-alias.b0003.json",
+      "sha256": "e300ebadd88aef693eed882526bd0df5ab5d2a138638f34ffc1ebf29db62ef78",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-alias/npc-alias.b0004.json",
+      "sha256": "c730a7ff35b383b8e63053bc433aa3d1fe381b5144b753b11e7135993cbed2ba",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-expression/npc-expression.b0001.json",
+      "sha256": "2c5a22fdf72dd77cf2a0c7c3165517614917d2544ef7cd9378aa05521f81bb12",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-expression/npc-expression.b0002.json",
+      "sha256": "c808f750a30f2c0cd8a0afc6b0163f826332b1fc85f8f794f8d259ccbea563ed",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-expression/npc-expression.b0003.json",
+      "sha256": "c95fc1b2df2d7baa7ee5f6b6bfbcfadc06da23b893b08f7b4fbe73d5f53a87de",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-expression/npc-expression.b0004.json",
+      "sha256": "91cd88b2603c3987d9fce1b16ac386f1b84ba713aa1c9dccc96069d454906511",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-goal/npc-goal.b0001.json",
+      "sha256": "b517549ddf46fc99a08f6416d5f7644196bb8141119c1d776f19b9be26d370b4",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-goal/npc-goal.b0002.json",
+      "sha256": "fbd35c1bfb0a4d4d2a47fed5cefb58c3e8af3e2d8ff1efb94982e26ce57caf09",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-goal/npc-goal.b0003.json",
+      "sha256": "b284b20cedb43cbf0ab8f07d82a9a2adeb5ee1a034c26c49aaa196e861e53c35",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-goal/npc-goal.b0004.json",
+      "sha256": "89bd7c9c3ec708c40cd80388f4dec139dc9f1d14b1281a804d0883448bbb4caf",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-habit/npc-habit.b0001.json",
+      "sha256": "d4ab1f3e728623efe98e7275b75dac8c44ae40db483e4315e80a84c53b66c713",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-habit/npc-habit.b0002.json",
+      "sha256": "1ec187414cafe3baa76bdb01f5c2a2733ee1a816f09424b8bd2daa170335fdd1",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-habit/npc-habit.b0003.json",
+      "sha256": "161a650440e52edaf7ea46d8458ca1dd1fe2a3d41e9106f8cec31ce229ccb3df",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-habit/npc-habit.b0004.json",
+      "sha256": "b3b7b2166dab66aa9d2e933ccd410483426a530b67256e04f963da086876e746",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-history/npc-history.b0001.json",
+      "sha256": "ca58f8d8111b921dd950ea943ecda5392905cc009e5c8634eb5aecaca6b11fae",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-history/npc-history.b0002.json",
+      "sha256": "59dfa436354e4240778b525dbf9922ae72455d4fcf3b131863150c1793062b51",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-history/npc-history.b0003.json",
+      "sha256": "985a417a67ce698d7193d02d3aed35cf519d8952c9dd60c7efe62a5cef12682c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-history/npc-history.b0004.json",
+      "sha256": "0d1c524eb69f6cd45d7ecdc4cb1a159907a18fd82345c2a7d0a7d54dfa1a169d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-identity/npc-identity.b0001.json",
+      "sha256": "9d7553610fa5ef3c0ecb7f4b346f76aa77103de917242cea647c0447b75d3dd7",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-identity/npc-identity.b0002.json",
+      "sha256": "431f5cc7e404274ef11b35aba3f70258a52deea91cd000d6ed942beb229d692c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-identity/npc-identity.b0003.json",
+      "sha256": "f3d94de3b858e74f25cad563eeffcd3d96967d3e8a8811def7604f9d11081402",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-interest/npc-interest.b0001.json",
+      "sha256": "6e7d3e4200ac244b521e4716c2ffc3f6b9a23205b6ec2772a9b879dcf8da815e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-interest/npc-interest.b0002.json",
+      "sha256": "85b46ab06c845a8c8a7f209a5c6b9d3aea6600d7dd0dd18724bcfb4683f6fd63",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-interest/npc-interest.b0003.json",
+      "sha256": "25f92753be529bbdebb65286d646a80517e4bbffef7684c7102d7a3e399f8c1b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-job/npc-job.b0001.json",
+      "sha256": "fbcef8b30803451c4ac5b0bed551b3f54f3a71636fc4d34022e686e3728efe4e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-job/npc-job.b0002.json",
+      "sha256": "746d27e8f71189f6f2ed44cef0c95962eec83fe2537b53219f6d327e1fa86f4c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-job/npc-job.b0003.json",
+      "sha256": "0986928060e1fa09d2710db770f3b0d5395d84d01aaecfeea3efd975278bec0a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-job/npc-job.b0004.json",
+      "sha256": "61e91d902209422c3a02134015398bcd4dbf0e1894d84ef0a43335de6d1d3cad",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-job/npc-job.b0005.json",
+      "sha256": "e5588c5c69ed5e459b3269e678c1ac22592f2a84474ced378b3eadc884a465cf",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-job/npc-job.b0006.json",
+      "sha256": "e478c5c0f81b86c69740cab3deff489b5f6a062a4c64a2dffc99a4514ddd2a68",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0001.json",
+      "sha256": "e54fc94f90c48714c0edc25ad3a8a5601e41a27c757d2ee01985a2a5dc6b7602",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0002.json",
+      "sha256": "f60a2065f4557417a40716198923496ab05b61bf8107d2d37ba9f32f9c03ade5",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0003.json",
+      "sha256": "52a988c705f4c5a10f6fb4bc148a856ee4276257aa9e6ad443a711d68740e989",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0004.json",
+      "sha256": "20b3c52be9a3134e48f5f6e72df53c6797b259a9722e41e85e70131cc909d2b8",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0005.json",
+      "sha256": "91d171c83daf0ff4e25c1378e81b4c3ba36ae107e4c26a51b0f514c619a2689f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0006.json",
+      "sha256": "ed93cd88ae0e3a50fbb1b78a2d1cb2af525acd2788debc518d0521fabdf0864d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0007.json",
+      "sha256": "8063ca265faca0fe6dc32539871363e5f4babbcaaddb8055dc670c113e7499b7",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-name/npc-name.b0008.json",
+      "sha256": "0c90aba0a57d0c9fdf00ed8bafd8ed0d30c56d04c84838eed2f7c258b02e6aea",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-origin/npc-origin.b0001.json",
+      "sha256": "481cc371c815f847afd2c5a5c1067a1bfee51a7b994c36784b91e887a5e31f5b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-origin/npc-origin.b0002.json",
+      "sha256": "759117ec88c111d19332c156c0a386586d9bd6930ebfdc56683025e3d38f19a8",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-origin/npc-origin.b0003.json",
+      "sha256": "8f3cda2d9d5757dcc6d26103d430cbf6f2bac938e4cefe3059806a3b00e5fe6c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-speech/npc-speech.b0001.json",
+      "sha256": "0180c315cd064833a5fd1f042ffa609180b7fde9294bdc787517b57e33ba8531",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-speech/npc-speech.b0002.json",
+      "sha256": "7a81eecf2345c8bacdd41889c43597e886caa47902bdffeedd1bfad71c8ca350",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-speech/npc-speech.b0003.json",
+      "sha256": "abda25fe2b63a805baa7d65bf5f56967a2a5f43e0e5a415df1f72607ff8230fa",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-trait/npc-trait.b0001.json",
+      "sha256": "94d6c7b2aa198968c5869d6d6edb4d1253309851f4dbdaf98e97a8d4641fbd39",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-trait/npc-trait.b0002.json",
+      "sha256": "8d24622684d2df215a79bd06a255daa9ae869ed0b127e3cab17ab06350d5cea6",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-trait/npc-trait.b0003.json",
+      "sha256": "f7d73e6082f193a24920ca06877e96e02a298ecea75778c0acd3c058006ac25e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-trait/npc-trait.b0004.json",
+      "sha256": "c9a2d3ab3ccb64d0a77c4ac3604a122efb97ecdbef15bf5be73a3adedc42ca6d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-value/npc-value.b0001.json",
+      "sha256": "e3b11c2c6c78ae96bfe0d579593faf288ec831105d01cb46b02cb23fd86805e6",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-value/npc-value.b0002.json",
+      "sha256": "3d44df944e61775481233b67c9b4b563b4defa82da3309e40067473bc307790e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/npc-value/npc-value.b0003.json",
+      "sha256": "f6b5a2cbf77175581aa1643fa9b4993fbcb05512f84cde6e50804bb6f032fb85",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-body/text-body.b0001.json",
+      "sha256": "72a5689ec9cfa0d347579e9dbd62f98569c88754e409682600f1dc14e302a4dd",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-body/text-body.b0002.json",
+      "sha256": "4412ac9aff02f99852678db48ffe7155fd2bc47f4c67617d0702e63d3e85ed07",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-body/text-body.b0003.json",
+      "sha256": "d1d375481f6f28dcb455d6c183ee51402f9228a14fb386c09b58cd12b3e6cc03",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-body/text-body.b0004.json",
+      "sha256": "e20afe5219fb14e84b69308068d1ff9a14b347752558765e2cb81b0d0f600097",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-emotion/text-emotion.b0001.json",
+      "sha256": "9955bd803189e3d2e3ffa99a4d7b64567322ed2ba65239c03950df75e21345c7",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-emotion/text-emotion.b0002.json",
+      "sha256": "19bd20cceccdc6e9250063962f0012f85953244ef82d852a0161d57a0801e146",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-emotion/text-emotion.b0003.json",
+      "sha256": "777264fddda11522c926c214c10101d5e1435dc662d01f8b5bb24bd8b4c88604",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-emotion/text-emotion.b0004.json",
+      "sha256": "f3dbe61f3bf78c3b13c5d8fd3f7296d49842a3b0b56ea5bb03e53d3024723968",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-encounter/text-encounter.b0001.json",
+      "sha256": "e5576025247267c8bcf542dde7186e1218740859dd06e43090cf29f894bb0dd0",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-encounter/text-encounter.b0002.json",
+      "sha256": "8830644c9c9f540f4e8a4958f53acc62256905e01ce7ece1764d0c945254d1dc",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-encounter/text-encounter.b0003.json",
+      "sha256": "ecb497f4cfae65728cb28a186a4d6f203ca8d5018a964d0bb14d3a82c15a7310",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-encounter/text-encounter.b0004.json",
+      "sha256": "86d4fbfef1a51a9230bf1417df95e89b850462df494fa62505b194d974820a3c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-environment/text-environment.b0001.json",
+      "sha256": "6edbc738cb905e1a129c7edf42b0963325ab8f880cc03e2b028387203191c9eb",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-environment/text-environment.b0002.json",
+      "sha256": "660a2f9837bced2c69e70f049884d0bd5f6d8214be25bd4b1106d04311241cd6",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-environment/text-environment.b0003.json",
+      "sha256": "663f80ef07fe889003545dc96299ad64e571ce34c32ebc7a379398c95991d425",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-environment/text-environment.b0004.json",
+      "sha256": "a72a073eaf8f8aaa6a8a74f1146070e9aa1491b6ea11ed3d7b275f828a1352cd",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-farewell/text-farewell.b0001.json",
+      "sha256": "69be51b7a27a71420a947a80e578fc8496bc35272ebef17d480045e12bdaf66b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-farewell/text-farewell.b0002.json",
+      "sha256": "af5e46280f36f4d669b9390e756a057c9e5a8afa74d47ddc565ade2ecd79079c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-farewell/text-farewell.b0003.json",
+      "sha256": "75a1926862e2e7cec397552f13869c9bf14d4221776043198b6b807dce195f8c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-opening/text-opening.b0001.json",
+      "sha256": "27213f94cfce526c6c624b52f15d4f551c08d3e8104f1f1c429a079b1dfa9665",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-opening/text-opening.b0002.json",
+      "sha256": "5b3c241dc409ba740967ffd7dfaf69819981f95c42205b3edc9a40c7cb35baeb",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-opening/text-opening.b0003.json",
+      "sha256": "3ed390285dc1cb6d235d8c8ab13301e3f6e700805bffb2b2d3dc88fdb32716c8",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-opening/text-opening.b0004.json",
+      "sha256": "1d616128efa59fc25b30a056777849b15c6f9833e693f6867a2a93880d62668c",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-refusal/text-refusal.b0001.json",
+      "sha256": "6e0b608a86fbfdc35fc1ebab4467950e2f2e5fed90b9d6375a5eb98132a957ae",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-refusal/text-refusal.b0002.json",
+      "sha256": "1c5167543a59724aaea5e64025ab539a9d507c100966d25f3d8bcd6ad2c24078",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-refusal/text-refusal.b0003.json",
+      "sha256": "f401d1f666f65d151fbdcaf603aa621b48274c91939b7f9c51d88300c23ec468",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-reply/text-reply.b0001.json",
+      "sha256": "0e82eb1c87e8e11bcd8a0a193d21d2fbda82ca57c8b7f1a4e654d675f30353d5",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-reply/text-reply.b0002.json",
+      "sha256": "88b559fbf9488b9a60c5f90bc89610390d9edf9b4f9b8690e4f71e69d0b1c916",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-reply/text-reply.b0003.json",
+      "sha256": "385d618f46bae087246427533dcf72aa826393887a1946359e67a042ba38d5d7",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-reply/text-reply.b0004.json",
+      "sha256": "6fb64f613ba6d613d5f7b1df08ec9b9b752a31f42613e193a33c0955b984a8f1",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-reply/text-reply.b0005.json",
+      "sha256": "d3082a4388daf32ec3d49864569e513b143bc91a0cf69c0422157f4aea3ecfda",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-reply/text-reply.b0006.json",
+      "sha256": "a5912a8e8d1237610c4eeb365fdc485e71bf2ffef17c2285283cce0ed522e54a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-adapt/text-tf-adapt.b0001.json",
+      "sha256": "4e77c3dbc2e0c6d175e47b8c4db3a12cd3767b178a7f0542d2c4d1c73c9c03ac",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-adapt/text-tf-adapt.b0002.json",
+      "sha256": "77c73230cf9008835a130ec447a944a4861c96351cab051e43690f1406ddbe4f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-adapt/text-tf-adapt.b0003.json",
+      "sha256": "7846cbc1beec8155be821c6b7c95433c749d49be1a53eb571b238c4e152175ea",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-adapt/text-tf-adapt.b0004.json",
+      "sha256": "3c725328f9331d19c33581f3c1d268a475d72c77ea165cd11f70a0497e0e8d6d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-sense/text-tf-sense.b0001.json",
+      "sha256": "52b42ff97154a367d20dadc9ec3ec4461a8130f2907f0dc7085cc9b0a4ca11e9",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-sense/text-tf-sense.b0002.json",
+      "sha256": "d0d9705a7df32d866fa6fe0899dd55b38786dc8bb0d160447f1754bc3f21872f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-sense/text-tf-sense.b0003.json",
+      "sha256": "1ac5b777058d4850651b808ccd61a67decf77f0a50912bcebd5b13afe55c1f80",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/text-tf-sense/text-tf-sense.b0004.json",
+      "sha256": "84bb95b91245e1ae85bb5e292c664a9faf5ede50aa4613cfeb70ea668fac22ea",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-building/world-building.b0001.json",
+      "sha256": "d308b2cb56ea93feae59ec07818e55c9e39c1941110b38ba884f2d8956a0aa09",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-building/world-building.b0002.json",
+      "sha256": "e23e84718189c94972bfd08c4ce5c7e253eb53ff423e11c5312d7717070870fc",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-building/world-building.b0003.json",
+      "sha256": "3e66679c6627a88c566b92b91fc6c79b4535276bbacc54602efe62c830132c4a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-building/world-building.b0004.json",
+      "sha256": "8729803cb8e5e1c9e0c7f494593b66bc2488dab4a2a5783f5a44f5f2de539ed8",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-culture/world-culture.b0001.json",
+      "sha256": "13857d4362baf30d75bcd5ae1f99b001631ca2f50b488b7337ce46bb512e1d04",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-culture/world-culture.b0002.json",
+      "sha256": "0e6a1b24ec4c583747d02ca331ec164fd77f00951317adae0443a19bc991a7bf",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-culture/world-culture.b0003.json",
+      "sha256": "a8d20d0a6a278b7a8b484c019157d10fcb46d3d2cae6b3c09410020c950a9e88",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-culture/world-culture.b0004.json",
+      "sha256": "3b77d97d7f2dec6b7c885f106d72ef53ef9a80b47fdb6702b96bcbf105f9e757",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-detail/world-detail.b0001.json",
+      "sha256": "bac3f52a60a475e66d9ff705c69ae9b6407fd3d35a4b75082e5b24d05065bbf0",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-detail/world-detail.b0002.json",
+      "sha256": "1a773c84dfca68464d64bde7f5def3453507af1c68f36b635fc865c8a415f03f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-detail/world-detail.b0003.json",
+      "sha256": "92b428c5179c5a779a7c5c6bb2190b73eb7f3856bbc96ca2fbf6a10b41138ce2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-detail/world-detail.b0004.json",
+      "sha256": "4ee245c53793d2ae421c442721686688573f5a0022d4c7a5b83e0ca209909e8b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-detail/world-detail.b0005.json",
+      "sha256": "d9a8e6b4bec82e3c0fec4e99a2b94241bdb6c583d5d44ad0f7528419e604a7d2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-detail/world-detail.b0006.json",
+      "sha256": "68e27e7f44be74b6b4ddd7f28f19a19cd3b1409b2ce64215e0a7f571adadd981",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-district/world-district.b0001.json",
+      "sha256": "e84ac82a01b045c83c8d1a2633ff9db8213e960742d8837e3c4fced9c9550b7d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-district/world-district.b0002.json",
+      "sha256": "c9a4b6e2c7292377743bfd001fd8cf63c15fbe3d1bc76b9019fba7fdb9dca869",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-district/world-district.b0003.json",
+      "sha256": "47678995229a4e558947062d739bddbfcffc62807b7262eafe292025d748c2c3",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-facility/world-facility.b0001.json",
+      "sha256": "e835d0631b5cb4cb8f63bf05967f4f7a70ee5ff40f3c5de1b6292673fd47425b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-facility/world-facility.b0002.json",
+      "sha256": "6af07cf45cc712b85c82b36409733477729645ff423338f1b8d3c67d16656ac3",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-facility/world-facility.b0003.json",
+      "sha256": "af672377b87944437414730698474ed40cf20f27047cf8f156e3fba8f3166e26",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-nature/world-nature.b0001.json",
+      "sha256": "a20dd8ea50786d704439084ba88dbeaf6606cc8b4541c7f672b695af88bddd30",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-nature/world-nature.b0002.json",
+      "sha256": "d9e1d6d084031b818395b2bacd51651085637da275baaf468a345172ced8aa39",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-nature/world-nature.b0003.json",
+      "sha256": "9daed02b0146babdeffc5f53041f8f3ea33562b82a02f2fff59e1849273869c3",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-object/world-object.b0001.json",
+      "sha256": "42d98a7c2cd3ccad77ad5792bc651af976132b03acd1f760df9efb15f0381e6f",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-object/world-object.b0002.json",
+      "sha256": "ff8da9f73ef7fca4eb128f65dfd45e37551281dc9e2744722fc3a8fa6683e64a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-object/world-object.b0003.json",
+      "sha256": "f7f7cb72bdf281403257a494a8a3313ebe54a896c6ca072f6accd042d26f055e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-object/world-object.b0004.json",
+      "sha256": "c2937b48f860ddf5cb8b8b27c117eed85fd83c176b8f37cf5a847a673a4f1a34",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-room/world-room.b0001.json",
+      "sha256": "310f48d865bfca6c246e459112524d386bb5dc08cc0445f9cdc353cd682a64e9",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-room/world-room.b0002.json",
+      "sha256": "1d452a85bca17048ea4a92ad5170755da97f8adbc1c20345023e2c4c53de137d",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-room/world-room.b0003.json",
+      "sha256": "582c3b0e133667eea55e93d51061b72ceceb22be79cdbc37454f291ae7f64b8a",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-scent/world-scent.b0001.json",
+      "sha256": "e833264c2c6791a81b9640cf8dd3979164eafeacbf195eb3168ae00a77beb1b0",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-scent/world-scent.b0002.json",
+      "sha256": "720dcbea170420bbbb32c80b029aa9251328557a0294e69fa7a72b2d9af4ffd5",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-scent/world-scent.b0003.json",
+      "sha256": "f1f3167305b2caba2e737a5ef723ff873b5c6d8b7c0d4b00a6353510c845f507",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-sound/world-sound.b0001.json",
+      "sha256": "63dcd9c3125bcd75fb456f1e74f0c0e2978065750ceba3f02416958c154f1931",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-sound/world-sound.b0002.json",
+      "sha256": "61ae3a8ee1663ab788367c4ed8ddd970fac60c8667c0b934bb7672f05375105b",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-sound/world-sound.b0003.json",
+      "sha256": "c04c55dc8ba714acbd5c88b1938be8dd03d7e3a4769af2b0844615cb09472de2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-terrain/world-terrain.b0001.json",
+      "sha256": "efea11551e117f00142a809a7e982e3dc519ff262ae5342aa8dcf7075d63eaf2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-terrain/world-terrain.b0002.json",
+      "sha256": "f5b5dcd4883ec5daf62ea412aed247911e8f224692d5c8ee2edbb6753e97ee4e",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-terrain/world-terrain.b0003.json",
+      "sha256": "a0b46ea7e4bc7663bae368cd990bf7263e71a7764619b9ad0121ef7dc94a6d59",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-weather/world-weather.b0001.json",
+      "sha256": "054aff1ca4f82f41f79d8c903be87eababc41d74dd63a4f00933abd17a828c70",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-weather/world-weather.b0002.json",
+      "sha256": "631c7edb4211327156c4a4463dfceb3f5a0cd4cc47c8210ac06672ddac73befe",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-weather/world-weather.b0003.json",
+      "sha256": "22c4404d555a739ae02c4f269652383e075b25ccf2349fa8826b5698867d0bca",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-weather/world-weather.b0004.json",
+      "sha256": "bf9c8678766304d0ef20c8311798a866619a96aaf1f76f467fd116c3b7d20da2",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-workplace/world-workplace.b0001.json",
+      "sha256": "b6e6b124ba8b203a6cb47d473056efef82a7ae5398ae88adf1102992c23be467",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-workplace/world-workplace.b0002.json",
+      "sha256": "c1b4dd293a1c66b5bdac52ba3489a41ec7e15c4ef0279a7328b637304725b267",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-workplace/world-workplace.b0003.json",
+      "sha256": "b6f15cd086bd778f774e6fbc35ff206c43aa68e2aa4c5679b76985e7a7152ffe",
+      "hashing": "json-stringify-sha256"
+    },
+    {
+      "path": "production/lexicon-authoring/collections/world-workplace/world-workplace.b0004.json",
+      "sha256": "267ccec42f7e6e2c6381a295279367ee49088c84ca27bd90702686e7796ce24d",
+      "hashing": "json-stringify-sha256"
+    }
+  ],
+  "preservedSourceFiles": [
+    {
+      "path": "originals/2026-10-12-交给用户-已收集tag汇总.md",
+      "sha256": "35442eefbb100480b13e59f85af97b629ce899b1d0d15bb0230ee9d13f9cf3e8"
+    },
+    {
+      "path": "originals/2026-10-12-已写好tag-正文交付说明.md",
+      "sha256": "e08392610c5adcc18b382d10dbcec32b5b2bcc8f5bfe3fa17cea587bc1ac705c"
+    },
+    {
+      "path": "originals/2026-10-12-已写好tag-正文交付.tar.gz",
+      "sha256": "db4284655bcd618a98635c6db879cdaf60c92bc53c03d75b9c3f2078de2ce0b3"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/00-目录.md",
+      "sha256": "2baadff3e298a13004bcf661de00166e3b63a760137db1b0c2d59595ea8255b1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺-剩余待入库-全加上.md",
+      "sha256": "1ce65b4400f4f4a18b20be060c3975c3042df5b2af6473901d4bb37f44fbe7f9"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/NSFW扩缺-待入库-v2-加量.md",
+      "sha256": "8784146e0d1dd69bbb2999f5c9871680d15fe07ddb2b48b00c3362c08556f322"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/候选待入库-色图批AB-v0.13.md",
+      "sha256": "690bb1efca80948b3cb24384c0845d6ff1eaf997bf1f908704cef70259276f3e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/NSFW扩缺-v2-摘要.md",
+      "sha256": "d1d626c0e56f896a42b5f1b72584b52dccbe0ebdc82648b4484e5c81473e6da3"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v2-加量.md",
+      "sha256": "fe785beba7420f2b81c5b8fdbb52317309f8947494c7298f9fec53ffb50a4ea4"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-v2-摘要.md",
+      "sha256": "ae0dfa8d64744f6264294d0254a470b951901c00e707add13b8fdeabad251727"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺候选-待入库-v1.md",
+      "sha256": "3083685636c5f73b7e6aad2c6566a4bece4a00e87a148106c99c835dc61d4431"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺候选-摘要.md",
+      "sha256": "9e928c8211346fcfb8f6d77746ad6c64bd3194a584ebacc1caafa172c015093e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-待入库-v1.md",
+      "sha256": "8212ba5702352cada1eb50bc41fbd9f18666345146f82f4d70b956a7c5ab59df"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/通用环境世界观查缺-摘要.md",
+      "sha256": "78cec4e5b6cdd6cfee516222403d0d8df91d28a8996e21b80a789498ae114e47"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/03-待入库/网上扩缺-本波收口说明.md",
+      "sha256": "7d169c3ec6d3eef7095be06b857d8eb558a4693800574dc8566317bf3269d98e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条清单-10700.md",
+      "sha256": "3c1e288ba206e9fe849a9a2b30691073c7cdca2bf1ffff827b26cfebdedfa6dd"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/通用已有词条-按库摘要.md",
+      "sha256": "b9aec64f9bb5bf9ab775b231453e37ceca95582be448f4c2e1e687bbfa3007c0"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/01-通用已有/README-全量说明.md",
+      "sha256": "295b5994a499107d95f5c8dc43d6233c8ec69f444e3138bebb2ff74806d8184c"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有-各库条数与样例-b0001至b0016.md",
+      "sha256": "03bf6a98f1b5ee10cabd2af58d0a68357c4a553b1b79586baf0783605a595019"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有词条清单-全量-b0001至b0016.md",
+      "sha256": "03a2429e2704dc22b3bf739dfeac785e00e321476cd324006c1819efcb2d91c1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/02-NSFW已有/NSFW已有词条清单-b0001.md",
+      "sha256": "8f6b79f4b6180f8507edeffd9b8489196e8b9ac6447f5c5bbccb96bfa1a4c30d"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/README.md",
+      "sha256": "2baadff3e298a13004bcf661de00166e3b63a760137db1b0c2d59595ea8255b1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/04-试跑种子/INDEX.md",
+      "sha256": "771941a02bba7b37dd203768f539065ed39994185ed6bed1fd8c0f3910c7a1c1"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/04-试跑种子/2026-10-12-接tag试跑-研究员触手黏液黑胶.md",
+      "sha256": "ec1c20549d95045f3a692c4c5a06abba3e3eab919d070cd6b6c15f32f8172442"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0003-production-report.md",
+      "sha256": "083102ef50556de4aa43c3a45ae18c7233cb5394087c68c0fccecbd63eee95dc"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/production-report.md",
+      "sha256": "8e1f95d3f25fdb05cc656c2124db6fe6875f443d0fc569dbe839a50fa8d6ad57"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0002-production-report.md",
+      "sha256": "72b8812c604f6b0ff1dd72366d812615c0cf2965afd0397648576721d4d10d6e"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0004-production-report.md",
+      "sha256": "ccd7c5a3b795927bab330dbc4d17a9af8ab745e78da72acf6d0f227fd898458c"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0010-b0016-production-report.md",
+      "sha256": "79f30ef68ea4847e25a03f00060540b714330cb7c647dae24f2795de9c2369e7"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付/05-生产报告摘要/b0005-b0009-production-report.md",
+      "sha256": "b5c3de0ed639c9e56d85af2ca16473828c5120662ff57315f0d9f69bc0f7076d"
+    },
+    {
+      "path": "readable/2026-10-12-已写好tag-正文交付说明.md",
+      "sha256": "e08392610c5adcc18b382d10dbcec32b5b2bcc8f5bfe3fa17cea587bc1ac705c"
+    }
+  ],
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "editorialSemantics": "Name, topic, attribute, source setting, example and description evidence are separate. No state, capability, consent, eligibility or reward is inferred.",
+  "idPolicy": {
+    "source": "Existing IDs retained; gap IDs hash source version/library/name; new concepts use authored keys.",
+    "exports": "b9001 common / b9101 world candidates. IDs frozen in export-links.json for this delivery; future additions need new batches, never re-sort old exports."
+  }
+}

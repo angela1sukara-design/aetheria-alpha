@@ -1,0 +1,16 @@
+import {readFile,writeFile,copyFile,mkdir} from 'node:fs/promises';
+import path from 'node:path';
+import {expandedPath} from './expand-general-library.mjs';
+const dir=expandedPath,index=JSON.parse(await readFile(path.join(dir,'index.json'),'utf8'));
+const entries=(await readFile(path.join(dir,'entries.jsonl'),'utf8')).trim().split('\n').map(JSON.parse);
+const tests=await readFile('artifacts/general-library-expansion-tests-2026-10-12.txt','utf8');
+if(!/tests 230/.test(tests)||!/pass 230/.test(tests)||!/fail 0/.test(tests))throw Error('完整测试没有通过，不能生成通过报告。');
+await mkdir(path.join(dir,'验证'),{recursive:true});
+await copyFile('artifacts/general-library-expansion-tests-2026-10-12.txt',path.join(dir,'验证/自动化测试.txt'));
+await writeFile(path.join(dir,'验证/类型检查.txt'),(await readFile('artifacts/general-library-expansion-typecheck-2026-10-12.txt','utf8')).trim()+'\n','utf8');
+const pending=entries.filter(e=>e.resolution==='needs-core-review');
+const grouped=[...Map.groupBy(pending,e=>e.library)].sort((a,b)=>b[1].length-a[1].length);
+await writeFile(path.join(dir,'验证与完成状态.md'),`# 整理验证与完成状态\n\n验证日期：2026-10-12。范围是上传的通用词条与世界环境候选资料，不是新一轮游戏功能开发。\n\n## 已实现\n\n- 原10,700条、候选667条及GPT新增388条统一收录，共11,755条；原ID、标题、完整说明、来源与字面证据可回溯。\n- 字典包含${index.counts.concepts}个编辑概念。核心对象、尺寸、材质、颜色、质感、空间、天气、时间和世界背景独立；原复合短语作为素材与例句保留。\n- 17种世界背景均有独立上下文映射。低重力和零重力分开；公共与共用分开；材料类比不反推材质。\n- 10,695条关联精确匹配的JSON说明；5段被截短的句子仅在派生版恢复，原件不覆盖。\n- 720个专名保持完整；6组重名保留来源差异；腕部和踝部两项新提案与现有位置属性重名，单列复核，没有跨语义强行合并。\n- 新增常用词条覆盖15个阅读分组，每条有实写定义与稳定编辑ID；没有占位说明。\n- 35个v2纯文字交换批次全部通过现有正式校验器；导出ID与编辑ID有对应表，重新生成时拒绝改写已交付ID。\n- 原交付31个文件（含NSFW）的SHA-256保持一致；源JSON哈希记录并核对。\n\n## 仅有交换接口，未实装\n\n编辑概念不属于运行TagDef。v2素材批次可用现有validate-v2校验，但tags数组为空，没有虚构运行标签引用，也未安装到游戏。进入运行库之前仍需正式语义审定与注册。素材没有事件效果、奖励、关系或身体状态字段。\n\n## 未完成与已知限制\n\n- ${index.counts.needsCoreReview}条仍缺乏可靠核心拆分，已输出needs-core-review.jsonl；最多集中在NPC习惯、价值、目标、身份和叙述句。\n- 有拆分结果的原素材也属于unreviewed编辑提案，尚未逐条人工审定；一条描写可能包含多个对象，修饰词的作用对象没有自动绑定。\n- descriptionTopicIds表示说明涉及的主题，不能作为身体能力、已发生事件、人物意愿或当前环境参数。\n- 两批候选的模型名未记录，不能确认是否Grok所写；既有world-* JSON的source.model标记为Grok Bot。\n- 原工程其它工作中的修改未纳入本次整理。\n\n## 自动化验证\n\nnpm test：230项通过，0失败；包含原216项及新增14项。覆盖全部主表重建一致、源ID保留、17背景、全文恢复边界、材质类比与否定、专名保护、属性维度、证据位置、导出ID防重排、35批正式格式校验和原件哈希。npm run typecheck通过。\n\n本轮为离线资料整理，没有更改游戏界面或运行行为；未新增宣称游戏内试玩或导入已通过的报告。完整记录见[自动化测试](验证/自动化测试.txt)、[类型检查](验证/类型检查.txt)。\n\n## 待核心复核分布\n\n| 库 | 条数 |\n| --- | --- |\n${grouped.map(([library,rs])=>`| ${library} | ${rs.length} |`).join('\n')}\n\n建议后续按来源库逐批审稿，先处理高频NPC行为与目标，再审核复合描写中的对象和属性绑定。审核通过后再接入运行字典，避免把原有描写短句继续当作不可组合的Tag。\n`,'utf8');
+const readme=await readFile(path.join(dir,'README.md'),'utf8');
+await writeFile(path.join(dir,'README.md'),readme.includes('[验证与完成状态]')?readme:readme.replace('- [机器索引与来源哈希]', '- [验证与完成状态](验证与完成状态.md)\n- [机器索引与来源哈希]'),'utf8');
+console.log(JSON.stringify({counts:index.counts,sourceFiles:index.sources.length,pendingLibraries:grouped.length}));
