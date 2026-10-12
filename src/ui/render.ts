@@ -5,6 +5,7 @@ import { renderBodyPanel } from './body-panel.ts';
 import { renderNPCPanel } from './npc-panel.ts';
 import { scenePresentation } from './scene-presentation.ts';
 import { actionPreview } from './action-preview.ts';
+import { presentationText } from '../engine/semantic-query.ts';
 export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag); node.className = className; if (text) node.textContent = text; return node;
 }
@@ -41,7 +42,8 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   byId('session-context').textContent = `${view.location.name} · ${scene.label}`;
   byId('action-context').textContent = scene.active ? '查看人物、身体或存档后，点“继续故事”即可回到这里。' : '选择行动前，可查看耗时与数值变化；实际恢复受状态上限影响。';
   byId('location-name').textContent = view.location.name;
-  prose(byId('location-description'), registry.text(view.location.textKey));
+  const observation = presentationText(view.state, registry, 'environment');
+  prose(byId('location-description'), registry.text(view.location.textKey) + (observation ? `\n\n${observation}` : ''));
   prose(byId('scene-text'), view.sceneText);
   byId('scene-text').hidden = scene.primaryResult || scene.mode === 'hub';
   byId('scene-return').hidden = scene.active || scene.mode === 'arrival' || scene.mode === 'hub';

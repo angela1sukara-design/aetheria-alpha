@@ -40,7 +40,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const meta = object(state.meta, ['schemaVersion', 'engineVersion', 'revision', 'packs']);
   if (!(meta.schemaVersion===3&&meta.engineVersion==='0.1-stage3'||meta.schemaVersion===4&&meta.engineVersion==='0.2-foundation')) bad('存档版本尚不支持；没有自动降级或迁移。');
   if(meta.schemaVersion===4){const env=object(state.environment);for(const [id,raw]of Object.entries(env)){registry.location(id as Id);const p=shape(raw,[],['light']);if(p.light!==undefined&&!['lit','dark'].includes(p.light))bad('光照覆盖无效。');}}
-  else {const reject=(v:unknown):void=>{if(v&&typeof v==='object'){for(const [k,x]of Object.entries(v)){if(['overrides','provenance','target','environment','entity'].includes(k))bad('v3 不接受 v4 新字段。');reject(x);}}};reject(state.player);reject(state.tfQueues);}
+  else {const reject=(v:unknown):void=>{if(v&&typeof v==='object'){for(const [k,x]of Object.entries(v)){if(['overrides','provenance','target','environment','entity'].includes(k))bad('v3 不接受 v4 新字段。');reject(x);}}};reject(state.player);reject(state.tfQueues);if((state as unknown as GameState).district?.scene)reject((state as unknown as GameState).district!.scene!.actors);}
   const revision = int(meta.revision);
   const refs = array(meta.packs);
   if (refs.length !== registry.packs.length) bad('PACK_MISMATCH：存档与已安装内容包集合不一致。');
@@ -162,6 +162,7 @@ export class SaveCodec {
       if (await checksum(envelope.payload) !== envelope.checksum) throw new Error('存档校验和不符，可能损坏。');
       if (!Number.isFinite(Date.parse(envelope.payload.savedAt))) throw new Error('存档日期格式不合法。');
       const version = envelope.payload.schemaVersion;
+      if (envelope.payload.state?.meta?.schemaVersion !== version) throw new Error('存档封装与状态版本不一致。');
       if (envelope.payload.state?.worldInstance) {
         if (![3,4].includes(version)) throw Error('生成世界存档版本无效。');
         const state = envelope.payload.state as GameState;
@@ -172,7 +173,8 @@ export class SaveCodec {
         parseRules(world.generation.rules);
         if (await hash(world.generation.rules) !== world.generation.rulesHash) throw Error('世界规则哈希不符。');
         validateState(state, restored);
-        return { status: 'ready', state: clone(state), registry: restored };
+        const migrated=version===3&&!!state.district?.scene;const loaded=migrated?upgradeFoundation(state,restored):clone(state);validateState(loaded,restored);
+        return { status: 'ready', state: loaded, registry: restored,...(migrated?{migration:'旧场景已升级：身体副本已移除，未知参与者暂停，原进度保留。'}:{}) };
       }
       if (this.registry.packs.some(p => p.id === 'generated/neighborhood')) {
         // 生成参考库可能额外装了种族/原型包；它们不能成为读取原固定世界的必需包。
@@ -198,9 +200,11 @@ export class SaveCodec {
       }
       const migrated = version < 3;
       const repair = migrated ? undefined : upgradeStage3(envelope.payload.state, this.registry);
-      const state = migrated ? migrateLegacy(envelope.payload.state, this.registry, version) : repair!.state;
+      let state = migrated ? migrateLegacy(envelope.payload.state, this.registry, version) : repair!.state;
       validateState(state, this.registry);
-      return { status: 'ready', state: clone(state), registry: this.registry, ...(migrated ? { migration: `${version === 1 ? '第一' : '第二'}阶段存档已升级：保留原进度${version === 1 ? '并新增初始身体' : '、身体与改造进度'}，新增人物记录。点击保存后写入新版存档。` } : repair?.upgraded ? { migration: '第三阶段存档已修复升级：原人物、任务、身体与改造进度完整保留。点击保存后写入修复版存档。' } : {}) };
+      const sceneUpgrade=(state as GameState).meta.schemaVersion===3&&!!(state as GameState).district?.scene;
+      if(sceneUpgrade){state=upgradeFoundation(state as GameState,this.registry);validateState(state,this.registry);}
+      return { status: 'ready', state: clone(state), registry: this.registry, ...(sceneUpgrade?{migration:'旧场景已升级：身体副本已移除；身体未知时暂停，事件和进度完整保留。'}:migrated ? { migration: `${version === 1 ? '第一' : '第二'}阶段存档已升级：保留原进度${version === 1 ? '并新增初始身体' : '、身体与改造进度'}，新增人物记录。点击保存后写入新版存档。` } : repair?.upgraded ? { migration: '第三阶段存档已修复升级：原人物、任务、身体与改造进度完整保留。点击保存后写入修复版存档。' } : {}) };
     } catch (error) {
       const reason = error instanceof Error ? error.message : '存档格式无效。';
       return { status: 'quarantined', code: reason.includes('PACK_MISMATCH') ? 'PACK_MISMATCH' : 'SAVE_INVALID', reason, original: text };

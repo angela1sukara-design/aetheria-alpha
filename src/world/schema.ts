@@ -1,3 +1,4 @@
+import { resolveTag } from '../content/tags.ts';
 import type { Registry } from '../content/registry.ts';
 import { clone, stableJson } from '../core/types.ts';
 import type { Id } from '../core/types.ts';
@@ -42,7 +43,7 @@ export function parseRules(raw: unknown): GenerationRulePack {
 function version(v: unknown): void { if (typeof v !== 'string' || !/^\d+\.\d+\.\d+$/.test(v)) throw Error('生成版本必须为三段版本。'); }
 export function parseReference(raw: unknown, registry: Registry): ReferencePack {
   const p = object(raw, ['format', 'schemaVersion', 'id', 'version', 'templates']);
-  if (p.format !== 'aetheria-reference' || p.schemaVersion !== 1) throw Error('不支持的参考包格式。');
+  if (p.format !== 'aetheria-reference' || ![1,2].includes(p.schemaVersion as number)) throw Error('不支持的参考包格式。');
   string(p.id); version(p.version); const seen = new Set<string>();
   list(p.templates, value => {
     const t = object(value, ['id', 'kind', 'data', 'environmentTags', 'weight', 'requiresTags', 'excludesTags', 'compatibleTags', 'requiresPacks', 'combination', 'contributes']);
@@ -61,6 +62,13 @@ export function parseReference(raw: unknown, registry: Registry): ReferencePack 
     else if (t.kind === 'event') { const d = object(t.data, ['label', 'prompt', 'completeText', 'minutes', 'reward']); for (const k of ['label', 'prompt', 'completeText']) string(d[k]); integer(d.minutes, 1, 120); integer(d.reward, 0, 20); }
     else if (t.kind === 'activity') { const d = object(t.data, ['label','description','minutes','energyChange','moneyChange','healthChange','capabilities']); string(d.label); string(d.description); integer(d.minutes, 5, 120); integer(d.energyChange, -12, 12); integer(d.moneyChange, -8, 8); integer(d.healthChange, 0, 8); strings(d.capabilities); if ((d.capabilities as string[]).some(c => !(BODY_CAPABILITIES as readonly string[]).includes(c))) throw Error('活动身体能力未实现。'); }
     else throw Error('未支持的参考模板类型。');
+    if(p.schemaVersion===2||registry.tags.length){
+      const check=(tag:string)=>{const id=resolveTag(registry,tag,'generation.v1');if(p.schemaVersion===2&&registry.tag(id).status!=='active')throw Error('新参考规则不可引用废弃 Tag。');if(p.schemaVersion===2&&tag!==id)throw Error('参考包 v2 必须使用规范 Tag ID。');return id;};
+      const all=[...t.environmentTags as string[],...t.requiresTags as string[],...t.excludesTags as string[],...t.compatibleTags as string[],...c.tags as string[],...(combo.boosts as {tag:string}[]).map(b=>b.tag),...(t.kind==='environment'?(t.data as {tags:string[]}).tags:[])];all.forEach(check);
+      const requires=(t.requiresTags as string[]).map(check),excludes=(t.excludesTags as string[]).map(check);if(requires.some(x=>excludes.includes(x)))throw Error('规则同时要求和排除同一语义。');
+      if(t.kind==='place'&&(c.tags as string[]).some(tag=>{const id=check(tag);return id.startsWith('foundation:service.')&&id!==('foundation:service.'+(t.data as {service:string}).service);}))throw Error('地点 service 与重复服务 Tag 矛盾。');
+      if(p.schemaVersion===2&&(c.tags as string[]).some(tag=>tag.startsWith('foundation:service.')))throw Error('参考包 v2 的 service Tag 必须从 data.service 派生。');
+    }
     // 缺少所需包的模板可保留在库里，但不能进入候选池。
     if ((t.requiresPacks as string[]).every(id => registry.packs.some(p => p.id === id))) {
       const npc = (id: unknown) => { if (!registry.residentTemplates.some(n => n.id === id)) throw Error('参考居民模板未注册。'); };

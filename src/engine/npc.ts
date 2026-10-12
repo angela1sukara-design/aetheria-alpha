@@ -1,3 +1,4 @@
+import { ageEligibility } from './eligibility.ts';
 import { instantiateBody, patchedBody } from './body.ts';
 import type { NPCState } from '../core/npc-types.ts';
 import type { Change, GameState, Id } from '../core/types.ts';
@@ -75,7 +76,5 @@ export function rememberNPC(state: GameState, registry: Registry, npcId: Id, mem
 /** 未知年龄不猜测；此接口给后续分级内容校验使用。 */
 export function adultNPCEligibility(registry: Registry, npcId: Id): { pass: boolean; reason: string } {
   const def = registry.npc(npcId), species = registry.species(def.speciesId);
-  if (def.ageYears === null) return { pass: false, reason: '人物年龄尚未确认。' };
-  if (!species.intelligent || def.ageYears < Math.max(18,species.adultAgeYears)) return { pass: false, reason: '未通过成年智慧人物资格。' };
-  return { pass: true, reason: '' };
+  return ageEligibility(def.ageYears,species.intelligent,species.adultAgeYears);
 }

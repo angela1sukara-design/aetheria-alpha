@@ -18,7 +18,9 @@
     "test:browser": "node tests/browser.mjs",
     "test:worldgen": "node --test tests/worldgen.test.ts tests/worldgen-v02.test.ts",
     "test:worldgen:browser": "node tests/worldgen-browser.mjs",
-    "check": "npm run typecheck && npm test && npm run build && node scripts/check-dist.mjs",
+    "check": "npm run typecheck && npm test && npm run build && node scripts/check-dist.mjs && npm run check:foundation",
+    "check:foundation": "node scripts/check-foundation.mjs",
+    "test:foundation:browser": "node tests/foundation-browser.mjs",
     "test:ui": "node tests/ui-pages-browser.mjs",
     "test:ux": "node tests/ux-browser.mjs"
   },

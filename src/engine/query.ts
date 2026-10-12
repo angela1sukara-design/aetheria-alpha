@@ -44,3 +44,6 @@ export function environment(s:GameState,r:Registry,locationId:Id=s.world.locatio
   return {service:service?known(service):unknown('地点服务未知。'),light:light?known(light):unknown('光照未知。')};
 }
 export function timeWindow(s:GameState,start:number,end:number):boolean {const now=s.clock.totalMinutes%1440;return start<end?now>=start&&now<end:now>=start||now<end;}
+
+/** 未来 TF 后的当前外观来自真实图；原生成文案作为历史素材保存，不当作身体证据。 */
+export function residentAppearance(s:GameState,r:Registry,id:string):string {const n=s.district?.residents.find(n=>n.id===id);if(!n)return '外观未知。';if(!s.tfQueues.some(j=>j.target?.kind==='resident'&&j.target.id===id&&j.completedStageIds.length))return n.appearance;const parts=[...new Set(n.body.parts.map(p=>r.bodyPart(p.definitionId).label))];const t=r.residentTemplates.find(t=>t.id===n.templateId);return parts.join('、')+(t?.attire?.length?'。衣着：'+t.attire[0]:'');}

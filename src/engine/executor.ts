@@ -1,3 +1,4 @@
+import { upgradeFoundation } from '../persistence/foundation-migration.ts';
 import type { ActionIntent, ActionResult, GameState } from '../core/types.ts';
 import { clone, freeze, stableJson } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -13,7 +14,7 @@ export class ActionExecutor {
   #state: GameState;
   readonly registry: Registry;
   readonly texts: TextLibrary;
-  constructor(registry: Registry, state: GameState, texts = new TextLibrary()) { this.registry = registry; this.#state = clone(state); this.texts=texts; }
+  constructor(registry: Registry, state: GameState, texts = new TextLibrary()) { this.registry = registry; this.#state = state.meta.schemaVersion===3&&registry.contentPacks.some(p=>p.manifest.schemaVersion===2)?upgradeFoundation(state,registry):clone(state); this.texts=texts; }
   snapshot(): GameState { return freeze(clone(this.#state)); }
   view() { return selectGameView(this.#state, this.registry, this.texts); }
   performAction(intent: ActionIntent, expectedRevision: number, requestId: string): ActionResult {

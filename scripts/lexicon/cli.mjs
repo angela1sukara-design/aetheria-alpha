@@ -1,3 +1,5 @@
+import { validateSemanticBatch, dictionaryRegistry } from './semantic-format.mjs';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { writeFile } from 'node:fs/promises';
@@ -13,6 +15,7 @@ function requireArgs(n) {if(args.length!==n)throw Error(`此操作需要 ${n} �
 try {
  let result;
  switch(command) {
+  case 'validate-v2': requireArgs(1); {const r=await dictionaryRegistry(project),b=validateSemanticBatch(JSON.parse(await readFile(path.resolve(args[0]),'utf8')),r);result={valid:true,format:b.format,batchId:b.batchId,count:b.entries.length,review:'unreviewed',runtime:'not-installed'};break;}
   case 'validate': requireArgs(1); {const b=await readBatch(path.resolve(args[0])),report=duplicateReport(b.entries);if(report.exact.length)throw Error('本批有精确重复：'+JSON.stringify(report.exact));result={valid:true,batchId:b.batchId,count:b.entries.length,duplicates:report};break;}
   case 'assign-scope': requireArgs(2); {result=await assignScope(root,...args);const file=path.join(root,'outbox',`whole-${args[0]}.md`);await writeFile(file,wholePrompt(...args),'utf8');result.prompt=file;break;}
   case 'validate-delivery': requireArgs(1); {const d=await readDelivery(path.resolve(args[0])),report=duplicateReport(d.batches.flatMap(b=>b.entries));if(report.exact.length)throw Error('整包有精确重复：'+JSON.stringify(report.exact.slice(0,10)));result={valid:true,scope:d.scope,batches:d.batches.length,entries:d.batches.reduce((n,b)=>n+b.entries.length,0),duplicates:report};break;}
@@ -26,7 +29,7 @@ try {
   case 'context': requireArgs(1); result=await contextSummary(root,args[0]);break;
   case 'export': requireArgs(1); result=await exportReviewed(root,path.resolve(args[0]));break;
   case 'inventory': requireArgs(0); {const report=await inventory(project);await atomicJSON(path.join(root,'inventory','current-materials.json'),report);result={totals:report.totals,fields:report.fields};break;}
-  default: console.log('基础词条工具（本地 Node.js，无 AI API、无游戏状态访问）\nassign-scope <all|npc|body|world|daily|text> <领取人>\nvalidate-delivery <整包.json>\nimport-delivery <整包.json>\nvalidate <交付.json>\nassign <批次ID> <领取人>\nextend <词库代码> <领取人> <主题>\nimport <交付.json>\nreview <审稿.json>\nduplicates\nindex\ncontext <词库代码>\nexport <输出.json>\ninventory');
+  default: console.log('基础词条工具（本地 Node.js，无 AI API、无游戏状态访问）\nassign-scope <all|npc|body|world|daily|text> <领取人>\nvalidate-delivery <整包.json>\nimport-delivery <整包.json>\nvalidate <交付.json>\nvalidate-v2 <语义素材v2.json>（只验收，不自动导入）\nassign <批次ID> <领取人>\nextend <词库代码> <领取人> <主题>\nimport <交付.json>\nreview <审稿.json>\nduplicates\nindex\ncontext <词库代码>\nexport <输出.json>\ninventory');
  }
  if(result)console.log(JSON.stringify(result,null,2));
 } catch(e) {console.error(e.message);process.exitCode=1;}

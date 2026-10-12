@@ -1,0 +1,5728 @@
+{
+  "format": "aetheria-tag-export",
+  "schemaVersion": 1,
+  "source": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "tags": [
+    {
+      "id": "foundation:setting.dry",
+      "label": "旱光街区",
+      "definition": "旱光街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.dry"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.forge",
+      "label": "炉巷街区",
+      "definition": "炉巷街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.forge"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.frost",
+      "label": "霜港街区",
+      "definition": "霜港街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.frost"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.garden",
+      "label": "林荫街区",
+      "definition": "林荫街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.garden"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.tidal",
+      "label": "咸汐街区",
+      "definition": "咸汐街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.tidal"
+        }
+      ]
+    },
+    {
+      "id": "foundation:setting.wet",
+      "label": "湿雾街区",
+      "definition": "湿雾街区的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "climate.wet"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.canopy",
+      "label": "树冠生态",
+      "definition": "树冠生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.canopy"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.fern",
+      "label": "蕨类生态",
+      "definition": "蕨类生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.fern"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.kelp",
+      "label": "海藻生态",
+      "definition": "海藻生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.kelp"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.lichen",
+      "label": "地衣生态",
+      "definition": "地衣生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.lichen"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.moss",
+      "label": "苔藓生态",
+      "definition": "苔藓生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.moss"
+        }
+      ]
+    },
+    {
+      "id": "foundation:ecology.shrub",
+      "label": "灌木生态",
+      "definition": "灌木生态的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "ecology"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "ecology.shrub"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.horticulture",
+      "label": "园艺背景",
+      "definition": "园艺背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "horticulture"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.insulation",
+      "label": "保温背景",
+      "definition": "保温背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "insulation"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.reclamation",
+      "label": "回收背景",
+      "definition": "回收背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "reclamation"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.saltwater",
+      "label": "盐水背景",
+      "definition": "盐水背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "saltwater"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.clinic",
+      "label": "诊疗服务",
+      "definition": "诊疗服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.clinic"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.commons",
+      "label": "公共空间",
+      "definition": "公共空间语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.commons"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.home",
+      "label": "住宿服务",
+      "definition": "住宿服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.home"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.market",
+      "label": "市场服务",
+      "definition": "市场服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.market"
+        }
+      ]
+    },
+    {
+      "id": "foundation:service.workshop",
+      "label": "工坊服务",
+      "definition": "工坊服务语义，由地点 service 字段查询产生。",
+      "facets": [
+        "service"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "service.workshop"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.solar",
+      "label": "日照利用背景",
+      "definition": "日照利用背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "solar"
+        }
+      ]
+    },
+    {
+      "id": "foundation:context.waterways",
+      "label": "水道背景",
+      "definition": "水道背景的生成背景语义；不等于实时温湿度或人物属性。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "waterways"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.city",
+      "label": "城市",
+      "definition": "关于城市的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "城市"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.assistance",
+      "label": "协助",
+      "definition": "关于协助的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "协助"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.life",
+      "label": "生活",
+      "definition": "关于生活的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "生活"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.identity",
+      "label": "身份",
+      "definition": "关于身份的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "身份"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.neighborhood",
+      "label": "邻里",
+      "definition": "关于邻里的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "邻里"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.work",
+      "label": "工作",
+      "definition": "关于工作的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "工作"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.trade",
+      "label": "交易",
+      "definition": "关于交易的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "交易"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.care",
+      "label": "诊疗",
+      "definition": "关于诊疗的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "诊疗"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.equipment",
+      "label": "装备",
+      "definition": "关于装备的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "装备"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.fit",
+      "label": "适配",
+      "definition": "关于适配的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "适配"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.social",
+      "label": "社交",
+      "definition": "关于社交的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "社交"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.rest",
+      "label": "休息",
+      "definition": "关于休息的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "休息"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.night",
+      "label": "夜间",
+      "definition": "关于夜间的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "夜间"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.mechanical",
+      "label": "机械",
+      "definition": "关于机械的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "机械"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.body-capability",
+      "label": "身体能力",
+      "definition": "关于身体能力的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "身体能力"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.exploration",
+      "label": "探索",
+      "definition": "关于探索的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "探索"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.balance",
+      "label": "平衡",
+      "definition": "关于平衡的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "平衡"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.risk",
+      "label": "风险",
+      "definition": "关于风险的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "风险"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.investigation",
+      "label": "调查",
+      "definition": "关于调查的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "调查"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.economy",
+      "label": "经济",
+      "definition": "关于经济的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "经济"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.recovery",
+      "label": "恢复",
+      "definition": "关于恢复的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "恢复"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.transformation",
+      "label": "身体变化主题",
+      "definition": "关于TF的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "TF"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.adaptation",
+      "label": "适应",
+      "definition": "关于适应的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "适应"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.salon",
+      "label": "沙龙",
+      "definition": "关于沙龙的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "沙龙"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.boundary",
+      "label": "边界",
+      "definition": "关于边界的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "边界"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.discovery",
+      "label": "发现",
+      "definition": "关于发现的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "发现"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.life-feedback",
+      "label": "生活反馈",
+      "definition": "关于生活反馈的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "生活反馈"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.beast-form",
+      "label": "兽化",
+      "definition": "关于兽化的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "兽化"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.senses",
+      "label": "感官",
+      "definition": "关于感官的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "感官"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.gel",
+      "label": "黑胶",
+      "definition": "关于黑胶的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "黑胶"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.cross-day",
+      "label": "跨日",
+      "definition": "关于跨日的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "跨日"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.lost-property",
+      "label": "失物",
+      "definition": "关于失物的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "失物"
+        }
+      ]
+    },
+    {
+      "id": "foundation:theme.gen-neighbor",
+      "label": "生成街区题材",
+      "definition": "关于neighborhood的剧情主题；不证明实体状态、时间、事实或行动资格。",
+      "facets": [
+        "theme"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "neighborhood"
+        }
+      ]
+    },
+    {
+      "id": "foundation:legacy.hidden",
+      "label": "旧隐藏标记",
+      "definition": "仅保留旧故事域映射；显示策略由 hidden 字段决定。",
+      "facets": [
+        "theme"
+      ],
+      "status": "deprecated",
+      "aliases": [
+        {
+          "scope": "story.v1",
+          "value": "隐藏"
+        }
+      ]
+    },
+    {
+      "id": "foundation:body.has-tail",
+      "label": "有尾部",
+      "definition": "真实身体存在尾部。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "foundation:body.mechanical-tail",
+      "label": "机械尾部",
+      "definition": "同一个真实尾部的有效材料族为 mechanical。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "foundation:body.can-grasp",
+      "label": "具备抓握能力",
+      "definition": "真实部件定义提供至少一个抓握能力。",
+      "facets": [
+        "body"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "foundation:time.night",
+      "label": "当前夜间",
+      "definition": "当前时钟处于 22:00–06:00；区别于剧情夜间主题。",
+      "facets": [
+        "retrieval"
+      ],
+      "status": "active",
+      "aliases": []
+    }
+  ],
+  "references": {
+    "foundation:theme.city": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/0/tags/0"
+      }
+    ],
+    "foundation:theme.assistance": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/0/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/13/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/15/tags/1"
+      }
+    ],
+    "foundation:theme.life": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/1/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/2/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/18/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/27/tags/1"
+      }
+    ],
+    "foundation:theme.identity": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/1/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/14/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/29/tags/0"
+      }
+    ],
+    "foundation:theme.neighborhood": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/2/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/27/tags/0"
+      }
+    ],
+    "foundation:theme.work": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/3/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/4/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/8/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/16/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/20/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/28/tags/1"
+      }
+    ],
+    "foundation:theme.trade": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/3/tags/1"
+      }
+    ],
+    "foundation:theme.care": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/4/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/16/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/26/tags/1"
+      }
+    ],
+    "foundation:theme.equipment": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/5/tags/0"
+      }
+    ],
+    "foundation:theme.fit": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/5/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/25/tags/1"
+      }
+    ],
+    "foundation:theme.social": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/6/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/7/tags/1"
+      }
+    ],
+    "foundation:theme.rest": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/6/tags/1"
+      }
+    ],
+    "foundation:theme.night": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/7/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/24/tags/1"
+      }
+    ],
+    "foundation:theme.mechanical": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/8/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/9/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/14/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/25/tags/0"
+      }
+    ],
+    "foundation:theme.body-capability": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/9/tags/0"
+      }
+    ],
+    "foundation:theme.exploration": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/10/tags/0"
+      }
+    ],
+    "foundation:theme.balance": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/10/tags/1"
+      }
+    ],
+    "foundation:theme.risk": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/11/tags/0"
+      }
+    ],
+    "foundation:theme.investigation": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/11/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/12/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/13/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/23/tags/1"
+      }
+    ],
+    "foundation:theme.economy": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/12/tags/1"
+      }
+    ],
+    "foundation:theme.recovery": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/15/tags/0"
+      }
+    ],
+    "foundation:theme.transformation": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/17/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/19/tags/1"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/21/tags/0"
+      }
+    ],
+    "foundation:theme.adaptation": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/17/tags/1"
+      }
+    ],
+    "foundation:theme.salon": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/18/tags/0"
+      }
+    ],
+    "foundation:theme.boundary": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/19/tags/0"
+      }
+    ],
+    "foundation:theme.discovery": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/20/tags/1"
+      }
+    ],
+    "foundation:theme.life-feedback": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/21/tags/1"
+      }
+    ],
+    "foundation:theme.beast-form": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/22/tags/0"
+      }
+    ],
+    "foundation:theme.senses": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/22/tags/1"
+      }
+    ],
+    "foundation:legacy.hidden": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/23/tags/0"
+      },
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/24/tags/0"
+      }
+    ],
+    "foundation:theme.gel": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/26/tags/0"
+      }
+    ],
+    "foundation:theme.cross-day": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/28/tags/0"
+      }
+    ],
+    "foundation:theme.lost-property": [
+      {
+        "packId": "aetheria/district",
+        "version": "0.2.0",
+        "pointer": "/storylets/29/tags/1"
+      }
+    ],
+    "foundation:body.has-tail": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/0/tagId"
+      },
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/proseMaterials/0/tags/0"
+      },
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/proseMaterials/2/tags/0"
+      }
+    ],
+    "foundation:body.mechanical-tail": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/1/tagId"
+      },
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/proseMaterials/1/tags/0"
+      }
+    ],
+    "foundation:body.can-grasp": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/2/tagId"
+      }
+    ],
+    "foundation:time.night": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/3/tagId"
+      }
+    ],
+    "foundation:service.home": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/4/tagId"
+      }
+    ],
+    "foundation:service.market": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/5/tagId"
+      }
+    ],
+    "foundation:service.workshop": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/6/tagId"
+      }
+    ],
+    "foundation:service.clinic": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/7/tagId"
+      }
+    ],
+    "foundation:service.commons": [
+      {
+        "packId": "aetheria/foundation",
+        "version": "1.0.0",
+        "pointer": "/derivedTags/8/tagId"
+      }
+    ]
+  },
+  "referenceReferences": [
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/0/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.fern",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/0/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.waterways",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/0/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/1/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/1/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/2/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/2/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/3/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/3/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/4/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/4/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/5/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/5/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/6/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/6/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/7/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/7/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/8/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/8/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/9/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/9/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/10/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/10/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/11/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/11/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/12/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/12/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/13/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/13/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/14/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/14/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/15/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/15/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/16/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/17/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/18/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/19/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/20/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/21/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.shrub",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/21/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.solar",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/21/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/22/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/22/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/23/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/23/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/24/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/24/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/25/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/25/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/26/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/26/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/27/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/27/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/28/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/28/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/29/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/29/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/30/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/30/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/31/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/31/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/32/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/32/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/33/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/33/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/34/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/34/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/35/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/35/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/36/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/36/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/37/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/38/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/39/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/40/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/41/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/42/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.canopy",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/42/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.horticulture",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/42/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/43/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/43/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/44/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/44/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/45/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/45/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/46/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/46/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/47/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/47/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/48/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/48/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/49/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/49/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/50/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/50/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/51/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/51/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/52/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/52/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/53/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/53/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/54/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/54/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/55/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/55/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/56/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/56/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/57/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/57/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/58/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/59/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/60/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/61/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/62/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/63/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.lichen",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/63/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.insulation",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/63/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/64/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/64/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/65/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/65/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/66/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/66/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/67/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/67/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/68/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/68/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/69/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/69/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/70/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/70/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/71/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/71/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/72/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/72/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/73/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/73/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/74/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/74/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/75/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/75/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/76/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/76/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/77/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/77/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/78/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/78/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/79/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/80/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/81/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/82/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/83/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/84/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.moss",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/84/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.reclamation",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/84/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/85/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/85/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/86/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/86/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/87/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/87/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/88/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/88/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/89/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/89/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/90/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/90/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/91/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/91/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/92/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/92/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/93/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/93/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/94/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/94/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/95/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/95/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/96/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/96/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/97/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/97/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/98/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/98/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/99/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/99/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/100/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/101/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/102/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/103/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/104/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/105/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.kelp",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/105/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.saltwater",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/105/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/106/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/106/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/107/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/107/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/108/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/108/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/109/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/109/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/110/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/110/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/111/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/111/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/112/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/112/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/113/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/113/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/114/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/114/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/115/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/115/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/116/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/116/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/117/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/117/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/118/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/118/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/119/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/119/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/120/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/120/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/121/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/122/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/123/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/124/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/125/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/126/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/127/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/128/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/129/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/130/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/131/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/132/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/133/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/134/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/135/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/136/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/137/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/138/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/139/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-reference",
+        "version": "0.2.0",
+        "hash": "1c515397c237b387b1a5b332775ecd7574a7fe37e78e594944ee70b5bb9634f3"
+      },
+      "path": "/templates/140/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/0/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.fern",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/0/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.waterways",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/0/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/1/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/1/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/2/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/2/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/3/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/3/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/4/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/4/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/5/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/5/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/6/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/6/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/7/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/7/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/8/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/8/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/9/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/9/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/10/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/10/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/11/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/11/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/12/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/12/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/13/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/13/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/14/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/14/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/15/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/15/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/16/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/17/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/18/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/19/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.wet",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/20/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/21/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.shrub",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/21/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.solar",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/21/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/22/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/22/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/23/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/23/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/24/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/24/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/25/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/25/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/26/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/26/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/27/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/27/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/28/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/28/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/29/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/29/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/30/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/30/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/31/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/31/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/32/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/32/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/33/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/33/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/34/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/34/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/35/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/35/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/36/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/36/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/37/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/38/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/39/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/40/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.dry",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/41/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/42/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.canopy",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/42/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.horticulture",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/42/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/43/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/43/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/44/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/44/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/45/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/45/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/46/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/46/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/47/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/47/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/48/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/48/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/49/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/49/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/50/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/50/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/51/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/51/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/52/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/52/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/53/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/53/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/54/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/54/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/55/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/55/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/56/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/56/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/57/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/57/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/58/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/59/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/60/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/61/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.garden",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/62/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/63/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.lichen",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/63/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.insulation",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/63/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/64/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/64/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/65/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/65/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/66/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/66/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/67/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/67/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/68/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/68/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/69/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/69/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/70/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/70/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/71/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/71/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/72/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/72/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/73/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/73/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/74/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/74/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/75/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/75/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/76/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/76/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/77/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/77/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/78/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/78/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/79/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/80/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/81/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/82/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.frost",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/83/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/84/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.moss",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/84/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.reclamation",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/84/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/85/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/85/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/86/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/86/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/87/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/87/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/88/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/88/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/89/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/89/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/90/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/90/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/91/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/91/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/92/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/92/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/93/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/93/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/94/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/94/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/95/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/95/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/96/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/96/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/97/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/97/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/98/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/98/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/99/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/99/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/100/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/101/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/102/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/103/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.forge",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/104/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/105/data/tags/0"
+    },
+    {
+      "tagId": "foundation:ecology.kelp",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/105/data/tags/1"
+    },
+    {
+      "tagId": "foundation:context.saltwater",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/105/data/tags/2"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/106/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/106/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/107/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/107/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/108/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/108/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/109/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/109/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/110/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/110/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/111/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/111/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/112/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/112/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/113/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/113/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/114/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/114/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/115/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/115/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/116/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/116/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/117/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/117/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/118/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/118/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/119/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/119/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/120/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/120/contributes/tags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/121/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/122/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/123/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/124/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:setting.tidal",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/125/environmentTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/126/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/127/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.home",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/128/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/129/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/130/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.market",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/131/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/132/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/133/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.workshop",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/134/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/135/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/136/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.clinic",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/137/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/138/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/139/requiresTags/0"
+    },
+    {
+      "tagId": "foundation:service.commons",
+      "source": {
+        "id": "aetheria/neighborhood-lexicon-reference",
+        "version": "1.0.0",
+        "hash": "ad2d007c8a8a69aa1e6499528f66cc081b2671f6af0e70ad4cf675695456cb63"
+      },
+      "path": "/templates/140/requiresTags/0"
+    }
+  ]
+}

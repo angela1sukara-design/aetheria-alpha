@@ -22,8 +22,8 @@ export function validateBody(value: unknown, registry: Registry): asserts value 
   for (const raw of graph.parts as unknown[]) {
     const extra = raw as Record<string,unknown>;
     const p = obj(raw, ['instanceId', 'definitionId', ...('overrides' in extra?['overrides']:[]), ...('provenance' in extra?['provenance']:[])]); const id = token(p.instanceId);
-    if(p.overrides)validateAttributes(p.overrides as never,registry,registry.bodyPart(p.definitionId as never).kind);
-    if(p.provenance){const v=obj(p.provenance,['tfInstanceId','stageId','patchId']);if(typeof v.tfInstanceId!=='string'||!v.tfInstanceId.length)fail('改造来源无效。');token(v.stageId);registry.bodyPatch(v.patchId as never);}
+    if(Object.hasOwn(p,'overrides'))validateAttributes(p.overrides as never,registry,registry.bodyPart(p.definitionId as never).kind);
+    if(Object.hasOwn(p,'provenance')){const v=obj(p.provenance,['tfInstanceId','stageId','patchId']);if(typeof v.tfInstanceId!=='string'||!v.tfInstanceId.length)fail('改造来源无效。');token(v.stageId);registry.bodyPatch(v.patchId as never);}
     if (parts.has(id)) fail('身体部件实例 ID 重复。');
     parts.set(id, registry.bodyPart(p.definitionId as never));
   }

@@ -31,6 +31,7 @@ function validatePlan(state: GameState, registry: Registry, def: TFDef, ownJob?:
 /** 只读预览用于 UI 与事务预检。它不抽随机、不扣钱、不增加进度。 */
 export function transformationCheck(state: GameState, registry: Registry, id: Id, op: 'tf.apply' | 'tf.enqueue' | 'tf.pause' | 'tf.resume' | 'tf.cancel', target:EntityRef=PLAYER): { pass: boolean; reason: string } {
   try {
+    if(target.kind!=='player'&&state.meta.schemaVersion!==4)throw new RuleError('STATE_VERSION','NPC 或居民变化需要先迁移到存档 v4。');
     const def = registry.transformation(id), job = currentTF(state, id,target);
     if (op === 'tf.apply' || op === 'tf.enqueue') {
       if (def.source !== (op === 'tf.apply' ? 'free' : 'story')) throw new RuleError('TF_SOURCE', '变化入口与内容定义不一致。');
@@ -55,7 +56,7 @@ function applyStage(job: TFInstance, stage: TFDef['stages'][number], state: Game
     const patch = registry.bodyPatch(stage.patchId);
     const scene=state.district?.scene;
     const occupied=scene?.contacts.flatMap(x=>entityKey(job.target)==='player'?[x.playerPartId]:scene.actors.some(a=>a.entity&&entityKey(a.entity)===entityKey(job.target))?[x.npcPartId]:[])??[];
-    if (patch.operations.some(op => occupied.includes(op.partId))) throw new RuleError('TF_CONTACT_OCCUPIED', '变化部位正在接触中。释放接触并恢复改造后继续。');
+    if (patchTargets(requireBody(state,job.target),patch,registry).some(key=>occupied.some(id=>key===`part:${id}`))) throw new RuleError('TF_CONTACT_OCCUPIED', '变化部位正在接触中。释放接触并恢复改造后继续。');
     const body=patchedBody(requireBody(state,job.target),patch,registry);
     if(state.meta.schemaVersion===4)for(const op of patch.operations){const part=body.parts.find(p=>p.instanceId===op.partId);if(part)part.provenance={tfInstanceId:job.instanceId,stageId:stage.id,patchId:patch.id};}
     replaceEntityBody(state,job.target??PLAYER,body);

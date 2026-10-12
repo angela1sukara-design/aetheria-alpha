@@ -39,7 +39,7 @@ const codec = new SaveCodec(registry); const decoded = await codec.decode(await 
 assert.equal(decoded.status, 'ready'); assert.deepEqual(decoded.state, engine.snapshot());
 const html = await readFile(path.join(root, 'index.html'), 'utf8'); assert.ok(html.includes('./src/ui/main.js'));
 const legacy = await codec.decode(await readFile(new URL('../tests/fixtures/stage1-save.json', import.meta.url), 'utf8'));
-assert.equal(legacy.status, 'ready'); assert.equal(legacy.state.meta.schemaVersion, 3);
+assert.equal(legacy.status, 'ready'); assert.equal(legacy.state.meta.schemaVersion, 4);
 const stage2 = await codec.decode(await readFile(new URL('../tests/fixtures/stage2-save.json', import.meta.url), 'utf8'));
 assert.equal(stage2.status, 'ready'); assert.equal(stage2.state.tfQueues[0].status, 'paused'); assert.equal(stage2.state.tfQueues[0].elapsedMinutes, 15);
 const stage3 = await codec.decode(await readFile(new URL('../tests/fixtures/stage3-npc-save.json', import.meta.url), 'utf8'));
@@ -50,4 +50,4 @@ assert.equal(recovered.view().actions.find(a => a.definition.id === 'aetheria-so
 assert.equal(recovered.performAction({ actionId: 'aetheria-recovery:action.salon.rest' }, recovered.snapshot().meta.revision, 'compiled-recover').ok, true);
 assert.equal(recovered.snapshot().player.variables['core:energy'], 10);
 assert.equal(recovered.performAction({ actionId: 'aetheria-social:action.travel.salon_street' }, recovered.snapshot().meta.revision, 'compiled-leave').ok, true);
-console.log('Distribution check passed: ESM imports, JSON loading, daily/event/BodyGraph/TF/NPC quest execution, schema-3 save round trip, stage-1/2/3 exact migration, exhausted-salon recovery. This is not browser QA.');
+console.log('Distribution check passed: ESM imports, JSON loading, daily/event/BodyGraph/TF/NPC quest execution, schema-4 save round trip, stage-1/2/3 exact migration, exhausted-salon recovery. This is not browser QA.');

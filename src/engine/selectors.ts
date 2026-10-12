@@ -1,3 +1,5 @@
+import { activityEligibility } from '../world/adaptation.ts';
+import { entityBody } from './query.ts';
 import type { ActionDef, ActionOption, GameState, GameView } from '../core/types.ts';
 import { clone, freeze } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -17,11 +19,13 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   return districtOptions(state,registry,allActions).map(definition => {
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
     for (const e of definition.effects) {
+      if(e.op==='resident.help'){const resident=state.district?.residents.find(n=>n.id===state.district?.currentResidentId),t=registry.residentTemplates.find(t=>t.id===resident?.templateId);if(resident&&t)checks.push(activityEligibility(resident.body,t,registry));}
       if(e.op==='scene.start')checks.push({pass:!!state.district?.profile.created,reason:'先在公寓签下租约，确认成年角色身份。'});
       if(e.op==='combat.turn'&&e.move==='attack')checks.push({pass:state.player.variables['core:energy']!>=3,reason:'进攻需要3点精力，防守可恢复。'});
       if(e.op==='combat.turn'&&e.move==='recover')checks.push({pass:state.player.variables['core:energy']!>=6,reason:'临时包扎需要6点精力。'});
       if(e.op==='scene.act'&&e.move==='contact') {const scene=state.district?.scene,def=registry.interactions.find(i=>i.id===scene?.definitionId),pose=def?.poses.find(p=>p.id===scene?.poseId);checks.push({pass:pose?.facing==='front'&&pose.zone==='near',reason:'面对面坐近后才可建立接触。'});checks.push({pass:!!state.player.body?.parts.some(p=>registry.bodyPart(p.definitionId).kind==='hand'&&!scene?.contacts.some(c=>c.playerPartId===p.instanceId)),reason:'没有空闲的手部资源，先释放接触。'});}
     }
+    for(const e of definition.effects)if(e.op==='scene.act'&&e.move==='contact'){const scene=state.district?.scene;if(scene){const b=entityBody(state,scene.actors[1]!.entity??{kind:'npc',id:scene.actors[1]!.id as import('../core/types.ts').Id});checks.push({pass:b.known&&b.value.parts.some(p=>registry.bodyPart(p.definitionId).kind==='hand'&&registry.bodyPart(p.definitionId).capabilities.includes('grasp')&&!scene.contacts.some(c=>c.npcPartId===p.instanceId)),reason:'对方没有空闲的抓握部位。'});}}
     checks.push(directResourceCheck(definition.effects, state, registry));
     for (const e of definition.effects) if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') checks.push(transformationCheck(state, registry, e.id, e.op,e.target));
     for (const e of definition.effects) if (e.op === 'event.start') for (const npcId of registry.event(e.id).participantIds ?? []) checks.push({ pass: npcPresent(state, registry, npcId), reason: `${registry.npc(npcId).name}此刻不在这里。` });

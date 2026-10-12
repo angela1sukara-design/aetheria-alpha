@@ -7,6 +7,8 @@ export interface PartAttributes { materialId?: Id; morphologyId?: Id; color?: 'b
 export interface PartPredicate extends PartAttributes { kind?: PartKind; materialFamily?: 'organic' | 'mechanical'; instanceId?: string; minLengthMm?: number }
 export interface TagDef { id: Id; label: string; definition: string; facets: ('setting' | 'ecology' | 'service' | 'body' | 'theme' | 'context' | 'retrieval')[]; status: 'active' | 'deprecated'; aliases: { scope: 'generation.v1' | 'story.v1' | 'lexicon.v2'; value: string }[]; replacementId?: Id }
 export interface FoundationDefinitions {
+  proseMaterials?: { id: Id; text: string; tags: Id[]; review: 'approved' | 'hold'; source: string; tier: 'general' }[];
+  proseSelections?: { id: Id; entryId: Id; channel: 'body' | 'environment'; when: Condition[] }[];
   tags?: TagDef[];
   materials?: { id: Id; label: string; family: 'organic' | 'mechanical' }[];
   morphologies?: { id: Id; label: string; kinds: PartKind[] }[];

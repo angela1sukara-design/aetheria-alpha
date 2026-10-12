@@ -12,4 +12,4 @@ export function tagLabel(r: Registry, value: string, scope: TagDef['aliases'][nu
   // 无字典的历史内容仍按旧域显示；已安装字典后未知值明确呈现，不能冒充规范 ID。
   try { return r.tag(resolveTag(r,value,scope)).label; } catch { return r.tags.length ? `未登记：${value}` : value; }
 }
-export function serviceTag(service: string): Id { return `aetheria:service.${service}`; }
+export function serviceTag(service: string): Id { return `foundation:service.${service}`; }

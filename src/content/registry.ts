@@ -8,7 +8,7 @@ import { RuleError } from '../core/errors.ts';
 import { isAppendOnlyEventPack } from './append-only.ts';
 export class Registry {
   readonly contentPacks: ContentPack[];
-  #definitions = new Map<string, { kind: string; value: unknown }>();
+  #definitions = new Map<string, { kind: string; value: unknown; packId:string }>();
   #actionsByHook = new Map<Id, Id[]>();
   readonly packs: PackRef[];
   readonly start: { locationId: Id; minutes: number };
@@ -26,6 +26,8 @@ export class Registry {
   readonly storylets: StoryletDef[]; readonly residentTemplates: ResidentTemplate[];
   readonly enemies: EnemyDef[]; readonly interactions: InteractionDef[]; readonly textSlots: TextSlotDef[];
   readonly sceneTexts: SceneTextDef[]; readonly equipment: EquipmentDef[];
+  readonly proseMaterials: NonNullable<FoundationDefinitions['proseMaterials']>;
+  readonly proseSelections: NonNullable<FoundationDefinitions['proseSelections']>;
   readonly tags: TagDef[];
   readonly derivedTags: NonNullable<FoundationDefinitions['derivedTags']>;
   readonly locationProfiles: NonNullable<FoundationDefinitions['locationProfiles']>;
@@ -41,13 +43,15 @@ export class Registry {
       const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1') && p.manifest.schemaVersion!==2);
       this.legacyRegistry = new Registry(legacy, references.filter(ref => legacy.some(p => p.manifest.id === ref.id)));
     }
+    this.proseMaterials=freeze(data.flatMap(p=>p.proseMaterials??[]));
+    this.proseSelections=freeze(data.flatMap(p=>p.proseSelections??[]));
     this.tags=freeze(data.flatMap(p=>p.tags??[]));
     this.derivedTags=freeze(data.flatMap(p=>p.derivedTags??[]));
     this.locationProfiles=freeze(data.flatMap(p=>p.locationProfiles??[]));
     this.npcBodies=freeze(data.flatMap(p=>p.npcBodies??[]));
     this.residentAdaptations=freeze(data.flatMap(p=>p.residentAdaptations??[]));
     const refs:Record<string,{packId:string;version:string;pointer:string}[]>={};
-    for(const pack of data){const scan=(v:unknown,path:string)=>{if(Array.isArray(v))v.forEach((x,i)=>scan(x,path+'/'+i));else if(v&&typeof v==='object')Object.entries(v).forEach(([k,x])=>{if(k!=='tags'||path!=='')scan(x,path+'/'+k);});else if(typeof v==='string'){const tag=this.tags.find(t=>t.id===v||t.aliases.some(a=>a.value===v));if(tag)(refs[tag.id]??=[]).push({packId:pack.manifest.id,version:pack.manifest.version,pointer:path});}};scan(pack,'');}
+    for(const pack of data){const scan=(v:unknown,path:string)=>{if(Array.isArray(v))v.forEach((x,i)=>scan(x,path+'/'+i));else if(v&&typeof v==='object')Object.entries(v).forEach(([k,x])=>{if(k!=='tags'||path!=='')scan(x,path+'/'+k);});else if(typeof v==='string'&&(/\/(tags|requiresTags|excludesTags|compatibleTags|environmentTags)\/\d+$|\/tag(Id)?$/.test(path))){const tag=this.tags.find(t=>t.id===v||t.aliases.some(a=>a.scope==='story.v1'&&path.startsWith('/storylets/')&&a.value===v));if(tag)(refs[tag.id]??=[]).push({packId:pack.manifest.id,version:pack.manifest.version,pointer:path});}};scan(pack,'');}
     this.tagReferences=freeze(refs);
     this.packs = freeze(clone(references));
     this.start = freeze(data.find(x => x.start)!.start!);
@@ -66,8 +70,8 @@ export class Registry {
     this.sceneTexts = freeze(data.flatMap(x => x.sceneTexts ?? []));
     this.equipment = freeze(data.flatMap(x => x.equipment ?? []));
     for (const pack of data) {
-      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def });
-      for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text });
+      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def,packId:pack.manifest.id });
+      for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text,packId:pack.manifest.id });
       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);
     }
     for (const [key, values] of this.#actionsByHook) this.#actionsByHook.set(key, [...new Set(values)].sort());
@@ -78,6 +82,7 @@ export class Registry {
     if (!entry || entry.kind !== kind) throw new RuleError('UNKNOWN_DEFINITION', `${id} 不是已注册的 ${kind}。`);
     return entry.value as T;
   }
+  provenance(id:Id):PackRef{const entry=this.#definitions.get(id);if(!entry)throw new RuleError('UNKNOWN_DEFINITION','内容定义不存在。');return this.packs.find(p=>p.id===entry.packId)!;}
   tag(id:Id):TagDef{return this.get(id,'tags');}
   material(id:Id):NonNullable<FoundationDefinitions['materials']>[number]{return this.get(id,'materials');}
   morphology(id:Id):NonNullable<FoundationDefinitions['morphologies']>[number]{return this.get(id,'morphologies');}

@@ -135,7 +135,7 @@ test('all six starter ecologies generate useful places, distinct local pools and
   }
 });
 test('generation-only professions are used without changing the fixed world pack list', async () => {
-  const index = await json('index'); assert.equal(index.packs.length, 6);
+  const index = await json('index'); assert.equal(index.packs.length, 7);
   const professions = new Set<string>();
   for (let seed = 0; seed < 16; seed++) {
     const g = await generate({ seed }); g.state.district!.residents.forEach(n => professions.add(n.profession));

@@ -55,10 +55,46 @@
   "hooks": [],
   "locations": [],
   "routes": [],
-  "actions": [],
+  "actions": [
+    {
+      "id": "foundation:action.tail-length",
+      "label": "将尾部适配为650毫米",
+      "hint": "修改真实尾部尺寸；不增加能力",
+      "group": "daily",
+      "surface": "body",
+      "conditions": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "instanceId": "tail"
+          }
+        }
+      ],
+      "effects": [
+        {
+          "op": "tf.apply",
+          "id": "foundation:tf.tail-length"
+        }
+      ],
+      "resultText": "foundation:text.tail-length"
+    }
+  ],
   "events": [],
-  "texts": {},
-  "contributions": [],
+  "texts": {
+    "foundation:text.tail-length": "尾部长度适配已完成，当前结构与活动能力仍按真实部件计算。"
+  },
+  "contributions": [
+    {
+      "hookId": "aetheria-tf:hook.body",
+      "actionIds": [
+        "foundation:action.tail-length"
+      ]
+    }
+  ],
   "tags": [
     {
       "id": "foundation:setting.dry",
@@ -1126,6 +1162,161 @@
         "op": "environment.service",
         "value": "commons"
       }
+    }
+  ],
+  "proseMaterials": [
+    {
+      "id": "foundation:prose.0.long-tail",
+      "text": "尾部需要留出足够的转身空间。",
+      "tags": [
+        "foundation:body.has-tail"
+      ],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.1.mechanical-tail",
+      "text": "机械尾部随重心变化调整位置。",
+      "tags": [
+        "foundation:body.mechanical-tail"
+      ],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.2.organic-tail",
+      "text": "尾部随着身体动作轻轻摆动。",
+      "tags": [
+        "foundation:body.has-tail"
+      ],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.light.dark",
+      "text": "工作灯熄灭后，细节暂时隐入暗处。",
+      "tags": [],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    },
+    {
+      "id": "foundation:prose.light.lit",
+      "text": "工作灯亮着，细小的刻线仍然清晰。",
+      "tags": [],
+      "source": "foundation-neutral-selection@1.0.0",
+      "review": "approved",
+      "tier": "general"
+    }
+  ],
+  "proseSelections": [
+    {
+      "id": "foundation:selection.0",
+      "entryId": "foundation:prose.0.long-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "minLengthMm": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "foundation:selection.1",
+      "entryId": "foundation:prose.1.mechanical-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "materialFamily": "mechanical"
+          }
+        }
+      ]
+    },
+    {
+      "id": "foundation:selection.2",
+      "entryId": "foundation:prose.2.organic-tail",
+      "channel": "body",
+      "when": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "materialFamily": "organic"
+          }
+        }
+      ]
+    },
+    {
+      "id": "foundation:selection.3",
+      "entryId": "foundation:prose.light.dark",
+      "channel": "environment",
+      "when": [
+        {
+          "op": "environment.light",
+          "value": "dark"
+        }
+      ]
+    },
+    {
+      "id": "foundation:selection.4",
+      "entryId": "foundation:prose.light.lit",
+      "channel": "environment",
+      "when": [
+        {
+          "op": "environment.light",
+          "value": "lit"
+        }
+      ]
+    }
+  ],
+  "bodyPatches": [
+    {
+      "id": "foundation:patch.tail-length",
+      "label": "尾部长度适配",
+      "summary": "尾部长度适配为650毫米",
+      "operations": [
+        {
+          "type": "attributes",
+          "partId": "tail",
+          "set": {
+            "lengthMm": 650
+          },
+          "unset": []
+        }
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "id": "foundation:tf.tail-length",
+      "label": "尾部长度适配",
+      "source": "free",
+      "stages": [
+        {
+          "id": "fit",
+          "atMinutes": 0,
+          "label": "已适配",
+          "patchId": "foundation:patch.tail-length"
+        }
+      ]
     }
   ]
 }

@@ -8,6 +8,6 @@ export function revalidateDistrict(s:GameState,r:Registry,c:EffectContext):void 
  const npc=entityBody(s,{kind:'npc',id:def.npcId});
  const player=entityBody(s,PLAYER);
  scene.contacts=scene.contacts.filter(c=>player.known&&npc.known&&player.value.parts.some(p=>p.instanceId===c.playerPartId&&r.bodyPart(p.definitionId).kind==='hand'&&r.bodyPart(p.definitionId).capabilities.includes('grasp'))&&npc.value.parts.some(p=>p.instanceId===c.npcPartId&&r.bodyPart(p.definitionId).kind==='hand'&&r.bodyPart(p.definitionId).capabilities.includes('grasp')));
- if(!player.known||!npc.known||(pose.requires&&(bodyTraits(player.value,r)[pose.requires]<1||bodyTraits(npc.value,r)[pose.requires]<1))){scene.contacts=[];scene.phase='paused';c.resolvedTexts.push('身体变化使当前姿态失去稳定条件，场景暂停并释放接触；可以退出后重新进入。');}
+ if(!player.known||!npc.known||!def.conditions.every(x=>evaluate(x,s,r).pass)||(pose.requires&&bodyTraits(player.value,r)[pose.requires]<1)){scene.contacts=[];scene.phase='paused';c.resolvedTexts.push('身体变化使当前姿态失去稳定条件，场景暂停并释放接触；可以退出后重新进入。');}
  }
 }

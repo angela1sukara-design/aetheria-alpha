@@ -17,3 +17,6 @@ export function selectReviewedText(s:GameState,r:Registry,materials:{id:string;t
   const ids=new Set(rules.filter(rule=>rule.when.every(c=>evaluate(c,s,r).pass)).map(rule=>rule.entryId));
   return materials.filter(m=>m.review==='approved'&&ids.has(m.id)).sort((a,b)=>a.id.localeCompare(b.id,'en'))[0]?.text;
 }
+export function presentationText(s:GameState,r:Registry,channel:'body'|'environment'):string|undefined {
+  return selectReviewedText(s,r,r.proseMaterials,r.proseSelections.filter(rule=>rule.channel===channel));
+}

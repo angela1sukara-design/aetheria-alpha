@@ -1,16 +1,19 @@
+import { resolveTag } from '../content/tags.ts';
+import { residentAdaptation, activityEligibility } from './adaptation.ts';
+import { validateReferenceOrder } from './reference-validation.ts';
 import { loadPacks } from '../content/loader.ts';
 import type { Registry } from '../content/registry.ts';
 import type { ActionDef, ContentPack, Effect, Id } from '../core/types.ts';
 import { clone } from '../core/types.ts';
 import { createGameState } from '../engine/state.ts';
-import { instantiateBody, patchedBody, bodyTraits } from '../engine/body.ts';
+import { instantiateBody, patchedBody } from '../engine/body.ts';
 import { draw } from '../engine/rng.ts';
 import { initialDistrict } from '../engine/district.ts';
 import { advanceWorldSimulation } from './simulation.ts';
 import { hash, integer, parseReference, parseRules } from './schema.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
-export const GENERATOR_VERSION = '0.2.1';
+export const GENERATOR_VERSION = '0.3.0';
 const id = (key: string): Id => `worldgen:${key}`;
 
 /** 生成器只创建初始快照。所有玩法编译成已有内容 DSL，并经过同一个 loader。 */
@@ -22,10 +25,13 @@ export class WorldGenerator {
     if (input.registry.packs.some(p => p.id === 'generated/neighborhood')) throw Error('请用源内容库创建新世界。');
     const rules = parseRules(input.rules), references = input.references.map(p => parseReference(p, input.registry)).sort((a, b) => a.id.localeCompare(b.id, 'en'));
     if (!references.length || new Set(references.map(p => p.id)).size !== references.length) throw Error('参考包集合为空或重复。');
-    const templates = references.flatMap(p => p.templates).sort((a, b) => a.id.localeCompare(b.id, 'en'));
+    const templates = references.flatMap(p => clone(p.templates)).sort((a, b) => a.id.localeCompare(b.id, 'en'));
     if (templates.length > 2000) throw Error('参考模板总量超过首版限制。');
     if (new Set(templates.map(t => t.id)).size !== templates.length) throw Error('跨包模板 ID 必须唯一。');
     for (const t of templates) for (const ref of [...t.combination.requiresTemplates, ...t.combination.excludesTemplates]) if (!templates.some(x => x.id === ref)) throw Error('组合规则引用未知模板。');
+    const canonical=(tag:string)=>input.registry.tags.length?resolveTag(input.registry,tag,'generation.v1'):tag;
+    for(const t of templates){for(const key of ['environmentTags','requiresTags','excludesTags','compatibleTags']as const)t[key]=t[key].map(canonical);t.contributes.tags=t.contributes.tags.map(canonical);for(const b of t.combination.boosts)b.tag=canonical(b.tag);if(t.kind==='environment')t.data.tags=t.data.tags.map(canonical);if(t.kind==='place')t.contributes.tags=t.contributes.tags.filter(tag=>!tag.startsWith('foundation:service.')&&!tag.startsWith('service.'));}
+    validateReferenceOrder(templates);
     // 模板贡献的原型同样遵守父模板条件；只有父模板实际被选中后才能参与抽样。
     if (templates.length + templates.reduce((count, t) => count + t.contributes.npcTemplateIds.length, 0) > 2000) throw Error('贡献原型展开后超过2000个模板限制。');
     const contributedNPCs: ReferenceTemplate[] = templates.flatMap(t => t.contributes.npcTemplateIds.map((npcId, i) => ({ ...clone(t), id: `${t.id}.contributed-npc.${i}`, kind: 'npc' as const, data: { residentTemplateId: npcId }, combination: { ...clone(t.combination), requiresTemplates: [...new Set([...t.combination.requiresTemplates, t.id])] }, contributes: { tags: [], npcTemplateIds: [], eventIds: [], tfIds: [] } })));
@@ -52,11 +58,11 @@ export class WorldGenerator {
     const environment = choose('environment', 'environment'); if (environment.kind !== 'environment') throw Error();
     [...environment.data.tags, ...environment.contributes.tags].forEach(t => tags.add(t));
     const pack: ContentPack = {
-      manifest: { id: 'generated/neighborhood', namespace: 'worldgen', version: GENERATOR_VERSION, schemaVersion: 1, engineApiVersion: '0.1', author: 'WorldGenerator · PROPOSED', status: 'draft', dependencies: input.registry.packs.map(p => ({ id: p.id, version: p.version, optional: false })), requiresCapabilities: ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'district.v1', 'body.graph.v1', 'tf.pipeline.v1'], migrations: [] },
+      manifest: { id: 'generated/neighborhood', namespace: 'worldgen', version: GENERATOR_VERSION, schemaVersion: input.registry.tags.length?2:1, engineApiVersion: '0.1', author: 'WorldGenerator · PROPOSED', status: 'draft', dependencies: input.registry.packs.map(p => ({ id: p.id, version: p.version, optional: false })), requiresCapabilities: [...(input.registry.tags.length?['foundation.v2']:[]),'condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'district.v1', 'body.graph.v1', 'tf.pipeline.v1'], migrations: [] },
       variables: [], flags: [], hooks: [], locations: [], routes: [], actions: [], events: [], texts: {}, contributions: [], residentTemplates: [], storylets: [],
     };
     const contributionsAt = new Map<Id, ReferenceTemplate[]>();
-    const definition: WorldDef = { id: `neighborhood-${input.seed}`, name: environment.data.name, startLocationId: id('location.0'), regions: [{ id: 'region-0', name: environment.data.name, environmentTags: [...tags], ecologyTags: [...tags].filter(t => t.startsWith('ecology.')) }], locations: [], factions: [], eventPool: [], packs: [] };
+    const definition: WorldDef = { id: `neighborhood-${input.seed}`, name: environment.data.name, startLocationId: id('location.0'), regions: [{ id: 'region-0', name: environment.data.name, environmentTags: [...tags], ecologyTags: [...tags].filter(t => t.startsWith('ecology.')||t.startsWith('foundation:ecology.')) }], locations: [], factions: [], eventPool: [], packs: [] };
     for (let i = 0; i < 2; i++) {
       const t = choose('faction', `faction.${i}`, t => !selected.some(s => s.kind === 'faction' && s.id === t.id)); if (t.kind !== 'faction') throw Error();
       t.contributes.tags.forEach(tag => tags.add(tag));
@@ -85,11 +91,12 @@ export class WorldGenerator {
       const t = choose('place', `place.${i}`, t => t.kind === 'place' && (!service || t.data.service === service)); if (t.kind !== 'place') throw Error();
       const lid = id(`location.${i}`), hook = id(`hook.${i}`), textKey = id(`text.location.${i}`), faction = definition.factions[i % 2]!;
       const name = pick(t.data.names, `name.${i}`) + (i >= 5 ? `·${i + 1}` : '');
-      const localTags = [...new Set([...tags, `service.${t.data.service}`, ...t.contributes.tags])];
+      const localTags = [...new Set([...tags, canonical(`service.${t.data.service}`), ...t.contributes.tags])];
       pack.hooks.push({ id: hook, accepts: 'action', visibility: 'public' });
       pack.texts[textKey] = `${environment.data.description}\n\n${t.data.description}\n\n这里以${t.data.economy.join('、')}维持生计，由${faction.name}协调。你可以休息、找工作或留意附近的人。`;
       const cell = pick(mapCells, `map.cell.${i}`); mapCells.splice(mapCells.indexOf(cell), 1);
       pack.locations.push({ id: lid, name, subtitle: `${t.data.economy.join(' / ')} · ${environment.data.name}`, textKey, actionHook: hook, map: { x: 12 + cell % 5 * 18 + Math.floor(draw(randomState, `generation:map.x.${i}`) * 5) - 2, y: 12 + Math.floor(cell / 5) * 24 + Math.floor(draw(randomState, `generation:map.y.${i}`) * 5) - 2 } });
+      if(pack.manifest.schemaVersion===2){(pack.locationProfiles??=[]).push({id:id('location-profile.'+i),locationId:lid,light:'lit'});action('light.off.'+i,'关闭工作灯',hook,[{op:'environment.setLight',locationId:lid,value:'dark'}],[{op:'environment.light',locationId:lid,value:'lit'}]);action('light.on.'+i,'打开工作灯',hook,[{op:'environment.setLight',locationId:lid,value:'lit'}],[{op:'environment.light',locationId:lid,value:'dark'}]);}
       definition.locations.push({ id: lid, regionId: 'region-0', templateId: t.id, service: t.data.service, tags: localTags, economy: clone(t.data.economy), professions: clone(t.data.professions), factionId: faction.id }); faction.locationIds.push(lid);
       if (t.data.ambience) for (const [key, start, end] of [['morning', 360, 600], ['day', 600, 1080], ['evening', 1080, 1320], ['night', 1320, 360]] as const) {
         const textKey = id(`text.ambience.${i}.${key}`); pack.texts[textKey] = t.data.ambience[key];
@@ -115,7 +122,7 @@ export class WorldGenerator {
         for (const tag of a.contributes.tags) { context.add(tag); if (!localTags.includes(tag)) localTags.push(tag); }
         const resources = [{ id: 'core:energy' as Id, amount: a.data.energyChange }, { id: 'core:money' as Id, amount: a.data.moneyChange }, { id: 'core:health' as Id, amount: a.data.healthChange }];
         const changes = (positive: boolean): Effect[] => resources.filter(r => positive ? r.amount > 0 : r.amount < 0).map(r => ({ op: 'var.change', ...r }));
-        action(`activity.${i}.${j}`, a.data.label, hook, [...changes(false), { op: 'clock.advance', minutes: a.data.minutes }, ...changes(true)], a.data.capabilities.map(capability => ({ op: 'body.hasCapability', capability, count: 1 })), 'daily', a.data.description);
+        action(`activity.${i}.${j}`, a.data.label, hook, [...changes(false), { op: 'clock.advance', minutes: a.data.minutes }, ...changes(true)], [...a.data.capabilities.map(capability => ({ op: 'body.hasCapability' as const, capability, count: 1 })),...(pack.manifest.schemaVersion===2?[{op:'environment.light' as const,locationId:lid,value:'lit' as const}]:[])], 'daily', a.data.description);
       }
       const events: ReferenceTemplate[] = [];
       for (let j = 0; j < (rules.eventsPerLocation ?? 1); j++) {
@@ -131,7 +138,7 @@ export class WorldGenerator {
       for (const aid of [finish, leave]) pack.actions.find(a => a.id === aid)!.context = { eventId: eid, nodeId: 'start' };
       pack.texts[prompt] = e.data.prompt; pack.texts[endText] = '交接已记录。你可以继续探索街区。';
       pack.events.push({ id: eid, startNode: 'start', rating: 'general', nodes: [{ id: 'start', type: 'choice', textVariants: [prompt], actionIds: [finish, leave], onEnter: [] }, { id: 'end', type: 'exit', textVariants: [endText], actionIds: [], onEnter: [{ op: 'event.exit' }] }] });
-      pack.storylets!.push({ id: id(`storylet.${i}.${j}`), locationId: lid, conditions: [], eventId: eid, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: ['neighborhood'] }); definition.eventPool.push(eid);
+      pack.storylets!.push({ id: id(`storylet.${i}.${j}`), locationId: lid, conditions: [], eventId: eid, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: [input.registry.tags.length?'foundation:theme.gen-neighbor':'neighborhood'] }); definition.eventPool.push(eid);
       }
     }
     const pairs = new Set<string>();
@@ -168,8 +175,9 @@ export class WorldGenerator {
       template.patchIds = source.patchIds.length ? [pick(source.patchIds, `npc.patch.${i}`)] : [];
       let initialBody = instantiateBody(input.registry.bodyTemplate(template.bodyTemplateId));
       for (const patch of template.patchIds) initialBody = patchedBody(initialBody, input.registry.bodyPatch(patch), input.registry);
-      const traits = bodyTraits(initialBody, input.registry);
-      if (traits.grasp < 1 || traits.walk < 1) throw Error('居民身体不满足首版劳动与移动能力规则。');
+      const adaptation=residentAdaptation(source,input.registry);
+      if(!activityEligibility(initialBody,source,input.registry).pass)throw Error('居民身体不满足明确的职业或活动适配。');
+      if(pack.manifest.schemaVersion===2)(pack.residentAdaptations??=[]).push({id:id('adaptation.'+i),templateId:template.id,workCapabilities:[...adaptation.workCapabilities],mobility:adaptation.mobility});
       // 旧模板外观可能包含与补丁无关的肢体描写；生成外观从真实图读取，避免虚构部件。
       const parts = initialBody.parts.map(p => input.registry.bodyPart(p.definitionId));
       template.appearance = [`${[...new Set(parts.filter(p => p.kind === 'ear' || p.kind === 'tail').map(p => p.label))].join('、') || input.registry.bodyTemplate(template.bodyTemplateId).label}，带着${template.profession}的工作用品`];
@@ -194,7 +202,7 @@ export class WorldGenerator {
       const contributions = [...globalContributors, ...contributionsAt.get(l.id)!].map(t => t.contributes);
       l.tags = [...new Set([...l.tags, ...contributions.flatMap(c => c.tags)])];
       for (const [j, eventId] of [...new Set(contributions.flatMap(c => c.eventIds))].entries()) {
-        pack.storylets!.push({ id: id(`storylet.contributed.${i}.${j}`), locationId: l.id, conditions: [], eventId, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: ['neighborhood'] }); definition.eventPool.push(eventId);
+        pack.storylets!.push({ id: id(`storylet.contributed.${i}.${j}`), locationId: l.id, conditions: [], eventId, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: [input.registry.tags.length?'foundation:theme.gen-neighbor':'neighborhood'] }); definition.eventPool.push(eventId);
       }
       for (const [j, tfId] of [...new Set(contributions.flatMap(c => c.tfIds))].entries()) {
         const tf = input.registry.transformation(tfId);

@@ -6,15 +6,15 @@ import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url)); const artifacts = path.join(root, 'artifacts'); await mkdir(artifacts, { recursive: true });
-const url = process.env.BROWSER_TEST_URL || 'http://localhost:4173/'; let server; let browser;
+const url = process.env.BROWSER_TEST_URL || 'http://localhost:4207/'; let server; let browser;
 const results = []; const errors = []; const failedRequests = [];
 async function check(name, run) { await run(); results.push({ name, status: 'passed' }); console.log(`PASS ${name}`); }
 try {
   if (!process.env.BROWSER_TEST_URL) {
-    server = spawn(process.execPath, [path.join(root, 'scripts/serve.mjs')], { cwd: root, stdio: ['ignore', 'pipe', 'pipe'] });
+    server = spawn(process.execPath, [path.join(root, 'scripts/serve.mjs'),'--built'], { cwd: root, env:{...process.env,PORT:'4207'}, stdio: ['ignore', 'pipe', 'pipe'] });
     await new Promise((resolve, reject) => { const timeout = setTimeout(() => reject(new Error('测试服务器启动超时。')), 20000); server.stdout.on('data', data => { if (String(data).includes('Aetheria Alpha')) { clearTimeout(timeout); resolve(); } }); server.on('error', reject); server.on('exit', code => { if (code) reject(new Error(`测试服务器退出 ${code}`)); }); });
   }
-  browser = await chromium.launch({ headless: true, ...(process.env.BROWSER_EXECUTABLE_PATH ? { executablePath: process.env.BROWSER_EXECUTABLE_PATH } : {}), args: process.env.BROWSER_ARGS_JSON ? JSON.parse(process.env.BROWSER_ARGS_JSON) : [] });
+  browser = await chromium.launch({ headless: true, ...(process.env.BROWSER_EXECUTABLE_PATH||process.platform==='win32' ? { executablePath: process.env.BROWSER_EXECUTABLE_PATH??'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' } : {}), args: process.env.BROWSER_ARGS_JSON ? JSON.parse(process.env.BROWSER_ARGS_JSON) : [] });
   const fontCSS = process.env.BROWSER_FONT_CSS ? await readFile(process.env.BROWSER_FONT_CSS, 'utf8') : '';
   const addFonts = async ctx => { if (fontCSS) await ctx.addInitScript(css => { document.addEventListener('DOMContentLoaded', () => { const style = document.createElement('style'); style.textContent = css; document.head.append(style); }); }, fontCSS); };
   const context = await browser.newContext({ viewport: { width: 1360, height: 1000 }, acceptDownloads: true });
@@ -74,7 +74,7 @@ try {
   let tfDownload;
   await check('新版JSON包含身体/阶段，读档不重复扣费或重新校准', async () => {
     await tfClick('存档'); const promise = tfPage.waitForEvent('download'); await tfPage.getByRole('button', { name: '导出 JSON', exact: true }).click(); const download = await promise; tfDownload = path.join(artifacts, 'browser-tf-save.json'); await download.saveAs(tfDownload);
-    const json = JSON.parse(await readFile(tfDownload, 'utf8')); assert.equal(json.payload.schemaVersion, 3); assert.ok(json.payload.state.player.body.parts.some(x => x.definitionId === 'aetheria-tf:part.tail.mechanical')); assert.equal(json.payload.state.tfQueues.find(x => x.definitionId === 'aetheria-tf:tf.tail.mechanical').status, 'completed');
+    const json = JSON.parse(await readFile(tfDownload, 'utf8')); assert.equal(json.payload.schemaVersion, 4); assert.ok(json.payload.state.player.body.parts.some(x => x.definitionId === 'aetheria-tf:part.tail.mechanical')); assert.equal(json.payload.state.tfQueues.find(x => x.definitionId === 'aetheria-tf:tf.tail.mechanical').status, 'completed');
     await tfPage.locator('#save-import').setInputFiles(tfDownload); await tfPage.locator('#save-message').filter({ hasText: '已导入' }).waitFor(); assert.equal((await tfState()).money, '42币'); await tfClick('关闭存档');
   });
   await check('校准尾部解锁集市工作，移除后工作不可执行', async () => {
@@ -135,7 +135,7 @@ try {
   let npcDownload;
   await check('NPC存档JSON包含稳定身份/来源记忆，导入可恢复整个关系闭环', async () => {
     await npcClick('存档'); await npcClick('保存当前进度'); const promise = npcPage.waitForEvent('download'); await npcPage.getByRole('button', { name: '导出 JSON', exact: true }).click(); const download = await promise; npcDownload = path.join(artifacts, 'browser-npc-save.json'); await download.saveAs(npcDownload);
-    const saved = JSON.parse(await readFile(npcDownload, 'utf8')); assert.equal(saved.payload.schemaVersion, 3); assert.equal(saved.payload.state.npcs[0].instanceId, 'fixed:aetheria-social:npc.velvet'); assert.equal(saved.payload.state.npcs[0].relationship.trust, 7); assert.ok(saved.payload.state.npcs[0].memories.every(m => m.sourceRequestId)); await npcPage.locator('#save-import').setInputFiles(npcDownload); await npcPage.locator('#save-message').filter({ hasText: '已导入' }).waitFor(); await npcClick('关闭存档');
+    const saved = JSON.parse(await readFile(npcDownload, 'utf8')); assert.equal(saved.payload.schemaVersion, 4); assert.equal(saved.payload.state.npcs[0].instanceId, 'fixed:aetheria-social:npc.velvet'); assert.equal(saved.payload.state.npcs[0].relationship.trust, 7); assert.ok(saved.payload.state.npcs[0].memories.every(m => m.sourceRequestId)); await npcPage.locator('#save-import').setInputFiles(npcDownload); await npcPage.locator('#save-message').filter({ hasText: '已导入' }).waitFor(); await npcClick('关闭存档');
   });
   await check('390px人物菜单/长记忆/日程可阅读操作，无横向溢出', async () => {
     await npcPage.setViewportSize({ width: 390, height: 844 }); await npcClick('人物'); assert.ok(await npcPage.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)); assert.ok(await npcPage.locator('#people-dialog').evaluate(d => d.scrollWidth <= d.clientWidth)); assert.equal(await npcPage.locator('[data-relation="trust"]').innerText(), '信任 7'); await npcPage.screenshot({ path: path.join(artifacts, 'npc-mobile.png'), fullPage: true }); await npcClick('关闭人物'); await npcPage.setViewportSize({ width: 1360, height: 1000 });

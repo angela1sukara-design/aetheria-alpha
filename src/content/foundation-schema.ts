@@ -2,7 +2,7 @@ import { clone } from '../core/types.ts';
 import type { ContentPack, Condition } from '../core/types.ts';
 import type { EntityRef, PartAttributes, PartPredicate } from '../core/query-types.ts';
 import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
-export const FOUNDATION_KEYS = ['tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags'] as const;
+export const FOUNDATION_KEYS = ['tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const;
 const bad = (reason: string): never => { throw Error(`内容 v2：${reason}`); };
 export function shape(v: unknown, required: string[], optional: string[] = []): Record<string, any> {
   if (!v || typeof v !== 'object' || Array.isArray(v)) bad('需要对象。');
@@ -35,6 +35,7 @@ export function predicate(v: unknown): asserts v is PartPredicate {
   if (o.materialFamily !== undefined) values(o.materialFamily, ['organic', 'mechanical']);
   if (o.instanceId !== undefined && (typeof o.instanceId !== 'string' || !/^[a-z][a-z0-9_.-]{0,79}$/.test(o.instanceId))) bad('部件实例 ID 无效。');
   attributes(Object.fromEntries(Object.entries(o).filter(([k]) => ['materialId','morphologyId','color','lengthMm'].includes(k))), o.kind);
+  if (Object.hasOwn(o, 'lengthMm') && o.kind !== 'tail') bad('长度谓词必须声明 tail 作用域。');
   if (o.minLengthMm !== undefined && (o.kind !== 'tail' || !Number.isSafeInteger(o.minLengthMm) || o.minLengthMm < 1 || o.minLengthMm > 5000)) bad('长度谓词必须声明 tail 作用域和毫米范围。');
 }
 /** 新格式单独验收，再把旧字段交给严格 v1 parser；不放宽 v1 的未知字段规则。 */
@@ -50,24 +51,26 @@ export function projectV2(input: unknown, parseV1: (v: unknown) => ContentPack):
     if (c.op === 'all' || c.op === 'any') return { ...c, conditions: c.conditions.map(x => projectCondition(x, depth + 1)) };
     if (c.op === 'not') return { ...c, condition: projectCondition(c.condition, depth + 1) };
     if (c.op === 'body.matches') { shape(c, ['op','target','part']); entityRef(c.target); predicate(c.part); return { op:'time.window',start:0,end:1 }; }
-    if (c.op === 'environment.light' || c.op === 'environment.service') { shape(c,['op','value'],['locationId']); if(c.locationId)stableId(c.locationId); values(c.value,c.op==='environment.light'?['lit','dark']:['home','market','workshop','clinic','commons']); return {op:'time.window',start:0,end:1}; }
+    if (c.op === 'environment.light' || c.op === 'environment.service') { shape(c,['op','value'],['locationId']); if(Object.hasOwn(c,'locationId'))stableId(c.locationId); values(c.value,c.op==='environment.light'?['lit','dark']:['home','market','workshop','clinic','commons']); return {op:'time.window',start:0,end:1}; }
     const copy = clone(c);
     if ('target' in copy) { if (!['body.hasPart','body.hasCapability','tf.state'].includes(copy.op)) bad('该条件不支持实体作用域。'); entityRef(copy.target); delete copy.target; }
     return copy;
   };
   for (const key of FOUNDATION_KEYS) array(p[key] ?? [], d => {
     stableId(d.id);
-    if (key === 'tags') { shape(d,['id','label','definition','facets','status','aliases'],['replacementId']); text(d.label); if(!/[\u3400-\u9fff]/.test(d.label))bad('显示名需要中文。'); text(d.definition); array(d.facets,x=>values(x,['setting','ecology','service','body','theme','context','retrieval'])); values(d.status,['active','deprecated']); array(d.aliases,a=>{shape(a,['scope','value']);values(a.scope,['generation.v1','story.v1','lexicon.v2']);text(a.value);}); if(d.replacementId){stableId(d.replacementId);if(d.status!=='deprecated')bad('仅废弃项可声明替代。');} }
+    if(key==='proseMaterials'){shape(d,['id','text','tags','review','source','tier']);text(d.text);text(d.source);array(d.tags,stableId);values(d.review,['approved','hold']);values(d.tier,['general']);}
+    if(key==='proseSelections'){shape(d,['id','entryId','channel','when']);stableId(d.entryId);values(d.channel,['body','environment']);array(d.when,c=>{const check=projectCondition(c);parseV1({...emptyLegacy(),actions:[{id:'probe:check',label:'校验',hint:'校验',group:'daily',conditions:[check],effects:[{op:'clock.advance',minutes:0}],resultText:'probe:text'}]});});}
+    if (key === 'tags') { shape(d,['id','label','definition','facets','status','aliases'],['replacementId']); text(d.label); if(!/[\u3400-\u9fff]/.test(d.label))bad('显示名需要中文。'); text(d.definition); array(d.facets,x=>values(x,['setting','ecology','service','body','theme','context','retrieval'])); values(d.status,['active','deprecated']); array(d.aliases,a=>{shape(a,['scope','value']);values(a.scope,['generation.v1','story.v1','lexicon.v2']);text(a.value);}); if(Object.hasOwn(d,'replacementId')){stableId(d.replacementId);if(d.status!=='deprecated')bad('仅废弃项可声明替代。');} }
     if (key === 'materials') {shape(d,['id','label','family']);text(d.label);values(d.family,['organic','mechanical']);}
     if (key === 'morphologies') {shape(d,['id','label','kinds']);text(d.label);array(d.kinds,x=>values(x,PART_KINDS));if(!d.kinds.length)bad('形态需要部件范围。');}
     if (key === 'partProfiles') {shape(d,['id','partId','defaults']);stableId(d.partId);attributes(d.defaults);}
     if (key === 'npcBodies') {shape(d,['id','npcId','bodyTemplateId','patchIds']);stableId(d.npcId);stableId(d.bodyTemplateId);array(d.patchIds,stableId);}
-    if (key === 'locationProfiles') {shape(d,['id','locationId'],['service','light']);stableId(d.locationId);if(d.service)values(d.service,['home','market','workshop','clinic','commons']);if(d.light)values(d.light,['lit','dark']);if(!d.service&&!d.light)bad('地点扩展需要实际属性。');}
+    if (key === 'locationProfiles') {shape(d,['id','locationId'],['service','light']);stableId(d.locationId);if(Object.hasOwn(d,'service'))values(d.service,['home','market','workshop','clinic','commons']);if(Object.hasOwn(d,'light'))values(d.light,['lit','dark']);if(!d.service&&!d.light)bad('地点扩展需要实际属性。');}
     if (key === 'residentAdaptations') {shape(d,['id','templateId','workCapabilities','mobility']);stableId(d.templateId);array(d.workCapabilities,x=>values(x,BODY_CAPABILITIES));values(d.mobility,['walk','assisted']);}
     if (key === 'derivedTags') {shape(d,['id','tagId','subject','when']);stableId(d.tagId);values(d.subject,['entity','location','world']);const check=projectCondition(d.when);parseV1({...emptyLegacy(),actions:[{id:'probe:check',label:'校验',hint:'校验',group:'daily',conditions:[check],effects:[{op:'clock.advance',minutes:0}],resultText:'probe:text'}]});if(d.subject==='entity'&&!['body.matches','body.hasPart','body.hasCapability'].includes(d.when.op))bad('实体派生仅接受身体查询。');if(d.subject==='location'&&!['environment.light','environment.service'].includes(d.when.op))bad('地点派生仅接受环境查询。');if(d.subject==='world'&&d.when.op!=='time.window')bad('世界派生仅接受时钟查询。');}
   });
   for (let i=0;i<(p.bodyParts??[]).length;i++){const d=p.bodyParts![i];if(d.defaults){attributes(d.defaults,d.kind);delete legacy.bodyParts![i].defaults;}}
-  for (const t of legacy.bodyTemplates??[])for(const part of t.parts){if(part.overrides)attributes(part.overrides);delete part.overrides;if(part.provenance)bad('模板不可伪造 TF 来源。');}
+  for (const t of legacy.bodyTemplates??[])for(const part of t.parts){if(Object.hasOwn(part,'overrides'))attributes(part.overrides);delete part.overrides;if(part.provenance)bad('模板不可伪造 TF 来源。');}
   for (let i=0;i<(p.bodyPatches??[]).length;i++)legacy.bodyPatches![i].operations=p.bodyPatches![i].operations.map(op=>{
     if(op.type!=='attributes')return op;
     shape(op,['type','partId','set','unset']);if(!/^[a-z][a-z0-9_.-]{0,79}$/.test(op.partId))bad('属性补丁部件 ID 无效。');attributes(op.set);array(op.unset,k=>values(k,['materialId','morphologyId','color','lengthMm']));if(new Set(op.unset).size!==op.unset.length||op.unset.some(k=>Object.hasOwn(op.set,k))||!Object.keys(op.set).length&&!op.unset.length)bad('属性补丁为空或自相矛盾。');return {type:'remove',partId:op.partId};

@@ -1,3 +1,4 @@
+import { presentationText } from './semantic-query.ts';
 import { entityBody, PLAYER } from './query.ts';
 import type { ActionDef, Effect, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -28,11 +29,11 @@ export function applyDistrictEffect(e:DistrictEffect,s:GameState,r:Registry,c:Ef
   const scene=d.scene;if(!scene)throw new RuleError('NO_SCENE','当前没有互动场景。');const def=r.interactions.find(x=>x.id===scene.definitionId)!;
   if(e.move==='exit'){scene.contacts=[];d.scene=null;const slot=r.textSlots.find(x=>x.id===def.textSlotId)!;apply([{op:'event.advance',nodeId:slot.nextNodeId}],s,r,c);c.resolvedTexts.push('你们释放所有接触，各自收回动作资源，回到普通交谈。');return;}
   if(e.move==='pause'){scene.phase='paused';scene.contacts=[];c.resolvedTexts.push('你提出暂停，对方立即停止并松开接触。场景与前情保留。');return;}
-  if(e.move==='resume'){if(!npcPresent(s,r,def.npcId)||!def.conditions.every(x=>evaluate(x,s,r).pass))throw new RuleError('SCENE_CONTEXT','需要重新确认对方是否在场并愿意继续。');scene.phase='active';c.resolvedTexts.push('你们重新确认意愿，从没有接触的位置继续。');return;}
+  if(e.move==='resume'){const b=entityBody(s,{kind:'npc',id:def.npcId});if(!b.known)throw new RuleError('SCENE_BODY_UNKNOWN',b.reason);if(!npcPresent(s,r,def.npcId)||!def.conditions.every(x=>evaluate(x,s,r).pass))throw new RuleError('SCENE_CONTEXT','需要重新确认对方是否在场并愿意继续。');scene.phase='active';c.resolvedTexts.push('你们重新确认意愿，从没有接触的位置继续。');return;}
   if(scene.phase!=='active')throw new RuleError('SCENE_PAUSED','先恢复场景或退出。');
   if(e.move==='pose'){const pose=def.poses.find(p=>p.id===e.poseId);if(!pose||(pose.requires&&bodyTraits(s.player.body,r)[pose.requires]<1))throw new RuleError('POSE_BODY','身体不具备该姿态的稳定条件。');scene.contacts=[];scene.poseId=pose.id;scene.actors[0]!.facing=pose.facing;scene.actors[0]!.zone=pose.zone;c.resolvedTexts.push(`先松开接触，再调整位置：${pose.label}。`);}
   else if(e.move==='release'){scene.contacts=[];c.resolvedTexts.push('你松开接触，对方也收回动作。');}
-  else if(e.move==='contact'){const pose=def.poses.find(p=>p.id===scene.poseId)!;if(pose.facing!=='front'||pose.zone!=='near')throw new RuleError('CONTACT_POSITION','需要面对面且处于近处。');const free=s.player.body?.parts.find(p=>r.bodyPart(p.definitionId).kind==='hand'&&!scene.contacts.some(c=>c.playerPartId===p.instanceId));const npc=entityBody(s,scene.actors[1]!.entity!);const target=(npc.known?npc.value.parts:[]).find(p=>r.bodyPart(p.definitionId).kind==='hand'&&!scene.contacts.some(c=>c.npcPartId===p.instanceId));if(!free||!target)throw new RuleError('CONTACT_RESOURCE','没有空闲的抓握部位。');scene.contacts.push({playerPartId:free.instanceId,npcPartId:target.instanceId,sinceTurn:scene.turn});c.resolvedTexts.push('对方点头后，你们建立短暂的手部接触。双方的对应部位被占用，直到释放、转身、暂停或退出。');}
+  else if(e.move==='contact'){const pose=def.poses.find(p=>p.id===scene.poseId)!;if(pose.facing!=='front'||pose.zone!=='near')throw new RuleError('CONTACT_POSITION','需要面对面且处于近处。');const free=s.player.body?.parts.find(p=>r.bodyPart(p.definitionId).kind==='hand'&&r.bodyPart(p.definitionId).capabilities.includes('grasp')&&!scene.contacts.some(c=>c.playerPartId===p.instanceId));const npc=entityBody(s,scene.actors[1]!.entity!);const target=(npc.known?npc.value.parts:[]).find(p=>r.bodyPart(p.definitionId).kind==='hand'&&!scene.contacts.some(c=>c.npcPartId===p.instanceId));if(!free||!target)throw new RuleError('CONTACT_RESOURCE','没有空闲的抓握部位。');scene.contacts.push({playerPartId:free.instanceId,npcPartId:target.instanceId,sinceTurn:scene.turn});c.resolvedTexts.push('对方点头后，你们建立短暂的手部接触。双方的对应部位被占用，直到释放、转身、暂停或退出。');}
   scene.turn++;
  }
  else if(e.op==='combat.start') {
@@ -76,5 +77,6 @@ export function districtText(s:GameState,r:Registry,base:string):string {
  if(s.district.scene){const scene=s.district.scene,i=r.interactions.find(x=>x.id===scene.definitionId)!,p=i.poses.find(p=>p.id===scene.poseId)!;return `${r.npc(i.npcId).name}与你 · ${scene.phase==='paused'?'暂停中':'正在相处'}\n\n姿态：${p.label}；朝向：${p.facing==='front'?'面向对方':'背向对方'}；位置：${p.zone==='near'?'近处':'桌子另一侧'}。\n\n${scene.contacts.length?`已建立${scene.contacts.length}条手部接触；对应动作资源被占用。`:'尚未建立接触，身体部位空闲。'}\n\n${base}`;}
  const event=s.eventInstances.find(x=>x.instanceId===s.activeEventStack.at(-1));
  const variants=r.sceneTexts.filter(v=>v.locationId===s.world.locationId&&(v.owner?v.owner.eventId===event?.definitionId&&v.owner.nodeId===event.nodeId:!event)&&v.conditions.every(c=>evaluate(c,s,r).pass)).sort((a,b)=>b.priority-a.priority||a.id.localeCompare(b.id,'en'));
- return base+(variants[0]?'\n\n'+r.text(variants[0].textKey):'');
+ const observation=presentationText(s,r,'environment');
+ return base+(observation?'\n\n'+observation:'')+(variants[0]?'\n\n'+r.text(variants[0].textKey):'');
 }

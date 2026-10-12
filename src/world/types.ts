@@ -16,7 +16,7 @@ export type ReferenceTemplate = TemplateRules & { id: string } & (
   | { kind: 'event'; data: { label: string; prompt: string; completeText: string; minutes: number; reward: number } }
   | { kind: 'activity'; data: { label: string; description: string; minutes: number; energyChange: number; moneyChange: number; healthChange: number; capabilities: BodyCapability[] } }
 );
-export interface ReferencePack { format: 'aetheria-reference'; schemaVersion: 1; id: string; version: string; templates: ReferenceTemplate[] }
+export interface ReferencePack { format: 'aetheria-reference'; schemaVersion: 1 | 2; id: string; version: string; templates: ReferenceTemplate[] }
 export interface GenerationRulePack {
   format: 'aetheria-generation-rules'; schemaVersion: 1; id: string; version: string;
   requiredServices: Service[]; locationCount: number; npcCount: number; extraConnections: number;

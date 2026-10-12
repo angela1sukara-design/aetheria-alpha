@@ -65,7 +65,7 @@ test('each recorded use resolves to real compiled text; the archive and held ent
   }
   assert.equal(new Set(compiled.usage.bindings.map(b=>b.entryId)).size,108);
   assert.ok(!JSON.stringify(compiled).includes('颧骨夕照暖'));
-  assert.deepEqual(index.packs, ['./core/pack.json','./world/pack.json','./reshaping/pack.json','./social/pack.json','./recovery/pack.json','./district/pack.json']);
+  assert.deepEqual(index.packs, ['./core/pack.json','./world/pack.json','./reshaping/pack.json','./social/pack.json','./recovery/pack.json','./district/pack.json','./foundation/pack.json']);
 });
 
 test('adaptation changes text without changing occupations, schedules, body recipes or activity effects',()=>{

@@ -1,3 +1,5 @@
+import { residentAppearance } from './query.ts';
+import { activityEligibility } from '../world/adaptation.ts';
 import type { GameState, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import type { DistrictState } from '../core/district-types.ts';
@@ -55,6 +57,7 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
   if (!r) throw new RuleError('NO_RESIDENT', '先留意附近的人。');
   const day = Math.floor(state.clock.totalMinutes / 1440), t = registry.residentTemplates.find(x => x.id === r.templateId)!;
   if (help) {
+    if(!activityEligibility(r.body,t,registry).pass)throw new RuleError('RESIDENT_ACTIVITY_BODY','对方当前身体不满足这项工作的适配。');
     if (r.memories.includes(`help:${day}`)) throw new RuleError('ALREADY_HELPED', '今天的事情已经处理好。明天再见。');
     const energy = state.player.variables['core:energy'];
     if (energy < 5) throw new RuleError('EXHAUSTED', '需要5点精力。');
@@ -68,5 +71,5 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
   r.persistent = r.visits >= 2 || r.trust >= 2;
   const speech = r.visits > 1 ? t.dialogue?.repeat ?? '“又见面了。上次那条路还好走吗？”对方记得你们曾经的交谈。' : t.dialogue?.intro ?? '对方报出名字，说这片街区总有人需要搭一把手。';
   const sentence = (text: string) => /[。！？]$/.test(text) ? text : text + '。';
-  return `${r.name}，${r.profession}，${sentence(r.appearance)}性情：${sentence(r.personality)}${speech}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : '你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
+  return `${r.name}，${r.profession}，${sentence(residentAppearance(state,registry,r.id))}性情：${sentence(r.personality)}${speech}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : '你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
 }

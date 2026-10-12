@@ -1,3 +1,5 @@
+import { presentationText } from '../engine/semantic-query.ts';
+import { effectivePart } from '../engine/query.ts';
 import type { GameView } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { bodyTraits } from '../engine/body.ts';
@@ -12,10 +14,11 @@ export function renderBodyPanel(view: GameView, registry: Registry, target: HTML
   const ears = [...new Set(parts.filter(x => x.kind === 'ear').map(x => x.label))].join('、');
   const tail = parts.filter(x => x.kind === 'tail').map(x => x.label).join('、') || '没有尾部';
   target.append(el('p', `${ears || '没有耳部'} · ${tail}`, 'body-summary'));
+  const prose=presentationText(view.state,registry,'body');if(prose)target.append(el('p',prose,'muted'));
   const abilities = el('div', '', 'body-abilities');
   for (const [label, n] of [['可抓握部位', traits.grasp], ['行走部位', traits.walk], ['尾部抓握', traits.tailGrip]] as const) abilities.append(el('span', `${label} ${n}`));
   target.append(abilities);
-  const jobs = view.state.tfQueues.filter(x => registry.transformation(x.definitionId).source === 'story');
+  const jobs = view.state.tfQueues.filter(x => (!x.target||x.target.kind==='player')&& registry.transformation(x.definitionId).source === 'story');
   for (const job of jobs.filter(x => ['active', 'paused', 'blocked'].includes(x.status)).concat(jobs.filter(x => ['completed', 'cancelled'].includes(x.status)).slice(-1))) {
     const def = registry.transformation(job.definitionId), duration = def.stages.at(-1)!.atMinutes;
     const card = el('section', '', 'tf-card');
@@ -40,5 +43,6 @@ export function renderBodyPanel(view: GameView, registry: Registry, target: HTML
   }
   const details = el('details', '', 'body-details'); details.append(el('summary', '查看身体结构'));
   const groups = new Map<string, number>(); for (const part of parts) groups.set(part.label, (groups.get(part.label) ?? 0) + 1);
+  for(const p of body.parts){const a=effectivePart(p,registry);const extra=[a.materialId?registry.material(a.materialId).label:'',a.morphologyId?registry.morphology(a.morphologyId).label:'',a.lengthMm!==undefined?`${a.lengthMm} 毫米`:''].filter(Boolean);if(extra.length)details.append(el('p',`${registry.bodyPart(p.definitionId).label}：${extra.join('、')}`,'muted'));}
   const list = el('div', '', 'body-parts'); for (const [label, n] of groups) list.append(el('span', n > 1 ? `${label} ×${n}` : label)); details.append(list); target.append(details);
 }

@@ -18,7 +18,7 @@ export function validateTFState(state: GameState, registry: Registry): void {
     if (!job.idempotencyKey.endsWith(suffix) || job.instanceId !== `tf-${job.idempotencyKey}`) bad('实例来源无效。');
     const request = job.idempotencyKey.slice(0, -suffix.length);
     const transaction = state.ledger.transactions.find(x => x.requestId === request);
-    if (!transaction || JSON.parse(transaction.fingerprint).actionId !== action.id || !action.effects.some(e => e.op === (def.source === 'free' ? 'tf.apply' : 'tf.enqueue') && e.id === def.id && entityKey(e.target)===entityKey(job.target))) bad('没有对应的创建事务。');
+    if (!transaction || JSON.parse(transaction.fingerprint).actionId !== action.id || !action.effects.flatMap(e=>{if(e.op==='event.start')return [e,...registry.event(e.id).nodes.find(n=>n.id===registry.event(e.id).startNode)!.onEnter];if(e.op==='event.advance'&&action.context)return [e,...registry.event(action.context.eventId).nodes.find(n=>n.id===e.nodeId)!.onEnter];return [e];}).some(e => e.op === (def.source === 'free' ? 'tf.apply' : 'tf.enqueue') && e.id === def.id && entityKey(e.target)===entityKey(job.target))) bad('没有对应的创建事务。');
     const duration = def.stages.at(-1)!.atMinutes;
     if (!Number.isSafeInteger(job.elapsedMinutes) || job.elapsedMinutes < 0 || job.elapsedMinutes > duration || !Number.isSafeInteger(job.startedAt) || job.startedAt < 0 || job.startedAt > state.clock.totalMinutes || job.elapsedMinutes > state.clock.totalMinutes - job.startedAt) bad('进度/时间范围错误。');
     if (!Array.isArray(job.completedStageIds) || job.completedStageIds.length > def.stages.length || job.completedStageIds.some((id, i) => id !== def.stages[i].id || def.stages[i].atMinutes > job.elapsedMinutes)) bad('阶段不构成合法时间前缀。');
@@ -34,4 +34,6 @@ export function validateTFState(state: GameState, registry: Registry): void {
     }
     if (job.status !== 'blocked' && job.blocker) bad('非阻塞状态不应有阻塞原因。');
   }
+  const bodies=[{ref:PLAYER,body:state.player.body},...state.npcs.map(n=>({ref:{kind:'npc' as const,id:n.definitionId},body:n.body})),...(state.district?.residents??[]).map(n=>({ref:{kind:'resident' as const,id:n.id},body:n.body}))];
+  for(const {ref,body}of bodies)for(const p of body?.parts??[])if(p.provenance){const v=p.provenance,j=state.tfQueues.find(j=>j.instanceId===v.tfInstanceId);if(!j||entityKey(j.target)!==entityKey(ref)||!j.completedStageIds.includes(v.stageId)||registry.transformation(j.definitionId).stages.find(s=>s.id===v.stageId)?.patchId!==v.patchId||!registry.bodyPatch(v.patchId).operations.some(op=>op.partId===p.instanceId))bad('部件改造来源与已结算阶段不符。');}
 }

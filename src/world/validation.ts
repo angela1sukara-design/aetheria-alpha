@@ -1,3 +1,5 @@
+import { activityEligibility } from './adaptation.ts';
+import { instantiateBody, patchedBody } from '../engine/body.ts';
 import type { GameState, Id } from '../core/types.ts';
 import { stableJson } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -11,7 +13,7 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (w.version !== 1) throw Error('世界实例版本不支持。');
   const g = w.generation;
   object(g, ['generatorVersion', 'seed', 'rules', 'rulesHash', 'references', 'contentPacks', 'parameters', 'selectedTemplateIds']);
-  if (!['0.1.0', '0.2.0', '0.2.1'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
+  if (!['0.1.0', '0.2.0', '0.2.1','0.3.0'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
   integer(g.seed, 0, 0xffffffff); if (g.seed !== state.rng.seed) throw Error('世界种子不一致。');
   parseRules(g.rules); const hashString = (v: unknown) => { if (typeof v !== 'string' || !/^[a-f0-9]{64}$/.test(v)) throw Error('世界来源哈希无效。'); };
   hashString(g.rulesHash);
@@ -29,10 +31,12 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
     if (byPack(d.packs) !== byPack(registry.contentPacks)) throw Error('世界定义快照不一致。');
   }
   list(d.regions, r => { object(r, ['id', 'name', 'environmentTags', 'ecologyTags']); string((r as typeof d.regions[number]).id); string((r as typeof d.regions[number]).name); strings((r as typeof d.regions[number]).environmentTags, 1); strings((r as typeof d.regions[number]).ecologyTags); }, 1, 20);
+  if(g.generatorVersion==='0.3.0'&&registry.tags.length)for(const region of d.regions){if(stableJson([...region.ecologyTags].sort())!==stableJson(region.environmentTags.filter(t=>t.startsWith('foundation:ecology.')).sort()))throw Error('生态子集与环境来源不一致。');for(const tag of region.environmentTags)registry.tag(tag as Id);}
   const locationIds = new Set<Id>();
   list(d.locations, raw => {
     const l = raw as typeof d.locations[number]; object(l, ['id', 'regionId', 'templateId', 'service', 'tags', 'economy', 'professions', 'factionId']);
     registry.location(l.id); if (locationIds.has(l.id) || !l.id.startsWith('worldgen:') || !d.regions.some(r => r.id === l.regionId) || !(services as readonly string[]).includes(l.service)) throw Error('生成地点元数据无效。');
+    if(g.generatorVersion==='0.3.0'&&registry.tags.length){const serviceTags=l.tags.filter(t=>t.startsWith('foundation:service.'));if(serviceTags.length!==1||serviceTags[0]!==('foundation:service.'+l.service))throw Error('地点 service 与语义快照不一致。');for(const tag of l.tags)registry.tag(tag as Id);}
     locationIds.add(l.id); string(l.templateId); string(l.factionId); strings(l.tags, 1); strings(l.economy, 1); strings(l.professions, 1);
     if (!registry.actionsAt(l.id).length) throw Error('生成地点没有用途。');
   }, g.parameters.locationCount, g.parameters.locationCount);
@@ -52,7 +56,9 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
     const resident = state.district!.residents.find(r => r.id === a.residentId);
     if (!resident || residents.has(a.residentId) || !locationIds.has(a.originLocationId) || !factions.has(a.factionId)) throw Error('世界居民身份不符。'); residents.add(a.residentId);
     if (d.locations.find(l => l.id === a.originLocationId)?.factionId !== a.factionId) throw Error('居民组织与工作地点不符。');
-    const traits = bodyTraits(resident.body, registry); if (traits.grasp < 1 || traits.walk < 1) throw Error('居民身体与首版职业能力规则不符。');
+    if(g.generatorVersion==='0.3.0'){
+      const t=registry.residentTemplates.find(t=>t.id===resident.templateId)!;let initial=instantiateBody(registry.bodyTemplate(t.bodyTemplateId));for(const patch of t.patchIds)initial=patchedBody(initial,registry.bodyPatch(patch),registry);if(!activityEligibility(initial,t,registry).pass)throw Error('居民初始身体不满足职业活动适配。');
+    }else {const traits = bodyTraits(resident.body, registry); if (traits.grasp < 1 || traits.walk < 1) throw Error('居民身体与首版职业能力规则不符。');}
     let end = 0;
     list(a.schedule, raw => { const slot = raw as typeof a.schedule[number]; object(slot, ['start', 'end', 'locationId', 'activity']); integer(slot.start, 0, 1439); integer(slot.end, 1, 1440); if (slot.start !== end || slot.end <= slot.start || !locationIds.has(slot.locationId) || !['home', 'work', 'leisure'].includes(slot.activity)) throw Error('居民日程必须连续覆盖全天。'); end = slot.end;
       const location = d.locations.find(l => l.id === slot.locationId)!;
