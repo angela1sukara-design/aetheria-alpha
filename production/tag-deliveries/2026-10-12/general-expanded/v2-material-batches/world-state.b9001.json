@@ -1,0 +1,344 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-state.b9001",
+  "library": "world-state",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-state.b9001.0001",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "可用",
+      "description": "物件或服务当前满足其基本使用条件，具体资格仍需检查。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0002",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "不可用",
+      "description": "当前不能正常使用；原因应由独立事实或说明提供。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0003",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "占用中",
+      "description": "指定空间或资源正在被某个使用者占用。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0004",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "空闲",
+      "description": "指定资源当前没有占用记录，不等于可任意使用。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0005",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "开放中",
+      "description": "场所当前按约定对某类来访者开放。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0006",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "关闭中",
+      "description": "场所当前停止接待，返程路径不能据此被删除。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0007",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "已预约",
+      "description": "相应资源存在预约记录，预约人和时间另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0008",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "等候中",
+      "description": "某项服务尚未开始，需要保留真实排队或预约信息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0009",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "服务中",
+      "description": "某项已开始的服务尚未结束。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0010",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "维护中",
+      "description": "设施暂时接受检查或维修，不等于已经修复。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0011",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "故障",
+      "description": "设施存在明确异常，不能仅凭旧外观判断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0012",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "断电",
+      "description": "相应供电来源当前中断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0013",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "停水",
+      "description": "相应供水服务当前中断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0014",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "漏水",
+      "description": "有水从不应出水的位置流出。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0015",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "堵塞",
+      "description": "指定通道或流路被阻碍，不和权限关闭混为一谈。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0016",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "库存不足",
+      "description": "现有数量低于某项明确需求；阈值应由规则给出。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0017",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "缺货",
+      "description": "指定商品没有可交付库存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0018",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "补货中",
+      "description": "库存补充工作正在进行，不提前增加数量。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0019",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "待归还",
+      "description": "已借出物件尚未完成归还确认。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0020",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "待检查",
+      "description": "尚未完成所需检查，不推定合格或故障。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0021",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "清洁中",
+      "description": "场所或物件正在清洁，是否暂时停用需另行说明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0022",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "晾干中",
+      "description": "物件正在等待水分减少，不提前判定干燥。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0023",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "已公告",
+      "description": "某项信息已经发布；角色是否看过仍需记忆事实。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0024",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "临时安排",
+      "description": "安排有待后续确认或具有明确期限。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-state.b9001.0025",
+      "category": "world-state",
+      "subcategory": "设施与资源状态",
+      "text": "安排变更",
+      "description": "已有安排发生修改，应保留原事实和变更来源。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

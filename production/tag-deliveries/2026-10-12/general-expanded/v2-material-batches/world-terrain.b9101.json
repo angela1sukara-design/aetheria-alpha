@@ -1,0 +1,669 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-terrain.b9101",
+  "library": "world-terrain",
+  "domain": "general",
+  "source": {
+    "producer": "world-gap-source",
+    "model": "not recorded in source",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-terrain.b9101.0001",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "焦土弹坑带",
+      "description": "地表焦黑开裂，散布浅弹坑与锈蚀碎片。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0002",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "新月沙丘脊",
+      "description": "新月形沙丘脊线锋利，背风坡较缓。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0003",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "盐壳干湖床",
+      "description": "干涸湖床覆白盐壳，踏裂声清脆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0004",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "风蚀柱谷",
+      "description": "风蚀砂岩柱林立的谷地，阴影深窄。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0005",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "浮空岛边缘崖",
+      "description": "浮空岛外缘断崖，下望云海无底。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0006",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "火口边缘观台",
+      "description": "火山口边缘天然观台，地表温热。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0007",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "熔岩渠石岸",
+      "description": "凝固熔岩渠岸，表面绳状褶皱。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0008",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "矿车铁轨巷",
+      "description": "矿道中央铺铁轨，两侧可供并行。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0009",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "冰川蓝裂隙",
+      "description": "冰川表面蓝色裂隙，边缘结霜锋利。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0010",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "雪桥冰面段",
+      "description": "河面结冰形成的临时雪桥通行段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0011",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "雪窝避风坑",
+      "description": "积雪挖出的避风浅坑，可容一人蜷卧。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0012",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "树冠层栈道",
+      "description": "架在树冠层的窄栈道，下望是林下暗绿。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0013",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "铆钉铁桥段",
+      "description": "铆钉密布的铁桥段，桥面有防滑齿纹。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0014",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "灵田垄畦",
+      "description": "洞府外开辟的灵田垄畦，土色偏深润。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0015",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "玉阶登山道",
+      "description": "山腰白玉色石阶道，两侧偶见鹤羽。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0016",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "珊瑚礁浅台",
+      "description": "浅海珊瑚礁台，潮退时可涉水。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0017",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "城垛巡墙道",
+      "description": "城墙顶巡墙道，内侧有垛口与箭孔。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0018",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "高架桥下空间",
+      "description": "高架桥下荫蔽带状空间，常停共享单车。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0019",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "防波堤灯塔段",
+      "description": "防波堤尽头灯塔基座段，浪花常溅。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0020",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "数据缆沟检修道",
+      "description": "下层街边揭开的数据缆沟检修道，盖板可掀。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0021",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "酸雨积水浅洼",
+      "description": "酸雨后路面浅洼积水，霓虹倒影碎裂晃动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0022",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "辐射雾低洼带",
+      "description": "低洼处辐射雾贴地漂移，能见度骤降。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0023",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "废城骨架街区",
+      "description": "倒塌楼骨架形成的可穿行废城街区。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0024",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "污染河滩警戒桩",
+      "description": "污染河滩插一排褪色警戒桩，禁止取水。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0025",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "废电池酸蚀坑",
+      "description": "废电池倾倒形成的酸蚀浅坑，草木不生。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0026",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "节点连接通道环",
+      "description": "模块间节点连接通道环，截面近圆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0027",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "干涸河床卵石滩",
+      "description": "干涸河床卵石滩，足迹长久清晰。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0028",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "阴影峡谷避午",
+      "description": "狭窄阴影峡谷，商队正午停歇避暑。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0029",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "盐壳裂纹多边形",
+      "description": "盐壳干湖床裂纹呈多边形网络。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0030",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "浮石碎屑缓落带",
+      "description": "岛缘浮石碎屑在上升气流中缓缓上飘再落下。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0031",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "浮岛影投云面",
+      "description": "日照下浮岛影完整投在云面，可判高度。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0032",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "黑色玄武碎石原",
+      "description": "新冷玄武碎石铺原，表面锋利难行。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0033",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "绳状熔岩坡",
+      "description": "绳状凝固熔岩坡，褶皱如巨缆。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0034",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "滴水钟乳巷段",
+      "description": "钟乳石滴水巷段，地面湿滑有钙华。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0035",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "盲巷尽头标识",
+      "description": "盲巷尽头红白标识，禁止继续开凿。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0036",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "冰脊压力丘带",
+      "description": "海冰挤压形成的冰脊压力丘带，难越。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0037",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "冰下潜水探孔",
+      "description": "科考凿出的冰下潜水探孔，边缘锋利。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0038",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "沼泽踏步桩道",
+      "description": "沼泽区圆木踏步桩道，间距一步。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0039",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "煤渣道碴路基",
+      "description": "厂区煤渣道碴路基，靴底留黑印。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0040",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "云梯栈道断续段",
+      "description": "悬崖云梯栈道断续，缺环处靠木板。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0041",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "试剑石坪裂痕",
+      "description": "试剑石坪布满新旧剑痕裂隙。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0042",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "潮间带礁坪沟",
+      "description": "潮间带礁坪冲蚀沟，退潮可涉入。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0043",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "护城河淤泥浅滩",
+      "description": "护城河水位低时露出淤泥浅滩与垃圾。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0044",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "地下水道铁栅",
+      "description": "城下水渠出口铁栅，半没水面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0045",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "地下车库坡道口",
+      "description": "写字楼地下车库坡道口，限高杆黄黑。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0046",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "防波堤内侧静水湾",
+      "description": "防波堤内侧静水湾，浪纹细碎。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0047",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "崩塌碎石甬道",
+      "description": "地牢崩塌碎石半堵甬道，仅侧身可过。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0048",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "螺旋下降石阶",
+      "description": "螺旋下降石阶绕中轴井，无扶手。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0049",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "尘土主街车辙",
+      "description": "小镇主街两条深车辙夹尘土带。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-terrain.b9101.0050",
+      "category": "world-terrain",
+      "subcategory": "环境候选",
+      "text": "干河床卵石道",
+      "description": "季节性干河床卵石道，可抄近路。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

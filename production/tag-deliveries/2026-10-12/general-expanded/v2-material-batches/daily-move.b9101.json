@@ -1,0 +1,71 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "daily-move.b9101",
+  "library": "daily-move",
+  "domain": "general",
+  "source": {
+    "producer": "world-gap-source",
+    "model": "not recorded in source",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-move.b9101.0001",
+      "category": "daily-move",
+      "subcategory": "环境候选",
+      "text": "通勤地铁站立",
+      "description": "地铁车厢高峰站立，扶手环随车晃。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-move.b9101.0002",
+      "category": "daily-move",
+      "subcategory": "环境候选",
+      "text": "雨夜下层换乘步行",
+      "description": "雨夜从空轨栈步行换乘地铁闸机的湿滑路段。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-move.b9101.0003",
+      "category": "daily-move",
+      "subcategory": "环境候选",
+      "text": "晨跑打卡闸",
+      "description": "校园晨跑打卡闸机过点并记圈。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-move.b9101.0004",
+      "category": "daily-move",
+      "subcategory": "环境候选",
+      "text": "雾霾口罩通勤",
+      "description": "雾霾日戴口罩通勤并在公司门口更换。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

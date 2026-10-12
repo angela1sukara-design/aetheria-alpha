@@ -1,0 +1,123 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-building.b9102",
+  "library": "world-building",
+  "domain": "general",
+  "source": {
+    "producer": "world-gap-source",
+    "model": "not recorded in source",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-building.b9102.0001",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "天桥玻璃雨棚",
+      "description": "人行天桥玻璃雨棚，接缝有密封胶。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9102.0002",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "引航站瞭望楼",
+      "description": "港口引航站瞭望楼，望远镜固定架。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9102.0003",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "船闸闸室墙",
+      "description": "内河船闸闸室墙，水位线层层渍。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9102.0004",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "拱顶石棺厅",
+      "description": "拱顶石棺大厅，侧龛多层。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9102.0005",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "封印石门双扉",
+      "description": "封印石门双扉，合缝有蜡与符。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9102.0006",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "木板人行道镇",
+      "description": "店铺前高架木板人行道，雨天避泥。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9102.0007",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "火车站水塔房",
+      "description": "边疆火车站水塔房，供机车补水。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9102.0008",
+      "category": "world-building",
+      "subcategory": "环境候选",
+      "text": "监狱铁栏小屋",
+      "description": "镇治安官监狱铁栏小屋，钥匙挂壁。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

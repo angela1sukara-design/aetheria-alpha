@@ -1,0 +1,51 @@
+# world-environment
+
+核心和属性为编辑提案，完整描述、证据与上下文见 entries.jsonl。专名和句子保持完整。
+
+| 稳定来源ID | 原素材／独立词条 | 核心概念 | 独立属性 | 状态 |
+| --- | --- | --- | --- | --- |
+| general-common:env.chilly | 微凉 | — | temperature：微凉 | authored-attribute |
+| general-common:env.mild | 温和 | — | temperature：温和 | authored-attribute |
+| general-common:env.warm | 温暖 | — | temperature：温暖 | authored-attribute |
+| general-common:env.hot | 闷热 | — | temperature：闷热 | authored-attribute |
+| general-common:env.frosty | 寒冷 | — | temperature：寒冷 | authored-attribute |
+| general-common:env.dry-air | 空气干燥 | — | air-humidity：空气干燥 | authored-attribute |
+| general-common:env.humid-air | 空气潮湿 | — | air-humidity：空气潮湿 | authored-attribute |
+| general-common:env.stuffy | 空气滞闷 | — | airflow：空气滞闷 | authored-attribute |
+| general-common:env.fresh | 空气清新 | — | airflow：空气清新 | authored-attribute |
+| general-common:env.draft | 穿堂风 | — | airflow：穿堂风 | authored-attribute |
+| general-common:env.breeze | 微风 | — | airflow：微风 | authored-attribute |
+| general-common:env.gust | 阵风 | — | airflow：阵风 | authored-attribute |
+| general-common:env.crosswind | 侧风 | — | airflow：侧风 | authored-attribute |
+| general-common:env.drizzle | 细雨 | — | weather：细雨 | authored-attribute |
+| general-common:env.downpour | 暴雨 | — | weather：暴雨 | authored-attribute |
+| general-common:env.sleet | 雨夹雪 | — | weather：雨夹雪 | authored-attribute |
+| general-common:env.snowfall | 降雪 | — | weather：降雪 | authored-attribute |
+| general-common:env.foggy | 起雾 | — | weather：起雾 | authored-attribute |
+| general-common:env.haze | 烟霾 | — | air-particles：烟霾 | authored-attribute |
+| general-common:env.dew | 结露 | — | surface-phase：结露 | authored-attribute |
+| general-common:env.frost | 结霜 | — | surface-phase：结霜 | authored-attribute |
+| general-common:env.icy-surface | 结冰 | — | surface-phase：结冰 | authored-attribute |
+| general-common:env.dust | 扬尘 | — | air-particles：扬尘 | authored-attribute |
+| general-common:env.odorless | 无明显气味 | — | scent：无明显气味 | authored-attribute |
+| general-common:env.smoky | 烟气 | — | air-particles：烟气 | authored-attribute |
+| general-common:light.daylight | 自然采光 | — | lighting：自然采光 | authored-attribute |
+| general-common:light.artificial | 人工照明 | — | lighting：人工照明 | authored-attribute |
+| general-common:light.backlit | 逆光 | — | lighting：逆光 | authored-attribute |
+| general-common:light.sidelit | 侧光 | — | lighting：侧光 | authored-attribute |
+| general-common:light.diffuse | 散射光 | — | lighting：散射光 | authored-attribute |
+| general-common:light.direct | 直射光 | — | lighting：直射光 | authored-attribute |
+| general-common:light.low | 昏暗 | — | lighting：昏暗 | authored-attribute |
+| general-common:light.blackout | 无照明 | — | lighting：无照明 | authored-attribute |
+| general-common:light.flicker | 闪烁 | — | lighting：闪烁 | authored-attribute |
+| general-common:light.glare | 眩光 | — | lighting：眩光 | authored-attribute |
+| general-common:light.reflection | 反光 | — | lighting：反光 | authored-attribute |
+| general-common:light.shadow | 遮阴 | — | lighting：遮阴 | authored-attribute |
+| general-common:sound.quiet | 安静 | — | sound-volume：安静 | authored-attribute |
+| general-common:sound.noisy | 嘈杂 | — | sound-volume：嘈杂 | authored-attribute |
+| general-common:sound.echo | 回声 | — | sound-propagation：回声 | authored-attribute |
+| general-common:sound.muffled | 声音闷钝 | — | sound-propagation：声音闷钝 | authored-attribute |
+| general-common:sound.continuous | 持续声 | — | continuity：持续声 | authored-attribute |
+| general-common:sound.intermittent | 间歇声 | — | continuity：间歇声 | authored-attribute |
+| general-common:sound.reverberant | 混响 | — | sound-propagation：混响 | authored-attribute |
+| general-common:sound.alarm | 警报声 | — | sound-function：警报声 | authored-attribute |

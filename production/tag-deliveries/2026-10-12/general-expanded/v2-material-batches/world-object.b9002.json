@@ -1,0 +1,214 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-object.b9002",
+  "library": "world-object",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-object.b9002.0001",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "针",
+      "description": "用于缝纫或穿引线材的细长工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0002",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "线",
+      "description": "用于缝纫、捆扎或连接的细长材料。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0003",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "胶黏剂",
+      "description": "用于相应材料粘接的用品，兼容范围另行说明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0004",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "胶带",
+      "description": "带黏附层的带状固定材料。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0005",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "扎带",
+      "description": "用于收束线缆或轻量物件的带状用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0006",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "固定夹",
+      "description": "在工作中临时保持物件相对位置的夹具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0007",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "润滑剂",
+      "description": "用于指定部位维护的用品，不能默认为任何身体都兼容。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0008",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "抹布",
+      "description": "用于一般物件表面擦拭的织物。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0009",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "拖把",
+      "description": "用于地面擦洗的清洁工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0010",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "扫帚",
+      "description": "把散落物扫拢的清洁工具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0011",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "簸箕",
+      "description": "接收扫拢杂物的器具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0012",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "清洁剂",
+      "description": "按用途清洁表面的用品，身体适用性不可由名称推断。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0013",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "海绵",
+      "description": "多孔吸水材料制成的擦洗用品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0014",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "水桶",
+      "description": "带提手、用于盛装液体或物件的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-object.b9002.0015",
+      "category": "world-object",
+      "subcategory": "修理与清洁工具",
+      "text": "劳动手套",
+      "description": "工作中保护手部接触面的衣物，尺寸和材料需适配。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-facility.b9001",
+  "library": "world-facility",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-facility.b9001.0001",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "电梯",
+      "description": "在不同楼层间运送人员或物件的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0002",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "扶梯",
+      "description": "连续移动踏步的楼层连接设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0003",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "坡道",
+      "description": "通过连续斜面连接高差的通路。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0004",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "扶手",
+      "description": "供行走或转移重心时抓握支撑的构件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0005",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "护栏",
+      "description": "在空间边缘提供隔挡和提示的构件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0006",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "自动门",
+      "description": "通过装置控制开合的门，不代表对所有人开放。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0007",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "闸机",
+      "description": "检验通行资格并控制单次通过的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0008",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "门禁读卡器",
+      "description": "读取通行凭据的装置，凭据是否合法属于规则层。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0009",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "对讲机",
+      "description": "供两处之间语音联系的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0010",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "公共终端",
+      "description": "面向多人提供信息查询或事务操作的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0011",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "售货机",
+      "description": "按商品与付款条件提供物品的自动零售设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0012",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "饮水机",
+      "description": "提供饮用水取用的设备，温度与维护状态另存。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0013",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "充电点",
+      "description": "为兼容设备提供电力连接的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0014",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "储物柜",
+      "description": "临时或长期存放个人物件的带格柜体。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0015",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "信箱",
+      "description": "接收或暂存信件的容器设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0016",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "快递柜",
+      "description": "按领取凭据存放和取出包裹的设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0017",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "售票机",
+      "description": "办理票券购买或领取的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0018",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "叫号屏",
+      "description": "显示等候顺序与服务窗口信息的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0019",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "洗手台",
+      "description": "供一般手部清洁使用的水盆与供水设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0020",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "排水口",
+      "description": "把积水导入排水系统的开口。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0021",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "灭火器",
+      "description": "用于火情处置的器材，素材不提供操作教程。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0022",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "急救箱",
+      "description": "集中收纳一般急救用品的箱体，不自动执行治疗。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0023",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "分类垃圾桶",
+      "description": "按标识分别接收废弃物的容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0024",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "自行车架",
+      "description": "供自行车停放或固定的构件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0025",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "公告屏",
+      "description": "显示通知与公共信息的电子屏幕。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0026",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "遮阳棚",
+      "description": "在局部空间遮挡直射光的覆盖设施。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0027",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "通风口",
+      "description": "空气进出空间的开口，不直接保证空气安全。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0028",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "空气过滤器",
+      "description": "用于空气过滤的设备，效果需由具体配置说明。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0029",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "备用电源",
+      "description": "主供电中断时可提供有限电力的设备。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-facility.b9001.0030",
+      "category": "world-facility",
+      "subcategory": "通行与公共服务",
+      "text": "轮椅停留位",
+      "description": "为轮椅停留预留的空间，尺寸和占用状态另行校验。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-building.b9001",
+  "library": "world-building",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-building.b9001.0001",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "便利店",
+      "description": "出售少量日常消耗品并提供即时购买的零售场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0002",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "杂货店",
+      "description": "经营多种家庭用品的小店，商品范围由具体场景决定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0003",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "自助洗衣店",
+      "description": "顾客自行使用洗衣与烘干设备的公共店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0004",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "洗衣房",
+      "description": "集中处理衣物清洗的房间，可属于住宅或工作场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0005",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "公共浴室",
+      "description": "提供一般清洁与洗浴设施的公共场所，隐私规则另行记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0006",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "图书馆",
+      "description": "借阅和查阅书刊资料的公共或机构场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0007",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "社区活动室",
+      "description": "用于邻里会议、课程或休闲活动的共享房间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0008",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "邮局",
+      "description": "处理信件、包裹和邮务咨询的服务场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0009",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "快递站",
+      "description": "集中暂存与领取包裹的地点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0010",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "药店",
+      "description": "陈列和提供药品及一般护理用品的店面，不承担医疗建议文本。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0011",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "急救站",
+      "description": "提供紧急求助接待的地点，实际救治流程另行设计。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0012",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "消防站",
+      "description": "消防人员与设备的驻地，可作为城市公共设施背景。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0013",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "警务室",
+      "description": "接受一般报案与社区事务咨询的工作场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0014",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "办事大厅",
+      "description": "集中办理登记与申请事务的公共服务空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0015",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "职业介绍所",
+      "description": "提供招聘信息与工作咨询的场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0016",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "维修店",
+      "description": "接收物件检查、维护和修理委托的店面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0017",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "二手店",
+      "description": "交易已被使用物品的店面；物品状况需逐件确认。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0018",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "回收点",
+      "description": "收集分类可回收物的地点，处理方式由设施配置决定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0019",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "仓库",
+      "description": "用于存放货物与管理出入库的建筑或房间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0020",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "避难点",
+      "description": "在特定事件下提供暂时停留与协助的地点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0021",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "值班室",
+      "description": "轮值人员接待、记录和休息的工作空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0022",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "屋顶平台",
+      "description": "建筑顶部可停留的平台，不自动保证对公众开放。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0023",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "地下室",
+      "description": "位于地面以下的室内空间，采光和通风另行描述。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0024",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "停车场",
+      "description": "集中停放交通工具的空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0025",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "公交站",
+      "description": "公共车辆按路线停靠与乘客等候的地点。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0026",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "地铁站",
+      "description": "城市轨道交通的进出与换乘空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0027",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "候车室",
+      "description": "乘客在出发前等候的室内空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0028",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "食堂",
+      "description": "向固定群体或公众提供日常餐食的用餐场所。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0029",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "咖啡馆",
+      "description": "提供饮品与短暂停留空间的店面，不预设社交或私人关系。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-building.b9001.0030",
+      "category": "world-building",
+      "subcategory": "城市常见场所",
+      "text": "温室",
+      "description": "通过围护结构管理植物生长环境的空间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

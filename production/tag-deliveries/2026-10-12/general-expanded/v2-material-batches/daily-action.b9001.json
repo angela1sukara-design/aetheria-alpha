@@ -1,0 +1,474 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "daily-action.b9001",
+  "library": "daily-action",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-action.b9001.0001",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "排队",
+      "description": "按照公开顺序等候服务，是否轮到自己由实际记录决定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0002",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "预约",
+      "description": "提出并确认未来服务时间的行动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0003",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "取消预约",
+      "description": "撤销已存在的预约，需要对应预约事实。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0004",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "登记",
+      "description": "把所需资料交由相应记录流程处理。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0005",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "报到",
+      "description": "到达后向接待方确认身份与来意。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0006",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "领取",
+      "description": "按已确认资格接收物品，领取效果由规则执行。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0007",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "付款",
+      "description": "按确认金额完成收付，不直接由文字增减货币。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0008",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "退款",
+      "description": "对已发生支付按约定处理返还的行动。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0009",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "换货",
+      "description": "依照约定用一种商品替换另一件商品。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0010",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "借用",
+      "description": "取得限定用途或期限的暂时使用许可。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0011",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "归还",
+      "description": "把借用物交还并确认接收。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0012",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "核对清单",
+      "description": "逐项比对物品、步骤或记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0013",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "报修",
+      "description": "说明设施问题、地点与观察到的现象。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0014",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "跟进",
+      "description": "在先前事项之后询问进展，不凭空增加结果。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0015",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "签收",
+      "description": "确认收到指定物件或文件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0016",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "打包",
+      "description": "把物件整理并放入便于携带的包装。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0017",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "拆包",
+      "description": "打开包装并核对其中物件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0018",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "分类",
+      "description": "依据明确用途或属性把物件分组。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0019",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "贴标",
+      "description": "为物件或位置添加可识别标记。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0020",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "称量",
+      "description": "用工具取得重量信息，不猜造读数。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0021",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "测量",
+      "description": "用相应工具取得某项参数，不自动转成身体变化。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0022",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "试用",
+      "description": "在许可范围内短暂检查物件是否合用。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0023",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "充电",
+      "description": "将兼容设备连接到可用电源。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0024",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "补充消耗品",
+      "description": "把已减少的消耗用品补回规定位置。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0025",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "通风",
+      "description": "通过允许的设施调整空气交换。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0026",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "晾干",
+      "description": "把湿物放到合适位置等待水分减少。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0027",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "折叠",
+      "description": "把衣物或柔性物件按折线收整。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0028",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "上锁",
+      "description": "使用匹配锁具保护对应入口或容器。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0029",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "解锁",
+      "description": "使用合法凭据打开对应锁具。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0030",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "换乘",
+      "description": "在路线中切换交通工具或线路。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0031",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "休息片刻",
+      "description": "暂时停止当前工作；精力恢复量由行动定义决定。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0032",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "改期",
+      "description": "重新协商已有事项的时间。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0033",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "记账",
+      "description": "记录实际发生的收支或借还情况。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0034",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "提交",
+      "description": "把资料交到指定流程或接收方。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.daily-action.b9001.0035",
+      "category": "daily-action",
+      "subcategory": "常用生活行动",
+      "text": "取回",
+      "description": "按已发生寄存或交付事实取回自己的物件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

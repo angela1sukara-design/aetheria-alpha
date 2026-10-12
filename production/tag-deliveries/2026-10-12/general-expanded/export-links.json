@@ -1,0 +1,4222 @@
+[
+  {
+    "sourceEntryId": "general-common:adapt.balance",
+    "materialEntryId": "lx.body-adaptation.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.test-clearance",
+    "materialEntryId": "lx.body-adaptation.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.change-grip",
+    "materialEntryId": "lx.body-adaptation.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.support",
+    "materialEntryId": "lx.body-adaptation.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.use-cane",
+    "materialEntryId": "lx.body-adaptation.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.rest-part",
+    "materialEntryId": "lx.body-adaptation.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.pace",
+    "materialEntryId": "lx.body-adaptation.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.turn-body",
+    "materialEntryId": "lx.body-adaptation.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.manage-tail",
+    "materialEntryId": "lx.body-adaptation.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.fold-wing",
+    "materialEntryId": "lx.body-adaptation.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.fit-clothing",
+    "materialEntryId": "lx.body-adaptation.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.fit-equipment",
+    "materialEntryId": "lx.body-adaptation.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.adjust-seat",
+    "materialEntryId": "lx.body-adaptation.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.use-utensil",
+    "materialEntryId": "lx.body-adaptation.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.sensory-break",
+    "materialEntryId": "lx.body-adaptation.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.clean-interface",
+    "materialEntryId": "lx.body-adaptation.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.inspect-fit",
+    "materialEntryId": "lx.body-adaptation.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.communicate-needs",
+    "materialEntryId": "lx.body-adaptation.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.request-assistance",
+    "materialEntryId": "lx.body-adaptation.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:adapt.practice-route",
+    "materialEntryId": "lx.body-adaptation.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:part.skin",
+    "materialEntryId": "lx.body-part.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:part.scalp",
+    "materialEntryId": "lx.body-part.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:part.forehead",
+    "materialEntryId": "lx.body-part.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:part.cheek",
+    "materialEntryId": "lx.body-part.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:part.chin",
+    "materialEntryId": "lx.body-part.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:part.neck",
+    "materialEntryId": "lx.body-part.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:part.upper-arm",
+    "materialEntryId": "lx.body-part.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:part.elbow",
+    "materialEntryId": "lx.body-part.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:part.palm",
+    "materialEntryId": "lx.body-part.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:part.fingertip",
+    "materialEntryId": "lx.body-part.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:part.nail",
+    "materialEntryId": "lx.body-part.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:part.knee",
+    "materialEntryId": "lx.body-part.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:part.sole",
+    "materialEntryId": "lx.body-part.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:part.heel",
+    "materialEntryId": "lx.body-part.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:part.toe",
+    "materialEntryId": "lx.body-part.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:part.feeler",
+    "materialEntryId": "lx.body-part.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:part.gill",
+    "materialEntryId": "lx.body-part.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:part.sucker",
+    "materialEntryId": "lx.body-part.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:action.queue",
+    "materialEntryId": "lx.daily-action.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:action.book",
+    "materialEntryId": "lx.daily-action.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:action.cancel-booking",
+    "materialEntryId": "lx.daily-action.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:action.register",
+    "materialEntryId": "lx.daily-action.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:action.check-in",
+    "materialEntryId": "lx.daily-action.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:action.collect",
+    "materialEntryId": "lx.daily-action.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:action.pay",
+    "materialEntryId": "lx.daily-action.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:action.refund",
+    "materialEntryId": "lx.daily-action.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:action.exchange",
+    "materialEntryId": "lx.daily-action.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:action.borrow",
+    "materialEntryId": "lx.daily-action.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:action.return",
+    "materialEntryId": "lx.daily-action.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:action.check-list",
+    "materialEntryId": "lx.daily-action.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:action.report-fault",
+    "materialEntryId": "lx.daily-action.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:action.follow-up",
+    "materialEntryId": "lx.daily-action.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:action.sign-receipt",
+    "materialEntryId": "lx.daily-action.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:action.pack",
+    "materialEntryId": "lx.daily-action.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:action.unpack",
+    "materialEntryId": "lx.daily-action.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:action.sort",
+    "materialEntryId": "lx.daily-action.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:action.label",
+    "materialEntryId": "lx.daily-action.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:action.weigh",
+    "materialEntryId": "lx.daily-action.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:action.measure",
+    "materialEntryId": "lx.daily-action.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:action.test",
+    "materialEntryId": "lx.daily-action.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:action.charge",
+    "materialEntryId": "lx.daily-action.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:action.refill",
+    "materialEntryId": "lx.daily-action.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:action.ventilate",
+    "materialEntryId": "lx.daily-action.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:action.dry",
+    "materialEntryId": "lx.daily-action.b9001.0026"
+  },
+  {
+    "sourceEntryId": "general-common:action.fold",
+    "materialEntryId": "lx.daily-action.b9001.0027"
+  },
+  {
+    "sourceEntryId": "general-common:action.lock",
+    "materialEntryId": "lx.daily-action.b9001.0028"
+  },
+  {
+    "sourceEntryId": "general-common:action.unlock",
+    "materialEntryId": "lx.daily-action.b9001.0029"
+  },
+  {
+    "sourceEntryId": "general-common:action.transfer",
+    "materialEntryId": "lx.daily-action.b9001.0030"
+  },
+  {
+    "sourceEntryId": "general-common:action.take-break",
+    "materialEntryId": "lx.daily-action.b9001.0031"
+  },
+  {
+    "sourceEntryId": "general-common:action.reschedule",
+    "materialEntryId": "lx.daily-action.b9001.0032"
+  },
+  {
+    "sourceEntryId": "general-common:action.keep-record",
+    "materialEntryId": "lx.daily-action.b9001.0033"
+  },
+  {
+    "sourceEntryId": "general-common:action.submit",
+    "materialEntryId": "lx.daily-action.b9001.0034"
+  },
+  {
+    "sourceEntryId": "general-common:action.retrieve",
+    "materialEntryId": "lx.daily-action.b9001.0035"
+  },
+  {
+    "sourceEntryId": "general-common:mat.steel",
+    "materialEntryId": "lx.material.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:mat.aluminium",
+    "materialEntryId": "lx.material.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:mat.stainless-steel",
+    "materialEntryId": "lx.material.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:mat.rubber",
+    "materialEntryId": "lx.material.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:mat.silicone",
+    "materialEntryId": "lx.material.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:mat.plastic",
+    "materialEntryId": "lx.material.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:mat.resin",
+    "materialEntryId": "lx.material.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:mat.foam",
+    "materialEntryId": "lx.material.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:mat.felt",
+    "materialEntryId": "lx.material.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:mat.wool",
+    "materialEntryId": "lx.material.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:mat.linen",
+    "materialEntryId": "lx.material.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:mat.polyester",
+    "materialEntryId": "lx.material.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:mat.nylon",
+    "materialEntryId": "lx.material.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:mat.paper",
+    "materialEntryId": "lx.material.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:mat.cardboard",
+    "materialEntryId": "lx.material.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:mat.cork",
+    "materialEntryId": "lx.material.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:mat.cement",
+    "materialEntryId": "lx.material.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:mat.concrete",
+    "materialEntryId": "lx.material.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:mat.brick",
+    "materialEntryId": "lx.material.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:mat.asphalt",
+    "materialEntryId": "lx.material.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:job.cashier",
+    "materialEntryId": "lx.npc-job.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:job.shop-assistant",
+    "materialEntryId": "lx.npc-job.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:job.waiter",
+    "materialEntryId": "lx.npc-job.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:job.barista",
+    "materialEntryId": "lx.npc-job.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:job.baker",
+    "materialEntryId": "lx.npc-job.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:job.kitchen-assistant",
+    "materialEntryId": "lx.npc-job.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:job.electrician",
+    "materialEntryId": "lx.npc-job.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:job.plumber",
+    "materialEntryId": "lx.npc-job.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:job.mechanic",
+    "materialEntryId": "lx.npc-job.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:job.courier",
+    "materialEntryId": "lx.npc-job.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:job.mail-carrier",
+    "materialEntryId": "lx.npc-job.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:job.driver",
+    "materialEntryId": "lx.npc-job.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:job.dispatcher",
+    "materialEntryId": "lx.npc-job.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:job.security",
+    "materialEntryId": "lx.npc-job.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:job.firefighter",
+    "materialEntryId": "lx.npc-job.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:job.librarian",
+    "materialEntryId": "lx.npc-job.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:job.archivist",
+    "materialEntryId": "lx.npc-job.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:job.translator",
+    "materialEntryId": "lx.npc-job.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:job.researcher",
+    "materialEntryId": "lx.npc-job.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:job.lab-assistant",
+    "materialEntryId": "lx.npc-job.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:job.gardener",
+    "materialEntryId": "lx.npc-job.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:job.hairdresser",
+    "materialEntryId": "lx.npc-job.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:job.property-manager",
+    "materialEntryId": "lx.npc-job.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:job.maintenance-dispatch",
+    "materialEntryId": "lx.npc-job.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:job.receptionist",
+    "materialEntryId": "lx.npc-job.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:job.warehouse-clerk",
+    "materialEntryId": "lx.npc-job.b9001.0026"
+  },
+  {
+    "sourceEntryId": "general-common:job.sorter",
+    "materialEntryId": "lx.npc-job.b9001.0027"
+  },
+  {
+    "sourceEntryId": "general-common:job.inspector",
+    "materialEntryId": "lx.npc-job.b9001.0028"
+  },
+  {
+    "sourceEntryId": "general-common:job.scheduler",
+    "materialEntryId": "lx.npc-job.b9001.0029"
+  },
+  {
+    "sourceEntryId": "general-common:job.volunteer",
+    "materialEntryId": "lx.npc-job.b9001.0030"
+  },
+  {
+    "sourceEntryId": "general-common:rel.stranger",
+    "materialEntryId": "lx.relationship-context.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:rel.acquaintance",
+    "materialEntryId": "lx.relationship-context.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:rel.neighbor",
+    "materialEntryId": "lx.relationship-context.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:rel.colleague",
+    "materialEntryId": "lx.relationship-context.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:rel.customer",
+    "materialEntryId": "lx.relationship-context.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:rel.host",
+    "materialEntryId": "lx.relationship-context.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:rel.guest",
+    "materialEntryId": "lx.relationship-context.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:rel.collaborator",
+    "materialEntryId": "lx.relationship-context.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:rel.mentor",
+    "materialEntryId": "lx.relationship-context.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:rel.learner",
+    "materialEntryId": "lx.relationship-context.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:rel.repeated-contact",
+    "materialEntryId": "lx.relationship-context.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:rel.unresolved-dispute",
+    "materialEntryId": "lx.relationship-context.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:rel.promise-pending",
+    "materialEntryId": "lx.relationship-context.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:rel.promise-kept",
+    "materialEntryId": "lx.relationship-context.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:rel.promise-broken",
+    "materialEntryId": "lx.relationship-context.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:speech.request",
+    "materialEntryId": "lx.social-action.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:speech.ask-permission",
+    "materialEntryId": "lx.social-action.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:speech.grant-permission",
+    "materialEntryId": "lx.social-action.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:speech.withdraw-permission",
+    "materialEntryId": "lx.social-action.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:speech.set-boundary",
+    "materialEntryId": "lx.social-action.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:speech.thank",
+    "materialEntryId": "lx.social-action.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:speech.apologize",
+    "materialEntryId": "lx.social-action.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:speech.explain",
+    "materialEntryId": "lx.social-action.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:speech.suggest",
+    "materialEntryId": "lx.social-action.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:speech.negotiate",
+    "materialEntryId": "lx.social-action.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:speech.remind",
+    "materialEntryId": "lx.social-action.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:speech.inquire-progress",
+    "materialEntryId": "lx.social-action.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:speech.introduce-other",
+    "materialEntryId": "lx.social-action.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:speech.ask-name",
+    "materialEntryId": "lx.social-action.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:speech.correct",
+    "materialEntryId": "lx.social-action.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:speech.admit-unknown",
+    "materialEntryId": "lx.social-action.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:speech.acknowledge",
+    "materialEntryId": "lx.social-action.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:speech.check-understanding",
+    "materialEntryId": "lx.social-action.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:speech.ask-repeat",
+    "materialEntryId": "lx.social-action.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:speech.offer-help",
+    "materialEntryId": "lx.social-action.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:speech.decline",
+    "materialEntryId": "lx.social-action.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:speech.defer-decision",
+    "materialEntryId": "lx.social-action.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:speech.keep-confidential",
+    "materialEntryId": "lx.social-action.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:speech.share-contact",
+    "materialEntryId": "lx.social-action.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:speech.request-space",
+    "materialEntryId": "lx.social-action.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:speech.request-pause",
+    "materialEntryId": "lx.social-action.b9001.0026"
+  },
+  {
+    "sourceEntryId": "general-common:speech.confirm-return",
+    "materialEntryId": "lx.social-action.b9001.0027"
+  },
+  {
+    "sourceEntryId": "general-common:speech.end-meeting",
+    "materialEntryId": "lx.social-action.b9001.0028"
+  },
+  {
+    "sourceEntryId": "general-common:speech.check-comfort",
+    "materialEntryId": "lx.social-action.b9001.0029"
+  },
+  {
+    "sourceEntryId": "general-common:speech.state-capacity",
+    "materialEntryId": "lx.social-action.b9001.0030"
+  },
+  {
+    "sourceEntryId": "general-common:place.convenience-store",
+    "materialEntryId": "lx.world-building.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:place.grocery",
+    "materialEntryId": "lx.world-building.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:place.laundromat",
+    "materialEntryId": "lx.world-building.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:place.laundry",
+    "materialEntryId": "lx.world-building.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:place.bathhouse",
+    "materialEntryId": "lx.world-building.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:place.library",
+    "materialEntryId": "lx.world-building.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:place.community-center",
+    "materialEntryId": "lx.world-building.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:place.post-office",
+    "materialEntryId": "lx.world-building.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:place.parcel-point",
+    "materialEntryId": "lx.world-building.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:place.pharmacy",
+    "materialEntryId": "lx.world-building.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:place.emergency-station",
+    "materialEntryId": "lx.world-building.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:place.fire-station",
+    "materialEntryId": "lx.world-building.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:place.police-office",
+    "materialEntryId": "lx.world-building.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:place.registration-office",
+    "materialEntryId": "lx.world-building.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:place.employment-office",
+    "materialEntryId": "lx.world-building.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:place.repair-shop",
+    "materialEntryId": "lx.world-building.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:place.secondhand-shop",
+    "materialEntryId": "lx.world-building.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:place.recycling-point",
+    "materialEntryId": "lx.world-building.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:place.warehouse",
+    "materialEntryId": "lx.world-building.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:place.shelter",
+    "materialEntryId": "lx.world-building.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:place.guard-booth",
+    "materialEntryId": "lx.world-building.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:place.rooftop",
+    "materialEntryId": "lx.world-building.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:place.basement",
+    "materialEntryId": "lx.world-building.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:place.parking",
+    "materialEntryId": "lx.world-building.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:place.bus-stop",
+    "materialEntryId": "lx.world-building.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:place.metro-station",
+    "materialEntryId": "lx.world-building.b9001.0026"
+  },
+  {
+    "sourceEntryId": "general-common:place.waiting-room",
+    "materialEntryId": "lx.world-building.b9001.0027"
+  },
+  {
+    "sourceEntryId": "general-common:place.canteen",
+    "materialEntryId": "lx.world-building.b9001.0028"
+  },
+  {
+    "sourceEntryId": "general-common:place.cafe",
+    "materialEntryId": "lx.world-building.b9001.0029"
+  },
+  {
+    "sourceEntryId": "general-common:place.greenhouse",
+    "materialEntryId": "lx.world-building.b9001.0030"
+  },
+  {
+    "sourceEntryId": "general-common:env.chilly",
+    "materialEntryId": "lx.world-environment.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:env.mild",
+    "materialEntryId": "lx.world-environment.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:env.warm",
+    "materialEntryId": "lx.world-environment.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:env.hot",
+    "materialEntryId": "lx.world-environment.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:env.frosty",
+    "materialEntryId": "lx.world-environment.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:env.dry-air",
+    "materialEntryId": "lx.world-environment.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:env.humid-air",
+    "materialEntryId": "lx.world-environment.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:env.stuffy",
+    "materialEntryId": "lx.world-environment.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:env.fresh",
+    "materialEntryId": "lx.world-environment.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:env.draft",
+    "materialEntryId": "lx.world-environment.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:env.breeze",
+    "materialEntryId": "lx.world-environment.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:env.gust",
+    "materialEntryId": "lx.world-environment.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:env.crosswind",
+    "materialEntryId": "lx.world-environment.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:env.drizzle",
+    "materialEntryId": "lx.world-environment.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:env.downpour",
+    "materialEntryId": "lx.world-environment.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:env.sleet",
+    "materialEntryId": "lx.world-environment.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:env.snowfall",
+    "materialEntryId": "lx.world-environment.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:env.foggy",
+    "materialEntryId": "lx.world-environment.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:env.haze",
+    "materialEntryId": "lx.world-environment.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:env.dew",
+    "materialEntryId": "lx.world-environment.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:env.frost",
+    "materialEntryId": "lx.world-environment.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:env.icy-surface",
+    "materialEntryId": "lx.world-environment.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:env.dust",
+    "materialEntryId": "lx.world-environment.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:env.odorless",
+    "materialEntryId": "lx.world-environment.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:env.smoky",
+    "materialEntryId": "lx.world-environment.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:light.daylight",
+    "materialEntryId": "lx.world-environment.b9001.0026"
+  },
+  {
+    "sourceEntryId": "general-common:light.artificial",
+    "materialEntryId": "lx.world-environment.b9001.0027"
+  },
+  {
+    "sourceEntryId": "general-common:light.backlit",
+    "materialEntryId": "lx.world-environment.b9001.0028"
+  },
+  {
+    "sourceEntryId": "general-common:light.sidelit",
+    "materialEntryId": "lx.world-environment.b9001.0029"
+  },
+  {
+    "sourceEntryId": "general-common:light.diffuse",
+    "materialEntryId": "lx.world-environment.b9001.0030"
+  },
+  {
+    "sourceEntryId": "general-common:light.direct",
+    "materialEntryId": "lx.world-environment.b9001.0031"
+  },
+  {
+    "sourceEntryId": "general-common:light.low",
+    "materialEntryId": "lx.world-environment.b9001.0032"
+  },
+  {
+    "sourceEntryId": "general-common:light.blackout",
+    "materialEntryId": "lx.world-environment.b9001.0033"
+  },
+  {
+    "sourceEntryId": "general-common:light.flicker",
+    "materialEntryId": "lx.world-environment.b9001.0034"
+  },
+  {
+    "sourceEntryId": "general-common:light.glare",
+    "materialEntryId": "lx.world-environment.b9001.0035"
+  },
+  {
+    "sourceEntryId": "general-common:light.reflection",
+    "materialEntryId": "lx.world-environment.b9001.0036"
+  },
+  {
+    "sourceEntryId": "general-common:light.shadow",
+    "materialEntryId": "lx.world-environment.b9001.0037"
+  },
+  {
+    "sourceEntryId": "general-common:sound.quiet",
+    "materialEntryId": "lx.world-environment.b9001.0038"
+  },
+  {
+    "sourceEntryId": "general-common:sound.noisy",
+    "materialEntryId": "lx.world-environment.b9001.0039"
+  },
+  {
+    "sourceEntryId": "general-common:sound.echo",
+    "materialEntryId": "lx.world-environment.b9001.0040"
+  },
+  {
+    "sourceEntryId": "general-common:sound.muffled",
+    "materialEntryId": "lx.world-environment.b9001.0041"
+  },
+  {
+    "sourceEntryId": "general-common:sound.continuous",
+    "materialEntryId": "lx.world-environment.b9001.0042"
+  },
+  {
+    "sourceEntryId": "general-common:sound.intermittent",
+    "materialEntryId": "lx.world-environment.b9001.0043"
+  },
+  {
+    "sourceEntryId": "general-common:sound.reverberant",
+    "materialEntryId": "lx.world-environment.b9001.0044"
+  },
+  {
+    "sourceEntryId": "general-common:sound.alarm",
+    "materialEntryId": "lx.world-environment.b9001.0045"
+  },
+  {
+    "sourceEntryId": "general-common:facility.elevator",
+    "materialEntryId": "lx.world-facility.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:facility.escalator",
+    "materialEntryId": "lx.world-facility.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:facility.ramp",
+    "materialEntryId": "lx.world-facility.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:facility.handrail",
+    "materialEntryId": "lx.world-facility.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:facility.guardrail",
+    "materialEntryId": "lx.world-facility.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:facility.automatic-door",
+    "materialEntryId": "lx.world-facility.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:facility.turnstile",
+    "materialEntryId": "lx.world-facility.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:facility.access-panel",
+    "materialEntryId": "lx.world-facility.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:facility.intercom",
+    "materialEntryId": "lx.world-facility.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:facility.public-terminal",
+    "materialEntryId": "lx.world-facility.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:facility.vending-machine",
+    "materialEntryId": "lx.world-facility.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:facility.water-dispenser",
+    "materialEntryId": "lx.world-facility.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:facility.charging-point",
+    "materialEntryId": "lx.world-facility.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:facility.locker",
+    "materialEntryId": "lx.world-facility.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:facility.mailbox",
+    "materialEntryId": "lx.world-facility.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:facility.parcel-locker",
+    "materialEntryId": "lx.world-facility.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:facility.ticket-machine",
+    "materialEntryId": "lx.world-facility.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:facility.queue-display",
+    "materialEntryId": "lx.world-facility.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:facility.washbasin",
+    "materialEntryId": "lx.world-facility.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:facility.drain",
+    "materialEntryId": "lx.world-facility.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:facility.fire-extinguisher",
+    "materialEntryId": "lx.world-facility.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:facility.first-aid-kit",
+    "materialEntryId": "lx.world-facility.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:facility.waste-sort-bin",
+    "materialEntryId": "lx.world-facility.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:facility.bike-rack",
+    "materialEntryId": "lx.world-facility.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:facility.bulletin-screen",
+    "materialEntryId": "lx.world-facility.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:facility.shade-canopy",
+    "materialEntryId": "lx.world-facility.b9001.0026"
+  },
+  {
+    "sourceEntryId": "general-common:facility.vent",
+    "materialEntryId": "lx.world-facility.b9001.0027"
+  },
+  {
+    "sourceEntryId": "general-common:facility.air-filter",
+    "materialEntryId": "lx.world-facility.b9001.0028"
+  },
+  {
+    "sourceEntryId": "general-common:facility.backup-power",
+    "materialEntryId": "lx.world-facility.b9001.0029"
+  },
+  {
+    "sourceEntryId": "general-common:facility.wheelchair-space",
+    "materialEntryId": "lx.world-facility.b9001.0030"
+  },
+  {
+    "sourceEntryId": "general-common:object.umbrella",
+    "materialEntryId": "lx.world-object.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:object.raincoat",
+    "materialEntryId": "lx.world-object.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:object.towel",
+    "materialEntryId": "lx.world-object.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:object.blanket",
+    "materialEntryId": "lx.world-object.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:object.pillow",
+    "materialEntryId": "lx.world-object.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:object.mattress",
+    "materialEntryId": "lx.world-object.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:object.cushion",
+    "materialEntryId": "lx.world-object.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:object.hanger",
+    "materialEntryId": "lx.world-object.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:object.clothes-pin",
+    "materialEntryId": "lx.world-object.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:object.storage-bag",
+    "materialEntryId": "lx.world-object.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:object.shopping-bag",
+    "materialEntryId": "lx.world-object.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:object.water-bottle",
+    "materialEntryId": "lx.world-object.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:object.lunchbox",
+    "materialEntryId": "lx.world-object.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:object.thermos",
+    "materialEntryId": "lx.world-object.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:object.kettle",
+    "materialEntryId": "lx.world-object.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:object.saucepan",
+    "materialEntryId": "lx.world-object.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:object.chopsticks",
+    "materialEntryId": "lx.world-object.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:object.fork",
+    "materialEntryId": "lx.world-object.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:object.plate",
+    "materialEntryId": "lx.world-object.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:object.napkin",
+    "materialEntryId": "lx.world-object.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:object.thermometer",
+    "materialEntryId": "lx.world-object.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:object.clock",
+    "materialEntryId": "lx.world-object.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:object.key",
+    "materialEntryId": "lx.world-object.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:object.wallet",
+    "materialEntryId": "lx.world-object.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:object.identity-card",
+    "materialEntryId": "lx.world-object.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:object.transit-card",
+    "materialEntryId": "lx.world-object.b9001.0026"
+  },
+  {
+    "sourceEntryId": "general-common:object.receipt",
+    "materialEntryId": "lx.world-object.b9001.0027"
+  },
+  {
+    "sourceEntryId": "general-common:object.ticket",
+    "materialEntryId": "lx.world-object.b9001.0028"
+  },
+  {
+    "sourceEntryId": "general-common:object.map",
+    "materialEntryId": "lx.world-object.b9001.0029"
+  },
+  {
+    "sourceEntryId": "general-common:object.calendar",
+    "materialEntryId": "lx.world-object.b9001.0030"
+  },
+  {
+    "sourceEntryId": "general-common:object.pen",
+    "materialEntryId": "lx.world-object.b9001.0031"
+  },
+  {
+    "sourceEntryId": "general-common:object.envelope",
+    "materialEntryId": "lx.world-object.b9001.0032"
+  },
+  {
+    "sourceEntryId": "general-common:object.clip",
+    "materialEntryId": "lx.world-object.b9001.0033"
+  },
+  {
+    "sourceEntryId": "general-common:object.battery",
+    "materialEntryId": "lx.world-object.b9001.0034"
+  },
+  {
+    "sourceEntryId": "general-common:object.flashlight",
+    "materialEntryId": "lx.world-object.b9001.0035"
+  },
+  {
+    "sourceEntryId": "general-common:object.phone",
+    "materialEntryId": "lx.world-object.b9001.0036"
+  },
+  {
+    "sourceEntryId": "general-common:object.earphones",
+    "materialEntryId": "lx.world-object.b9001.0037"
+  },
+  {
+    "sourceEntryId": "general-common:object.charger",
+    "materialEntryId": "lx.world-object.b9001.0038"
+  },
+  {
+    "sourceEntryId": "general-common:object.powerbank",
+    "materialEntryId": "lx.world-object.b9001.0039"
+  },
+  {
+    "sourceEntryId": "general-common:object.medicine-box",
+    "materialEntryId": "lx.world-object.b9001.0040"
+  },
+  {
+    "sourceEntryId": "general-common:tool.screwdriver",
+    "materialEntryId": "lx.world-object.b9001.0041"
+  },
+  {
+    "sourceEntryId": "general-common:tool.wrench",
+    "materialEntryId": "lx.world-object.b9001.0042"
+  },
+  {
+    "sourceEntryId": "general-common:tool.pliers",
+    "materialEntryId": "lx.world-object.b9001.0043"
+  },
+  {
+    "sourceEntryId": "general-common:tool.scissors",
+    "materialEntryId": "lx.world-object.b9001.0044"
+  },
+  {
+    "sourceEntryId": "general-common:tool.tape-measure",
+    "materialEntryId": "lx.world-object.b9001.0045"
+  },
+  {
+    "sourceEntryId": "general-common:tool.spirit-level",
+    "materialEntryId": "lx.world-object.b9001.0046"
+  },
+  {
+    "sourceEntryId": "general-common:tool.file",
+    "materialEntryId": "lx.world-object.b9001.0047"
+  },
+  {
+    "sourceEntryId": "general-common:tool.sandpaper",
+    "materialEntryId": "lx.world-object.b9001.0048"
+  },
+  {
+    "sourceEntryId": "general-common:tool.brush",
+    "materialEntryId": "lx.world-object.b9001.0049"
+  },
+  {
+    "sourceEntryId": "general-common:tool.scraper",
+    "materialEntryId": "lx.world-object.b9001.0050"
+  },
+  {
+    "sourceEntryId": "general-common:tool.needle",
+    "materialEntryId": "lx.world-object.b9002.0001"
+  },
+  {
+    "sourceEntryId": "general-common:tool.thread",
+    "materialEntryId": "lx.world-object.b9002.0002"
+  },
+  {
+    "sourceEntryId": "general-common:tool.glue",
+    "materialEntryId": "lx.world-object.b9002.0003"
+  },
+  {
+    "sourceEntryId": "general-common:tool.tape",
+    "materialEntryId": "lx.world-object.b9002.0004"
+  },
+  {
+    "sourceEntryId": "general-common:tool.cable-tie",
+    "materialEntryId": "lx.world-object.b9002.0005"
+  },
+  {
+    "sourceEntryId": "general-common:tool.clamp",
+    "materialEntryId": "lx.world-object.b9002.0006"
+  },
+  {
+    "sourceEntryId": "general-common:tool.lubricant",
+    "materialEntryId": "lx.world-object.b9002.0007"
+  },
+  {
+    "sourceEntryId": "general-common:tool.cleaning-cloth",
+    "materialEntryId": "lx.world-object.b9002.0008"
+  },
+  {
+    "sourceEntryId": "general-common:tool.mop",
+    "materialEntryId": "lx.world-object.b9002.0009"
+  },
+  {
+    "sourceEntryId": "general-common:tool.broom",
+    "materialEntryId": "lx.world-object.b9002.0010"
+  },
+  {
+    "sourceEntryId": "general-common:tool.dustpan",
+    "materialEntryId": "lx.world-object.b9002.0011"
+  },
+  {
+    "sourceEntryId": "general-common:tool.detergent",
+    "materialEntryId": "lx.world-object.b9002.0012"
+  },
+  {
+    "sourceEntryId": "general-common:tool.sponge",
+    "materialEntryId": "lx.world-object.b9002.0013"
+  },
+  {
+    "sourceEntryId": "general-common:tool.bucket",
+    "materialEntryId": "lx.world-object.b9002.0014"
+  },
+  {
+    "sourceEntryId": "general-common:tool.work-gloves",
+    "materialEntryId": "lx.world-object.b9002.0015"
+  },
+  {
+    "sourceEntryId": "general-common:space.indoors",
+    "materialEntryId": "lx.world-space.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:space.outdoors",
+    "materialEntryId": "lx.world-space.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:space.semi-open",
+    "materialEntryId": "lx.world-space.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:space.narrow",
+    "materialEntryId": "lx.world-space.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:space.spacious",
+    "materialEntryId": "lx.world-space.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:space.low-clearance",
+    "materialEntryId": "lx.world-space.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:space.step-free",
+    "materialEntryId": "lx.world-space.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:space.stepped",
+    "materialEntryId": "lx.world-space.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:space.sloping",
+    "materialEntryId": "lx.world-space.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:space.level",
+    "materialEntryId": "lx.world-space.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:space.uneven",
+    "materialEntryId": "lx.world-space.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:space.slippery",
+    "materialEntryId": "lx.world-space.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:space.obstructed",
+    "materialEntryId": "lx.world-space.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:space.clear",
+    "materialEntryId": "lx.world-space.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:space.one-way",
+    "materialEntryId": "lx.world-space.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:space.shared",
+    "materialEntryId": "lx.world-space.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:space.private",
+    "materialEntryId": "lx.world-space.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:space.public",
+    "materialEntryId": "lx.world-space.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:space.sheltered",
+    "materialEntryId": "lx.world-space.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:space.exposed",
+    "materialEntryId": "lx.world-space.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:space.crowded",
+    "materialEntryId": "lx.world-space.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:space.sparse",
+    "materialEntryId": "lx.world-space.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:space.visible",
+    "materialEntryId": "lx.world-space.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:space.blind-corner",
+    "materialEntryId": "lx.world-space.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:space.soundproof",
+    "materialEntryId": "lx.world-space.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-common:state.available",
+    "materialEntryId": "lx.world-state.b9001.0001"
+  },
+  {
+    "sourceEntryId": "general-common:state.unavailable",
+    "materialEntryId": "lx.world-state.b9001.0002"
+  },
+  {
+    "sourceEntryId": "general-common:state.occupied",
+    "materialEntryId": "lx.world-state.b9001.0003"
+  },
+  {
+    "sourceEntryId": "general-common:state.idle",
+    "materialEntryId": "lx.world-state.b9001.0004"
+  },
+  {
+    "sourceEntryId": "general-common:state.open",
+    "materialEntryId": "lx.world-state.b9001.0005"
+  },
+  {
+    "sourceEntryId": "general-common:state.closed",
+    "materialEntryId": "lx.world-state.b9001.0006"
+  },
+  {
+    "sourceEntryId": "general-common:state.reserved",
+    "materialEntryId": "lx.world-state.b9001.0007"
+  },
+  {
+    "sourceEntryId": "general-common:state.waiting",
+    "materialEntryId": "lx.world-state.b9001.0008"
+  },
+  {
+    "sourceEntryId": "general-common:state.in-service",
+    "materialEntryId": "lx.world-state.b9001.0009"
+  },
+  {
+    "sourceEntryId": "general-common:state.maintenance",
+    "materialEntryId": "lx.world-state.b9001.0010"
+  },
+  {
+    "sourceEntryId": "general-common:state.fault",
+    "materialEntryId": "lx.world-state.b9001.0011"
+  },
+  {
+    "sourceEntryId": "general-common:state.power-cut",
+    "materialEntryId": "lx.world-state.b9001.0012"
+  },
+  {
+    "sourceEntryId": "general-common:state.water-cut",
+    "materialEntryId": "lx.world-state.b9001.0013"
+  },
+  {
+    "sourceEntryId": "general-common:state.leaking",
+    "materialEntryId": "lx.world-state.b9001.0014"
+  },
+  {
+    "sourceEntryId": "general-common:state.blocked",
+    "materialEntryId": "lx.world-state.b9001.0015"
+  },
+  {
+    "sourceEntryId": "general-common:state.low-stock",
+    "materialEntryId": "lx.world-state.b9001.0016"
+  },
+  {
+    "sourceEntryId": "general-common:state.out-of-stock",
+    "materialEntryId": "lx.world-state.b9001.0017"
+  },
+  {
+    "sourceEntryId": "general-common:state.restocking",
+    "materialEntryId": "lx.world-state.b9001.0018"
+  },
+  {
+    "sourceEntryId": "general-common:state.return-pending",
+    "materialEntryId": "lx.world-state.b9001.0019"
+  },
+  {
+    "sourceEntryId": "general-common:state.inspection-pending",
+    "materialEntryId": "lx.world-state.b9001.0020"
+  },
+  {
+    "sourceEntryId": "general-common:state.cleaning",
+    "materialEntryId": "lx.world-state.b9001.0021"
+  },
+  {
+    "sourceEntryId": "general-common:state.drying",
+    "materialEntryId": "lx.world-state.b9001.0022"
+  },
+  {
+    "sourceEntryId": "general-common:state.notice-posted",
+    "materialEntryId": "lx.world-state.b9001.0023"
+  },
+  {
+    "sourceEntryId": "general-common:state.temporary",
+    "materialEntryId": "lx.world-state.b9001.0024"
+  },
+  {
+    "sourceEntryId": "general-common:state.changed",
+    "materialEntryId": "lx.world-state.b9001.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-accessory.82913b061e872348",
+    "materialEntryId": "lx.body-accessory.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-accessory.e7c9d4badac90b4a",
+    "materialEntryId": "lx.body-accessory.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-accessory.178d501e6afc88f6",
+    "materialEntryId": "lx.body-accessory.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-accessory.18ad0bde9faafa56",
+    "materialEntryId": "lx.body-accessory.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.8764a395d57d629e",
+    "materialEntryId": "lx.body-accessory.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.eb8c9b671641b9e2",
+    "materialEntryId": "lx.body-accessory.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.442f735c1c45d497",
+    "materialEntryId": "lx.body-accessory.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.8ae1e0196fb7b83e",
+    "materialEntryId": "lx.body-accessory.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.58a1336b99de3835",
+    "materialEntryId": "lx.body-accessory.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.e1bbc2da97c22958",
+    "materialEntryId": "lx.body-accessory.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.4057ad77a28e83e5",
+    "materialEntryId": "lx.body-accessory.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.b43cb47306fa841e",
+    "materialEntryId": "lx.body-accessory.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.b00f367a862a7133",
+    "materialEntryId": "lx.body-accessory.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.268c85861b89561b",
+    "materialEntryId": "lx.body-accessory.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.2894148040c16350",
+    "materialEntryId": "lx.body-accessory.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.48ff5621ceb55cbd",
+    "materialEntryId": "lx.body-accessory.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.7e791d7192d85a49",
+    "materialEntryId": "lx.body-accessory.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.c42da25d979fe3db",
+    "materialEntryId": "lx.body-accessory.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.0e941a0a2dc8fac2",
+    "materialEntryId": "lx.body-accessory.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.5944fbd74c8faed5",
+    "materialEntryId": "lx.body-accessory.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-accessory.b4d8ba3b1505e96a",
+    "materialEntryId": "lx.body-accessory.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-clothing.a648019878fc4268",
+    "materialEntryId": "lx.body-clothing.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-clothing.9acd6cd24e75aad9",
+    "materialEntryId": "lx.body-clothing.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-clothing.8f3d0154b8c8ca80",
+    "materialEntryId": "lx.body-clothing.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-clothing.9a8d03a80b2ac27b",
+    "materialEntryId": "lx.body-clothing.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-clothing.62c0a1cb387c4313",
+    "materialEntryId": "lx.body-clothing.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.body-clothing.72be2a0bdd3ba43c",
+    "materialEntryId": "lx.body-clothing.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.c4e51317b288711d",
+    "materialEntryId": "lx.body-clothing.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.74860dc618ad3425",
+    "materialEntryId": "lx.body-clothing.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.f83a816b36cf3174",
+    "materialEntryId": "lx.body-clothing.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.606087914375ecef",
+    "materialEntryId": "lx.body-clothing.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.976cf9214defcac8",
+    "materialEntryId": "lx.body-clothing.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.b435cb79cb2d3c37",
+    "materialEntryId": "lx.body-clothing.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.b7af8b7a89455bda",
+    "materialEntryId": "lx.body-clothing.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.0961a1f87e5915e6",
+    "materialEntryId": "lx.body-clothing.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.bf73019a2675397a",
+    "materialEntryId": "lx.body-clothing.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.e2a03442beba1b1a",
+    "materialEntryId": "lx.body-clothing.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.b96cce1f1f772915",
+    "materialEntryId": "lx.body-clothing.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.f12cc50a19aa628b",
+    "materialEntryId": "lx.body-clothing.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.3b6e4ad59e326209",
+    "materialEntryId": "lx.body-clothing.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.c9f123628033a8d3",
+    "materialEntryId": "lx.body-clothing.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.cec90e0d6001894e",
+    "materialEntryId": "lx.body-clothing.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.4670f0142db5dfac",
+    "materialEntryId": "lx.body-clothing.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.6f5ead036eae9186",
+    "materialEntryId": "lx.body-clothing.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.body-clothing.0bc359ba3c0973d8",
+    "materialEntryId": "lx.body-clothing.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.daily-move.dd1a5461743a1676",
+    "materialEntryId": "lx.daily-move.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-move.1b25915500f7e15a",
+    "materialEntryId": "lx.daily-move.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-move.7c428591b8001e44",
+    "materialEntryId": "lx.daily-move.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-move.267937a09d4b20e1",
+    "materialEntryId": "lx.daily-move.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-rest.294085aac6cd00c5",
+    "materialEntryId": "lx.daily-rest.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.daily-work.5b97b23fea823ca8",
+    "materialEntryId": "lx.daily-work.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.daily-work.9d12168c37f74012",
+    "materialEntryId": "lx.daily-work.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.19f00c65efbc01b0",
+    "materialEntryId": "lx.daily-work.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.fa6d9f5a7fd9754f",
+    "materialEntryId": "lx.daily-work.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.baf0e217bdb38c2d",
+    "materialEntryId": "lx.daily-work.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.640f98fe1c50a8be",
+    "materialEntryId": "lx.daily-work.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.1bf8d7d4ffa62799",
+    "materialEntryId": "lx.daily-work.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.597fa04aa222b7a1",
+    "materialEntryId": "lx.daily-work.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.ea67bc7d0f0bfbf7",
+    "materialEntryId": "lx.daily-work.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.2582603ac31f2370",
+    "materialEntryId": "lx.daily-work.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.67847cd17f8e782f",
+    "materialEntryId": "lx.daily-work.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.dd45b3e01fb5db4d",
+    "materialEntryId": "lx.daily-work.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.b2082c1d3cee66af",
+    "materialEntryId": "lx.daily-work.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.65b0be48df446b42",
+    "materialEntryId": "lx.daily-work.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.1248bdd07cdc5674",
+    "materialEntryId": "lx.daily-work.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.3152e4b75cdb3077",
+    "materialEntryId": "lx.daily-work.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.1854e327f13f9646",
+    "materialEntryId": "lx.daily-work.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.363d24485d3e4192",
+    "materialEntryId": "lx.daily-work.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.a210288133b7c56f",
+    "materialEntryId": "lx.daily-work.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.5397a469a0ffb754",
+    "materialEntryId": "lx.daily-work.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.b381fbce0ad65001",
+    "materialEntryId": "lx.daily-work.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.11303d678bc1340a",
+    "materialEntryId": "lx.daily-work.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.0fdc3376e5ea6e7b",
+    "materialEntryId": "lx.daily-work.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.bcee493cc8bbc28c",
+    "materialEntryId": "lx.daily-work.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.c4075cfa069f6178",
+    "materialEntryId": "lx.daily-work.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.6d73b441cba1551c",
+    "materialEntryId": "lx.daily-work.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.2da9f1041c4723f1",
+    "materialEntryId": "lx.daily-work.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.e94f396a7b68a691",
+    "materialEntryId": "lx.daily-work.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.63b64422df961ae0",
+    "materialEntryId": "lx.daily-work.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.27071492b3ba37cc",
+    "materialEntryId": "lx.daily-work.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.303253a487f3892b",
+    "materialEntryId": "lx.daily-work.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.fa2f348410daeadf",
+    "materialEntryId": "lx.daily-work.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.bac7edf3e1075d70",
+    "materialEntryId": "lx.daily-work.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.080666b1073926d9",
+    "materialEntryId": "lx.daily-work.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.e933eec7ba3ae4f6",
+    "materialEntryId": "lx.daily-work.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.7561563818ca6a14",
+    "materialEntryId": "lx.daily-work.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.daily-work.6c092ee42a546735",
+    "materialEntryId": "lx.daily-work.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.4f39b1399edc359f",
+    "materialEntryId": "lx.text-environment.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.2809facc25161a4c",
+    "materialEntryId": "lx.text-environment.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.a4595f378da69c38",
+    "materialEntryId": "lx.text-environment.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.83ef3f2b1df1d51a",
+    "materialEntryId": "lx.text-environment.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.5cc84c59919ce717",
+    "materialEntryId": "lx.text-environment.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.ca63c6658cd48682",
+    "materialEntryId": "lx.text-environment.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.9de802e65f4453e9",
+    "materialEntryId": "lx.text-environment.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.text-environment.e6809d65326ffc42",
+    "materialEntryId": "lx.text-environment.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.0f45d270518f6fc8",
+    "materialEntryId": "lx.text-environment.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.16e0fd346dfccd1d",
+    "materialEntryId": "lx.text-environment.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.8366e84920847203",
+    "materialEntryId": "lx.text-environment.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.375ca3c8376a4e5c",
+    "materialEntryId": "lx.text-environment.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.4497379d2eb78e38",
+    "materialEntryId": "lx.text-environment.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.318a1bf1827ffc6c",
+    "materialEntryId": "lx.text-environment.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.0e21c2780b4743b7",
+    "materialEntryId": "lx.text-environment.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.d284f8b7f1432010",
+    "materialEntryId": "lx.text-environment.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.4b909f3c59ffb691",
+    "materialEntryId": "lx.text-environment.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.2f2e5e1fbf98b978",
+    "materialEntryId": "lx.text-environment.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.d438f90037187885",
+    "materialEntryId": "lx.text-environment.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.13200d1ce6ba5a92",
+    "materialEntryId": "lx.text-environment.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.781f69883137072b",
+    "materialEntryId": "lx.text-environment.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.1d713676662a4e6f",
+    "materialEntryId": "lx.text-environment.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.267f7480f4fd4a93",
+    "materialEntryId": "lx.text-environment.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.978507cb74e948b0",
+    "materialEntryId": "lx.text-environment.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.9f6fcafb9bc9893a",
+    "materialEntryId": "lx.text-environment.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.94f7b1219c1fd617",
+    "materialEntryId": "lx.text-environment.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.e53e9d9e6630715f",
+    "materialEntryId": "lx.text-environment.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.d9315c5907c3c368",
+    "materialEntryId": "lx.text-environment.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.0e54d7b006e55bd0",
+    "materialEntryId": "lx.text-environment.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.2ca55d02ffb2cf25",
+    "materialEntryId": "lx.text-environment.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.ac072b27b75829ba",
+    "materialEntryId": "lx.text-environment.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.24212858d635b158",
+    "materialEntryId": "lx.text-environment.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.338c1e8dba12e424",
+    "materialEntryId": "lx.text-environment.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.0b289102a8a8f31d",
+    "materialEntryId": "lx.text-environment.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.f9da76bb121f1634",
+    "materialEntryId": "lx.text-environment.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.f21c88ceb1d1b091",
+    "materialEntryId": "lx.text-environment.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.2c2d79fb82654f96",
+    "materialEntryId": "lx.text-environment.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.323c4c434c5f6bbc",
+    "materialEntryId": "lx.text-environment.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.0cb325dd640dea83",
+    "materialEntryId": "lx.text-environment.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.c4cc1315c1ff3daa",
+    "materialEntryId": "lx.text-environment.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.text-environment.804592239993336e",
+    "materialEntryId": "lx.text-environment.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.954747ef6abdc56d",
+    "materialEntryId": "lx.world-building.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.536b212d378ea8a0",
+    "materialEntryId": "lx.world-building.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.2507150b6a2fb667",
+    "materialEntryId": "lx.world-building.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.2d348cdb6ae30de9",
+    "materialEntryId": "lx.world-building.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.22e283d9500972fc",
+    "materialEntryId": "lx.world-building.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.22d7b79453d81f2f",
+    "materialEntryId": "lx.world-building.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.46dbabe9b0750d09",
+    "materialEntryId": "lx.world-building.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.7af1c5f71e6c21bd",
+    "materialEntryId": "lx.world-building.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.c6fda38c44d0464b",
+    "materialEntryId": "lx.world-building.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.8bb372d98a452284",
+    "materialEntryId": "lx.world-building.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.0eaec67e628a951c",
+    "materialEntryId": "lx.world-building.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.5fe6f4003510f860",
+    "materialEntryId": "lx.world-building.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.bdb3b662e6e43360",
+    "materialEntryId": "lx.world-building.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.01932903cb29fc51",
+    "materialEntryId": "lx.world-building.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.03cf9732e0562bfc",
+    "materialEntryId": "lx.world-building.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-building.5e3439302fb02d68",
+    "materialEntryId": "lx.world-building.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.75217eb0a09b7385",
+    "materialEntryId": "lx.world-building.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.dc3be2d19f1fd87b",
+    "materialEntryId": "lx.world-building.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.effb032c7e909ab9",
+    "materialEntryId": "lx.world-building.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.25cf722b22e12b9f",
+    "materialEntryId": "lx.world-building.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.2735c7f9c93e03ce",
+    "materialEntryId": "lx.world-building.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.5c75695ca6dc8289",
+    "materialEntryId": "lx.world-building.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.c52460695f92ed8e",
+    "materialEntryId": "lx.world-building.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.1a51bcf0eb27dd05",
+    "materialEntryId": "lx.world-building.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.7af2bb0069dc3e46",
+    "materialEntryId": "lx.world-building.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.01f0af9d287a0640",
+    "materialEntryId": "lx.world-building.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.e2776436faed5650",
+    "materialEntryId": "lx.world-building.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.f7dd331a39b990a9",
+    "materialEntryId": "lx.world-building.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.0bec951de2dd50eb",
+    "materialEntryId": "lx.world-building.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.1b5ed1375f3ba1bd",
+    "materialEntryId": "lx.world-building.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.013fc6c0c5a63fe0",
+    "materialEntryId": "lx.world-building.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.5d5844386bb4f1f1",
+    "materialEntryId": "lx.world-building.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.525bb9e82ae46a9b",
+    "materialEntryId": "lx.world-building.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.c356222890968bea",
+    "materialEntryId": "lx.world-building.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.69024cdc6d447add",
+    "materialEntryId": "lx.world-building.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.6862954c2448f77e",
+    "materialEntryId": "lx.world-building.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.d5bc92f31044a6bf",
+    "materialEntryId": "lx.world-building.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.c3a346981aaff5b0",
+    "materialEntryId": "lx.world-building.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.21b6954005f25acd",
+    "materialEntryId": "lx.world-building.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.9fc553d52e742139",
+    "materialEntryId": "lx.world-building.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.e27f10b7fe7203aa",
+    "materialEntryId": "lx.world-building.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.763cd4fdb0bcc6d9",
+    "materialEntryId": "lx.world-building.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.af78a74c70c119c7",
+    "materialEntryId": "lx.world-building.b9101.0043"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.6608f81ca6aca45b",
+    "materialEntryId": "lx.world-building.b9101.0044"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.9f5abe171eb90e6f",
+    "materialEntryId": "lx.world-building.b9101.0045"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.08aecdf3a281eefe",
+    "materialEntryId": "lx.world-building.b9101.0046"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.a63de11e1d709574",
+    "materialEntryId": "lx.world-building.b9101.0047"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.1a2db2abfc8fed82",
+    "materialEntryId": "lx.world-building.b9101.0048"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.f7d15a4dfe552605",
+    "materialEntryId": "lx.world-building.b9101.0049"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.7f404a2f44325d11",
+    "materialEntryId": "lx.world-building.b9101.0050"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.5b15c73499da108b",
+    "materialEntryId": "lx.world-building.b9102.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.491626709bf3f3d8",
+    "materialEntryId": "lx.world-building.b9102.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.33964ec20ac524bb",
+    "materialEntryId": "lx.world-building.b9102.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.75cbb5027f229a8a",
+    "materialEntryId": "lx.world-building.b9102.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.efb841bda06700e3",
+    "materialEntryId": "lx.world-building.b9102.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.db60a9a0f10896ec",
+    "materialEntryId": "lx.world-building.b9102.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.18c27e59ef4207a3",
+    "materialEntryId": "lx.world-building.b9102.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-building.94750ba6eb215554",
+    "materialEntryId": "lx.world-building.b9102.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.8f689fe4324f04aa",
+    "materialEntryId": "lx.world-culture.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.7ecfb83457140c13",
+    "materialEntryId": "lx.world-culture.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.fcda851cb5f343b1",
+    "materialEntryId": "lx.world-culture.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.783d9c558b3d3392",
+    "materialEntryId": "lx.world-culture.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.b69f1f01238ec8ed",
+    "materialEntryId": "lx.world-culture.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.aab7fef3b48f8974",
+    "materialEntryId": "lx.world-culture.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.d735b9b52327eb85",
+    "materialEntryId": "lx.world-culture.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.784a58bc3244ed4e",
+    "materialEntryId": "lx.world-culture.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.de38be3c5f701d14",
+    "materialEntryId": "lx.world-culture.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.ecd8ef02cd19b455",
+    "materialEntryId": "lx.world-culture.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.caaf353c803b7b87",
+    "materialEntryId": "lx.world-culture.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.825c260de20f47f9",
+    "materialEntryId": "lx.world-culture.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.6a9d868d3b30b090",
+    "materialEntryId": "lx.world-culture.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.744828b3b9217e2c",
+    "materialEntryId": "lx.world-culture.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.841e318fc461aac7",
+    "materialEntryId": "lx.world-culture.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.868bd9090f8973d2",
+    "materialEntryId": "lx.world-culture.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.9ee72bce2b775580",
+    "materialEntryId": "lx.world-culture.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.421f45c9a09b2fcd",
+    "materialEntryId": "lx.world-culture.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.d91f74954128c7f0",
+    "materialEntryId": "lx.world-culture.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.653a80969df4c350",
+    "materialEntryId": "lx.world-culture.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.0d67c3a9711f7559",
+    "materialEntryId": "lx.world-culture.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.1d9e47f51f844418",
+    "materialEntryId": "lx.world-culture.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.4088acca641f66b7",
+    "materialEntryId": "lx.world-culture.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.8fe44edd04d5b245",
+    "materialEntryId": "lx.world-culture.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.476040a1d4d70cbd",
+    "materialEntryId": "lx.world-culture.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.766592abd929a667",
+    "materialEntryId": "lx.world-culture.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.e3655c0c7e58bea4",
+    "materialEntryId": "lx.world-culture.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.23d688ebd7a31912",
+    "materialEntryId": "lx.world-culture.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.03e9cd823cfd484f",
+    "materialEntryId": "lx.world-culture.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.d257ec2c34fb622d",
+    "materialEntryId": "lx.world-culture.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.709325ae2c644859",
+    "materialEntryId": "lx.world-culture.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-culture.40bb874862b2553c",
+    "materialEntryId": "lx.world-culture.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-detail.0fbf6816d2a3dbdd",
+    "materialEntryId": "lx.world-detail.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-detail.a03e127df4c01470",
+    "materialEntryId": "lx.world-detail.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.a2a80a68ca18a784",
+    "materialEntryId": "lx.world-detail.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.737e8c54680c6fb3",
+    "materialEntryId": "lx.world-detail.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.836360a5fd2919f1",
+    "materialEntryId": "lx.world-detail.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.598c12f5c8438a65",
+    "materialEntryId": "lx.world-detail.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.13a5d85956371251",
+    "materialEntryId": "lx.world-detail.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.486d7058a3c2f4e9",
+    "materialEntryId": "lx.world-detail.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.d4485612816472af",
+    "materialEntryId": "lx.world-detail.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.7decd5523b03f183",
+    "materialEntryId": "lx.world-detail.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.d26f73faf86ebfad",
+    "materialEntryId": "lx.world-detail.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.0a352358d50657b0",
+    "materialEntryId": "lx.world-detail.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.f678a034b5308ca3",
+    "materialEntryId": "lx.world-detail.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.2bb3183c3d7690a2",
+    "materialEntryId": "lx.world-detail.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.6853340fcd5061ae",
+    "materialEntryId": "lx.world-detail.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.8eb8ac40c2f8bef3",
+    "materialEntryId": "lx.world-detail.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.eec7e7a50a6c9416",
+    "materialEntryId": "lx.world-detail.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.b2d9574787a009bf",
+    "materialEntryId": "lx.world-detail.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.adcb879a4cba6ac8",
+    "materialEntryId": "lx.world-detail.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.0e7fb6e95cb142d8",
+    "materialEntryId": "lx.world-detail.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.1036ac69d4455c31",
+    "materialEntryId": "lx.world-detail.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.8501675ed58389ad",
+    "materialEntryId": "lx.world-detail.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.2118be8e44cd22d0",
+    "materialEntryId": "lx.world-detail.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.0822cf2c760b47e0",
+    "materialEntryId": "lx.world-detail.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-detail.abef03457661d719",
+    "materialEntryId": "lx.world-detail.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-district.8e9451d0e463a5ff",
+    "materialEntryId": "lx.world-district.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-district.3cd3ef8a72c600ba",
+    "materialEntryId": "lx.world-district.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-district.3b87535f1bd84308",
+    "materialEntryId": "lx.world-district.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-district.0e90aa475156a8a9",
+    "materialEntryId": "lx.world-district.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-district.aa6df432583f5aed",
+    "materialEntryId": "lx.world-district.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-district.d8f3ad4bb53026a5",
+    "materialEntryId": "lx.world-district.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-district.35e37ee7287c8730",
+    "materialEntryId": "lx.world-district.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.1388fae158c68162",
+    "materialEntryId": "lx.world-district.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.045e004c6590aa14",
+    "materialEntryId": "lx.world-district.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.49ed635a316d3833",
+    "materialEntryId": "lx.world-district.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.bbc68415cca56e6d",
+    "materialEntryId": "lx.world-district.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.88012f47cc4db257",
+    "materialEntryId": "lx.world-district.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.7a244c0a4688f368",
+    "materialEntryId": "lx.world-district.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.eb9910ece9f08ba8",
+    "materialEntryId": "lx.world-district.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.86e71dbc75d4cd66",
+    "materialEntryId": "lx.world-district.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.c24005a584a40ef6",
+    "materialEntryId": "lx.world-district.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.c5238ec983fe8e5b",
+    "materialEntryId": "lx.world-district.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.227d1d8c897e4740",
+    "materialEntryId": "lx.world-district.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.e8d1db9b37d9ca86",
+    "materialEntryId": "lx.world-district.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.4aa64e2152ff13d4",
+    "materialEntryId": "lx.world-district.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.109709c5ff73c7d0",
+    "materialEntryId": "lx.world-district.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.b1f9a6836743a148",
+    "materialEntryId": "lx.world-district.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.e7a3532b75092ec6",
+    "materialEntryId": "lx.world-district.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.01f9a608b68ac73d",
+    "materialEntryId": "lx.world-district.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.3522a68eb0e54c5c",
+    "materialEntryId": "lx.world-district.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.de7ecbb62500bdcb",
+    "materialEntryId": "lx.world-district.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.a3ea70c434d79b3d",
+    "materialEntryId": "lx.world-district.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-district.fcc3ebeb957d5187",
+    "materialEntryId": "lx.world-district.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.f9a0c2009b8523d2",
+    "materialEntryId": "lx.world-facility.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.c01dde4f224770b6",
+    "materialEntryId": "lx.world-facility.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.c2f3d2ca1150a542",
+    "materialEntryId": "lx.world-facility.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.547ce04809636fc0",
+    "materialEntryId": "lx.world-facility.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.34d15e49ae1365c3",
+    "materialEntryId": "lx.world-facility.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.f3f291f685dd5955",
+    "materialEntryId": "lx.world-facility.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.ee5613860bb00c4f",
+    "materialEntryId": "lx.world-facility.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.aadb7fc5abdbf920",
+    "materialEntryId": "lx.world-facility.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.a499d1795577bfb4",
+    "materialEntryId": "lx.world-facility.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.c9e5d2e486e9a1cf",
+    "materialEntryId": "lx.world-facility.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.cdc457fc7247feb6",
+    "materialEntryId": "lx.world-facility.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-facility.4266695b2c72b791",
+    "materialEntryId": "lx.world-facility.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.db2c97d2868cbf97",
+    "materialEntryId": "lx.world-facility.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.211ada0bf7270223",
+    "materialEntryId": "lx.world-facility.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.253c0cb720877eb5",
+    "materialEntryId": "lx.world-facility.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.162d5ede6eede0fd",
+    "materialEntryId": "lx.world-facility.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.cd37c2c5c6f802b7",
+    "materialEntryId": "lx.world-facility.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.225b62b9387a25f0",
+    "materialEntryId": "lx.world-facility.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.da4750b2cdaa914f",
+    "materialEntryId": "lx.world-facility.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.2adb45cbb8d8ae0a",
+    "materialEntryId": "lx.world-facility.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.2b1772628db6c6af",
+    "materialEntryId": "lx.world-facility.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.57fc43fe43ebc004",
+    "materialEntryId": "lx.world-facility.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.aa49893eb18ecf7c",
+    "materialEntryId": "lx.world-facility.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.d526e154f17adb5b",
+    "materialEntryId": "lx.world-facility.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.c3a94dee3f0714a9",
+    "materialEntryId": "lx.world-facility.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.507e7785355a4125",
+    "materialEntryId": "lx.world-facility.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.c137efa6cc6be3d0",
+    "materialEntryId": "lx.world-facility.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.870942278eb7aec6",
+    "materialEntryId": "lx.world-facility.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.c88a8f0438800b2e",
+    "materialEntryId": "lx.world-facility.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.7b98c754ae543f4b",
+    "materialEntryId": "lx.world-facility.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.03857c06548f3dc2",
+    "materialEntryId": "lx.world-facility.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.72a25cc505cf8664",
+    "materialEntryId": "lx.world-facility.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.e0d2fe4267c7c467",
+    "materialEntryId": "lx.world-facility.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.0221942f3ba85024",
+    "materialEntryId": "lx.world-facility.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.0161886b06f71dc7",
+    "materialEntryId": "lx.world-facility.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.69e01af90d58dbc3",
+    "materialEntryId": "lx.world-facility.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.3d723c32b406d65a",
+    "materialEntryId": "lx.world-facility.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.3465914fac80af9f",
+    "materialEntryId": "lx.world-facility.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.6f57af6efe6aba77",
+    "materialEntryId": "lx.world-facility.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.3494850ae9658d63",
+    "materialEntryId": "lx.world-facility.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.193b306c3cba589c",
+    "materialEntryId": "lx.world-facility.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.f07a5b0c7d1f443a",
+    "materialEntryId": "lx.world-facility.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.dd50b13308702e8d",
+    "materialEntryId": "lx.world-facility.b9101.0043"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.26d21296a3623e58",
+    "materialEntryId": "lx.world-facility.b9101.0044"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.cf8949df57b9da95",
+    "materialEntryId": "lx.world-facility.b9101.0045"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.2dbdd705184da132",
+    "materialEntryId": "lx.world-facility.b9101.0046"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.088b3715b99f35f2",
+    "materialEntryId": "lx.world-facility.b9101.0047"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.7aa95af551fa761c",
+    "materialEntryId": "lx.world-facility.b9101.0048"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.bf2d2266cadd7473",
+    "materialEntryId": "lx.world-facility.b9101.0049"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.f20ac5b7edfd5789",
+    "materialEntryId": "lx.world-facility.b9101.0050"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.6b91329fa9da8701",
+    "materialEntryId": "lx.world-facility.b9102.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.8fb3602d742849f5",
+    "materialEntryId": "lx.world-facility.b9102.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.7916930103953e0c",
+    "materialEntryId": "lx.world-facility.b9102.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.0fc668760af8b1c9",
+    "materialEntryId": "lx.world-facility.b9102.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.f50ede7594833aab",
+    "materialEntryId": "lx.world-facility.b9102.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.bb96a590f1c6f359",
+    "materialEntryId": "lx.world-facility.b9102.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.8695dfef68868f23",
+    "materialEntryId": "lx.world-facility.b9102.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.0d2c0c18dd35489f",
+    "materialEntryId": "lx.world-facility.b9102.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.c25fe031bb7e3feb",
+    "materialEntryId": "lx.world-facility.b9102.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.10be3d2003c8a373",
+    "materialEntryId": "lx.world-facility.b9102.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.786364e1ead8344e",
+    "materialEntryId": "lx.world-facility.b9102.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.0afcbff5698e44be",
+    "materialEntryId": "lx.world-facility.b9102.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.e53b231e3a14d39c",
+    "materialEntryId": "lx.world-facility.b9102.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.2d6ecf76342cb214",
+    "materialEntryId": "lx.world-facility.b9102.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.d095a88da17b0a09",
+    "materialEntryId": "lx.world-facility.b9102.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-facility.f529aecf22903970",
+    "materialEntryId": "lx.world-facility.b9102.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-nature.eff3fb1a27468fb3",
+    "materialEntryId": "lx.world-nature.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-nature.c8bf46f2116bedd5",
+    "materialEntryId": "lx.world-nature.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-nature.5bb5cc34b106ef4f",
+    "materialEntryId": "lx.world-nature.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-nature.37b6be4aeaba992e",
+    "materialEntryId": "lx.world-nature.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-nature.bc283a9c39745eb0",
+    "materialEntryId": "lx.world-nature.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-nature.2ede284e917b1b5a",
+    "materialEntryId": "lx.world-nature.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.6f38dc415bf4ad30",
+    "materialEntryId": "lx.world-nature.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.1d1cebb0956f5613",
+    "materialEntryId": "lx.world-nature.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.32fe32721c928152",
+    "materialEntryId": "lx.world-nature.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.e85291375853c9c0",
+    "materialEntryId": "lx.world-nature.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.0d81944296e3902e",
+    "materialEntryId": "lx.world-nature.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.2bb13a4c0b4976d9",
+    "materialEntryId": "lx.world-nature.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.4cadec2b2cbbdb4f",
+    "materialEntryId": "lx.world-nature.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.97b12a7b81222577",
+    "materialEntryId": "lx.world-nature.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.d4d9a63412002261",
+    "materialEntryId": "lx.world-nature.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-nature.dc7d8182e67b695c",
+    "materialEntryId": "lx.world-nature.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-object.061d7fe98886e80a",
+    "materialEntryId": "lx.world-object.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-object.43048cfe56933285",
+    "materialEntryId": "lx.world-object.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-object.fbe9ae319377267c",
+    "materialEntryId": "lx.world-object.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-object.894bf5dcfbde43a4",
+    "materialEntryId": "lx.world-object.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-object.8f4af315630138d4",
+    "materialEntryId": "lx.world-object.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.e9d22ec0503ee6ea",
+    "materialEntryId": "lx.world-object.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.d4692b73aa745ace",
+    "materialEntryId": "lx.world-object.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.e683b9e164da8bc6",
+    "materialEntryId": "lx.world-object.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.ac30919cde133592",
+    "materialEntryId": "lx.world-object.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.a89a57be22819a06",
+    "materialEntryId": "lx.world-object.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.85a002fe73cb560c",
+    "materialEntryId": "lx.world-object.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.d92121c6aa5ff792",
+    "materialEntryId": "lx.world-object.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.0bf11ccf9ca882dd",
+    "materialEntryId": "lx.world-object.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.3bba1f59ea443a55",
+    "materialEntryId": "lx.world-object.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.fb25f51db7cc42a6",
+    "materialEntryId": "lx.world-object.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.45d92cbe06c6f609",
+    "materialEntryId": "lx.world-object.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.5b10b859759d21a1",
+    "materialEntryId": "lx.world-object.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.e036dfb9ee2bb7ad",
+    "materialEntryId": "lx.world-object.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.3189ac68984fa2e3",
+    "materialEntryId": "lx.world-object.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.b591659ae963591c",
+    "materialEntryId": "lx.world-object.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.d5cb1f4cba146fc8",
+    "materialEntryId": "lx.world-object.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.752e64c6675bfec6",
+    "materialEntryId": "lx.world-object.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.8024f73eaf6d91a1",
+    "materialEntryId": "lx.world-object.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.fbba1f87d228356e",
+    "materialEntryId": "lx.world-object.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.39ab91d13c53b687",
+    "materialEntryId": "lx.world-object.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.7d7664234ce59d3d",
+    "materialEntryId": "lx.world-object.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.85cecb4836fa845a",
+    "materialEntryId": "lx.world-object.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.111bd3b8bd3b634d",
+    "materialEntryId": "lx.world-object.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.c06968055d40fab8",
+    "materialEntryId": "lx.world-object.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.315a91c71b5b3fcb",
+    "materialEntryId": "lx.world-object.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.8458f6f7ace5b117",
+    "materialEntryId": "lx.world-object.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.73518ba88fd6345a",
+    "materialEntryId": "lx.world-object.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.358b6c751b9afb3c",
+    "materialEntryId": "lx.world-object.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.e585261a2770e766",
+    "materialEntryId": "lx.world-object.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.11884c146493751b",
+    "materialEntryId": "lx.world-object.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.2741b84814f346bb",
+    "materialEntryId": "lx.world-object.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.5729e2760f78152a",
+    "materialEntryId": "lx.world-object.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.37ffe028cb8ab74e",
+    "materialEntryId": "lx.world-object.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.37cab1a510b5101c",
+    "materialEntryId": "lx.world-object.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.2be21979b903325b",
+    "materialEntryId": "lx.world-object.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.c7e08f5f5550f8c1",
+    "materialEntryId": "lx.world-object.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.8df8ac2d954dfe7e",
+    "materialEntryId": "lx.world-object.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-object.7b2cce60fc45c92e",
+    "materialEntryId": "lx.world-object.b9101.0043"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.8df962c68d407d84",
+    "materialEntryId": "lx.world-room.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.014ba17d60fff7fd",
+    "materialEntryId": "lx.world-room.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.9b5fd0f8ac77a854",
+    "materialEntryId": "lx.world-room.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.ccedf3fce51d8b0e",
+    "materialEntryId": "lx.world-room.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.d8b1144a74fe4beb",
+    "materialEntryId": "lx.world-room.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.f086459f4f07af29",
+    "materialEntryId": "lx.world-room.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.6c55da77850b77c9",
+    "materialEntryId": "lx.world-room.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.e4c79033015efe5a",
+    "materialEntryId": "lx.world-room.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.4f736070f51cc108",
+    "materialEntryId": "lx.world-room.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.316a98d57dee2ef8",
+    "materialEntryId": "lx.world-room.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.23b7651747fbb48c",
+    "materialEntryId": "lx.world-room.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.de47497eafee9bf7",
+    "materialEntryId": "lx.world-room.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-room.9f835688bbd0599e",
+    "materialEntryId": "lx.world-room.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.cef33865e80e2c2c",
+    "materialEntryId": "lx.world-room.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.80d1f78a426ce8ca",
+    "materialEntryId": "lx.world-room.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.dceb176f551d8e7f",
+    "materialEntryId": "lx.world-room.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.44e7f322de122ad4",
+    "materialEntryId": "lx.world-room.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.371c359b7b8b0dce",
+    "materialEntryId": "lx.world-room.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.a443774fe68f63b4",
+    "materialEntryId": "lx.world-room.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.28473d99824d60de",
+    "materialEntryId": "lx.world-room.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.801b4926827dc40f",
+    "materialEntryId": "lx.world-room.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.e0b133d7058c7e0a",
+    "materialEntryId": "lx.world-room.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.01147ff1f6f55bfb",
+    "materialEntryId": "lx.world-room.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.05792ddfa8d5e25f",
+    "materialEntryId": "lx.world-room.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.cb232a279c3eb268",
+    "materialEntryId": "lx.world-room.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.0dfb9862af1ffdfa",
+    "materialEntryId": "lx.world-room.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.9e571c1d9a06f972",
+    "materialEntryId": "lx.world-room.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.1d097432a4529a71",
+    "materialEntryId": "lx.world-room.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.e50a386f77b9774a",
+    "materialEntryId": "lx.world-room.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.94a34576339825e2",
+    "materialEntryId": "lx.world-room.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.3352fa2eb0a8a332",
+    "materialEntryId": "lx.world-room.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.e2ec1a1cdddfc239",
+    "materialEntryId": "lx.world-room.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.4a220beca99209aa",
+    "materialEntryId": "lx.world-room.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.012d1c1ff25f759f",
+    "materialEntryId": "lx.world-room.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.66750c2915086a6c",
+    "materialEntryId": "lx.world-room.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.da3543cda07d6920",
+    "materialEntryId": "lx.world-room.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.210183f25adff41d",
+    "materialEntryId": "lx.world-room.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.cd9ca5dbc1742a50",
+    "materialEntryId": "lx.world-room.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.5cbb86534b4effc5",
+    "materialEntryId": "lx.world-room.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.2ef2c0a92ce1717a",
+    "materialEntryId": "lx.world-room.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.fb17566b592a7eff",
+    "materialEntryId": "lx.world-room.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-room.34f69727174e9387",
+    "materialEntryId": "lx.world-room.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.6c69fdca586740b6",
+    "materialEntryId": "lx.world-scent.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.a3abd0a6405da721",
+    "materialEntryId": "lx.world-scent.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.a0a2c2d73de67668",
+    "materialEntryId": "lx.world-scent.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.d9a4af0b8c75001f",
+    "materialEntryId": "lx.world-scent.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.98035b90a4a3fefa",
+    "materialEntryId": "lx.world-scent.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.8d416247af58a56a",
+    "materialEntryId": "lx.world-scent.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.5a6cada91f226ccf",
+    "materialEntryId": "lx.world-scent.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.08a311bfe0a4faae",
+    "materialEntryId": "lx.world-scent.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.da257566b1a60216",
+    "materialEntryId": "lx.world-scent.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.c159243e8edc49b1",
+    "materialEntryId": "lx.world-scent.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.822fd84beae71349",
+    "materialEntryId": "lx.world-scent.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.0ba419e3960c9b2c",
+    "materialEntryId": "lx.world-scent.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-scent.e44f2b560c7f3e07",
+    "materialEntryId": "lx.world-scent.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.514f03e5fd31babf",
+    "materialEntryId": "lx.world-scent.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.551f775e38741bb2",
+    "materialEntryId": "lx.world-scent.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.f6c3ac4d052e17c8",
+    "materialEntryId": "lx.world-scent.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.9f16ee0dbd6b0849",
+    "materialEntryId": "lx.world-scent.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.ffc0b0961abe987e",
+    "materialEntryId": "lx.world-scent.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.679c1116ae6b0335",
+    "materialEntryId": "lx.world-scent.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.9617769cedff2d74",
+    "materialEntryId": "lx.world-scent.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.6b3dbde01f502bde",
+    "materialEntryId": "lx.world-scent.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.be572d52cb3dcdd7",
+    "materialEntryId": "lx.world-scent.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.1360cb5bcfcde08d",
+    "materialEntryId": "lx.world-scent.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.ebdd64bed55851a5",
+    "materialEntryId": "lx.world-scent.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.6b37c7234759c9a5",
+    "materialEntryId": "lx.world-scent.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.2884d135953e200c",
+    "materialEntryId": "lx.world-scent.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.b78116cfa2724b69",
+    "materialEntryId": "lx.world-scent.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.297700eb2ce8e958",
+    "materialEntryId": "lx.world-scent.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.b3f7539aa985d4d5",
+    "materialEntryId": "lx.world-scent.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.fa2a7ee8f4b4e072",
+    "materialEntryId": "lx.world-scent.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.7ad7a03035da1200",
+    "materialEntryId": "lx.world-scent.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.270f293e2e0fe00c",
+    "materialEntryId": "lx.world-scent.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.ac3f8770542cd4cc",
+    "materialEntryId": "lx.world-scent.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.6f28aeb479d0826c",
+    "materialEntryId": "lx.world-scent.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.9866186ad471b91d",
+    "materialEntryId": "lx.world-scent.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.5896dcab4f16c2bb",
+    "materialEntryId": "lx.world-scent.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.340ea704a52045de",
+    "materialEntryId": "lx.world-scent.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.45b0bb8112985cbf",
+    "materialEntryId": "lx.world-scent.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.d926f15c750aab81",
+    "materialEntryId": "lx.world-scent.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.ce6f7e05552c0e24",
+    "materialEntryId": "lx.world-scent.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.53530454463d85f3",
+    "materialEntryId": "lx.world-scent.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.51fe7288d2262a2c",
+    "materialEntryId": "lx.world-scent.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.7257dbda621c2856",
+    "materialEntryId": "lx.world-scent.b9101.0043"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.c510cd8c926c487c",
+    "materialEntryId": "lx.world-scent.b9101.0044"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.4a1232468798bb32",
+    "materialEntryId": "lx.world-scent.b9101.0045"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.a56d486245d7c237",
+    "materialEntryId": "lx.world-scent.b9101.0046"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.13e01b570f2ee504",
+    "materialEntryId": "lx.world-scent.b9101.0047"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.f59eaa2a9a8b90e5",
+    "materialEntryId": "lx.world-scent.b9101.0048"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.2587ce11ad1b8bda",
+    "materialEntryId": "lx.world-scent.b9101.0049"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-scent.05021d71646bec79",
+    "materialEntryId": "lx.world-scent.b9101.0050"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.58f6a7bc4488a3ab",
+    "materialEntryId": "lx.world-sound.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.617106fd6c9e796d",
+    "materialEntryId": "lx.world-sound.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.780f2622ca7b7b85",
+    "materialEntryId": "lx.world-sound.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.97dff08420868adf",
+    "materialEntryId": "lx.world-sound.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.191df05838a73363",
+    "materialEntryId": "lx.world-sound.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.5cce50af8438245b",
+    "materialEntryId": "lx.world-sound.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.9f465f53a0a525eb",
+    "materialEntryId": "lx.world-sound.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.77acfb70b1652b0c",
+    "materialEntryId": "lx.world-sound.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.0f918ac73850dd9c",
+    "materialEntryId": "lx.world-sound.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.69652767597322a6",
+    "materialEntryId": "lx.world-sound.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-sound.b73494a6095b1327",
+    "materialEntryId": "lx.world-sound.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.a2b06b800a1fdf79",
+    "materialEntryId": "lx.world-sound.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.c9b1a2fbbfdedcaf",
+    "materialEntryId": "lx.world-sound.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.212b717e720dd76f",
+    "materialEntryId": "lx.world-sound.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.075ad3001c875e75",
+    "materialEntryId": "lx.world-sound.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.f97380b55c0559bb",
+    "materialEntryId": "lx.world-sound.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.55cb511c29c15d60",
+    "materialEntryId": "lx.world-sound.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.d0cb8657568fec8c",
+    "materialEntryId": "lx.world-sound.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.2a76ed66b6ff35cc",
+    "materialEntryId": "lx.world-sound.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.26e8ed8f296f3b64",
+    "materialEntryId": "lx.world-sound.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.5672792e99b5da6f",
+    "materialEntryId": "lx.world-sound.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.7013d8752e3a4bd5",
+    "materialEntryId": "lx.world-sound.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.bc174ecdc8b9b1f2",
+    "materialEntryId": "lx.world-sound.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.81d2f3fd07fff09b",
+    "materialEntryId": "lx.world-sound.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.034f69ce609b7228",
+    "materialEntryId": "lx.world-sound.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.0eaa2e7a40bc68b9",
+    "materialEntryId": "lx.world-sound.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.5b5a946b9179021c",
+    "materialEntryId": "lx.world-sound.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.c92be9dd03c080bd",
+    "materialEntryId": "lx.world-sound.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.80be3bf44a2c743b",
+    "materialEntryId": "lx.world-sound.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.7bc91aec81538c39",
+    "materialEntryId": "lx.world-sound.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.25c274fe10fff939",
+    "materialEntryId": "lx.world-sound.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.df54558aa2008143",
+    "materialEntryId": "lx.world-sound.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.e4aa15167e4af9dc",
+    "materialEntryId": "lx.world-sound.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.a1ad3fafb92f5fd1",
+    "materialEntryId": "lx.world-sound.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.3276d0247370e8bb",
+    "materialEntryId": "lx.world-sound.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.65e2f3c62454e6e5",
+    "materialEntryId": "lx.world-sound.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.8da70cb9d5f56501",
+    "materialEntryId": "lx.world-sound.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.82069af621a44319",
+    "materialEntryId": "lx.world-sound.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.14a93b4ca6f674a6",
+    "materialEntryId": "lx.world-sound.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.d336c7053b12a501",
+    "materialEntryId": "lx.world-sound.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.2514c4d5929b4942",
+    "materialEntryId": "lx.world-sound.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.863a41d8aa5f5535",
+    "materialEntryId": "lx.world-sound.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.3dba14e3e2fdcb3b",
+    "materialEntryId": "lx.world-sound.b9101.0043"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.486ed1dbe70c93a0",
+    "materialEntryId": "lx.world-sound.b9101.0044"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.432c7f8829b7065b",
+    "materialEntryId": "lx.world-sound.b9101.0045"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.54e3099deb7f0199",
+    "materialEntryId": "lx.world-sound.b9101.0046"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.92ea27b538619a0f",
+    "materialEntryId": "lx.world-sound.b9101.0047"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.cd9f6fae19f3a1fc",
+    "materialEntryId": "lx.world-sound.b9101.0048"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.013bfb2d349d0456",
+    "materialEntryId": "lx.world-sound.b9101.0049"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-sound.9c13d341623e7c5f",
+    "materialEntryId": "lx.world-sound.b9101.0050"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.ab24af7ea03957ec",
+    "materialEntryId": "lx.world-terrain.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.0e4653b5fddd292a",
+    "materialEntryId": "lx.world-terrain.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.fd8e9b6024332d80",
+    "materialEntryId": "lx.world-terrain.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.c571bdf37b26f7cd",
+    "materialEntryId": "lx.world-terrain.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.86fe36433027bee2",
+    "materialEntryId": "lx.world-terrain.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.45fb24d05bcf3d5f",
+    "materialEntryId": "lx.world-terrain.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.6a3a4dc029aba11e",
+    "materialEntryId": "lx.world-terrain.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.eb97b1da8b39c346",
+    "materialEntryId": "lx.world-terrain.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.8d5f0aadfff512eb",
+    "materialEntryId": "lx.world-terrain.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.14bdaf5d21867762",
+    "materialEntryId": "lx.world-terrain.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.fe1a416372f9c09e",
+    "materialEntryId": "lx.world-terrain.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.f3744cf6350917ca",
+    "materialEntryId": "lx.world-terrain.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.231518db8df8aef5",
+    "materialEntryId": "lx.world-terrain.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.1e83e2cf544b4915",
+    "materialEntryId": "lx.world-terrain.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.61a392b960483b0d",
+    "materialEntryId": "lx.world-terrain.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.c2f69db92970cad6",
+    "materialEntryId": "lx.world-terrain.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.26e657547d24f6dc",
+    "materialEntryId": "lx.world-terrain.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.95d7817f419b4cf9",
+    "materialEntryId": "lx.world-terrain.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-terrain.693615f65974502a",
+    "materialEntryId": "lx.world-terrain.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.984332cde4a094d1",
+    "materialEntryId": "lx.world-terrain.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.9446af599dcb0e8a",
+    "materialEntryId": "lx.world-terrain.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.c9d9e41f47ed9e3c",
+    "materialEntryId": "lx.world-terrain.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.e8431af55911b0b7",
+    "materialEntryId": "lx.world-terrain.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.d2e67c8189904efa",
+    "materialEntryId": "lx.world-terrain.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.b3c2edb8b7f5c049",
+    "materialEntryId": "lx.world-terrain.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.ca168323288dd8a9",
+    "materialEntryId": "lx.world-terrain.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.16bf74cf1270dc37",
+    "materialEntryId": "lx.world-terrain.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.7928676d263342b2",
+    "materialEntryId": "lx.world-terrain.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.be5a622745349a6d",
+    "materialEntryId": "lx.world-terrain.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.0db22eab7cec2433",
+    "materialEntryId": "lx.world-terrain.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.9ac20d033fe3f035",
+    "materialEntryId": "lx.world-terrain.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.9db92fb283f7faa9",
+    "materialEntryId": "lx.world-terrain.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.d04b6ac73eaae3e2",
+    "materialEntryId": "lx.world-terrain.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.c9bf4b353da1b67e",
+    "materialEntryId": "lx.world-terrain.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.d7da67b680ac4af6",
+    "materialEntryId": "lx.world-terrain.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.10e549b01d31c139",
+    "materialEntryId": "lx.world-terrain.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.56189d74344516f1",
+    "materialEntryId": "lx.world-terrain.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.53e95ae5fab8dbe0",
+    "materialEntryId": "lx.world-terrain.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.de99992c915e6d75",
+    "materialEntryId": "lx.world-terrain.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.4e0e42c7e35a04a2",
+    "materialEntryId": "lx.world-terrain.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.b7330b19d66c2ffe",
+    "materialEntryId": "lx.world-terrain.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.1fa11e05b166ef55",
+    "materialEntryId": "lx.world-terrain.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.feb336a961d4152d",
+    "materialEntryId": "lx.world-terrain.b9101.0043"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.833c00d124477464",
+    "materialEntryId": "lx.world-terrain.b9101.0044"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.f804d9ebc067b307",
+    "materialEntryId": "lx.world-terrain.b9101.0045"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.1847a24b323dc25e",
+    "materialEntryId": "lx.world-terrain.b9101.0046"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.f8e1d60d547beaf1",
+    "materialEntryId": "lx.world-terrain.b9101.0047"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.48e0e69f5cbee0dc",
+    "materialEntryId": "lx.world-terrain.b9101.0048"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.f916f4aa69055f0b",
+    "materialEntryId": "lx.world-terrain.b9101.0049"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-terrain.8781d4816075de50",
+    "materialEntryId": "lx.world-terrain.b9101.0050"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-weather.a6ff485d098e8c8b",
+    "materialEntryId": "lx.world-weather.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-weather.44feb9ec93208ac1",
+    "materialEntryId": "lx.world-weather.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-weather.e4f18c9eee390dac",
+    "materialEntryId": "lx.world-weather.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-weather.3fc4e123646c991c",
+    "materialEntryId": "lx.world-weather.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-weather.2b7b819e5600c21e",
+    "materialEntryId": "lx.world-weather.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-weather.9dc5a58222a25da2",
+    "materialEntryId": "lx.world-weather.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.8f5e91c973d1656d",
+    "materialEntryId": "lx.world-weather.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.f2d1ed9c3d617795",
+    "materialEntryId": "lx.world-weather.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.68a06df55c2a2977",
+    "materialEntryId": "lx.world-weather.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.94ac88baf4709fa4",
+    "materialEntryId": "lx.world-weather.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.50d5e4e72a8f64cf",
+    "materialEntryId": "lx.world-weather.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.0e7771962630ece8",
+    "materialEntryId": "lx.world-weather.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.fd342527408c77bf",
+    "materialEntryId": "lx.world-weather.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.7a3e315bb2aafe16",
+    "materialEntryId": "lx.world-weather.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.06585f56ee4d15c6",
+    "materialEntryId": "lx.world-weather.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.5c9e09a730894fd4",
+    "materialEntryId": "lx.world-weather.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.54702fb786db9919",
+    "materialEntryId": "lx.world-weather.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.05eba94e575bebe8",
+    "materialEntryId": "lx.world-weather.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.ad40f373402cf67a",
+    "materialEntryId": "lx.world-weather.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.be977701ee0d3e30",
+    "materialEntryId": "lx.world-weather.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.6b4809bb42f8c6d2",
+    "materialEntryId": "lx.world-weather.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.20a7423b92aeeeba",
+    "materialEntryId": "lx.world-weather.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.ae3a82cd2298a611",
+    "materialEntryId": "lx.world-weather.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.8c0b2b8a3f9c0ae6",
+    "materialEntryId": "lx.world-weather.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.bebd8286d2b865b1",
+    "materialEntryId": "lx.world-weather.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.5650044e325adceb",
+    "materialEntryId": "lx.world-weather.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.5af66a86f3102ae1",
+    "materialEntryId": "lx.world-weather.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.1278840fa46a2d54",
+    "materialEntryId": "lx.world-weather.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-weather.a775acb794e339b9",
+    "materialEntryId": "lx.world-weather.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-workplace.d687fe0495a7c04f",
+    "materialEntryId": "lx.world-workplace.b9101.0001"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-workplace.f3a441ed8f5eab3c",
+    "materialEntryId": "lx.world-workplace.b9101.0002"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-workplace.795de43ec40b7f4b",
+    "materialEntryId": "lx.world-workplace.b9101.0003"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-workplace.98babccdb50100ff",
+    "materialEntryId": "lx.world-workplace.b9101.0004"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-workplace.eb74d9dc9ae156de",
+    "materialEntryId": "lx.world-workplace.b9101.0005"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-workplace.62cdd73fde0b6ffd",
+    "materialEntryId": "lx.world-workplace.b9101.0006"
+  },
+  {
+    "sourceEntryId": "general-gap:v1.world-workplace.c7478aa9d539ffd2",
+    "materialEntryId": "lx.world-workplace.b9101.0007"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.988cad51b60abbd7",
+    "materialEntryId": "lx.world-workplace.b9101.0008"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.2a081c5d2eb3f9ec",
+    "materialEntryId": "lx.world-workplace.b9101.0009"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.64c0ee2725dd4dfb",
+    "materialEntryId": "lx.world-workplace.b9101.0010"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.2572ec7861773375",
+    "materialEntryId": "lx.world-workplace.b9101.0011"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.682b9c129b175de9",
+    "materialEntryId": "lx.world-workplace.b9101.0012"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.86f48b36288f9707",
+    "materialEntryId": "lx.world-workplace.b9101.0013"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.cdfce504cdbebb6a",
+    "materialEntryId": "lx.world-workplace.b9101.0014"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.64a09e747147eca4",
+    "materialEntryId": "lx.world-workplace.b9101.0015"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.a0ce2e9214bdd3f0",
+    "materialEntryId": "lx.world-workplace.b9101.0016"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.f7202db248ad3de0",
+    "materialEntryId": "lx.world-workplace.b9101.0017"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.1f25d2b3d69578ca",
+    "materialEntryId": "lx.world-workplace.b9101.0018"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.727f3ec00a80d8f9",
+    "materialEntryId": "lx.world-workplace.b9101.0019"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.e9c6a4ae88943f62",
+    "materialEntryId": "lx.world-workplace.b9101.0020"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.06b43b0aecdf0ab0",
+    "materialEntryId": "lx.world-workplace.b9101.0021"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.b30d39f66cebe4f2",
+    "materialEntryId": "lx.world-workplace.b9101.0022"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.1e9f7624e8cd4143",
+    "materialEntryId": "lx.world-workplace.b9101.0023"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.27f35c802f1850b1",
+    "materialEntryId": "lx.world-workplace.b9101.0024"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.0de80685cbb67af7",
+    "materialEntryId": "lx.world-workplace.b9101.0025"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.dfcc12bc272032de",
+    "materialEntryId": "lx.world-workplace.b9101.0026"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.63b5bd230498eae3",
+    "materialEntryId": "lx.world-workplace.b9101.0027"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.4e3351eceff9c375",
+    "materialEntryId": "lx.world-workplace.b9101.0028"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.226254e3f4ac5da4",
+    "materialEntryId": "lx.world-workplace.b9101.0029"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.75f407cbb15ed895",
+    "materialEntryId": "lx.world-workplace.b9101.0030"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.7def24afd32fe811",
+    "materialEntryId": "lx.world-workplace.b9101.0031"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.ca9b21222f5b6951",
+    "materialEntryId": "lx.world-workplace.b9101.0032"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.64826b0ad12fd83c",
+    "materialEntryId": "lx.world-workplace.b9101.0033"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.e234597c5f5e6ffd",
+    "materialEntryId": "lx.world-workplace.b9101.0034"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.39b789a575c9968d",
+    "materialEntryId": "lx.world-workplace.b9101.0035"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.8fb28006ed105466",
+    "materialEntryId": "lx.world-workplace.b9101.0036"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.b9f31ac55dcb61f6",
+    "materialEntryId": "lx.world-workplace.b9101.0037"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.2e06dec9a7d981ac",
+    "materialEntryId": "lx.world-workplace.b9101.0038"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.d12a1a9e68a68cc1",
+    "materialEntryId": "lx.world-workplace.b9101.0039"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.651e3144437af344",
+    "materialEntryId": "lx.world-workplace.b9101.0040"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.8c43f6c354b33201",
+    "materialEntryId": "lx.world-workplace.b9101.0041"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.332440a5354b2e13",
+    "materialEntryId": "lx.world-workplace.b9101.0042"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.d3b48efd84771f5a",
+    "materialEntryId": "lx.world-workplace.b9101.0043"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.366419a4d7fd0d9e",
+    "materialEntryId": "lx.world-workplace.b9101.0044"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.490b2d5e06ec8b1f",
+    "materialEntryId": "lx.world-workplace.b9101.0045"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.7d47901e0a2dea36",
+    "materialEntryId": "lx.world-workplace.b9101.0046"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.99fa8d27896f1e5e",
+    "materialEntryId": "lx.world-workplace.b9101.0047"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.04c373e76cb2d572",
+    "materialEntryId": "lx.world-workplace.b9101.0048"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.d4ef69d0b543e0c8",
+    "materialEntryId": "lx.world-workplace.b9101.0049"
+  },
+  {
+    "sourceEntryId": "general-gap:v2.world-workplace.805b5c795f99b232",
+    "materialEntryId": "lx.world-workplace.b9101.0050"
+  }
+]

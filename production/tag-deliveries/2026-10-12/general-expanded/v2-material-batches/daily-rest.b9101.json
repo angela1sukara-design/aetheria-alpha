@@ -1,0 +1,32 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "daily-rest.b9101",
+  "library": "daily-rest",
+  "domain": "general",
+  "source": {
+    "producer": "world-gap-source",
+    "model": "not recorded in source",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.daily-rest.b9101.0001",
+      "category": "daily-rest",
+      "subcategory": "环境候选",
+      "text": "雪窝应急过夜",
+      "description": "暴风雪中挖雪窝应急过夜并留通气孔。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

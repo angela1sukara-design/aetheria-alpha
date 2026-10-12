@@ -1,0 +1,409 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "social-action.b9001",
+  "library": "social-action",
+  "domain": "general",
+  "source": {
+    "producer": "GPT",
+    "model": "GPT (exact model not recorded)",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.social-action.b9001.0001",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "提出请求",
+      "description": "明确表达需要的协助，不把提出请求视为对方答应。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0002",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "征求许可",
+      "description": "行动前询问对方是否允许。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0003",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "给予许可",
+      "description": "对具体请求表达许可，范围与期限仍需记录。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0004",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "撤回许可",
+      "description": "停止此前允许的后续行为，不重写已经发生的事实。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0005",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "说明边界",
+      "description": "表达自己的可接受范围或不愿参与之处。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0006",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "道谢",
+      "description": "对已获得的帮助或善意表达感谢。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0007",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "致歉",
+      "description": "承认造成的影响并表达歉意，不自动恢复信任。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0008",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "解释",
+      "description": "补充原因或信息，不保证听者接受。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0009",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "建议",
+      "description": "提出可选方案，选择权仍由相关角色保留。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0010",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "协商",
+      "description": "共同讨论可接受的安排和条件。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0011",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "提醒",
+      "description": "把有关时间、事项或约定再次告知对方。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0012",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "询问进展",
+      "description": "针对已存在事项询问当前情况。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0013",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "引见",
+      "description": "在许可范围内介绍彼此身份或来意。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0014",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "询问称呼",
+      "description": "询问对方愿意使用的名字或称呼。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0015",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "纠正信息",
+      "description": "指出已知信息中的具体错误并提供依据。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0016",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "承认未知",
+      "description": "明确表示自己暂时不知道，不编造答案。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0017",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "确认收到",
+      "description": "表示信息或物件已接收，不等于赞同内容。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0018",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "核对理解",
+      "description": "复述重点并请对方确认是否理解一致。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0019",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "请求重述",
+      "description": "请对方再次说明没有听清或理解的部分。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0020",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "主动帮忙",
+      "description": "提出协助意向，实际行动仍需对方接受和资格检查。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0021",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "婉拒",
+      "description": "明确拒绝某个请求，同时保持礼貌表达。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0022",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "暂缓决定",
+      "description": "暂时不作承诺，并说明何时或如何再确认。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0023",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "保密约定",
+      "description": "对具体信息的传播范围形成约定，不自动创建信任。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0024",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "交换联络方式",
+      "description": "在双方愿意时提供可后续联系的信息。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0025",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "请求独处",
+      "description": "表达暂时需要个人空间的意愿。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0026",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "请求暂停",
+      "description": "请相关行动暂时停止，暂停是否成功由场景流程处理。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0027",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "约定回访",
+      "description": "对再次联系的时间或条件达成具体安排。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0028",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "结束会面",
+      "description": "明确告知本次相处结束并沿合法退出路径离开。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0029",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "确认舒适度",
+      "description": "询问当前安排是否让对方感到合适。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.social-action.b9001.0030",
+      "category": "social-action",
+      "subcategory": "交流与边界",
+      "text": "说明能力限度",
+      "description": "说明自己能做和暂时做不到的部分，不用标签补造能力。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}

@@ -1,0 +1,669 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "batchId": "world-scent.b9101",
+  "library": "world-scent",
+  "domain": "general",
+  "source": {
+    "producer": "world-gap-source",
+    "model": "not recorded in source",
+    "theme": "通用词条整理扩充；独立审稿，未自动安装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "entries": [
+    {
+      "id": "lx.world-scent.b9101.0001",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "酸雨后金属腥",
+      "description": "酸雨过后栏杆与路面散发淡金属腥与臭氧气。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0002",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "锈尘干燥气味",
+      "description": "空气里持续有干锈粉与焦土粉尘味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0003",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "再生水淡腥",
+      "description": "再生水与过滤芯附近的淡腥与湿塑料气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0004",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "日照热沙焦味",
+      "description": "正午沙面升起的焦暖尘气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0005",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "云絮湿冷触",
+      "description": "穿云时湿冷水汽扑面，几乎无味却凉。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0006",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "硫磺刺鼻味",
+      "description": "近火口硫磺刺鼻，久留眼鼻不适。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0007",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "石尘干燥呛",
+      "description": "巷道石尘干燥呛喉的气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0008",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "腐叶土腥",
+      "description": "厚腐叶层散发的湿土与菌腥。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0009",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "机油蒸汽混合味",
+      "description": "机油与蒸汽湿气混合的厚气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0010",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "松烟丹香",
+      "description": "洞府内松烟与药材煮香混合，不呛但持久。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0011",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "盐湿碘气味",
+      "description": "码头与水下舱交接处的盐湿与淡碘味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0012",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "麦酒与炉烟",
+      "description": "酒馆街区麦酒酸甜与远处炉烟混合。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0013",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "消毒液走廊味",
+      "description": "上学日走廊常见的淡消毒液气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0014",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "油炸摊热塑料混合味",
+      "description": "下层巷热油与热塑料气味叠在一起，呛而甜。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0015",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "义体冷却液刺鼻",
+      "description": "诊所旁义体冷却液挥发的淡甜刺鼻味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0016",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "臭氧净化喷雾味",
+      "description": "上层区臭氧净化喷雾后的冷冽气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0017",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "柴油烟焦糊味",
+      "description": "发电机棚柴油燃烧的焦糊与烟油气。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0018",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "碘片药柜潮味",
+      "description": "医务角碘片药柜打开时的潮药味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0019",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "汗味循环滤芯气",
+      "description": "运动后滤芯附近短暂的汗味与暖塑料气。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0020",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "碘化水淡药味",
+      "description": "饮用水袋开启时淡碘与塑料袋气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0021",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "驼粪烟篝火味",
+      "description": "夜营驼粪干燃的特殊烟篝火味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0022",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "干革与尘土味",
+      "description": "鞍具干革味混着无处不在的细尘土味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0023",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "高空臭氧淡味",
+      "description": "穿云后短暂可闻的淡臭氧清冽味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0024",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "云絮咸湿凉意",
+      "description": "低云穿行时咸湿凉意扑面，几乎无香。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0025",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "硫化氢臭蛋味",
+      "description": "低洼处硫化氢臭蛋味浓，久留头晕。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0026",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "温泥敷脚气味",
+      "description": "温泥浴后泥与硫磺混合的厚气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0027",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "潮湿霉木支护味",
+      "description": "旧木支护段潮湿霉味混石腥。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0028",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "炸药硫磺残味",
+      "description": "爆破后残留的硫磺与硝烟涩味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0029",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "煤油炉暖腥味",
+      "description": "室内煤油炉燃烧的暖腥与金属味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0030",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "干羊毛湿汽味",
+      "description": "烘干房干羊毛与湿汽混合气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0031",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "腐果发酵甜腥",
+      "description": "落地腐果发酵的甜腥混湿土气。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0032",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "篝火湿柴烟呛",
+      "description": "湿柴难燃时浓烟呛喉的气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0033",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "煤烟皮革混合味",
+      "description": "车间煤烟与工人皮革围裙的混合味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0034",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "热沥青路面味",
+      "description": "新铺热沥青与蒸汽混合的厚气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0035",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "檀香净尘味",
+      "description": "大殿长燃檀香压住山风尘土味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0036",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "药圃晨露清气",
+      "description": "药圃晨露蒸发时的清苦草气。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0037",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "湿廊盐雾热湿",
+      "description": "湿廊月池区热湿盐雾扑面。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0038",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "机舱热油湿味",
+      "description": "水面支援船机舱热油与海水湿味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0039",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "干草马厩氨味",
+      "description": "马厩干草与氨气混合的厚气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0040",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "蜡烛烟蜂蜡味",
+      "description": "城堡长廊蜡烛烟与蜂蜡甜味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0041",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "湿冷地牢霉味",
+      "description": "地牢入口湿冷霉味明显重于上层。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0042",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "打印店碳粉味",
+      "description": "文印店开门碳粉与纸屑气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0043",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "咖啡机焦香层",
+      "description": "写字楼茶水间咖啡机焦香覆盖消毒水。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0044",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "新装修油漆味",
+      "description": "开学前教室新装修残留油漆味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0045",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "渔网腥咸潮味",
+      "description": "渔港清晨渔网腥咸与柴油混合味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0046",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "油漆稀释剂味",
+      "description": "船坞油漆日稀释剂刺鼻味扩散。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0047",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "旧香冷灰味",
+      "description": "祭坛旧香冷灰与石尘混合味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0048",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "磷光菌毯味",
+      "description": "磷光菌毯区域有淡腥甜气味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0049",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "干草马粪尘味",
+      "description": "主街干草、马粪与尘土混合味。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    },
+    {
+      "id": "lx.world-scent.b9101.0050",
+      "category": "world-scent",
+      "subcategory": "环境候选",
+      "text": "威士忌橡木桶香",
+      "description": "酒馆开桶时威士忌橡木香散开。",
+      "tags": [],
+      "classification": {
+        "tier": "general",
+        "preferenceKey": null,
+        "eligibility": "general"
+      }
+    }
+  ]
+}
