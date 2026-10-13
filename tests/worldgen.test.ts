@@ -21,7 +21,7 @@ const act = (engine: ActionExecutor, actionId: Id) => { const result = engine.pe
 
 test('生成结果可由原 Registry、身体与存档校验器验证', async () => {
   const g = await generate(); validateState(g.state, g.registry);
-  assert.equal(g.world.definition.locations.length, 7); assert.equal(g.state.district!.residents.length, 9);
+  assert.equal(g.world.definition.locations.length, rules.locationCount); assert.equal(g.state.district!.residents.length, rules.npcCount);
   assert.ok(g.world.agents.every(a => a.relationships?.length === 2));
   for (const n of g.state.district!.residents) { validateBody(n.body, g.registry); assert.ok(n.profession); assert.ok(n.personality); }
   assert.equal(g.world.generation.rulesHash, await hash(rules)); assert.equal(g.world.generation.references[0].hash, await hash(reference));

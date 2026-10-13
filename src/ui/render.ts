@@ -7,6 +7,7 @@ import { scenePresentation } from './scene-presentation.ts';
 import { actionPreview } from './action-preview.ts';
 import { folioCategory, folioCategories } from './folio.ts';
 import { presentationText } from '../engine/semantic-query.ts';
+import { uniqueParagraphs } from '../content/player-prose.ts';
 export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag); node.className = className; if (text) node.textContent = text; return node;
 }
@@ -141,7 +142,8 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   byId('location-name').textContent = view.location.name;
   const observation = presentationText(view.state, registry, 'environment');
   prose(byId('location-description'), registry.text(view.location.textKey) + (observation ? `\n\n${observation}` : ''));
-  prose(byId('scene-text'), view.sceneText);
+  const sceneBody = view.sceneText.startsWith(scene.title+'\n\n') ? view.sceneText.slice(scene.title.length+2) : view.sceneText;
+  prose(byId('scene-text'), sceneBody);
   byId('scene-text').hidden = scene.primaryResult || scene.mode === 'hub';
   byId('scene-return').hidden = scene.active || scene.mode === 'arrival' || scene.mode === 'hub';
   byId('scene-return').textContent = scene.mode === 'conversation' ? '← 结束交谈，返回地点' : '← 返回地点';
@@ -217,8 +219,9 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   if (detail.dataset.result !== resultKey) { detail.open = scene.primaryResult; detail.dataset.result = resultKey; }
   byId('result-label').textContent = scene.primaryResult ? '行动经过' : '刚刚的行动';
   if (result?.ok) {
-    prose(byId('result-text'), result.text);
-    byId('result-changes').replaceChildren(...result.changes.map(x => element('span', 'change', `${x.label} ${x.before} → ${x.after}`)));
+    prose(byId('result-text'), uniqueParagraphs(result.text));
+    const value = (v: string | number | boolean) => typeof v==='boolean' ? v?'已完成':'未完成' : String(v);
+    byId('result-changes').replaceChildren(...result.changes.map(x => element('span', 'change', `${x.label} ${value(x.before)} → ${value(x.after)}`)));
   }
   renderMap(view, registry);
   renderBodyPanel(view, registry, byId('body-content'), option => actionButton(option, registry, false, view.state));
@@ -297,8 +300,8 @@ function renderMap(view: GameView, registry: Registry): void {
   for (const p of gridPos.values()) { maxCol = Math.max(maxCol, p.col); maxRow = Math.max(maxRow, p.row); }
   const adjacent = new Set(routes.filter(r => r.from === view.location.id).map(r => r.to));
   const grid = element('div', 'map-grid');
-  grid.style.gridTemplateColumns = `repeat(${maxCol + 1}, minmax(64px, 1fr))`;
-  grid.style.gridTemplateRows = `repeat(${maxRow + 1}, minmax(48px, auto))`;
+  grid.style.gridTemplateColumns = `repeat(${maxCol + 1}, minmax(0, 1fr))`;
+  grid.style.gridTemplateRows = `repeat(${maxRow + 1}, minmax(56px, auto))`;
   grid.setAttribute('role', 'grid');
   grid.setAttribute('aria-label', '街区网格地图');
   // 先填空单元格占位，保持网格对齐
@@ -318,22 +321,21 @@ function renderMap(view: GameView, registry: Registry): void {
       const isCurrent = place.id === view.location.id;
       const travel = view.actions.find(x => x.definition.effects.some(fx => fx.op === 'location.move' && registry.route(fx.routeId).to === place.id));
       const canGo = !!travel?.available && !view.eventTitle;
-      const reason = isCurrent ? '你在这里' : view.eventTitle ? '事件中' : travel && !travel.available ? travel.reason : adjacent.has(place.id) ? '可前往' : '不可直达';
-      const cell = element(canGo || isCurrent ? 'button' : 'div', `map-cell${isCurrent ? ' current' : canGo ? ' reachable' : ' blocked'}`);
+      const reason = isCurrent ? '当前位置' : view.eventTitle ? '当前事件进行中' : travel && !travel.available ? travel.reason : adjacent.has(place.id) ? '前往这里' : '需经相邻街道（不可直达）';
+      const cell = element(canGo || isCurrent ? 'button' : 'div', `map-cell${isCurrent ? ' current' : ''}${canGo ? ' reachable' : ' blocked'}`);
       if (cell instanceof HTMLButtonElement) { cell.type = 'button'; if (canGo && travel) cell.dataset.action = travel.definition.id; else cell.disabled = true; }
       cell.style.gridColumn = String(c + 1); cell.style.gridRow = String(r + 1);
       cell.setAttribute('role', 'gridcell');
       const short = place.name.length > 8 ? place.name.slice(0, 7) + '…' : place.name;
       cell.append(element('span', 'map-cell-name', short));
-      if (isCurrent) cell.append(element('span', 'map-here', '你在这里'));
-      else cell.append(element('small', '', reason));
+      cell.append(element('small', '', reason));
       cell.title = `${place.name} · ${reason}`;
       cell.setAttribute('aria-label', `${place.name}，${reason}`);
       if (isCurrent) cell.setAttribute('aria-current', 'true');
       grid.append(cell);
     }
   }
-  const legend = element('p', 'muted map-grid-legend', '亮边可点；灰格不可直达。');
+  const legend = element('p', 'muted map-grid-legend', '点击相邻格子前往（沿用 location.move）。灰色格：事件中或非相邻不可直达。右侧「周围环境」仍列出邻接。');
   byId('map-content').replaceChildren(grid, legend);
 }
 let feedbackTimer: ReturnType<typeof setTimeout> | undefined;

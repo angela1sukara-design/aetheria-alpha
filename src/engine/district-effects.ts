@@ -133,7 +133,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
   const d = district(s);
   if (e.op === 'player.create') {
     if (d.profile.created) throw new RuleError('CREATED', '角色已经创建。');
-    d.profile = { name: e.name, ageYears: e.ageYears, created: true, adultOptional: false };
+    d.profile = { name: e.name, ageYears: e.ageYears, created: true, adultOptional: d.profile.adultOptional };
     c.resolvedTexts.push(`${e.name}，${e.ageYears}岁。你在租约上签下名字，把这座城市当作新的起点。`);
   } else if (e.op === 'preference.set') d.profile.adultOptional = e.value;
   else if (e.op === 'equipment.wear') {
@@ -257,7 +257,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
       ...(rule ? { enemyName: applied.name, reward: applied.reward } : {}),
       ...(applied.defeatTags ? { defeatTags: applied.defeatTags } : {}),
     };
-    if (rule) c.resolvedTexts.push(`环境条件匹配：${applied.name}（规则 ${rule.id}）。`);
+    if (rule) c.resolvedTexts.push(`${applied.name}逼近，你准备应战。`);
   } else if (e.op === 'combat.turn') {
     const battle = d.combat;
     if (!battle) throw new RuleError('NO_COMBAT', '当前没有战斗。');
@@ -270,13 +270,13 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     }
     const enemy = r.enemies.find(x => x.id === battle.enemyId)!;
     const intent = enemy.intents[battle.turn % enemy.intents.length]!;
-    apply([{ op: 'clock.advance', minutes: 5 }], s, r, c);
-    const end = (result: 'victory' | 'defeat' | 'escape') => {
+    const end = (result: 'victory' | 'defeat' | 'escape', voluntary?: 'surrender'|'giveup') => {
       d.combat = null;
-      if(r.narrativeNodes.length){const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);const defeat=battle.defeatTags??profile?.defeatTags??[];a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:result==='defeat'?[...defeat]:[]};}
-      c.resolvedTexts.push(result === 'victory' ? '你赢得了交锋。' : result === 'defeat' ? '你失去继续战斗的力气，后续仍有恢复路径。' : '你找到空隙离开了交锋。');
+      if(r.narrativeNodes.length){const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);const defeat=battle.defeatTags??profile?.defeatTags??[];a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:result==='defeat'?(voluntary?[{role:'player',tagId:`progression:tag.${voluntary}`}]:[...defeat]):[]};}
+      c.resolvedTexts.push(voluntary==='surrender'?'你示意投降，结束交锋，等待对方回应。':voluntary==='giveup'?'你停止抵抗，放下防备，让眼前的对手接手后续。':result === 'victory' ? '你赢得了交锋。' : result === 'defeat' ? '你失去继续战斗的力气，后续仍有恢复路径。' : '你找到空隙离开了交锋。');
       let eventId = result === 'victory' ? enemy.victoryEventId : result === 'defeat' ? enemy.defeatEventId : enemy.escapeEventId;
       if (result === 'defeat') {
+        if(voluntary&&r.narrativeNodes.some(n=>n.kind==='defeat')){startNarrative(s,r,c,'defeat',undefined,voluntary==='giveup'?'yielded':'start');return;}
         const badEnd = applyDefeatSanity(s, r, c);
         if(!badEnd&&r.narrativeNodes.some(n=>n.kind==='defeat')){startNarrative(s,r,c,'defeat');return;}
         if (badEnd) {
@@ -285,12 +285,15 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
             eventId = SANITY_BREAK_EVENT;
             c.resolvedTexts.push('理智归零：压力耗尽余量，进入 Bad End。');
           } else {
-            c.resolvedTexts.push('【占位】理智归零：已置 core:flag.sanity_break；Bad End 事件尚未装入内容包。');
+            c.resolvedTexts.push('你已无力继续应对，只能先离开冲突，寻找能休息的地方。');
           }
         }
       }
       apply([{ op: 'event.start', id: eventId }], s, r, c);
     };
+
+    if(e.move==='surrender'||e.move==='giveup'){end('defeat',e.move);return;}
+    apply([{ op: 'clock.advance', minutes: 5 }], s, r, c);
 
     const health = s.player.variables[PLAYER_HP_ID]!;
     const stamina = s.player.variables[STAMINA_ID] ?? 100;
@@ -445,14 +448,15 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
 export function districtOptions(s: GameState, r: Registry, actions: ActionDef[]): ActionDef[] {
   if (!s.district) return actions;
   const runtime = r.actionsForHook('district:hook.runtime'), settings = runtime.filter(a => a.effects.some(e => e.op === 'preference.set'));
-  const story=narrativeActions(s,r);if(story)return story;
+  const story=narrativeActions(s,r);if(story)return [...story.slice(0,-1),...settings,...story.slice(-1)];
   if (s.district.combat) {
     const turns=[...runtime.filter(a => a.effects.some(e => e.op === 'combat.turn')), ...r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn'))];
     const combatItems=r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn'&&e.move==='item'));
     return [...turns, ...combatItems.filter(a=>!turns.includes(a)), ...settings];
   }
   if (s.district.scene) return [...runtime.filter(a => a.effects.some(e => e.op === 'scene.act' && (s.district!.scene!.phase === 'active' ? e.move !== 'resume' : ['resume', 'exit'].includes(e.move)))), ...r.globalActions().filter(a=>a.surface==='body'), ...settings];
-  return [...actions, ...settings].filter(a=>{
+  const creation=s.worldInstance?.definition.startLocationId===s.world.locationId&&!s.district.profile.created?[r.action('district:action.create')]:[];
+  return [...actions, ...creation, ...settings].filter(a=>{
     if(a.effects.some(e=>e.op==='narrative.choose'||e.op==='combat.turn'))return false;
     if(a.effects.some(e=>e.op==='combat.encounter')&&!matchingEnvironmentEnemyRules(s,r).length)return false;
     return !s.activeEventStack.length||!!a.context||!a.id.startsWith('progression:')&&!a.effects.some(e=>e.op==='narrative.start'||e.op==='progression.act'||e.op==='combat.start'||e.op==='combat.encounter');

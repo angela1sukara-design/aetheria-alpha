@@ -105,7 +105,7 @@ export type DistrictEffect =
   | { op: 'resident.talk' | 'resident.help' }
   | { op: 'combat.start'; id: Id }
   | { op: 'combat.encounter' }
-  | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' | 'skill' | 'item'; id?: Id }
+  | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' | 'skill' | 'item' | 'surrender' | 'giveup'; id?: Id }
   | { op: 'scene.start'; id: Id }
   | { op: 'scene.act'; move: 'pose' | 'contact' | 'release' | 'pause' | 'resume' | 'exit'; poseId?: string }
   | { op: 'equipment.wear'; id: Id }

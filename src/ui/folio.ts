@@ -135,7 +135,7 @@ function presentFlow():void {
   if(card)showCard(option!,registry);
   for(const group of byId('actions').querySelectorAll<HTMLElement>('.action-group'))group.hidden=!scene.active&&scene.mode!=='conversation'&&group.dataset.group!==category;
   byId('view-label').textContent=card?'故事卡 · 确认':listing?'故事卡':scene.mode==='combat'?'交锋':scene.mode==='conversation'||scene.mode==='interaction'?'对白':'书页';
-  byId('folio-hint').textContent=card?'确认后执行行动':listing?(category==='travel'?'点击目的地即可前往，无需再确认':'点一张卡，先读再选'):scene.active?'1–9 选择 · 菜单可随时查阅':'从书页里的选项往下走';
+  byId('folio-hint').textContent=card?'选择下方行动即可执行':listing?'查看耗时与变化，点击行动即可执行':scene.active?'1–9 选择 · 菜单可随时查阅':'从书页里的选项往下走';
 }
 function cardsPagination():void {
   if(!current)return;
@@ -195,14 +195,7 @@ export function renderFolio(view:GameView,registry:Registry,result?:ActionResult
       button.append(element('span','entry-number',String(entries.childElementCount+1)),element('span','entry-text',label),element('span','entry-arrow','↗'));button.title=description;
       button.addEventListener('click',()=>route(`#/play/cards/${category}`));entries.append(button);
     }
-    for(const card of byId('actions').querySelectorAll<HTMLButtonElement>('button[data-action]')){
-      const option=view.actions.find(o=>o.definition.id===card.dataset.action);
-      // location.move / travel：保留 data-action，一点即行；不进 #/play/card 二次确认
-      if(option&&isImmediateTravel(option))continue;
-      card.dataset.cardAction=card.dataset.action;delete card.dataset.action;card.classList.add('story-card');card.disabled=false;
-      if(option&&!option.available)card.classList.add('card-locked');
-      card.addEventListener('click',()=>route(`#/play/card/${encodeURIComponent(card.dataset.cardAction!)}`));
-    }
+    // Every list item already shows its costs and eligibility. One click performs it.
     cardsPagination();
   }
   byId('scene-clock').textContent=byId('clock').textContent;

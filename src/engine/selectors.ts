@@ -30,6 +30,7 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
     const effects=publicActionEffects(definition,state,registry);
     for (const e of effects) {
+      if(e.op==='combat.start'||e.op==='combat.encounter')checks.push({pass:(state.player.variables['core:health']??0)>=1,reason:'需要先休息恢复，再开始交锋。'});
       if(e.op==='progression.act')checks.push(progressionCheck(state,registry,e.move,e.id));
       if (e.op === 'resident.help') {
         const resident = state.district?.residents.find(n => n.id === state.district?.currentResidentId), t = registry.residentTemplates.find(t => t.id === resident?.templateId);

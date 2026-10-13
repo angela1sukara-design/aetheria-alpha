@@ -19,11 +19,12 @@ import { validateWorldInstance } from '../world/validation.ts';
 import { validRequestFilter } from '../engine/history.ts';
 import { validateAdventure } from './adventure-validation.ts';
 import { adventure } from '../engine/narrative.ts';
+import { upgradeUXContent } from './ux-content-migration.ts';
 export const MAX_SAVE_BYTES = 4 * 1024 * 1024;
 export type DecodeResult = { status: 'ready'; state: GameState; registry?: Registry; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
 interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 3 | 4; savedAt: string; state: GameState }
 async function checksum(value: unknown): Promise<string> {
-  const bytes = new TextEncoder().encode(stableJson(value));
+  const bytes = new TextEncoder().encode(stableJson(JSON.parse(JSON.stringify(value))));
   const hash = await crypto.subtle.digest('SHA-256', bytes);
   return [...new Uint8Array(hash)].map(x => x.toString(16).padStart(2, '0')).join('');
 }
@@ -188,7 +189,16 @@ export class SaveCodec {
       if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB。');
       const envelope = JSON.parse(text);
       if (envelope?.payload?.format !== 'aetheria-alpha' || ![1, 2, 3, 4].includes(envelope.payload.schemaVersion)) throw new Error('文件不是受支持的 Alpha 0.1 存档。');
-      if (await checksum(envelope.payload) !== envelope.checksum) throw new Error('存档校验和不符，可能损坏。');
+      if (await checksum(envelope.payload) !== envelope.checksum) {
+        // The previous writer hashed an optional undefined fills property, then JSON
+        // omitted it. Reconstruct only this known bug and still verify the exact hash.
+        const legacy=clone(envelope.payload),story=legacy.state?.adventure?.story;
+        if(!story||Object.hasOwn(story,'fills'))throw new Error('存档校验和不符，可能损坏。');
+        story.fills=undefined;
+        const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(stableJson(legacy)));
+        const expected=[...new Uint8Array(digest)].map(v=>v.toString(16).padStart(2,'0')).join('');
+        if(expected!==envelope.checksum)throw new Error('存档校验和不符，可能损坏。');
+      }
       if (!Number.isFinite(Date.parse(envelope.payload.savedAt))) throw new Error('存档日期格式不合法。');
       const version = envelope.payload.schemaVersion;
       if (envelope.payload.state?.meta?.schemaVersion !== version) throw new Error('存档封装与状态版本不一致。');
@@ -203,6 +213,8 @@ export class SaveCodec {
         if (await hash(world.generation.rules) !== world.generation.rulesHash) throw Error('世界规则哈希不符。');
         validateState(state, restored);
         const migrated=version===3&&!!state.district?.scene;const loaded=migrated?upgradeFoundation(state,restored):clone(state);validateState(loaded,restored);
+        const ux=await upgradeUXContent(loaded,this.fixedRegistry??this.registry);
+        if(ux){validateState(ux.state,ux.registry);return {status:'ready',...ux,migration:'已更新本地场景与内容显示，地图、人物和原进度保留。'};}
         return { status: 'ready', state: loaded, registry: restored,...(migrated?{migration:'旧场景已升级：身体副本已移除，未知参与者暂停，原进度保留。'}:{}) };
       }
       if (this.registry.packs.some(p => p.id === 'generated/neighborhood')) {
@@ -215,6 +227,8 @@ export class SaveCodec {
         const state=clone(previous.state);state.meta.packs=clone(this.registry.packs);normalizePlayerVariables(state,this.registry);normalizePlayerFlags(state,this.registry);adventure(state);validateState(state,this.registry);
         return {status:'ready',state,registry:this.registry,migration:`${previous.migration??''} 已追加故事与成长内容，原有身体、记忆与事件保持。`};
       }
+      const ux=await upgradeUXContent(envelope.payload.state,this.registry);
+      if(ux){validateState(ux.state,ux.registry);return {status:'ready',...ux,migration:'已更新内容显示，身体、人物和原进度保留。'};}
       if (this.registry.legacyRegistry && !envelope.payload.state.district) {
         const old = await new SaveCodec(this.registry.legacyRegistry).decode(text);
         if (old.status !== 'ready') return old;

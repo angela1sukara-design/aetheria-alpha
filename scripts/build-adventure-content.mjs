@@ -24,19 +24,37 @@ node('defeat.hands','defeat','assess','双手暂时受限','你发现双手暂�
 node('defeat.help','defeat','help','回应来自通道','通道里传来回应。值班人员根据你刚才报出的信息找到现场【已发出求助】，先确认你的意识与伤处，再询问你希望接受哪些帮助。',[choice('接受脱困与基础护理','对方帮助你脱离现场，并处理了擦伤。事故情况已经记入本次经历。',null,[time(20),health(12),change('safety',1)]),choice('只请求离开危险位置','对方协助你离开危险位置，你保留之后自行处理伤势的选择。',null,[time(10),health(3)])],{requiresTags:[scoped('player','signal')]});
 node('defeat.repair.scope','defeat','repair','保留自己的决定','检查范围已经说明。你可以结束检查，或要求先处理现场安全。没有相应设备与已确认身体条件的项目不会自动执行【检查改装目标】。',[choice('先处理现场安全','现场得到整理，你离开危险位置。',null,[time(10),health(3),change('safety',1)])]);
 node('defeat.repair.tail','defeat','repair','机械尾的维护提议','你的尾部确为机械结构【机械尾】。对方提出把尾部外伸长度调整到650毫米，说明需要十五分钟【检查改装目标】。这一项只会在你明确接受后开始。',[choice('接受这一次长度调整','你明确接受本次长度调整【接受本次修理】；维护完成，尾部的真实长度记录为650毫米。',null,[{op:'tf.enqueue',id:id('tf.tail-maintenance')},time(15),health(5)],[],[scoped('player','repair.accepted')]),choice('拒绝改装，离开现场','你拒绝改装，沿安全路线离开。',null,[time(10),health(3)])],{priority:6,requiresTags:[{role:'player',tagId:'foundation:body.mechanical-tail'},scoped('opponent','tools')],conditions:[{op:'body.matches',target:{kind:'player'},part:{kind:'tail',materialFamily:'mechanical'}},{op:'tf.state',id:id('tf.tail-maintenance'),state:'idle'},{op:'not',condition:{op:'body.matches',target:{kind:'player'},part:{kind:'tail',lengthMm:650}}}]});
+p.tags.push(...['surrender','giveup'].map(key=>({id:tag(key),label:key==='surrender'?'主动投降':'放弃抵抗',definition:'本次交锋主动结束时记录的应对方式。',facets:['context'],status:'active',aliases:[]})));
+node('defeat.surrender','defeat','start','你选择投降','你向{opponent}示意不再交战，收起进攻的动作。对方停在你面前，等你说明接下来的打算。你仍可以开口求助，或结束这段接触。',[
+ choice('等待对方回应','你停下争辩，等待{opponent}处理眼前的局面。','yielded',[time(5)]),
+ choice('发声请求协助','你报出{place}的位置，请求协助。','help',[],[],[scoped('player','signal')]),
+],{priority:30,requiresTags:[scoped('player','surrender')]});
+node('defeat.giveup','defeat','start','停止抵抗','你放下防备，不再尝试反击或挣脱。{opponent}看见你停下，开始接手处理现场。你留在原处，等待事态继续。',[
+ choice('不再干预，等待后续','你不再与{opponent}争执，任由对方接手眼前的安排。','yielded',[time(5)]),
+],{priority:30,requiresTags:[scoped('player','giveup')]});
+node('defeat.yielded','defeat','yielded','交锋后的安排','{opponent}把冲突留在原处，为你让出离开的位置。通道里恢复了走动声，你可以先去休息。',[
+ choice('沿通道离开','你离开{place}的冲突现场，在公共通道停下来喘息。',null,[time(10)]),
+]);
+node('defeat.yielded.control','defeat','yielded','对方接手现场','{opponent}先把现场稳住，阻止冲突继续扩大，随后带你走向公共通道。你没有再次抵抗。',[
+ choice('跟随安排，离开冲突','你随{opponent}离开冲突所在的位置，回到能够休息的通道。',null,[time(10)]),
+],{priority:5,requiresTags:[scoped('opponent','goal.control')]});
+node('defeat.yielded.repair','defeat','yielded','处理受损的装备','{opponent}收起工具，先查看现场有没有松脱的物件，随后把能带走的装备放在你手边。',[
+ choice('等对方收拾完，再离开','你等待{opponent}清理完现场，带着自己的物品回到公共通道。',null,[time(10)]),
+],{priority:5,requiresTags:[scoped('opponent','goal.repair')]});
 for(const kind of ['encounter','exploration','daily','conversation','quest','transformation','ending']){
  const messages={encounter:['眼前的遭遇','你在{place}停下，留意眼前正在发生的小事。先观察当前处境，再决定是否参与【探索】。'],exploration:['查看周围','你沿{place}的可见通道查看路面与告示。已经走过的路线可以核对，尚未进入的地方仍保留未知【调查】。'],daily:['安排一段日常','你在{place}检查手边的事情，衡量当前体力与精力。可以选择一段公共协作，也可以留出时间休息【生活】。'],conversation:['与眼前的人交谈','你与已经在场的{opponent}谈起眼前的事务。你先听对方把话说完，再决定是否参与【社交】。'],quest:['核对当前事务','你把已经发生的进展与眼前的安排核对。需要进一步处理的事项仍要通过实际行动完成【工作】。'],transformation:['适应当前身体','你放慢动作，检查身体目前的支撑与活动方式。已经完成的变化以真实身体记录为准，尚在推进的项目仍需等待【适应】。'],ending:['回顾已经留下的结果','你回顾已完成的契约、协作与交锋。当前的经营份额、组织影响和街区安全仍然保留，之后的行动会继续改变它们【身份】。']};
  const [title,text]=messages[kind];
  // encounter：无「继续核对细节」；正文／选项由 encounter-prose 与地点链覆盖（见下）。
- const choices=kind==='daily'?[choice('完成一次公共协作','你完成了当前可用的公共协作【公共协作】。',null,[{op:'progression.act',move:'aid'}],[{op:'progression.available',move:'aid'}])]:kind==='conversation'?[choice('交换今天的近况','你们谈起已经知道的近况，这次交谈按原居民规则记录。',null,[{op:'resident.talk'}],[{op:'resident.available'}])]:kind==='encounter'?[]:[choice('继续核对细节','你完成这一次观察，记录实际看见的内容。','detail',[time(5)])];
+ const choices=kind==='daily'?[choice('完成一次公共协作','你完成了当前可用的公共协作【公共协作】。',null,[{op:'progression.act',move:'aid'}],[{op:'progression.available',move:'aid'}])]:kind==='conversation'?[choice('交换今天的近况','你们谈起已经知道的近况，这次交谈按原居民规则记录。',null,[{op:'resident.talk'}],[{op:'resident.available'}])]:kind==='exploration'?[choice('看看附近正在发生的事','你沿{place}的通道走去，留意居民和当地事务。',null,[time(5),{op:'world.encounter'}])]:kind==='transformation'?[choice('练习转身与平衡（10分钟）','你在{place}练习转身与平衡。{tfState}',null,[time(10)])]:[];
  node(kind+'.start',kind,'start',title,text,choices);
- if(!['daily','conversation','encounter'].includes(kind))node(kind+'.detail',kind,'detail','这一次的新发现','你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。',[]);
+ // Keep old stage IDs readable for saved games, but no new choices lead to empty detail stages.
+ if(!['daily','conversation','encounter'].includes(kind))node(kind+'.detail',kind,'detail','返回实际行动','你回到{place}的公共通道。{nearby}',[]);
 }
 node('exploration.night','exploration','start','夜间的通道','真实时钟已经进入夜间【夜间】。你在{place}核对照明和公开告示，先确认可见的安全路线。',[choice('记下照明明确的通道','你核对并记录了当前可见的路线【路线发现】。',null,[time(5),change('safety',1)])],{priority:4,requiresTags:[{role:'environment',tagId:'foundation:time.night'}]});
 node('transformation.tail','transformation','start','尾部动作练习','你确实拥有尾部【有尾】。你放慢转身速度，确认尾部的位置和当前支撑方式；这次练习不会自动增加身体能力。',[choice('完成这一次适应练习','你完成动作练习，真实身体结构与转化进度保持一致。',null,[time(5)])],{priority:4,requiresTags:[{role:'player',tagId:'foundation:body.has-tail'}]});
 node('defeat.control.cautious','defeat','start','先核对风险','{opponent}没有立刻改变现场，而是先核对周围的风险【谨慎】。对方要求你停止贸然发力【控制现场目标】，留出检查限制位置的时间。你可以配合检查，也可以直接提出离开。',[choice('先核对自己的处境','你用几分钟确认了限制所在【已检查处境】。','assess',[time(5)],[],[scoped('player','assessed')]),choice('请求值班协助','你清楚说明位置，请求协助【已发出求助】。','help',[time(5)],[],[scoped('player','signal')])],{priority:5,requiresTags:[scoped('opponent','goal.control')],tendencies:[{tagId:tag('control'),weight:1},{tagId:tag('cautious'),weight:3}]});
 node('defeat.repair.cautious','defeat','start','先说明维护范围','{opponent}先把工具留在你能看见的位置【携带维护工具】，逐项说明维护范围，再等待你的决定【谨慎】。任何实际调整都需要你接下来的明确选择。',[choice('听清范围后再决定','你听清维护范围，保留接受或拒绝的选择。','repair',[time(5)]),choice('拒绝这次维护','你拒绝这次维护，沿安全通道离开。',null,[time(5),health(3)])],{priority:5,requiresTags:[scoped('opponent','goal.repair'),scoped('opponent','tools')],tendencies:[{tagId:tag('repair'),weight:1},{tagId:tag('cautious'),weight:3}]});
-node('exploration.workshop','exploration','start','查看工坊的工作区','这里实际提供工坊服务【工坊服务】。你核对公开的设备时段与通道，寻找能够参与的工作；工具和设备的实际使用仍需满足对应条件。',[choice('记录可用工作区','你核对了可用工作区，记录在本次经历中【发现】。',null,[time(5)]),choice('继续查看其他细节','你把注意力转向通道和告示。','detail',[time(5)])],{priority:4,requiresTags:[{role:'environment',tagId:'foundation:service.workshop'}]});
+node('exploration.workshop','exploration','start','工坊里的工作','{period}，{place}的工作台旁留着一块空位。{nearby}你可以帮忙{localWork}，或认识在场的人。',[choice('参与整理工作','你把{place}的工具分门别类放好。',null,[{op:'progression.act',move:'aid'}],[{op:'progression.available',move:'aid'}]),choice('认识在场的人','你走到工作台旁，与在场的人打招呼。',null,[{op:'world.encounter',events:false}])],{priority:4,requiresTags:[{role:'environment',tagId:'foundation:service.workshop'}]});
 node('daily.tired','daily','start','先恢复一些力气','你当前的体力不足以安排强度较高的工作【体力≤19】。你可以先找个安全位置休息，恢复之后再处理当天事务。',[choice('休息半小时','你休息了半小时，体力与精力恢复。',null,[time(30),{op:'var.change',id:'core:stamina',amount:12},{op:'var.change',id:'core:energy',amount:12}])],{priority:4,conditions:[{op:'var.compare',id:'core:stamina',comparison:'lte',value:19}]});
 node('conversation.progress','conversation','start','谈谈已经留下的进展','你可以向在场的{opponent}讲述已经登记的街区进展【社交】。对方的具体反应仍取决于当下的交谈，这次说明不会替对方接受新的约定。',[choice('说明近况并听取回应','你们完成这次近况交谈，原居民记忆规则记录实际发生的交流。',null,[{op:'resident.talk'}],[{op:'resident.available'}])],{priority:4,conditions:[{op:'adventure.compare',field:'reputation',comparison:'gte',value:4}]});
 node('ending.resource','ending','start','核对经营成果','你逐项核对当前登记的经营份额、订单与契约【交易】。这些记录会继续参与跨日结算和终局条件，已经完成的事项不会因查看而再次奖励。',[choice('保留当前安排','你保留当前经营安排，接下来的结算仍依据实际份额。')],{priority:4,conditions:[{op:'adventure.compare',field:'assets',comparison:'gte',value:6}]});
@@ -98,6 +116,8 @@ for(const [name,label,category,effects,price,usableInCombat,desc]of [
  if(usableInCombat) action('combat.item.'+name,'战内使用：'+label,[{op:'combat.turn',move:'item',id:iid}],[{op:'item.has',id:iid,comparison:'gte',value:1}],'行动点1 · 消耗1个');
 }
 action('combat.skill','技能击',[{op:'combat.turn',move:'skill'}],[],'技能资源−15 · 体力−4 · 行动点2');
+action('combat.surrender','投降',[{op:'combat.turn',move:'surrender'}],[],'立即结束交锋，进入战败后续；不额外损失生命或体力');
+action('combat.giveup','彻底放弃',[{op:'combat.turn',move:'giveup'}],[],'放弃抵抗，交由当前对手处理后续；保留本局进度');
 for(const result of ['victory','escape','defeat']){
  const eid=id('event.'+result),aid=id('action.event.'+result),prompt=id('text.event.'+result),end=id('text.event.'+result+'.end');p.texts[prompt]=({victory:'交锋已经结束。实际奖励、胜利记录与街区后果已经结算【恢复】。',escape:'你已经撤离这次交锋，没有获得战斗奖励【边界】。',defeat:'你暂时失去继续交锋的能力，仍可以离开并恢复【恢复】。'})[result];p.texts[end]='你回到当前地点，可以休息、处理伤势或继续行动。';p.actions.push({id:aid,label:'返回安全位置',hint:'免费退出',group:'event',context:{eventId:eid,nodeId:'start'},conditions:[],effects:[{op:'event.advance',nodeId:'end'}],resultText:end});p.events.push({id:eid,startNode:'start',rating:'general',nodes:[{id:'start',type:'choice',textVariants:[prompt],actionIds:[aid],onEnter:[]},{id:'end',type:'exit',textVariants:[end],actionIds:[],onEnter:[{op:'event.exit'}]}]});
 }
@@ -598,7 +618,7 @@ for (const play of defeatPlayMeta) {
   }
 }
 const hubText = id('text.node.defeat.play.hub');
-p.texts[hubText] = '战败之后，{opponent}仍在场。你可以按 8 种玩法大类继续当前处境（束缚制服、材质覆层转化、侵犯插入、口封感官剥夺、产卵灌注、公开羞辱、主从调教、多体围攻）。词条≠玩法≠数值；脱困、转化与催眠均尚未结算。本次抽到材质 {material}（定词挂前）、部位 {part}；转化仅通用「{tf}」占位。选择一类进入，或结束回到安全位置。';
+p.texts[hubText] = '交锋结束后，{opponent}仍在{place}。你还没有离开现场。你可以选择下一步应对，也可以立即结束这段经历。';
 // hub 分页：每页 ≤3 玩法 + exit（shape 上限 4）。G5 必须从 hub3 路径可达。
 // hub: G1 G2 | hub2: G3 G4 | hub3: G5 G6 | hub4: G7 G8
 p.narrativeNodes.push({
@@ -775,9 +795,9 @@ await writeFile(
     schemaVersion: 1,
     note: '运行时表在 src/engine/defeat-play-draws.ts；本文件供核对 / 文档。定词挂前；goo TF 仅通用原子。',
     opponents: [
-      { kind: 'human', label: '人类占位' },
-      { kind: 'beast', label: '野兽占位' },
-      { kind: 'monster', label: '怪物占位' },
+      { kind: 'human', label: '人类对手' },
+      { kind: 'beast', label: '野兽' },
+      { kind: 'monster', label: '异形生物' },
     ],
     materials: [
       { key: 'M1', dingci: '蛞蝓', base: '黏液', label: '蛞蝓黏液' },
@@ -795,6 +815,27 @@ await writeFile(
 );
 
 
-p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))];p.contributions=p.contributions.slice(0,1);
+// Local scenes use the actual map and residents, including the fixed test city.
+for(const [suffix,locationId,name]of [['canal','district:location.canal','旧渠步道'],['station','district:location.station','下城检查站']]){
+ const eid=id('event.road-threat.'+suffix),prompt=id('text.road-threat.'+suffix),end=id('text.road-threat.'+suffix+'.end');
+ p.texts[prompt]=`你走到${name}的通道拐角，前方传来急促的响动。一个敌对身影挡住了道路，尚未逼到你面前。你可以迎战，也可以沿原路退开。`;
+ p.texts[end]='你沿原路退回公共通道，避开了这次冲突。';
+ const fight=id('action.road-threat.'+suffix+'.fight'),avoid=id('action.road-threat.'+suffix+'.avoid');
+ p.actions.push({id:fight,label:'迎战拦路的对手',hint:'进入战斗；可以防守或撤离',group:'event',context:{eventId:eid,nodeId:'start'},conditions:[],effects:[{op:'event.exit'},{op:'combat.encounter'}],resultText:prompt},
+ {id:avoid,label:'沿原路退开，避开冲突',hint:'免费避开；可以继续其他探索',group:'event',context:{eventId:eid,nodeId:'start'},conditions:[],effects:[{op:'event.advance',nodeId:'end'}],resultText:end});
+ p.events.push({id:eid,startNode:'start',rating:'general',nodes:[{id:'start',type:'choice',textVariants:[prompt],actionIds:[fight,avoid],onEnter:[]},{id:'end',type:'exit',textVariants:[end],actionIds:[],onEnter:[{op:'event.exit'}]}]});
+ (p.storylets??=[]).push({id:id('storylet.road-threat.'+suffix),locationId,conditions:[],eventId:eid,weight:10,priority:2,cooldownMinutes:60,cooldownGroup:'road-threat-'+suffix,repeat:'daily',hidden:true,tags:['foundation:theme.risk']});
+}
+node('encounter.local','encounter','start','{place}的动静','{period}，你在{place}停下脚步。{nearby}\n\n附近的通道通向{routeNames}。你可以参与眼前的事务，也可以先认识这里的人。',[
+ choice('看看当地发生的事','你走向{place}的公共通道。',null,[{op:'world.encounter'}]),
+ choice('认识此刻在场的人','你在{place}与在场的人打招呼。',null,[{op:'world.encounter',events:false}]),
+],{priority:20,conditions:[{op:'any',conditions:base.flatMap(p=>p.locations).map(l=>({op:'location.is',id:l.id}))}],excludesTags:[scoped('opponent','nsfwcombo.active')]});
+p.texts[id('text.node.exploration.start')]='{period}，你沿{place}的通道走了一段。路牌通向{routeNames}。{nearby}';
+p.texts[id('text.node.transformation.start')]='你在{place}留出一块空地，慢慢活动身体。你目前的结构包括{bodyState}。{tfState}';
+p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))].filter(a=>!['action.narrative.quest','action.narrative.ending'].map(id).includes(a));p.contributions=p.contributions.slice(0,1);
+// Missing prose is a build error, never an instruction shown inside the game.
+for(const n of p.narrativeNodes)for(const k of [n.textKey,...n.choices.map(c=>c.resultText)]){
+ if(/占位|可填(?:中性|成人|正文)|【槽|故事侧可填|\b(?:TODO|TBD|placeholder|stub)\b/i.test(p.texts[k]??''))throw Error('可玩正文未完成：'+k);
+}
 await mkdir('content/adventure',{recursive:true});await writeFile('content/adventure/pack.json',JSON.stringify(p,null,2)+'\n');
 console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.items.length} consumables, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}, defeat-play fills ${defeatPlayFillCount}.`);

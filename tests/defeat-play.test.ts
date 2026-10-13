@@ -95,7 +95,7 @@ test('defeat.play action opens hub under fantasy play entry tag', async () => {
   assert.ok(story.fills?.material, 'entry draw should fill material');
   assert.ok(story.fills?.part, 'entry draw should fill part');
   assert.ok(story.fills?.tf === '黏液化' || story.fills?.tf === '黑胶化');
-  assert.match(story.opponentName, /占位/);
+  assert.doesNotMatch(story.opponentName, /占位/);assert.ok(story.opponentName.length>0);
 });
 
 test('G1 four-beat chain: capture→press→peak→resolve with exit kept', async () => {

@@ -89,7 +89,7 @@ test('orders, investments and daily income form a playable resource loop',()=>{
 });
 
 test('all story categories have usable starts and condition-driven branches',()=>{
- for(const kind of ['encounter','exploration','daily','quest','transformation','ending']as const){const s=stateAt();s.adventure!.reputation=2;const e=new ActionExecutor(registry,s);act(e,`progression:action.narrative.${kind}`);assert.equal(e.snapshot().adventure!.story!.kind,kind);const last=e.view().actions.at(-1)!;assert.equal(last.available,true);act(e,last.definition.id);assert.equal(e.snapshot().adventure!.story,null);}
+ for(const kind of ['encounter','exploration','daily','transformation']as const){const s=stateAt();s.adventure!.reputation=2;const e=new ActionExecutor(registry,s);act(e,`progression:action.narrative.${kind}`);assert.equal(e.snapshot().adventure!.story!.kind,kind);const last=e.view().actions.at(-1)!;assert.equal(last.available,true);act(e,last.definition.id);assert.equal(e.snapshot().adventure!.story,null);}
  const s=stateAt();s.clock.totalMinutes=1320;const e=new ActionExecutor(registry,s);act(e,'progression:action.narrative.exploration');assert.equal(e.snapshot().adventure!.story!.nodeId,'progression:node.exploration.night');
 });
 

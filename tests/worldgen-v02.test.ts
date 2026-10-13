@@ -124,8 +124,8 @@ test('all six starter ecologies generate useful places, distinct local pools and
     const g = await generate({ references: [ref] }); validateState(g.state, g.registry);
     assert.equal(g.world.definition.name, environment.data.name);
     for (const location of g.world.definition.locations) {
-      assert.equal(g.registry.actionsAt(location.id).filter(a => a.id.startsWith('worldgen:action.activity.')).length, 2);
-      assert.equal(g.registry.storylets.filter(s => s.locationId === location.id).length, 2);
+      assert.equal(g.registry.actionsAt(location.id).filter(a => a.id.startsWith('worldgen:action.activity.')).length, rules.activitiesPerLocation);
+      assert.equal(g.registry.storylets.filter(s => s.locationId === location.id&&!s.id.includes('.danger.')).length, rules.eventsPerLocation);
       assert.equal(g.registry.sceneTexts.filter(s => s.locationId === location.id).length, 4);
     }
     const before = new ActionExecutor(g.registry, g.state).view().sceneText;
@@ -135,7 +135,7 @@ test('all six starter ecologies generate useful places, distinct local pools and
   }
 });
 test('generation-only professions are used without changing the fixed world pack list', async () => {
-  const index = await json('index'); assert.equal(index.packs.length, 8); assert.ok(index.packs.includes('./adventure/pack.json'));
+  const index = await json('index'); assert.equal(index.packs.length, 9); assert.ok(index.packs.includes('./adventure/pack.json'));assert.ok(index.packs.includes('./general-lexicon/pack.json'));
   const professions = new Set<string>();
   for (let seed = 0; seed < 16; seed++) {
     const g = await generate({ seed }); g.state.district!.residents.forEach(n => professions.add(n.profession));

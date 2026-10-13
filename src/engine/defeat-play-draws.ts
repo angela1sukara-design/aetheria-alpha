@@ -3,9 +3,9 @@ import { draw } from './rng.ts';
 
 /** 人/兽/怪占位标签（非物种 TF 专条） */
 export const DEFEAT_PLAY_OPPONENTS = [
-  { kind: 'human', label: '人类占位' },
-  { kind: 'beast', label: '野兽占位' },
-  { kind: 'monster', label: '怪物占位' },
+  { kind: 'human', label: '人类对手' },
+  { kind: 'beast', label: '野兽' },
+  { kind: 'monster', label: '异形生物' },
 ] as const;
 
 /**
@@ -60,7 +60,7 @@ function pick<T>(state: GameState, stream: string, list: readonly T[]): T {
   return list[i]!;
 }
 
-/** 战败 8 玩法入口：按种子抽对手占位 + 定词材质 + 部位 + 通用 TF。 */
+/** 战败 8 玩法入口：按种子抽对手 + 定词材质 + 部位 + 通用 TF。 */
 export function drawDefeatPlayFills(state: GameState, streamBase: string): DefeatPlayFills {
   const row = pick(state, `${streamBase}:combo`, DEFEAT_PLAY_COMBO_ROWS);
   const opponent = DEFEAT_PLAY_OPPONENTS.find(o => o.kind === row.opponentKind) ?? DEFEAT_PLAY_OPPONENTS[0];
@@ -81,5 +81,5 @@ export function drawDefeatPlayFills(state: GameState, streamBase: string): Defea
 }
 
 export function opponentLabelForKind(kind: string): string {
-  return DEFEAT_PLAY_OPPONENTS.find(o => o.kind === kind)?.label ?? '对手占位';
+  return DEFEAT_PLAY_OPPONENTS.find(o => o.kind === kind)?.label ?? '对手';
 }

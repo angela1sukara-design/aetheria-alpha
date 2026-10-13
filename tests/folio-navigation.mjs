@@ -17,7 +17,7 @@ export async function folioHome(page) {
 }
 export async function chooseFolioCard(page,id) {
   await folioHome(page);
-  let card=page.locator(`#actions [data-card-action="${id}"]`).first();
+  let card=page.locator(`#actions [data-action="${id}"]`).first();
   if(!await card.count())return;
   const category=await card.evaluate(node=>node.closest('.action-group').dataset.group);
   if(!await card.isVisible()){
@@ -35,11 +35,12 @@ export async function chooseFolioCard(page,id) {
       }
     }
   }
-  await card.click();
+  // Merely open the list. The caller's single click performs the action.
 }
 export async function performFolioAction(page,id) {
   await enterFolio(page);
+  if(/:action\.(buy\.|wear\.|use\.item\.)/.test(id))await openFolioPage(page,'bag');
   const direct=page.locator(`button[data-action="${id}"]`).filter({visible:true}).first();
-  if(await direct.count())await direct.click();else {await chooseFolioCard(page,id);await page.locator(`#card-controls [data-action="${id}"]`).click();}
+  if(await direct.count())await direct.click();else {await chooseFolioCard(page,id);await page.locator(`#actions [data-action="${id}"]`).click();}
   await page.waitForTimeout(300);
 }

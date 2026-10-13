@@ -8,6 +8,8 @@ import { draw } from './rng.ts';
 import { drawDefeatPlayFills, opponentLabelForKind } from './defeat-play-draws.ts';
 import { derivedSemantics } from './semantic-query.ts';
 import { environment } from './query.ts';
+import { sceneContext } from './scene-context.ts';
+import { proseProblem } from '../content/player-prose.ts';
 
 export function initialAdventure(): AdventureState { return {version:1,assets:0,influence:0,safety:0,reputation:0,orders:0,contracts:0,victories:{},daily:{},equipment:{},items:{},story:null,journal:[],lastCombat:null}; }
 export function adventure(s:GameState):AdventureState { if(!s.adventure){s.adventure=initialAdventure();s.adventure.daily['world.day']=Math.floor(s.clock.totalMinutes/1440);}return s.adventure; }
@@ -32,15 +34,18 @@ function chooseNode(s:GameState,r:Registry,stage:string):NarrativeNode|undefined
   const priority=Math.max(...pool.map(n=>n.priority));pool=pool.filter(n=>n.priority===priority).sort((a,b)=>a.id.localeCompare(b.id,'en'));
   const weight=(n:NarrativeNode)=>Math.max(1,n.weight+n.tendencies.reduce((sum,t)=>sum+(profile?.tendencies.find(x=>x.tagId===t.tagId)?.weight??0)*t.weight,0));
   let roll=draw(s,`narrative:${story.instanceId}`)*pool.reduce((sum,n)=>sum+weight(n),0);
-  const selected=pool.find(n=>(roll-=weight(n))<0)??pool.at(-1)!;story.nodeId=selected.id;story.visits[selected.id]=(story.visits[selected.id]??0)+1;return selected;
+  const selected=pool.find(n=>(roll-=weight(n))<0)??pool.at(-1)!;
+  const problem=proseProblem(applyNarrativeFills(r.text(selected.textKey),story,s,r));
+  if(problem)throw new RuleError('NARRATIVE_TEXT',`这段内容尚未准备好：${problem}。`);
+  story.nodeId=selected.id;story.visits[selected.id]=(story.visits[selected.id]??0)+1;return selected;
 }
-export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:NarrativeKind,profileId?:Id):void {
+export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:NarrativeKind,profileId?:Id,initialStage='start'):void {
   if(s.district?.combat||s.district?.scene||s.activeEventStack.length||s.adventure?.story)throw new RuleError('NARRATIVE_BUSY','先结束眼前的交锋或故事。');
   const a=adventure(s),profile=profileId?r.narrativeProfiles.find(p=>p.id===profileId):kind==='defeat'?r.narrativeProfiles.find(p=>p.enemyId===a.lastCombat?.enemyId):undefined;
   if(profileId&&!profile)throw new RuleError('NARRATIVE_PROFILE','行为档案不存在。');
   const resident=s.district?.residents.find(n=>n.id===s.district?.currentResidentId&&n.locationId===s.world.locationId);
   const tags:ScopedTag[]=[...(kind==='defeat'?a.lastCombat?.tags??[]:[]),...(profile?.tags??[]).map(tagId=>({role:'opponent' as const,tagId})),...(profile?.goals.slice(0,1)??[]).map(tagId=>({role:'opponent' as const,tagId}))];
-  let opponentName=kind==='defeat'?a.lastCombat?.enemyName??'对方':resident?.name??'当地居民';
+  let opponentName=kind==='defeat'?a.lastCombat?.enemyName??'对方':resident?.name??s.district?.residents.find(n=>n.locationId===s.world.locationId)?.name??'对方';
   let fills:Record<string,string>|undefined;
   // fantasy 战败 8 玩法：入口小随机（对手人/兽/怪占位 + 定词材质 + 部位 + 通用 TF）
   if(profile?.id==='progression:profile.defeat.play'){
@@ -56,26 +61,31 @@ export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:Narra
       comboSample:drawn.comboSample,
     };
   }
-  a.story={instanceId:c.transactionId,kind,stage:'start',nodeId:'progression:unselected',profileId:profile?.id??null,opponentName,actor:resident?{kind:'resident',id:resident.id}:profile?.npcId?{kind:'npc',id:profile.npcId}:null,tags,visits:{},log:[],steps:0,fills};
-  if(!chooseNode(s,r,'start')){a.story=null;throw new RuleError('NO_NARRATIVE','当前没有适用的故事节点。');}
+  a.story={instanceId:c.transactionId,kind,stage:'start',nodeId:'progression:unselected',profileId:profile?.id??null,opponentName,actor:resident?{kind:'resident',id:resident.id}:profile?.npcId?{kind:'npc',id:profile.npcId}:null,tags,visits:{},log:[],steps:0,...(fills?{fills}:{})};
+  if(!chooseNode(s,r,initialStage)){a.story=null;throw new RuleError('NO_NARRATIVE','当前没有适用的故事节点。');}
 }
 function applyNarrativeFills(text:string,story:NonNullable<AdventureState['story']>,s:GameState,r:Registry):string{
-  let out=text.replaceAll('{opponent}',story.opponentName).replaceAll('{place}',r.location(s.world.locationId).name).replaceAll('{player}',s.district?.profile.name??'旅人');
-  for(const [key,value] of Object.entries(story.fills??{})) out=out.replaceAll('{'+key+'}',value);
+  let out=text.replaceAll('{opponent}',story.opponentName);
+  for(const [key,value] of Object.entries({...sceneContext(s,r),...story.fills})) out=out.replaceAll('{'+key+'}',value);
   return out;
 }
 export function narrativeText(s:GameState,r:Registry):string|undefined {
   const story=s.adventure?.story;if(!story)return;
   const node=r.narrativeNodes.find(n=>n.id===story.nodeId)!;
   const replace=(text:string)=>applyNarrativeFills(text,story,s,r);
-  return `${node.title}\n\n${replace(r.text(node.textKey))}${story.log.length?'\n\n'+replace(story.log.at(-1)!):''}`;
+  return `${replace(node.title)}\n\n${replace(r.text(node.textKey))}${story.log.length?'\n\n'+replace(story.log.at(-1)!):''}`;
+}
+export function narrativeTitle(s:GameState,r:Registry):string|undefined {
+  const story=s.adventure?.story,node=r.narrativeNodes.find(n=>n.id===story?.nodeId);
+  return story&&node?applyNarrativeFills(node.title,story,s,r):undefined;
 }
 export function narrativeActions(s:GameState,r:Registry):ActionDef[]|undefined {
   const story=s.adventure?.story;if(!story)return;
   const node=r.narrativeNodes.find(n=>n.id===story.nodeId)!;
   return node.choices.map((choice,index)=>{
     const costs=choice.effects.some(e=>e.op==='progression.act'||e.op==='var.change'&&e.amount<0);
-    return {...r.action(`progression:action.story.${index}`),label:choice.label,conditions:choice.conditions,hint:costs?'按选项结算行动消耗':choice.next?'继续当前经历':'结束当前经历；无资源费用'};
+    const time=choice.effects.filter(e=>e.op==='clock.advance').reduce((n,e)=>n+(e.op==='clock.advance'?e.minutes:0),0);
+    return {...r.action(`progression:action.story.${index}`),label:applyNarrativeFills(choice.label,story,s,r),conditions:choice.conditions,hint:costs?'按选项结算行动消耗':time?'按下方耗时执行':choice.next?'继续当前经历':'结束当前经历；无资源费用'};
   });
 }
 /** Read the current option's public effects for cost and eligibility checks, without advancing it. */
@@ -91,8 +101,10 @@ export function advanceNarrative(s:GameState,r:Registry,c:EffectContext,index:nu
   apply(choice.effects,s,r,c);
   const unset=new Set(choice.unsetTags.map(key));story.tags=story.tags.filter(t=>!unset.has(key(t)));
   story.tags=[...new Map([...story.tags,...choice.setTags].map(t=>[key(t),t])).values()];story.steps++;
-  const line=applyNarrativeFills(r.text(choice.resultText),story,s,r);story.log.push(line);story.log=story.log.slice(-12);c.resolvedTexts.push(line);
+  const line=applyNarrativeFills(r.text(choice.resultText),story,s,r);
+  const problem=proseProblem(line);if(problem)throw new RuleError('NARRATIVE_TEXT',`这段内容尚未准备好：${problem}。`);
+  story.log.push(line);story.log=story.log.slice(-12);c.resolvedTexts.push(line);
   if(choice.next&&story.steps<12&&chooseNode(s,r,choice.next))return;
   if(story.kind==='defeat'&&s.player.variables['core:health']!<1){s.player.variables['core:health']=1;c.changes.push({label:'脱离危险',before:0,after:1});}
-  a.journal.push({at:s.clock.totalMinutes,title:node.title,text:story.log.join('\n')});a.journal=a.journal.slice(-64);delete s.rng.streams[`narrative:${story.instanceId}`];for(const k of Object.keys(s.rng.streams))if(k.startsWith(`defeat-play:fill:${story.instanceId}`))delete s.rng.streams[k];a.story=null;
+  a.journal.push({at:s.clock.totalMinutes,title:applyNarrativeFills(node.title,story,s,r),text:story.log.join('\n')});a.journal=a.journal.slice(-64);delete s.rng.streams[`narrative:${story.instanceId}`];for(const k of Object.keys(s.rng.streams))if(k.startsWith(`defeat-play:fill:${story.instanceId}`))delete s.rng.streams[k];a.story=null;
 }

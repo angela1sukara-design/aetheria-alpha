@@ -13,10 +13,13 @@ import { advanceWorldSimulation } from './simulation.ts';
 import { hash, integer, parseReference, parseRules } from './schema.ts';
 import { selectQuestContent } from '../content/quest-schema.ts';
 import { compileWorldQuests } from './quests.ts';
+import { compileWorldScenes } from './scenes.ts';
+import { compileCombatEncounters } from './combat-encounters.ts';
+import { proseProblem } from '../content/player-prose.ts';
 import { applyWorldProfile, chooseWorldProfile, parseWorldProfiles, professionName, worldProfileSelectionTag } from './profiles.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
-export const GENERATOR_VERSION = '0.7.0';
+export const GENERATOR_VERSION = '0.8.0';
 const id = (key: string): Id => `worldgen:${key}`;
 
 /** 生成器只创建初始快照。所有玩法编译成已有内容 DSL，并经过同一个 loader。 */
@@ -229,6 +232,14 @@ export class WorldGenerator {
     const questContent = profile?.quests ?? input.questContent;
     if (questContent !== undefined) definition.startLocationId = definition.locations.find(l => l.service === 'home')!.id;
     const questPacks = questContent === undefined ? [] : await compileWorldQuests(selectQuestContent(questContent, definition.regions[0]!.environmentTags, canonical), input.seed, input.registry, pack, definition, agents);
+    compileCombatEncounters(pack, definition, input.registry);
+    definition.eventPool=[...new Set([...definition.eventPool,...pack.events.filter(e=>e.id.startsWith('worldgen:event.danger.')).map(e=>e.id)])];
+    compileWorldScenes(pack, definition, input.registry);
+    const sceneKeys=new Set((pack.narrativeNodes??[]).flatMap(n=>[n.textKey,...n.choices.map(c=>c.resultText)]));
+    for(const [key,text]of Object.entries(pack.texts)){
+      const problem=proseProblem(text,sceneKeys.has(key as Id));if(problem)throw Error(`生成正文未完成：${key}，${problem}。`);
+    }
+    for(const action of pack.actions){const problem=proseProblem(action.label);if(problem)throw Error(`生成选项未完成：${action.id}，${problem}。`);}
     definition.packs = [...clone(input.registry.contentPacks), pack, ...questPacks];
     const registry = await loadPacks(definition.packs), state = createGameState(registry, input.seed);
     state.world = { locationId: definition.startLocationId, knownLocationIds: [definition.startLocationId] };

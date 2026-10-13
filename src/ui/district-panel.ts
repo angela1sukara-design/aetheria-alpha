@@ -1,7 +1,7 @@
 import { residentMemoryText } from '../engine/resident-quests.ts';
 import { renderRelationshipTree } from './relationship-tree.ts';
 import { RELATION_LABELS } from '../core/quest-types.ts';
-import { residentAppearance } from '../engine/query.ts';
+import { residentAppearance, environment } from '../engine/query.ts';
 import { tagLabel } from '../content/tags.ts';
 import type{GameView}from'../core/types.ts';import type{Registry}from'../content/registry.ts';import type{TextLibrary}from'../content/text-variants.ts';import{byId,element}from'./render.ts';import{evaluate}from'../engine/conditions.ts';
 import { worldActivityAt } from '../world/simulation.ts';
@@ -14,7 +14,7 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
  const startId=v.state.worldInstance?.definition.startLocationId;
  const atBirthplace=v.location.id==='aetheria:location.apartment'||(!!startId&&v.location.id===startId);
  const intro=byId('character-intro');
- intro.hidden=d.profile.created||!atBirthplace;
+ intro.hidden=d.profile.created||!atBirthplace||!!v.eventTitle||!!d.combat||!!d.scene;
  // 异世界无公寓文案：出生点同样走签到，不硬绑租约措辞
  if(!intro.hidden){
   const title=intro.querySelector('h2'); const blurb=intro.querySelector('p');
@@ -47,6 +47,12 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
  const tasks=byId('quest-content');tasks.replaceChildren();for(const q of [...journal,...(v.state.worldInstance?.definition.quests?.journal??[])].filter(q=>q.unlock.every(c=>evaluate(c,v.state,r).pass))){const step=[...q.steps].reverse().find(step=>step.conditions.every(c=>evaluate(c,v.state,r).pass));const card=element('article','npc-card');card.append(element('h3','',q.title),element('p','',step?.text??'继续留意街区。'));tasks.append(card);}if(!tasks.childElementCount)tasks.append(element('p','muted','留意街区、与人物正式认识，或到档案室查看公开工单。接受的事情会记在这里。'));
  if(v.state.adventure){const a=v.state.adventure,card=element('article','npc-card');card.append(element('h3','','成长与街区进展'),element('p','',`经营份额${a.assets}；订单${a.orders}；契约${a.contracts}；组织影响${a.influence}；街区安全${a.safety}；声望${a.reputation}；有效胜利${Object.values(a.victories).reduce((n,v)=>n+v,0)}`),element('p','muted','经营终局需要经营份额6、订单3、契约2。权力终局需要组织影响5、安全5、有效胜利2。市场与工坊可接订单、购买装备；公共区与工坊可训练和挑战。'));tasks.prepend(card);for(const row of [...a.journal].reverse().slice(0,12)){const item=element('article','log-item');item.append(element('h3','',row.title),element('p','',row.text));tasks.append(item);}}
  const bag=byId('bag-content');const slotLabel:Record<string,string>={held:'持握',head:'头',body:'身',hands:'手',legs:'腿',accessory:'饰品',weapon:'持握',armor:'身',cosmetic:'时装',wings:'翼',tail:'尾',other:'其他'};const equippedEntries=Object.entries(v.state.adventure?.equipment??{});const equippedIds=[...new Set([d.equipped,...equippedEntries.map(([,id])=>id)].filter(Boolean))] as string[];bag.replaceChildren(element('p','',equippedEntries.length?'正在穿戴：'+equippedEntries.map(([slot,id])=>`${slotLabel[slot]??slot}·${r.equipment.find(e=>e.id===id)?.name??id}`).join('、'):'当前没有试用装备。'));for(const item of d.inventory){const def=r.equipment.find(e=>e.id===item)!;const slot=def.slot??'cosmetic';bag.append(element('h3','',`${def.name}（${slotLabel[slot]??slot}）`),element('p','muted',def.description));const option=v.actions.find(a=>a.definition.effects.some(e=>e.op==='equipment.wear'&&e.id===item));if(option){const worn=equippedIds.includes(item);const button=element('button','',worn?'已装备':'装备');button.dataset.action=option.definition.id;button.disabled=!option.available||worn;bag.append(button);}}const stacks=Object.entries(v.state.adventure?.items??{});if(stacks.length){bag.append(element('h3','','消耗品'));for(const [id,qty] of stacks){const def=r.items.find(i=>i.id===id);if(!def)continue;bag.append(element('p','',`${def.name} ×${qty}`),element('p','muted',def.description));const use=v.actions.find(a=>a.definition.effects.some(e=>e.op==='item.use'&&e.id===id));if(use){const button=element('button','','使用');button.dataset.action=use.definition.id;button.disabled=!use.available;bag.append(button);}}}bag.append(element('p','muted',v.state.adventure?'头/身/手/腿/饰品/持握各保留一件（翼/尾为扩展槽）。同槽新装备替换旧件，物品仍留在背包；消耗品按数量堆叠，使用后扣减。':'市场提供免费试穿和收起入口。身体变化使装备不兼容时，会自动卸下并保留。'));
+ const service=environment(v.state,r).service;
+ const shop=v.actions.filter(o=>o.definition.effects.some(e=>e.op==='progression.act'&&e.move==='buy'));
+ if(service.known&&['market','workshop','clinic','commons'].includes(service.value)&&shop.length){
+  bag.append(element('h3','','当地补给与装备'));
+  for(const option of shop){const card=element('article','save-slot');card.append(element('p','',option.definition.label),element('p','muted',option.available?option.definition.hint:option.reason));const button=element('button','','购买');button.dataset.action=option.definition.id;button.disabled=!option.available;card.append(button);bag.append(card);}
+ }
  const search=byId<HTMLInputElement>('discovery-search').value.trim().toLowerCase(),index=byId('discovery-content');index.replaceChildren();
  const rows:{title:string;detail:string;kind?:string}[]=[];
  for(const row of npcCodexDiscoveryRows(v,r))rows.push(row);
@@ -62,7 +68,7 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
  // 成人偏好已开但仍被门挡住时，复用条件文案说明原因（不误放行）
  const packMsg=byId('pack-message');
  const adultGate=!!(d.profile.created&&d.profile.ageYears>=18&&d.profile.adultOptional);
- const adultReason='需要已创建的成年角色并开启成人可选文本偏好。';
+ const adultReason='偏好已开启；创建成年角色后即可显示相关文本。';
  if(d.profile.adultOptional&&!adultGate){
   if(!packMsg.textContent||packMsg.dataset.adultReason==='1'||/成人|成年|adult/i.test(packMsg.textContent)){
    packMsg.textContent=adultReason;packMsg.dataset.adultReason='1';

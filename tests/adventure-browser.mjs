@@ -82,6 +82,23 @@ try{
     const before=await snapshot(page);await act(page,'progression:action.story.0');const after=await snapshot(page);
     assert.equal(after.player.variables['core:stamina'],before.player.variables['core:stamina']-4);assert.equal(after.adventure.safety,1);
   });
+  await check('普通探索遇敌后可迎战、随处切换偏好并直接投降',async()=>{
+    await fixture(page,'district:location.canal',s=>{s.district.profile.created=true;});
+    await act(page,'district:action.observe.location.canal');
+    assert.ok(await page.locator('#actions [data-action="progression:action.road-threat.canal.fight"]').isVisible());
+    await act(page,'progression:action.road-threat.canal.fight');
+    await openFolioPage(page,'pack');await page.locator('#adult-preference').check();
+    assert.ok(!/不属于|地点/.test(await page.locator('#pack-message').innerText()));
+    await home(page);await act(page,'progression:action.combat.surrender');
+    const s=await snapshot(page);assert.equal(s.district.combat,null);assert.equal(s.adventure.lastCombat.result,'defeat');assert.equal(s.adventure.story.nodeId,'progression:node.defeat.surrender');
+  });
+  await check('彻底放弃直接进入当前对手后续，无二次确认',async()=>{
+    await fixture(page,'aetheria:location.market',s=>{s.district.profile.created=true;s.player.variables['core:stamina']=0;s.player.variables['core:actionPoints']=0;});
+    await act(page,'progression:action.challenge.gel');const before=await snapshot(page);
+    await act(page,'progression:action.combat.giveup');const after=await snapshot(page);
+    assert.equal(after.district.combat,null);assert.equal(after.adventure.story.stage,'yielded');assert.equal(after.player.variables['core:health'],before.player.variables['core:health']);
+    await page.screenshot({path:path.join(out,'giveup-desktop.png'),fullPage:true});
+  });
   const preferences=await fresh();
   await check('文本扩展禁用和重新启用均跨刷新保留',async()=>{
     await openFolioPage(preferences,'pack');await preferences.locator('#pack-import').setInputFiles(path.resolve('content/author-example/text-pack.json'));

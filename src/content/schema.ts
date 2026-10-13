@@ -79,7 +79,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'combat.encounter') obj(value,path,['op']);
     else if (['combat.start','scene.start','equipment.wear','item.use'].includes(String(op))) { const x = obj(value,path,['op','id']); id(x.id,path); }
     else if (op === 'item.gain') { const x = obj(value,path,['op','id','amount']); id(x.id,path); integer(x.amount,path,1,99); }
-    else if (op === 'combat.turn') { const x = obj(value,path,['op','move','id']); choice(x.move,path,['attack','guard','recover','flee','skill','item']); if(x.move==='item'){ if(x.id===undefined) fail(`${path}/id`,'战内使用消耗品必须声明 item id。'); id(x.id,`${path}/id`); } else if(x.id!==undefined) fail(`${path}/id`,'非 item 行动不应带 id。'); }
+    else if (op === 'combat.turn') { const x = obj(value,path,['op','move','id']); choice(x.move,path,['attack','guard','recover','flee','skill','item','surrender','giveup']); if(x.move==='item'){ if(x.id===undefined) fail(`${path}/id`,'战内使用消耗品必须声明 item id。'); id(x.id,`${path}/id`); } else if(x.id!==undefined) fail(`${path}/id`,'非 item 行动不应带 id。'); }
     else if (op === 'scene.act') { const x = obj(value,path,['op','move','poseId']); choice(x.move,path,['pose','contact','release','pause','resume','exit']); if(x.poseId !== undefined) str(x.poseId,path); }
     else if (op === 'player.create') { const x = obj(value,path,['op','name','ageYears']); str(x.name,path); integer(x.ageYears,path,18,120); }
     else if (op === 'preference.set') { const x = obj(value,path,['op','value']); boolean(x.value,path); }

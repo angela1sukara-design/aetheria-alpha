@@ -152,10 +152,10 @@ test('local encounter action skips empty shell and 核对细节', async () => {
   const result = e.performAction({ actionId: 'progression:action.narrative.encounter' as Id }, e.snapshot().meta.revision, 'encounter-inn');
   assert.equal(result.ok, true, result.message);
   const story = e.snapshot().adventure!.story!;
-  assert.equal(story.nodeId, 'progression:node.encounter.inn.gate.capture');
+  assert.equal(story.nodeId, 'progression:node.encounter.local');
   const node = registry.narrativeNodes.find((n) => n.id === story.nodeId)!;
   assert.ok(!node.choices.some((c) => /核对/.test(c.label)), JSON.stringify(node.choices.map((c) => c.label)));
-  assert.match(registry.text(node.textKey), /城门旅馆/);
+  assert.ok(e.view().sceneText.includes('公寓'));assert.doesNotMatch(e.view().sceneText,/城门旅馆/);
 });
 
 test('C6/C7 offer engage/avoid/alt without 核对组合', async () => {
