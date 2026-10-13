@@ -1,0 +1,262 @@
+{
+  "manifest": {
+    "id": "aetheria/fantasy-residents",
+    "namespace": "fantasy",
+    "version": "1.0.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "fantasy playtest",
+    "status": "reviewed",
+    "dependencies": [
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "body.graph.v1",
+      "npc.fixed.v1",
+      "district.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": [],
+  "species": [
+    {
+      "id": "fantasy:species.human",
+      "label": "人类",
+      "intelligent": true,
+      "adultAgeYears": 18
+    },
+    {
+      "id": "fantasy:species.beast",
+      "label": "野兽",
+      "intelligent": true,
+      "adultAgeYears": 18
+    },
+    {
+      "id": "fantasy:species.monster",
+      "label": "怪物",
+      "intelligent": true,
+      "adultAgeYears": 18
+    }
+  ],
+  "residentTemplates": [
+    {
+      "id": "fantasy:resident.squire",
+      "locationIds": [
+        "aetheria:location.street"
+      ],
+      "start": 480,
+      "end": 1080,
+      "names": [
+        "Gareth",
+        "Rowan",
+        "Elena",
+        "Thorne"
+      ],
+      "profession": "交接信使",
+      "appearance": [
+        "皮甲与剑带",
+        "袖口绣着公会纹章"
+      ],
+      "personality": [
+        "直率守约",
+        "好打听远方消息"
+      ],
+      "behavior": "guide",
+      "speciesId": "fantasy:species.human",
+      "ageYears": 28,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "dialogue": {
+        "intro": "旅馆值守今天顺利。你是新来的旅人吗？",
+        "repeat": "城外驿路还算通畅，公会告示刚换过。",
+        "help": "我可以帮你指去公会广场或神殿疗养所的路。"
+      }
+    },
+    {
+      "id": "fantasy:resident.broker",
+      "locationIds": [
+        "aetheria:location.street"
+      ],
+      "start": 480,
+      "end": 1080,
+      "names": [
+        "Isolde",
+        "Quinn",
+        "Mira",
+        "Jonas"
+      ],
+      "profession": "摊贩",
+      "appearance": [
+        "账册与公会徽章",
+        "腰间挂着验货镜"
+      ],
+      "personality": [
+        "精于当面核算",
+        "不喜欢空口承诺"
+      ],
+      "behavior": "trade",
+      "speciesId": "fantasy:species.human",
+      "ageYears": 30,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "dialogue": {
+        "intro": "广场这边的附魔护具报价刚更新。",
+        "repeat": "魔晶份额的争议还在，合同要写清返修。",
+        "help": "需要核货的话，先把供货单放到台面上。"
+      }
+    },
+    {
+      "id": "fantasy:resident.wolfkin",
+      "locationIds": [
+        "aetheria:location.street"
+      ],
+      "start": 480,
+      "end": 1080,
+      "names": [
+        "Sable",
+        "Fen",
+        "Lyra",
+        "Ash"
+      ],
+      "profession": "护理员",
+      "appearance": [
+        "兽耳与毛皮披肩",
+        "爪印纹的药箱扣"
+      ],
+      "personality": [
+        "警觉寡言",
+        "重当面约定"
+      ],
+      "behavior": "guide",
+      "speciesId": "fantasy:species.beast",
+      "ageYears": 32,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "dialogue": {
+        "intro": "疗养所气味今天很干净。别挡着救护通道。",
+        "repeat": "战地疗伤用品按底额留着，队伍配额另算。",
+        "help": "需要向导或包扎指引的话，先说清伤处。"
+      }
+    },
+    {
+      "id": "fantasy:resident.smith",
+      "locationIds": [
+        "aetheria:location.street"
+      ],
+      "start": 480,
+      "end": 1080,
+      "names": [
+        "Thorne",
+        "Kai",
+        "Ash",
+        "Rowan"
+      ],
+      "profession": "维护电工",
+      "appearance": [
+        "爪垫护腕",
+        "锻造围裙沾着魔晶粉"
+      ],
+      "personality": [
+        "手稳话少",
+        "讲究交接编号"
+      ],
+      "behavior": "repair",
+      "speciesId": "fantasy:species.beast",
+      "ageYears": 34,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [
+        "aetheria-tf:patch.ears.cat"
+      ],
+      "dialogue": {
+        "intro": "锻造坊的时段表刚核对完。",
+        "repeat": "闲置设备要登记维护，才能换独立试产。",
+        "help": "工具坏了可以先放公共检视台。"
+      }
+    },
+    {
+      "id": "fantasy:resident.slimekin",
+      "locationIds": [
+        "aetheria:location.street"
+      ],
+      "start": 480,
+      "end": 1080,
+      "names": [
+        "Gelda",
+        "Vex",
+        "Onyx",
+        "Mira"
+      ],
+      "profession": "档案整理员",
+      "appearance": [
+        "半透明外皮映着符文灯",
+        "腰间密封样本瓶"
+      ],
+      "personality": [
+        "好奇又谨慎",
+        "讨厌空口承诺"
+      ],
+      "behavior": "guide",
+      "speciesId": "fantasy:species.monster",
+      "ageYears": 36,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "dialogue": {
+        "intro": "公议厅的争议单我刚收过。别空手摸潮湿墙面。",
+        "repeat": "清算按重量计，样本要分装。",
+        "help": "若你要进下层走廊，我可以标出最近的安全回撤点。"
+      }
+    },
+    {
+      "id": "fantasy:resident.geltech",
+      "locationIds": [
+        "aetheria:location.street"
+      ],
+      "start": 480,
+      "end": 1080,
+      "names": [
+        "Onyx",
+        "Vex",
+        "Sable",
+        "Kai"
+      ],
+      "profession": "维护电工",
+      "appearance": [
+        "凝胶护层手套",
+        "符文量尺"
+      ],
+      "personality": [
+        "细致",
+        "怕返工"
+      ],
+      "behavior": "repair",
+      "speciesId": "fantasy:species.monster",
+      "ageYears": 38,
+      "bodyTemplateId": "aetheria-tf:body.human",
+      "patchIds": [],
+      "dialogue": {
+        "intro": "附魔锻造的黏性残留我刚清过。",
+        "repeat": "设备区与接单区要分开，别混用工具。",
+        "help": "需要量具校准可以来找我。"
+      }
+    }
+  ]
+}

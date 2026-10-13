@@ -4,7 +4,7 @@ import { createGameState } from '../engine/state.ts';
 import { formatClock } from '../engine/clock.ts';
 import { SaveCodec, MAX_SAVE_BYTES } from '../persistence/codec.ts';
 import { IndexedDBSaveStore, SaveRepository } from '../persistence/store.ts';
-import { asId, byId, feedback, newSeed, renderGame } from './render.ts';
+import { asId, byId, feedback, newSeed, renderGame, setTagDebugRegistry } from './render.ts';
 import type { ActionResult } from '../core/types.ts';
 import { PackError } from '../core/errors.ts';
 import { TextLibrary } from '../content/text-variants.ts';
@@ -61,7 +61,7 @@ async function boot(): Promise<void> {
     const status = byId('save-state'); status.dataset.state = saved ? 'saved' : savedSnapshot ? 'dirty' : 'new';
     status.textContent = saved ? '进度已保存' : savedSnapshot ? '有未保存进度' : '尚未保存';
   }
-  function redraw(): void { const view=engine.view();renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); pages.refresh(); updateSaveStatus(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
+  function redraw(): void { const view=engine.view(); setTagDebugRegistry(registry); renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); pages.refresh(); updateSaveStatus(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; }
   function adopt(loaded: { state: import('../core/types.ts').GameState; registry?: import('../content/registry.ts').Registry }): void {
     registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry, fixedRegistry); saves = new SaveRepository(codec, store);
     engine = new ActionExecutor(registry, loaded.state, texts);
@@ -78,11 +78,17 @@ async function boot(): Promise<void> {
         content: await Promise.all(contents.map(name => fetchJSON(new URL(name, indexUrl)))),
       };
     }
+    const allWorldProfiles = await fetchJSON(new URL('../../content/generation/world-profiles.json', import.meta.url)) as { format: string; schemaVersion: number; profiles: { tag: string }[] };
+    // 小范围试玩：随机/题材列表只开放中世纪异世界（worlds:setting.fantasy）
+    const worldProfiles = { ...allWorldProfiles, profiles: allWorldProfiles.profiles.filter(p => p.tag === 'worlds:setting.fantasy') };
     return {
-      worldProfiles: await fetchJSON(new URL('../../content/generation/world-profiles.json', import.meta.url)),
+      worldProfiles,
       rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)),
-      reference: await fetchJSON(new URL('../../content/generation/lexicon-reference.json', import.meta.url)),
-      content: await Promise.all(['neighborhood-content','lexicon-content','world-profile-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))),
+      reference: [
+        await fetchJSON(new URL('../../content/generation/lexicon-reference.json', import.meta.url)),
+        await fetchJSON(new URL('../../content/generation/fantasy-reference.json', import.meta.url)),
+      ],
+      content: await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))),
     };
   })();
   mountWorldControls({ source: () => fixedRegistry, defaults: generation, lockDefaults: playtest === 'tagcoexist', isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {

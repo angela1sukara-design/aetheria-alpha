@@ -121,3 +121,19 @@
 - `content/adventure/pack.json`（生成物，勿手改）
 - `docs/nsfw-auto-combo.md`
 - `docs/tag-hub/outbox/2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md`
+
+
+## fantasy 战败 8 玩法（合载）
+
+| 玩法 | 节点 | 中性槽 | adult 槽 |
+|---|---|---|---|
+| 束缚制服 | `progression:node.defeat.play.01` | `…play.p1` | `…play.p1.adult` |
+| 材质覆层转化 | `…02` | `…p2` | `…p2.adult` |
+| 侵犯插入 | `…03` | `…p3` | `…p3.adult` |
+| 口封感官剥夺 | `…04` | `…p4` | `…p4.adult` |
+| 产卵灌注 | `…05` | `…p5` | `…p5.adult` |
+| 公开羞辱 | `…06` | `…p6` | `…p6.adult` |
+| 主从调教 | `…07` | `…p7` | `…p7.adult` |
+| 多体围攻 | `…08` | `…p8` | `…p8.adult` |
+
+入口：`progression:action.defeat.play` → hub。编辑编号保留 `edit:node.defeat.play.01`–`08`。

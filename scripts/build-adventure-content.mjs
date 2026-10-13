@@ -276,9 +276,12 @@ await writeFile(
       generatedFrom: nsfwAtoms.sourceCard,
       count: nsfwCandidates.length,
       proseFillsApplied: proseFillCount,
+      gameplayFilter: nsfwAtoms.playtestFilter ?? null,
       candidates: nsfwCandidates.map((c) => ({
         sampleId: c.sampleId,
         comboKey: c.comboKey,
+        gameplay: c.gameplay ?? null,
+        fantasyNpcKind: c.fantasyNpcKind ?? null,
         adultRequired: c.adultRequired,
         lexiconRefs: c.lexiconRefs,
         proposedRuntimeTags: c.proposedRuntimeTags,
@@ -294,6 +297,235 @@ await writeFile(
   ) + '\n',
 );
 
+
+// —— fantasy 战败后 8 玩法大类（proposed-nodes 合载）——
+// 节点 edit:node.defeat.play.01–08；textKey progression:text.node.defeat.play.p1–p8(+.adult)
+// 玩法过滤按 8 大类；词条≠玩法≠数值；成人门 adultOptional。
+const defeatPlayMeta = [
+  { n: 1, key: 'G1', name: '束缚制服', adult: true },
+  { n: 2, key: 'G2', name: '材质覆层转化', adult: true },
+  { n: 3, key: 'G3', name: '侵犯插入', adult: true },
+  { n: 4, key: 'G4', name: '口封感官剥夺', adult: true },
+  { n: 5, key: 'G5', name: '产卵灌注', adult: true },
+  { n: 6, key: 'G6', name: '公开羞辱', adult: true },
+  { n: 7, key: 'G7', name: '主从调教', adult: true },
+  { n: 8, key: 'G8', name: '多体围攻', adult: true },
+];
+p.tags.push({
+  id: tag('defeat.play.active'),
+  label: '战败玩法入口激活',
+  definition: '故事局部：本次进入 fantasy 战败后 8 玩法大类入口；不等于词库审定，不授予身体能力，不表示脱困/转化/催眠已结算。',
+  facets: ['context'],
+  status: 'active',
+  aliases: [],
+});
+for (const play of defeatPlayMeta) {
+  p.tags.push({
+    id: tag(`defeat.play.${play.key.toLowerCase()}`),
+    label: play.name,
+    definition: `故事局部：战败后玩法大类「${play.name}」选材入口；词条≠玩法≠数值；不表示该玩法效果已结算。`,
+    facets: ['context'],
+    status: 'active',
+    aliases: [],
+  });
+}
+p.narrativeProfiles.push({
+  id: id('profile.defeat.play'),
+  tags: [tag('defeat.play.active')],
+  goals: [],
+  tendencies: [],
+  defeatTags: [],
+});
+const playHubChoices = [];
+for (const play of defeatPlayMeta) {
+  const pad = String(play.n).padStart(2, '0');
+  const stage = `play-${pad}`;
+  const adultStage = `play-${pad}-adult`;
+  const textKey = id(`text.node.defeat.play.p${play.n}`);
+  const adultKey = id(`text.node.defeat.play.p${play.n}.adult`);
+  const nodeId = id(`node.defeat.play.${pad}`);
+  const adultNodeId = id(`node.defeat.play.${pad}.adult`);
+  p.texts[textKey] = `【可填中性槽 · ${play.name}】战败后玩法大类入口占位。关闭成人偏好时使用本槽。`;
+  p.texts[adultKey] = `【可填成人正文槽 · ${play.name}】占位：同意前提下的成人向战败玩法描写。勿写未成年人；勿伪造 foundation:*。`;
+  const toPlay = id(`text.choice.defeat.play.${pad}`);
+  p.texts[toPlay] = `你进入「${play.name}」玩法入口；尚未结算脱困、转化或催眠。`;
+  playHubChoices.push({
+    label: `进入：${play.name}`,
+    resultText: toPlay,
+    next: stage,
+    effects: [time(5)],
+    conditions: [],
+    setTags: [scoped('player', `defeat.play.${play.key.toLowerCase()}`)],
+    unsetTags: [],
+  });
+  const startChoices = [
+    {
+      label: '阅读成人向补充描写',
+      resultText: id(`text.choice.defeat.play.${pad}.adult`),
+      next: adultStage,
+      effects: [time(5)],
+      conditions: adultGate,
+      setTags: [],
+      unsetTags: [],
+    },
+    exit(),
+  ];
+  p.texts[id(`text.choice.defeat.play.${pad}.adult`)] = '你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。';
+  p.narrativeNodes.push({
+    id: nodeId,
+    kind: 'defeat',
+    stage,
+    title: `战败 · ${play.name}`,
+    textKey,
+    requiresTags: [scoped('opponent', 'defeat.play.active')],
+    excludesTags: [],
+    conditions: [],
+    tendencies: [],
+    weight: 10,
+    priority: 6,
+    maxVisits: 1,
+    choices: startChoices,
+  });
+  p.narrativeNodes.push({
+    id: adultNodeId,
+    kind: 'defeat',
+    stage: adultStage,
+    title: `战败 · ${play.name} · 成人补充`,
+    textKey: adultKey,
+    requiresTags: [scoped('opponent', 'defeat.play.active')],
+    excludesTags: [],
+    conditions: adultGate,
+    tendencies: [],
+    weight: 10,
+    priority: 6,
+    maxVisits: 1,
+    choices: [exit()],
+  });
+}
+const hubText = id('text.node.defeat.play.hub');
+p.texts[hubText] = '战败之后，你可以按 8 种玩法大类继续当前处境（束缚制服、材质覆层转化、侵犯插入、口封感官剥夺、产卵灌注、公开羞辱、主从调教、多体围攻）。词条≠玩法≠数值；脱困、转化与催眠均尚未结算。fantasy 试玩对手可为人类/野兽/怪物占位。选择一类进入，或结束回到安全位置。';
+// hub 作为 start：有 requiresTags，不抢无条件 defeat.start 回退；优先于普通 start
+p.narrativeNodes.push({
+  id: id('node.defeat.play.hub'),
+  kind: 'defeat',
+  stage: 'start',
+  title: '战败后的玩法入口',
+  textKey: hubText,
+  requiresTags: [scoped('opponent', 'defeat.play.active')],
+  excludesTags: [],
+  conditions: [],
+  tendencies: [],
+  weight: 10,
+  priority: 8,
+  maxVisits: 1,
+  choices: [...playHubChoices.slice(0, 3), exit()], // shape 上限 4 choices（含 exit）
+});
+// 其余 5 类：从 assess 风格二级 hub 进入（再拆一页，遵守每节点 ≤4 choice）
+const hub2Text = id('text.node.defeat.play.hub2');
+p.texts[hub2Text] = '还有其他玩法大类可选。选择一类进入，或结束回到安全位置。';
+const moreResult = id('text.choice.defeat.play.more');
+p.texts[moreResult] = '你继续浏览其余战败玩法入口。';
+// 给第一页 hub 腾出「更多」：重写 choices 为前 2 玩法 + 更多 + exit
+p.narrativeNodes[p.narrativeNodes.length - 1].choices = [
+  playHubChoices[0],
+  playHubChoices[1],
+  { label: '查看更多玩法…', resultText: moreResult, next: 'play-hub-more', effects: [], conditions: [], setTags: [], unsetTags: [] },
+  exit(),
+];
+p.narrativeNodes.push({
+  id: id('node.defeat.play.hub2'),
+  kind: 'defeat',
+  stage: 'play-hub-more',
+  title: '战败玩法 · 更多',
+  textKey: hub2Text,
+  requiresTags: [scoped('opponent', 'defeat.play.active')],
+  excludesTags: [],
+  conditions: [],
+  tendencies: [],
+  weight: 10,
+  priority: 6,
+  maxVisits: 1,
+  choices: [...playHubChoices.slice(2, 5), exit()],
+});
+const hub3Text = id('text.node.defeat.play.hub3');
+p.texts[hub3Text] = '最后几类玩法大类。选择一类进入，或结束回到安全位置。';
+const more2 = id('text.choice.defeat.play.more2');
+p.texts[more2] = '你继续浏览剩余战败玩法入口。';
+p.narrativeNodes[p.narrativeNodes.length - 1].choices = [
+  playHubChoices[2],
+  playHubChoices[3],
+  { label: '查看其余玩法…', resultText: more2, next: 'play-hub-rest', effects: [], conditions: [], setTags: [], unsetTags: [] },
+  exit(),
+];
+p.narrativeNodes.push({
+  id: id('node.defeat.play.hub3'),
+  kind: 'defeat',
+  stage: 'play-hub-rest',
+  title: '战败玩法 · 其余',
+  textKey: hub3Text,
+  requiresTags: [scoped('opponent', 'defeat.play.active')],
+  excludesTags: [],
+  conditions: [],
+  tendencies: [],
+  weight: 10,
+  priority: 6,
+  maxVisits: 1,
+  choices: [...playHubChoices.slice(5, 8), exit()],
+});
+action(
+  'defeat.play',
+  '试跑战败后 8 玩法',
+  [{ op: 'narrative.start', kind: 'defeat', profileId: id('profile.defeat.play') }],
+  [],
+  'fantasy 战败后按 8 玩法大类进入；成人正文须 adultOptional；不改审定',
+  'explore',
+);
+
+// 回填 8 玩法正文
+const defeatPlayFillsPath = 'content/nsfw-auto-combo/defeat-play-fills.json';
+let defeatPlayFillCount = 0;
+try {
+  const fills = await json(defeatPlayFillsPath);
+  if (fills.format !== 'aetheria-defeat-play-prose-fills' || fills.schemaVersion !== 1) throw new Error('defeat-play-fills 格式无效。');
+  for (const [key, body] of Object.entries(fills.texts ?? {})) {
+    if (typeof body !== 'string' || !body.trim()) throw new Error(`战败玩法散文空槽：${key}`);
+    if (!(key in p.texts)) throw new Error(`战败玩法散文目标不存在：${key}`);
+    p.texts[key] = body;
+    defeatPlayFillCount += 1;
+  }
+} catch (err) {
+  if (err && err.code === 'ENOENT') {
+    // 无回填时保留占位
+  } else {
+    throw err;
+  }
+}
+await writeFile(
+  'content/nsfw-auto-combo/defeat-play-candidates.json',
+  JSON.stringify({
+    format: 'aetheria-defeat-play-candidates',
+    schemaVersion: 1,
+    worldTag: 'worlds:setting.fantasy',
+    proseFillsApplied: defeatPlayFillCount,
+    entryAction: id('action.defeat.play'),
+    hubNodeId: id('node.defeat.play.hub'),
+    plays: defeatPlayMeta.map((play) => {
+      const pad = String(play.n).padStart(2, '0');
+      return {
+        gameplay: play.key,
+        name: play.name,
+        nodeId: id(`node.defeat.play.${pad}`),
+        editNodeId: `edit:node.defeat.play.${pad}`,
+        adultNodeId: id(`node.defeat.play.${pad}.adult`),
+        editAdultNodeId: `edit:node.defeat.play.${pad}.adult`,
+        textKey: id(`text.node.defeat.play.p${play.n}`),
+        adultTextKey: id(`text.node.defeat.play.p${play.n}.adult`),
+      };
+    }),
+  }, null, 2) + '\n',
+);
+
+
 p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))];p.contributions=p.contributions.slice(0,1);
 await mkdir('content/adventure',{recursive:true});await writeFile('content/adventure/pack.json',JSON.stringify(p,null,2)+'\n');
-console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.items.length} consumables, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}.`);
+console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.items.length} consumables, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}, defeat-play fills ${defeatPlayFillCount}.`);

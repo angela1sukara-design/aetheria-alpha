@@ -77,3 +77,21 @@ const many = enumerateCombos(atoms, { limit: 12 });
 ## 可填槽清单
 
 见 `docs/tag-hub/outbox/2026-10-13-NSFW-auto-combo-可填槽清单.md`（C1–C12 节点 / textKey / adult 槽与 U1–U8 缺口）。
+
+
+## fantasy 战败后 8 玩法大类（合载）
+
+日期续：2026-10-13。世界：`worlds:setting.fantasy`。
+
+| 项 | ID / path |
+|---|---|
+| 入口 action | `progression:action.defeat.play` |
+| hub 节点 | `progression:node.defeat.play.hub`（编辑编号 `edit:node.defeat.play.*`） |
+| 玩法节点 | `progression:node.defeat.play.01`–`08` + `.adult` |
+| textKey | `progression:text.node.defeat.play.p1`–`p8`（+`.adult`） |
+| 正文源 | `docs/tag-hub/outbox/2026-10-13-故事试写-战败8玩法-可粘贴正文.md` |
+| 回填 | `content/nsfw-auto-combo/defeat-play-fills.json` |
+| 候选 | `content/nsfw-auto-combo/defeat-play-candidates.json` |
+
+大类：束缚制服｜材质覆层转化｜侵犯插入｜口封感官剥夺｜产卵灌注｜公开羞辱｜主从调教｜多体围攻。  
+combo 样例亦按 `gameplayCategories` G1–G8 过滤；词条≠玩法≠数值。

@@ -1,0 +1,164 @@
+{
+  "format": "aetheria-reference",
+  "schemaVersion": 1,
+  "id": "aetheria/fantasy-reference",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/fantasy-residents"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "fantasy.npc.squire",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "fantasy:resident.squire"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/fantasy-residents"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "fantasy.npc.broker",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "fantasy:resident.broker"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/fantasy-residents"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "fantasy.npc.wolfkin",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "fantasy:resident.wolfkin"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/fantasy-residents"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "fantasy.npc.smith",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "fantasy:resident.smith"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/fantasy-residents"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "fantasy.npc.slimekin",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "fantasy:resident.slimekin"
+      }
+    },
+    {
+      "environmentTags": [],
+      "weight": 1000,
+      "requiresTags": [],
+      "excludesTags": [],
+      "compatibleTags": [],
+      "requiresPacks": [
+        "aetheria/fantasy-residents"
+      ],
+      "combination": {
+        "requiresTemplates": [],
+        "excludesTemplates": [],
+        "boosts": []
+      },
+      "contributes": {
+        "tags": [],
+        "npcTemplateIds": [],
+        "eventIds": [],
+        "tfIds": []
+      },
+      "id": "fantasy.npc.geltech",
+      "kind": "npc",
+      "data": {
+        "residentTemplateId": "fantasy:resident.geltech"
+      }
+    }
+  ]
+}

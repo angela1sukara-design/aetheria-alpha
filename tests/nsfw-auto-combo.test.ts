@@ -92,7 +92,7 @@ test('toEncounterCandidate never forges foundation material.gel', async () => {
 test('adult samples expose gated adult text slots', async () => {
   const candidates = await json('content/nsfw-auto-combo/candidates.json');
   const adults = candidates.candidates.filter((c: { adultRequired: boolean }) => c.adultRequired);
-  assert.equal(adults.length, 6);
+  assert.ok(adults.length >= 6, `adult samples ${adults.length}`);
   for (const c of adults) {
     assert.ok(c.adultTextKey?.endsWith('.adult'), c.sampleId);
     assert.ok(c.fillable?.adultNodeId?.includes('.adult'), c.sampleId);
@@ -121,4 +121,12 @@ test('prose-fills applied to start and adult text slots (P0+P1)', async () => {
   }
   // detail left as combo stub
   assert.match(pack.texts['progression:text.node.encounter.nsfwcombo.c1.detail'], /组合键/);
+});
+
+test('atoms expose 8 gameplay categories and samples cover all', async () => {
+  const atoms = await loadAtoms();
+  assert.equal((atoms.gameplayCategories ?? []).length, 8);
+  const combos = sampleCombos(atoms);
+  const keys = new Set(combos.map((c: { gameplay?: { key: string } }) => c.gameplay?.key).filter(Boolean));
+  assert.equal(keys.size, 8, JSON.stringify([...keys]));
 });

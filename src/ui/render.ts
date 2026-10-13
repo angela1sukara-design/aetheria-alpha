@@ -12,7 +12,73 @@ export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className
 export function byId<T extends HTMLElement = HTMLElement>(id: string): T {
   const node = document.getElementById(id); if (!node) throw new Error(`缺少 UI 元素 ${id}`); return node as T;
 }
-function prose(target: HTMLElement, text: string): void { target.replaceChildren(...text.split('\n\n').map(t => element('p', '', t))); }
+let tagDebugRegistry: Registry | undefined;
+/** Debug：正文【标签】下划线可点查看来源（只读，不改玩法）。 */
+export function setTagDebugRegistry(registry: Registry): void { tagDebugRegistry = registry; }
+
+function tagSourceLines(label: string): string[] {
+  const r = tagDebugRegistry;
+  if (!r) return [`标记「${label}」`, '来源：调试注册表尚未就绪'];
+  const hits = r.tags.filter(t => t.label === label || t.id.endsWith('.' + label) || t.aliases.some(a => a.value === label));
+  if (!hits.length) {
+    // 亦匹配「伤后乏力」类已写入正文的 label
+    const loose = r.tags.filter(t => t.label.includes(label) || label.includes(t.label));
+    if (!loose.length) return [`标记「${label}」`, '来源：未在已装 TagDef 中找到同名条目（可能是素材指向 / 编辑编号 / 占位）'];
+    return loose.slice(0, 5).flatMap(t => [`${t.label} · ${t.id}`, `定义：${t.definition}`, `状态：${t.status} · facets：${t.facets.join(',') || '—'}`]);
+  }
+  return hits.flatMap(t => [`${t.label} · ${t.id}`, `定义：${t.definition}`, `状态：${t.status} · facets：${t.facets.join(',') || '—'}`]);
+}
+
+function showTagSource(label: string, anchor: HTMLElement): void {
+  let tip = document.getElementById('tag-source-pop');
+  if (!tip) {
+    tip = element('div', 'tag-source-pop');
+    tip.id = 'tag-source-pop';
+    tip.setAttribute('role', 'dialog');
+    tip.setAttribute('aria-label', '标签来源');
+    document.body.append(tip);
+    document.addEventListener('click', (event) => {
+      const t = document.getElementById('tag-source-pop');
+      if (!t || t.hidden) return;
+      const el = event.target as Node | null;
+      if (el && (t.contains(el) || (el instanceof Element && el.closest('.tag-mark')))) return;
+      t.hidden = true;
+    });
+  }
+  tip.replaceChildren();
+  tip.append(element('strong', '', '标签来源（调试）'));
+  for (const line of tagSourceLines(label)) tip.append(element('p', '', line));
+  const close = element('button', '', '关闭'); close.type = 'button';
+  close.addEventListener('click', () => { tip!.hidden = true; });
+  tip.append(close);
+  tip.hidden = false;
+  const rect = anchor.getBoundingClientRect();
+  tip.style.left = `${Math.min(rect.left, window.innerWidth - 320)}px`;
+  tip.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 120)}px`;
+}
+
+function prose(target: HTMLElement, text: string): void {
+  target.replaceChildren(...text.split('\n\n').map(para => {
+    const node = element('p', '');
+    const re = /【([^【】]+)】/g;
+    let last = 0;
+    let match: RegExpExecArray | null;
+    while ((match = re.exec(para))) {
+      if (match.index > last) node.append(document.createTextNode(para.slice(last, match.index)));
+      const label = match[1]!;
+      const mark = element('button', 'tag-mark', `【${label}】`);
+      mark.type = 'button';
+      mark.title = '点击查看来源';
+      mark.setAttribute('aria-label', `标签 ${label}，点击查看来源`);
+      mark.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); showTagSource(label, mark); });
+      node.append(mark);
+      last = match.index + match[0].length;
+    }
+    if (last < para.length) node.append(document.createTextNode(para.slice(last)));
+    if (!node.childNodes.length) node.textContent = para;
+    return node;
+  }));
+}
 function actionButton(option: ActionOption, registry: Registry, compact = false, state?: GameState): HTMLButtonElement {
   const button = element('button', compact ? 'map-label' : 'action-button'); button.type = 'button';
   button.dataset.action = option.definition.id; button.dataset.group = option.definition.group;

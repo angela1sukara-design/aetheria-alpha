@@ -4,10 +4,30 @@
   "generatedFrom": "docs/tag-hub/outbox/2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md",
   "count": 12,
   "proseFillsApplied": 18,
+  "gameplayFilter": {
+    "worldTag": "worlds:setting.fantasy",
+    "gameplayKeys": [
+      "G1",
+      "G2",
+      "G3",
+      "G4",
+      "G5",
+      "G6",
+      "G7",
+      "G8"
+    ],
+    "note": "fantasy 小圈；combo 入口与可填槽按玩法大类过滤；试写到后回填。"
+  },
   "candidates": [
     {
       "sampleId": "C1",
       "comboKey": "触手黏液×手腕、腰侧×缠绕→被黏液束缚",
+      "gameplay": {
+        "key": "G1",
+        "id": "nsfw.gameplay.restraint",
+        "name": "束缚制服"
+      },
+      "fantasyNpcKind": "monster",
       "adultRequired": false,
       "lexiconRefs": [
         "lx.nsfw-material.b0005.0004",
@@ -36,6 +56,12 @@
     {
       "sampleId": "C2",
       "comboKey": "蛞蝓黏液×脚踝、大腿内侧×涂覆",
+      "gameplay": {
+        "key": "G2",
+        "id": "nsfw.gameplay.coat-tf",
+        "name": "材质覆层转化"
+      },
+      "fantasyNpcKind": "beast",
       "adultRequired": false,
       "lexiconRefs": [
         "lx.nsfw-material.b0002.0001",
@@ -60,13 +86,24 @@
     },
     {
       "sampleId": "C3",
-      "comboKey": "凝胶膜×外衣下摆×滴落包覆",
+      "comboKey": "凝胶膜×外衣下摆×滴落包覆→整身被涂覆→黏液化",
+      "gameplay": {
+        "key": "G2",
+        "id": "nsfw.gameplay.coat-tf",
+        "name": "材质覆层转化"
+      },
+      "fantasyNpcKind": "monster",
       "adultRequired": false,
       "lexiconRefs": [
         "lx.nsfw-material.b0001.0006",
-        "lx.nsfw-action.b0002.0003"
+        "lx.nsfw-action.b0002.0003",
+        "lx.nsfw-state.b0002.0002",
+        "lx.nsfw-tf.b0002.0001"
       ],
-      "proposedRuntimeTags": [],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s2",
+        "edit:tag.tf.slime"
+      ],
       "nodeId": "progression:node.encounter.nsfwcombo.c3",
       "fragment": "凝胶膜沿你的外衣下摆发生滴落包覆：半透明的膜状液滴挂住布料边缘，与黑胶题材环境可作描写对照，但这不等于战败外衣黏附已结算——coat.stuck 尚未写入。身体材料也未因此置换。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
       "adultFragment": null,
@@ -84,6 +121,12 @@
     {
       "sampleId": "C4",
       "comboKey": "活体黑胶×嘴唇×封口包覆",
+      "gameplay": {
+        "key": "G4",
+        "id": "nsfw.gameplay.sensory-seal",
+        "name": "口封感官剥夺"
+      },
+      "fantasyNpcKind": "monster",
       "adultRequired": true,
       "lexiconRefs": [
         "lx.nsfw-material.b0001.0001",
@@ -107,14 +150,23 @@
     },
     {
       "sampleId": "C5",
-      "comboKey": "虫巢黏液×身后×丝状滴落",
+      "comboKey": "虫巢黏液×身后×缠绕→被黏液束缚",
+      "gameplay": {
+        "key": "G1",
+        "id": "nsfw.gameplay.restraint",
+        "name": "束缚制服"
+      },
+      "fantasyNpcKind": "beast",
       "adultRequired": false,
       "lexiconRefs": [
         "lx.nsfw-material.b0005.0003",
         "lx.nsfw-locus.b0001.0005",
-        "lx.nsfw-action.b0002.0005"
+        "lx.nsfw-action.b0002.0001",
+        "lx.nsfw-state.b0002.0001"
       ],
-      "proposedRuntimeTags": [],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s1"
+      ],
       "nodeId": "progression:node.encounter.nsfwcombo.c5",
       "fragment": "虫巢黏液在你的身后发生丝状滴落。细丝带着细粒触感，沿背侧与衣料外侧淌下，触感清楚，却未写成任何腔内事实。战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
       "adultFragment": null,
@@ -131,16 +183,22 @@
     },
     {
       "sampleId": "C6",
-      "comboKey": "史莱姆黏液×倒挂姿态×倒挂→倒挂固定",
-      "adultRequired": false,
+      "comboKey": "史莱姆黏液×胯下×顶入→性器外露",
+      "gameplay": {
+        "key": "G3",
+        "id": "nsfw.gameplay.penetration",
+        "name": "侵犯插入"
+      },
+      "fantasyNpcKind": "monster",
+      "adultRequired": true,
       "lexiconRefs": [
         "lx.nsfw-material.b0008.0002",
-        "lx.nsfw-action.b0002.0006",
-        "lx.nsfw-state.b0002.0003",
-        "lx.nsfw-pose.b0002.0002"
+        "lx.nsfw-locus.b0001.0001",
+        "lx.nsfw-action.b0001.0012",
+        "lx.nsfw-state.b0002.0007"
       ],
       "proposedRuntimeTags": [
-        "edit:tag.state.s3"
+        "edit:tag.state.s4"
       ],
       "nodeId": "progression:node.encounter.nsfwcombo.c6",
       "fragment": "史莱姆黏液托住你的重心，完成一次倒挂；身体短暂呈倒挂拱身的姿态参考，半透明黏液拉出牵制的力线。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags——仍可挣，并非永久固定，亦非黏液化。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
@@ -149,22 +207,27 @@
         "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c6",
         "detailTextKey": "progression:text.node.encounter.nsfwcombo.c6.detail",
         "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c6.detail",
-        "adultTextKey": null,
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c6.adult",
         "startNodeId": "progression:node.encounter.nsfwcombo.c6",
         "detailNodeId": "progression:node.encounter.nsfwcombo.c6.detail",
-        "adultNodeId": null
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c6.adult"
       },
-      "adultTextKey": null
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c6.adult"
     },
     {
       "sampleId": "C7",
-      "comboKey": "触手黏液×脖颈、锁骨窝×缠绕→被黏液束缚",
-      "adultRequired": false,
+      "comboKey": "触手黏液×脖颈×触手封眼→被黏液束缚",
+      "gameplay": {
+        "key": "G4",
+        "id": "nsfw.gameplay.sensory-seal",
+        "name": "口封感官剥夺"
+      },
+      "fantasyNpcKind": "monster",
+      "adultRequired": true,
       "lexiconRefs": [
         "lx.nsfw-material.b0005.0004",
         "lx.nsfw-part.b0001.0007",
-        "lx.nsfw-part.b0001.0008",
-        "lx.nsfw-action.b0002.0001",
+        "lx.nsfw-action.b0013.0013",
         "lx.nsfw-state.b0002.0001"
       ],
       "proposedRuntimeTags": [
@@ -177,22 +240,29 @@
         "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c7",
         "detailTextKey": "progression:text.node.encounter.nsfwcombo.c7.detail",
         "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c7.detail",
-        "adultTextKey": null,
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c7.adult",
         "startNodeId": "progression:node.encounter.nsfwcombo.c7",
         "detailNodeId": "progression:node.encounter.nsfwcombo.c7.detail",
-        "adultNodeId": null
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c7.adult"
       },
-      "adultTextKey": null
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c7.adult"
     },
     {
       "sampleId": "C8",
-      "comboKey": "活体黑胶×胯下×涂覆→性器外露",
+      "comboKey": "活体黑胶×胯下×裙摆掀起→性器外露",
+      "gameplay": {
+        "key": "G6",
+        "id": "nsfw.gameplay.public-humiliation",
+        "name": "公开羞辱"
+      },
+      "fantasyNpcKind": "human",
       "adultRequired": true,
       "lexiconRefs": [
         "lx.nsfw-material.b0001.0001",
         "lx.nsfw-locus.b0001.0001",
-        "lx.nsfw-action.b0002.0002",
-        "lx.nsfw-state.b0002.0007"
+        "lx.nsfw-action.b0012.0011",
+        "lx.nsfw-state.b0002.0007",
+        "lx.nsfw-pose.b0008.0002"
       ],
       "proposedRuntimeTags": [
         "edit:tag.state.s4"
@@ -213,20 +283,20 @@
     },
     {
       "sampleId": "C9",
-      "comboKey": "蛞蝓黏液×大腿内侧、胯下×滴落包覆→整身被涂覆→黏液化",
+      "comboKey": "虫巢黏液×胯下×产卵",
+      "gameplay": {
+        "key": "G5",
+        "id": "nsfw.gameplay.oviposition",
+        "name": "产卵灌注"
+      },
+      "fantasyNpcKind": "beast",
       "adultRequired": true,
       "lexiconRefs": [
-        "lx.nsfw-material.b0002.0001",
-        "lx.nsfw-part.b0001.0021",
+        "lx.nsfw-material.b0005.0003",
         "lx.nsfw-locus.b0001.0001",
-        "lx.nsfw-action.b0002.0003",
-        "lx.nsfw-state.b0002.0002",
-        "lx.nsfw-tf.b0002.0001"
+        "lx.nsfw-action.b0004.0002"
       ],
-      "proposedRuntimeTags": [
-        "edit:tag.state.s2",
-        "edit:tag.tf.slime"
-      ],
+      "proposedRuntimeTags": [],
       "nodeId": "progression:node.encounter.nsfwcombo.c9",
       "fragment": "蛞蝓黏液在大腿内侧与胯下发生滴落包覆；接触可见。整身被涂覆、黏液化仅素材指向，未写入 story.tags。可核对组合或回安全。",
       "adultFragment": "蛞蝓黏液自你的大腿内侧滴落，包覆向胯下。液膜温热、略带韧性，沿皮肤往下淌，把内侧肌肤与胯间一并裹住；湿热与黏滞感清楚可辨。（成人门：adultOptional + 年龄≥18）整身被涂覆、黏液化皆为素材指向的推进目标，未写入 story.tags，亦未完成——仅用通用黏液化，禁止物种专条。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
@@ -244,6 +314,12 @@
     {
       "sampleId": "C10",
       "comboKey": "史莱姆黏液×嘴唇、脖颈×指令触发→催眠中",
+      "gameplay": {
+        "key": "G7",
+        "id": "nsfw.gameplay.dom-train",
+        "name": "主从调教"
+      },
+      "fantasyNpcKind": "human",
       "adultRequired": true,
       "lexiconRefs": [
         "lx.nsfw-material.b0008.0002",
@@ -271,18 +347,20 @@
     },
     {
       "sampleId": "C11",
-      "comboKey": "虫巢黏液×手腕、腰侧×封口包覆→被黏液束缚",
+      "comboKey": "触手黏液×胯下×触手灌入",
+      "gameplay": {
+        "key": "G5",
+        "id": "nsfw.gameplay.oviposition",
+        "name": "产卵灌注"
+      },
+      "fantasyNpcKind": "monster",
       "adultRequired": true,
       "lexiconRefs": [
-        "lx.nsfw-material.b0005.0003",
-        "lx.nsfw-part.b0001.0028",
-        "lx.nsfw-part.b0001.0016",
-        "lx.nsfw-action.b0002.0004",
-        "lx.nsfw-state.b0002.0001"
+        "lx.nsfw-material.b0005.0004",
+        "lx.nsfw-locus.b0001.0001",
+        "lx.nsfw-action.b0013.0016"
       ],
-      "proposedRuntimeTags": [
-        "edit:tag.state.s1"
-      ],
+      "proposedRuntimeTags": [],
       "nodeId": "progression:node.encounter.nsfwcombo.c11",
       "fragment": "虫巢黏液在手腕与腰侧发生封口包覆；接触可见。「被黏液束缚」仅素材指向，未写入 story.tags。可核对组合或回安全。",
       "adultFragment": "虫巢黏液缠裹你的手腕与腰侧，以封口包覆把缝隙糊严。黏丝带着细粒触感，勒紧腕骨与腰线，湿热压迫让挣动手感滞涩；呼吸被腰侧的黏膜轻轻顶住。（成人门：adultOptional + 年龄≥18）被黏液束缚仅素材指向，未写入 story.tags。战败外衣黏附、催眠与黏液化均未结算。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
@@ -299,13 +377,20 @@
     },
     {
       "sampleId": "C12",
-      "comboKey": "凝胶膜×胯下×缠绕→恍惚服从",
+      "comboKey": "凝胶膜×胯下×多根抵入→恍惚服从",
+      "gameplay": {
+        "key": "G8",
+        "id": "nsfw.gameplay.multi-siege",
+        "name": "多体围攻"
+      },
+      "fantasyNpcKind": "monster",
       "adultRequired": true,
       "lexiconRefs": [
         "lx.nsfw-material.b0001.0006",
         "lx.nsfw-locus.b0001.0001",
-        "lx.nsfw-action.b0002.0001",
-        "lx.nsfw-state.b0003.0002"
+        "lx.nsfw-action.b0008.0003",
+        "lx.nsfw-state.b0003.0002",
+        "lx.nsfw-pose.b0008.0001"
       ],
       "proposedRuntimeTags": [
         "edit:tag.state.s6"

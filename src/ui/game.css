@@ -126,3 +126,11 @@ input:focus-visible,summary:focus-visible{outline:2px solid var(--teal);outline-
 .prose p{white-space:pre-line}
 
 .discovery-section{margin:18px 0 8px;font-size:13px;letter-spacing:2px;color:var(--accent)}.npc-codex-card{border-left:2px solid #66557e;padding-left:12px}
+
+/* Debug：正文 tag 下划线与来源浮层 */
+.tag-mark{display:inline;padding:0;margin:0;border:0;border-bottom:1px dashed var(--teal);border-radius:0;background:transparent;color:inherit;font:inherit;line-height:inherit;cursor:pointer;text-decoration:none}
+.tag-mark:hover,.tag-mark:focus-visible{border-bottom-style:solid;color:var(--teal);background:#20302c55}
+.tag-source-pop{position:fixed;z-index:40;max-width:min(360px,calc(100vw - 24px));padding:14px 16px;background:#1a2030f7;border:1px solid #4a6a62;border-radius:10px;box-shadow:0 10px 36px #0007;color:var(--ink);font-size:12px;line-height:1.8}
+.tag-source-pop strong{display:block;margin-bottom:8px;color:var(--teal);letter-spacing:1px}
+.tag-source-pop p{margin:0 0 6px;color:#c5ccd8;overflow-wrap:anywhere}
+.tag-source-pop button{margin-top:8px;font-size:11px;min-height:32px;padding:6px 12px}

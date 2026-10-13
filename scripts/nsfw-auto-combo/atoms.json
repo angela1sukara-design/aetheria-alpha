@@ -7,7 +7,8 @@
     "不改词库审定状态；不伪造 foundation:*。",
     "定词挂前：定词+材质；转化只用通用黏液化/黑胶化。",
     "成人内容须 adultOptional + 年龄≥18；本组合器阶段 A 为遭遇反馈片段。",
-    "C7–C12：补全脖颈/锁骨/胯下/指令触发与成人可玩节点；优先可触发遭遇，不改审定。"
+    "玩法过滤按 8 大类（非三动作）；词条≠玩法≠数值。",
+    "fantasy 试玩：combo 入口按玩法暴露；遭遇对手可挂人/野兽/怪物图鉴。"
   ],
   "materials": [
     {
@@ -188,6 +189,54 @@
       "kind": "L",
       "batch": "nsfw-action.b0003.json",
       "adultRequired": true
+    },
+    {
+      "key": "A8",
+      "id": "lx.nsfw-action.b0001.0012",
+      "name": "顶入",
+      "kind": "L",
+      "batch": "nsfw-action.b0001.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A9",
+      "id": "lx.nsfw-action.b0004.0002",
+      "name": "产卵",
+      "kind": "L",
+      "batch": "nsfw-action.b0004.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A10",
+      "id": "lx.nsfw-action.b0013.0016",
+      "name": "触手灌入",
+      "kind": "L",
+      "batch": "nsfw-action.b0013.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A11",
+      "id": "lx.nsfw-action.b0013.0013",
+      "name": "触手封眼",
+      "kind": "L",
+      "batch": "nsfw-action.b0013.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A12",
+      "id": "lx.nsfw-action.b0008.0003",
+      "name": "多根抵入",
+      "kind": "L",
+      "batch": "nsfw-action.b0008.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A13",
+      "id": "lx.nsfw-action.b0012.0011",
+      "name": "裙摆掀起",
+      "kind": "L",
+      "batch": "nsfw-action.b0012.json",
+      "adultRequired": true
     }
   ],
   "states": [
@@ -243,11 +292,25 @@
       "id": "lx.nsfw-pose.b0002.0002",
       "name": "倒挂拱身",
       "kind": "L"
+    },
+    {
+      "key": "Po2",
+      "id": "lx.nsfw-pose.b0008.0001",
+      "name": "围拢侍奉",
+      "kind": "L"
+    },
+    {
+      "key": "Po3",
+      "id": "lx.nsfw-pose.b0008.0002",
+      "name": "隔窗展示位",
+      "kind": "L"
     }
   ],
   "samples": [
     {
       "id": "C1",
+      "gameplay": "G1",
+      "fantasyNpcKind": "monster",
       "material": "M2",
       "targets": [
         "Pt5",
@@ -259,10 +322,12 @@
       "optionalPose": null,
       "defeatHook": "defeat.coat|hands",
       "adultRequired": false,
-      "title": "触手黏液缠住腕与腰"
+      "title": "触手黏液缠住腕与腰（束缚制服）"
     },
     {
       "id": "C2",
+      "gameplay": "G2",
+      "fantasyNpcKind": "beast",
       "material": "M1",
       "targets": [
         "Pt7",
@@ -274,23 +339,27 @@
       "optionalPose": null,
       "defeatHook": "proposed.coat.advance",
       "adultRequired": false,
-      "title": "蛞蝓黏液涂覆腿下段"
+      "title": "蛞蝓黏液涂覆腿下段（材质覆层）"
     },
     {
       "id": "C3",
+      "gameplay": "G2",
+      "fantasyNpcKind": "monster",
       "material": "M6",
       "targets": [],
       "targetScene": "外衣下摆",
       "action": "A3",
-      "optionalState": null,
-      "optionalTf": null,
+      "optionalState": "S2",
+      "optionalTf": "Tf1",
       "optionalPose": null,
       "defeatHook": "defeat.coat+profile.gel",
       "adultRequired": false,
-      "title": "凝胶膜滴落包覆下摆"
+      "title": "凝胶膜滴落包覆下摆并指向黏液化（覆层转化）"
     },
     {
       "id": "C4",
+      "gameplay": "G4",
+      "fantasyNpcKind": "monster",
       "material": "M5",
       "targets": [
         "Pt1"
@@ -301,81 +370,92 @@
       "optionalPose": null,
       "defeatHook": "assess+signal",
       "adultRequired": true,
-      "title": "活体黑胶封口包覆"
+      "title": "活体黑胶封口包覆（口封感官剥夺）"
     },
     {
       "id": "C5",
+      "gameplay": "G1",
+      "fantasyNpcKind": "beast",
       "material": "M3",
       "targets": [
         "Lc2"
-      ],
-      "action": "A5",
-      "optionalState": null,
-      "optionalTf": null,
-      "optionalPose": null,
-      "defeatHook": "proposed.encounter",
-      "adultRequired": false,
-      "title": "虫巢黏液丝状滴落身后"
-    },
-    {
-      "id": "C6",
-      "material": "M4",
-      "targets": [],
-      "action": "A6",
-      "optionalState": "S3",
-      "optionalTf": null,
-      "optionalPose": "Po1",
-      "defeatHook": "proposed.hang",
-      "adultRequired": false,
-      "title": "史莱姆黏液倒挂固定",
-      "targetScene": "倒挂姿态"
-    },
-    {
-      "id": "C7",
-      "material": "M2",
-      "targets": [
-        "Pt2",
-        "Pt3"
       ],
       "action": "A1",
       "optionalState": "S1",
       "optionalTf": null,
       "optionalPose": null,
-      "defeatHook": "defeat.hands|proposed.coat.advance",
+      "defeatHook": "proposed.encounter",
       "adultRequired": false,
-      "title": "触手黏液缠住脖颈与锁骨"
+      "title": "虫巢黏液缠绕身后（束缚制服）"
     },
     {
-      "id": "C8",
-      "material": "M5",
+      "id": "C6",
+      "gameplay": "G3",
+      "fantasyNpcKind": "monster",
+      "material": "M4",
       "targets": [
         "Lc1"
       ],
-      "action": "A2",
+      "action": "A8",
       "optionalState": "S4",
       "optionalTf": null,
       "optionalPose": null,
       "defeatHook": "assess+adult_optional",
       "adultRequired": true,
-      "title": "活体黑胶涂覆胯下"
+      "title": "史莱姆黏液顶入胯下（侵犯插入）"
+    },
+    {
+      "id": "C7",
+      "gameplay": "G4",
+      "fantasyNpcKind": "monster",
+      "material": "M2",
+      "targets": [
+        "Pt2"
+      ],
+      "action": "A11",
+      "optionalState": "S1",
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "defeat.hands|proposed.coat.advance",
+      "adultRequired": true,
+      "title": "触手黏液封眼并勒颈（口封感官剥夺）"
+    },
+    {
+      "id": "C8",
+      "gameplay": "G6",
+      "fantasyNpcKind": "human",
+      "material": "M5",
+      "targets": [
+        "Lc1"
+      ],
+      "action": "A13",
+      "optionalState": "S4",
+      "optionalTf": null,
+      "optionalPose": "Po3",
+      "defeatHook": "assess+adult_optional",
+      "adultRequired": true,
+      "title": "活体黑胶掀起裙摆于隔窗展示（公开羞辱）"
     },
     {
       "id": "C9",
-      "material": "M1",
+      "gameplay": "G5",
+      "fantasyNpcKind": "beast",
+      "material": "M3",
       "targets": [
-        "Pt6",
         "Lc1"
       ],
-      "action": "A3",
-      "optionalState": "S2",
-      "optionalTf": "Tf1",
+      "action": "A9",
+      "optionalState": null,
+      "optionalTf": null,
       "optionalPose": null,
-      "defeatHook": "proposed.tf.slime",
+      "defeatHook": "proposed.oviposition",
       "adultRequired": true,
-      "title": "蛞蝓黏液滴落包覆腿根并启动黏液化"
+      "title": "虫巢黏液产卵于胯下（产卵灌注）"
     },
     {
       "id": "C10",
+      "gameplay": "G7",
+      "fantasyNpcKind": "human",
       "material": "M4",
       "targets": [
         "Pt1",
@@ -385,38 +465,105 @@
       "optionalState": "S5",
       "optionalTf": null,
       "optionalPose": null,
-      "defeatHook": "proposed.mental.chain",
+      "defeatHook": "proposed.dom.train",
       "adultRequired": true,
-      "title": "史莱姆黏液指令触发唇与颈"
+      "title": "史莱姆黏液指令触发唇与颈（主从调教）"
     },
     {
       "id": "C11",
-      "material": "M3",
+      "gameplay": "G5",
+      "fantasyNpcKind": "monster",
+      "material": "M2",
       "targets": [
-        "Pt5",
-        "Pt4"
+        "Lc1"
       ],
-      "action": "A4",
-      "optionalState": "S1",
+      "action": "A10",
+      "optionalState": null,
       "optionalTf": null,
       "optionalPose": null,
-      "defeatHook": "assess+signal",
+      "defeatHook": "proposed.oviposition",
       "adultRequired": true,
-      "title": "虫巢黏液封口包覆腕腰"
+      "title": "触手黏液灌入胯下（产卵灌注）"
     },
     {
       "id": "C12",
+      "gameplay": "G8",
+      "fantasyNpcKind": "monster",
       "material": "M6",
       "targets": [
         "Lc1"
       ],
-      "action": "A1",
+      "action": "A12",
       "optionalState": "S6",
       "optionalTf": null,
-      "optionalPose": null,
+      "optionalPose": "Po2",
       "defeatHook": "defeat.coat+profile.gel",
       "adultRequired": true,
-      "title": "凝胶膜缠绕胯下并恍惚服从"
+      "title": "凝胶膜多根抵入并围拢侍奉（多体围攻）"
     }
-  ]
+  ],
+  "gameplayCategories": [
+    {
+      "key": "G1",
+      "id": "nsfw.gameplay.restraint",
+      "name": "束缚制服",
+      "adultDefault": false
+    },
+    {
+      "key": "G2",
+      "id": "nsfw.gameplay.coat-tf",
+      "name": "材质覆层转化",
+      "adultDefault": false
+    },
+    {
+      "key": "G3",
+      "id": "nsfw.gameplay.penetration",
+      "name": "侵犯插入",
+      "adultDefault": true
+    },
+    {
+      "key": "G4",
+      "id": "nsfw.gameplay.sensory-seal",
+      "name": "口封感官剥夺",
+      "adultDefault": true
+    },
+    {
+      "key": "G5",
+      "id": "nsfw.gameplay.oviposition",
+      "name": "产卵灌注",
+      "adultDefault": true
+    },
+    {
+      "key": "G6",
+      "id": "nsfw.gameplay.public-humiliation",
+      "name": "公开羞辱",
+      "adultDefault": true
+    },
+    {
+      "key": "G7",
+      "id": "nsfw.gameplay.dom-train",
+      "name": "主从调教",
+      "adultDefault": true
+    },
+    {
+      "key": "G8",
+      "id": "nsfw.gameplay.multi-siege",
+      "name": "多体围攻",
+      "adultDefault": true
+    }
+  ],
+  "playtestFilter": {
+    "worldTag": "worlds:setting.fantasy",
+    "gameplayKeys": [
+      "G1",
+      "G2",
+      "G3",
+      "G4",
+      "G5",
+      "G6",
+      "G7",
+      "G8"
+    ],
+    "note": "fantasy 小圈；combo 入口与可填槽按玩法大类过滤；试写到后回填。"
+  }
 }

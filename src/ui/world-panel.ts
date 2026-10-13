@@ -13,9 +13,12 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
   const message = (text: string) => { byId('world-message').textContent = text; };
   const profiles = options.defaults.worldProfiles === undefined ? [] : parseWorldProfiles(options.defaults.worldProfiles);
   const theme = byId<HTMLSelectElement>('world-theme');
+  // 小范围试玩若只剩单一题材，去掉「按种子选择」空项并锁定该题材。
+  if (profiles.length === 1) theme.replaceChildren();
   for (const profile of profiles) { const option = document.createElement('option'); option.value = profile.tag; option.textContent = profile.name; theme.append(option); }
-  theme.disabled = !profiles.length;
-  const describe = () => { byId('world-theme-description').textContent = profiles.find(p => p.tag === theme.value)?.description ?? '根据种子确定世界题材；湿润、干燥、寒冷等环境在世界内部生成。'; };
+  if (profiles.length === 1) { theme.value = profiles[0]!.tag; theme.disabled = true; }
+  else theme.disabled = !profiles.length;
+  const describe = () => { byId('world-theme-description').textContent = profiles.find(p => p.tag === theme.value)?.description ?? (profiles.length === 1 ? profiles[0]!.description : '根据种子确定世界题材；湿润、干燥、寒冷等环境在世界内部生成。'); };
   theme.addEventListener('change', describe); describe();
   const persist = () => { if (options.lockDefaults) return; try { localStorage.setItem('aetheria-generation-library', JSON.stringify({ rules, references, extraContent })); } catch { message('参考库已在当前会话启用；本地持久化暂不可用。'); } };
   if (!options.lockDefaults) {

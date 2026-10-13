@@ -91,9 +91,15 @@ export function combine(atoms, spec) {
 
   const fragment = fillStageA(slots, { adultRequired, optionalState, optionalPose });
 
+  const gameplay = spec.gameplay
+    ? (atoms.gameplayCategories ?? []).find((g) => g.key === spec.gameplay) ?? { key: spec.gameplay, name: spec.gameplay }
+    : null;
+
   return {
     sampleId: spec.sampleId ?? null,
     title: spec.title ?? `${material.label}·${action.name}`,
+    gameplay: gameplay ? { key: gameplay.key, id: gameplay.id ?? null, name: gameplay.name } : null,
+    fantasyNpcKind: spec.fantasyNpcKind ?? null,
     comboKey,
     material,
     targets,
@@ -134,8 +140,12 @@ function fillStageA(slots, { adultRequired, optionalState, optionalPose }) {
 }
 
 /** 制作卡 §5 六样例 */
-export function sampleCombos(atoms) {
-  return atoms.samples.map((s) =>
+export function sampleCombos(atoms, opts = {}) {
+  const allow = opts.gameplayKeys ?? atoms.playtestFilter?.gameplayKeys ?? null;
+  const samples = allow
+    ? atoms.samples.filter((s) => !s.gameplay || allow.includes(s.gameplay))
+    : atoms.samples;
+  return samples.map((s) =>
     combine(atoms, {
       material: s.material,
       targets: s.targets,
@@ -148,8 +158,15 @@ export function sampleCombos(atoms) {
       title: s.title,
       defeatHook: s.defeatHook,
       adultRequired: s.adultRequired,
+      gameplay: s.gameplay,
+      fantasyNpcKind: s.fantasyNpcKind,
     }),
   );
+}
+
+/** 按 8 玩法大类列出入口（供制作/可填槽）。 */
+export function listGameplayCategories(atoms) {
+  return atoms.gameplayCategories ?? [];
 }
 
 /**
@@ -182,6 +199,8 @@ export function enumerateCombos(atoms, opts = {}) {
 export function toEncounterCandidate(combo, ids) {
   const detail = [
     `组合键：${combo.comboKey}`,
+    combo.gameplay ? `玩法 ${combo.gameplay.key}（${combo.gameplay.name}）` : null,
+    combo.fantasyNpcKind ? `fantasy NPC 种类占位：${combo.fantasyNpcKind}` : null,
     `材质 ${combo.material.id}（${combo.material.label}）`,
     `目标 ${combo.targets.map((t) => `${t.id}/${t.name}`).join('、') || combo.targetScene}`,
     `动作 ${combo.action.id}（${combo.action.name}）`,
@@ -196,6 +215,8 @@ export function toEncounterCandidate(combo, ids) {
   return {
     sampleId: combo.sampleId,
     comboKey: combo.comboKey,
+    gameplay: combo.gameplay ?? null,
+    fantasyNpcKind: combo.fantasyNpcKind ?? null,
     adultRequired: combo.adultRequired,
     lexiconRefs: combo.lexiconRefs,
     proposedRuntimeTags: combo.proposedRuntimeTags,
