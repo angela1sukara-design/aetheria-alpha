@@ -38,7 +38,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
-    for (const type of ['narrativeNodes','narrativeProfiles'] as const) for (const value of p[type]??[]) add(p,value.id,type,value);
+    for (const type of ['narrativeNodes','narrativeProfiles','environmentEnemyRules'] as const) for (const value of p[type]??[]) add(p,value.id,type,value);
   }
   function add(p: ContentPack, id: string, type: string, value: unknown): void {
     if (id.split(':')[0] !== p.manifest.namespace) fail(p, 'NAMESPACE_OWNERSHIP', `/${type}/${id}`, '不能定义其他包的 ID。', id);
@@ -77,7 +77,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
-    if(['narrative.start','narrative.choose','adventure.change','progression.act'].includes(e.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
+    if(['narrative.start','narrative.choose','adventure.change','progression.act','combat.encounter'].includes(e.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
     if (e.op === 'resident.remember') {
       checkResident(p, e.residentId, path); ref(p, e.memoryId, 'texts', path);
       const event = context ? definitions.get(context.eventId)?.value as ContentPack['events'][number] | undefined : undefined;

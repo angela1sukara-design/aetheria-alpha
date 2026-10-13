@@ -78,6 +78,7 @@ export type DistrictEffect =
   | { op: 'world.encounter'; events?: boolean }
   | { op: 'resident.talk' | 'resident.help' }
   | { op: 'combat.start'; id: Id }
+  | { op: 'combat.encounter' }
   | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' | 'skill' }
   | { op: 'scene.start'; id: Id }
   | { op: 'scene.act'; move: 'pose' | 'contact' | 'release' | 'pause' | 'resume' | 'exit'; poseId?: string }
@@ -110,6 +111,14 @@ export interface CombatState {
   /** 本回合剩余 AP；开回合 = min(10, core:actionPoints) */
   playerAp: number;
   guarding: boolean;
+  /** 地点层环境选敌规则；缺省表示直接 combat.start 固定敌人 */
+  selectionRuleId?: Id;
+  /** 规则覆盖的显示名 */
+  enemyName?: string;
+  /** 规则注入的战败 tag；缺省回退 NarrativeProfile.defeatTags */
+  defeatTags?: { role: 'player' | 'opponent' | 'environment'; tagId: Id }[];
+  /** 规则覆盖的战斗报酬 */
+  reward?: number;
 }
 export interface DistrictState {
   version: 1; profile: { name: string; ageYears: number; created: boolean; adultOptional: boolean };

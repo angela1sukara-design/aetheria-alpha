@@ -1062,7 +1062,11 @@
       "id": "foundation:location.workshop",
       "locationId": "district:location.workshop",
       "service": "workshop",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.mechanical",
+        "foundation:theme.equipment"
+      ]
     }
   ],
   "derivedTags": [

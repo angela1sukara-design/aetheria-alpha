@@ -26,6 +26,7 @@ import {
 } from './numerics.ts';
 import { transformProgress } from './transform-perception.ts';
 import { adventure, narrativeActions, startNarrative } from './narrative.ts';
+import { matchingEnvironmentEnemyRules, overlayEnvironmentEnemy, selectEnvironmentEnemyRule } from './environment-enemies.ts';
 
 export const SANITY_BREAK_EVENT = 'district:event.sanity_break' as Id;
 const STAMINA_ID = 'core:stamina' as Id;
@@ -206,20 +207,31 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
       c.resolvedTexts.push('对方点头后，你们建立短暂的手部接触。双方的对应部位被占用，直到释放、转身、暂停或退出。');
     }
     scene.turn++;
-  } else if (e.op === 'combat.start') {
-    const enemy = r.enemies.find(x => x.id === e.id);
-    if (!enemy || d.combat || d.scene || s.activeEventStack.length) throw new RuleError('COMBAT_CONTEXT', '现在不能开始战斗。');
+  } else if (e.op === 'combat.start' || e.op === 'combat.encounter') {
+    if (d.combat || d.scene || s.activeEventStack.length) throw new RuleError('COMBAT_CONTEXT', '现在不能开始战斗。');
     if (s.player.variables[PLAYER_HP_ID]! < 1) throw new RuleError('NEED_RECOVERY', '需要先休息恢复。');
-    const runtime = resolveEnemyRuntime(enemy);
+    const rule = e.op === 'combat.encounter'
+      ? selectEnvironmentEnemyRule(s, r, `combat:encounter:${c.transactionId}`)
+      : selectEnvironmentEnemyRule(s, r, `combat:overlay:${c.transactionId}:${e.id}`, e.id);
+    if (e.op === 'combat.encounter' && !rule) throw new RuleError('NO_ENV_ENEMY', '当前地点环境没有可匹配的敌人。');
+    const enemyId = e.op === 'combat.encounter' ? rule!.enemyId : e.id;
+    const enemy = r.enemies.find(x => x.id === enemyId);
+    if (!enemy) throw new RuleError('COMBAT_CONTEXT', '现在不能开始战斗。');
+    // combat.start 无匹配规则时仍用原 EnemyDef；有规则则注入数值与 defeatTags。
+    const applied = overlayEnvironmentEnemy(enemy, resolveEnemyRuntime({ ...enemy, hp: rule?.hp ?? enemy.hp }), rule);
     d.combat = {
-      enemyId: e.id,
-      hp: enemy.hp,
+      enemyId,
+      hp: applied.hp,
       turn: 0,
       log: [],
-      enemy: runtime,
+      enemy: applied.runtime,
       playerAp: refreshPlayerAp(s),
       guarding: false,
+      ...(applied.selectionRuleId ? { selectionRuleId: applied.selectionRuleId } : {}),
+      ...(rule ? { enemyName: applied.name, reward: applied.reward } : {}),
+      ...(applied.defeatTags ? { defeatTags: applied.defeatTags } : {}),
     };
+    if (rule) c.resolvedTexts.push(`环境条件匹配：${applied.name}（规则 ${rule.id}）。`);
   } else if (e.op === 'combat.turn') {
     const battle = d.combat;
     if (!battle) throw new RuleError('NO_COMBAT', '当前没有战斗。');
@@ -235,7 +247,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     apply([{ op: 'clock.advance', minutes: 5 }], s, r, c);
     const end = (result: 'victory' | 'defeat' | 'escape') => {
       d.combat = null;
-      if(r.narrativeNodes.length){const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);a.lastCombat={enemyId:enemy.id,enemyName:enemy.name,result,turn:battle.turn+1,tags:result==='defeat'?[...(profile?.defeatTags??[])]:[]};}
+      if(r.narrativeNodes.length){const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);const defeat=battle.defeatTags??profile?.defeatTags??[];a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:result==='defeat'?[...defeat]:[]};}
       c.resolvedTexts.push(result === 'victory' ? '你赢得了交锋。' : result === 'defeat' ? '你失去继续战斗的力气，后续仍有恢复路径。' : '你找到空隙离开了交锋。');
       let eventId = result === 'victory' ? enemy.victoryEventId : result === 'defeat' ? enemy.defeatEventId : enemy.escapeEventId;
       if (result === 'defeat') {
@@ -333,7 +345,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     if (battle.hp === 0) {
       c.resolvedTexts.push(`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}\n行动：${e.move==='skill'?'技能击':'进攻'}\n造成效果：${line} 敌方生命归零。`);
       const before = s.player.variables['core:money']!;
-      let reward=enemy.reward;
+      let reward=battle.reward??enemy.reward;
       if(r.narrativeNodes.length){const a=adventure(s),day=Math.floor(s.clock.totalMinutes/1440),key=`${day}:reward:${enemy.id}`;if(a.daily[key]){reward=0;c.resolvedTexts.push('今天该对手的奖励已领取，本次不重复结算。');}else{a.daily[key]=1;a.victories[enemy.id]=(a.victories[enemy.id]??0)+1;a.safety++;a.influence++;a.reputation++;}}
       s.player.variables['core:money'] = Math.min(r.variable('core:money').max, before + reward);
       c.changes.push({ label: '战斗报酬', before, after: s.player.variables['core:money']! });
@@ -398,7 +410,11 @@ export function districtOptions(s: GameState, r: Registry, actions: ActionDef[])
   const story=narrativeActions(s,r);if(story)return story;
   if (s.district.combat) return [...runtime.filter(a => a.effects.some(e => e.op === 'combat.turn')), ...r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn')), ...settings];
   if (s.district.scene) return [...runtime.filter(a => a.effects.some(e => e.op === 'scene.act' && (s.district!.scene!.phase === 'active' ? e.move !== 'resume' : ['resume', 'exit'].includes(e.move)))), ...r.globalActions().filter(a=>a.surface==='body'), ...settings];
-  return [...actions, ...settings].filter(a=>!a.effects.some(e=>e.op==='narrative.choose'||e.op==='combat.turn')&&(!s.activeEventStack.length||!!a.context||!a.id.startsWith('progression:')&&!a.effects.some(e=>e.op==='narrative.start'||e.op==='progression.act'||e.op==='combat.start')));
+  return [...actions, ...settings].filter(a=>{
+    if(a.effects.some(e=>e.op==='narrative.choose'||e.op==='combat.turn'))return false;
+    if(a.effects.some(e=>e.op==='combat.encounter')&&!matchingEnvironmentEnemyRules(s,r).length)return false;
+    return !s.activeEventStack.length||!!a.context||!a.id.startsWith('progression:')&&!a.effects.some(e=>e.op==='narrative.start'||e.op==='progression.act'||e.op==='combat.start'||e.op==='combat.encounter');
+  });
 }
 
 export function districtText(s: GameState, r: Registry, base: string): string {
@@ -410,7 +426,7 @@ export function districtText(s: GameState, r: Registry, base: string): string {
     const player=playerCombatStats(s,r);
     const labels=(ids:Id[])=>ids.map(id=>`【${r.tag(id).label}】`).join('')||'无已登记标签';
     const profile=r.narrativeProfiles.find(p=>p.enemyId===e.id);
-    return `交锋：${e.name}\n\n我方：生命${s.player.variables[PLAYER_HP_ID]}；体力${s.player.variables[STAMINA_ID]}；攻击${player.attack}；防御${player.defense}；速度${player.speed}；技能强度${player.skillPower}；技能资源${s.player.variables[SKILL_RES_ID]}；行动点${s.player.variables[AP_ID]}\n我方Tag：${labels(derivedSemantics(s,r,{entity:{kind:'player'}}))}\n敌方：生命${b.hp}/${hpMax}；攻击${b.enemy.attack}；防御${b.enemy.defense}；速度${b.enemy.speed}；每回合行动${b.enemy.actionsPerTurn}次\n敌方Tag：${labels([...(profile?.tags??[]),...(profile?.goals.slice(0,1)??[])])}\n\n第${b.turn+1}回合；下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
+    return `交锋：${b.enemyName??e.name}\n\n我方：生命${s.player.variables[PLAYER_HP_ID]}；体力${s.player.variables[STAMINA_ID]}；攻击${player.attack}；防御${player.defense}；速度${player.speed}；技能强度${player.skillPower}；技能资源${s.player.variables[SKILL_RES_ID]}；行动点${s.player.variables[AP_ID]}\n我方Tag：${labels(derivedSemantics(s,r,{entity:{kind:'player'}}))}\n敌方：生命${b.hp}/${hpMax}；攻击${b.enemy.attack}；防御${b.enemy.defense}；速度${b.enemy.speed}；每回合行动${b.enemy.actionsPerTurn}次\n敌方Tag：${labels([...(profile?.tags??[]),...(profile?.goals.slice(0,1)??[])])}\n\n第${b.turn+1}回合；下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
   }
   if (s.district.scene) {
     const scene = s.district.scene, i = r.interactions.find(x => x.id === scene.definitionId)!, p = i.poses.find(p => p.id === scene.poseId)!;

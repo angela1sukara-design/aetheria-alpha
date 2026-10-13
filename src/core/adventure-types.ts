@@ -1,6 +1,6 @@
 import type { Condition, Effect, Id } from './types.ts';
 import type { EntityRef } from './query-types.ts';
-import type { EquipmentSlot } from './district-types.ts';
+import type { EquipmentSlot, EnemyCombatStats } from './district-types.ts';
 
 export const NARRATIVE_KINDS = ['defeat', 'encounter', 'exploration', 'daily', 'conversation', 'quest', 'transformation', 'ending'] as const;
 export type NarrativeKind = typeof NARRATIVE_KINDS[number];
@@ -17,6 +17,28 @@ export interface AdventureState {
   story: NarrativeState | null; journal: { at: number; title: string; text: string }[];
   lastCombat: { enemyId: Id; enemyName: string; result: 'victory' | 'defeat' | 'escape'; turn: number; tags: ScopedTag[] } | null;
 }
-export interface AdventureDefinitions { narrativeProfiles?: NarrativeProfile[]; narrativeNodes?: NarrativeNode[] }
+/** 地点层：环境 tag 组合 → 候选敌人 + 战斗/战败覆盖。词条≠玩法≠数值。 */
+export interface EnvironmentEnemyRule {
+  id: Id;
+  enemyId: Id;
+  /** 当前地点环境 tag 须全部具备 */
+  requiresTags: Id[];
+  excludesTags?: Id[];
+  weight: number;
+  priority?: number;
+  /** 显示名覆盖；缺省用 EnemyDef.name */
+  name?: string;
+  /** 覆盖 EnemyDef.hp / reward / combat 字段（开打时注入运行时） */
+  hp?: number;
+  reward?: number;
+  combat?: Partial<EnemyCombatStats>;
+  /** 若填写则战败写入这些 tag（可进不同战败节点）；缺省仍用 NarrativeProfile.defeatTags */
+  defeatTags?: ScopedTag[];
+}
+export interface AdventureDefinitions {
+  narrativeProfiles?: NarrativeProfile[];
+  narrativeNodes?: NarrativeNode[];
+  environmentEnemyRules?: EnvironmentEnemyRule[];
+}
 export type AdventureEffect = { op: 'narrative.start'; kind: NarrativeKind; profileId?: Id } | { op: 'narrative.choose'; index: number } | { op: 'adventure.change'; field: AdventureField; amount: number } | { op: 'progression.act'; move: 'train' | 'buy' | 'order' | 'invest' | 'patrol' | 'aid' | 'reconcile'; id?: Id };
 export type AdventureCondition = { op: 'adventure.compare'; field: AdventureField | 'victories'; comparison: 'eq' | 'gte' | 'lte'; value: number } | { op: 'progression.available'; move: 'train' | 'buy' | 'order' | 'invest' | 'patrol' | 'aid' | 'reconcile'; id?: Id } | {op:'narrative.tag';role:ScopedTag['role'];id:Id;value:boolean};

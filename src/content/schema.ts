@@ -74,6 +74,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'resident.remember') { const x = obj(value, path, ['op', 'residentId', 'memoryId']); str(x.residentId, path); id(x.memoryId, path); }
     else if (op === 'world.encounter') { const x = obj(value,path,['op','events']); if (x.events !== undefined) boolean(x.events,path); }
     else if (['resident.talk','resident.help','equipment.remove'].includes(String(op))) obj(value,path,['op']);
+    else if (op === 'combat.encounter') obj(value,path,['op']);
     else if (['combat.start','scene.start','equipment.wear'].includes(String(op))) { const x = obj(value,path,['op','id']); id(x.id,path); }
     else if (op === 'combat.turn') { const x = obj(value,path,['op','move']); choice(x.move,path,['attack','guard','recover','flee','skill']); }
     else if (op === 'scene.act') { const x = obj(value,path,['op','move','poseId']); choice(x.move,path,['pose','contact','release','pause','resume','exit']); if(x.poseId !== undefined) str(x.poseId,path); }
@@ -85,7 +86,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'progression.act') {const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path);}
     else fail(`${path}/op`, '未知或未实现的效果操作符。', 'UNSUPPORTED_OPCODE');
   }
-  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'narrativeProfiles','narrativeNodes']);
+  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'narrativeProfiles','narrativeNodes','environmentEnemyRules']);
   const m = obj(root.manifest, '/manifest', ['id', 'namespace', 'version', 'schemaVersion', 'engineApiVersion', 'author', 'status', 'dependencies', 'requiresCapabilities', 'migrations']);
   if (typeof m.id === 'string') packId = m.id;
   str(m.id, '/manifest/id'); str(m.author, '/manifest/author');

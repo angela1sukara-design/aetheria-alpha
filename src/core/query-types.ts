@@ -15,7 +15,7 @@ export interface FoundationDefinitions {
   /** 旧定义不改字节；唯一版本化扩展为其提供默认参数。禁止两个 profile 覆盖同一部件。 */
   partProfiles?: { id: Id; partId: Id; defaults: PartAttributes }[];
   npcBodies?: { id: Id; npcId: Id; bodyTemplateId: Id; patchIds: Id[] }[];
-  locationProfiles?: { id: Id; locationId: Id; service?: 'home' | 'market' | 'workshop' | 'clinic' | 'commons'; light?: 'lit' | 'dark' }[];
+  locationProfiles?: { id: Id; locationId: Id; service?: 'home' | 'market' | 'workshop' | 'clinic' | 'commons'; light?: 'lit' | 'dark'; /** 地点层环境语义；玩法匹配用，不是词库审定字段 */ tags?: Id[] }[];
   residentAdaptations?: { id: Id; templateId: Id; workCapabilities: BodyCapability[]; mobility: 'walk' | 'assisted' }[];
   derivedTags?: { id: Id; tagId: Id; subject: 'entity' | 'location' | 'world'; when: Condition }[];
 }

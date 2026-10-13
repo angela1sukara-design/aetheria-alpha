@@ -41,7 +41,7 @@
 
 ## 故事匹配与写作接口
 
-真实契约在 `src/core/adventure-types.ts`，内容样例在 `content/adventure/pack.json`，生成源在 `scripts/build-adventure-content.mjs`。修改内置内容应改生成源再构建，避免下一次构建覆盖手改的JSON。
+真实契约在 `src/core/adventure-types.ts`，内容样例在 `content/adventure/pack.json`，生成源在 `scripts/build-adventure-content.mjs`。修改内置内容应改生成源再构建，避免下一次构建覆盖手改的JSON。地点层环境选敌见 [environment-enemy-selection.md](./environment-enemy-selection.md)。
 
 `NarrativeProfile`分别保存敌人/人物引用、标签、目标列表、倾向及权重；目前目标列表首项作为本次主要目标。`defeatTags`是战败结算实际写入的情境事实。倾向权重帮助在可行候选中选择，不是动作规划器，也不创造身体能力。
 

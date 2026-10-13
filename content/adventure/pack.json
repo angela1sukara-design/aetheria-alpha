@@ -907,6 +907,19 @@
         }
       ],
       "resultText": "progression:text.action.narrative.ending"
+    },
+    {
+      "id": "progression:action.encounter.env",
+      "label": "调查危险环境",
+      "hint": "按当前地点环境 tag 匹配敌人；可覆盖数值与战败节点",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.encounter"
+        }
+      ],
+      "resultText": "progression:text.action.encounter.env"
     }
   ],
   "events": [
@@ -1149,7 +1162,8 @@
     "progression:text.action.narrative.conversation": "与在场居民继续交谈。",
     "progression:text.action.narrative.quest": "核对当前进展。",
     "progression:text.action.narrative.transformation": "练习适应当前身体。",
-    "progression:text.action.narrative.ending": "回顾已经留下的结果。"
+    "progression:text.action.narrative.ending": "回顾已经留下的结果。",
+    "progression:text.action.encounter.env": "调查危险环境。"
   },
   "contributions": [
     {
@@ -1194,7 +1208,8 @@
         "progression:action.narrative.conversation",
         "progression:action.narrative.quest",
         "progression:action.narrative.transformation",
-        "progression:action.narrative.ending"
+        "progression:action.narrative.ending",
+        "progression:action.encounter.env"
       ]
     }
   ],
@@ -3124,6 +3139,149 @@
       ]
     }
   ],
+  "environmentEnemyRules": [
+    {
+      "id": "progression:env-enemy.gel.canal",
+      "enemyId": "district:enemy.gel",
+      "requiresTags": [
+        "foundation:service.commons",
+        "foundation:context.waterways",
+        "foundation:theme.gel"
+      ],
+      "weight": 20,
+      "priority": 0,
+      "name": "渠底黑胶群落（湿滑）",
+      "hp": 38,
+      "combat": {
+        "defense": 6,
+        "speed": 7,
+        "attack": 8
+      },
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.coat.stuck"
+        }
+      ]
+    },
+    {
+      "id": "progression:env-enemy.scavenger.canal",
+      "enemyId": "district:enemy.scavenger",
+      "requiresTags": [
+        "foundation:service.commons",
+        "foundation:context.waterways",
+        "foundation:theme.risk"
+      ],
+      "weight": 12,
+      "priority": 0,
+      "name": "失控搬运机（渠道）",
+      "combat": {
+        "attack": 10,
+        "defense": 6
+      },
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        }
+      ]
+    },
+    {
+      "id": "progression:env-enemy.scavenger.workshop",
+      "enemyId": "district:enemy.scavenger",
+      "requiresTags": [
+        "foundation:service.workshop",
+        "foundation:theme.mechanical"
+      ],
+      "weight": 18,
+      "priority": 0,
+      "name": "失控搬运机（工坊）",
+      "hp": 44,
+      "combat": {
+        "attack": 11,
+        "defense": 7,
+        "speed": 8
+      },
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.hands.restricted"
+        }
+      ]
+    },
+    {
+      "id": "progression:env-enemy.collector.station",
+      "enemyId": "district:enemy.collector",
+      "requiresTags": [
+        "foundation:service.commons",
+        "foundation:theme.boundary"
+      ],
+      "weight": 16,
+      "priority": 0,
+      "name": "拦路收债客（检查站）",
+      "combat": {
+        "attack": 13,
+        "speed": 11
+      },
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        }
+      ]
+    },
+    {
+      "id": "progression:env-enemy.collector.market",
+      "enemyId": "district:enemy.collector",
+      "requiresTags": [
+        "foundation:service.market",
+        "foundation:theme.trade"
+      ],
+      "weight": 16,
+      "priority": 0,
+      "name": "拦路收债客（市集）",
+      "hp": 65,
+      "reward": 18,
+      "combat": {
+        "attack": 12,
+        "defense": 9
+      },
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        }
+      ]
+    }
+  ],
   "equipment": [
     {
       "id": "progression:equipment.blade",
@@ -3329,55 +3487,86 @@
       "id": "progression:location-profile.apartment",
       "locationId": "aetheria:location.apartment",
       "service": "home",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.rest"
+      ]
     },
     {
       "id": "progression:location-profile.street",
       "locationId": "aetheria:location.street",
       "service": "commons",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.exploration"
+      ]
     },
     {
       "id": "progression:location-profile.market",
       "locationId": "aetheria:location.market",
       "service": "market",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.trade",
+        "foundation:theme.economy"
+      ]
     },
     {
       "id": "progression:location-profile.clinic",
       "locationId": "aetheria-tf:location.clinic",
       "service": "clinic",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.care"
+      ]
     },
     {
       "id": "progression:location-profile.salon",
       "locationId": "aetheria-social:location.salon",
       "service": "commons",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.social"
+      ]
     },
     {
       "id": "progression:location-profile.cafe",
       "locationId": "district:location.cafe",
       "service": "commons",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.social"
+      ]
     },
     {
       "id": "progression:location-profile.canal",
       "locationId": "district:location.canal",
       "service": "commons",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:context.waterways",
+        "foundation:theme.gel",
+        "foundation:theme.risk"
+      ]
     },
     {
       "id": "progression:location-profile.archive",
       "locationId": "district:location.archive",
       "service": "commons",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.investigation"
+      ]
     },
     {
       "id": "progression:location-profile.station",
       "locationId": "district:location.station",
       "service": "commons",
-      "light": "lit"
+      "light": "lit",
+      "tags": [
+        "foundation:theme.boundary",
+        "foundation:theme.risk"
+      ]
     }
   ],
   "bodyPatches": [
