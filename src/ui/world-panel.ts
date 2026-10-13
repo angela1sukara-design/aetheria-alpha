@@ -7,7 +7,7 @@ import { byId } from './render.ts';
 import { parseWorldProfiles } from '../world/profiles.ts';
 
 /** 参考库导入只影响下一次创建；不能写正在游玩的世界或未保存进度。 */
-export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown | unknown[]; content?: unknown[]; questContent?: unknown; worldProfiles?: unknown }; lockDefaults?: boolean; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void }): void {
+export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown | unknown[]; content?: unknown[]; questContent?: unknown; worldProfiles?: unknown }; lockDefaults?: boolean; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void; /** 一键异世界进入后：若尚未创建则自动 player.create（默认名+成年年龄） */ ensurePlayerCreated?: () => void }): void {
   const defaultReferences = (): unknown[] => Array.isArray(options.defaults.reference) ? [...options.defaults.reference] : [options.defaults.reference];
   let rules = options.defaults.rules, references: unknown[] = defaultReferences(), extraContent: unknown[] = [];
   const message = (text: string) => { byId('world-message').textContent = text; };
@@ -44,7 +44,8 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
       const worldTag = theme.value || undefined;
       const world = await new WorldGenerator().generate({ seed, registry: await library(), rules, references, questContent: options.defaults.questContent, worldProfiles: options.defaults.worldProfiles, worldTag, parameters: { locationCount: Number(byId<HTMLInputElement>('world-size').value), npcCount: Number(byId<HTMLInputElement>('world-population').value) } });
       options.replace(world); byId<HTMLDialogElement>('world-dialog').close(); message('世界已生成。请手动保存你想保留的进度。');
-    } catch (error) { message(`生成失败，当前进度保留：${error instanceof Error ? error.message : error}`); }
+      if (pendingEnsureCreate) { pendingEnsureCreate = false; options.ensurePlayerCreated?.(); }
+    } catch (error) { pendingEnsureCreate = false; message(`生成失败，当前进度保留：${error instanceof Error ? error.message : error}`); }
     finally {
       generating = false; options.setBusy(false); byId<HTMLButtonElement>('world-generate').disabled = false; byId('world-generate').textContent = '生成并进入世界';
       for (const id of ['world-fantasy-quick', 'fantasy-enter-quick'] as const) {
@@ -53,13 +54,15 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
       }
     }
   }
-  /** 一键进 fantasy 小世界：默认种子/地点/居民，题材锁定 worlds:setting.fantasy。 */
+  let pendingEnsureCreate = false;
+  /** 一键进 fantasy 小世界：默认种子/地点/居民，题材锁定 worlds:setting.fantasy；进入后 auto-create 以便成人门可达。 */
   async function startFantasyDefaults(): Promise<void> {
     const fantasy = profiles.find(p => p.tag === 'worlds:setting.fantasy') ?? profiles[0];
     if (fantasy) { theme.value = fantasy.tag; theme.dispatchEvent(new Event('change')); }
     byId<HTMLInputElement>('world-seed').value = '42';
     byId<HTMLInputElement>('world-size').value = '5';
     byId<HTMLInputElement>('world-population').value = '9';
+    pendingEnsureCreate = true;
     await start(42);
   }
   byId('world-generate').addEventListener('click', () => { void start(Number(byId<HTMLInputElement>('world-seed').value)); });

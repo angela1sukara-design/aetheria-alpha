@@ -232,7 +232,8 @@ export class WorldGenerator {
     definition.packs = [...clone(input.registry.contentPacks), pack, ...questPacks];
     const registry = await loadPacks(definition.packs), state = createGameState(registry, input.seed);
     state.world = { locationId: definition.startLocationId, knownLocationIds: [definition.startLocationId] };
-    state.clock.totalMinutes = rules.startMinutes; state.rng = clone(randomState.rng); state.district = initialDistrict(); state.district.profile.created = true;
+    state.clock.totalMinutes = rules.startMinutes; state.rng = clone(randomState.rng); state.district = initialDistrict();
+    // 不在生成时静默 created：异世界无公寓，需由一键入口 auto-create 或出生点 character-intro 完成签到。
     for (const [i, agent] of agents.entries()) {
       const t = pack.residentTemplates![i]!;
       let body = instantiateBody(registry.bodyTemplate(t.bodyTemplateId));

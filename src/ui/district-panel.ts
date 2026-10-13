@@ -11,8 +11,31 @@ import type { JournalEntry } from '../core/quest-types.ts';
 export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:JournalEntry[]=[]):void {
  const d=v.state.district;if(!d)return;
  const sentence=(text:string)=>/[。！？]$/.test(text)?text:text+'。';
- const intro=byId('character-intro');intro.hidden=d.profile.created||v.location.id!=='aetheria:location.apartment';
+ const startId=v.state.worldInstance?.definition.startLocationId;
+ const atBirthplace=v.location.id==='aetheria:location.apartment'||(!!startId&&v.location.id===startId);
+ const intro=byId('character-intro');
+ intro.hidden=d.profile.created||!atBirthplace;
+ // 异世界无公寓文案：出生点同样走签到，不硬绑租约措辞
+ if(!intro.hidden){
+  const title=intro.querySelector('h2'); const blurb=intro.querySelector('p');
+  if(title)title.textContent=v.location.id==='aetheria:location.apartment'?'在这座城市开始生活':'在此地确认身份';
+  if(blurb)blurb.textContent=v.location.id==='aetheria:location.apartment'
+    ?'你租下一间公寓。先写下姓名和成年年龄，再到身体面板选择自由塑形。'
+    :'先写下姓名和成年年龄，确认身份后再继续探索。可到身体面板选择自由塑形。';
+ }
  byId('player-name').textContent=d.profile.created?d.profile.name:'新来的住户';
+ // 创建聚焦：未创建且签到可见时收起「下一步」，避免与签到抢注意力
+ const actionsPanel=document.querySelector<HTMLElement>('.actions-panel');
+ if(actionsPanel){
+  const focus=!!(!d.profile.created&&!intro.hidden);
+  actionsPanel.hidden=focus;
+  actionsPanel.dataset.createFocus=focus?'1':'0';
+  let note=document.getElementById('create-focus-note') as HTMLElement | null;
+  if(focus){
+   if(!note){note=element('p','muted create-focus-note');note.id='create-focus-note';actionsPanel.parentElement?.insertBefore(note,actionsPanel);}
+   note.hidden=false;note.textContent='先签下租约（或确认身份），再选择下一步行动。';
+  }else if(note)note.hidden=true;
+ }
  const resident=byId('resident-nearby');resident.replaceChildren();const current=d.residents.find(x=>x.id===d.currentResidentId&&x.locationId===v.location.id);
  const active=!!v.eventTitle||!!d.combat||!!d.scene;
  if(current&&!active){resident.append(element('p','resident-name',`${current.name} · ${current.profession}`),element('p','muted',`${sentence(residentAppearance(v.state,r,current.id))}性情：${sentence(current.personality)}${current.persistent?'你们已互留联络。':''}`));const buttons=element('div','resident-buttons');const profile=element('button','profile-open','查看档案 →');profile.dataset.npcOpen=`resident:${current.id}`;buttons.append(profile);if(byId('scene-panel').dataset.mode!=='conversation'){const talk=v.actions.find(a=>a.available&&a.definition.effects.some(e=>e.op==='resident.talk'));if(talk){const b=element('button','','开始交谈 →');b.dataset.action=talk.definition.id;buttons.prepend(b);}}resident.append(buttons);}
@@ -36,4 +59,21 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
  if(!index.childElementCount)index.append(element('p','muted','尚未发现匹配内容。NPC 图鉴与索引只显示亲自知道的人物、主题和互动。'));
  const packs=byId('pack-content');packs.replaceChildren();for(const p of texts.list()){const card=element('div','save-slot');card.append(element('p','',`${p.id} · ${p.version} · ${p.enabled?'已启用':'已禁用'}`));for(const [move,label]of [['toggle',p.enabled?'禁用':'启用'],['delete','删除']]){const b=element('button','',label);b.dataset.pack=p.id;b.dataset.packMove=move;card.append(b);}packs.append(card);}if(!packs.childElementCount)packs.append(element('p','muted','当前使用完整基础正文。可以导入经过审核的可选文本包。'));
  byId<HTMLInputElement>('adult-preference').checked=d.profile.adultOptional;
+ // 成人偏好已开但仍被门挡住时，复用条件文案说明原因（不误放行）
+ const packMsg=byId('pack-message');
+ const adultGate=!!(d.profile.created&&d.profile.ageYears>=18&&d.profile.adultOptional);
+ const adultReason='需要已创建的成年角色并开启成人可选文本偏好。';
+ if(d.profile.adultOptional&&!adultGate){
+  if(!packMsg.textContent||packMsg.dataset.adultReason==='1'||/成人|成年|adult/i.test(packMsg.textContent)){
+   packMsg.textContent=adultReason;packMsg.dataset.adultReason='1';
+  }
+ }else if(packMsg.dataset.adultReason==='1'){packMsg.textContent='';delete packMsg.dataset.adultReason;}
+ const statusNote=document.querySelector('.status-note');
+ if(statusNote){
+  if(d.profile.adultOptional&&!adultGate)statusNote.innerHTML=`成人可选文本暂不可用。<br>${adultReason}`;
+  else if(statusNote.dataset.adultHint==='1'||statusNote.textContent?.includes('成人可选文本暂不可用')){
+   statusNote.innerHTML='生活仍在继续。<br>决定下一步的人是你。';delete statusNote.dataset.adultHint;
+  }
+  if(d.profile.adultOptional&&!adultGate)statusNote.dataset.adultHint='1';
+ }
 }

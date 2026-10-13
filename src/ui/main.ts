@@ -106,6 +106,14 @@ async function boot(): Promise<void> {
     if (generated) adopt({ state: generated.state, registry: generated.registry });
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });
     result = undefined; redraw(); pages.game(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');
+  }, ensurePlayerCreated: () => {
+    // 一键异世界：无公寓签到点时自动 player.create（默认名+年龄≥18），打通 adultOptional 门
+    const snap = engine.snapshot();
+    if (!snap.district || snap.district.profile.created) { redraw(); return; }
+    const created = engine.performAction({ actionId: asId('district:action.create'), params: { name: '旅人', ageYears: 25 } }, snap.meta.revision, crypto.randomUUID());
+    if (created.ok) { result = created; browsing = false; feedback('已用默认身份进入异世界（旅人 · 25 岁）。可在内容偏好开启成人可选文本。'); }
+    else feedback(created.message, true);
+    redraw();
   } });
   async function refreshSlot(): Promise<void> {
     for (const button of document.querySelectorAll<HTMLButtonElement>('[data-save-slot]')) button.setAttribute('aria-pressed', String(Number(button.dataset.saveSlot) === selectedSlot));
@@ -201,7 +209,7 @@ async function boot(): Promise<void> {
   }));
   function persistTexts():void{for(const pack of texts.list())textEnabled[pack.id]=pack.enabled;try{localStorage.setItem('aetheria-alpha02-texts',JSON.stringify(storedTexts));localStorage.setItem('aetheria-alpha02-text-enabled',JSON.stringify(textEnabled));}catch{byId('pack-message').textContent='文本已在当前会话启用；浏览器不允许持久化扩展文件。';}}
   byId('discovery-search').addEventListener('input',redraw);
-  byId('adult-preference').addEventListener('change',()=>{if(busy)return;const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(!x.ok)byId('pack-message').textContent=x.message;redraw();});
+  byId('adult-preference').addEventListener('change',()=>{if(busy)return;const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(!x.ok)byId('pack-message').textContent=x.message;else if(enabled){const p=engine.snapshot().district?.profile;const gate=!!(p?.created&&p.ageYears>=18&&p.adultOptional);byId('pack-message').textContent=gate?'成人可选文本偏好已开启。':'需要已创建的成年角色并开启成人可选文本偏好。';byId('pack-message').dataset.adultReason=gate?'0':'1';}else{byId('pack-message').textContent='已关闭成人可选文本。';delete byId('pack-message').dataset.adultReason;}redraw();});
   byId<HTMLInputElement>('pack-import').addEventListener('change',async event=>{const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file)return;try{if(file.size>1024*1024)throw Error('文本包超过1 MiB。');const raw=JSON.parse(await file.text()),id=texts.install(raw,registry);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);storedTexts.push(raw);persistTexts();redraw();byId('pack-message').textContent='可选文本包已启用。当前进度与效果没有改变。';}catch(error){byId('pack-message').textContent='未导入：'+(error instanceof Error?error.message:error);}});
   document.addEventListener('click',event=>{const b=(event.target as Element).closest<HTMLButtonElement>('button[data-pack]');if(!b)return;const id=b.dataset.pack!;if(b.dataset.packMove==='delete'){texts.remove(id);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);delete textEnabled[id];}else {textEnabled[id]=!texts.list().find(x=>x.id===id)!.enabled;texts.setEnabled(id,textEnabled[id]!);}persistTexts();redraw();byId('pack-message').textContent='文本显示已更新；角色与事件状态保留。';});
   byId<HTMLInputElement>('rules-import').addEventListener('change',async event=>{
