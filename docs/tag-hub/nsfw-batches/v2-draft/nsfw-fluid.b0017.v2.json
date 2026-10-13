@@ -1,0 +1,45 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "v1→v2 draft · nsfw-fluid.b0017 · 待审定 · 未实装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "domain": "nsfw",
+  "library": "nsfw-fluid",
+  "batchId": "nsfw-fluid.b0017",
+  "entries": [
+    {
+      "id": "lx.nsfw-fluid.b0017.0001",
+      "category": "nsfw-fluid",
+      "subcategory": "体液",
+      "text": "尿液",
+      "description": "温热尿液自尿道口溢出或浇淋体表的流体；可积洼、浸湿股间与被单。≠憋尿动作。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-fluid.b0017.0002",
+      "category": "nsfw-fluid",
+      "subcategory": "定词流体",
+      "text": "毒液",
+      "description": "带腐蚀或麻痹感的毒液呈液态涂覆、滴落或渡入腔道；fluid 侧定词。与 material 毒液分挂，禁与黏液/黑胶互充。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    }
+  ]
+}

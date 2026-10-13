@@ -1,0 +1,101 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0017",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "查缺优先 · 标记与 gore 态 · b0017"
+  },
+  "entries": [
+    {
+      "subcategory": "gore态",
+      "name": "出血",
+      "description": "伤口或咬破处正在渗血、淌血的现场态；鲜血为 fluid，本条为态。soft-gore。待审定。",
+      "tags": [
+        "gore",
+        "出血"
+      ],
+      "id": "lx.nsfw-state.b0017.0001",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "标记态",
+      "name": "纹身",
+      "description": "体表已呈现纹身图案的当下外观态（腰侧、耻丘、乳下等）；≠纹身动作过程。待审定。",
+      "tags": [
+        "标记",
+        "纹身"
+      ],
+      "id": "lx.nsfw-state.b0017.0002",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "标记态",
+      "name": "疤痕化",
+      "description": "创口已结疤、隆起或淡化成永久疤痕的态；可横过臀峰或大腿内侧。待审定。",
+      "tags": [
+        "标记",
+        "疤痕"
+      ],
+      "id": "lx.nsfw-state.b0017.0003",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "标记态",
+      "name": "淫纹",
+      "description": "性器周围或小腹浮现发光/脉动淫纹的外观态；数值效果另挂 variables。待审定。",
+      "tags": [
+        "标记",
+        "淫纹"
+      ],
+      "id": "lx.nsfw-state.b0017.0004",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "gore态",
+      "name": "暴露内脏",
+      "description": "腹腔或胸腔剖开后内脏可见、湿亮颤动的现场态；标 gore。≠ kink「内脏暴露（预留）」。待审定。",
+      "tags": [
+        "gore",
+        "内脏"
+      ],
+      "id": "lx.nsfw-state.b0017.0005",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "gore态",
+      "name": "骨骼外露",
+      "description": "皮肉撕开后肋骨、指骨或盆骨外露可见的现场态；标 gore。待审定。",
+      "tags": [
+        "gore",
+        "骨骼"
+      ],
+      "id": "lx.nsfw-state.b0017.0006",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "gore态",
+      "name": "贯穿伤",
+      "description": "被刺穿后留有贯通创道、前后可见的受伤态；标 gore。≠穿刺动作本身。待审定。",
+      "tags": [
+        "gore",
+        "贯穿"
+      ],
+      "id": "lx.nsfw-state.b0017.0007",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "gore态",
+      "name": "内脏脱出",
+      "description": "肠管或其他脏器自创口脱出体外、垂挂摩擦的现场态；标 gore。待审定。",
+      "tags": [
+        "gore",
+        "脱出"
+      ],
+      "id": "lx.nsfw-state.b0017.0008",
+      "category": "nsfw-state"
+    }
+  ]
+}

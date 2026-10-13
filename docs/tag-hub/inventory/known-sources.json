@@ -1,25 +1,26 @@
 {
-  "updated": "2026-10-12 15:15 SGT",
+  "updated": "2026-10-13 11:10 SGT",
   "source_room": "Tag协作",
-  "note": "登记路径索引；收录≠审定≠已实装；口径不当词条收",
+  "note": "登记路径索引；收录≠审定≠已实装；口径不当词条收；+b0017 hub 收录与 v2-draft",
   "counts": {
-    "total": 39,
-    "exists": 39,
+    "total": 42,
+    "exists": 42,
     "missing": 0,
     "by_kind": {
       "已有清单": 3,
       "批次根": 1,
-      "报告": 9,
+      "报告": 10,
       "交付包": 1,
       "种子": 2,
       "扩缺batch": 2,
       "待入库": 6,
-      "摘要": 5,
+      "摘要": 6,
       "查缺": 2,
       "装箱": 1,
       "试跑种子": 1,
       "口径": 4,
-      "种子zip": 2
+      "种子zip": 2,
+      "hub批次": 1
     }
   },
   "entries": [
@@ -51,9 +52,9 @@
       "kind": "批次根",
       "source": "NSFWtag",
       "path": "/workspace/nsfw-lexicon/batches/",
-      "note": "14 库 *.b0001–*.b0016",
+      "note": "14 库 *.b0001–*.b0017",
       "exists": true,
-      "size": 395118
+      "size": 415743
     },
     {
       "kind": "报告",
@@ -334,6 +335,30 @@
       "note": "平行种子 zip",
       "exists": true,
       "size": 9561
+    },
+    {
+      "kind": "摘要",
+      "source": "NSFWtag",
+      "path": "/workspace/NSFW扩缺-b0017-摘要.md",
+      "note": "b0017 扩缺摘要",
+      "exists": true,
+      "size": 945
+    },
+    {
+      "kind": "报告",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/b0017-production-report.md",
+      "note": "b0017 production-report",
+      "exists": true,
+      "size": 4962
+    },
+    {
+      "kind": "hub批次",
+      "source": "引擎接入",
+      "path": "docs/tag-hub/nsfw-batches/ (b0017 + v2-draft)",
+      "note": "仓内收录待审定；v2 草稿 validate-v2；未实装",
+      "exists": true,
+      "size": 0
     }
   ]
 }

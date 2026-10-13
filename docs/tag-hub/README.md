@@ -36,7 +36,7 @@
 | `inventory/seeds/` | 试跑种子三分栏 |
 | `outbox/` | 对外交付；见 `outbox/INDEX.md` |
 | `rules/` | 共存/互斥/分维度规则产出（可从 outbox 归档副本） |
-| `nsfw-batches/` | NSFW lexicon 原始 batch JSON（b0001–b0016 片段） |
+| `nsfw-batches/` | NSFW lexicon 原始 batch JSON（b0001–b0017 片段；含 v2-draft） |
 
 ## Tag收集职责
 

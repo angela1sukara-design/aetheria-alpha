@@ -10,3 +10,4 @@
 | 2026-10-12 15:20 | [2026-10-12-故事试写-研究员触手黏液黑胶.md](./2026-10-12-故事试写-研究员触手黏液黑胶.md) | 故事试写 | tag→短篇样例；配对 `inventory/seeds/2026-10-12-接tag试跑-研究员触手黏液黑胶.md` |
 | 2026-10-12 18:01 | [2026-10-12-tag-rules-delivery-coexistence/](./2026-10-12-tag-rules-delivery-coexistence/) | Tag共存规则 | TAG-RULES 交付包首版（后由 18:17 行升级为 v1.1.0 试跑切片） |
 | 2026-10-12 18:17 | [2026-10-12-tag-rules-delivery-coexistence/](./2026-10-12-tag-rules-delivery-coexistence/) **v1.1.0 试跑切片** | Tag共存规则 | 补 generation-rules（夜间开局）、gel/night when、clinic 昼夜模板互斥、PLAYTEST-SLICE；全库矩阵仍 TBD |
+| 2026-10-13 11:10 | [2026-10-13-nsfw-b0017-ingest.md](./2026-10-13-nsfw-b0017-ingest.md) | 引擎接入 | b0017→tag-hub 收录 + v1→v2 草稿（validate-v2）；待审定未实装 |

@@ -1,6 +1,6 @@
 # 已知库存路径（Tag协作 首批登记）
 
-更新：2026-10-12 15:15 SGT｜来源群：Tag协作｜存在 39/39
+更新：2026-10-13 11:10 SGT｜来源群：Tag协作｜存在 42/42（+b0017）
 
 收录≠审定≠已实装。口径文档登记在册但不当词条收。
 
@@ -9,7 +9,7 @@
 | 已有清单 | Angela+通用tag | `/workspace/通用已有词条清单-10700.md` | 通用正式库存清单 | ✅ |
 | 已有清单 | Angela+通用tag | `/workspace/通用已有词条-按库摘要.md` | 按库摘要 | ✅ |
 | 已有清单 | Angela+NSFWtag | `/workspace/NSFW已有词条清单-b0001.md` | NSFW 正式库存清单 | ✅ |
-| 批次根 | NSFWtag | `/workspace/nsfw-lexicon/batches/` | 14 库 *.b0001–*.b0016 | ✅ |
+| 批次根 | NSFWtag | `/workspace/nsfw-lexicon/batches/` | 14 库 *.b0001–*.b0017 | ✅ |
 | 报告 | NSFWtag | `/workspace/nsfw-lexicon/production-report.md` | 总生产报告 | ✅ |
 | 交付包 | 通用tag | `/workspace/game-tags-out/` | all + world/body/npc/text/daily | ✅ |
 | 种子 | 通用tag | `/workspace/game-tags-out/sfw-parallel-seeds/` | 平行种子 | ✅ |
@@ -45,3 +45,7 @@
 | 报告 | NSFWtag | `/workspace/nsfw-lexicon/b0005-b0009-production-report.md` | nsfw-lexicon production-report | ✅ |
 | 种子zip | 通用tag | `/workspace/通用平行种子-goo对象指向-物件建筑表面.zip` | 平行种子 zip | ✅ |
 | 种子zip | 通用tag | `/workspace/通用平行种子-洞穴雾林孕腹泄殖腔.zip` | 平行种子 zip | ✅ |
+
+| 摘要 | NSFWtag | `/workspace/NSFW扩缺-b0017-摘要.md` | b0017 扩缺摘要 | ✅ |
+| 报告 | NSFWtag | `/workspace/nsfw-lexicon/b0017-production-report.md` | b0017 production-report | ✅ |
+| hub批次 | 引擎接入 | `docs/tag-hub/nsfw-batches/*b0017.json` + `v2-draft/` | 仓内收录待审定；v2 草稿已 validate-v2；未实装 | ✅ |
