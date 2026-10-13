@@ -79,6 +79,7 @@ export function projectV2(input: unknown, parseV1: (v: unknown) => ContentPack):
   const fx=(e:any)=>{if(e.op==='environment.setLight'){shape(e,['op','locationId','value']);stableId(e.locationId);values(e.value,['lit','dark']);return {op:'clock.advance',minutes:0};}if(Object.hasOwn(e,'target')){if(!e.op.startsWith('tf.'))bad('该效果不支持目标。');entityRef(e.target);const x=clone(e);delete x.target;return x;}return e;};
   for(const a of legacy.actions)a.effects=a.effects.map(fx);
   for(const e of legacy.events)for(const n of e.nodes)n.onEnter=n.onEnter.map(fx);
+  for(const n of legacy.narrativeNodes??[]){n.conditions=n.conditions.map(c=>projectCondition(c));for(const c of n.choices){c.conditions=c.conditions.map(x=>projectCondition(x));c.effects=c.effects.map(fx);}}
   parseV1(legacy);
   return p;
 }

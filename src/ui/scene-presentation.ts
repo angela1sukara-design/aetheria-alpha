@@ -22,6 +22,7 @@ export function resultAction(view: GameView, registry: Registry, result?: Action
 }
 export function scenePresentation(view: GameView, registry: Registry, result?: ActionResult, browsing = false): ScenePresentation {
   const district = view.state.district;
+  if(view.state.adventure?.story){const node=registry.narrativeNodes.find(n=>n.id===view.state.adventure!.story!.nodeId);return {mode:'event',title:node?.title??'眼前的经历',subtitle:'根据当前处境继续，或随时结束',label:'正在发生',active:true,primaryResult:false};}
   if (district?.combat) {
     const enemy = registry.enemies.find(enemy => enemy.id === district.combat!.enemyId);
     return { mode: 'combat', title: enemy?.name ?? '眼前的对手', subtitle: `第 ${district.combat.turn + 1} 回合 · 观察意图，再决定行动`, label: '正在交锋', active: true, primaryResult: false };

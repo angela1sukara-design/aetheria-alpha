@@ -1,12 +1,13 @@
 import { projectV2 } from './foundation-schema.ts';
 import { parseDistrict } from './district-schema.ts';
+import { parseAdventurePack, ADVENTURE_FIELDS, NARRATIVE_KINDS, PROGRESSION_MOVES } from './adventure-schema.ts';
 import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
 import { RELATION_FIELDS } from '../core/npc-types.ts';
 import { PLAYER_RELATIONS } from '../core/quest-types.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import type { ContentPack } from '../core/types.ts';
-export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1', 'npc.fixed.v1', 'district.v1', 'quest.binding.v1'] as const;
+export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1', 'npc.fixed.v1', 'district.v1', 'quest.binding.v1', 'adventure.v1'] as const;
 type Obj = Record<string, unknown>;
 /** 只冻结本切片实际使用的契约；未实现操作符必须导入失败，不能静默跳过。 */
 export function parsePack(input: unknown): ContentPack {
@@ -54,6 +55,9 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'resident.memory') { const x = obj(value, path, ['op', 'residentId', 'memoryId', 'value']); str(x.residentId, path); id(x.memoryId, path); boolean(x.value, path); }
     else if (op === 'resident.available') obj(value,path,['op']);
     else if (op === 'player.created') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
+    else if (op === 'adventure.compare') { const x=obj(value,path,['op','field','comparison','value']);choice(x.field,path,[...ADVENTURE_FIELDS,'victories']);choice(x.comparison,path,['eq','gte','lte']);integer(x.value,path,0,1000000); }
+    else if (op === 'progression.available') { const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path); }
+    else if(op==='narrative.tag'){const x=obj(value,path,['op','role','id','value']);choice(x.role,path,['player','opponent','environment']);id(x.id,path);boolean(x.value,path);}
     else fail(`${path}/op`, '未知或未实现的条件操作符。', 'UNSUPPORTED_OPCODE');
   }
   function effect(value: unknown, path: string): void {
@@ -71,13 +75,17 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'world.encounter') { const x = obj(value,path,['op','events']); if (x.events !== undefined) boolean(x.events,path); }
     else if (['resident.talk','resident.help','equipment.remove'].includes(String(op))) obj(value,path,['op']);
     else if (['combat.start','scene.start','equipment.wear'].includes(String(op))) { const x = obj(value,path,['op','id']); id(x.id,path); }
-    else if (op === 'combat.turn') { const x = obj(value,path,['op','move']); choice(x.move,path,['attack','guard','recover','flee']); }
+    else if (op === 'combat.turn') { const x = obj(value,path,['op','move']); choice(x.move,path,['attack','guard','recover','flee','skill']); }
     else if (op === 'scene.act') { const x = obj(value,path,['op','move','poseId']); choice(x.move,path,['pose','contact','release','pause','resume','exit']); if(x.poseId !== undefined) str(x.poseId,path); }
     else if (op === 'player.create') { const x = obj(value,path,['op','name','ageYears']); str(x.name,path); integer(x.ageYears,path,18,120); }
     else if (op === 'preference.set') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
+    else if (op === 'narrative.start') {const x=obj(value,path,['op','kind','profileId']);choice(x.kind,path,[...NARRATIVE_KINDS]);if(x.profileId!==undefined)id(x.profileId,path);}
+    else if (op === 'narrative.choose') {const x=obj(value,path,['op','index']);integer(x.index,path,0,3);}
+    else if (op === 'adventure.change') {const x=obj(value,path,['op','field','amount']);choice(x.field,path,[...ADVENTURE_FIELDS]);integer(x.amount,path,-1000,1000);}
+    else if (op === 'progression.act') {const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path);}
     else fail(`${path}/op`, '未知或未实现的效果操作符。', 'UNSUPPORTED_OPCODE');
   }
-  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment']);
+  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'narrativeProfiles','narrativeNodes']);
   const m = obj(root.manifest, '/manifest', ['id', 'namespace', 'version', 'schemaVersion', 'engineApiVersion', 'author', 'status', 'dependencies', 'requiresCapabilities', 'migrations']);
   if (typeof m.id === 'string') packId = m.id;
   str(m.id, '/manifest/id'); str(m.author, '/manifest/author');
@@ -144,6 +152,7 @@ export function parsePack(input: unknown): ContentPack {
   });
   list(root.globalActionHooks ?? [], '/globalActionHooks', id);
   parseDistrict(input, { obj, str, id, integer, boolean, list, choice, condition });
+  parseAdventurePack(input as ContentPack, { condition, effect });
   if (issues.length) throw new PackError(issues);
   return input as ContentPack;
 }

@@ -11,7 +11,7 @@
     "lexicon:prepare": "node scripts/lexicon/prepare.mjs",
     "test:lexicon": "node --test tests/lexicon.test.ts tests/lexicon-whole.test.ts",
     "dev": "node scripts/serve.mjs",
-    "build": "node scripts/build-quest-content.mjs && node scripts/build-lexicon-adapter.mjs && node scripts/build.mjs && node scripts/build-standalone.mjs && node scripts/build-world-samples.mjs",
+    "build": "node scripts/build-adventure-content.mjs && node scripts/build-quest-content.mjs && node scripts/build-lexicon-adapter.mjs && node scripts/build.mjs && node scripts/build-standalone.mjs && node scripts/build-world-samples.mjs",
     "quests:build": "node scripts/build-quest-content.mjs",
     "test:quests": "node --test tests/cyber-apex.test.ts tests/neighborhood-quests.test.ts tests/world-profiles.test.ts tests/main-relationships.test.ts",
     "test:quests:browser": "node tests/world-profiles-browser.mjs",
@@ -25,7 +25,8 @@
     "check:foundation": "node scripts/check-foundation.mjs",
     "test:foundation:browser": "node tests/foundation-browser.mjs",
     "test:ui": "node tests/ui-pages-browser.mjs",
-    "test:ux": "node tests/ux-browser.mjs"
+    "test:ux": "node tests/ux-browser.mjs",
+    "test:adventure:browser": "node tests/adventure-browser.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",

@@ -78,7 +78,7 @@ export type DistrictEffect =
   | { op: 'world.encounter'; events?: boolean }
   | { op: 'resident.talk' | 'resident.help' }
   | { op: 'combat.start'; id: Id }
-  | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' }
+  | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' | 'skill' }
   | { op: 'scene.start'; id: Id }
   | { op: 'scene.act'; move: 'pose' | 'contact' | 'release' | 'pause' | 'resume' | 'exit'; poseId?: string }
   | { op: 'equipment.wear'; id: Id }

@@ -12,34 +12,42 @@ import { districtOptions, districtText } from './district-effects.ts';
 import { directResourceCheck } from './resource-check.ts';
 import type { TextLibrary } from '../content/text-variants.ts';
 import { routeDistanceTier, routeStaminaCost, staminaGate, STAMINA_COST } from './numerics.ts';
+import { narrativeActions, narrativeText, publicActionEffects } from './narrative.ts';
+import { progressionCheck } from './progression.ts';
 
 const STAMINA_ID = 'core:stamina' as Id;
 
 /** 所有可执行入口同一个选择器：UI 可见动作与引擎授权集合完全一致。 */
 export function actionOptions(state: GameState, registry: Registry): ActionOption[] {
   const current = eventNode(state, registry);
-  const actions: ActionDef[] = current ? current.node.actionIds.map(id => registry.action(id)).filter(x => x.context?.eventId === current.event.definitionId && x.context.nodeId === current.node.id) : registry.actionsAt(state.world.locationId).filter(x => !x.context);
+  const storyActions=narrativeActions(state,registry);
+  const actions: ActionDef[] = storyActions??(current ? current.node.actionIds.map(id => registry.action(id)).filter(x => x.context?.eventId === current.event.definitionId && x.context.nodeId === current.node.id) : registry.actionsAt(state.world.locationId).filter(x => !x.context));
   const topics = current ? [] : registry.npcs.filter(n => npcPresent(state, registry, n.id)).flatMap(n => registry.actionsForHook(n.topicHook));
-  const allActions = [...new Map([...actions, ...topics, ...registry.globalActions()].map(a => [a.id, a])).values()];
+  const allActions = [...new Map([...actions, ...(storyActions?[]:topics), ...(storyActions?[]:registry.globalActions())].map(a => [a.id, a])).values()];
   const stamina = state.player.variables[STAMINA_ID] ?? 100;
   const gate = staminaGate(stamina);
   return districtOptions(state, registry, allActions).map(definition => {
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
-    for (const e of definition.effects) {
+    const effects=publicActionEffects(definition,state,registry);
+    for (const e of effects) {
+      if(e.op==='progression.act')checks.push(progressionCheck(state,registry,e.move,e.id));
       if (e.op === 'resident.help') {
         const resident = state.district?.residents.find(n => n.id === state.district?.currentResidentId), t = registry.residentTemplates.find(t => t.id === resident?.templateId);
         if (resident && t) checks.push(activityEligibility(resident.body, t, registry));
         checks.push({ pass: gate.allowLabor && stamina >= STAMINA_COST.labor, reason: stamina < STAMINA_COST.labor ? `体力不足：当前 ${stamina}，本次需要 ${STAMINA_COST.labor}。` : '体力过低，无法从事体力劳动。' });
       }
       if (e.op === 'scene.start') checks.push({ pass: !!state.district?.profile.created, reason: '先在公寓签下租约，确认成年角色身份。' });
-      if (e.op === 'combat.turn' && e.move === 'attack') {
+      if (e.op === 'combat.turn' && (e.move === 'attack'||e.move==='skill')) {
         checks.push({ pass: gate.allowAttack && stamina >= STAMINA_COST.attack, reason: gate.combatOnlyGuardOrFlee || !gate.allowAttack ? '体力过低，本回合只能防守或撤离。' : `进攻需要${STAMINA_COST.attack}点体力。` });
       }
       if (e.op === 'combat.turn' && e.move === 'recover') {
         checks.push({ pass: !gate.combatOnlyGuardOrFlee && stamina >= STAMINA_COST.recover, reason: gate.combatOnlyGuardOrFlee ? '体力耗尽，只能防守或撤离。' : `临时包扎需要${STAMINA_COST.recover}点体力。` });
       }
+      if(e.op==='combat.turn'&&e.move==='skill')checks.push({pass:(state.player.variables['core:skillResource']??0)>=15&&stamina>=4,reason:'技能击需要技能资源15和体力4。'});
+      if(e.op==='equipment.wear'&&e.id.startsWith('progression:'))checks.push({pass:!!state.district?.inventory.includes(e.id),reason:'先购买这件装备。'});
       if (e.op === 'combat.turn' && e.move === 'flee') {
-        checks.push({ pass: stamina >= STAMINA_COST.flee, reason: `撤离需要${STAMINA_COST.flee}点体力。` });
+        // Emergency withdrawal remains available even after an enemy drains the last point.
+        checks.push({ pass: true, reason: '' });
       }
       if (e.op === 'combat.turn' && e.move === 'guard') {
         checks.push({ pass: stamina >= STAMINA_COST.guard, reason: '防守需要1点体力。' });
@@ -66,8 +74,8 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
         checks.push({ pass: b.known && b.value.parts.some(p => registry.bodyPart(p.definitionId).kind === 'hand' && registry.bodyPart(p.definitionId).capabilities.includes('grasp') && !scene.contacts.some(c => c.npcPartId === p.instanceId)), reason: '对方没有空闲的抓握部位。' });
       }
     }
-    checks.push(directResourceCheck(definition.effects, state, registry));
-    for (const e of definition.effects) if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') checks.push(transformationCheck(state, registry, e.id, e.op, e.target));
+    checks.push(directResourceCheck(effects, state, registry));
+    for (const e of effects) if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') checks.push(transformationCheck(state, registry, e.id, e.op, e.target));
     for (const e of definition.effects) if (e.op === 'event.start') for (const npcId of registry.event(e.id).participantIds ?? []) checks.push({ pass: npcPresent(state, registry, npcId), reason: `${registry.npc(npcId).name}此刻不在这里。` });
     for (const e of definition.effects) if (e.op === 'event.start') for (const residentId of registry.event(e.id).residentIds ?? []) checks.push({ pass: residentPresent(state, residentId), reason: '约定的居民此刻不在这里。' });
     const failed = checks.find(x => !x.pass);
@@ -77,10 +85,10 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
 export function selectGameView(state: GameState, registry: Registry, texts?: TextLibrary): GameView {
   const current = eventNode(state, registry); const location = registry.location(state.world.locationId);
   const slot = current ? registry.textSlots.find(s => s.owner.eventId === current.event.definitionId && s.owner.nodeId === current.node.id) : undefined;
-  const base = slot && texts ? texts.resolve(slot.id, state, registry) : current ? registry.text(current.event.textByNode[current.node.id]) : registry.text(location.textKey);
+  const base = narrativeText(state,registry)??(slot && texts ? texts.resolve(slot.id, state, registry) : current ? registry.text(current.event.textByNode[current.node.id]) : registry.text(location.textKey));
   return freeze({
     location, state: clone(state), actions: actionOptions(state, registry),
     sceneText: districtText(state, registry, base),
-    ...(current ? { eventTitle: '正在发生' } : {}),
+    ...(current||state.adventure?.story ? { eventTitle: '正在发生' } : {}),
   });
 }

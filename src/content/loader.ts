@@ -1,5 +1,6 @@
 import { validateFoundation } from './foundation-validation.ts';
 import { validateDistrictDefinitions } from './district-schema.ts';
+import { validateAdventureDefinitions } from './adventure-schema.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import { clone, stableJson } from '../core/types.ts';
@@ -37,6 +38,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
+    for (const type of ['narrativeNodes','narrativeProfiles'] as const) for (const value of p[type]??[]) add(p,value.id,type,value);
   }
   function add(p: ContentPack, id: string, type: string, value: unknown): void {
     if (id.split(':')[0] !== p.manifest.namespace) fail(p, 'NAMESPACE_OWNERSHIP', `/${type}/${id}`, '不能定义其他包的 ID。', id);
@@ -49,6 +51,8 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (d.pack !== p && !p.manifest.dependencies.some(x => x.id === d.pack.manifest.id)) fail(p, 'UNDECLARED_DEPENDENCY', path, `引用 ${id} 需要显式依赖其包。`, id);
   }
   function checkCondition(p: ContentPack, c: Condition, path: string): void {
+    if(['adventure.compare','progression.available','narrative.tag'].includes(c.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
+    if(c.op==='progression.available'&&c.id)ref(p,c.id,c.move==='buy'?'equipment':'variables',path);
     if ('residentId' in c) {
       checkResident(p, c.residentId, path);
       if (c.op === 'resident.memory') ref(p, c.memoryId, 'texts', path);
@@ -59,6 +63,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (c.op === 'all' || c.op === 'any') c.conditions.forEach((x, i) => checkCondition(p, x, `${path}/${i}`));
     else if (c.op === 'not') checkCondition(p, c.condition, `${path}/condition`);
     else if (c.op === 'var.compare') ref(p, c.id, 'variables', path);
+    else if (c.op === 'narrative.tag') ref(p,c.id,'tags',path);
     else if (c.op === 'day.after') ref(p,c.flagId,'flags',path);
     else if (c.op === 'flag.has') ref(p, c.id, 'flags', path);
     else if (c.op === 'location.is') ref(p, c.id, 'locations', path);
@@ -72,6 +77,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
+    if(['narrative.start','narrative.choose','adventure.change','progression.act'].includes(e.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
     if (e.op === 'resident.remember') {
       checkResident(p, e.residentId, path); ref(p, e.memoryId, 'texts', path);
       const event = context ? definitions.get(context.eventId)?.value as ContentPack['events'][number] | undefined : undefined;
@@ -83,6 +89,8 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     else if (e.op === 'combat.start') ref(p,e.id,'enemies',path);
     else if (e.op === 'scene.start') ref(p,e.id,'interactions',path);
     else if (e.op === 'equipment.wear') ref(p,e.id,'equipment',path);
+    else if (e.op === 'narrative.start' && e.profileId) ref(p,e.profileId,'narrativeProfiles',path);
+    else if (e.op === 'progression.act' && e.id) ref(p,e.id,e.move==='buy'?'equipment':'variables',path);
     else if (e.op === 'flag.set') ref(p, e.id, 'flags', path);
     else if (e.op === 'location.move') ref(p, e.routeId, 'routes', path);
     else if (e.op === 'event.start') ref(p, e.id, 'events', path);
@@ -190,7 +198,8 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
     for (const c of p.contributions) if (sorted.some(owner => owner.globalActionHooks?.includes(c.hookId))) for (const id of c.actionIds) {
       const action = definitions.get(id)?.value as ContentPack['actions'][number] | undefined;
-      if (action?.surface !== 'body' || action.context) fail(p, 'GLOBAL_ACTION_SURFACE', '/contributions', '当前全局 Hook 仅接受身体面板行动。');
+      const adventureSurface=p.manifest.requiresCapabilities.includes('adventure.v1')&&c.hookId.split(':')[0]===p.manifest.namespace;
+      if ((!adventureSurface&&action?.surface !== 'body') || action?.context) fail(p, 'GLOBAL_ACTION_SURFACE', '/contributions', '全局剧情行动需显式声明adventure.v1；普通全局Hook仅接受身体面板行动。');
     }
   }
   if (issues.length) throw new PackError(issues);
@@ -203,6 +212,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   const registry = new Registry(sorted, references);
   validateFoundation(sorted, registry, ref, checkCondition);
   validateDistrictDefinitions(sorted, registry, fail, checkCondition);
+  for (const pack of sorted) validateAdventureDefinitions(pack, registry, checkCondition, checkEffect);
   for (const p of sorted) for (const template of p.bodyTemplates ?? []) {
     try { validateBody(instantiateBody(template), registry); }
     catch (error) { fail(p, 'BODY_TOPOLOGY', `/bodyTemplates/${template.id}`, error instanceof Error ? error.message : '身体模板无效。', template.id); }

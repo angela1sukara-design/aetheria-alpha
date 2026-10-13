@@ -21,7 +21,7 @@ export async function compileWorldQuests(content: QuestContent, seed: number, so
   if (await hash(content.source) !== content.sourceHash) throw Error('任务作者源文件哈希不一致。');
   const baseDependencies = [...source.packs.map(p => ({ id: p.id, version: p.version, optional: false })), { id: generated.manifest.id, version: generated.manifest.version, optional: false }];
   const makePack = (namespace: 'main' | 'side', packId: string): ContentPack => ({
-    manifest: { id: packId, namespace, version: content.version, schemaVersion: 1, engineApiVersion: '0.1', author: 'Aetheria · 离线任务制作', status: 'draft', dependencies: [...baseDependencies], requiresCapabilities: ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'quest.binding.v1'], migrations: [] },
+    manifest: { id: packId, namespace, version: content.version, schemaVersion: 1, engineApiVersion: '0.1', author: 'Aetheria · 离线任务制作', status: 'draft', dependencies: [...baseDependencies], requiresCapabilities: ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'quest.binding.v1',...(source.narrativeNodes.length?['adventure.v1']:[])], migrations: [] },
     variables: [], flags: [], hooks: [], locations: [], routes: [], actions: [], events: [], texts: {}, contributions: []
   });
   const sidePack = makePack('side', QUEST_PACK_IDS[0]!), mainPack = makePack('main', QUEST_PACK_IDS[1]!);
@@ -48,16 +48,22 @@ export async function compileWorldQuests(content: QuestContent, seed: number, so
     const ns = pack.manifest.namespace;
     const promptKey: Id = `${ns}:text.${binding.id}.prompt`, doneKey: Id = `${ns}:text.${binding.id}.done`, leaveKey: Id = `${ns}:text.${binding.id}.leave`;
     pack.texts[promptKey] = `${title}\n\n${prompt}`;
+    if(source.narrativeNodes.length){pack.texts[promptKey]+='\n\n【工作】【调查】';if(endingFlag)pack.texts[promptKey]+=/resource|capital/.test(endingFlag)?'\n实际门槛：经营份额6、已完成订单3、登记契约2。可先免费退出，到市场与工坊完成订单及经营登记。':'\n实际门槛：组织影响5、街区安全5、有效战斗胜利2。可先免费退出，进行巡查、协作与交锋。';}
     pack.texts[doneKey] = `${title}：本阶段已完成。`;
     pack.texts[leaveKey] = '你暂时离开，现有进度保留。以后可以从原入口继续。';
     const context = { eventId: binding.eventId, nodeId: 'choice' };
     const actionIds: Id[] = [];
-    for (const choice of choices) {
+    for (const [choiceIndex,choice] of choices.entries()) {
       const actionId: Id = `${ns}:action.${binding.id}.${choice.id}`, textKey: Id = `${ns}:text.${binding.id}.${choice.id}`;
       pack.texts[textKey] = choice.result;
+      if(source.narrativeNodes.length)pack.texts[textKey]+=endingFlag?'【身份】':'【工作】';
       const effects: Effect[] = [];
       if (choice.energy) effects.push({ op: 'var.change', id: 'core:energy', amount: -choice.energy });
       if (choice.complete) {
+        if(source.narrativeNodes.length){
+          if(ns==='main'&&!endingFlag){effects.push({op:'adventure.change',field:/resource|capital/.test(binding.id)?'contracts':'influence',amount:1});}
+          if(ns==='side'){effects.push({op:'adventure.change',field:choiceIndex===0?'reputation':'assets',amount:choiceIndex===0?2:1},{op:'adventure.change',field:choiceIndex===0?'safety':'influence',amount:1},{op:'var.change',id:'core:money',amount:3});}
+        }
         if (binding.residentId && choice.memory) {
           const memoryId: Id = `${ns}:memory.${binding.id}.${choice.id}`;
           pack.texts[memoryId] = choice.memory;
@@ -70,7 +76,8 @@ export async function compileWorldQuests(content: QuestContent, seed: number, so
       }
       if (choice.minutes) effects.push({ op: 'clock.advance', minutes: choice.minutes });
       effects.push({ op: 'event.advance', nodeId: choice.complete ? 'done' : 'leave' });
-      const conditions = choice.complete ? [...prerequisites, ...choice.requires.map(f => has(f))] : [];
+      const milestone:Condition[]=source.narrativeNodes.length&&endingFlag?(/resource|capital/.test(endingFlag)?[{op:'adventure.compare',field:'assets',comparison:'gte',value:6},{op:'adventure.compare',field:'orders',comparison:'gte',value:3},{op:'adventure.compare',field:'contracts',comparison:'gte',value:2}]:[{op:'adventure.compare',field:'influence',comparison:'gte',value:5},{op:'adventure.compare',field:'safety',comparison:'gte',value:5},{op:'adventure.compare',field:'victories',comparison:'gte',value:2}]):[];
+      const conditions = choice.complete ? [...prerequisites, ...choice.requires.map(f => has(f)),...milestone] : [];
       pack.actions.push({ id: actionId, label: choice.label, hint: choice.complete ? `${choice.minutes}分钟${choice.energy ? ` · 精力−${choice.energy}` : ' · 无资源费用'}${choice.requires.length ? ' · 需要已完成的可选支线' : ''}` : '免费退出，保留进度', group: 'event', context, conditions, effects, resultText: textKey });
       actionIds.push(actionId);
     }

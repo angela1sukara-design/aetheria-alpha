@@ -10,6 +10,7 @@ import { advanceClock } from '../src/engine/clock.ts';
 import { evaluate } from '../src/engine/conditions.ts';
 import type { Id } from '../src/core/types.ts';
 import type { QuestBinding, QuestContent } from '../src/core/quest-types.ts';
+import { prepareMilestones } from './adventure-helpers.ts';
 
 const json = async (path: string) => JSON.parse(await readFile(new URL('../' + path, import.meta.url), 'utf8'));
 const index = await json('content/index.json');
@@ -60,10 +61,11 @@ for (const { environmentTag, content } of entries) {
     for (const side of content.source.sideQuests.filter(s => s.requiresRelation === null)) assert.ok(small.world.definition.quests!.sides.some(b => b.id === side.id));
     validateState(small.state, small.registry);
   });
-  test(`${key}: both routes finish without side flags; saved ending uses actual chosen title`, async () => {
+  test(`${key}: both routes finish after growth milestones without mandatory sides; saved ending uses chosen title`, async () => {
     const g = await generate(key);
     for (const path of content.source.mainQuest.paths) {
       let state = structuredClone(g.state);
+      prepareMilestones(state);
       state.player.variables['core:energy'] = 0; state.player.variables['core:money'] = 0;
       for (const stage of path.stages) {
         const binding = g.world.definition.quests!.stages.find(b => b.id === stage.id)!;

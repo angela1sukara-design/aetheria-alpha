@@ -9,12 +9,13 @@ import type { EffectContext } from './effects.ts';
 import { npcPresenceTransitions } from './npc.ts';
 import { revalidateDistrict } from './interaction.ts';
 import { TextLibrary } from '../content/text-variants.ts';
+import { compactHistory, historyTransaction, requestArchived } from './history.ts';
 /** 唯一写入权威。存档恢复建立新的 executor，不能通过可写 snapshot 绕过事务。 */
 export class ActionExecutor {
   #state: GameState;
   readonly registry: Registry;
   readonly texts: TextLibrary;
-  constructor(registry: Registry, state: GameState, texts = new TextLibrary()) { this.registry = registry; this.#state = state.meta.schemaVersion===3&&registry.contentPacks.some(p=>p.manifest.schemaVersion===2)?upgradeFoundation(state,registry):clone(state); this.texts=texts; }
+  constructor(registry: Registry, state: GameState, texts = new TextLibrary()) { this.registry = registry; this.#state = state.meta.schemaVersion===3&&registry.contentPacks.some(p=>p.manifest.schemaVersion===2)?upgradeFoundation(state,registry):clone(state); compactHistory(this.#state); this.texts=texts; }
   snapshot(): GameState { return freeze(clone(this.#state)); }
   view() { return selectGameView(this.#state, this.registry, this.texts); }
   performAction(intent: ActionIntent, expectedRevision: number, requestId: string): ActionResult {
@@ -23,9 +24,10 @@ export class ActionExecutor {
     if (Object.keys(intent).some(k => k !== 'actionId' && k !== 'params')) return fail('INVALID_INTENT', '本版本未登记该行动参数。');
     if (intent.params && Object.keys(intent.params).length && (intent.actionId !== 'district:action.create' || Object.keys(intent.params).some(k=>k!=='name'&&k!=='ageYears') || typeof intent.params.name!=='string' || !intent.params.name.trim() || intent.params.name.length>40 || !Number.isSafeInteger(intent.params.ageYears) || intent.params.ageYears!<18 || intent.params.ageYears!>120)) return fail('INVALID_INTENT','角色需要1–40字姓名与18–120岁年龄。');
     const fingerprint = stableJson(intent);
-    const previous = this.#state.ledger.transactions.find(x => x.requestId === requestId);
+    const previous = historyTransaction(this.#state, requestId);
     // 必须先检查幂等，再检查旧 revision；网络重试可以获得原结果，但不同请求不能冒用 ID。
     if (previous) return previous.fingerprint === fingerprint ? clone(previous.result) : fail('REQUEST_ID_REUSED', '相同请求 ID 不能用于另一个行动。');
+    if (requestArchived(this.#state, requestId)) return fail('REQUEST_ARCHIVED', '该请求已经归档，本次不会重复执行。请刷新选项后重新发起新的行动。');
     if (expectedRevision !== this.#state.meta.revision) return fail('STALE_REVISION', '状态已改变，请重新选择行动。');
     const option = actionOptions(this.#state, this.registry).find(x => x.definition.id === intent.actionId);
     if (!option) return fail('ACTION_NOT_AVAILABLE', '该行动不属于当前地点或事件。');
@@ -41,8 +43,9 @@ export class ActionExecutor {
       context.changes.push(...movements.changes); context.resolvedTexts.push(...movements.texts);
       draft.meta.revision++;
       const result: ActionResult = { ok: true, code: 'COMMITTED', message: '行动完成。', requestId,
-        revision: draft.meta.revision, text: [this.registry.text(option.definition.resultText), ...context.resolvedTexts].join('\n\n'), changes: context.changes };
-      draft.ledger.transactions.push({ requestId, fingerprint, result: clone(result) });
+        revision: draft.meta.revision, text: [option.definition.effects.some(e=>e.op==='combat.turn')?'':this.registry.text(option.definition.resultText), ...context.resolvedTexts].filter(Boolean).join('\n\n'), changes: context.changes };
+      draft.ledger.transactions.push({ requestId, fingerprint, result: clone(result), ...(context.narrativeChoice?{narrativeChoice:context.narrativeChoice}:{}) });
+      compactHistory(draft);
       // 只有所有效果成功之后才替换权威状态；渲染、IO、AI 都不参与此次提交。
       this.#state = draft;
       return result;

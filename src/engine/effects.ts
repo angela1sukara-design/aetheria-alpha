@@ -11,13 +11,18 @@ import { aftertasteDecay, routeDistanceTier, routeDurationMinutes, routeStaminaC
 import { SANITY_ID } from '../persistence/vars-migration.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
 import { residentPresent, rememberResident } from './resident-quests.ts';
-export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id }
+import { startNarrative, advanceNarrative } from './narrative.ts';
+import { advanceAdventureDay, applyProgression } from './progression.ts';
+export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id; narrativeChoice?: { nodeId: import('../core/types.ts').Id; index: number } }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
   // 旅行 Action 常仍带 clock.advance 10；时钟改由 location.move 按 Route 推进，同批效果内跳过以免双计（保留旧包指纹）。
   const routeOwnsClock = effects.some(e => e.op === 'location.move');
   for (const effect of effects) {
     if (--context.budget < 0) throw new RuleError('EFFECT_BUDGET', '单次事务效果超过安全上限。');
     switch (effect.op) {
+      case 'narrative.start': startNarrative(draft,registry,context,effect.kind,effect.profileId);break;
+      case 'narrative.choose': advanceNarrative(draft,registry,context,effect.index,applyEffects);break;
+      case 'adventure.change': case 'progression.act': applyProgression(effect,draft,registry,context,applyEffects);break;
       case 'resident.remember': rememberResident(draft, registry, effect.residentId, effect.memoryId); break;
       case 'world.encounter': { const id = encounter(draft,registry,effect.events !== false); if(id) applyEffects([{op:'event.start',id}],draft,registry,context); else context.resolvedTexts.push(effect.events === false ? (draft.district?.currentResidentId ? '你向另一位在场居民打了招呼，可以继续交谈或协助。' : '此刻没有居民在这里停留。可以查看公共活动时段，再等候或前往其他地点。') : '街区暂时平静。你留意了周围的人与路况。'); break; }
       case 'resident.talk': case 'resident.help': context.resolvedTexts.push(residentInteraction(draft,registry,effect.op === 'resident.help')); break;
@@ -44,22 +49,28 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       case 'clock.advance': {
         if (routeOwnsClock) break;
         const before = draft.clock.totalMinutes; advanceTransformationTime(draft, effect.minutes, registry, context.changes);
+        advanceAdventureDay(draft,registry);
         if (effect.minutes) context.changes.push({ label: '时间', before: formatClock(before), after: formatClock(draft.clock.totalMinutes) });
         if (effect.minutes > 0 && !draft.district?.combat) {
+          const recovery = draft.clock.recovery ?? { aftertasteMinutes: 0, skillMinutes: 0 };
+          const aftertasteMinutes = recovery.aftertasteMinutes + effect.minutes;
+          const skillMinutes = recovery.skillMinutes + effect.minutes;
           const atDef = registry.variables.find(v => v.id === 'core:aftertaste');
           const srDef = registry.variables.find(v => v.id === 'core:skillResource');
           if (atDef && 'core:aftertaste' in draft.player.variables) {
             const b = draft.player.variables[atDef.id]!;
-            const a = aftertasteDecay(b, effect.minutes);
+            const a = aftertasteDecay(b, aftertasteMinutes);
             if (a !== b) { draft.player.variables[atDef.id] = a; context.changes.push({ label: atDef.label, before: b, after: a }); }
           }
           if (srDef && 'core:skillResource' in draft.player.variables) {
             const b = draft.player.variables[srDef.id]!;
-            const a = skillResourceOutOfCombatRegen(b, effect.minutes, srDef.max);
+            const a = skillResourceOutOfCombatRegen(b, skillMinutes, srDef.max);
             if (a !== b) { draft.player.variables[srDef.id] = a; context.changes.push({ label: srDef.label, before: b, after: a }); }
           }
+          if (atDef || srDef) draft.clock.recovery = { aftertasteMinutes: aftertasteMinutes % 60, skillMinutes: skillMinutes % 30 };
         }
-        const restLike = /(?:^|:)action\.(?:rest|waitday)\b/.test(context.actionId) || context.actionId.includes('.rest.') || context.actionId.includes('.waitday.');
+        const restLike = /(?:^|:)action\.(?:rest|waitday|sleep)\b/.test(context.actionId) || context.actionId.includes('.rest.') || context.actionId.includes('.waitday.');
+        if(context.actionId==='aetheria:action.rest'&&effect.minutes>=30){const id='core:stamina' as const,def=registry.variables.find(v=>v.id===id);if(def){const before=draft.player.variables[id]!;draft.player.variables[id]=Math.min(def.max,before+Math.floor(effect.minutes/30)*12);if(before!==draft.player.variables[id])context.changes.push({label:def.label,before,after:draft.player.variables[id]!});}}
         if (restLike && effect.minutes >= 30) {
           const def = registry.variables.find(v => v.id === SANITY_ID);
           const delta = sanityRestDelta(effect.minutes);

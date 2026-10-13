@@ -15,6 +15,7 @@ import type { JournalEntry } from './district-panel.ts';
 import { writingContext } from '../engine/writing-context.ts';
 import { mountWorldControls } from './world-panel.ts';
 import { mountPages } from './pages.ts';
+import { loadPersistedExtensions } from '../content/extensions.ts';
 async function fetchJSON(url: URL): Promise<unknown> {
   const response = await fetch(url); if (!response.ok) throw new Error(`无法读取内容包（${response.status}）。`); return response.json();
 }
@@ -28,9 +29,26 @@ async function boot(): Promise<void> {
   const basePacks=embedded?.packs??await Promise.all(index.packs.map(x => fetchJSON(new URL(x, indexUrl))));
   let rulePacks:unknown[]=[];let storedTexts:unknown[]=[];
   try {rulePacks=JSON.parse(localStorage.getItem('aetheria-alpha02-rules')??'[]');storedTexts=JSON.parse(localStorage.getItem('aetheria-alpha02-texts')??'[]');if(!Array.isArray(rulePacks)||!Array.isArray(storedTexts))throw Error();}catch{rulePacks=[];storedTexts=[];}
-  let registry = await loadPacks([...basePacks,...rulePacks]);
+  const extensionLoad = await loadPersistedExtensions(basePacks, rulePacks);
+  rulePacks = extensionLoad.accepted;
+  let quarantinedRules = extensionLoad.quarantined;
+  let registry = extensionLoad.registry;
   let fixedRegistry = registry;
-  const texts=new TextLibrary();for(const p of storedTexts){try{texts.install(p,registry);}catch{ /* invalid prose stays disabled */ }}
+  let textEnabled: Record<string, boolean> = {};
+  try { const raw = JSON.parse(localStorage.getItem('aetheria-alpha02-text-enabled') ?? '{}'); if (raw && typeof raw === 'object' && !Array.isArray(raw)) textEnabled = Object.fromEntries(Object.entries(raw).filter(([, v]) => typeof v === 'boolean')) as Record<string, boolean>; } catch { /* Safe defaults for an older preference format. */ }
+  const texts=new TextLibrary();for(const p of storedTexts){try{const id=texts.install(p,registry);texts.setEnabled(id,textEnabled[id]!==false);}catch{ /* invalid prose stays disabled */ }}
+  const recovery = document.createElement('section'); recovery.id = 'extension-recovery'; byId('pack-dialog').append(recovery);
+  function showQuarantinedRules(): void {
+    recovery.replaceChildren();
+    for (const [i, item] of quarantinedRules.entries()) {
+      const paragraph = document.createElement('p'); paragraph.textContent = `隔离的规则扩展：${item.reason}。原文件与存档均保留。`;
+      const remove = document.createElement('button'); remove.type = 'button'; remove.textContent = '移除这份隔离扩展';
+      remove.addEventListener('click', () => { quarantinedRules.splice(i, 1); persistRules(); showQuarantinedRules(); });
+      recovery.append(paragraph, remove);
+    }
+  }
+  function persistRules(): void { try { localStorage.setItem('aetheria-alpha02-rules', JSON.stringify([...rulePacks, ...quarantinedRules.map(x => x.raw)])); } catch { byId('pack-message').textContent = '扩展在当前会话可用；浏览器未能保存扩展设置，请保留原文件。'; } }
+  showQuarantinedRules();
   const journal=embedded?.journal??await fetchJSON(new URL('../../content/journal.json',import.meta.url)) as JournalEntry[];
   let codec = new SaveCodec(registry); const store=new IndexedDBSaveStore();let saves = new SaveRepository(codec,store);
   const launch = globalThis as unknown as { aetheriaInitialSave?: string; aetheriaSaveSlot?: string };
@@ -151,11 +169,11 @@ async function boot(): Promise<void> {
     // 仅载入到游戏，玩家点击“保存”后才覆盖手动存档。
     adopt(decoded); result = decoded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = `已导入到当前游戏。${decoded.migration ?? '要写入手动存档，请点击保存。'}`;
   }));
-  function persistTexts():void{try{localStorage.setItem('aetheria-alpha02-texts',JSON.stringify(storedTexts));}catch{byId('pack-message').textContent='文本已在当前会话启用；浏览器不允许持久化扩展文件。';}}
+  function persistTexts():void{for(const pack of texts.list())textEnabled[pack.id]=pack.enabled;try{localStorage.setItem('aetheria-alpha02-texts',JSON.stringify(storedTexts));localStorage.setItem('aetheria-alpha02-text-enabled',JSON.stringify(textEnabled));}catch{byId('pack-message').textContent='文本已在当前会话启用；浏览器不允许持久化扩展文件。';}}
   byId('discovery-search').addEventListener('input',redraw);
   byId('adult-preference').addEventListener('change',()=>{if(busy)return;const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(!x.ok)byId('pack-message').textContent=x.message;redraw();});
   byId<HTMLInputElement>('pack-import').addEventListener('change',async event=>{const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file)return;try{if(file.size>1024*1024)throw Error('文本包超过1 MiB。');const raw=JSON.parse(await file.text()),id=texts.install(raw,registry);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);storedTexts.push(raw);persistTexts();redraw();byId('pack-message').textContent='可选文本包已启用。当前进度与效果没有改变。';}catch(error){byId('pack-message').textContent='未导入：'+(error instanceof Error?error.message:error);}});
-  document.addEventListener('click',event=>{const b=(event.target as Element).closest<HTMLButtonElement>('button[data-pack]');if(!b)return;const id=b.dataset.pack!;if(b.dataset.packMove==='delete'){texts.remove(id);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);persistTexts();}else texts.setEnabled(id,!texts.list().find(x=>x.id===id)!.enabled);redraw();byId('pack-message').textContent='文本显示已更新；角色与事件状态保留。';});
+  document.addEventListener('click',event=>{const b=(event.target as Element).closest<HTMLButtonElement>('button[data-pack]');if(!b)return;const id=b.dataset.pack!;if(b.dataset.packMove==='delete'){texts.remove(id);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);delete textEnabled[id];}else {textEnabled[id]=!texts.list().find(x=>x.id===id)!.enabled;texts.setEnabled(id,textEnabled[id]!);}persistTexts();redraw();byId('pack-message').textContent='文本显示已更新；角色与事件状态保留。';});
   byId<HTMLInputElement>('rules-import').addEventListener('change',async event=>{
     const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file||busy)return;busy=true;
     try {
@@ -169,7 +187,7 @@ async function boot(): Promise<void> {
       if(state.worldInstance)state.worldInstance.definition.packs=structuredClone(next.contentPacks);
       const nextCodec=new SaveCodec(next);await nextCodec.encode(state);
       fixedRegistry=fixedNext;adopt({state,registry:next});rulePacks.push(raw);
-      try{localStorage.setItem('aetheria-alpha02-rules',JSON.stringify(rulePacks));}catch{}
+      persistRules();
       redraw();byId('pack-message').textContent='追加事件包校验通过并已启用。公开入口已更新，存档会记录包版本。';
     } catch(error){byId('pack-message').textContent='未导入，原进度保留：'+(error instanceof Error?error.message:error);}finally{busy=false;}
   });

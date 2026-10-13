@@ -1,0 +1,3416 @@
+{
+  "manifest": {
+    "id": "aetheria/adventure",
+    "namespace": "progression",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/recovery",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/district",
+        "version": "0.2.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/foundation",
+        "version": "1.0.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "foundation.v2",
+      "adventure.v1",
+      "condition.v1",
+      "effect.v1",
+      "hook.global.v1",
+      "district.v1",
+      "body.graph.v1",
+      "tf.pipeline.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [
+    {
+      "id": "progression:hook.runtime",
+      "accepts": "action",
+      "visibility": "public"
+    }
+  ],
+  "locations": [],
+  "routes": [],
+  "actions": [
+    {
+      "id": "progression:action.story.0",
+      "label": "继续当前经历",
+      "hint": "按当前条件执行",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.choose",
+          "index": 0
+        }
+      ],
+      "resultText": "progression:text.action.story.0"
+    },
+    {
+      "id": "progression:action.story.1",
+      "label": "继续当前经历",
+      "hint": "按当前条件执行",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.choose",
+          "index": 1
+        }
+      ],
+      "resultText": "progression:text.action.story.1"
+    },
+    {
+      "id": "progression:action.story.2",
+      "label": "继续当前经历",
+      "hint": "按当前条件执行",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.choose",
+          "index": 2
+        }
+      ],
+      "resultText": "progression:text.action.story.2"
+    },
+    {
+      "id": "progression:action.story.3",
+      "label": "继续当前经历",
+      "hint": "按当前条件执行",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.choose",
+          "index": 3
+        }
+      ],
+      "resultText": "progression:text.action.story.3"
+    },
+    {
+      "id": "progression:action.rest",
+      "label": "安全休息半小时",
+      "hint": "30分钟 · 体力+12 · 精力+12",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 12
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 12
+        }
+      ],
+      "resultText": "progression:text.action.rest"
+    },
+    {
+      "id": "progression:action.sleep",
+      "label": "休息到次日同一时刻",
+      "hint": "24小时 · 体力+50 · 精力+70",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 1440
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 50
+        },
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 70
+        }
+      ],
+      "resultText": "progression:text.action.sleep"
+    },
+    {
+      "id": "progression:action.care",
+      "label": "接受基础伤势处理",
+      "hint": "30分钟 · 生命+12",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 30
+        },
+        {
+          "op": "var.change",
+          "id": "core:health",
+          "amount": 12
+        }
+      ],
+      "resultText": "progression:text.action.care"
+    },
+    {
+      "id": "progression:action.train.attack",
+      "label": "训练攻击",
+      "hint": "45分钟 · 零钱−8 · 体力−8 · 精力−4 · 攻击+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "train",
+          "id": "core:attack"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "train",
+          "id": "core:attack"
+        }
+      ],
+      "resultText": "progression:text.action.train.attack"
+    },
+    {
+      "id": "progression:action.train.defense",
+      "label": "训练防御",
+      "hint": "45分钟 · 零钱−8 · 体力−8 · 精力−4 · 防御+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "train",
+          "id": "core:defense"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "train",
+          "id": "core:defense"
+        }
+      ],
+      "resultText": "progression:text.action.train.defense"
+    },
+    {
+      "id": "progression:action.train.speed",
+      "label": "训练速度",
+      "hint": "45分钟 · 零钱−8 · 体力−8 · 精力−4 · 速度+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "train",
+          "id": "core:speed"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "train",
+          "id": "core:speed"
+        }
+      ],
+      "resultText": "progression:text.action.train.speed"
+    },
+    {
+      "id": "progression:action.train.skillPower",
+      "label": "训练技能强度",
+      "hint": "45分钟 · 零钱−8 · 体力−8 · 精力−4 · 技能强度+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "train",
+          "id": "core:skillPower"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "train",
+          "id": "core:skillPower"
+        }
+      ],
+      "resultText": "progression:text.action.train.skillPower"
+    },
+    {
+      "id": "progression:action.train.hit",
+      "label": "训练命中",
+      "hint": "45分钟 · 零钱−8 · 体力−8 · 精力−4 · 命中+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "train",
+          "id": "core:hit"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "train",
+          "id": "core:hit"
+        }
+      ],
+      "resultText": "progression:text.action.train.hit"
+    },
+    {
+      "id": "progression:action.train.evasion",
+      "label": "训练闪避",
+      "hint": "45分钟 · 零钱−8 · 体力−8 · 精力−4 · 闪避+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "train",
+          "id": "core:evasion"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "train",
+          "id": "core:evasion"
+        }
+      ],
+      "resultText": "progression:text.action.train.evasion"
+    },
+    {
+      "id": "progression:action.train.crit",
+      "label": "训练暴击",
+      "hint": "45分钟 · 零钱−8 · 体力−8 · 精力−4 · 暴击+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "train",
+          "id": "core:crit"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "train",
+          "id": "core:crit"
+        }
+      ],
+      "resultText": "progression:text.action.train.crit"
+    },
+    {
+      "id": "progression:action.order",
+      "label": "完成一份公开订单",
+      "hint": "30分钟 · 体力−8 · 精力−5 · 报酬与经营份额",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "order"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "order"
+        }
+      ],
+      "resultText": "progression:text.action.order"
+    },
+    {
+      "id": "progression:action.invest",
+      "label": "登记经营份额",
+      "hint": "45分钟 · 零钱−30 · 经营份额+2 · 契约+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "invest"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "invest"
+        }
+      ],
+      "resultText": "progression:text.action.invest"
+    },
+    {
+      "id": "progression:action.patrol",
+      "label": "完成一次街区巡查",
+      "hint": "45分钟 · 体力−10 · 安全+2 · 组织影响+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "patrol"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "patrol"
+        }
+      ],
+      "resultText": "progression:text.action.patrol"
+    },
+    {
+      "id": "progression:action.aid",
+      "label": "参与公共协作",
+      "hint": "30分钟 · 体力−4 · 声望+2 · 安全+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "aid"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "aid"
+        }
+      ],
+      "resultText": "progression:text.action.aid"
+    },
+    {
+      "id": "progression:action.reconcile",
+      "label": "调解一项当地分歧",
+      "hint": "30分钟 · 精力−4 · 组织影响+1",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "reconcile"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "reconcile"
+        }
+      ],
+      "resultText": "progression:text.action.reconcile"
+    },
+    {
+      "id": "progression:action.buy.blade",
+      "label": "购买工坊制式工具刃",
+      "hint": "10分钟 · 零钱−25",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.blade"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.blade"
+        }
+      ],
+      "resultText": "progression:text.action.buy.blade"
+    },
+    {
+      "id": "progression:action.wear.blade",
+      "label": "装备工坊制式工具刃",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.blade"
+        }
+      ],
+      "resultText": "progression:text.action.wear.blade"
+    },
+    {
+      "id": "progression:action.buy.vest",
+      "label": "购买加固巡查背心",
+      "hint": "10分钟 · 零钱−30",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.vest"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.vest"
+        }
+      ],
+      "resultText": "progression:text.action.buy.vest"
+    },
+    {
+      "id": "progression:action.wear.vest",
+      "label": "装备加固巡查背心",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.vest"
+        }
+      ],
+      "resultText": "progression:text.action.wear.vest"
+    },
+    {
+      "id": "progression:action.buy.staff",
+      "label": "购买平衡练习杖",
+      "hint": "10分钟 · 零钱−25",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.staff"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.staff"
+        }
+      ],
+      "resultText": "progression:text.action.buy.staff"
+    },
+    {
+      "id": "progression:action.wear.staff",
+      "label": "装备平衡练习杖",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.staff"
+        }
+      ],
+      "resultText": "progression:text.action.wear.staff"
+    },
+    {
+      "id": "progression:action.buy.coat",
+      "label": "购买轻型防护外套",
+      "hint": "10分钟 · 零钱−30",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.coat"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.coat"
+        }
+      ],
+      "resultText": "progression:text.action.buy.coat"
+    },
+    {
+      "id": "progression:action.wear.coat",
+      "label": "装备轻型防护外套",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.coat"
+        }
+      ],
+      "resultText": "progression:text.action.wear.coat"
+    },
+    {
+      "id": "progression:action.combat.skill",
+      "label": "技能击",
+      "hint": "技能资源−15 · 体力−4 · 行动点2",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.turn",
+          "move": "skill"
+        }
+      ],
+      "resultText": "progression:text.action.combat.skill"
+    },
+    {
+      "id": "progression:action.event.victory",
+      "label": "返回安全位置",
+      "hint": "免费退出",
+      "group": "event",
+      "context": {
+        "eventId": "progression:event.victory",
+        "nodeId": "start"
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "progression:text.event.victory.end"
+    },
+    {
+      "id": "progression:action.event.escape",
+      "label": "返回安全位置",
+      "hint": "免费退出",
+      "group": "event",
+      "context": {
+        "eventId": "progression:event.escape",
+        "nodeId": "start"
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "progression:text.event.escape.end"
+    },
+    {
+      "id": "progression:action.event.defeat",
+      "label": "返回安全位置",
+      "hint": "免费退出",
+      "group": "event",
+      "context": {
+        "eventId": "progression:event.defeat",
+        "nodeId": "start"
+      },
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "progression:text.event.defeat.end"
+    },
+    {
+      "id": "progression:action.challenge.raider",
+      "label": "挑战：抢占通道的游荡者",
+      "hint": "观察属性后交锋；可以撤离",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "any",
+          "conditions": [
+            {
+              "op": "environment.service",
+              "value": "commons"
+            },
+            {
+              "op": "environment.service",
+              "value": "workshop"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "progression:enemy.raider"
+        }
+      ],
+      "resultText": "progression:text.action.challenge.raider"
+    },
+    {
+      "id": "progression:action.challenge.sentinel",
+      "label": "挑战：封锁通道的重装哨卫",
+      "hint": "观察属性后交锋；可以撤离",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "any",
+          "conditions": [
+            {
+              "op": "environment.service",
+              "value": "commons"
+            },
+            {
+              "op": "environment.service",
+              "value": "workshop"
+            }
+          ]
+        },
+        {
+          "op": "adventure.compare",
+          "field": "victories",
+          "comparison": "gte",
+          "value": 2
+        }
+      ],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "progression:enemy.sentinel"
+        }
+      ],
+      "resultText": "progression:text.action.challenge.sentinel"
+    },
+    {
+      "id": "progression:action.challenge.overseer",
+      "label": "挑战：维护核心的失控监理",
+      "hint": "观察属性后交锋；可以撤离",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "any",
+          "conditions": [
+            {
+              "op": "environment.service",
+              "value": "commons"
+            },
+            {
+              "op": "environment.service",
+              "value": "workshop"
+            }
+          ]
+        },
+        {
+          "op": "adventure.compare",
+          "field": "victories",
+          "comparison": "gte",
+          "value": 4
+        },
+        {
+          "op": "adventure.compare",
+          "field": "influence",
+          "comparison": "gte",
+          "value": 4
+        }
+      ],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "progression:enemy.overseer"
+        }
+      ],
+      "resultText": "progression:text.action.challenge.overseer"
+    },
+    {
+      "id": "progression:action.challenge.gel",
+      "label": "调查危险：渠底黑胶群落",
+      "hint": "交锋、撤离或战后恢复",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "any",
+          "conditions": [
+            {
+              "op": "environment.service",
+              "value": "commons"
+            },
+            {
+              "op": "environment.service",
+              "value": "market"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "district:enemy.gel"
+        }
+      ],
+      "resultText": "progression:text.action.challenge.gel"
+    },
+    {
+      "id": "progression:action.challenge.collector",
+      "label": "调查危险：拦路收债客",
+      "hint": "交锋、撤离或战后恢复",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "any",
+          "conditions": [
+            {
+              "op": "environment.service",
+              "value": "commons"
+            },
+            {
+              "op": "environment.service",
+              "value": "market"
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "op": "combat.start",
+          "id": "district:enemy.collector"
+        }
+      ],
+      "resultText": "progression:text.action.challenge.collector"
+    },
+    {
+      "id": "progression:action.narrative.encounter",
+      "label": "留意一次当地遭遇",
+      "hint": "根据当前状态展开；可以免费结束",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "encounter"
+        }
+      ],
+      "resultText": "progression:text.action.narrative.encounter"
+    },
+    {
+      "id": "progression:action.narrative.exploration",
+      "label": "仔细查看当前环境",
+      "hint": "根据当前状态展开；可以免费结束",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "exploration"
+        }
+      ],
+      "resultText": "progression:text.action.narrative.exploration"
+    },
+    {
+      "id": "progression:action.narrative.daily",
+      "label": "安排一段日常事务",
+      "hint": "根据当前状态展开；可以免费结束",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "daily"
+        }
+      ],
+      "resultText": "progression:text.action.narrative.daily"
+    },
+    {
+      "id": "progression:action.narrative.conversation",
+      "label": "与在场居民继续交谈",
+      "hint": "根据当前状态展开；可以免费结束",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "resident.available"
+        }
+      ],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "conversation"
+        }
+      ],
+      "resultText": "progression:text.action.narrative.conversation"
+    },
+    {
+      "id": "progression:action.narrative.quest",
+      "label": "核对当前进展",
+      "hint": "根据当前状态展开；可以免费结束",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "quest"
+        }
+      ],
+      "resultText": "progression:text.action.narrative.quest"
+    },
+    {
+      "id": "progression:action.narrative.transformation",
+      "label": "练习适应当前身体",
+      "hint": "根据当前状态展开；可以免费结束",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "transformation"
+        }
+      ],
+      "resultText": "progression:text.action.narrative.transformation"
+    },
+    {
+      "id": "progression:action.narrative.ending",
+      "label": "回顾已经留下的结果",
+      "hint": "根据当前状态展开；可以免费结束",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "adventure.compare",
+          "field": "reputation",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "ending"
+        }
+      ],
+      "resultText": "progression:text.action.narrative.ending"
+    }
+  ],
+  "events": [
+    {
+      "id": "progression:event.victory",
+      "startNode": "start",
+      "rating": "general",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "progression:text.event.victory"
+          ],
+          "actionIds": [
+            "progression:action.event.victory"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "progression:text.event.victory.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "progression:event.escape",
+      "startNode": "start",
+      "rating": "general",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "progression:text.event.escape"
+          ],
+          "actionIds": [
+            "progression:action.event.escape"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "progression:text.event.escape.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "progression:event.defeat",
+      "startNode": "start",
+      "rating": "general",
+      "nodes": [
+        {
+          "id": "start",
+          "type": "choice",
+          "textVariants": [
+            "progression:text.event.defeat"
+          ],
+          "actionIds": [
+            "progression:action.event.defeat"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "progression:text.event.defeat.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "progression:text.action.story.0": "继续当前经历。",
+    "progression:text.action.story.1": "继续当前经历。",
+    "progression:text.action.story.2": "继续当前经历。",
+    "progression:text.action.story.3": "继续当前经历。",
+    "progression:text.choice.4": "你停下无效的挣扎，检查可活动部位【已检查处境】。",
+    "progression:text.node.defeat.start": "你已经失去继续交锋的力气【伤后乏力】，但仍能辨认周围的声音【保持清醒】。你先稳住身体，判断怎样离开眼前的处境。",
+    "progression:text.choice.6": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.7": "你确认了限制所在【已检查处境】。",
+    "progression:text.choice.8": "你向公共通道清楚地发出求助【已发出求助】。",
+    "progression:text.node.defeat.control": "{opponent}先收拢现场，阻止你再次贸然行动【控制现场目标】。你仍保持清醒【保持清醒】，可以检查限制的位置，或发声请求协助。",
+    "progression:text.choice.10": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.11": "你确认伤处并完成简单处理，随后回到安全通道。",
+    "progression:text.choice.12": "你说明自己需要协助【已发出求助】。",
+    "progression:text.node.defeat.direct": "{opponent}确认你无法继续交锋，便结束了这次接触【结束接触目标】。你留在原地喘息，先检查伤势，再决定是否需要协助【伤后乏力】。",
+    "progression:text.choice.14": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.15": "对方说明检查范围，等待你的下一步决定。",
+    "progression:text.choice.16": "你拒绝这次检查，停止接触并离开。",
+    "progression:text.node.defeat.repair": "{opponent}把维护工具放在一旁【携带维护工具】，提出检查装备的方案【检查改装目标】。你仍可以拒绝，或先要求对方说明检查范围。此时尚未发生任何身体改造。",
+    "progression:text.choice.18": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.19": "你发出求助信号【已发出求助】。",
+    "progression:text.choice.20": "你沿安全路线离开危险位置，休息后再决定下一步。",
+    "progression:text.node.defeat.assess": "你把注意力放回可活动部位。身体的真实结构仍然保留，眼前的限制需要分别处理；你可以继续求助，也可以沿安全路线离开【已检查处境】。",
+    "progression:text.choice.22": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.23": "你松开外衣的牵扯，沿台阶回到安全位置。",
+    "progression:text.choice.24": "你报出所在位置，请求协助【已发出求助】。",
+    "progression:text.node.defeat.coat": "外衣的下摆粘在低处【外衣黏附】，身体本身没有因此变成黑胶。你确认手边仍有可用的抓握部位，可以尝试松开外衣，或请求协助。",
+    "progression:text.choice.26": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.27": "你清楚报出位置【已发出求助】。",
+    "progression:text.node.defeat.hands": "你发现双手暂时不便取用工具【双手受限】。你不再强行够取物件，转而用声音说明自己所在的位置。",
+    "progression:text.choice.29": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.30": "对方帮助你脱离现场，并处理了擦伤。事故情况已经记入本次经历。",
+    "progression:text.choice.31": "对方协助你离开危险位置，你保留之后自行处理伤势的选择。",
+    "progression:text.node.defeat.help": "通道里传来回应。值班人员根据你刚才报出的信息找到现场【已发出求助】，先确认你的意识与伤处，再询问你希望接受哪些帮助。",
+    "progression:text.choice.33": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.34": "现场得到整理，你离开危险位置。",
+    "progression:text.node.defeat.repair.scope": "检查范围已经说明。你可以结束检查，或要求先处理现场安全。没有相应设备与已确认身体条件的项目不会自动执行【检查改装目标】。",
+    "progression:text.choice.36": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.37": "你明确接受本次长度调整【接受本次修理】；维护完成，尾部的真实长度记录为650毫米。",
+    "progression:text.choice.38": "你拒绝改装，沿安全路线离开。",
+    "progression:text.node.defeat.repair.tail": "你的尾部确为机械结构【机械尾】。对方提出把尾部外伸长度调整到650毫米，说明需要十五分钟【检查改装目标】。这一项只会在你明确接受后开始。",
+    "progression:text.choice.40": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.41": "你完成这一次观察，记录实际看见的内容。",
+    "progression:text.node.encounter.start": "你在{place}停下，留意眼前正在发生的小事。先观察当前处境，再决定是否参与【探索】。",
+    "progression:text.choice.43": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.detail": "你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。",
+    "progression:text.choice.45": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.46": "你完成这一次观察，记录实际看见的内容。",
+    "progression:text.node.exploration.start": "你沿{place}的可见通道查看路面与告示。已经走过的路线可以核对，尚未进入的地方仍保留未知【调查】。",
+    "progression:text.choice.48": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.exploration.detail": "你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。",
+    "progression:text.choice.50": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.51": "你完成了当前可用的公共协作【公共协作】。",
+    "progression:text.node.daily.start": "你在{place}检查手边的事情，衡量当前体力与精力。可以选择一段公共协作，也可以留出时间休息【生活】。",
+    "progression:text.choice.53": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.54": "你们谈起已经知道的近况，这次交谈按原居民规则记录。",
+    "progression:text.node.conversation.start": "你与已经在场的{opponent}谈起眼前的事务。你先听对方把话说完，再决定是否参与【社交】。",
+    "progression:text.choice.56": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.57": "你完成这一次观察，记录实际看见的内容。",
+    "progression:text.node.quest.start": "你把已经发生的进展与眼前的安排核对。需要进一步处理的事项仍要通过实际行动完成【工作】。",
+    "progression:text.choice.59": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.quest.detail": "你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。",
+    "progression:text.choice.61": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.62": "你完成这一次观察，记录实际看见的内容。",
+    "progression:text.node.transformation.start": "你放慢动作，检查身体目前的支撑与活动方式。已经完成的变化以真实身体记录为准，尚在推进的项目仍需等待【适应】。",
+    "progression:text.choice.64": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.transformation.detail": "你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。",
+    "progression:text.choice.66": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.67": "你完成这一次观察，记录实际看见的内容。",
+    "progression:text.node.ending.start": "你回顾已完成的契约、协作与交锋。当前的经营份额、组织影响和街区安全仍然保留，之后的行动会继续改变它们【身份】。",
+    "progression:text.choice.69": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.ending.detail": "你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。",
+    "progression:text.choice.71": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.72": "你核对并记录了当前可见的路线【路线发现】。",
+    "progression:text.node.exploration.night": "真实时钟已经进入夜间【夜间】。你在{place}核对照明和公开告示，先确认可见的安全路线。",
+    "progression:text.choice.74": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.75": "你完成动作练习，真实身体结构与转化进度保持一致。",
+    "progression:text.node.transformation.tail": "你确实拥有尾部【有尾】。你放慢转身速度，确认尾部的位置和当前支撑方式；这次练习不会自动增加身体能力。",
+    "progression:text.choice.77": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.78": "你用几分钟确认了限制所在【已检查处境】。",
+    "progression:text.choice.79": "你清楚说明位置，请求协助【已发出求助】。",
+    "progression:text.node.defeat.control.cautious": "{opponent}没有立刻改变现场，而是先核对周围的风险【谨慎】。对方要求你停止贸然发力【控制现场目标】，留出检查限制位置的时间。你可以配合检查，也可以直接提出离开。",
+    "progression:text.choice.81": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.82": "你听清维护范围，保留接受或拒绝的选择。",
+    "progression:text.choice.83": "你拒绝这次维护，沿安全通道离开。",
+    "progression:text.node.defeat.repair.cautious": "{opponent}先把工具留在你能看见的位置【携带维护工具】，逐项说明维护范围，再等待你的决定【谨慎】。任何实际调整都需要你接下来的明确选择。",
+    "progression:text.choice.85": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.86": "你核对了可用工作区，记录在本次经历中【发现】。",
+    "progression:text.choice.87": "你把注意力转向通道和告示。",
+    "progression:text.node.exploration.workshop": "这里实际提供工坊服务【工坊服务】。你核对公开的设备时段与通道，寻找能够参与的工作；工具和设备的实际使用仍需满足对应条件。",
+    "progression:text.choice.89": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.90": "你休息了半小时，体力与精力恢复。",
+    "progression:text.node.daily.tired": "你当前的体力不足以安排强度较高的工作【体力≤19】。你可以先找个安全位置休息，恢复之后再处理当天事务。",
+    "progression:text.choice.92": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.93": "你们完成这次近况交谈，原居民记忆规则记录实际发生的交流。",
+    "progression:text.node.conversation.progress": "你可以向在场的{opponent}讲述已经登记的街区进展【社交】。对方的具体反应仍取决于当下的交谈，这次说明不会替对方接受新的约定。",
+    "progression:text.choice.95": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.96": "你保留当前经营安排，接下来的结算仍依据实际份额。",
+    "progression:text.node.ending.resource": "你逐项核对当前登记的经营份额、订单与契约【交易】。这些记录会继续参与跨日结算和终局条件，已经完成的事项不会因查看而再次奖励。",
+    "progression:text.choice.98": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.99": "你结束这次回顾，实际胜利与安全记录继续保留。",
+    "progression:text.node.ending.security": "你核对已经记录的有效胜利和街区安全【恢复】。组织影响来自实际任务、协作与交锋，后续是否继续行动仍由你决定。",
+    "progression:text.choice.101": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.tail-maintenance": "本次确认的长度调整已经完成，真实尾部参数更新为650毫米。",
+    "progression:text.action.rest": "安全休息半小时。",
+    "progression:text.action.sleep": "休息到次日同一时刻。",
+    "progression:text.action.care": "接受基础伤势处理。",
+    "progression:text.action.train.attack": "训练攻击。",
+    "progression:text.action.train.defense": "训练防御。",
+    "progression:text.action.train.speed": "训练速度。",
+    "progression:text.action.train.skillPower": "训练技能强度。",
+    "progression:text.action.train.hit": "训练命中。",
+    "progression:text.action.train.evasion": "训练闪避。",
+    "progression:text.action.train.crit": "训练暴击。",
+    "progression:text.action.order": "完成一份公开订单。",
+    "progression:text.action.invest": "登记经营份额。",
+    "progression:text.action.patrol": "完成一次街区巡查。",
+    "progression:text.action.aid": "参与公共协作。",
+    "progression:text.action.reconcile": "调解一项当地分歧。",
+    "progression:text.action.buy.blade": "购买工坊制式工具刃。",
+    "progression:text.action.wear.blade": "装备工坊制式工具刃。",
+    "progression:text.action.buy.vest": "购买加固巡查背心。",
+    "progression:text.action.wear.vest": "装备加固巡查背心。",
+    "progression:text.action.buy.staff": "购买平衡练习杖。",
+    "progression:text.action.wear.staff": "装备平衡练习杖。",
+    "progression:text.action.buy.coat": "购买轻型防护外套。",
+    "progression:text.action.wear.coat": "装备轻型防护外套。",
+    "progression:text.action.combat.skill": "技能击。",
+    "progression:text.event.victory": "交锋已经结束。实际奖励、胜利记录与街区后果已经结算【恢复】。",
+    "progression:text.event.victory.end": "你回到当前地点，可以休息、处理伤势或继续行动。",
+    "progression:text.event.escape": "你已经撤离这次交锋，没有获得战斗奖励【边界】。",
+    "progression:text.event.escape.end": "你回到当前地点，可以休息、处理伤势或继续行动。",
+    "progression:text.event.defeat": "你暂时失去继续交锋的能力，仍可以离开并恢复【恢复】。",
+    "progression:text.event.defeat.end": "你回到当前地点，可以休息、处理伤势或继续行动。",
+    "progression:text.action.challenge.raider": "挑战：抢占通道的游荡者。",
+    "progression:text.action.challenge.sentinel": "挑战：封锁通道的重装哨卫。",
+    "progression:text.action.challenge.overseer": "挑战：维护核心的失控监理。",
+    "progression:text.action.challenge.gel": "调查危险：渠底黑胶群落。",
+    "progression:text.action.challenge.collector": "调查危险：拦路收债客。",
+    "progression:text.action.narrative.encounter": "留意一次当地遭遇。",
+    "progression:text.action.narrative.exploration": "仔细查看当前环境。",
+    "progression:text.action.narrative.daily": "安排一段日常事务。",
+    "progression:text.action.narrative.conversation": "与在场居民继续交谈。",
+    "progression:text.action.narrative.quest": "核对当前进展。",
+    "progression:text.action.narrative.transformation": "练习适应当前身体。",
+    "progression:text.action.narrative.ending": "回顾已经留下的结果。"
+  },
+  "contributions": [
+    {
+      "hookId": "progression:hook.runtime",
+      "actionIds": [
+        "progression:action.story.0",
+        "progression:action.story.1",
+        "progression:action.story.2",
+        "progression:action.story.3",
+        "progression:action.rest",
+        "progression:action.sleep",
+        "progression:action.care",
+        "progression:action.train.attack",
+        "progression:action.train.defense",
+        "progression:action.train.speed",
+        "progression:action.train.skillPower",
+        "progression:action.train.hit",
+        "progression:action.train.evasion",
+        "progression:action.train.crit",
+        "progression:action.order",
+        "progression:action.invest",
+        "progression:action.patrol",
+        "progression:action.aid",
+        "progression:action.reconcile",
+        "progression:action.buy.blade",
+        "progression:action.wear.blade",
+        "progression:action.buy.vest",
+        "progression:action.wear.vest",
+        "progression:action.buy.staff",
+        "progression:action.wear.staff",
+        "progression:action.buy.coat",
+        "progression:action.wear.coat",
+        "progression:action.combat.skill",
+        "progression:action.challenge.raider",
+        "progression:action.challenge.sentinel",
+        "progression:action.challenge.overseer",
+        "progression:action.challenge.gel",
+        "progression:action.challenge.collector",
+        "progression:action.narrative.encounter",
+        "progression:action.narrative.exploration",
+        "progression:action.narrative.daily",
+        "progression:action.narrative.conversation",
+        "progression:action.narrative.quest",
+        "progression:action.narrative.transformation",
+        "progression:action.narrative.ending"
+      ]
+    }
+  ],
+  "globalActionHooks": [
+    "progression:hook.runtime"
+  ],
+  "tags": [
+    {
+      "id": "progression:tag.control",
+      "label": "控制倾向",
+      "definition": "偏爱先稳定现场和限制危险行动的行为倾向，不授予身体能力。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.direct",
+      "label": "直接倾向",
+      "definition": "偏爱尽快结束当前事务的行为倾向。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.repair",
+      "label": "改造与修理倾向",
+      "definition": "偏爱提出检查与改装方案，不代表实际执行或取得同意。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.cautious",
+      "label": "谨慎",
+      "definition": "优先核对条件和风险的倾向；对应离线概念general-taxonomy:disposition.caution。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.tools",
+      "label": "携带维护工具",
+      "definition": "行为档案确认对方携带维护工具，工具不替代玩家的选择。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.goal.control",
+      "label": "控制现场目标",
+      "definition": "本次主要目标为稳定现场。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.goal.leave",
+      "label": "结束接触目标",
+      "definition": "本次主要目标为结束接触并离开。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.goal.repair",
+      "label": "检查改装目标",
+      "definition": "本次主要目标为提出检查或修理方案。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.coat.stuck",
+      "label": "外衣黏附",
+      "definition": "战败结算明确写入的玩家外衣暂时黏附事实，不等于身体黑胶化。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.hands.restricted",
+      "label": "双手受限",
+      "definition": "故事局部事实：玩家双手暂时不便取用工具，不移除BodyGraph中的手。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.clear",
+      "label": "保持清醒",
+      "definition": "当前战败规则确认玩家仍可清楚回应。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.injured",
+      "label": "伤后乏力",
+      "definition": "战败结算留下的局部状态。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.signal",
+      "label": "已发出求助",
+      "definition": "实际选择求助后记录的本次信号事实。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.assessed",
+      "label": "已检查处境",
+      "definition": "玩家已通过选择检查现场。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.aid",
+      "label": "公共协作",
+      "definition": "发生的公共协作行动题材。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.route",
+      "label": "路线发现",
+      "definition": "本次探索确认了可使用的通道信息。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.repair.accepted",
+      "label": "接受本次修理",
+      "definition": "本次选择明确接受指定修理，不能用于其他范围。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    }
+  ],
+  "narrativeNodes": [
+    {
+      "id": "progression:node.defeat.start",
+      "kind": "defeat",
+      "stage": "start",
+      "title": "交锋之后",
+      "textKey": "progression:text.node.defeat.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "检查还能怎样活动",
+          "resultText": "progression:text.choice.4",
+          "next": "assess",
+          "effects": [],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.assessed"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.6",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.control",
+      "kind": "defeat",
+      "stage": "start",
+      "title": "被留在原处",
+      "textKey": "progression:text.node.defeat.control",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.goal.control"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.control",
+          "weight": 1
+        }
+      ],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "检查限制位置",
+          "resultText": "progression:text.choice.7",
+          "next": "assess",
+          "effects": [],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.assessed"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "发声请求协助",
+          "resultText": "progression:text.choice.8",
+          "next": "help",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.signal"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.10",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.direct",
+      "kind": "defeat",
+      "stage": "start",
+      "title": "冲突已经结束",
+      "textKey": "progression:text.node.defeat.direct",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.goal.leave"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.direct",
+          "weight": 1
+        }
+      ],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "缓慢检查并处理擦伤",
+          "resultText": "progression:text.choice.11",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 8
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "请求值班协助",
+          "resultText": "progression:text.choice.12",
+          "next": "help",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.signal"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.14",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.repair",
+      "kind": "defeat",
+      "stage": "start",
+      "title": "提出检查方案",
+      "textKey": "progression:text.node.defeat.repair",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.goal.repair"
+        },
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.tools"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.repair",
+          "weight": 1
+        }
+      ],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "先听检查范围",
+          "resultText": "progression:text.choice.15",
+          "next": "repair",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "拒绝检查，请求离开",
+          "resultText": "progression:text.choice.16",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.18",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.assess",
+      "kind": "defeat",
+      "stage": "assess",
+      "title": "检查处境",
+      "textKey": "progression:text.node.defeat.assess",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "发声请求协助",
+          "resultText": "progression:text.choice.19",
+          "next": "help",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.signal"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "沿安全路线缓慢离开",
+          "resultText": "progression:text.choice.20",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 20
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.22",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.coat",
+      "kind": "defeat",
+      "stage": "assess",
+      "title": "找到黏附位置",
+      "textKey": "progression:text.node.defeat.coat",
+      "requiresTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.coat.stuck"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "松开被牵住的外衣",
+          "resultText": "progression:text.choice.23",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "body.hasCapability",
+              "capability": "grasp",
+              "count": 1
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.coat.stuck"
+            }
+          ]
+        },
+        {
+          "label": "发声请求协助",
+          "resultText": "progression:text.choice.24",
+          "next": "help",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.signal"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.26",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.hands",
+      "kind": "defeat",
+      "stage": "assess",
+      "title": "双手暂时受限",
+      "textKey": "progression:text.node.defeat.hands",
+      "requiresTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.hands.restricted"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 6,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "清楚报出位置并等待协助",
+          "resultText": "progression:text.choice.27",
+          "next": "help",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.signal"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.29",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.help",
+      "kind": "defeat",
+      "stage": "help",
+      "title": "回应来自通道",
+      "textKey": "progression:text.node.defeat.help",
+      "requiresTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.signal"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "接受脱困与基础护理",
+          "resultText": "progression:text.choice.30",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 20
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 12
+            },
+            {
+              "op": "adventure.change",
+              "field": "safety",
+              "amount": 1
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "只请求离开危险位置",
+          "resultText": "progression:text.choice.31",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 3
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.33",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.repair.scope",
+      "kind": "defeat",
+      "stage": "repair",
+      "title": "保留自己的决定",
+      "textKey": "progression:text.node.defeat.repair.scope",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "先处理现场安全",
+          "resultText": "progression:text.choice.34",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 3
+            },
+            {
+              "op": "adventure.change",
+              "field": "safety",
+              "amount": 1
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.36",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.repair.tail",
+      "kind": "defeat",
+      "stage": "repair",
+      "title": "机械尾的维护提议",
+      "textKey": "progression:text.node.defeat.repair.tail",
+      "requiresTags": [
+        {
+          "role": "player",
+          "tagId": "foundation:body.mechanical-tail"
+        },
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.tools"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail",
+            "materialFamily": "mechanical"
+          }
+        },
+        {
+          "op": "tf.state",
+          "id": "progression:tf.tail-maintenance",
+          "state": "idle"
+        },
+        {
+          "op": "not",
+          "condition": {
+            "op": "body.matches",
+            "target": {
+              "kind": "player"
+            },
+            "part": {
+              "kind": "tail",
+              "lengthMm": 650
+            }
+          }
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 6,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "接受这一次长度调整",
+          "resultText": "progression:text.choice.37",
+          "next": null,
+          "effects": [
+            {
+              "op": "tf.enqueue",
+              "id": "progression:tf.tail-maintenance"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.repair.accepted"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "拒绝改装，离开现场",
+          "resultText": "progression:text.choice.38",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 3
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.40",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.start",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "眼前的遭遇",
+      "textKey": "progression:text.node.encounter.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "继续核对细节",
+          "resultText": "progression:text.choice.41",
+          "next": "detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.43",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.detail",
+      "kind": "encounter",
+      "stage": "detail",
+      "title": "这一次的新发现",
+      "textKey": "progression:text.node.encounter.detail",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.45",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.exploration.start",
+      "kind": "exploration",
+      "stage": "start",
+      "title": "查看周围",
+      "textKey": "progression:text.node.exploration.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "继续核对细节",
+          "resultText": "progression:text.choice.46",
+          "next": "detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.48",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.exploration.detail",
+      "kind": "exploration",
+      "stage": "detail",
+      "title": "这一次的新发现",
+      "textKey": "progression:text.node.exploration.detail",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.50",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.daily.start",
+      "kind": "daily",
+      "stage": "start",
+      "title": "安排一段日常",
+      "textKey": "progression:text.node.daily.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "完成一次公共协作",
+          "resultText": "progression:text.choice.51",
+          "next": null,
+          "effects": [
+            {
+              "op": "progression.act",
+              "move": "aid"
+            }
+          ],
+          "conditions": [
+            {
+              "op": "progression.available",
+              "move": "aid"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.53",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.conversation.start",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与眼前的人交谈",
+      "textKey": "progression:text.node.conversation.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "交换今天的近况",
+          "resultText": "progression:text.choice.54",
+          "next": null,
+          "effects": [
+            {
+              "op": "resident.talk"
+            }
+          ],
+          "conditions": [
+            {
+              "op": "resident.available"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.56",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.quest.start",
+      "kind": "quest",
+      "stage": "start",
+      "title": "核对当前事务",
+      "textKey": "progression:text.node.quest.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "继续核对细节",
+          "resultText": "progression:text.choice.57",
+          "next": "detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.59",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.quest.detail",
+      "kind": "quest",
+      "stage": "detail",
+      "title": "这一次的新发现",
+      "textKey": "progression:text.node.quest.detail",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.61",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.transformation.start",
+      "kind": "transformation",
+      "stage": "start",
+      "title": "适应当前身体",
+      "textKey": "progression:text.node.transformation.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "继续核对细节",
+          "resultText": "progression:text.choice.62",
+          "next": "detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.64",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.transformation.detail",
+      "kind": "transformation",
+      "stage": "detail",
+      "title": "这一次的新发现",
+      "textKey": "progression:text.node.transformation.detail",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.66",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.ending.start",
+      "kind": "ending",
+      "stage": "start",
+      "title": "回顾已经留下的结果",
+      "textKey": "progression:text.node.ending.start",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "继续核对细节",
+          "resultText": "progression:text.choice.67",
+          "next": "detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.69",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.ending.detail",
+      "kind": "ending",
+      "stage": "detail",
+      "title": "这一次的新发现",
+      "textKey": "progression:text.node.ending.detail",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 0,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.71",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.exploration.night",
+      "kind": "exploration",
+      "stage": "start",
+      "title": "夜间的通道",
+      "textKey": "progression:text.node.exploration.night",
+      "requiresTags": [
+        {
+          "role": "environment",
+          "tagId": "foundation:time.night"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "记下照明明确的通道",
+          "resultText": "progression:text.choice.72",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            },
+            {
+              "op": "adventure.change",
+              "field": "safety",
+              "amount": 1
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.74",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.transformation.tail",
+      "kind": "transformation",
+      "stage": "start",
+      "title": "尾部动作练习",
+      "textKey": "progression:text.node.transformation.tail",
+      "requiresTags": [
+        {
+          "role": "player",
+          "tagId": "foundation:body.has-tail"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "完成这一次适应练习",
+          "resultText": "progression:text.choice.75",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.77",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.control.cautious",
+      "kind": "defeat",
+      "stage": "start",
+      "title": "先核对风险",
+      "textKey": "progression:text.node.defeat.control.cautious",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.goal.control"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.control",
+          "weight": 1
+        },
+        {
+          "tagId": "progression:tag.cautious",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "先核对自己的处境",
+          "resultText": "progression:text.choice.78",
+          "next": "assess",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.assessed"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "请求值班协助",
+          "resultText": "progression:text.choice.79",
+          "next": "help",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [
+            {
+              "role": "player",
+              "tagId": "progression:tag.signal"
+            }
+          ],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.81",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.defeat.repair.cautious",
+      "kind": "defeat",
+      "stage": "start",
+      "title": "先说明维护范围",
+      "textKey": "progression:text.node.defeat.repair.cautious",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.goal.repair"
+        },
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.tools"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.repair",
+          "weight": 1
+        },
+        {
+          "tagId": "progression:tag.cautious",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "听清范围后再决定",
+          "resultText": "progression:text.choice.82",
+          "next": "repair",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "拒绝这次维护",
+          "resultText": "progression:text.choice.83",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            },
+            {
+              "op": "var.change",
+              "id": "core:health",
+              "amount": 3
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.85",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.exploration.workshop",
+      "kind": "exploration",
+      "stage": "start",
+      "title": "查看工坊的工作区",
+      "textKey": "progression:text.node.exploration.workshop",
+      "requiresTags": [
+        {
+          "role": "environment",
+          "tagId": "foundation:service.workshop"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "记录可用工作区",
+          "resultText": "progression:text.choice.86",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "继续查看其他细节",
+          "resultText": "progression:text.choice.87",
+          "next": "detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.89",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.daily.tired",
+      "kind": "daily",
+      "stage": "start",
+      "title": "先恢复一些力气",
+      "textKey": "progression:text.node.daily.tired",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:stamina",
+          "comparison": "lte",
+          "value": 19
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "休息半小时",
+          "resultText": "progression:text.choice.90",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 30
+            },
+            {
+              "op": "var.change",
+              "id": "core:stamina",
+              "amount": 12
+            },
+            {
+              "op": "var.change",
+              "id": "core:energy",
+              "amount": 12
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.92",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.conversation.progress",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "谈谈已经留下的进展",
+      "textKey": "progression:text.node.conversation.progress",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "adventure.compare",
+          "field": "reputation",
+          "comparison": "gte",
+          "value": 4
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "说明近况并听取回应",
+          "resultText": "progression:text.choice.93",
+          "next": null,
+          "effects": [
+            {
+              "op": "resident.talk"
+            }
+          ],
+          "conditions": [
+            {
+              "op": "resident.available"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.95",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.ending.resource",
+      "kind": "ending",
+      "stage": "start",
+      "title": "核对经营成果",
+      "textKey": "progression:text.node.ending.resource",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "adventure.compare",
+          "field": "assets",
+          "comparison": "gte",
+          "value": 6
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "保留当前安排",
+          "resultText": "progression:text.choice.96",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.98",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.ending.security",
+      "kind": "ending",
+      "stage": "start",
+      "title": "核对交锋与巡查记录",
+      "textKey": "progression:text.node.ending.security",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "adventure.compare",
+          "field": "victories",
+          "comparison": "gte",
+          "value": 2
+        },
+        {
+          "op": "adventure.compare",
+          "field": "safety",
+          "comparison": "gte",
+          "value": 5
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束回顾，继续生活",
+          "resultText": "progression:text.choice.99",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.101",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    }
+  ],
+  "narrativeProfiles": [
+    {
+      "id": "progression:profile.gel",
+      "enemyId": "district:enemy.gel",
+      "tags": [
+        "progression:tag.control"
+      ],
+      "goals": [
+        "progression:tag.goal.control"
+      ],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.control",
+          "weight": 80
+        },
+        {
+          "tagId": "progression:tag.cautious",
+          "weight": 30
+        }
+      ],
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.coat.stuck"
+        }
+      ]
+    },
+    {
+      "id": "progression:profile.collector",
+      "enemyId": "district:enemy.collector",
+      "tags": [
+        "progression:tag.direct"
+      ],
+      "goals": [
+        "progression:tag.goal.leave"
+      ],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.direct",
+          "weight": 90
+        }
+      ],
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        }
+      ]
+    },
+    {
+      "id": "progression:profile.scavenger",
+      "enemyId": "district:enemy.scavenger",
+      "tags": [
+        "progression:tag.repair",
+        "progression:tag.tools"
+      ],
+      "goals": [
+        "progression:tag.goal.repair"
+      ],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.repair",
+          "weight": 80
+        },
+        {
+          "tagId": "progression:tag.cautious",
+          "weight": 50
+        }
+      ],
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        }
+      ]
+    },
+    {
+      "id": "progression:profile.raider",
+      "enemyId": "progression:enemy.raider",
+      "tags": [
+        "progression:tag.direct"
+      ],
+      "goals": [
+        "progression:tag.goal.leave"
+      ],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.direct",
+          "weight": 70
+        }
+      ],
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        }
+      ]
+    },
+    {
+      "id": "progression:profile.sentinel",
+      "enemyId": "progression:enemy.sentinel",
+      "tags": [
+        "progression:tag.control"
+      ],
+      "goals": [
+        "progression:tag.goal.control"
+      ],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.control",
+          "weight": 85
+        }
+      ],
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.hands.restricted"
+        }
+      ]
+    },
+    {
+      "id": "progression:profile.overseer",
+      "enemyId": "progression:enemy.overseer",
+      "tags": [
+        "progression:tag.repair",
+        "progression:tag.tools"
+      ],
+      "goals": [
+        "progression:tag.goal.repair"
+      ],
+      "tendencies": [
+        {
+          "tagId": "progression:tag.repair",
+          "weight": 90
+        },
+        {
+          "tagId": "progression:tag.control",
+          "weight": 30
+        }
+      ],
+      "defeatTags": [
+        {
+          "role": "player",
+          "tagId": "progression:tag.clear"
+        },
+        {
+          "role": "player",
+          "tagId": "progression:tag.injured"
+        }
+      ]
+    }
+  ],
+  "equipment": [
+    {
+      "id": "progression:equipment.blade",
+      "name": "工坊制式工具刃",
+      "slot": "weapon",
+      "bonuses": {
+        "attack": 3
+      },
+      "description": "工坊制式工具刃已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "progression:equipment.vest",
+      "name": "加固巡查背心",
+      "slot": "armor",
+      "bonuses": {
+        "defense": 3,
+        "evasion": 3
+      },
+      "description": "加固巡查背心已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "progression:equipment.staff",
+      "name": "平衡练习杖",
+      "slot": "weapon",
+      "bonuses": {
+        "attack": 2
+      },
+      "description": "平衡练习杖已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "progression:equipment.coat",
+      "name": "轻型防护外套",
+      "slot": "armor",
+      "bonuses": {
+        "defense": 2,
+        "evasion": 5
+      },
+      "description": "轻型防护外套已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "enemies": [
+    {
+      "id": "progression:enemy.raider",
+      "name": "抢占通道的游荡者",
+      "hp": 45,
+      "reward": 12,
+      "tier": "S",
+      "combat": {
+        "attack": 9,
+        "defense": 5,
+        "speed": 9,
+        "skillPower": 9,
+        "hit": 75,
+        "evasion": 8,
+        "crit": 5,
+        "actionsPerTurn": 1,
+        "skillResource": 0
+      },
+      "intents": [
+        {
+          "label": "逼近并试探",
+          "damage": 5,
+          "guard": 2,
+          "drain": 0
+        },
+        {
+          "label": "稳住防护",
+          "damage": 2,
+          "guard": 5,
+          "drain": 0
+        },
+        {
+          "label": "集中力量攻击",
+          "damage": 12,
+          "guard": 0,
+          "drain": 1
+        }
+      ],
+      "victoryEventId": "progression:event.victory",
+      "defeatEventId": "progression:event.defeat",
+      "escapeEventId": "progression:event.escape"
+    },
+    {
+      "id": "progression:enemy.sentinel",
+      "name": "封锁通道的重装哨卫",
+      "hp": 90,
+      "reward": 28,
+      "tier": "L",
+      "combat": {
+        "attack": 16,
+        "defense": 12,
+        "speed": 12,
+        "skillPower": 16,
+        "hit": 75,
+        "evasion": 8,
+        "crit": 5,
+        "actionsPerTurn": 2,
+        "skillResource": 0
+      },
+      "intents": [
+        {
+          "label": "逼近并试探",
+          "damage": 5,
+          "guard": 2,
+          "drain": 0
+        },
+        {
+          "label": "稳住防护",
+          "damage": 2,
+          "guard": 5,
+          "drain": 0
+        },
+        {
+          "label": "集中力量攻击",
+          "damage": 12,
+          "guard": 0,
+          "drain": 1
+        }
+      ],
+      "victoryEventId": "progression:event.victory",
+      "defeatEventId": "progression:event.defeat",
+      "escapeEventId": "progression:event.escape"
+    },
+    {
+      "id": "progression:enemy.overseer",
+      "name": "维护核心的失控监理",
+      "hp": 160,
+      "reward": 50,
+      "tier": "boss",
+      "combat": {
+        "attack": 18,
+        "defense": 14,
+        "speed": 11,
+        "skillPower": 18,
+        "hit": 75,
+        "evasion": 8,
+        "crit": 5,
+        "actionsPerTurn": 2,
+        "skillResource": 0
+      },
+      "phases": [
+        {
+          "hpRatio": 0.5,
+          "defenseBonus": 4,
+          "extraActions": 1
+        }
+      ],
+      "intents": [
+        {
+          "label": "逼近并试探",
+          "damage": 5,
+          "guard": 2,
+          "drain": 0
+        },
+        {
+          "label": "稳住防护",
+          "damage": 2,
+          "guard": 5,
+          "drain": 0
+        },
+        {
+          "label": "集中力量攻击",
+          "damage": 12,
+          "guard": 0,
+          "drain": 1
+        }
+      ],
+      "victoryEventId": "progression:event.victory",
+      "defeatEventId": "progression:event.defeat",
+      "escapeEventId": "progression:event.escape"
+    }
+  ],
+  "locationProfiles": [
+    {
+      "id": "progression:location-profile.apartment",
+      "locationId": "aetheria:location.apartment",
+      "service": "home",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.street",
+      "locationId": "aetheria:location.street",
+      "service": "commons",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.market",
+      "locationId": "aetheria:location.market",
+      "service": "market",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.clinic",
+      "locationId": "aetheria-tf:location.clinic",
+      "service": "clinic",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.salon",
+      "locationId": "aetheria-social:location.salon",
+      "service": "commons",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.cafe",
+      "locationId": "district:location.cafe",
+      "service": "commons",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.canal",
+      "locationId": "district:location.canal",
+      "service": "commons",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.archive",
+      "locationId": "district:location.archive",
+      "service": "commons",
+      "light": "lit"
+    },
+    {
+      "id": "progression:location-profile.station",
+      "locationId": "district:location.station",
+      "service": "commons",
+      "light": "lit"
+    }
+  ],
+  "bodyPatches": [
+    {
+      "id": "progression:patch.tail-maintenance",
+      "label": "机械尾外伸长度调整",
+      "summary": "尾部外伸长度调整至650毫米",
+      "operations": [
+        {
+          "type": "attributes",
+          "partId": "tail",
+          "set": {
+            "lengthMm": 650
+          },
+          "unset": []
+        }
+      ]
+    }
+  ],
+  "transformations": [
+    {
+      "id": "progression:tf.tail-maintenance",
+      "label": "机械尾长度维护",
+      "source": "story",
+      "stages": [
+        {
+          "id": "adjusted",
+          "label": "长度调整完成",
+          "atMinutes": 15,
+          "patchId": "progression:patch.tail-maintenance",
+          "textKey": "progression:text.tail-maintenance"
+        }
+      ]
+    }
+  ]
+}

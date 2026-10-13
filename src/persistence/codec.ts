@@ -16,6 +16,9 @@ import type { Registry } from '../content/registry.ts';
 import { loadPacks } from '../content/loader.ts';
 import { hash, parseRules } from '../world/schema.ts';
 import { validateWorldInstance } from '../world/validation.ts';
+import { validRequestFilter } from '../engine/history.ts';
+import { validateAdventure } from './adventure-validation.ts';
+import { adventure } from '../engine/narrative.ts';
 export const MAX_SAVE_BYTES = 4 * 1024 * 1024;
 export type DecodeResult = { status: 'ready'; state: GameState; registry?: Registry; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
 interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 3 | 4; savedAt: string; state: GameState }
@@ -37,7 +40,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const array = (x: unknown): unknown[] => { if (!Array.isArray(x)) bad('状态数组无效。'); return x as unknown[]; };
   const string = (x: unknown): string => { if (typeof x !== 'string' || !x.length) bad('状态字符串无效。'); return x as string; };
   const unique = (x: unknown[]): void => { if (new Set(x).size !== x.length) bad('状态中存在重复条目。'); };
-  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs', ...((value as GameState)?.district ? ['district'] : []), ...((value as GameState)?.worldInstance ? ['worldInstance'] : []), ...((value as GameState)?.meta?.schemaVersion===4?['environment']:[])]);
+  const state = object(value, ['meta', 'clock', 'world', 'player', 'eventInstances', 'activeEventStack', 'rng', 'ledger', 'tfQueues', 'npcs', ...((value as GameState)?.district ? ['district'] : []), ...((value as GameState)?.worldInstance ? ['worldInstance'] : []), ...((value as GameState)?.adventure ? ['adventure'] : []), ...((value as GameState)?.meta?.schemaVersion===4?['environment']:[])]);
   const meta = object(state.meta, ['schemaVersion', 'engineVersion', 'revision', 'packs']);
   if (!(meta.schemaVersion===3&&meta.engineVersion==='0.1-stage3'||meta.schemaVersion===4&&meta.engineVersion==='0.2-foundation')) bad('存档版本尚不支持；没有自动降级或迁移。');
   if(meta.schemaVersion===4){const env=object(state.environment);for(const [id,raw]of Object.entries(env)){registry.location(id as Id);const p=shape(raw,[],['light']);if(p.light!==undefined&&!['lit','dark'].includes(p.light))bad('光照覆盖无效。');}}
@@ -52,7 +55,8 @@ export function validateState(value: unknown, registry: Registry): asserts value
     if (!installed || installed.version !== ref.version || installed.hash !== ref.hash) bad(`PACK_MISMATCH：缺少或已变更的内容包 ${ref.id}。原存档不会被删改。`);
   }
   unique(refIds);
-  const clock = object(state.clock, ['totalMinutes', 'crossedDays']); const total = int(clock.totalMinutes);
+  const clock = object(state.clock, ['totalMinutes', 'crossedDays', ...((state.clock as GameState['clock'])?.recovery ? ['recovery'] : [])]); const total = int(clock.totalMinutes);
+  if (clock.recovery !== undefined) { const recovery = object(clock.recovery, ['aftertasteMinutes', 'skillMinutes']); int(recovery.aftertasteMinutes, 0, 59); int(recovery.skillMinutes, 0, 29); }
   const days = array(clock.crossedDays); unique(days);
   for (const day of days) int(day, 1, Math.floor(total / 1440));
   const world = object(state.world, ['locationId', 'knownLocationIds']);
@@ -88,25 +92,32 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const streams = object(rng.streams);
   for (const [key, raw] of Object.entries(streams)) { string(key); const s = object(raw, ['state', 'draws']); int(s.state, 1, 4294967295); int(s.draws, 1); }
   for (const raw of array(state.eventInstances)) { const e = raw as GameState['eventInstances'][number]; const stream = streams[`event:${e.instanceId}`] as { draws: number } | undefined; if (registry.event(e.definitionId).textMode === 'fixed' ? !!stream : !stream || stream.draws !== e.draws.length) bad('事件独立随机流丢失或次数不符。'); }
-  const ledger = object(state.ledger, ['transactions']); const transactions = array(ledger.transactions); const requests: string[] = [];
-  if (transactions.length !== revision) bad('事务账本与 revision 不一致。');
-  transactions.forEach((raw, index) => {
-    const tx = object(raw, ['requestId', 'fingerprint', 'result']); const requestId = string(tx.requestId); if (requestId.length > 128) bad('事务 ID 过长。'); requests.push(requestId);
+  const ledger = object(state.ledger, ['transactions', ...((state.ledger as GameState['ledger'])?.checkpoint ? ['checkpoint'] : [])]); const transactions = array(ledger.transactions); const requests: string[] = [];
+  const checkpoint = ledger.checkpoint === undefined ? undefined : object(ledger.checkpoint, ['revision', 'requests', 'evidence', 'completedEvents']);
+  const baseRevision = checkpoint ? int(checkpoint.revision, 1, revision) : 0;
+  if (checkpoint) { if (!validRequestFilter(checkpoint.requests)) bad('归档请求过滤器无效。'); const completed = array(checkpoint.completedEvents); unique(completed); for (const id of completed) registry.event(string(id) as Id); }
+  if (transactions.length + baseRevision !== revision) bad('事务账本与 revision 不一致。');
+  const checkTransaction = (raw: unknown, expectedRevision: number) => {
+    const tx = object(raw, ['requestId', 'fingerprint', 'result', ...((raw as GameState['ledger']['transactions'][number])?.narrativeChoice?['narrativeChoice']:[])]); const requestId = string(tx.requestId); if (requestId.length > 128) bad('事务 ID 过长。'); requests.push(requestId);
     const intent = JSON.parse(string(tx.fingerprint)); const intentObj = object(intent);
     if (Object.keys(intentObj).some(k => k !== 'actionId' && k !== 'params')) bad('事务 intent 包含未知字段。');
     if (intentObj.params && Object.keys(object(intentObj.params)).length) { const p=object(intentObj.params,['name','ageYears']);if(intentObj.actionId!=='district:action.create'||typeof p.name!=='string'||!p.name.trim()||p.name.length>40)bad('事务参数未登记。');int(p.ageYears,18,120); }
     registry.action(string(intentObj.actionId) as Id);
+    if(tx.narrativeChoice){const context=object(tx.narrativeChoice,['nodeId','index']);const index=int(context.index,0,3),node=registry.narrativeNodes.find(n=>n.id===context.nodeId);if(!node?.choices[index]||!registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.choose'&&e.index===index))bad('故事事务来源错配。');}
     if (stableJson(intent) !== tx.fingerprint) bad('事务指纹无效。');
     const result = object(tx.result, ['ok', 'code', 'message', 'revision', 'requestId', 'text', 'changes']);
-    if (result.ok !== true || result.code !== 'COMMITTED' || result.revision !== index + 1 || result.requestId !== requestId) bad('事务结果无效。');
+    if (result.ok !== true || result.code !== 'COMMITTED' || result.revision !== expectedRevision || result.requestId !== requestId) bad('事务结果无效。');
     string(result.message); string(result.text);
     for (const rawChange of array(result.changes)) { const c = object(rawChange, ['label', 'before', 'after']); string(c.label); for (const v of [c.before, c.after]) if (!['number', 'string', 'boolean'].includes(typeof v) || (typeof v === 'number' && !Number.isFinite(v))) bad('事务变化摘要无效。'); }
-  });
+  };
+  transactions.forEach((raw, index) => checkTransaction(raw, baseRevision + index + 1));
+  if (checkpoint) for (const raw of array(checkpoint.evidence)) { const tx = raw as GameState['ledger']['transactions'][number]; checkTransaction(raw, int(tx?.result?.revision, 1, baseRevision)); }
   unique(requests);
   validateTFState(value as GameState, registry);
   validateNPCState(value as GameState, registry);
   validateDistrictState(value as GameState, registry);
   validateWorldInstance(value as GameState, registry);
+  validateAdventure(value as GameState, registry);
 }
 function sortedRefs(refs: unknown): string {
   if (!Array.isArray(refs)) throw new Error('PACK_MISMATCH：存档内容包记录无效。');
@@ -197,6 +208,12 @@ export class SaveCodec {
       if (this.registry.packs.some(p => p.id === 'generated/neighborhood')) {
         // 生成参考库可能额外装了种族/原型包；它们不能成为读取原固定世界的必需包。
         return new SaveCodec(this.fixedRegistry ?? await loadPacks(this.registry.contentPacks.filter(p => !['generated/neighborhood', 'generated/cyber-apex-main', 'generated/cyber-apex-side'].includes(p.manifest.id)))).decode(text);
+      }
+      if(this.registry.packs.some(p=>p.id==='aetheria/adventure')&&!envelope.payload.state.meta.packs.some((p:{id:string})=>p.id==='aetheria/adventure')){
+        const base=await loadPacks(this.registry.contentPacks.filter(p=>p.manifest.id!=='aetheria/adventure'));
+        const previous=await new SaveCodec(base).decode(text);if(previous.status!=='ready')return previous;
+        const state=clone(previous.state);state.meta.packs=clone(this.registry.packs);normalizePlayerVariables(state,this.registry);normalizePlayerFlags(state,this.registry);adventure(state);validateState(state,this.registry);
+        return {status:'ready',state,registry:this.registry,migration:`${previous.migration??''} 已追加故事与成长内容，原有身体、记忆与事件保持。`};
       }
       if (this.registry.legacyRegistry && !envelope.payload.state.district) {
         const old = await new SaveCodec(this.registry.legacyRegistry).decode(text);

@@ -1,4 +1,4 @@
-import { presentationText } from './semantic-query.ts';
+import { derivedSemantics, presentationText } from './semantic-query.ts';
 import { entityBody, PLAYER } from './query.ts';
 import type { ActionDef, Effect, GameState, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -25,6 +25,7 @@ import {
   type CombatActorStats,
 } from './numerics.ts';
 import { transformProgress } from './transform-perception.ts';
+import { adventure, narrativeActions, startNarrative } from './narrative.ts';
 
 export const SANITY_BREAK_EVENT = 'district:event.sanity_break' as Id;
 const STAMINA_ID = 'core:stamina' as Id;
@@ -40,9 +41,9 @@ function playerCombatStats(s: GameState, r?: Registry): CombatActorStats {
   const baseDef = v['core:defense'] ?? 10;
   const baseEva = v['core:evasion'] ?? 10;
   let gear = { attack: 0, defense: 0, evasion: 0 };
-  if (r && s.district?.equipped) {
-    const item = r.equipment.find(x => x.id === s.district!.equipped);
-    if (item) gear = sumEquipmentBonuses([item]);
+  if (r) {
+    const worn=[...new Set([s.district?.equipped,...Object.values(s.adventure?.equipment??{})])].flatMap(id=>r.equipment.find(e=>e.id===id)??[]);
+    gear = sumEquipmentBonuses(worn);
   }
   return {
     attack: baseAtk + gear.attack,
@@ -134,11 +135,14 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
   else if (e.op === 'equipment.wear') {
     const item = r.equipment.find(x => x.id === e.id);
     if (!item || !item.requires.every(x => evaluate(x, s, r).pass)) throw new RuleError('EQUIPMENT_FIT', '装备与当前身体不兼容。');
+    if(e.id.startsWith('progression:')&&!d.inventory.includes(e.id))throw new RuleError('EQUIPMENT_NOT_OWNED','先购买这件装备。');
     if (!d.inventory.includes(e.id)) d.inventory.push(e.id);
     d.equipped = e.id;
+    if(s.adventure)s.adventure.equipment[item.slot??'cosmetic']=item.id;
     c.resolvedTexts.push(item.description);
   } else if (e.op === 'equipment.remove') {
     d.equipped = null;
+    if(s.adventure)s.adventure.equipment={};
     c.resolvedTexts.push('你把装备收进背包，物品仍然保留。');
   } else if (e.op === 'scene.start') {
     const def = r.interactions.find(x => x.id === e.id);
@@ -211,7 +215,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
       enemyId: e.id,
       hp: enemy.hp,
       turn: 0,
-      log: [`${enemy.name}挡住了你的路线。观察对方的意图，再决定行动。`],
+      log: [],
       enemy: runtime,
       playerAp: refreshPlayerAp(s),
       guarding: false,
@@ -231,10 +235,12 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     apply([{ op: 'clock.advance', minutes: 5 }], s, r, c);
     const end = (result: 'victory' | 'defeat' | 'escape') => {
       d.combat = null;
+      if(r.narrativeNodes.length){const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);a.lastCombat={enemyId:enemy.id,enemyName:enemy.name,result,turn:battle.turn+1,tags:result==='defeat'?[...(profile?.defeatTags??[])]:[]};}
       c.resolvedTexts.push(result === 'victory' ? '你赢得了交锋。' : result === 'defeat' ? '你失去继续战斗的力气，后续仍有恢复路径。' : '你找到空隙离开了交锋。');
       let eventId = result === 'victory' ? enemy.victoryEventId : result === 'defeat' ? enemy.defeatEventId : enemy.escapeEventId;
       if (result === 'defeat') {
         const badEnd = applyDefeatSanity(s, r, c);
+        if(!badEnd&&r.narrativeNodes.some(n=>n.kind==='defeat')){startNarrative(s,r,c,'defeat');return;}
         if (badEnd) {
           let has = false; try { r.event(SANITY_BREAK_EVENT); has = true; } catch { has = false; }
           if (has) {
@@ -250,9 +256,13 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
 
     const health = s.player.variables[PLAYER_HP_ID]!;
     const stamina = s.player.variables[STAMINA_ID] ?? 100;
+    const enemyBefore=battle.hp;
     const player = playerCombatStats(s, r);
     const card = COMBAT_CARD[e.move];
     battle.playerAp = refreshPlayerAp(s);
+    if(e.move==='flee'&&(stamina<STAMINA_COST.flee||battle.playerAp<card.ap)){
+      c.resolvedTexts.push(`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}\n行动：应急撤离\n造成效果：离开交锋，无战斗奖励，无额外行动点或体力费用。`);end('escape');return;
+    }
     if (card.ap > battle.playerAp) throw new RuleError('NO_AP', `本回合行动点不足（需要 ${card.ap}）。`);
     battle.playerAp -= card.ap;
     battle.guarding = false;
@@ -264,15 +274,21 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     let line = '';
 
     if (e.move === 'flee') {
-      if (stamina < STAMINA_COST.flee) throw new RuleError('EXHAUSTED', `撤离需要${STAMINA_COST.flee}点体力。`);
+      if (stamina < STAMINA_COST.flee) {
+        c.resolvedTexts.push(`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}\n行动：应急撤离\n造成效果：离开交锋，无战斗奖励，无额外体力费用。`);
+        end('escape'); return;
+      }
       applyVar(s, r, c, STAMINA_ID, -STAMINA_COST.flee);
       const chance = fleeChancePercent(player.speed, battle.enemy.speed, battle.enemy.fleeBonus);
       const ok = battle.turn > 0 || draw(s, `combat:flee:${c.transactionId}`) * 100 < chance;
-      if (ok) { end('escape'); return; }
-      line = `你尝试脱离（成功率约${chance}%），第一道出口被挡住；下一回合可以安全撤出。`;
-    } else if (e.move === 'attack') {
-      if (stamina < STAMINA_COST.attack) throw new RuleError('EXHAUSTED', `进攻需要${STAMINA_COST.attack}点体力。`);
-      applyVar(s, r, c, STAMINA_ID, -STAMINA_COST.attack);
+      if (ok) { c.resolvedTexts.push(`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}\n行动：撤离\n造成效果：成功离开交锋，体力−${STAMINA_COST.flee}。`);end('escape'); return; }
+      line = `撤离失败（成功率${chance}%）；下回合撤离必定成功。`;
+    } else if (e.move === 'attack'||e.move==='skill') {
+      const cost=e.move==='skill'?STAMINA_COST.skill:STAMINA_COST.attack;
+      if (stamina < cost) throw new RuleError('EXHAUSTED', `进攻需要${cost}点体力。`);
+      if(e.move==='skill'&&(s.player.variables[SKILL_RES_ID]??0)<15)throw new RuleError('NO_SKILL_RESOURCE','技能资源不足15。');
+      if(e.move==='skill')applyVar(s,r,c,SKILL_RES_ID,-15);
+      applyVar(s, r, c, STAMINA_ID, -cost);
       const atkStats = { ...player, attack: player.attack + (bodyTraits(s.player.body, r).tailGrip ? 3 : 0) };
       const defStats: CombatActorStats = {
         attack: battle.enemy.attack,
@@ -286,7 +302,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
       const hitChance = combatHitChance(atkStats, defStats);
       const hitRoll = draw(s, `combat:hit:${c.transactionId}`);
       if (hitRoll * 100 >= hitChance) {
-        line = `你的进攻未命中（命中率${hitChance}%）。`;
+        line = `进攻未命中（命中率${hitChance}%）。`;
       } else {
         const crit = draw(s, `combat:crit:${c.transactionId}`) * 100 < atkStats.crit;
         const damage = combatDamage({
@@ -294,29 +310,32 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
           skillPower: atkStats.skillPower,
           defense: defStats.defense,
           powerMult: card.powerMult,
-          skill: false,
+          skill: e.move==='skill',
           crit,
         });
         battle.hp = Math.max(0, battle.hp - damage);
-        line = crit ? `暴击！你造成${damage}点伤害。` : `你的进攻造成${damage}点伤害。`;
+        line = `${crit?'暴击；':''}敌方受到${damage}点伤害。`;
       }
     } else if (e.move === 'guard') {
       if (stamina < STAMINA_COST.guard) throw new RuleError('EXHAUSTED', '防守需要1点体力。');
       applyVar(s, r, c, STAMINA_ID, -STAMINA_COST.guard);
       applyVar(s, r, c, ENERGY_ID, 2);
       battle.guarding = true;
-      line = '你稳住重心，防守并略微喘息（承伤减半，精力+2）。';
+      line = '防守生效：本回合承伤减半，精力+2。';
     } else if (e.move === 'recover') {
       if (stamina < STAMINA_COST.recover) throw new RuleError('EXHAUSTED', `临时包扎需要${STAMINA_COST.recover}点体力。`);
       applyVar(s, r, c, STAMINA_ID, -STAMINA_COST.recover);
       applyVar(s, r, c, PLAYER_HP_ID, COMBAT_CARD.recover.heal);
       applyVar(s, r, c, SKILL_RES_ID, 8);
-      line = `你抓紧空隙包扎，恢复${COMBAT_CARD.recover.heal}点生命，并稳住气息。`;
+      line = `包扎生效：生命+${COMBAT_CARD.recover.heal}，技能资源+8。`;
     }
 
     if (battle.hp === 0) {
+      c.resolvedTexts.push(`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}\n行动：${e.move==='skill'?'技能击':'进攻'}\n造成效果：${line} 敌方生命归零。`);
       const before = s.player.variables['core:money']!;
-      s.player.variables['core:money'] = Math.min(r.variable('core:money').max, before + enemy.reward);
+      let reward=enemy.reward;
+      if(r.narrativeNodes.length){const a=adventure(s),day=Math.floor(s.clock.totalMinutes/1440),key=`${day}:reward:${enemy.id}`;if(a.daily[key]){reward=0;c.resolvedTexts.push('今天该对手的奖励已领取，本次不重复结算。');}else{a.daily[key]=1;a.victories[enemy.id]=(a.victories[enemy.id]??0)+1;a.safety++;a.influence++;a.reputation++;}}
+      s.player.variables['core:money'] = Math.min(r.variable('core:money').max, before + reward);
       c.changes.push({ label: '战斗报酬', before, after: s.player.variables['core:money']! });
       end('victory');
       return;
@@ -338,7 +357,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
       };
       const hitChance = combatHitChance(enemyAtk, player);
       if (draw(s, `combat:enemyhit:${c.transactionId}:${i}`) * 100 >= hitChance) {
-        line += i === 0 ? ` ${stepIntent.label}，但你躲开了。` : ' 追加攻击未命中。';
+        line += ` 敌方第${i+1}次行动未命中。`;
         continue;
       }
       const crit = draw(s, `combat:enemycrit:${c.transactionId}:${i}`) * 100 < enemyAtk.crit;
@@ -355,18 +374,19 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
       if (battle.guarding) dmg = Math.max(0, Math.floor(dmg * 0.5));
       incoming += dmg;
       if (stepIntent.drain > 0) applyVar(s, r, c, STAMINA_ID, -stepIntent.drain);
-      line += i === 0 ? ` ${stepIntent.label}，你受到${dmg}点伤害。` : ` 追加命中${dmg}点。`;
+      line += ` 敌方第${i+1}次行动命中，我方受到${dmg}点伤害。`;
     }
 
     s.player.variables[PLAYER_HP_ID] = Math.max(0, s.player.variables[PLAYER_HP_ID]! - incoming);
     // 回合末 skillResource +5
     applyVar(s, r, c, SKILL_RES_ID, 5);
 
-    battle.log.push(line);
+    const record=`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}/${battle.enemy.hpMax}\n行动：${({attack:'进攻',skill:'技能击',guard:'防守',recover:'临时包扎',flee:'撤离'})[e.move]}；敌方${intent.label}\n造成效果：${line}`;
+    battle.log.push(record);
     battle.log = battle.log.slice(-4);
     battle.turn++;
     battle.enemy.defenseBonus = 0;
-    c.resolvedTexts.push(line);
+    c.resolvedTexts.push(record);
     c.changes.push({ label: '生命', before: health, after: s.player.variables[PLAYER_HP_ID]! });
     if (s.player.variables[PLAYER_HP_ID] === 0) end('defeat');
   } else throw new RuleError('MODULE_PENDING', '该模块尚未接入。');
@@ -375,17 +395,22 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
 export function districtOptions(s: GameState, r: Registry, actions: ActionDef[]): ActionDef[] {
   if (!s.district) return actions;
   const runtime = r.actionsForHook('district:hook.runtime'), settings = runtime.filter(a => a.effects.some(e => e.op === 'preference.set'));
-  if (s.district.combat) return [...runtime.filter(a => a.effects.some(e => e.op === 'combat.turn')), ...settings];
-  if (s.district.scene) return [...runtime.filter(a => a.effects.some(e => e.op === 'scene.act' && (s.district!.scene!.phase === 'active' ? e.move !== 'resume' : ['resume', 'exit'].includes(e.move)))), ...r.globalActions(), ...settings];
-  return [...actions, ...settings];
+  const story=narrativeActions(s,r);if(story)return story;
+  if (s.district.combat) return [...runtime.filter(a => a.effects.some(e => e.op === 'combat.turn')), ...r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn')), ...settings];
+  if (s.district.scene) return [...runtime.filter(a => a.effects.some(e => e.op === 'scene.act' && (s.district!.scene!.phase === 'active' ? e.move !== 'resume' : ['resume', 'exit'].includes(e.move)))), ...r.globalActions().filter(a=>a.surface==='body'), ...settings];
+  return [...actions, ...settings].filter(a=>!a.effects.some(e=>e.op==='narrative.choose'||e.op==='combat.turn')&&(!s.activeEventStack.length||!!a.context||!a.id.startsWith('progression:')&&!a.effects.some(e=>e.op==='narrative.start'||e.op==='progression.act'||e.op==='combat.start')));
 }
 
 export function districtText(s: GameState, r: Registry, base: string): string {
   if (!s.district) return base;
+  if(s.adventure?.story)return base;
   if (s.district.combat) {
     const b = s.district.combat, e = r.enemies.find(x => x.id === b.enemyId)!;
     const hpMax = b.enemy?.hpMax ?? e.hp;
-    return `交锋：${e.name}\n\n对方生命 ${b.hp}/${hpMax} · 第${b.turn + 1}回合\n\n下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
+    const player=playerCombatStats(s,r);
+    const labels=(ids:Id[])=>ids.map(id=>`【${r.tag(id).label}】`).join('')||'无已登记标签';
+    const profile=r.narrativeProfiles.find(p=>p.enemyId===e.id);
+    return `交锋：${e.name}\n\n我方：生命${s.player.variables[PLAYER_HP_ID]}；体力${s.player.variables[STAMINA_ID]}；攻击${player.attack}；防御${player.defense}；速度${player.speed}；技能强度${player.skillPower}；技能资源${s.player.variables[SKILL_RES_ID]}；行动点${s.player.variables[AP_ID]}\n我方Tag：${labels(derivedSemantics(s,r,{entity:{kind:'player'}}))}\n敌方：生命${b.hp}/${hpMax}；攻击${b.enemy.attack}；防御${b.enemy.defense}；速度${b.enemy.speed}；每回合行动${b.enemy.actionsPerTurn}次\n敌方Tag：${labels([...(profile?.tags??[]),...(profile?.goals.slice(0,1)??[])])}\n\n第${b.turn+1}回合；下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
   }
   if (s.district.scene) {
     const scene = s.district.scene, i = r.interactions.find(x => x.id === scene.definitionId)!, p = i.poses.find(p => p.id === scene.poseId)!;

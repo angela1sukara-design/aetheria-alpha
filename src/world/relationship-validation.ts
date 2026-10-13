@@ -7,10 +7,10 @@ import { integer, list, object, string, strings } from './schema.ts';
 export function validateMainRelationships(state: GameState, registry: Registry): void {
   const world = state.worldInstance!, tree = world.definition.relationshipTree, quests = world.definition.quests;
   if (!tree) {
-    if (quests && world.generation.generatorVersion === '0.6.0') throw Error('缺少主线人物关系树。');
+    if (quests && ['0.6.0','0.7.0'].includes(world.generation.generatorVersion)) throw Error('缺少主线人物关系树。');
     return;
   }
-  if (!quests || world.generation.generatorVersion !== '0.6.0') throw Error('主线关系树版本或任务来源无效。');
+  if (!quests || !['0.6.0','0.7.0'].includes(world.generation.generatorVersion)) throw Error('主线关系树版本或任务来源无效。');
   object(tree, ['version', 'mainQuestId', 'goal', 'paths', 'roles', 'sideLinks']);
   string(tree.mainQuestId); string(tree.goal);
   if (tree.version !== 1 || tree.mainQuestId !== quests.journal[0]?.id || !quests.journal[0]?.steps[0]?.text.startsWith(tree.goal + ' ')) throw Error('关系树根节点与主线目标不一致。');

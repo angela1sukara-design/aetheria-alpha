@@ -2,6 +2,7 @@ import { validateBody } from '../engine/body.ts';
 import type { GameState, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import type { NPCMemory, NPCState } from '../core/npc-types.ts';
+import { historyTransaction } from '../engine/history.ts';
 export function validateNPCState(value: GameState, registry: Registry): void {
   const bad = (message: string): never => { throw new Error(`NPC 存档无效：${message}`); };
   const object = (v: unknown, keys: string[]): Record<string, unknown> => {
@@ -28,7 +29,8 @@ export function validateNPCState(value: GameState, registry: Registry): void {
       if (memory.npcId !== def.id || seen.has(memory.id)) bad('记忆所有者错误或重复。'); seen.add(memory.id);
       if (!Number.isSafeInteger(m.recordedAt) || (m.recordedAt as number) < 0 || (m.recordedAt as number) < previousTime || (m.recordedAt as number) > value.clock.totalMinutes) bad('记忆时间无效。');
       previousTime = m.recordedAt as number;
-      const tx = value.ledger.transactions.find(x => x.requestId === m.sourceRequestId);
+      if (typeof m.sourceRequestId !== 'string') bad('来源事务无效。');
+      const tx = historyTransaction(value, m.sourceRequestId as string);
       if (!tx || JSON.parse(tx.fingerprint).actionId !== m.sourceActionId) bad('来源事务缺失或错配。');
       const a = registry.action(m.sourceActionId as Id);
       const effects = a.effects.flatMap(e => {

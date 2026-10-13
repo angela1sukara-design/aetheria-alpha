@@ -2,6 +2,8 @@
 
 这里是唯一的当前开发工程，包含固定都市、随机街区、BodyGraph / TF、人物、事件及存档系统。游戏包版本为 `0.2.0-alpha`，已加入 foundation v0.4 增量接口。旧交付目录是历史快照，继续开发使用本目录。
 
+当前已接入Tag组合故事、敌人倾向与战败分支，以及训练、武器护甲、技能、经营和主线里程碑。玩法与兼容说明见[故事与成长框架](docs/adventure-framework-2026-10-13.md)，交给其他AI的正文制作要求见[Tag写作规范](production/TAG-STORY-WRITING-SPEC.md)。旧生成世界保留原快照，新生成世界使用新玩法。
+
 ## 启动与验证
 
 需要 Node.js 24 或更新版本。首次从 Git 克隆后运行：
@@ -20,6 +22,8 @@ npm run check
 ```
 
 该命令执行类型检查、规则回归、构建和产物检查。浏览器流程分别使用 `npm run test:browser`、`npm run test:ui`、`npm run test:ux` 和 `npm run test:worldgen:browser`。首次运行浏览器测试需要 `npx playwright install chromium`；脚本的浏览器路径配置见相应测试文件。
+
+故事与成长的实际操作检查使用`npm run test:adventure:browser`，世界主线使用`npm run test:quests:browser`，foundation离线检查使用`npm run test:foundation:browser`。
 
 ## 文件与资料入口
 

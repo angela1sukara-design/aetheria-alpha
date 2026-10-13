@@ -6,8 +6,11 @@ import type { NPCDef, NPCMemoryDef, SpeciesDef } from '../core/npc-types.ts';
 import type { StoryletDef, ResidentTemplate, EnemyDef, InteractionDef, TextSlotDef, SceneTextDef, EquipmentDef } from '../core/district-types.ts';
 import { RuleError } from '../core/errors.ts';
 import { isAppendOnlyEventPack } from './append-only.ts';
+import type { NarrativeNode, NarrativeProfile } from '../core/adventure-types.ts';
 export class Registry {
   readonly contentPacks: ContentPack[];
+  readonly narrativeNodes: NarrativeNode[];
+  readonly narrativeProfiles: NarrativeProfile[];
   #definitions = new Map<string, { kind: string; value: unknown; packId:string }>();
   #actionsByHook = new Map<Id, Id[]>();
   readonly packs: PackRef[];
@@ -38,6 +41,8 @@ export class Registry {
     // 私有 Map 永远不暴露；深冻结所有定义，避免 UI/扩展包直接改注册表。
     const data = freeze(clone(packs));
     this.contentPacks = data;
+    this.narrativeNodes = freeze(data.flatMap(p=>p.narrativeNodes??[]));
+    this.narrativeProfiles = freeze(data.flatMap(p=>p.narrativeProfiles??[]));
     this.appendOnlyPackIds = freeze(data.filter(isAppendOnlyEventPack).map(p=>p.manifest.id));
     if (packs.some(p => p.manifest.requiresCapabilities.includes('district.v1'))) {
       const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1') && p.manifest.schemaVersion!==2);
@@ -72,6 +77,7 @@ export class Registry {
     for (const pack of data) {
       for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def,packId:pack.manifest.id });
       for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text,packId:pack.manifest.id });
+      for (const kind of ['narrativeNodes','narrativeProfiles'] as const) for (const value of pack[kind]??[]) this.#definitions.set(value.id,{kind,value,packId:pack.manifest.id});
       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);
     }
     for (const [key, values] of this.#actionsByHook) this.#actionsByHook.set(key, [...new Set(values)].sort());

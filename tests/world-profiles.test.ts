@@ -9,6 +9,7 @@ import { ActionExecutor } from '../src/engine/executor.ts';
 import { advanceClock } from '../src/engine/clock.ts';
 import { evaluate } from '../src/engine/conditions.ts';
 import type { Id } from '../src/core/types.ts';
+import { prepareMilestones } from './adventure-helpers.ts';
 
 const json = async (p: string) => JSON.parse(await readFile(new URL('../' + p, import.meta.url), 'utf8'));
 const index = await json('content/index.json');
@@ -62,7 +63,7 @@ for (const profile of profiles) test(`${profile.name}: shared services, world-sp
   assert.ok(g.state.district!.residents.every(r=>profile.residentNames.some(n=>r.name.startsWith(n))));
   assert.doesNotMatch(JSON.stringify(g.registry.contentPacks.filter(p=>p.manifest.id==='generated/neighborhood'||p.manifest.namespace==='main'||p.manifest.namespace==='side')),/百渠总管|雨棚盟首|种源总藏主|百炉总匠|工联执印人|工联落印/);
   for(const route of profile.quests.source.mainQuest.paths){
-    let state=structuredClone(g.state); state.player.variables['core:energy']=0; state.player.variables['core:money']=0;
+    let state=structuredClone(g.state); prepareMilestones(state); state.player.variables['core:energy']=0; state.player.variables['core:money']=0;
     for(const stage of route.stages){
       const binding=def.quests!.stages.find(b=>b.id===stage.id)!;
       state.world.locationId=binding.locationId;if(!state.world.knownLocationIds.includes(binding.locationId))state.world.knownLocationIds.push(binding.locationId);

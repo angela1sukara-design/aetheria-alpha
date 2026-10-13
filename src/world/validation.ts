@@ -16,8 +16,8 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (w.version !== 1) throw Error('世界实例版本不支持。');
   const g = w.generation;
   object(g, ['generatorVersion', 'seed', 'rules', 'rulesHash', 'references', 'contentPacks', 'parameters', 'selectedTemplateIds']);
-  if (!['0.1.0', '0.2.0', '0.2.1','0.3.0','0.4.0','0.4.1','0.5.0','0.6.0'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
-  const modern = ['0.3.0', '0.4.0', '0.4.1', '0.5.0', '0.6.0'].includes(g.generatorVersion);
+  if (!['0.1.0', '0.2.0', '0.2.1','0.3.0','0.4.0','0.4.1','0.5.0','0.6.0','0.7.0'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
+  const modern = ['0.3.0', '0.4.0', '0.4.1', '0.5.0', '0.6.0','0.7.0'].includes(g.generatorVersion);
   integer(g.seed, 0, 0xffffffff); if (g.seed !== state.rng.seed) throw Error('世界种子不一致。');
   parseRules(g.rules); const hashString = (v: unknown) => { if (typeof v !== 'string' || !/^[a-f0-9]{64}$/.test(v)) throw Error('世界来源哈希无效。'); };
   hashString(g.rulesHash);
@@ -32,7 +32,7 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (d.setting) {
     const s = d.setting; object(s, ['id', 'tag', 'name', 'version', 'hash', 'ecologyTag', 'questId']);
     [s.id, s.tag, s.name, s.version, s.ecologyTag, s.questId].forEach(string); hashString(s.hash);
-    if (!['0.5.0','0.6.0'].includes(g.generatorVersion) || !s.tag.startsWith('worlds:setting.') || s.id !== 'world.' + s.tag.slice('worlds:setting.'.length) || s.questId !== `aetheria/world-${s.id.slice(6)}-apex` || d.name !== s.name || d.quests?.id !== s.questId || !/^\d+\.\d+\.\d+$/.test(s.version)) throw Error('世界题材、名称与任务来源不一致。');
+    if (!['0.5.0','0.6.0','0.7.0'].includes(g.generatorVersion) || !s.tag.startsWith('worlds:setting.') || s.id !== 'world.' + s.tag.slice('worlds:setting.'.length) || s.questId !== `aetheria/world-${s.id.slice(6)}-apex` || d.name !== s.name || d.quests?.id !== s.questId || !/^\d+\.\d+\.\d+$/.test(s.version)) throw Error('世界题材、名称与任务来源不一致。');
     if (registry.tag(s.tag).status !== 'active' || !registry.tag(s.tag).facets.includes('setting')) throw Error('世界题材 Tag 未启用。');
     registry.tag(s.ecologyTag);
     if (!d.regions.every(r => r.environmentTags.includes(s.tag) && r.environmentTags.includes(s.ecologyTag) && r.environmentTags.filter(t => t.startsWith('worlds:setting.')).length === 1) || !d.locations.every(l => l.tags.includes(s.tag) && l.tags.filter(t => t.startsWith('worlds:setting.')).length === 1)) throw Error('世界题材没有贯穿地区与地点。');

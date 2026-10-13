@@ -10,6 +10,7 @@ import { advanceClock } from '../src/engine/clock.ts';
 import { evaluate } from '../src/engine/conditions.ts';
 import type { Id } from '../src/core/types.ts';
 import type { QuestBinding } from '../src/core/quest-types.ts';
+import { prepareMilestones } from './adventure-helpers.ts';
 
 const json = async (file: string) => JSON.parse(await readFile(new URL('../' + file, import.meta.url), 'utf8'));
 const index = await json('content/index.json');
@@ -71,9 +72,10 @@ test('same seed reproduces bindings, relations and packs; authoring prose is nev
 });
 
 for (const [pathId, choices] of [['path.capital', ['small_order', 'standard', 'alliance', 'charter']], ['path.warlord', ['handover', 'limited', 'drill', 'alliance']]] as const) {
-  test(`${pathId} reaches the common apex without any side quest or resources`, async () => {
+  test(`${pathId} reaches the common apex without mandatory sides after progression milestones`, async () => {
     const generated = await generate(), state = structuredClone(generated.state);
     state.player.variables['core:energy'] = 0; state.player.variables['core:money'] = 0;
+    prepareMilestones(state);
     let engine = new ActionExecutor(generated.registry, state);
     const beforeRng = engine.snapshot().rng;
     const path = content.source.mainQuest.paths.find(p => p.id === pathId)!;

@@ -4,11 +4,16 @@ import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
 import { npcPresent, npcState, hasMemory } from './npc.ts';
 import { residentPresent, residentRelation } from './resident-quests.ts';
+import { adventureValue, progressionCheck } from './progression.ts';
+import { narrativeTags } from './narrative.ts';
 export interface Check { pass: boolean; reason: string; known?: boolean }
 /** 条件求值是纯读取：不能在这里抽 RNG，也不能推进时钟。 */
 export function evaluate(condition: Condition, state: GameState, registry: Registry): Check {
   let pass: boolean; let reason = '条件尚未满足。';
   switch (condition.op) {
+    case 'adventure.compare': {const value=adventureValue(state,condition.field);pass=condition.comparison==='eq'?value===condition.value:condition.comparison==='gte'?value>=condition.value:value<=condition.value;reason=`${({assets:'经营份额',influence:'组织影响',safety:'街区安全',reputation:'公共声望',orders:'订单',contracts:'契约',victories:'有效战斗胜利'})[condition.field]}需${condition.comparison==='gte'?'至少':condition.comparison==='lte'?'不超过':'等于'}${condition.value}（当前${value}）。`;break;}
+    case 'progression.available': return progressionCheck(state,registry,condition.move,condition.id);
+    case 'narrative.tag': pass=!!state.adventure?.story&&narrativeTags(state,registry).some(t=>t.role===condition.role&&t.tagId===condition.id)===condition.value;reason='当前故事状态不满足这个选择。';break;
     case 'resident.present': pass = residentPresent(state, condition.residentId); reason = '约定的居民此刻不在这里，请按其日程再来。'; break;
     case 'resident.relation': pass = residentRelation(state, condition.residentId, condition.relation); reason = '需要与该居民有相应的共同背景。'; break;
     case 'resident.memory': pass = (state.district?.residents.find(r => r.id === condition.residentId)?.memories.includes(condition.memoryId) ?? false) === condition.value; break;
@@ -43,7 +48,8 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     }
     case 'event.state': {
       const instances = state.eventInstances.filter(x => x.definitionId === condition.id);
-      pass = condition.state === 'unseen' ? instances.length === 0 : instances.some(x => x.status === condition.state);
+      const archived = state.ledger.checkpoint?.completedEvents.includes(condition.id) ?? false;
+      pass = condition.state === 'unseen' ? instances.length === 0 && !archived : instances.some(x => x.status === condition.state) || condition.state === 'completed' && archived;
       reason = condition.state === 'unseen' ? '这件事已经处理过了。' : '当前事件进度不符合条件。';
       break;
     }

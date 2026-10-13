@@ -1,4 +1,4 @@
-import type { ActionOption, ActionResult, GameView, Id } from '../core/types.ts';
+import type { ActionOption, ActionResult, GameState, GameView, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { formatClock } from '../engine/clock.ts';
 import { renderBodyPanel } from './body-panel.ts';
@@ -13,12 +13,12 @@ export function byId<T extends HTMLElement = HTMLElement>(id: string): T {
   const node = document.getElementById(id); if (!node) throw new Error(`缺少 UI 元素 ${id}`); return node as T;
 }
 function prose(target: HTMLElement, text: string): void { target.replaceChildren(...text.split('\n\n').map(t => element('p', '', t))); }
-function actionButton(option: ActionOption, registry: Registry, compact = false): HTMLButtonElement {
+function actionButton(option: ActionOption, registry: Registry, compact = false, state?: GameState): HTMLButtonElement {
   const button = element('button', compact ? 'map-label' : 'action-button'); button.type = 'button';
   button.dataset.action = option.definition.id; button.dataset.group = option.definition.group;
   button.disabled = !option.available;
   button.append(element('span', 'action-label', option.definition.label));
-  const preview = actionPreview(option.definition, registry);
+  const preview = actionPreview(option.definition, registry, state);
   const rawHint = option.available ? option.definition.hint : option.reason;
   const normalize = (text: string) => text.replace(/\s/g, '');
   const hint = option.available ? rawHint.split(' · ').filter(part => {
@@ -61,6 +61,7 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     if (def.max <= 100) { const meter = element('div', 'meter'); const fill = element('div', 'meter-fill'); fill.style.width = `${(value - def.min) / (def.max - def.min) * 100}%`; meter.append(fill); stat.append(meter); }
     status.append(stat);
   }
+  if(view.state.adventure){const a=view.state.adventure;const info=element('p','muted',`经营份额 ${a.assets} · 组织影响 ${a.influence} · 街区安全 ${a.safety} · 声望 ${a.reputation}`);info.id='adventure-status';info.style.gridColumn='1 / -1';status.append(info);}
   const actions = byId('actions');
   const expanded = new Set([...actions.querySelectorAll<HTMLDetailsElement>('.locked-actions[open]')].map(node => node.dataset.group));
   const filterKey = `${view.location.id}:${scene.active}:${scene.mode === 'conversation'}`;
@@ -74,13 +75,13 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     if (!options.length) continue;
     const section = element('div', 'action-group'); section.dataset.group = group; const grid = element('div', 'action-grid');
     section.append(element('div', 'action-group-title', label));
-    grid.append(...options.filter(option => option.available).map(x => actionButton(x, registry))); section.append(grid);
+    grid.append(...options.filter(option => option.available).map(x => actionButton(x, registry, false, view.state))); section.append(grid);
     const locked = options.filter(option => !option.available);
     if (locked.length) {
       const details = element('details', 'locked-actions');
       details.dataset.group = group; details.open = expanded.has(group);
       details.append(element('summary', '', `暂不可用 · ${locked.length} 项`));
-      const lockedGrid = element('div', 'action-grid'); lockedGrid.append(...locked.map(x => actionButton(x, registry))); details.append(lockedGrid); section.append(details);
+      const lockedGrid = element('div', 'action-grid'); lockedGrid.append(...locked.map(x => actionButton(x, registry, false, view.state))); details.append(lockedGrid); section.append(details);
     }
     actions.append(section);
   }
@@ -105,8 +106,8 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     byId('result-changes').replaceChildren(...result.changes.map(x => element('span', 'change', `${x.label} ${x.before} → ${x.after}`)));
   }
   renderMap(view, registry);
-  renderBodyPanel(view, registry, byId('body-content'), option => actionButton(option, registry));
-  renderNPCPanel(view, registry, option => actionButton(option, registry));
+  renderBodyPanel(view, registry, byId('body-content'), option => actionButton(option, registry, false, view.state));
+  renderNPCPanel(view, registry, option => actionButton(option, registry, false, view.state));
   const log = byId('log-content'); log.replaceChildren();
   for (const tx of [...view.state.ledger.transactions].reverse().slice(0, 20)) {
     const item = element('article', 'log-item'); item.append(element('small', '', `行动 ${tx.result.revision}`), element('p', '', tx.result.text)); log.append(item);
@@ -131,7 +132,7 @@ function renderMap(view: GameView, registry: Registry): void {
   const links = element('div', 'map-links');
   for (const place of locations) {
     const option = view.actions.find(x => x.definition.effects.some(fx => fx.op === 'location.move' && registry.route(fx.routeId).to === place.id));
-    if (option) links.append(actionButton(option, registry, true));
+    if (option) links.append(actionButton(option, registry, true, view.state));
     else { const label = element('div', `map-label ${place.id === view.location.id ? 'current' : ''}`, place.name); label.append(element('small', '', place.id === view.location.id ? '当前位置' : view.eventTitle ? '当前事件进行中' : '需经相邻街道')); links.append(label); }
   }
   byId('map-content').replaceChildren(svg, links);

@@ -2,9 +2,11 @@ import type { EntityRef, FoundationDefinitions, QueryCondition } from './query-t
 import type { BodyGraph, BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef, TFInstance, TFState, BodyCapability } from './body-types.ts';
 import type { NPCDef, NPCState, NPCMemoryDef, SpeciesDef, RelationField } from './npc-types.ts';
 import type { DistrictDefinitions, DistrictEffect, DistrictCondition, DistrictState } from './district-types.ts';
+import type { AdventureCondition, AdventureDefinitions, AdventureEffect, AdventureState } from './adventure-types.ts';
 export type Id = `${string}:${string}`;
 export type Scalar = string | number | boolean;
 export type Condition =
+  | AdventureCondition
   | QueryCondition
   | DistrictCondition
   | { op: 'all' | 'any'; conditions: Condition[] }
@@ -21,6 +23,7 @@ export type Condition =
   | { op: 'npc.memory'; npcId: Id; memoryId: Id; value: boolean }
   | { op: 'npc.relation'; npcId: Id; field: RelationField; comparison: 'eq' | 'gte' | 'lte'; value: number };
 export type Effect =
+  | AdventureEffect
   | { op: 'environment.setLight'; locationId: Id; value: 'lit' | 'dark' }
   | DistrictEffect
   | { op: 'var.change'; id: Id; amount: number }
@@ -61,7 +64,7 @@ export interface PackManifest {
   requiresCapabilities: string[];
   migrations: []; // 通用内容包迁移未实现；仅存档codec允许已发布官方版本的精确升级。
 }
-export interface ContentPack extends DistrictDefinitions, FoundationDefinitions {
+export interface ContentPack extends DistrictDefinitions, FoundationDefinitions, AdventureDefinitions {
   manifest: PackManifest; variables: VariableDef[]; flags: FlagDef[]; hooks: HookDef[];
   locations: LocationDef[]; routes: RouteDef[]; actions: ActionDef[]; events: EventDef[];
   texts: Record<Id, string>; contributions: { hookId: Id; actionIds: Id[] }[];
@@ -81,20 +84,22 @@ export interface ActionResult {
   ok: boolean; code: string; message: string; revision: number;
   text: string; changes: Change[]; requestId: string;
 }
-export interface Transaction { requestId: string; fingerprint: string; result: ActionResult }
+export interface Transaction { requestId: string; fingerprint: string; result: ActionResult; narrativeChoice?: { nodeId: Id; index: number } }
+export interface LedgerCheckpoint { revision: number; requests: string; evidence: Transaction[]; completedEvents: Id[] }
 export interface GameState {
+  adventure?: AdventureState;
   environment?: Record<Id, { light?: 'lit' | 'dark' }>;
   worldInstance?: import('../world/types.ts').WorldInstance;
   district?: DistrictState;
   meta: { schemaVersion: 3 | 4; engineVersion: '0.1-stage3' | '0.2-foundation'; revision: number; packs: PackRef[] };
-  clock: { totalMinutes: number; crossedDays: number[] };
+  clock: { totalMinutes: number; crossedDays: number[]; recovery?: { aftertasteMinutes: number; skillMinutes: number } };
   world: { locationId: Id; knownLocationIds: Id[] };
   player: { variables: Record<Id, number>; flags: Record<Id, boolean>; body: BodyGraph | null };
   tfQueues: TFInstance[];
   npcs: NPCState[];
   eventInstances: EventInstance[]; activeEventStack: string[];
   rng: { seed: number; streams: Record<string, { state: number; draws: number }> };
-  ledger: { transactions: Transaction[] };
+  ledger: { transactions: Transaction[]; checkpoint?: LedgerCheckpoint };
 }
 export interface ActionOption { definition: ActionDef; available: boolean; reason: string }
 export interface GameView { location: LocationDef; sceneText: string; eventTitle?: string; actions: ActionOption[]; state: GameState }

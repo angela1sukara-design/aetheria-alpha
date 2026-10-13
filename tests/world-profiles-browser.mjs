@@ -116,6 +116,12 @@ try {
   assert.ok((await page.locator('#quest-content').innerText()).includes(route.stages[2].name));
   assert.ok((await page.locator('#quest-content').innerText()).includes(otherRoute.stages[0].objective));
   await page.locator('#page-home').click(); checks.push('可选支线解锁额外方案，两条当地路线的日志分别推进');
+  await travel(initial.worldInstance.definition.locations.find(l=>l.service==='market').id);
+  for(let i=0;i<3;i++)await act('progression:action.rest');
+  for(let i=0;i<3;i++)await act('progression:action.order');
+  await act('progression:action.invest');
+  current=await state();assert.ok(current.adventure.assets>=6);assert.ok(current.adventure.orders>=3);assert.ok(current.adventure.contracts>=2);
+  checks.push('真实完成订单与经营登记，成长数值满足经营终局门槛');
   for (const [id, option] of [['resource_s3', 'a'], ['resource_s4', 'b']]) {
     const binding = quests.stages.find(b => b.id === id); await travel(binding.locationId); await act(binding.entryActionId); await act('main:action.' + id + '.' + option);
   }

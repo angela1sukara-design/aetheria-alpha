@@ -3,6 +3,7 @@ import { entityRef } from '../content/foundation-schema.ts';
 import type { GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { patchTargets } from '../engine/body.ts';
+import { historyTransaction } from '../engine/history.ts';
 /** 不接受任意进度/阶段布尔；已完成阶段必须是定义的时间前缀。 */
 export function validateTFState(state: GameState, registry: Registry): void {
   const bad = (reason: string): never => { throw new Error(`TF 存档无效：${reason}`); };
@@ -17,8 +18,9 @@ export function validateTFState(state: GameState, registry: Registry): void {
     const suffix = !job.target||job.target.kind==='player'?`/${def.id}`:`/${entityKey(job.target)}/${def.id}`;
     if (!job.idempotencyKey.endsWith(suffix) || job.instanceId !== `tf-${job.idempotencyKey}`) bad('实例来源无效。');
     const request = job.idempotencyKey.slice(0, -suffix.length);
-    const transaction = state.ledger.transactions.find(x => x.requestId === request);
-    if (!transaction || JSON.parse(transaction.fingerprint).actionId !== action.id || !action.effects.flatMap(e=>{if(e.op==='event.start')return [e,...registry.event(e.id).nodes.find(n=>n.id===registry.event(e.id).startNode)!.onEnter];if(e.op==='event.advance'&&action.context)return [e,...registry.event(action.context.eventId).nodes.find(n=>n.id===e.nodeId)!.onEnter];return [e];}).some(e => e.op === (def.source === 'free' ? 'tf.apply' : 'tf.enqueue') && e.id === def.id && entityKey(e.target)===entityKey(job.target))) bad('没有对应的创建事务。');
+    const transaction = historyTransaction(state, request);
+    const narrativeEffects=transaction?.narrativeChoice?registry.narrativeNodes.find(n=>n.id===transaction.narrativeChoice!.nodeId)?.choices[transaction.narrativeChoice.index]?.effects??[]:[];
+    if (!transaction || JSON.parse(transaction.fingerprint).actionId !== action.id || ![...action.effects,...narrativeEffects].flatMap(e=>{if(e.op==='event.start')return [e,...registry.event(e.id).nodes.find(n=>n.id===registry.event(e.id).startNode)!.onEnter];if(e.op==='event.advance'&&action.context)return [e,...registry.event(action.context.eventId).nodes.find(n=>n.id===e.nodeId)!.onEnter];return [e];}).some(e => e.op === (def.source === 'free' ? 'tf.apply' : 'tf.enqueue') && e.id === def.id && entityKey(e.target)===entityKey(job.target))) bad('没有对应的创建事务。');
     const duration = def.stages.at(-1)!.atMinutes;
     if (!Number.isSafeInteger(job.elapsedMinutes) || job.elapsedMinutes < 0 || job.elapsedMinutes > duration || !Number.isSafeInteger(job.startedAt) || job.startedAt < 0 || job.startedAt > state.clock.totalMinutes || job.elapsedMinutes > state.clock.totalMinutes - job.startedAt) bad('进度/时间范围错误。');
     if (!Array.isArray(job.completedStageIds) || job.completedStageIds.length > def.stages.length || job.completedStageIds.some((id, i) => id !== def.stages[i].id || def.stages[i].atMinutes > job.elapsedMinutes)) bad('阶段不构成合法时间前缀。');

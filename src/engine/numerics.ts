@@ -169,6 +169,7 @@ export const STAMINA_COST = {
   attack: 3,
   guard: 1,
   flee: 4,
+  skill: 4,
   recover: 4,
 } as const;
 
@@ -177,6 +178,7 @@ export const COMBAT_CARD = {
   guard: { ap: 1, skillResource: 0, powerMult: 0, skill: false },
   recover: { ap: 2, skillResource: 0, powerMult: 0, skill: false, heal: 8 },
   flee: { ap: 2, skillResource: 0, powerMult: 0, skill: false },
+  skill: { ap: 2, skillResource: 15, powerMult: 1.2, skill: true },
 } as const;
 
 export function staminaGate(stamina: number): {
