@@ -297,8 +297,8 @@ function renderMap(view: GameView, registry: Registry): void {
   for (const p of gridPos.values()) { maxCol = Math.max(maxCol, p.col); maxRow = Math.max(maxRow, p.row); }
   const adjacent = new Set(routes.filter(r => r.from === view.location.id).map(r => r.to));
   const grid = element('div', 'map-grid');
-  grid.style.gridTemplateColumns = `repeat(${maxCol + 1}, minmax(72px, 1fr))`;
-  grid.style.gridTemplateRows = `repeat(${maxRow + 1}, minmax(56px, auto))`;
+  grid.style.gridTemplateColumns = `repeat(${maxCol + 1}, minmax(64px, 1fr))`;
+  grid.style.gridTemplateRows = `repeat(${maxRow + 1}, minmax(48px, auto))`;
   grid.setAttribute('role', 'grid');
   grid.setAttribute('aria-label', '街区网格地图');
   // 先填空单元格占位，保持网格对齐
@@ -318,21 +318,22 @@ function renderMap(view: GameView, registry: Registry): void {
       const isCurrent = place.id === view.location.id;
       const travel = view.actions.find(x => x.definition.effects.some(fx => fx.op === 'location.move' && registry.route(fx.routeId).to === place.id));
       const canGo = !!travel?.available && !view.eventTitle;
-      const reason = isCurrent ? '当前位置' : view.eventTitle ? '当前事件进行中' : travel && !travel.available ? travel.reason : adjacent.has(place.id) ? '前往这里' : '需经相邻街道（不可直达）';
-      const cell = element(canGo || isCurrent ? 'button' : 'div', `map-cell${isCurrent ? ' current' : ''}${canGo ? ' reachable' : ' blocked'}`);
+      const reason = isCurrent ? '你在这里' : view.eventTitle ? '事件中' : travel && !travel.available ? travel.reason : adjacent.has(place.id) ? '可前往' : '不可直达';
+      const cell = element(canGo || isCurrent ? 'button' : 'div', `map-cell${isCurrent ? ' current' : canGo ? ' reachable' : ' blocked'}`);
       if (cell instanceof HTMLButtonElement) { cell.type = 'button'; if (canGo && travel) cell.dataset.action = travel.definition.id; else cell.disabled = true; }
       cell.style.gridColumn = String(c + 1); cell.style.gridRow = String(r + 1);
       cell.setAttribute('role', 'gridcell');
       const short = place.name.length > 8 ? place.name.slice(0, 7) + '…' : place.name;
       cell.append(element('span', 'map-cell-name', short));
-      cell.append(element('small', '', reason));
+      if (isCurrent) cell.append(element('span', 'map-here', '你在这里'));
+      else cell.append(element('small', '', reason));
       cell.title = `${place.name} · ${reason}`;
       cell.setAttribute('aria-label', `${place.name}，${reason}`);
       if (isCurrent) cell.setAttribute('aria-current', 'true');
       grid.append(cell);
     }
   }
-  const legend = element('p', 'muted map-grid-legend', '点击相邻格子前往（沿用 location.move）。灰色格：事件中或非相邻不可直达。右侧「周围环境」仍列出邻接。');
+  const legend = element('p', 'muted map-grid-legend', '亮边可点；灰格不可直达。');
   byId('map-content').replaceChildren(grid, legend);
 }
 let feedbackTimer: ReturnType<typeof setTimeout> | undefined;
