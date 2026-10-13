@@ -1,4 +1,5 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import { loadAtoms, sampleCombos, toEncounterCandidate } from './nsfw-auto-combo/combiner.mjs';
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
 const index=await json('content/index.json'),base=await Promise.all(index.packs.filter(p=>!p.includes('/adventure/')).map(p=>json('content/'+p)));
 const id=s=>'progression:'+s,tag=s=>id('tag.'+s),scoped=(role,s)=>({role,tagId:tag(s)}),has=(role,s,value=true)=>({op:'narrative.tag',role,id:tag(s),value});
@@ -82,6 +83,105 @@ envRule('scavenger.workshop','district:enemy.scavenger',['foundation:service.wor
 envRule('collector.station','district:enemy.collector',['foundation:service.commons','foundation:theme.boundary'],{weight:16,name:'拦路收债客（检查站）',combat:{attack:13,speed:11},defeatTags:scopedDefeat('clear','injured')});
 envRule('collector.market','district:enemy.collector',['foundation:service.market','foundation:theme.trade'],{weight:16,name:'拦路收债客（市集）',hp:65,reward:18,combat:{attack:12,defense:9},defeatTags:scopedDefeat('clear','injured')});
 action('encounter.env','调查危险环境',[{op:'combat.encounter'}],[],'按当前地点环境 tag 匹配敌人；可覆盖数值与战败节点','explore');
+
+// —— NSFW 定词材质×部位×动作 自动组合（制作卡 proposed-nodes / U6）——
+// 合载：运行 tag + profile + encounter 候选节点；不改词库审定；不伪造 foundation:*。
+const nsfwAtoms = await loadAtoms();
+const nsfwCombos = sampleCombos(nsfwAtoms);
+p.tags.push({
+  id: tag('nsfwcombo.active'),
+  label: 'NSFW组合遭遇激活',
+  definition: '故事局部：本次遭遇由 NSFW 自动组合器（材质×部位×动作）选中；不等于词库审定，不授予身体能力，不表示 TF 已完成。',
+  facets: ['context'],
+  status: 'active',
+  aliases: [],
+});
+p.narrativeProfiles.push({
+  id: id('profile.nsfwcombo.matrix'),
+  tags: [tag('nsfwcombo.active')],
+  goals: [],
+  tendencies: [],
+  defeatTags: [],
+});
+const nsfwCandidates = [];
+for (const combo of nsfwCombos) {
+  const slug = (combo.sampleId ?? 'x').toLowerCase();
+  const cand = toEncounterCandidate(combo, {
+    nodeId: id(`node.encounter.nsfwcombo.${slug}`),
+    textKey: id(`text.node.encounter.nsfwcombo.${slug}`),
+    requireTagId: tag('nsfwcombo.active'),
+    priority: 5,
+    weight: 10,
+  });
+  nsfwCandidates.push(cand);
+  p.texts[cand.node.textKey] = cand.fragment;
+  const detailKey = id(`text.node.encounter.nsfwcombo.${slug}.detail`);
+  p.texts[detailKey] = cand.texts.detail;
+  const resultKey = id(`text.choice.nsfwcombo.${slug}.detail`);
+  p.texts[resultKey] = `你记下组合键「${combo.comboKey}」，确认尚未写入战败或转化结算。`;
+  p.narrativeNodes.push({
+    ...cand.node,
+    choices: [
+      {
+        label: '核对组合原子与挂接提示',
+        resultText: resultKey,
+        next: 'nsfwcombo-detail',
+        effects: [time(5)],
+        conditions: [],
+        setTags: [],
+        unsetTags: [],
+      },
+      exit(),
+    ],
+  });
+  p.narrativeNodes.push({
+    id: id(`node.encounter.nsfwcombo.${slug}.detail`),
+    kind: 'encounter',
+    stage: 'nsfwcombo-detail',
+    title: '组合键与素材对照',
+    textKey: detailKey,
+    requiresTags: [scoped('opponent', 'nsfwcombo.active')],
+    excludesTags: [],
+    conditions: [],
+    tendencies: [],
+    weight: 10,
+    priority: 5,
+    maxVisits: 1,
+    choices: [exit()],
+  });
+}
+action(
+  'nsfwcombo.encounter',
+  '试跑 NSFW 材质组合遭遇',
+  [{ op: 'narrative.start', kind: 'encounter', profileId: id('profile.nsfwcombo.matrix') }],
+  [],
+  '定词材质×部位×动作 → 候选遭遇节点；不改审定；成人完整正文另见 adult 门',
+  'explore',
+);
+await mkdir('content/nsfw-auto-combo', { recursive: true });
+await writeFile(
+  'content/nsfw-auto-combo/candidates.json',
+  JSON.stringify(
+    {
+      format: 'aetheria-nsfw-auto-combo-candidates',
+      schemaVersion: 1,
+      generatedFrom: nsfwAtoms.sourceCard,
+      count: nsfwCandidates.length,
+      candidates: nsfwCandidates.map((c) => ({
+        sampleId: c.sampleId,
+        comboKey: c.comboKey,
+        adultRequired: c.adultRequired,
+        lexiconRefs: c.lexiconRefs,
+        proposedRuntimeTags: c.proposedRuntimeTags,
+        nodeId: c.node.id,
+        fragment: c.fragment,
+      })),
+    },
+    null,
+    2,
+  ) + '\n',
+);
+
 p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))];p.contributions=p.contributions.slice(0,1);
 await mkdir('content/adventure',{recursive:true});await writeFile('content/adventure/pack.json',JSON.stringify(p,null,2)+'\n');
-console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.enemies.length} enemies.`);
+console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}.`);

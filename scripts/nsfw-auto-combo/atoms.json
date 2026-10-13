@@ -1,0 +1,280 @@
+{
+  "format": "aetheria-nsfw-auto-combo-atoms",
+  "schemaVersion": 1,
+  "sourceCard": "docs/tag-hub/outbox/2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md",
+  "notes": [
+    "原子来自 tag-hub/nsfw-batches 真实 ID；收录≠审定≠已实装。",
+    "不改词库审定状态；不伪造 foundation:*。",
+    "定词挂前：定词+材质；转化只用通用黏液化/黑胶化。",
+    "成人内容须 adultOptional + 年龄≥18；本组合器阶段 A 为遭遇反馈片段。"
+  ],
+  "materials": [
+    {
+      "key": "M1",
+      "id": "lx.nsfw-material.b0002.0001",
+      "name": "黏液",
+      "dingci": "蛞蝓",
+      "label": "蛞蝓黏液",
+      "kind": "L",
+      "batch": "nsfw-material.b0002.json"
+    },
+    {
+      "key": "M2",
+      "id": "lx.nsfw-material.b0005.0004",
+      "name": "触手黏液",
+      "dingci": "触手",
+      "label": "触手黏液",
+      "kind": "L",
+      "batch": "nsfw-material.b0005.json"
+    },
+    {
+      "key": "M3",
+      "id": "lx.nsfw-material.b0005.0003",
+      "name": "虫巢黏液",
+      "dingci": "虫巢",
+      "label": "虫巢黏液",
+      "kind": "L",
+      "batch": "nsfw-material.b0005.json"
+    },
+    {
+      "key": "M4",
+      "id": "lx.nsfw-material.b0008.0002",
+      "name": "史莱姆黏液",
+      "dingci": "史莱姆",
+      "label": "史莱姆黏液",
+      "kind": "L",
+      "batch": "nsfw-material.b0008.json"
+    },
+    {
+      "key": "M5",
+      "id": "lx.nsfw-material.b0001.0001",
+      "name": "活体黑胶",
+      "dingci": null,
+      "label": "活体黑胶",
+      "kind": "L",
+      "batch": "nsfw-material.b0001.json"
+    },
+    {
+      "key": "M6",
+      "id": "lx.nsfw-material.b0001.0006",
+      "name": "凝胶膜",
+      "dingci": null,
+      "label": "凝胶膜",
+      "kind": "L",
+      "batch": "nsfw-material.b0001.json"
+    }
+  ],
+  "parts": [
+    {
+      "key": "Pt1",
+      "id": "lx.nsfw-part.b0001.0001",
+      "name": "嘴唇",
+      "kind": "L",
+      "batch": "nsfw-part.b0001.json"
+    },
+    {
+      "key": "Pt4",
+      "id": "lx.nsfw-part.b0001.0016",
+      "name": "腰侧",
+      "kind": "L",
+      "batch": "nsfw-part.b0001.json"
+    },
+    {
+      "key": "Pt5",
+      "id": "lx.nsfw-part.b0001.0028",
+      "name": "手腕",
+      "kind": "L",
+      "batch": "nsfw-part.b0001.json"
+    },
+    {
+      "key": "Pt6",
+      "id": "lx.nsfw-part.b0001.0021",
+      "name": "大腿内侧",
+      "kind": "L",
+      "batch": "nsfw-part.b0001.json"
+    },
+    {
+      "key": "Pt7",
+      "id": "lx.nsfw-part.b0001.0023",
+      "name": "脚踝",
+      "kind": "L",
+      "batch": "nsfw-part.b0001.json"
+    }
+  ],
+  "loci": [
+    {
+      "key": "Lc2",
+      "id": "lx.nsfw-locus.b0001.0005",
+      "name": "身后",
+      "kind": "L",
+      "batch": "nsfw-locus.b0001.json"
+    }
+  ],
+  "actions": [
+    {
+      "key": "A1",
+      "id": "lx.nsfw-action.b0002.0001",
+      "name": "缠绕",
+      "kind": "L",
+      "batch": "nsfw-action.b0002.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A2",
+      "id": "lx.nsfw-action.b0002.0002",
+      "name": "涂覆",
+      "kind": "L",
+      "batch": "nsfw-action.b0002.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A3",
+      "id": "lx.nsfw-action.b0002.0003",
+      "name": "滴落包覆",
+      "kind": "L",
+      "batch": "nsfw-action.b0002.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A4",
+      "id": "lx.nsfw-action.b0002.0004",
+      "name": "封口包覆",
+      "kind": "L",
+      "batch": "nsfw-action.b0002.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A5",
+      "id": "lx.nsfw-action.b0002.0005",
+      "name": "丝状滴落",
+      "kind": "L",
+      "batch": "nsfw-action.b0002.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A6",
+      "id": "lx.nsfw-action.b0002.0006",
+      "name": "倒挂",
+      "kind": "L",
+      "batch": "nsfw-action.b0002.json",
+      "adultRequired": false
+    }
+  ],
+  "states": [
+    {
+      "key": "S1",
+      "id": "lx.nsfw-state.b0002.0001",
+      "name": "被黏液束缚",
+      "kind": "L"
+    },
+    {
+      "key": "S3",
+      "id": "lx.nsfw-state.b0002.0003",
+      "name": "倒挂固定",
+      "kind": "L"
+    }
+  ],
+  "tfs": [
+    {
+      "key": "Tf1",
+      "id": "lx.nsfw-tf.b0002.0001",
+      "name": "黏液化",
+      "kind": "L",
+      "note": "通用 TF；禁止物种专条"
+    }
+  ],
+  "poses": [
+    {
+      "key": "Po1",
+      "id": "lx.nsfw-pose.b0002.0002",
+      "name": "倒挂拱身",
+      "kind": "L"
+    }
+  ],
+  "samples": [
+    {
+      "id": "C1",
+      "material": "M2",
+      "targets": [
+        "Pt5",
+        "Pt4"
+      ],
+      "action": "A1",
+      "optionalState": "S1",
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "defeat.coat|hands",
+      "adultRequired": false,
+      "title": "触手黏液缠住腕与腰"
+    },
+    {
+      "id": "C2",
+      "material": "M1",
+      "targets": [
+        "Pt7",
+        "Pt6"
+      ],
+      "action": "A2",
+      "optionalState": null,
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "proposed.coat.advance",
+      "adultRequired": false,
+      "title": "蛞蝓黏液涂覆腿下段"
+    },
+    {
+      "id": "C3",
+      "material": "M6",
+      "targets": [],
+      "targetScene": "外衣下摆",
+      "action": "A3",
+      "optionalState": null,
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "defeat.coat+profile.gel",
+      "adultRequired": false,
+      "title": "凝胶膜滴落包覆下摆"
+    },
+    {
+      "id": "C4",
+      "material": "M5",
+      "targets": [
+        "Pt1"
+      ],
+      "action": "A4",
+      "optionalState": null,
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "assess+signal",
+      "adultRequired": true,
+      "title": "活体黑胶封口包覆"
+    },
+    {
+      "id": "C5",
+      "material": "M3",
+      "targets": [
+        "Lc2"
+      ],
+      "action": "A5",
+      "optionalState": null,
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "proposed.encounter",
+      "adultRequired": false,
+      "title": "虫巢黏液丝状滴落身后"
+    },
+    {
+      "id": "C6",
+      "material": "M4",
+      "targets": [],
+      "action": "A6",
+      "optionalState": "S3",
+      "optionalTf": null,
+      "optionalPose": "Po1",
+      "defeatHook": "proposed.hang",
+      "adultRequired": false,
+      "title": "史莱姆黏液倒挂固定",
+      "targetScene": "倒挂姿态"
+    }
+  ]
+}

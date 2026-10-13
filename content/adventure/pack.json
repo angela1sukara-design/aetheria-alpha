@@ -920,6 +920,21 @@
         }
       ],
       "resultText": "progression:text.action.encounter.env"
+    },
+    {
+      "id": "progression:action.nsfwcombo.encounter",
+      "label": "试跑 NSFW 材质组合遭遇",
+      "hint": "定词材质×部位×动作 → 候选遭遇节点；不改审定；成人完整正文另见 adult 门",
+      "group": "explore",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "narrative.start",
+          "kind": "encounter",
+          "profileId": "progression:profile.nsfwcombo.matrix"
+        }
+      ],
+      "resultText": "progression:text.action.nsfwcombo.encounter"
     }
   ],
   "events": [
@@ -1163,7 +1178,38 @@
     "progression:text.action.narrative.quest": "核对当前进展。",
     "progression:text.action.narrative.transformation": "练习适应当前身体。",
     "progression:text.action.narrative.ending": "回顾已经留下的结果。",
-    "progression:text.action.encounter.env": "调查危险环境。"
+    "progression:text.action.encounter.env": "调查危险环境。",
+    "progression:text.node.encounter.nsfwcombo.c1": "触手黏液在手腕、腰侧发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。",
+    "progression:text.node.encounter.nsfwcombo.c1.detail": "组合键：触手黏液×手腕、腰侧×缠绕→被黏液束缚\n材质 lx.nsfw-material.b0005.0004（触手黏液）\n目标 lx.nsfw-part.b0001.0028/手腕、lx.nsfw-part.b0001.0016/腰侧\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：defeat.coat|hands\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c1.detail": "你记下组合键「触手黏液×手腕、腰侧×缠绕→被黏液束缚」，确认尚未写入战败或转化结算。",
+    "progression:text.choice.149": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.150": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c2": "蛞蝓黏液在脚踝、大腿内侧发生涂覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。",
+    "progression:text.node.encounter.nsfwcombo.c2.detail": "组合键：蛞蝓黏液×脚踝、大腿内侧×涂覆\n材质 lx.nsfw-material.b0002.0001（蛞蝓黏液）\n目标 lx.nsfw-part.b0001.0023/脚踝、lx.nsfw-part.b0001.0021/大腿内侧\n动作 lx.nsfw-action.b0002.0002（涂覆）\n战败挂接提示：proposed.coat.advance\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c2.detail": "你记下组合键「蛞蝓黏液×脚踝、大腿内侧×涂覆」，确认尚未写入战败或转化结算。",
+    "progression:text.choice.154": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.155": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c3": "凝胶膜在外衣下摆发生滴落包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。",
+    "progression:text.node.encounter.nsfwcombo.c3.detail": "组合键：凝胶膜×外衣下摆×滴落包覆\n材质 lx.nsfw-material.b0001.0006（凝胶膜）\n目标 外衣下摆\n动作 lx.nsfw-action.b0002.0003（滴落包覆）\n战败挂接提示：defeat.coat+profile.gel\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c3.detail": "你记下组合键「凝胶膜×外衣下摆×滴落包覆」，确认尚未写入战败或转化结算。",
+    "progression:text.choice.159": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.160": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c4": "活体黑胶在嘴唇发生封口包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+    "progression:text.node.encounter.nsfwcombo.c4.detail": "组合键：活体黑胶×嘴唇×封口包覆\n材质 lx.nsfw-material.b0001.0001（活体黑胶）\n目标 lx.nsfw-part.b0001.0001/嘴唇\n动作 lx.nsfw-action.b0002.0004（封口包覆）\n战败挂接提示：assess+signal\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c4.detail": "你记下组合键「活体黑胶×嘴唇×封口包覆」，确认尚未写入战败或转化结算。",
+    "progression:text.choice.164": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.165": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c5": "虫巢黏液在身后发生丝状滴落。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。",
+    "progression:text.node.encounter.nsfwcombo.c5.detail": "组合键：虫巢黏液×身后×丝状滴落\n材质 lx.nsfw-material.b0005.0003（虫巢黏液）\n目标 lx.nsfw-locus.b0001.0005/身后\n动作 lx.nsfw-action.b0002.0005（丝状滴落）\n战败挂接提示：proposed.encounter\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c5.detail": "你记下组合键「虫巢黏液×身后×丝状滴落」，确认尚未写入战败或转化结算。",
+    "progression:text.choice.169": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.170": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c6": "史莱姆黏液在倒挂姿态发生倒挂。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags。姿态参考「倒挂拱身」。",
+    "progression:text.node.encounter.nsfwcombo.c6.detail": "组合键：史莱姆黏液×倒挂姿态×倒挂→倒挂固定\n材质 lx.nsfw-material.b0008.0002（史莱姆黏液）\n目标 倒挂姿态\n动作 lx.nsfw-action.b0002.0006（倒挂）\n状态素材 lx.nsfw-state.b0002.0003\n战败挂接提示：proposed.hang\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c6.detail": "你记下组合键「史莱姆黏液×倒挂姿态×倒挂→倒挂固定」，确认尚未写入战败或转化结算。",
+    "progression:text.choice.174": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.175": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.action.nsfwcombo.encounter": "试跑 NSFW 材质组合遭遇。"
   },
   "contributions": [
     {
@@ -1209,7 +1255,8 @@
         "progression:action.narrative.quest",
         "progression:action.narrative.transformation",
         "progression:action.narrative.ending",
-        "progression:action.encounter.env"
+        "progression:action.encounter.env",
+        "progression:action.nsfwcombo.encounter"
       ]
     }
   ],
@@ -1381,6 +1428,16 @@
       "id": "progression:tag.repair.accepted",
       "label": "接受本次修理",
       "definition": "本次选择明确接受指定修理，不能用于其他范围。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "progression:tag.nsfwcombo.active",
+      "label": "NSFW组合遭遇激活",
+      "definition": "故事局部：本次遭遇由 NSFW 自动组合器（材质×部位×动作）选中；不等于词库审定，不授予身体能力，不表示 TF 已完成。",
       "facets": [
         "context"
       ],
@@ -2957,6 +3014,450 @@
           "unsetTags": []
         }
       ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c1",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "触手黏液缠住腕与腰",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c1",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c1.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.149",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c1.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c1.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.150",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c2",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "蛞蝓黏液涂覆腿下段",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c2",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c2.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.154",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c2.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c2.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.155",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c3",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "凝胶膜滴落包覆下摆",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c3",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c3.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.159",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c3.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c3.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.160",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c4",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "活体黑胶封口包覆",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c4",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c4.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.164",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c4.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c4.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.165",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c5",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "虫巢黏液丝状滴落身后",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c5",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c5.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.169",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c5.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c5.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.170",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c6",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "史莱姆黏液倒挂固定",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c6",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c6.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.174",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c6.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c6.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.175",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
     }
   ],
   "narrativeProfiles": [
@@ -3137,6 +3638,15 @@
           "tagId": "progression:tag.injured"
         }
       ]
+    },
+    {
+      "id": "progression:profile.nsfwcombo.matrix",
+      "tags": [
+        "progression:tag.nsfwcombo.active"
+      ],
+      "goals": [],
+      "tendencies": [],
+      "defeatTags": []
     }
   ],
   "environmentEnemyRules": [

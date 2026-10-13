@@ -1,0 +1,93 @@
+{
+  "format": "aetheria-nsfw-auto-combo-candidates",
+  "schemaVersion": 1,
+  "generatedFrom": "docs/tag-hub/outbox/2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md",
+  "count": 6,
+  "candidates": [
+    {
+      "sampleId": "C1",
+      "comboKey": "触手黏液×手腕、腰侧×缠绕→被黏液束缚",
+      "adultRequired": false,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0005.0004",
+        "lx.nsfw-part.b0001.0028",
+        "lx.nsfw-part.b0001.0016",
+        "lx.nsfw-action.b0002.0001",
+        "lx.nsfw-state.b0002.0001"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s1"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c1",
+      "fragment": "触手黏液在手腕、腰侧发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。"
+    },
+    {
+      "sampleId": "C2",
+      "comboKey": "蛞蝓黏液×脚踝、大腿内侧×涂覆",
+      "adultRequired": false,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0002.0001",
+        "lx.nsfw-part.b0001.0023",
+        "lx.nsfw-part.b0001.0021",
+        "lx.nsfw-action.b0002.0002"
+      ],
+      "proposedRuntimeTags": [],
+      "nodeId": "progression:node.encounter.nsfwcombo.c2",
+      "fragment": "蛞蝓黏液在脚踝、大腿内侧发生涂覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。"
+    },
+    {
+      "sampleId": "C3",
+      "comboKey": "凝胶膜×外衣下摆×滴落包覆",
+      "adultRequired": false,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0001.0006",
+        "lx.nsfw-action.b0002.0003"
+      ],
+      "proposedRuntimeTags": [],
+      "nodeId": "progression:node.encounter.nsfwcombo.c3",
+      "fragment": "凝胶膜在外衣下摆发生滴落包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。"
+    },
+    {
+      "sampleId": "C4",
+      "comboKey": "活体黑胶×嘴唇×封口包覆",
+      "adultRequired": true,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0001.0001",
+        "lx.nsfw-part.b0001.0001",
+        "lx.nsfw-action.b0002.0004"
+      ],
+      "proposedRuntimeTags": [],
+      "nodeId": "progression:node.encounter.nsfwcombo.c4",
+      "fragment": "活体黑胶在嘴唇发生封口包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）"
+    },
+    {
+      "sampleId": "C5",
+      "comboKey": "虫巢黏液×身后×丝状滴落",
+      "adultRequired": false,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0005.0003",
+        "lx.nsfw-locus.b0001.0005",
+        "lx.nsfw-action.b0002.0005"
+      ],
+      "proposedRuntimeTags": [],
+      "nodeId": "progression:node.encounter.nsfwcombo.c5",
+      "fragment": "虫巢黏液在身后发生丝状滴落。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。"
+    },
+    {
+      "sampleId": "C6",
+      "comboKey": "史莱姆黏液×倒挂姿态×倒挂→倒挂固定",
+      "adultRequired": false,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0008.0002",
+        "lx.nsfw-action.b0002.0006",
+        "lx.nsfw-state.b0002.0003",
+        "lx.nsfw-pose.b0002.0002"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s3"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c6",
+      "fragment": "史莱姆黏液在倒挂姿态发生倒挂。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags。姿态参考「倒挂拱身」。"
+    }
+  ]
+}
