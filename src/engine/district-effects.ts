@@ -21,6 +21,7 @@ import {
   fleeChancePercent,
   sanityGain,
   STAMINA_COST,
+  sumEquipmentBonuses,
   type CombatActorStats,
 } from './numerics.ts';
 import { transformProgress } from './transform-perception.ts';
@@ -33,16 +34,24 @@ const AP_ID = 'core:actionPoints' as Id;
 const AFTERTASTE_ID = 'core:aftertaste' as Id;
 const SUBMISSION_ID = 'core:submissionTendency' as Id;
 
-function playerCombatStats(s: GameState): CombatActorStats {
+function playerCombatStats(s: GameState, r?: Registry): CombatActorStats {
   const v = s.player.variables;
+  const baseAtk = v['core:attack'] ?? 10;
+  const baseDef = v['core:defense'] ?? 10;
+  const baseEva = v['core:evasion'] ?? 10;
+  let gear = { attack: 0, defense: 0, evasion: 0 };
+  if (r && s.district?.equipped) {
+    const item = r.equipment.find(x => x.id === s.district!.equipped);
+    if (item) gear = sumEquipmentBonuses([item]);
+  }
   return {
-    attack: v['core:attack'] ?? 10,
-    defense: v['core:defense'] ?? 10,
+    attack: baseAtk + gear.attack,
+    defense: baseDef + gear.defense,
     speed: v['core:speed'] ?? 10,
     skillPower: v['core:skillPower'] ?? 10,
     crit: v['core:crit'] ?? 5,
     hit: v['core:hit'] ?? 80,
-    evasion: v['core:evasion'] ?? 10,
+    evasion: Math.min(100, baseEva + gear.evasion),
   };
 }
 
@@ -241,7 +250,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
 
     const health = s.player.variables[PLAYER_HP_ID]!;
     const stamina = s.player.variables[STAMINA_ID] ?? 100;
-    const player = playerCombatStats(s);
+    const player = playerCombatStats(s, r);
     const card = COMBAT_CARD[e.move];
     battle.playerAp = refreshPlayerAp(s);
     if (card.ap > battle.playerAp) throw new RuleError('NO_AP', `本回合行动点不足（需要 ${card.ap}）。`);

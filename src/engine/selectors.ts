@@ -10,7 +10,7 @@ import { npcPresent } from './npc.ts';
 import { districtOptions, districtText } from './district-effects.ts';
 import { directResourceCheck } from './resource-check.ts';
 import type { TextLibrary } from '../content/text-variants.ts';
-import { staminaGate, STAMINA_COST } from './numerics.ts';
+import { routeDistanceTier, routeStaminaCost, staminaGate, STAMINA_COST } from './numerics.ts';
 
 const STAMINA_ID = 'core:stamina' as Id;
 
@@ -44,12 +44,12 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
         checks.push({ pass: stamina >= STAMINA_COST.guard, reason: '防守需要1点体力。' });
       }
       if (e.op === 'location.move') {
-        checks.push({ pass: stamina >= STAMINA_COST.moveShort, reason: `体力不足：当前 ${stamina}，短移动需要 ${STAMINA_COST.moveShort}。` });
-        if (gate.onlyRestOrHelp && !gate.allowFarMove) {
-          // 1–19：禁止赶路类（所有 location.move）；仅休息/社交低耗
-          checks.push({ pass: false, reason: '体力过低，只能休息或低耗社交。' });
-        } else if (!gate.allowFarMove) {
-          // 20–39：短移动允许；远路标签尚未接线，现行一律短移动
+        const route = registry.route(e.routeId);
+        const tier = routeDistanceTier(route);
+        const cost = routeStaminaCost(route);
+        checks.push({ pass: stamina >= cost, reason: `体力不足：当前 ${stamina}，本次移动需要 ${cost}。` });
+        if (tier !== 'adjacent' && !gate.allowFarMove) {
+          checks.push({ pass: false, reason: '体力不足，无法走远路/跨区' });
         }
       }
       if (e.op === 'scene.act' && e.move === 'contact') {

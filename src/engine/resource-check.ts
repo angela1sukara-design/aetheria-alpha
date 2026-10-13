@@ -1,6 +1,6 @@
 import type { Effect, GameState, Id } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
-import { STAMINA_COST } from './numerics.ts';
+import { routeStaminaCost } from './numerics.ts';
 
 const STAMINA_ID = 'core:stamina' as Id;
 
@@ -15,9 +15,10 @@ export function directResourceCheck(effects: Effect[], state: GameState, registr
     if (effect.op === 'location.move') {
       const def = registry.variables.find(v => v.id === STAMINA_ID);
       if (def && STAMINA_ID in balances) {
+        const cost = routeStaminaCost(registry.route(effect.routeId));
         const before = balances[STAMINA_ID]!;
-        const after = before - STAMINA_COST.moveShort;
-        if (after < def.min) return { pass: false, reason: `${def.label}不足：当前 ${before}，本次需要 ${STAMINA_COST.moveShort}。` };
+        const after = before - cost;
+        if (after < def.min) return { pass: false, reason: `${def.label}不足：当前 ${before}，本次需要 ${cost}。` };
         balances[STAMINA_ID] = after;
       }
       continue;

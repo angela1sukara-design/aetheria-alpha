@@ -13,7 +13,7 @@
 - ≥100：置 `core:flag.sanity_break`，并优先启动 `district:event.sanity_break`（若内容包已装）
 
 ### 2. stamina
-- `location.move`：邻接 −2（远路标签未接）
+- `location.move`：按 Route `distanceTier`（邻接 −2 / 远·跨 −5）+ `durationMinutes` 推进时钟
 - 居民协助劳动：−8 stamina（可选 −2 energy），不再主扣 energy−5
 - 战斗：attack−3 / guard−1 / recover−4 / flee−4；**攻击不再耗 energy**
 - selectors：`staminaGate` 低体力限制（远路/劳动/攻击等）
@@ -39,14 +39,21 @@
 ### transformProgress
 - 非 root 部位为相关槽；带 `provenance` 为已填；perception 暂等同 progress
 
-## 未做 / 需用户拍
+## 2026-10-13 已补（对照 DESIGN-numeric-gaps）
 
-1. 多卡同回（轻击/重击/技能击手牌经济）——现一动一回合过渡
-2. route 远路标签（−5）与跨区判定
-3. Boss 内容包（独立遭遇 + 专属败北事件）
-4. 场景内 arousal/restraint 写入拍点（现仅结构与 exit 余韵）
-5. 安全区治疗 +100 是否改为 +40（设计另议）
-6. world 包 `aetheria:action.rest` 未加 stamina（避免 core/world 指纹大面积失效）；公寓休息靠 district waitday/rest
+1. **Route**：`distanceTier` / `durationMinutes`；`location.move` 统一 clock+stamina；远/跨 −5 与 `allowFarMove`；同批 `clock.advance` 跳过以免双计（world/social/reshaping 指纹保留）
+2. **装备 U1**：`slot`/`bonuses`；战斗 `eff=base+bonus`；`equipBonusesConfig.enabled`；cosmetic=0
+3. **安全区治疗 U2**：district heal `core:health` **+40**
+4. **U3**：不动 world rest/labor；district 短休 +12 / waitday +50 / help −8 已就绪
+5. **U4**：多卡同回仍缓做（四移映射）
+6. **U5**：cross 与 far 同耗 5
+
+## 未做 / 后续
+
+1. 多卡同回（轻击/重击/技能击手牌经济）——现一动一回合过渡（U4 缓做）
+2. Boss 内容包（独立遭遇 + 专属败北事件）
+3. 场景内 arousal/restraint 写入拍点（现仅结构与 exit 余韵）
+4. world 包 `aetheria:action.rest` 未加 stamina（U3：仅 district）
 
 ## 关键文件
 

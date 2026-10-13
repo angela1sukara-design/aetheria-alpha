@@ -1,4 +1,5 @@
-import type { EnemyTier } from '../core/district-types.ts';
+import type { EnemyTier, EquipmentBonuses, EquipmentSlot } from '../core/district-types.ts';
+import type { RouteDistanceTier } from '../core/types.ts';
 export type { EnemyTier };
 
 /** 数值深设计纯函数：理智 / 命中伤害 / 余韵 / TF 进度 / 倾向分档。字段 ID 以 VariableDef 为准。 */
@@ -230,3 +231,54 @@ export function staminaGate(stamina: number): {
     onlyRestOrHelp: false,
   };
 }
+
+
+/** Route 默认推进分钟（缺 durationMinutes 时按 tier）。 */
+export const ROUTE_DEFAULT_DURATION: Record<RouteDistanceTier, number> = {
+  adjacent: 10,
+  far: 25,
+  cross: 45,
+};
+
+export function routeDistanceTier(route: { distanceTier?: RouteDistanceTier }): RouteDistanceTier {
+  return route.distanceTier ?? 'adjacent';
+}
+
+export function routeDurationMinutes(route: { distanceTier?: RouteDistanceTier; durationMinutes?: number }): number {
+  const tier = routeDistanceTier(route);
+  return route.durationMinutes ?? ROUTE_DEFAULT_DURATION[tier];
+}
+
+export function routeStaminaCost(route: { distanceTier?: RouteDistanceTier }): number {
+  return routeDistanceTier(route) === 'adjacent' ? STAMINA_COST.moveShort : STAMINA_COST.moveFar;
+}
+
+/** U1：装备战斗加成开关与硬顶（不写回 VariableDef）。 */
+export const equipBonusesConfig = { enabled: true };
+
+export const EQUIP_BONUS_ITEM_MAX = { attack: 4, defense: 4, evasion: 6 } as const;
+export const EQUIP_BONUS_CAP = { attack: 4, defense: 4, evasion: 8 } as const;
+
+export interface GearBonusSource {
+  slot?: EquipmentSlot;
+  bonuses?: EquipmentBonuses;
+}
+
+/** 结算时读取；cosmetic 贡献 0；总和再按全局帽 clamp。 */
+export function sumEquipmentBonuses(items: GearBonusSource[]): { attack: number; defense: number; evasion: number } {
+  if (!equipBonusesConfig.enabled) return { attack: 0, defense: 0, evasion: 0 };
+  let attack = 0, defense = 0, evasion = 0;
+  for (const item of items) {
+    const slot = item.slot ?? 'cosmetic';
+    if (slot === 'cosmetic') continue;
+    attack += item.bonuses?.attack ?? 0;
+    defense += item.bonuses?.defense ?? 0;
+    evasion += item.bonuses?.evasion ?? 0;
+  }
+  return {
+    attack: clamp(attack, 0, EQUIP_BONUS_CAP.attack),
+    defense: clamp(defense, 0, EQUIP_BONUS_CAP.defense),
+    evasion: clamp(evasion, 0, EQUIP_BONUS_CAP.evasion),
+  };
+}
+

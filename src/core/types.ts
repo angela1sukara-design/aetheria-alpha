@@ -36,7 +36,16 @@ export interface VariableDef { id: Id; label: string; initial: number; min: numb
 export interface FlagDef { id: Id; initial: boolean }
 export interface HookDef { id: Id; accepts: 'action'; visibility: 'public' }
 export interface LocationDef { id: Id; name: string; subtitle: string; textKey: Id; actionHook: Id; map: { x: number; y: number } }
-export interface RouteDef { id: Id; from: Id; to: Id }
+export type RouteDistanceTier = 'adjacent' | 'far' | 'cross';
+export interface RouteDef {
+  id: Id;
+  from: Id;
+  to: Id;
+  /** 距离档；缺省 adjacent */
+  distanceTier?: RouteDistanceTier;
+  /** 推进分钟；缺省按 tier 默认表 */
+  durationMinutes?: number;
+}
 export interface ActionDef {
   id: Id; label: string; hint: string; group: 'travel' | 'daily' | 'explore' | 'event';
   conditions: Condition[]; effects: Effect[]; resultText: Id;

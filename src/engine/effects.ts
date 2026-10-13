@@ -7,11 +7,13 @@ import { draw } from './rng.ts';
 import { activeEvent } from './events.ts';
 import { encounter, residentInteraction } from './district.ts';
 import { applyDistrictEffect } from './district-effects.ts';
-import { aftertasteDecay, sanityRestDelta, skillResourceOutOfCombatRegen, STAMINA_COST } from './numerics.ts';
+import { aftertasteDecay, routeDistanceTier, routeDurationMinutes, routeStaminaCost, sanityRestDelta, skillResourceOutOfCombatRegen, staminaGate } from './numerics.ts';
 import { SANITY_ID } from '../persistence/vars-migration.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
 export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
+  // 旅行 Action 常仍带 clock.advance 10；时钟改由 location.move 按 Route 推进，同批效果内跳过以免双计（保留旧包指纹）。
+  const routeOwnsClock = effects.some(e => e.op === 'location.move');
   for (const effect of effects) {
     if (--context.budget < 0) throw new RuleError('EFFECT_BUDGET', '单次事务效果超过安全上限。');
     switch (effect.op) {
@@ -38,6 +40,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
         break;
       }
       case 'clock.advance': {
+        if (routeOwnsClock) break;
         const before = draft.clock.totalMinutes; advanceTransformationTime(draft, effect.minutes, registry, context.changes);
         if (effect.minutes) context.changes.push({ label: '时间', before: formatClock(before), after: formatClock(draft.clock.totalMinutes) });
         if (effect.minutes > 0 && !draft.district?.combat) {
@@ -70,11 +73,16 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
         if (activeEvent(draft)) throw new RuleError('EVENT_ACTIVE', '先完成或退出当前事件。');
         const route = registry.route(effect.routeId);
         if (route.from !== draft.world.locationId) throw new RuleError('INVALID_ROUTE_ORIGIN', '当前地点不是这条路线的起点。');
+        const tier = routeDistanceTier(route);
+        const staminaCost = routeStaminaCost(route);
+        const duration = routeDurationMinutes(route);
         const staminaId = 'core:stamina' as import('../core/types.ts').Id;
-        const staminaCost = STAMINA_COST.moveShort; // 跨区远路标签待接；现行路线按邻接 −2
         if (staminaId in draft.player.variables) {
           const def = registry.variable(staminaId);
           const beforeSt = draft.player.variables[staminaId]!;
+          if (tier !== 'adjacent' && !staminaGate(beforeSt).allowFarMove) {
+            throw new RuleError('EXHAUSTED', '体力不足，无法走远路/跨区');
+          }
           const afterSt = beforeSt - staminaCost;
           if (afterSt < def.min) throw new RuleError('INSUFFICIENT_RESOURCE', `${def.label}不足：当前 ${beforeSt}，本次需要 ${staminaCost}。`);
           draft.player.variables[staminaId] = afterSt;
@@ -84,6 +92,8 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
         draft.world.locationId = route.to;
         if (!draft.world.knownLocationIds.includes(route.to)) draft.world.knownLocationIds.push(route.to);
         context.changes.push({ label: '地点', before, after: registry.location(route.to).name });
+        // 时钟单一来源：按 Route duration 推进（旅行 Action 不再硬编码 10min）
+        if (duration > 0) applyEffects([{ op: 'clock.advance', minutes: duration }], draft, registry, context);
         break;
       }
       case 'event.start': {

@@ -24,7 +24,7 @@ function actionButton(option: ActionOption, registry: Registry, compact = false)
   const hint = option.available ? rawHint.split(' · ').filter(part => {
     if (part === '选择会推进经历 · 查看行动反馈' || part === '选择会推进经历' || part === '查看行动反馈') return false;
     if (preview.some(tag => normalize(tag) === normalize(part))) return false;
-    return !(preview.length && option.definition.effects.some(effect => effect.op === 'clock.advance') && /^(?:步行\s*)?\d+\s*(?:分钟|小时)$/.test(part));
+    return !(preview.length && option.definition.effects.some(effect => effect.op === 'clock.advance' || effect.op === 'location.move') && /^(?:步行\s*)?\d+\s*(?:分钟|小时)$/.test(part));
   }).join(' · ') : rawHint;
   if (hint) button.append(element('span', 'action-hint', hint));
   if (preview.length) {

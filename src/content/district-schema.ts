@@ -9,7 +9,23 @@ export function parseDistrict(input:unknown,h:Helpers):void {
  list(r.interactions ?? [],'/interactions',(v,p)=>{const x=obj(v,p,['id','npcId','conditions','textSlotId','endEventId','poses','contact']); for(const k of ['id','npcId','textSlotId','endEventId']) id(x[k],p); list(x.conditions,p,condition); list(x.poses,p,(v,p)=>{const a=obj(v,p,['id','label','facing','zone','requires']); str(a.id,p); str(a.label,p); choice(a.facing,p,['front','away']); choice(a.zone,p,['near','across']); choice(a.requires,p,[null,'grasp','walk','balance','tailGrip','hear']);}); const c=obj(x.contact,p,['playerKind','npcKind','label']); choice(c.playerKind,p,['hand']); choice(c.npcKind,p,['hand']); str(c.label,p);});
  list(r.textSlots ?? [],'/textSlots',(v,p)=>{const x=obj(v,p,['id','owner','contentTier','fallbackTextKey','participants','allowedVariables','requiredFacts','sceneRequirements','before','after','purpose','requiredBeats','nextNodeId','exitActionIds','allowedReplacement']); id(x.id,p); id(x.fallbackTextKey,p); const o=obj(x.owner,p,['eventId','nodeId']); id(o.eventId,p); str(o.nodeId,p); choice(x.contentTier,p,['mature_fade','adult_optional']); list(x.participants,p,(a,p)=>{if(a!=='player')id(a,p);}); for(const k of ['allowedVariables','sceneRequirements','requiredBeats']) list(x[k],p,str); for(const k of ['requiredFacts','exitActionIds']) list(x[k],p,id); for(const k of ['before','after','purpose','nextNodeId']) str(x[k],p); choice(x.allowedReplacement,p,['prose_only']);});
  list(r.sceneTexts ?? [],'/sceneTexts',(v,p)=>{const x=obj(v,p,['id','locationId','conditions','priority','textKey','owner']); if(x.owner){const owner=obj(x.owner,p,['eventId','nodeId']);id(owner.eventId,p);str(owner.nodeId,p);} for(const k of ['id','locationId','textKey']) id(x[k],p); list(x.conditions,p,condition); integer(x.priority,p,0,100);});
- list(r.equipment ?? [],'/equipment',(v,p)=>{const x=obj(v,p,['id','name','requires','description']); id(x.id,p); str(x.name,p); str(x.description,p); list(x.requires,p,condition);});
+ list(r.equipment ?? [],'/equipment',(v,p)=>{
+  const x=obj(v,p,['id','name','requires','description','slot','bonuses']);
+  id(x.id,p); str(x.name,p); str(x.description,p); list(x.requires,p,condition);
+  if(x.slot!==undefined) choice(x.slot,`${p}/slot`,['weapon','armor','cosmetic']);
+  const slot = (x.slot as string|undefined) ?? 'cosmetic';
+  if(x.bonuses!==undefined){
+    const b=obj(x.bonuses,`${p}/bonuses`,['attack','defense','evasion']);
+    for(const k of ['attack','defense','evasion'] as const){
+      if(b[k]!==undefined) integer(b[k],`${p}/bonuses/${k}`,0,k==='evasion'?6:4);
+    }
+    if(slot==='cosmetic'){
+      for(const k of ['attack','defense','evasion'] as const){
+        if(typeof b[k]==='number' && (b[k] as number)!==0) choice(b[k],`${p}/bonuses/${k}`,[0]);
+      }
+    }
+  }
+ });
 }
 export function validateDistrictDefinitions(packs:ContentPack[],r:Registry,fail:(p:ContentPack,c:string,ptr:string,reason:string,id?:string)=>void,check:(p:ContentPack,c:Condition,path:string)=>void):void {
  for(const p of packs) {

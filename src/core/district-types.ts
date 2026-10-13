@@ -50,7 +50,25 @@ export interface TextSlotDef {
   nextNodeId: string; exitActionIds: Id[]; allowedReplacement: 'prose_only';
 }
 export interface SceneTextDef { id: Id; locationId: Id; conditions: Condition[]; priority: number; textKey: Id; owner?:{eventId:Id;nodeId:string} }
-export interface EquipmentDef { id: Id; name: string; requires: Condition[]; description: string }
+export type EquipmentSlot = 'weapon' | 'armor' | 'cosmetic';
+export interface EquipmentBonuses {
+  /** 对应 VariableDef core:attack，加法整数 */
+  attack?: number;
+  /** core:defense */
+  defense?: number;
+  /** core:evasion（百分点） */
+  evasion?: number;
+}
+export interface EquipmentDef {
+  id: Id;
+  name: string;
+  requires: Condition[];
+  description: string;
+  /** 缺省 cosmetic（兼容雨衣/尾衣） */
+  slot?: EquipmentSlot;
+  /** 缺省 {}；cosmetic 必须全 0 / 省略 */
+  bonuses?: EquipmentBonuses;
+}
 export interface DistrictDefinitions {
   storylets?: StoryletDef[]; residentTemplates?: ResidentTemplate[]; enemies?: EnemyDef[];
   interactions?: InteractionDef[]; textSlots?: TextSlotDef[]; sceneTexts?: SceneTextDef[]; equipment?: EquipmentDef[];

@@ -146,8 +146,8 @@ export class WorldGenerator {
       const key = [a, b].sort((a, b) => a - b).join('.'); if (a === b || pairs.has(key)) return; pairs.add(key);
       for (const [from, to] of [[a, b], [b, a]]) {
         const routeId = id(`route.${from}.${to}`), place = pack.locations[from]!, target = pack.locations[to]!;
-        pack.routes.push({ id: routeId, from: place.id, to: target.id });
-        action(`travel.${from}.${to}`, `前往${target.name}`, place.actionHook, [{ op: 'location.move', routeId }, { op: 'clock.advance', minutes: 10 }], [], 'travel', `你沿公共通道来到${target.name}。`);
+        pack.routes.push({ id: routeId, from: place.id, to: target.id, distanceTier: 'adjacent' });
+        action(`travel.${from}.${to}`, `前往${target.name}`, place.actionHook, [{ op: 'location.move', routeId }], [], 'travel', `你沿公共通道来到${target.name}。`);
       }
     };
     // 先生成双向生成树，再加随机捷径：所有必需服务可达，方向也可返回。

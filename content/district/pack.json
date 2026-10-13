@@ -500,22 +500,26 @@
     {
       "id": "district:route.cafe.out",
       "from": "aetheria:location.street",
-      "to": "district:location.cafe"
+      "to": "district:location.cafe",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.cafe.back",
       "from": "district:location.cafe",
-      "to": "aetheria:location.street"
+      "to": "aetheria:location.street",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.workshop.out",
       "from": "aetheria:location.market",
-      "to": "district:location.workshop"
+      "to": "district:location.workshop",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.workshop.back",
       "from": "district:location.workshop",
-      "to": "aetheria:location.market"
+      "to": "aetheria:location.market",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.canal.out",
@@ -530,42 +534,50 @@
     {
       "id": "district:route.archive.out",
       "from": "aetheria:location.street",
-      "to": "district:location.archive"
+      "to": "district:location.archive",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.archive.back",
       "from": "district:location.archive",
-      "to": "aetheria:location.street"
+      "to": "aetheria:location.street",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.station.out",
       "from": "district:location.canal",
-      "to": "district:location.station"
+      "to": "district:location.station",
+      "distanceTier": "far"
     },
     {
       "id": "district:route.station.back",
       "from": "district:location.station",
-      "to": "district:location.canal"
+      "to": "district:location.canal",
+      "distanceTier": "far"
     },
     {
       "id": "district:route.station.street",
       "from": "district:location.station",
-      "to": "aetheria:location.street"
+      "to": "aetheria:location.street",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.street.station",
       "from": "aetheria:location.street",
-      "to": "district:location.station"
+      "to": "district:location.station",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.archive.clinic",
       "from": "district:location.archive",
-      "to": "aetheria-tf:location.clinic"
+      "to": "aetheria-tf:location.clinic",
+      "distanceTier": "cross"
     },
     {
       "id": "district:route.clinic.archive",
       "from": "aetheria-tf:location.clinic",
-      "to": "district:location.archive"
+      "to": "district:location.archive",
+      "distanceTier": "cross"
     }
   ],
   "actions": [
@@ -576,10 +588,6 @@
       "group": "travel",
       "conditions": [],
       "effects": [
-        {
-          "op": "clock.advance",
-          "minutes": 10
-        },
         {
           "op": "location.move",
           "routeId": "district:route.cafe.out"
@@ -595,10 +603,6 @@
       "conditions": [],
       "effects": [
         {
-          "op": "clock.advance",
-          "minutes": 10
-        },
-        {
           "op": "location.move",
           "routeId": "district:route.cafe.back"
         }
@@ -612,10 +616,6 @@
       "group": "travel",
       "conditions": [],
       "effects": [
-        {
-          "op": "clock.advance",
-          "minutes": 10
-        },
         {
           "op": "location.move",
           "routeId": "district:route.workshop.out"
@@ -631,10 +631,6 @@
       "conditions": [],
       "effects": [
         {
-          "op": "clock.advance",
-          "minutes": 10
-        },
-        {
           "op": "location.move",
           "routeId": "district:route.workshop.back"
         }
@@ -648,10 +644,6 @@
       "group": "travel",
       "conditions": [],
       "effects": [
-        {
-          "op": "clock.advance",
-          "minutes": 10
-        },
         {
           "op": "location.move",
           "routeId": "district:route.canal.out"
@@ -667,10 +659,6 @@
       "conditions": [],
       "effects": [
         {
-          "op": "clock.advance",
-          "minutes": 10
-        },
-        {
           "op": "location.move",
           "routeId": "district:route.canal.back"
         }
@@ -684,10 +672,6 @@
       "group": "travel",
       "conditions": [],
       "effects": [
-        {
-          "op": "clock.advance",
-          "minutes": 10
-        },
         {
           "op": "location.move",
           "routeId": "district:route.archive.out"
@@ -703,10 +687,6 @@
       "conditions": [],
       "effects": [
         {
-          "op": "clock.advance",
-          "minutes": 10
-        },
-        {
           "op": "location.move",
           "routeId": "district:route.archive.back"
         }
@@ -720,10 +700,6 @@
       "group": "travel",
       "conditions": [],
       "effects": [
-        {
-          "op": "clock.advance",
-          "minutes": 10
-        },
         {
           "op": "location.move",
           "routeId": "district:route.station.out"
@@ -739,10 +715,6 @@
       "conditions": [],
       "effects": [
         {
-          "op": "clock.advance",
-          "minutes": 10
-        },
-        {
           "op": "location.move",
           "routeId": "district:route.station.back"
         }
@@ -756,10 +728,6 @@
       "group": "travel",
       "conditions": [],
       "effects": [
-        {
-          "op": "clock.advance",
-          "minutes": 10
-        },
         {
           "op": "location.move",
           "routeId": "district:route.station.street"
@@ -775,10 +743,6 @@
       "conditions": [],
       "effects": [
         {
-          "op": "clock.advance",
-          "minutes": 10
-        },
-        {
           "op": "location.move",
           "routeId": "district:route.street.station"
         }
@@ -793,10 +757,6 @@
       "conditions": [],
       "effects": [
         {
-          "op": "clock.advance",
-          "minutes": 10
-        },
-        {
           "op": "location.move",
           "routeId": "district:route.archive.clinic"
         }
@@ -810,10 +770,6 @@
       "group": "travel",
       "conditions": [],
       "effects": [
-        {
-          "op": "clock.advance",
-          "minutes": 10
-        },
         {
           "op": "location.move",
           "routeId": "district:route.clinic.archive"
@@ -5408,7 +5364,7 @@
         {
           "op": "var.change",
           "id": "core:health",
-          "amount": 100
+          "amount": 40
         },
         {
           "op": "var.change",
@@ -5432,7 +5388,7 @@
         {
           "op": "var.change",
           "id": "core:health",
-          "amount": 100
+          "amount": 40
         },
         {
           "op": "var.change",
@@ -5456,7 +5412,7 @@
         {
           "op": "var.change",
           "id": "core:health",
-          "amount": 100
+          "amount": 40
         },
         {
           "op": "var.change",
@@ -5480,7 +5436,7 @@
         {
           "op": "var.change",
           "id": "core:health",
-          "amount": 100
+          "amount": 40
         },
         {
           "op": "var.change",
@@ -5504,7 +5460,7 @@
         {
           "op": "var.change",
           "id": "core:health",
-          "amount": 100
+          "amount": 40
         },
         {
           "op": "var.change",
@@ -13928,7 +13884,8 @@
           }
         }
       ],
-      "description": "这件雨衣适合没有尾部结构的身体。新增尾部后将自动卸下并保留。"
+      "description": "这件雨衣适合没有尾部结构的身体。新增尾部后将自动卸下并保留。",
+      "slot": "cosmetic"
     },
     {
       "id": "district:equipment.tailcoat",
@@ -13940,7 +13897,8 @@
           "count": 1
         }
       ],
-      "description": "尾口留出活动空间，适配具有尾部平衡能力的身体。"
+      "description": "尾口留出活动空间，适配具有尾部平衡能力的身体。",
+      "slot": "cosmetic"
     }
   ],
   "bodyParts": [
