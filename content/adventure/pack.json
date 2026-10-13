@@ -1355,14 +1355,13 @@
     {
       "id": "progression:action.narrative.encounter",
       "label": "留意一次当地遭遇",
-      "hint": "抽有正文的遭遇（nsfwcombo）；空壳核对已禁用",
+      "hint": "地点场面优先（城门旅馆多拍／可读 start）；无空壳核对",
       "group": "explore",
       "conditions": [],
       "effects": [
         {
           "op": "narrative.start",
-          "kind": "encounter",
-          "profileId": "progression:profile.nsfwcombo.matrix"
+          "kind": "encounter"
         }
       ],
       "resultText": "progression:text.action.narrative.encounter"
@@ -1643,7 +1642,7 @@
     "progression:text.choice.38": "你拒绝改装，沿安全路线离开。",
     "progression:text.node.defeat.repair.tail": "你的尾部确为机械结构【机械尾】。对方提出把尾部外伸长度调整到650毫米，说明需要十五分钟【检查改装目标】。这一项只会在你明确接受后开始。",
     "progression:text.choice.40": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.node.encounter.start": "你在{place}停下，留意眼前正在发生的小事。先观察当前处境，再决定是否参与【探索】。",
+    "progression:text.node.encounter.start": "你在{place}停下。眼前有人影、有动静，也有一条尚未被挡住的退路。空气里能闻到湿气与尘土，脚下的地面还留着新鲜的痕迹。你可以上前参与、退开观望，或改换另一条路绕开。",
     "progression:text.choice.42": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.43": "你完成这一次观察，记录实际看见的内容。",
     "progression:text.node.exploration.start": "你沿{place}的可见通道查看路面与告示。已经走过的路线可以核对，尚未进入的地方仍保留未知【调查】。",
@@ -1773,189 +1772,217 @@
     "progression:text.action.narrative.transformation": "练习适应当前身体。",
     "progression:text.action.narrative.ending": "回顾已经留下的结果。",
     "progression:text.action.encounter.env": "调查危险环境。",
+    "progression:text.choice.encounter.generic.engage": "你上前一步，靴底踩过发亮的水痕，眼前的动静朝你抬起——接触已近在咫尺。",
+    "progression:text.choice.encounter.generic.avoid": "你退开半步，把眼前的灯火与痕迹隔在安全距离之外，仍能看清它缓慢起伏。",
+    "progression:text.choice.encounter.generic.alt": "你改换另一条路绕开，把接触留在身后，脚步重新落到干燥的地面上。",
+    "progression:text.choice.encounter.generic.exit": "你停下这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.start.street": "公会外的石阶还残留着午后雨渍，告示板下聚着两三名闲谈的佣兵。巷口风把旗帜吹得啪响，一只半透明的黏液正从下水道口探出边缘。你可以上前拦住它、退回公会门口，或改从侧巷绕开。",
+    "progression:text.choice.encounter.street.exit": "你离开巷口，回到可以继续行动的位置。",
+    "progression:text.node.encounter.start.canal": "运河边的货摊灯火晃动，水面映着半截栏杆影子。货主正收绳，脚下石板发滑；一团黏液贴着缆桩慢慢胀大，空气里有甜腥。你可以上前察看、退到桥墩后观望，或改走市场内廊绕开。",
+    "progression:text.choice.encounter.canal.exit": "你离开缆桩边，回到可以继续行动的位置。",
+    "progression:text.node.encounter.inn.gate.capture": "城门旅馆堂厅灯火偏黄，门楣下还滴着斗篷水珠。柜台后的值守按着抹布，目光跟着你推开的门板。角落桌腿旁，一团半透明黏液正往上爬，留下发亮水痕，空气里有淡淡的甜腥。你可以上前拦住它、退到门口观望，或改走侧廊绕开。",
+    "progression:text.node.encounter.inn.gate.press": "你靠近半步，黏液已爬上凳面，鼓出一小截尖端朝你腰侧探来。值守低声提醒别碰，自己却没离开柜台。黏液边缘贴上你靴尖，凉意透过鞋面——尚未缠死。你可以伸手拨开、退回门廊，或改用桌布把它隔开。",
+    "progression:text.node.encounter.inn.gate.press.adult": "黏液贴上靴尖后继续上爬，凉滑边缘擦过小腿内侧，衣料被顶开一线。鼓起的尖端抵住你大腿根外侧，带着湿热压力，却还停在布料外——尚未深入。你可以并拢腿根挡住、退开，或改用桌布隔开接触。",
+    "progression:text.node.encounter.inn.gate.resolve": "黏液缩回桌腿根，水痕还在，却不再追近。值守把抹布扔到一旁，朝你点了点头。侧廊风带着门外守备的脚步声。你可以再走近看一眼残迹、转身离开堂厅，或先向值守问清刚才发生了什么。",
+    "progression:text.node.encounter.inn.gate.detail": "你再靠近一步：桌腿上的水痕发亮，黏液表面起伏着细小气泡，凳脚缝里卡着半截布条。柜台抽屉半开，露出一把旧钥匙。值守的目光仍盯着你。你可以伸手挑开布条、退回原处，或改问值守这痕迹从哪来。",
+    "progression:text.choice.encounter.inn.gate.engage": "你上前一步，靴底踩过发亮的水痕，黏液鼓面朝你腰侧抬起——接触已近在咫尺。",
+    "progression:text.choice.encounter.inn.gate.avoid": "你退到门口，把堂厅里的灯火与水痕隔在半步之外，仍能看清它缓慢起伏。",
+    "progression:text.choice.encounter.inn.gate.alt": "你扯过柜台上的桌布，隔开靴尖与黏液边缘；布料立刻洇湿一块。",
+    "progression:text.choice.encounter.inn.gate.exit": "你转身离开堂厅，把门闩在身后扣上，走廊灯火重新变得平稳。",
+    "progression:text.choice.encounter.inn.gate.press.engage": "你伸手拨开黏液尖端，凉滑触感停在指节上，它缩了一下又重新鼓起。",
+    "progression:text.choice.encounter.inn.gate.press.avoid": "你退回门廊，靴尖离开水痕，堂厅里的甜腥被门槛隔开。",
+    "progression:text.choice.encounter.inn.gate.press.alt": "你扯过桌布隔开靴尖与黏液；布料洇湿，黏液暂时被挡在布面外。",
+    "progression:text.choice.encounter.inn.gate.resolve.detail": "你再走近残迹，看清气泡与布条，值守的目光仍跟着你。",
+    "progression:text.choice.encounter.inn.gate.resolve.ask": "你向值守问起水痕从哪来；对方只说「夜里渗上来的」，不再多讲。",
+    "progression:text.choice.encounter.inn.gate.resolve.leave": "你转身离开堂厅，把门闩在身后扣上，走廊灯火重新变得平稳。",
+    "progression:text.choice.encounter.inn.gate.detail.poke": "你伸手挑开凳脚缝里的布条，湿冷纤维黏在指腹上。",
+    "progression:text.choice.encounter.inn.gate.detail.back": "你退回原处，把细节留在半步之外。",
+    "progression:text.choice.encounter.inn.gate.detail.ask": "你改问值守这痕迹从哪来；对方摇头，只把抹布拧得更紧。",
     "progression:text.node.encounter.nsfwcombo.c1": "触手黏液在你的手腕与腰侧发生缠绕：凉滑的条带勒紧腕骨，另一股贴住腰线收束，牵制感清楚可辨。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未结算。你可以结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c1.detail": "组合键：触手黏液×手腕、腰侧×缠绕→被黏液束缚\n玩法 G1（束缚制服）\nfantasy NPC 种类占位：monster\n材质 lx.nsfw-material.b0005.0004（触手黏液）\n目标 lx.nsfw-part.b0001.0028/手腕、lx.nsfw-part.b0001.0016/腰侧\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：defeat.coat|hands\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
-    "progression:text.choice.173": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.199": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c2": "蛞蝓黏液在你的脚踝与大腿内侧发生涂覆。定词挂前的液膜温热、略有韧性，沿腿线下缘抹开一小片——这是局部涂覆痕迹，不是整身完成，也不是黏液化已写入。禁止物种专条。你可以结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c2.detail": "组合键：蛞蝓黏液×脚踝、大腿内侧×涂覆\n玩法 G2（材质覆层转化）\nfantasy NPC 种类占位：beast\n材质 lx.nsfw-material.b0002.0001（蛞蝓黏液）\n目标 lx.nsfw-part.b0001.0023/脚踝、lx.nsfw-part.b0001.0021/大腿内侧\n动作 lx.nsfw-action.b0002.0002（涂覆）\n战败挂接提示：proposed.coat.advance\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
-    "progression:text.choice.176": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.202": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c3": "凝胶膜沿你的外衣下摆发生滴落包覆：半透明的膜状液滴挂住布料边缘，与黑胶题材环境可作描写对照，但这不等于战败外衣黏附已结算——coat.stuck 尚未写入。身体材料也未因此置换。你可以结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c3.detail": "组合键：凝胶膜×外衣下摆×滴落包覆→整身被涂覆→黏液化\n玩法 G2（材质覆层转化）\nfantasy NPC 种类占位：monster\n材质 lx.nsfw-material.b0001.0006（凝胶膜）\n目标 外衣下摆\n动作 lx.nsfw-action.b0002.0003（滴落包覆）\n状态素材 lx.nsfw-state.b0002.0002\n通用 TF lx.nsfw-tf.b0002.0001\n战败挂接提示：defeat.coat+profile.gel\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
-    "progression:text.choice.179": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.205": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c4": "活体黑胶在嘴唇发生封口包覆；接触可见。发声受阻仅为当下描写，未结算求助结果。可结束回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c4.detail": "组合键：活体黑胶×嘴唇×封口包覆\n玩法 G4（口封感官剥夺）\nfantasy NPC 种类占位：monster\n材质 lx.nsfw-material.b0001.0001（活体黑胶）\n目标 lx.nsfw-part.b0001.0001/嘴唇\n动作 lx.nsfw-action.b0002.0004（封口包覆）\n战败挂接提示：assess+signal\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.node.encounter.nsfwcombo.c4.adult": "活体黑胶覆上你的嘴唇，完成封口包覆。胶膜贴紧唇缝，带着弹性压力与湿热气味，张口与发声都变得费力——但这只是当下触感，尚未结算任何求助成功或失败。（成人门：adultOptional + 年龄≥18）外衣黏附、催眠、黏液化均未写入。你可以结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c4.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.184": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.185": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.210": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.211": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c5": "虫巢黏液在你的身后发生丝状滴落。细丝带着细粒触感，沿背侧与衣料外侧淌下，触感清楚，却未写成任何腔内事实。战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。你可以结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c5.detail": "组合键：虫巢黏液×身后×缠绕→被黏液束缚\n玩法 G1（束缚制服）\nfantasy NPC 种类占位：beast\n材质 lx.nsfw-material.b0005.0003（虫巢黏液）\n目标 lx.nsfw-locus.b0001.0005/身后\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：proposed.encounter\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
-    "progression:text.choice.188": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.node.encounter.nsfwcombo.c6": "史莱姆黏液托住你的重心，完成一次倒挂；身体短暂呈倒挂拱身的姿态参考，半透明黏液拉出牵制的力线。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags——仍可挣，并非永久固定，亦非黏液化。你可以结束当前经历、回到安全位置。",
+    "progression:text.choice.214": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c6": "史莱姆黏液托住你的胯下，半透明鼓面温热，沿布料缝隙往里顶。衣料被推开一线，压迫与湿热清楚可辨，却还停在浅处，你仍能并拢膝弯。你可以夹紧抗拒、侧身挣开，或改用布料隔开。",
     "progression:text.node.encounter.nsfwcombo.c6.detail": "组合键：史莱姆黏液×胯下×顶入→性器外露\n玩法 G3（侵犯插入）\nfantasy NPC 种类占位：monster\n材质 lx.nsfw-material.b0008.0002（史莱姆黏液）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0001.0012（顶入）\n状态素材 lx.nsfw-state.b0002.0007\n战败挂接提示：assess+adult_optional\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
-    "progression:text.node.encounter.nsfwcombo.c6.adult": "【可填成人正文槽 · C6 · 史莱姆黏液×胯下×顶入→性器外露】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0008.0002、lx.nsfw-locus.b0001.0001、lx.nsfw-action.b0001.0012、lx.nsfw-state.b0002.0007",
-    "progression:text.choice.nsfwcombo.c6.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.193": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.194": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.node.encounter.nsfwcombo.c7": "触手黏液在你的脖颈与锁骨窝发生缠绕。凉滑条带贴住颈侧，余端挤进锁骨凹陷，呼吸时牵制感加重。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未结算。你可以结束当前经历、回到安全位置。",
+    "progression:text.choice.nsfwcombo.c6.engage": "你放松膝弯，任黏液顶入再深半寸；湿热鼓面贴紧性器轮廓，衣料彻底滑开。",
+    "progression:text.choice.nsfwcombo.c6.avoid": "你夹紧腿根侧身退开，黏液鼓面从胯下滑落，只留下湿凉的残迹。",
+    "progression:text.choice.nsfwcombo.c6.alt": "你扯过衣角堵住缝隙，黏液顶在布料外，压迫仍在，却未能再进。",
+    "progression:text.node.encounter.nsfwcombo.c6.adult": "史莱姆黏液托住你的胯下，半透明鼓面温热而韧。它沿布料缝隙顶入，把性器轮廓一点点顶开、顶湿；衣料被推得滑开，私处暴露在凉气里，却仍能并拢膝弯。顶入只停在浅处，尚未深入。你可以夹紧抗拒、侧身挣开，或先稳住呼吸。",
+    "progression:text.choice.221": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c7": "触手黏液贴上你的脖颈，凉滑条带勒住颈侧，余端爬向眼眶，把视线一点点糊住。呼吸变浅，束缚感清楚可辨，手腕却还能动。你可以扯开眼前的黏液、侧头挣脱，或先护住眼睛再退。",
     "progression:text.node.encounter.nsfwcombo.c7.detail": "组合键：触手黏液×脖颈×触手封眼→被黏液束缚\n玩法 G4（口封感官剥夺）\nfantasy NPC 种类占位：monster\n材质 lx.nsfw-material.b0005.0004（触手黏液）\n目标 lx.nsfw-part.b0001.0007/脖颈\n动作 lx.nsfw-action.b0013.0013（触手封眼）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：defeat.hands|proposed.coat.advance\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
-    "progression:text.node.encounter.nsfwcombo.c7.adult": "【可填成人正文槽 · C7 · 触手黏液×脖颈×触手封眼→被黏液束缚】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0005.0004、lx.nsfw-part.b0001.0007、lx.nsfw-action.b0013.0013、lx.nsfw-state.b0002.0001",
-    "progression:text.choice.nsfwcombo.c7.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.199": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.200": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.nsfwcombo.c7.engage": "你任触手封眼收紧，视野全黑，颈侧勒痕加深，呼吸只剩浅浅一口。",
+    "progression:text.choice.nsfwcombo.c7.avoid": "你扯开眼前的黏液条带，侧头挣脱颈侧的勒束，视野重新漏进灯火。",
+    "progression:text.choice.nsfwcombo.c7.alt": "你抬手护住眼睛，另一手按住颈侧条带，改用袖口隔开黏液。",
+    "progression:text.node.encounter.nsfwcombo.c7.adult": "触手黏液贴上你的脖颈，凉滑条带勒住颈侧，余端爬向眼眶。触手封眼把视野一点点糊死，湿热黏液堵住睫毛，呼吸因颈侧收紧而变浅。束缚感清楚可辨，手腕却还能动。你可以扯开眼前的黏液、侧头挣脱，或先护住眼睛再退。",
+    "progression:text.choice.228": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c8": "活体黑胶在胯下发生可见涂覆；接触与动作已成立。目标态「性器外露」仅素材指向，未写入 story.tags。可结束回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c8.detail": "组合键：活体黑胶×胯下×裙摆掀起→性器外露\n玩法 G6（公开羞辱）\nfantasy NPC 种类占位：human\n材质 lx.nsfw-material.b0001.0001（活体黑胶）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0012.0011（裙摆掀起）\n状态素材 lx.nsfw-state.b0002.0007\n战败挂接提示：assess+adult_optional\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.node.encounter.nsfwcombo.c8.adult": "温热的活体黑胶贴上你的胯下，沿布料与皮肤缝隙做缓慢涂覆。胶面带着细微搏动，把私处轮廓一点一点抹开、抹湿；衣料被推得滑开时，性器外露只是本组合的描写目标态——素材指向，未写入 story.tags。（成人门：adultOptional + 年龄≥18）战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未结算。你可以结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c8.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.205": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.206": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.233": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.234": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c9": "蛞蝓黏液在大腿内侧与胯下发生滴落包覆；接触可见。整身被涂覆、黏液化仅素材指向，未写入 story.tags。可结束回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c9.detail": "组合键：虫巢黏液×胯下×产卵\n玩法 G5（产卵灌注）\nfantasy NPC 种类占位：beast\n材质 lx.nsfw-material.b0005.0003（虫巢黏液）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0004.0002（产卵）\n战败挂接提示：proposed.oviposition\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.node.encounter.nsfwcombo.c9.adult": "蛞蝓黏液自你的大腿内侧滴落，包覆向胯下。液膜温热、略带韧性，沿皮肤往下淌，把内侧肌肤与胯间一并裹住；湿热与黏滞感清楚可辨。（成人门：adultOptional + 年龄≥18）整身被涂覆、黏液化皆为素材指向的推进目标，未写入 story.tags，亦未完成——仅用通用黏液化，禁止物种专条。你可以结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c9.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.211": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.212": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.239": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.240": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c10": "史莱姆黏液在嘴唇与脖颈发生指令触发；接触可见。「催眠中」仅素材指向，未写入 story.tags。可结束回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c10.detail": "组合键：史莱姆黏液×嘴唇、脖颈×指令触发→催眠中\n玩法 G7（主从调教）\nfantasy NPC 种类占位：human\n材质 lx.nsfw-material.b0008.0002（史莱姆黏液）\n目标 lx.nsfw-part.b0001.0001/嘴唇、lx.nsfw-part.b0001.0007/脖颈\n动作 lx.nsfw-action.b0003.0001（指令触发）\n状态素材 lx.nsfw-state.b0003.0001\n战败挂接提示：proposed.dom.train\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.node.encounter.nsfwcombo.c10.adult": "半透明的史莱姆黏液贴住你的嘴唇与脖颈，随接触发出短促的指令触发。声线像从胶膜内侧传来，短暂拉扯注意力与呼吸节奏；皮肤上的凉滑与指令余韵叠在一起。（成人门：adultOptional + 年龄≥18）催眠中仅作素材指向，未写入 story.tags；恍惚服从亦未成立。你仍可拒绝与中断——偏好不能替代同意。你可以结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c10.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.217": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.218": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.245": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.246": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c11": "虫巢黏液在手腕与腰侧发生封口包覆；接触可见。「被黏液束缚」仅素材指向，未写入 story.tags。可结束回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c11.detail": "组合键：触手黏液×胯下×触手灌入\n玩法 G5（产卵灌注）\nfantasy NPC 种类占位：monster\n材质 lx.nsfw-material.b0005.0004（触手黏液）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0013.0016（触手灌入）\n战败挂接提示：proposed.oviposition\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.node.encounter.nsfwcombo.c11.adult": "虫巢黏液缠裹你的手腕与腰侧，以封口包覆把缝隙糊严。黏丝带着细粒触感，勒紧腕骨与腰线，湿热压迫让挣动手感滞涩；呼吸被腰侧的黏膜轻轻顶住。（成人门：adultOptional + 年龄≥18）被黏液束缚仅素材指向，未写入 story.tags。战败外衣黏附、催眠与黏液化均未结算。你可以结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c11.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.223": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.224": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.251": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.252": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c12": "凝胶膜在胯下发生缠绕；接触可见。「恍惚服从」仅素材指向，未写入 story.tags。可结束回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c12.detail": "组合键：凝胶膜×胯下×多根抵入→恍惚服从\n玩法 G8（多体围攻）\nfantasy NPC 种类占位：monster\n材质 lx.nsfw-material.b0001.0006（凝胶膜）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0008.0003（多根抵入）\n状态素材 lx.nsfw-state.b0003.0002\n战败挂接提示：defeat.coat+profile.gel\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.node.encounter.nsfwcombo.c12.adult": "凝胶膜在你的胯下缠绕收紧，膜面清凉而黏，一圈圈勒过敏感带，牵动呼吸与注意力（黑胶题材可作描写选材，不等于身体已黑胶化）。（成人门：adultOptional + 年龄≥18）恍惚服从是描写目标态——素材指向，未写入 story.tags；催眠中亦未成立。你可以结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c12.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.229": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.230": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.257": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.258": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.action.nsfwcombo.encounter": "试跑 NSFW 材质组合遭遇。",
     "progression:text.choice.defeat.g1.enter": "你进入「束缚制服」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g1.capture": "战败刚落定，{opponent} 扣住你的手腕往身后并拢。束缚带勒进腕骨，另一端绕过脚踝，把你拽成跪姿。制服式束形只勒到肩线，布料起褶，呼吸仍能在胸腔里起伏，四肢还留着可动的缝。你可以先挣动手腕，或先摸清束带走向。",
     "progression:text.node.defeat.g1.capture.adult": "战败刚落定，{opponent} 已扣住你的手腕往身后并拢。束缚带勒进腕骨凹处，另一端绕过脚踝，把你拽成跪姿。制服式束形还只勒到肩线——布料被勒出褶皱，呼吸仍能在胸腔里起伏，私处尚未被束带直接压住。你可以先试着挣动手腕，或先摸清束带走向。",
     "progression:text.choice.defeat.g1.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g1.capture.continue": "你进入「加压」拍；仍可随时退出。",
-    "progression:text.choice.237": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.265": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g1.capture.adult.continue": "你进入「加压」拍；仍可随时退出。",
-    "progression:text.choice.239": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.267": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g1.press": "束带继续收紧：肩胛被勒向一处，胸前布料叠压，腰侧勒出横痕。{opponent} 用缠绕补上膝弯与肘弯，胶带束缚贴上小臂，空隙一点点封死。呼吸变浅，喉间还能出声；处境比刚才糟一档。你仍可硬挣，或改用缓慢松动。",
     "progression:text.node.defeat.g1.press.adult": "束带继续收紧：肩胛被勒向一处，胸前布料叠压成浅浅的起伏，腰侧也勒出一道横痕。{opponent} 用缠绕补上膝弯与肘弯，胶带束缚贴上小臂，把挣扎的空隙一点点封死。呼吸变浅，喉间还能出声；处境比刚才糟一档。你仍可硬挣，或改用缓慢松动。",
     "progression:text.choice.defeat.g1.press.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g1.press.continue": "你进入「高峰」拍；仍可随时退出。",
-    "progression:text.choice.244": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.272": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g1.press.adult.continue": "你进入「高峰」拍；仍可随时退出。",
-    "progression:text.choice.246": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.274": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g1.peak": "{opponent} 把束带勒过胯骨与大腿根，制服式束形收成一整片压迫：布料与束带叠压，呼吸把勒痕往肉里送。手腕、脚踝、膝弯同时发紧，肩线也动不了，触感顶在这一拍——尚未脱困。你可以继续硬挣，或先停住摸缝找脱出的角度。",
     "progression:text.node.defeat.g1.peak.adult": "{opponent} 把最后的束带勒过胯骨与大腿根，制服式束形终于收成一整片压迫：布料与束带叠压着私处轮廓，每一次呼吸都把勒痕往肉里送半寸。手腕、脚踝、膝弯同时发紧，触感顶在这一拍——尚未脱困。你可以继续硬挣、求缓，或先停住摸缝。",
     "progression:text.choice.defeat.g1.peak.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g1.peak.continue": "你进入「收束」拍；仍可随时退出。",
-    "progression:text.choice.251": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.279": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g1.peak.adult.continue": "你进入「收束」拍；仍可随时退出。",
-    "progression:text.choice.253": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.281": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g1.resolve": "束带仍勒着，但力道松了一线。你摸到腕侧未贴死的结头，脚踝环带也在摩擦中略微滑动。肩线还被制服式束形压着，地上有可借力的棱角。你可以试着解结、沿棱角蹭松，或结束这段经历、回到安全处。",
     "progression:text.node.defeat.g1.resolve.adult": "束带仍勒着，但{opponent} 的力道松了一线。你摸到腕侧一处未贴死的结头，也能感到脚踝环带在摩擦中略微滑动。肩线还被制服式束形压着，地上却有可借力的棱角。你可以试着解结脱困、沿棱角蹭松，或结束这段经历、回到安全处。",
     "progression:text.choice.defeat.g1.resolve.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.257": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.258": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.285": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.286": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g2.enter": "你进入「材质覆层转化」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g2.capture": "战败刚落定，{material} 先沾上你的小臂与锁骨：凉、黏，拉丝时发出细细的啧声。{opponent} 把覆层往下推，皮肤被涂成薄亮膜，底下纹理仍清晰——还只是局部，远未爬到躯干。你可以先刮开小臂上的膜，或先护住领口不让它继续爬。",
     "progression:text.node.defeat.g2.capture.adult": "战败刚落定，{material} 先沾上你的小臂与锁骨：凉、黏，拉丝时发出细细的啧声。{opponent} 用手掌把覆层往下推，皮肤被涂成一层薄亮膜，底下的汗毛仍清晰可见——还只是局部，私处尚未触及。你可以先刮开小臂上的膜，或先护住领口不让它继续爬。",
     "progression:text.choice.defeat.g2.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g2.capture.continue": "你进入「加压」拍；仍可随时退出。",
-    "progression:text.choice.264": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.292": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g2.capture.adult.continue": "你进入「加压」拍；仍可随时退出。",
-    "progression:text.choice.266": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.294": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g2.press": "覆层漫过肘弯与胸侧，温热起来，像第二层皮肤。你按自己手臂，指腹已拖出细丝；黏液化／黑胶化的触感在局部推进，远未到全身。衣料边缘也被浸透，处境糟一档。你可以继续刮除，或先护住尚未被覆的部位。",
     "progression:text.node.defeat.g2.press.adult": "覆层漫过肘弯与乳下弧线，温热起来，像第二层皮肤贴紧。你按自己手臂，指腹已拖出细丝；黏液化／黑胶化的触感在局部推进，却远未到全身。衣料边缘也被浸透贴开，处境糟一档。你可以继续刮除、试图甩开，或先护住尚未被覆的部位。",
     "progression:text.choice.defeat.g2.press.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g2.press.continue": "你进入「高峰」拍；仍可随时退出。",
-    "progression:text.choice.271": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.299": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g2.press.adult.continue": "你进入「高峰」拍；仍可随时退出。",
-    "progression:text.choice.273": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.301": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g2.peak": "{material} 爬到大腿内侧与小腹，皮肤变软变滑，按下去像按在膜上：还能感知，却拖丝。酥麻顺着已涂的神经往下窜——转化只停在这一拍的触感顶峰，全身远未完成。你可以硬刮停进、蜷身减接触面，或先摸清覆层边界再决定下一步。",
     "progression:text.node.defeat.g2.peak.adult": "{material} 爬到大腿内侧与小腹，皮肤变软、变滑，按下去像按在半透明膜上：还能感知，却拖丝。乳尖与私处边缘被覆层轻轻碾过，酥麻顺着已涂的神经往下窜——转化只停在这一拍的触感顶峰，全身远未完成。你可以硬刮停进、蜷身减接触面，或先感受覆层边界再决定下一步。",
     "progression:text.choice.defeat.g2.peak.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g2.peak.continue": "你进入「收束」拍；仍可随时退出。",
-    "progression:text.choice.278": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.306": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g2.peak.adult.continue": "你进入「收束」拍；仍可随时退出。",
-    "progression:text.choice.280": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.308": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g2.resolve": "覆层仍亮着，但边缘开始发干发脆。你摸到小臂上能撕起的薄边，膝弯内侧有未粘死的缝。大腿内侧的凉意还在，指尖却已能抠开残迹。你可以试着撕开脱困、用布料擦净，或结束这段经历、回到安全处。",
     "progression:text.node.defeat.g2.resolve.adult": "覆层仍亮着，但边缘开始发干、发脆。你摸到小臂上一处能撕起的薄边，也感到膝弯内侧有未粘死的缝。大腿内侧的凉意还在，却已能动手清理。你可以试着撕开脱困、用布料擦净残迹，或结束这段经历、回到安全处。",
     "progression:text.choice.defeat.g2.resolve.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.284": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.285": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.312": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.313": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g3.enter": "你进入「侵犯插入」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g3.capture": "战败刚成立，{opponent} 把你按到地面，膝顶开腿根。一只手压住胯骨，另一只抵住身后入口外侧，只先顶住边缘，尚未深入。压迫贴着入口，热意却已传来，你仍能并拢膝弯挣扎。你可以先夹紧抗拒，或先调整呼吸稳住身体。",
     "progression:text.node.defeat.g3.capture.adult": "战败刚成立，{opponent} 就把你按到地面，膝顶开你的腿根。一只手压住胯骨，另一只抵住身后入口外侧，活塞校准插入只先顶住边缘，尚未深入。热意与压迫贴着入口，你仍能并拢膝弯。你可以先夹紧抗拒，或先调整呼吸。",
     "progression:text.choice.defeat.g3.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g3.capture.continue": "你进入「加压」拍；仍可随时退出。",
-    "progression:text.choice.291": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.319": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g3.capture.adult.continue": "你进入「加压」拍；仍可随时退出。",
-    "progression:text.choice.293": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.321": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g3.press": "{opponent} 的推进加深半寸，入口被撑开一线，摩擦沿内壁往里爬。胯下被死死按住，你想蜷身却只把压迫送得更近。处境比刚才糟一档——压迫更深，却仍停在浅处，尚未顶满。你仍可夹紧抗拒、侧身挣脱，或先忍住这一拍。",
     "progression:text.node.defeat.g3.press.adult": "{opponent} 的推进加深半寸，入口被撑开一线，黏湿的摩擦沿着内壁往里爬。胯下被死死按住，你想蜷身却只把压迫送得更近。处境比刚才糟一档——插入已开始，却还停在浅处。你可以继续夹紧、侧身挣脱，或先忍住这一拍。",
     "progression:text.choice.defeat.g3.press.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g3.press.continue": "你进入「高峰」拍；仍可随时退出。",
-    "progression:text.choice.298": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.326": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g3.press.adult.continue": "你进入「高峰」拍；仍可随时退出。",
-    "progression:text.choice.300": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.328": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g3.peak": "推进停在最深那一截：{opponent} 停在里面，细微抽送刮过内壁，热意从入口冲到小腹。腿根发颤，呼吸发紧，肩背也绷住，触感顶在这一拍——尚未脱困，结局也未写完。你可以求停、硬挣外抽，或先稳住呼吸摸清脱身角度。",
     "progression:text.node.defeat.g3.peak.adult": "插入终于顶到最深那一截：{opponent} 停在里面脉动，每一次细微抽送都刮过敏感处，热意从身后入口冲到小腹。你的腿根发颤，却还没被写完结局——触感停在这一拍的顶峰。你可以求停、硬挣外抽，或先稳住呼吸摸清脱身角度。",
     "progression:text.choice.defeat.g3.peak.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
     "progression:text.choice.defeat.g3.peak.continue": "你进入「收束」拍；仍可随时退出。",
-    "progression:text.choice.305": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.333": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g3.peak.adult.continue": "你进入「收束」拍；仍可随时退出。",
-    "progression:text.choice.307": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.335": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.g3.resolve": "{opponent} 的力道退了一线，压迫仍在，但不再死死顶住。膝弯能微微并拢，身下有可借力的缝隙，呼吸也稍微回得来，脱出的空隙刚够一掌宽，指尖能撑住地面。你可以趁机拉开距离、侧滚脱身，或结束这段经历、回到安全处。",
     "progression:text.node.defeat.g3.resolve.adult": "{opponent} 的力道退了一线，插入仍在，但不再死死顶住。你感到膝弯能微微并拢，身下地面有可借力的缝隙，呼吸也稍微回得来，私处的压迫松了一点。你可以趁机外抽脱困、侧滚拉开距离，或结束这段经历、回到安全处。",
     "progression:text.choice.defeat.g3.resolve.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.311": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.312": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.339": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.340": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g4.enter": "你进入「口封感官剥夺」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g4.capture": "战败后，{opponent}对{part}做封口/遮蔽；发声与视听受阻仅为当下描写，未结算求助结果。可核对或回安全。",
     "progression:text.node.defeat.g4.capture.adult": "战败之后，{opponent}用口球或口枷压住相关部位，再叠加封口包覆；{material}也可作封眼/封耳的触感选材，把光与声一并压暗。发声与视听受阻只是当下触感——尚未结算任何求助成功或失败。感官剥夺仅作选材，不能替代同意。你可以摸索挣脱缝隙、核对处境，或结束回到安全位置。",
     "progression:text.choice.defeat.g4.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.317": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.318": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.345": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.346": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g5.enter": "你进入「产卵灌注」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g5.capture": "战败后，{opponent}向入口推进产卵或灌注动作；{material}可作灌注触感选材。填充触感成立，未结算长期身体结果或{tf}完成。可核对或回安全。",
     "progression:text.node.defeat.g5.capture.adult": "战败之后，{opponent}以产卵腔选材贴近你的入口，推进产卵；另可改用灌注管，借{material}做灌入触感——卵感与液流是当下填充触感。尚未写成产卵完成的长期身体结算，亦未写入{tf}完成或催眠。你可以感受填充节奏、核对处境，或结束回到安全位置。",
     "progression:text.choice.defeat.g5.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.323": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.324": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.351": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.352": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g6.enter": "你进入「公开羞辱」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g6.capture": "战败后，{opponent}在可被旁观处对你施加羞辱性展示与言辞压迫；在场者为占位，非真实可识别人物。未结算脱困。可核对或回安全。",
     "progression:text.node.defeat.g6.capture.adult": "战败之后，{opponent}把你拖到仍有视线可及的空地，以羞辱性的姿态与短促训词加压；羞辱偏好只作选材。在场者均为「对手/旁观占位」，禁止写成真实可识别人物。公开曝光感是当下处境，尚未结算脱困或求助成功。偏好不能替代同意。你可以低头避开视线、核对处境，或结束回到安全位置。",
     "progression:text.choice.defeat.g6.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.329": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.330": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.357": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.358": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g7.enter": "你进入「主从调教」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g7.capture": "战败后，{opponent}发出指令触发；服从倾向/指令触感仅为当下描写。「恍惚服从」素材指向未写入，催眠未成立。仍可拒绝。可核对或回安全。",
     "progression:text.node.defeat.g7.capture.adult": "战败之后，{opponent}发出短促的指令触发，声线与触感一起压在你呼吸上；你感到服从倾向被轻轻拉动——「恍惚服从」仅为素材指向，未写入 story.tags，催眠亦未成立。你仍可拒绝与中断；偏好不能替代同意。你可以选择听从试探、明确拒绝，或结束回到安全位置。",
     "progression:text.choice.defeat.g7.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.335": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.336": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.363": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.364": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.g8.enter": "你进入「多体围攻」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。",
     "progression:text.node.defeat.g8.capture": "战败后，多名{opponent}合围施压（人/兽/怪占位已抽）；{material}可作触感选材。触感交错，无具名固定 NPC，禁止 NPC24。未结算脱困。可核对或回安全。",
     "progression:text.node.defeat.g8.capture.adult": "战败之后，多名{opponent}从四面合围——{material}可作怪形/覆层选材。一只按住{part}，另一方向推进轮替，第三人拉扯视线；触感交错，却不是任何具名固定 NPC。禁止 NPC24。围攻为当下处境，脱困、求助成功、催眠与整身{tf}均未结算。你可以挣扎找缝、核对处境，或结束回到安全位置。",
     "progression:text.choice.defeat.g8.capture.adult": "你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。",
-    "progression:text.choice.341": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.342": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.369": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.370": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.defeat.play.hub": "战败之后，{opponent}仍在场。你可以按 8 种玩法大类继续当前处境（束缚制服、材质覆层转化、侵犯插入、口封感官剥夺、产卵灌注、公开羞辱、主从调教、多体围攻）。词条≠玩法≠数值；脱困、转化与催眠均尚未结算。本次抽到材质 {material}（定词挂前）、部位 {part}；转化仅通用「{tf}」占位。选择一类进入，或结束回到安全位置。",
-    "progression:text.choice.344": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.372": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.play.more": "你继续浏览其余战败玩法入口。",
     "progression:text.node.defeat.play.hub2": "还有其他玩法大类可选（侵犯插入、口封感官剥夺…）。选择一类进入，或结束回到安全位置。",
-    "progression:text.choice.347": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.375": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.play.more2": "你继续浏览剩余战败玩法入口（含产卵灌注）。",
     "progression:text.node.defeat.play.hub3": "其余玩法大类：产卵灌注、公开羞辱等。选择一类进入，或查看最后两类。",
-    "progression:text.choice.350": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.378": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.defeat.play.more3": "你查看最后的战败玩法入口。",
     "progression:text.node.defeat.play.hub4": "最后两类玩法大类：主从调教、多体围攻。选择一类进入，或结束回到安全位置。",
-    "progression:text.choice.353": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.381": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.action.defeat.play": "试跑战败后 8 玩法。"
   },
   "contributions": [
@@ -2982,7 +3009,7 @@
       "id": "progression:node.encounter.start",
       "kind": "encounter",
       "stage": "start",
-      "title": "眼前的遭遇",
+      "title": "当地的动静",
       "textKey": "progression:text.node.encounter.start",
       "requiresTags": [],
       "excludesTags": [],
@@ -2993,8 +3020,50 @@
       "maxVisits": 1,
       "choices": [
         {
+          "label": "上前参与眼下这一幕",
+          "resultText": "progression:text.choice.encounter.generic.engage",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "先退开，从安全距离观望",
+          "resultText": "progression:text.choice.encounter.generic.avoid",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "换一条路绕开",
+          "resultText": "progression:text.choice.encounter.generic.alt",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.42",
+          "resultText": "progression:text.choice.encounter.generic.exit",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3843,6 +3912,494 @@
       ]
     },
     {
+      "id": "progression:node.encounter.start.street",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "公会外的动静",
+      "textKey": "progression:text.node.encounter.start.street",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "any",
+          "conditions": [
+            {
+              "op": "environment.service",
+              "value": "commons"
+            },
+            {
+              "op": "environment.service",
+              "value": "market"
+            }
+          ]
+        }
+      ],
+      "tendencies": [],
+      "weight": 12,
+      "priority": 4,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "上前拦住黏液",
+          "resultText": "progression:text.choice.encounter.generic.engage",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "退回公会门口观望",
+          "resultText": "progression:text.choice.encounter.generic.avoid",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "改从侧巷绕开",
+          "resultText": "progression:text.choice.encounter.generic.alt",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.encounter.street.exit",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.start.canal",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "运河边的动静",
+      "textKey": "progression:text.node.encounter.start.canal",
+      "requiresTags": [
+        {
+          "role": "environment",
+          "tagId": "foundation:context.waterways"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 14,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "上前察看",
+          "resultText": "progression:text.choice.encounter.generic.engage",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "退到桥墩后观望",
+          "resultText": "progression:text.choice.encounter.generic.avoid",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "改走市场内廊绕开",
+          "resultText": "progression:text.choice.encounter.generic.alt",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.encounter.canal.exit",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.inn.gate.capture",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "城门旅馆的水痕",
+      "textKey": "progression:text.node.encounter.inn.gate.capture",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "environment.service",
+          "value": "home"
+        }
+      ],
+      "tendencies": [],
+      "weight": 20,
+      "priority": 8,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "上前拦住黏液",
+          "resultText": "progression:text.choice.encounter.inn.gate.engage",
+          "next": "inn-gate-press",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "退到门口观望",
+          "resultText": "progression:text.choice.encounter.inn.gate.avoid",
+          "next": "inn-gate-press",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "改走侧廊绕开",
+          "resultText": "progression:text.choice.encounter.inn.gate.alt",
+          "next": "inn-gate-resolve",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.encounter.inn.gate.exit",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.inn.gate.press",
+      "kind": "encounter",
+      "stage": "inn-gate-press",
+      "title": "黏液贴上靴尖",
+      "textKey": "progression:text.node.encounter.inn.gate.press",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "伸手拨开",
+          "resultText": "progression:text.choice.encounter.inn.gate.press.engage",
+          "next": "inn-gate-resolve",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "退回门廊",
+          "resultText": "progression:text.choice.encounter.inn.gate.press.avoid",
+          "next": "inn-gate-resolve",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "用桌布隔开",
+          "resultText": "progression:text.choice.encounter.inn.gate.press.alt",
+          "next": "inn-gate-resolve",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.encounter.inn.gate.exit",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.inn.gate.press.adult",
+      "kind": "encounter",
+      "stage": "inn-gate-press",
+      "title": "黏液沿腿上爬",
+      "textKey": "progression:text.node.encounter.inn.gate.press.adult",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "preference.adultOptional",
+          "value": true
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 6,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "并拢腿根挡住",
+          "resultText": "progression:text.choice.encounter.inn.gate.press.avoid",
+          "next": "inn-gate-resolve",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "退开",
+          "resultText": "progression:text.choice.encounter.inn.gate.press.avoid",
+          "next": "inn-gate-resolve",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "用桌布隔开接触",
+          "resultText": "progression:text.choice.encounter.inn.gate.press.alt",
+          "next": "inn-gate-resolve",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.encounter.inn.gate.exit",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.inn.gate.resolve",
+      "kind": "encounter",
+      "stage": "inn-gate-resolve",
+      "title": "水痕停住之后",
+      "textKey": "progression:text.node.encounter.inn.gate.resolve",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "再看一眼残迹",
+          "resultText": "progression:text.choice.encounter.inn.gate.resolve.detail",
+          "next": "inn-gate-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "向值守询问",
+          "resultText": "progression:text.choice.encounter.inn.gate.resolve.ask",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "转身离开堂厅",
+          "resultText": "progression:text.choice.encounter.inn.gate.resolve.leave",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.encounter.inn.gate.exit",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.inn.gate.detail",
+      "kind": "encounter",
+      "stage": "inn-gate-detail",
+      "title": "桌腿旁的细节",
+      "textKey": "progression:text.node.encounter.inn.gate.detail",
+      "requiresTags": [],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "伸手挑开布条",
+          "resultText": "progression:text.choice.encounter.inn.gate.detail.poke",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "退回原处",
+          "resultText": "progression:text.choice.encounter.inn.gate.detail.back",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "改问值守",
+          "resultText": "progression:text.choice.encounter.inn.gate.detail.ask",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.encounter.inn.gate.exit",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
       "id": "progression:node.encounter.nsfwcombo.c1",
       "kind": "encounter",
       "stage": "start",
@@ -3863,7 +4420,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.173",
+          "resultText": "progression:text.choice.199",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3893,7 +4450,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.176",
+          "resultText": "progression:text.choice.202",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3923,7 +4480,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.179",
+          "resultText": "progression:text.choice.205",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3972,7 +4529,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.184",
+          "resultText": "progression:text.choice.210",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4007,7 +4564,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.185",
+          "resultText": "progression:text.choice.211",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4037,7 +4594,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.188",
+          "resultText": "progression:text.choice.214",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4066,27 +4623,50 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "阅读成人向补充描写",
-          "resultText": "progression:text.choice.nsfwcombo.c6.adult",
-          "next": "nsfwcombo-adult",
+          "label": "放松膝弯迎上",
+          "resultText": "progression:text.choice.nsfwcombo.c6.engage",
+          "next": null,
           "effects": [
             {
               "op": "clock.advance",
               "minutes": 5
             }
           ],
-          "conditions": [
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "夹紧腿根退开",
+          "resultText": "progression:text.choice.nsfwcombo.c6.avoid",
+          "next": null,
+          "effects": [
             {
-              "op": "preference.adultOptional",
-              "value": true
+              "op": "clock.advance",
+              "minutes": 5
             }
           ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "用衣角隔开",
+          "resultText": "progression:text.choice.nsfwcombo.c6.alt",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
           "setTags": [],
           "unsetTags": []
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.193",
+          "resultText": "progression:text.choice.221",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4098,8 +4678,8 @@
     {
       "id": "progression:node.encounter.nsfwcombo.c6.adult",
       "kind": "encounter",
-      "stage": "nsfwcombo-adult",
-      "title": "史莱姆黏液顶入胯下（侵犯插入） · 成人补充",
+      "stage": "start",
+      "title": "史莱姆黏液顶入胯下（侵犯插入） · 成人",
       "textKey": "progression:text.node.encounter.nsfwcombo.c6.adult",
       "requiresTags": [
         {
@@ -4116,12 +4696,54 @@
       ],
       "tendencies": [],
       "weight": 10,
-      "priority": 5,
+      "priority": 6,
       "maxVisits": 1,
       "choices": [
         {
+          "label": "放松膝弯迎上",
+          "resultText": "progression:text.choice.nsfwcombo.c6.engage",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "夹紧腿根退开",
+          "resultText": "progression:text.choice.nsfwcombo.c6.avoid",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "用衣角隔开",
+          "resultText": "progression:text.choice.nsfwcombo.c6.alt",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.194",
+          "resultText": "progression:text.choice.221",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4150,27 +4772,50 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "阅读成人向补充描写",
-          "resultText": "progression:text.choice.nsfwcombo.c7.adult",
-          "next": "nsfwcombo-adult",
+          "label": "任封眼收紧",
+          "resultText": "progression:text.choice.nsfwcombo.c7.engage",
+          "next": null,
           "effects": [
             {
               "op": "clock.advance",
               "minutes": 5
             }
           ],
-          "conditions": [
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "扯开眼前黏液",
+          "resultText": "progression:text.choice.nsfwcombo.c7.avoid",
+          "next": null,
+          "effects": [
             {
-              "op": "preference.adultOptional",
-              "value": true
+              "op": "clock.advance",
+              "minutes": 5
             }
           ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "抬手护眼隔开",
+          "resultText": "progression:text.choice.nsfwcombo.c7.alt",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
           "setTags": [],
           "unsetTags": []
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.199",
+          "resultText": "progression:text.choice.228",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4182,8 +4827,8 @@
     {
       "id": "progression:node.encounter.nsfwcombo.c7.adult",
       "kind": "encounter",
-      "stage": "nsfwcombo-adult",
-      "title": "触手黏液封眼并勒颈（口封感官剥夺） · 成人补充",
+      "stage": "start",
+      "title": "触手黏液封眼并勒颈（口封感官剥夺） · 成人",
       "textKey": "progression:text.node.encounter.nsfwcombo.c7.adult",
       "requiresTags": [
         {
@@ -4200,12 +4845,54 @@
       ],
       "tendencies": [],
       "weight": 10,
-      "priority": 5,
+      "priority": 6,
       "maxVisits": 1,
       "choices": [
         {
+          "label": "任封眼收紧",
+          "resultText": "progression:text.choice.nsfwcombo.c7.engage",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "扯开眼前黏液",
+          "resultText": "progression:text.choice.nsfwcombo.c7.avoid",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "抬手护眼隔开",
+          "resultText": "progression:text.choice.nsfwcombo.c7.alt",
+          "next": null,
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.200",
+          "resultText": "progression:text.choice.228",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4254,7 +4941,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.205",
+          "resultText": "progression:text.choice.233",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4289,7 +4976,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.206",
+          "resultText": "progression:text.choice.234",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4338,7 +5025,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.211",
+          "resultText": "progression:text.choice.239",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4373,7 +5060,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.212",
+          "resultText": "progression:text.choice.240",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4422,7 +5109,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.217",
+          "resultText": "progression:text.choice.245",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4457,7 +5144,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.218",
+          "resultText": "progression:text.choice.246",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4506,7 +5193,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.223",
+          "resultText": "progression:text.choice.251",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4541,7 +5228,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.224",
+          "resultText": "progression:text.choice.252",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4590,7 +5277,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.229",
+          "resultText": "progression:text.choice.257",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4625,7 +5312,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.230",
+          "resultText": "progression:text.choice.258",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4688,7 +5375,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.237",
+          "resultText": "progression:text.choice.265",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4737,7 +5424,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.239",
+          "resultText": "progression:text.choice.267",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4800,7 +5487,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.244",
+          "resultText": "progression:text.choice.272",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4849,7 +5536,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.246",
+          "resultText": "progression:text.choice.274",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4912,7 +5599,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.251",
+          "resultText": "progression:text.choice.279",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4961,7 +5648,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.253",
+          "resultText": "progression:text.choice.281",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5010,7 +5697,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.257",
+          "resultText": "progression:text.choice.285",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5045,7 +5732,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.258",
+          "resultText": "progression:text.choice.286",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5108,7 +5795,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.264",
+          "resultText": "progression:text.choice.292",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5157,7 +5844,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.266",
+          "resultText": "progression:text.choice.294",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5220,7 +5907,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.271",
+          "resultText": "progression:text.choice.299",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5269,7 +5956,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.273",
+          "resultText": "progression:text.choice.301",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5332,7 +6019,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.278",
+          "resultText": "progression:text.choice.306",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5381,7 +6068,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.280",
+          "resultText": "progression:text.choice.308",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5430,7 +6117,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.284",
+          "resultText": "progression:text.choice.312",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5465,7 +6152,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.285",
+          "resultText": "progression:text.choice.313",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5528,7 +6215,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.291",
+          "resultText": "progression:text.choice.319",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5577,7 +6264,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.293",
+          "resultText": "progression:text.choice.321",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5640,7 +6327,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.298",
+          "resultText": "progression:text.choice.326",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5689,7 +6376,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.300",
+          "resultText": "progression:text.choice.328",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5752,7 +6439,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.305",
+          "resultText": "progression:text.choice.333",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5801,7 +6488,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.307",
+          "resultText": "progression:text.choice.335",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5850,7 +6537,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.311",
+          "resultText": "progression:text.choice.339",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5885,7 +6572,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.312",
+          "resultText": "progression:text.choice.340",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5934,7 +6621,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.317",
+          "resultText": "progression:text.choice.345",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -5969,7 +6656,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.318",
+          "resultText": "progression:text.choice.346",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6018,7 +6705,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.323",
+          "resultText": "progression:text.choice.351",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6053,7 +6740,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.324",
+          "resultText": "progression:text.choice.352",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6102,7 +6789,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.329",
+          "resultText": "progression:text.choice.357",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6137,7 +6824,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.330",
+          "resultText": "progression:text.choice.358",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6186,7 +6873,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.335",
+          "resultText": "progression:text.choice.363",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6221,7 +6908,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.336",
+          "resultText": "progression:text.choice.364",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6270,7 +6957,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.341",
+          "resultText": "progression:text.choice.369",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6305,7 +6992,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.342",
+          "resultText": "progression:text.choice.370",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6382,7 +7069,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.344",
+          "resultText": "progression:text.choice.372",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6459,7 +7146,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.347",
+          "resultText": "progression:text.choice.375",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6536,7 +7223,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.350",
+          "resultText": "progression:text.choice.378",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -6604,7 +7291,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.353",
+          "resultText": "progression:text.choice.381",
           "next": null,
           "effects": [],
           "conditions": [],

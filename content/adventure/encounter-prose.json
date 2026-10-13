@@ -1,0 +1,43 @@
+{
+  "format": "aetheria-encounter-location-prose",
+  "schemaVersion": 1,
+  "source": "docs/tag-hub/outbox/2026-10-13-故事试写-遭遇替换与C6C7-可粘贴正文.md",
+  "note": "fantasy 遭遇：真实场面替换空壳；城门旅馆 3 拍；C6/C7 选项文案。detail 组合键说明书不可玩。",
+  "texts": {
+    "progression:text.node.encounter.start": "你在{place}停下。眼前有人影、有动静，也有一条尚未被挡住的退路。空气里能闻到湿气与尘土，脚下的地面还留着新鲜的痕迹。你可以上前参与、退开观望，或改换另一条路绕开。",
+    "progression:text.node.encounter.start.street": "公会外的石阶还残留着午后雨渍，告示板下聚着两三名闲谈的佣兵。巷口风把旗帜吹得啪响，一只半透明的黏液正从下水道口探出边缘。你可以上前拦住它、退回公会门口，或改从侧巷绕开。",
+    "progression:text.node.encounter.start.canal": "运河边的货摊灯火晃动，水面映着半截栏杆影子。货主正收绳，脚下石板发滑；一团黏液贴着缆桩慢慢胀大，空气里有甜腥。你可以上前察看、退到桥墩后观望，或改走市场内廊绕开。",
+    "progression:text.node.encounter.inn.gate.capture": "城门旅馆堂厅灯火偏黄，门楣下还滴着斗篷水珠。柜台后的值守按着抹布，目光跟着你推开的门板。角落桌腿旁，一团半透明黏液正往上爬，留下发亮水痕，空气里有淡淡的甜腥。你可以上前拦住它、退到门口观望，或改走侧廊绕开。",
+    "progression:text.node.encounter.inn.gate.press": "你靠近半步，黏液已爬上凳面，鼓出一小截尖端朝你腰侧探来。值守低声提醒别碰，自己却没离开柜台。黏液边缘贴上你靴尖，凉意透过鞋面——尚未缠死。你可以伸手拨开、退回门廊，或改用桌布把它隔开。",
+    "progression:text.node.encounter.inn.gate.press.adult": "黏液贴上靴尖后继续上爬，凉滑边缘擦过小腿内侧，衣料被顶开一线。鼓起的尖端抵住你大腿根外侧，带着湿热压力，却还停在布料外——尚未深入。你可以并拢腿根挡住、退开，或改用桌布隔开接触。",
+    "progression:text.node.encounter.inn.gate.resolve": "黏液缩回桌腿根，水痕还在，却不再追近。值守把抹布扔到一旁，朝你点了点头。侧廊风带着门外守备的脚步声。你可以再走近看一眼残迹、转身离开堂厅，或先向值守问清刚才发生了什么。",
+    "progression:text.node.encounter.inn.gate.detail": "你再靠近一步：桌腿上的水痕发亮，黏液表面起伏着细小气泡，凳脚缝里卡着半截布条。柜台抽屉半开，露出一把旧钥匙。值守的目光仍盯着你。你可以伸手挑开布条、退回原处，或改问值守这痕迹从哪来。",
+    "progression:text.choice.encounter.generic.engage": "你上前一步，靴底踩过发亮的水痕，眼前的动静朝你抬起——接触已近在咫尺。",
+    "progression:text.choice.encounter.generic.avoid": "你退开半步，把眼前的灯火与痕迹隔在安全距离之外，仍能看清它缓慢起伏。",
+    "progression:text.choice.encounter.generic.alt": "你改换另一条路绕开，把接触留在身后，脚步重新落到干燥的地面上。",
+    "progression:text.choice.encounter.inn.gate.engage": "你上前一步，靴底踩过发亮的水痕，黏液鼓面朝你腰侧抬起——接触已近在咫尺。",
+    "progression:text.choice.encounter.inn.gate.avoid": "你退到门口，把堂厅里的灯火与水痕隔在半步之外，仍能看清它缓慢起伏。",
+    "progression:text.choice.encounter.inn.gate.alt": "你扯过柜台上的桌布，隔开靴尖与黏液边缘；布料立刻洇湿一块。",
+    "progression:text.choice.encounter.inn.gate.exit": "你转身离开堂厅，把门闩在身后扣上，走廊灯火重新变得平稳。",
+    "progression:text.choice.encounter.inn.gate.press.engage": "你伸手拨开黏液尖端，凉滑触感停在指节上，它缩了一下又重新鼓起。",
+    "progression:text.choice.encounter.inn.gate.press.avoid": "你退回门廊，靴尖离开水痕，堂厅里的甜腥被门槛隔开。",
+    "progression:text.choice.encounter.inn.gate.press.alt": "你扯过桌布隔开靴尖与黏液；布料洇湿，黏液暂时被挡在布面外。",
+    "progression:text.choice.encounter.inn.gate.resolve.detail": "你再走近残迹，看清气泡与布条，值守的目光仍跟着你。",
+    "progression:text.choice.encounter.inn.gate.resolve.ask": "你向值守问起水痕从哪来；对方只说「夜里渗上来的」，不再多讲。",
+    "progression:text.choice.encounter.inn.gate.resolve.leave": "你转身离开堂厅，把门闩在身后扣上，走廊灯火重新变得平稳。",
+    "progression:text.choice.encounter.inn.gate.detail.poke": "你伸手挑开凳脚缝里的布条，湿冷纤维黏在指腹上。",
+    "progression:text.choice.encounter.inn.gate.detail.back": "你退回原处，把细节留在半步之外。",
+    "progression:text.choice.encounter.inn.gate.detail.ask": "你改问值守这痕迹从哪来；对方摇头，只把抹布拧得更紧。",
+    "progression:text.choice.nsfwcombo.c6.engage": "你放松膝弯，任黏液顶入再深半寸；湿热鼓面贴紧性器轮廓，衣料彻底滑开。",
+    "progression:text.choice.nsfwcombo.c6.avoid": "你夹紧腿根侧身退开，黏液鼓面从胯下滑落，只留下湿凉的残迹。",
+    "progression:text.choice.nsfwcombo.c6.alt": "你扯过衣角堵住缝隙，黏液顶在布料外，压迫仍在，却未能再进。",
+    "progression:text.choice.nsfwcombo.c7.engage": "你任触手封眼收紧，视野全黑，颈侧勒痕加深，呼吸只剩浅浅一口。",
+    "progression:text.choice.nsfwcombo.c7.avoid": "你扯开眼前的黏液条带，侧头挣脱颈侧的勒束，视野重新漏进灯火。",
+    "progression:text.choice.nsfwcombo.c7.alt": "你抬手护住眼睛，另一手按住颈侧条带，改用袖口隔开黏液。"
+  },
+  "howToVerifyNoEmptyGateInn": [
+    "一键 fantasy → 走到「城门旅馆」（home）→ 点「留意一次当地遭遇」。",
+    "应进入城门旅馆 capture 场面（堂厅／值守／黏液水痕），选项为上前／退开／侧廊／离开——不得出现「眼前的遭遇」空壳或「继续核对细节」。",
+    "试跑 NSFW 组合遭遇仍可抽 nsfwcombo；C6/C7 开场为场面正文 + 参与／回避／换手段，无「核对组合原子」。"
+  ]
+}

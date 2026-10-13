@@ -27,7 +27,7 @@ node('defeat.repair.tail','defeat','repair','机械尾的维护提议','你的�
 for(const kind of ['encounter','exploration','daily','conversation','quest','transformation','ending']){
  const messages={encounter:['眼前的遭遇','你在{place}停下，留意眼前正在发生的小事。先观察当前处境，再决定是否参与【探索】。'],exploration:['查看周围','你沿{place}的可见通道查看路面与告示。已经走过的路线可以核对，尚未进入的地方仍保留未知【调查】。'],daily:['安排一段日常','你在{place}检查手边的事情，衡量当前体力与精力。可以选择一段公共协作，也可以留出时间休息【生活】。'],conversation:['与眼前的人交谈','你与已经在场的{opponent}谈起眼前的事务。你先听对方把话说完，再决定是否参与【社交】。'],quest:['核对当前事务','你把已经发生的进展与眼前的安排核对。需要进一步处理的事项仍要通过实际行动完成【工作】。'],transformation:['适应当前身体','你放慢动作，检查身体目前的支撑与活动方式。已经完成的变化以真实身体记录为准，尚在推进的项目仍需等待【适应】。'],ending:['回顾已经留下的结果','你回顾已完成的契约、协作与交锋。当前的经营份额、组织影响和街区安全仍然保留，之后的行动会继续改变它们【身份】。']};
  const [title,text]=messages[kind];
- // encounter 空壳仅作 schema 无条件回退：无「继续核对细节」二次确认；fantasy 抽卡走 nsfwcombo 档案，不会落到此节点。
+ // encounter：无「继续核对细节」；正文／选项由 encounter-prose 与地点链覆盖（见下）。
  const choices=kind==='daily'?[choice('完成一次公共协作','你完成了当前可用的公共协作【公共协作】。',null,[{op:'progression.act',move:'aid'}],[{op:'progression.available',move:'aid'}])]:kind==='conversation'?[choice('交换今天的近况','你们谈起已经知道的近况，这次交谈按原居民规则记录。',null,[{op:'resident.talk'}],[{op:'resident.available'}])]:kind==='encounter'?[]:[choice('继续核对细节','你完成这一次观察，记录实际看见的内容。','detail',[time(5)])];
  node(kind+'.start',kind,'start',title,text,choices);
  if(!['daily','conversation','encounter'].includes(kind))node(kind+'.detail',kind,'detail','这一次的新发现','你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。',[]);
@@ -108,12 +108,10 @@ for(const [name,label,tier,hp,attack,defense,speed,reward,actions]of [['raider',
 for(const [name,eid]of [['gel','district:enemy.gel'],['collector','district:enemy.collector']])action('challenge.'+name,'调查危险：'+(name==='gel'?'渠底黑胶群落':'拦路收债客'),[{op:'combat.start',id:eid}],[service(['commons','market'])],'交锋、撤离或战后恢复','explore');
 for(const kind of ['encounter','exploration','daily','conversation','quest','transformation','ending']){
   const labels={encounter:'留意一次当地遭遇',exploration:'仔细查看当前环境',daily:'安排一段日常事务',conversation:'与在场居民继续交谈',quest:'核对当前进展',transformation:'练习适应当前身体',ending:'回顾已经留下的结果'};
-  // fantasy / 当地遭遇：挂 nsfwcombo 档案，priority 高于空壳 encounter.start，直接抽到有正文的组合节点。
-  const effects=kind==='encounter'
-    ?[{op:'narrative.start',kind,profileId:id('profile.nsfwcombo.matrix')}]
-    :[{op:'narrative.start',kind}];
+  // 当地遭遇不强制 nsfwcombo 档案：优先地点链（城门旅馆 inn.gate）与有正文的 start；组合遭遇走专用 action。
+  const effects=[{op:'narrative.start',kind}];
   const conditions=kind==='conversation'?[{op:'resident.available'}]:kind==='ending'?[{op:'adventure.compare',field:'reputation',comparison:'gte',value:1}]:[];
-  const hint=kind==='encounter'?'抽有正文的遭遇（nsfwcombo）；空壳核对已禁用':'根据当前状态展开；可以免费结束';
+  const hint=kind==='encounter'?'地点场面优先（城门旅馆多拍／可读 start）；无空壳核对':'根据当前状态展开；可以免费结束';
   action('narrative.'+kind,labels[kind],effects,conditions,hint,'explore');
 }
 const scopedDefeat=(...keys)=>keys.map(k=>scoped('player',k));
@@ -146,6 +144,132 @@ p.narrativeProfiles.push({
   defeatTags: [],
 });
 const adultGate = [{ op: 'preference.adultOptional', value: true }];
+// —— fantasy 遭遇场面：通用回退 + 地点特化 + 城门旅馆 3 拍 ——
+const encounterProse = await json('content/adventure/encounter-prose.json');
+if (encounterProse.format !== 'aetheria-encounter-location-prose' || encounterProse.schemaVersion !== 1) {
+  throw new Error('encounter-prose.json 格式无效。');
+}
+const ep = encounterProse.texts ?? {};
+const takeEp = (key, fallback = '') => {
+  const body = ep[key] ?? fallback;
+  if (typeof body !== 'string' || !body.trim()) throw new Error('遭遇正文空槽：' + key);
+  p.texts[key] = body;
+  return key;
+};
+const freeExit = (resultKey, body = '你停下这次接触，回到可以继续行动的位置。') => {
+  p.texts[resultKey] = body;
+  return { label: '结束当前经历，回到安全位置', resultText: resultKey, next: null, effects: [], conditions: [], setTags: [], unsetTags: [] };
+};
+const sceneChoice = (label, resultKey, next = null, effects = [], conditions = []) => ({
+  label, resultText: resultKey, next, effects, conditions, setTags: [], unsetTags: [],
+});
+takeEp(id('text.node.encounter.start'));
+takeEp(id('text.choice.encounter.generic.engage'));
+takeEp(id('text.choice.encounter.generic.avoid'));
+takeEp(id('text.choice.encounter.generic.alt'));
+{
+  const startNode = p.narrativeNodes.find((n) => n.id === id('node.encounter.start'));
+  if (!startNode) throw new Error('missing encounter.start');
+  startNode.title = '当地的动静';
+  startNode.choices = [
+    sceneChoice('上前参与眼下这一幕', id('text.choice.encounter.generic.engage'), null, [time(5)]),
+    sceneChoice('先退开，从安全距离观望', id('text.choice.encounter.generic.avoid'), null, [time(5)]),
+    sceneChoice('换一条路绕开', id('text.choice.encounter.generic.alt'), null, [time(5)]),
+    freeExit(id('text.choice.encounter.generic.exit')),
+  ];
+}
+takeEp(id('text.node.encounter.start.street'));
+p.narrativeNodes.push({
+  id: id('node.encounter.start.street'), kind: 'encounter', stage: 'start', title: '公会外的动静',
+  textKey: id('text.node.encounter.start.street'), requiresTags: [], excludesTags: [],
+  conditions: [{ op: 'any', conditions: [{ op: 'environment.service', value: 'commons' }, { op: 'environment.service', value: 'market' }] }],
+  tendencies: [], weight: 12, priority: 4, maxVisits: 1,
+  choices: [
+    sceneChoice('上前拦住黏液', id('text.choice.encounter.generic.engage'), null, [time(5)]),
+    sceneChoice('退回公会门口观望', id('text.choice.encounter.generic.avoid'), null, [time(5)]),
+    sceneChoice('改从侧巷绕开', id('text.choice.encounter.generic.alt'), null, [time(5)]),
+    freeExit(id('text.choice.encounter.street.exit'), '你离开巷口，回到可以继续行动的位置。'),
+  ],
+});
+takeEp(id('text.node.encounter.start.canal'));
+p.narrativeNodes.push({
+  id: id('node.encounter.start.canal'), kind: 'encounter', stage: 'start', title: '运河边的动静',
+  textKey: id('text.node.encounter.start.canal'),
+  requiresTags: [{ role: 'environment', tagId: 'foundation:context.waterways' }],
+  excludesTags: [], conditions: [], tendencies: [], weight: 14, priority: 5, maxVisits: 1,
+  choices: [
+    sceneChoice('上前察看', id('text.choice.encounter.generic.engage'), null, [time(5)]),
+    sceneChoice('退到桥墩后观望', id('text.choice.encounter.generic.avoid'), null, [time(5)]),
+    sceneChoice('改走市场内廊绕开', id('text.choice.encounter.generic.alt'), null, [time(5)]),
+    freeExit(id('text.choice.encounter.canal.exit'), '你离开缆桩边，回到可以继续行动的位置。'),
+  ],
+});
+for (const key of [
+  'text.node.encounter.inn.gate.capture','text.node.encounter.inn.gate.press','text.node.encounter.inn.gate.press.adult',
+  'text.node.encounter.inn.gate.resolve','text.node.encounter.inn.gate.detail',
+  'text.choice.encounter.inn.gate.engage','text.choice.encounter.inn.gate.avoid','text.choice.encounter.inn.gate.alt',
+  'text.choice.encounter.inn.gate.exit','text.choice.encounter.inn.gate.press.engage','text.choice.encounter.inn.gate.press.avoid',
+  'text.choice.encounter.inn.gate.press.alt','text.choice.encounter.inn.gate.resolve.detail','text.choice.encounter.inn.gate.resolve.ask',
+  'text.choice.encounter.inn.gate.resolve.leave','text.choice.encounter.inn.gate.detail.poke','text.choice.encounter.inn.gate.detail.back',
+  'text.choice.encounter.inn.gate.detail.ask',
+]) takeEp(id(key));
+const innExit = freeExit(id('text.choice.encounter.inn.gate.exit'), ep[id('text.choice.encounter.inn.gate.exit')]);
+p.narrativeNodes.push({
+  id: id('node.encounter.inn.gate.capture'), kind: 'encounter', stage: 'start', title: '城门旅馆的水痕',
+  textKey: id('text.node.encounter.inn.gate.capture'), requiresTags: [], excludesTags: [],
+  conditions: [{ op: 'environment.service', value: 'home' }], tendencies: [], weight: 20, priority: 8, maxVisits: 1,
+  choices: [
+    sceneChoice('上前拦住黏液', id('text.choice.encounter.inn.gate.engage'), 'inn-gate-press', [time(5)]),
+    sceneChoice('退到门口观望', id('text.choice.encounter.inn.gate.avoid'), 'inn-gate-press', [time(5)]),
+    sceneChoice('改走侧廊绕开', id('text.choice.encounter.inn.gate.alt'), 'inn-gate-resolve', [time(5)]),
+    innExit,
+  ],
+});
+p.narrativeNodes.push({
+  id: id('node.encounter.inn.gate.press'), kind: 'encounter', stage: 'inn-gate-press', title: '黏液贴上靴尖',
+  textKey: id('text.node.encounter.inn.gate.press'), requiresTags: [], excludesTags: [], conditions: [], tendencies: [],
+  weight: 10, priority: 5, maxVisits: 1,
+  choices: [
+    sceneChoice('伸手拨开', id('text.choice.encounter.inn.gate.press.engage'), 'inn-gate-resolve', [time(5)]),
+    sceneChoice('退回门廊', id('text.choice.encounter.inn.gate.press.avoid'), 'inn-gate-resolve', [time(5)]),
+    sceneChoice('用桌布隔开', id('text.choice.encounter.inn.gate.press.alt'), 'inn-gate-resolve', [time(5)]),
+    innExit,
+  ],
+});
+p.narrativeNodes.push({
+  id: id('node.encounter.inn.gate.press.adult'), kind: 'encounter', stage: 'inn-gate-press', title: '黏液沿腿上爬',
+  textKey: id('text.node.encounter.inn.gate.press.adult'), requiresTags: [], excludesTags: [], conditions: adultGate, tendencies: [],
+  weight: 10, priority: 6, maxVisits: 1,
+  choices: [
+    sceneChoice('并拢腿根挡住', id('text.choice.encounter.inn.gate.press.avoid'), 'inn-gate-resolve', [time(5)]),
+    sceneChoice('退开', id('text.choice.encounter.inn.gate.press.avoid'), 'inn-gate-resolve', [time(5)]),
+    sceneChoice('用桌布隔开接触', id('text.choice.encounter.inn.gate.press.alt'), 'inn-gate-resolve', [time(5)]),
+    innExit,
+  ],
+});
+p.narrativeNodes.push({
+  id: id('node.encounter.inn.gate.resolve'), kind: 'encounter', stage: 'inn-gate-resolve', title: '水痕停住之后',
+  textKey: id('text.node.encounter.inn.gate.resolve'), requiresTags: [], excludesTags: [], conditions: [], tendencies: [],
+  weight: 10, priority: 5, maxVisits: 1,
+  choices: [
+    sceneChoice('再看一眼残迹', id('text.choice.encounter.inn.gate.resolve.detail'), 'inn-gate-detail', [time(5)]),
+    sceneChoice('向值守询问', id('text.choice.encounter.inn.gate.resolve.ask'), null, [time(5)]),
+    sceneChoice('转身离开堂厅', id('text.choice.encounter.inn.gate.resolve.leave'), null, []),
+    innExit,
+  ],
+});
+p.narrativeNodes.push({
+  id: id('node.encounter.inn.gate.detail'), kind: 'encounter', stage: 'inn-gate-detail', title: '桌腿旁的细节',
+  textKey: id('text.node.encounter.inn.gate.detail'), requiresTags: [], excludesTags: [], conditions: [], tendencies: [],
+  weight: 10, priority: 5, maxVisits: 1,
+  choices: [
+    sceneChoice('伸手挑开布条', id('text.choice.encounter.inn.gate.detail.poke'), null, [time(5)]),
+    sceneChoice('退回原处', id('text.choice.encounter.inn.gate.detail.back'), null, []),
+    sceneChoice('改问值守', id('text.choice.encounter.inn.gate.detail.ask'), null, [time(5)]),
+    innExit,
+  ],
+});
+
 const nsfwCandidates = [];
 for (const combo of nsfwCombos) {
   const slug = (combo.sampleId ?? 'x').toLowerCase();
@@ -162,8 +286,21 @@ for (const combo of nsfwCombos) {
   const detailKey = id(`text.node.encounter.nsfwcombo.${slug}.detail`);
   p.texts[detailKey] = cand.texts.detail;
   const startChoices = [];
-  // 成人样例：可填 adult 正文槽 + 偏好门选项（中性 fragment 仍可无偏好阅读）
   let adultKey = null;
+  const branchSlugs = new Set(['c6', 'c7']);
+  if (branchSlugs.has(slug)) {
+    // C6/C7：场面正文 + 参与／回避／换手段；成人槽为更高 priority 的 start 变体（非核对说明书）
+    for (const arm of ['engage', 'avoid', 'alt']) {
+      const rk = id(`text.choice.nsfwcombo.${slug}.${arm}`);
+      takeEp(rk);
+    }
+    // max 4 choices: engage / avoid / alt / exit
+    startChoices.push(
+      sceneChoice(slug === 'c6' ? '放松膝弯迎上' : '任封眼收紧', id(`text.choice.nsfwcombo.${slug}.engage`), null, [time(5)]),
+      sceneChoice(slug === 'c6' ? '夹紧腿根退开' : '扯开眼前黏液', id(`text.choice.nsfwcombo.${slug}.avoid`), null, [time(5)]),
+      sceneChoice(slug === 'c6' ? '用衣角隔开' : '抬手护眼隔开', id(`text.choice.nsfwcombo.${slug}.alt`), null, [time(5)]),
+    );
+  }
   if (combo.adultRequired) {
     adultKey = id(`text.node.encounter.nsfwcombo.${slug}.adult`);
     p.texts[adultKey] = [
@@ -173,24 +310,44 @@ for (const combo of nsfwCombos) {
       '勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。',
       `lexiconRefs：${combo.lexiconRefs.join('、')}`,
     ].join('\n');
-    const adultResult = id(`text.choice.nsfwcombo.${slug}.adult`);
-    p.texts[adultResult] = '你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。';
-    startChoices.push({
-      label: '阅读成人向补充描写',
-      resultText: adultResult,
-      next: 'nsfwcombo-adult',
-      effects: [time(5)],
-      conditions: adultGate,
-      setTags: [],
-      unsetTags: [],
-    });
+    if (!branchSlugs.has(slug)) {
+      const adultResult = id(`text.choice.nsfwcombo.${slug}.adult`);
+      p.texts[adultResult] = '你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。';
+      startChoices.push({
+        label: '阅读成人向补充描写',
+        resultText: adultResult,
+        next: 'nsfwcombo-adult',
+        effects: [time(5)],
+        conditions: adultGate,
+        setTags: [],
+        unsetTags: [],
+      });
+    }
   }
   startChoices.push(exit());
+  if (startChoices.length > 4) throw new Error(`nsfwcombo.${slug} choices>${4}`);
   p.narrativeNodes.push({
     ...cand.node,
     choices: startChoices,
   });
-  if (adultKey) {
+  if (adultKey && branchSlugs.has(slug)) {
+    // 成人门开启时优先抽成人场面 start（同 requiresTags），选项与中性一致
+    p.narrativeNodes.push({
+      id: id(`node.encounter.nsfwcombo.${slug}.adult`),
+      kind: 'encounter',
+      stage: 'start',
+      title: `${combo.title} · 成人`,
+      textKey: adultKey,
+      requiresTags: [scoped('opponent', 'nsfwcombo.active')],
+      excludesTags: [],
+      conditions: adultGate,
+      tendencies: [],
+      weight: 10,
+      priority: 6,
+      maxVisits: 1,
+      choices: startChoices.map((c) => ({ ...c })),
+    });
+  } else if (adultKey) {
     p.narrativeNodes.push({
       id: id(`node.encounter.nsfwcombo.${slug}.adult`),
       kind: 'encounter',
@@ -264,12 +421,9 @@ await writeFile(
       proseFillsApplied: proseFillCount,
       gameplayFilter: nsfwAtoms.playtestFilter ?? null,
       emptyShellDisabled: true,
-      note: '当地遭遇挂 profile.nsfwcombo.matrix；空壳 encounter.start/detail 与「核对组合原子」二次确认已禁用。',
-      howToVerifyNoEmptyGateInn: [
-        '一键 fantasy 世界 → 走到「城门旅馆」→ 点「留意一次当地遭遇」。',
-        '应直接进入 nsfwcombo.c* 有正文场景；不得出现「眼前的遭遇」空壳 +「继续核对细节」。',
-        'nsfwcombo 开场选项不得出现「核对组合原子与挂接提示」。',
-        '自动化：node --test tests/nsfw-auto-combo.test.ts（含 empty-shell 断言）。',
+      note: '当地遭遇优先地点链／可读 start；nsfwcombo 走专用 action；空壳核对与组合键 detail 不可玩。',
+      howToVerifyNoEmptyGateInn: encounterProse.howToVerifyNoEmptyGateInn ?? [
+        '一键 fantasy → 城门旅馆 → 留意一次当地遭遇 → 应为 inn.gate capture，无空壳核对。',
       ],
       candidates: nsfwCandidates.map((c) => ({
         sampleId: c.sampleId,

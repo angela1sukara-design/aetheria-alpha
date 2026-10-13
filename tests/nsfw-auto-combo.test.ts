@@ -110,17 +110,19 @@ test('adult samples expose gated adult text slots', async () => {
 test('prose-fills applied to start and adult text slots (P0+P1)', async () => {
   const fills = await json('content/nsfw-auto-combo/prose-fills.json');
   assert.equal(fills.format, 'aetheria-nsfw-auto-combo-prose-fills');
-  assert.equal(Object.keys(fills.texts).length, 18);
+  assert.equal(Object.keys(fills.texts).length, 20);
   const pack = await json('content/adventure/pack.json');
   for (const [key, body] of Object.entries(fills.texts) as [string, string][]) {
     assert.equal(pack.texts[key], body, key);
     assert.ok(!String(body).includes('可填成人正文槽'), key);
   }
   // dual-slot adult samples
-  for (const slug of ['c4', 'c8', 'c9', 'c10', 'c11', 'c12']) {
+  for (const slug of ['c4', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'c12']) {
     assert.ok(pack.texts[`progression:text.node.encounter.nsfwcombo.${slug}`]);
     assert.ok(pack.texts[`progression:text.node.encounter.nsfwcombo.${slug}.adult`]);
   }
+  assert.match(pack.texts['progression:text.node.encounter.nsfwcombo.c6'], /胯下/);
+  assert.ok(!pack.texts['progression:text.node.encounter.nsfwcombo.c6'].includes('倒挂'));
   // detail text kept for authoring, but not playable
   assert.match(pack.texts['progression:text.node.encounter.nsfwcombo.c1.detail'], /组合键/);
   assert.ok(!pack.narrativeNodes.some((n: { id: string }) => n.id.endsWith('nsfwcombo.c1.detail')));
@@ -131,23 +133,44 @@ test('local encounter action skips empty shell and 核对细节', async () => {
   const inputs = await Promise.all(index.packs.map((p: string) => json('content/' + p)));
   const registry = await loadPacks(inputs);
   const encounterAct = registry.action('progression:action.narrative.encounter' as Id);
-  assert.ok(encounterAct.effects.some((e) => e.op === 'narrative.start' && e.kind === 'encounter' && e.profileId === 'progression:profile.nsfwcombo.matrix'));
+  assert.ok(encounterAct.effects.some((e) => e.op === 'narrative.start' && e.kind === 'encounter' && !('profileId' in e && e.profileId)));
   const emptyStart = registry.narrativeNodes.find((n) => n.id === 'progression:node.encounter.start');
   assert.ok(emptyStart, 'schema fallback start retained');
   assert.ok(!emptyStart!.choices.some((c) => /核对细节/.test(c.label)), 'empty start must not offer 继续核对细节');
+  assert.match(registry.text(emptyStart!.textKey), /退路|绕开/);
   assert.ok(!registry.narrativeNodes.some((n) => n.id === 'progression:node.encounter.detail'), 'encounter.detail shell removed');
+  const inn = registry.narrativeNodes.find((n) => n.id === 'progression:node.encounter.inn.gate.capture');
+  assert.ok(inn);
+  assert.ok(inn!.conditions.some((c) => c.op === 'environment.service' && c.value === 'home'));
+  assert.ok(!inn!.choices.some((c) => /核对/.test(c.label)));
 
+  // 城门旅馆（home）：应抽到 inn.gate capture，而非空壳
   const s = createGameState(registry, 42);
-  s.world.locationId = 'district:location.canal' as Id;
+  s.world.locationId = 'aetheria:location.apartment' as Id;
   if (!s.world.knownLocationIds.includes(s.world.locationId)) s.world.knownLocationIds.push(s.world.locationId);
   const e = new ActionExecutor(registry, s);
-  const result = e.performAction({ actionId: 'progression:action.narrative.encounter' as Id }, e.snapshot().meta.revision, 'encounter-no-shell');
+  const result = e.performAction({ actionId: 'progression:action.narrative.encounter' as Id }, e.snapshot().meta.revision, 'encounter-inn');
   assert.equal(result.ok, true, result.message);
   const story = e.snapshot().adventure!.story!;
-  assert.ok(story.nodeId.includes('nsfwcombo'), story.nodeId);
-  assert.notEqual(story.nodeId, 'progression:node.encounter.start');
+  assert.equal(story.nodeId, 'progression:node.encounter.inn.gate.capture');
   const node = registry.narrativeNodes.find((n) => n.id === story.nodeId)!;
   assert.ok(!node.choices.some((c) => /核对/.test(c.label)), JSON.stringify(node.choices.map((c) => c.label)));
+  assert.match(registry.text(node.textKey), /城门旅馆/);
+});
+
+test('C6/C7 offer engage/avoid/alt without 核对组合', async () => {
+  const index = await json('content/index.json');
+  const inputs = await Promise.all(index.packs.map((p: string) => json('content/' + p)));
+  const registry = await loadPacks(inputs);
+  for (const slug of ['c6', 'c7']) {
+    const node = registry.narrativeNodes.find((n) => n.id === `progression:node.encounter.nsfwcombo.${slug}`);
+    assert.ok(node, slug);
+    const labels = node!.choices.map((c) => c.label);
+    assert.ok(!labels.some((l) => /核对/.test(l)), labels.join(','));
+    assert.ok(node!.choices.length === 4, labels.join(','));
+    assert.ok(!registry.text(node!.textKey).includes('可填成人正文槽'));
+    assert.ok(!registry.text(`progression:text.node.encounter.nsfwcombo.${slug}.adult` as Id).includes('可填成人正文槽'));
+  }
 });
 
 test('atoms expose 8 gameplay categories and samples cover all', async () => {
