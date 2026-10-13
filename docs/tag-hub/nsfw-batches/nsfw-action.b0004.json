@@ -1,0 +1,43 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-action",
+  "batchId": "nsfw-action.b0004",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "孕/产卵/胀腹 · b0004"
+  },
+  "entries": [
+    {
+      "subcategory": "受孕/妊娠相关",
+      "name": "受孕",
+      "description": "受精成立瞬间或过程的动作原子；≠妊娠态，≠孕奸偏好。",
+      "tags": [
+        "孕"
+      ],
+      "id": "lx.nsfw-action.b0004.0001",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "产卵",
+      "name": "产卵",
+      "description": "将卵体排出体外的动作；≠产卵腔形态，≠产卵偏好。",
+      "tags": [
+        "产卵"
+      ],
+      "id": "lx.nsfw-action.b0004.0002",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "产卵",
+      "name": "着卵",
+      "description": "将卵置入体内的动作；与「产卵」（排出）分立。",
+      "tags": [
+        "产卵"
+      ],
+      "id": "lx.nsfw-action.b0004.0003",
+      "category": "nsfw-action"
+    }
+  ]
+}

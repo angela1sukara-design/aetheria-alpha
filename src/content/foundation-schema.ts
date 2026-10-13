@@ -10,7 +10,7 @@ export function shape(v: unknown, required: string[], optional: string[] = []): 
   if (required.some(k => !Object.hasOwn(o, k)) || Object.keys(o).some(k => ![...required, ...optional].includes(k))) bad('未知或缺失字段。');
   return o;
 }
-export function stableId(v: unknown): void { if (typeof v !== 'string' || !/^[a-z][a-z0-9_-]*:[a-z][a-z0-9_.-]*$/.test(v)) bad('引用必须是稳定 ID。'); }
+export function stableId(v: unknown): void { if (typeof v !== 'string' || !/^[a-z][a-z0-9_-]*:[a-z][a-zA-Z0-9_.-]*$/.test(v)) bad('引用必须是稳定 ID。'); }
 function text(v: unknown): void { if (typeof v !== 'string' || !v.trim() || v.length > 10000) bad('文字无效。'); }
 function values(v: unknown, allowed: readonly unknown[]): void { if (!allowed.includes(v)) bad(`不支持的值 ${String(v)}。`); }
 function array(v: unknown, visit: (v: any) => void): void { if (!Array.isArray(v) || v.length > 5000) bad('数组无效。'); (v as unknown[]).forEach(visit); }

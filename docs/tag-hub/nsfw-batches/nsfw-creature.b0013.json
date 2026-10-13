@@ -1,0 +1,53 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-creature",
+  "batchId": "nsfw-creature.b0013",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "兽龙触手机械互动 · b0013"
+  },
+  "entries": [
+    {
+      "subcategory": "形态特征",
+      "name": "覆油皮表体",
+      "description": "皮表恒油光形态；材质油脂另挂。待审定窄条",
+      "tags": [
+        "兽龙"
+      ],
+      "id": "lx.nsfw-creature.b0013.0001",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "形态特征",
+      "name": "水域两栖态",
+      "description": "两栖互动向形态；≠全兽态。待审定窄条。待",
+      "tags": [
+        "兽龙"
+      ],
+      "id": "lx.nsfw-creature.b0013.0002",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "形态特征",
+      "name": "展翼遮蔽态",
+      "description": "翼可遮蔽的形态特征；≠收翼态。待审定窄条",
+      "tags": [
+        "兽龙"
+      ],
+      "id": "lx.nsfw-creature.b0013.0003",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "形态特征",
+      "name": "多尾缠束态",
+      "description": "多尾可缠形态；≠仅尾兽化。待审定窄条。待",
+      "tags": [
+        "兽龙"
+      ],
+      "id": "lx.nsfw-creature.b0013.0004",
+      "category": "nsfw-creature"
+    }
+  ]
+}

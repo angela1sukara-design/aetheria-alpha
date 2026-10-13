@@ -1,0 +1,59 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-material",
+  "batchId": "nsfw-material.b0005",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "虫寄生+触手寄生 · b0005"
+  },
+  "entries": [
+    {
+      "subcategory": "甲壳/几丁",
+      "name": "甲壳覆盖",
+      "description": "体表甲壳覆层材质；与生物甲壳审稿分立为覆层窄条。",
+      "tags": [
+        "虫寄生"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0005.0001",
+      "category": "nsfw-material"
+    },
+    {
+      "subcategory": "甲壳/几丁",
+      "name": "几丁质",
+      "description": "几丁质材质定词；与甲壳覆盖分账，可组合硬度 mod。",
+      "tags": [
+        "虫寄生"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0005.0002",
+      "category": "nsfw-material"
+    },
+    {
+      "subcategory": "定词黏液",
+      "name": "虫巢黏液",
+      "description": "虫巢定词挂前的黏液材质；≠ 蛞蝓黏液/黑胶/凝胶。",
+      "tags": [
+        "虫寄生",
+        "定词挂前"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0005.0003",
+      "category": "nsfw-material"
+    },
+    {
+      "subcategory": "定词黏液",
+      "name": "触手黏液",
+      "description": "触手定词挂前的黏液材质；定词≠触手 creature 本身。",
+      "tags": [
+        "触手寄生",
+        "定词挂前"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0005.0004",
+      "category": "nsfw-material"
+    }
+  ]
+}

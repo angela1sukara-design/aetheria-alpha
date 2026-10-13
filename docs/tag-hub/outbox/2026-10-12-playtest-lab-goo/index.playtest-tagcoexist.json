@@ -1,0 +1,24 @@
+{
+  "packs": [
+    "./core/pack.json",
+    "./world/pack.json",
+    "./reshaping/pack.json",
+    "./social/pack.json",
+    "./recovery/pack.json",
+    "./district/pack.json",
+    "./foundation/pack.json",
+    "./playtest-tagcoexist/pack.json"
+  ],
+  "generation": {
+    "rules": "./generation/playtest-tagcoexist-rules.json",
+    "reference": [
+      "./generation/lexicon-reference.json",
+      "./generation/playtest-tagcoexist-reference.json"
+    ],
+    "content": [
+      "./generation/neighborhood-content.json",
+      "./generation/lexicon-content.json"
+    ],
+    "notes": "Playtest only. Default content/index.json unchanged. Mount via URL ?playtest=tagcoexist (dev server) or world-panel file import. No EventGraph in this slice."
+  }
+}

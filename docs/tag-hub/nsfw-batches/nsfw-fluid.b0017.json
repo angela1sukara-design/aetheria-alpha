@@ -1,0 +1,37 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-fluid",
+  "batchId": "nsfw-fluid.b0017",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "查缺优先 · 定词流体 · b0017"
+  },
+  "entries": [
+    {
+      "subcategory": "体液",
+      "name": "尿液",
+      "description": "温热尿液自尿道口溢出或浇淋体表的流体；可积洼、浸湿股间与被单。≠憋尿动作。待审定。",
+      "tags": [
+        "体液",
+        "浇淋"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0017.0001",
+      "category": "nsfw-fluid"
+    },
+    {
+      "subcategory": "定词流体",
+      "name": "毒液",
+      "description": "带腐蚀或麻痹感的毒液呈液态涂覆、滴落或渡入腔道；fluid 侧定词。与 material 毒液分挂，禁与黏液/黑胶互充。待审定。",
+      "tags": [
+        "定词挂前",
+        "毒液"
+      ],
+      "usage": "fluid",
+      "id": "lx.nsfw-fluid.b0017.0002",
+      "category": "nsfw-fluid"
+    }
+  ]
+}

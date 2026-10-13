@@ -24,7 +24,7 @@ function actionButton(option: ActionOption, registry: Registry, compact = false)
   const hint = option.available ? rawHint.split(' · ').filter(part => {
     if (part === '选择会推进经历 · 查看行动反馈' || part === '选择会推进经历' || part === '查看行动反馈') return false;
     if (preview.some(tag => normalize(tag) === normalize(part))) return false;
-    return !(preview.length && option.definition.effects.some(effect => effect.op === 'clock.advance') && /^(?:步行\s*)?\d+\s*(?:分钟|小时)$/.test(part));
+    return !(preview.length && option.definition.effects.some(effect => effect.op === 'clock.advance' || effect.op === 'location.move') && /^(?:步行\s*)?\d+\s*(?:分钟|小时)$/.test(part));
   }).join(' · ') : rawHint;
   if (hint) button.append(element('span', 'action-hint', hint));
   if (preview.length) {
@@ -50,7 +50,10 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   byId('scene-return').textContent = scene.mode === 'conversation' ? '← 结束交谈，返回地点' : '← 返回地点';
   byId('actions-title').textContent = scene.active ? '你的选择' : scene.mode === 'conversation' ? '继续交谈' : '下一步';
   const status = byId('status'); status.replaceChildren();
+  // HUD 只展示硬核心；战斗八维/倾向值在 VariableDef 中但不挤状态栏（见 docs/NOTES-vars-engine.md）
+  const hudIds = new Set(['core:money', 'core:energy', 'core:health', 'core:stamina', 'core:sanity', 'core:skillResource']);
   for (const def of registry.variables) {
+    if (!hudIds.has(def.id)) continue;
     const value = view.state.player.variables[def.id]; const stat = element('div', 'stat');
     const heading = element('div', 'stat-heading'); const number = element('span', 'stat-value', String(value));
     number.dataset.stat = def.id; if (def.unit) number.append(element('small', '', def.unit));

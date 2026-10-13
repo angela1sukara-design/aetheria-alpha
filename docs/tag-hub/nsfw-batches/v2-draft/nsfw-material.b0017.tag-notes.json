@@ -1,0 +1,76 @@
+{
+  "sourceFormat": "aetheria-nsfw-lexicon-batch",
+  "sourceSchemaVersion": 1,
+  "batchId": "nsfw-material.b0017",
+  "mappedAt": "2026-10-13T03:09:03.702Z",
+  "status": "pending-review",
+  "runtime": "not-installed",
+  "droppedFreeTags": [
+    {
+      "id": "lx.nsfw-material.b0017.0001",
+      "name": "毒液",
+      "v1Tags": [
+        "定词挂前",
+        "毒液"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0017.0002",
+      "name": "活体乳胶",
+      "v1Tags": [
+        "定词挂前",
+        "乳胶",
+        "活体"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0017.0003",
+      "name": "液态乳胶",
+      "v1Tags": [
+        "定词挂前",
+        "乳胶"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0017.0004",
+      "name": "活体皮囊",
+      "v1Tags": [
+        "定词挂前",
+        "活体",
+        "皮囊"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0017.0005",
+      "name": "PVC",
+      "v1Tags": [
+        "定词挂前",
+        "面料"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0017.0006",
+      "name": "氯丁橡胶",
+      "v1Tags": [
+        "定词挂前",
+        "面料"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0017.0007",
+      "name": "血肉",
+      "v1Tags": [
+        "定词挂前",
+        "gore"
+      ],
+      "usage": "material"
+    }
+  ],
+  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
+}

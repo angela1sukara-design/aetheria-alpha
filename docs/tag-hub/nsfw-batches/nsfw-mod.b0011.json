@@ -1,0 +1,43 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0011",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "气味声音 · b0011"
+  },
+  "entries": [
+    {
+      "subcategory": "气味修饰",
+      "name": "麝香调",
+      "description": "麝香气味调性修饰窄条。待审定窄条。待审定",
+      "tags": [
+        "气味"
+      ],
+      "id": "lx.nsfw-mod.b0011.0001",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "气味修饰",
+      "name": "腥甜调",
+      "description": "腥甜气味调性修饰窄条。待审定窄条。待审定",
+      "tags": [
+        "气味"
+      ],
+      "id": "lx.nsfw-mod.b0011.0002",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "声音修饰",
+      "name": "低频嗡鸣",
+      "description": "低频嗡鸣声音或震动修饰。待审定窄条。待审",
+      "tags": [
+        "声音"
+      ],
+      "id": "lx.nsfw-mod.b0011.0003",
+      "category": "nsfw-mod"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-kink",
+  "batchId": "nsfw-kink.b0009",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "goo范式缺口 · b0009"
+  },
+  "entries": [
+    {
+      "subcategory": "goo偏好",
+      "name": "喜欢被goo化",
+      "description": "偏好自身被黑胶/goo 转化；选材参考。",
+      "tags": [
+        "黑胶",
+        "goo"
+      ],
+      "synonyms": [
+        "喜欢被黑胶化"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0009.0001",
+      "category": "nsfw-kink"
+    },
+    {
+      "subcategory": "goo偏好",
+      "name": "喜欢把人/物goo化",
+      "description": "偏好主动将人或物品 goo/黑胶化；选材参考。",
+      "tags": [
+        "黑胶",
+        "goo"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0009.0002",
+      "category": "nsfw-kink"
+    }
+  ]
+}

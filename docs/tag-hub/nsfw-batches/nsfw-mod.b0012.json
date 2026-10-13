@@ -1,0 +1,53 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0012",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "服装半脱 · b0012"
+  },
+  "entries": [
+    {
+      "subcategory": "着衣修饰",
+      "name": "半脱态",
+      "description": "衣物半脱程度修饰窄条。待审定窄条。待审定",
+      "tags": [
+        "服装半脱"
+      ],
+      "id": "lx.nsfw-mod.b0012.0001",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "着衣修饰",
+      "name": "撕破态",
+      "description": "衣料破损程度修饰窄条。待审定窄条。待审定",
+      "tags": [
+        "服装半脱"
+      ],
+      "id": "lx.nsfw-mod.b0012.0002",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "着衣修饰",
+      "name": "湿透贴肤态",
+      "description": "衣物湿透贴肤程度修饰窄条。待审定窄条。待",
+      "tags": [
+        "服装半脱"
+      ],
+      "id": "lx.nsfw-mod.b0012.0003",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "着衣修饰",
+      "name": "仅存内衣",
+      "description": "仅存内衣的着衣程度修饰。待审定窄条。待审",
+      "tags": [
+        "服装半脱"
+      ],
+      "id": "lx.nsfw-mod.b0012.0004",
+      "category": "nsfw-mod"
+    }
+  ]
+}

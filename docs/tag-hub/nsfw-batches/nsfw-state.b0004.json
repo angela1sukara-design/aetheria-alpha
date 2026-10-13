@@ -1,0 +1,65 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0004",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "孕/产卵/胀腹 · b0004"
+  },
+  "entries": [
+    {
+      "subcategory": "妊娠",
+      "name": "妊娠态",
+      "description": "当下可见妊娠体征的现场状态；≠ kink「孕奸偏好/胀腹暗示」。",
+      "tags": [
+        "孕"
+      ],
+      "id": "lx.nsfw-state.b0004.0001",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "胀腹",
+      "name": "胀腹",
+      "description": "腹部鼓胀的现场粗态（孕/灌液/产卵共用）；偏好侧另挂 kink。",
+      "tags": [
+        "胀腹"
+      ],
+      "id": "lx.nsfw-state.b0004.0002",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "胀腹",
+      "name": "灌液胀腹",
+      "description": "因大量体液灌入导致鼓胀的现场态；≠妊娠态。",
+      "tags": [
+        "灌液",
+        "胀腹"
+      ],
+      "id": "lx.nsfw-state.b0004.0003",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "产卵",
+      "name": "怀卵中",
+      "description": "体内持卵尚未排出的现场状态；≠妊娠态。",
+      "tags": [
+        "产卵"
+      ],
+      "id": "lx.nsfw-state.b0004.0004",
+      "category": "nsfw-state"
+    },
+    {
+      "id": "lx.nsfw-state.b0004.0005",
+      "category": "nsfw-state",
+      "subcategory": "胀满",
+      "name": "精液胀满",
+      "description": "体内精液积到鼓胀感的现场状态；fluid 用精液+mod 表达量。",
+      "tags": [
+        "精液",
+        "胀腹"
+      ]
+    }
+  ]
+}

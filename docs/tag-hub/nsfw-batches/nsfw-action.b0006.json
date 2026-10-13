@@ -1,0 +1,35 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-action",
+  "batchId": "nsfw-action.b0006",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "束缚载体 · b0006"
+  },
+  "entries": [
+    {
+      "subcategory": "束缚类",
+      "name": "胶带束缚",
+      "description": "以胶带为载体缠绕固定肢体、口鼻或躯干的束缚动作。",
+      "tags": [
+        "束缚",
+        "胶带"
+      ],
+      "id": "lx.nsfw-action.b0006.0001",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "束缚类",
+      "name": "蛛网束缚",
+      "description": "以蛛网/丝网缠缚固定的动作；可与虫蛛主题联动。",
+      "tags": [
+        "束缚",
+        "蛛网"
+      ],
+      "id": "lx.nsfw-action.b0006.0002",
+      "category": "nsfw-action"
+    }
+  ]
+}

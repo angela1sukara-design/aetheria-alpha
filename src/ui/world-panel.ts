@@ -7,8 +7,9 @@ import { byId } from './render.ts';
 import { parseWorldProfiles } from '../world/profiles.ts';
 
 /** 参考库导入只影响下一次创建；不能写正在游玩的世界或未保存进度。 */
-export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown; content?: unknown[]; questContent?: unknown; worldProfiles?: unknown }; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void }): void {
-  let rules = options.defaults.rules, references: unknown[] = [options.defaults.reference], extraContent: unknown[] = [];
+export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown | unknown[]; content?: unknown[]; questContent?: unknown; worldProfiles?: unknown }; lockDefaults?: boolean; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void }): void {
+  const defaultReferences = (): unknown[] => Array.isArray(options.defaults.reference) ? [...options.defaults.reference] : [options.defaults.reference];
+  let rules = options.defaults.rules, references: unknown[] = defaultReferences(), extraContent: unknown[] = [];
   const message = (text: string) => { byId('world-message').textContent = text; };
   const profiles = options.defaults.worldProfiles === undefined ? [] : parseWorldProfiles(options.defaults.worldProfiles);
   const theme = byId<HTMLSelectElement>('world-theme');
@@ -16,8 +17,10 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
   theme.disabled = !profiles.length;
   const describe = () => { byId('world-theme-description').textContent = profiles.find(p => p.tag === theme.value)?.description ?? '根据种子确定世界题材；湿润、干燥、寒冷等环境在世界内部生成。'; };
   theme.addEventListener('change', describe); describe();
-  const persist = () => { try { localStorage.setItem('aetheria-generation-library', JSON.stringify({ rules, references, extraContent })); } catch { message('参考库已在当前会话启用；本地持久化暂不可用。'); } };
-  try { const saved = JSON.parse(localStorage.getItem('aetheria-generation-library') ?? 'null'); if (saved && Array.isArray(saved.references) && Array.isArray(saved.extraContent)) { rules = parseRules(saved.rules); references = saved.references; extraContent = saved.extraContent; } } catch { message('本地参考库无效，已使用默认示例。'); }
+  const persist = () => { if (options.lockDefaults) return; try { localStorage.setItem('aetheria-generation-library', JSON.stringify({ rules, references, extraContent })); } catch { message('参考库已在当前会话启用；本地持久化暂不可用。'); } };
+  if (!options.lockDefaults) {
+    try { const saved = JSON.parse(localStorage.getItem('aetheria-generation-library') ?? 'null'); if (saved && Array.isArray(saved.references) && Array.isArray(saved.extraContent)) { rules = parseRules(saved.rules); references = saved.references; extraContent = saved.extraContent; } } catch { message('本地参考库无效，已使用默认示例。'); }
+  }
   const defaultContent = () => (options.defaults.content ?? []).filter(p => !options.source().packs.some(s => s.id === (p as { manifest: { id: string } }).manifest.id));
   const library = async () => loadPacks([...options.source().contentPacks, ...defaultContent(), ...extraContent]);
   let generating = false;
@@ -53,5 +56,5 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
     } catch (error) { message(`未导入：${error instanceof Error ? error.message : error}`); }
     finally { generating = false; options.setBusy(false); }
   });
-  byId('world-library-reset').addEventListener('click', () => { if (generating) return; rules = options.defaults.rules; references = [options.defaults.reference]; extraContent = []; persist(); message('已恢复默认生成库，当前世界保持。'); });
+  byId('world-library-reset').addEventListener('click', () => { if (generating) return; rules = options.defaults.rules; references = defaultReferences(); extraContent = []; persist(); message('已恢复默认生成库，当前世界保持。'); });
 }

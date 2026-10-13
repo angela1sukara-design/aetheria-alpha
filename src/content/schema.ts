@@ -23,7 +23,7 @@ export function parsePack(input: unknown): ContentPack {
     return result;
   }
   function str(value: unknown, path: string): void { if (typeof value !== 'string' || !value.trim() || value.length > 10000) fail(path, '必须是非空字符串（最多10000字符）。'); }
-  function id(value: unknown, path: string): void { if (typeof value !== 'string' || !/^[a-z][a-z0-9_-]*:[a-z][a-z0-9_.-]*$/.test(value)) fail(path, '需要 namespace:id。'); }
+  function id(value: unknown, path: string): void { if (typeof value !== 'string' || !/^[a-z][a-z0-9_-]*:[a-z][a-zA-Z0-9_.-]*$/.test(value)) fail(path, '需要 namespace:id。'); }
   function integer(value: unknown, path: string, min = -1000000, max = 1000000): void { if (!Number.isSafeInteger(value) || (value as number) < min || (value as number) > max) fail(path, `必须是 ${min}–${max} 整数。`); }
   function boolean(value: unknown, path: string): void { if (typeof value !== 'boolean') fail(path, '必须是布尔值。'); }
   function list(value: unknown, path: string, visit: (x: unknown, p: string) => void): void {
@@ -92,7 +92,12 @@ export function parsePack(input: unknown): ContentPack {
   list(root.flags, '/flags', (v, p) => { const x = obj(v, p, ['id', 'initial']); id(x.id, `${p}/id`); boolean(x.initial, `${p}/initial`); });
   list(root.hooks, '/hooks', (v, p) => { const x = obj(v, p, ['id', 'accepts', 'visibility']); id(x.id, `${p}/id`); choice(x.accepts, `${p}/accepts`, ['action']); choice(x.visibility, `${p}/visibility`, ['public']); });
   list(root.locations, '/locations', (v, p) => { const x = obj(v, p, ['id', 'name', 'subtitle', 'textKey', 'actionHook', 'map']); for (const k of ['id', 'textKey', 'actionHook']) id(x[k], `${p}/${k}`); str(x.name, `${p}/name`); str(x.subtitle, `${p}/subtitle`); const map = obj(x.map, `${p}/map`, ['x', 'y']); integer(map.x, `${p}/map/x`, 0, 100); integer(map.y, `${p}/map/y`, 0, 100); });
-  list(root.routes, '/routes', (v, p) => { const x = obj(v, p, ['id', 'from', 'to']); for (const k of ['id', 'from', 'to']) id(x[k], `${p}/${k}`); });
+  list(root.routes, '/routes', (v, p) => {
+    const x = obj(v, p, ['id', 'from', 'to', 'distanceTier', 'durationMinutes']);
+    for (const k of ['id', 'from', 'to']) id(x[k], `${p}/${k}`);
+    if (x.distanceTier !== undefined) choice(x.distanceTier, `${p}/distanceTier`, ['adjacent', 'far', 'cross']);
+    if (x.durationMinutes !== undefined) integer(x.durationMinutes, `${p}/durationMinutes`, 1, 240);
+  });
   list(root.actions, '/actions', (v, p) => { const x = obj(v, p, ['id', 'label', 'hint', 'group', 'conditions', 'effects', 'resultText', 'context', 'surface']); id(x.id, `${p}/id`); id(x.resultText, `${p}/resultText`); if (x.surface !== undefined) choice(x.surface, `${p}/surface`, ['scene', 'body']); str(x.label, `${p}/label`); str(x.hint, `${p}/hint`); choice(x.group, `${p}/group`, ['travel', 'daily', 'explore', 'event']); list(x.conditions, `${p}/conditions`, condition); list(x.effects, `${p}/effects`, effect); if (x.context) { const c = obj(x.context, `${p}/context`, ['eventId', 'nodeId']); id(c.eventId, `${p}/context/eventId`); str(c.nodeId, `${p}/context/nodeId`); } if (x.group === 'event' && !x.context) fail(`${p}/context`, '事件动作必须绑定事件及节点。'); if (!Array.isArray(x.effects) || !x.effects.length) fail(`${p}/effects`, '没有可执行效果的按钮不可注册。'); });
   list(root.events, '/events', (v, p) => { const x = obj(v, p, ['id', 'startNode', 'nodes', 'participantIds', 'residentIds', 'textMode', 'rating']); id(x.id, `${p}/id`); str(x.startNode, `${p}/startNode`); if (x.participantIds !== undefined) { list(x.participantIds, `${p}/participantIds`, id); if (Array.isArray(x.participantIds) && new Set(x.participantIds).size !== x.participantIds.length) fail(p, '事件参与者重复。'); } if (x.residentIds !== undefined) { list(x.residentIds, `${p}/residentIds`, str); if (Array.isArray(x.residentIds) && new Set(x.residentIds).size !== x.residentIds.length) fail(p, '居民参与者重复。'); } if (x.textMode !== undefined) choice(x.textMode, p, ['fixed']); if (x.rating !== undefined) choice(x.rating, `${p}/rating`, ['general', 'adult']); list(x.nodes, `${p}/nodes`, (v, p) => { const n = obj(v, p, ['id', 'type', 'textVariants', 'actionIds', 'onEnter']); str(n.id, `${p}/id`); choice(n.type, `${p}/type`, ['choice', 'exit']); list(n.textVariants, `${p}/textVariants`, id); list(n.actionIds, `${p}/actionIds`, id); list(n.onEnter, `${p}/onEnter`, effect); if (!Array.isArray(n.textVariants) || !n.textVariants.length) fail(`${p}/textVariants`, '必须有回退文字。'); }); });
   if (!root.texts || typeof root.texts !== 'object' || Array.isArray(root.texts)) fail('/texts', '需要文字字典。');

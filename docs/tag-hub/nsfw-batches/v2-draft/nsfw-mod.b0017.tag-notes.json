@@ -1,0 +1,29 @@
+{
+  "sourceFormat": "aetheria-nsfw-lexicon-batch",
+  "sourceSchemaVersion": 1,
+  "batchId": "nsfw-mod.b0017",
+  "mappedAt": "2026-10-13T03:09:03.702Z",
+  "status": "pending-review",
+  "runtime": "not-installed",
+  "droppedFreeTags": [
+    {
+      "id": "lx.nsfw-mod.b0017.0001",
+      "name": "松弛",
+      "v1Tags": [
+        "状态",
+        "对义"
+      ],
+      "usage": null
+    },
+    {
+      "id": "lx.nsfw-mod.b0017.0002",
+      "name": "干燥",
+      "v1Tags": [
+        "状态",
+        "对义"
+      ],
+      "usage": null
+    }
+  ],
+  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
+}

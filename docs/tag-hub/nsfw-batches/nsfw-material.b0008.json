@@ -1,0 +1,59 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-material",
+  "batchId": "nsfw-material.b0008",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "群P+露出+机械奸+史莱姆+杂项 · b0008"
+  },
+  "entries": [
+    {
+      "subcategory": "凝胶膜",
+      "name": "半透明凝胶膜",
+      "description": "半透明凝胶薄膜材质窄条；亦可凝胶膜+半透明(mod)组合。",
+      "tags": [
+        "史莱姆",
+        "凝胶"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0008.0001",
+      "category": "nsfw-material"
+    },
+    {
+      "subcategory": "定词黏液",
+      "name": "史莱姆黏液",
+      "description": "史莱姆定词挂前的黏液材质；≠ 黑胶/蛞蝓黏液/凝胶体。",
+      "tags": [
+        "史莱姆",
+        "定词挂前"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0008.0002",
+      "category": "nsfw-material"
+    },
+    {
+      "subcategory": "卵壳",
+      "name": "软卵",
+      "description": "可变形软壳卵材质；与 gear「卵」分账。",
+      "tags": [
+        "产卵"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0008.0003",
+      "category": "nsfw-material"
+    },
+    {
+      "subcategory": "卵壳",
+      "name": "硬壳卵",
+      "description": "硬质外壳的卵材质定词；与软卵分立，道具卵另挂 gear。",
+      "tags": [
+        "产卵"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0008.0004",
+      "category": "nsfw-material"
+    }
+  ]
+}

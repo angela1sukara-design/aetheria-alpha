@@ -1,0 +1,35 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-action",
+  "batchId": "nsfw-action.b0009",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "goo范式缺口 · b0009"
+  },
+  "entries": [
+    {
+      "subcategory": "包覆/浸染",
+      "name": "黑胶吞没",
+      "description": "以黑胶整体吞没包覆的动作；与涂覆/吞没包覆审稿去近义。",
+      "tags": [
+        "黑胶",
+        "goo"
+      ],
+      "id": "lx.nsfw-action.b0009.0001",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "包覆/浸染",
+      "name": "物品浸胶",
+      "description": "对非生物对象施行黑胶浸染覆盖的动作原子。",
+      "tags": [
+        "黑胶",
+        "goo"
+      ],
+      "id": "lx.nsfw-action.b0009.0002",
+      "category": "nsfw-action"
+    }
+  ]
+}

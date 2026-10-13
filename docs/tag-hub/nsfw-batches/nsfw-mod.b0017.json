@@ -1,0 +1,35 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0017",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "查缺优先 · 对义修饰 · b0017"
+  },
+  "entries": [
+    {
+      "subcategory": "状态",
+      "name": "松弛",
+      "description": "腔道、括约肌或束带松弛敞开，易滑入；紧致之对义修饰。待审定。",
+      "tags": [
+        "状态",
+        "对义"
+      ],
+      "id": "lx.nsfw-mod.b0017.0001",
+      "category": "nsfw-mod"
+    },
+    {
+      "subcategory": "状态",
+      "name": "干燥",
+      "description": "黏膜或皮表缺乏润滑、摩擦发涩；湿之对义修饰。待审定。",
+      "tags": [
+        "状态",
+        "对义"
+      ],
+      "id": "lx.nsfw-mod.b0017.0002",
+      "category": "nsfw-mod"
+    }
+  ]
+}

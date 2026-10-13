@@ -1,0 +1,37 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-pose",
+  "batchId": "nsfw-pose.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓场景姿势补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "四足/兽姿",
+      "name": "四足趴地",
+      "precise": "承接方或对象四肢着地、胸腹贴近地面或支撑面，脊背可拱可塌；本条不预设插入方向，≠四足后入。",
+      "description": "四足贴地趴伏的兽姿俗称。",
+      "tags": [
+        "四足",
+        "趴"
+      ],
+      "id": "lx.nsfw-pose.b0002.0001",
+      "category": "nsfw-pose"
+    },
+    {
+      "subcategory": "悬吊/挂住位",
+      "name": "倒挂拱身",
+      "precise": "对象头下脚上固定，脊柱后弓、胸腹前送；可与倒挂动作、倒挂固定状态并存，≠倒吊口舌专用位。",
+      "description": "倒挂且躯干拱起的姿势俗称。",
+      "tags": [
+        "倒挂",
+        "拱身"
+      ],
+      "id": "lx.nsfw-pose.b0002.0002",
+      "category": "nsfw-pose"
+    }
+  ]
+}

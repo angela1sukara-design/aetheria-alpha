@@ -19,9 +19,11 @@ async function fetchJSON(url: URL): Promise<unknown> {
   const response = await fetch(url); if (!response.ok) throw new Error(`无法读取内容包（${response.status}）。`); return response.json();
 }
 async function boot(): Promise<void> {
-  const indexUrl = new URL('../../content/index.json', import.meta.url);
-  const embedded = (globalThis as unknown as {aetheriaEmbedded?:{packs:unknown[];journal:JournalEntry[];generation:{rules:unknown;reference:unknown;content?:unknown[];questContent?:unknown;worldProfiles?:unknown}}}).aetheriaEmbedded;
-  const index = embedded ? {packs:[]} : await fetchJSON(indexUrl) as { packs: string[] };
+  const playtest = new URLSearchParams(location.search).get('playtest');
+  const indexFile = playtest === 'tagcoexist' ? '../../content/index.playtest-tagcoexist.json' : '../../content/index.json';
+  const indexUrl = new URL(indexFile, import.meta.url);
+  const embedded = (globalThis as unknown as {aetheriaEmbedded?:{packs:unknown[];journal:JournalEntry[];generation:{rules:unknown;reference:unknown | unknown[];content?:unknown[];questContent?:unknown;worldProfiles?:unknown}}}).aetheriaEmbedded;
+  const index = embedded ? {packs:[] as string[]} : await fetchJSON(indexUrl) as { packs: string[]; generation?: { rules?: string; reference?: string | string[]; content?: string[] } };
   if (!Array.isArray(index.packs) || index.packs.some(x => typeof x !== 'string')) throw new Error('内容包目录格式错误。');
   const basePacks=embedded?.packs??await Promise.all(index.packs.map(x => fetchJSON(new URL(x, indexUrl))));
   let rulePacks:unknown[]=[];let storedTexts:unknown[]=[];
@@ -47,8 +49,25 @@ async function boot(): Promise<void> {
     engine = new ActionExecutor(registry, loaded.state, texts);
     browsing = false;
   }
-  const generation = embedded?.generation ?? { worldProfiles: await fetchJSON(new URL('../../content/generation/world-profiles.json', import.meta.url)), rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)), reference: await fetchJSON(new URL('../../content/generation/lexicon-reference.json', import.meta.url)), content: await Promise.all(['neighborhood-content','lexicon-content','world-profile-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))) };
-  mountWorldControls({ source: () => fixedRegistry, defaults: generation, isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {
+  const generation = embedded?.generation ?? await (async () => {
+    const gen = index.generation;
+    if (gen?.rules && gen.reference) {
+      const refs = Array.isArray(gen.reference) ? gen.reference : [gen.reference];
+      const contents = gen.content ?? ['./generation/neighborhood-content.json', './generation/lexicon-content.json'];
+      return {
+        rules: await fetchJSON(new URL(gen.rules, indexUrl)),
+        reference: await Promise.all(refs.map(name => fetchJSON(new URL(name, indexUrl)))),
+        content: await Promise.all(contents.map(name => fetchJSON(new URL(name, indexUrl)))),
+      };
+    }
+    return {
+      worldProfiles: await fetchJSON(new URL('../../content/generation/world-profiles.json', import.meta.url)),
+      rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)),
+      reference: await fetchJSON(new URL('../../content/generation/lexicon-reference.json', import.meta.url)),
+      content: await Promise.all(['neighborhood-content','lexicon-content','world-profile-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))),
+    };
+  })();
+  mountWorldControls({ source: () => fixedRegistry, defaults: generation, lockDefaults: playtest === 'tagcoexist', isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {
     if (generated) adopt({ state: generated.state, registry: generated.registry });
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });
     result = undefined; redraw(); pages.game(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');

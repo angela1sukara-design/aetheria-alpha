@@ -48,6 +48,9 @@ test('seed changes regenerate contacts and edges from the same NPC pool; names a
   for (const variation of variations) for (const path of variation.tree.paths) assert.ok(path.memberIds.every(id => g.world.agents.some(a => a.residentId === id)));
   // Renaming every generated person has no effect on the relationship selection rules.
   assert.ok(variations.every(v => !JSON.stringify(v).includes('莱娜') && !JSON.stringify(v).includes('凯恩')));
+  const otherMain = structuredClone(content); otherMain.source.mainQuest.id = 'main.other_world';
+  const themed = generateMainRelationships(otherMain, 42, def, structuredClone(g.world.agents), def.quests!.stages);
+  assert.notDeepEqual(themed.paths.map(p => p.memberIds), variations[1]!.tree.paths.map(p => p.memberIds));
 });
 
 test('changing main service demands changes circle membership, rather than merely renaming a ring', async () => {

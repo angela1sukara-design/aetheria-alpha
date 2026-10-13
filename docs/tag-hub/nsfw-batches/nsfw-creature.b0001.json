@@ -1,0 +1,535 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-creature",
+  "batchId": "nsfw-creature.b0001",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "首轮通用原子覆盖"
+  },
+  "entries": [
+    {
+      "id": "lx.nsfw-creature.b0001.0001",
+      "category": "nsfw-creature",
+      "subcategory": "人型",
+      "name": "人型",
+      "description": "标准人形轮廓，无额外兽/机械征，影响交合与转化的形态特征。",
+      "tags": [
+        "人型"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0002",
+      "category": "nsfw-creature",
+      "subcategory": "人型",
+      "name": "近人人型",
+      "description": "整体人型仅有轻微非人细节，影响交合与转化的形态特征。",
+      "tags": [
+        "人型"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0003",
+      "category": "nsfw-creature",
+      "subcategory": "人型",
+      "name": "双性人型",
+      "description": "人型体态具备双套性征，影响交合与转化的形态特征。",
+      "tags": [
+        "人型",
+        "双性"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0004",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "轻兽化",
+      "description": "仅有耳、尾等局部兽征，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0005",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "半兽化",
+      "description": "肢体与面部明显兽征但仍可直立，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0006",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "深兽化",
+      "description": "兽躯比例高，行动偏四足，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0007",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "全兽态",
+      "description": "几乎完全兽形，仅保留可交合意向，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0008",
+      "category": "nsfw-creature",
+      "subcategory": "翼/飞行器态",
+      "name": "有翼",
+      "description": "背生双翼，可滑翔或飞行，影响交合与转化的形态特征。",
+      "tags": [
+        "翼"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0009",
+      "category": "nsfw-creature",
+      "subcategory": "翼/飞行器态",
+      "name": "飞行器态",
+      "description": "处于展翼飞行中的身体姿态特征，影响交合与转化的形态特征。",
+      "tags": [
+        "翼",
+        "飞行"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0010",
+      "category": "nsfw-creature",
+      "subcategory": "翼/飞行器态",
+      "name": "翼膜敏感",
+      "description": "翼膜具备性敏感的飞行态特征，影响交合与转化的形态特征。",
+      "tags": [
+        "翼"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0011",
+      "category": "nsfw-creature",
+      "subcategory": "翼/飞行器态",
+      "name": "爪攫飞行",
+      "description": "以爪攫住对象飞行的形态能力，影响交合与转化的形态特征。",
+      "tags": [
+        "翼",
+        "爪"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0012",
+      "category": "nsfw-creature",
+      "subcategory": "触手生物",
+      "name": "触手躯",
+      "description": "躯干或下肢以触手为主，影响交合与转化的形态特征。",
+      "tags": [
+        "触手"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0013",
+      "category": "nsfw-creature",
+      "subcategory": "触手生物",
+      "name": "背生触簇",
+      "description": "背部生长多分触手簇，影响交合与转化的形态特征。",
+      "tags": [
+        "触手"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0014",
+      "category": "nsfw-creature",
+      "subcategory": "触手生物",
+      "name": "口腕共生",
+      "description": "口周有腕足辅助固定，影响交合与转化的形态特征。",
+      "tags": [
+        "触手"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0015",
+      "category": "nsfw-creature",
+      "subcategory": "触手生物",
+      "name": "触手腔巢体",
+      "description": "触手与产卵/储存腔共存的形态，影响交合与转化的形态特征。",
+      "tags": [
+        "触手",
+        "产卵"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0016",
+      "category": "nsfw-creature",
+      "subcategory": "凝胶生物",
+      "name": "凝胶体",
+      "description": "身体主要由可塑凝胶构成，影响交合与转化的形态特征。",
+      "tags": [
+        "凝胶"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0017",
+      "category": "nsfw-creature",
+      "subcategory": "凝胶生物",
+      "name": "半凝胶人型",
+      "description": "人型轮廓但肢体可凝胶化变形，影响交合与转化的形态特征。",
+      "tags": [
+        "凝胶",
+        "人型"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0018",
+      "category": "nsfw-creature",
+      "subcategory": "凝胶生物",
+      "name": "黑胶生物",
+      "description": "以活体黑胶为躯体主材质的形态，影响交合与转化的形态特征。",
+      "tags": [
+        "黑胶",
+        "凝胶"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0019",
+      "category": "nsfw-creature",
+      "subcategory": "凝胶生物",
+      "name": "可分裂凝胶",
+      "description": "可分裂出伪肢再融合的凝胶态，影响交合与转化的形态特征。",
+      "tags": [
+        "凝胶"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0020",
+      "category": "nsfw-creature",
+      "subcategory": "机械体",
+      "name": "全机械体",
+      "description": "外表与驱动均为机械，影响交合与转化的形态特征。",
+      "tags": [
+        "机械"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0021",
+      "category": "nsfw-creature",
+      "subcategory": "机械体",
+      "name": "义肢嵌合人",
+      "description": "人型主体大量义肢嵌合，影响交合与转化的形态特征。",
+      "tags": [
+        "机械",
+        "义肢"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0022",
+      "category": "nsfw-creature",
+      "subcategory": "机械体",
+      "name": "机械兽体",
+      "description": "兽型轮廓的机械躯体，影响交合与转化的形态特征。",
+      "tags": [
+        "机械",
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0023",
+      "category": "nsfw-creature",
+      "subcategory": "机械体",
+      "name": "接口暴露体",
+      "description": "体表可见多个对接接口的形态，影响交合与转化的形态特征。",
+      "tags": [
+        "机械",
+        "接口"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0024",
+      "category": "nsfw-creature",
+      "subcategory": "嵌合体",
+      "name": "嵌合体",
+      "description": "多物种/材质特征拼接的合一躯，影响交合与转化的形态特征。",
+      "tags": [
+        "嵌合"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0025",
+      "category": "nsfw-creature",
+      "subcategory": "嵌合体",
+      "name": "翼兽嵌合",
+      "description": "兽躯与翼的嵌合，影响交合与转化的形态特征。",
+      "tags": [
+        "嵌合",
+        "翼"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0026",
+      "category": "nsfw-creature",
+      "subcategory": "嵌合体",
+      "name": "机兽嵌合",
+      "description": "机械与兽征嵌合，影响交合与转化的形态特征。",
+      "tags": [
+        "嵌合",
+        "机械"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0027",
+      "category": "nsfw-creature",
+      "subcategory": "嵌合体",
+      "name": "黑胶嵌兽",
+      "description": "活体黑胶包裹或替换部分兽躯，影响交合与转化的形态特征。",
+      "tags": [
+        "嵌合",
+        "黑胶"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0028",
+      "category": "nsfw-creature",
+      "subcategory": "巨物态",
+      "name": "巨物态",
+      "description": "体型远超常人的巨大形态，影响交合与转化的形态特征。",
+      "tags": [
+        "巨物"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0029",
+      "category": "nsfw-creature",
+      "subcategory": "巨物态",
+      "name": "局部巨化",
+      "description": "仅性器或某肢巨大化，影响交合与转化的形态特征。",
+      "tags": [
+        "巨物",
+        "尺寸差"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0030",
+      "category": "nsfw-creature",
+      "subcategory": "巨物态",
+      "name": "可缩放巨物",
+      "description": "可在常人与巨物间切换，影响交合与转化的形态特征。",
+      "tags": [
+        "巨物",
+        "缩放"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0031",
+      "category": "nsfw-creature",
+      "subcategory": "人型",
+      "name": "高挑人型",
+      "description": "四肢修长的人型外观特征，影响交合与转化的形态特征。",
+      "tags": [
+        "人型"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0032",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "仅尾兽化",
+      "description": "除尾以外保持人型，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0033",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "爪足兽化",
+      "description": "下肢为兽爪/蹄，上身人型，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化",
+        "足"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0034",
+      "category": "nsfw-creature",
+      "subcategory": "翼/飞行器态",
+      "name": "收翼态",
+      "description": "翼折叠贴背的非飞行态，影响交合与转化的形态特征。",
+      "tags": [
+        "翼"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0035",
+      "category": "nsfw-creature",
+      "subcategory": "触手生物",
+      "name": "细触密生",
+      "description": "体表密生细触手的形态，影响交合与转化的形态特征。",
+      "tags": [
+        "触手"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0036",
+      "category": "nsfw-creature",
+      "subcategory": "凝胶生物",
+      "name": "透明凝胶体",
+      "description": "内部结构隐约可见的透明凝胶躯，影响交合与转化的形态特征。",
+      "tags": [
+        "凝胶"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0037",
+      "category": "nsfw-creature",
+      "subcategory": "机械体",
+      "name": "外骨骼甲体",
+      "description": "人型外包机械外骨骼，影响交合与转化的形态特征。",
+      "tags": [
+        "机械"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0038",
+      "category": "nsfw-creature",
+      "subcategory": "嵌合体",
+      "name": "多头嵌合（暗示）",
+      "description": "额外头/口器嵌合的稀有形态暗示，影响交合与转化的形态特征。",
+      "tags": [
+        "嵌合"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0039",
+      "category": "nsfw-creature",
+      "subcategory": "巨物态",
+      "name": "掌中对照",
+      "description": "相对巨物方，另一方处于掌中尺寸，影响交合与转化的形态特征。",
+      "tags": [
+        "巨物",
+        "尺寸差"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0040",
+      "category": "nsfw-creature",
+      "subcategory": "人型",
+      "name": "标记人型",
+      "description": "人型体表带契约/感染纹的特征，影响交合与转化的形态特征。",
+      "tags": [
+        "人型",
+        "标记"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0041",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "耳尾乳尖兽化",
+      "description": "耳尾及敏感点同步兽化的特征组合，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0042",
+      "category": "nsfw-creature",
+      "subcategory": "翼/飞行器态",
+      "name": "破空俯冲击",
+      "description": "飞行态高速俯冲时的形态张力，影响交合与转化的形态特征。",
+      "tags": [
+        "翼",
+        "飞行"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0043",
+      "category": "nsfw-creature",
+      "subcategory": "触手生物",
+      "name": "封口触手种",
+      "description": "触手末端可封住腔口的种族特征，影响交合与转化的形态特征。",
+      "tags": [
+        "触手"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0044",
+      "category": "nsfw-creature",
+      "subcategory": "凝胶生物",
+      "name": "温热凝胶体",
+      "description": "体感偏热的活性凝胶生物，影响交合与转化的形态特征。",
+      "tags": [
+        "凝胶",
+        "热"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0045",
+      "category": "nsfw-creature",
+      "subcategory": "机械体",
+      "name": "液压关节体",
+      "description": "关节以液压驱动、动作可锁死，影响交合与转化的形态特征。",
+      "tags": [
+        "机械"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0046",
+      "category": "nsfw-creature",
+      "subcategory": "嵌合体",
+      "name": "鳞翼机爪嵌合",
+      "description": "鳞、翼与机械爪并存的嵌合，影响交合与转化的形态特征。",
+      "tags": [
+        "嵌合"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0047",
+      "category": "nsfw-creature",
+      "subcategory": "巨物态",
+      "name": "阴影笼罩态",
+      "description": "巨物站立时将对方完全罩入阴影，影响交合与转化的形态特征。",
+      "tags": [
+        "巨物"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0048",
+      "category": "nsfw-creature",
+      "subcategory": "兽化程度",
+      "name": "发情兽化加深",
+      "description": "发情时兽征临时加深的特征，影响交合与转化的形态特征。",
+      "tags": [
+        "兽化",
+        "发情"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0049",
+      "category": "nsfw-creature",
+      "subcategory": "机械体",
+      "name": "传感皮层体",
+      "description": "机械体覆有仿生传感皮层，影响交合与转化的形态特征。",
+      "tags": [
+        "机械",
+        "官能"
+      ]
+    },
+    {
+      "id": "lx.nsfw-creature.b0001.0050",
+      "category": "nsfw-creature",
+      "subcategory": "嵌合体",
+      "name": "人面兽躯嵌合",
+      "description": "保留人面的兽躯嵌合特征，影响交合与转化的形态特征。",
+      "tags": [
+        "嵌合",
+        "兽化"
+      ]
+    }
+  ]
+}

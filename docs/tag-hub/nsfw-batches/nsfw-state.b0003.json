@@ -1,0 +1,33 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0003",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "性转TF+催眠 · b0003"
+  },
+  "entries": [
+    {
+      "subcategory": "催眠态",
+      "name": "催眠中",
+      "description": "当下正处于催眠暗示作用下的现场状态；≠ kink「催眠暗示」。",
+      "tags": [
+        "催眠"
+      ],
+      "id": "lx.nsfw-state.b0003.0001",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "催眠态",
+      "name": "恍惚服从",
+      "description": "意识模糊但仍执行指令的现场状态；意愿/合意另由情境表达，不用本条代替。",
+      "tags": [
+        "催眠"
+      ],
+      "id": "lx.nsfw-state.b0003.0002",
+      "category": "nsfw-state"
+    }
+  ]
+}

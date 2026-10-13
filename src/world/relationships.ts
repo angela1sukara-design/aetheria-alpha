@@ -15,6 +15,7 @@ const compare = (seed: number, key: string, a: string, b: string) => rank(seed, 
 /** The quest hierarchy determines circles first; geography determines the small local network within them. */
 export function generateMainRelationships(content: QuestContent, seed: number, definition: WorldDef, agents: WorldAgent[], stages: QuestBinding[]): MainRelationshipTree {
   const source = content.source.mainQuest;
+  seed = rank(seed, source.id);
   const orderedAgents = [...agents].sort((a, b) => a.residentId.localeCompare(b.residentId, 'en'));
   const sourcePaths = [...source.paths].sort((a, b) => a.id.localeCompare(b.id, 'en'));
   const tree: MainRelationshipTree = {
@@ -102,7 +103,7 @@ export function mainStagesSupportedBy(content: QuestContent, side: QuestSide): s
 /** Priority only: existing relation capacity, physical schedules and free main choices remain authoritative. */
 export function sideRelationPriority(tree: MainRelationshipTree, seed: number, side: QuestSide, residentId: string): number {
   const paths = [...tree.paths].sort((a, b) => a.id.localeCompare(b.id, 'en'));
-  const focus = paths[rank(seed, 'side-circle:' + side.id) % paths.length]!;
+  const focus = paths[rank(seed, tree.mainQuestId + ':side-circle:' + side.id) % paths.length]!;
   return (focus.memberIds.includes(residentId) ? 4 : 0) + (tree.roles.some(r => r.pathId === focus.id && r.residentId === residentId) ? 2 : 0);
 }
 export function linkSideToMain(tree: MainRelationshipTree, content: QuestContent, side: QuestSide, binding: QuestBinding, definition: WorldDef): void {

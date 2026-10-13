@@ -1,0 +1,33 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-action",
+  "batchId": "nsfw-action.b0011",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "气味声音 · b0011"
+  },
+  "entries": [
+    {
+      "subcategory": "感官",
+      "name": "嗅闻体味",
+      "description": "主动嗅闻体味的动作；≠嗅闻(kink)。",
+      "tags": [
+        "气味"
+      ],
+      "id": "lx.nsfw-action.b0011.0001",
+      "category": "nsfw-action"
+    },
+    {
+      "subcategory": "感官",
+      "name": "耳语指令",
+      "description": "贴耳低语下达指令的动作；可组合催眠主从。",
+      "tags": [
+        "声音"
+      ],
+      "id": "lx.nsfw-action.b0011.0002",
+      "category": "nsfw-action"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-part",
+  "batchId": "nsfw-part.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蝠/多眼可选补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "头面五官",
+      "name": "多眼",
+      "description": "同一头面上多枚可开合的眼；偏部位目标。若强调非人嵌合互动特征，可改挂 creature。",
+      "tags": [
+        "眼"
+      ],
+      "id": "lx.nsfw-part.b0002.0001",
+      "category": "nsfw-part"
+    },
+    {
+      "subcategory": "耳/角/触须",
+      "name": "蝠耳",
+      "description": "蝠类大耳廓部位；与 b0001「兽耳」互为检索近义（synonyms），正式对齐以审定为准。",
+      "tags": [
+        "蝠",
+        "耳"
+      ],
+      "id": "lx.nsfw-part.b0002.0002",
+      "category": "nsfw-part",
+      "synonyms": [
+        "兽耳"
+      ]
+    }
+  ]
+}

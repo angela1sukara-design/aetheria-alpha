@@ -1,0 +1,364 @@
+{
+  "updated": "2026-10-13 11:10 SGT",
+  "source_room": "Tag协作",
+  "note": "登记路径索引；收录≠审定≠已实装；口径不当词条收；+b0017 hub 收录与 v2-draft",
+  "counts": {
+    "total": 42,
+    "exists": 42,
+    "missing": 0,
+    "by_kind": {
+      "已有清单": 3,
+      "批次根": 1,
+      "报告": 10,
+      "交付包": 1,
+      "种子": 2,
+      "扩缺batch": 2,
+      "待入库": 6,
+      "摘要": 6,
+      "查缺": 2,
+      "装箱": 1,
+      "试跑种子": 1,
+      "口径": 4,
+      "种子zip": 2,
+      "hub批次": 1
+    }
+  },
+  "entries": [
+    {
+      "kind": "已有清单",
+      "source": "Angela+通用tag",
+      "path": "/workspace/通用已有词条清单-10700.md",
+      "note": "通用正式库存清单",
+      "exists": true,
+      "size": 903482
+    },
+    {
+      "kind": "已有清单",
+      "source": "Angela+通用tag",
+      "path": "/workspace/通用已有词条-按库摘要.md",
+      "note": "按库摘要",
+      "exists": true,
+      "size": 1750
+    },
+    {
+      "kind": "已有清单",
+      "source": "Angela+NSFWtag",
+      "path": "/workspace/NSFW已有词条清单-b0001.md",
+      "note": "NSFW 正式库存清单",
+      "exists": true,
+      "size": 38848
+    },
+    {
+      "kind": "批次根",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/batches/",
+      "note": "14 库 *.b0001–*.b0017",
+      "exists": true,
+      "size": 415743
+    },
+    {
+      "kind": "报告",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/production-report.md",
+      "note": "总生产报告",
+      "exists": true,
+      "size": 5949
+    },
+    {
+      "kind": "交付包",
+      "source": "通用tag",
+      "path": "/workspace/game-tags-out/",
+      "note": "all + world/body/npc/text/daily",
+      "exists": true,
+      "size": 12001001
+    },
+    {
+      "kind": "种子",
+      "source": "通用tag",
+      "path": "/workspace/game-tags-out/sfw-parallel-seeds/",
+      "note": "平行种子",
+      "exists": true,
+      "size": 29302
+    },
+    {
+      "kind": "种子",
+      "source": "通用tag",
+      "path": "/workspace/game-tags-out/sfw-goo-object-seeds/",
+      "note": "goo/object 种子",
+      "exists": true,
+      "size": 39365
+    },
+    {
+      "kind": "扩缺batch",
+      "source": "通用tag",
+      "path": "/workspace/game-tags-out/worldview-gap-v1/",
+      "note": "世界观扩缺 v1",
+      "exists": true,
+      "size": 86446
+    },
+    {
+      "kind": "扩缺batch",
+      "source": "通用tag",
+      "path": "/workspace/game-tags-out/worldview-gap-v2/",
+      "note": "世界观扩缺 v2",
+      "exists": true,
+      "size": 297072
+    },
+    {
+      "kind": "待入库",
+      "source": "Angela+色图Tag分析",
+      "path": "/workspace/候选待入库-色图批AB-v0.13.md",
+      "note": "色图批 AB 候选",
+      "exists": true,
+      "size": 7846
+    },
+    {
+      "kind": "待入库",
+      "source": "Angela+Tag查漏补缺",
+      "path": "/workspace/网上扩缺候选-待入库-v1.md",
+      "note": "网上扩缺 v1",
+      "exists": true,
+      "size": 29982
+    },
+    {
+      "kind": "待入库",
+      "source": "Angela+NSFWtag",
+      "path": "/workspace/NSFW扩缺-待入库-v2-加量.md",
+      "note": "NSFW 扩缺 v2",
+      "exists": true,
+      "size": 49741
+    },
+    {
+      "kind": "待入库",
+      "source": "通用tag",
+      "path": "/workspace/通用环境世界观查缺-待入库-v1.md",
+      "note": "世界观查缺待入库 v1",
+      "exists": true,
+      "size": 29570
+    },
+    {
+      "kind": "待入库",
+      "source": "通用tag",
+      "path": "/workspace/通用环境世界观查缺-待入库-v2-加量.md",
+      "note": "世界观查缺待入库 v2",
+      "exists": true,
+      "size": 88898
+    },
+    {
+      "kind": "待入库",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/网上扩缺-剩余待入库-全加上.md",
+      "note": "网上扩缺剩余全加上",
+      "exists": true,
+      "size": 8018
+    },
+    {
+      "kind": "摘要",
+      "source": "NSFWtag",
+      "path": "/workspace/NSFW扩缺-v2-摘要.md",
+      "note": "扩缺摘要",
+      "exists": true,
+      "size": 919
+    },
+    {
+      "kind": "摘要",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/网上扩缺候选-摘要.md",
+      "note": "网上扩缺摘要",
+      "exists": true,
+      "size": 880
+    },
+    {
+      "kind": "摘要",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/网上扩缺-本波收口说明.md",
+      "note": "本波收口",
+      "exists": true,
+      "size": 626
+    },
+    {
+      "kind": "摘要",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/通用环境世界观查缺-摘要.md",
+      "note": "世界观查缺摘要",
+      "exists": true,
+      "size": 880
+    },
+    {
+      "kind": "摘要",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/通用环境世界观查缺-v2-摘要.md",
+      "note": "世界观查缺 v2 摘要",
+      "exists": true,
+      "size": 900
+    },
+    {
+      "kind": "查缺",
+      "source": "Angela+Tag查漏补缺",
+      "path": "/workspace/实验室黑胶-可通用tag-查缺结果.md",
+      "note": "实验室黑胶查缺",
+      "exists": true,
+      "size": 8170
+    },
+    {
+      "kind": "查缺",
+      "source": "Angela+色图Tag分析",
+      "path": "/workspace/查缺报告-色图批AB-vs-b0001.md",
+      "note": "色图批 vs b0001",
+      "exists": true,
+      "size": 6333
+    },
+    {
+      "kind": "装箱",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/b0002-补库装箱单-蛞蝓黏液.md",
+      "note": "b0002 装箱单",
+      "exists": true,
+      "size": 2987
+    },
+    {
+      "kind": "试跑种子",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/agent-tools/接tag试跑-研究员触手黏液黑胶.md",
+      "note": "已另档 tag-hub seeds",
+      "exists": true,
+      "size": 4494
+    },
+    {
+      "kind": "口径",
+      "source": "Angela",
+      "path": "/workspace/整游戏-Tag规范-v0.13.md",
+      "note": "规范，不当词条收",
+      "exists": true,
+      "size": 57076
+    },
+    {
+      "kind": "口径",
+      "source": "Angela+NSFWtag",
+      "path": "/workspace/NSFWtag规范-v1.0.1.md",
+      "note": "规范，不当词条收",
+      "exists": true,
+      "size": 15719
+    },
+    {
+      "kind": "口径",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/定词挂前-材质规则-v0.2.md",
+      "note": "口径，不当词条收",
+      "exists": true,
+      "size": 571
+    },
+    {
+      "kind": "口径",
+      "source": "Tag查漏补缺",
+      "path": "/workspace/黑胶-goo-transformation定义-v0.1.md",
+      "note": "口径文内v0.2，不当词条收",
+      "exists": true,
+      "size": 6048
+    },
+    {
+      "kind": "报告",
+      "source": "Angela+NSFWtag",
+      "path": "/workspace/b0002-production-report.md",
+      "note": "production-report",
+      "exists": true,
+      "size": 1038
+    },
+    {
+      "kind": "报告",
+      "source": "Angela+NSFWtag",
+      "path": "/workspace/b0003-production-report.md",
+      "note": "production-report",
+      "exists": true,
+      "size": 797
+    },
+    {
+      "kind": "报告",
+      "source": "Angela+NSFWtag",
+      "path": "/workspace/b0004-production-report.md",
+      "note": "production-report",
+      "exists": true,
+      "size": 541
+    },
+    {
+      "kind": "报告",
+      "source": "Angela+NSFWtag",
+      "path": "/workspace/b0005-b0009-production-report.md",
+      "note": "production-report",
+      "exists": true,
+      "size": 3720
+    },
+    {
+      "kind": "报告",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/b0002-production-report.md",
+      "note": "nsfw-lexicon production-report",
+      "exists": true,
+      "size": 1038
+    },
+    {
+      "kind": "报告",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/b0003-production-report.md",
+      "note": "nsfw-lexicon production-report",
+      "exists": true,
+      "size": 797
+    },
+    {
+      "kind": "报告",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/b0004-production-report.md",
+      "note": "nsfw-lexicon production-report",
+      "exists": true,
+      "size": 541
+    },
+    {
+      "kind": "报告",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/b0005-b0009-production-report.md",
+      "note": "nsfw-lexicon production-report",
+      "exists": true,
+      "size": 3720
+    },
+    {
+      "kind": "种子zip",
+      "source": "通用tag",
+      "path": "/workspace/通用平行种子-goo对象指向-物件建筑表面.zip",
+      "note": "平行种子 zip",
+      "exists": true,
+      "size": 8886
+    },
+    {
+      "kind": "种子zip",
+      "source": "通用tag",
+      "path": "/workspace/通用平行种子-洞穴雾林孕腹泄殖腔.zip",
+      "note": "平行种子 zip",
+      "exists": true,
+      "size": 9561
+    },
+    {
+      "kind": "摘要",
+      "source": "NSFWtag",
+      "path": "/workspace/NSFW扩缺-b0017-摘要.md",
+      "note": "b0017 扩缺摘要",
+      "exists": true,
+      "size": 945
+    },
+    {
+      "kind": "报告",
+      "source": "NSFWtag",
+      "path": "/workspace/nsfw-lexicon/b0017-production-report.md",
+      "note": "b0017 production-report",
+      "exists": true,
+      "size": 4962
+    },
+    {
+      "kind": "hub批次",
+      "source": "引擎接入",
+      "path": "docs/tag-hub/nsfw-batches/ (b0017 + v2-draft)",
+      "note": "仓内收录待审定；v2 草稿 validate-v2；未实装",
+      "exists": true,
+      "size": 0
+    }
+  ]
+}

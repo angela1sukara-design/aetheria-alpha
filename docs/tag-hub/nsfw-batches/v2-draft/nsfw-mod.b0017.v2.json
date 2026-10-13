@@ -1,0 +1,45 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "v1→v2 draft · nsfw-mod.b0017 · 待审定 · 未实装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+  },
+  "domain": "nsfw",
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0017",
+  "entries": [
+    {
+      "id": "lx.nsfw-mod.b0017.0001",
+      "category": "nsfw-mod",
+      "subcategory": "状态",
+      "text": "松弛",
+      "description": "腔道、括约肌或束带松弛敞开，易滑入；紧致之对义修饰。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-mod.b0017.0002",
+      "category": "nsfw-mod",
+      "subcategory": "状态",
+      "text": "干燥",
+      "description": "黏膜或皮表缺乏润滑、摩擦发涩；湿之对义修饰。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    }
+  ]
+}

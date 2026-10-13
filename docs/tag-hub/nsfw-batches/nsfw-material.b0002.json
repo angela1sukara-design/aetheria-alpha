@@ -1,0 +1,25 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-material",
+  "batchId": "nsfw-material.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓定词黏液主定义"
+  },
+  "entries": [
+    {
+      "subcategory": "黏液",
+      "name": "黏液",
+      "description": "蛞蝓相关黏液材质本体：湿滑、可拉丝、可固化贴覆；主定义落在此条，勿并入生物粘液/发光粘液/黑胶 synonyms。",
+      "tags": [
+        "蛞蝓定词",
+        "主定义"
+      ],
+      "usage": "material",
+      "id": "lx.nsfw-material.b0002.0001",
+      "category": "nsfw-material"
+    }
+  ]
+}

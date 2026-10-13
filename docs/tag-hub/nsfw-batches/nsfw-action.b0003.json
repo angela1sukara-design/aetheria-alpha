@@ -1,0 +1,23 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-action",
+  "batchId": "nsfw-action.b0003",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "性转TF+催眠 · b0003"
+  },
+  "entries": [
+    {
+      "subcategory": "精神触发",
+      "name": "指令触发",
+      "description": "发出触发词或手势以激活既有催眠暗示的动作；≠催眠中状态，≠催眠偏好本身。",
+      "tags": [
+        "催眠"
+      ],
+      "id": "lx.nsfw-action.b0003.0001",
+      "category": "nsfw-action"
+    }
+  ]
+}

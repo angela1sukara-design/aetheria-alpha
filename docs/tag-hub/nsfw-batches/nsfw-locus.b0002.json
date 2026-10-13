@@ -1,0 +1,63 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-locus",
+  "batchId": "nsfw-locus.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓场景相对位置补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "上方/悬挂",
+      "name": "天花板下垂",
+      "description": "自洞穴顶或天花板向下垂落、接触的相对位置。",
+      "tags": [
+        "上方"
+      ],
+      "id": "lx.nsfw-locus.b0002.0001",
+      "category": "nsfw-locus"
+    },
+    {
+      "subcategory": "树上",
+      "name": "枝下",
+      "description": "悬挂或附着于枝条下方的相对位置。",
+      "tags": [
+        "林"
+      ],
+      "id": "lx.nsfw-locus.b0002.0002",
+      "category": "nsfw-locus"
+    },
+    {
+      "subcategory": "头面",
+      "name": "面部",
+      "description": "相对落在脸面区域（口鼻颊眼周）。",
+      "tags": [
+        "头面"
+      ],
+      "id": "lx.nsfw-locus.b0002.0003",
+      "category": "nsfw-locus"
+    },
+    {
+      "subcategory": "翼",
+      "name": "膜缘",
+      "description": "翼膜边缘一带的相对位置。",
+      "tags": [
+        "翼"
+      ],
+      "id": "lx.nsfw-locus.b0002.0004",
+      "category": "nsfw-locus"
+    },
+    {
+      "subcategory": "躯干",
+      "name": "躯干表面",
+      "description": "胸腹背等躯干外表面，非腔内。",
+      "tags": [
+        "体表"
+      ],
+      "id": "lx.nsfw-locus.b0002.0005",
+      "category": "nsfw-locus"
+    }
+  ]
+}

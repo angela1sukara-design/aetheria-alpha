@@ -1,0 +1,33 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0012",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "服装半脱 · b0012"
+  },
+  "entries": [
+    {
+      "subcategory": "服装态",
+      "name": "半脱挂身中",
+      "description": "衣物半脱仍挂身的现场态；≠半脱偏好。待审",
+      "tags": [
+        "服装半脱"
+      ],
+      "id": "lx.nsfw-state.b0012.0001",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "服装态",
+      "name": "湿透贴衣中",
+      "description": "衣物湿透贴身的现场态；≠汗湿贴肤fluid。",
+      "tags": [
+        "服装半脱"
+      ],
+      "id": "lx.nsfw-state.b0012.0002",
+      "category": "nsfw-state"
+    }
+  ]
+}

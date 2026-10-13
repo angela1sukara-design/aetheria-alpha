@@ -1,0 +1,23 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-creature",
+  "batchId": "nsfw-creature.b0008",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "群P+露出+机械奸+史莱姆+杂项 · b0008"
+  },
+  "entries": [
+    {
+      "subcategory": "史莱姆形态",
+      "name": "史莱姆体",
+      "description": "史莱姆式不定形躯体互动特征；≠ 凝胶体/黑胶生物/蛞蝓。",
+      "tags": [
+        "史莱姆"
+      ],
+      "id": "lx.nsfw-creature.b0008.0001",
+      "category": "nsfw-creature"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-creature",
+  "batchId": "nsfw-creature.b0005",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "虫寄生+触手寄生 · b0005"
+  },
+  "entries": [
+    {
+      "subcategory": "虫态特征",
+      "name": "虫体",
+      "description": "昆虫式躯体轮廓影响攀附与交合的形态特征；≠ part。",
+      "tags": [
+        "虫寄生"
+      ],
+      "id": "lx.nsfw-creature.b0005.0001",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "虫态特征",
+      "name": "多足虫态",
+      "description": "多足攀附与缠绕能力突出的虫态互动特征；影响固定与爬行交合。",
+      "tags": [
+        "虫寄生"
+      ],
+      "id": "lx.nsfw-creature.b0005.0002",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "虫态特征",
+      "name": "产卵虫",
+      "description": "以产卵互动为核心的虫态特征；一条一事勿塞剧情。",
+      "tags": [
+        "虫寄生",
+        "产卵"
+      ],
+      "id": "lx.nsfw-creature.b0005.0003",
+      "category": "nsfw-creature"
+    },
+    {
+      "subcategory": "虫态特征",
+      "name": "寄生虫体",
+      "description": "可进入并寄居宿主的虫态特征；≠ tf「寄生定居」。",
+      "tags": [
+        "虫寄生"
+      ],
+      "id": "lx.nsfw-creature.b0005.0004",
+      "category": "nsfw-creature"
+    }
+  ]
+}

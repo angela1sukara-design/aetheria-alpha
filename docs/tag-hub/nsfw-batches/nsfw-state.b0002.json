@@ -1,0 +1,87 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0002",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "蛞蝓/黏液现场状态补缺"
+  },
+  "entries": [
+    {
+      "subcategory": "束缚持续态",
+      "name": "被黏液束缚",
+      "description": "当下正被黏液缠住无法挣脱的现场状态；≠喜欢被黏液束缚的性癖。",
+      "tags": [
+        "黏液",
+        "束缚"
+      ],
+      "id": "lx.nsfw-state.b0002.0001",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "涂覆态",
+      "name": "整身被涂覆",
+      "description": "体表大面积已被黏液或软体分泌物盖住的状态；含黏液涂身近义场景。",
+      "tags": [
+        "涂覆"
+      ],
+      "synonyms": [
+        "黏液涂身"
+      ],
+      "id": "lx.nsfw-state.b0002.0002",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "倒挂态",
+      "name": "倒挂固定",
+      "description": "头下脚上已被固定住的当下状态。",
+      "tags": [
+        "倒挂"
+      ],
+      "id": "lx.nsfw-state.b0002.0003",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "翼态",
+      "name": "膜翼合拢",
+      "description": "翼膜收拢贴身、未展开的状态。",
+      "tags": [
+        "翼"
+      ],
+      "id": "lx.nsfw-state.b0002.0004",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "静置态",
+      "name": "闭目静置",
+      "description": "双眼闭合、暂时不挣扎的静置状态。",
+      "tags": [
+        "静"
+      ],
+      "id": "lx.nsfw-state.b0002.0005",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "转化前态",
+      "name": "挣扎未化",
+      "description": "仍在挣扎、黏液化尚未完成的过渡状态。",
+      "tags": [
+        "转化前"
+      ],
+      "id": "lx.nsfw-state.b0002.0006",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "暴露态",
+      "name": "性器外露",
+      "description": "性器处于未被遮挡、可见可触的当下状态；不是性器形态词条。",
+      "tags": [
+        "外露"
+      ],
+      "id": "lx.nsfw-state.b0002.0007",
+      "category": "nsfw-state"
+    }
+  ]
+}

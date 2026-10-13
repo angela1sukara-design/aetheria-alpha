@@ -1,0 +1,24 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-kink",
+  "batchId": "nsfw-kink.b0011",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "气味声音 · b0011"
+  },
+  "entries": [
+    {
+      "subcategory": "气味偏好",
+      "name": "气味偏好",
+      "description": "偏好体味或情境气味；≠具体气味sensation。",
+      "tags": [
+        "气味"
+      ],
+      "tier": "non-gore",
+      "id": "lx.nsfw-kink.b0011.0001",
+      "category": "nsfw-kink"
+    }
+  ]
+}

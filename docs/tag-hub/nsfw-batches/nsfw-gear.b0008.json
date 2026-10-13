@@ -1,0 +1,75 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-gear",
+  "batchId": "nsfw-gear.b0008",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Grok Bot",
+    "theme": "群P+露出+机械奸+史莱姆+杂项 · b0008"
+  },
+  "entries": [
+    {
+      "subcategory": "机械拘束",
+      "name": "固定架",
+      "description": "将身体固定于架上的机械拘束装备；与吊缚架分立。",
+      "tags": [
+        "机械奸",
+        "束缚"
+      ],
+      "id": "lx.nsfw-gear.b0008.0001",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "机械装置",
+      "name": "性处理机",
+      "description": "综合机械奸装置总类；细则另开，一条一事。",
+      "tags": [
+        "机械奸"
+      ],
+      "id": "lx.nsfw-gear.b0008.0002",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "机械装置",
+      "name": "抽插柱",
+      "description": "强调往复抽送的柱状机械对接件；对齐对接柱可窄条。",
+      "tags": [
+        "机械奸"
+      ],
+      "id": "lx.nsfw-gear.b0008.0003",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "吸乳器械",
+      "name": "吸乳罩杯",
+      "description": "吸附于乳部、用于挤乳或吸乳刺激的器械罩杯。",
+      "tags": [
+        "机械奸",
+        "乳"
+      ],
+      "id": "lx.nsfw-gear.b0008.0004",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "卵具",
+      "name": "卵",
+      "description": "可操作的卵体道具/载体；材质另挂 material。",
+      "tags": [
+        "产卵"
+      ],
+      "id": "lx.nsfw-gear.b0008.0005",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "卵具",
+      "name": "卵束",
+      "description": "成串卵体道具；若作束缚载体边缘时走本条或 gear 组合。",
+      "tags": [
+        "产卵"
+      ],
+      "id": "lx.nsfw-gear.b0008.0006",
+      "category": "nsfw-gear"
+    }
+  ]
+}
