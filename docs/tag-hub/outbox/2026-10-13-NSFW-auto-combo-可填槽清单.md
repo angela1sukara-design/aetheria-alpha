@@ -105,6 +105,14 @@
 - adult 可填槽：6（['C4', 'C8', 'C9', 'C10', 'C11', 'C12']）
 - 未改 approved 词库；无物种 TF 专条；无未成年人内容
 
+## 正文回填状态（P0+P1）
+
+- 源：`docs/tag-hub/outbox/2026-10-13-故事试写-nsfwcombo-可粘贴正文.md`（标注版同前缀 P0/P1）
+- 工程源：`content/nsfw-auto-combo/prose-fills.json`（构建时写入 `pack.texts`）
+- 已填：C1–C3/C5–C7 中性 start；C4/C8–C12 **双槽**（中性 + `.adult`）共 18 槽
+- 本批未动：`.detail` / choice 结果短句
+- 重建：`node scripts/build-adventure-content.mjs`
+
 ## 相关 path
 
 - `content/nsfw-auto-combo/candidates.json`

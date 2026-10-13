@@ -24,6 +24,7 @@ ComboKey = Material(定词+材质 L) × Part|Locus(L) × Action(L)
 | `scripts/build-adventure-content.mjs` | 构建时合载：tag + profile + encounter 节点 + 行动 |
 | `content/adventure/pack.json` | 生成结果（勿手改；改源后 `node scripts/build-adventure-content.mjs`） |
 | `content/nsfw-auto-combo/candidates.json` | 候选片段清单（编辑/对照用） |
+| `content/nsfw-auto-combo/prose-fills.json` | existing-prose 回填（P0+P1 start/adult；构建覆盖 `pack.texts`） |
 
 ## 如何挂进游戏
 
@@ -60,7 +61,7 @@ const many = enumerateCombos(atoms, { limit: 12 });
 ### 4. 明确不做
 
 - 不改 `docs/tag-hub/nsfw-batches` 审定状态；不把 L 写成已写入的 foundation/progression 假已有（除本卡声明的 `progression:tag.nsfwcombo.active`）。
-- 不装 external AI **existing-prose** 长文回填。
+- 长文回填经 `content/nsfw-auto-combo/prose-fills.json` 合载（P0+P1）；不直接手改 `pack.json`。
 - 不写物种黏液化专条；不写 NPC24。
 
 ## 自检

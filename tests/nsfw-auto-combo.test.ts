@@ -104,3 +104,21 @@ test('adult samples expose gated adult text slots', async () => {
   assert.ok(adultNode);
   assert.ok(adultNode!.conditions.some((c) => c.op === 'preference.adultOptional' && c.value === true));
 });
+
+test('prose-fills applied to start and adult text slots (P0+P1)', async () => {
+  const fills = await json('content/nsfw-auto-combo/prose-fills.json');
+  assert.equal(fills.format, 'aetheria-nsfw-auto-combo-prose-fills');
+  assert.equal(Object.keys(fills.texts).length, 18);
+  const pack = await json('content/adventure/pack.json');
+  for (const [key, body] of Object.entries(fills.texts) as [string, string][]) {
+    assert.equal(pack.texts[key], body, key);
+    assert.ok(!String(body).includes('可填成人正文槽'), key);
+  }
+  // dual-slot adult samples
+  for (const slug of ['c4', 'c8', 'c9', 'c10', 'c11', 'c12']) {
+    assert.ok(pack.texts[`progression:text.node.encounter.nsfwcombo.${slug}`]);
+    assert.ok(pack.texts[`progression:text.node.encounter.nsfwcombo.${slug}.adult`]);
+  }
+  // detail left as combo stub
+  assert.match(pack.texts['progression:text.node.encounter.nsfwcombo.c1.detail'], /组合键/);
+});

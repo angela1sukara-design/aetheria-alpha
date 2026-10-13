@@ -210,6 +210,32 @@ action(
   '定词材质×部位×动作 → 候选遭遇节点；不改审定；成人完整正文另见 adult 门',
   'explore',
 );
+// existing-prose 回填：覆盖 start 中性槽与已有 .adult 槽（.detail / choice 本批不动）
+const proseFillsPath = 'content/nsfw-auto-combo/prose-fills.json';
+let proseFillCount = 0;
+try {
+  const proseFills = await json(proseFillsPath);
+  if (proseFills.format !== 'aetheria-nsfw-auto-combo-prose-fills' || proseFills.schemaVersion !== 1) {
+    throw new Error('prose-fills.json 格式无效。');
+  }
+  for (const [key, body] of Object.entries(proseFills.texts ?? {})) {
+    if (typeof body !== 'string' || !body.trim()) throw new Error(`散文回填空槽：${key}`);
+    if (!(key in p.texts)) throw new Error(`散文回填目标不存在于 pack.texts：${key}`);
+    p.texts[key] = body;
+    proseFillCount += 1;
+    for (const c of nsfwCandidates) {
+      if (c.node.textKey === key) c.fragment = body;
+      if (c.adultTextKey === key) c.adultFragment = body;
+    }
+  }
+} catch (err) {
+  if (err && err.code === 'ENOENT') {
+    // 无回填文件时保留组合器 stub
+  } else {
+    throw err;
+  }
+}
+
 await mkdir('content/nsfw-auto-combo', { recursive: true });
 await writeFile(
   'content/nsfw-auto-combo/candidates.json',
@@ -219,6 +245,7 @@ await writeFile(
       schemaVersion: 1,
       generatedFrom: nsfwAtoms.sourceCard,
       count: nsfwCandidates.length,
+      proseFillsApplied: proseFillCount,
       candidates: nsfwCandidates.map((c) => ({
         sampleId: c.sampleId,
         comboKey: c.comboKey,
@@ -227,6 +254,7 @@ await writeFile(
         proposedRuntimeTags: c.proposedRuntimeTags,
         nodeId: c.node.id,
         fragment: c.fragment,
+        adultFragment: c.adultFragment ?? null,
         fillable: c.fillable,
         adultTextKey: c.adultTextKey,
       })),
@@ -238,4 +266,4 @@ await writeFile(
 
 p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))];p.contributions=p.contributions.slice(0,1);
 await mkdir('content/adventure',{recursive:true});await writeFile('content/adventure/pack.json',JSON.stringify(p,null,2)+'\n');
-console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}.`);
+console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}.`);

@@ -12,4 +12,7 @@
 | 2026-10-12 18:17 | [2026-10-12-tag-rules-delivery-coexistence/](./2026-10-12-tag-rules-delivery-coexistence/) **v1.1.0 试跑切片** | Tag共存规则 | 补 generation-rules（夜间开局）、gel/night when、clinic 昼夜模板互斥、PLAYTEST-SLICE；全库矩阵仍 TBD |
 | 2026-10-13 11:10 | [2026-10-13-nsfw-b0017-ingest.md](./2026-10-13-nsfw-b0017-ingest.md) | 引擎接入 | b0017→tag-hub 收录 + v1→v2 草稿（validate-v2）；待审定未实装 |
 | 2026-10-13 15:02 | [2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md](./2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md) | 故事试写 | proposed-nodes：定词材质×部位×动作自动组合；已合载见 `docs/nsfw-auto-combo.md` |
-- `2026-10-13-NSFW-auto-combo-可填槽清单.md` — NSFW combo 已合载可填槽（节点/textKey/adult）
+| 2026-10-13 15:25 | [2026-10-13-故事试写-nsfwcombo-P0-成人遭遇回填-标注版.md](./2026-10-13-故事试写-nsfwcombo-P0-成人遭遇回填-标注版.md) | 故事试写 | existing-prose：C8/C9/C4/C10/C11/C12 成人遭遇回填（标注+中性回退+可粘贴） |
+| 2026-10-13 15:25 | [2026-10-13-故事试写-nsfwcombo-P1-组合遭遇回填-标注版.md](./2026-10-13-故事试写-nsfwcombo-P1-组合遭遇回填-标注版.md) | 故事试写 | existing-prose：C1/C2/C3/C5/C6/C7 组合遭遇回填 |
+| 2026-10-13 15:25 | [2026-10-13-故事试写-nsfwcombo-可粘贴正文.md](./2026-10-13-故事试写-nsfwcombo-可粘贴正文.md) | 故事试写 | P0+P1 textKey⇒纯正文对照，便于 pack 回填 |
+| 2026-10-13 15:09 | [2026-10-13-NSFW-auto-combo-可填槽清单.md](./2026-10-13-NSFW-auto-combo-可填槽清单.md) | 引擎接入 | NSFW combo 已合载可填槽（节点/textKey/adult） |
