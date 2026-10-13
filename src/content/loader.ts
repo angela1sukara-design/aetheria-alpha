@@ -49,6 +49,10 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (d.pack !== p && !p.manifest.dependencies.some(x => x.id === d.pack.manifest.id)) fail(p, 'UNDECLARED_DEPENDENCY', path, `引用 ${id} 需要显式依赖其包。`, id);
   }
   function checkCondition(p: ContentPack, c: Condition, path: string): void {
+    if ('residentId' in c) {
+      checkResident(p, c.residentId, path);
+      if (c.op === 'resident.memory') ref(p, c.memoryId, 'texts', path);
+    }
     if('target'in c&&c.target?.kind==='npc')ref(p,c.target.id,'npcs',path+'/target');
     if(c.op==='body.matches'){if(c.part.materialId)ref(p,c.part.materialId,'materials',path);if(c.part.morphologyId)ref(p,c.part.morphologyId,'morphologies',path);}
     if((c.op==='environment.light'||c.op==='environment.service')&&c.locationId)ref(p,c.locationId,'locations',path);
@@ -68,6 +72,11 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
+    if (e.op === 'resident.remember') {
+      checkResident(p, e.residentId, path); ref(p, e.memoryId, 'texts', path);
+      const event = context ? definitions.get(context.eventId)?.value as ContentPack['events'][number] | undefined : undefined;
+      if (!event?.residentIds?.includes(e.residentId)) fail(p, 'RESIDENT_MEMORY_CONTEXT', path, '居民记忆须由声明该居民为参与者的事件写入。');
+    }
     if('target'in e&&e.target?.kind==='npc')ref(p,e.target.id,'npcs',path+'/target');
     if(e.op==='environment.setLight')ref(p,e.locationId,'locations',path);
     if (e.op === 'var.change') ref(p, e.id, 'variables', path);
@@ -101,6 +110,12 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
   }
   const starts = sorted.filter(x => x.start);
+  function checkResident(p: ContentPack, residentId: string, path: string): void {
+    if (!p.manifest.requiresCapabilities.includes('quest.binding.v1')) fail(p, 'CAPABILITY_UNDECLARED', path, '居民任务需声明 quest.binding.v1。');
+    const match = /^resident:([a-z][a-z0-9_-]*:[a-z][a-z0-9_.-]*):([a-z][a-z0-9_-]*:[a-z][a-z0-9_.-]*)$/.exec(residentId);
+    if (!match) { fail(p, 'INVALID_RESIDENT_REFERENCE', path, '居民实例 ID 无效。'); return; }
+    ref(p, match[1] as Id, 'locations', path); ref(p, match[2] as Id, 'residentTemplates', path);
+  }
   if (starts.length !== 1) fail(sorted[0] ?? parsePack(input[0]), 'INVALID_ENTRYPOINT', '/start', '必须且只能有一个世界开局入口。');
   for (const p of sorted) {
     if (p.start) ref(p, p.start.locationId, 'locations', '/start/locationId');
@@ -114,6 +129,8 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       a.effects.forEach((x, i) => checkEffect(p, x, `/actions/${a.id}/effects/${i}`, a.context));
     }
     for (const e of p.events) {
+      for (const residentId of e.residentIds ?? []) checkResident(p, residentId, `/events/${e.id}/residentIds`);
+      if (e.textMode === 'fixed' && (!p.manifest.requiresCapabilities.includes('quest.binding.v1') || e.nodes.some(n => n.textVariants.length !== 1))) fail(p, 'FIXED_EVENT_TEXT', `/events/${e.id}`, '固定文本事件需声明任务能力且每节点只有一个文本。');
       for (const npcId of e.participantIds ?? []) ref(p, npcId, 'npcs', `/events/${e.id}/participantIds`);
       // 玩家年龄协议尚未实现；不能因为 NPC 有年龄就开放成人事件。
       if (e.rating === 'adult') fail(p, 'ADULT_PLAYER_UNVERIFIED', `/events/${e.id}/rating`, '本阶段尚无玩家成年资格协议，成人事件不可加载。');

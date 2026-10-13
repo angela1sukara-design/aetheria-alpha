@@ -39,6 +39,7 @@ export interface DistrictDefinitions {
   interactions?: InteractionDef[]; textSlots?: TextSlotDef[]; sceneTexts?: SceneTextDef[]; equipment?: EquipmentDef[];
 }
 export type DistrictEffect =
+  | { op: 'resident.remember'; residentId: string; memoryId: Id }
   | { op: 'world.encounter'; events?: boolean }
   | { op: 'resident.talk' | 'resident.help' }
   | { op: 'combat.start'; id: Id }
@@ -50,6 +51,9 @@ export type DistrictEffect =
   | { op: 'player.create'; name: string; ageYears: number }
   | { op: 'preference.set'; value: boolean };
 export type DistrictCondition =
+  | { op: 'resident.present'; residentId: string }
+  | { op: 'resident.relation'; residentId: string; relation: import('./quest-types.ts').PlayerRelation }
+  | { op: 'resident.memory'; residentId: string; memoryId: Id; value: boolean }
   | { op: 'day.after'; flagId: Id; days: number }
   | { op: 'scene.state'; value: 'active' | 'paused' | 'none' }
   | { op: 'resident.available' }

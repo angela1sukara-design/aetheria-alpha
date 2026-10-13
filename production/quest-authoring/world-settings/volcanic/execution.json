@@ -1,0 +1,722 @@
+{
+  "stages": {
+    "resource_s1": [
+      {
+        "id": "a",
+        "label": "亲自验货，以明确的返修责任换取供货署名",
+        "result": "你亲自验货，以明确的返修责任换取供货署名。取得一份可以持续结算的耐热组件供货契约。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "联合小供货方，把零散订单合成一份长期契约",
+        "result": "你联合小供货方，把零散订单合成一份长期契约。取得一份可以持续结算的耐热组件供货契约。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「被退回的耐热组件」的处理记录",
+        "result": "你用已确认的处理记录解决了本次谈判中的争议，随后完成现场交接。取得一份可以持续结算的耐热组件供货契约。",
+        "requires": [
+          "side:flag.support_1"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s2": [
+      {
+        "id": "a",
+        "label": "完成试产，按交付成果分成换取固定产能",
+        "result": "你完成试产，按交付成果分成换取固定产能。取得耐热设备生产线的固定生产与交付权限。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "接管闲置设备，以承担维护换取独立生产时段",
+        "result": "你接管闲置设备，以承担维护换取独立生产时段。取得耐热设备生产线的固定生产与交付权限。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「谁能使用耐热设备生产线」的处理记录",
+        "result": "你用已确认的处理记录解决了本次谈判中的争议，随后完成现场交接。取得耐热设备生产线的固定生产与交付权限。",
+        "requires": [
+          "side:flag.support_2"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s3": [
+      {
+        "id": "a",
+        "label": "以供货与产能担保重组旧债，换取地热开采额度的优先调配权",
+        "result": "你以供货与产能担保重组旧债，换取地热开采额度的优先调配权。取得地热物资结算网的主要结算与资源分配权。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "联合独立经营者集中表决授权，接管共同结算",
+        "result": "你联合独立经营者集中表决授权，接管共同结算。取得地热物资结算网的主要结算与资源分配权。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「地热物资结算网的隐藏抽成」的处理记录",
+        "result": "你用已确认的处理记录解决了本次谈判中的争议，随后完成现场交接。取得地热物资结算网的主要结算与资源分配权。",
+        "requires": [
+          "side:flag.support_3"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s4": [
+      {
+        "id": "a",
+        "label": "承担旧债与经营责任，接管统一控制权",
+        "result": "你承担旧债与经营责任，接管统一控制权。完成地热物资结算网的实际控制权转移，成为地热寡头。你以地热寡头的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留小供货方的独立经营权，以控股联盟接掌网络",
+        "result": "你保留小供货方的独立经营权，以控股联盟接掌网络。完成地热物资结算网的实际控制权转移，成为地热寡头。你以地热寡头的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s1": [
+      {
+        "id": "a",
+        "label": "恢复据点的控制设备，在现场完成接管演示",
+        "result": "你恢复据点的控制设备，在现场完成接管演示。取得黑岩前哨堡的独立调度与防卫授权。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "与原值守者达成互保约定，以承担防卫取得据点",
+        "result": "你与原值守者达成互保约定，以承担防卫取得据点。取得黑岩前哨堡的独立调度与防卫授权。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「黑岩前哨堡的两份通行约定」的处理记录",
+        "result": "你用已确认的处理记录解决了本次谈判中的争议，随后完成现场交接。取得黑岩前哨堡的独立调度与防卫授权。",
+        "requires": [
+          "side:flag.support_4"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s2": [
+      {
+        "id": "a",
+        "label": "与护理人员划清灼伤护理用品底额，签下持续补给约定",
+        "result": "你与护理人员划清灼伤护理用品底额，签下持续补给约定。落实要塞守备队的持续补给与救护协议。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "接受较少初期配额，用轮值护送换取稳定补给",
+        "result": "你接受较少初期配额，用轮值护送换取稳定补给。落实要塞守备队的持续补给与救护协议。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「先给谁的灼伤护理用品」的处理记录",
+        "result": "你用已确认的处理记录解决了本次谈判中的争议，随后完成现场交接。落实要塞守备队的持续补给与救护协议。",
+        "requires": [
+          "side:flag.support_5"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s3": [
+      {
+        "id": "a",
+        "label": "以已控制的据点与补给提出接管条件，集中指挥权",
+        "result": "你以已控制的据点与补给提出接管条件，集中指挥权。取得地热要塞控制室的统一防卫指挥授权。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "公开挑战旧指挥方案，以现场演练赢得各队授权",
+        "result": "你公开挑战旧指挥方案，以现场演练赢得各队授权。取得地热要塞控制室的统一防卫指挥授权。这项权利已由现场各方确认。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「地热要塞控制室的旧债」的处理记录",
+        "result": "你用已确认的处理记录解决了本次谈判中的争议，随后完成现场交接。取得地热要塞控制室的统一防卫指挥授权。",
+        "requires": [
+          "side:flag.support_6"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s4": [
+      {
+        "id": "a",
+        "label": "签署统一防卫令，直接掌握最高指挥权",
+        "result": "你签署统一防卫令，直接掌握最高指挥权。接管地热要塞控制室并落实各据点的服从约定，成为火山要塞统治者。你以火山要塞统治者的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留各队内部事务权，以共同防卫协议取得最高指挥权",
+        "result": "你保留各队内部事务权，以共同防卫协议取得最高指挥权。接管地热要塞控制室并落实各据点的服从约定，成为火山要塞统治者。你以火山要塞统治者的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ]
+  },
+  "sides": {
+    "side.support_1": {
+      "title": "被退回的耐热组件",
+      "prompt": "一批耐热组件被整批退回，卖方说只有部分有问题，买方不愿再承担风险。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把可用与待修部分分开交易",
+          "result": "双方当场复核分类，愿意为明确可用的部分重新签单。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "保留整批但写明折价与返修责任",
+          "result": "买方接受折价，卖方明确承担返修，争执有了可执行的处理记录。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.support_2": {
+      "title": "谁能使用耐热设备生产线",
+      "prompt": "耐热设备生产线的空闲时段被大客户预订，新生产者只能借到零碎时间。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "与小生产者合并时段申请",
+          "result": "共同申请取得连续时段，各自贡献仍单独记账。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用维护工作换取固定试产时段",
+          "result": "值守人员接受维护交换，试产不再依赖临时空档。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.support_3": {
+      "title": "地热物资结算网的隐藏抽成",
+      "prompt": "地热物资结算网的结算单上多出一项无人说明的抽成，小供货方想直接拒付。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "公开逐项对照原合同",
+          "result": "未被约定的抽成被剔除，双方接受公开后的结算版本。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把争议部分暂存，先结清无争议部分",
+          "result": "供货方拿到确定收入，争议被单独保存等待裁决。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.support_4": {
+      "title": "黑岩前哨堡的两份通行约定",
+      "prompt": "黑岩前哨堡的物资车辆和步行访客使用同一入口，双方都认为对方破坏了通行约定。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "现场演练人车分时进入",
+          "result": "入口按演练次序重新分配，双方见证了可执行的安排。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "为访客保留连续开放的侧道",
+          "result": "物资通行得以继续，访客也获得不依赖临时放行的路径。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.support_5": {
+      "title": "先给谁的灼伤护理用品",
+      "prompt": "要塞守备队希望拿走新到的灼伤护理用品，护理人员坚持必须留下当地居民的储备。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "先保留基本救护储备再配给队伍",
+          "result": "双方接受固定底额，队伍领到剩余物资且不干涉救护。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "队伍分批领取并承担补回责任",
+          "result": "护理人员保住周转余量，队伍签下明确的补回次序。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.support_6": {
+      "title": "地热要塞控制室的旧债",
+      "prompt": "旧承包者以未清债务要求要塞守备队继续服从，账面却把同一笔费用算了两次。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "当场核对并撤销重复计费",
+          "result": "重复费用被双方划除，旧债不再能被无限扩大。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "由共同托管结清争议之外的部分",
+          "result": "确定债务得到偿付，指挥授权与剩余争议被明确分开。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.resident_1": {
+      "title": "不必一样的作息",
+      "prompt": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起给餐具架垫软布",
+          "result": "邻居记住你们共同减少声响，没有要求谁改变作息。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居记住你们共同减少声响，没有要求谁改变作息。"
+        },
+        {
+          "id": "b",
+          "label": "划分清晨可用的静音餐具",
+          "result": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。"
+        }
+      ]
+    },
+    "side.resident_2": {
+      "title": "门边的旧画",
+      "prompt": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留旧画并加新画框",
+          "result": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。"
+        },
+        {
+          "id": "b",
+          "label": "把旧画收进公共纪念册",
+          "result": "邻居接受给墙面换新，也记住旧画被妥善留存。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居接受给墙面换新，也记住旧画被妥善留存。"
+        }
+      ]
+    },
+    "side.resident_3": {
+      "title": "署在样件上的名字",
+      "prompt": "同事完成大半样件，你做了最后修整，署名位置却只有一处。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "并列写上分工",
+          "result": "同事记住你明确写出双方贡献，而没有独占成品署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事记住你明确写出双方贡献，而没有独占成品署名。"
+        },
+        {
+          "id": "b",
+          "label": "署共同小组名并另留工序卡",
+          "result": "同事接受共同署名，具体贡献仍在工序卡上可查。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事接受共同署名，具体贡献仍在工序卡上可查。"
+        }
+      ]
+    },
+    "side.resident_4": {
+      "title": "不想被公开的故事",
+      "prompt": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起改成匿名版本",
+          "result": "熟人确认删去了可识别细节，记住你尊重署名选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人确认删去了可识别细节，记住你尊重署名选择。"
+        },
+        {
+          "id": "b",
+          "label": "把故事留在私人的折页里",
+          "result": "熟人收起折页，记住你没有把一段谈话当成公开许可。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人收起折页，记住你没有把一段谈话当成公开许可。"
+        }
+      ]
+    },
+    "side.resident_5": {
+      "title": "留在地热物资结算网里的旧名",
+      "prompt": "有旧怨的人发现自己的贡献在地热物资结算网的公开记录中被归到你名下。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "共同更正贡献记录",
+          "result": "对方记住你愿意当面纠正署名，接受不再追究这一笔旧怨。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方记住你愿意当面纠正署名，接受不再追究这一笔旧怨。"
+        },
+        {
+          "id": "b",
+          "label": "保留争议说明并补上两人的各自记录",
+          "result": "对方记住你保留了双方说法，接受以清楚边界继续相处。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方记住你保留了双方说法，接受以清楚边界继续相处。"
+        }
+      ]
+    },
+    "side.resident_6": {
+      "title": "欠着一份灼伤护理用品",
+      "prompt": "曾给你提供灼伤护理用品的人正在整理剩余用品，你一直没有机会还清那次人情。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "与对方一起完成用品分类",
+          "result": "对方接受你当场完成的劳动，记住这次旧人情已经结清。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方接受你当场完成的劳动，记住这次旧人情已经结清。"
+        },
+        {
+          "id": "b",
+          "label": "帮对方制作更清楚的取用说明",
+          "result": "对方保留了说明，并记住你用实际帮助偿还了旧人情。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方保留了说明，并记住你用实际帮助偿还了旧人情。"
+        }
+      ]
+    },
+    "side.moment_1": {
+      "title": "要塞调度中心里的短暂停留",
+      "prompt": "要塞调度中心里有人刚刚离开，空位旁留着一张无字卡片。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把卡片压在公共留言册里",
+          "result": "卡片停在新的空白页，留给下一个愿意落笔的人。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把卡片摆到空位正中",
+          "result": "卡片安静地留在空位上，周围声响仍在继续。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.moment_2": {
+      "title": "地热物资交易场的收摊声",
+      "prompt": "地热物资交易场的货箱正在合上，一只空箱的搭扣仍轻轻晃动。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "扣好空箱搭扣",
+          "result": "箱盖稳住，收摊的人朝你点了点头。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把空箱移到挡风处",
+          "result": "搭扣停止晃动，通道也多出一点空位。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.moment_3": {
+      "title": "桌边的空杯",
+      "prompt": "公用桌上留着一只洗净的杯子，杯沿朝着通道。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把杯子倒扣在垫上",
+          "result": "杯底接住了一小片光。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把杯柄转向桌内",
+          "result": "杯子安稳地留在伸手可及的位置。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.moment_4": {
+      "title": "松动的纸角",
+      "prompt": "公共示意图的一角被穿堂风掀起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用现成纸夹夹住",
+          "result": "图纸安静下来，旁边的说明重新露出。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把纸角折入透明套",
+          "result": "纸面留下小折痕，不再拍打墙面。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.moment_5": {
+      "title": "窗帘留一道缝",
+      "prompt": "休息位旁的帘子遮住了窗外的公共花盆。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘子束在一侧",
+          "result": "花盆和柔和的光一起露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只留一道窄缝",
+          "result": "一线光落在空座的扶手上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.moment_6": {
+      "title": "给空白页一个折角",
+      "prompt": "共用留言册翻到最后一页，那里还没有字。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "画一小段无名纹样",
+          "result": "空白页多了一段不占地方的线条。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把书签移到这一页",
+          "result": "后来的人会先翻到这处空白。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    }
+  }
+}

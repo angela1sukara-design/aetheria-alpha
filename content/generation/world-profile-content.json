@@ -1,0 +1,312 @@
+{
+  "manifest": {
+    "id": "aetheria/world-settings",
+    "namespace": "worlds",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria world profile authoring",
+    "status": "reviewed",
+    "dependencies": [
+      {
+        "id": "aetheria/foundation",
+        "version": "1.0.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "foundation.v2"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": [],
+  "tags": [
+    {
+      "id": "worlds:setting.cyberpunk",
+      "label": "赛博都市",
+      "definition": "当前世界题材为赛博都市；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.cyberpunk"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.post-apocalypse",
+      "label": "废土",
+      "definition": "当前世界题材为废土；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.post-apocalypse"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.space-station",
+      "label": "太空站",
+      "definition": "当前世界题材为太空站；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.space-station"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.desert",
+      "label": "沙漠戈壁",
+      "definition": "当前世界题材为沙漠戈壁；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.desert"
+        },
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.gobi"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.floating",
+      "label": "天空浮空",
+      "definition": "当前世界题材为天空浮空；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.floating"
+        },
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.sky"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.volcanic",
+      "label": "火山熔岩",
+      "definition": "当前世界题材为火山熔岩；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.volcanic"
+        },
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.lava"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.underground",
+      "label": "矿道地下城",
+      "definition": "当前世界题材为矿道地下城；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.underground"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.polar",
+      "label": "雪原极地",
+      "definition": "当前世界题材为雪原极地；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.polar"
+        },
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.snowfield"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.jungle",
+      "label": "丛林雨林",
+      "definition": "当前世界题材为丛林雨林；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.jungle"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.steampunk",
+      "label": "蒸汽朋克",
+      "definition": "当前世界题材为蒸汽朋克；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.steampunk"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.xianxia",
+      "label": "仙侠洞府",
+      "definition": "当前世界题材为仙侠洞府；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.xianxia"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.underwater",
+      "label": "海底水下",
+      "definition": "当前世界题材为海底水下；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.underwater"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.fantasy",
+      "label": "奇幻城镇城堡",
+      "definition": "当前世界题材为奇幻城镇城堡；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.fantasy"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.modern",
+      "label": "现代都市校园",
+      "definition": "当前世界题材为现代都市校园；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.modern"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.harbor",
+      "label": "港口船舶",
+      "definition": "当前世界题材为港口船舶；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.harbor"
+        },
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.ship"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.dungeon",
+      "label": "奇幻地牢墓穴",
+      "definition": "当前世界题材为奇幻地牢墓穴；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.dungeon"
+        },
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.grave"
+        }
+      ]
+    },
+    {
+      "id": "worlds:setting.western",
+      "label": "西部拓荒",
+      "definition": "当前世界题材为西部拓荒；与湿润、干燥等生态独立。",
+      "facets": [
+        "setting"
+      ],
+      "status": "active",
+      "aliases": [
+        {
+          "scope": "generation.v1",
+          "value": "general-taxonomy:setting.western"
+        }
+      ]
+    }
+  ]
+}

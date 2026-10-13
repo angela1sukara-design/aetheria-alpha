@@ -13,7 +13,7 @@ npm run build
 
 Windows 双击 `start_game.bat`，浏览器打开 `http://localhost:4173/`。也可运行 `npm run dev`。`dist/` 是本地构建结果，Git 仓库不附带构建、依赖和浏览器。
 
-构建后，可直接打开 `dist/Aetheria-Alpha-0.2.html`；两个离线街区在 `dist/WorldGenerator-Seed-7.html` 和 `dist/WorldGenerator-Seed-42.html`。开发模板 `index.html` 需通过服务器加载。
+构建后，可直接打开 `dist/Aetheria-Alpha-0.2.html`；两个离线世界示例在 `dist/WorldGenerator-Seed-7.html` 和 `dist/WorldGenerator-Seed-42.html`。在“世界”页可指定 17 种世界题材或按种子选择，地点、组织、终局和任务随世界 Tag 绑定，生态环境独立生成。开发模板 `index.html` 需通过服务器加载。
 
 ```sh
 npm run check
@@ -41,6 +41,7 @@ npm run check
 
 - [foundation v0.4](docs/foundation-v0.4.md)、[Tag 映射](docs/foundation-tag-mapping.md)、[兼容性与验证](docs/foundation-v0.4-validation.md)：当前实体、参数、语义查询及存档增量接口。
 - [世界生成器 v0.2](docs/world-generator-v0.2.md)、[词库接入](docs/worldgen-lexicon-integration.md)、[首批词条验收](docs/lexicon-delivery-2026-10-11.md)：生成与原始词库接入范围。
+- [世界 Tag 与任务配置](docs/world-profiles.md)：当前 17 种世界、共享地点服务、两条主线路线、每世界 18 条支线配置及存档兼容。
 - [UI 子页](docs/ui-pages-update.md)、[操作流程优化](docs/ui-ux-2026-10-12.md)：导航、保存状态与行动展示。
 - [内容、Tag 与固定故事规范](docs/content-tag-story-standard.md)：Alpha 0.2 阶段的制作参考；涉及 Tag 注册表、参数与存档的旧描述，以当前 foundation 和 v2 文档为准。
 - [实施前 Tag 审计](docs/tag-audit-2026-10-12/decision-summary.md)：保留问题来源与证据；其中“待实现”描述对应审计时点，不能作为当前功能清单。

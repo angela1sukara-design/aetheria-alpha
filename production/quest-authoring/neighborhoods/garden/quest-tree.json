@@ -1,0 +1,385 @@
+{
+  "mainQuest": {
+    "id": "main.garden_apex",
+    "goal": "站上顶点：在林荫街区成为种源总藏主，或成为绿廊议长。",
+    "paths": [
+      {
+        "id": "path.resource",
+        "style": "种源经营：成为种源总藏主",
+        "stages": [
+          {
+            "id": "resource_s1",
+            "name": "一匣有来历的种子",
+            "locationType": "market",
+            "objective": "取得可追溯种源的保管与交换资格。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.1",
+            "actions": [
+              "逐份展示留种记录，以公开来源换取资格",
+              "先接管少量常见种，以试行交换取得资格",
+              "采用「同名的两袋种子」的处理记录，完成一匣有来历的种子"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "resource_s2"
+            ]
+          },
+          {
+            "id": "resource_s2",
+            "name": "不让一季绝收",
+            "locationType": "workshop",
+            "objective": "验收能够分开保存种源的储藏架。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.2",
+            "actions": [
+              "组装隔层架并演示独立取放",
+              "把旧架拆成多个小格，完成分散保管验收",
+              "采用「会串味的木格」的处理记录，完成不让一季绝收"
+            ],
+            "requires": [
+              "main:flag.resource.1"
+            ],
+            "next": [
+              "resource_s3"
+            ]
+          },
+          {
+            "id": "resource_s3",
+            "name": "谁来留下一季",
+            "locationType": "commons",
+            "objective": "签订跨苗圃的留种与回补契约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.3",
+            "actions": [
+              "按发芽记录议定回补份额，保留共享种源",
+              "由各苗圃分散留种，以互换副本达成契约",
+              "采用「留种还是开席」的处理记录，完成谁来留下一季"
+            ],
+            "requires": [
+              "main:flag.resource.2"
+            ],
+            "next": [
+              "resource_s4"
+            ]
+          },
+          {
+            "id": "resource_s4",
+            "name": "打开总藏",
+            "locationType": "home",
+            "objective": "接掌街区种源总藏名册，成为种源总藏主。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "公开保管与借种规则，接管总藏登记",
+              "保留苗圃的育种署名，接管统一交换目录"
+            ],
+            "requires": [
+              "main:flag.resource.3"
+            ],
+            "next": []
+          }
+        ]
+      },
+      {
+        "id": "path.stewardship",
+        "style": "绿廊共治：成为绿廊议长",
+        "stages": [
+          {
+            "id": "stewardship_s1",
+            "name": "根与门槛",
+            "locationType": "home",
+            "objective": "取得连廊住户共同签认的步道维护席位。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.1",
+            "actions": [
+              "重排门前花槽，保留树根与行人空间",
+              "约定分季移盆，以轮值维护换取通行权",
+              "采用「花槽占了门槛」的处理记录，完成根与门槛"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "stewardship_s2"
+            ]
+          },
+          {
+            "id": "stewardship_s2",
+            "name": "能歇脚的绿廊",
+            "locationType": "clinic",
+            "objective": "落实面向不同身体的绿廊休息点安排。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.2",
+            "actions": [
+              "试摆宽窄两类座位，按通行情况定稿",
+              "保留无椅休息位，以靠栏与坐席组合定稿",
+              "采用「座椅下的新芽」的处理记录，完成能歇脚的绿廊"
+            ],
+            "requires": [
+              "main:flag.stewardship.1"
+            ],
+            "next": [
+              "stewardship_s3"
+            ]
+          },
+          {
+            "id": "stewardship_s3",
+            "name": "枝架承得住谁",
+            "locationType": "workshop",
+            "objective": "通过跨院连廊的承重与通行方案。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.3",
+            "actions": [
+              "在样架上演示分段支撑，完成共同验收",
+              "降低同时通行人数，验收保留旧架的方案",
+              "采用「枝架上的空档」的处理记录，完成枝架承得住谁"
+            ],
+            "requires": [
+              "main:flag.stewardship.2"
+            ],
+            "next": [
+              "stewardship_s4"
+            ]
+          },
+          {
+            "id": "stewardship_s4",
+            "name": "树冠下的议席",
+            "locationType": "commons",
+            "objective": "获授绿廊维护与使用争议的议长席，成为绿廊议长。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "公布通行优先章程并接受各院推举",
+              "设苗圃与住户轮值副席，接掌联席主持权"
+            ],
+            "requires": [
+              "main:flag.stewardship.3"
+            ],
+            "next": []
+          }
+        ]
+      }
+    ],
+    "journal": [
+      {
+        "unlockFlag": "main:flag.started",
+        "text": "站上顶点：在林荫街区成为种源总藏主，或成为绿廊议长。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.1",
+        "text": "不让一季绝收：验收能够分开保存种源的储藏架。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.2",
+        "text": "谁来留下一季：签订跨苗圃的留种与回补契约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.3",
+        "text": "打开总藏：接掌街区种源总藏名册，成为种源总藏主。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.1",
+        "text": "能歇脚的绿廊：落实面向不同身体的绿廊休息点安排。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.2",
+        "text": "枝架承得住谁：通过跨院连廊的承重与通行方案。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.3",
+        "text": "树冠下的议席：获授绿廊维护与使用争议的议长席，成为绿廊议长。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.top_reached",
+        "text": "你已取得本街区的最高席位。未完成的当地事务仍可继续。"
+      }
+    ]
+  },
+  "sideQuests": [
+    {
+      "id": "side.garden.support_1",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "两袋同名种子来自不同苗圃，摊主想合并标签出售。 当地选择：保留来源并分袋交换，或制作混种说明另立编号。",
+      "flag": "side:flag.garden.support_1",
+      "effectOnMain": "为种源经营第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「同名的两袋种子」：保留来源并分袋交换，或制作混种说明另立编号。无需返回报信。"
+    },
+    {
+      "id": "side.garden.support_2",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "新储藏架省下隔板，却让不同种源的空袋混在一起。 当地选择：加隔板保留每格样袋，或用独立小盒代替整层隔板。",
+      "flag": "side:flag.garden.support_2",
+      "effectOnMain": "为种源经营第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「会串味的木格」：加隔板保留每格样袋，或用独立小盒代替整层隔板。无需返回报信。"
+    },
+    {
+      "id": "side.garden.support_3",
+      "type": "main-related",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "丰收宴想用掉最后一批好种，苗圃担心下一季没有余量。 当地选择：先封存留种份再安排宴席，或借出部分种源并签回补约定。",
+      "flag": "side:flag.garden.support_3",
+      "effectOnMain": "为种源经营第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「留种还是开席」：先封存留种份再安排宴席，或借出部分种源并签回补约定。无需返回报信。"
+    },
+    {
+      "id": "side.garden.support_4",
+      "type": "main-related",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "邻门的花槽遮住门槛边缘，搬走又会伤到攀援茎。 当地选择：一起编一副临时托架，或分步挪盆并保留过渡绳。",
+      "flag": "side:flag.garden.support_4",
+      "effectOnMain": "为绿廊共治第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「花槽占了门槛」：一起编一副临时托架，或分步挪盆并保留过渡绳。无需返回报信。"
+    },
+    {
+      "id": "side.garden.support_5",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息椅下冒出新芽，直接搬椅会使入口变窄。 当地选择：移栽新芽到边缘空槽，或把座椅改排在槽外两侧。",
+      "flag": "side:flag.garden.support_5",
+      "effectOnMain": "为绿廊共治第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「座椅下的新芽」：移栽新芽到边缘空槽，或把座椅改排在槽外两侧。无需返回报信。"
+    },
+    {
+      "id": "side.garden.support_6",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "连廊样架有一段便于推车却压住通气口。 当地选择：改用窄条跨架，或留出空档另铺绕行小板。",
+      "flag": "side:flag.garden.support_6",
+      "effectOnMain": "为绿廊共治第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「枝架上的空档」：改用窄条跨架，或留出空档另铺绕行小板。无需返回报信。"
+    },
+    {
+      "id": "side.garden.resident_1",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。 当地选择：一起给餐具架垫软布，或划分清晨可用的静音餐具。",
+      "flag": "side:flag.garden.resident_1",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不必一样的作息」：一起给餐具架垫软布，或划分清晨可用的静音餐具。无需返回报信。"
+    },
+    {
+      "id": "side.garden.resident_2",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。 当地选择：保留旧画并加新画框，或把旧画收进公共纪念册。",
+      "flag": "side:flag.garden.resident_2",
+      "effectOnMain": null,
+      "journalText": "在当地处理「门边的旧画」：保留旧画并加新画框，或把旧画收进公共纪念册。无需返回报信。"
+    },
+    {
+      "id": "side.garden.resident_3",
+      "type": "character",
+      "locationType": "workshop",
+      "requiresRelation": "colleague",
+      "objective": "同事完成大半样件，你做了最后修整，署名位置却只有一处。 当地选择：并列写上分工，或署共同小组名并另留工序卡。",
+      "flag": "side:flag.garden.resident_3",
+      "effectOnMain": null,
+      "journalText": "在当地处理「署在样件上的名字」：并列写上分工，或署共同小组名并另留工序卡。无需返回报信。"
+    },
+    {
+      "id": "side.garden.resident_4",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "acquaintance",
+      "objective": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。 当地选择：一起改成匿名版本，或把故事留在私人的折页里。",
+      "flag": "side:flag.garden.resident_4",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不想被公开的故事」：一起改成匿名版本，或把故事留在私人的折页里。无需返回报信。"
+    },
+    {
+      "id": "side.garden.resident_5",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "grudge",
+      "objective": "旧识仍记得你们因遮路枝条争吵，他带来两份修剪草图。 当地选择：共同画出最少修剪范围，或保留枝条改画绕行线。",
+      "flag": "side:flag.garden.resident_5",
+      "effectOnMain": null,
+      "journalText": "在当地处理「被剪短的那一枝」：共同画出最少修剪范围，或保留枝条改画绕行线。无需返回报信。"
+    },
+    {
+      "id": "side.garden.resident_6",
+      "type": "character",
+      "locationType": "clinic",
+      "requiresRelation": "debt",
+      "objective": "曾替你照料盆栽的人在护理站歇脚，想把照料笔记交还。 当地选择：一起把笔记补成轮值卡，或把笔记改成可共享的简页。",
+      "flag": "side:flag.garden.resident_6",
+      "effectOnMain": null,
+      "journalText": "在当地处理「欠着一季照料」：一起把笔记补成轮值卡，或把笔记改成可共享的简页。无需返回报信。"
+    },
+    {
+      "id": "side.garden.moment_1",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "透过树冠的光落在一张空白卡片上。 当地选择：描下此刻的叶影，或把卡片轻轻转半圈。",
+      "flag": "side:flag.garden.moment_1",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.garden.moment_2",
+      "type": "atmosphere",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "摊主留了一只已经取空种子的干荚供人把玩。 当地选择：轻摇干荚，或用指节敲敲荚背。",
+      "flag": "side:flag.garden.moment_2",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.garden.moment_3",
+      "type": "atmosphere",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "公用桌上留着一只洗净的杯子，杯沿朝着通道。 当地选择：把杯子倒扣在垫上，或把杯柄转向桌内。",
+      "flag": "side:flag.garden.moment_3",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.garden.moment_4",
+      "type": "atmosphere",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "公共示意图的一角被穿堂风掀起。 当地选择：用现成纸夹夹住，或把纸角折入透明套。",
+      "flag": "side:flag.garden.moment_4",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.garden.moment_5",
+      "type": "atmosphere",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息位旁的帘子遮住了窗外的公共花盆。 当地选择：把帘子束在一侧，或只留一道窄缝。",
+      "flag": "side:flag.garden.moment_5",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.garden.moment_6",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "共用留言册翻到最后一页，那里还没有字。 当地选择：画一小段无名纹样，或把书签移到这一页。",
+      "flag": "side:flag.garden.moment_6",
+      "effectOnMain": null,
+      "journalText": null
+    }
+  ],
+  "relationRules": {
+    "types": [
+      "colleague",
+      "neighbor",
+      "acquaintance",
+      "grudge",
+      "debt"
+    ],
+    "perResident": "1-2",
+    "usage": "主线/支线只引用关系类型，生成器负责绑定具体居民 ID；共同经历只记录已选分支。"
+  }
+}

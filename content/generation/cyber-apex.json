@@ -1,0 +1,720 @@
+{
+  "format": "aetheria-quest-content",
+  "schemaVersion": 1,
+  "id": "aetheria/cyber-apex",
+  "version": "1.0.0",
+  "sourceHash": "047a55703eba7693dd2c916480be780ef822405f2a085a288c71a3a3a1372420",
+  "source": {
+    "mainQuest": {
+      "id": "main.cyber_apex",
+      "goal": "站上顶点：掌握以太都市最大财团的控股权，成为首富；或取得全城防务指挥权，成为军阀。",
+      "paths": [
+        {
+          "id": "path.capital",
+          "style": "资本：从街头交易者成为财团所有者",
+          "stages": [
+            {
+              "id": "capital_s1",
+              "name": "霓虹下的第一份契约",
+              "locationType": "market",
+              "objective": "取得一份以自己名义登记、可持续结算的芯片供货契约。零散收入不能代替契约登记。",
+              "flag": "main:flag.capital.contract",
+              "actions": [
+                "与摊商当场核对芯片样品，以共同承担退货责任换取署名供货契约。",
+                "核对公开报价并现场谈判，承接被财团放弃的小批量订单，登记独立供货契约。",
+                "报价被拒后，改为签署利润较低的寄售契约；仍取得署名结算权，不必完成任何支线。"
+              ],
+              "requires": [
+                "main:flag.started"
+              ],
+              "next": [
+                "capital_s2"
+              ]
+            },
+            {
+              "id": "capital_s2",
+              "name": "让流水线署上你的名字",
+              "locationType": "workshop",
+              "objective": "为供货契约落实一条经过当场验收的生产配额，取得设备使用与成品交付的书面权限。",
+              "flag": "main:flag.capital.production",
+              "actions": [
+                "与工坊共同完成试产和验收，以订单分成换取生产配额。",
+                "拆检闲置生产台并完成试产，以承担维护工作换取生产配额。",
+                "若存在 side:flag.batch_verified，可使用已核验的批次资料直接进入验收；仍须完成配额登记，推进同一阶段旗标。",
+                "试产方案被否决时，选择产量较低的标准工序重新验收，保留供货契约和当前进度。"
+              ],
+              "requires": [
+                "main:flag.capital.contract"
+              ],
+              "next": [
+                "capital_s3"
+              ]
+            },
+            {
+              "id": "capital_s3",
+              "name": "买下锁链的另一端",
+              "locationType": "market",
+              "objective": "在公开清算席取得都市最大财团的控股凭证；拿到传闻或账本副本不算完成。",
+              "flag": "main:flag.capital.controlling_share",
+              "actions": [
+                "把供货契约与生产配额作为重组条件，当场谈妥债转股，取得控股凭证。",
+                "联合小供货商逐项确认表决授权，以合并持股取得控股凭证。",
+                "若存在 side:flag.debt_clause_exposed，可在清算席出示已公开的隐藏条款，要求按修正协议办理控股交割。",
+                "直接收购被拒时，改走公开重组听证并接受保留原雇员的条款；仍可取得同一控股凭证。"
+              ],
+              "requires": [
+                "main:flag.capital.production"
+              ],
+              "next": [
+                "capital_s4"
+              ]
+            },
+            {
+              "id": "capital_s4",
+              "name": "城市资产的最终署名",
+              "locationType": "commons",
+              "objective": "在公共登记终端完成最大财团的控制权交割，公开确认首富身份，达成统一终局“站上顶点”。",
+              "flag": "main:flag.top_reached",
+              "actions": [
+                "公开控股凭证及债务承担方案，在公证席签署控制权交割，成为首富。",
+                "保留工坊和供货商的自治条款，签署仍由自己控股的联盟章程，完成交割并成为首富。",
+                "若拒绝当前交割条款，暂时离开且不写入终局旗标；以后可在原登记终端重新选择。"
+              ],
+              "requires": [
+                "main:flag.capital.controlling_share"
+              ],
+              "next": []
+            }
+          ]
+        },
+        {
+          "id": "path.warlord",
+          "style": "武力：以装备、补给和指挥授权建立军阀统治",
+          "stages": [
+            {
+              "id": "warlord_s1",
+              "name": "断线哨站",
+              "locationType": "workshop",
+              "objective": "在本地工坊完成哨站指挥终端的检修与接管，取得可验证的哨站控制密钥。",
+              "flag": "main:flag.warlord.outpost",
+              "actions": [
+                "拆检废弃指挥终端并现场恢复线路，将哨站控制密钥登记到自己名下。",
+                "与守站人员当场完成控制权交接，以承担哨站维护责任换取控制密钥。",
+                "终端拒绝原认证时，使用公开的离线维护流程重新验收；取得同一控制密钥，不要求随机战斗掉落。"
+              ],
+              "requires": [
+                "main:flag.started"
+              ],
+              "next": [
+                "warlord_s2"
+              ]
+            },
+            {
+              "id": "warlord_s2",
+              "name": "让队伍撑过下一夜",
+              "locationType": "clinic",
+              "objective": "在诊所完成哨站急救物资的清点、分配与补给协议签署，落实队伍的持续补给权限。",
+              "flag": "main:flag.warlord.supply",
+              "actions": [
+                "与医护人员当场清点急救包，以保护公开救治通道的承诺签下补给协议。",
+                "承接诊所储备柜的整理与值守安排，按双方确认的配额签下补给协议。",
+                "若存在 side:flag.batch_verified，可使用批次核验资料简化清点；仍须确认救治通道和补给权限。",
+                "优先配给遭拒时，接受较少配额且不排挤平民救治的方案；推进同一补给旗标。"
+              ],
+              "requires": [
+                "main:flag.warlord.outpost"
+              ],
+              "next": [
+                "warlord_s3"
+              ]
+            },
+            {
+              "id": "warlord_s3",
+              "name": "收拢枪口的方向",
+              "locationType": "commons",
+              "objective": "在公共防务席完成各哨站指挥授权的集中签署，取得防务总控密钥。威胁或口头效忠不能代替授权。",
+              "flag": "main:flag.warlord.command",
+              "actions": [
+                "展示哨站控制密钥和已落实的补给协议，以统一值守、统一补给的章程换取指挥授权。",
+                "用公开的布防推演挑战旧指挥方案，以现场认可的接管协议集中指挥授权。",
+                "若存在 side:flag.debt_clause_exposed，可展示旧防务承包商的无效债务条款，以解除债务胁迫为条件办理指挥交接。",
+                "全面接管被拒时，接受保留各哨站内部人事权的章程；战略指挥仍统一交给玩家，取得同一总控密钥。"
+              ],
+              "requires": [
+                "main:flag.warlord.supply"
+              ],
+              "next": [
+                "warlord_s4"
+              ]
+            },
+            {
+              "id": "warlord_s4",
+              "name": "最高指挥席",
+              "locationType": "home",
+              "objective": "在自己的安全屋启用防务总控密钥，签署最高指挥令，成为掌握全城防务的军阀，达成统一终局“站上顶点”。",
+              "flag": "main:flag.top_reached",
+              "actions": [
+                "启用总控密钥并签署集中指挥令，以直接统辖的方式成为军阀。",
+                "启用总控密钥并签署保留地方自治的防务盟约，以拥有最终战略裁决权的方式成为军阀。",
+                "若拒绝启用总控密钥，暂时退出且不写入终局旗标；以后可返回安全屋继续。"
+              ],
+              "requires": [
+                "main:flag.warlord.command"
+              ],
+              "next": []
+            }
+          ]
+        }
+      ],
+      "journal": [
+        {
+          "unlockFlag": "main:flag.started",
+          "text": "站上顶点：去集市取得署名供货契约，走资本路线；或去工坊接管哨站终端，走军阀路线。两条路线可以同时准备，支线均非必做。"
+        },
+        {
+          "unlockFlag": "main:flag.capital.contract",
+          "text": "资本路线：去工坊完成试产与验收，为供货契约落实生产配额。可以合作分成，也可以自行检修生产台。"
+        },
+        {
+          "unlockFlag": "main:flag.capital.production",
+          "text": "资本路线：去集市的公开清算席，以债转股或联合持股取得最大财团的控股凭证。"
+        },
+        {
+          "unlockFlag": "main:flag.capital.controlling_share",
+          "text": "资本路线：去公共空间的登记终端办理控制权交割。确认章程后，你将以首富身份站上顶点。"
+        },
+        {
+          "unlockFlag": "main:flag.warlord.outpost",
+          "text": "军阀路线：去诊所清点急救储备，签下补给协议。必须落实补给权限，不能只获得口头支持。"
+        },
+        {
+          "unlockFlag": "main:flag.warlord.supply",
+          "text": "军阀路线：去公共空间的防务席集中指挥授权。可以提交统一补给章程，也可以提出布防推演方案。"
+        },
+        {
+          "unlockFlag": "main:flag.warlord.command",
+          "text": "军阀路线：回自己的安全屋启用防务总控密钥，选择直接统辖或保留地方自治，签署最高指挥令。"
+        },
+        {
+          "unlockFlag": "main:flag.top_reached",
+          "text": "你已站上顶点。首富的交割书或军阀的指挥令已经生效；尚未处理的街区事务仍可继续。"
+        }
+      ]
+    },
+    "sideQuests": [
+      {
+        "id": "side.batch_verification",
+        "type": "main-related",
+        "locationType": "workshop",
+        "requiresRelation": "colleague",
+        "objective": "与同事当场拆验两组混标芯片，选择重新分拣或更正标签，完成双方认可的批次核验；无需另找人报信。",
+        "flag": "side:flag.batch_verified",
+        "effectOnMain": "资本第二阶段和军阀第二阶段可检查此旗标，分别开放使用核验资料的验收或清点选项。所有基础完成方式保留，不替玩家写入主线阶段旗标。",
+        "journalText": "在工坊与同事拆验混标芯片，当场完成分拣或标签更正；此事可选，完成后能帮助生产验收和补给清点。"
+      },
+      {
+        "id": "side.debt_clause",
+        "type": "main-related",
+        "locationType": "market",
+        "requiresRelation": "acquaintance",
+        "objective": "与熟人在公开交易终端逐条对照租赁账目，选择公开隐藏担保条款或共同签署撤销担保书，在本地完成条款纠正。",
+        "flag": "side:flag.debt_clause_exposed",
+        "effectOnMain": "资本第三阶段和军阀第三阶段可检查此旗标，开放依据已纠正债务条款进行谈判的选项。没有该旗标仍可走原有重组或指挥交接方案。",
+        "journalText": "在集市与熟人对照租赁账目，公开隐藏条款或共同撤销担保；无需回报，完成后可用于清算与防务谈判。"
+      },
+      {
+        "id": "side.shared_wall",
+        "type": "character",
+        "locationType": "home",
+        "requiresRelation": "neighbor",
+        "objective": "与邻居共同调整共用隔音板，现场试听后选择保留警报提示音或彻底静音，并确认双方都接受的设置。完成时仅为在场居民记录共同调试隔音板的记忆。",
+        "flag": "side:flag.shared_wall_set",
+        "effectOnMain": null,
+        "journalText": "与邻居在住处试听隔音板，商定警报提示音的设置，当场完成。"
+      },
+      {
+        "id": "side.old_grudge",
+        "type": "character",
+        "locationType": "commons",
+        "requiresRelation": "grudge",
+        "objective": "与有过节的居民在公共终端共同回看一段双方均能查看的旧监控，选择签署和解说明或明确今后的往来边界。两种选择都完成此事，但记忆分别记录和解或保持距离，不自动改变关系类型。",
+        "flag": "side:flag.old_grudge_addressed",
+        "effectOnMain": null,
+        "journalText": "与有过节的居民在公共终端回看旧监控；可以和解，也可以明确边界，无需接受对方全部解释。"
+      },
+      {
+        "id": "side.settle_care_debt",
+        "type": "character",
+        "locationType": "clinic",
+        "requiresRelation": "debt",
+        "objective": "与存在人情债的居民共同整理护理柜，选择以当场协助结清旧人情，或双方明确不再互相追索。只有双方确认后写入完成旗标和各自亲历的记忆，不模拟债务利息或自动追债。",
+        "flag": "side:flag.care_debt_addressed",
+        "effectOnMain": null,
+        "journalText": "在诊所与对方整理护理柜，协商结清旧人情或停止追索；选择必须得到双方当场确认。"
+      },
+      {
+        "id": "side.neon_frequency",
+        "type": "atmosphere",
+        "locationType": "commons",
+        "requiresRelation": null,
+        "objective": "拨动公共收音台的旋钮，选择保留雨声或播放旧城广播，当场听完一句收台提示。",
+        "flag": "side:flag.neon_frequency_set",
+        "effectOnMain": null,
+        "journalText": null
+      },
+      {
+        "id": "side.last_demo_chip",
+        "type": "atmosphere",
+        "locationType": "market",
+        "requiresRelation": null,
+        "objective": "在摊位试听展示芯片，选择循环一段旧广告或清除杂音，现场完成试听。",
+        "flag": "side:flag.demo_chip_heard",
+        "effectOnMain": null,
+        "journalText": null
+      }
+    ],
+    "relationRules": {
+      "types": [
+        "colleague",
+        "neighbor",
+        "acquaintance",
+        "grudge",
+        "debt"
+      ],
+      "perResident": "1-2",
+      "usage": "主线与支线只引用关系类型；生成器在新世界生成时依据相同种子、内容版本和稳定排序绑定具体居民 ID、地点 ID，并保存绑定快照。关系保持轻量静态标签；共同经历只写入实际在场者的 NPC memory，不触发实时关系演化。没有匹配居民的支线不生成，不影响主线；角色任务绑定后始终使用同一居民。"
+    }
+  },
+  "execution": {
+    "stages": {
+      "capital_s1": [
+        {
+          "id": "sample",
+          "label": "核验样品，签署共担退货契约",
+          "result": "你与摊商逐片核对样品，把退货责任写进协议。第一份以你署名、可以持续结算的供货契约登记完成。",
+          "requires": [],
+          "minutes": 15,
+          "energy": 3,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "small_order",
+          "label": "承接小批量订单",
+          "result": "你核对公开报价，承接大财团放弃的小单。独立供货契约已登记，结算权属于你。",
+          "requires": [],
+          "minutes": 25,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "consignment",
+          "label": "接受低利润的寄售方案",
+          "result": "对方拒绝了原报价，你改签利润较低的寄售契约。收入空间更窄，但署名结算权已经落实。",
+          "requires": [],
+          "minutes": 30,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ],
+      "capital_s2": [
+        {
+          "id": "shared",
+          "label": "共同试产，以分成换取配额",
+          "result": "你与工坊完成试产，逐项签下验收单。工坊保留分成，你取得设备使用和交付配额。",
+          "requires": [],
+          "minutes": 25,
+          "energy": 3,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "standard",
+          "label": "使用低产量标准工序验收",
+          "result": "你放弃冒险的高产方案，改用较慢的标准工序。样品通过验收，生产配额正式登记。",
+          "requires": [],
+          "minutes": 40,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "verified",
+          "label": "凭已核验批次资料办理验收",
+          "result": "已核验的批次资料省去了重复拆检。你仍亲自确认设备权限并签下配额登记，供货契约现在有了稳定的生产安排。",
+          "requires": [
+            "side:flag.batch_verified"
+          ],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ],
+      "capital_s3": [
+        {
+          "id": "restructure",
+          "label": "以供货和生产协议债转股",
+          "result": "公开清算席认可你的持续供货安排。你承担重组协议列明的责任，取得最大财团的控股凭证。",
+          "requires": [],
+          "minutes": 30,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "alliance",
+          "label": "联合小供货商确认表决授权",
+          "result": "供货商逐项签署表决授权。联盟合并持股，你取得最终控股凭证，同时承诺保留原雇员。",
+          "requires": [],
+          "minutes": 40,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "corrected",
+          "label": "依据已纠正的债务条款交割",
+          "result": "你出示已公开更正的担保条款，旧清算方案被修订。控股交割按修正协议办理，你取得有效凭证。",
+          "requires": [
+            "side:flag.debt_clause_exposed"
+          ],
+          "minutes": 15,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ],
+      "capital_s4": [
+        {
+          "id": "direct",
+          "label": "签署集中控制的交割书",
+          "result": "公共登记终端确认最大财团的控制权交割。你的名字成为城市最大资产集团的最终署名。你以首富身份站上顶点。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "charter",
+          "label": "保留工坊自治，签署控股章程",
+          "result": "工坊与供货商保留自治条款，你持有最终控股权。交割书正式生效。你以联盟首富的身份站上顶点。",
+          "requires": [],
+          "minutes": 15,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ],
+      "warlord_s1": [
+        {
+          "id": "repair",
+          "label": "检修指挥终端并接管密钥",
+          "result": "你拆检断线终端，恢复离线维护线路。验收通过后，哨站控制密钥登记在你名下。",
+          "requires": [],
+          "minutes": 20,
+          "energy": 3,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "handover",
+          "label": "承担维护责任，办理控制权交接",
+          "result": "你接受哨站的维护责任，通过公开交接手续取得控制密钥。哨站终端认得你的授权。",
+          "requires": [],
+          "minutes": 30,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "offline",
+          "label": "改用离线维护流程重新验收",
+          "result": "原认证无法使用，你按公开维护流程重新验收终端。新的控制密钥已签发，之前的努力没有白费。",
+          "requires": [],
+          "minutes": 40,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ],
+      "warlord_s2": [
+        {
+          "id": "passage",
+          "label": "清点急救包，保障公开救治通道",
+          "result": "你清点急救包并确认救治通道不受哨站封锁。诊所签署持续补给协议，你的队伍有了明确的配额。",
+          "requires": [],
+          "minutes": 25,
+          "energy": 3,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "limited",
+          "label": "接受不挤占平民救治的较少配额",
+          "result": "优先配给未获认可。你改用较少配额的协议，平民救治不受挤占，哨站的持续补给权限仍然成立。",
+          "requires": [],
+          "minutes": 35,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "verified",
+          "label": "凭批次核验资料确认补给",
+          "result": "核验资料省去了重复清点。你确认开放救治通道并签下补给权限，哨站获得约定配额。",
+          "requires": [
+            "side:flag.batch_verified"
+          ],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ],
+      "warlord_s3": [
+        {
+          "id": "supply",
+          "label": "以统一补给章程集中指挥授权",
+          "result": "你展示控制密钥与补给协议，各哨站签署统一值守章程。防务总控密钥正式交到你手里。",
+          "requires": [],
+          "minutes": 30,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "drill",
+          "label": "完成公开布防推演，保留地方人事权",
+          "result": "公开推演指出旧布防方案的缺口。各哨站保留内部人事权，你取得最终战略指挥授权和总控密钥。",
+          "requires": [],
+          "minutes": 40,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "release",
+          "label": "以解除无效债务办理指挥交接",
+          "result": "已纠正的担保条款揭开了旧承包商的债务胁迫。防务席认可解除协议，指挥授权集中到你手中。",
+          "requires": [
+            "side:flag.debt_clause_exposed"
+          ],
+          "minutes": 15,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ],
+      "warlord_s4": [
+        {
+          "id": "direct",
+          "label": "启用密钥，签署直接统辖令",
+          "result": "安全屋里的终端接受防务总控密钥。最高指挥令签署完成，各哨站的战略调度归你裁决。你以军阀身份站上顶点。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "alliance",
+          "label": "保留地方自治，签署最高防务盟约",
+          "result": "你启用总控密钥，承认地方自治，同时保留最终战略裁决权。防务盟约生效，你以军阀身份站上顶点。",
+          "requires": [],
+          "minutes": 15,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "sides": {
+      "side.batch_verification": {
+        "title": "混标芯片",
+        "choices": [
+          {
+            "id": "sort",
+            "label": "共同拆验，重新分拣",
+            "result": "你们逐片拆验并重新分拣。双方确认批次资料有效，这份记录可用于之后的验收和补给清点。",
+            "requires": [],
+            "minutes": 15,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们一起拆验过混标芯片，重新分拣后确认了批次。"
+          },
+          {
+            "id": "label",
+            "label": "对照样品，更正批次标签",
+            "result": "你们对照样品改正错误标签，并共同确认核验记录。事情在工作台前就处理完了。",
+            "requires": [],
+            "minutes": 10,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们一起更正了芯片标签，共同确认了核验记录。"
+          }
+        ],
+        "prompt": "两箱芯片的标签混在了一起。你的同事把样品和登记表摆上工作台，等你一起决定如何核验这一批货。"
+      },
+      "side.debt_clause": {
+        "title": "担保书里的暗门",
+        "choices": [
+          {
+            "id": "publish",
+            "label": "共同核对并公开隐藏条款",
+            "result": "你们逐条对照公开账目，将未被告知的担保条款更正并公开。修订记录已经生效，无需另找人回报。",
+            "requires": [],
+            "minutes": 15,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们一起核对租赁账目，公开并纠正了隐藏担保条款。"
+          },
+          {
+            "id": "withdraw",
+            "label": "共同签署撤销担保书",
+            "result": "你们在终端共同签署撤销担保书。隐藏条款的更正记录随之公开，旧担保不再有效。",
+            "requires": [],
+            "minutes": 10,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们一起签署撤销担保书，公开更正了旧条款。"
+          }
+        ],
+        "prompt": "熟人把租赁账目投在公开终端上：原本只租一张摊位，附页却要求为承包商担保。你们可以逐项公开纠正，也可以共同撤销这份担保。"
+      },
+      "side.shared_wall": {
+        "title": "一墙之隔",
+        "choices": [
+          {
+            "id": "alarm",
+            "label": "保留警报提示，隔绝其他噪声",
+            "result": "你们反复试听，将警报提示保留在双方都能接受的音量。隔音板设置确认完毕。",
+            "requires": [],
+            "minutes": 10,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们一起调试隔音板，约定保留低音量的警报提示。"
+          },
+          {
+            "id": "quiet",
+            "label": "约定彻底静音",
+            "result": "你们试听了静音效果，双方接受这套设置。之后是否调整，可以另行协商。",
+            "requires": [],
+            "minutes": 10,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们一起调试隔音板，双方同意彻底静音。"
+          }
+        ],
+        "prompt": "隔墙不断传来机械提示音。邻居愿意和你一起试听隔音板的设置，留下必要警报，或约定彻底安静。"
+      },
+      "side.old_grudge": {
+        "title": "监控里的旧怨",
+        "choices": [
+          {
+            "id": "reconcile",
+            "label": "核对监控，签署和解说明",
+            "result": "你们核对双方可见的旧监控，对争议事实形成共同说明，并当场签署和解。旧事不会被抹去，你们也记得这次和解。",
+            "requires": [],
+            "minutes": 15,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们共同回看了旧监控，并签署和解说明。"
+          },
+          {
+            "id": "boundary",
+            "label": "核对事实，明确往来边界",
+            "result": "你没有接受对方全部解释。双方仍确认了能证实的事实，并约定今后的往来边界。",
+            "requires": [],
+            "minutes": 15,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们共同回看了旧监控，没有和解，但确认了今后的往来边界。"
+          }
+        ],
+        "prompt": "公共终端调出了双方都能查看的旧监控。画面并不能解释所有争执，但你们可以就能证实的事实和解，也可以明确今后的边界。"
+      },
+      "side.settle_care_debt": {
+        "title": "护理柜旁的人情债",
+        "choices": [
+          {
+            "id": "help",
+            "label": "共同整理护理柜，结清旧人情",
+            "result": "你们一起清点整理护理柜，对方当场确认这次协助足以结清旧人情。这段共同经历会被记住。",
+            "requires": [],
+            "minutes": 15,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们共同整理护理柜，双方确认结清了旧人情。"
+          },
+          {
+            "id": "release",
+            "label": "共同清点，约定不再追索",
+            "result": "护理柜清点完成。你们明确确认不再互相追索这份旧人情，各自保留决定今后往来的权利。",
+            "requires": [],
+            "minutes": 15,
+            "energy": 0,
+            "complete": true,
+            "memory": "我们共同清点护理柜，并确认不再追索旧人情。"
+          }
+        ],
+        "prompt": "旧人情一直悬在你们之间。对方打开护理柜，愿意与你一同清点，并当面商定这份旧人情如何了结。"
+      },
+      "side.neon_frequency": {
+        "title": "雨声频段",
+        "choices": [
+          {
+            "id": "rain",
+            "label": "保留雨声",
+            "result": "旋钮停在雨声最清楚的位置。收音台低声提示：本次调频结束。",
+            "requires": [],
+            "minutes": 1,
+            "energy": 0,
+            "complete": true,
+            "memory": null
+          },
+          {
+            "id": "broadcast",
+            "label": "播放旧城广播",
+            "result": "旧城广播从杂音里浮起：夜班结束的人，请慢慢回家。收台提示随即响起。",
+            "requires": [],
+            "minutes": 1,
+            "energy": 0,
+            "complete": true,
+            "memory": null
+          }
+        ],
+        "prompt": "公共收音台混着雨声和旧城广播。你把手放在旋钮上，两段声音都近在耳边。"
+      },
+      "side.last_demo_chip": {
+        "title": "最后一枚展示芯片",
+        "choices": [
+          {
+            "id": "advert",
+            "label": "循环一段旧广告",
+            "result": "展示芯片亮起：明天，从更好的义体开始。你听完这句过时的广告，结束试听。",
+            "requires": [],
+            "minutes": 1,
+            "energy": 0,
+            "complete": true,
+            "memory": null
+          },
+          {
+            "id": "clean",
+            "label": "清除杂音后试听",
+            "result": "你调整试听接口，杂音褪去，只剩一句清晰的收尾：愿你拥有自己的明天。",
+            "requires": [],
+            "minutes": 1,
+            "energy": 0,
+            "complete": true,
+            "memory": null
+          }
+        ],
+        "prompt": "摊位上还剩最后一枚试听芯片。广告声断断续续，你可以听完旧广告，也可以先调清杂音。"
+      }
+    }
+  }
+}

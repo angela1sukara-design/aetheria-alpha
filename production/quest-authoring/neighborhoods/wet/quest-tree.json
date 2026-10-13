@@ -1,0 +1,385 @@
+{
+  "mainQuest": {
+    "id": "main.wet_apex",
+    "goal": "站上顶点：在雾潮街区成为百渠总管，或成为雨棚盟首。",
+    "paths": [
+      {
+        "id": "path.resource",
+        "style": "水务经营：成为百渠总管",
+        "stages": [
+          {
+            "id": "resource_s1",
+            "name": "第一段水渠",
+            "locationType": "market",
+            "objective": "取得公共支渠的维护承包权。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.1",
+            "actions": [
+              "按实际耗材报价，签下分段维护合同",
+              "联合摊户共担维护工时，签下合办合同",
+              "采用「下游的第一桶水」的处理记录，完成第一段水渠"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "resource_s2"
+            ]
+          },
+          {
+            "id": "resource_s2",
+            "name": "泵房的两把钥匙",
+            "locationType": "workshop",
+            "objective": "取得两座泵房共同认可的调度资格。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.2",
+            "actions": [
+              "在试验台演示错峰启泵，完成验收",
+              "采用人工交替值守方案，完成低负荷验收",
+              "采用「两种响声」的处理记录，完成泵房的两把钥匙"
+            ],
+            "requires": [
+              "main:flag.resource.1"
+            ],
+            "next": [
+              "resource_s3"
+            ]
+          },
+          {
+            "id": "resource_s3",
+            "name": "上游与下游",
+            "locationType": "commons",
+            "objective": "使上下游代表签署统一分水章程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.3",
+            "actions": [
+              "按人口分配基本水额，再安排经营用水",
+              "保留各渠旧水额，以轮流停泵平衡总量",
+              "采用「最后一道闸」的处理记录，完成上游与下游"
+            ],
+            "requires": [
+              "main:flag.resource.2"
+            ],
+            "next": [
+              "resource_s4"
+            ]
+          },
+          {
+            "id": "resource_s4",
+            "name": "百渠合印",
+            "locationType": "home",
+            "objective": "接掌全街区水务总印，成为百渠总管。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "签下统一维修与供水责任书",
+              "保留支渠自治，把总调度权写入联营章程"
+            ],
+            "requires": [
+              "main:flag.resource.3"
+            ],
+            "next": []
+          }
+        ]
+      },
+      {
+        "id": "path.stewardship",
+        "style": "避雨互助：成为雨棚盟首",
+        "stages": [
+          {
+            "id": "stewardship_s1",
+            "name": "雨棚下留一个位置",
+            "locationType": "home",
+            "objective": "取得住户认可的公共避雨棚管理席位。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.1",
+            "actions": [
+              "重排储物架，划出连续的公共避雨位",
+              "实行分时存放，确保夜间全棚开放",
+              "采用「棚角的一只箱子」的处理记录，完成雨棚下留一个位置"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "stewardship_s2"
+            ]
+          },
+          {
+            "id": "stewardship_s2",
+            "name": "干燥的一夜",
+            "locationType": "clinic",
+            "objective": "落实公共雨棚的护理与干燥物资配额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.2",
+            "actions": [
+              "安排先护理后晾晒的分区轮值",
+              "建立小额常备包，由各棚轮流补齐",
+              "采用「先晒谁的毯子」的处理记录，完成干燥的一夜"
+            ],
+            "requires": [
+              "main:flag.stewardship.1"
+            ],
+            "next": [
+              "stewardship_s3"
+            ]
+          },
+          {
+            "id": "stewardship_s3",
+            "name": "把棚与棚连起来",
+            "locationType": "workshop",
+            "objective": "验收连接各雨棚的可拆连廊方案。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.3",
+            "actions": [
+              "现场拼装标准棚扣，测试连廊样段",
+              "沿现有宽檐设计步行接力点，验收线路模型",
+              "采用「会掀起的接缝」的处理记录，完成把棚与棚连起来"
+            ],
+            "requires": [
+              "main:flag.stewardship.2"
+            ],
+            "next": [
+              "stewardship_s4"
+            ]
+          },
+          {
+            "id": "stewardship_s4",
+            "name": "雨夜共同签名",
+            "locationType": "commons",
+            "objective": "获得雨棚联席的召集权，成为雨棚盟首。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "接受各棚公开推举并签署公共通行章程",
+              "以可撤换的任期制度接掌联席召集权"
+            ],
+            "requires": [
+              "main:flag.stewardship.3"
+            ],
+            "next": []
+          }
+        ]
+      }
+    ],
+    "journal": [
+      {
+        "unlockFlag": "main:flag.started",
+        "text": "站上顶点：在雾潮街区成为百渠总管，或成为雨棚盟首。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.1",
+        "text": "泵房的两把钥匙：取得两座泵房共同认可的调度资格。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.2",
+        "text": "上游与下游：使上下游代表签署统一分水章程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.3",
+        "text": "百渠合印：接掌全街区水务总印，成为百渠总管。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.1",
+        "text": "干燥的一夜：落实公共雨棚的护理与干燥物资配额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.2",
+        "text": "把棚与棚连起来：验收连接各雨棚的可拆连廊方案。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.3",
+        "text": "雨夜共同签名：获得雨棚联席的召集权，成为雨棚盟首。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.top_reached",
+        "text": "你已取得本街区的最高席位。未完成的当地事务仍可继续。"
+      }
+    ]
+  },
+  "sideQuests": [
+    {
+      "id": "side.wet.support_1",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "摊户想把清晨全部水额包走，下游洗菜摊会错过开市。 当地选择：保留基本水额再售余量，或交换早晚两个取水时段。",
+      "flag": "side:flag.wet.support_1",
+      "effectOnMain": "为水务经营第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「下游的第一桶水」：保留基本水额再售余量，或交换早晚两个取水时段。无需返回报信。"
+    },
+    {
+      "id": "side.wet.support_2",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "旧泵的异响与棚扣的振动混在一起，样机验收争执不下。 当地选择：分开运行两段样机，或降低负载逐段听辨。",
+      "flag": "side:flag.wet.support_2",
+      "effectOnMain": "为水务经营第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「两种响声」：分开运行两段样机，或降低负载逐段听辨。无需返回报信。"
+    },
+    {
+      "id": "side.wet.support_3",
+      "type": "main-related",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "分水草案让末端住户承担全部停泵时间。 当地选择：按受影响户数重排停泵，或用维护轮值抵扣停泵时段。",
+      "flag": "side:flag.wet.support_3",
+      "effectOnMain": "为水务经营第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「最后一道闸」：按受影响户数重排停泵，或用维护轮值抵扣停泵时段。无需返回报信。"
+    },
+    {
+      "id": "side.wet.support_4",
+      "type": "main-related",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "雨棚转角堆着一只旧箱，挪走能多容一人，但箱主无处存放。 当地选择：把箱子抬上共用高架，或重新划分白天与夜间储物位。",
+      "flag": "side:flag.wet.support_4",
+      "effectOnMain": "为避雨互助第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「棚角的一只箱子」：把箱子抬上共用高架，或重新划分白天与夜间储物位。无需返回报信。"
+    },
+    {
+      "id": "side.wet.support_5",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "护理毯和住户的湿衣挤在同一副晾架上。 当地选择：分出护理用品专用半架，或按干燥速度轮换挂位。",
+      "flag": "side:flag.wet.support_5",
+      "effectOnMain": "为避雨互助第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「先晒谁的毯子」：分出护理用品专用半架，或按干燥速度轮换挂位。无需返回报信。"
+    },
+    {
+      "id": "side.wet.support_6",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "新连廊样段节省材料，却在转角留下迎风接缝。 当地选择：转动棚扣让接缝背风，或加可拆压条保留旧扣。",
+      "flag": "side:flag.wet.support_6",
+      "effectOnMain": "为避雨互助第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「会掀起的接缝」：转动棚扣让接缝背风，或加可拆压条保留旧扣。无需返回报信。"
+    },
+    {
+      "id": "side.wet.resident_1",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。 当地选择：一起给餐具架垫软布，或划分清晨可用的静音餐具。",
+      "flag": "side:flag.wet.resident_1",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不必一样的作息」：一起给餐具架垫软布，或划分清晨可用的静音餐具。无需返回报信。"
+    },
+    {
+      "id": "side.wet.resident_2",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。 当地选择：保留旧画并加新画框，或把旧画收进公共纪念册。",
+      "flag": "side:flag.wet.resident_2",
+      "effectOnMain": null,
+      "journalText": "在当地处理「门边的旧画」：保留旧画并加新画框，或把旧画收进公共纪念册。无需返回报信。"
+    },
+    {
+      "id": "side.wet.resident_3",
+      "type": "character",
+      "locationType": "workshop",
+      "requiresRelation": "colleague",
+      "objective": "同事完成大半样件，你做了最后修整，署名位置却只有一处。 当地选择：并列写上分工，或署共同小组名并另留工序卡。",
+      "flag": "side:flag.wet.resident_3",
+      "effectOnMain": null,
+      "journalText": "在当地处理「署在样件上的名字」：并列写上分工，或署共同小组名并另留工序卡。无需返回报信。"
+    },
+    {
+      "id": "side.wet.resident_4",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "acquaintance",
+      "objective": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。 当地选择：一起改成匿名版本，或把故事留在私人的折页里。",
+      "flag": "side:flag.wet.resident_4",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不想被公开的故事」：一起改成匿名版本，或把故事留在私人的折页里。无需返回报信。"
+    },
+    {
+      "id": "side.wet.resident_5",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "grudge",
+      "objective": "旧怨来自一次积水争执：你们各自画的水位线互相覆盖。 当地选择：共同重画两次实测位置，或保留各自版本并标明时刻。",
+      "flag": "side:flag.wet.resident_5",
+      "effectOnMain": null,
+      "journalText": "在当地处理「被划掉的水位线」：共同重画两次实测位置，或保留各自版本并标明时刻。无需返回报信。"
+    },
+    {
+      "id": "side.wet.resident_6",
+      "type": "character",
+      "locationType": "clinic",
+      "requiresRelation": "debt",
+      "objective": "当初替你挡雨的人还留着那块破布，想把它补成护理垫。 当地选择：一起补好边角，或帮忙裁成两块小垫。",
+      "flag": "side:flag.wet.resident_6",
+      "effectOnMain": null,
+      "journalText": "在当地处理「欠下的一块干布」：一起补好边角，或帮忙裁成两块小垫。无需返回报信。"
+    },
+    {
+      "id": "side.wet.moment_1",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "两只接水桶敲出错落的雨声，挪一点位置便会变调。 当地选择：把两桶靠近，或把一桶移到檐边。",
+      "flag": "side:flag.wet.moment_1",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.wet.moment_2",
+      "type": "atmosphere",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "雾气蒙住了摊前价签的透明罩。 当地选择：擦开中间一小块，或掀起罩沿晾一晾。",
+      "flag": "side:flag.wet.moment_2",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.wet.moment_3",
+      "type": "atmosphere",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "公用桌上留着一只洗净的杯子，杯沿朝着通道。 当地选择：把杯子倒扣在垫上，或把杯柄转向桌内。",
+      "flag": "side:flag.wet.moment_3",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.wet.moment_4",
+      "type": "atmosphere",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "公共示意图的一角被穿堂风掀起。 当地选择：用现成纸夹夹住，或把纸角折入透明套。",
+      "flag": "side:flag.wet.moment_4",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.wet.moment_5",
+      "type": "atmosphere",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息位旁的帘子遮住了窗外的公共花盆。 当地选择：把帘子束在一侧，或只留一道窄缝。",
+      "flag": "side:flag.wet.moment_5",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.wet.moment_6",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "共用留言册翻到最后一页，那里还没有字。 当地选择：画一小段无名纹样，或把书签移到这一页。",
+      "flag": "side:flag.wet.moment_6",
+      "effectOnMain": null,
+      "journalText": null
+    }
+  ],
+  "relationRules": {
+    "types": [
+      "colleague",
+      "neighbor",
+      "acquaintance",
+      "grudge",
+      "debt"
+    ],
+    "perResident": "1-2",
+    "usage": "主线/支线只引用关系类型，生成器负责绑定具体居民 ID；共同经历只记录已选分支。"
+  }
+}

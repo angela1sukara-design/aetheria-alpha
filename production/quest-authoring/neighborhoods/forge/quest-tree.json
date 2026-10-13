@@ -1,0 +1,385 @@
+{
+  "mainQuest": {
+    "id": "main.forge_apex",
+    "goal": "站上顶点：在炉巷街区成为百炉总匠，或成为工联执印人。",
+    "paths": [
+      {
+        "id": "path.resource",
+        "style": "工艺联营：成为百炉总匠",
+        "stages": [
+          {
+            "id": "resource_s1",
+            "name": "废料也有身价",
+            "locationType": "market",
+            "objective": "取得可追溯回炉材料的联营份额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.1",
+            "actions": [
+              "按成分分档议价，以分拣工时换取份额",
+              "从低杂质小批料起步，签下试行联营契约",
+              "采用「混进来的亮片」的处理记录，完成废料也有身价"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "resource_s2"
+            ]
+          },
+          {
+            "id": "resource_s2",
+            "name": "一把不必专用的尺",
+            "locationType": "workshop",
+            "objective": "通过各工坊都可复用的样件验收。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.2",
+            "actions": [
+              "现场修整公差，完成互换样件测试",
+              "保留两档规格，以转接件完成兼容测试",
+              "采用「差半格的样规」的处理记录，完成一把不必专用的尺"
+            ],
+            "requires": [
+              "main:flag.resource.1"
+            ],
+            "next": [
+              "resource_s3"
+            ]
+          },
+          {
+            "id": "resource_s3",
+            "name": "炉与炉之间",
+            "locationType": "commons",
+            "objective": "签订跨工坊的产能与维护互助章程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.3",
+            "actions": [
+              "用轮流停炉维护换取共同接单权",
+              "保留各坊独立接单，把溢出工单交给联营",
+              "采用「空下来的炉时」的处理记录，完成炉与炉之间"
+            ],
+            "requires": [
+              "main:flag.resource.2"
+            ],
+            "next": [
+              "resource_s4"
+            ]
+          },
+          {
+            "id": "resource_s4",
+            "name": "百炉共用一印",
+            "locationType": "home",
+            "objective": "接掌跨坊工艺验收总印，成为百炉总匠。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "公开验收样规，以统一质量责任接印",
+              "保留各坊工艺署名，接掌联营验收权"
+            ],
+            "requires": [
+              "main:flag.resource.3"
+            ],
+            "next": []
+          }
+        ]
+      },
+      {
+        "id": "path.stewardship",
+        "style": "工联共治：成为工联执印人",
+        "stages": [
+          {
+            "id": "stewardship_s1",
+            "name": "先有喘息的位置",
+            "locationType": "clinic",
+            "objective": "与工人确认公共净尘与恢复位使用公约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.1",
+            "actions": [
+              "把恢复时段计入轮值表，保证人人可用",
+              "设短歇与长歇两区，以轮换提高座位利用",
+              "采用「满灰的靠背」的处理记录，完成先有喘息的位置"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "stewardship_s2"
+            ]
+          },
+          {
+            "id": "stewardship_s2",
+            "name": "工时写在谁名下",
+            "locationType": "market",
+            "objective": "落实工人可核对的工单结算约定。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.2",
+            "actions": [
+              "逐项拆开材料与工时报价，现场签认",
+              "采用最低工时保底，把超额成果另行分配",
+              "采用「算不到的准备工」的处理记录，完成工时写在谁名下"
+            ],
+            "requires": [
+              "main:flag.stewardship.1"
+            ],
+            "next": [
+              "stewardship_s3"
+            ]
+          },
+          {
+            "id": "stewardship_s3",
+            "name": "停炉也有次序",
+            "locationType": "workshop",
+            "objective": "使各坊签认公共检修停炉的执行协议。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.3",
+            "actions": [
+              "以轮换停炉保留共同冷却余量",
+              "先停低负荷炉，验收检修与复工交接流程",
+              "采用「冷渠边的两份工单」的处理记录，完成停炉也有次序"
+            ],
+            "requires": [
+              "main:flag.stewardship.2"
+            ],
+            "next": [
+              "stewardship_s4"
+            ]
+          },
+          {
+            "id": "stewardship_s4",
+            "name": "工联落印",
+            "locationType": "commons",
+            "objective": "获授工联公共工单与检修章程的执印权，成为工联执印人。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "接受工坊代表公开推举并签认申诉程序",
+              "设轮值监督席，在可撤换的章程下接印"
+            ],
+            "requires": [
+              "main:flag.stewardship.3"
+            ],
+            "next": []
+          }
+        ]
+      }
+    ],
+    "journal": [
+      {
+        "unlockFlag": "main:flag.started",
+        "text": "站上顶点：在炉巷街区成为百炉总匠，或成为工联执印人。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.1",
+        "text": "一把不必专用的尺：通过各工坊都可复用的样件验收。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.2",
+        "text": "炉与炉之间：签订跨工坊的产能与维护互助章程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.3",
+        "text": "百炉共用一印：接掌跨坊工艺验收总印，成为百炉总匠。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.1",
+        "text": "工时写在谁名下：落实工人可核对的工单结算约定。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.2",
+        "text": "停炉也有次序：使各坊签认公共检修停炉的执行协议。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.3",
+        "text": "工联落印：获授工联公共工单与检修章程的执印权，成为工联执印人。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.top_reached",
+        "text": "你已取得本街区的最高席位。未完成的当地事务仍可继续。"
+      }
+    ]
+  },
+  "sideQuests": [
+    {
+      "id": "side.forge.support_1",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "回炉料里混着外观相似的异材亮片，摊主想整批降价。 当地选择：按样片逐类分拣，或保留混合批次并注明用途限制。",
+      "flag": "side:flag.forge.support_1",
+      "effectOnMain": "为工艺联营第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「混进来的亮片」：按样片逐类分拣，或保留混合批次并注明用途限制。无需返回报信。"
+    },
+    {
+      "id": "side.forge.support_2",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "两个工坊的量尺差半格，谁都不愿承认自家样件不合格。 当地选择：共同制作一件对照样，或为两档尺寸各做转接环。",
+      "flag": "side:flag.forge.support_2",
+      "effectOnMain": "为工艺联营第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「差半格的样规」：共同制作一件对照样，或为两档尺寸各做转接环。无需返回报信。"
+    },
+    {
+      "id": "side.forge.support_3",
+      "type": "main-related",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "联营表把闲炉都写成可接单，却没给保养留时间。 当地选择：先锁定轮流保养窗口，或用两坊互代换出整段停炉。",
+      "flag": "side:flag.forge.support_3",
+      "effectOnMain": "为工艺联营第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「空下来的炉时」：先锁定轮流保养窗口，或用两坊互代换出整段停炉。无需返回报信。"
+    },
+    {
+      "id": "side.forge.support_4",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息椅靠背难清理，有人提议撤掉，却有人离不开支撑。 当地选择：加可拆洗的靠背套，或分设有靠背与无靠背坐席。",
+      "flag": "side:flag.forge.support_4",
+      "effectOnMain": "为工联共治第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「满灰的靠背」：加可拆洗的靠背套，或分设有靠背与无靠背坐席。无需返回报信。"
+    },
+    {
+      "id": "side.forge.support_5",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "新工单只付加工费，夹具准备时间被算成无偿。 当地选择：把准备工单独列项，或把准备工摊入最低工时。",
+      "flag": "side:flag.forge.support_5",
+      "effectOnMain": "为工联共治第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「算不到的准备工」：把准备工单独列项，或把准备工摊入最低工时。无需返回报信。"
+    },
+    {
+      "id": "side.forge.support_6",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "两份检修单同时要求占用同一处冷却接口。 当地选择：先做短检修再交接接口，或借助备用接口拆成两路。",
+      "flag": "side:flag.forge.support_6",
+      "effectOnMain": "为工联共治第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「冷渠边的两份工单」：先做短检修再交接接口，或借助备用接口拆成两路。无需返回报信。"
+    },
+    {
+      "id": "side.forge.resident_1",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。 当地选择：一起给餐具架垫软布，或划分清晨可用的静音餐具。",
+      "flag": "side:flag.forge.resident_1",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不必一样的作息」：一起给餐具架垫软布，或划分清晨可用的静音餐具。无需返回报信。"
+    },
+    {
+      "id": "side.forge.resident_2",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。 当地选择：保留旧画并加新画框，或把旧画收进公共纪念册。",
+      "flag": "side:flag.forge.resident_2",
+      "effectOnMain": null,
+      "journalText": "在当地处理「门边的旧画」：保留旧画并加新画框，或把旧画收进公共纪念册。无需返回报信。"
+    },
+    {
+      "id": "side.forge.resident_3",
+      "type": "character",
+      "locationType": "workshop",
+      "requiresRelation": "colleague",
+      "objective": "同事完成大半样件，你做了最后修整，署名位置却只有一处。 当地选择：并列写上分工，或署共同小组名并另留工序卡。",
+      "flag": "side:flag.forge.resident_3",
+      "effectOnMain": null,
+      "journalText": "在当地处理「署在样件上的名字」：并列写上分工，或署共同小组名并另留工序卡。无需返回报信。"
+    },
+    {
+      "id": "side.forge.resident_4",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "acquaintance",
+      "objective": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。 当地选择：一起改成匿名版本，或把故事留在私人的折页里。",
+      "flag": "side:flag.forge.resident_4",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不想被公开的故事」：一起改成匿名版本，或把故事留在私人的折页里。无需返回报信。"
+    },
+    {
+      "id": "side.forge.resident_5",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "grudge",
+      "objective": "旧识一直怪你弄坏公用夹具，但旧锉痕早已无法辨清。 当地选择：一起重修夹口，或保持各自说法，合定借用验收。",
+      "flag": "side:flag.forge.resident_5",
+      "effectOnMain": null,
+      "journalText": "在当地处理「锉痕是谁留下的」：一起重修夹口，或保持各自说法，合定借用验收。无需返回报信。"
+    },
+    {
+      "id": "side.forge.resident_6",
+      "type": "character",
+      "locationType": "clinic",
+      "requiresRelation": "debt",
+      "objective": "曾借你手套的人正在补内衬，旧人情一直没找到归还方式。 当地选择：帮他裁好两片内衬，或陪他把好用的旧布分档。",
+      "flag": "side:flag.forge.resident_6",
+      "effectOnMain": null,
+      "journalText": "在当地处理「一副借来的手套」：帮他裁好两片内衬，或陪他把好用的旧布分档。无需返回报信。"
+    },
+    {
+      "id": "side.forge.moment_1",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "公共桌旁悬着一片废弃样片，轻碰会响。 当地选择：用指节轻叩中间，或扶住边缘再轻叩。",
+      "flag": "side:flag.forge.moment_1",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.forge.moment_2",
+      "type": "atmosphere",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "收摊后的空秤略微偏着，秤盘在风里摆动。 当地选择：轻扶秤盘等它停下，或把挡风片移到秤边。",
+      "flag": "side:flag.forge.moment_2",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.forge.moment_3",
+      "type": "atmosphere",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "公用桌上留着一只洗净的杯子，杯沿朝着通道。 当地选择：把杯子倒扣在垫上，或把杯柄转向桌内。",
+      "flag": "side:flag.forge.moment_3",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.forge.moment_4",
+      "type": "atmosphere",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "公共示意图的一角被穿堂风掀起。 当地选择：用现成纸夹夹住，或把纸角折入透明套。",
+      "flag": "side:flag.forge.moment_4",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.forge.moment_5",
+      "type": "atmosphere",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息位旁的帘子遮住了窗外的公共花盆。 当地选择：把帘子束在一侧，或只留一道窄缝。",
+      "flag": "side:flag.forge.moment_5",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.forge.moment_6",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "共用留言册翻到最后一页，那里还没有字。 当地选择：画一小段无名纹样，或把书签移到这一页。",
+      "flag": "side:flag.forge.moment_6",
+      "effectOnMain": null,
+      "journalText": null
+    }
+  ],
+  "relationRules": {
+    "types": [
+      "colleague",
+      "neighbor",
+      "acquaintance",
+      "grudge",
+      "debt"
+    ],
+    "perResident": "1-2",
+    "usage": "主线/支线只引用关系类型，生成器负责绑定具体居民 ID；共同经历只记录已选分支。"
+  }
+}

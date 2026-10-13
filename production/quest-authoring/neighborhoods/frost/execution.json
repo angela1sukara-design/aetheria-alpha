@@ -1,0 +1,722 @@
+{
+  "stages": {
+    "resource_s1": [
+      {
+        "id": "a",
+        "label": "演示分段隔离检修，换取管段值守权",
+        "result": "你演示分段隔离检修，换取管段值守权。现场约定生效：取得一段公共暖管的检修调度权。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "采用低流量不停供的检修表，取得试行权",
+        "result": "你采用低流量不停供的检修表，取得试行权。现场约定生效：取得一段公共暖管的检修调度权。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「读不准的温差」的处理记录，完成还有余温的管段",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得一段公共暖管的检修调度权。",
+        "requires": [
+          "side:flag.frost.support_1"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s2": [
+      {
+        "id": "a",
+        "label": "按实测保温时长议定交换配额",
+        "result": "你按实测保温时长议定交换配额。现场约定生效：签下跨库房的保温材料储备契约。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "接受分批供货，以降低集中占库换取契约",
+        "result": "你接受分批供货，以降低集中占库换取契约。现场约定生效：签下跨库房的保温材料储备契约。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「厚毡的重量」的处理记录，完成把热留到明天",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。签下跨库房的保温材料储备契约。",
+        "requires": [
+          "side:flag.frost.support_2"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s3": [
+      {
+        "id": "a",
+        "label": "将基本热额置于生产供热之前",
+        "result": "你将基本热额置于生产供热之前。现场约定生效：落实暖网末端与护理站的基本热额。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "用分时升温保证末端轮流回暖，签署热额表",
+        "result": "你用分时升温保证末端轮流回暖，签署热额表。现场约定生效：落实暖网末端与护理站的基本热额。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「最末端的一杯热水」的处理记录，完成冷端也有份",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。落实暖网末端与护理站的基本热额。",
+        "requires": [
+          "side:flag.frost.support_3"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s4": [
+      {
+        "id": "a",
+        "label": "公布热额和检修窗口，接过统一调度权",
+        "result": "你公布热额和检修窗口，接过统一调度权。接掌街区暖网总排程，成为暖网总调度，以暖网总调度的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留分区应急阀权限，接掌跨区热流协调权",
+        "result": "你保留分区应急阀权限，接掌跨区热流协调权。接掌街区暖网总排程，成为暖网总调度，以暖网总调度的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s1": [
+      {
+        "id": "a",
+        "label": "按自愿时段轮值，逐户确认交接位置",
+        "result": "你按自愿时段轮值，逐户确认交接位置。现场约定生效：组织住户确认夜间保温廊道的值守协议。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "采用两户一组的互查制度，确认值守表",
+        "result": "你采用两户一组的互查制度，确认值守表。现场约定生效：组织住户确认夜间保温廊道的值守协议。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「双层门帘」的处理记录，完成门帘后的灯",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。组织住户确认夜间保温廊道的值守协议。",
+        "requires": [
+          "side:flag.frost.support_4"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s2": [
+      {
+        "id": "a",
+        "label": "划出独立的临时休息区并制定轮换规则",
+        "result": "你划出独立的临时休息区并制定轮换规则。现场约定生效：设立不以住户身份为条件的临时回暖配额。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留少量常备位，以短时交接增加可用次数",
+        "result": "你保留少量常备位，以短时交接增加可用次数。现场约定生效：设立不以住户身份为条件的临时回暖配额。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「谁的名字在毯角」的处理记录，完成留给陌生人的毯子",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。设立不以住户身份为条件的临时回暖配额。",
+        "requires": [
+          "side:flag.frost.support_5"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s3": [
+      {
+        "id": "a",
+        "label": "用可移路牌演练单段封闭与绕行",
+        "result": "你用可移路牌演练单段封闭与绕行。现场约定生效：验收夜间廊道封闭与改道的现场演练。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "设双人交接点，演练先接后封的慢速方案",
+        "result": "你设双人交接点，演练先接后封的慢速方案。现场约定生效：验收夜间廊道封闭与改道的现场演练。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「被霜遮住的箭头」的处理记录，完成霜线之前",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。验收夜间廊道封闭与改道的现场演练。",
+        "requires": [
+          "side:flag.frost.support_6"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s4": [
+      {
+        "id": "a",
+        "label": "由各值守组共同署名授予召集权",
+        "result": "你由各值守组共同署名授予召集权。获得跨廊道的夜间守望召集权，成为冬港守望长，以冬港守望长的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "接受任期复核约定，接管冬夜应急联席",
+        "result": "你接受任期复核约定，接管冬夜应急联席。获得跨廊道的夜间守望召集权，成为冬港守望长，以冬港守望长的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ]
+  },
+  "sides": {
+    "side.frost.support_1": {
+      "title": "读不准的温差",
+      "prompt": "两支旧温标读数不同，维修员不愿据此判定管段。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "同放一个校验槽比较",
+          "result": "偏差被记成对照表，原读数没有被掩盖。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只用同一温标逐段复测",
+          "result": "各段差值来自同一支温标，复测次序完整留下。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.support_2": {
+      "title": "厚毡的重量",
+      "prompt": "一批厚毡按重量计价，却因含湿而难与薄毡比较。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "分别称干燥样片再议价",
+          "result": "双方按样片说明重算报价，差异写进仓单。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "改按覆盖面积与保温时长交换",
+          "result": "厚薄毡各有明示用途，双方放弃只比重量。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.support_3": {
+      "title": "最末端的一杯热水",
+      "prompt": "末端护理点想延长供热，中心区担心影响忙时使用。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "错开清洁与回暖时段",
+          "result": "两处按轮换次序用热，末端取得完整回暖窗口。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "保留基本热额后分配余量",
+          "result": "末端的基本额度写入表内，额外需求再公开协调。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.support_4": {
+      "title": "双层门帘",
+      "prompt": "为保温加厚的帘子让夜间交接的人看不清另一侧。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "加一条可掀开的交接缝",
+          "result": "交接双方先看见彼此，再分次掀帘。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "在两层之间留出站位",
+          "result": "交接在帘间完成，廊道不必同时敞开两层。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.support_5": {
+      "title": "谁的名字在毯角",
+      "prompt": "捐来的毯子绣着住户名，陌生访客因此不敢使用。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "加可拆的公共使用套",
+          "result": "原署名保留在内侧，外套清楚标明任何人可用。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把捐赠名录移到旁边册页",
+          "result": "毯子只标用途，捐赠记录留在册中。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.support_6": {
+      "title": "被霜遮住的箭头",
+      "prompt": "演练路牌在灯下清楚，覆上模拟霜层后却只剩轮廓。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "给箭头加凸起边缘",
+          "result": "路牌在遮挡演示中仍能辨认方向。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用两块形状不同的路牌配对",
+          "result": "封闭与绕行的标牌即使看不清字也能区分。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.resident_1": {
+      "title": "不必一样的作息",
+      "prompt": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起给餐具架垫软布",
+          "result": "邻居记住你们共同减少声响，没有要求谁改变作息。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居记住你们共同减少声响，没有要求谁改变作息。"
+        },
+        {
+          "id": "b",
+          "label": "划分清晨可用的静音餐具",
+          "result": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。"
+        }
+      ]
+    },
+    "side.frost.resident_2": {
+      "title": "门边的旧画",
+      "prompt": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留旧画并加新画框",
+          "result": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。"
+        },
+        {
+          "id": "b",
+          "label": "把旧画收进公共纪念册",
+          "result": "邻居接受给墙面换新，也记住旧画被妥善留存。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居接受给墙面换新，也记住旧画被妥善留存。"
+        }
+      ]
+    },
+    "side.frost.resident_3": {
+      "title": "署在样件上的名字",
+      "prompt": "同事完成大半样件，你做了最后修整，署名位置却只有一处。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "并列写上分工",
+          "result": "同事记住你明确写出双方贡献，而没有独占成品署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事记住你明确写出双方贡献，而没有独占成品署名。"
+        },
+        {
+          "id": "b",
+          "label": "署共同小组名并另留工序卡",
+          "result": "同事接受共同署名，具体贡献仍在工序卡上可查。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事接受共同署名，具体贡献仍在工序卡上可查。"
+        }
+      ]
+    },
+    "side.frost.resident_4": {
+      "title": "不想被公开的故事",
+      "prompt": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起改成匿名版本",
+          "result": "熟人确认删去了可识别细节，记住你尊重署名选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人确认删去了可识别细节，记住你尊重署名选择。"
+        },
+        {
+          "id": "b",
+          "label": "把故事留在私人的折页里",
+          "result": "熟人收起折页，记住你没有把一段谈话当成公开许可。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人收起折页，记住你没有把一段谈话当成公开许可。"
+        }
+      ]
+    },
+    "side.frost.resident_5": {
+      "title": "那夜是谁关的帘",
+      "prompt": "旧识认为你提前关帘让他多绕一圈，你记得他晚于约定。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "对照两人的交接记录",
+          "result": "你们分别承认一处记忆误差，留下新的交接时刻。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "你们分别承认一处记忆误差，留下新的交接时刻。"
+        },
+        {
+          "id": "b",
+          "label": "不争旧时刻，重定先接后关",
+          "result": "对方记住你愿意先确认人在场，再关闭门帘。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方记住你愿意先确认人在场，再关闭门帘。"
+        }
+      ]
+    },
+    "side.frost.resident_6": {
+      "title": "还一段暖意",
+      "prompt": "曾让给你热水位的人正在缝一只旧毯套。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "陪他缝好毯套",
+          "result": "对方把完成的毯套叠好，同意人情已还。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方把完成的毯套叠好，同意人情已还。"
+        },
+        {
+          "id": "b",
+          "label": "替他整理可继续使用的布片",
+          "result": "对方获得顺手的布片，也记住你认真完成这次回报。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方获得顺手的布片，也记住你认真完成这次回报。"
+        }
+      ]
+    },
+    "side.frost.moment_1": {
+      "title": "玻璃上的霜花",
+      "prompt": "外窗结出细小霜花，室内暖意正在慢慢融化边缘。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "沿空白处画一个圆",
+          "result": "圆框里留下了一小簇完整的霜花。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "隔着玻璃用掌心暖一角",
+          "result": "一角霜花化成透明水点，外面的灯亮了起来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.moment_2": {
+      "title": "纸袋里的脆声",
+      "prompt": "空纸袋受冷变得挺括，边缘折痕轻轻作响。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把袋口折成平边",
+          "result": "脆声停下，袋子稳稳立在台上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "轻压袋底撑开四角",
+          "result": "空袋膨成方形，发出一声干净的轻响。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.moment_3": {
+      "title": "桌边的空杯",
+      "prompt": "公用桌上留着一只洗净的杯子，杯沿朝着通道。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把杯子倒扣在垫上",
+          "result": "杯底接住了一小片光。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把杯柄转向桌内",
+          "result": "杯子安稳地留在伸手可及的位置。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.moment_4": {
+      "title": "松动的纸角",
+      "prompt": "公共示意图的一角被穿堂风掀起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用现成纸夹夹住",
+          "result": "图纸安静下来，旁边的说明重新露出。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把纸角折入透明套",
+          "result": "纸面留下小折痕，不再拍打墙面。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.moment_5": {
+      "title": "窗帘留一道缝",
+      "prompt": "休息位旁的帘子遮住了窗外的公共花盆。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘子束在一侧",
+          "result": "花盆和柔和的光一起露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只留一道窄缝",
+          "result": "一线光落在空座的扶手上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.frost.moment_6": {
+      "title": "给空白页一个折角",
+      "prompt": "共用留言册翻到最后一页，那里还没有字。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "画一小段无名纹样",
+          "result": "空白页多了一段不占地方的线条。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把书签移到这一页",
+          "result": "后来的人会先翻到这处空白。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    }
+  }
+}

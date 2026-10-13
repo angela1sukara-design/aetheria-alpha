@@ -25,16 +25,27 @@ export interface GenerationRulePack {
 }
 export interface WorldDef {
   id: string; name: string; startLocationId: Id;
+  setting?: import('./profiles.ts').WorldSettingSnapshot;
   regions: { id: string; name: string; environmentTags: string[]; ecologyTags: string[] }[];
   locations: { id: Id; regionId: string; templateId: string; service: Service; tags: string[]; economy: string[]; professions: string[]; factionId: string }[];
   factions: { id: string; templateId: string; name: string; activities: string[]; locationIds: Id[] }[];
   eventPool: Id[];
   // 已生成定义的完整快照；新参考库永远不参与旧档恢复。
   packs: ContentPack[];
+  quests?: import('../core/quest-types.ts').QuestSnapshot;
+  relationshipTree?: MainRelationshipTree;
+}
+export type ResidentRelationKind = 'coworker' | 'neighbor' | 'acquaintance' | 'ally' | 'rival';
+export interface MainRelationshipTree {
+  version: 1; mainQuestId: string; goal: string;
+  paths: { id: string; label: string; coordinatorId: string; memberIds: string[]; stageIds: string[] }[];
+  roles: { stageId: string; pathId: string; label: string; locationId: Id; residentId: string | null }[];
+  sideLinks: { sideId: string; pathIds: string[]; stageIds: string[] }[];
 }
 export interface WorldAgent {
   residentId: string; originLocationId: Id; factionId: string;
-  relationships?: { otherResidentId: string; kind: 'coworker' | 'neighbor' | 'acquaintance'; strength: number }[];
+  playerRelations?: import('../core/quest-types.ts').PlayerRelation[];
+  relationships?: { otherResidentId: string; kind: ResidentRelationKind; strength: number }[];
   schedule: { start: number; end: number; locationId: Id; activity: 'home' | 'work' | 'leisure' }[];
 }
 export interface WorldInstance {

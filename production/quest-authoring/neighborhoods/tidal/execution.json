@@ -1,0 +1,722 @@
+{
+  "stages": {
+    "resource_s1": [
+      {
+        "id": "a",
+        "label": "展示密封样箱，以承担返工换取寄存位",
+        "result": "你展示密封样箱，以承担返工换取寄存位。现场约定生效：取得防潮仓栈的署名寄存契约。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "分批短存并降低占位时长，取得寄存契约",
+        "result": "你分批短存并降低占位时长，取得寄存契约。现场约定生效：取得防潮仓栈的署名寄存契约。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「封口下的一点盐」的处理记录，完成一箱能过潮的货",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得防潮仓栈的署名寄存契约。",
+        "requires": [
+          "side:flag.tidal.support_1"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s2": [
+      {
+        "id": "a",
+        "label": "调整连接扣，完成两种高度的对接演示",
+        "result": "你调整连接扣，完成两种高度的对接演示。现场约定生效：验收能够对接不同栈台的浮架样段。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "增设过渡板，以低载荷方案完成验收",
+        "result": "你增设过渡板，以低载荷方案完成验收。现场约定生效：验收能够对接不同栈台的浮架样段。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「高低两种栈台」的处理记录，完成让浮架相认",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。验收能够对接不同栈台的浮架样段。",
+        "requires": [
+          "side:flag.tidal.support_2"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s3": [
+      {
+        "id": "a",
+        "label": "按存放时长分担损耗，保留公开复核位",
+        "result": "你按存放时长分担损耗，保留公开复核位。现场约定生效：签下各仓栈认可的转存与损耗分担章程。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "按批次互保，把单箱损耗摊入共同储备",
+        "result": "你按批次互保，把单箱损耗摊入共同储备。现场约定生效：签下各仓栈认可的转存与损耗分担章程。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「湿了一角的仓单」的处理记录，完成盐雾中的账",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。签下各仓栈认可的转存与损耗分担章程。",
+        "requires": [
+          "side:flag.tidal.support_3"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s4": [
+      {
+        "id": "a",
+        "label": "公开统一仓单并接管跨栈调仓",
+        "result": "你公开统一仓单并接管跨栈调仓。接掌跨栈联营的总账与调仓权，成为千栈总商，以千栈总商的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留各栈自营份额，接掌联营转存配额",
+        "result": "你保留各栈自营份额，接掌联营转存配额。接掌跨栈联营的总账与调仓权，成为千栈总商，以千栈总商的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s1": [
+      {
+        "id": "a",
+        "label": "改放门前杂物，连出不间断的高处步道",
+        "result": "你改放门前杂物，连出不间断的高处步道。现场约定生效：取得高脚住户共同签认的出入通道维护席。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "约定轮流让出搬运位，保证涨潮时步道通畅",
+        "result": "你约定轮流让出搬运位，保证涨潮时步道通畅。现场约定生效：取得高脚住户共同签认的出入通道维护席。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「门口的一捆绳」的处理记录，完成门外就是潮线",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得高脚住户共同签认的出入通道维护席。",
+        "requires": [
+          "side:flag.tidal.support_4"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s2": [
+      {
+        "id": "a",
+        "label": "按路段分置密封小包，签署轮换补给表",
+        "result": "你按路段分置密封小包，签署轮换补给表。现场约定生效：落实潮路上的护理物资与休息点安排。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "以少量集中储备配合干燥接应位，签下安排",
+        "result": "你以少量集中储备配合干燥接应位，签下安排。现场约定生效：落实潮路上的护理物资与休息点安排。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「密封包里的空白」的处理记录，完成干燥处的接应",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。落实潮路上的护理物资与休息点安排。",
+        "requires": [
+          "side:flag.tidal.support_5"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s3": [
+      {
+        "id": "a",
+        "label": "用浮架模型演示高低潮两条接驳线",
+        "result": "你用浮架模型演示高低潮两条接驳线。现场约定生效：验收栈桥改道与临时断开后的接驳方案。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "采用固定高处绕行，以较长路程换取连续通行",
+        "result": "你采用固定高处绕行，以较长路程换取连续通行。现场约定生效：验收栈桥改道与临时断开后的接驳方案。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「退潮时的断口」的处理记录，完成潮路两端",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。验收栈桥改道与临时断开后的接驳方案。",
+        "requires": [
+          "side:flag.tidal.support_6"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s4": [
+      {
+        "id": "a",
+        "label": "由各栈共同签认航标章程并授予协调权",
+        "result": "你由各栈共同签认航标章程并授予协调权。接掌公共潮路标记与改道协调权，成为潮路领航人，以潮路领航人的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留各段维护人，接掌跨段改道的最终排程",
+        "result": "你保留各段维护人，接掌跨段改道的最终排程。接掌公共潮路标记与改道协调权，成为潮路领航人，以潮路领航人的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ]
+  },
+  "sides": {
+    "side.tidal.support_1": {
+      "title": "封口下的一点盐",
+      "prompt": "样箱封口夹着盐粒，整条封带看起来却完好。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "拆开清理后重新封样",
+          "result": "盐粒被清掉，买卖双方一起见证重新封口。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "改用双层套并保留检查口",
+          "result": "外套挡潮，内层检查口能在交接时复核。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.support_2": {
+      "title": "高低两种栈台",
+      "prompt": "一段浮架接得上高栈，却在低栈侧留下陡坡。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "增加一节缓坡过渡",
+          "result": "两侧坡度在模型上重新对齐，接驳更平缓。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "限制载荷并分两次过架",
+          "result": "旧架仍能使用，低栈侧的承载限制明确。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.support_3": {
+      "title": "湿了一角的仓单",
+      "prompt": "一箱货物受潮，转存双方都认为损耗该由对方承担。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "按交接时的封签状况分担",
+          "result": "双方接受以共同确认的封签记录划分责任。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "从共同储备先补损再修条款",
+          "result": "货主先得到补偿，双方补上了原来缺失的检查约定。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.support_4": {
+      "title": "门口的一捆绳",
+      "prompt": "晾绳占了高处通道，收进屋又会让地板沾湿。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把晾绳架升到侧墙",
+          "result": "绳子继续滴水，脚下的通行空间腾了出来。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "铺接水盘并缩短横向占位",
+          "result": "屋内地板保持干燥，通道也留出连续宽度。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.support_5": {
+      "title": "密封包里的空白",
+      "prompt": "护理包封得严密，外面却看不出内容，拆检容易返潮。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "另做外置内容卡",
+          "result": "不用拆包就能核对用途，封口保持完整。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "按用途分色套袋",
+          "result": "套袋提供快速辨识，详细说明仍保存在干燥册内。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.support_6": {
+      "title": "退潮时的断口",
+      "prompt": "栈桥模型在高潮时接得平稳，退潮后中间出现落差。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "加一段可拆接驳板",
+          "result": "高低潮演示都能接上，板件有了固定存放位。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把低潮路线移到固定高道",
+          "result": "低潮路程变长，但不再依赖浮架高度。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.resident_1": {
+      "title": "不必一样的作息",
+      "prompt": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起给餐具架垫软布",
+          "result": "邻居记住你们共同减少声响，没有要求谁改变作息。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居记住你们共同减少声响，没有要求谁改变作息。"
+        },
+        {
+          "id": "b",
+          "label": "划分清晨可用的静音餐具",
+          "result": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。"
+        }
+      ]
+    },
+    "side.tidal.resident_2": {
+      "title": "门边的旧画",
+      "prompt": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留旧画并加新画框",
+          "result": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。"
+        },
+        {
+          "id": "b",
+          "label": "把旧画收进公共纪念册",
+          "result": "邻居接受给墙面换新，也记住旧画被妥善留存。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居接受给墙面换新，也记住旧画被妥善留存。"
+        }
+      ]
+    },
+    "side.tidal.resident_3": {
+      "title": "署在样件上的名字",
+      "prompt": "同事完成大半样件，你做了最后修整，署名位置却只有一处。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "并列写上分工",
+          "result": "同事记住你明确写出双方贡献，而没有独占成品署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事记住你明确写出双方贡献，而没有独占成品署名。"
+        },
+        {
+          "id": "b",
+          "label": "署共同小组名并另留工序卡",
+          "result": "同事接受共同署名，具体贡献仍在工序卡上可查。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事接受共同署名，具体贡献仍在工序卡上可查。"
+        }
+      ]
+    },
+    "side.tidal.resident_4": {
+      "title": "不想被公开的故事",
+      "prompt": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起改成匿名版本",
+          "result": "熟人确认删去了可识别细节，记住你尊重署名选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人确认删去了可识别细节，记住你尊重署名选择。"
+        },
+        {
+          "id": "b",
+          "label": "把故事留在私人的折页里",
+          "result": "熟人收起折页，记住你没有把一段谈话当成公开许可。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人收起折页，记住你没有把一段谈话当成公开许可。"
+        }
+      ]
+    },
+    "side.tidal.resident_5": {
+      "title": "丢失的系绳结",
+      "prompt": "旧识认为你拆了他的绳结，你只记得那条通道当时被堵住。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起重绑不占道的固定结",
+          "result": "对方接受新结的位置，也愿意结束旧争执。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方接受新结的位置，也愿意结束旧争执。"
+        },
+        {
+          "id": "b",
+          "label": "各用一段绳并标出公共边界",
+          "result": "你们保留各自绳段，对方记住你没有再越过边界。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "你们保留各自绳段，对方记住你没有再越过边界。"
+        }
+      ]
+    },
+    "side.tidal.resident_6": {
+      "title": "那只借来的干袋",
+      "prompt": "曾借你干袋的人想修补袋口，你的人情债还没结清。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "陪他补好袋口",
+          "result": "干袋重新能用，对方接受这次修补作为归还。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "干袋重新能用，对方接受这次修补作为归还。"
+        },
+        {
+          "id": "b",
+          "label": "把旧袋改成两个内衬袋",
+          "result": "对方接受新的用途，并把旧人情划清。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方接受新的用途，并把旧人情划清。"
+        }
+      ]
+    },
+    "side.tidal.moment_1": {
+      "title": "栏杆上的盐花",
+      "prompt": "栏杆背风侧结了一小片盐花，旁边是常被扶握的地方。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把扶握处擦干净",
+          "result": "盐花留在背面，手边恢复光滑。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用卡片描下盐花边缘",
+          "result": "卡片上留下潮水退去后的细碎轮廓。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.moment_2": {
+      "title": "瓶中的潮声",
+      "prompt": "空瓶横放在摊边，风从瓶口吹过。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把瓶口转向海风",
+          "result": "瓶中响起低低的气鸣。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把瓶子竖在软垫上",
+          "result": "气鸣停了，瓶身轻晃后站稳。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.moment_3": {
+      "title": "桌边的空杯",
+      "prompt": "公用桌上留着一只洗净的杯子，杯沿朝着通道。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把杯子倒扣在垫上",
+          "result": "杯底接住了一小片光。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把杯柄转向桌内",
+          "result": "杯子安稳地留在伸手可及的位置。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.moment_4": {
+      "title": "松动的纸角",
+      "prompt": "公共示意图的一角被穿堂风掀起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用现成纸夹夹住",
+          "result": "图纸安静下来，旁边的说明重新露出。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把纸角折入透明套",
+          "result": "纸面留下小折痕，不再拍打墙面。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.moment_5": {
+      "title": "窗帘留一道缝",
+      "prompt": "休息位旁的帘子遮住了窗外的公共花盆。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘子束在一侧",
+          "result": "花盆和柔和的光一起露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只留一道窄缝",
+          "result": "一线光落在空座的扶手上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.tidal.moment_6": {
+      "title": "给空白页一个折角",
+      "prompt": "共用留言册翻到最后一页，那里还没有字。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "画一小段无名纹样",
+          "result": "空白页多了一段不占地方的线条。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把书签移到这一页",
+          "result": "后来的人会先翻到这处空白。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    }
+  }
+}

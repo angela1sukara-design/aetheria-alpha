@@ -1,0 +1,385 @@
+{
+  "mainQuest": {
+    "id": "main.tidal_apex",
+    "goal": "站上顶点：在咸汐街区成为千栈总商，或成为潮路领航人。",
+    "paths": [
+      {
+        "id": "path.resource",
+        "style": "仓栈联营：成为千栈总商",
+        "stages": [
+          {
+            "id": "resource_s1",
+            "name": "一箱能过潮的货",
+            "locationType": "market",
+            "objective": "取得防潮仓栈的署名寄存契约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.1",
+            "actions": [
+              "展示密封样箱，以承担返工换取寄存位",
+              "分批短存并降低占位时长，取得寄存契约",
+              "采用「封口下的一点盐」的处理记录，完成一箱能过潮的货"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "resource_s2"
+            ]
+          },
+          {
+            "id": "resource_s2",
+            "name": "让浮架相认",
+            "locationType": "workshop",
+            "objective": "验收能够对接不同栈台的浮架样段。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.2",
+            "actions": [
+              "调整连接扣，完成两种高度的对接演示",
+              "增设过渡板，以低载荷方案完成验收",
+              "采用「高低两种栈台」的处理记录，完成让浮架相认"
+            ],
+            "requires": [
+              "main:flag.resource.1"
+            ],
+            "next": [
+              "resource_s3"
+            ]
+          },
+          {
+            "id": "resource_s3",
+            "name": "盐雾中的账",
+            "locationType": "commons",
+            "objective": "签下各仓栈认可的转存与损耗分担章程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.3",
+            "actions": [
+              "按存放时长分担损耗，保留公开复核位",
+              "按批次互保，把单箱损耗摊入共同储备",
+              "采用「湿了一角的仓单」的处理记录，完成盐雾中的账"
+            ],
+            "requires": [
+              "main:flag.resource.2"
+            ],
+            "next": [
+              "resource_s4"
+            ]
+          },
+          {
+            "id": "resource_s4",
+            "name": "千栈同账",
+            "locationType": "home",
+            "objective": "接掌跨栈联营的总账与调仓权，成为千栈总商。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "公开统一仓单并接管跨栈调仓",
+              "保留各栈自营份额，接掌联营转存配额"
+            ],
+            "requires": [
+              "main:flag.resource.3"
+            ],
+            "next": []
+          }
+        ]
+      },
+      {
+        "id": "path.stewardship",
+        "style": "潮路共管：成为潮路领航人",
+        "stages": [
+          {
+            "id": "stewardship_s1",
+            "name": "门外就是潮线",
+            "locationType": "home",
+            "objective": "取得高脚住户共同签认的出入通道维护席。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.1",
+            "actions": [
+              "改放门前杂物，连出不间断的高处步道",
+              "约定轮流让出搬运位，保证涨潮时步道通畅",
+              "采用「门口的一捆绳」的处理记录，完成门外就是潮线"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "stewardship_s2"
+            ]
+          },
+          {
+            "id": "stewardship_s2",
+            "name": "干燥处的接应",
+            "locationType": "clinic",
+            "objective": "落实潮路上的护理物资与休息点安排。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.2",
+            "actions": [
+              "按路段分置密封小包，签署轮换补给表",
+              "以少量集中储备配合干燥接应位，签下安排",
+              "采用「密封包里的空白」的处理记录，完成干燥处的接应"
+            ],
+            "requires": [
+              "main:flag.stewardship.1"
+            ],
+            "next": [
+              "stewardship_s3"
+            ]
+          },
+          {
+            "id": "stewardship_s3",
+            "name": "潮路两端",
+            "locationType": "workshop",
+            "objective": "验收栈桥改道与临时断开后的接驳方案。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.3",
+            "actions": [
+              "用浮架模型演示高低潮两条接驳线",
+              "采用固定高处绕行，以较长路程换取连续通行",
+              "采用「退潮时的断口」的处理记录，完成潮路两端"
+            ],
+            "requires": [
+              "main:flag.stewardship.2"
+            ],
+            "next": [
+              "stewardship_s4"
+            ]
+          },
+          {
+            "id": "stewardship_s4",
+            "name": "潮声里的共同航标",
+            "locationType": "commons",
+            "objective": "接掌公共潮路标记与改道协调权，成为潮路领航人。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "由各栈共同签认航标章程并授予协调权",
+              "保留各段维护人，接掌跨段改道的最终排程"
+            ],
+            "requires": [
+              "main:flag.stewardship.3"
+            ],
+            "next": []
+          }
+        ]
+      }
+    ],
+    "journal": [
+      {
+        "unlockFlag": "main:flag.started",
+        "text": "站上顶点：在咸汐街区成为千栈总商，或成为潮路领航人。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.1",
+        "text": "让浮架相认：验收能够对接不同栈台的浮架样段。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.2",
+        "text": "盐雾中的账：签下各仓栈认可的转存与损耗分担章程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.3",
+        "text": "千栈同账：接掌跨栈联营的总账与调仓权，成为千栈总商。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.1",
+        "text": "干燥处的接应：落实潮路上的护理物资与休息点安排。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.2",
+        "text": "潮路两端：验收栈桥改道与临时断开后的接驳方案。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.3",
+        "text": "潮声里的共同航标：接掌公共潮路标记与改道协调权，成为潮路领航人。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.top_reached",
+        "text": "你已取得本街区的最高席位。未完成的当地事务仍可继续。"
+      }
+    ]
+  },
+  "sideQuests": [
+    {
+      "id": "side.tidal.support_1",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "样箱封口夹着盐粒，整条封带看起来却完好。 当地选择：拆开清理后重新封样，或改用双层套并保留检查口。",
+      "flag": "side:flag.tidal.support_1",
+      "effectOnMain": "为仓栈联营第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「封口下的一点盐」：拆开清理后重新封样，或改用双层套并保留检查口。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.support_2",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "一段浮架接得上高栈，却在低栈侧留下陡坡。 当地选择：增加一节缓坡过渡，或限制载荷并分两次过架。",
+      "flag": "side:flag.tidal.support_2",
+      "effectOnMain": "为仓栈联营第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「高低两种栈台」：增加一节缓坡过渡，或限制载荷并分两次过架。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.support_3",
+      "type": "main-related",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "一箱货物受潮，转存双方都认为损耗该由对方承担。 当地选择：按交接时的封签状况分担，或从共同储备先补损再修条款。",
+      "flag": "side:flag.tidal.support_3",
+      "effectOnMain": "为仓栈联营第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「湿了一角的仓单」：按交接时的封签状况分担，或从共同储备先补损再修条款。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.support_4",
+      "type": "main-related",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "晾绳占了高处通道，收进屋又会让地板沾湿。 当地选择：把晾绳架升到侧墙，或铺接水盘并缩短横向占位。",
+      "flag": "side:flag.tidal.support_4",
+      "effectOnMain": "为潮路共管第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「门口的一捆绳」：把晾绳架升到侧墙，或铺接水盘并缩短横向占位。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.support_5",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "护理包封得严密，外面却看不出内容，拆检容易返潮。 当地选择：另做外置内容卡，或按用途分色套袋。",
+      "flag": "side:flag.tidal.support_5",
+      "effectOnMain": "为潮路共管第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「密封包里的空白」：另做外置内容卡，或按用途分色套袋。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.support_6",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "栈桥模型在高潮时接得平稳，退潮后中间出现落差。 当地选择：加一段可拆接驳板，或把低潮路线移到固定高道。",
+      "flag": "side:flag.tidal.support_6",
+      "effectOnMain": "为潮路共管第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「退潮时的断口」：加一段可拆接驳板，或把低潮路线移到固定高道。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.resident_1",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。 当地选择：一起给餐具架垫软布，或划分清晨可用的静音餐具。",
+      "flag": "side:flag.tidal.resident_1",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不必一样的作息」：一起给餐具架垫软布，或划分清晨可用的静音餐具。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.resident_2",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。 当地选择：保留旧画并加新画框，或把旧画收进公共纪念册。",
+      "flag": "side:flag.tidal.resident_2",
+      "effectOnMain": null,
+      "journalText": "在当地处理「门边的旧画」：保留旧画并加新画框，或把旧画收进公共纪念册。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.resident_3",
+      "type": "character",
+      "locationType": "workshop",
+      "requiresRelation": "colleague",
+      "objective": "同事完成大半样件，你做了最后修整，署名位置却只有一处。 当地选择：并列写上分工，或署共同小组名并另留工序卡。",
+      "flag": "side:flag.tidal.resident_3",
+      "effectOnMain": null,
+      "journalText": "在当地处理「署在样件上的名字」：并列写上分工，或署共同小组名并另留工序卡。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.resident_4",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "acquaintance",
+      "objective": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。 当地选择：一起改成匿名版本，或把故事留在私人的折页里。",
+      "flag": "side:flag.tidal.resident_4",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不想被公开的故事」：一起改成匿名版本，或把故事留在私人的折页里。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.resident_5",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "grudge",
+      "objective": "旧识认为你拆了他的绳结，你只记得那条通道当时被堵住。 当地选择：一起重绑不占道的固定结，或各用一段绳并标出公共边界。",
+      "flag": "side:flag.tidal.resident_5",
+      "effectOnMain": null,
+      "journalText": "在当地处理「丢失的系绳结」：一起重绑不占道的固定结，或各用一段绳并标出公共边界。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.resident_6",
+      "type": "character",
+      "locationType": "clinic",
+      "requiresRelation": "debt",
+      "objective": "曾借你干袋的人想修补袋口，你的人情债还没结清。 当地选择：陪他补好袋口，或把旧袋改成两个内衬袋。",
+      "flag": "side:flag.tidal.resident_6",
+      "effectOnMain": null,
+      "journalText": "在当地处理「那只借来的干袋」：陪他补好袋口，或把旧袋改成两个内衬袋。无需返回报信。"
+    },
+    {
+      "id": "side.tidal.moment_1",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "栏杆背风侧结了一小片盐花，旁边是常被扶握的地方。 当地选择：把扶握处擦干净，或用卡片描下盐花边缘。",
+      "flag": "side:flag.tidal.moment_1",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.tidal.moment_2",
+      "type": "atmosphere",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "空瓶横放在摊边，风从瓶口吹过。 当地选择：把瓶口转向海风，或把瓶子竖在软垫上。",
+      "flag": "side:flag.tidal.moment_2",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.tidal.moment_3",
+      "type": "atmosphere",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "公用桌上留着一只洗净的杯子，杯沿朝着通道。 当地选择：把杯子倒扣在垫上，或把杯柄转向桌内。",
+      "flag": "side:flag.tidal.moment_3",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.tidal.moment_4",
+      "type": "atmosphere",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "公共示意图的一角被穿堂风掀起。 当地选择：用现成纸夹夹住，或把纸角折入透明套。",
+      "flag": "side:flag.tidal.moment_4",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.tidal.moment_5",
+      "type": "atmosphere",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息位旁的帘子遮住了窗外的公共花盆。 当地选择：把帘子束在一侧，或只留一道窄缝。",
+      "flag": "side:flag.tidal.moment_5",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.tidal.moment_6",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "共用留言册翻到最后一页，那里还没有字。 当地选择：画一小段无名纹样，或把书签移到这一页。",
+      "flag": "side:flag.tidal.moment_6",
+      "effectOnMain": null,
+      "journalText": null
+    }
+  ],
+  "relationRules": {
+    "types": [
+      "colleague",
+      "neighbor",
+      "acquaintance",
+      "grudge",
+      "debt"
+    ],
+    "perResident": "1-2",
+    "usage": "主线/支线只引用关系类型，生成器负责绑定具体居民 ID；共同经历只记录已选分支。"
+  }
+}

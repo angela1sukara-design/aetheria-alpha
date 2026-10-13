@@ -1,0 +1,385 @@
+{
+  "mainQuest": {
+    "id": "main.frost_apex",
+    "goal": "站上顶点：在霜港街区成为暖网总调度，或成为冬港守望长。",
+    "paths": [
+      {
+        "id": "path.resource",
+        "style": "暖网统筹：成为暖网总调度",
+        "stages": [
+          {
+            "id": "resource_s1",
+            "name": "还有余温的管段",
+            "locationType": "workshop",
+            "objective": "取得一段公共暖管的检修调度权。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.1",
+            "actions": [
+              "演示分段隔离检修，换取管段值守权",
+              "采用低流量不停供的检修表，取得试行权",
+              "采用「读不准的温差」的处理记录，完成还有余温的管段"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "resource_s2"
+            ]
+          },
+          {
+            "id": "resource_s2",
+            "name": "把热留到明天",
+            "locationType": "market",
+            "objective": "签下跨库房的保温材料储备契约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.2",
+            "actions": [
+              "按实测保温时长议定交换配额",
+              "接受分批供货，以降低集中占库换取契约",
+              "采用「厚毡的重量」的处理记录，完成把热留到明天"
+            ],
+            "requires": [
+              "main:flag.resource.1"
+            ],
+            "next": [
+              "resource_s3"
+            ]
+          },
+          {
+            "id": "resource_s3",
+            "name": "冷端也有份",
+            "locationType": "clinic",
+            "objective": "落实暖网末端与护理站的基本热额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.3",
+            "actions": [
+              "将基本热额置于生产供热之前",
+              "用分时升温保证末端轮流回暖，签署热额表",
+              "采用「最末端的一杯热水」的处理记录，完成冷端也有份"
+            ],
+            "requires": [
+              "main:flag.resource.2"
+            ],
+            "next": [
+              "resource_s4"
+            ]
+          },
+          {
+            "id": "resource_s4",
+            "name": "总阀前的签名",
+            "locationType": "commons",
+            "objective": "接掌街区暖网总排程，成为暖网总调度。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "公布热额和检修窗口，接过统一调度权",
+              "保留分区应急阀权限，接掌跨区热流协调权"
+            ],
+            "requires": [
+              "main:flag.resource.3"
+            ],
+            "next": []
+          }
+        ]
+      },
+      {
+        "id": "path.stewardship",
+        "style": "越冬守望：成为冬港守望长",
+        "stages": [
+          {
+            "id": "stewardship_s1",
+            "name": "门帘后的灯",
+            "locationType": "home",
+            "objective": "组织住户确认夜间保温廊道的值守协议。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.1",
+            "actions": [
+              "按自愿时段轮值，逐户确认交接位置",
+              "采用两户一组的互查制度，确认值守表",
+              "采用「双层门帘」的处理记录，完成门帘后的灯"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "stewardship_s2"
+            ]
+          },
+          {
+            "id": "stewardship_s2",
+            "name": "留给陌生人的毯子",
+            "locationType": "clinic",
+            "objective": "设立不以住户身份为条件的临时回暖配额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.2",
+            "actions": [
+              "划出独立的临时休息区并制定轮换规则",
+              "保留少量常备位，以短时交接增加可用次数",
+              "采用「谁的名字在毯角」的处理记录，完成留给陌生人的毯子"
+            ],
+            "requires": [
+              "main:flag.stewardship.1"
+            ],
+            "next": [
+              "stewardship_s3"
+            ]
+          },
+          {
+            "id": "stewardship_s3",
+            "name": "霜线之前",
+            "locationType": "workshop",
+            "objective": "验收夜间廊道封闭与改道的现场演练。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.3",
+            "actions": [
+              "用可移路牌演练单段封闭与绕行",
+              "设双人交接点，演练先接后封的慢速方案",
+              "采用「被霜遮住的箭头」的处理记录，完成霜线之前"
+            ],
+            "requires": [
+              "main:flag.stewardship.2"
+            ],
+            "next": [
+              "stewardship_s4"
+            ]
+          },
+          {
+            "id": "stewardship_s4",
+            "name": "冬港不熄灯",
+            "locationType": "commons",
+            "objective": "获得跨廊道的夜间守望召集权，成为冬港守望长。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "由各值守组共同署名授予召集权",
+              "接受任期复核约定，接管冬夜应急联席"
+            ],
+            "requires": [
+              "main:flag.stewardship.3"
+            ],
+            "next": []
+          }
+        ]
+      }
+    ],
+    "journal": [
+      {
+        "unlockFlag": "main:flag.started",
+        "text": "站上顶点：在霜港街区成为暖网总调度，或成为冬港守望长。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.1",
+        "text": "把热留到明天：签下跨库房的保温材料储备契约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.2",
+        "text": "冷端也有份：落实暖网末端与护理站的基本热额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.3",
+        "text": "总阀前的签名：接掌街区暖网总排程，成为暖网总调度。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.1",
+        "text": "留给陌生人的毯子：设立不以住户身份为条件的临时回暖配额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.2",
+        "text": "霜线之前：验收夜间廊道封闭与改道的现场演练。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.3",
+        "text": "冬港不熄灯：获得跨廊道的夜间守望召集权，成为冬港守望长。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.top_reached",
+        "text": "你已取得本街区的最高席位。未完成的当地事务仍可继续。"
+      }
+    ]
+  },
+  "sideQuests": [
+    {
+      "id": "side.frost.support_1",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "两支旧温标读数不同，维修员不愿据此判定管段。 当地选择：同放一个校验槽比较，或只用同一温标逐段复测。",
+      "flag": "side:flag.frost.support_1",
+      "effectOnMain": "为暖网统筹第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「读不准的温差」：同放一个校验槽比较，或只用同一温标逐段复测。无需返回报信。"
+    },
+    {
+      "id": "side.frost.support_2",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "一批厚毡按重量计价，却因含湿而难与薄毡比较。 当地选择：分别称干燥样片再议价，或改按覆盖面积与保温时长交换。",
+      "flag": "side:flag.frost.support_2",
+      "effectOnMain": "为暖网统筹第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「厚毡的重量」：分别称干燥样片再议价，或改按覆盖面积与保温时长交换。无需返回报信。"
+    },
+    {
+      "id": "side.frost.support_3",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "末端护理点想延长供热，中心区担心影响忙时使用。 当地选择：错开清洁与回暖时段，或保留基本热额后分配余量。",
+      "flag": "side:flag.frost.support_3",
+      "effectOnMain": "为暖网统筹第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「最末端的一杯热水」：错开清洁与回暖时段，或保留基本热额后分配余量。无需返回报信。"
+    },
+    {
+      "id": "side.frost.support_4",
+      "type": "main-related",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "为保温加厚的帘子让夜间交接的人看不清另一侧。 当地选择：加一条可掀开的交接缝，或在两层之间留出站位。",
+      "flag": "side:flag.frost.support_4",
+      "effectOnMain": "为越冬守望第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「双层门帘」：加一条可掀开的交接缝，或在两层之间留出站位。无需返回报信。"
+    },
+    {
+      "id": "side.frost.support_5",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "捐来的毯子绣着住户名，陌生访客因此不敢使用。 当地选择：加可拆的公共使用套，或把捐赠名录移到旁边册页。",
+      "flag": "side:flag.frost.support_5",
+      "effectOnMain": "为越冬守望第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「谁的名字在毯角」：加可拆的公共使用套，或把捐赠名录移到旁边册页。无需返回报信。"
+    },
+    {
+      "id": "side.frost.support_6",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "演练路牌在灯下清楚，覆上模拟霜层后却只剩轮廓。 当地选择：给箭头加凸起边缘，或用两块形状不同的路牌配对。",
+      "flag": "side:flag.frost.support_6",
+      "effectOnMain": "为越冬守望第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「被霜遮住的箭头」：给箭头加凸起边缘，或用两块形状不同的路牌配对。无需返回报信。"
+    },
+    {
+      "id": "side.frost.resident_1",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。 当地选择：一起给餐具架垫软布，或划分清晨可用的静音餐具。",
+      "flag": "side:flag.frost.resident_1",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不必一样的作息」：一起给餐具架垫软布，或划分清晨可用的静音餐具。无需返回报信。"
+    },
+    {
+      "id": "side.frost.resident_2",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。 当地选择：保留旧画并加新画框，或把旧画收进公共纪念册。",
+      "flag": "side:flag.frost.resident_2",
+      "effectOnMain": null,
+      "journalText": "在当地处理「门边的旧画」：保留旧画并加新画框，或把旧画收进公共纪念册。无需返回报信。"
+    },
+    {
+      "id": "side.frost.resident_3",
+      "type": "character",
+      "locationType": "workshop",
+      "requiresRelation": "colleague",
+      "objective": "同事完成大半样件，你做了最后修整，署名位置却只有一处。 当地选择：并列写上分工，或署共同小组名并另留工序卡。",
+      "flag": "side:flag.frost.resident_3",
+      "effectOnMain": null,
+      "journalText": "在当地处理「署在样件上的名字」：并列写上分工，或署共同小组名并另留工序卡。无需返回报信。"
+    },
+    {
+      "id": "side.frost.resident_4",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "acquaintance",
+      "objective": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。 当地选择：一起改成匿名版本，或把故事留在私人的折页里。",
+      "flag": "side:flag.frost.resident_4",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不想被公开的故事」：一起改成匿名版本，或把故事留在私人的折页里。无需返回报信。"
+    },
+    {
+      "id": "side.frost.resident_5",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "grudge",
+      "objective": "旧识认为你提前关帘让他多绕一圈，你记得他晚于约定。 当地选择：对照两人的交接记录，或不争旧时刻，重定先接后关。",
+      "flag": "side:flag.frost.resident_5",
+      "effectOnMain": null,
+      "journalText": "在当地处理「那夜是谁关的帘」：对照两人的交接记录，或不争旧时刻，重定先接后关。无需返回报信。"
+    },
+    {
+      "id": "side.frost.resident_6",
+      "type": "character",
+      "locationType": "clinic",
+      "requiresRelation": "debt",
+      "objective": "曾让给你热水位的人正在缝一只旧毯套。 当地选择：陪他缝好毯套，或替他整理可继续使用的布片。",
+      "flag": "side:flag.frost.resident_6",
+      "effectOnMain": null,
+      "journalText": "在当地处理「还一段暖意」：陪他缝好毯套，或替他整理可继续使用的布片。无需返回报信。"
+    },
+    {
+      "id": "side.frost.moment_1",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "外窗结出细小霜花，室内暖意正在慢慢融化边缘。 当地选择：沿空白处画一个圆，或隔着玻璃用掌心暖一角。",
+      "flag": "side:flag.frost.moment_1",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.frost.moment_2",
+      "type": "atmosphere",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "空纸袋受冷变得挺括，边缘折痕轻轻作响。 当地选择：把袋口折成平边，或轻压袋底撑开四角。",
+      "flag": "side:flag.frost.moment_2",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.frost.moment_3",
+      "type": "atmosphere",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "公用桌上留着一只洗净的杯子，杯沿朝着通道。 当地选择：把杯子倒扣在垫上，或把杯柄转向桌内。",
+      "flag": "side:flag.frost.moment_3",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.frost.moment_4",
+      "type": "atmosphere",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "公共示意图的一角被穿堂风掀起。 当地选择：用现成纸夹夹住，或把纸角折入透明套。",
+      "flag": "side:flag.frost.moment_4",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.frost.moment_5",
+      "type": "atmosphere",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息位旁的帘子遮住了窗外的公共花盆。 当地选择：把帘子束在一侧，或只留一道窄缝。",
+      "flag": "side:flag.frost.moment_5",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.frost.moment_6",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "共用留言册翻到最后一页，那里还没有字。 当地选择：画一小段无名纹样，或把书签移到这一页。",
+      "flag": "side:flag.frost.moment_6",
+      "effectOnMain": null,
+      "journalText": null
+    }
+  ],
+  "relationRules": {
+    "types": [
+      "colleague",
+      "neighbor",
+      "acquaintance",
+      "grudge",
+      "debt"
+    ],
+    "perResident": "1-2",
+    "usage": "主线/支线只引用关系类型，生成器负责绑定具体居民 ID；共同经历只记录已选分支。"
+  }
+}

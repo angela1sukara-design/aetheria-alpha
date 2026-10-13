@@ -1,0 +1,385 @@
+{
+  "mainQuest": {
+    "id": "main.world_dungeon",
+    "goal": "站上顶点：在地下城世界成为遗迹垄断者，或成为地下城之主。",
+    "paths": [
+      {
+        "id": "path.resource",
+        "style": "资源经营：成为遗迹垄断者",
+        "stages": [
+          {
+            "id": "resource_s1",
+            "name": "第一笔机关核心生意",
+            "locationType": "market",
+            "objective": "取得一份可以持续结算的机关核心供货契约。需要当场落实约定，传闻或口头承诺不算完成。",
+            "flag": "main:flag.resource.1",
+            "actions": [
+              "亲自验货，以明确的返修责任换取供货署名",
+              "联合小供货方，把零散订单合成一份长期契约",
+              "采用「被退回的机关核心」的处理记录"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "resource_s2"
+            ]
+          },
+          {
+            "id": "resource_s2",
+            "name": "掌握核心修复工场",
+            "locationType": "workshop",
+            "objective": "取得核心修复工场的固定生产与交付权限。需要当场落实约定，传闻或口头承诺不算完成。",
+            "flag": "main:flag.resource.2",
+            "actions": [
+              "完成试产，按交付成果分成换取固定产能",
+              "接管闲置设备，以承担维护换取独立生产时段",
+              "采用「谁能使用核心修复工场」的处理记录"
+            ],
+            "requires": [
+              "main:flag.resource.1"
+            ],
+            "next": [
+              "resource_s3"
+            ]
+          },
+          {
+            "id": "resource_s3",
+            "name": "控制探索队物资交换网",
+            "locationType": "commons",
+            "objective": "取得探索队物资交换网的主要结算与资源分配权。需要当场落实约定，传闻或口头承诺不算完成。",
+            "flag": "main:flag.resource.3",
+            "actions": [
+              "以供货与产能担保重组旧债，换取遗迹采集份额的优先调配权",
+              "联合独立经营者集中表决授权，接管共同结算",
+              "采用「探索队物资交换网的隐藏抽成」的处理记录"
+            ],
+            "requires": [
+              "main:flag.resource.2"
+            ],
+            "next": [
+              "resource_s4"
+            ]
+          },
+          {
+            "id": "resource_s4",
+            "name": "遗迹垄断者的最后一笔交易",
+            "locationType": "home",
+            "objective": "完成探索队物资交换网的实际控制权转移，成为遗迹垄断者。控制权必须完成实际交接。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "承担旧债与经营责任，接管统一控制权",
+              "保留小供货方的独立经营权，以控股联盟接掌网络"
+            ],
+            "requires": [
+              "main:flag.resource.3"
+            ],
+            "next": []
+          }
+        ]
+      },
+      {
+        "id": "path.stewardship",
+        "style": "权力争夺：成为地下城之主",
+        "stages": [
+          {
+            "id": "stewardship_s1",
+            "name": "把独立石门据点变成你的据点",
+            "locationType": "workshop",
+            "objective": "取得独立石门据点的独立调度与防卫授权。需要当场落实约定，传闻或口头承诺不算完成。",
+            "flag": "main:flag.stewardship.1",
+            "actions": [
+              "恢复据点的控制设备，在现场完成接管演示",
+              "与原值守者达成互保约定，以承担防卫取得据点",
+              "采用「独立石门据点的两份通行约定」的处理记录"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "stewardship_s2"
+            ]
+          },
+          {
+            "id": "stewardship_s2",
+            "name": "让遗迹守卫队留下来",
+            "locationType": "clinic",
+            "objective": "落实遗迹守卫队的持续补给与救护协议。需要当场落实约定，传闻或口头承诺不算完成。",
+            "flag": "main:flag.stewardship.2",
+            "actions": [
+              "与护理人员划清探险疗伤用品底额，签下持续补给约定",
+              "接受较少初期配额，用轮值护送换取稳定补给",
+              "采用「先给谁的探险疗伤用品」的处理记录"
+            ],
+            "requires": [
+              "main:flag.stewardship.1"
+            ],
+            "next": [
+              "stewardship_s3"
+            ]
+          },
+          {
+            "id": "stewardship_s3",
+            "name": "夺取地下城门禁中枢的主动权",
+            "locationType": "commons",
+            "objective": "取得地下城门禁中枢的统一防卫指挥授权。需要当场落实约定，传闻或口头承诺不算完成。",
+            "flag": "main:flag.stewardship.3",
+            "actions": [
+              "以已控制的据点与补给提出接管条件，集中指挥权",
+              "公开挑战旧指挥方案，以现场演练赢得各队授权",
+              "采用「地下城门禁中枢的旧债」的处理记录"
+            ],
+            "requires": [
+              "main:flag.stewardship.2"
+            ],
+            "next": [
+              "stewardship_s4"
+            ]
+          },
+          {
+            "id": "stewardship_s4",
+            "name": "地下城之主的控制席",
+            "locationType": "home",
+            "objective": "接管地下城门禁中枢并落实各据点的服从约定，成为地下城之主。控制权必须完成实际交接。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "签署统一防卫令，直接掌握最高指挥权",
+              "保留各队内部事务权，以共同防卫协议取得最高指挥权"
+            ],
+            "requires": [
+              "main:flag.stewardship.3"
+            ],
+            "next": []
+          }
+        ]
+      }
+    ],
+    "journal": [
+      {
+        "unlockFlag": "main:flag.started",
+        "text": "站上顶点：在地下城世界成为遗迹垄断者，或成为地下城之主。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.1",
+        "text": "取得核心修复工场的固定生产与交付权限。需要当场落实约定，传闻或口头承诺不算完成。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.2",
+        "text": "取得探索队物资交换网的主要结算与资源分配权。需要当场落实约定，传闻或口头承诺不算完成。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.3",
+        "text": "完成探索队物资交换网的实际控制权转移，成为遗迹垄断者。控制权必须完成实际交接。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.1",
+        "text": "落实遗迹守卫队的持续补给与救护协议。需要当场落实约定，传闻或口头承诺不算完成。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.2",
+        "text": "取得地下城门禁中枢的统一防卫指挥授权。需要当场落实约定，传闻或口头承诺不算完成。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.3",
+        "text": "接管地下城门禁中枢并落实各据点的服从约定，成为地下城之主。控制权必须完成实际交接。"
+      },
+      {
+        "unlockFlag": "main:flag.top_reached",
+        "text": "你已取得这个世界的最高地位，未完成的当地事务仍可继续。"
+      }
+    ]
+  },
+  "sideQuests": [
+    {
+      "id": "side.support_1",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "一批机关核心被整批退回，卖方说只有部分有问题，买方不愿再承担风险。 在当地选择：把可用与待修部分分开交易，或保留整批但写明折价与返修责任。",
+      "flag": "side:flag.support_1",
+      "effectOnMain": "为资源经营第1阶段提供额外解法；主线基础方案始终可用。",
+      "journalText": "在遗迹物资交换厅处理「被退回的机关核心」：把可用与待修部分分开交易，或保留整批但写明折价与返修责任。"
+    },
+    {
+      "id": "side.support_2",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "核心修复工场的空闲时段被大客户预订，新生产者只能借到零碎时间。 在当地选择：与小生产者合并时段申请，或用维护工作换取固定试产时段。",
+      "flag": "side:flag.support_2",
+      "effectOnMain": "为资源经营第2阶段提供额外解法；主线基础方案始终可用。",
+      "journalText": "在机关修复间处理「谁能使用核心修复工场」：与小生产者合并时段申请，或用维护工作换取固定试产时段。"
+    },
+    {
+      "id": "side.support_3",
+      "type": "main-related",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "探索队物资交换网的结算单上多出一项无人说明的抽成，小供货方想直接拒付。 在当地选择：公开逐项对照原合同，或把争议部分暂存，先结清无争议部分。",
+      "flag": "side:flag.support_3",
+      "effectOnMain": "为资源经营第3阶段提供额外解法；主线基础方案始终可用。",
+      "journalText": "在地下城公共石厅处理「探索队物资交换网的隐藏抽成」：公开逐项对照原合同，或把争议部分暂存，先结清无争议部分。"
+    },
+    {
+      "id": "side.support_4",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "独立石门据点的物资车辆和步行访客使用同一入口，双方都认为对方破坏了通行约定。 在当地选择：现场演练人车分时进入，或为访客保留连续开放的侧道。",
+      "flag": "side:flag.support_4",
+      "effectOnMain": "为权力争夺第1阶段提供额外解法；主线基础方案始终可用。",
+      "journalText": "在机关修复间处理「独立石门据点的两份通行约定」：现场演练人车分时进入，或为访客保留连续开放的侧道。"
+    },
+    {
+      "id": "side.support_5",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "遗迹守卫队希望拿走新到的探险疗伤用品，护理人员坚持必须留下当地居民的储备。 在当地选择：先保留基本救护储备再配给队伍，或队伍分批领取并承担补回责任。",
+      "flag": "side:flag.support_5",
+      "effectOnMain": "为权力争夺第2阶段提供额外解法；主线基础方案始终可用。",
+      "journalText": "在探险者疗养所处理「先给谁的探险疗伤用品」：先保留基本救护储备再配给队伍，或队伍分批领取并承担补回责任。"
+    },
+    {
+      "id": "side.support_6",
+      "type": "main-related",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "旧承包者以未清债务要求遗迹守卫队继续服从，账面却把同一笔费用算了两次。 在当地选择：当场核对并撤销重复计费，或由共同托管结清争议之外的部分。",
+      "flag": "side:flag.support_6",
+      "effectOnMain": "为权力争夺第3阶段提供额外解法；主线基础方案始终可用。",
+      "journalText": "在地下城公共石厅处理「地下城门禁中枢的旧债」：当场核对并撤销重复计费，或由共同托管结清争议之外的部分。"
+    },
+    {
+      "id": "side.resident_1",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。 在当地选择：一起给餐具架垫软布，或划分清晨可用的静音餐具。",
+      "flag": "side:flag.resident_1",
+      "effectOnMain": null,
+      "journalText": "在石厅避难营处理「不必一样的作息」：一起给餐具架垫软布，或划分清晨可用的静音餐具。"
+    },
+    {
+      "id": "side.resident_2",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。 在当地选择：保留旧画并加新画框，或把旧画收进公共纪念册。",
+      "flag": "side:flag.resident_2",
+      "effectOnMain": null,
+      "journalText": "在石厅避难营处理「门边的旧画」：保留旧画并加新画框，或把旧画收进公共纪念册。"
+    },
+    {
+      "id": "side.resident_3",
+      "type": "character",
+      "locationType": "workshop",
+      "requiresRelation": "colleague",
+      "objective": "同事完成大半样件，你做了最后修整，署名位置却只有一处。 在当地选择：并列写上分工，或署共同小组名并另留工序卡。",
+      "flag": "side:flag.resident_3",
+      "effectOnMain": null,
+      "journalText": "在机关修复间处理「署在样件上的名字」：并列写上分工，或署共同小组名并另留工序卡。"
+    },
+    {
+      "id": "side.resident_4",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "acquaintance",
+      "objective": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。 在当地选择：一起改成匿名版本，或把故事留在私人的折页里。",
+      "flag": "side:flag.resident_4",
+      "effectOnMain": null,
+      "journalText": "在地下城公共石厅处理「不想被公开的故事」：一起改成匿名版本，或把故事留在私人的折页里。"
+    },
+    {
+      "id": "side.resident_5",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "grudge",
+      "objective": "有旧怨的人发现自己的贡献在探索队物资交换网的公开记录中被归到你名下。 在当地选择：共同更正贡献记录，或保留争议说明并补上两人的各自记录。",
+      "flag": "side:flag.resident_5",
+      "effectOnMain": null,
+      "journalText": "在地下城公共石厅处理「留在探索队物资交换网里的旧名」：共同更正贡献记录，或保留争议说明并补上两人的各自记录。"
+    },
+    {
+      "id": "side.resident_6",
+      "type": "character",
+      "locationType": "clinic",
+      "requiresRelation": "debt",
+      "objective": "曾给你提供探险疗伤用品的人正在整理剩余用品，你一直没有机会还清那次人情。 在当地选择：与对方一起完成用品分类，或帮对方制作更清楚的取用说明。",
+      "flag": "side:flag.resident_6",
+      "effectOnMain": null,
+      "journalText": "在探险者疗养所处理「欠着一份探险疗伤用品」：与对方一起完成用品分类，或帮对方制作更清楚的取用说明。"
+    },
+    {
+      "id": "side.moment_1",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "地下城公共石厅里有人刚刚离开，空位旁留着一张无字卡片。 在当地选择：把卡片压在公共留言册里，或把卡片摆到空位正中。",
+      "flag": "side:flag.moment_1",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.moment_2",
+      "type": "atmosphere",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "遗迹物资交换厅的货箱正在合上，一只空箱的搭扣仍轻轻晃动。 在当地选择：扣好空箱搭扣，或把空箱移到挡风处。",
+      "flag": "side:flag.moment_2",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.moment_3",
+      "type": "atmosphere",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "公用桌上留着一只洗净的杯子，杯沿朝着通道。 在当地选择：把杯子倒扣在垫上，或把杯柄转向桌内。",
+      "flag": "side:flag.moment_3",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.moment_4",
+      "type": "atmosphere",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "公共示意图的一角被穿堂风掀起。 在当地选择：用现成纸夹夹住，或把纸角折入透明套。",
+      "flag": "side:flag.moment_4",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.moment_5",
+      "type": "atmosphere",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息位旁的帘子遮住了窗外的公共花盆。 在当地选择：把帘子束在一侧，或只留一道窄缝。",
+      "flag": "side:flag.moment_5",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.moment_6",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "共用留言册翻到最后一页，那里还没有字。 在当地选择：画一小段无名纹样，或把书签移到这一页。",
+      "flag": "side:flag.moment_6",
+      "effectOnMain": null,
+      "journalText": null
+    }
+  ],
+  "relationRules": {
+    "types": [
+      "colleague",
+      "neighbor",
+      "acquaintance",
+      "grudge",
+      "debt"
+    ],
+    "perResident": "1-2",
+    "usage": "复用关系类型，由生成器绑定具体成年居民；仅记录当场选择，不自动演化关系。"
+  }
+}

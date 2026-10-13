@@ -1,5 +1,7 @@
 # 内容、Tag 分类与固定故事整体规范
 
+> 2026-10-13 补充：生成世界的阶段任务、五类轻量玩家关系、动态居民任务记忆与 Journal 已接入；默认内容见[世界 Tag 与任务配置](world-profiles.md)，六类生态独立于 17 种世界题材，底层协议见[原赛博任务接入](cyber-apex-integration.md)。下文涉及这些能力的旧限制保留为历史记录。
+
 > 历史版本提示：本文件记录 Alpha 0.2、foundation 增量实施前的制作规范。当前 Tag 注册、实体参数和存档规则见 [foundation v0.4](foundation-v0.4.md) 与 [v2 创作接口](../production/lexicon-authoring/formats/v2/README.md)；下文“没有 TagDef”等限制只描述当时状态。
 
 版本：1.0 · 核对日期：2026-10-11。适用：当前 Alpha 0.2 / 世界生成器 0.2.1 工程。

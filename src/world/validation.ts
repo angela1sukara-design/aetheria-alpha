@@ -1,3 +1,6 @@
+import { PLAYER_RELATIONS } from '../core/quest-types.ts';
+import { validateQuestSnapshot } from './quest-validation.ts';
+import { validateMainRelationships } from './relationship-validation.ts';
 import { activityEligibility } from './adaptation.ts';
 import { instantiateBody, patchedBody } from '../engine/body.ts';
 import type { GameState, Id } from '../core/types.ts';
@@ -13,30 +16,40 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (w.version !== 1) throw Error('世界实例版本不支持。');
   const g = w.generation;
   object(g, ['generatorVersion', 'seed', 'rules', 'rulesHash', 'references', 'contentPacks', 'parameters', 'selectedTemplateIds']);
-  if (!['0.1.0', '0.2.0', '0.2.1','0.3.0'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
+  if (!['0.1.0', '0.2.0', '0.2.1','0.3.0','0.4.0','0.4.1','0.5.0','0.6.0'].includes(g.generatorVersion)) throw Error('生成器快照版本不支持。');
+  const modern = ['0.3.0', '0.4.0', '0.4.1', '0.5.0', '0.6.0'].includes(g.generatorVersion);
   integer(g.seed, 0, 0xffffffff); if (g.seed !== state.rng.seed) throw Error('世界种子不一致。');
   parseRules(g.rules); const hashString = (v: unknown) => { if (typeof v !== 'string' || !/^[a-f0-9]{64}$/.test(v)) throw Error('世界来源哈希无效。'); };
   hashString(g.rulesHash);
   const refs = (value: unknown) => { const ids = new Set(); list(value, v => { const r = object(v, ['id', 'version', 'hash']); string(r.id); string(r.version); hashString(r.hash); if (ids.has(r.id)) throw Error('世界来源包重复。'); ids.add(r.id); }, 1, 100); };
   refs(g.references); refs(g.contentPacks); strings(g.selectedTemplateIds, 1);
   object(g.parameters, ['locationCount', 'npcCount']); integer(g.parameters.locationCount, 5, 20); integer(g.parameters.npcCount, 3, 40);
-  const installedSources = registry.packs.filter(p => p.id !== 'generated/neighborhood');
+  const installedSources = registry.packs.filter(p => !['generated/neighborhood', 'generated/cyber-apex-main', 'generated/cyber-apex-side'].includes(p.id));
   const originalSources = installedSources.filter(p => g.contentPacks.some(ref => ref.id === p.id));
   if (stableJson(g.contentPacks) !== stableJson(originalSources) || installedSources.some(p => !g.contentPacks.some(ref => ref.id === p.id) && !registry.appendOnlyPackIds.includes(p.id))) throw Error('世界内容来源与快照不一致。');
   const d = w.definition;
-  object(d, ['id', 'name', 'startLocationId', 'regions', 'locations', 'factions', 'eventPool', 'packs']); string(d.id); string(d.name); registry.location(d.startLocationId);
+  object(d, ['id', 'name', 'startLocationId', 'regions', 'locations', 'factions', 'eventPool', 'packs', ...('quests' in d ? ['quests'] : []), ...('setting' in d ? ['setting'] : []), ...('relationshipTree' in d ? ['relationshipTree'] : [])]); string(d.id); string(d.name); registry.location(d.startLocationId);
+  if (d.setting) {
+    const s = d.setting; object(s, ['id', 'tag', 'name', 'version', 'hash', 'ecologyTag', 'questId']);
+    [s.id, s.tag, s.name, s.version, s.ecologyTag, s.questId].forEach(string); hashString(s.hash);
+    if (!['0.5.0','0.6.0'].includes(g.generatorVersion) || !s.tag.startsWith('worlds:setting.') || s.id !== 'world.' + s.tag.slice('worlds:setting.'.length) || s.questId !== `aetheria/world-${s.id.slice(6)}-apex` || d.name !== s.name || d.quests?.id !== s.questId || !/^\d+\.\d+\.\d+$/.test(s.version)) throw Error('世界题材、名称与任务来源不一致。');
+    if (registry.tag(s.tag).status !== 'active' || !registry.tag(s.tag).facets.includes('setting')) throw Error('世界题材 Tag 未启用。');
+    registry.tag(s.ecologyTag);
+    if (!d.regions.every(r => r.environmentTags.includes(s.tag) && r.environmentTags.includes(s.ecologyTag) && r.environmentTags.filter(t => t.startsWith('worlds:setting.')).length === 1) || !d.locations.every(l => l.tags.includes(s.tag) && l.tags.filter(t => t.startsWith('worlds:setting.')).length === 1)) throw Error('世界题材没有贯穿地区与地点。');
+  }
+  if (!d.setting && d.regions.some(r => r.environmentTags.some(t => t.startsWith('worlds:setting.')))) throw Error('缺少世界题材快照。');
   if (stableJson(d.packs) !== stableJson(registry.contentPacks)) {
     // loader 会按依赖排序；输入数组顺序不具有语义。
     const byPack = (packs: typeof d.packs) => stableJson([...packs].sort((a, b) => a.manifest.id.localeCompare(b.manifest.id, 'en')));
     if (byPack(d.packs) !== byPack(registry.contentPacks)) throw Error('世界定义快照不一致。');
   }
   list(d.regions, r => { object(r, ['id', 'name', 'environmentTags', 'ecologyTags']); string((r as typeof d.regions[number]).id); string((r as typeof d.regions[number]).name); strings((r as typeof d.regions[number]).environmentTags, 1); strings((r as typeof d.regions[number]).ecologyTags); }, 1, 20);
-  if(g.generatorVersion==='0.3.0'&&registry.tags.length)for(const region of d.regions){if(stableJson([...region.ecologyTags].sort())!==stableJson(region.environmentTags.filter(t=>t.startsWith('foundation:ecology.')).sort()))throw Error('生态子集与环境来源不一致。');for(const tag of region.environmentTags)registry.tag(tag as Id);}
+  if(modern&&registry.tags.length)for(const region of d.regions){if(stableJson([...region.ecologyTags].sort())!==stableJson(region.environmentTags.filter(t=>t.startsWith('foundation:ecology.')).sort()))throw Error('生态子集与环境来源不一致。');for(const tag of region.environmentTags)registry.tag(tag as Id);}
   const locationIds = new Set<Id>();
   list(d.locations, raw => {
     const l = raw as typeof d.locations[number]; object(l, ['id', 'regionId', 'templateId', 'service', 'tags', 'economy', 'professions', 'factionId']);
     registry.location(l.id); if (locationIds.has(l.id) || !l.id.startsWith('worldgen:') || !d.regions.some(r => r.id === l.regionId) || !(services as readonly string[]).includes(l.service)) throw Error('生成地点元数据无效。');
-    if(g.generatorVersion==='0.3.0'&&registry.tags.length){const serviceTags=l.tags.filter(t=>t.startsWith('foundation:service.'));if(serviceTags.length!==1||serviceTags[0]!==('foundation:service.'+l.service))throw Error('地点 service 与语义快照不一致。');for(const tag of l.tags)registry.tag(tag as Id);}
+    if(modern&&registry.tags.length){const serviceTags=l.tags.filter(t=>t.startsWith('foundation:service.'));if(serviceTags.length!==1||serviceTags[0]!==('foundation:service.'+l.service))throw Error('地点 service 与语义快照不一致。');for(const tag of l.tags)registry.tag(tag as Id);}
     locationIds.add(l.id); string(l.templateId); string(l.factionId); strings(l.tags, 1); strings(l.economy, 1); strings(l.professions, 1);
     if (!registry.actionsAt(l.id).length) throw Error('生成地点没有用途。');
   }, g.parameters.locationCount, g.parameters.locationCount);
@@ -52,11 +65,12 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
   if (!state.district || state.district.residents.length !== g.parameters.npcCount) throw Error('生成居民数量不符。');
   const residents = new Set<string>();
   list(w.agents, raw => {
-    const a = raw as typeof w.agents[number]; object(a, ['residentId', 'originLocationId', 'factionId', 'schedule', ...('relationships' in a ? ['relationships'] : [])]); string(a.residentId);
+    const a = raw as typeof w.agents[number]; object(a, ['residentId', 'originLocationId', 'factionId', 'schedule', ...('relationships' in a ? ['relationships'] : []), ...('playerRelations' in a ? ['playerRelations'] : [])]); string(a.residentId);
+    if (a.playerRelations !== undefined) { strings(a.playerRelations, 1); if (a.playerRelations.length > 2 || new Set(a.playerRelations).size !== a.playerRelations.length || a.playerRelations.some(r => !PLAYER_RELATIONS.includes(r))) throw Error('玩家关系标签无效。'); }
     const resident = state.district!.residents.find(r => r.id === a.residentId);
     if (!resident || residents.has(a.residentId) || !locationIds.has(a.originLocationId) || !factions.has(a.factionId)) throw Error('世界居民身份不符。'); residents.add(a.residentId);
     if (d.locations.find(l => l.id === a.originLocationId)?.factionId !== a.factionId) throw Error('居民组织与工作地点不符。');
-    if(g.generatorVersion==='0.3.0'){
+    if(modern){
       const t=registry.residentTemplates.find(t=>t.id===resident.templateId)!;let initial=instantiateBody(registry.bodyTemplate(t.bodyTemplateId));for(const patch of t.patchIds)initial=patchedBody(initial,registry.bodyPatch(patch),registry);if(!activityEligibility(initial,t,registry).pass)throw Error('居民初始身体不满足职业活动适配。');
     }else {const traits = bodyTraits(resident.body, registry); if (traits.grasp < 1 || traits.walk < 1) throw Error('居民身体与首版职业能力规则不符。');}
     let end = 0;
@@ -71,11 +85,13 @@ export function validateWorldInstance(state: GameState, registry: Registry): voi
     const peers = new Set<string>();
     list(a.relationships ?? [], raw => {
       const edge = raw as NonNullable<typeof a.relationships>[number]; object(edge, ['otherResidentId', 'kind', 'strength']); integer(edge.strength, 0, 100);
-      if (!['coworker', 'neighbor', 'acquaintance'].includes(edge.kind) || edge.otherResidentId === a.residentId || peers.has(edge.otherResidentId)) throw Error('居民关系无效。'); peers.add(edge.otherResidentId);
+      if (!(d.relationshipTree ? ['coworker', 'neighbor', 'acquaintance', 'ally', 'rival'] : ['coworker', 'neighbor', 'acquaintance']).includes(edge.kind) || edge.otherResidentId === a.residentId || peers.has(edge.otherResidentId)) throw Error('居民关系无效。'); peers.add(edge.otherResidentId);
       const b = w.agents.find(b => b.residentId === edge.otherResidentId);
       if (!b?.relationships?.some(back => back.otherResidentId === a.residentId && back.kind === edge.kind && back.strength === edge.strength)) throw Error('居民关系必须指向已存在人物并双向一致。');
       if ((edge.kind === 'coworker' && a.originLocationId !== b.originLocationId) || (edge.kind === 'neighbor' && a.schedule[0].locationId !== b.schedule[0].locationId)) throw Error('居民共同经历关系与地点不符。');
     }, 0, 40);
   }
+  validateQuestSnapshot(state, registry);
+  validateMainRelationships(state, registry);
   object(w.simulation, ['version', 'lastMinute']); if (w.simulation.version !== 1 || w.simulation.lastMinute !== state.clock.totalMinutes) throw Error('世界模拟时钟不符。');
 }

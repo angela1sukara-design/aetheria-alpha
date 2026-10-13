@@ -1,0 +1,722 @@
+{
+  "stages": {
+    "resource_s1": [
+      {
+        "id": "a",
+        "label": "校正样板角度，以维护工时换取份额",
+        "result": "你校正样板角度，以维护工时换取份额。现场约定生效：取得共享镜板阵列的维护份额。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "制定低强度轮用表，以共享设备换取份额",
+        "result": "你制定低强度轮用表，以共享设备换取份额。现场约定生效：取得共享镜板阵列的维护份额。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「镜背的旧刻度」的处理记录，完成一面可用的镜板",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得共享镜板阵列的维护份额。",
+        "requires": [
+          "side:flag.dry.support_1"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s2": [
+      {
+        "id": "a",
+        "label": "按实际加工时段议价，签署统一收据",
+        "result": "你按实际加工时段议价，签署统一收据。现场约定生效：签署跨摊位的日照加工结算契约。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "以淡旺时段互抵，签下季节平价契约",
+        "result": "你以淡旺时段互抵，签下季节平价契约。现场约定生效：签署跨摊位的日照加工结算契约。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「正午的订单」的处理记录，完成日光的价码",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。签署跨摊位的日照加工结算契约。",
+        "requires": [
+          "side:flag.dry.support_2"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s3": [
+      {
+        "id": "a",
+        "label": "在模型上保留正午行人阴影带",
+        "result": "你在模型上保留正午行人阴影带。现场约定生效：通过兼顾遮阴与加工的镜阵总排程。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "把集中加工移到早晚，保留午间镜板停转",
+        "result": "你把集中加工移到早晚，保留午间镜板停转。现场约定生效：通过兼顾遮阴与加工的镜阵总排程。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「会移动的暗线」的处理记录，完成正午的留白",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。通过兼顾遮阴与加工的镜阵总排程。",
+        "requires": [
+          "side:flag.dry.support_3"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s4": [
+      {
+        "id": "a",
+        "label": "以公开能额账册接管统一排程",
+        "result": "你以公开能额账册接管统一排程。接掌镜阵排程总钥，成为镜阵执掌者，以镜阵执掌者的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留各坊自用时段，接管共同加工窗口",
+        "result": "你保留各坊自用时段，接管共同加工窗口。接掌镜阵排程总钥，成为镜阵执掌者，以镜阵执掌者的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s1": [
+      {
+        "id": "a",
+        "label": "挪开自家储物位，换取相邻门廊开放",
+        "result": "你挪开自家储物位，换取相邻门廊开放。现场约定生效：获得住户签认的连续遮阴通道使用权。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "制定错时开帘协议，连起共用阴影带",
+        "result": "你制定错时开帘协议，连起共用阴影带。现场约定生效：获得住户签认的连续遮阴通道使用权。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「一张帘的两面」的处理记录，完成门前的阴影",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。获得住户签认的连续遮阴通道使用权。",
+        "requires": [
+          "side:flag.dry.support_4"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s2": [
+      {
+        "id": "a",
+        "label": "按停留时间轮换座位，留出急需休息位",
+        "result": "你按停留时间轮换座位，留出急需休息位。现场约定生效：建立对所有行人开放的降温座位安排。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "增设短坐区，把长时休息与通行分开",
+        "result": "你增设短坐区，把长时休息与通行分开。现场约定生效：建立对所有行人开放的降温座位安排。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「座位朝哪边」的处理记录，完成凉水与座位",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。建立对所有行人开放的降温座位安排。",
+        "requires": [
+          "side:flag.dry.support_5"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s3": [
+      {
+        "id": "a",
+        "label": "把货物搬运集中到清晨，全天保留步道",
+        "result": "你把货物搬运集中到清晨，全天保留步道。现场约定生效：让商户签署遮棚下的人货分流公约。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "分出推车窄道，以摊位退让换取不断流通行",
+        "result": "你分出推车窄道，以摊位退让换取不断流通行。现场约定生效：让商户签署遮棚下的人货分流公约。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「推车的影子」的处理记录，完成谁能先过",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。让商户签署遮棚下的人货分流公约。",
+        "requires": [
+          "side:flag.dry.support_6"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s4": [
+      {
+        "id": "a",
+        "label": "接受各院推举，公布遮荫争议的听证次序",
+        "result": "你接受各院推举，公布遮荫争议的听证次序。获授公共凉荫事务的裁决席位，成为凉荫议长，以凉荫议长的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "设轮值副席，在公开章程下接掌议长席",
+        "result": "你设轮值副席，在公开章程下接掌议长席。获授公共凉荫事务的裁决席位，成为凉荫议长，以凉荫议长的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ]
+  },
+  "sides": {
+    "side.dry.support_1": {
+      "title": "镜背的旧刻度",
+      "prompt": "新旧镜板刻度方向相反，合用时总有人调错。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "加装双向对照尺",
+          "result": "两套刻度可以同时读懂，试调记录保留下来。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "遮住旧刻度贴可移标记",
+          "result": "当前调节方向明确，旧刻度仍可在拆标后恢复。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.support_2": {
+      "title": "正午的订单",
+      "prompt": "一笔大单只肯买最热时段，却会挤掉小摊的加工窗口。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把大单拆成早晚两批",
+          "result": "大单接受分批，小摊保住原有窗口。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "让大单让出首尾时段",
+          "result": "双方压缩各自空档，签出互不覆盖的订单表。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.support_3": {
+      "title": "会移动的暗线",
+      "prompt": "镜阵模型上的阴影带在午后切断了去护理站的路线。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "调整边缘镜板的转动范围",
+          "result": "路线在演示中保持连贯，少量加工时长被放弃。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "给午后加一段固定布棚",
+          "result": "镜阵排程得以保留，布棚接上了断开的阴影。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.support_4": {
+      "title": "一张帘的两面",
+      "prompt": "住户想合帘挡热，通道另一侧却需要开帘通风。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘分成上下两幅",
+          "result": "下幅挡晒，上幅留风，双方都试过站位。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "按墙影约定开合时刻",
+          "result": "住户保住最热时段的遮挡，通道获得固定通风窗口。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.support_5": {
+      "title": "座位朝哪边",
+      "prompt": "一排座椅朝着来风处，却挡住了宽体行人的转身空间。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把座椅排成弧形",
+          "result": "中间腾出了回转处，两端仍能接到凉风。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "拆分坐席与靠站区",
+          "result": "不同休息方式各有空间，入口保持通畅。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.support_6": {
+      "title": "推车的影子",
+      "prompt": "遮棚下只能并排容纳一辆推车和一人，货主想两车同行。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "试行单车接力",
+          "result": "货物在棚外换车，棚下保住行人通道。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用摊位退线换短暂停车位",
+          "result": "摊主让出一小段边界，两车能错位交接。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.resident_1": {
+      "title": "不必一样的作息",
+      "prompt": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起给餐具架垫软布",
+          "result": "邻居记住你们共同减少声响，没有要求谁改变作息。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居记住你们共同减少声响，没有要求谁改变作息。"
+        },
+        {
+          "id": "b",
+          "label": "划分清晨可用的静音餐具",
+          "result": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。"
+        }
+      ]
+    },
+    "side.dry.resident_2": {
+      "title": "门边的旧画",
+      "prompt": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留旧画并加新画框",
+          "result": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。"
+        },
+        {
+          "id": "b",
+          "label": "把旧画收进公共纪念册",
+          "result": "邻居接受给墙面换新，也记住旧画被妥善留存。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居接受给墙面换新，也记住旧画被妥善留存。"
+        }
+      ]
+    },
+    "side.dry.resident_3": {
+      "title": "署在样件上的名字",
+      "prompt": "同事完成大半样件，你做了最后修整，署名位置却只有一处。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "并列写上分工",
+          "result": "同事记住你明确写出双方贡献，而没有独占成品署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事记住你明确写出双方贡献，而没有独占成品署名。"
+        },
+        {
+          "id": "b",
+          "label": "署共同小组名并另留工序卡",
+          "result": "同事接受共同署名，具体贡献仍在工序卡上可查。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事接受共同署名，具体贡献仍在工序卡上可查。"
+        }
+      ]
+    },
+    "side.dry.resident_4": {
+      "title": "不想被公开的故事",
+      "prompt": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起改成匿名版本",
+          "result": "熟人确认删去了可识别细节，记住你尊重署名选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人确认删去了可识别细节，记住你尊重署名选择。"
+        },
+        {
+          "id": "b",
+          "label": "把故事留在私人的折页里",
+          "result": "熟人收起折页，记住你没有把一段谈话当成公开许可。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人收起折页，记住你没有把一段谈话当成公开许可。"
+        }
+      ]
+    },
+    "side.dry.resident_5": {
+      "title": "借走的阴影",
+      "prompt": "你与旧识曾为占用阴凉长凳争执，他坚持那是自己的固定座位。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起试定轮坐时长",
+          "result": "对方接受长凳共用，记住这次平分阴影的约定。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方接受长凳共用，记住这次平分阴影的约定。"
+        },
+        {
+          "id": "b",
+          "label": "各留一端并标出公共中段",
+          "result": "你们保留距离，同时把中间位置留给后来者。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "你们保留距离，同时把中间位置留给后来者。"
+        }
+      ]
+    },
+    "side.dry.resident_6": {
+      "title": "那次递来的凉水",
+      "prompt": "曾照顾你的人想重新摆放饮水桌，桌腿却不平。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "陪他垫平桌脚",
+          "result": "水壶放稳了，对方说这次帮忙已经还清旧情。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "水壶放稳了，对方说这次帮忙已经还清旧情。"
+        },
+        {
+          "id": "b",
+          "label": "把饮水分到两张矮台",
+          "result": "较低的取水点更好够到，对方接受这份回报。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "较低的取水点更好够到，对方接受这份回报。"
+        }
+      ]
+    },
+    "side.dry.moment_1": {
+      "title": "墙上的小太阳",
+      "prompt": "一小片废镜把日光映在无人停留的墙面上。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把光斑调成一条细线",
+          "result": "墙上多了一条慢慢移动的金线。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "让光斑落在石缝边",
+          "result": "亮点停在粗糙石面上，边缘晕开。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.moment_2": {
+      "title": "风过空篮",
+      "prompt": "空篮的编条在热风中轻轻振动。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把篮口转向风",
+          "result": "篮内发出低低的空响。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把篮子侧放在布上",
+          "result": "振动停了，摊边只剩布角的扑动声。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.moment_3": {
+      "title": "桌边的空杯",
+      "prompt": "公用桌上留着一只洗净的杯子，杯沿朝着通道。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把杯子倒扣在垫上",
+          "result": "杯底接住了一小片光。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把杯柄转向桌内",
+          "result": "杯子安稳地留在伸手可及的位置。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.moment_4": {
+      "title": "松动的纸角",
+      "prompt": "公共示意图的一角被穿堂风掀起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用现成纸夹夹住",
+          "result": "图纸安静下来，旁边的说明重新露出。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把纸角折入透明套",
+          "result": "纸面留下小折痕，不再拍打墙面。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.moment_5": {
+      "title": "窗帘留一道缝",
+      "prompt": "休息位旁的帘子遮住了窗外的公共花盆。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘子束在一侧",
+          "result": "花盆和柔和的光一起露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只留一道窄缝",
+          "result": "一线光落在空座的扶手上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.dry.moment_6": {
+      "title": "给空白页一个折角",
+      "prompt": "共用留言册翻到最后一页，那里还没有字。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "画一小段无名纹样",
+          "result": "空白页多了一段不占地方的线条。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把书签移到这一页",
+          "result": "后来的人会先翻到这处空白。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    }
+  }
+}

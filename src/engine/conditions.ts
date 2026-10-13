@@ -3,11 +3,15 @@ import type { Condition, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
 import { npcPresent, npcState, hasMemory } from './npc.ts';
+import { residentPresent, residentRelation } from './resident-quests.ts';
 export interface Check { pass: boolean; reason: string; known?: boolean }
 /** 条件求值是纯读取：不能在这里抽 RNG，也不能推进时钟。 */
 export function evaluate(condition: Condition, state: GameState, registry: Registry): Check {
   let pass: boolean; let reason = '条件尚未满足。';
   switch (condition.op) {
+    case 'resident.present': pass = residentPresent(state, condition.residentId); reason = '约定的居民此刻不在这里，请按其日程再来。'; break;
+    case 'resident.relation': pass = residentRelation(state, condition.residentId, condition.relation); reason = '需要与该居民有相应的共同背景。'; break;
+    case 'resident.memory': pass = (state.district?.residents.find(r => r.id === condition.residentId)?.memories.includes(condition.memoryId) ?? false) === condition.value; break;
     case 'body.matches': {const q=bodyMatches(state,registry,condition.target,condition.part);return q.known?{pass:q.value,reason:q.value?'':'身体部件条件不满足。',known:true}:{pass:false,reason:q.reason,known:false};}
     case 'environment.light': case 'environment.service': {const e=environment(state,registry,condition.locationId),q=condition.op==='environment.light'?e.light:e.service;return q.known?{pass:q.value===condition.value,reason:'环境条件不满足。',known:true}:{pass:false,reason:q.reason,known:false};}
     case 'day.after': { const at = state.district?.factsAt[condition.flagId]; pass = at !== undefined && Math.floor(state.clock.totalMinutes / 1440) >= Math.floor(at / 1440) + condition.days; reason = '需要等到下一个约定的游戏日。'; break; }

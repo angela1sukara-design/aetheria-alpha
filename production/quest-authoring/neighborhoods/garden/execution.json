@@ -1,0 +1,722 @@
+{
+  "stages": {
+    "resource_s1": [
+      {
+        "id": "a",
+        "label": "逐份展示留种记录，以公开来源换取资格",
+        "result": "你逐份展示留种记录，以公开来源换取资格。现场约定生效：取得可追溯种源的保管与交换资格。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "先接管少量常见种，以试行交换取得资格",
+        "result": "你先接管少量常见种，以试行交换取得资格。现场约定生效：取得可追溯种源的保管与交换资格。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「同名的两袋种子」的处理记录，完成一匣有来历的种子",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得可追溯种源的保管与交换资格。",
+        "requires": [
+          "side:flag.garden.support_1"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s2": [
+      {
+        "id": "a",
+        "label": "组装隔层架并演示独立取放",
+        "result": "你组装隔层架并演示独立取放。现场约定生效：验收能够分开保存种源的储藏架。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "把旧架拆成多个小格，完成分散保管验收",
+        "result": "你把旧架拆成多个小格，完成分散保管验收。现场约定生效：验收能够分开保存种源的储藏架。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「会串味的木格」的处理记录，完成不让一季绝收",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。验收能够分开保存种源的储藏架。",
+        "requires": [
+          "side:flag.garden.support_2"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s3": [
+      {
+        "id": "a",
+        "label": "按发芽记录议定回补份额，保留共享种源",
+        "result": "你按发芽记录议定回补份额，保留共享种源。现场约定生效：签订跨苗圃的留种与回补契约。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "由各苗圃分散留种，以互换副本达成契约",
+        "result": "你由各苗圃分散留种，以互换副本达成契约。现场约定生效：签订跨苗圃的留种与回补契约。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「留种还是开席」的处理记录，完成谁来留下一季",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。签订跨苗圃的留种与回补契约。",
+        "requires": [
+          "side:flag.garden.support_3"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s4": [
+      {
+        "id": "a",
+        "label": "公开保管与借种规则，接管总藏登记",
+        "result": "你公开保管与借种规则，接管总藏登记。接掌街区种源总藏名册，成为种源总藏主，以种源总藏主的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留苗圃的育种署名，接管统一交换目录",
+        "result": "你保留苗圃的育种署名，接管统一交换目录。接掌街区种源总藏名册，成为种源总藏主，以种源总藏主的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s1": [
+      {
+        "id": "a",
+        "label": "重排门前花槽，保留树根与行人空间",
+        "result": "你重排门前花槽，保留树根与行人空间。现场约定生效：取得连廊住户共同签认的步道维护席位。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "约定分季移盆，以轮值维护换取通行权",
+        "result": "你约定分季移盆，以轮值维护换取通行权。现场约定生效：取得连廊住户共同签认的步道维护席位。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「花槽占了门槛」的处理记录，完成根与门槛",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得连廊住户共同签认的步道维护席位。",
+        "requires": [
+          "side:flag.garden.support_4"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s2": [
+      {
+        "id": "a",
+        "label": "试摆宽窄两类座位，按通行情况定稿",
+        "result": "你试摆宽窄两类座位，按通行情况定稿。现场约定生效：落实面向不同身体的绿廊休息点安排。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留无椅休息位，以靠栏与坐席组合定稿",
+        "result": "你保留无椅休息位，以靠栏与坐席组合定稿。现场约定生效：落实面向不同身体的绿廊休息点安排。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「座椅下的新芽」的处理记录，完成能歇脚的绿廊",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。落实面向不同身体的绿廊休息点安排。",
+        "requires": [
+          "side:flag.garden.support_5"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s3": [
+      {
+        "id": "a",
+        "label": "在样架上演示分段支撑，完成共同验收",
+        "result": "你在样架上演示分段支撑，完成共同验收。现场约定生效：通过跨院连廊的承重与通行方案。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "降低同时通行人数，验收保留旧架的方案",
+        "result": "你降低同时通行人数，验收保留旧架的方案。现场约定生效：通过跨院连廊的承重与通行方案。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「枝架上的空档」的处理记录，完成枝架承得住谁",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。通过跨院连廊的承重与通行方案。",
+        "requires": [
+          "side:flag.garden.support_6"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s4": [
+      {
+        "id": "a",
+        "label": "公布通行优先章程并接受各院推举",
+        "result": "你公布通行优先章程并接受各院推举。获授绿廊维护与使用争议的议长席，成为绿廊议长，以绿廊议长的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "设苗圃与住户轮值副席，接掌联席主持权",
+        "result": "你设苗圃与住户轮值副席，接掌联席主持权。获授绿廊维护与使用争议的议长席，成为绿廊议长，以绿廊议长的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ]
+  },
+  "sides": {
+    "side.garden.support_1": {
+      "title": "同名的两袋种子",
+      "prompt": "两袋同名种子来自不同苗圃，摊主想合并标签出售。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留来源并分袋交换",
+          "result": "两个来源分别登记，交换人能自行选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "制作混种说明另立编号",
+          "result": "混种成为新批次，原来源仍写在说明中。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.support_2": {
+      "title": "会串味的木格",
+      "prompt": "新储藏架省下隔板，却让不同种源的空袋混在一起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "加隔板保留每格样袋",
+          "result": "样袋有了固定格位，取放演示未再混淆。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用独立小盒代替整层隔板",
+          "result": "旧架继续使用，各批次随盒独立移动。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.support_3": {
+      "title": "留种还是开席",
+      "prompt": "丰收宴想用掉最后一批好种，苗圃担心下一季没有余量。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "先封存留种份再安排宴席",
+          "result": "一份种源被共同封存，宴席缩小了规模。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "借出部分种源并签回补约定",
+          "result": "宴席得以保留，回补责任由参加者共同署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.support_4": {
+      "title": "花槽占了门槛",
+      "prompt": "邻门的花槽遮住门槛边缘，搬走又会伤到攀援茎。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起编一副临时托架",
+          "result": "攀援茎有了支撑，门槛重新露出。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "分步挪盆并保留过渡绳",
+          "result": "花槽退到边缘，旧藤仍沿绳攀住原处。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.support_5": {
+      "title": "座椅下的新芽",
+      "prompt": "休息椅下冒出新芽，直接搬椅会使入口变窄。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "移栽新芽到边缘空槽",
+          "result": "新芽换到空槽，休息入口保持原宽度。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把座椅改排在槽外两侧",
+          "result": "新芽留在原处，两侧仍各有歇脚位。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.support_6": {
+      "title": "枝架上的空档",
+      "prompt": "连廊样架有一段便于推车却压住通气口。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "改用窄条跨架",
+          "result": "车轮有了支撑，根部通气口重新露出。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "留出空档另铺绕行小板",
+          "result": "推车绕过通气口，步行距离略有增加。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.resident_1": {
+      "title": "不必一样的作息",
+      "prompt": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起给餐具架垫软布",
+          "result": "邻居记住你们共同减少声响，没有要求谁改变作息。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居记住你们共同减少声响，没有要求谁改变作息。"
+        },
+        {
+          "id": "b",
+          "label": "划分清晨可用的静音餐具",
+          "result": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。"
+        }
+      ]
+    },
+    "side.garden.resident_2": {
+      "title": "门边的旧画",
+      "prompt": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留旧画并加新画框",
+          "result": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。"
+        },
+        {
+          "id": "b",
+          "label": "把旧画收进公共纪念册",
+          "result": "邻居接受给墙面换新，也记住旧画被妥善留存。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居接受给墙面换新，也记住旧画被妥善留存。"
+        }
+      ]
+    },
+    "side.garden.resident_3": {
+      "title": "署在样件上的名字",
+      "prompt": "同事完成大半样件，你做了最后修整，署名位置却只有一处。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "并列写上分工",
+          "result": "同事记住你明确写出双方贡献，而没有独占成品署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事记住你明确写出双方贡献，而没有独占成品署名。"
+        },
+        {
+          "id": "b",
+          "label": "署共同小组名并另留工序卡",
+          "result": "同事接受共同署名，具体贡献仍在工序卡上可查。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事接受共同署名，具体贡献仍在工序卡上可查。"
+        }
+      ]
+    },
+    "side.garden.resident_4": {
+      "title": "不想被公开的故事",
+      "prompt": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起改成匿名版本",
+          "result": "熟人确认删去了可识别细节，记住你尊重署名选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人确认删去了可识别细节，记住你尊重署名选择。"
+        },
+        {
+          "id": "b",
+          "label": "把故事留在私人的折页里",
+          "result": "熟人收起折页，记住你没有把一段谈话当成公开许可。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人收起折页，记住你没有把一段谈话当成公开许可。"
+        }
+      ]
+    },
+    "side.garden.resident_5": {
+      "title": "被剪短的那一枝",
+      "prompt": "旧识仍记得你们因遮路枝条争吵，他带来两份修剪草图。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "共同画出最少修剪范围",
+          "result": "他接受只修影响通行的部分，并记住共同落笔的边界。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "他接受只修影响通行的部分，并记住共同落笔的边界。"
+        },
+        {
+          "id": "b",
+          "label": "保留枝条改画绕行线",
+          "result": "他接受更长的绕行安排，旧争执有了不必认输的出口。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "他接受更长的绕行安排，旧争执有了不必认输的出口。"
+        }
+      ]
+    },
+    "side.garden.resident_6": {
+      "title": "欠着一季照料",
+      "prompt": "曾替你照料盆栽的人在护理站歇脚，想把照料笔记交还。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起把笔记补成轮值卡",
+          "result": "对方记住你接回照料责任，并划清旧人情。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方记住你接回照料责任，并划清旧人情。"
+        },
+        {
+          "id": "b",
+          "label": "把笔记改成可共享的简页",
+          "result": "对方同意留下匿名经验，接受你完成整理作为回报。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方同意留下匿名经验，接受你完成整理作为回报。"
+        }
+      ]
+    },
+    "side.garden.moment_1": {
+      "title": "叶漏的光",
+      "prompt": "透过树冠的光落在一张空白卡片上。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "描下此刻的叶影",
+          "result": "卡片留住一片很快就会移动的影子。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把卡片轻轻转半圈",
+          "result": "叶影越过纸边，桌面又接住了它。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.moment_2": {
+      "title": "空荚的小响声",
+      "prompt": "摊主留了一只已经取空种子的干荚供人把玩。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "轻摇干荚",
+          "result": "薄壳里传出很轻的沙响。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用指节敲敲荚背",
+          "result": "干荚回了两声短促的脆响。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.moment_3": {
+      "title": "桌边的空杯",
+      "prompt": "公用桌上留着一只洗净的杯子，杯沿朝着通道。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把杯子倒扣在垫上",
+          "result": "杯底接住了一小片光。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把杯柄转向桌内",
+          "result": "杯子安稳地留在伸手可及的位置。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.moment_4": {
+      "title": "松动的纸角",
+      "prompt": "公共示意图的一角被穿堂风掀起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用现成纸夹夹住",
+          "result": "图纸安静下来，旁边的说明重新露出。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把纸角折入透明套",
+          "result": "纸面留下小折痕，不再拍打墙面。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.moment_5": {
+      "title": "窗帘留一道缝",
+      "prompt": "休息位旁的帘子遮住了窗外的公共花盆。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘子束在一侧",
+          "result": "花盆和柔和的光一起露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只留一道窄缝",
+          "result": "一线光落在空座的扶手上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.garden.moment_6": {
+      "title": "给空白页一个折角",
+      "prompt": "共用留言册翻到最后一页，那里还没有字。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "画一小段无名纹样",
+          "result": "空白页多了一段不占地方的线条。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把书签移到这一页",
+          "result": "后来的人会先翻到这处空白。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    }
+  }
+}

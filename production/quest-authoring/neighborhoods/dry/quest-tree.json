@@ -1,0 +1,385 @@
+{
+  "mainQuest": {
+    "id": "main.dry_apex",
+    "goal": "站上顶点：在晴砾街区成为镜阵执掌者，或成为凉荫议长。",
+    "paths": [
+      {
+        "id": "path.resource",
+        "style": "镜阵经营：成为镜阵执掌者",
+        "stages": [
+          {
+            "id": "resource_s1",
+            "name": "一面可用的镜板",
+            "locationType": "workshop",
+            "objective": "取得共享镜板阵列的维护份额。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.1",
+            "actions": [
+              "校正样板角度，以维护工时换取份额",
+              "制定低强度轮用表，以共享设备换取份额",
+              "采用「镜背的旧刻度」的处理记录，完成一面可用的镜板"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "resource_s2"
+            ]
+          },
+          {
+            "id": "resource_s2",
+            "name": "日光的价码",
+            "locationType": "market",
+            "objective": "签署跨摊位的日照加工结算契约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.2",
+            "actions": [
+              "按实际加工时段议价，签署统一收据",
+              "以淡旺时段互抵，签下季节平价契约",
+              "采用「正午的订单」的处理记录，完成日光的价码"
+            ],
+            "requires": [
+              "main:flag.resource.1"
+            ],
+            "next": [
+              "resource_s3"
+            ]
+          },
+          {
+            "id": "resource_s3",
+            "name": "正午的留白",
+            "locationType": "commons",
+            "objective": "通过兼顾遮阴与加工的镜阵总排程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.resource.3",
+            "actions": [
+              "在模型上保留正午行人阴影带",
+              "把集中加工移到早晚，保留午间镜板停转",
+              "采用「会移动的暗线」的处理记录，完成正午的留白"
+            ],
+            "requires": [
+              "main:flag.resource.2"
+            ],
+            "next": [
+              "resource_s4"
+            ]
+          },
+          {
+            "id": "resource_s4",
+            "name": "收拢日光",
+            "locationType": "home",
+            "objective": "接掌镜阵排程总钥，成为镜阵执掌者。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "以公开能额账册接管统一排程",
+              "保留各坊自用时段，接管共同加工窗口"
+            ],
+            "requires": [
+              "main:flag.resource.3"
+            ],
+            "next": []
+          }
+        ]
+      },
+      {
+        "id": "path.stewardship",
+        "style": "凉荫公议：成为凉荫议长",
+        "stages": [
+          {
+            "id": "stewardship_s1",
+            "name": "门前的阴影",
+            "locationType": "home",
+            "objective": "获得住户签认的连续遮阴通道使用权。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.1",
+            "actions": [
+              "挪开自家储物位，换取相邻门廊开放",
+              "制定错时开帘协议，连起共用阴影带",
+              "采用「一张帘的两面」的处理记录，完成门前的阴影"
+            ],
+            "requires": [
+              "main:flag.started"
+            ],
+            "next": [
+              "stewardship_s2"
+            ]
+          },
+          {
+            "id": "stewardship_s2",
+            "name": "凉水与座位",
+            "locationType": "clinic",
+            "objective": "建立对所有行人开放的降温座位安排。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.2",
+            "actions": [
+              "按停留时间轮换座位，留出急需休息位",
+              "增设短坐区，把长时休息与通行分开",
+              "采用「座位朝哪边」的处理记录，完成凉水与座位"
+            ],
+            "requires": [
+              "main:flag.stewardship.1"
+            ],
+            "next": [
+              "stewardship_s3"
+            ]
+          },
+          {
+            "id": "stewardship_s3",
+            "name": "谁能先过",
+            "locationType": "market",
+            "objective": "让商户签署遮棚下的人货分流公约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.stewardship.3",
+            "actions": [
+              "把货物搬运集中到清晨，全天保留步道",
+              "分出推车窄道，以摊位退让换取不断流通行",
+              "采用「推车的影子」的处理记录，完成谁能先过"
+            ],
+            "requires": [
+              "main:flag.stewardship.2"
+            ],
+            "next": [
+              "stewardship_s4"
+            ]
+          },
+          {
+            "id": "stewardship_s4",
+            "name": "晴棚联席",
+            "locationType": "commons",
+            "objective": "获授公共凉荫事务的裁决席位，成为凉荫议长。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。",
+            "flag": "main:flag.top_reached",
+            "actions": [
+              "接受各院推举，公布遮荫争议的听证次序",
+              "设轮值副席，在公开章程下接掌议长席"
+            ],
+            "requires": [
+              "main:flag.stewardship.3"
+            ],
+            "next": []
+          }
+        ]
+      }
+    ],
+    "journal": [
+      {
+        "unlockFlag": "main:flag.started",
+        "text": "站上顶点：在晴砾街区成为镜阵执掌者，或成为凉荫议长。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.1",
+        "text": "日光的价码：签署跨摊位的日照加工结算契约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.2",
+        "text": "正午的留白：通过兼顾遮阴与加工的镜阵总排程。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.resource.3",
+        "text": "收拢日光：接掌镜阵排程总钥，成为镜阵执掌者。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.1",
+        "text": "凉水与座位：建立对所有行人开放的降温座位安排。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.2",
+        "text": "谁能先过：让商户签署遮棚下的人货分流公约。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.stewardship.3",
+        "text": "晴棚联席：获授公共凉荫事务的裁决席位，成为凉荫议长。需在当地完成试行、验收或双方签认；可以选择不同方案，也可暂缓后再来。"
+      },
+      {
+        "unlockFlag": "main:flag.top_reached",
+        "text": "你已取得本街区的最高席位。未完成的当地事务仍可继续。"
+      }
+    ]
+  },
+  "sideQuests": [
+    {
+      "id": "side.dry.support_1",
+      "type": "main-related",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "新旧镜板刻度方向相反，合用时总有人调错。 当地选择：加装双向对照尺，或遮住旧刻度贴可移标记。",
+      "flag": "side:flag.dry.support_1",
+      "effectOnMain": "为镜阵经营第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「镜背的旧刻度」：加装双向对照尺，或遮住旧刻度贴可移标记。无需返回报信。"
+    },
+    {
+      "id": "side.dry.support_2",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "一笔大单只肯买最热时段，却会挤掉小摊的加工窗口。 当地选择：把大单拆成早晚两批，或让大单让出首尾时段。",
+      "flag": "side:flag.dry.support_2",
+      "effectOnMain": "为镜阵经营第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「正午的订单」：把大单拆成早晚两批，或让大单让出首尾时段。无需返回报信。"
+    },
+    {
+      "id": "side.dry.support_3",
+      "type": "main-related",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "镜阵模型上的阴影带在午后切断了去护理站的路线。 当地选择：调整边缘镜板的转动范围，或给午后加一段固定布棚。",
+      "flag": "side:flag.dry.support_3",
+      "effectOnMain": "为镜阵经营第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「会移动的暗线」：调整边缘镜板的转动范围，或给午后加一段固定布棚。无需返回报信。"
+    },
+    {
+      "id": "side.dry.support_4",
+      "type": "main-related",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "住户想合帘挡热，通道另一侧却需要开帘通风。 当地选择：把帘分成上下两幅，或按墙影约定开合时刻。",
+      "flag": "side:flag.dry.support_4",
+      "effectOnMain": "为凉荫公议第1阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「一张帘的两面」：把帘分成上下两幅，或按墙影约定开合时刻。无需返回报信。"
+    },
+    {
+      "id": "side.dry.support_5",
+      "type": "main-related",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "一排座椅朝着来风处，却挡住了宽体行人的转身空间。 当地选择：把座椅排成弧形，或拆分坐席与靠站区。",
+      "flag": "side:flag.dry.support_5",
+      "effectOnMain": "为凉荫公议第2阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「座位朝哪边」：把座椅排成弧形，或拆分坐席与靠站区。无需返回报信。"
+    },
+    {
+      "id": "side.dry.support_6",
+      "type": "main-related",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "遮棚下只能并排容纳一辆推车和一人，货主想两车同行。 当地选择：试行单车接力，或用摊位退线换短暂停车位。",
+      "flag": "side:flag.dry.support_6",
+      "effectOnMain": "为凉荫公议第3阶段提供可选记录方案；不作为阶段入口或普通完成方式的前置。",
+      "journalText": "在当地处理「推车的影子」：试行单车接力，或用摊位退线换短暂停车位。无需返回报信。"
+    },
+    {
+      "id": "side.dry.resident_1",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。 当地选择：一起给餐具架垫软布，或划分清晨可用的静音餐具。",
+      "flag": "side:flag.dry.resident_1",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不必一样的作息」：一起给餐具架垫软布，或划分清晨可用的静音餐具。无需返回报信。"
+    },
+    {
+      "id": "side.dry.resident_2",
+      "type": "character",
+      "locationType": "home",
+      "requiresRelation": "neighbor",
+      "objective": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。 当地选择：保留旧画并加新画框，或把旧画收进公共纪念册。",
+      "flag": "side:flag.dry.resident_2",
+      "effectOnMain": null,
+      "journalText": "在当地处理「门边的旧画」：保留旧画并加新画框，或把旧画收进公共纪念册。无需返回报信。"
+    },
+    {
+      "id": "side.dry.resident_3",
+      "type": "character",
+      "locationType": "workshop",
+      "requiresRelation": "colleague",
+      "objective": "同事完成大半样件，你做了最后修整，署名位置却只有一处。 当地选择：并列写上分工，或署共同小组名并另留工序卡。",
+      "flag": "side:flag.dry.resident_3",
+      "effectOnMain": null,
+      "journalText": "在当地处理「署在样件上的名字」：并列写上分工，或署共同小组名并另留工序卡。无需返回报信。"
+    },
+    {
+      "id": "side.dry.resident_4",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "acquaintance",
+      "objective": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。 当地选择：一起改成匿名版本，或把故事留在私人的折页里。",
+      "flag": "side:flag.dry.resident_4",
+      "effectOnMain": null,
+      "journalText": "在当地处理「不想被公开的故事」：一起改成匿名版本，或把故事留在私人的折页里。无需返回报信。"
+    },
+    {
+      "id": "side.dry.resident_5",
+      "type": "character",
+      "locationType": "commons",
+      "requiresRelation": "grudge",
+      "objective": "你与旧识曾为占用阴凉长凳争执，他坚持那是自己的固定座位。 当地选择：一起试定轮坐时长，或各留一端并标出公共中段。",
+      "flag": "side:flag.dry.resident_5",
+      "effectOnMain": null,
+      "journalText": "在当地处理「借走的阴影」：一起试定轮坐时长，或各留一端并标出公共中段。无需返回报信。"
+    },
+    {
+      "id": "side.dry.resident_6",
+      "type": "character",
+      "locationType": "clinic",
+      "requiresRelation": "debt",
+      "objective": "曾照顾你的人想重新摆放饮水桌，桌腿却不平。 当地选择：陪他垫平桌脚，或把饮水分到两张矮台。",
+      "flag": "side:flag.dry.resident_6",
+      "effectOnMain": null,
+      "journalText": "在当地处理「那次递来的凉水」：陪他垫平桌脚，或把饮水分到两张矮台。无需返回报信。"
+    },
+    {
+      "id": "side.dry.moment_1",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "一小片废镜把日光映在无人停留的墙面上。 当地选择：把光斑调成一条细线，或让光斑落在石缝边。",
+      "flag": "side:flag.dry.moment_1",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.dry.moment_2",
+      "type": "atmosphere",
+      "locationType": "market",
+      "requiresRelation": null,
+      "objective": "空篮的编条在热风中轻轻振动。 当地选择：把篮口转向风，或把篮子侧放在布上。",
+      "flag": "side:flag.dry.moment_2",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.dry.moment_3",
+      "type": "atmosphere",
+      "locationType": "home",
+      "requiresRelation": null,
+      "objective": "公用桌上留着一只洗净的杯子，杯沿朝着通道。 当地选择：把杯子倒扣在垫上，或把杯柄转向桌内。",
+      "flag": "side:flag.dry.moment_3",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.dry.moment_4",
+      "type": "atmosphere",
+      "locationType": "workshop",
+      "requiresRelation": null,
+      "objective": "公共示意图的一角被穿堂风掀起。 当地选择：用现成纸夹夹住，或把纸角折入透明套。",
+      "flag": "side:flag.dry.moment_4",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.dry.moment_5",
+      "type": "atmosphere",
+      "locationType": "clinic",
+      "requiresRelation": null,
+      "objective": "休息位旁的帘子遮住了窗外的公共花盆。 当地选择：把帘子束在一侧，或只留一道窄缝。",
+      "flag": "side:flag.dry.moment_5",
+      "effectOnMain": null,
+      "journalText": null
+    },
+    {
+      "id": "side.dry.moment_6",
+      "type": "atmosphere",
+      "locationType": "commons",
+      "requiresRelation": null,
+      "objective": "共用留言册翻到最后一页，那里还没有字。 当地选择：画一小段无名纹样，或把书签移到这一页。",
+      "flag": "side:flag.dry.moment_6",
+      "effectOnMain": null,
+      "journalText": null
+    }
+  ],
+  "relationRules": {
+    "types": [
+      "colleague",
+      "neighbor",
+      "acquaintance",
+      "grudge",
+      "debt"
+    ],
+    "perResident": "1-2",
+    "usage": "主线/支线只引用关系类型，生成器负责绑定具体居民 ID；共同经历只记录已选分支。"
+  }
+}

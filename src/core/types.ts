@@ -44,7 +44,7 @@ export interface ActionDef {
   surface?: 'scene' | 'body';
 }
 export interface EventNode { id: string; type: 'choice' | 'exit'; textVariants: Id[]; actionIds: Id[]; onEnter: Effect[] }
-export interface EventDef { id: Id; startNode: string; nodes: EventNode[]; participantIds?: Id[]; rating?: 'general' | 'adult' }
+export interface EventDef { id: Id; startNode: string; nodes: EventNode[]; participantIds?: Id[]; residentIds?: string[]; textMode?: 'fixed'; rating?: 'general' | 'adult' }
 export interface PackManifest {
   id: string; namespace: string; version: string; schemaVersion: 1 | 2; engineApiVersion: '0.1';
   author: string; status: 'draft' | 'reviewed' | 'approved';

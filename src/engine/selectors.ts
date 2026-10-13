@@ -7,6 +7,7 @@ import { evaluate } from './conditions.ts';
 import { transformationCheck } from './transformations.ts';
 import { eventNode } from './events.ts';
 import { npcPresent } from './npc.ts';
+import { residentPresent } from './resident-quests.ts';
 import { districtOptions, districtText } from './district-effects.ts';
 import { directResourceCheck } from './resource-check.ts';
 import type { TextLibrary } from '../content/text-variants.ts';
@@ -29,6 +30,7 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
     checks.push(directResourceCheck(definition.effects, state, registry));
     for (const e of definition.effects) if (e.op === 'tf.apply' || e.op === 'tf.enqueue' || e.op === 'tf.pause' || e.op === 'tf.resume' || e.op === 'tf.cancel') checks.push(transformationCheck(state, registry, e.id, e.op,e.target));
     for (const e of definition.effects) if (e.op === 'event.start') for (const npcId of registry.event(e.id).participantIds ?? []) checks.push({ pass: npcPresent(state, registry, npcId), reason: `${registry.npc(npcId).name}此刻不在这里。` });
+    for (const e of definition.effects) if (e.op === 'event.start') for (const residentId of registry.event(e.id).residentIds ?? []) checks.push({ pass: residentPresent(state, residentId), reason: '约定的居民此刻不在这里。' });
     const failed = checks.find(x => !x.pass);
     return { definition, available: !failed, reason: failed?.reason ?? '' };
   });

@@ -78,7 +78,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
     for (const [nodeId, textId] of Object.entries(texts)) if (!def.nodes.find(x => x.id === nodeId)?.textVariants.includes(string(textId) as Id)) bad('事件抽样结果与定义不一致。');
     const draws = array(event.draws); const drawnIds: string[] = [];
     for (const rawDraw of draws) { const d = object(rawDraw, ['nodeId', 'value']); drawnIds.push(string(d.nodeId)); if (!texts[string(d.nodeId)] || typeof d.value !== 'number' || d.value < 0 || d.value >= 1) bad('事件随机记录无效。'); const n = def.nodes.find(x => x.id === d.nodeId)!; if (n.textVariants[Math.floor((d.value as number) * n.textVariants.length)] !== texts[string(d.nodeId)]) bad('随机结果与文字索引不一致。'); }
-    unique(drawnIds); if (draws.length !== Object.keys(texts).length) bad('事件抽样次数不一致。');
+    unique(drawnIds); if (draws.length !== (def.textMode === 'fixed' ? 0 : Object.keys(texts).length)) bad('事件抽样次数不一致。');
     for (const v of Object.values(object(event.locals))) if (!['string', 'number', 'boolean'].includes(typeof v) || (typeof v === 'number' && !Number.isFinite(v))) bad('事件局部变量无效。');
   }
   unique(eventIds); const stack = array(state.activeEventStack); unique(stack);
@@ -86,7 +86,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   const rng = object(state.rng, ['seed', 'streams']); int(rng.seed, 0, 4294967295);
   const streams = object(rng.streams);
   for (const [key, raw] of Object.entries(streams)) { string(key); const s = object(raw, ['state', 'draws']); int(s.state, 1, 4294967295); int(s.draws, 1); }
-  for (const raw of array(state.eventInstances)) { const e = raw as GameState['eventInstances'][number]; const stream = streams[`event:${e.instanceId}`] as { draws: number } | undefined; if (!stream || stream.draws !== e.draws.length) bad('事件独立随机流丢失或次数不符。'); }
+  for (const raw of array(state.eventInstances)) { const e = raw as GameState['eventInstances'][number]; const stream = streams[`event:${e.instanceId}`] as { draws: number } | undefined; if (registry.event(e.definitionId).textMode === 'fixed' ? !!stream : !stream || stream.draws !== e.draws.length) bad('事件独立随机流丢失或次数不符。'); }
   const ledger = object(state.ledger, ['transactions']); const transactions = array(ledger.transactions); const requests: string[] = [];
   if (transactions.length !== revision) bad('事务账本与 revision 不一致。');
   transactions.forEach((raw, index) => {
@@ -178,7 +178,7 @@ export class SaveCodec {
       }
       if (this.registry.packs.some(p => p.id === 'generated/neighborhood')) {
         // 生成参考库可能额外装了种族/原型包；它们不能成为读取原固定世界的必需包。
-        return new SaveCodec(this.fixedRegistry ?? await loadPacks(this.registry.contentPacks.filter(p => p.manifest.id !== 'generated/neighborhood'))).decode(text);
+        return new SaveCodec(this.fixedRegistry ?? await loadPacks(this.registry.contentPacks.filter(p => !['generated/neighborhood', 'generated/cyber-apex-main', 'generated/cyber-apex-side'].includes(p.manifest.id)))).decode(text);
       }
       if (this.registry.legacyRegistry && !envelope.payload.state.district) {
         const old = await new SaveCodec(this.registry.legacyRegistry).decode(text);

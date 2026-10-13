@@ -24,7 +24,7 @@ try {
   let initial, remembered;
   await check('固定世界保留；通过世界菜单实际生成并进入种子42街区', async () => {
     await snapshot(page,'fixed-initial');
-    await click(page, '世界'); await page.locator('#world-seed').fill('42'); await click(page, '生成并进入街区');
+    await click(page, '世界'); await page.locator('#world-seed').fill('42'); await click(page, '生成并进入世界');
     await page.locator('#world-current').filter({hasText:worldName(42)}).waitFor({state:"attached"}); initial = await snapshot(page,'seed42-initial'); assert.equal(initial.worldInstance.generation.seed,42);assert.equal(initial.district.residents.length,9);
     assert.ok(initial.worldInstance.generation.contentPacks.some(p=>p.id==='aetheria/neighborhood-lexicon'));
     assert.ok(initial.district.residents.every(r=>r.appearance.includes('衣着：')));
@@ -76,7 +76,7 @@ try {
     await click(page,'世界');await page.getByText('管理生成参考库',{exact:true}).click();
     await page.locator('#world-generation-content-import').setInputFiles(path.join(root,'content/generation/addon-content.json'));await page.locator('#world-message').filter({hasText:'校验通过'}).waitFor();
     await page.locator('#world-reference-import').setInputFiles(path.join(root,'content/generation/addon-reference.json'));await page.locator('#world-message').filter({hasText:'校验通过'}).waitFor();await click(page,'关闭世界');assert.deepEqual(await snapshot(),remembered);
-    await click(page,'世界');await click(page,'生成并进入街区');const next=await snapshot(page,'addon-world');assert.ok(next.district.residents.some(r=>r.profession==='灯匠'));assert.equal(next.worldInstance.generation.contentPacks.length,initial.worldInstance.generation.contentPacks.length+1);
+    await click(page,'世界');await click(page,'生成并进入世界');const next=await snapshot(page,'addon-world');assert.ok(next.district.residents.some(r=>r.profession==='灯匠'));assert.equal(next.worldInstance.generation.contentPacks.length,initial.worldInstance.generation.contentPacks.length+1);
     await click(page,'存档');await page.locator('#save-import').setInputFiles(path.join(out,'fixed-initial.json'));await page.locator('#save-message').filter({hasText:'已导入'}).waitFor();assert.equal(await page.locator('#location-name').innerText(),'公寓');
     await page.locator('#save-import').setInputFiles(path.join(out,'current.json'));await page.locator('#save-message').filter({hasText:'已导入'}).waitFor();await click(page,'关闭存档');assert.deepEqual(await snapshot(),remembered);
     await page.screenshot({path:path.join(out,'desktop.png'),fullPage:true});

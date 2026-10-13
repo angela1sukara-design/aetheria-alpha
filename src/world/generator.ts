@@ -11,18 +11,24 @@ import { draw } from '../engine/rng.ts';
 import { initialDistrict } from '../engine/district.ts';
 import { advanceWorldSimulation } from './simulation.ts';
 import { hash, integer, parseReference, parseRules } from './schema.ts';
+import { selectQuestContent } from '../content/quest-schema.ts';
+import { compileWorldQuests } from './quests.ts';
+import { applyWorldProfile, chooseWorldProfile, parseWorldProfiles, professionName } from './profiles.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
-export const GENERATOR_VERSION = '0.3.0';
+export const GENERATOR_VERSION = '0.6.0';
 const id = (key: string): Id => `worldgen:${key}`;
 
 /** 生成器只创建初始快照。所有玩法编译成已有内容 DSL，并经过同一个 loader。 */
 export class WorldGenerator {
-  async generate(input: { seed: number; registry: Registry; rules: unknown; references: unknown[]; parameters?: { locationCount?: number; npcCount?: number } }): Promise<GeneratedWorld> {
+  async generate(input: { seed: number; registry: Registry; rules: unknown; references: unknown[]; questContent?: unknown; worldProfiles?: unknown; worldTag?: string; parameters?: { locationCount?: number; npcCount?: number } }): Promise<GeneratedWorld> {
     integer(input.seed, 0, 0xffffffff);
     if (!Array.isArray(input.references) || input.references.length < 1 || input.references.length > 20) throw Error('参考包数量必须为1–20。');
     if (input.parameters && Object.keys(input.parameters).some(k => !['locationCount', 'npcCount'].includes(k))) throw Error('未知生成参数。');
     if (input.registry.packs.some(p => p.id === 'generated/neighborhood')) throw Error('请用源内容库创建新世界。');
+    if (input.worldTag !== undefined && input.worldProfiles === undefined) throw Error('指定世界 Tag 需要世界配置目录。');
+    if (input.worldProfiles !== undefined && input.questContent !== undefined) throw Error('世界配置已包含任务，不能同时指定另一套任务。');
+    const profile = input.worldProfiles === undefined ? undefined : chooseWorldProfile(parseWorldProfiles(input.worldProfiles, input.registry), input.seed, input.worldTag === undefined ? undefined : resolveTag(input.registry, input.worldTag, 'generation.v1'));
     const rules = parseRules(input.rules), references = input.references.map(p => parseReference(p, input.registry)).sort((a, b) => a.id.localeCompare(b.id, 'en'));
     if (!references.length || new Set(references.map(p => p.id)).size !== references.length) throw Error('参考包集合为空或重复。');
     const templates = references.flatMap(p => clone(p.templates)).sort((a, b) => a.id.localeCompare(b.id, 'en'));
@@ -31,6 +37,7 @@ export class WorldGenerator {
     for (const t of templates) for (const ref of [...t.combination.requiresTemplates, ...t.combination.excludesTemplates]) if (!templates.some(x => x.id === ref)) throw Error('组合规则引用未知模板。');
     const canonical=(tag:string)=>input.registry.tags.length?resolveTag(input.registry,tag,'generation.v1'):tag;
     for(const t of templates){for(const key of ['environmentTags','requiresTags','excludesTags','compatibleTags']as const)t[key]=t[key].map(canonical);t.contributes.tags=t.contributes.tags.map(canonical);for(const b of t.combination.boosts)b.tag=canonical(b.tag);if(t.kind==='environment')t.data.tags=t.data.tags.map(canonical);if(t.kind==='place')t.contributes.tags=t.contributes.tags.filter(tag=>!tag.startsWith('foundation:service.')&&!tag.startsWith('service.'));}
+    if (profile) applyWorldProfile(templates, profile);
     validateReferenceOrder(templates);
     // 模板贡献的原型同样遵守父模板条件；只有父模板实际被选中后才能参与抽样。
     if (templates.length + templates.reduce((count, t) => count + t.contributes.npcTemplateIds.length, 0) > 2000) throw Error('贡献原型展开后超过2000个模板限制。');
@@ -39,7 +46,7 @@ export class WorldGenerator {
     if (new Set(templates.map(t => t.id)).size !== templates.length) throw Error('自动贡献模板 ID 与参考库冲突。');
     const parameters = { locationCount: input.parameters?.locationCount ?? rules.locationCount, npcCount: input.parameters?.npcCount ?? rules.npcCount };
     integer(parameters.locationCount, 5, 20); integer(parameters.npcCount, 3, 40);
-    const randomState = createGameState(input.registry, input.seed), selected: ReferenceTemplate[] = [], tags = new Set<string>();
+    const randomState = createGameState(input.registry, input.seed), selected: ReferenceTemplate[] = [], tags = new Set<string>(profile ? [profile.tag] : []);
     const pick = <T>(items: T[], stream: string): T => { if (!items.length) throw Error('没有兼容的生成候选。'); return items[Math.floor(draw(randomState, `generation:${stream}`) * items.length)]!; };
     const eligible = (t: ReferenceTemplate, localTags = tags) => t.requiresPacks.every(p => input.registry.packs.some(x => x.id === p))
       && (!t.environmentTags.length || t.environmentTags.some(tag => tags.has(tag)))
@@ -63,6 +70,12 @@ export class WorldGenerator {
     };
     const contributionsAt = new Map<Id, ReferenceTemplate[]>();
     const definition: WorldDef = { id: `neighborhood-${input.seed}`, name: environment.data.name, startLocationId: id('location.0'), regions: [{ id: 'region-0', name: environment.data.name, environmentTags: [...tags], ecologyTags: [...tags].filter(t => t.startsWith('ecology.')||t.startsWith('foundation:ecology.')) }], locations: [], factions: [], eventPool: [], packs: [] };
+    if (profile) {
+      const ecologyTag = environment.data.tags.find(t => t.startsWith('foundation:setting.') || t.startsWith('climate.'));
+      if (!ecologyTag) throw Error('世界题材需要一个明确的生态环境标签。');
+      definition.name = profile.name;
+      definition.setting = { id: profile.id, tag: profile.tag, name: profile.name, version: profile.version, hash: await hash(profile), ecologyTag: ecologyTag as Id, questId: profile.quests.id };
+    }
     for (let i = 0; i < 2; i++) {
       const t = choose('faction', `faction.${i}`, t => !selected.some(s => s.kind === 'faction' && s.id === t.id)); if (t.kind !== 'faction') throw Error();
       t.contributes.tags.forEach(tag => tags.add(tag));
@@ -80,7 +93,7 @@ export class WorldGenerator {
         if (effect.op === 'tf.apply') return ['立即改变当前形态'];
         return [];
       });
-      pack.actions.push({ id: aid, label, hint: hints.join(' · ') || '继续在街区生活', group, conditions, effects, resultText: textKey });
+      pack.actions.push({ id: aid, label, hint: hints.join(' · ') || '继续当地生活', group, conditions, effects, resultText: textKey });
       if (group !== 'event') pack.contributions.push({ hookId: hook, actionIds: [aid] }); return aid;
     }
     // Draw distinct cells, then jitter inside each cell. Even at the 20-place
@@ -103,12 +116,12 @@ export class WorldGenerator {
         (pack.sceneTexts ??= []).push({ id: id(`ambience.${i}.${key}`), locationId: lid, conditions: [{ op: 'time.window', start, end }], priority: 1, textKey });
       }
       // 所有地点免费恢复，旅行不扣精力，保证贫穷/耗尽时仍可继续游玩。
-      action(`rest.${i}`, '找个座位休息', hook, [{ op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:energy', amount: 12 }], [], 'daily', '你在公共座位休息。精力逐渐恢复，街区的日程仍在推进。');
+      action(`rest.${i}`, '找个座位休息', hook, [{ op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:energy', amount: 12 }], [], 'daily', '你在公共座位休息。精力逐渐恢复，当地的日程仍在推进。');
       if (t.data.service === 'clinic') action(`care.${i}`, '使用免费体况恢复座位', hook, [{ op: 'clock.advance', minutes: 45 }, { op: 'var.change', id: 'core:energy', amount: 6 }, { op: 'var.change', id: 'core:health', amount: 8 }], [], 'daily', '你在开放的护理座位补充饮水并休息，体况逐渐恢复。');
       action(`wait.${i}`, '等候一小时', hook, [{ op: 'clock.advance', minutes: 60 }]);
       action(`wait.short.${i}`, '在附近等候一刻钟', hook, [{ op: 'clock.advance', minutes: 15 }], [], 'daily', '你等候了一刻钟，居民按原来的日程活动。');
       action(`work.${i}`, `参与${t.data.economy[0]}`, hook, [{ op: 'var.change', id: 'core:energy', amount: -5 }, { op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:money', amount: 5 }], [{ op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你按现场约定完成了一段工作，收到报酬。');
-      action(`look.${i}`, '留意街区与附近的人', hook, [{ op: 'world.encounter' }], [], 'explore', '你留意周围的人与路况。');
+      action(`look.${i}`, '留意环境与附近的人', hook, [{ op: 'world.encounter' }], [], 'explore', '你留意周围的人与路况。');
       action(`meet.${i}`, '看看在场居民', hook, [{ op: 'world.encounter', events: false }], [], 'explore', '你向身边的人打了个招呼。');
       action(`talk.${i}`, '与眼前的居民交谈', hook, [{ op: 'resident.talk' }, { op: 'clock.advance', minutes: 5 }], [{ op: 'resident.available' }], 'daily', '你们聊了聊今天的生活。');
       action(`help.${i}`, '帮居民处理手边的事', hook, [{ op: 'resident.help' }, { op: 'clock.advance', minutes: 15 }], [{ op: 'resident.available' }, { op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你先问清楚需要什么，再伸手帮忙。');
@@ -136,7 +149,7 @@ export class WorldGenerator {
       const finish = action(`event.finish.${suffix}`, e.data.label, hook, [{ op: 'clock.advance', minutes: e.data.minutes }, { op: 'var.change', id: 'core:money', amount: e.data.reward }, { op: 'event.advance', nodeId: 'end' }], [], 'event', e.data.completeText);
       const leave = action(`event.leave.${suffix}`, '先继续自己的安排', hook, [{ op: 'event.advance', nodeId: 'end' }], [], 'event', '你向值班人说明稍后再说，走回公共通道。');
       for (const aid of [finish, leave]) pack.actions.find(a => a.id === aid)!.context = { eventId: eid, nodeId: 'start' };
-      pack.texts[prompt] = e.data.prompt; pack.texts[endText] = '交接已记录。你可以继续探索街区。';
+      pack.texts[prompt] = e.data.prompt; pack.texts[endText] = '交接已记录。你可以继续探索周围。';
       pack.events.push({ id: eid, startNode: 'start', rating: 'general', nodes: [{ id: 'start', type: 'choice', textVariants: [prompt], actionIds: [finish, leave], onEnter: [] }, { id: 'end', type: 'exit', textVariants: [endText], actionIds: [], onEnter: [{ op: 'event.exit' }] }] });
       pack.storylets!.push({ id: id(`storylet.${i}.${j}`), locationId: lid, conditions: [], eventId: eid, weight: 1, priority: 1, cooldownMinutes: 60, cooldownGroup: `generated-${i}`, repeat: 'daily', hidden: true, tags: [input.registry.tags.length?'foundation:theme.gen-neighbor':'neighborhood'] }); definition.eventPool.push(eid);
       }
@@ -170,8 +183,9 @@ export class WorldGenerator {
       contributionsAt.get(work.id)!.push(t);
       const source = input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!;
       const template = clone(source); template.id = id(`resident.${i}`); template.locationIds = pack.locations.map(l => l.id); template.start = 0; template.end = 1439;
+      if (profile) template.profession = professionName(profile, work.service, source.profession);
       // 抽样只在生成时完成；单值实例模板继续受原居民存档校验保护。
-      template.names = [`${pick(source.names, `npc.name.${i}`)}·${i + 1}`]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
+      template.names = [`${pick(profile?.residentNames ?? source.names, `npc.name.${i}`)}·${i + 1}`]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
       template.patchIds = source.patchIds.length ? [pick(source.patchIds, `npc.patch.${i}`)] : [];
       let initialBody = instantiateBody(input.registry.bodyTemplate(template.bodyTemplateId));
       for (const patch of template.patchIds) initialBody = patchedBody(initialBody, input.registry.bodyPatch(patch), input.registry);
@@ -190,6 +204,7 @@ export class WorldGenerator {
       const home = pick(residences, `home.${i}`), rest = pick(leisure, `leisure.${i}`);
       agents.push({ residentId: `resident:${work.id}:${template.id}`, originLocationId: work.id, factionId: work.factionId, relationships: [], schedule: schedule(rules, home.id, work.id, rest.id) });
     }
+    if (profile) for (const place of definition.locations) place.professions = [...new Set(place.professions.map(p => professionName(profile, place.service, p)))];
     // 最小社交网络只记录真实共同住处/工作关系；后续变化属于模拟器。
     for (let i = 0; i < agents.length; i++) {
       const a = agents[i]!, b = agents[(i + 1) % agents.length]!;
@@ -210,7 +225,11 @@ export class WorldGenerator {
       }
     }
     definition.eventPool = [...new Set(definition.eventPool)];
-    definition.packs = [...clone(input.registry.contentPacks), pack];
+    // Imported rules may list services in a different order; quest worlds still start at a home.
+    const questContent = profile?.quests ?? input.questContent;
+    if (questContent !== undefined) definition.startLocationId = definition.locations.find(l => l.service === 'home')!.id;
+    const questPacks = questContent === undefined ? [] : await compileWorldQuests(selectQuestContent(questContent, definition.regions[0]!.environmentTags, canonical), input.seed, input.registry, pack, definition, agents);
+    definition.packs = [...clone(input.registry.contentPacks), pack, ...questPacks];
     const registry = await loadPacks(definition.packs), state = createGameState(registry, input.seed);
     state.world = { locationId: definition.startLocationId, knownLocationIds: [definition.startLocationId] };
     state.clock.totalMinutes = rules.startMinutes; state.rng = clone(randomState.rng); state.district = initialDistrict(); state.district.profile.created = true;

@@ -8,11 +8,13 @@ import { activeEvent } from './events.ts';
 import { encounter, residentInteraction } from './district.ts';
 import { applyDistrictEffect } from './district-effects.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
+import { residentPresent, rememberResident } from './resident-quests.ts';
 export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
   for (const effect of effects) {
     if (--context.budget < 0) throw new RuleError('EFFECT_BUDGET', '单次事务效果超过安全上限。');
     switch (effect.op) {
+      case 'resident.remember': rememberResident(draft, registry, effect.residentId, effect.memoryId); break;
       case 'world.encounter': { const id = encounter(draft,registry,effect.events !== false); if(id) applyEffects([{op:'event.start',id}],draft,registry,context); else context.resolvedTexts.push(effect.events === false ? (draft.district?.currentResidentId ? '你向另一位在场居民打了招呼，可以继续交谈或协助。' : '此刻没有居民在这里停留。可以查看公共活动时段，再等候或前往其他地点。') : '街区暂时平静。你留意了周围的人与路况。'); break; }
       case 'resident.talk': case 'resident.help': context.resolvedTexts.push(residentInteraction(draft,registry,effect.op === 'resident.help')); break;
       case 'combat.start': case 'combat.turn': case 'scene.start': case 'scene.act': case 'equipment.wear': case 'equipment.remove': case 'player.create': case 'preference.set':
@@ -53,6 +55,10 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       case 'event.start': {
         if (activeEvent(draft)) throw new RuleError('EVENT_ACTIVE', '本切片暂不支持嵌套事件。');
         const def = registry.event(effect.id);
+        for (const residentId of def.residentIds ?? []) {
+          if (!residentPresent(draft, residentId)) throw new RuleError('RESIDENT_ABSENT', '约定的居民此刻不在这里。');
+          draft.district!.residents.find(r => r.id === residentId)!.persistent = true;
+        }
         for (const id of def.participantIds ?? []) if (!npcPresent(draft, registry, id)) throw new RuleError('NPC_ABSENT', `${registry.npc(id).name}不在这里。`);
         const instance: EventInstance = {
           instanceId: `event-${context.transactionId}`, definitionId: def.id, nodeId: def.startNode,
@@ -84,9 +90,12 @@ function enterNode(instance: EventInstance, draft: GameState, registry: Registry
   if (!node) throw new RuleError('INVALID_NODE', '事件节点不存在。');
   // 已抽结果固化到实例；重绘、存读和查看地图只读 textByNode，不重抽、不重放 onEnter。
   if (!instance.textByNode[node.id]) {
-    const value = draw(draft, `event:${instance.instanceId}`);
-    instance.draws.push({ nodeId: node.id, value });
-    instance.textByNode[node.id] = node.textVariants[Math.floor(value * node.textVariants.length)];
+    if (registry.event(instance.definitionId).textMode === 'fixed') instance.textByNode[node.id] = node.textVariants[0]!;
+    else {
+      const value = draw(draft, `event:${instance.instanceId}`);
+      instance.draws.push({ nodeId: node.id, value });
+      instance.textByNode[node.id] = node.textVariants[Math.floor(value * node.textVariants.length)];
+    }
     applyEffects(node.onEnter, draft, registry, context);
   }
   if (node.type === 'exit') context.resolvedTexts.push(registry.text(instance.textByNode[node.id]));

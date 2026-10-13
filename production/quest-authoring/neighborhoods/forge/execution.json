@@ -1,0 +1,722 @@
+{
+  "stages": {
+    "resource_s1": [
+      {
+        "id": "a",
+        "label": "按成分分档议价，以分拣工时换取份额",
+        "result": "你按成分分档议价，以分拣工时换取份额。现场约定生效：取得可追溯回炉材料的联营份额。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "从低杂质小批料起步，签下试行联营契约",
+        "result": "你从低杂质小批料起步，签下试行联营契约。现场约定生效：取得可追溯回炉材料的联营份额。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「混进来的亮片」的处理记录，完成废料也有身价",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得可追溯回炉材料的联营份额。",
+        "requires": [
+          "side:flag.forge.support_1"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s2": [
+      {
+        "id": "a",
+        "label": "现场修整公差，完成互换样件测试",
+        "result": "你现场修整公差，完成互换样件测试。现场约定生效：通过各工坊都可复用的样件验收。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留两档规格，以转接件完成兼容测试",
+        "result": "你保留两档规格，以转接件完成兼容测试。现场约定生效：通过各工坊都可复用的样件验收。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「差半格的样规」的处理记录，完成一把不必专用的尺",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。通过各工坊都可复用的样件验收。",
+        "requires": [
+          "side:flag.forge.support_2"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s3": [
+      {
+        "id": "a",
+        "label": "用轮流停炉维护换取共同接单权",
+        "result": "你用轮流停炉维护换取共同接单权。现场约定生效：签订跨工坊的产能与维护互助章程。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留各坊独立接单，把溢出工单交给联营",
+        "result": "你保留各坊独立接单，把溢出工单交给联营。现场约定生效：签订跨工坊的产能与维护互助章程。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「空下来的炉时」的处理记录，完成炉与炉之间",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。签订跨工坊的产能与维护互助章程。",
+        "requires": [
+          "side:flag.forge.support_3"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s4": [
+      {
+        "id": "a",
+        "label": "公开验收样规，以统一质量责任接印",
+        "result": "你公开验收样规，以统一质量责任接印。接掌跨坊工艺验收总印，成为百炉总匠，以百炉总匠的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留各坊工艺署名，接掌联营验收权",
+        "result": "你保留各坊工艺署名，接掌联营验收权。接掌跨坊工艺验收总印，成为百炉总匠，以百炉总匠的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s1": [
+      {
+        "id": "a",
+        "label": "把恢复时段计入轮值表，保证人人可用",
+        "result": "你把恢复时段计入轮值表，保证人人可用。现场约定生效：与工人确认公共净尘与恢复位使用公约。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "设短歇与长歇两区，以轮换提高座位利用",
+        "result": "你设短歇与长歇两区，以轮换提高座位利用。现场约定生效：与工人确认公共净尘与恢复位使用公约。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「满灰的靠背」的处理记录，完成先有喘息的位置",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。与工人确认公共净尘与恢复位使用公约。",
+        "requires": [
+          "side:flag.forge.support_4"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s2": [
+      {
+        "id": "a",
+        "label": "逐项拆开材料与工时报价，现场签认",
+        "result": "你逐项拆开材料与工时报价，现场签认。现场约定生效：落实工人可核对的工单结算约定。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "采用最低工时保底，把超额成果另行分配",
+        "result": "你采用最低工时保底，把超额成果另行分配。现场约定生效：落实工人可核对的工单结算约定。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「算不到的准备工」的处理记录，完成工时写在谁名下",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。落实工人可核对的工单结算约定。",
+        "requires": [
+          "side:flag.forge.support_5"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s3": [
+      {
+        "id": "a",
+        "label": "以轮换停炉保留共同冷却余量",
+        "result": "你以轮换停炉保留共同冷却余量。现场约定生效：使各坊签认公共检修停炉的执行协议。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "先停低负荷炉，验收检修与复工交接流程",
+        "result": "你先停低负荷炉，验收检修与复工交接流程。现场约定生效：使各坊签认公共检修停炉的执行协议。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「冷渠边的两份工单」的处理记录，完成停炉也有次序",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。使各坊签认公共检修停炉的执行协议。",
+        "requires": [
+          "side:flag.forge.support_6"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s4": [
+      {
+        "id": "a",
+        "label": "接受工坊代表公开推举并签认申诉程序",
+        "result": "你接受工坊代表公开推举并签认申诉程序。获授工联公共工单与检修章程的执印权，成为工联执印人，以工联执印人的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "设轮值监督席，在可撤换的章程下接印",
+        "result": "你设轮值监督席，在可撤换的章程下接印。获授工联公共工单与检修章程的执印权，成为工联执印人，以工联执印人的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ]
+  },
+  "sides": {
+    "side.forge.support_1": {
+      "title": "混进来的亮片",
+      "prompt": "回炉料里混着外观相似的异材亮片，摊主想整批降价。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "按样片逐类分拣",
+          "result": "不同材料分开计价，整批不再按最低档处理。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "保留混合批次并注明用途限制",
+          "result": "买方知道混料边界，交易改按适用用途议价。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.support_2": {
+      "title": "差半格的样规",
+      "prompt": "两个工坊的量尺差半格，谁都不愿承认自家样件不合格。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "共同制作一件对照样",
+          "result": "双方以同一对照样复测，差异有了共同尺度。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "为两档尺寸各做转接环",
+          "result": "两档样件可以互换连接，旧尺仍有明确用途。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.support_3": {
+      "title": "空下来的炉时",
+      "prompt": "联营表把闲炉都写成可接单，却没给保养留时间。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "先锁定轮流保养窗口",
+          "result": "排程留出保养时段，公开接单额度随之调整。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用两坊互代换出整段停炉",
+          "result": "两坊互相承接急单，各自获得完整保养窗口。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.support_4": {
+      "title": "满灰的靠背",
+      "prompt": "休息椅靠背难清理，有人提议撤掉，却有人离不开支撑。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "加可拆洗的靠背套",
+          "result": "需要支撑的人保住靠背，清洁也有了可换洗部件。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "分设有靠背与无靠背坐席",
+          "result": "两种休息方式并存，清洁轮值分别安排。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.support_5": {
+      "title": "算不到的准备工",
+      "prompt": "新工单只付加工费，夹具准备时间被算成无偿。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把准备工单独列项",
+          "result": "准备与加工分别签认，报价可以逐项核对。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把准备工摊入最低工时",
+          "result": "短单也有保底工时，双方明示了计算方法。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.support_6": {
+      "title": "冷渠边的两份工单",
+      "prompt": "两份检修单同时要求占用同一处冷却接口。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "先做短检修再交接接口",
+          "result": "接口按顺序使用，交接点在样表上明确标出。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "借助备用接口拆成两路",
+          "result": "两单可并行，备用接口的负荷限制一并写下。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.resident_1": {
+      "title": "不必一样的作息",
+      "prompt": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起给餐具架垫软布",
+          "result": "邻居记住你们共同减少声响，没有要求谁改变作息。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居记住你们共同减少声响，没有要求谁改变作息。"
+        },
+        {
+          "id": "b",
+          "label": "划分清晨可用的静音餐具",
+          "result": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。"
+        }
+      ]
+    },
+    "side.forge.resident_2": {
+      "title": "门边的旧画",
+      "prompt": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留旧画并加新画框",
+          "result": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。"
+        },
+        {
+          "id": "b",
+          "label": "把旧画收进公共纪念册",
+          "result": "邻居接受给墙面换新，也记住旧画被妥善留存。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居接受给墙面换新，也记住旧画被妥善留存。"
+        }
+      ]
+    },
+    "side.forge.resident_3": {
+      "title": "署在样件上的名字",
+      "prompt": "同事完成大半样件，你做了最后修整，署名位置却只有一处。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "并列写上分工",
+          "result": "同事记住你明确写出双方贡献，而没有独占成品署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事记住你明确写出双方贡献，而没有独占成品署名。"
+        },
+        {
+          "id": "b",
+          "label": "署共同小组名并另留工序卡",
+          "result": "同事接受共同署名，具体贡献仍在工序卡上可查。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事接受共同署名，具体贡献仍在工序卡上可查。"
+        }
+      ]
+    },
+    "side.forge.resident_4": {
+      "title": "不想被公开的故事",
+      "prompt": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起改成匿名版本",
+          "result": "熟人确认删去了可识别细节，记住你尊重署名选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人确认删去了可识别细节，记住你尊重署名选择。"
+        },
+        {
+          "id": "b",
+          "label": "把故事留在私人的折页里",
+          "result": "熟人收起折页，记住你没有把一段谈话当成公开许可。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人收起折页，记住你没有把一段谈话当成公开许可。"
+        }
+      ]
+    },
+    "side.forge.resident_5": {
+      "title": "锉痕是谁留下的",
+      "prompt": "旧识一直怪你弄坏公用夹具，但旧锉痕早已无法辨清。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起重修夹口",
+          "result": "对方记住你参与修复，愿意结束归责争执。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方记住你参与修复，愿意结束归责争执。"
+        },
+        {
+          "id": "b",
+          "label": "保持各自说法，合定借用验收",
+          "result": "夹具今后先验后借，对方接受用规则划清责任。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "夹具今后先验后借，对方接受用规则划清责任。"
+        }
+      ]
+    },
+    "side.forge.resident_6": {
+      "title": "一副借来的手套",
+      "prompt": "曾借你手套的人正在补内衬，旧人情一直没找到归还方式。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "帮他裁好两片内衬",
+          "result": "内衬裁得合手，对方接受这次帮忙抵清旧情。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "内衬裁得合手，对方接受这次帮忙抵清旧情。"
+        },
+        {
+          "id": "b",
+          "label": "陪他把好用的旧布分档",
+          "result": "可用布料有了去处，对方记住这次共同整理。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "可用布料有了去处，对方记住这次共同整理。"
+        }
+      ]
+    },
+    "side.forge.moment_1": {
+      "title": "冷铁的回声",
+      "prompt": "公共桌旁悬着一片废弃样片，轻碰会响。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用指节轻叩中间",
+          "result": "一声低沉回响在桌边停住。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "扶住边缘再轻叩",
+          "result": "回响变短，像一声轻轻的答应。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.moment_2": {
+      "title": "铜秤归零",
+      "prompt": "收摊后的空秤略微偏着，秤盘在风里摆动。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "轻扶秤盘等它停下",
+          "result": "指针慢慢归到零位。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把挡风片移到秤边",
+          "result": "秤盘安静下来，留下细小的金属余音。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.moment_3": {
+      "title": "桌边的空杯",
+      "prompt": "公用桌上留着一只洗净的杯子，杯沿朝着通道。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把杯子倒扣在垫上",
+          "result": "杯底接住了一小片光。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把杯柄转向桌内",
+          "result": "杯子安稳地留在伸手可及的位置。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.moment_4": {
+      "title": "松动的纸角",
+      "prompt": "公共示意图的一角被穿堂风掀起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用现成纸夹夹住",
+          "result": "图纸安静下来，旁边的说明重新露出。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把纸角折入透明套",
+          "result": "纸面留下小折痕，不再拍打墙面。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.moment_5": {
+      "title": "窗帘留一道缝",
+      "prompt": "休息位旁的帘子遮住了窗外的公共花盆。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘子束在一侧",
+          "result": "花盆和柔和的光一起露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只留一道窄缝",
+          "result": "一线光落在空座的扶手上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.forge.moment_6": {
+      "title": "给空白页一个折角",
+      "prompt": "共用留言册翻到最后一页，那里还没有字。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "画一小段无名纹样",
+          "result": "空白页多了一段不占地方的线条。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把书签移到这一页",
+          "result": "后来的人会先翻到这处空白。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    }
+  }
+}

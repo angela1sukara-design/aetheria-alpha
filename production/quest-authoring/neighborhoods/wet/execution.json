@@ -1,0 +1,722 @@
+{
+  "stages": {
+    "resource_s1": [
+      {
+        "id": "a",
+        "label": "按实际耗材报价，签下分段维护合同",
+        "result": "你按实际耗材报价，签下分段维护合同。现场约定生效：取得公共支渠的维护承包权。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "联合摊户共担维护工时，签下合办合同",
+        "result": "你联合摊户共担维护工时，签下合办合同。现场约定生效：取得公共支渠的维护承包权。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「下游的第一桶水」的处理记录，完成第一段水渠",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得公共支渠的维护承包权。",
+        "requires": [
+          "side:flag.wet.support_1"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s2": [
+      {
+        "id": "a",
+        "label": "在试验台演示错峰启泵，完成验收",
+        "result": "你在试验台演示错峰启泵，完成验收。现场约定生效：取得两座泵房共同认可的调度资格。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "采用人工交替值守方案，完成低负荷验收",
+        "result": "你采用人工交替值守方案，完成低负荷验收。现场约定生效：取得两座泵房共同认可的调度资格。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「两种响声」的处理记录，完成泵房的两把钥匙",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得两座泵房共同认可的调度资格。",
+        "requires": [
+          "side:flag.wet.support_2"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s3": [
+      {
+        "id": "a",
+        "label": "按人口分配基本水额，再安排经营用水",
+        "result": "你按人口分配基本水额，再安排经营用水。现场约定生效：使上下游代表签署统一分水章程。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留各渠旧水额，以轮流停泵平衡总量",
+        "result": "你保留各渠旧水额，以轮流停泵平衡总量。现场约定生效：使上下游代表签署统一分水章程。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「最后一道闸」的处理记录，完成上游与下游",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。使上下游代表签署统一分水章程。",
+        "requires": [
+          "side:flag.wet.support_3"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "resource_s4": [
+      {
+        "id": "a",
+        "label": "签下统一维修与供水责任书",
+        "result": "你签下统一维修与供水责任书。接掌全街区水务总印，成为百渠总管，以百渠总管的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "保留支渠自治，把总调度权写入联营章程",
+        "result": "你保留支渠自治，把总调度权写入联营章程。接掌全街区水务总印，成为百渠总管，以百渠总管的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s1": [
+      {
+        "id": "a",
+        "label": "重排储物架，划出连续的公共避雨位",
+        "result": "你重排储物架，划出连续的公共避雨位。现场约定生效：取得住户认可的公共避雨棚管理席位。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "实行分时存放，确保夜间全棚开放",
+        "result": "你实行分时存放，确保夜间全棚开放。现场约定生效：取得住户认可的公共避雨棚管理席位。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「棚角的一只箱子」的处理记录，完成雨棚下留一个位置",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。取得住户认可的公共避雨棚管理席位。",
+        "requires": [
+          "side:flag.wet.support_4"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s2": [
+      {
+        "id": "a",
+        "label": "安排先护理后晾晒的分区轮值",
+        "result": "你安排先护理后晾晒的分区轮值。现场约定生效：落实公共雨棚的护理与干燥物资配额。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "建立小额常备包，由各棚轮流补齐",
+        "result": "你建立小额常备包，由各棚轮流补齐。现场约定生效：落实公共雨棚的护理与干燥物资配额。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「先晒谁的毯子」的处理记录，完成干燥的一夜",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。落实公共雨棚的护理与干燥物资配额。",
+        "requires": [
+          "side:flag.wet.support_5"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s3": [
+      {
+        "id": "a",
+        "label": "现场拼装标准棚扣，测试连廊样段",
+        "result": "你现场拼装标准棚扣，测试连廊样段。现场约定生效：验收连接各雨棚的可拆连廊方案。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "沿现有宽檐设计步行接力点，验收线路模型",
+        "result": "你沿现有宽檐设计步行接力点，验收线路模型。现场约定生效：验收连接各雨棚的可拆连廊方案。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "supported",
+        "label": "采用「会掀起的接缝」的处理记录，完成把棚与棚连起来",
+        "result": "你将已完成的当地处理记录纳入本次方案，现场确认责任与边界。验收连接各雨棚的可拆连廊方案。",
+        "requires": [
+          "side:flag.wet.support_6"
+        ],
+        "minutes": 10,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ],
+    "stewardship_s4": [
+      {
+        "id": "a",
+        "label": "接受各棚公开推举并签署公共通行章程",
+        "result": "你接受各棚公开推举并签署公共通行章程。获得雨棚联席的召集权，成为雨棚盟首，以雨棚盟首的身份站上顶点。",
+        "requires": [],
+        "minutes": 20,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      },
+      {
+        "id": "b",
+        "label": "以可撤换的任期制度接掌联席召集权",
+        "result": "你以可撤换的任期制度接掌联席召集权。获得雨棚联席的召集权，成为雨棚盟首，以雨棚盟首的身份站上顶点。",
+        "requires": [],
+        "minutes": 25,
+        "energy": 0,
+        "complete": true,
+        "memory": null
+      }
+    ]
+  },
+  "sides": {
+    "side.wet.support_1": {
+      "title": "下游的第一桶水",
+      "prompt": "摊户想把清晨全部水额包走，下游洗菜摊会错过开市。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留基本水额再售余量",
+          "result": "下游保住开市水额，剩余额度按公开价格分配。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "交换早晚两个取水时段",
+          "result": "上下游互换时段，双方签下错峰取水记录。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.support_2": {
+      "title": "两种响声",
+      "prompt": "旧泵的异响与棚扣的振动混在一起，样机验收争执不下。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "分开运行两段样机",
+          "result": "泵与棚扣分别测试，异响来源在验收纸上标明。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "降低负载逐段听辨",
+          "result": "你们用低负载对照排除误判，留下可复验的记录。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.support_3": {
+      "title": "最后一道闸",
+      "prompt": "分水草案让末端住户承担全部停泵时间。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "按受影响户数重排停泵",
+          "result": "各渠分担停泵时长，末端不再独自承受断水。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "用维护轮值抵扣停泵时段",
+          "result": "主动承担维护的住户换得连续水额，双方接受修订。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.support_4": {
+      "title": "棚角的一只箱子",
+      "prompt": "雨棚转角堆着一只旧箱，挪走能多容一人，但箱主无处存放。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把箱子抬上共用高架",
+          "result": "箱子保持干燥，地面多出一个公共避雨位。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "重新划分白天与夜间储物位",
+          "result": "白天存箱、夜间腾位的安排写上棚柱，箱主也签了名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.support_5": {
+      "title": "先晒谁的毯子",
+      "prompt": "护理毯和住户的湿衣挤在同一副晾架上。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "分出护理用品专用半架",
+          "result": "护理毯有了固定位置，另一半仍供住户轮用。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "按干燥速度轮换挂位",
+          "result": "快干物先取下，双方接受了不混放的轮换次序。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.support_6": {
+      "title": "会掀起的接缝",
+      "prompt": "新连廊样段节省材料，却在转角留下迎风接缝。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "转动棚扣让接缝背风",
+          "result": "样段经重新拼装通过检查，转角不再直接迎风。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "加可拆压条保留旧扣",
+          "result": "压条固定了接缝，也保留了旧扣的维护空间。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.resident_1": {
+      "title": "不必一样的作息",
+      "prompt": "邻居早起时会碰响公用餐具，你晚睡后常被惊醒。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起给餐具架垫软布",
+          "result": "邻居记住你们共同减少声响，没有要求谁改变作息。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居记住你们共同减少声响，没有要求谁改变作息。"
+        },
+        {
+          "id": "b",
+          "label": "划分清晨可用的静音餐具",
+          "result": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居同意清晨使用指定餐具，也记住你尊重他的早班。"
+        }
+      ]
+    },
+    "side.wet.resident_2": {
+      "title": "门边的旧画",
+      "prompt": "邻居想换掉公共墙上的旧画，又担心抹去前住户的痕迹。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "保留旧画并加新画框",
+          "result": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居把新旧画并列挂起，记住你愿意为旧物留位置。"
+        },
+        {
+          "id": "b",
+          "label": "把旧画收进公共纪念册",
+          "result": "邻居接受给墙面换新，也记住旧画被妥善留存。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "邻居接受给墙面换新，也记住旧画被妥善留存。"
+        }
+      ]
+    },
+    "side.wet.resident_3": {
+      "title": "署在样件上的名字",
+      "prompt": "同事完成大半样件，你做了最后修整，署名位置却只有一处。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "并列写上分工",
+          "result": "同事记住你明确写出双方贡献，而没有独占成品署名。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事记住你明确写出双方贡献，而没有独占成品署名。"
+        },
+        {
+          "id": "b",
+          "label": "署共同小组名并另留工序卡",
+          "result": "同事接受共同署名，具体贡献仍在工序卡上可查。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "同事接受共同署名，具体贡献仍在工序卡上可查。"
+        }
+      ]
+    },
+    "side.wet.resident_4": {
+      "title": "不想被公开的故事",
+      "prompt": "熟人讲述旧经历后发现它很适合公共留言板，却不愿暴露姓名。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起改成匿名版本",
+          "result": "熟人确认删去了可识别细节，记住你尊重署名选择。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人确认删去了可识别细节，记住你尊重署名选择。"
+        },
+        {
+          "id": "b",
+          "label": "把故事留在私人的折页里",
+          "result": "熟人收起折页，记住你没有把一段谈话当成公开许可。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "熟人收起折页，记住你没有把一段谈话当成公开许可。"
+        }
+      ]
+    },
+    "side.wet.resident_5": {
+      "title": "被划掉的水位线",
+      "prompt": "旧怨来自一次积水争执：你们各自画的水位线互相覆盖。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "共同重画两次实测位置",
+          "result": "对方接受把两次记录并列保存，不再把差异说成撒谎。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方接受把两次记录并列保存，不再把差异说成撒谎。"
+        },
+        {
+          "id": "b",
+          "label": "保留各自版本并标明时刻",
+          "result": "对方接受分时标记；争执未变成和解，但有了可核对的边界。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方接受分时标记；争执未变成和解，但有了可核对的边界。"
+        }
+      ]
+    },
+    "side.wet.resident_6": {
+      "title": "欠下的一块干布",
+      "prompt": "当初替你挡雨的人还留着那块破布，想把它补成护理垫。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "一起补好边角",
+          "result": "对方记住你陪着完成修补，并把人情债划清。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方记住你陪着完成修补，并把人情债划清。"
+        },
+        {
+          "id": "b",
+          "label": "帮忙裁成两块小垫",
+          "result": "对方接受改作小垫，也同意这次劳作抵清旧人情。",
+          "requires": [],
+          "minutes": 10,
+          "energy": 0,
+          "complete": true,
+          "memory": "对方接受改作小垫，也同意这次劳作抵清旧人情。"
+        }
+      ]
+    },
+    "side.wet.moment_1": {
+      "title": "雨槽的两拍",
+      "prompt": "两只接水桶敲出错落的雨声，挪一点位置便会变调。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把两桶靠近",
+          "result": "两股落水声合成更密的节拍。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把一桶移到檐边",
+          "result": "疏落的单拍留在近处，密声退到了檐外。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.moment_2": {
+      "title": "雾里的价签",
+      "prompt": "雾气蒙住了摊前价签的透明罩。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "擦开中间一小块",
+          "result": "价格从一小片清晰的窗口里露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "掀起罩沿晾一晾",
+          "result": "细小水珠顺着罩沿落下，字迹慢慢清楚。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.moment_3": {
+      "title": "桌边的空杯",
+      "prompt": "公用桌上留着一只洗净的杯子，杯沿朝着通道。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把杯子倒扣在垫上",
+          "result": "杯底接住了一小片光。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把杯柄转向桌内",
+          "result": "杯子安稳地留在伸手可及的位置。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.moment_4": {
+      "title": "松动的纸角",
+      "prompt": "公共示意图的一角被穿堂风掀起。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "用现成纸夹夹住",
+          "result": "图纸安静下来，旁边的说明重新露出。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把纸角折入透明套",
+          "result": "纸面留下小折痕，不再拍打墙面。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.moment_5": {
+      "title": "窗帘留一道缝",
+      "prompt": "休息位旁的帘子遮住了窗外的公共花盆。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "把帘子束在一侧",
+          "result": "花盆和柔和的光一起露出来。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "只留一道窄缝",
+          "result": "一线光落在空座的扶手上。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    },
+    "side.wet.moment_6": {
+      "title": "给空白页一个折角",
+      "prompt": "共用留言册翻到最后一页，那里还没有字。",
+      "choices": [
+        {
+          "id": "a",
+          "label": "画一小段无名纹样",
+          "result": "空白页多了一段不占地方的线条。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        },
+        {
+          "id": "b",
+          "label": "把书签移到这一页",
+          "result": "后来的人会先翻到这处空白。",
+          "requires": [],
+          "minutes": 1,
+          "energy": 0,
+          "complete": true,
+          "memory": null
+        }
+      ]
+    }
+  }
+}

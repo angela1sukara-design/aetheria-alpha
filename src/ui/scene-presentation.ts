@@ -33,11 +33,13 @@ export function scenePresentation(view: GameView, registry: Registry, result?: A
   }
   const event = activeEvent(view.state);
   if (event) {
+    const residents = (registry.event(event.definitionId).residentIds ?? []).map(id => district?.residents.find(r => r.id === id)).filter(r => !!r);
+    if (residents.length) return { mode: 'conversation', title: `与${residents.map(r => r.name).join('、')}处理当地事务`, subtitle: residents.map(r => r.profession).join(' · '), label: '共同经历', active: true, primaryResult: false };
     const participants = (registry.event(event.definitionId).participantIds ?? []).map(id => registry.npc(id));
     const title = participants.length ? `与${participants.map(npc => npc.name).join('、')}交谈` : '眼前的遭遇';
     return { mode: participants.length ? 'conversation' : 'event', title, subtitle: participants.length ? participants.map(npc => npc.role).join(' · ') : '故事正在继续 · 做出你的选择', label: '正在发生', active: true, primaryResult: false };
   }
-  if (browsing) return { mode: 'hub', title: '接下来做什么', subtitle: '与身边的人交谈，或继续探索街区。', label: '自由行动', active: false, primaryResult: false };
+  if (browsing) return { mode: 'hub', title: '接下来做什么', subtitle: '与身边的人交谈，或继续探索周围。', label: '自由行动', active: false, primaryResult: false };
   const action = resultAction(view, registry, result);
   if (!result?.ok || action?.effects.some(effect => effect.op === 'location.move'))
     return { mode: 'arrival', title: view.location.name, subtitle: view.location.subtitle, label: '抵达地点', active: false, primaryResult: false };
