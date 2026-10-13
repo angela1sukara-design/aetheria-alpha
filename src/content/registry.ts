@@ -3,7 +3,7 @@ import { clone, freeze } from '../core/types.ts';
 import type { ActionDef, ContentPack, EventDef, FlagDef, HookDef, Id, LocationDef, PackRef, RouteDef, VariableDef } from '../core/types.ts';
 import type { BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef } from '../core/body-types.ts';
 import type { NPCDef, NPCMemoryDef, SpeciesDef } from '../core/npc-types.ts';
-import type { StoryletDef, ResidentTemplate, EnemyDef, InteractionDef, TextSlotDef, SceneTextDef, EquipmentDef } from '../core/district-types.ts';
+import type { StoryletDef, ResidentTemplate, EnemyDef, InteractionDef, TextSlotDef, SceneTextDef, EquipmentDef, ItemDef } from '../core/district-types.ts';
 import { RuleError } from '../core/errors.ts';
 import { isAppendOnlyEventPack } from './append-only.ts';
 import type { EnvironmentEnemyRule, NarrativeNode, NarrativeProfile } from '../core/adventure-types.ts';
@@ -29,7 +29,7 @@ export class Registry {
   readonly appendOnlyPackIds: string[];
   readonly storylets: StoryletDef[]; readonly residentTemplates: ResidentTemplate[];
   readonly enemies: EnemyDef[]; readonly interactions: InteractionDef[]; readonly textSlots: TextSlotDef[];
-  readonly sceneTexts: SceneTextDef[]; readonly equipment: EquipmentDef[];
+  readonly sceneTexts: SceneTextDef[]; readonly equipment: EquipmentDef[]; readonly items: ItemDef[];
   readonly proseMaterials: NonNullable<FoundationDefinitions['proseMaterials']>;
   readonly proseSelections: NonNullable<FoundationDefinitions['proseSelections']>;
   readonly tags: TagDef[];
@@ -76,8 +76,9 @@ export class Registry {
     this.textSlots = freeze(data.flatMap(x => x.textSlots ?? []));
     this.sceneTexts = freeze(data.flatMap(x => x.sceneTexts ?? []));
     this.equipment = freeze(data.flatMap(x => x.equipment ?? []));
+    this.items = freeze(data.flatMap(x => x.items ?? []));
     for (const pack of data) {
-      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def,packId:pack.manifest.id });
+      for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'items', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def,packId:pack.manifest.id });
       for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text,packId:pack.manifest.id });
       for (const kind of ['narrativeNodes','narrativeProfiles','environmentEnemyRules'] as const) for (const value of pack[kind]??[]) this.#definitions.set(value.id,{kind,value,packId:pack.manifest.id});
       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);

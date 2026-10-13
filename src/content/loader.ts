@@ -34,7 +34,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   for (const p of [...packs].sort((a, b) => a.manifest.id.localeCompare(b.manifest.id, 'en'))) visit(p);
   const definitions = new Map<string, { type: string; pack: ContentPack; value: unknown }>();
   for (const p of sorted) {
-    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const) {
+    for (const type of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'items', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const) {
       for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
@@ -52,7 +52,8 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   }
   function checkCondition(p: ContentPack, c: Condition, path: string): void {
     if(['adventure.compare','progression.available','narrative.tag'].includes(c.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
-    if(c.op==='progression.available'&&c.id)ref(p,c.id,c.move==='buy'?'equipment':'variables',path);
+    if(c.op==='progression.available'&&c.id){const buyType=definitions.has(c.id)&&definitions.get(c.id)!.type==='items'?'items':c.move==='buy'?'equipment':'variables';ref(p,c.id,c.move==='buy'?buyType:'variables',path);}
+    if(c.op==='item.has')ref(p,c.id,'items',path);
     if ('residentId' in c) {
       checkResident(p, c.residentId, path);
       if (c.op === 'resident.memory') ref(p, c.memoryId, 'texts', path);
@@ -89,8 +90,13 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     else if (e.op === 'combat.start') ref(p,e.id,'enemies',path);
     else if (e.op === 'scene.start') ref(p,e.id,'interactions',path);
     else if (e.op === 'equipment.wear') ref(p,e.id,'equipment',path);
+    else if (e.op === 'item.use' || e.op === 'item.gain') ref(p,e.id,'items',path);
+    else if (e.op === 'combat.turn' && e.move==='item' && e.id) ref(p,e.id,'items',path);
     else if (e.op === 'narrative.start' && e.profileId) ref(p,e.profileId,'narrativeProfiles',path);
-    else if (e.op === 'progression.act' && e.id) ref(p,e.id,e.move==='buy'?'equipment':'variables',path);
+    else if (e.op === 'progression.act' && e.id) {
+      const buyType = definitions.has(e.id) && definitions.get(e.id)!.type === 'items' ? 'items' : e.move === 'buy' ? 'equipment' : 'variables';
+      ref(p, e.id, e.move === 'buy' ? buyType : 'variables', path);
+    }
     else if (e.op === 'flag.set') ref(p, e.id, 'flags', path);
     else if (e.op === 'location.move') ref(p, e.routeId, 'routes', path);
     else if (e.op === 'event.start') ref(p, e.id, 'events', path);

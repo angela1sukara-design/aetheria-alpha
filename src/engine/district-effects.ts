@@ -145,6 +145,29 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     d.equipped = null;
     if(s.adventure)s.adventure.equipment={};
     c.resolvedTexts.push('你把装备收进背包，物品仍然保留。');
+  } else if (e.op === 'item.gain') {
+    const item = r.items.find(x => x.id === e.id);
+    if (!item) throw new RuleError('ITEM_MISSING', '消耗品不存在。');
+    const a = adventure(s);
+    const bag = a.items ?? (a.items = {});
+    const max = item.maxStack ?? 20;
+    const next = (bag[item.id] ?? 0) + e.amount;
+    if (next > max) throw new RuleError('ITEM_STACK', `${item.name}超过携带上限。`);
+    bag[item.id] = next;
+    c.resolvedTexts.push(`获得${item.name}×${e.amount}。`);
+  } else if (e.op === 'item.use') {
+    if (d.combat) throw new RuleError('ITEM_IN_COMBAT', '交锋中请使用战内消耗品行动。');
+    const item = r.items.find(x => x.id === e.id);
+    if (!item) throw new RuleError('ITEM_MISSING', '消耗品不存在。');
+    const a = adventure(s);
+    const bag = a.items ?? (a.items = {});
+    const have = bag[item.id] ?? 0;
+    if (have < 1) throw new RuleError('ITEM_EMPTY', `没有${item.name}。`);
+    apply(item.effects as Effect[], s, r, c);
+    bag[item.id] = have - 1;
+    if (bag[item.id]! <= 0) delete bag[item.id];
+    apply([{ op: 'clock.advance', minutes: 5 }], s, r, c);
+    c.resolvedTexts.push(`你使用了${item.name}。`);
   } else if (e.op === 'scene.start') {
     const def = r.interactions.find(x => x.id === e.id);
     if (!def || d.scene || d.combat || !npcPresent(s, r, def.npcId) || !def.conditions.every(x => evaluate(x, s, r).pass) || !d.profile.created || d.profile.ageYears < 18 || (r.textSlots.find(x => x.id === def.textSlotId)?.contentTier === 'adult_optional' && !adultNPCEligibility(r, def.npcId).pass)) throw new RuleError('SCENE_UNWILLING', '当前身份、意愿或处境不适合继续。');
@@ -340,6 +363,18 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
       applyVar(s, r, c, PLAYER_HP_ID, COMBAT_CARD.recover.heal);
       applyVar(s, r, c, SKILL_RES_ID, 8);
       line = `包扎生效：生命+${COMBAT_CARD.recover.heal}，技能资源+8。`;
+    } else if (e.move === 'item') {
+      if (!e.id) throw new RuleError('ITEM_MISSING', '未指定消耗品。');
+      const item = r.items.find(x => x.id === e.id);
+      if (!item || !item.usableInCombat) throw new RuleError('ITEM_COMBAT', '该消耗品不能在交锋中使用。');
+      const a = adventure(s);
+      const bag = a.items ?? (a.items = {});
+      const have = bag[item.id] ?? 0;
+      if (have < 1) throw new RuleError('ITEM_EMPTY', `没有${item.name}。`);
+      apply(item.effects as Effect[], s, r, c);
+      bag[item.id] = have - 1;
+      if (bag[item.id]! <= 0) delete bag[item.id];
+      line = `使用${item.name}。`;
     }
 
     if (battle.hp === 0) {
@@ -393,7 +428,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     // 回合末 skillResource +5
     applyVar(s, r, c, SKILL_RES_ID, 5);
 
-    const record=`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}/${battle.enemy.hpMax}\n行动：${({attack:'进攻',skill:'技能击',guard:'防守',recover:'临时包扎',flee:'撤离'})[e.move]}；敌方${intent.label}\n造成效果：${line}`;
+    const record=`状态：我方生命${health}，体力${stamina}；敌方生命${enemyBefore}/${battle.enemy.hpMax}\n行动：${({attack:'进攻',skill:'技能击',guard:'防守',recover:'临时包扎',flee:'撤离',item:'使用消耗品'})[e.move]}；敌方${intent.label}\n造成效果：${line}`;
     battle.log.push(record);
     battle.log = battle.log.slice(-4);
     battle.turn++;
@@ -408,7 +443,11 @@ export function districtOptions(s: GameState, r: Registry, actions: ActionDef[])
   if (!s.district) return actions;
   const runtime = r.actionsForHook('district:hook.runtime'), settings = runtime.filter(a => a.effects.some(e => e.op === 'preference.set'));
   const story=narrativeActions(s,r);if(story)return story;
-  if (s.district.combat) return [...runtime.filter(a => a.effects.some(e => e.op === 'combat.turn')), ...r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn')), ...settings];
+  if (s.district.combat) {
+    const turns=[...runtime.filter(a => a.effects.some(e => e.op === 'combat.turn')), ...r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn'))];
+    const combatItems=r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn'&&e.move==='item'));
+    return [...turns, ...combatItems.filter(a=>!turns.includes(a)), ...settings];
+  }
   if (s.district.scene) return [...runtime.filter(a => a.effects.some(e => e.op === 'scene.act' && (s.district!.scene!.phase === 'active' ? e.move !== 'resume' : ['resume', 'exit'].includes(e.move)))), ...r.globalActions().filter(a=>a.surface==='body'), ...settings];
   return [...actions, ...settings].filter(a=>{
     if(a.effects.some(e=>e.op==='narrative.choose'||e.op==='combat.turn'))return false;

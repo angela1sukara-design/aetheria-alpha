@@ -14,6 +14,8 @@ export type AdventureField = typeof ADVENTURE_FIELDS[number];
 export interface AdventureState {
   version: 1; assets: number; influence: number; safety: number; reputation: number; orders: number; contracts: number;
   victories: Record<Id, number>; daily: Record<string, number>; equipment: Partial<Record<EquipmentSlot, Id>>;
+  /** 消耗品堆叠；缺省视为 {}（旧档兼容） */
+  items?: Record<Id, number>;
   story: NarrativeState | null; journal: { at: number; title: string; text: string }[];
   lastCombat: { enemyId: Id; enemyName: string; result: 'victory' | 'defeat' | 'escape'; turn: number; tags: ScopedTag[] } | null;
 }

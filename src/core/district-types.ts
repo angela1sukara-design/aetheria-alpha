@@ -50,7 +50,15 @@ export interface TextSlotDef {
   nextNodeId: string; exitActionIds: Id[]; allowedReplacement: 'prose_only';
 }
 export interface SceneTextDef { id: Id; locationId: Id; conditions: Condition[]; priority: number; textKey: Id; owner?:{eventId:Id;nodeId:string} }
-export type EquipmentSlot = 'weapon' | 'armor' | 'cosmetic';
+/** 六主槽 + 遗留三槽 + proposed 扩展（翼/尾/其他）。遗留 weapon≈held、armor≈body、cosmetic 仍为零加成时装。 */
+export const EQUIPMENT_SLOTS = [
+  'held', 'head', 'body', 'hands', 'legs', 'accessory',
+  'weapon', 'armor', 'cosmetic',
+  'wings', 'tail', 'other',
+] as const;
+export type EquipmentSlot = typeof EQUIPMENT_SLOTS[number];
+/** 不计战斗加成的槽（含遗留 cosmetic）。 */
+export const EQUIPMENT_ZERO_BONUS_SLOTS: readonly EquipmentSlot[] = ['cosmetic', 'accessory', 'other'];
 export interface EquipmentBonuses {
   /** 对应 VariableDef core:attack，加法整数 */
   attack?: number;
@@ -66,12 +74,30 @@ export interface EquipmentDef {
   description: string;
   /** 缺省 cosmetic（兼容雨衣/尾衣） */
   slot?: EquipmentSlot;
-  /** 缺省 {}；cosmetic 必须全 0 / 省略 */
+  /** 缺省 {}；cosmetic/accessory/other 必须全 0 / 省略 */
   bonuses?: EquipmentBonuses;
+}
+/** 消耗品：效果仅允许已有 core 变量的 var.change。 */
+export type ItemCategory = 'recovery' | 'combat' | 'explore';
+export const ITEM_EFFECT_VARS = ['core:health', 'core:energy', 'core:stamina', 'core:sanity', 'core:skillResource'] as const;
+export interface ItemDef {
+  id: Id;
+  name: string;
+  description: string;
+  category: ItemCategory;
+  /** 缺省 20 */
+  maxStack?: number;
+  /** 商店标价；缺省 8 */
+  price?: number;
+  /** 仅 var.change，且 id 必须在 ITEM_EFFECT_VARS */
+  effects: { op: 'var.change'; id: Id; amount: number }[];
+  /** 战内可用；缺省 false */
+  usableInCombat?: boolean;
 }
 export interface DistrictDefinitions {
   storylets?: StoryletDef[]; residentTemplates?: ResidentTemplate[]; enemies?: EnemyDef[];
   interactions?: InteractionDef[]; textSlots?: TextSlotDef[]; sceneTexts?: SceneTextDef[]; equipment?: EquipmentDef[];
+  items?: ItemDef[];
 }
 export type DistrictEffect =
   | { op: 'resident.remember'; residentId: string; memoryId: Id }
@@ -79,11 +105,13 @@ export type DistrictEffect =
   | { op: 'resident.talk' | 'resident.help' }
   | { op: 'combat.start'; id: Id }
   | { op: 'combat.encounter' }
-  | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' | 'skill' }
+  | { op: 'combat.turn'; move: 'attack' | 'guard' | 'recover' | 'flee' | 'skill' | 'item'; id?: Id }
   | { op: 'scene.start'; id: Id }
   | { op: 'scene.act'; move: 'pose' | 'contact' | 'release' | 'pause' | 'resume' | 'exit'; poseId?: string }
   | { op: 'equipment.wear'; id: Id }
   | { op: 'equipment.remove' }
+  | { op: 'item.use'; id: Id }
+  | { op: 'item.gain'; id: Id; amount: number }
   | { op: 'player.create'; name: string; ageYears: number }
   | { op: 'preference.set'; value: boolean };
 export type DistrictCondition =
@@ -94,7 +122,8 @@ export type DistrictCondition =
   | { op: 'scene.state'; value: 'active' | 'paused' | 'none' }
   | { op: 'resident.available' }
   | { op: 'player.created'; value: boolean }
-  | { op: 'preference.adultOptional'; value: boolean };
+  | { op: 'preference.adultOptional'; value: boolean }
+  | { op: 'item.has'; id: Id; comparison: 'eq' | 'gte' | 'lte'; value: number };
 /** 战斗运行时敌方快照（开打时从模板拷入）。 */
 export interface CombatEnemyRuntime {
   hpMax: number;

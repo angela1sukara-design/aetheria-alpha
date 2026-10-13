@@ -45,6 +45,8 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
       }
       if(e.op==='combat.turn'&&e.move==='skill')checks.push({pass:(state.player.variables['core:skillResource']??0)>=15&&stamina>=4,reason:'技能击需要技能资源15和体力4。'});
       if(e.op==='equipment.wear'&&e.id.startsWith('progression:'))checks.push({pass:!!state.district?.inventory.includes(e.id),reason:'先购买这件装备。'});
+      if(e.op==='item.use')checks.push({pass:(state.adventure?.items?.[e.id]??0)>=1,reason:'补给袋中没有这件消耗品。'});
+      if(e.op==='combat.turn'&&e.move==='item'&&e.id)checks.push({pass:(state.adventure?.items?.[e.id]??0)>=1&&!!registry.items.find(i=>i.id===e.id)?.usableInCombat,reason:'战内没有可用的这件消耗品。'});
       if (e.op === 'combat.turn' && e.move === 'flee') {
         // Emergency withdrawal remains available even after an enemy drains the last point.
         checks.push({ pass: true, reason: '' });

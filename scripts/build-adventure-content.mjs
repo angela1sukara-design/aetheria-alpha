@@ -3,7 +3,7 @@ import { loadAtoms, sampleCombos, toEncounterCandidate } from './nsfw-auto-combo
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
 const index=await json('content/index.json'),base=await Promise.all(index.packs.filter(p=>!p.includes('/adventure/')).map(p=>json('content/'+p)));
 const id=s=>'progression:'+s,tag=s=>id('tag.'+s),scoped=(role,s)=>({role,tagId:tag(s)}),has=(role,s,value=true)=>({op:'narrative.tag',role,id:tag(s),value});
-const p={manifest:{id:'aetheria/adventure',namespace:'progression',version:'1.0.0',schemaVersion:2,engineApiVersion:'0.1',author:'Aetheria',status:'draft',dependencies:base.map(p=>({id:p.manifest.id,version:p.manifest.version,optional:false})),requiresCapabilities:['foundation.v2','adventure.v1','condition.v1','effect.v1','hook.global.v1','district.v1','body.graph.v1','tf.pipeline.v1'],migrations:[]},variables:[],flags:[],hooks:[{id:id('hook.runtime'),accepts:'action',visibility:'public'}],locations:[],routes:[],actions:[],events:[],texts:{},contributions:[],globalActionHooks:[id('hook.runtime')],tags:[],narrativeNodes:[],narrativeProfiles:[],environmentEnemyRules:[],equipment:[],enemies:[],locationProfiles:[],bodyPatches:[],transformations:[]};
+const p={manifest:{id:'aetheria/adventure',namespace:'progression',version:'1.0.0',schemaVersion:2,engineApiVersion:'0.1',author:'Aetheria',status:'draft',dependencies:base.map(p=>({id:p.manifest.id,version:p.manifest.version,optional:false})),requiresCapabilities:['foundation.v2','adventure.v1','condition.v1','effect.v1','hook.global.v1','district.v1','body.graph.v1','tf.pipeline.v1'],migrations:[]},variables:[],flags:[],hooks:[{id:id('hook.runtime'),accepts:'action',visibility:'public'}],locations:[],routes:[],actions:[],events:[],texts:{},contributions:[],globalActionHooks:[id('hook.runtime')],tags:[],narrativeNodes:[],narrativeProfiles:[],environmentEnemyRules:[],equipment:[],items:[],enemies:[],locationProfiles:[],bodyPatches:[],transformations:[]};
 for(const [key,label,definition]of [
  ['control','控制倾向','偏爱先稳定现场和限制危险行动的行为倾向，不授予身体能力。'],['direct','直接倾向','偏爱尽快结束当前事务的行为倾向。'],['repair','改造与修理倾向','偏爱提出检查与改装方案，不代表实际执行或取得同意。'],['cautious','谨慎','优先核对条件和风险的倾向；对应离线概念general-taxonomy:disposition.caution。'],['tools','携带维护工具','行为档案确认对方携带维护工具，工具不替代玩家的选择。'],['goal.control','控制现场目标','本次主要目标为稳定现场。'],['goal.leave','结束接触目标','本次主要目标为结束接触并离开。'],['goal.repair','检查改装目标','本次主要目标为提出检查或修理方案。'],['coat.stuck','外衣黏附','战败结算明确写入的玩家外衣暂时黏附事实，不等于身体黑胶化。'],['hands.restricted','双手受限','故事局部事实：玩家双手暂时不便取用工具，不移除BodyGraph中的手。'],['clear','保持清醒','当前战败规则确认玩家仍可清楚回应。'],['injured','伤后乏力','战败结算留下的局部状态。'],['signal','已发出求助','实际选择求助后记录的本次信号事实。'],['assessed','已检查处境','玩家已通过选择检查现场。'],['aid','公共协作','发生的公共协作行动题材。'],['route','路线发现','本次探索确认了可使用的通道信息。'],['repair.accepted','接受本次修理','本次选择明确接受指定修理，不能用于其他范围。']])p.tags.push({id:tag(key),label,definition,facets:['context'],status:'active',aliases:[]});
 const profiles=[['gel','district:enemy.gel',['control'],['goal.control'],[['control',80],['cautious',30]],[scoped('player','coat.stuck')]],['collector','district:enemy.collector',['direct'],['goal.leave'],[['direct',90]],[]],['scavenger','district:enemy.scavenger',['repair','tools'],['goal.repair'],[['repair',80],['cautious',50]],[]],['raider',id('enemy.raider'),['direct'],['goal.leave'],[['direct',70]],[]],['sentinel',id('enemy.sentinel'),['control'],['goal.control'],[['control',85]],[scoped('player','hands.restricted')]],['overseer',id('enemy.overseer'),['repair','tools'],['goal.repair'],[['repair',90],['control',30]],[]]];
@@ -61,8 +61,38 @@ action('sleep','休息到次日同一时刻',[time(1440),{op:'var.change',id:'co
 action('care','接受基础伤势处理',[time(30),health(12)],[],'30分钟 · 生命+12');
 for(const [stat,label]of [['attack','攻击'],['defense','防御'],['speed','速度'],['skillPower','技能强度'],['hit','命中'],['evasion','闪避'],['crit','暴击']])action('train.'+stat,'训练'+label,[{op:'progression.act',move:'train',id:'core:'+stat}],[{op:'progression.available',move:'train',id:'core:'+stat}],'45分钟 · 零钱−8 · 体力−8 · 精力−4 · '+label+'+1');
 for(const [move,label,hint]of [['order','完成一份公开订单','30分钟 · 体力−8 · 精力−5 · 报酬与经营份额'],['invest','登记经营份额','45分钟 · 零钱−30 · 经营份额+2 · 契约+1'],['patrol','完成一次街区巡查','45分钟 · 体力−10 · 安全+2 · 组织影响+1'],['aid','参与公共协作','30分钟 · 体力−4 · 声望+2 · 安全+1'],['reconcile','调解一项当地分歧','30分钟 · 精力−4 · 组织影响+1']])action(move,label,[{op:'progression.act',move}],[{op:'progression.available',move}],hint);
-for(const [name,label,slot,bonuses]of [['blade','工坊制式工具刃','weapon',{attack:3}],['vest','加固巡查背心','armor',{defense:3,evasion:3}],['staff','平衡练习杖','weapon',{attack:2}],['coat','轻型防护外套','armor',{defense:2,evasion:5}]]){
- const eid=id('equipment.'+name);p.equipment.push({id:eid,name:label,slot,bonuses,description:label+'已穿戴；战斗时叠加装备属性，基础属性保持。',requires:[grasp]});action('buy.'+name,'购买'+label,[{op:'progression.act',move:'buy',id:eid}],[{op:'progression.available',move:'buy',id:eid}],`10分钟 · 零钱−${slot==='weapon'?25:30}`);action('wear.'+name,'装备'+label,[{op:'equipment.wear',id:eid}],[],'已购装备；同槽替换');
+const priceOf=slot=>slot==='held'||slot==='weapon'?25:slot==='accessory'||slot==='cosmetic'?12:30;
+const part=(kind)=>({op:'body.matches',target:{kind:'player'},part:{kind}});
+for(const [name,label,slot,bonuses,requires]of [
+ ['blade','工坊制式工具刃','held',{attack:3},[grasp]],
+ ['staff','平衡练习杖','held',{attack:2},[grasp]],
+ ['vest','加固巡查背心','body',{defense:3,evasion:3},[grasp]],
+ ['coat','轻型防护外套','body',{defense:2,evasion:5},[grasp]],
+ ['helm','巡查护额','head',{defense:1,evasion:1},[part('head')]],
+ ['gloves','工坊防护手套','hands',{defense:1},[grasp]],
+ ['greaves','轻型护胫','legs',{defense:1,evasion:2},[part('leg')]],
+ ['charm','街区通行挂件','accessory',{},[]],
+ ['probe','工坊测量探针','held',{},[grasp]],
+ ['tailguard','尾部护套','tail',{defense:1},[part('tail')]],
+]){
+ const eid=id('equipment.'+name);p.equipment.push({id:eid,name:label,slot,bonuses,description:label+'已穿戴；战斗时叠加装备属性，基础属性保持。',requires});
+ action('buy.'+name,'购买'+label,[{op:'progression.act',move:'buy',id:eid}],[{op:'progression.available',move:'buy',id:eid}],`10分钟 · 零钱−${priceOf(slot)}`);
+ action('wear.'+name,'装备'+label,[{op:'equipment.wear',id:eid}],[],'已购装备；同槽替换');
+}
+// 消耗品样本：恢复 / 战斗辅助 / 探索（仅已有 core 变量）；成人门类跳过
+for(const [name,label,category,effects,price,usableInCombat,desc]of [
+ ['salve','夜光创口胶','recovery',[{op:'var.change',id:'core:health',amount:12}],8,false,'涂抹后即时恢复生命。'],
+ ['ration','电解口粮','recovery',[{op:'var.change',id:'core:energy',amount:10}],6,false,'短时补充精力。'],
+ ['tonic','净水冲剂','recovery',[{op:'var.change',id:'core:stamina',amount:10}],6,false,'恢复体力。'],
+ ['cell','脉冲蓄能片','combat',[{op:'var.change',id:'core:skillResource',amount:12}],10,true,'战斗中补充技能资源。'],
+ ['candy','战术高糖软片','combat',[{op:'var.change',id:'core:stamina',amount:8}],8,true,'战斗中补充体力。'],
+ ['calm','暗巷冷静贴','explore',[{op:'var.change',id:'core:sanity',amount:-8}],7,false,'减轻理智累积；不清除崩溃标记。'],
+]){
+ const iid=id('item.'+name);
+ p.items.push({id:iid,name:label,description:desc,category,effects,price,maxStack:20,usableInCombat});
+ action('buy.item.'+name,'购买'+label,[{op:'progression.act',move:'buy',id:iid}],[{op:'progression.available',move:'buy',id:iid}],`10分钟 · 零钱−${price}`);
+ action('use.item.'+name,'使用'+label,[{op:'item.use',id:iid}],[{op:'item.has',id:iid,comparison:'gte',value:1}],'5分钟 · 消耗1个');
+ if(usableInCombat) action('combat.item.'+name,'战内使用：'+label,[{op:'combat.turn',move:'item',id:iid}],[{op:'item.has',id:iid,comparison:'gte',value:1}],'行动点1 · 消耗1个');
 }
 action('combat.skill','技能击',[{op:'combat.turn',move:'skill'}],[],'技能资源−15 · 体力−4 · 行动点2');
 for(const result of ['victory','escape','defeat']){
@@ -266,4 +296,4 @@ await writeFile(
 
 p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))];p.contributions=p.contributions.slice(0,1);
 await mkdir('content/adventure',{recursive:true});await writeFile('content/adventure/pack.json',JSON.stringify(p,null,2)+'\n');
-console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}.`);
+console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.items.length} consumables, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}.`);

@@ -8,7 +8,7 @@ import { draw } from './rng.ts';
 import { derivedSemantics } from './semantic-query.ts';
 import { environment } from './query.ts';
 
-export function initialAdventure(): AdventureState { return {version:1,assets:0,influence:0,safety:0,reputation:0,orders:0,contracts:0,victories:{},daily:{},equipment:{},story:null,journal:[],lastCombat:null}; }
+export function initialAdventure(): AdventureState { return {version:1,assets:0,influence:0,safety:0,reputation:0,orders:0,contracts:0,victories:{},daily:{},equipment:{},items:{},story:null,journal:[],lastCombat:null}; }
 export function adventure(s:GameState):AdventureState { if(!s.adventure){s.adventure=initialAdventure();s.adventure.daily['world.day']=Math.floor(s.clock.totalMinutes/1440);}return s.adventure; }
 const key = (t:ScopedTag) => t.role+'/'+t.tagId;
 export function narrativeTags(s:GameState,r:Registry):ScopedTag[] {

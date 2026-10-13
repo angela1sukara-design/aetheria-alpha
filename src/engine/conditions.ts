@@ -23,6 +23,13 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     case 'scene.state': pass = (state.district?.scene?.phase ?? 'none') === condition.value; break;
     case 'resident.available': pass = !!state.district?.residents.some(r => r.id === state.district?.currentResidentId && r.locationId === state.world.locationId); break;
     case 'player.created': pass = (state.district?.profile.created ?? false) === condition.value; break;
+    case 'item.has': {
+      const qty = state.adventure?.items?.[condition.id] ?? 0;
+      pass = condition.comparison === 'eq' ? qty === condition.value : condition.comparison === 'gte' ? qty >= condition.value : qty <= condition.value;
+      const name = registry.items.find(i => i.id === condition.id)?.name ?? '消耗品';
+      reason = `${name}数量需${condition.comparison === 'gte' ? '至少' : condition.comparison === 'lte' ? '不超过' : '等于'}${condition.value}（当前${qty}）。`;
+      break;
+    }
     case 'preference.adultOptional': {
       const profile = state.district?.profile;
       const adult = !!(profile?.created && profile.ageYears >= 18 && profile.adultOptional);

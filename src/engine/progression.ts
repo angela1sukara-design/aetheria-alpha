@@ -21,10 +21,22 @@ export function progressionCheck(s:GameState,r:Registry,move:Extract<AdventureCo
     if(v['core:stamina']!<8||v['core:energy']!<4||v['core:money']!<8)return fail('训练需要体力8、精力4、零钱8。');
     if(!at('workshop')&&!at('commons'))return fail('到工坊或公共训练区训练。');
   }else if(move==='buy'){
-    const item=r.equipment.find(e=>e.id===id);if(!item)return fail('装备不存在。');
-    if(!at('market')&&!at('workshop'))return fail('到市场或工坊购买装备。');
-    if(s.district?.inventory.includes(item.id))return fail('已经拥有这件装备。');
-    const price=item.slot==='weapon'?25:30;if(v['core:money']!<price)return fail(`需要零钱${price}。`);
+    if(!at('market')&&!at('workshop')&&!at('clinic')&&!at('commons'))return fail('到市场、工坊、诊所或公共区购买。');
+    const gear=r.equipment.find(e=>e.id===id);
+    const cons=r.items.find(e=>e.id===id);
+    if(!gear&&!cons)return fail('商品不存在。');
+    if(gear){
+      if(s.district?.inventory.includes(gear.id))return fail('已经拥有这件装备。');
+      const slot=gear.slot??'cosmetic';
+      const price=slot==='weapon'||slot==='held'?25:slot==='accessory'||slot==='cosmetic'?12:30;
+      if(v['core:money']!<price)return fail(`需要零钱${price}。`);
+    }else if(cons){
+      const price=cons.price??8;
+      const have=s.adventure?.items?.[cons.id]??0;
+      const max=cons.maxStack??20;
+      if(have>=max)return fail(`${cons.name}已达携带上限。`);
+      if(v['core:money']!<price)return fail(`需要零钱${price}。`);
+    }
   }else if(move==='order'){
     if(!at('market')&&!at('workshop'))return fail('到市场或工坊承接订单。');
     if(!bodyTraits(s.player.body,r).grasp)return fail('需要可用的抓握部位。');
@@ -53,7 +65,19 @@ export function applyProgression(e:Extract<AdventureEffect,{op:'progression.act'
   if(e.move==='train'){
     pay('core:money',-8);pay('core:stamina',-8);pay('core:energy',-4);pay(e.id!,1);use('training');use('training:'+e.id);minutes=45;line=`你完成了${r.variable(e.id!).label}训练，提升1点。每项每天最多2次，所有项目合计每天3次。`;
   }else if(e.move==='buy'){
-    const item=r.equipment.find(x=>x.id===e.id)!;pay('core:money',-(item.slot==='weapon'?25:30));s.district!.inventory.push(item.id);line=`你买下${item.name}，已放入背包。`;minutes=10;
+    const gear=r.equipment.find(x=>x.id===e.id);
+    const cons=r.items.find(x=>x.id===e.id);
+    if(gear){
+      const slot=gear.slot??'cosmetic';
+      const price=slot==='weapon'||slot==='held'?25:slot==='accessory'||slot==='cosmetic'?12:30;
+      pay('core:money',-price);s.district!.inventory.push(gear.id);line=`你买下${gear.name}，已放入背包。`;
+    }else{
+      const price=cons!.price??8;pay('core:money',-price);
+      const bag=a.items??(a.items={});
+      bag[cons!.id]=(bag[cons!.id]??0)+1;
+      line=`你买下${cons!.name}×1，已放入补给袋。`;
+    }
+    minutes=10;
   }else if(e.move==='order'){
     pay('core:stamina',-8);pay('core:energy',-5);pay('core:money',12+Math.min(8,Math.floor(a.reputation/5)));change('orders',1);change('assets',1);change('reputation',1);use('orders');line='订单已经交付，报酬到账；你保留了一份可持续结算的经营份额。';
   }else if(e.move==='invest'){

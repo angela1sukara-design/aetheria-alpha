@@ -469,41 +469,6 @@
       "resultText": "progression:text.action.wear.blade"
     },
     {
-      "id": "progression:action.buy.vest",
-      "label": "购买加固巡查背心",
-      "hint": "10分钟 · 零钱−30",
-      "group": "daily",
-      "conditions": [
-        {
-          "op": "progression.available",
-          "move": "buy",
-          "id": "progression:equipment.vest"
-        }
-      ],
-      "effects": [
-        {
-          "op": "progression.act",
-          "move": "buy",
-          "id": "progression:equipment.vest"
-        }
-      ],
-      "resultText": "progression:text.action.buy.vest"
-    },
-    {
-      "id": "progression:action.wear.vest",
-      "label": "装备加固巡查背心",
-      "hint": "已购装备；同槽替换",
-      "group": "daily",
-      "conditions": [],
-      "effects": [
-        {
-          "op": "equipment.wear",
-          "id": "progression:equipment.vest"
-        }
-      ],
-      "resultText": "progression:text.action.wear.vest"
-    },
-    {
       "id": "progression:action.buy.staff",
       "label": "购买平衡练习杖",
       "hint": "10分钟 · 零钱−25",
@@ -539,6 +504,41 @@
       "resultText": "progression:text.action.wear.staff"
     },
     {
+      "id": "progression:action.buy.vest",
+      "label": "购买加固巡查背心",
+      "hint": "10分钟 · 零钱−30",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.vest"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.vest"
+        }
+      ],
+      "resultText": "progression:text.action.buy.vest"
+    },
+    {
+      "id": "progression:action.wear.vest",
+      "label": "装备加固巡查背心",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.vest"
+        }
+      ],
+      "resultText": "progression:text.action.wear.vest"
+    },
+    {
       "id": "progression:action.buy.coat",
       "label": "购买轻型防护外套",
       "hint": "10分钟 · 零钱−30",
@@ -572,6 +572,512 @@
         }
       ],
       "resultText": "progression:text.action.wear.coat"
+    },
+    {
+      "id": "progression:action.buy.helm",
+      "label": "购买巡查护额",
+      "hint": "10分钟 · 零钱−30",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.helm"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.helm"
+        }
+      ],
+      "resultText": "progression:text.action.buy.helm"
+    },
+    {
+      "id": "progression:action.wear.helm",
+      "label": "装备巡查护额",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.helm"
+        }
+      ],
+      "resultText": "progression:text.action.wear.helm"
+    },
+    {
+      "id": "progression:action.buy.gloves",
+      "label": "购买工坊防护手套",
+      "hint": "10分钟 · 零钱−30",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.gloves"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.gloves"
+        }
+      ],
+      "resultText": "progression:text.action.buy.gloves"
+    },
+    {
+      "id": "progression:action.wear.gloves",
+      "label": "装备工坊防护手套",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.gloves"
+        }
+      ],
+      "resultText": "progression:text.action.wear.gloves"
+    },
+    {
+      "id": "progression:action.buy.greaves",
+      "label": "购买轻型护胫",
+      "hint": "10分钟 · 零钱−30",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.greaves"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.greaves"
+        }
+      ],
+      "resultText": "progression:text.action.buy.greaves"
+    },
+    {
+      "id": "progression:action.wear.greaves",
+      "label": "装备轻型护胫",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.greaves"
+        }
+      ],
+      "resultText": "progression:text.action.wear.greaves"
+    },
+    {
+      "id": "progression:action.buy.charm",
+      "label": "购买街区通行挂件",
+      "hint": "10分钟 · 零钱−12",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.charm"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.charm"
+        }
+      ],
+      "resultText": "progression:text.action.buy.charm"
+    },
+    {
+      "id": "progression:action.wear.charm",
+      "label": "装备街区通行挂件",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.charm"
+        }
+      ],
+      "resultText": "progression:text.action.wear.charm"
+    },
+    {
+      "id": "progression:action.buy.probe",
+      "label": "购买工坊测量探针",
+      "hint": "10分钟 · 零钱−25",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.probe"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.probe"
+        }
+      ],
+      "resultText": "progression:text.action.buy.probe"
+    },
+    {
+      "id": "progression:action.wear.probe",
+      "label": "装备工坊测量探针",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.probe"
+        }
+      ],
+      "resultText": "progression:text.action.wear.probe"
+    },
+    {
+      "id": "progression:action.buy.tailguard",
+      "label": "购买尾部护套",
+      "hint": "10分钟 · 零钱−30",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:equipment.tailguard"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:equipment.tailguard"
+        }
+      ],
+      "resultText": "progression:text.action.buy.tailguard"
+    },
+    {
+      "id": "progression:action.wear.tailguard",
+      "label": "装备尾部护套",
+      "hint": "已购装备；同槽替换",
+      "group": "daily",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "equipment.wear",
+          "id": "progression:equipment.tailguard"
+        }
+      ],
+      "resultText": "progression:text.action.wear.tailguard"
+    },
+    {
+      "id": "progression:action.buy.item.salve",
+      "label": "购买夜光创口胶",
+      "hint": "10分钟 · 零钱−8",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:item.salve"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:item.salve"
+        }
+      ],
+      "resultText": "progression:text.action.buy.item.salve"
+    },
+    {
+      "id": "progression:action.use.item.salve",
+      "label": "使用夜光创口胶",
+      "hint": "5分钟 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.salve",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "item.use",
+          "id": "progression:item.salve"
+        }
+      ],
+      "resultText": "progression:text.action.use.item.salve"
+    },
+    {
+      "id": "progression:action.buy.item.ration",
+      "label": "购买电解口粮",
+      "hint": "10分钟 · 零钱−6",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:item.ration"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:item.ration"
+        }
+      ],
+      "resultText": "progression:text.action.buy.item.ration"
+    },
+    {
+      "id": "progression:action.use.item.ration",
+      "label": "使用电解口粮",
+      "hint": "5分钟 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.ration",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "item.use",
+          "id": "progression:item.ration"
+        }
+      ],
+      "resultText": "progression:text.action.use.item.ration"
+    },
+    {
+      "id": "progression:action.buy.item.tonic",
+      "label": "购买净水冲剂",
+      "hint": "10分钟 · 零钱−6",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:item.tonic"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:item.tonic"
+        }
+      ],
+      "resultText": "progression:text.action.buy.item.tonic"
+    },
+    {
+      "id": "progression:action.use.item.tonic",
+      "label": "使用净水冲剂",
+      "hint": "5分钟 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.tonic",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "item.use",
+          "id": "progression:item.tonic"
+        }
+      ],
+      "resultText": "progression:text.action.use.item.tonic"
+    },
+    {
+      "id": "progression:action.buy.item.cell",
+      "label": "购买脉冲蓄能片",
+      "hint": "10分钟 · 零钱−10",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:item.cell"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:item.cell"
+        }
+      ],
+      "resultText": "progression:text.action.buy.item.cell"
+    },
+    {
+      "id": "progression:action.use.item.cell",
+      "label": "使用脉冲蓄能片",
+      "hint": "5分钟 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.cell",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "item.use",
+          "id": "progression:item.cell"
+        }
+      ],
+      "resultText": "progression:text.action.use.item.cell"
+    },
+    {
+      "id": "progression:action.combat.item.cell",
+      "label": "战内使用：脉冲蓄能片",
+      "hint": "行动点1 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.cell",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "combat.turn",
+          "move": "item",
+          "id": "progression:item.cell"
+        }
+      ],
+      "resultText": "progression:text.action.combat.item.cell"
+    },
+    {
+      "id": "progression:action.buy.item.candy",
+      "label": "购买战术高糖软片",
+      "hint": "10分钟 · 零钱−8",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:item.candy"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:item.candy"
+        }
+      ],
+      "resultText": "progression:text.action.buy.item.candy"
+    },
+    {
+      "id": "progression:action.use.item.candy",
+      "label": "使用战术高糖软片",
+      "hint": "5分钟 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.candy",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "item.use",
+          "id": "progression:item.candy"
+        }
+      ],
+      "resultText": "progression:text.action.use.item.candy"
+    },
+    {
+      "id": "progression:action.combat.item.candy",
+      "label": "战内使用：战术高糖软片",
+      "hint": "行动点1 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.candy",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "combat.turn",
+          "move": "item",
+          "id": "progression:item.candy"
+        }
+      ],
+      "resultText": "progression:text.action.combat.item.candy"
+    },
+    {
+      "id": "progression:action.buy.item.calm",
+      "label": "购买暗巷冷静贴",
+      "hint": "10分钟 · 零钱−7",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:item.calm"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:item.calm"
+        }
+      ],
+      "resultText": "progression:text.action.buy.item.calm"
+    },
+    {
+      "id": "progression:action.use.item.calm",
+      "label": "使用暗巷冷静贴",
+      "hint": "5分钟 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.calm",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "item.use",
+          "id": "progression:item.calm"
+        }
+      ],
+      "resultText": "progression:text.action.use.item.calm"
     },
     {
       "id": "progression:action.combat.skill",
@@ -1153,12 +1659,38 @@
     "progression:text.action.reconcile": "调解一项当地分歧。",
     "progression:text.action.buy.blade": "购买工坊制式工具刃。",
     "progression:text.action.wear.blade": "装备工坊制式工具刃。",
-    "progression:text.action.buy.vest": "购买加固巡查背心。",
-    "progression:text.action.wear.vest": "装备加固巡查背心。",
     "progression:text.action.buy.staff": "购买平衡练习杖。",
     "progression:text.action.wear.staff": "装备平衡练习杖。",
+    "progression:text.action.buy.vest": "购买加固巡查背心。",
+    "progression:text.action.wear.vest": "装备加固巡查背心。",
     "progression:text.action.buy.coat": "购买轻型防护外套。",
     "progression:text.action.wear.coat": "装备轻型防护外套。",
+    "progression:text.action.buy.helm": "购买巡查护额。",
+    "progression:text.action.wear.helm": "装备巡查护额。",
+    "progression:text.action.buy.gloves": "购买工坊防护手套。",
+    "progression:text.action.wear.gloves": "装备工坊防护手套。",
+    "progression:text.action.buy.greaves": "购买轻型护胫。",
+    "progression:text.action.wear.greaves": "装备轻型护胫。",
+    "progression:text.action.buy.charm": "购买街区通行挂件。",
+    "progression:text.action.wear.charm": "装备街区通行挂件。",
+    "progression:text.action.buy.probe": "购买工坊测量探针。",
+    "progression:text.action.wear.probe": "装备工坊测量探针。",
+    "progression:text.action.buy.tailguard": "购买尾部护套。",
+    "progression:text.action.wear.tailguard": "装备尾部护套。",
+    "progression:text.action.buy.item.salve": "购买夜光创口胶。",
+    "progression:text.action.use.item.salve": "使用夜光创口胶。",
+    "progression:text.action.buy.item.ration": "购买电解口粮。",
+    "progression:text.action.use.item.ration": "使用电解口粮。",
+    "progression:text.action.buy.item.tonic": "购买净水冲剂。",
+    "progression:text.action.use.item.tonic": "使用净水冲剂。",
+    "progression:text.action.buy.item.cell": "购买脉冲蓄能片。",
+    "progression:text.action.use.item.cell": "使用脉冲蓄能片。",
+    "progression:text.action.combat.item.cell": "战内使用：脉冲蓄能片。",
+    "progression:text.action.buy.item.candy": "购买战术高糖软片。",
+    "progression:text.action.use.item.candy": "使用战术高糖软片。",
+    "progression:text.action.combat.item.candy": "战内使用：战术高糖软片。",
+    "progression:text.action.buy.item.calm": "购买暗巷冷静贴。",
+    "progression:text.action.use.item.calm": "使用暗巷冷静贴。",
     "progression:text.action.combat.skill": "技能击。",
     "progression:text.event.victory": "交锋已经结束。实际奖励、胜利记录与街区后果已经结算【恢复】。",
     "progression:text.event.victory.end": "你回到当前地点，可以休息、处理伤势或继续行动。",
@@ -1182,81 +1714,81 @@
     "progression:text.node.encounter.nsfwcombo.c1": "触手黏液在你的手腕与腰侧发生缠绕：凉滑的条带勒紧腕骨，另一股贴住腰线收束，牵制感清楚可辨。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未结算。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c1.detail": "组合键：触手黏液×手腕、腰侧×缠绕→被黏液束缚\n材质 lx.nsfw-material.b0005.0004（触手黏液）\n目标 lx.nsfw-part.b0001.0028/手腕、lx.nsfw-part.b0001.0016/腰侧\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：defeat.coat|hands\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c1.detail": "你记下组合键「触手黏液×手腕、腰侧×缠绕→被黏液束缚」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.149": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.150": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.175": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.176": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c2": "蛞蝓黏液在你的脚踝与大腿内侧发生涂覆。定词挂前的液膜温热、略有韧性，沿腿线下缘抹开一小片——这是局部涂覆痕迹，不是整身完成，也不是黏液化已写入。禁止物种专条。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c2.detail": "组合键：蛞蝓黏液×脚踝、大腿内侧×涂覆\n材质 lx.nsfw-material.b0002.0001（蛞蝓黏液）\n目标 lx.nsfw-part.b0001.0023/脚踝、lx.nsfw-part.b0001.0021/大腿内侧\n动作 lx.nsfw-action.b0002.0002（涂覆）\n战败挂接提示：proposed.coat.advance\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c2.detail": "你记下组合键「蛞蝓黏液×脚踝、大腿内侧×涂覆」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.154": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.155": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.180": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.181": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c3": "凝胶膜沿你的外衣下摆发生滴落包覆：半透明的膜状液滴挂住布料边缘，与黑胶题材环境可作描写对照，但这不等于战败外衣黏附已结算——coat.stuck 尚未写入。身体材料也未因此置换。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c3.detail": "组合键：凝胶膜×外衣下摆×滴落包覆\n材质 lx.nsfw-material.b0001.0006（凝胶膜）\n目标 外衣下摆\n动作 lx.nsfw-action.b0002.0003（滴落包覆）\n战败挂接提示：defeat.coat+profile.gel\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c3.detail": "你记下组合键「凝胶膜×外衣下摆×滴落包覆」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.159": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.160": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.185": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.186": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c4": "活体黑胶在嘴唇发生封口包覆；接触可见。发声受阻仅为当下描写，未结算求助结果。可核对组合或回安全。",
     "progression:text.node.encounter.nsfwcombo.c4.detail": "组合键：活体黑胶×嘴唇×封口包覆\n材质 lx.nsfw-material.b0001.0001（活体黑胶）\n目标 lx.nsfw-part.b0001.0001/嘴唇\n动作 lx.nsfw-action.b0002.0004（封口包覆）\n战败挂接提示：assess+signal\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c4.detail": "你记下组合键「活体黑胶×嘴唇×封口包覆」，确认尚未写入战败或转化结算。",
     "progression:text.node.encounter.nsfwcombo.c4.adult": "活体黑胶覆上你的嘴唇，完成封口包覆。胶膜贴紧唇缝，带着弹性压力与湿热气味，张口与发声都变得费力——但这只是当下触感，尚未结算任何求助成功或失败。（成人门：adultOptional + 年龄≥18）外衣黏附、催眠、黏液化均未写入。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c4.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.166": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.167": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.168": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.192": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.193": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.194": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c5": "虫巢黏液在你的身后发生丝状滴落。细丝带着细粒触感，沿背侧与衣料外侧淌下，触感清楚，却未写成任何腔内事实。战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c5.detail": "组合键：虫巢黏液×身后×丝状滴落\n材质 lx.nsfw-material.b0005.0003（虫巢黏液）\n目标 lx.nsfw-locus.b0001.0005/身后\n动作 lx.nsfw-action.b0002.0005（丝状滴落）\n战败挂接提示：proposed.encounter\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c5.detail": "你记下组合键「虫巢黏液×身后×丝状滴落」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.172": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.173": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.198": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.199": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c6": "史莱姆黏液托住你的重心，完成一次倒挂；身体短暂呈倒挂拱身的姿态参考，半透明黏液拉出牵制的力线。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags——仍可挣，并非永久固定，亦非黏液化。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c6.detail": "组合键：史莱姆黏液×倒挂姿态×倒挂→倒挂固定\n材质 lx.nsfw-material.b0008.0002（史莱姆黏液）\n目标 倒挂姿态\n动作 lx.nsfw-action.b0002.0006（倒挂）\n状态素材 lx.nsfw-state.b0002.0003\n战败挂接提示：proposed.hang\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c6.detail": "你记下组合键「史莱姆黏液×倒挂姿态×倒挂→倒挂固定」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.177": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.178": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.203": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.204": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c7": "触手黏液在你的脖颈与锁骨窝发生缠绕。凉滑条带贴住颈侧，余端挤进锁骨凹陷，呼吸时牵制感加重。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未结算。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c7.detail": "组合键：触手黏液×脖颈、锁骨窝×缠绕→被黏液束缚\n材质 lx.nsfw-material.b0005.0004（触手黏液）\n目标 lx.nsfw-part.b0001.0007/脖颈、lx.nsfw-part.b0001.0008/锁骨窝\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：defeat.hands|proposed.coat.advance\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c7.detail": "你记下组合键「触手黏液×脖颈、锁骨窝×缠绕→被黏液束缚」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.182": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.183": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.208": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.209": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c8": "活体黑胶在胯下发生可见涂覆；接触与动作已成立。目标态「性器外露」仅素材指向，未写入 story.tags。可核对组合原子，或结束回到安全位置。",
     "progression:text.node.encounter.nsfwcombo.c8.detail": "组合键：活体黑胶×胯下×涂覆→性器外露\n材质 lx.nsfw-material.b0001.0001（活体黑胶）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0002.0002（涂覆）\n状态素材 lx.nsfw-state.b0002.0007\n战败挂接提示：assess+adult_optional\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c8.detail": "你记下组合键「活体黑胶×胯下×涂覆→性器外露」，确认尚未写入战败或转化结算。",
     "progression:text.node.encounter.nsfwcombo.c8.adult": "温热的活体黑胶贴上你的胯下，沿布料与皮肤缝隙做缓慢涂覆。胶面带着细微搏动，把私处轮廓一点一点抹开、抹湿；衣料被推得滑开时，性器外露只是本组合的描写目标态——素材指向，未写入 story.tags。（成人门：adultOptional + 年龄≥18）战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未结算。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c8.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.189": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.190": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.191": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.215": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.216": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.217": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c9": "蛞蝓黏液在大腿内侧与胯下发生滴落包覆；接触可见。整身被涂覆、黏液化仅素材指向，未写入 story.tags。可核对组合或回安全。",
     "progression:text.node.encounter.nsfwcombo.c9.detail": "组合键：蛞蝓黏液×大腿内侧、胯下×滴落包覆→整身被涂覆→黏液化\n材质 lx.nsfw-material.b0002.0001（蛞蝓黏液）\n目标 lx.nsfw-part.b0001.0021/大腿内侧、lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0002.0003（滴落包覆）\n状态素材 lx.nsfw-state.b0002.0002\n通用 TF lx.nsfw-tf.b0002.0001\n战败挂接提示：proposed.tf.slime\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c9.detail": "你记下组合键「蛞蝓黏液×大腿内侧、胯下×滴落包覆→整身被涂覆→黏液化」，确认尚未写入战败或转化结算。",
     "progression:text.node.encounter.nsfwcombo.c9.adult": "蛞蝓黏液自你的大腿内侧滴落，包覆向胯下。液膜温热、略带韧性，沿皮肤往下淌，把内侧肌肤与胯间一并裹住；湿热与黏滞感清楚可辨。（成人门：adultOptional + 年龄≥18）整身被涂覆、黏液化皆为素材指向的推进目标，未写入 story.tags，亦未完成——仅用通用黏液化，禁止物种专条。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c9.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.197": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.198": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.199": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.223": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.224": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.225": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c10": "史莱姆黏液在嘴唇与脖颈发生指令触发；接触可见。「催眠中」仅素材指向，未写入 story.tags。可核对组合或回安全。",
     "progression:text.node.encounter.nsfwcombo.c10.detail": "组合键：史莱姆黏液×嘴唇、脖颈×指令触发→催眠中\n材质 lx.nsfw-material.b0008.0002（史莱姆黏液）\n目标 lx.nsfw-part.b0001.0001/嘴唇、lx.nsfw-part.b0001.0007/脖颈\n动作 lx.nsfw-action.b0003.0001（指令触发）\n状态素材 lx.nsfw-state.b0003.0001\n战败挂接提示：proposed.mental.chain\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c10.detail": "你记下组合键「史莱姆黏液×嘴唇、脖颈×指令触发→催眠中」，确认尚未写入战败或转化结算。",
     "progression:text.node.encounter.nsfwcombo.c10.adult": "半透明的史莱姆黏液贴住你的嘴唇与脖颈，随接触发出短促的指令触发。声线像从胶膜内侧传来，短暂拉扯注意力与呼吸节奏；皮肤上的凉滑与指令余韵叠在一起。（成人门：adultOptional + 年龄≥18）催眠中仅作素材指向，未写入 story.tags；恍惚服从亦未成立。你仍可拒绝与中断——偏好不能替代同意。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c10.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.205": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.206": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.207": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.231": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.232": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.233": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c11": "虫巢黏液在手腕与腰侧发生封口包覆；接触可见。「被黏液束缚」仅素材指向，未写入 story.tags。可核对组合或回安全。",
     "progression:text.node.encounter.nsfwcombo.c11.detail": "组合键：虫巢黏液×手腕、腰侧×封口包覆→被黏液束缚\n材质 lx.nsfw-material.b0005.0003（虫巢黏液）\n目标 lx.nsfw-part.b0001.0028/手腕、lx.nsfw-part.b0001.0016/腰侧\n动作 lx.nsfw-action.b0002.0004（封口包覆）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：assess+signal\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c11.detail": "你记下组合键「虫巢黏液×手腕、腰侧×封口包覆→被黏液束缚」，确认尚未写入战败或转化结算。",
     "progression:text.node.encounter.nsfwcombo.c11.adult": "虫巢黏液缠裹你的手腕与腰侧，以封口包覆把缝隙糊严。黏丝带着细粒触感，勒紧腕骨与腰线，湿热压迫让挣动手感滞涩；呼吸被腰侧的黏膜轻轻顶住。（成人门：adultOptional + 年龄≥18）被黏液束缚仅素材指向，未写入 story.tags。战败外衣黏附、催眠与黏液化均未结算。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c11.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.213": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.214": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.215": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.239": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.240": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.241": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c12": "凝胶膜在胯下发生缠绕；接触可见。「恍惚服从」仅素材指向，未写入 story.tags。可核对组合或回安全。",
     "progression:text.node.encounter.nsfwcombo.c12.detail": "组合键：凝胶膜×胯下×缠绕→恍惚服从\n材质 lx.nsfw-material.b0001.0006（凝胶膜）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0003.0002\n战败挂接提示：defeat.coat+profile.gel\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c12.detail": "你记下组合键「凝胶膜×胯下×缠绕→恍惚服从」，确认尚未写入战败或转化结算。",
     "progression:text.node.encounter.nsfwcombo.c12.adult": "凝胶膜在你的胯下缠绕收紧，膜面清凉而黏，一圈圈勒过敏感带，牵动呼吸与注意力（黑胶题材可作描写选材，不等于身体已黑胶化）。（成人门：adultOptional + 年龄≥18）恍惚服从是描写目标态——素材指向，未写入 story.tags；催眠中亦未成立。你可以核对组合原子与挂接提示，或结束当前经历、回到安全位置。",
     "progression:text.choice.nsfwcombo.c12.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
-    "progression:text.choice.221": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.222": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.223": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.247": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.248": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.249": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.action.nsfwcombo.encounter": "试跑 NSFW 材质组合遭遇。"
   },
   "contributions": [
@@ -1284,12 +1816,38 @@
         "progression:action.reconcile",
         "progression:action.buy.blade",
         "progression:action.wear.blade",
-        "progression:action.buy.vest",
-        "progression:action.wear.vest",
         "progression:action.buy.staff",
         "progression:action.wear.staff",
+        "progression:action.buy.vest",
+        "progression:action.wear.vest",
         "progression:action.buy.coat",
         "progression:action.wear.coat",
+        "progression:action.buy.helm",
+        "progression:action.wear.helm",
+        "progression:action.buy.gloves",
+        "progression:action.wear.gloves",
+        "progression:action.buy.greaves",
+        "progression:action.wear.greaves",
+        "progression:action.buy.charm",
+        "progression:action.wear.charm",
+        "progression:action.buy.probe",
+        "progression:action.wear.probe",
+        "progression:action.buy.tailguard",
+        "progression:action.wear.tailguard",
+        "progression:action.buy.item.salve",
+        "progression:action.use.item.salve",
+        "progression:action.buy.item.ration",
+        "progression:action.use.item.ration",
+        "progression:action.buy.item.tonic",
+        "progression:action.use.item.tonic",
+        "progression:action.buy.item.cell",
+        "progression:action.use.item.cell",
+        "progression:action.combat.item.cell",
+        "progression:action.buy.item.candy",
+        "progression:action.use.item.candy",
+        "progression:action.combat.item.candy",
+        "progression:action.buy.item.calm",
+        "progression:action.use.item.calm",
         "progression:action.combat.skill",
         "progression:action.challenge.raider",
         "progression:action.challenge.sentinel",
@@ -3098,7 +3656,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.149",
+          "resultText": "progression:text.choice.175",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3128,7 +3686,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.150",
+          "resultText": "progression:text.choice.176",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3172,7 +3730,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.154",
+          "resultText": "progression:text.choice.180",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3202,7 +3760,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.155",
+          "resultText": "progression:text.choice.181",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3246,7 +3804,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.159",
+          "resultText": "progression:text.choice.185",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3276,7 +3834,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.160",
+          "resultText": "progression:text.choice.186",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3339,7 +3897,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.166",
+          "resultText": "progression:text.choice.192",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3369,7 +3927,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.167",
+          "resultText": "progression:text.choice.193",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3404,7 +3962,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.168",
+          "resultText": "progression:text.choice.194",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3448,7 +4006,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.172",
+          "resultText": "progression:text.choice.198",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3478,7 +4036,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.173",
+          "resultText": "progression:text.choice.199",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3522,7 +4080,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.177",
+          "resultText": "progression:text.choice.203",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3552,7 +4110,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.178",
+          "resultText": "progression:text.choice.204",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3596,7 +4154,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.182",
+          "resultText": "progression:text.choice.208",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3626,7 +4184,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.183",
+          "resultText": "progression:text.choice.209",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3689,7 +4247,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.189",
+          "resultText": "progression:text.choice.215",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3719,7 +4277,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.190",
+          "resultText": "progression:text.choice.216",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3754,7 +4312,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.191",
+          "resultText": "progression:text.choice.217",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3817,7 +4375,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.197",
+          "resultText": "progression:text.choice.223",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3847,7 +4405,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.198",
+          "resultText": "progression:text.choice.224",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3882,7 +4440,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.199",
+          "resultText": "progression:text.choice.225",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3945,7 +4503,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.205",
+          "resultText": "progression:text.choice.231",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3975,7 +4533,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.206",
+          "resultText": "progression:text.choice.232",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4010,7 +4568,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.207",
+          "resultText": "progression:text.choice.233",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4073,7 +4631,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.213",
+          "resultText": "progression:text.choice.239",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4103,7 +4661,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.214",
+          "resultText": "progression:text.choice.240",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4138,7 +4696,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.215",
+          "resultText": "progression:text.choice.241",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4201,7 +4759,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.221",
+          "resultText": "progression:text.choice.247",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4231,7 +4789,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.222",
+          "resultText": "progression:text.choice.248",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4266,7 +4824,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.223",
+          "resultText": "progression:text.choice.249",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -4612,7 +5170,7 @@
     {
       "id": "progression:equipment.blade",
       "name": "工坊制式工具刃",
-      "slot": "weapon",
+      "slot": "held",
       "bonuses": {
         "attack": 3
       },
@@ -4626,9 +5184,25 @@
       ]
     },
     {
+      "id": "progression:equipment.staff",
+      "name": "平衡练习杖",
+      "slot": "held",
+      "bonuses": {
+        "attack": 2
+      },
+      "description": "平衡练习杖已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ]
+    },
+    {
       "id": "progression:equipment.vest",
       "name": "加固巡查背心",
-      "slot": "armor",
+      "slot": "body",
       "bonuses": {
         "defense": 3,
         "evasion": 3
@@ -4643,25 +5217,9 @@
       ]
     },
     {
-      "id": "progression:equipment.staff",
-      "name": "平衡练习杖",
-      "slot": "weapon",
-      "bonuses": {
-        "attack": 2
-      },
-      "description": "平衡练习杖已穿戴；战斗时叠加装备属性，基础属性保持。",
-      "requires": [
-        {
-          "op": "body.hasCapability",
-          "capability": "grasp",
-          "count": 1
-        }
-      ]
-    },
-    {
       "id": "progression:equipment.coat",
       "name": "轻型防护外套",
-      "slot": "armor",
+      "slot": "body",
       "bonuses": {
         "defense": 2,
         "evasion": 5
@@ -4674,6 +5232,204 @@
           "count": 1
         }
       ]
+    },
+    {
+      "id": "progression:equipment.helm",
+      "name": "巡查护额",
+      "slot": "head",
+      "bonuses": {
+        "defense": 1,
+        "evasion": 1
+      },
+      "description": "巡查护额已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "head"
+          }
+        }
+      ]
+    },
+    {
+      "id": "progression:equipment.gloves",
+      "name": "工坊防护手套",
+      "slot": "hands",
+      "bonuses": {
+        "defense": 1
+      },
+      "description": "工坊防护手套已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "progression:equipment.greaves",
+      "name": "轻型护胫",
+      "slot": "legs",
+      "bonuses": {
+        "defense": 1,
+        "evasion": 2
+      },
+      "description": "轻型护胫已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "leg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "progression:equipment.charm",
+      "name": "街区通行挂件",
+      "slot": "accessory",
+      "bonuses": {},
+      "description": "街区通行挂件已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": []
+    },
+    {
+      "id": "progression:equipment.probe",
+      "name": "工坊测量探针",
+      "slot": "held",
+      "bonuses": {},
+      "description": "工坊测量探针已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "progression:equipment.tailguard",
+      "name": "尾部护套",
+      "slot": "tail",
+      "bonuses": {
+        "defense": 1
+      },
+      "description": "尾部护套已穿戴；战斗时叠加装备属性，基础属性保持。",
+      "requires": [
+        {
+          "op": "body.matches",
+          "target": {
+            "kind": "player"
+          },
+          "part": {
+            "kind": "tail"
+          }
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "progression:item.salve",
+      "name": "夜光创口胶",
+      "description": "涂抹后即时恢复生命。",
+      "category": "recovery",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:health",
+          "amount": 12
+        }
+      ],
+      "price": 8,
+      "maxStack": 20,
+      "usableInCombat": false
+    },
+    {
+      "id": "progression:item.ration",
+      "name": "电解口粮",
+      "description": "短时补充精力。",
+      "category": "recovery",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 10
+        }
+      ],
+      "price": 6,
+      "maxStack": 20,
+      "usableInCombat": false
+    },
+    {
+      "id": "progression:item.tonic",
+      "name": "净水冲剂",
+      "description": "恢复体力。",
+      "category": "recovery",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 10
+        }
+      ],
+      "price": 6,
+      "maxStack": 20,
+      "usableInCombat": false
+    },
+    {
+      "id": "progression:item.cell",
+      "name": "脉冲蓄能片",
+      "description": "战斗中补充技能资源。",
+      "category": "combat",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:skillResource",
+          "amount": 12
+        }
+      ],
+      "price": 10,
+      "maxStack": 20,
+      "usableInCombat": true
+    },
+    {
+      "id": "progression:item.candy",
+      "name": "战术高糖软片",
+      "description": "战斗中补充体力。",
+      "category": "combat",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 8
+        }
+      ],
+      "price": 8,
+      "maxStack": 20,
+      "usableInCombat": true
+    },
+    {
+      "id": "progression:item.calm",
+      "name": "暗巷冷静贴",
+      "description": "减轻理智累积；不清除崩溃标记。",
+      "category": "explore",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": -8
+        }
+      ],
+      "price": 7,
+      "maxStack": 20,
+      "usableInCombat": false
     }
   ],
   "enemies": [

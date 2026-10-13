@@ -1,4 +1,5 @@
 import type { EnemyTier, EquipmentBonuses, EquipmentSlot } from '../core/district-types.ts';
+import { EQUIPMENT_ZERO_BONUS_SLOTS } from '../core/district-types.ts';
 import type { RouteDistanceTier } from '../core/types.ts';
 export type { EnemyTier };
 
@@ -179,6 +180,7 @@ export const COMBAT_CARD = {
   recover: { ap: 2, skillResource: 0, powerMult: 0, skill: false, heal: 8 },
   flee: { ap: 2, skillResource: 0, powerMult: 0, skill: false },
   skill: { ap: 2, skillResource: 15, powerMult: 1.2, skill: true },
+  item: { ap: 1, skillResource: 0, powerMult: 0, skill: false },
 } as const;
 
 export function staminaGate(stamina: number): {
@@ -272,7 +274,7 @@ export function sumEquipmentBonuses(items: GearBonusSource[]): { attack: number;
   let attack = 0, defense = 0, evasion = 0;
   for (const item of items) {
     const slot = item.slot ?? 'cosmetic';
-    if (slot === 'cosmetic') continue;
+    if ((EQUIPMENT_ZERO_BONUS_SLOTS as readonly string[]).includes(slot)) continue;
     attack += item.bonuses?.attack ?? 0;
     defense += item.bonuses?.defense ?? 0;
     evasion += item.bonuses?.evasion ?? 0;

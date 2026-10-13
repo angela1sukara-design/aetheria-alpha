@@ -12,19 +12,36 @@ export function parseDistrict(input:unknown,h:Helpers):void {
  list(r.equipment ?? [],'/equipment',(v,p)=>{
   const x=obj(v,p,['id','name','requires','description','slot','bonuses']);
   id(x.id,p); str(x.name,p); str(x.description,p); list(x.requires,p,condition);
-  if(x.slot!==undefined) choice(x.slot,`${p}/slot`,['weapon','armor','cosmetic']);
+  if(x.slot!==undefined) choice(x.slot,`${p}/slot`,['held','head','body','hands','legs','accessory','weapon','armor','cosmetic','wings','tail','other']);
   const slot = (x.slot as string|undefined) ?? 'cosmetic';
   if(x.bonuses!==undefined){
     const b=obj(x.bonuses,`${p}/bonuses`,['attack','defense','evasion']);
     for(const k of ['attack','defense','evasion'] as const){
       if(b[k]!==undefined) integer(b[k],`${p}/bonuses/${k}`,0,k==='evasion'?6:4);
     }
-    if(slot==='cosmetic'){
+    if(['cosmetic','accessory','other'].includes(slot)){
       for(const k of ['attack','defense','evasion'] as const){
         if(typeof b[k]==='number' && (b[k] as number)!==0) choice(b[k],`${p}/bonuses/${k}`,[0]);
       }
     }
   }
+ });
+ list(r.items ?? [],'/items',(v,p)=>{
+  const x=obj(v,p,['id','name','description','category','effects','maxStack','price','usableInCombat']);
+  id(x.id,p); str(x.name,p); str(x.description,p);
+  choice(x.category,`${p}/category`,['recovery','combat','explore']);
+  if(x.maxStack!==undefined) integer(x.maxStack,`${p}/maxStack`,1,99);
+  if(x.price!==undefined) integer(x.price,`${p}/price`,0,100);
+  if(x.usableInCombat!==undefined) boolean(x.usableInCombat,`${p}/usableInCombat`);
+  list(x.effects,`${p}/effects`,(ev,ep)=>{
+    const e=obj(ev,ep,['op','id','amount']);
+    choice(e.op,`${ep}/op`,['var.change']);
+    id(e.id,`${ep}/id`);
+    choice(e.id,`${ep}/id`,['core:health','core:energy','core:stamina','core:sanity','core:skillResource']);
+    integer(e.amount,`${ep}/amount`,-100,100);
+    if((e.amount as number)===0) integer(e.amount,`${ep}/amount`,1,100);
+  });
+  integer((x.effects as unknown[])?.length,`${p}/effects`,1,8);
  });
 }
 export function validateDistrictDefinitions(packs:ContentPack[],r:Registry,fail:(p:ContentPack,c:string,ptr:string,reason:string,id?:string)=>void,check:(p:ContentPack,c:Condition,path:string)=>void):void {
