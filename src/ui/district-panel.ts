@@ -68,7 +68,7 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
    packMsg.textContent=adultReason;packMsg.dataset.adultReason='1';
   }
  }else if(packMsg.dataset.adultReason==='1'){packMsg.textContent='';delete packMsg.dataset.adultReason;}
- const statusNote=document.querySelector('.status-note');
+ const statusNote=document.querySelector<HTMLElement>('.status-note');
  if(statusNote){
   if(d.profile.adultOptional&&!adultGate)statusNote.innerHTML=`成人可选文本暂不可用。<br>${adultReason}`;
   else if(statusNote.dataset.adultHint==='1'||statusNote.textContent?.includes('成人可选文本暂不可用')){

@@ -67,10 +67,13 @@ async function boot(): Promise<void> {
     status.textContent = saved ? '进度已保存' : savedSnapshot ? '有未保存进度' : '尚未保存';
   }
   function syncDefeatPlayQuick(view = engine.view()): void {
-    const defeat = byId<HTMLButtonElement>('defeat-play-quick');
     const defeatOption = view.actions.find(x => x.definition.id === 'progression:action.defeat.play');
-    defeat.disabled = busy || !defeatOption?.available;
-    defeat.title = defeatOption?.available ? (defeatOption.definition.hint ?? '不必先战斗；直接试跑战败后 8 玩法') : (defeatOption?.reason || '当前场景不可用（战斗/故事进行中时请先结束）');
+    for (const id of ['defeat-play-quick', 'defeat-play-world'] as const) {
+      const defeat = document.getElementById(id) as HTMLButtonElement | null;
+      if (!defeat) continue;
+      defeat.disabled = busy || !defeatOption?.available;
+      defeat.title = defeatOption?.available ? (defeatOption.definition.hint ?? '不必先战斗；直接试跑战败后 8 玩法') : (defeatOption?.reason || '当前场景不可用（战斗/故事进行中时请先结束）');
+    }
   }
   function redraw(): void { const view=engine.view(); setTagDebugRegistry(registry); renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); renderFolio(view,registry,result,browsing); pages.refresh(); updateSaveStatus(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; syncDefeatPlayQuick(view); }
   function adopt(loaded: { state: import('../core/types.ts').GameState; registry?: import('../content/registry.ts').Registry }): void {

@@ -101,6 +101,36 @@ function actionButton(option: ActionOption, registry: Registry, compact = false,
   if (!option.available) button.title = option.reason;
   return button;
 }
+
+/** 主列表密度：购买/装备/使用只留在背包面板，不占「下一步」。 */
+function isInventoryOnlyAction(option: ActionOption): boolean {
+  const id = option.definition.id;
+  if (/\.buy\.|:buy\./.test(id)) return true;
+  if (option.definition.effects.some(e => e.op === 'equipment.wear' || e.op === 'item.use')) return true;
+  // 战内消耗品按钮仍留在事件/战斗选择里
+  if (option.definition.effects.some(e => e.op === 'combat.turn' && (e as { move?: string }).move === 'item')) return false;
+  return false;
+}
+/** 训练 + 经营/订单/巡查/协作/调解 → 「更多日常」折叠。 */
+function isMoreDailyAction(option: ActionOption): boolean {
+  const id = option.definition.id;
+  if (/\.train\.|:train\./.test(id)) return true;
+  if (/:action\.(order|invest|patrol|aid|reconcile)$/.test(id)) return true;
+  if (option.definition.effects.some(e => e.op === 'progression.act' && ['train', 'order', 'invest', 'patrol', 'aid', 'reconcile'].includes((e as { move?: string }).move ?? ''))) return true;
+  return false;
+}
+/** 主列表优先排序：休息/伤势 → 出行 → 挑战/环境 → 短叙事 → NSFW试跑 → 战败8玩法。 */
+function mainActionPriority(option: ActionOption): number {
+  const id = option.definition.id;
+  const ops = option.definition.effects.map(e => e.op);
+  if (/:action\.(rest|sleep|care)$/.test(id) || ops.includes('var.change') && /rest|sleep|care/.test(id)) return 10;
+  if (ops.includes('location.move') || option.definition.group === 'travel') return 20;
+  if (ops.includes('combat.start') || ops.includes('combat.encounter') || /challenge\.|encounter\.env/.test(id)) return 30;
+  if (/nsfwcombo/.test(id)) return 50;
+  if (/defeat\.play/.test(id)) return 60;
+  if (ops.includes('narrative.start') || ops.includes('narrative.choose') || /narrative\./.test(id)) return 40;
+  return 80;
+}
 export function renderGame(view: GameView, registry: Registry, result?: ActionResult, browsing = false): void {
   const scene = scenePresentation(view, registry, result, browsing);
   byId('scene-panel').dataset.mode = scene.mode;
@@ -130,19 +160,37 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   }
   if(view.state.adventure){const a=view.state.adventure;const info=element('p','muted',`经营份额 ${a.assets} · 组织影响 ${a.influence} · 街区安全 ${a.safety} · 声望 ${a.reputation}`);info.id='adventure-status';info.style.gridColumn='1 / -1';status.append(info);}
   const actions = byId('actions');
-  const expanded = new Set([...actions.querySelectorAll<HTMLDetailsElement>('.locked-actions[open]')].map(node => node.dataset.group));
+  const expanded = new Set([...actions.querySelectorAll<HTMLDetailsElement>('.locked-actions[open], .more-daily-actions[open]')].map(node => node.dataset.group));
+  const moreDailyOpen = expanded.has('more-daily');
   const filterKey = `${view.location.id}:${scene.active}:${scene.mode === 'conversation'}`;
   if (actions.dataset.filterKey !== filterKey) actions.dataset.filter = 'all';
   actions.dataset.filterKey = filterKey; actions.replaceChildren();
   const groups = scene.active || scene.mode === 'conversation' ? { event: '眼下的选择', daily: '当前互动', explore: '当前互动', travel: '离开' } : Object.fromEntries(Object.entries(folioCategories).map(([id,value])=>[id,value[0]]));
+  const densityHub = !scene.active && scene.mode !== 'conversation';
   for (const [group, label] of Object.entries(groups)) {
-    const options = view.actions.filter(x => (scene.active || scene.mode === 'conversation' ? x.definition.group === group : folioCategory(x,registry) === group) && x.definition.surface !== 'body'
+    let options = view.actions.filter(x => (scene.active || scene.mode === 'conversation' ? x.definition.group === group : folioCategory(x,registry) === group) && x.definition.surface !== 'body'
+
       && !x.definition.effects.some(effect => effect.op === 'preference.set' || effect.op === 'player.create')
       && (!(scene.mode === 'conversation' && !scene.active) || x.definition.effects.some(effect => effect.op === 'resident.talk' || effect.op === 'resident.help')));
-    if (!options.length) continue;
+    // 可见性瘦身：购买/装备/使用不进主列表（背包面板仍有按钮）；玩法未删。
+    if (densityHub) options = options.filter(x => !isInventoryOnlyAction(x));
+    const folded = densityHub ? options.filter(isMoreDailyAction) : [];
+    if (densityHub) options = options.filter(x => !isMoreDailyAction(x));
+    if (densityHub) options = [...options].sort((a, b) => mainActionPriority(a) - mainActionPriority(b) || a.definition.label.localeCompare(b.definition.label, 'zh'));
+    if (!options.length && !folded.length) continue;
     const section = element('div', 'action-group'); section.dataset.group = group; const grid = element('div', 'action-grid');
     section.append(element('div', 'action-group-title', label));
     grid.append(...options.filter(option => option.available).map(x => actionButton(x, registry, false, view.state))); section.append(grid);
+    if (folded.length) {
+      const more = element('details', 'more-daily-actions locked-actions');
+      more.dataset.group = 'more-daily'; more.open = moreDailyOpen;
+      more.append(element('summary', '', `更多日常 · ${folded.length} 项`));
+      const moreGrid = element('div', 'action-grid');
+      moreGrid.append(...folded.filter(o => o.available).map(x => actionButton(x, registry, false, view.state)));
+      const foldedLocked = folded.filter(o => !o.available);
+      if (foldedLocked.length) moreGrid.append(...foldedLocked.map(x => actionButton(x, registry, false, view.state)));
+      more.append(moreGrid); section.append(more);
+    }
     const locked = options.filter(option => !option.available);
     if (locked.length) {
       const details = element('details', 'locked-actions');
