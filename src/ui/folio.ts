@@ -10,7 +10,7 @@ export const folioCategories: Record<string, [string,string]> = {
   explore: ['探索此处','观察四周，寻找线索和新的经历。'],
   people: ['身边的人','认识在场的人，继续你们的交谈。'],
   daily: ['可做的事','休息、工作，或继续你的成长。'],
-  travel: ['前往别处','沿着可通行的路，去下一个地方。'],
+  travel: ['前往别处','点击可通行地点即可前往，无需再确认。'],
 };
 export function folioCategory(option: ActionOption, registry: Registry): string {
   if (option.definition.group === 'travel') return 'travel';
@@ -18,6 +18,9 @@ export function folioCategory(option: ActionOption, registry: Registry): string 
     || (e.op === 'world.encounter' && e.events === false)
     || (e.op === 'event.start' && ((registry.event(e.id).participantIds?.length ?? 0) > 0 || (registry.event(e.id).residentIds?.length ?? 0) > 0)))) return 'people';
   return option.definition.group === 'explore' ? 'explore' : 'daily';
+}
+export function isImmediateTravel(option: ActionOption): boolean {
+  return option.definition.group === 'travel' || option.definition.effects.some(e => e.op === 'location.move');
 }
 type Settings = {font:'sm'|'md'|'lg';reveal:'instant'|'type';motion:boolean;debug:boolean};
 let settings: Settings = {font:'md',reveal:'instant',motion:!matchMedia('(prefers-reduced-motion: reduce)').matches,debug:false};
@@ -117,6 +120,8 @@ function presentFlow():void {
   let cardId:string|undefined;
   if(parts[1]==='play'&&parts[2]==='card')try{cardId=decodeURIComponent(parts[3]??'');}catch{/* Invalid deep links return to the book. */}
   const option=cardId?view.actions.find(option=>option.definition.id===cardId&&option.definition.surface!=='body'):undefined;
+  // 出行不走故事卡确认：深链到 travel 卡时退回书页，由 data-action 直接 performAction
+  if(option&&isImmediateTravel(option))cardId=undefined;
   if(scene.active||(scene.mode==='conversation'&&!scene.active)){category=undefined;cardId=undefined;}
   if(!folioCategories[category??''])category=undefined;
   const card=!!option&&!!cardId,listing=!!category&&!card;
@@ -130,7 +135,7 @@ function presentFlow():void {
   if(card)showCard(option!,registry);
   for(const group of byId('actions').querySelectorAll<HTMLElement>('.action-group'))group.hidden=!scene.active&&scene.mode!=='conversation'&&group.dataset.group!==category;
   byId('view-label').textContent=card?'故事卡 · 确认':listing?'故事卡':scene.mode==='combat'?'交锋':scene.mode==='conversation'||scene.mode==='interaction'?'对白':'书页';
-  byId('folio-hint').textContent=card?'确认后执行行动':listing?'点一张卡，先读再选':scene.active?'1–9 选择 · 菜单可随时查阅':'从书页里的选项往下走';
+  byId('folio-hint').textContent=card?'确认后执行行动':listing?(category==='travel'?'点击目的地即可前往，无需再确认':'点一张卡，先读再选'):scene.active?'1–9 选择 · 菜单可随时查阅':'从书页里的选项往下走';
 }
 function cardsPagination():void {
   if(!current)return;
@@ -191,8 +196,11 @@ export function renderFolio(view:GameView,registry:Registry,result?:ActionResult
       button.addEventListener('click',()=>route(`#/play/cards/${category}`));entries.append(button);
     }
     for(const card of byId('actions').querySelectorAll<HTMLButtonElement>('button[data-action]')){
+      const option=view.actions.find(o=>o.definition.id===card.dataset.action);
+      // location.move / travel：保留 data-action，一点即行；不进 #/play/card 二次确认
+      if(option&&isImmediateTravel(option))continue;
       card.dataset.cardAction=card.dataset.action;delete card.dataset.action;card.classList.add('story-card');card.disabled=false;
-      const option=view.actions.find(o=>o.definition.id===card.dataset.cardAction);if(option&&!option.available)card.classList.add('card-locked');
+      if(option&&!option.available)card.classList.add('card-locked');
       card.addEventListener('click',()=>route(`#/play/card/${encodeURIComponent(card.dataset.cardAction!)}`));
     }
     cardsPagination();
