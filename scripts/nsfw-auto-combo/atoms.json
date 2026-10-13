@@ -6,7 +6,8 @@
     "原子来自 tag-hub/nsfw-batches 真实 ID；收录≠审定≠已实装。",
     "不改词库审定状态；不伪造 foundation:*。",
     "定词挂前：定词+材质；转化只用通用黏液化/黑胶化。",
-    "成人内容须 adultOptional + 年龄≥18；本组合器阶段 A 为遭遇反馈片段。"
+    "成人内容须 adultOptional + 年龄≥18；本组合器阶段 A 为遭遇反馈片段。",
+    "C7–C12：补全脖颈/锁骨/胯下/指令触发与成人可玩节点；优先可触发遭遇，不改审定。"
   ],
   "materials": [
     {
@@ -99,6 +100,20 @@
       "name": "脚踝",
       "kind": "L",
       "batch": "nsfw-part.b0001.json"
+    },
+    {
+      "key": "Pt2",
+      "id": "lx.nsfw-part.b0001.0007",
+      "name": "脖颈",
+      "kind": "L",
+      "batch": "nsfw-part.b0001.json"
+    },
+    {
+      "key": "Pt3",
+      "id": "lx.nsfw-part.b0001.0008",
+      "name": "锁骨窝",
+      "kind": "L",
+      "batch": "nsfw-part.b0001.json"
     }
   ],
   "loci": [
@@ -106,6 +121,13 @@
       "key": "Lc2",
       "id": "lx.nsfw-locus.b0001.0005",
       "name": "身后",
+      "kind": "L",
+      "batch": "nsfw-locus.b0001.json"
+    },
+    {
+      "key": "Lc1",
+      "id": "lx.nsfw-locus.b0001.0001",
+      "name": "胯下",
       "kind": "L",
       "batch": "nsfw-locus.b0001.json"
     }
@@ -158,6 +180,14 @@
       "kind": "L",
       "batch": "nsfw-action.b0002.json",
       "adultRequired": false
+    },
+    {
+      "key": "A7",
+      "id": "lx.nsfw-action.b0003.0001",
+      "name": "指令触发",
+      "kind": "L",
+      "batch": "nsfw-action.b0003.json",
+      "adultRequired": true
     }
   ],
   "states": [
@@ -171,6 +201,30 @@
       "key": "S3",
       "id": "lx.nsfw-state.b0002.0003",
       "name": "倒挂固定",
+      "kind": "L"
+    },
+    {
+      "key": "S2",
+      "id": "lx.nsfw-state.b0002.0002",
+      "name": "整身被涂覆",
+      "kind": "L"
+    },
+    {
+      "key": "S4",
+      "id": "lx.nsfw-state.b0002.0007",
+      "name": "性器外露",
+      "kind": "L"
+    },
+    {
+      "key": "S5",
+      "id": "lx.nsfw-state.b0003.0001",
+      "name": "催眠中",
+      "kind": "L"
+    },
+    {
+      "key": "S6",
+      "id": "lx.nsfw-state.b0003.0002",
+      "name": "恍惚服从",
       "kind": "L"
     }
   ],
@@ -275,6 +329,94 @@
       "adultRequired": false,
       "title": "史莱姆黏液倒挂固定",
       "targetScene": "倒挂姿态"
+    },
+    {
+      "id": "C7",
+      "material": "M2",
+      "targets": [
+        "Pt2",
+        "Pt3"
+      ],
+      "action": "A1",
+      "optionalState": "S1",
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "defeat.hands|proposed.coat.advance",
+      "adultRequired": false,
+      "title": "触手黏液缠住脖颈与锁骨"
+    },
+    {
+      "id": "C8",
+      "material": "M5",
+      "targets": [
+        "Lc1"
+      ],
+      "action": "A2",
+      "optionalState": "S4",
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "assess+adult_optional",
+      "adultRequired": true,
+      "title": "活体黑胶涂覆胯下"
+    },
+    {
+      "id": "C9",
+      "material": "M1",
+      "targets": [
+        "Pt6",
+        "Lc1"
+      ],
+      "action": "A3",
+      "optionalState": "S2",
+      "optionalTf": "Tf1",
+      "optionalPose": null,
+      "defeatHook": "proposed.tf.slime",
+      "adultRequired": true,
+      "title": "蛞蝓黏液滴落包覆腿根并启动黏液化"
+    },
+    {
+      "id": "C10",
+      "material": "M4",
+      "targets": [
+        "Pt1",
+        "Pt2"
+      ],
+      "action": "A7",
+      "optionalState": "S5",
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "proposed.mental.chain",
+      "adultRequired": true,
+      "title": "史莱姆黏液指令触发唇与颈"
+    },
+    {
+      "id": "C11",
+      "material": "M3",
+      "targets": [
+        "Pt5",
+        "Pt4"
+      ],
+      "action": "A4",
+      "optionalState": "S1",
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "assess+signal",
+      "adultRequired": true,
+      "title": "虫巢黏液封口包覆腕腰"
+    },
+    {
+      "id": "C12",
+      "material": "M6",
+      "targets": [
+        "Lc1"
+      ],
+      "action": "A1",
+      "optionalState": "S6",
+      "optionalTf": null,
+      "optionalPose": null,
+      "defeatHook": "defeat.coat+profile.gel",
+      "adultRequired": true,
+      "title": "凝胶膜缠绕胯下并恍惚服从"
     }
   ]
 }

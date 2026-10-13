@@ -124,3 +124,5 @@ input:focus-visible,summary:focus-visible{outline:2px solid var(--teal);outline-
 .feedback{pointer-events:none}
 .location-bar{scroll-margin-top:80px}@media(max-width:680px){.location-bar{scroll-margin-top:90px}}
 .prose p{white-space:pre-line}
+
+.discovery-section{margin:18px 0 8px;font-size:13px;letter-spacing:2px;color:var(--accent)}.npc-codex-card{border-left:2px solid #66557e;padding-left:12px}

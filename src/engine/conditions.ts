@@ -23,6 +23,13 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     case 'scene.state': pass = (state.district?.scene?.phase ?? 'none') === condition.value; break;
     case 'resident.available': pass = !!state.district?.residents.some(r => r.id === state.district?.currentResidentId && r.locationId === state.world.locationId); break;
     case 'player.created': pass = (state.district?.profile.created ?? false) === condition.value; break;
+    case 'preference.adultOptional': {
+      const profile = state.district?.profile;
+      const adult = !!(profile?.created && profile.ageYears >= 18 && profile.adultOptional);
+      pass = adult === condition.value;
+      reason = condition.value ? '需要已创建的成年角色并开启成人可选文本偏好。' : '当前已开启成人可选文本。';
+      break;
+    }
     case 'all': {
       const failed = condition.conditions.map(x => evaluate(x, state, registry)).find(x => !x.pass);
       if(condition.conditions.some(x=>{const q=evaluate(x,state,registry);return q.known!==false&&!q.pass;}))return {pass:false,reason:failed?.reason??'',known:true};

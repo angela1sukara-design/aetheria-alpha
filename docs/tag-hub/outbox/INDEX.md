@@ -12,3 +12,4 @@
 | 2026-10-12 18:17 | [2026-10-12-tag-rules-delivery-coexistence/](./2026-10-12-tag-rules-delivery-coexistence/) **v1.1.0 试跑切片** | Tag共存规则 | 补 generation-rules（夜间开局）、gel/night when、clinic 昼夜模板互斥、PLAYTEST-SLICE；全库矩阵仍 TBD |
 | 2026-10-13 11:10 | [2026-10-13-nsfw-b0017-ingest.md](./2026-10-13-nsfw-b0017-ingest.md) | 引擎接入 | b0017→tag-hub 收录 + v1→v2 草稿（validate-v2）；待审定未实装 |
 | 2026-10-13 15:02 | [2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md](./2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md) | 故事试写 | proposed-nodes：定词材质×部位×动作自动组合；已合载见 `docs/nsfw-auto-combo.md` |
+- `2026-10-13-NSFW-auto-combo-可填槽清单.md` — NSFW combo 已合载可填槽（节点/textKey/adult）

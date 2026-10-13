@@ -103,6 +103,7 @@ p.narrativeProfiles.push({
   tendencies: [],
   defeatTags: [],
 });
+const adultGate = [{ op: 'preference.adultOptional', value: true }];
 const nsfwCandidates = [];
 for (const combo of nsfwCombos) {
   const slug = (combo.sampleId ?? 'x').toLowerCase();
@@ -119,20 +120,44 @@ for (const combo of nsfwCombos) {
   p.texts[detailKey] = cand.texts.detail;
   const resultKey = id(`text.choice.nsfwcombo.${slug}.detail`);
   p.texts[resultKey] = `你记下组合键「${combo.comboKey}」，确认尚未写入战败或转化结算。`;
+  const startChoices = [
+    {
+      label: '核对组合原子与挂接提示',
+      resultText: resultKey,
+      next: 'nsfwcombo-detail',
+      effects: [time(5)],
+      conditions: [],
+      setTags: [],
+      unsetTags: [],
+    },
+  ];
+  // 成人样例：可填 adult 正文槽 + 偏好门选项（中性 fragment 仍可无偏好阅读）
+  let adultKey = null;
+  if (combo.adultRequired) {
+    adultKey = id(`text.node.encounter.nsfwcombo.${slug}.adult`);
+    p.texts[adultKey] = [
+      `【可填成人正文槽 · ${combo.sampleId} · ${combo.comboKey}】`,
+      '占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。',
+      '关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。',
+      '勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。',
+      `lexiconRefs：${combo.lexiconRefs.join('、')}`,
+    ].join('\n');
+    const adultResult = id(`text.choice.nsfwcombo.${slug}.adult`);
+    p.texts[adultResult] = '你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。';
+    startChoices.push({
+      label: '阅读成人向补充描写',
+      resultText: adultResult,
+      next: 'nsfwcombo-adult',
+      effects: [time(5)],
+      conditions: adultGate,
+      setTags: [],
+      unsetTags: [],
+    });
+  }
+  startChoices.push(exit());
   p.narrativeNodes.push({
     ...cand.node,
-    choices: [
-      {
-        label: '核对组合原子与挂接提示',
-        resultText: resultKey,
-        next: 'nsfwcombo-detail',
-        effects: [time(5)],
-        conditions: [],
-        setTags: [],
-        unsetTags: [],
-      },
-      exit(),
-    ],
+    choices: startChoices,
   });
   p.narrativeNodes.push({
     id: id(`node.encounter.nsfwcombo.${slug}.detail`),
@@ -149,6 +174,33 @@ for (const combo of nsfwCombos) {
     maxVisits: 1,
     choices: [exit()],
   });
+  if (adultKey) {
+    p.narrativeNodes.push({
+      id: id(`node.encounter.nsfwcombo.${slug}.adult`),
+      kind: 'encounter',
+      stage: 'nsfwcombo-adult',
+      title: `${combo.title} · 成人补充`,
+      textKey: adultKey,
+      requiresTags: [scoped('opponent', 'nsfwcombo.active')],
+      excludesTags: [],
+      conditions: adultGate,
+      tendencies: [],
+      weight: 10,
+      priority: 5,
+      maxVisits: 1,
+      choices: [exit()],
+    });
+  }
+  cand.adultTextKey = adultKey;
+  cand.fillable = {
+    neutralTextKey: cand.node.textKey,
+    detailTextKey: detailKey,
+    choiceDetailTextKey: resultKey,
+    adultTextKey: adultKey,
+    startNodeId: cand.node.id,
+    detailNodeId: id(`node.encounter.nsfwcombo.${slug}.detail`),
+    adultNodeId: adultKey ? id(`node.encounter.nsfwcombo.${slug}.adult`) : null,
+  };
 }
 action(
   'nsfwcombo.encounter',
@@ -175,6 +227,8 @@ await writeFile(
         proposedRuntimeTags: c.proposedRuntimeTags,
         nodeId: c.node.id,
         fragment: c.fragment,
+        fillable: c.fillable,
+        adultTextKey: c.adultTextKey,
       })),
     },
     null,

@@ -68,6 +68,11 @@ const many = enumerateCombos(atoms, { limit: 12 });
 | 项 | 结果 |
 |---|---|
 | 组合器可读制作卡原子 | `atoms.json` + hub ID 校验（测试） |
-| 合载可触发 | `progression:action.nsfwcombo.encounter` |
+| 合载可触发 | `progression:action.nsfwcombo.encounter`（样例 C1–C12） |
+| 成人优先补槽 | C8–C12（胯下/指令/封口/黏液化入口等） |
 | 未改 approved 词库 | 是 |
 | 无物种 TF 专条 | 是 |
+
+## 可填槽清单
+
+见 `docs/tag-hub/outbox/2026-10-13-NSFW-auto-combo-可填槽清单.md`（C1–C12 节点 / textKey / adult 槽与 U1–U8 缺口）。

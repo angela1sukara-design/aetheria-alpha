@@ -55,6 +55,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'resident.memory') { const x = obj(value, path, ['op', 'residentId', 'memoryId', 'value']); str(x.residentId, path); id(x.memoryId, path); boolean(x.value, path); }
     else if (op === 'resident.available') obj(value,path,['op']);
     else if (op === 'player.created') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
+    else if (op === 'preference.adultOptional') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
     else if (op === 'adventure.compare') { const x=obj(value,path,['op','field','comparison','value']);choice(x.field,path,[...ADVENTURE_FIELDS,'victories']);choice(x.comparison,path,['eq','gte','lte']);integer(x.value,path,0,1000000); }
     else if (op === 'progression.available') { const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path); }
     else if(op==='narrative.tag'){const x=obj(value,path,['op','role','id','value']);choice(x.role,path,['player','opponent','environment']);id(x.id,path);boolean(x.value,path);}

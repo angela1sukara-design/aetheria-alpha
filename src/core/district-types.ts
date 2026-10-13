@@ -93,7 +93,8 @@ export type DistrictCondition =
   | { op: 'day.after'; flagId: Id; days: number }
   | { op: 'scene.state'; value: 'active' | 'paused' | 'none' }
   | { op: 'resident.available' }
-  | { op: 'player.created'; value: boolean };
+  | { op: 'player.created'; value: boolean }
+  | { op: 'preference.adultOptional'; value: boolean };
 /** 战斗运行时敌方快照（开打时从模板拷入）。 */
 export interface CombatEnemyRuntime {
   hpMax: number;

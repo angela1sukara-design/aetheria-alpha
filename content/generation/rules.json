@@ -2,7 +2,7 @@
   "format": "aetheria-generation-rules",
   "schemaVersion": 1,
   "id": "aetheria/neighborhood-rules",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "requiredServices": [
     "home",
     "market",
@@ -10,13 +10,13 @@
     "clinic",
     "commons"
   ],
-  "locationCount": 7,
+  "locationCount": 5,
   "npcCount": 9,
-  "extraConnections": 3,
+  "extraConnections": 1,
   "startMinutes": 540,
   "workStart": 480,
   "workEnd": 1080,
   "leisureEnd": 1320,
-  "eventsPerLocation": 2,
-  "activitiesPerLocation": 2
+  "eventsPerLocation": 1,
+  "activitiesPerLocation": 1
 }

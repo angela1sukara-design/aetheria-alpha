@@ -70,7 +70,7 @@ export async function buildWorldProfiles() {
     const tag=`worlds:setting.${key}`;
     const aliases=[key,...({floating:['sky'],polar:['snowfield'],volcanic:['lava'],harbor:['ship'],desert:['gobi'],dungeon:['grave']}[key]??[])];
     tags.push({id:tag,label:sourceTheme,definition:`当前世界题材为${sourceTheme}；与湿润、干燥等生态独立。`,facets:['setting'],status:'active',aliases:aliases.map(k=>({scope:'generation.v1',value:`general-taxonomy:setting.${k}`}))});
-    profiles.push({id:`world.${key}`,tag,name,version:'1.0.0',description,sourceTheme,residentNames:key==='xianxia'?['林舟','沈青','叶宁','顾尘','苏禾','陆遥']:['莱娜','凯恩','米拉','洛根','艾达','诺亚'],locations,factions:[{name:tradeFaction,activities:[`${product}贸易`,`${resource}调配`]},{name:powerFaction,activities:[`${forces}联络`,'公共救护协作']}],quests});
+    profiles.push({id:`world.${key}`,tag,name,version:'1.0.0',description,sourceTheme,residentNames:key==='xianxia'?['林舟','Elena','沈青','Kai','叶宁','Mira','苏禾','Jonas']:['Elena','Marcus','Aiko','Noah','Sera','Kai','林舟','Quinn','Ravi','Mira'],locations,factions:[{name:tradeFaction,activities:[`${product}贸易`,`${resource}调配`]},{name:powerFaction,activities:[`${forces}联络`,'公共救护协作']}],quests});
     const dir=`production/quest-authoring/world-settings/${key}`;await mkdir(dir,{recursive:true});await write(`${dir}/quest-tree.json`,source);await write(`${dir}/execution.json`,execution);
   }
   const catalog={format:'aetheria-world-profiles',schemaVersion:1,profiles};parseWorldProfiles(catalog);

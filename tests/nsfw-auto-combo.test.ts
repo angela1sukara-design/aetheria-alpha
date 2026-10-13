@@ -11,11 +11,11 @@ import type { Id } from '../src/core/types.ts';
 const hub = path.resolve('docs/tag-hub/nsfw-batches');
 const json = async (p: string) => JSON.parse(await readFile(new URL('../' + p, import.meta.url), 'utf8'));
 
-test('combiner builds C1–C6 from production-card atoms with real hub IDs', async () => {
+test('combiner builds C1–C12 from production-card atoms with real hub IDs', async () => {
   const atoms = await loadAtoms();
-  assert.equal(atoms.samples.length, 6);
+  assert.equal(atoms.samples.length, 12);
   const combos = sampleCombos(atoms);
-  assert.equal(combos.length, 6);
+  assert.equal(combos.length, 12);
   assert.equal(combos[0]!.sampleId, 'C1');
   assert.match(combos[0]!.comboKey, /触手黏液/);
   assert.match(combos[0]!.fragment, /缠绕/);
@@ -54,13 +54,13 @@ test('adventure pack exposes nsfwcombo encounter action and sample nodes', async
   assert.ok(registry.tags.some((t) => t.id === 'progression:tag.nsfwcombo.active'));
   assert.ok(registry.narrativeProfiles.some((p) => p.id === 'progression:profile.nsfwcombo.matrix'));
   const nodes = registry.narrativeNodes.filter((n) => n.id.includes('nsfwcombo'));
-  assert.ok(nodes.length >= 12, `expected start+detail per sample, got ${nodes.length}`);
+  assert.ok(nodes.length >= 30, `expected start+detail (+adult) per sample, got ${nodes.length}`);
   assert.equal(registry.action('progression:action.nsfwcombo.encounter' as Id).label, '试跑 NSFW 材质组合遭遇');
   assert.ok(registry.globalActions().some((a) => a.id === 'progression:action.nsfwcombo.encounter'));
 
   const candidates = await json('content/nsfw-auto-combo/candidates.json');
   assert.equal(candidates.format, 'aetheria-nsfw-auto-combo-candidates');
-  assert.equal(candidates.count, 6);
+  assert.equal(candidates.count, 12);
 
   const s = createGameState(registry, 17);
   s.world.locationId = 'district:location.canal' as Id;
@@ -87,4 +87,20 @@ test('toEncounterCandidate never forges foundation material.gel', async () => {
   });
   assert.ok(!JSON.stringify(cand).includes('foundation:material.gel'));
   assert.match(cand.fragment, /凝胶膜/);
+});
+
+test('adult samples expose gated adult text slots', async () => {
+  const candidates = await json('content/nsfw-auto-combo/candidates.json');
+  const adults = candidates.candidates.filter((c: { adultRequired: boolean }) => c.adultRequired);
+  assert.equal(adults.length, 6);
+  for (const c of adults) {
+    assert.ok(c.adultTextKey?.endsWith('.adult'), c.sampleId);
+    assert.ok(c.fillable?.adultNodeId?.includes('.adult'), c.sampleId);
+  }
+  const index = await json('content/index.json');
+  const inputs = await Promise.all(index.packs.map((p: string) => json('content/' + p)));
+  const registry = await loadPacks(inputs);
+  const adultNode = registry.narrativeNodes.find((n) => n.id === 'progression:node.encounter.nsfwcombo.c8.adult');
+  assert.ok(adultNode);
+  assert.ok(adultNode!.conditions.some((c) => c.op === 'preference.adultOptional' && c.value === true));
 });

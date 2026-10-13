@@ -5,6 +5,7 @@ import { residentAppearance } from '../engine/query.ts';
 import { tagLabel } from '../content/tags.ts';
 import type{GameView}from'../core/types.ts';import type{Registry}from'../content/registry.ts';import type{TextLibrary}from'../content/text-variants.ts';import{byId,element}from'./render.ts';import{evaluate}from'../engine/conditions.ts';
 import { worldActivityAt } from '../world/simulation.ts';
+import { npcCodexDiscoveryRows } from './npc-codex.ts';
 export type { JournalEntry } from '../core/quest-types.ts';
 import type { JournalEntry } from '../core/quest-types.ts';
 export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:JournalEntry[]=[]):void {
@@ -24,9 +25,15 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
  if(v.state.adventure){const a=v.state.adventure,card=element('article','npc-card');card.append(element('h3','','成长与街区进展'),element('p','',`经营份额${a.assets}；订单${a.orders}；契约${a.contracts}；组织影响${a.influence}；街区安全${a.safety}；声望${a.reputation}；有效胜利${Object.values(a.victories).reduce((n,v)=>n+v,0)}`),element('p','muted','经营终局需要经营份额6、订单3、契约2。权力终局需要组织影响5、安全5、有效胜利2。市场与工坊可接订单、购买装备；公共区与工坊可训练和挑战。'));tasks.prepend(card);for(const row of [...a.journal].reverse().slice(0,12)){const item=element('article','log-item');item.append(element('h3','',row.title),element('p','',row.text));tasks.append(item);}}
  const bag=byId('bag-content');const equipped=[...new Set([d.equipped,...Object.values(v.state.adventure?.equipment??{})].filter(Boolean))];bag.replaceChildren(element('p','',equipped.length?'正在穿戴：'+equipped.map(id=>r.equipment.find(e=>e.id===id)?.name).join('、'):'当前没有试用装备。'));for(const item of d.inventory){const def=r.equipment.find(e=>e.id===item)!;bag.append(element('h3','',def.name),element('p','muted',def.description));const option=v.actions.find(a=>a.definition.effects.some(e=>e.op==='equipment.wear'&&e.id===item));if(option){const button=element('button','',equipped.includes(item)?'已装备':'装备');button.dataset.action=option.definition.id;button.disabled=!option.available||equipped.includes(item);bag.append(button);}}bag.append(element('p','muted',v.state.adventure?'武器、护甲与适配服各保留一件。同槽新装备替换旧装备，物品仍留在背包；身体不兼容时自动卸下。':'市场提供免费试穿和收起入口。身体变化使装备不兼容时，会自动卸下并保留。'));
  const search=byId<HTMLInputElement>('discovery-search').value.trim().toLowerCase(),index=byId('discovery-content');index.replaceChildren();
- const rows:{title:string;detail:string}[]=[];for(const sid of d.discovered){const st=r.storylets.find(x=>x.id===sid);if(st){const e=r.event(st.eventId);rows.push({title:r.text(e.nodes[0]!.textVariants[0]!).split('\n')[0]!,detail:`${r.location(st.locationId).name} · ${st.tags.map(tag=>tagLabel(r,tag,'story.v1')).filter(Boolean).join(' / ')} · ${st.repeat==='once'?'已记下经历':'可按生活节奏再次遇见'}`});}const i=r.interactions.find(x=>x.id===sid);if(i)rows.push({title:r.npc(i.npcId).name+'的安静相处',detail:'私人交谈 / 姿态 / 手部接触；必须重新确认当下意愿。'});}
- for(const n of v.state.npcs.filter(x=>x.discovered))rows.push({title:r.npc(n.definitionId).name,detail:r.npc(n.definitionId).role+' · 可在人物册查看经历与去向'});
- for(const row of rows.filter(x=>(x.title+x.detail).toLowerCase().includes(search))){const card=element('article','log-item');card.append(element('h3','',row.title),element('p','muted',row.detail));index.append(card);}if(!index.childElementCount)index.append(element('p','muted','尚未发现匹配内容。索引只显示亲自知道的人物、主题和互动。'));
+ const rows:{title:string;detail:string;kind?:string}[]=[];
+ for(const row of npcCodexDiscoveryRows(v,r))rows.push(row);
+ for(const sid of d.discovered){const st=r.storylets.find(x=>x.id===sid);if(st){const e=r.event(st.eventId);rows.push({title:r.text(e.nodes[0]!.textVariants[0]!).split('\n')[0]!,detail:`${r.location(st.locationId).name} · ${st.tags.map(tag=>tagLabel(r,tag,'story.v1')).filter(Boolean).join(' / ')} · ${st.repeat==='once'?'已记下经历':'可按生活节奏再次遇见'}`});}const i=r.interactions.find(x=>x.id===sid);if(i)rows.push({title:r.npc(i.npcId).name+'的安静相处',detail:'私人交谈 / 姿态 / 手部接触；必须重新确认当下意愿。'});}
+ const matched=rows.filter(x=>(x.title+x.detail).toLowerCase().includes(search));
+ const codex=matched.filter(x=>x.kind==='npc-codex');
+ const other=matched.filter(x=>x.kind!=='npc-codex');
+ if(codex.length){index.append(element('h3','discovery-section','NPC 图鉴'));for(const row of codex){const card=element('article','log-item npc-codex-card');card.append(element('h3','',row.title),element('p','muted',row.detail));index.append(card);}}
+ if(other.length){index.append(element('h3','discovery-section','经历与互动'));for(const row of other){const card=element('article','log-item');card.append(element('h3','',row.title),element('p','muted',row.detail));index.append(card);}}
+ if(!index.childElementCount)index.append(element('p','muted','尚未发现匹配内容。NPC 图鉴与索引只显示亲自知道的人物、主题和互动。'));
  const packs=byId('pack-content');packs.replaceChildren();for(const p of texts.list()){const card=element('div','save-slot');card.append(element('p','',`${p.id} · ${p.version} · ${p.enabled?'已启用':'已禁用'}`));for(const [move,label]of [['toggle',p.enabled?'禁用':'启用'],['delete','删除']]){const b=element('button','',label);b.dataset.pack=p.id;b.dataset.packMove=move;card.append(b);}packs.append(card);}if(!packs.childElementCount)packs.append(element('p','muted','当前使用完整基础正文。可以导入经过审核的可选文本包。'));
  byId<HTMLInputElement>('adult-preference').checked=d.profile.adultOptional;
 }

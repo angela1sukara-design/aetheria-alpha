@@ -1197,18 +1197,66 @@
     "progression:text.node.encounter.nsfwcombo.c4": "活体黑胶在嘴唇发生封口包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
     "progression:text.node.encounter.nsfwcombo.c4.detail": "组合键：活体黑胶×嘴唇×封口包覆\n材质 lx.nsfw-material.b0001.0001（活体黑胶）\n目标 lx.nsfw-part.b0001.0001/嘴唇\n动作 lx.nsfw-action.b0002.0004（封口包覆）\n战败挂接提示：assess+signal\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c4.detail": "你记下组合键「活体黑胶×嘴唇×封口包覆」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.164": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.165": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c4.adult": "【可填成人正文槽 · C4 · 活体黑胶×嘴唇×封口包覆】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0001.0001、lx.nsfw-part.b0001.0001、lx.nsfw-action.b0002.0004",
+    "progression:text.choice.nsfwcombo.c4.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
+    "progression:text.choice.166": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.167": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.168": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c5": "虫巢黏液在身后发生丝状滴落。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。",
     "progression:text.node.encounter.nsfwcombo.c5.detail": "组合键：虫巢黏液×身后×丝状滴落\n材质 lx.nsfw-material.b0005.0003（虫巢黏液）\n目标 lx.nsfw-locus.b0001.0005/身后\n动作 lx.nsfw-action.b0002.0005（丝状滴落）\n战败挂接提示：proposed.encounter\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c5.detail": "你记下组合键「虫巢黏液×身后×丝状滴落」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.169": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.170": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.172": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.173": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.node.encounter.nsfwcombo.c6": "史莱姆黏液在倒挂姿态发生倒挂。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags。姿态参考「倒挂拱身」。",
     "progression:text.node.encounter.nsfwcombo.c6.detail": "组合键：史莱姆黏液×倒挂姿态×倒挂→倒挂固定\n材质 lx.nsfw-material.b0008.0002（史莱姆黏液）\n目标 倒挂姿态\n动作 lx.nsfw-action.b0002.0006（倒挂）\n状态素材 lx.nsfw-state.b0002.0003\n战败挂接提示：proposed.hang\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
     "progression:text.choice.nsfwcombo.c6.detail": "你记下组合键「史莱姆黏液×倒挂姿态×倒挂→倒挂固定」，确认尚未写入战败或转化结算。",
-    "progression:text.choice.174": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.choice.175": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.177": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.178": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c7": "触手黏液在脖颈、锁骨窝发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。",
+    "progression:text.node.encounter.nsfwcombo.c7.detail": "组合键：触手黏液×脖颈、锁骨窝×缠绕→被黏液束缚\n材质 lx.nsfw-material.b0005.0004（触手黏液）\n目标 lx.nsfw-part.b0001.0007/脖颈、lx.nsfw-part.b0001.0008/锁骨窝\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：defeat.hands|proposed.coat.advance\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c7.detail": "你记下组合键「触手黏液×脖颈、锁骨窝×缠绕→被黏液束缚」，确认尚未写入战败或转化结算。",
+    "progression:text.choice.182": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.183": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c8": "活体黑胶在胯下发生涂覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「性器外露」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+    "progression:text.node.encounter.nsfwcombo.c8.detail": "组合键：活体黑胶×胯下×涂覆→性器外露\n材质 lx.nsfw-material.b0001.0001（活体黑胶）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0002.0002（涂覆）\n状态素材 lx.nsfw-state.b0002.0007\n战败挂接提示：assess+adult_optional\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c8.detail": "你记下组合键「活体黑胶×胯下×涂覆→性器外露」，确认尚未写入战败或转化结算。",
+    "progression:text.node.encounter.nsfwcombo.c8.adult": "【可填成人正文槽 · C8 · 活体黑胶×胯下×涂覆→性器外露】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0001.0001、lx.nsfw-locus.b0001.0001、lx.nsfw-action.b0002.0002、lx.nsfw-state.b0002.0007",
+    "progression:text.choice.nsfwcombo.c8.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
+    "progression:text.choice.189": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.190": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.191": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c9": "蛞蝓黏液在大腿内侧、胯下发生滴落包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「整身被涂覆」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+    "progression:text.node.encounter.nsfwcombo.c9.detail": "组合键：蛞蝓黏液×大腿内侧、胯下×滴落包覆→整身被涂覆→黏液化\n材质 lx.nsfw-material.b0002.0001（蛞蝓黏液）\n目标 lx.nsfw-part.b0001.0021/大腿内侧、lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0002.0003（滴落包覆）\n状态素材 lx.nsfw-state.b0002.0002\n通用 TF lx.nsfw-tf.b0002.0001\n战败挂接提示：proposed.tf.slime\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c9.detail": "你记下组合键「蛞蝓黏液×大腿内侧、胯下×滴落包覆→整身被涂覆→黏液化」，确认尚未写入战败或转化结算。",
+    "progression:text.node.encounter.nsfwcombo.c9.adult": "【可填成人正文槽 · C9 · 蛞蝓黏液×大腿内侧、胯下×滴落包覆→整身被涂覆→黏液化】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0002.0001、lx.nsfw-part.b0001.0021、lx.nsfw-locus.b0001.0001、lx.nsfw-action.b0002.0003、lx.nsfw-state.b0002.0002、lx.nsfw-tf.b0002.0001",
+    "progression:text.choice.nsfwcombo.c9.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
+    "progression:text.choice.197": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.198": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.199": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c10": "史莱姆黏液在嘴唇、脖颈发生指令触发。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「催眠中」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+    "progression:text.node.encounter.nsfwcombo.c10.detail": "组合键：史莱姆黏液×嘴唇、脖颈×指令触发→催眠中\n材质 lx.nsfw-material.b0008.0002（史莱姆黏液）\n目标 lx.nsfw-part.b0001.0001/嘴唇、lx.nsfw-part.b0001.0007/脖颈\n动作 lx.nsfw-action.b0003.0001（指令触发）\n状态素材 lx.nsfw-state.b0003.0001\n战败挂接提示：proposed.mental.chain\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c10.detail": "你记下组合键「史莱姆黏液×嘴唇、脖颈×指令触发→催眠中」，确认尚未写入战败或转化结算。",
+    "progression:text.node.encounter.nsfwcombo.c10.adult": "【可填成人正文槽 · C10 · 史莱姆黏液×嘴唇、脖颈×指令触发→催眠中】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0008.0002、lx.nsfw-part.b0001.0001、lx.nsfw-part.b0001.0007、lx.nsfw-action.b0003.0001、lx.nsfw-state.b0003.0001",
+    "progression:text.choice.nsfwcombo.c10.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
+    "progression:text.choice.205": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.206": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.207": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c11": "虫巢黏液在手腕、腰侧发生封口包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+    "progression:text.node.encounter.nsfwcombo.c11.detail": "组合键：虫巢黏液×手腕、腰侧×封口包覆→被黏液束缚\n材质 lx.nsfw-material.b0005.0003（虫巢黏液）\n目标 lx.nsfw-part.b0001.0028/手腕、lx.nsfw-part.b0001.0016/腰侧\n动作 lx.nsfw-action.b0002.0004（封口包覆）\n状态素材 lx.nsfw-state.b0002.0001\n战败挂接提示：assess+signal\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c11.detail": "你记下组合键「虫巢黏液×手腕、腰侧×封口包覆→被黏液束缚」，确认尚未写入战败或转化结算。",
+    "progression:text.node.encounter.nsfwcombo.c11.adult": "【可填成人正文槽 · C11 · 虫巢黏液×手腕、腰侧×封口包覆→被黏液束缚】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0005.0003、lx.nsfw-part.b0001.0028、lx.nsfw-part.b0001.0016、lx.nsfw-action.b0002.0004、lx.nsfw-state.b0002.0001",
+    "progression:text.choice.nsfwcombo.c11.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
+    "progression:text.choice.213": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.214": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.215": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.node.encounter.nsfwcombo.c12": "凝胶膜在胯下发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「恍惚服从」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+    "progression:text.node.encounter.nsfwcombo.c12.detail": "组合键：凝胶膜×胯下×缠绕→恍惚服从\n材质 lx.nsfw-material.b0001.0006（凝胶膜）\n目标 lx.nsfw-locus.b0001.0001/胯下\n动作 lx.nsfw-action.b0002.0001（缠绕）\n状态素材 lx.nsfw-state.b0003.0002\n战败挂接提示：defeat.coat+profile.gel\n词条≠玩法≠数值；本节点不改 BodyGraph、不授予能力。",
+    "progression:text.choice.nsfwcombo.c12.detail": "你记下组合键「凝胶膜×胯下×缠绕→恍惚服从」，确认尚未写入战败或转化结算。",
+    "progression:text.node.encounter.nsfwcombo.c12.adult": "【可填成人正文槽 · C12 · 凝胶膜×胯下×缠绕→恍惚服从】\n占位：在此写入同意前提下的成人向遭遇描写（材质×部位×动作）。\n关闭 adultOptional 或不满足成年资格时，玩家看不到本选项；主节点中性 fragment 仍可用。\n勿写未成年人；勿伪造 foundation:*；勿写物种 TF 专条。\nlexiconRefs：lx.nsfw-material.b0001.0006、lx.nsfw-locus.b0001.0001、lx.nsfw-action.b0002.0001、lx.nsfw-state.b0003.0002",
+    "progression:text.choice.nsfwcombo.c12.adult": "你读完这段可选成人描写，仍可随时退出；未写入战败或转化结算。",
+    "progression:text.choice.221": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.222": "你停止这次接触，回到可以继续行动的位置。",
+    "progression:text.choice.223": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.action.nsfwcombo.encounter": "试跑 NSFW 材质组合遭遇。"
   },
   "contributions": [
@@ -3271,8 +3319,27 @@
           "unsetTags": []
         },
         {
+          "label": "阅读成人向补充描写",
+          "resultText": "progression:text.choice.nsfwcombo.c4.adult",
+          "next": "nsfwcombo-adult",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.164",
+          "resultText": "progression:text.choice.166",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3302,7 +3369,42 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.165",
+          "resultText": "progression:text.choice.167",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c4.adult",
+      "kind": "encounter",
+      "stage": "nsfwcombo-adult",
+      "title": "活体黑胶封口包覆 · 成人补充",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c4.adult",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "preference.adultOptional",
+          "value": true
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.168",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3346,7 +3448,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.169",
+          "resultText": "progression:text.choice.172",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3376,7 +3478,7 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.170",
+          "resultText": "progression:text.choice.173",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3420,7 +3522,7 @@
         },
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.174",
+          "resultText": "progression:text.choice.177",
           "next": null,
           "effects": [],
           "conditions": [],
@@ -3450,7 +3552,721 @@
       "choices": [
         {
           "label": "结束当前经历，回到安全位置",
-          "resultText": "progression:text.choice.175",
+          "resultText": "progression:text.choice.178",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c7",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "触手黏液缠住脖颈与锁骨",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c7",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c7.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.182",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c7.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c7.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.183",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c8",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "活体黑胶涂覆胯下",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c8",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c8.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "阅读成人向补充描写",
+          "resultText": "progression:text.choice.nsfwcombo.c8.adult",
+          "next": "nsfwcombo-adult",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.189",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c8.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c8.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.190",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c8.adult",
+      "kind": "encounter",
+      "stage": "nsfwcombo-adult",
+      "title": "活体黑胶涂覆胯下 · 成人补充",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c8.adult",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "preference.adultOptional",
+          "value": true
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.191",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c9",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "蛞蝓黏液滴落包覆腿根并启动黏液化",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c9",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c9.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "阅读成人向补充描写",
+          "resultText": "progression:text.choice.nsfwcombo.c9.adult",
+          "next": "nsfwcombo-adult",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.197",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c9.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c9.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.198",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c9.adult",
+      "kind": "encounter",
+      "stage": "nsfwcombo-adult",
+      "title": "蛞蝓黏液滴落包覆腿根并启动黏液化 · 成人补充",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c9.adult",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "preference.adultOptional",
+          "value": true
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.199",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c10",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "史莱姆黏液指令触发唇与颈",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c10",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c10.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "阅读成人向补充描写",
+          "resultText": "progression:text.choice.nsfwcombo.c10.adult",
+          "next": "nsfwcombo-adult",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.205",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c10.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c10.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.206",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c10.adult",
+      "kind": "encounter",
+      "stage": "nsfwcombo-adult",
+      "title": "史莱姆黏液指令触发唇与颈 · 成人补充",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c10.adult",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "preference.adultOptional",
+          "value": true
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.207",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c11",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "虫巢黏液封口包覆腕腰",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c11",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c11.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "阅读成人向补充描写",
+          "resultText": "progression:text.choice.nsfwcombo.c11.adult",
+          "next": "nsfwcombo-adult",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.213",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c11.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c11.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.214",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c11.adult",
+      "kind": "encounter",
+      "stage": "nsfwcombo-adult",
+      "title": "虫巢黏液封口包覆腕腰 · 成人补充",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c11.adult",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "preference.adultOptional",
+          "value": true
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.215",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c12",
+      "kind": "encounter",
+      "stage": "start",
+      "title": "凝胶膜缠绕胯下并恍惚服从",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c12",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "核对组合原子与挂接提示",
+          "resultText": "progression:text.choice.nsfwcombo.c12.detail",
+          "next": "nsfwcombo-detail",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "阅读成人向补充描写",
+          "resultText": "progression:text.choice.nsfwcombo.c12.adult",
+          "next": "nsfwcombo-adult",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            }
+          ],
+          "setTags": [],
+          "unsetTags": []
+        },
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.221",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c12.detail",
+      "kind": "encounter",
+      "stage": "nsfwcombo-detail",
+      "title": "组合键与素材对照",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c12.detail",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.222",
+          "next": null,
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": []
+        }
+      ]
+    },
+    {
+      "id": "progression:node.encounter.nsfwcombo.c12.adult",
+      "kind": "encounter",
+      "stage": "nsfwcombo-adult",
+      "title": "凝胶膜缠绕胯下并恍惚服从 · 成人补充",
+      "textKey": "progression:text.node.encounter.nsfwcombo.c12.adult",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "progression:tag.nsfwcombo.active"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [
+        {
+          "op": "preference.adultOptional",
+          "value": true
+        }
+      ],
+      "tendencies": [],
+      "weight": 10,
+      "priority": 5,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "结束当前经历，回到安全位置",
+          "resultText": "progression:text.choice.223",
           "next": null,
           "effects": [],
           "conditions": [],

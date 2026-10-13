@@ -2,7 +2,7 @@
   "format": "aetheria-nsfw-auto-combo-candidates",
   "schemaVersion": 1,
   "generatedFrom": "docs/tag-hub/outbox/2026-10-13-故事试写-proposed-nodes-NSFW自动组合制作卡.md",
-  "count": 6,
+  "count": 12,
   "candidates": [
     {
       "sampleId": "C1",
@@ -19,7 +19,17 @@
         "edit:tag.state.s1"
       ],
       "nodeId": "progression:node.encounter.nsfwcombo.c1",
-      "fragment": "触手黏液在手腕、腰侧发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。"
+      "fragment": "触手黏液在手腕、腰侧发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c1",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c1.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c1.detail",
+        "adultTextKey": null,
+        "startNodeId": "progression:node.encounter.nsfwcombo.c1",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c1.detail",
+        "adultNodeId": null
+      },
+      "adultTextKey": null
     },
     {
       "sampleId": "C2",
@@ -33,7 +43,17 @@
       ],
       "proposedRuntimeTags": [],
       "nodeId": "progression:node.encounter.nsfwcombo.c2",
-      "fragment": "蛞蝓黏液在脚踝、大腿内侧发生涂覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。"
+      "fragment": "蛞蝓黏液在脚踝、大腿内侧发生涂覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c2",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c2.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c2.detail",
+        "adultTextKey": null,
+        "startNodeId": "progression:node.encounter.nsfwcombo.c2",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c2.detail",
+        "adultNodeId": null
+      },
+      "adultTextKey": null
     },
     {
       "sampleId": "C3",
@@ -45,7 +65,17 @@
       ],
       "proposedRuntimeTags": [],
       "nodeId": "progression:node.encounter.nsfwcombo.c3",
-      "fragment": "凝胶膜在外衣下摆发生滴落包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。"
+      "fragment": "凝胶膜在外衣下摆发生滴落包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c3",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c3.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c3.detail",
+        "adultTextKey": null,
+        "startNodeId": "progression:node.encounter.nsfwcombo.c3",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c3.detail",
+        "adultNodeId": null
+      },
+      "adultTextKey": null
     },
     {
       "sampleId": "C4",
@@ -58,7 +88,17 @@
       ],
       "proposedRuntimeTags": [],
       "nodeId": "progression:node.encounter.nsfwcombo.c4",
-      "fragment": "活体黑胶在嘴唇发生封口包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）"
+      "fragment": "活体黑胶在嘴唇发生封口包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c4",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c4.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c4.detail",
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c4.adult",
+        "startNodeId": "progression:node.encounter.nsfwcombo.c4",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c4.detail",
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c4.adult"
+      },
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c4.adult"
     },
     {
       "sampleId": "C5",
@@ -71,7 +111,17 @@
       ],
       "proposedRuntimeTags": [],
       "nodeId": "progression:node.encounter.nsfwcombo.c5",
-      "fragment": "虫巢黏液在身后发生丝状滴落。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。"
+      "fragment": "虫巢黏液在身后发生丝状滴落。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c5",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c5.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c5.detail",
+        "adultTextKey": null,
+        "startNodeId": "progression:node.encounter.nsfwcombo.c5",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c5.detail",
+        "adultNodeId": null
+      },
+      "adultTextKey": null
     },
     {
       "sampleId": "C6",
@@ -87,7 +137,179 @@
         "edit:tag.state.s3"
       ],
       "nodeId": "progression:node.encounter.nsfwcombo.c6",
-      "fragment": "史莱姆黏液在倒挂姿态发生倒挂。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags。姿态参考「倒挂拱身」。"
+      "fragment": "史莱姆黏液在倒挂姿态发生倒挂。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「倒挂固定」仅作素材指向，未写入 story.tags。姿态参考「倒挂拱身」。",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c6",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c6.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c6.detail",
+        "adultTextKey": null,
+        "startNodeId": "progression:node.encounter.nsfwcombo.c6",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c6.detail",
+        "adultNodeId": null
+      },
+      "adultTextKey": null
+    },
+    {
+      "sampleId": "C7",
+      "comboKey": "触手黏液×脖颈、锁骨窝×缠绕→被黏液束缚",
+      "adultRequired": false,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0005.0004",
+        "lx.nsfw-part.b0001.0007",
+        "lx.nsfw-part.b0001.0008",
+        "lx.nsfw-action.b0002.0001",
+        "lx.nsfw-state.b0002.0001"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s1"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c7",
+      "fragment": "触手黏液在脖颈、锁骨窝发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c7",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c7.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c7.detail",
+        "adultTextKey": null,
+        "startNodeId": "progression:node.encounter.nsfwcombo.c7",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c7.detail",
+        "adultNodeId": null
+      },
+      "adultTextKey": null
+    },
+    {
+      "sampleId": "C8",
+      "comboKey": "活体黑胶×胯下×涂覆→性器外露",
+      "adultRequired": true,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0001.0001",
+        "lx.nsfw-locus.b0001.0001",
+        "lx.nsfw-action.b0002.0002",
+        "lx.nsfw-state.b0002.0007"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s4"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c8",
+      "fragment": "活体黑胶在胯下发生涂覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「性器外露」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c8",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c8.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c8.detail",
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c8.adult",
+        "startNodeId": "progression:node.encounter.nsfwcombo.c8",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c8.detail",
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c8.adult"
+      },
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c8.adult"
+    },
+    {
+      "sampleId": "C9",
+      "comboKey": "蛞蝓黏液×大腿内侧、胯下×滴落包覆→整身被涂覆→黏液化",
+      "adultRequired": true,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0002.0001",
+        "lx.nsfw-part.b0001.0021",
+        "lx.nsfw-locus.b0001.0001",
+        "lx.nsfw-action.b0002.0003",
+        "lx.nsfw-state.b0002.0002",
+        "lx.nsfw-tf.b0002.0001"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s2",
+        "edit:tag.tf.slime"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c9",
+      "fragment": "蛞蝓黏液在大腿内侧、胯下发生滴落包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「整身被涂覆」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c9",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c9.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c9.detail",
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c9.adult",
+        "startNodeId": "progression:node.encounter.nsfwcombo.c9",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c9.detail",
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c9.adult"
+      },
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c9.adult"
+    },
+    {
+      "sampleId": "C10",
+      "comboKey": "史莱姆黏液×嘴唇、脖颈×指令触发→催眠中",
+      "adultRequired": true,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0008.0002",
+        "lx.nsfw-part.b0001.0001",
+        "lx.nsfw-part.b0001.0007",
+        "lx.nsfw-action.b0003.0001",
+        "lx.nsfw-state.b0003.0001"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s5"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c10",
+      "fragment": "史莱姆黏液在嘴唇、脖颈发生指令触发。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「催眠中」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c10",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c10.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c10.detail",
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c10.adult",
+        "startNodeId": "progression:node.encounter.nsfwcombo.c10",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c10.detail",
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c10.adult"
+      },
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c10.adult"
+    },
+    {
+      "sampleId": "C11",
+      "comboKey": "虫巢黏液×手腕、腰侧×封口包覆→被黏液束缚",
+      "adultRequired": true,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0005.0003",
+        "lx.nsfw-part.b0001.0028",
+        "lx.nsfw-part.b0001.0016",
+        "lx.nsfw-action.b0002.0004",
+        "lx.nsfw-state.b0002.0001"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s1"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c11",
+      "fragment": "虫巢黏液在手腕、腰侧发生封口包覆。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「被黏液束缚」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c11",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c11.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c11.detail",
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c11.adult",
+        "startNodeId": "progression:node.encounter.nsfwcombo.c11",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c11.detail",
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c11.adult"
+      },
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c11.adult"
+    },
+    {
+      "sampleId": "C12",
+      "comboKey": "凝胶膜×胯下×缠绕→恍惚服从",
+      "adultRequired": true,
+      "lexiconRefs": [
+        "lx.nsfw-material.b0001.0006",
+        "lx.nsfw-locus.b0001.0001",
+        "lx.nsfw-action.b0002.0001",
+        "lx.nsfw-state.b0003.0002"
+      ],
+      "proposedRuntimeTags": [
+        "edit:tag.state.s6"
+      ],
+      "nodeId": "progression:node.encounter.nsfwcombo.c12",
+      "fragment": "凝胶膜在胯下发生缠绕。接触可见，动作已经发生；战败外衣黏附、整身涂覆完成、黏液化与催眠态均尚未写入。描写目标态「恍惚服从」仅作素材指向，未写入 story.tags。（本组合含成人向动作原子；完整成人正文须 adultOptional + 年龄≥18，关闭时仅用中性回退。）",
+      "fillable": {
+        "neutralTextKey": "progression:text.node.encounter.nsfwcombo.c12",
+        "detailTextKey": "progression:text.node.encounter.nsfwcombo.c12.detail",
+        "choiceDetailTextKey": "progression:text.choice.nsfwcombo.c12.detail",
+        "adultTextKey": "progression:text.node.encounter.nsfwcombo.c12.adult",
+        "startNodeId": "progression:node.encounter.nsfwcombo.c12",
+        "detailNodeId": "progression:node.encounter.nsfwcombo.c12.detail",
+        "adultNodeId": "progression:node.encounter.nsfwcombo.c12.adult"
+      },
+      "adultTextKey": "progression:text.node.encounter.nsfwcombo.c12.adult"
     }
   ]
 }
