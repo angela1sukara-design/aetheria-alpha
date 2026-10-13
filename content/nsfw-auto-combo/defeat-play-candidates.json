@@ -1,10 +1,41 @@
 {
   "format": "aetheria-defeat-play-candidates",
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "worldTag": "worlds:setting.fantasy",
   "proseFillsApplied": 16,
   "entryAction": "progression:action.defeat.play",
   "hubNodeId": "progression:node.defeat.play.hub",
+  "stageChain": [
+    "capture",
+    "escalate",
+    "peak",
+    "aftermath"
+  ],
+  "stageNote": "既有单段正文挂在 capture（stage play-0N）；escalate/peak/aftermath 为多拍结构槽，故事侧后填。",
+  "hubPages": {
+    "hub": [
+      "G1",
+      "G2"
+    ],
+    "hub2": [
+      "G3",
+      "G4"
+    ],
+    "hub3": [
+      "G5",
+      "G6"
+    ],
+    "hub4": [
+      "G7",
+      "G8"
+    ]
+  },
+  "howToTestRandom": [
+    "UI：新开档（不同世界种子）→ 打开「试跑战败后 8 玩法」→ 读 hub 正文中的 {opponent}/{material}/{part}/{tf} 实填。",
+    "或 node --test tests/defeat-play.test.ts（含双种子可见填充差异断言）。",
+    "控制台：执行 action 后查看 adventure.story.opponentName 与 adventure.story.fills。",
+    "同一 transactionId 流固定；换种子或换 transactionId 即重抽。"
+  ],
   "plays": [
     {
       "gameplay": "G1",
@@ -14,7 +45,29 @@
       "adultNodeId": "progression:node.defeat.play.01.adult",
       "editAdultNodeId": "edit:node.defeat.play.01.adult",
       "textKey": "progression:text.node.defeat.play.p1",
-      "adultTextKey": "progression:text.node.defeat.play.p1.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p1.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-01",
+          "nodeId": "progression:node.defeat.play.01",
+          "textKey": "progression:text.node.defeat.play.p1"
+        },
+        "escalate": {
+          "stage": "play-01-escalate",
+          "nodeId": "progression:node.defeat.play.01.escalate",
+          "textKey": "progression:text.node.defeat.play.p1.escalate"
+        },
+        "peak": {
+          "stage": "play-01-peak",
+          "nodeId": "progression:node.defeat.play.01.peak",
+          "textKey": "progression:text.node.defeat.play.p1.peak"
+        },
+        "aftermath": {
+          "stage": "play-01-aftermath",
+          "nodeId": "progression:node.defeat.play.01.aftermath",
+          "textKey": "progression:text.node.defeat.play.p1.aftermath"
+        }
+      }
     },
     {
       "gameplay": "G2",
@@ -24,7 +77,29 @@
       "adultNodeId": "progression:node.defeat.play.02.adult",
       "editAdultNodeId": "edit:node.defeat.play.02.adult",
       "textKey": "progression:text.node.defeat.play.p2",
-      "adultTextKey": "progression:text.node.defeat.play.p2.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p2.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-02",
+          "nodeId": "progression:node.defeat.play.02",
+          "textKey": "progression:text.node.defeat.play.p2"
+        },
+        "escalate": {
+          "stage": "play-02-escalate",
+          "nodeId": "progression:node.defeat.play.02.escalate",
+          "textKey": "progression:text.node.defeat.play.p2.escalate"
+        },
+        "peak": {
+          "stage": "play-02-peak",
+          "nodeId": "progression:node.defeat.play.02.peak",
+          "textKey": "progression:text.node.defeat.play.p2.peak"
+        },
+        "aftermath": {
+          "stage": "play-02-aftermath",
+          "nodeId": "progression:node.defeat.play.02.aftermath",
+          "textKey": "progression:text.node.defeat.play.p2.aftermath"
+        }
+      }
     },
     {
       "gameplay": "G3",
@@ -34,7 +109,29 @@
       "adultNodeId": "progression:node.defeat.play.03.adult",
       "editAdultNodeId": "edit:node.defeat.play.03.adult",
       "textKey": "progression:text.node.defeat.play.p3",
-      "adultTextKey": "progression:text.node.defeat.play.p3.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p3.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-03",
+          "nodeId": "progression:node.defeat.play.03",
+          "textKey": "progression:text.node.defeat.play.p3"
+        },
+        "escalate": {
+          "stage": "play-03-escalate",
+          "nodeId": "progression:node.defeat.play.03.escalate",
+          "textKey": "progression:text.node.defeat.play.p3.escalate"
+        },
+        "peak": {
+          "stage": "play-03-peak",
+          "nodeId": "progression:node.defeat.play.03.peak",
+          "textKey": "progression:text.node.defeat.play.p3.peak"
+        },
+        "aftermath": {
+          "stage": "play-03-aftermath",
+          "nodeId": "progression:node.defeat.play.03.aftermath",
+          "textKey": "progression:text.node.defeat.play.p3.aftermath"
+        }
+      }
     },
     {
       "gameplay": "G4",
@@ -44,7 +141,29 @@
       "adultNodeId": "progression:node.defeat.play.04.adult",
       "editAdultNodeId": "edit:node.defeat.play.04.adult",
       "textKey": "progression:text.node.defeat.play.p4",
-      "adultTextKey": "progression:text.node.defeat.play.p4.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p4.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-04",
+          "nodeId": "progression:node.defeat.play.04",
+          "textKey": "progression:text.node.defeat.play.p4"
+        },
+        "escalate": {
+          "stage": "play-04-escalate",
+          "nodeId": "progression:node.defeat.play.04.escalate",
+          "textKey": "progression:text.node.defeat.play.p4.escalate"
+        },
+        "peak": {
+          "stage": "play-04-peak",
+          "nodeId": "progression:node.defeat.play.04.peak",
+          "textKey": "progression:text.node.defeat.play.p4.peak"
+        },
+        "aftermath": {
+          "stage": "play-04-aftermath",
+          "nodeId": "progression:node.defeat.play.04.aftermath",
+          "textKey": "progression:text.node.defeat.play.p4.aftermath"
+        }
+      }
     },
     {
       "gameplay": "G5",
@@ -54,7 +173,29 @@
       "adultNodeId": "progression:node.defeat.play.05.adult",
       "editAdultNodeId": "edit:node.defeat.play.05.adult",
       "textKey": "progression:text.node.defeat.play.p5",
-      "adultTextKey": "progression:text.node.defeat.play.p5.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p5.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-05",
+          "nodeId": "progression:node.defeat.play.05",
+          "textKey": "progression:text.node.defeat.play.p5"
+        },
+        "escalate": {
+          "stage": "play-05-escalate",
+          "nodeId": "progression:node.defeat.play.05.escalate",
+          "textKey": "progression:text.node.defeat.play.p5.escalate"
+        },
+        "peak": {
+          "stage": "play-05-peak",
+          "nodeId": "progression:node.defeat.play.05.peak",
+          "textKey": "progression:text.node.defeat.play.p5.peak"
+        },
+        "aftermath": {
+          "stage": "play-05-aftermath",
+          "nodeId": "progression:node.defeat.play.05.aftermath",
+          "textKey": "progression:text.node.defeat.play.p5.aftermath"
+        }
+      }
     },
     {
       "gameplay": "G6",
@@ -64,7 +205,29 @@
       "adultNodeId": "progression:node.defeat.play.06.adult",
       "editAdultNodeId": "edit:node.defeat.play.06.adult",
       "textKey": "progression:text.node.defeat.play.p6",
-      "adultTextKey": "progression:text.node.defeat.play.p6.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p6.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-06",
+          "nodeId": "progression:node.defeat.play.06",
+          "textKey": "progression:text.node.defeat.play.p6"
+        },
+        "escalate": {
+          "stage": "play-06-escalate",
+          "nodeId": "progression:node.defeat.play.06.escalate",
+          "textKey": "progression:text.node.defeat.play.p6.escalate"
+        },
+        "peak": {
+          "stage": "play-06-peak",
+          "nodeId": "progression:node.defeat.play.06.peak",
+          "textKey": "progression:text.node.defeat.play.p6.peak"
+        },
+        "aftermath": {
+          "stage": "play-06-aftermath",
+          "nodeId": "progression:node.defeat.play.06.aftermath",
+          "textKey": "progression:text.node.defeat.play.p6.aftermath"
+        }
+      }
     },
     {
       "gameplay": "G7",
@@ -74,7 +237,29 @@
       "adultNodeId": "progression:node.defeat.play.07.adult",
       "editAdultNodeId": "edit:node.defeat.play.07.adult",
       "textKey": "progression:text.node.defeat.play.p7",
-      "adultTextKey": "progression:text.node.defeat.play.p7.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p7.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-07",
+          "nodeId": "progression:node.defeat.play.07",
+          "textKey": "progression:text.node.defeat.play.p7"
+        },
+        "escalate": {
+          "stage": "play-07-escalate",
+          "nodeId": "progression:node.defeat.play.07.escalate",
+          "textKey": "progression:text.node.defeat.play.p7.escalate"
+        },
+        "peak": {
+          "stage": "play-07-peak",
+          "nodeId": "progression:node.defeat.play.07.peak",
+          "textKey": "progression:text.node.defeat.play.p7.peak"
+        },
+        "aftermath": {
+          "stage": "play-07-aftermath",
+          "nodeId": "progression:node.defeat.play.07.aftermath",
+          "textKey": "progression:text.node.defeat.play.p7.aftermath"
+        }
+      }
     },
     {
       "gameplay": "G8",
@@ -84,7 +269,29 @@
       "adultNodeId": "progression:node.defeat.play.08.adult",
       "editAdultNodeId": "edit:node.defeat.play.08.adult",
       "textKey": "progression:text.node.defeat.play.p8",
-      "adultTextKey": "progression:text.node.defeat.play.p8.adult"
+      "adultTextKey": "progression:text.node.defeat.play.p8.adult",
+      "stages": {
+        "capture": {
+          "stage": "play-08",
+          "nodeId": "progression:node.defeat.play.08",
+          "textKey": "progression:text.node.defeat.play.p8"
+        },
+        "escalate": {
+          "stage": "play-08-escalate",
+          "nodeId": "progression:node.defeat.play.08.escalate",
+          "textKey": "progression:text.node.defeat.play.p8.escalate"
+        },
+        "peak": {
+          "stage": "play-08-peak",
+          "nodeId": "progression:node.defeat.play.08.peak",
+          "textKey": "progression:text.node.defeat.play.p8.peak"
+        },
+        "aftermath": {
+          "stage": "play-08-aftermath",
+          "nodeId": "progression:node.defeat.play.08.aftermath",
+          "textKey": "progression:text.node.defeat.play.p8.aftermath"
+        }
+      }
     }
   ]
 }

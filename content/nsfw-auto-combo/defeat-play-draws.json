@@ -1,0 +1,72 @@
+{
+  "format": "aetheria-defeat-play-draws",
+  "schemaVersion": 1,
+  "note": "运行时表在 src/engine/defeat-play-draws.ts；本文件供核对 / 文档。定词挂前；goo TF 仅通用原子。",
+  "opponents": [
+    {
+      "kind": "human",
+      "label": "人类占位"
+    },
+    {
+      "kind": "beast",
+      "label": "野兽占位"
+    },
+    {
+      "kind": "monster",
+      "label": "怪物占位"
+    }
+  ],
+  "materials": [
+    {
+      "key": "M1",
+      "dingci": "蛞蝓",
+      "base": "黏液",
+      "label": "蛞蝓黏液"
+    },
+    {
+      "key": "M2",
+      "dingci": "触手",
+      "base": "黏液",
+      "label": "触手黏液"
+    },
+    {
+      "key": "M3",
+      "dingci": "虫巢",
+      "base": "黏液",
+      "label": "虫巢黏液"
+    },
+    {
+      "key": "M4",
+      "dingci": "史莱姆",
+      "base": "黏液",
+      "label": "史莱姆黏液"
+    },
+    {
+      "key": "M5",
+      "dingci": null,
+      "base": "活体黑胶",
+      "label": "活体黑胶"
+    },
+    {
+      "key": "M6",
+      "dingci": null,
+      "base": "凝胶膜",
+      "label": "凝胶膜"
+    }
+  ],
+  "parts": [
+    "手腕",
+    "腰侧",
+    "脚踝",
+    "大腿内侧",
+    "脖颈",
+    "锁骨窝",
+    "嘴唇"
+  ],
+  "tfs": [
+    "黏液化",
+    "黑胶化"
+  ],
+  "wiredToNsfwAutoCombo": true,
+  "comboRows": 12
+}

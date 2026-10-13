@@ -5,6 +5,7 @@ import type { EffectContext } from './effects.ts';
 import { RuleError } from '../core/errors.ts';
 import { evaluate } from './conditions.ts';
 import { draw } from './rng.ts';
+import { drawDefeatPlayFills, opponentLabelForKind } from './defeat-play-draws.ts';
 import { derivedSemantics } from './semantic-query.ts';
 import { environment } from './query.ts';
 
@@ -38,13 +39,34 @@ export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:Narra
   if(profileId&&!profile)throw new RuleError('NARRATIVE_PROFILE','行为档案不存在。');
   const resident=s.district?.residents.find(n=>n.id===s.district?.currentResidentId&&n.locationId===s.world.locationId);
   const tags:ScopedTag[]=[...(kind==='defeat'?a.lastCombat?.tags??[]:[]),...(profile?.tags??[]).map(tagId=>({role:'opponent' as const,tagId})),...(profile?.goals.slice(0,1)??[]).map(tagId=>({role:'opponent' as const,tagId}))];
-  a.story={instanceId:c.transactionId,kind,stage:'start',nodeId:'progression:unselected',profileId:profile?.id??null,opponentName:kind==='defeat'?a.lastCombat?.enemyName??'对方':resident?.name??'当地居民',actor:resident?{kind:'resident',id:resident.id}:profile?.npcId?{kind:'npc',id:profile.npcId}:null,tags,visits:{},log:[],steps:0};
+  let opponentName=kind==='defeat'?a.lastCombat?.enemyName??'对方':resident?.name??'当地居民';
+  let fills:Record<string,string>|undefined;
+  // fantasy 战败 8 玩法：入口小随机（对手人/兽/怪占位 + 定词材质 + 部位 + 通用 TF）
+  if(profile?.id==='progression:profile.defeat.play'){
+    const drawn=drawDefeatPlayFills(s,`defeat-play:fill:${c.transactionId}`);
+    opponentName=opponentLabelForKind(drawn.opponentKind);
+    fills={
+      opponentKind:drawn.opponentKind,
+      material:drawn.material,
+      materialBase:drawn.materialBase,
+      dingci:drawn.dingci||'（无定词）',
+      part:drawn.part,
+      tf:drawn.tf,
+      comboSample:drawn.comboSample,
+    };
+  }
+  a.story={instanceId:c.transactionId,kind,stage:'start',nodeId:'progression:unselected',profileId:profile?.id??null,opponentName,actor:resident?{kind:'resident',id:resident.id}:profile?.npcId?{kind:'npc',id:profile.npcId}:null,tags,visits:{},log:[],steps:0,fills};
   if(!chooseNode(s,r,'start')){a.story=null;throw new RuleError('NO_NARRATIVE','当前没有适用的故事节点。');}
+}
+function applyNarrativeFills(text:string,story:NonNullable<AdventureState['story']>,s:GameState,r:Registry):string{
+  let out=text.replaceAll('{opponent}',story.opponentName).replaceAll('{place}',r.location(s.world.locationId).name).replaceAll('{player}',s.district?.profile.name??'旅人');
+  for(const [key,value] of Object.entries(story.fills??{})) out=out.replaceAll('{'+key+'}',value);
+  return out;
 }
 export function narrativeText(s:GameState,r:Registry):string|undefined {
   const story=s.adventure?.story;if(!story)return;
   const node=r.narrativeNodes.find(n=>n.id===story.nodeId)!;
-  const replace=(text:string)=>text.replaceAll('{opponent}',story.opponentName).replaceAll('{place}',r.location(s.world.locationId).name).replaceAll('{player}',s.district?.profile.name??'旅人');
+  const replace=(text:string)=>applyNarrativeFills(text,story,s,r);
   return `${node.title}\n\n${replace(r.text(node.textKey))}${story.log.length?'\n\n'+replace(story.log.at(-1)!):''}`;
 }
 export function narrativeActions(s:GameState,r:Registry):ActionDef[]|undefined {
@@ -68,8 +90,8 @@ export function advanceNarrative(s:GameState,r:Registry,c:EffectContext,index:nu
   apply(choice.effects,s,r,c);
   const unset=new Set(choice.unsetTags.map(key));story.tags=story.tags.filter(t=>!unset.has(key(t)));
   story.tags=[...new Map([...story.tags,...choice.setTags].map(t=>[key(t),t])).values()];story.steps++;
-  const line=r.text(choice.resultText).replaceAll('{opponent}',story.opponentName).replaceAll('{place}',r.location(s.world.locationId).name);story.log.push(line);story.log=story.log.slice(-12);c.resolvedTexts.push(line);
+  const line=applyNarrativeFills(r.text(choice.resultText),story,s,r);story.log.push(line);story.log=story.log.slice(-12);c.resolvedTexts.push(line);
   if(choice.next&&story.steps<12&&chooseNode(s,r,choice.next))return;
   if(story.kind==='defeat'&&s.player.variables['core:health']!<1){s.player.variables['core:health']=1;c.changes.push({label:'脱离危险',before:0,after:1});}
-  a.journal.push({at:s.clock.totalMinutes,title:node.title,text:story.log.join('\n')});a.journal=a.journal.slice(-64);delete s.rng.streams[`narrative:${story.instanceId}`];a.story=null;
+  a.journal.push({at:s.clock.totalMinutes,title:node.title,text:story.log.join('\n')});a.journal=a.journal.slice(-64);delete s.rng.streams[`narrative:${story.instanceId}`];for(const k of Object.keys(s.rng.streams))if(k.startsWith(`defeat-play:fill:${story.instanceId}`))delete s.rng.streams[k];a.story=null;
 }
