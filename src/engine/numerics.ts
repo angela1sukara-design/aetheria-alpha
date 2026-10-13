@@ -26,7 +26,7 @@ const SANITY_BASE: Record<SanityTickKind, { lo: number; hi: number; mid: number 
   heavy: { lo: 10, hi: 14, mid: 12 },
 };
 
-export interface SanityGainInput {
+export interface SanityLossInput {
   kind?: SanityTickKind;
   /** 若给出区间则覆盖 kind 表；rng ∈ [0,1) */
   baseRange?: { lo: number; hi: number };
@@ -36,12 +36,22 @@ export interface SanityGainInput {
   arousal?: number;
   submissionTendency?: number;
   transformProgress?: number;
+  /** 倾向乘区；stress/400 */
+  stress?: number;
   /** 压抑/束缚类 +0.15；镇定类 −0.20；最终 clamp [0.5,1.5] */
   statusModParts?: number[];
 }
 
-/** 单次理智上涨（崩坏积蓄）；返回增量（≥0）。 */
-export function sanityGain(input: SanityGainInput): number {
+/** @deprecated 使用 SanityLossInput；积蓄语义已废。 */
+export type SanityGainInput = SanityLossInput;
+
+/**
+ * 单次理智流失量（≥0）。DESIGN-sanity-drain：
+ * loss = round(base × (1 + arousal/200 + submission/150 + tf/250 + stress/400) × statusMod)
+ * stress≥80 且非 light：额外 +1
+ * 调用方：sanity' = max(0, sanity − loss)
+ */
+export function sanityLoss(input: SanityLossInput): number {
   const kind = input.kind ?? 'standard';
   const table = SANITY_BASE[kind];
   let base: number;
@@ -57,21 +67,41 @@ export function sanityGain(input: SanityGainInput): number {
   const arousal = input.arousal ?? 0;
   const submission = input.submissionTendency ?? 0;
   const tf = input.transformProgress ?? 0;
+  const stress = input.stress ?? 0;
   let statusMod = 1;
   for (const p of input.statusModParts ?? []) statusMod += p;
   statusMod = clamp(statusMod, 0.5, 1.5);
 
-  const gain = Math.round(
-    base * (1 + arousal / 200 + submission / 150 + tf / 250) * statusMod,
+  let loss = Math.round(
+    base * (1 + arousal / 200 + submission / 150 + tf / 250 + stress / 400) * statusMod,
   );
-  return Math.max(0, gain);
+  loss = Math.max(0, loss);
+  if (kind !== 'light' && stress >= 80) loss += 1;
+  return loss;
 }
 
-/** 休息恢复：短歇 −8；长睡片段（≥6h）−15。 */
+/** @deprecated 别名 = sanityLoss（流失量，非积蓄增量）。 */
+export const sanityGain = sanityLoss;
+
+/** 休息回升：短歇 +8；长睡片段（≥6h）+15。 */
 export function sanityRestDelta(minutes: number): number {
-  if (minutes >= 360) return -15;
-  if (minutes >= 30) return -8;
+  if (minutes >= 360) return 15;
+  if (minutes >= 30) return 8;
   return 0;
+}
+
+/** 敌对区被动慢漏：DEFAULT 开；−1 / 90min；安全区不漏。 */
+export const SANITY_PASSIVE_DRAIN_ENABLED = true;
+export const SANITY_PASSIVE_DRAIN_INTERVAL = 90;
+
+/** canal / 显式 hostile 视为敌对；公寓·主街·诊所等安全锚点不匹配。 */
+export function isSanityHostileLocation(locationId: string): boolean {
+  return /(?:^|[:.])(?:canal|hostile)$/i.test(locationId);
+}
+
+/** 累计敌对分钟可结算的被动扣减次数（每次 −1）。 */
+export function sanityPassiveDrainSteps(hostileMinutesAccumulated: number): number {
+  return Math.floor(Math.max(0, hostileMinutesAccumulated) / SANITY_PASSIVE_DRAIN_INTERVAL);
 }
 
 export interface CombatActorStats {

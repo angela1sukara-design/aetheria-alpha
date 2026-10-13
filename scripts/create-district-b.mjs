@@ -25,7 +25,7 @@ for(const [key,name,hp,reward,intents,location,defeatIntro]of [
  p.enemies.push({id:id('enemy.'+key),name,hp,reward,tier,combat,intents,victoryEventId:victory,defeatEventId:defeat,escapeEventId:escape});
  action('battle.'+key,'调查危险：'+name,`你进入标有风险警示的区域，遇到了${name}。`,[{op:'combat.start',id:id('enemy.'+key)}],[],hooks.get(location),null,'explore');
 }
-for(const l of p.locations)action('heal.'+l.id.split('.')[1],'在安全区处理伤势','你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。',[time(60),change('core:health',40),change('energy',25)],[],l.actionHook);
+for(const l of p.locations)action('heal.'+l.id.split('.')[1],'在安全区处理伤势','你清洁擦伤，喝水，等身体恢复到能继续赶路的状态。伤后经历依然存在，体力恢复不会删去已经发生的事。',[time(60),change('core:health',40),change('energy',25),change('core:sanity',10)],[],l.actionHook);
 // Material changes remain actual BodyGraph replacements, independently of identity.
 const hand={id:id('part.hand.gel'),label:'稳定的黑胶共生手部',kind:'hand',material:'organic',capabilities:['grasp'],anchors:[]};p.bodyParts=[hand];
 p.bodyPatches=[{id:id('patch.gel'),label:'黑胶共生手部适应',summary:'双手表层与黑胶共生，保留自主控制',operations:['left','right'].map(side=>({type:'replace',partId:'hand.'+side,definitionId:hand.id}))},{id:id('patch.hands.restore'),label:'恢复有机手部',summary:'手部恢复有机结构',operations:['left','right'].map(side=>({type:'replace',partId:'hand.'+side,definitionId:'aetheria-tf:part.hand'}))}];

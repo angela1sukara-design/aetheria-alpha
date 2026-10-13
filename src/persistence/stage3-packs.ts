@@ -8,7 +8,7 @@ export const STAGE3_PACKS_LEGACY: PackRef[] = [
 ];
 /** 当前第三阶段四包指纹（含数值扩表后的 engine/core）。 */
 export const STAGE3_PACKS: PackRef[] = [
-  { "id": "engine/core", "version": "0.1.0", "hash": "da552b1fe226a6bdb0bd972a7d7e4535a779b210f96617532214c11322810f3a" },
+  { "id": "engine/core", "version": "0.1.0", "hash": "8a581ae11e18f6e085a9ecaa12ce01485f366fc87aaaeea9faff1d03854e616f" },
   { "id": "aetheria/world", "version": "0.1.0", "hash": "01ea5d235f7762c6e99ca9080c4390d02bdf9796208acab15a3437d615f2feb8" },
   { "id": "aetheria/reshaping", "version": "0.1.0", "hash": "90a0fd948b069cdf62257b650f6fdfe2f2ef7f619a00efd1bef8d3baf4aab7a2" },
   { "id": "aetheria/social", "version": "0.1.0", "hash": "06ef44297b2fd8361925cc66dc041fd6a7c3d8236f5fcf140f182c5bce36c9d6" }

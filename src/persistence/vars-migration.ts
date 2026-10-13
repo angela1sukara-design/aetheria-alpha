@@ -4,6 +4,9 @@ import type { Registry } from '../content/registry.ts';
 /** 历史 engine/core 指纹：变量扩表后 hash 会变，仍识别为可升级的官方核包。 */
 export const LEGACY_CORE_HASHES = new Set([
   'aab3c415bcccdd459d21e7a0d0f4f3d636008b6e6809860452ec89787a7400f7',
+  'da552b1fe226a6bdb0bd972a7d7e4535a779b210f96617532214c11322810f3a',
+  '0a2330430d5c716ee803fb8e43712b798f60807bfdb8beabeb37baf01ced10d6',
+  '7d6b5048a40893e027bd157cea182068c2a1db8d16a45da76641dc874e649ff9',
 ]);
 
 /** 统一玩家变量：填补新 VariableDef、剔除已废弃键，并把 district:health 迁入 core:health。 */
@@ -29,14 +32,24 @@ export function normalizePlayerVariables(state: GameState, registry: Registry): 
   }
 }
 
-/** 填补新 FlagDef、剔除废弃标记。 */
+/** 填补新 FlagDef、剔除废弃标记；旧积蓄模型理智一次性反转为余量。 */
 export function normalizePlayerFlags(state: GameState, registry: Registry): void {
   const flags = state.player.flags as Record<string, boolean>;
+  const vars = state.player.variables as Record<string, number>;
+  const hadRemaining = Object.prototype.hasOwnProperty.call(flags, SANITY_REMAINING_FLAG);
   for (const def of registry.flags) {
     if (!(def.id in flags)) flags[def.id] = def.initial;
   }
   for (const id of Object.keys(flags)) {
     if (!registry.flags.some(f => f.id === id)) delete flags[id];
+  }
+  if (!hadRemaining && Object.prototype.hasOwnProperty.call(vars, SANITY_ID)) {
+    const def = registry.variables.find(v => v.id === SANITY_ID);
+    if (def) {
+      const before = vars[SANITY_ID]!;
+      vars[SANITY_ID] = Math.min(def.max, Math.max(def.min, def.max - before));
+    }
+    flags[SANITY_REMAINING_FLAG] = true;
   }
 }
 
@@ -63,5 +76,7 @@ export function normalizeSceneTemps(state: GameState): void {
 export const PLAYER_HP_ID = 'core:health' as Id;
 export const SANITY_ID = 'core:sanity' as Id;
 export const SANITY_BREAK_FLAG = 'core:flag.sanity_break' as Id;
-/** @deprecated 已由 numerics.sanityGain 正式公式取代；保留以免旧测试/脚本引用断裂。 */
+/** 理智余量模型标记：缺省表示旧「积蓄上涨」存档，读档时一次性 max-value 反转。 */
+export const SANITY_REMAINING_FLAG = 'core:flag.sanity_remaining' as Id;
+/** @deprecated 已由 numerics.sanityGain 正式公式取代；保留以免旧测试/脚本引用断裂。值为压力扣减量。 */
 export const SANITY_DEFEAT_DELTA = 6;

@@ -2,10 +2,11 @@
 
 > 日期：2026-10-13（Asia/Singapore）  
 > 分支：`codex/tag-effect-preview`  
-> 对照：`docs/DESIGN-deep-numerics-2026-10-12.md` · `docs/NOTES-deep-numerics-impl-2026-10-12.md`  
+> 对照：`docs/DESIGN-deep-numerics-2026-10-12.md` · `docs/NOTES-deep-numerics-impl-2026-10-12.md` · **`docs/DESIGN-sanity-drain-2026-10-13.md`**  
 > 状态：**设计交付**；引擎实装按本文接表。  
 > **硬约束**：VariableDef ID **禁止改名**（`core:attack` / `core:defense` / `core:evasion` / `core:stamina` / `core:sanity` / `core:money` / `core:trust` 等一律保持）。  
-> 原则：玩法硬数字少；倾向只文风；数值在 GameState；装备加成运行时叠加、不写回 VariableDef。
+> 原则：玩法硬数字少；倾向只文风；数值在 GameState；装备加成运行时叠加、不写回 VariableDef。  
+> **理智**：§3 药水符号、§C.7、文中「恢复 −15/−25」均以 **DESIGN-sanity-drain** 为准（恢复改为 **+15/+25**；tick 为 **loss**；Bad End **≤0**）。
 
 ---
 
@@ -289,7 +290,7 @@ raw = atk.effAtk * powerMult - def.effDef * 0.5
 |----|----------|------|
 | 基准工资（劳动 30min） | `core:money` **+5**（现行 worldgen） | 保持 |
 | 小吃/茶 | 3–8 | 恢复 energy 小幅 |
-| 镇定药水（小/大） | 15 / 35 | 见 §C 理智恢复 −15/−25 |
+| 镇定药水（小/大） | 15 / 35 | 见 sanity-drain：理智恢复 **+15/+25**（§C.7 旧符号作废） |
 | 粗武器 / 常武器 | 25 / 60 | 对应 §2.3 |
 | 粗护甲 / 常护甲 | 30 / 70 | |
 | 诊所点滴 `core:health +8` | 免费或 5 | worldgen clinic |
@@ -406,7 +407,7 @@ statusMod = clamp(1 + Σ parts, 0.5, 1.5)
 |------|----------|
 | L 精英遭遇 | `tier: "L"`；HP90 八维按深设计；defeat → 普通败北事件 |
 | Boss | `tier: "boss"` + `phases[]`；**禁止** S/M/L 倍率生成 |
-| Boss 败北 | 独立 `defeatEventId`；sanity base **10–14** |
+| Boss 败北 | 独立 `defeatEventId`；sanity **loss** base **10–14**（drain 语义） |
 | Boss 胜利 | 剧情旗 + 高奖励；可解锁区带 |
 | 内容包 | 尚无遭遇实体 — 只预留 ID 槽，如 `district:enemy.boss.*` |
 | 状态 | **设计钩子 only**；正文另议 |
@@ -460,7 +461,10 @@ statusMod = clamp(1 + Σ parts, 0.5, 1.5)
 
 ### C.7 理智触发表 + 倾向增量 + 镇定药水
 
-#### C.7.1 sanity tick 触发（内容标标签 → 引擎 `sanityGain`）
+> **【已取代 2026-10-13】** tick 为 **loss（减法）**；恢复为 **加**；Bad End **≤0**。  
+> 权威：[`DESIGN-sanity-drain-2026-10-13.md`](./DESIGN-sanity-drain-2026-10-13.md)。下列 base 区间仍有效，但接入 `sanityLoss` 而非 `sanityGain`。
+
+#### C.7.1 sanity tick 触发（内容标标签 → 引擎 `sanityLoss`）
 
 | 内容标 | base 区间 | 典型场景 |
 |--------|-----------|----------|
@@ -469,8 +473,8 @@ statusMod = clamp(1 + Σ parts, 0.5, 1.5)
 | `sanity.tick.continue` | **8–12** | 同一 scene 内再次加深 |
 | `sanity.tick.heavy` | **10–14** | 强制 TF、精英/Boss 败北 |
 
-乘区仍用深设计：`arousal` / `submissionTendency` / `transformProgress` / `statusMod`。  
-ID：只写 `core:sanity`。
+乘区：`arousal` / `submissionTendency` / `transformProgress` / `stress/400` / `statusMod` → **乘在 loss 上**。  
+应用：`sanity' = max(0, sanity − loss)`；`≤0` → flag。ID：只写 `core:sanity`。
 
 #### C.7.2 倾向增量（文风 only；不锁分支）
 
@@ -489,10 +493,10 @@ ID：只写 `core:sanity`。
 
 | 物品档 | `core:sanity` | `core:money` 参考价 | 附带 status |
 |--------|---------------|---------------------|-------------|
-| 小 | **−15** | 15 | `status.calmed` 120min |
-| 大 | **−25** | 35 | `status.calmed` 180min |
+| 小 | **+15**（原 −15） | 15 | `status.calmed` 120min |
+| 大 | **+25**（原 −25） | 35 | `status.calmed` 180min |
 
-走 `var.change`；不改 VariableDef 边界（0–100）。
+走 `var.change`；不改 VariableDef 边界（0–100）。initial 现为 **100**。
 
 | 状态 | 触发表/药水数 **可直接实装**；倾向增量可分期 |
 
@@ -510,7 +514,7 @@ ID：只写 `core:sanity`。
 | U4 | 首期是否上多卡同回 | 上 / 暂映射四移 | **暂映射**（降低实装面） |
 | U5 | cross 是否与 far 同耗 5 | 同 5 / cross 另耗 6 | **同 5** |
 
-非分叉（直接做）：§1 全表、远路 −5、arousal 写入表、struggle −10、sanity tick 表、药水 −15/−25、桩 §3–7。
+非分叉（直接做）：§1 全表、远路 −5、arousal 写入表、struggle −10、sanity tick 表（**loss**）、药水 **+15/+25**、桩 §3–7；理智语义见 DESIGN-sanity-drain。
 
 ---
 

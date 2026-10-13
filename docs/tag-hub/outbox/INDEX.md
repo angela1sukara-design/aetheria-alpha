@@ -18,3 +18,5 @@
 | 2026-10-13 15:25 | [2026-10-13-故事试写-nsfwcombo-P1-组合遭遇回填-标注版.md](./2026-10-13-故事试写-nsfwcombo-P1-组合遭遇回填-标注版.md) | 故事试写 | existing-prose：C1/C2/C3/C5/C6/C7 组合遭遇回填 |
 | 2026-10-13 15:25 | [2026-10-13-故事试写-nsfwcombo-可粘贴正文.md](./2026-10-13-故事试写-nsfwcombo-可粘贴正文.md) | 故事试写 | P0+P1 textKey⇒纯正文对照，便于 pack 回填 |
 | 2026-10-13 15:09 | [2026-10-13-NSFW-auto-combo-可填槽清单.md](./2026-10-13-NSFW-auto-combo-可填槽清单.md) | 引擎接入 | NSFW combo 已合载可填槽（节点/textKey/adult） |
+| 2026-10-13 16:40 | [`content/general-lexicon/`](../../../content/general-lexicon/) | 引擎接入 | 通用候选 TagDef **1932** 条进默认 `content/index.json` 加载；NSFW 未批 approved |
+| 2026-10-13 16:40 | [NOTES-vars-engine.md §8](../../NOTES-vars-engine.md) | 数值 | 理智余量模型：战败/压力扣减、休息回升、≤0 Bad End |

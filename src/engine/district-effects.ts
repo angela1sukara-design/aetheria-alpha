@@ -19,7 +19,7 @@ import {
   combatHitChance,
   ENEMY_TIER_TEMPLATES,
   fleeChancePercent,
-  sanityGain,
+  sanityLoss,
   STAMINA_COST,
   sumEquipmentBonuses,
   type CombatActorStats,
@@ -35,6 +35,7 @@ const SKILL_RES_ID = 'core:skillResource' as Id;
 const AP_ID = 'core:actionPoints' as Id;
 const AFTERTASTE_ID = 'core:aftertaste' as Id;
 const SUBMISSION_ID = 'core:submissionTendency' as Id;
+const STRESS_ID = 'core:stress' as Id;
 
 function playerCombatStats(s: GameState, r?: Registry): CombatActorStats {
   const v = s.player.variables;
@@ -86,21 +87,23 @@ function applyVar(s: GameState, r: Registry, c: EffectContext, id: Id, delta: nu
   if (before !== after) c.changes.push({ label: def.label, before, after });
 }
 
-/** 战败理智：公式 base=6（5–8 中位）+ 乘区；≥100 置 flag，优先 Bad End 事件。 */
+/** 战败理智：公式 base=6（5–8 中位）+ 乘区作为扣减；≤0 置 flag，优先 Bad End 事件。 */
 function applyDefeatSanity(s: GameState, r: Registry, c: EffectContext): boolean {
   const def = r.variable(SANITY_ID);
   const before = s.player.variables[SANITY_ID] ?? def.initial;
   const scene = s.district?.scene;
-  const gain = sanityGain({
+  const loss = sanityLoss({
+    kind: 'standard',
     base: 6,
     arousal: scene?.arousal ?? 0,
     submissionTendency: s.player.variables[SUBMISSION_ID] ?? 0,
     transformProgress: transformProgress(s, r),
+    stress: s.player.variables[STRESS_ID] ?? 0,
   });
-  const after = Math.min(def.max, before + gain);
+  const after = Math.max(def.min, before - loss);
   s.player.variables[SANITY_ID] = after;
   if (before !== after) c.changes.push({ label: def.label, before, after });
-  if (after >= def.max) {
+  if (after <= def.min) {
     s.player.flags[SANITY_BREAK_FLAG] = true;
     return true;
   }
@@ -280,9 +283,9 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
           let has = false; try { r.event(SANITY_BREAK_EVENT); has = true; } catch { has = false; }
           if (has) {
             eventId = SANITY_BREAK_EVENT;
-            c.resolvedTexts.push('理智已满：崩坏积蓄触及阈值，进入 Bad End。');
+            c.resolvedTexts.push('理智归零：压力耗尽余量，进入 Bad End。');
           } else {
-            c.resolvedTexts.push('【占位】理智已满：已置 core:flag.sanity_break；Bad End 事件尚未装入内容包。');
+            c.resolvedTexts.push('【占位】理智归零：已置 core:flag.sanity_break；Bad End 事件尚未装入内容包。');
           }
         }
       }

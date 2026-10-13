@@ -5370,6 +5370,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": 10
         }
       ],
       "resultText": "district:text.heal.cafe"
@@ -5394,6 +5399,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": 10
         }
       ],
       "resultText": "district:text.heal.workshop"
@@ -5418,6 +5428,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": 10
         }
       ],
       "resultText": "district:text.heal.canal"
@@ -5442,6 +5457,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": 10
         }
       ],
       "resultText": "district:text.heal.archive"
@@ -5466,6 +5486,11 @@
           "op": "var.change",
           "id": "core:energy",
           "amount": 25
+        },
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": 10
         }
       ],
       "resultText": "district:text.heal.station"
@@ -12311,7 +12336,7 @@
     "district:text.story.after.rain": "你曾经拦起围栏的路口已经补好绝缘层。维修队留下了一张公开验收单，那次协助并没有随着页面关闭而消失。",
     "district:text.story.after.water": "新的警戒刻度对应你协助记录过的水位。低处行人开始沿更安全的路线通过。",
     "district:text.story.after.ledger": "补齐的工时残页已经装订归档。公开索引注明了核对来源，工人的工时不再只靠口头争辩。",
-    "district:text.sanity_break.start": "崩坏积蓄已满。意识像潮水一样漫过边界：你仍能感到身体，却再也分不清哪些念头属于自己。\n\n这是理智阈值的 Bad End。你可以读档、从安全点重来，或把这次沉沦记进经历。",
+    "district:text.sanity_break.start": "理智余量耗尽。意识像潮水一样漫过边界：你仍能感到身体，却再也分不清哪些念头属于自己。\n\n这是理智归零的 Bad End。你可以读档、从安全点重来，或把这次沉沦记进经历。",
     "district:text.sanity_break.end": "故事在这里停住。标记 core:flag.sanity_break 已留下；重新开始前，世界不会自动抹去这次崩坏。",
     "district:text.sanity_break.choice": "你没有反抗潮水。结局已定。"
   },

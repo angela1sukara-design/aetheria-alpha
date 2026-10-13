@@ -7,8 +7,8 @@ import { draw } from './rng.ts';
 import { activeEvent } from './events.ts';
 import { encounter, residentInteraction } from './district.ts';
 import { applyDistrictEffect } from './district-effects.ts';
-import { aftertasteDecay, routeDistanceTier, routeDurationMinutes, routeStaminaCost, sanityRestDelta, skillResourceOutOfCombatRegen, staminaGate } from './numerics.ts';
-import { SANITY_ID } from '../persistence/vars-migration.ts';
+import { aftertasteDecay, isSanityHostileLocation, routeDistanceTier, routeDurationMinutes, routeStaminaCost, SANITY_PASSIVE_DRAIN_ENABLED, SANITY_PASSIVE_DRAIN_INTERVAL, sanityPassiveDrainSteps, sanityRestDelta, skillResourceOutOfCombatRegen, staminaGate } from './numerics.ts';
+import { SANITY_BREAK_FLAG, SANITY_ID } from '../persistence/vars-migration.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
 import { residentPresent, rememberResident } from './resident-quests.ts';
 import { startNarrative, advanceNarrative } from './narrative.ts';
@@ -51,8 +51,9 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
         const before = draft.clock.totalMinutes; advanceTransformationTime(draft, effect.minutes, registry, context.changes);
         advanceAdventureDay(draft,registry);
         if (effect.minutes) context.changes.push({ label: '时间', before: formatClock(before), after: formatClock(draft.clock.totalMinutes) });
+        const restLike = /(?:^|:)action\.(?:rest|waitday|sleep)\b/.test(context.actionId) || context.actionId.includes('.rest.') || context.actionId.includes('.waitday.');
         if (effect.minutes > 0 && !draft.district?.combat) {
-          const recovery = draft.clock.recovery ?? { aftertasteMinutes: 0, skillMinutes: 0 };
+          const recovery = draft.clock.recovery ?? { aftertasteMinutes: 0, skillMinutes: 0, sanityHostileMinutes: 0 };
           const aftertasteMinutes = recovery.aftertasteMinutes + effect.minutes;
           const skillMinutes = recovery.skillMinutes + effect.minutes;
           const atDef = registry.variables.find(v => v.id === 'core:aftertaste');
@@ -67,18 +68,44 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
             const a = skillResourceOutOfCombatRegen(b, skillMinutes, srDef.max);
             if (a !== b) { draft.player.variables[srDef.id] = a; context.changes.push({ label: srDef.label, before: b, after: a }); }
           }
-          if (atDef || srDef) draft.clock.recovery = { aftertasteMinutes: aftertasteMinutes % 60, skillMinutes: skillMinutes % 30 };
+          draft.clock.recovery = {
+            aftertasteMinutes: aftertasteMinutes % 60,
+            skillMinutes: skillMinutes % 30,
+            sanityHostileMinutes: recovery.sanityHostileMinutes ?? 0,
+          };
         }
-        const restLike = /(?:^|:)action\.(?:rest|waitday|sleep)\b/.test(context.actionId) || context.actionId.includes('.rest.') || context.actionId.includes('.waitday.');
         if(context.actionId==='aetheria:action.rest'&&effect.minutes>=30){const id='core:stamina' as const,def=registry.variables.find(v=>v.id===id);if(def){const before=draft.player.variables[id]!;draft.player.variables[id]=Math.min(def.max,before+Math.floor(effect.minutes/30)*12);if(before!==draft.player.variables[id])context.changes.push({label:def.label,before,after:draft.player.variables[id]!});}}
         if (restLike && effect.minutes >= 30) {
           const def = registry.variables.find(v => v.id === SANITY_ID);
           const delta = sanityRestDelta(effect.minutes);
           if (def && delta && SANITY_ID in draft.player.variables) {
             const b = draft.player.variables[SANITY_ID]!;
-            const a = Math.max(def.min, b + delta);
+            const a = Math.min(def.max, Math.max(def.min, b + delta));
             if (a !== b) { draft.player.variables[SANITY_ID] = a; context.changes.push({ label: def.label, before: b, after: a }); }
           }
+        } else if (
+          SANITY_PASSIVE_DRAIN_ENABLED
+          && effect.minutes > 0
+          && !restLike
+          && SANITY_ID in draft.player.variables
+          && isSanityHostileLocation(draft.world.locationId)
+        ) {
+          const recovery = draft.clock.recovery ?? { aftertasteMinutes: 0, skillMinutes: 0, sanityHostileMinutes: 0 };
+          const hostileMinutes = (recovery.sanityHostileMinutes ?? 0) + effect.minutes;
+          const steps = sanityPassiveDrainSteps(hostileMinutes);
+          const def = registry.variable(SANITY_ID);
+          if (steps > 0) {
+            const b = draft.player.variables[SANITY_ID]!;
+            const a = Math.max(def.min, b - steps);
+            draft.player.variables[SANITY_ID] = a;
+            if (a !== b) context.changes.push({ label: def.label, before: b, after: a });
+            if (a <= def.min) draft.player.flags[SANITY_BREAK_FLAG] = true;
+          }
+          draft.clock.recovery = {
+            aftertasteMinutes: recovery.aftertasteMinutes ?? 0,
+            skillMinutes: recovery.skillMinutes ?? 0,
+            sanityHostileMinutes: hostileMinutes % SANITY_PASSIVE_DRAIN_INTERVAL,
+          };
         }
         break;
       }

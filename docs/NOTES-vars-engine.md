@@ -11,7 +11,7 @@
 | 日常赶路/挣扎 | 新开 `core:stamina`（标签「体力」）；**不**与战斗 HP 混用 |
 | 废弃分轨 | `district:health` 已从 VariableDef 与内容效果中移除；读档时按 0–40→0–100 比例迁入 `core:health` |
 | 精力 | `core:energy` 保留不变 |
-| 理智 | `core:sanity`（不用 sinking）；满值打 `core:flag.sanity_break`（Bad End 入口 stub） |
+| 理智 | `core:sanity`（余量模型）；**缓慢下降**，≤0 打 `core:flag.sanity_break`（Bad End） |
 | 技能资源 | 代码 ID 固定 `core:skillResource`，显示名暂「技能资源」 |
 | 倾向值 | `core:` 前缀；不覆盖 NPC `relationship.trust` |
 | transformPerception | **不**存标量；见 `src/engine/transform-perception.ts` TODO |
@@ -27,7 +27,7 @@
 | `core:energy` | 精力 | 70 | 0–100 | 已有 |
 | `core:health` | 生命 | 100 | 0–100 | **统一 HP**；原「体况」改名 |
 | `core:stamina` | 体力 | 100 | 0–100 | 赶路/劳动/战斗负荷；低体力门槛已接 |
-| `core:sanity` | 理智 | 0 | 0–100 | 正式公式；满值 flag + district:event.sanity_break |
+| `core:sanity` | 理智 | 100 | 0–100 | 余量模型；战败/压力扣减，休息回升；≤0 flag + district:event.sanity_break |
 | `core:skillResource` | 技能资源 | 100 | 0–100 | 战斗回合+5；喘息+8；出战斗每30min+10 |
 
 ### B 战斗八维（VariableDef 已入库，命中/伤害/暴击已接）
@@ -52,7 +52,8 @@
 
 ### Flag
 
-- `core:flag.sanity_break`：理智满值时置 true（Bad End 事件入口待接）
+- `core:flag.sanity_break`：理智≤0 时置 true（Bad End）
+- `core:flag.sanity_remaining`：余量模型标记；旧积蓄存档读档时一次性 `max−value` 反转后置 true
 
 ## 3. 迁移说明
 
@@ -112,3 +113,23 @@
 ## 7. Schema 备注
 
 定稿字段使用 camelCase 局部 ID（如 `core:skillResource`）。原先 `namespace:id` 正则只允许小写；已放宽局部段为 `[a-z][a-zA-Z0-9_.-]*`。
+
+
+## 8. 2026-10-13 理智方向反转（权威：DESIGN-sanity-drain）
+
+对照：`docs/DESIGN-sanity-drain-2026-10-13.md`。字段仍 `core:sanity`，勿改名。
+
+| 项 | 旧（积蓄） | 新（清醒条 drain） |
+|----|------------|---------------------|
+| initial | 0 | **100**（满=清醒） |
+| 流失 | `sanity + gain` | `sanityLoss` → `max(0, sanity − loss)` |
+| 公式 | base×(1+arousal/200+sub/150+tf/250)×statusMod | 同形 + **stress/400**；stress≥80 且非 light **额外 −1** |
+| base | light 3–5 / std 5–8（败 6）/ continue 8–12 / heavy 10–14 | **同表** |
+| 休息 | −8 / −15 | **+8（≥30）/ +15（≥360）** |
+| 药水 | −15 / −25 | **+15 / +25**（冷静贴小 / 深井清心饮大） |
+| 安全区安抚 | — | heal 护理附带 **+10** |
+| 被动 | — | hostile（canal）**−1 / 90min**；安全区不漏 |
+| Bad End | ≥100 | **≤0** → `core:flag.sanity_break` + `district:event.sanity_break` |
+| 存档 | — | 缺 `core:flag.sanity_remaining` 时 `sanity = 100 − old` |
+
+实现：`numerics.ts`（`sanityLoss`）/ `district-effects.ts` / `effects.ts` / `vars-migration.ts`；详见 `NOTES-deep-numerics-impl-2026-10-12.md`。

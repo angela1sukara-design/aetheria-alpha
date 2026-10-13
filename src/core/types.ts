@@ -92,7 +92,7 @@ export interface GameState {
   worldInstance?: import('../world/types.ts').WorldInstance;
   district?: DistrictState;
   meta: { schemaVersion: 3 | 4; engineVersion: '0.1-stage3' | '0.2-foundation'; revision: number; packs: PackRef[] };
-  clock: { totalMinutes: number; crossedDays: number[]; recovery?: { aftertasteMinutes: number; skillMinutes: number } };
+  clock: { totalMinutes: number; crossedDays: number[]; recovery?: { aftertasteMinutes: number; skillMinutes: number; sanityHostileMinutes?: number } };
   world: { locationId: Id; knownLocationIds: Id[] };
   player: { variables: Record<Id, number>; flags: Record<Id, boolean>; body: BodyGraph | null };
   tfQueues: TFInstance[];

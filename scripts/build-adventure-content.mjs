@@ -86,7 +86,8 @@ for(const [name,label,category,effects,price,usableInCombat,desc]of [
  ['tonic','净水冲剂','recovery',[{op:'var.change',id:'core:stamina',amount:10}],6,false,'恢复体力。'],
  ['cell','脉冲蓄能片','combat',[{op:'var.change',id:'core:skillResource',amount:12}],10,true,'战斗中补充技能资源。'],
  ['candy','战术高糖软片','combat',[{op:'var.change',id:'core:stamina',amount:8}],8,true,'战斗中补充体力。'],
- ['calm','暗巷冷静贴','explore',[{op:'var.change',id:'core:sanity',amount:-8}],7,false,'减轻理智累积；不清除崩溃标记。'],
+ ['calm','暗巷冷静贴','explore',[{op:'var.change',id:'core:sanity',amount:15}],15,false,'镇定药水（小）：回升理智 +15；不清除崩溃标记。'],
+ ['calm.strong','深井清心饮','explore',[{op:'var.change',id:'core:sanity',amount:25}],35,false,'镇定药水（大）：回升理智 +25；不清除崩溃标记。'],
 ]){
  const iid=id('item.'+name);
  p.items.push({id:iid,name:label,description:desc,category,effects,price,maxStack:20,usableInCombat});

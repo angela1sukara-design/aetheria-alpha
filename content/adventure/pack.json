@@ -1080,6 +1080,48 @@
       "resultText": "progression:text.action.use.item.calm"
     },
     {
+      "id": "progression:action.buy.item.calm.strong",
+      "label": "购买深井清心饮",
+      "hint": "10分钟 · 零钱−35",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "progression.available",
+          "move": "buy",
+          "id": "progression:item.calm.strong"
+        }
+      ],
+      "effects": [
+        {
+          "op": "progression.act",
+          "move": "buy",
+          "id": "progression:item.calm.strong"
+        }
+      ],
+      "resultText": "progression:text.action.buy.item.calm.strong"
+    },
+    {
+      "id": "progression:action.use.item.calm.strong",
+      "label": "使用深井清心饮",
+      "hint": "5分钟 · 消耗1个",
+      "group": "daily",
+      "conditions": [
+        {
+          "op": "item.has",
+          "id": "progression:item.calm.strong",
+          "comparison": "gte",
+          "value": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "item.use",
+          "id": "progression:item.calm.strong"
+        }
+      ],
+      "resultText": "progression:text.action.use.item.calm.strong"
+    },
+    {
       "id": "progression:action.combat.skill",
       "label": "技能击",
       "hint": "技能资源−15 · 体力−4 · 行动点2",
@@ -1869,7 +1911,9 @@
     "progression:text.choice.defeat.play.more2": "你继续浏览剩余战败玩法入口。",
     "progression:text.choice.313": "你停止这次接触，回到可以继续行动的位置。",
     "progression:text.choice.314": "你停止这次接触，回到可以继续行动的位置。",
-    "progression:text.action.defeat.play": "试跑战败后 8 玩法。"
+    "progression:text.action.defeat.play": "试跑战败后 8 玩法。",
+    "progression:text.action.buy.item.calm.strong": "购买深井清心饮。",
+    "progression:text.action.use.item.calm.strong": "使用深井清心饮。"
   },
   "contributions": [
     {
@@ -1927,6 +1971,8 @@
         "progression:action.use.item.candy",
         "progression:action.combat.item.candy",
         "progression:action.buy.item.calm",
+        "progression:action.buy.item.calm.strong",
+        "progression:action.use.item.calm.strong",
         "progression:action.use.item.calm",
         "progression:action.combat.skill",
         "progression:action.challenge.raider",
@@ -6619,16 +6665,32 @@
     {
       "id": "progression:item.calm",
       "name": "暗巷冷静贴",
-      "description": "减轻理智累积；不清除崩溃标记。",
+      "description": "镇定药水（小）：回升理智 +15；不清除崩溃标记。",
       "category": "explore",
       "effects": [
         {
           "op": "var.change",
           "id": "core:sanity",
-          "amount": -8
+          "amount": 15
         }
       ],
-      "price": 7,
+      "price": 15,
+      "maxStack": 20,
+      "usableInCombat": false
+    },
+    {
+      "id": "progression:item.calm.strong",
+      "name": "深井清心饮",
+      "description": "镇定药水（大）：回升理智 +25；不清除崩溃标记。",
+      "category": "explore",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": 25
+        }
+      ],
+      "price": 35,
       "maxStack": 20,
       "usableInCombat": false
     }

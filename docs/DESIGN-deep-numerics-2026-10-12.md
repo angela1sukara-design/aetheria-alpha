@@ -3,7 +3,11 @@
 > 日期：2026-10-12（Asia/Singapore）  
 > 对照提交：`b2eea4662e55ac21c79a931a2beb0e29d8207e32`（分支 `codex/tag-effect-preview`）  
 > 状态：**设计交付**；引擎实装 agent 按本文接公式，勿改 VariableDef ID（除非「字段映射」节另注）。  
-> 原则：玩法硬数字尽量少；倾向只喂文风；数值在 GameState，不进 Tag；TF 走 BodyGraph；抗性不在范围。
+> 原则：玩法硬数字尽量少；倾向只喂文风；数值在 GameState，不进 Tag；TF 走 BodyGraph；抗性不在范围。  
+>  
+> **⚠ 理智语义已翻转（2026-10-13）**：`core:sanity` 改为清醒条（满=清醒、空=崩坏）。  
+> **§0.3 表中 sanity 行、§0.5 理智行、§0.6 sinking 行、整节 §A、§F 第 4 步、§G 理智验收** 均被  
+> [`docs/DESIGN-sanity-drain-2026-10-13.md`](./DESIGN-sanity-drain-2026-10-13.md) **取代**。引擎勿再按「涨到 100 Bad End」实装。
 
 ---
 
@@ -32,7 +36,7 @@
 | `core:energy` | 精力 | 70 | 0–100 | 社交/脑力/旧战斗扣费仍走它 |
 | `core:health` | 生命 | 100 | 0–100 | **统一 HP**；归零战败 |
 | `core:stamina` | 体力 | 100 | 0–100 | **仅入库，无扣点** |
-| `core:sanity` | 理智 | 0 | 0–100 | 战败占位 `+10`；满值 flag |
+| `core:sanity` | 理智 | ~~0~~ → **100** | 0–100 | **已被 sanity-drain 取代**：满=清醒；≤0 Bad End + flag |
 | `core:skillResource` | 技能资源 | 100 | 0–100 | **仅入库** |
 
 #### B 战斗八维
@@ -92,13 +96,13 @@
 | 资源 | attack −3 `energy`；recover −6 `energy` +10 HP；guard +4 `energy` |
 | 敌方 | 仅 `hp` + intents.`damage/guard/drain`；无八维 |
 | 现有三敌 HP | scavenger 30 / collector 38 / gel 26（**旧 0–40 玩家条尺度**） |
-| 理智 | 战败固定 `SANITY_DEFEAT_DELTA = 10` |
+| 理智 | ~~战败固定 +10~~ → 现公式流失；**语义见 DESIGN-sanity-drain** |
 
 ### 0.6 字段映射（旧名 → 现 ID）
 
 | 旧/口语 | 仓库 ID | 备注 |
 |---------|---------|------|
-| sinking | `core:sanity` | 上升至 100 崩坏（非下降） |
+| sinking | `core:sanity` | ~~上升至 100 崩坏~~ → **2026-10-13 改为下降至 0 崩坏**（见 DESIGN-sanity-drain） |
 | HP / 体况 / district:health | `core:health` | 旧 0–40 读档 ×(100/40) 迁入 |
 | MP | **禁止**；用 `core:skillResource` | label 可后改世界观名 |
 | transformPerception 标量 | **不存**；`transformPerception(state)` | |
@@ -108,11 +112,16 @@
 
 ## A. 理智正式公式（`core:sanity`）
 
+> **【已取代 2026-10-13】** 本节（A.1–A.6）描述的「崩坏积蓄 / 涨到 100」方案**作废**。  
+> 现行可执行设计：[`DESIGN-sanity-drain-2026-10-13.md`](./DESIGN-sanity-drain-2026-10-13.md)  
+> （initial=100；loss 公式同形；休息/药水改加；≤0 → `core:flag.sanity_break`）。  
+> 以下原文仅供考古，**勿实装**。
+
 ### A.1 语义
 
-- **理智是「崩坏积蓄」**：0 = 清醒，100 = Bad End 门槛。  
-- 增加 = 受冲击/沉沦加深；减少 = 药水/休息等恢复。  
-- **不要**做成传统「理智条扣光」语义，避免与旧名 sinking 混淆。
+- ~~**理智是「崩坏积蓄」**：0 = 清醒，100 = Bad End 门槛。~~ **已废**  
+- ~~增加 = 受冲击/沉沦加深；减少 = 药水/休息等恢复。~~ **已废**  
+- ~~**不要**做成传统「理智条扣光」语义~~ → **已改为扣光语义**（见 sanity-drain）。
 
 ### A.2 派生输入
 
@@ -517,10 +526,10 @@ Recover 旧：「−6 energy +10 HP」→ 改为 **AP 2 + stamina 4，+8 HP**（
 
 ## F. 实装顺序建议（给引擎 agent）
 
-1. **公式纯函数**落地：`sanityGain` / `combatHit` / `combatDamage` / `aftertasteOnExit` / `transformProgress`（测单测）。  
+1. **公式纯函数**落地：`sanityLoss`（取代 `sanityGain`）/ `combatHit` / `combatDamage` / `aftertasteOnExit` / `transformProgress`（测单测）。  
 2. 战斗运行时扩字段；三敌改模板数；Boss 先占位结构。  
 3. stamina 扣点接 `location.move` + labor；selectors 门槛。  
-4. 理智：替换 `SANITY_DEFEAT_DELTA`；接休息减；满值 `event.start`。  
+4. 理智：~~休息减 / 满值事件~~ → 按 **DESIGN-sanity-drain**：`sanityLoss` 减法；休息/药水加；**≤0** `event.start`。  
 5. writingContext 注入 `tone`；exit 写 aftertaste。  
 6. **不**把倾向写入条件 DSL；**不**把数值塞 Tag。
 
@@ -528,7 +537,7 @@ Recover 旧：「−6 energy +10 HP」→ 改为 **AP 2 + stamina 4，+8 HP**（
 
 ## G. 验收清单
 
-- [ ] 理智：同输入下 gain 与表公式一致；≥100 置 flag 并进事件  
+- [ ] 理智：~~gain / ≥100~~ → 见 sanity-drain：`sanityLoss` 一致；**≤0** 置 flag 并进事件  
 - [ ] stamina：赶路/劳动/挣扎有扣；低阈值限制可测  
 - [ ] 八维：miss/crit/伤害样本对表；AP=3 组合合法  
 - [ ] skillResource：技能扣 15、回合 +5  

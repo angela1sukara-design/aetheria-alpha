@@ -7,7 +7,10 @@ import {
   combatDamage,
   combatHitChance,
   fleeChancePercent,
+  isSanityHostileLocation,
   sanityGain,
+  sanityLoss,
+  sanityPassiveDrainSteps,
   sanityRestDelta,
   skillResourceOutOfCombatRegen,
   staminaGate,
@@ -15,27 +18,51 @@ import {
   BOSS_TEMPLATE,
 } from '../src/engine/numerics.ts';
 
-test('sanityGain: defeat mid base 6 with zero mods', () => {
+test('sanityLoss: defeat pressure magnitude mid base 6 with zero mods', () => {
+  assert.equal(sanityLoss({ base: 6 }), 6);
+  assert.equal(sanityLoss({ kind: 'standard' }), 6);
   assert.equal(sanityGain({ base: 6 }), 6);
-  assert.equal(sanityGain({ kind: 'standard' }), 6);
 });
 
-test('sanityGain: arousal/submission/tf multipliers', () => {
-  const g = sanityGain({ base: 6, arousal: 100, submissionTendency: 150, transformProgress: 250 });
+test('sanityLoss: arousal/submission/tf multipliers', () => {
+  const g = sanityLoss({ base: 6, arousal: 100, submissionTendency: 150, transformProgress: 250 });
   // 6 * (1 + 0.5 + 1 + 1) = 6 * 3.5 = 21
   assert.equal(g, 21);
 });
 
-test('sanityGain: statusMod clamp', () => {
-  assert.equal(sanityGain({ base: 10, statusModParts: [0.15, -0.2] }), Math.round(10 * 0.95));
-  assert.equal(sanityGain({ base: 10, statusModParts: [1, 1] }), Math.round(10 * 1.5));
+test('sanityLoss: stress/400 mult and high-stress pulse', () => {
+  // light：只乘区，无脉冲
+  assert.equal(sanityLoss({ kind: 'light', base: 6, stress: 100 }), Math.round(6 * (1 + 0.25)));
+  // standard + stress>=80 → +1 pulse
+  assert.equal(sanityLoss({ kind: 'standard', base: 6, stress: 80 }), Math.round(6 * (1 + 80 / 400)) + 1);
+  assert.equal(sanityLoss({ kind: 'light', base: 4, stress: 80 }), Math.round(4 * (1 + 80 / 400)));
 });
 
-test('sanityRestDelta', () => {
+test('sanityLoss: full mult with stress pulse', () => {
+  const g = sanityLoss({ base: 6, arousal: 100, submissionTendency: 150, transformProgress: 250, stress: 400 });
+  // 6 * (1 + 0.5 + 1 + 1 + 1) = 27; stress 400>=80 +1 pulse
+  assert.equal(g, 28);
+});
+
+test('sanityLoss: statusMod clamp', () => {
+  assert.equal(sanityLoss({ base: 10, statusModParts: [0.15, -0.2] }), Math.round(10 * 0.95));
+  assert.equal(sanityLoss({ base: 10, statusModParts: [1, 1] }), Math.round(10 * 1.5));
+});
+
+test('sanityRestDelta recovers remaining sanity', () => {
   assert.equal(sanityRestDelta(10), 0);
-  assert.equal(sanityRestDelta(30), -8);
-  assert.equal(sanityRestDelta(360), -15);
-  assert.equal(sanityRestDelta(1440), -15);
+  assert.equal(sanityRestDelta(30), 8);
+  assert.equal(sanityRestDelta(360), 15);
+  assert.equal(sanityRestDelta(1440), 15);
+});
+
+test('passive hostile drain helpers', () => {
+  assert.equal(isSanityHostileLocation('district:location.canal'), true);
+  assert.equal(isSanityHostileLocation('district:location.cafe'), false);
+  assert.equal(isSanityHostileLocation('district:location.apartment'), false);
+  assert.equal(sanityPassiveDrainSteps(89), 0);
+  assert.equal(sanityPassiveDrainSteps(90), 1);
+  assert.equal(sanityPassiveDrainSteps(180), 2);
 });
 
 test('combatHitChance bounds', () => {

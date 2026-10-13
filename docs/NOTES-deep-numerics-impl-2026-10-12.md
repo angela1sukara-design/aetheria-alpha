@@ -6,11 +6,14 @@
 
 ## 已接线
 
-### 1. 理智（`core:sanity`）
-- 纯函数 `sanityGain` / `sanityRestDelta`（`src/engine/numerics.ts`）
-- 战败：base=6 + 乘区（arousal / submissionTendency / transformProgress），**取代**固定 +10
-- 休息 / waitday（actionId 含 rest|waitday 且 clock≥30）：−8；≥360min：−15
-- ≥100：置 `core:flag.sanity_break`，并优先启动 `district:event.sanity_break`（若内容包已装）
+### 1. 理智（`core:sanity`）— 2026-10-13 drain（权威 DESIGN-sanity-drain）
+- 纯函数 **`sanityLoss`**（`sanityGain` 为别名）/ `sanityRestDelta`（`src/engine/numerics.ts`）
+- 公式：`loss = round(base × (1 + arousal/200 + submission/150 + tf/250 + stress/400) × statusMod)`；stress≥80 且非 light 额外 +1
+- initial **100**；战败 base=6：`sanity = max(0, sanity − loss)`
+- 休息 / waitday：≥30 **+8**；≥360 **+15**；药水 +15/+25；安全区 heal 安抚 **+10**
+- 被动：hostile（canal）**−1/90min**（`SANITY_PASSIVE_DRAIN_ENABLED`）；安全区不漏
+- **≤0**：置 `core:flag.sanity_break`，并优先启动 `district:event.sanity_break`
+- 旧积蓄存档：缺 `core:flag.sanity_remaining` 时读档一次性 `100 − old`
 
 ### 2. stamina
 - `location.move`：按 Route `distanceTier`（邻接 −2 / 远·跨 −5）+ `durationMinutes` 推进时钟

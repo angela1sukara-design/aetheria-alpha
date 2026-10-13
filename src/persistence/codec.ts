@@ -56,7 +56,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   }
   unique(refIds);
   const clock = object(state.clock, ['totalMinutes', 'crossedDays', ...((state.clock as GameState['clock'])?.recovery ? ['recovery'] : [])]); const total = int(clock.totalMinutes);
-  if (clock.recovery !== undefined) { const recovery = object(clock.recovery, ['aftertasteMinutes', 'skillMinutes']); int(recovery.aftertasteMinutes, 0, 59); int(recovery.skillMinutes, 0, 29); }
+  if (clock.recovery !== undefined) { const rawRec = clock.recovery as Record<string, unknown>; const recKeys = ['aftertasteMinutes', 'skillMinutes', ...('sanityHostileMinutes' in rawRec ? ['sanityHostileMinutes'] : [])]; const recovery = object(rawRec, recKeys); int(recovery.aftertasteMinutes, 0, 59); int(recovery.skillMinutes, 0, 29); if (recovery.sanityHostileMinutes !== undefined) int(recovery.sanityHostileMinutes, 0, 89); }
   const days = array(clock.crossedDays); unique(days);
   for (const day of days) int(day, 1, Math.floor(total / 1440));
   const world = object(state.world, ['locationId', 'knownLocationIds']);

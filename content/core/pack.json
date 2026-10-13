@@ -52,7 +52,7 @@
     {
       "id": "core:sanity",
       "label": "理智",
-      "initial": 0,
+      "initial": 100,
       "min": 0,
       "max": 100,
       "unit": ""
@@ -190,6 +190,10 @@
     {
       "id": "core:flag.sanity_break",
       "initial": false
+    },
+    {
+      "id": "core:flag.sanity_remaining",
+      "initial": true
     }
   ],
   "hooks": [],

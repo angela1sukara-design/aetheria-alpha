@@ -1,0 +1,25 @@
+{
+  "format": "aetheria-general-lexicon-install-receipt",
+  "installedAt": "2026-10-13T16:30:00+08:00",
+  "source": "production/tag-deliveries/2026-10-12/general-expansion-v2/taxonomy.json",
+  "domain": "general",
+  "nsfwTouched": false,
+  "reviewPolicy": "TagDef status=active for load path; editorial reviewStatus remains candidate/proposed; do NOT write approved into NSFW or unreviewed materials",
+  "counts": {
+    "sourceConcepts": 1932,
+    "installedTags": 1932,
+    "skipped": 0
+  },
+  "sourceStatuses": {
+    "proposed-editorial": 766,
+    "authored-proposed": 1166
+  },
+  "facetDistribution": {
+    "theme": 544,
+    "body": 257,
+    "setting": 493,
+    "ecology": 32,
+    "service": 175,
+    "context": 431
+  }
+}
