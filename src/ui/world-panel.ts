@@ -35,15 +35,38 @@ export function mountWorldControls(options: { source: () => Registry; defaults: 
     }
     generating = true; options.setBusy(true); byId<HTMLButtonElement>('world-generate').disabled = true;
     byId('world-generate').textContent = '正在生成…';
+    for (const id of ['world-fantasy-quick', 'fantasy-enter-quick'] as const) {
+      const button = document.getElementById(id) as HTMLButtonElement | null;
+      if (button) button.disabled = true;
+    }
     try {
       message('正在生成世界并校验路线与人物…');
       const worldTag = theme.value || undefined;
       const world = await new WorldGenerator().generate({ seed, registry: await library(), rules, references, questContent: options.defaults.questContent, worldProfiles: options.defaults.worldProfiles, worldTag, parameters: { locationCount: Number(byId<HTMLInputElement>('world-size').value), npcCount: Number(byId<HTMLInputElement>('world-population').value) } });
       options.replace(world); byId<HTMLDialogElement>('world-dialog').close(); message('世界已生成。请手动保存你想保留的进度。');
     } catch (error) { message(`生成失败，当前进度保留：${error instanceof Error ? error.message : error}`); }
-    finally { generating = false; options.setBusy(false); byId<HTMLButtonElement>('world-generate').disabled = false; byId('world-generate').textContent = '生成并进入世界'; }
+    finally {
+      generating = false; options.setBusy(false); byId<HTMLButtonElement>('world-generate').disabled = false; byId('world-generate').textContent = '生成并进入世界';
+      for (const id of ['world-fantasy-quick', 'fantasy-enter-quick'] as const) {
+        const button = document.getElementById(id) as HTMLButtonElement | null;
+        if (button) button.disabled = false;
+      }
+    }
+  }
+  /** 一键进 fantasy 小世界：默认种子/地点/居民，题材锁定 worlds:setting.fantasy。 */
+  async function startFantasyDefaults(): Promise<void> {
+    const fantasy = profiles.find(p => p.tag === 'worlds:setting.fantasy') ?? profiles[0];
+    if (fantasy) { theme.value = fantasy.tag; theme.dispatchEvent(new Event('change')); }
+    byId<HTMLInputElement>('world-seed').value = '42';
+    byId<HTMLInputElement>('world-size').value = '5';
+    byId<HTMLInputElement>('world-population').value = '9';
+    await start(42);
   }
   byId('world-generate').addEventListener('click', () => { void start(Number(byId<HTMLInputElement>('world-seed').value)); });
+  for (const id of ['world-fantasy-quick', 'fantasy-enter-quick']) {
+    const button = document.getElementById(id);
+    if (button) button.addEventListener('click', () => { void startFantasyDefaults(); });
+  }
   byId('world-random').addEventListener('click', () => { byId<HTMLInputElement>('world-seed').value = String(crypto.getRandomValues(new Uint32Array(1))[0]); });
   byId('world-fixed').addEventListener('click', () => { if (generating || options.isBusy()) return; options.replace(); byId<HTMLDialogElement>('world-dialog').close(); });
   for (const type of ['reference', 'generation-rules', 'generation-content']) byId<HTMLInputElement>(`world-${type}-import`).addEventListener('change', async event => {

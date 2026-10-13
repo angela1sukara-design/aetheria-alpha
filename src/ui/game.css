@@ -134,3 +134,10 @@ input:focus-visible,summary:focus-visible{outline:2px solid var(--teal);outline-
 .tag-source-pop strong{display:block;margin-bottom:8px;color:var(--teal);letter-spacing:1px}
 .tag-source-pop p{margin:0 0 6px;color:#c5ccd8;overflow-wrap:anywhere}
 .tag-source-pop button{margin-top:8px;font-size:11px;min-height:32px;padding:6px 12px}
+
+/* 试玩入口：异世界一键生成 + 战败 8 玩法直达（主界面，不必先战斗） */
+.playtest-cluster{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-right:4px}
+.playtest-cluster button{font-size:12px;min-height:36px;padding:7px 12px;background:#2a2436;border-color:#5a4d73;color:#d8c8ef}
+.playtest-cluster button:disabled{opacity:.45}
+#world-fantasy-quick{background:#2a2436;border-color:#5a4d73;color:#d8c8ef}
+@media(max-width:760px){.playtest-cluster{width:100%;order:3}#save-quick{order:4}}
