@@ -26,9 +26,11 @@ node('defeat.repair.scope','defeat','repair','保留自己的决定','检查范�
 node('defeat.repair.tail','defeat','repair','机械尾的维护提议','你的尾部确为机械结构【机械尾】。对方提出把尾部外伸长度调整到650毫米，说明需要十五分钟【检查改装目标】。这一项只会在你明确接受后开始。',[choice('接受这一次长度调整','你明确接受本次长度调整【接受本次修理】；维护完成，尾部的真实长度记录为650毫米。',null,[{op:'tf.enqueue',id:id('tf.tail-maintenance')},time(15),health(5)],[],[scoped('player','repair.accepted')]),choice('拒绝改装，离开现场','你拒绝改装，沿安全路线离开。',null,[time(10),health(3)])],{priority:6,requiresTags:[{role:'player',tagId:'foundation:body.mechanical-tail'},scoped('opponent','tools')],conditions:[{op:'body.matches',target:{kind:'player'},part:{kind:'tail',materialFamily:'mechanical'}},{op:'tf.state',id:id('tf.tail-maintenance'),state:'idle'},{op:'not',condition:{op:'body.matches',target:{kind:'player'},part:{kind:'tail',lengthMm:650}}}]});
 for(const kind of ['encounter','exploration','daily','conversation','quest','transformation','ending']){
  const messages={encounter:['眼前的遭遇','你在{place}停下，留意眼前正在发生的小事。先观察当前处境，再决定是否参与【探索】。'],exploration:['查看周围','你沿{place}的可见通道查看路面与告示。已经走过的路线可以核对，尚未进入的地方仍保留未知【调查】。'],daily:['安排一段日常','你在{place}检查手边的事情，衡量当前体力与精力。可以选择一段公共协作，也可以留出时间休息【生活】。'],conversation:['与眼前的人交谈','你与已经在场的{opponent}谈起眼前的事务。你先听对方把话说完，再决定是否参与【社交】。'],quest:['核对当前事务','你把已经发生的进展与眼前的安排核对。需要进一步处理的事项仍要通过实际行动完成【工作】。'],transformation:['适应当前身体','你放慢动作，检查身体目前的支撑与活动方式。已经完成的变化以真实身体记录为准，尚在推进的项目仍需等待【适应】。'],ending:['回顾已经留下的结果','你回顾已完成的契约、协作与交锋。当前的经营份额、组织影响和街区安全仍然保留，之后的行动会继续改变它们【身份】。']};
- const [title,text]=messages[kind];const choices=kind==='daily'?[choice('完成一次公共协作','你完成了当前可用的公共协作【公共协作】。',null,[{op:'progression.act',move:'aid'}],[{op:'progression.available',move:'aid'}])]:kind==='conversation'?[choice('交换今天的近况','你们谈起已经知道的近况，这次交谈按原居民规则记录。',null,[{op:'resident.talk'}],[{op:'resident.available'}])]:[choice('继续核对细节','你完成这一次观察，记录实际看见的内容。','detail',[time(5)])];
+ const [title,text]=messages[kind];
+ // encounter 空壳仅作 schema 无条件回退：无「继续核对细节」二次确认；fantasy 抽卡走 nsfwcombo 档案，不会落到此节点。
+ const choices=kind==='daily'?[choice('完成一次公共协作','你完成了当前可用的公共协作【公共协作】。',null,[{op:'progression.act',move:'aid'}],[{op:'progression.available',move:'aid'}])]:kind==='conversation'?[choice('交换今天的近况','你们谈起已经知道的近况，这次交谈按原居民规则记录。',null,[{op:'resident.talk'}],[{op:'resident.available'}])]:kind==='encounter'?[]:[choice('继续核对细节','你完成这一次观察，记录实际看见的内容。','detail',[time(5)])];
  node(kind+'.start',kind,'start',title,text,choices);
- if(!['daily','conversation'].includes(kind))node(kind+'.detail',kind,'detail','这一次的新发现','你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。',[]);
+ if(!['daily','conversation','encounter'].includes(kind))node(kind+'.detail',kind,'detail','这一次的新发现','你已经核对了眼前的细节，没有把尚未发生的事情记成结果。你可以结束这次查看，回到实际行动【发现】。',[]);
 }
 node('exploration.night','exploration','start','夜间的通道','真实时钟已经进入夜间【夜间】。你在{place}核对照明和公开告示，先确认可见的安全路线。',[choice('记下照明明确的通道','你核对并记录了当前可见的路线【路线发现】。',null,[time(5),change('safety',1)])],{priority:4,requiresTags:[{role:'environment',tagId:'foundation:time.night'}]});
 node('transformation.tail','transformation','start','尾部动作练习','你确实拥有尾部【有尾】。你放慢转身速度，确认尾部的位置和当前支撑方式；这次练习不会自动增加身体能力。',[choice('完成这一次适应练习','你完成动作练习，真实身体结构与转化进度保持一致。',null,[time(5)])],{priority:4,requiresTags:[{role:'player',tagId:'foundation:body.has-tail'}]});
@@ -104,7 +106,16 @@ for(const [name,label,tier,hp,attack,defense,speed,reward,actions]of [['raider',
  action('challenge.'+name,'挑战：'+label,[{op:'combat.start',id:enemyId}],[service(['commons','workshop']),...(tier==='L'?[{op:'adventure.compare',field:'victories',comparison:'gte',value:2}]:tier==='boss'?[{op:'adventure.compare',field:'victories',comparison:'gte',value:4},{op:'adventure.compare',field:'influence',comparison:'gte',value:4}]:[])],'观察属性后交锋；可以撤离','explore');
 }
 for(const [name,eid]of [['gel','district:enemy.gel'],['collector','district:enemy.collector']])action('challenge.'+name,'调查危险：'+(name==='gel'?'渠底黑胶群落':'拦路收债客'),[{op:'combat.start',id:eid}],[service(['commons','market'])],'交锋、撤离或战后恢复','explore');
-for(const kind of ['encounter','exploration','daily','conversation','quest','transformation','ending'])action('narrative.'+kind,({encounter:'留意一次当地遭遇',exploration:'仔细查看当前环境',daily:'安排一段日常事务',conversation:'与在场居民继续交谈',quest:'核对当前进展',transformation:'练习适应当前身体',ending:'回顾已经留下的结果'})[kind],[{op:'narrative.start',kind}],kind==='conversation'?[{op:'resident.available'}]:kind==='ending'?[{op:'adventure.compare',field:'reputation',comparison:'gte',value:1}]:[],'根据当前状态展开；可以免费结束','explore');
+for(const kind of ['encounter','exploration','daily','conversation','quest','transformation','ending']){
+  const labels={encounter:'留意一次当地遭遇',exploration:'仔细查看当前环境',daily:'安排一段日常事务',conversation:'与在场居民继续交谈',quest:'核对当前进展',transformation:'练习适应当前身体',ending:'回顾已经留下的结果'};
+  // fantasy / 当地遭遇：挂 nsfwcombo 档案，priority 高于空壳 encounter.start，直接抽到有正文的组合节点。
+  const effects=kind==='encounter'
+    ?[{op:'narrative.start',kind,profileId:id('profile.nsfwcombo.matrix')}]
+    :[{op:'narrative.start',kind}];
+  const conditions=kind==='conversation'?[{op:'resident.available'}]:kind==='ending'?[{op:'adventure.compare',field:'reputation',comparison:'gte',value:1}]:[];
+  const hint=kind==='encounter'?'抽有正文的遭遇（nsfwcombo）；空壳核对已禁用':'根据当前状态展开；可以免费结束';
+  action('narrative.'+kind,labels[kind],effects,conditions,hint,'explore');
+}
 const scopedDefeat=(...keys)=>keys.map(k=>scoped('player',k));
 const envRule=(name,enemyId,requires,extra={})=>p.environmentEnemyRules.push({id:id('env-enemy.'+name),enemyId,requiresTags:requires,weight:extra.weight??10,priority:extra.priority??0,...(extra.excludes?{excludesTags:extra.excludes}:{}),...(extra.name?{name:extra.name}:{}),...(extra.hp?{hp:extra.hp}:{}),...(extra.reward!==undefined?{reward:extra.reward}:{}),...(extra.combat?{combat:extra.combat}:{}),...(extra.defeatTags?{defeatTags:extra.defeatTags}:{})});
 // 地点层挂接：环境 tag 组合 → scavenger / collector / gel；可覆盖数值与 defeatTags。
@@ -147,21 +158,10 @@ for (const combo of nsfwCombos) {
   });
   nsfwCandidates.push(cand);
   p.texts[cand.node.textKey] = cand.fragment;
+  // detail 组合键说明书仅保留在 texts / candidates（制作对照），不挂可玩节点，避免「核对组合原子」二次确认。
   const detailKey = id(`text.node.encounter.nsfwcombo.${slug}.detail`);
   p.texts[detailKey] = cand.texts.detail;
-  const resultKey = id(`text.choice.nsfwcombo.${slug}.detail`);
-  p.texts[resultKey] = `你记下组合键「${combo.comboKey}」，确认尚未写入战败或转化结算。`;
-  const startChoices = [
-    {
-      label: '核对组合原子与挂接提示',
-      resultText: resultKey,
-      next: 'nsfwcombo-detail',
-      effects: [time(5)],
-      conditions: [],
-      setTags: [],
-      unsetTags: [],
-    },
-  ];
+  const startChoices = [];
   // 成人样例：可填 adult 正文槽 + 偏好门选项（中性 fragment 仍可无偏好阅读）
   let adultKey = null;
   if (combo.adultRequired) {
@@ -190,21 +190,6 @@ for (const combo of nsfwCombos) {
     ...cand.node,
     choices: startChoices,
   });
-  p.narrativeNodes.push({
-    id: id(`node.encounter.nsfwcombo.${slug}.detail`),
-    kind: 'encounter',
-    stage: 'nsfwcombo-detail',
-    title: '组合键与素材对照',
-    textKey: detailKey,
-    requiresTags: [scoped('opponent', 'nsfwcombo.active')],
-    excludesTags: [],
-    conditions: [],
-    tendencies: [],
-    weight: 10,
-    priority: 5,
-    maxVisits: 1,
-    choices: [exit()],
-  });
   if (adultKey) {
     p.narrativeNodes.push({
       id: id(`node.encounter.nsfwcombo.${slug}.adult`),
@@ -226,10 +211,10 @@ for (const combo of nsfwCombos) {
   cand.fillable = {
     neutralTextKey: cand.node.textKey,
     detailTextKey: detailKey,
-    choiceDetailTextKey: resultKey,
+    detailPlayable: false,
     adultTextKey: adultKey,
     startNodeId: cand.node.id,
-    detailNodeId: id(`node.encounter.nsfwcombo.${slug}.detail`),
+    detailNodeId: null,
     adultNodeId: adultKey ? id(`node.encounter.nsfwcombo.${slug}.adult`) : null,
   };
 }
@@ -278,6 +263,14 @@ await writeFile(
       count: nsfwCandidates.length,
       proseFillsApplied: proseFillCount,
       gameplayFilter: nsfwAtoms.playtestFilter ?? null,
+      emptyShellDisabled: true,
+      note: '当地遭遇挂 profile.nsfwcombo.matrix；空壳 encounter.start/detail 与「核对组合原子」二次确认已禁用。',
+      howToVerifyNoEmptyGateInn: [
+        '一键 fantasy 世界 → 走到「城门旅馆」→ 点「留意一次当地遭遇」。',
+        '应直接进入 nsfwcombo.c* 有正文场景；不得出现「眼前的遭遇」空壳 +「继续核对细节」。',
+        'nsfwcombo 开场选项不得出现「核对组合原子与挂接提示」。',
+        '自动化：node --test tests/nsfw-auto-combo.test.ts（含 empty-shell 断言）。',
+      ],
       candidates: nsfwCandidates.map((c) => ({
         sampleId: c.sampleId,
         comboKey: c.comboKey,
@@ -300,20 +293,26 @@ await writeFile(
 
 
 // —— fantasy 战败后 8 玩法大类（proposed-nodes 合载）——
-// 节点 edit:node.defeat.play.01–08；textKey progression:text.node.defeat.play.p1–p8(+.adult)
-// 玩法过滤按 8 大类；词条≠玩法≠数值；成人门 adultOptional。
-// 多拍槽：capture → escalate → peak → aftermath；现有单段正文挂在 capture。
-const defeatPlayStages = ['capture', 'escalate', 'peak', 'aftermath'];
+// G1–G3：4 拍 capture→press→peak→resolve；textKey progression:text.node.defeat.g{N}.{stage}[+.adult]
+// G4–G8：单段 capture + adult（不硬装空多段链）；peak 样文仅 fills.peakSamplesNotInstalled
+// 成人门 adultOptional；词条≠玩法≠数值；不硬换 gel 战败链（defeat.control / coat / profile.gel）
+const defeatPlayStageChain = ['capture', 'press', 'peak', 'resolve'];
 const defeatPlayMeta = [
-  { n: 1, key: 'G1', name: '束缚制服', adult: true },
-  { n: 2, key: 'G2', name: '材质覆层转化', adult: true },
-  { n: 3, key: 'G3', name: '侵犯插入', adult: true },
-  { n: 4, key: 'G4', name: '口封感官剥夺', adult: true },
-  { n: 5, key: 'G5', name: '产卵灌注', adult: true },
-  { n: 6, key: 'G6', name: '公开羞辱', adult: true },
-  { n: 7, key: 'G7', name: '主从调教', adult: true },
-  { n: 8, key: 'G8', name: '多体围攻', adult: true },
+  { n: 1, key: 'G1', name: '束缚制服', multiBeat: true },
+  { n: 2, key: 'G2', name: '材质覆层转化', multiBeat: true },
+  { n: 3, key: 'G3', name: '侵犯插入', multiBeat: true },
+  { n: 4, key: 'G4', name: '口封感官剥夺', multiBeat: false },
+  { n: 5, key: 'G5', name: '产卵灌注', multiBeat: false },
+  { n: 6, key: 'G6', name: '公开羞辱', multiBeat: false },
+  { n: 7, key: 'G7', name: '主从调教', multiBeat: false },
+  { n: 8, key: 'G8', name: '多体围攻', multiBeat: false },
 ];
+const defeatStageTitle = { capture: '捕捉', press: '加压', peak: '高峰', resolve: '收束' };
+const defeatContinueLabel = {
+  capture: '继续：加压收紧',
+  press: '继续：推向高峰',
+  peak: '继续：收束脱困',
+};
 p.tags.push({
   id: tag('defeat.play.active'),
   label: '战败玩法入口激活',
@@ -340,161 +339,109 @@ p.narrativeProfiles.push({
   defeatTags: [],
 });
 const playHubChoices = [];
+const defeatStageId = (n, stage, adult = false) => {
+  const pad = String(n).padStart(2, '0');
+  if (stage === 'capture' && !adult) return `play-${pad}`; // hub next 兼容
+  return adult ? `play-${pad}-${stage}-adult` : `play-${pad}-${stage}`;
+};
 for (const play of defeatPlayMeta) {
+  const g = `g${play.n}`;
   const pad = String(play.n).padStart(2, '0');
-  const captureStage = `play-${pad}`; // capture = 既有 stage id，兼容入口 next
-  const escalateStage = `play-${pad}-escalate`;
-  const peakStage = `play-${pad}-peak`;
-  const aftermathStage = `play-${pad}-aftermath`;
-  const adultStage = `play-${pad}-adult`;
-  const textKey = id(`text.node.defeat.play.p${play.n}`);
-  const adultKey = id(`text.node.defeat.play.p${play.n}.adult`);
-  const escalateKey = id(`text.node.defeat.play.p${play.n}.escalate`);
-  const peakKey = id(`text.node.defeat.play.p${play.n}.peak`);
-  const aftermathKey = id(`text.node.defeat.play.p${play.n}.aftermath`);
-  const nodeId = id(`node.defeat.play.${pad}`);
-  const adultNodeId = id(`node.defeat.play.${pad}.adult`);
-  p.texts[textKey] = `【可填中性槽·捕捉 capture · ${play.name}】战败后，{opponent}靠近；{material}（定词挂前）贴向{part}。关闭成人偏好时使用本槽。通用转化仅「{tf}」占位，未写入。`;
-  p.texts[adultKey] = `【可填成人正文槽 · ${play.name}】占位：同意前提下的成人向战败玩法描写。{opponent} / {material} / {part}。勿写未成年人；勿伪造 foundation:*。`;
-  p.texts[escalateKey] = `【槽·升级 escalate · ${play.name}】{opponent}继续施压；{material}在{part}一带收紧。故事侧可填。转化仅通用「{tf}」占位，未写入 story.tags。`;
-  p.texts[peakKey] = `【槽·高峰 peak · ${play.name}】处境被推到这一拍的高峰触感；{opponent}与{material}仍为占位。故事侧可填。脱困/转化/催眠均未结算。`;
-  p.texts[aftermathKey] = `【槽·余波 aftermath · ${play.name}】高峰之后的短暂余波；{opponent}仍在场。故事侧可填。可结束回到安全位置。`;
-  const toPlay = id(`text.choice.defeat.play.${pad}`);
+  const stages = play.multiBeat ? defeatPlayStageChain : ['capture'];
+  const toPlay = id(`text.choice.defeat.${g}.enter`);
   p.texts[toPlay] = `你进入「${play.name}」玩法入口（捕捉拍）；尚未结算脱困、转化或催眠。`;
   playHubChoices.push({
     label: `进入：${play.name}`,
     resultText: toPlay,
-    next: captureStage,
+    next: defeatStageId(play.n, 'capture'),
     effects: [time(5)],
     conditions: [],
     setTags: [scoped('player', `defeat.play.${play.key.toLowerCase()}`)],
     unsetTags: [],
   });
-  const toEscalate = id(`text.choice.defeat.play.${pad}.escalate`);
-  const toPeak = id(`text.choice.defeat.play.${pad}.peak`);
-  const toAftermath = id(`text.choice.defeat.play.${pad}.aftermath`);
-  p.texts[toEscalate] = '你进入升级拍；仍可随时退出。';
-  p.texts[toPeak] = '你进入高峰拍；仍可随时退出。';
-  p.texts[toAftermath] = '你进入余波拍；仍可随时退出。';
-  p.texts[id(`text.choice.defeat.play.${pad}.adult`)] = '你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。';
-  // capture：既有单段正文；可选成人补充 / 继续多拍 / 退出
-  p.narrativeNodes.push({
-    id: nodeId,
-    kind: 'defeat',
-    stage: captureStage,
-    title: `战败 · ${play.name} · 捕捉`,
-    textKey,
-    requiresTags: [scoped('opponent', 'defeat.play.active')],
-    excludesTags: [],
-    conditions: [],
-    tendencies: [],
-    weight: 10,
-    priority: 6,
-    maxVisits: 1,
-    choices: [
-      {
-        label: '继续：升级压迫',
-        resultText: toEscalate,
-        next: escalateStage,
+  for (let si = 0; si < stages.length; si++) {
+    const stage = stages[si];
+    const nextStage = stages[si + 1];
+    const textKey = id(`text.node.defeat.${g}.${stage}`);
+    const adultKey = id(`text.node.defeat.${g}.${stage}.adult`);
+    const nodeId = id(`node.defeat.${g}.${stage}`);
+    const adultNodeId = id(`node.defeat.${g}.${stage}.adult`);
+    const stageId = defeatStageId(play.n, stage);
+    const adultStageId = defeatStageId(play.n, stage, true);
+    p.texts[textKey] = `【可填中性槽·${defeatStageTitle[stage]} ${stage} · ${play.name}】战败后，{opponent}靠近；{material}（定词挂前）贴向{part}。关闭成人偏好时使用本槽。通用转化仅「{tf}」占位，未写入。`;
+    p.texts[adultKey] = `【可填成人正文槽 · ${play.name} · ${stage}】占位：同意前提下的成人向战败玩法描写。{opponent} / {material} / {part}。勿写未成年人；勿伪造 foundation:*。`;
+    const adultChoiceText = id(`text.choice.defeat.${g}.${stage}.adult`);
+    p.texts[adultChoiceText] = '你读完这段可选成人描写，仍可随时退出；未写入脱困、转化或催眠结算。';
+    const choices = [];
+    if (nextStage) {
+      const contKey = id(`text.choice.defeat.${g}.${stage}.continue`);
+      p.texts[contKey] = `你进入「${defeatStageTitle[nextStage]}」拍；仍可随时退出。`;
+      choices.push({
+        label: defeatContinueLabel[stage],
+        resultText: contKey,
+        next: defeatStageId(play.n, nextStage),
         effects: [time(5)],
         conditions: [],
         setTags: [],
         unsetTags: [],
-      },
-      {
-        label: '阅读成人向补充描写',
-        resultText: id(`text.choice.defeat.play.${pad}.adult`),
-        next: adultStage,
-        effects: [time(5)],
-        conditions: adultGate,
-        setTags: [],
-        unsetTags: [],
-      },
-      exit(),
-    ],
-  });
-  p.narrativeNodes.push({
-    id: id(`node.defeat.play.${pad}.escalate`),
-    kind: 'defeat',
-    stage: escalateStage,
-    title: `战败 · ${play.name} · 升级`,
-    textKey: escalateKey,
-    requiresTags: [scoped('opponent', 'defeat.play.active')],
-    excludesTags: [],
-    conditions: [],
-    tendencies: [],
-    weight: 10,
-    priority: 6,
-    maxVisits: 1,
-    choices: [
-      {
-        label: '继续：推向高峰',
-        resultText: toPeak,
-        next: peakStage,
-        effects: [time(5)],
-        conditions: [],
-        setTags: [],
-        unsetTags: [],
-      },
-      exit(),
-    ],
-  });
-  p.narrativeNodes.push({
-    id: id(`node.defeat.play.${pad}.peak`),
-    kind: 'defeat',
-    stage: peakStage,
-    title: `战败 · ${play.name} · 高峰`,
-    textKey: peakKey,
-    requiresTags: [scoped('opponent', 'defeat.play.active')],
-    excludesTags: [],
-    conditions: [],
-    tendencies: [],
-    weight: 10,
-    priority: 6,
-    maxVisits: 1,
-    choices: [
-      {
-        label: '继续：余波收束',
-        resultText: toAftermath,
-        next: aftermathStage,
+      });
+    }
+    choices.push({
+      label: '阅读成人向补充描写',
+      resultText: adultChoiceText,
+      next: adultStageId,
+      effects: [time(5)],
+      conditions: adultGate,
+      setTags: [],
+      unsetTags: [],
+    });
+    choices.push(exit());
+    p.narrativeNodes.push({
+      id: nodeId,
+      kind: 'defeat',
+      stage: stageId,
+      title: `战败 · ${play.name} · ${defeatStageTitle[stage]}`,
+      textKey,
+      requiresTags: [scoped('opponent', 'defeat.play.active')],
+      excludesTags: [],
+      conditions: [],
+      tendencies: [],
+      weight: 10,
+      priority: 6,
+      maxVisits: 1,
+      choices,
+    });
+    const adultChoices = [];
+    if (nextStage) {
+      const contAdultKey = id(`text.choice.defeat.${g}.${stage}.adult.continue`);
+      p.texts[contAdultKey] = `你进入「${defeatStageTitle[nextStage]}」拍；仍可随时退出。`;
+      adultChoices.push({
+        label: defeatContinueLabel[stage],
+        resultText: contAdultKey,
+        next: defeatStageId(play.n, nextStage),
         effects: [time(5)],
         conditions: [],
         setTags: [],
         unsetTags: [],
-      },
-      exit(),
-    ],
-  });
-  p.narrativeNodes.push({
-    id: id(`node.defeat.play.${pad}.aftermath`),
-    kind: 'defeat',
-    stage: aftermathStage,
-    title: `战败 · ${play.name} · 余波`,
-    textKey: aftermathKey,
-    requiresTags: [scoped('opponent', 'defeat.play.active')],
-    excludesTags: [],
-    conditions: [],
-    tendencies: [],
-    weight: 10,
-    priority: 6,
-    maxVisits: 1,
-    choices: [exit()],
-  });
-  p.narrativeNodes.push({
-    id: adultNodeId,
-    kind: 'defeat',
-    stage: adultStage,
-    title: `战败 · ${play.name} · 成人补充`,
-    textKey: adultKey,
-    requiresTags: [scoped('opponent', 'defeat.play.active')],
-    excludesTags: [],
-    conditions: adultGate,
-    tendencies: [],
-    weight: 10,
-    priority: 6,
-    maxVisits: 1,
-    choices: [exit()],
-  });
+      });
+    }
+    adultChoices.push(exit());
+    p.narrativeNodes.push({
+      id: adultNodeId,
+      kind: 'defeat',
+      stage: adultStageId,
+      title: `战败 · ${play.name} · ${defeatStageTitle[stage]} · 成人补充`,
+      textKey: adultKey,
+      requiresTags: [scoped('opponent', 'defeat.play.active')],
+      excludesTags: [],
+      conditions: adultGate,
+      tendencies: [],
+      weight: 10,
+      priority: 6,
+      maxVisits: 1,
+      choices: adultChoices,
+    });
+  }
 }
 const hubText = id('text.node.defeat.play.hub');
 p.texts[hubText] = '战败之后，{opponent}仍在场。你可以按 8 种玩法大类继续当前处境（束缚制服、材质覆层转化、侵犯插入、口封感官剥夺、产卵灌注、公开羞辱、主从调教、多体围攻）。词条≠玩法≠数值；脱困、转化与催眠均尚未结算。本次抽到材质 {material}（定词挂前）、部位 {part}；转化仅通用「{tf}」占位。选择一类进入，或结束回到安全位置。';
@@ -558,7 +505,7 @@ p.narrativeNodes.push({
   priority: 6,
   maxVisits: 1,
   choices: [
-    playHubChoices[4], // G5 产卵灌注 — 修复 hub3 缺 05
+    playHubChoices[4], // G5 产卵灌注
     playHubChoices[5], // G6
     { label: '查看最后玩法…', resultText: id('text.choice.defeat.play.more3'), next: 'play-hub-last', effects: [], conditions: [], setTags: [], unsetTags: [] },
     exit(),
@@ -594,12 +541,12 @@ action(
   'explore',
 );
 
-// 回填 8 玩法正文（capture + adult；多拍槽保留引擎占位供故事侧后填）
+// 回填战败玩法正文（G1–G3 四拍 + G4–G8 单段；不装 peakSamplesNotInstalled）
 const defeatPlayFillsPath = 'content/nsfw-auto-combo/defeat-play-fills.json';
 let defeatPlayFillCount = 0;
 try {
   const fills = await json(defeatPlayFillsPath);
-  if (fills.format !== 'aetheria-defeat-play-prose-fills' || fills.schemaVersion !== 1) throw new Error('defeat-play-fills 格式无效。');
+  if (fills.format !== 'aetheria-defeat-play-prose-fills' || ![1, 2].includes(fills.schemaVersion)) throw new Error('defeat-play-fills 格式无效。');
   for (const [key, body] of Object.entries(fills.texts ?? {})) {
     if (typeof body !== 'string' || !body.trim()) throw new Error(`战败玩法散文空槽：${key}`);
     if (!(key in p.texts)) throw new Error(`战败玩法散文目标不存在：${key}`);
@@ -617,13 +564,13 @@ await writeFile(
   'content/nsfw-auto-combo/defeat-play-candidates.json',
   JSON.stringify({
     format: 'aetheria-defeat-play-candidates',
-    schemaVersion: 2,
+    schemaVersion: 3,
     worldTag: 'worlds:setting.fantasy',
     proseFillsApplied: defeatPlayFillCount,
     entryAction: id('action.defeat.play'),
     hubNodeId: id('node.defeat.play.hub'),
-    stageChain: defeatPlayStages,
-    stageNote: '既有单段正文挂在 capture（stage play-0N）；escalate/peak/aftermath 为多拍结构槽，故事侧后填。',
+    stageChain: defeatPlayStageChain,
+    stageNote: 'G1–G3 实装 capture→press→peak→resolve；G4–G8 仅单段 capture+adult，不硬装空多段链。escalate/aftermath 已弃用。',
     hubPages: {
       hub: ['G1', 'G2'],
       hub2: ['G3', 'G4'],
@@ -637,22 +584,31 @@ await writeFile(
       '同一 transactionId 流固定；换种子或换 transactionId 即重抽。',
     ],
     plays: defeatPlayMeta.map((play) => {
-      const pad = String(play.n).padStart(2, '0');
+      const g = `g${play.n}`;
+      const stages = play.multiBeat ? defeatPlayStageChain : ['capture'];
+      const stageMap = {};
+      for (const stage of stages) {
+        stageMap[stage] = {
+          stage: defeatStageId(play.n, stage),
+          nodeId: id(`node.defeat.${g}.${stage}`),
+          editNodeId: `edit:node.defeat.${g}.${stage}`,
+          textKey: id(`text.node.defeat.${g}.${stage}`),
+          adultNodeId: id(`node.defeat.${g}.${stage}.adult`),
+          editAdultNodeId: `edit:node.defeat.${g}.${stage}.adult`,
+          adultTextKey: id(`text.node.defeat.${g}.${stage}.adult`),
+        };
+      }
       return {
         gameplay: play.key,
         name: play.name,
-        nodeId: id(`node.defeat.play.${pad}`),
-        editNodeId: `edit:node.defeat.play.${pad}`,
-        adultNodeId: id(`node.defeat.play.${pad}.adult`),
-        editAdultNodeId: `edit:node.defeat.play.${pad}.adult`,
-        textKey: id(`text.node.defeat.play.p${play.n}`),
-        adultTextKey: id(`text.node.defeat.play.p${play.n}.adult`),
-        stages: {
-          capture: { stage: `play-${pad}`, nodeId: id(`node.defeat.play.${pad}`), textKey: id(`text.node.defeat.play.p${play.n}`) },
-          escalate: { stage: `play-${pad}-escalate`, nodeId: id(`node.defeat.play.${pad}.escalate`), textKey: id(`text.node.defeat.play.p${play.n}.escalate`) },
-          peak: { stage: `play-${pad}-peak`, nodeId: id(`node.defeat.play.${pad}.peak`), textKey: id(`text.node.defeat.play.p${play.n}.peak`) },
-          aftermath: { stage: `play-${pad}-aftermath`, nodeId: id(`node.defeat.play.${pad}.aftermath`), textKey: id(`text.node.defeat.play.p${play.n}.aftermath`) },
-        },
+        multiBeat: play.multiBeat,
+        nodeId: id(`node.defeat.${g}.capture`),
+        editNodeId: `edit:node.defeat.${g}.capture`,
+        adultNodeId: id(`node.defeat.${g}.capture.adult`),
+        editAdultNodeId: `edit:node.defeat.${g}.capture.adult`,
+        textKey: id(`text.node.defeat.${g}.capture`),
+        adultTextKey: id(`text.node.defeat.${g}.capture.adult`),
+        stages: stageMap,
       };
     }),
   }, null, 2) + '\n',

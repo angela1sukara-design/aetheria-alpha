@@ -35,8 +35,15 @@ function chooseNode(s:GameState,r:Registry,stage:string):NarrativeNode|undefined
 }
 export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:NarrativeKind,profileId?:Id):void {
   if(s.district?.combat||s.district?.scene||s.activeEventStack.length||s.adventure?.story)throw new RuleError('NARRATIVE_BUSY','先结束眼前的交锋或故事。');
-  const a=adventure(s),profile=profileId?r.narrativeProfiles.find(p=>p.id===profileId):kind==='defeat'?r.narrativeProfiles.find(p=>p.enemyId===a.lastCombat?.enemyId):undefined;
-  if(profileId&&!profile)throw new RuleError('NARRATIVE_PROFILE','行为档案不存在。');
+  const a=adventure(s);
+  // fantasy 当地遭遇：无档案时自动挂 nsfwcombo，避免抽到空壳 encounter.start +「继续核对细节」。
+  let resolvedProfileId=profileId;
+  if(!resolvedProfileId&&kind==='encounter'&&s.worldInstance?.definition.setting?.tag==='worlds:setting.fantasy'){
+    const nsfw=r.narrativeProfiles.find(p=>p.id==='progression:profile.nsfwcombo.matrix');
+    if(nsfw) resolvedProfileId=nsfw.id;
+  }
+  const profile=resolvedProfileId?r.narrativeProfiles.find(p=>p.id===resolvedProfileId):kind==='defeat'?r.narrativeProfiles.find(p=>p.enemyId===a.lastCombat?.enemyId):undefined;
+  if(resolvedProfileId&&!profile)throw new RuleError('NARRATIVE_PROFILE','行为档案不存在。');
   const resident=s.district?.residents.find(n=>n.id===s.district?.currentResidentId&&n.locationId===s.world.locationId);
   const tags:ScopedTag[]=[...(kind==='defeat'?a.lastCombat?.tags??[]:[]),...(profile?.tags??[]).map(tagId=>({role:'opponent' as const,tagId})),...(profile?.goals.slice(0,1)??[]).map(tagId=>({role:'opponent' as const,tagId}))];
   let opponentName=kind==='defeat'?a.lastCombat?.enemyName??'对方':resident?.name??'当地居民';

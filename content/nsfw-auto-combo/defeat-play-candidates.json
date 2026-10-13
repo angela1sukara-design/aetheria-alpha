@@ -1,17 +1,17 @@
 {
   "format": "aetheria-defeat-play-candidates",
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "worldTag": "worlds:setting.fantasy",
-  "proseFillsApplied": 16,
+  "proseFillsApplied": 34,
   "entryAction": "progression:action.defeat.play",
   "hubNodeId": "progression:node.defeat.play.hub",
   "stageChain": [
     "capture",
-    "escalate",
+    "press",
     "peak",
-    "aftermath"
+    "resolve"
   ],
-  "stageNote": "既有单段正文挂在 capture（stage play-0N）；escalate/peak/aftermath 为多拍结构槽，故事侧后填。",
+  "stageNote": "G1–G3 实装 capture→press→peak→resolve；G4–G8 仅单段 capture+adult，不硬装空多段链。escalate/aftermath 已弃用。",
   "hubPages": {
     "hub": [
       "G1",
@@ -40,256 +40,257 @@
     {
       "gameplay": "G1",
       "name": "束缚制服",
-      "nodeId": "progression:node.defeat.play.01",
-      "editNodeId": "edit:node.defeat.play.01",
-      "adultNodeId": "progression:node.defeat.play.01.adult",
-      "editAdultNodeId": "edit:node.defeat.play.01.adult",
-      "textKey": "progression:text.node.defeat.play.p1",
-      "adultTextKey": "progression:text.node.defeat.play.p1.adult",
+      "multiBeat": true,
+      "nodeId": "progression:node.defeat.g1.capture",
+      "editNodeId": "edit:node.defeat.g1.capture",
+      "adultNodeId": "progression:node.defeat.g1.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g1.capture.adult",
+      "textKey": "progression:text.node.defeat.g1.capture",
+      "adultTextKey": "progression:text.node.defeat.g1.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-01",
-          "nodeId": "progression:node.defeat.play.01",
-          "textKey": "progression:text.node.defeat.play.p1"
+          "nodeId": "progression:node.defeat.g1.capture",
+          "editNodeId": "edit:node.defeat.g1.capture",
+          "textKey": "progression:text.node.defeat.g1.capture",
+          "adultNodeId": "progression:node.defeat.g1.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g1.capture.adult"
         },
-        "escalate": {
-          "stage": "play-01-escalate",
-          "nodeId": "progression:node.defeat.play.01.escalate",
-          "textKey": "progression:text.node.defeat.play.p1.escalate"
+        "press": {
+          "stage": "play-01-press",
+          "nodeId": "progression:node.defeat.g1.press",
+          "editNodeId": "edit:node.defeat.g1.press",
+          "textKey": "progression:text.node.defeat.g1.press",
+          "adultNodeId": "progression:node.defeat.g1.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.press.adult",
+          "adultTextKey": "progression:text.node.defeat.g1.press.adult"
         },
         "peak": {
           "stage": "play-01-peak",
-          "nodeId": "progression:node.defeat.play.01.peak",
-          "textKey": "progression:text.node.defeat.play.p1.peak"
+          "nodeId": "progression:node.defeat.g1.peak",
+          "editNodeId": "edit:node.defeat.g1.peak",
+          "textKey": "progression:text.node.defeat.g1.peak",
+          "adultNodeId": "progression:node.defeat.g1.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.peak.adult",
+          "adultTextKey": "progression:text.node.defeat.g1.peak.adult"
         },
-        "aftermath": {
-          "stage": "play-01-aftermath",
-          "nodeId": "progression:node.defeat.play.01.aftermath",
-          "textKey": "progression:text.node.defeat.play.p1.aftermath"
+        "resolve": {
+          "stage": "play-01-resolve",
+          "nodeId": "progression:node.defeat.g1.resolve",
+          "editNodeId": "edit:node.defeat.g1.resolve",
+          "textKey": "progression:text.node.defeat.g1.resolve",
+          "adultNodeId": "progression:node.defeat.g1.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.resolve.adult",
+          "adultTextKey": "progression:text.node.defeat.g1.resolve.adult"
         }
       }
     },
     {
       "gameplay": "G2",
       "name": "材质覆层转化",
-      "nodeId": "progression:node.defeat.play.02",
-      "editNodeId": "edit:node.defeat.play.02",
-      "adultNodeId": "progression:node.defeat.play.02.adult",
-      "editAdultNodeId": "edit:node.defeat.play.02.adult",
-      "textKey": "progression:text.node.defeat.play.p2",
-      "adultTextKey": "progression:text.node.defeat.play.p2.adult",
+      "multiBeat": true,
+      "nodeId": "progression:node.defeat.g2.capture",
+      "editNodeId": "edit:node.defeat.g2.capture",
+      "adultNodeId": "progression:node.defeat.g2.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g2.capture.adult",
+      "textKey": "progression:text.node.defeat.g2.capture",
+      "adultTextKey": "progression:text.node.defeat.g2.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-02",
-          "nodeId": "progression:node.defeat.play.02",
-          "textKey": "progression:text.node.defeat.play.p2"
+          "nodeId": "progression:node.defeat.g2.capture",
+          "editNodeId": "edit:node.defeat.g2.capture",
+          "textKey": "progression:text.node.defeat.g2.capture",
+          "adultNodeId": "progression:node.defeat.g2.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g2.capture.adult"
         },
-        "escalate": {
-          "stage": "play-02-escalate",
-          "nodeId": "progression:node.defeat.play.02.escalate",
-          "textKey": "progression:text.node.defeat.play.p2.escalate"
+        "press": {
+          "stage": "play-02-press",
+          "nodeId": "progression:node.defeat.g2.press",
+          "editNodeId": "edit:node.defeat.g2.press",
+          "textKey": "progression:text.node.defeat.g2.press",
+          "adultNodeId": "progression:node.defeat.g2.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.press.adult",
+          "adultTextKey": "progression:text.node.defeat.g2.press.adult"
         },
         "peak": {
           "stage": "play-02-peak",
-          "nodeId": "progression:node.defeat.play.02.peak",
-          "textKey": "progression:text.node.defeat.play.p2.peak"
+          "nodeId": "progression:node.defeat.g2.peak",
+          "editNodeId": "edit:node.defeat.g2.peak",
+          "textKey": "progression:text.node.defeat.g2.peak",
+          "adultNodeId": "progression:node.defeat.g2.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.peak.adult",
+          "adultTextKey": "progression:text.node.defeat.g2.peak.adult"
         },
-        "aftermath": {
-          "stage": "play-02-aftermath",
-          "nodeId": "progression:node.defeat.play.02.aftermath",
-          "textKey": "progression:text.node.defeat.play.p2.aftermath"
+        "resolve": {
+          "stage": "play-02-resolve",
+          "nodeId": "progression:node.defeat.g2.resolve",
+          "editNodeId": "edit:node.defeat.g2.resolve",
+          "textKey": "progression:text.node.defeat.g2.resolve",
+          "adultNodeId": "progression:node.defeat.g2.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.resolve.adult",
+          "adultTextKey": "progression:text.node.defeat.g2.resolve.adult"
         }
       }
     },
     {
       "gameplay": "G3",
       "name": "侵犯插入",
-      "nodeId": "progression:node.defeat.play.03",
-      "editNodeId": "edit:node.defeat.play.03",
-      "adultNodeId": "progression:node.defeat.play.03.adult",
-      "editAdultNodeId": "edit:node.defeat.play.03.adult",
-      "textKey": "progression:text.node.defeat.play.p3",
-      "adultTextKey": "progression:text.node.defeat.play.p3.adult",
+      "multiBeat": true,
+      "nodeId": "progression:node.defeat.g3.capture",
+      "editNodeId": "edit:node.defeat.g3.capture",
+      "adultNodeId": "progression:node.defeat.g3.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g3.capture.adult",
+      "textKey": "progression:text.node.defeat.g3.capture",
+      "adultTextKey": "progression:text.node.defeat.g3.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-03",
-          "nodeId": "progression:node.defeat.play.03",
-          "textKey": "progression:text.node.defeat.play.p3"
+          "nodeId": "progression:node.defeat.g3.capture",
+          "editNodeId": "edit:node.defeat.g3.capture",
+          "textKey": "progression:text.node.defeat.g3.capture",
+          "adultNodeId": "progression:node.defeat.g3.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g3.capture.adult"
         },
-        "escalate": {
-          "stage": "play-03-escalate",
-          "nodeId": "progression:node.defeat.play.03.escalate",
-          "textKey": "progression:text.node.defeat.play.p3.escalate"
+        "press": {
+          "stage": "play-03-press",
+          "nodeId": "progression:node.defeat.g3.press",
+          "editNodeId": "edit:node.defeat.g3.press",
+          "textKey": "progression:text.node.defeat.g3.press",
+          "adultNodeId": "progression:node.defeat.g3.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.press.adult",
+          "adultTextKey": "progression:text.node.defeat.g3.press.adult"
         },
         "peak": {
           "stage": "play-03-peak",
-          "nodeId": "progression:node.defeat.play.03.peak",
-          "textKey": "progression:text.node.defeat.play.p3.peak"
+          "nodeId": "progression:node.defeat.g3.peak",
+          "editNodeId": "edit:node.defeat.g3.peak",
+          "textKey": "progression:text.node.defeat.g3.peak",
+          "adultNodeId": "progression:node.defeat.g3.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.peak.adult",
+          "adultTextKey": "progression:text.node.defeat.g3.peak.adult"
         },
-        "aftermath": {
-          "stage": "play-03-aftermath",
-          "nodeId": "progression:node.defeat.play.03.aftermath",
-          "textKey": "progression:text.node.defeat.play.p3.aftermath"
+        "resolve": {
+          "stage": "play-03-resolve",
+          "nodeId": "progression:node.defeat.g3.resolve",
+          "editNodeId": "edit:node.defeat.g3.resolve",
+          "textKey": "progression:text.node.defeat.g3.resolve",
+          "adultNodeId": "progression:node.defeat.g3.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.resolve.adult",
+          "adultTextKey": "progression:text.node.defeat.g3.resolve.adult"
         }
       }
     },
     {
       "gameplay": "G4",
       "name": "口封感官剥夺",
-      "nodeId": "progression:node.defeat.play.04",
-      "editNodeId": "edit:node.defeat.play.04",
-      "adultNodeId": "progression:node.defeat.play.04.adult",
-      "editAdultNodeId": "edit:node.defeat.play.04.adult",
-      "textKey": "progression:text.node.defeat.play.p4",
-      "adultTextKey": "progression:text.node.defeat.play.p4.adult",
+      "multiBeat": false,
+      "nodeId": "progression:node.defeat.g4.capture",
+      "editNodeId": "edit:node.defeat.g4.capture",
+      "adultNodeId": "progression:node.defeat.g4.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g4.capture.adult",
+      "textKey": "progression:text.node.defeat.g4.capture",
+      "adultTextKey": "progression:text.node.defeat.g4.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-04",
-          "nodeId": "progression:node.defeat.play.04",
-          "textKey": "progression:text.node.defeat.play.p4"
-        },
-        "escalate": {
-          "stage": "play-04-escalate",
-          "nodeId": "progression:node.defeat.play.04.escalate",
-          "textKey": "progression:text.node.defeat.play.p4.escalate"
-        },
-        "peak": {
-          "stage": "play-04-peak",
-          "nodeId": "progression:node.defeat.play.04.peak",
-          "textKey": "progression:text.node.defeat.play.p4.peak"
-        },
-        "aftermath": {
-          "stage": "play-04-aftermath",
-          "nodeId": "progression:node.defeat.play.04.aftermath",
-          "textKey": "progression:text.node.defeat.play.p4.aftermath"
+          "nodeId": "progression:node.defeat.g4.capture",
+          "editNodeId": "edit:node.defeat.g4.capture",
+          "textKey": "progression:text.node.defeat.g4.capture",
+          "adultNodeId": "progression:node.defeat.g4.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g4.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g4.capture.adult"
         }
       }
     },
     {
       "gameplay": "G5",
       "name": "产卵灌注",
-      "nodeId": "progression:node.defeat.play.05",
-      "editNodeId": "edit:node.defeat.play.05",
-      "adultNodeId": "progression:node.defeat.play.05.adult",
-      "editAdultNodeId": "edit:node.defeat.play.05.adult",
-      "textKey": "progression:text.node.defeat.play.p5",
-      "adultTextKey": "progression:text.node.defeat.play.p5.adult",
+      "multiBeat": false,
+      "nodeId": "progression:node.defeat.g5.capture",
+      "editNodeId": "edit:node.defeat.g5.capture",
+      "adultNodeId": "progression:node.defeat.g5.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g5.capture.adult",
+      "textKey": "progression:text.node.defeat.g5.capture",
+      "adultTextKey": "progression:text.node.defeat.g5.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-05",
-          "nodeId": "progression:node.defeat.play.05",
-          "textKey": "progression:text.node.defeat.play.p5"
-        },
-        "escalate": {
-          "stage": "play-05-escalate",
-          "nodeId": "progression:node.defeat.play.05.escalate",
-          "textKey": "progression:text.node.defeat.play.p5.escalate"
-        },
-        "peak": {
-          "stage": "play-05-peak",
-          "nodeId": "progression:node.defeat.play.05.peak",
-          "textKey": "progression:text.node.defeat.play.p5.peak"
-        },
-        "aftermath": {
-          "stage": "play-05-aftermath",
-          "nodeId": "progression:node.defeat.play.05.aftermath",
-          "textKey": "progression:text.node.defeat.play.p5.aftermath"
+          "nodeId": "progression:node.defeat.g5.capture",
+          "editNodeId": "edit:node.defeat.g5.capture",
+          "textKey": "progression:text.node.defeat.g5.capture",
+          "adultNodeId": "progression:node.defeat.g5.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g5.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g5.capture.adult"
         }
       }
     },
     {
       "gameplay": "G6",
       "name": "公开羞辱",
-      "nodeId": "progression:node.defeat.play.06",
-      "editNodeId": "edit:node.defeat.play.06",
-      "adultNodeId": "progression:node.defeat.play.06.adult",
-      "editAdultNodeId": "edit:node.defeat.play.06.adult",
-      "textKey": "progression:text.node.defeat.play.p6",
-      "adultTextKey": "progression:text.node.defeat.play.p6.adult",
+      "multiBeat": false,
+      "nodeId": "progression:node.defeat.g6.capture",
+      "editNodeId": "edit:node.defeat.g6.capture",
+      "adultNodeId": "progression:node.defeat.g6.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g6.capture.adult",
+      "textKey": "progression:text.node.defeat.g6.capture",
+      "adultTextKey": "progression:text.node.defeat.g6.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-06",
-          "nodeId": "progression:node.defeat.play.06",
-          "textKey": "progression:text.node.defeat.play.p6"
-        },
-        "escalate": {
-          "stage": "play-06-escalate",
-          "nodeId": "progression:node.defeat.play.06.escalate",
-          "textKey": "progression:text.node.defeat.play.p6.escalate"
-        },
-        "peak": {
-          "stage": "play-06-peak",
-          "nodeId": "progression:node.defeat.play.06.peak",
-          "textKey": "progression:text.node.defeat.play.p6.peak"
-        },
-        "aftermath": {
-          "stage": "play-06-aftermath",
-          "nodeId": "progression:node.defeat.play.06.aftermath",
-          "textKey": "progression:text.node.defeat.play.p6.aftermath"
+          "nodeId": "progression:node.defeat.g6.capture",
+          "editNodeId": "edit:node.defeat.g6.capture",
+          "textKey": "progression:text.node.defeat.g6.capture",
+          "adultNodeId": "progression:node.defeat.g6.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g6.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g6.capture.adult"
         }
       }
     },
     {
       "gameplay": "G7",
       "name": "主从调教",
-      "nodeId": "progression:node.defeat.play.07",
-      "editNodeId": "edit:node.defeat.play.07",
-      "adultNodeId": "progression:node.defeat.play.07.adult",
-      "editAdultNodeId": "edit:node.defeat.play.07.adult",
-      "textKey": "progression:text.node.defeat.play.p7",
-      "adultTextKey": "progression:text.node.defeat.play.p7.adult",
+      "multiBeat": false,
+      "nodeId": "progression:node.defeat.g7.capture",
+      "editNodeId": "edit:node.defeat.g7.capture",
+      "adultNodeId": "progression:node.defeat.g7.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g7.capture.adult",
+      "textKey": "progression:text.node.defeat.g7.capture",
+      "adultTextKey": "progression:text.node.defeat.g7.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-07",
-          "nodeId": "progression:node.defeat.play.07",
-          "textKey": "progression:text.node.defeat.play.p7"
-        },
-        "escalate": {
-          "stage": "play-07-escalate",
-          "nodeId": "progression:node.defeat.play.07.escalate",
-          "textKey": "progression:text.node.defeat.play.p7.escalate"
-        },
-        "peak": {
-          "stage": "play-07-peak",
-          "nodeId": "progression:node.defeat.play.07.peak",
-          "textKey": "progression:text.node.defeat.play.p7.peak"
-        },
-        "aftermath": {
-          "stage": "play-07-aftermath",
-          "nodeId": "progression:node.defeat.play.07.aftermath",
-          "textKey": "progression:text.node.defeat.play.p7.aftermath"
+          "nodeId": "progression:node.defeat.g7.capture",
+          "editNodeId": "edit:node.defeat.g7.capture",
+          "textKey": "progression:text.node.defeat.g7.capture",
+          "adultNodeId": "progression:node.defeat.g7.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g7.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g7.capture.adult"
         }
       }
     },
     {
       "gameplay": "G8",
       "name": "多体围攻",
-      "nodeId": "progression:node.defeat.play.08",
-      "editNodeId": "edit:node.defeat.play.08",
-      "adultNodeId": "progression:node.defeat.play.08.adult",
-      "editAdultNodeId": "edit:node.defeat.play.08.adult",
-      "textKey": "progression:text.node.defeat.play.p8",
-      "adultTextKey": "progression:text.node.defeat.play.p8.adult",
+      "multiBeat": false,
+      "nodeId": "progression:node.defeat.g8.capture",
+      "editNodeId": "edit:node.defeat.g8.capture",
+      "adultNodeId": "progression:node.defeat.g8.capture.adult",
+      "editAdultNodeId": "edit:node.defeat.g8.capture.adult",
+      "textKey": "progression:text.node.defeat.g8.capture",
+      "adultTextKey": "progression:text.node.defeat.g8.capture.adult",
       "stages": {
         "capture": {
           "stage": "play-08",
-          "nodeId": "progression:node.defeat.play.08",
-          "textKey": "progression:text.node.defeat.play.p8"
-        },
-        "escalate": {
-          "stage": "play-08-escalate",
-          "nodeId": "progression:node.defeat.play.08.escalate",
-          "textKey": "progression:text.node.defeat.play.p8.escalate"
-        },
-        "peak": {
-          "stage": "play-08-peak",
-          "nodeId": "progression:node.defeat.play.08.peak",
-          "textKey": "progression:text.node.defeat.play.p8.peak"
-        },
-        "aftermath": {
-          "stage": "play-08-aftermath",
-          "nodeId": "progression:node.defeat.play.08.aftermath",
-          "textKey": "progression:text.node.defeat.play.p8.aftermath"
+          "nodeId": "progression:node.defeat.g8.capture",
+          "editNodeId": "edit:node.defeat.g8.capture",
+          "textKey": "progression:text.node.defeat.g8.capture",
+          "adultNodeId": "progression:node.defeat.g8.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g8.capture.adult",
+          "adultTextKey": "progression:text.node.defeat.g8.capture.adult"
         }
       }
     }

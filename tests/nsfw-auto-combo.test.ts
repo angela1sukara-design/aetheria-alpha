@@ -54,7 +54,9 @@ test('adventure pack exposes nsfwcombo encounter action and sample nodes', async
   assert.ok(registry.tags.some((t) => t.id === 'progression:tag.nsfwcombo.active'));
   assert.ok(registry.narrativeProfiles.some((p) => p.id === 'progression:profile.nsfwcombo.matrix'));
   const nodes = registry.narrativeNodes.filter((n) => n.id.includes('nsfwcombo'));
-  assert.ok(nodes.length >= 30, `expected start+detail (+adult) per sample, got ${nodes.length}`);
+  assert.ok(nodes.length >= 12, `expected start (+adult) per sample, got ${nodes.length}`);
+  assert.equal(nodes.filter((n) => n.id.endsWith('.detail')).length, 0, 'nsfwcombo detail nodes must not be playable');
+  assert.ok(!nodes.some((n) => n.choices.some((c) => /核对组合/.test(c.label))), 'no 核对组合二次确认');
   assert.equal(registry.action('progression:action.nsfwcombo.encounter' as Id).label, '试跑 NSFW 材质组合遭遇');
   assert.ok(registry.globalActions().some((a) => a.id === 'progression:action.nsfwcombo.encounter'));
 
@@ -119,8 +121,33 @@ test('prose-fills applied to start and adult text slots (P0+P1)', async () => {
     assert.ok(pack.texts[`progression:text.node.encounter.nsfwcombo.${slug}`]);
     assert.ok(pack.texts[`progression:text.node.encounter.nsfwcombo.${slug}.adult`]);
   }
-  // detail left as combo stub
+  // detail text kept for authoring, but not playable
   assert.match(pack.texts['progression:text.node.encounter.nsfwcombo.c1.detail'], /组合键/);
+  assert.ok(!pack.narrativeNodes.some((n: { id: string }) => n.id.endsWith('nsfwcombo.c1.detail')));
+});
+
+test('local encounter action skips empty shell and 核对细节', async () => {
+  const index = await json('content/index.json');
+  const inputs = await Promise.all(index.packs.map((p: string) => json('content/' + p)));
+  const registry = await loadPacks(inputs);
+  const encounterAct = registry.action('progression:action.narrative.encounter' as Id);
+  assert.ok(encounterAct.effects.some((e) => e.op === 'narrative.start' && e.kind === 'encounter' && e.profileId === 'progression:profile.nsfwcombo.matrix'));
+  const emptyStart = registry.narrativeNodes.find((n) => n.id === 'progression:node.encounter.start');
+  assert.ok(emptyStart, 'schema fallback start retained');
+  assert.ok(!emptyStart!.choices.some((c) => /核对细节/.test(c.label)), 'empty start must not offer 继续核对细节');
+  assert.ok(!registry.narrativeNodes.some((n) => n.id === 'progression:node.encounter.detail'), 'encounter.detail shell removed');
+
+  const s = createGameState(registry, 42);
+  s.world.locationId = 'district:location.canal' as Id;
+  if (!s.world.knownLocationIds.includes(s.world.locationId)) s.world.knownLocationIds.push(s.world.locationId);
+  const e = new ActionExecutor(registry, s);
+  const result = e.performAction({ actionId: 'progression:action.narrative.encounter' as Id }, e.snapshot().meta.revision, 'encounter-no-shell');
+  assert.equal(result.ok, true, result.message);
+  const story = e.snapshot().adventure!.story!;
+  assert.ok(story.nodeId.includes('nsfwcombo'), story.nodeId);
+  assert.notEqual(story.nodeId, 'progression:node.encounter.start');
+  const node = registry.narrativeNodes.find((n) => n.id === story.nodeId)!;
+  assert.ok(!node.choices.some((c) => /核对/.test(c.label)), JSON.stringify(node.choices.map((c) => c.label)));
 });
 
 test('atoms expose 8 gameplay categories and samples cover all', async () => {
