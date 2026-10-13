@@ -14711,11 +14711,11 @@
         "schemaVersion": 1,
         "id": "aetheria/world-fantasy-apex",
         "version": "1.0.0",
-        "sourceHash": "d9a1383c1cdedd93788250507c41bc844aee1d7f699a80c6128463771edddc4f",
+        "sourceHash": "837fba762f6df8cdb5cf1dcd8b96f419f4f37e3f8f18f87cb14cdcc0f7ba120e",
         "source": {
           "mainQuest": {
             "id": "main.world_fantasy",
-            "goal": "站上顶点：在奇幻王国成为商会巨头，或成为王城之主。",
+            "goal": "站上顶点：在中世纪异世界成为商会巨头，或成为王城之主。",
             "paths": [
               {
                 "id": "path.resource",
@@ -14871,7 +14871,7 @@
             "journal": [
               {
                 "unlockFlag": "main:flag.started",
-                "text": "站上顶点：在奇幻王国成为商会巨头，或成为王城之主。"
+                "text": "站上顶点：在中世纪异世界成为商会巨头，或成为王城之主。"
               },
               {
                 "unlockFlag": "main:flag.resource.1",

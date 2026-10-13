@@ -68,8 +68,9 @@ export async function buildWorldProfiles() {
     const professionLabels = key === 'xianxia' ? ['客舍管事','灵材商人','机关炼器师','丹药医师','宗门执事'] : key === 'western' ? ['旅馆管理员','货运经纪','机车技师','边境医生','镇务文员'] : ['住区管理员','交易经纪人','设备技师','护理人员','公共事务联络人'];
     ['home','market','workshop','clinic','commons'].forEach((service,i)=>locations[service]={names:[places[i],`${places[i]}·附区`],description:details[i],economy:[economies[i]],professions:[professionLabels[i]]});
     const tag=`worlds:setting.${key}`;
-    const aliases=[key,...({floating:['sky'],polar:['snowfield'],volcanic:['lava'],harbor:['ship'],desert:['gobi'],dungeon:['grave']}[key]??[])];
-    tags.push({id:tag,label:sourceTheme,definition:`当前世界题材为${sourceTheme}；与湿润、干燥等生态独立。`,facets:['setting'],status:'active',aliases:aliases.map(k=>({scope:'generation.v1',value:`general-taxonomy:setting.${k}`}))});
+    // General taxonomy IDs now have their own canonical TagDefs. Keep legacy
+    // world selection at the profile boundary rather than shadowing those tags.
+    tags.push({id:tag,label:sourceTheme,definition:`当前世界题材为${sourceTheme}；与湿润、干燥等生态独立。`,facets:['setting'],status:'active',aliases:[]});
     profiles.push({id:`world.${key}`,tag,name,version:'1.0.0',description,sourceTheme,residentNames:key==='xianxia'?['林舟','Elena','沈青','Kai','叶宁','Mira','苏禾','Jonas']:key==='fantasy'?['Elena','Gareth','Isolde','Rowan','Sable','Kai','Mira','Thorne','Quinn','Lyra']:['Elena','Marcus','Aiko','Noah','Sera','Kai','林舟','Quinn','Ravi','Mira'],locations,factions:[{name:tradeFaction,activities:[`${product}贸易`,`${resource}调配`]},{name:powerFaction,activities:[`${forces}联络`,'公共救护协作']}],quests});
     const dir=`production/quest-authoring/world-settings/${key}`;await mkdir(dir,{recursive:true});await write(`${dir}/quest-tree.json`,source);await write(`${dir}/execution.json`,execution);
   }

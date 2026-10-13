@@ -5,6 +5,7 @@ import { renderBodyPanel } from './body-panel.ts';
 import { renderNPCPanel } from './npc-panel.ts';
 import { scenePresentation } from './scene-presentation.ts';
 import { actionPreview } from './action-preview.ts';
+import { folioCategory, folioCategories } from './folio.ts';
 import { presentationText } from '../engine/semantic-query.ts';
 export function element<K extends keyof HTMLElementTagNameMap>(tag: K, className = '', text = ''): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag); node.className = className; if (text) node.textContent = text; return node;
@@ -53,8 +54,9 @@ function showTagSource(label: string, anchor: HTMLElement): void {
   tip.append(close);
   tip.hidden = false;
   const rect = anchor.getBoundingClientRect();
-  tip.style.left = `${Math.min(rect.left, window.innerWidth - 320)}px`;
-  tip.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 120)}px`;
+  const box = tip.getBoundingClientRect();
+  tip.style.left = `${Math.max(12, Math.min(rect.left, window.innerWidth - box.width - 12))}px`;
+  tip.style.top = `${Math.max(12, Math.min(rect.bottom + 8, window.innerHeight - box.height - 12))}px`;
 }
 
 function prose(target: HTMLElement, text: string): void {
@@ -66,11 +68,10 @@ function prose(target: HTMLElement, text: string): void {
     while ((match = re.exec(para))) {
       if (match.index > last) node.append(document.createTextNode(para.slice(last, match.index)));
       const label = match[1]!;
-      const mark = element('button', 'tag-mark', `【${label}】`);
-      mark.type = 'button';
-      mark.title = '点击查看来源';
-      mark.setAttribute('aria-label', `标签 ${label}，点击查看来源`);
-      mark.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); showTagSource(label, mark); });
+      const mark = element(document.body.dataset.debug === 'true' ? 'button' : 'span', 'tag-mark', `【${label}】`);
+      if(mark instanceof HTMLButtonElement)mark.type = 'button';
+      if(mark instanceof HTMLButtonElement){mark.title = '点击查看来源';mark.setAttribute('aria-label', `标签 ${label}，点击查看来源`);}
+      if(mark instanceof HTMLButtonElement)mark.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); showTagSource(label, mark); });
       node.append(mark);
       last = match.index + match[0].length;
     }
@@ -133,9 +134,9 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   const filterKey = `${view.location.id}:${scene.active}:${scene.mode === 'conversation'}`;
   if (actions.dataset.filterKey !== filterKey) actions.dataset.filter = 'all';
   actions.dataset.filterKey = filterKey; actions.replaceChildren();
-  const groups = scene.active ? { event: '眼下的选择', daily: '当前互动', explore: '当前互动', travel: '离开' } : { event: '人物与故事', daily: '生活与工作', explore: '探索与遇见', travel: '前往其他地点' };
+  const groups = scene.active || scene.mode === 'conversation' ? { event: '眼下的选择', daily: '当前互动', explore: '当前互动', travel: '离开' } : Object.fromEntries(Object.entries(folioCategories).map(([id,value])=>[id,value[0]]));
   for (const [group, label] of Object.entries(groups)) {
-    const options = view.actions.filter(x => x.definition.group === group && x.definition.surface !== 'body'
+    const options = view.actions.filter(x => (scene.active || scene.mode === 'conversation' ? x.definition.group === group : folioCategory(x,registry) === group) && x.definition.surface !== 'body'
       && !x.definition.effects.some(effect => effect.op === 'preference.set' || effect.op === 'player.create')
       && (!(scene.mode === 'conversation' && !scene.active) || x.definition.effects.some(effect => effect.op === 'resident.talk' || effect.op === 'resident.help')));
     if (!options.length) continue;
@@ -151,7 +152,7 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
     }
     actions.append(section);
   }
-  renderActionFilters(scene.active);
+  byId('action-filters').hidden = true;
   byId('district-location').textContent = `你在${view.location.name}。`;
   const nearby = byId('nearby'); nearby.replaceChildren();
   for (const route of registry.routes.filter(x => x.from === view.location.id)) {
@@ -202,24 +203,6 @@ function renderMap(view: GameView, registry: Registry): void {
     else { const label = element('div', `map-label ${place.id === view.location.id ? 'current' : ''}`, place.name); label.append(element('small', '', place.id === view.location.id ? '当前位置' : view.eventTitle ? '当前事件进行中' : '需经相邻街道')); links.append(label); }
   }
   byId('map-content').replaceChildren(svg, links);
-}
-function renderActionFilters(active: boolean): void {
-  const host = byId('action-filters'), actions = byId('actions'); host.replaceChildren();
-  const categories = [...actions.querySelectorAll<HTMLElement>('.action-group')];
-  host.hidden = active || categories.length < 2;
-  if (host.hidden) actions.dataset.filter = 'all';
-  let selected = actions.dataset.filter ?? 'all';
-  if (selected !== 'all' && !categories.some(node => node.dataset.group === selected)) { selected = 'all'; actions.dataset.filter = selected; }
-  for (const [group, label] of [['all', '全部'], ['event', '故事'], ['daily', '生活'], ['explore', '探索'], ['travel', '出行']]) {
-    const category = categories.find(node => node.dataset.group === group);
-    if (group !== 'all' && !category) continue;
-    const count = (group === 'all' ? actions : category!).querySelectorAll('button[data-action]:enabled').length;
-    const button = element('button', '', `${label} ${count}`); button.type = 'button'; button.dataset.actionFilter = group;
-    button.setAttribute('aria-pressed', String(selected === group));
-    button.addEventListener('click', () => { actions.dataset.filter = group; renderActionFilters(active); byId('action-filters').querySelector<HTMLButtonElement>(`[data-action-filter="${group}"]`)?.focus({preventScroll:true}); });
-    host.append(button);
-  }
-  for (const category of categories) category.hidden = selected !== 'all' && category.dataset.group !== selected;
 }
 let feedbackTimer: ReturnType<typeof setTimeout> | undefined;
 export function feedback(text: string, error = false): void {

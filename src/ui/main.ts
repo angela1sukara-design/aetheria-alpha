@@ -15,6 +15,7 @@ import type { JournalEntry } from './district-panel.ts';
 import { writingContext } from '../engine/writing-context.ts';
 import { mountWorldControls } from './world-panel.ts';
 import { mountPages } from './pages.ts';
+import { mountFolio, renderFolio } from './folio.ts';
 import { loadPersistedExtensions } from '../content/extensions.ts';
 async function fetchJSON(url: URL): Promise<unknown> {
   const response = await fetch(url); if (!response.ok) throw new Error(`无法读取内容包（${response.status}）。`); return response.json();
@@ -52,7 +53,11 @@ async function boot(): Promise<void> {
   const journal=embedded?.journal??await fetchJSON(new URL('../../content/journal.json',import.meta.url)) as JournalEntry[];
   let codec = new SaveCodec(registry); const store=new IndexedDBSaveStore();let saves = new SaveRepository(codec,store);
   const launch = globalThis as unknown as { aetheriaInitialSave?: string; aetheriaSaveSlot?: string };
-  const saveSlot = launch.aetheriaSaveSlot ?? 'manual';
+  const baseSaveSlot = launch.aetheriaSaveSlot ?? 'manual';
+  const saveSlots = [baseSaveSlot, `${baseSaveSlot}:folio-2`, `${baseSaveSlot}:folio-3`];
+  let selectedSlot = 0;
+  try { const remembered = Number(localStorage.getItem(`aetheria-folio-slot:${baseSaveSlot}`) ?? 0); if (Number.isInteger(remembered) && remembered >= 0 && remembered < 3) selectedSlot = remembered; } catch { /* Keep the original manual slot available. */ }
+  let saveSlot = saveSlots[selectedSlot];
   let engine = new ActionExecutor(registry, createGameState(registry, newSeed()),texts);
   let result: ActionResult | undefined; let busy = false; let browsing = false;
   let savedSnapshot: string | undefined;
@@ -67,7 +72,7 @@ async function boot(): Promise<void> {
     defeat.disabled = busy || !defeatOption?.available;
     defeat.title = defeatOption?.available ? (defeatOption.definition.hint ?? '不必先战斗；直接试跑战败后 8 玩法') : (defeatOption?.reason || '当前场景不可用（战斗/故事进行中时请先结束）');
   }
-  function redraw(): void { const view=engine.view(); setTagDebugRegistry(registry); renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); pages.refresh(); updateSaveStatus(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; syncDefeatPlayQuick(view); }
+  function redraw(): void { const view=engine.view(); setTagDebugRegistry(registry); renderGame(view, registry, result, browsing);renderDistrict(view,registry,texts,journal); renderFolio(view,registry,result,browsing); pages.refresh(); updateSaveStatus(); byId('world-current').textContent=view.state.worldInstance?`${view.state.worldInstance.definition.name} · 种子 ${view.state.worldInstance.generation.seed} · ${view.state.worldInstance.definition.locations.length} 个地点`:'固定以太都市测试世界'; syncDefeatPlayQuick(view); }
   function adopt(loaded: { state: import('../core/types.ts').GameState; registry?: import('../content/registry.ts').Registry }): void {
     registry = loaded.registry ?? fixedRegistry; codec = new SaveCodec(registry, fixedRegistry); saves = new SaveRepository(codec, store);
     engine = new ActionExecutor(registry, loaded.state, texts);
@@ -97,13 +102,17 @@ async function boot(): Promise<void> {
       content: await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))),
     };
   })();
-  mountWorldControls({ source: () => fixedRegistry, defaults: generation, lockDefaults: playtest === 'tagcoexist', isBusy: () => busy, setBusy: value => { busy = value; }, replace: generated => {
+  mountWorldControls({ source: () => fixedRegistry, defaults: generation, lockDefaults: playtest === 'tagcoexist', isBusy: () => busy, setBusy: value => { busy = value; syncDefeatPlayQuick(); }, replace: generated => {
     if (generated) adopt({ state: generated.state, registry: generated.registry });
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });
     result = undefined; redraw(); pages.game(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');
   } });
   async function refreshSlot(): Promise<void> {
-    const saved = await saves.load(saveSlot);
+    for (const button of document.querySelectorAll<HTMLButtonElement>('[data-save-slot]')) button.setAttribute('aria-pressed', String(Number(button.dataset.saveSlot) === selectedSlot));
+    byId('save-quick').textContent = `保存进度 · ${['卷一','卷二','卷三'][selectedSlot]}`;
+    const slot = saveSlot;
+    const saved = await saves.load(slot);
+    if (slot !== saveSlot) return;
     byId<HTMLButtonElement>('save-read').disabled = saved.status !== 'ready';
     byId('save-info').textContent = saved.status === 'ready' ? `${(saved.registry??registry).location(saved.state.world.locationId).name} · ${formatClock(saved.state.clock.totalMinutes)} · ${saved.state.meta.revision} 次行动` : saved.status === 'empty' ? '尚无存档' : `已隔离：${saved.reason}`;
   }
@@ -111,6 +120,15 @@ async function boot(): Promise<void> {
     byId('page-action-feedback').textContent = '';
     if (name === 'save') void refreshSlot().catch(error => { byId('save-message').textContent = `本地存档不可用：${error instanceof Error ? error.message : error}。你仍可导出 JSON。`; });
   });
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-save-slot]')) button.addEventListener('click', () => {
+    if (busy) return;
+    selectedSlot = Number(button.dataset.saveSlot); saveSlot = saveSlots[selectedSlot];
+    byId<HTMLButtonElement>('save-read').disabled = true;
+    byId('save-message').textContent = '已选中存档槽。保存或读取后，才会写入或恢复进度。';
+    void refreshSlot().catch(error => { byId('save-message').textContent = error instanceof Error ? error.message : '无法读取存档'; });
+  });
+  function rememberSlot(): void { try { localStorage.setItem(`aetheria-folio-slot:${baseSaveSlot}`,String(selectedSlot)); } catch { /* The save itself remains in IndexedDB. */ } }
+  mountFolio({redraw,openPage:(name,from)=>pages.open(name,from)});
   byId('location-review').addEventListener('click', () => {
     const details = byId('location-details'); details.hidden = !details.hidden;
     byId('location-review').setAttribute('aria-expanded', String(!details.hidden));
@@ -125,7 +143,7 @@ async function boot(): Promise<void> {
     const button = (event.target as Element).closest<HTMLButtonElement>('button[data-action]');
     if (!button || button.disabled || busy) return;
     busy = true; button.disabled = true;
-    const keepBodyPage = !!button.closest('#body-dialog');
+    const keepBodyPage = !!button.closest('#body-dialog,#bag-dialog');
     const revision = engine.snapshot().meta.revision;
     // 先锁按钮再提交；同一轮快速点击携带旧请求不会悄悄执行下一项行动。
     const params=button.dataset.action==='district:action.create'?{name:byId<HTMLInputElement>('character-name').value,ageYears:Number(byId<HTMLInputElement>('character-age').value)}:undefined;
@@ -141,7 +159,7 @@ async function boot(): Promise<void> {
     } else { feedback(actionResult.message, true); byId('page-action-feedback').textContent = actionResult.message; byId('page-action-feedback').classList.add('error'); redraw(); }
     setTimeout(() => { busy = false; syncDefeatPlayQuick(); }, 250);
   });
-  const dialogNames = ['map', 'body', 'people', 'save', 'log', 'quest', 'bag', 'discovery', 'pack', 'world'];
+  const dialogNames = ['map', 'body', 'people', 'save', 'log', 'quest', 'bag', 'discovery', 'pack', 'world', 'reading'];
   async function openDialog(name: string): Promise<void> {
     pages.open(name);
   }
@@ -158,7 +176,7 @@ async function boot(): Promise<void> {
     finally { busy = false; byId<HTMLButtonElement>('save-quick').disabled = false; buttons.forEach(x => { x.disabled = false; }); updateSaveStatus(); try { await refreshSlot(); } catch { byId<HTMLButtonElement>('save-read').disabled = true; } }
   }
   const saveCurrent = () => storageAction(async () => {
-    const snapshot = engine.snapshot(); await saves.save(snapshot, saveSlot); savedSnapshot = JSON.stringify(snapshot);
+    const snapshot = engine.snapshot(); await saves.save(snapshot, saveSlot); savedSnapshot = JSON.stringify(snapshot); rememberSlot();
     byId('save-message').textContent = '保存完成。'; feedback('保存完成。');
   });
   byId('save-write').addEventListener('click', saveCurrent);
@@ -166,7 +184,7 @@ async function boot(): Promise<void> {
   byId('save-read').addEventListener('click', () => storageAction(async () => {
     const loaded = await saves.load(saveSlot);
     if (loaded.status !== 'ready') { byId('save-message').textContent = loaded.status === 'empty' ? '没有可读取的存档。' : `存档已隔离：${loaded.reason}`; return; }
-    adopt(loaded); savedSnapshot = JSON.stringify(loaded.state); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = loaded.migration ?? '已恢复保存时的进度。';
+    adopt(loaded); savedSnapshot = JSON.stringify(loaded.state); rememberSlot(); result = loaded.state.ledger.transactions.at(-1)?.result; redraw(); byId('save-message').textContent = loaded.migration ?? '已恢复保存时的进度。';
   }));
   byId('save-export').addEventListener('click', () => storageAction(async () => {
     const text = await codec.encode(engine.snapshot()); const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));

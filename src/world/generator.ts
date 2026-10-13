@@ -13,7 +13,7 @@ import { advanceWorldSimulation } from './simulation.ts';
 import { hash, integer, parseReference, parseRules } from './schema.ts';
 import { selectQuestContent } from '../content/quest-schema.ts';
 import { compileWorldQuests } from './quests.ts';
-import { applyWorldProfile, chooseWorldProfile, parseWorldProfiles, professionName } from './profiles.ts';
+import { applyWorldProfile, chooseWorldProfile, parseWorldProfiles, professionName, worldProfileSelectionTag } from './profiles.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
 export const GENERATOR_VERSION = '0.7.0';
@@ -28,7 +28,7 @@ export class WorldGenerator {
     if (input.registry.packs.some(p => p.id === 'generated/neighborhood')) throw Error('请用源内容库创建新世界。');
     if (input.worldTag !== undefined && input.worldProfiles === undefined) throw Error('指定世界 Tag 需要世界配置目录。');
     if (input.worldProfiles !== undefined && input.questContent !== undefined) throw Error('世界配置已包含任务，不能同时指定另一套任务。');
-    const profile = input.worldProfiles === undefined ? undefined : chooseWorldProfile(parseWorldProfiles(input.worldProfiles, input.registry), input.seed, input.worldTag === undefined ? undefined : resolveTag(input.registry, input.worldTag, 'generation.v1'));
+    const profile = input.worldProfiles === undefined ? undefined : chooseWorldProfile(parseWorldProfiles(input.worldProfiles, input.registry), input.seed, input.worldTag === undefined ? undefined : resolveTag(input.registry, worldProfileSelectionTag(input.worldTag), 'generation.v1'));
     const rules = parseRules(input.rules), references = input.references.map(p => parseReference(p, input.registry)).sort((a, b) => a.id.localeCompare(b.id, 'en'));
     if (!references.length || new Set(references.map(p => p.id)).size !== references.length) throw Error('参考包集合为空或重复。');
     const templates = references.flatMap(p => clone(p.templates)).sort((a, b) => a.id.localeCompare(b.id, 'en'));

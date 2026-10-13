@@ -14,6 +14,13 @@ export interface WorldProfile {
   quests: QuestContent;
 }
 export interface WorldSettingSnapshot { id: string; tag: Id; name: string; version: string; hash: string; ecologyTag: Id; questId: string }
+/** Historical selection IDs are input compatibility, not aliases of canonical taxonomy tags. */
+export function worldProfileSelectionTag(value: string): string {
+  const match = /^general-taxonomy:setting\.([a-z][a-z0-9-]*)$/.exec(value);
+  if (!match) return value;
+  const names: Record<string,string> = {sky:'floating',snowfield:'polar',lava:'volcanic',ship:'harbor',gobi:'desert',grave:'dungeon'};
+  return `worlds:setting.${names[match[1]] ?? match[1]}`;
+}
 const services: Service[] = ['home', 'market', 'workshop', 'clinic', 'commons'];
 const starterProfessions = new Set(['交接信使','烘焙师','缝补工','维护电工','水务工','摊贩','护理员','档案整理员','园艺工']);
 export function professionName(profile: WorldProfile, service: Service, original: string): string {

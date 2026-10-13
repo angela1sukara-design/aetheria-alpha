@@ -6,6 +6,7 @@ import { pathToFileURL } from 'node:url';
 import { loadPacks } from '../src/content/loader.ts';
 import { createGameState } from '../src/engine/state.ts';
 import { SaveCodec } from '../src/persistence/codec.ts';
+import { enterFolio,openFolioPage,performFolioAction } from './folio-navigation.mjs';
 
 const out=path.resolve('artifacts/adventure-browser');await mkdir(out,{recursive:true});
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
@@ -19,22 +20,20 @@ async function fresh(){
   const page=await context.newPage();page.setDefaultTimeout(12000);page.on('pageerror',e=>errors.push(e.message));
   await page.goto(url);await page.locator('#location-name').filter({hasText:'公寓'}).waitFor({state:'attached'});return page;
 }
-async function home(page){if(await page.locator('#subpage-host').isVisible())await page.locator('#page-home').click();}
+async function home(page){await enterFolio(page);if(await page.locator('#subpage-host').isVisible())await page.locator('#page-home').click();}
 async function act(page,id){
   await home(page);if(await page.locator('#scene-return').isVisible())await page.locator('#scene-return').click();
-  const button=page.locator(`#play-page button[data-action="${id}"]`).first();
-  if(!await button.isVisible())for(const summary of await page.locator('#actions .locked-actions:not([open]) > summary').all())await summary.click();
-  await button.click();await page.waitForTimeout(300);
+  await performFolioAction(page,id);
   assert.ok(!await page.locator('#feedback').evaluate(e=>e.classList.contains('error')),await page.locator('#feedback').innerText());
 }
 async function fixture(page,location,change=()=>{}){
   const state=createGameState(registry,42);state.world.locationId=location;if(!state.world.knownLocationIds.includes(location))state.world.knownLocationIds.push(location);change(state);
   const file=path.join(out,'fixture-'+ ++serial+'.json');await writeFile(file,await codec.encode(state));
-  await home(page);await page.locator('#save-open').click();await page.locator('#save-import').setInputFiles(file);
+  await home(page);await openFolioPage(page,'save');await page.locator('#save-import').setInputFiles(file);
   await page.locator('#save-message').filter({hasText:'已导入到当前游戏'}).waitFor();await home(page);
 }
 async function snapshot(page){
-  await home(page);await page.locator('#save-open').click();const pending=page.waitForEvent('download');await page.locator('#save-export').click();
+  await home(page);await openFolioPage(page,'save');const pending=page.waitForEvent('download');await page.locator('#save-export').click();
   const file=path.join(out,'snapshot-'+ ++serial+'.json');await(await pending).saveAs(file);await home(page);return(await json(file)).payload.state;
 }
 async function saveReload(page){await home(page);await page.locator('#save-quick').click();await page.locator('#feedback').filter({hasText:'保存完成'}).waitFor();await page.reload();await page.locator('#feedback').filter({hasText:'已恢复手动存档'}).waitFor();}
@@ -85,16 +84,16 @@ try{
   });
   const preferences=await fresh();
   await check('文本扩展禁用和重新启用均跨刷新保留',async()=>{
-    await preferences.locator('#pack-open').click();await preferences.locator('#pack-import').setInputFiles(path.resolve('content/author-example/text-pack.json'));
+    await openFolioPage(preferences,'pack');await preferences.locator('#pack-import').setInputFiles(path.resolve('content/author-example/text-pack.json'));
     const toggle=preferences.locator('[data-pack="author-example/quiet"][data-pack-move="toggle"]');await toggle.waitFor();await toggle.click();
-    assert.match(await preferences.locator('#pack-content').innerText(),/已禁用/);await preferences.reload();await preferences.locator('#pack-open').click();
-    assert.match(await preferences.locator('#pack-content').innerText(),/已禁用/);await toggle.click();await preferences.reload();await preferences.locator('#pack-open').click();
+    assert.match(await preferences.locator('#pack-content').innerText(),/已禁用/);await preferences.reload();await openFolioPage(preferences,'pack');
+    assert.match(await preferences.locator('#pack-content').innerText(),/已禁用/);await toggle.click();await preferences.reload();await openFolioPage(preferences,'pack');
     assert.match(await preferences.locator('#pack-content').innerText(),/已启用/);
   });
   await check('不兼容规则扩展被隔离，城市仍启动且原文保留',async()=>{
     const bad=structuredClone(inputs.at(-1));bad.manifest.id='broken/extension';bad.manifest.dependencies[0].version='999.0.0';
     await preferences.evaluate(raw=>localStorage.setItem('aetheria-alpha02-rules',JSON.stringify([raw])),bad);await preferences.reload();
-    await preferences.locator('#location-name').filter({hasText:'公寓'}).waitFor({state:'attached'});await preferences.locator('#pack-open').click();
+    await preferences.locator('#location-name').filter({hasText:'公寓'}).waitFor({state:'attached'});await openFolioPage(preferences,'pack');
     assert.match(await preferences.locator('#extension-recovery').innerText(),/隔离的规则扩展/);
     assert.deepEqual(await preferences.evaluate(()=>JSON.parse(localStorage.getItem('aetheria-alpha02-rules'))),[bad]);
   });

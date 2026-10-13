@@ -2,6 +2,8 @@
 
 这里是唯一的当前开发工程，包含固定都市、随机街区、BodyGraph / TF、人物、事件及存档系统。游戏包版本为 `0.2.0-alpha`，已加入 foundation v0.4 增量接口。旧交付目录是历史快照，继续开发使用本目录。
 
+当前界面已按用户提供的“墨卷”框架重构：封面、书页、故事卡与对白共用真实游戏状态，补齐三个独立存档、阅读设置和手机资料抽屉。直接打开 `dist/Aetheria-Folio.html`；接入范围、实测与既有回归问题见 [墨卷 UI 接入](docs/folio-ui-2026-10-13.md)。运行 `npm run test:folio` 检查当前界面和实际玩法。
+
 当前已接入Tag组合故事、敌人倾向与战败分支，以及训练、武器护甲、技能、经营和主线里程碑。玩法与兼容说明见[故事与成长框架](docs/adventure-framework-2026-10-13.md)，交给其他AI的正文制作要求见[Tag写作规范](production/TAG-STORY-WRITING-SPEC.md)。旧生成世界保留原快照，新生成世界使用新玩法。
 
 ## 启动与验证
@@ -15,7 +17,7 @@ npm run build
 
 Windows 双击 `start_game.bat`，浏览器打开 `http://localhost:4173/`。也可运行 `npm run dev`。`dist/` 是本地构建结果，Git 仓库不附带构建、依赖和浏览器。
 
-构建后，可直接打开 `dist/Aetheria-Alpha-0.2.html`；两个离线世界示例在 `dist/WorldGenerator-Seed-7.html` 和 `dist/WorldGenerator-Seed-42.html`。在“世界”页可指定 17 种世界题材或按种子选择，地点、组织、终局和任务随世界 Tag 绑定，生态环境独立生成。开发模板 `index.html` 需通过服务器加载。
+构建后，可直接打开 `dist/Aetheria-Folio.html`；原 `dist/Aetheria-Alpha-0.2.html` 为兼容入口，两个离线世界示例在 `dist/WorldGenerator-Seed-7.html` 和 `dist/WorldGenerator-Seed-42.html`。当前新世界试玩入口限定中世纪异世界；底层 17 种题材配置与既有世界快照保留。开发模板 `index.html` 需通过服务器加载。
 
 ```sh
 npm run check

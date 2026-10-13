@@ -10,4 +10,6 @@ let html=await readFile('index.html','utf8');
 html=html.replace('<link rel="stylesheet" href="./src/ui/game.css">',`<style>${await readFile('src/ui/game.css','utf8')}</style>`).replace('<script type="module" src="./src/ui/main.ts"></script>','');
 // 内联普通脚本没有 module 的延迟执行语义，必须放在全部对话框之后。
 html=html.replace('</body>',()=>`<script>${script.replace(/<\/script/gi,'<\\/script')}</script>\n</body>`);
-await writeFile('dist/Aetheria-Alpha-0.2.html',html);console.log('Standalone offline HTML built: dist/Aetheria-Alpha-0.2.html');
+await writeFile('dist/Aetheria-Alpha-0.2.html',html);
+await writeFile('dist/Aetheria-Folio.html',html);
+console.log('Standalone offline HTML built: dist/Aetheria-Folio.html (legacy entry preserved).');
