@@ -14,6 +14,7 @@ import type { TextLibrary } from '../content/text-variants.ts';
 import { routeDistanceTier, routeStaminaCost, staminaGate, STAMINA_COST } from './numerics.ts';
 import { narrativeActions, narrativeText, publicActionEffects } from './narrative.ts';
 import { progressionCheck } from './progression.ts';
+import { describeResidentAction, functionKey, requiredFunction, selectedResident, serviceAvailable, usesFunctions } from './entity-functions.ts';
 
 const STAMINA_ID = 'core:stamina' as Id;
 
@@ -26,7 +27,18 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   const allActions = [...new Map([...actions, ...(storyActions?[]:topics), ...(storyActions?[]:registry.globalActions())].map(a => [a.id, a])).values()];
   const stamina = state.player.variables[STAMINA_ID] ?? 100;
   const gate = staminaGate(stamina);
-  return districtOptions(state, registry, allActions).map(definition => {
+  const strict=usesFunctions(state,registry), supported=districtOptions(state,registry,allActions).filter(a=>{
+    if(a.conditions.some(c=>c.op==='service.available'&&!serviceAvailable(state,registry,c)))return false;
+    const need=requiredFunction(a,publicActionEffects(a,state,registry));
+    return !strict||!!a.context||!need||serviceAvailable(state,registry,need);
+  });
+  const preferred=new Map<string,ActionDef>();
+  const score=(a:ActionDef)=>a.effects.some(e=>e.op==='resident.help'||e.op==='resident.talk')?1000:a.effects.reduce((n,e)=>n+(e.op==='var.change'&&e.amount>0&&['core:energy','core:stamina','core:health'].includes(e.id)?e.amount*10:e.op==='clock.advance'?-e.minutes:0),0);
+  if(strict)for(const a of supported){const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);if(key&&!a.context&&!a.effects.some(e=>e.op==='narrative.choose')){const old=preferred.get(key);if(!old||score(a)>score(old))preferred.set(key,a);}}
+  return supported.filter(a=>{if(!strict||a.context||a.effects.some(e=>e.op==='narrative.choose'))return true;const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);return !key||preferred.get(key)===a;}).map(source => {
+    const need=strict&&!source.context?requiredFunction(source,publicActionEffects(source,state,registry)):undefined;
+    const decorated=describeResidentAction(source,state,registry);
+    const definition=need?{...decorated,conditions:[...decorated.conditions,{op:'service.available' as const,...need}]}:decorated;
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
     const effects=publicActionEffects(definition,state,registry);
     for (const e of effects) {
@@ -35,6 +47,7 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
       if (e.op === 'resident.help') {
         const resident = state.district?.residents.find(n => n.id === state.district?.currentResidentId), t = registry.residentTemplates.find(t => t.id === resident?.templateId);
         if (resident && t) checks.push(activityEligibility(resident.body, t, registry));
+        if(strict)checks.push({pass:!selectedResident(state)?.memories.includes(`help:${Math.floor(state.clock.totalMinutes/1440)}`),reason:'今天的协助已完成，明天再来。'});
         checks.push({ pass: gate.allowLabor && stamina >= STAMINA_COST.labor, reason: stamina < STAMINA_COST.labor ? `体力不足：当前 ${stamina}，本次需要 ${STAMINA_COST.labor}。` : '体力过低，无法从事体力劳动。' });
       }
       if (e.op === 'scene.start') checks.push({ pass: !!state.district?.profile.created, reason: '先在公寓签下租约，确认成年角色身份。' });

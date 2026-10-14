@@ -3,9 +3,11 @@ import type { BodyGraph, BodyPartDef, BodyTemplateDef, BodyPatchDef, TFDef, TFIn
 import type { NPCDef, NPCState, NPCMemoryDef, SpeciesDef, RelationField } from './npc-types.ts';
 import type { DistrictDefinitions, DistrictEffect, DistrictCondition, DistrictState } from './district-types.ts';
 import type { AdventureCondition, AdventureDefinitions, AdventureEffect, AdventureState } from './adventure-types.ts';
+import type { LocationFacility, ServiceRequirement } from './function-types.ts';
 export type Id = `${string}:${string}`;
 export type Scalar = string | number | boolean;
 export type Condition =
+  | ({ op: 'service.available' } & ServiceRequirement)
   | AdventureCondition
   | QueryCondition
   | DistrictCondition
@@ -38,7 +40,7 @@ export type Effect =
 export interface VariableDef { id: Id; label: string; initial: number; min: number; max: number; unit: string }
 export interface FlagDef { id: Id; initial: boolean }
 export interface HookDef { id: Id; accepts: 'action'; visibility: 'public' }
-export interface LocationDef { id: Id; name: string; subtitle: string; textKey: Id; actionHook: Id; map: { x: number; y: number } }
+export interface LocationDef { id: Id; name: string; subtitle: string; textKey: Id; actionHook: Id; map: { x: number; y: number }; facilities?: LocationFacility[] }
 export type RouteDistanceTier = 'adjacent' | 'far' | 'cross';
 export interface RouteDef {
   id: Id;

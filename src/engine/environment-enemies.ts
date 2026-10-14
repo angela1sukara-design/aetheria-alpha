@@ -9,7 +9,8 @@ import { draw } from './rng.ts';
 /** 地点层环境 tag：service / locationProfile.tags / 世界地点·区域 tags / 派生世界语义。词条本身不结算。 */
 export function locationEnvironmentTags(s: GameState, r: Registry, locationId: Id = s.world.locationId): Id[] {
   const tags: Id[] = [];
-  const push = (id: string) => { if (r.tags.some(t => t.id === id) && !tags.includes(id as Id)) tags.push(id as Id); };
+  const has = (id: string) => typeof r.hasTag === 'function' ? r.hasTag(id) : r.tags.some(t => t.id === id);
+  const push = (id: string) => { if (has(id) && !tags.includes(id as Id)) tags.push(id as Id); };
   const profile = r.locationProfiles.find(p => p.locationId === locationId);
   const service = environment(s, r, locationId).service;
   if (service.known) push(`foundation:service.${service.value}`);

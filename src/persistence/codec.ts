@@ -102,7 +102,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
     const tx = object(raw, ['requestId', 'fingerprint', 'result', ...((raw as GameState['ledger']['transactions'][number])?.narrativeChoice?['narrativeChoice']:[])]); const requestId = string(tx.requestId); if (requestId.length > 128) bad('事务 ID 过长。'); requests.push(requestId);
     const intent = JSON.parse(string(tx.fingerprint)); const intentObj = object(intent);
     if (Object.keys(intentObj).some(k => k !== 'actionId' && k !== 'params')) bad('事务 intent 包含未知字段。');
-    if (intentObj.params && Object.keys(object(intentObj.params)).length) { const p=object(intentObj.params,['name','ageYears']);if(intentObj.actionId!=='district:action.create'||typeof p.name!=='string'||!p.name.trim()||p.name.length>40)bad('事务参数未登记。');int(p.ageYears,18,120); }
+    if (intentObj.params && Object.keys(object(intentObj.params)).length) { const p=object(intentObj.params);if(Object.keys(p).some(k=>k!=='name'&&k!=='ageYears')||intentObj.actionId!=='district:action.create'||typeof p.name!=='string'||!p.name.trim()||p.name.length>40)bad('事务参数未登记。');if(p.ageYears!==undefined)int(p.ageYears,18,120); }
     registry.action(string(intentObj.actionId) as Id);
     if(tx.narrativeChoice){const context=object(tx.narrativeChoice,['nodeId','index']);const index=int(context.index,0,3),node=registry.narrativeNodes.find(n=>n.id===context.nodeId);if(!node?.choices[index]||!registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.choose'&&e.index===index))bad('故事事务来源错配。');}
     if (stableJson(intent) !== tx.fingerprint) bad('事务指纹无效。');

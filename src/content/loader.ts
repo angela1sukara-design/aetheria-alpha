@@ -51,6 +51,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (d.pack !== p && !p.manifest.dependencies.some(x => x.id === d.pack.manifest.id)) fail(p, 'UNDECLARED_DEPENDENCY', path, `引用 ${id} 需要显式依赖其包。`, id);
   }
   function checkCondition(p: ContentPack, c: Condition, path: string): void {
+    if(c.op==='service.available'&&c.subject==='resident'&&c.id)ref(p,c.id,c.service==='teach'?'variables':definitions.get(c.id)?.type==='items'?'items':'equipment',path);
     if(['adventure.compare','progression.available','narrative.tag'].includes(c.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
     if(c.op==='progression.available'&&c.id){const buyType=definitions.has(c.id)&&definitions.get(c.id)!.type==='items'?'items':c.move==='buy'?'equipment':'variables';ref(p,c.id,c.move==='buy'?buyType:'variables',path);}
     if(c.op==='item.has')ref(p,c.id,'items',path);

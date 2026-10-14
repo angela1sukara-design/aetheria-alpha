@@ -20,8 +20,8 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
   const title=intro.querySelector('h2'); const blurb=intro.querySelector('p');
   if(title)title.textContent=v.location.id==='aetheria:location.apartment'?'在这座城市开始生活':'在此地确认身份';
   if(blurb)blurb.textContent=v.location.id==='aetheria:location.apartment'
-    ?'你租下一间公寓。先写下姓名和成年年龄，再到身体面板选择自由塑形。'
-    :'先写下姓名和成年年龄，确认身份后再继续探索。可到身体面板选择自由塑形。';
+    ?'你租下一间公寓。写下姓名，再到身体面板选择自由塑形。'
+    :'写下姓名，确认身份后继续探索。可到身体面板选择自由塑形。';
  }
  byId('player-name').textContent=d.profile.created?d.profile.name:'新来的住户';
  // 创建聚焦：未创建且签到可见时收起「下一步」，避免与签到抢注意力
@@ -67,7 +67,7 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
  byId<HTMLInputElement>('adult-preference').checked=d.profile.adultOptional;
  // 成人偏好已开但仍被门挡住时，复用条件文案说明原因（不误放行）
  const packMsg=byId('pack-message');
- const adultGate=!!(d.profile.created&&d.profile.ageYears>=18&&d.profile.adultOptional);
+ const adultGate=!!(d.profile.created&&d.profile.adultOptional);
  const adultReason='偏好已开启；创建成年角色后即可显示相关文本。';
  if(d.profile.adultOptional&&!adultGate){
   if(!packMsg.textContent||packMsg.dataset.adultReason==='1'||/成人|成年|adult/i.test(packMsg.textContent)){

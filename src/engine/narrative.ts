@@ -15,24 +15,34 @@ export function initialAdventure(): AdventureState { return {version:1,assets:0,
 export function adventure(s:GameState):AdventureState { if(!s.adventure){s.adventure=initialAdventure();s.adventure.daily['world.day']=Math.floor(s.clock.totalMinutes/1440);}return s.adventure; }
 const key = (t:ScopedTag) => t.role+'/'+t.tagId;
 export function narrativeTags(s:GameState,r:Registry):ScopedTag[] {
+  const has = (id: string) => typeof r.hasTag === 'function' ? r.hasTag(id) : r.tags.some(t => t.id === id);
   const story=s.adventure?.story;
   const tags=[...(story?.tags??[])];
   const derived=new Set(r.derivedTags.map(t=>t.tagId));
   const live=tags.filter(t=>!derived.has(t.tagId));
   live.push(...derivedSemantics(s,r,{entity:{kind:'player'}}).map(tagId=>({role:'player' as const,tagId})));
   live.push(...derivedSemantics(s,r,{world:true}).map(tagId=>({role:'environment' as const,tagId})));
-  for(const tag of s.worldInstance?.definition.locations.find(l=>l.id===s.world.locationId)?.tags??[])if(r.tags.some(t=>t.id===tag))live.push({role:'environment',tagId:tag as Id});
-  for(const tag of r.locationProfiles.find(p=>p.locationId===s.world.locationId)?.tags??[])if(r.tags.some(t=>t.id===tag))live.push({role:'environment',tagId:tag as Id});
-  const service=environment(s,r).service;if(service.known&&r.tags.some(t=>t.id===`foundation:service.${service.value}`))live.push({role:'environment',tagId:`foundation:service.${service.value}`});
+  for(const tag of s.worldInstance?.definition.locations.find(l=>l.id===s.world.locationId)?.tags??[])if(has(tag))live.push({role:'environment',tagId:tag as Id});
+  for(const tag of r.locationProfiles.find(p=>p.locationId===s.world.locationId)?.tags??[])if(has(tag))live.push({role:'environment',tagId:tag as Id});
+  const service=environment(s,r).service;if(service.known&&has(`foundation:service.${service.value}`))live.push({role:'environment',tagId:`foundation:service.${service.value}`});
   return [...new Map(live.map(t=>[key(t),t])).values()];
+}
+function nodeWeight(n: NarrativeNode, profile?: Registry['narrativeProfiles'][number], activeEnvTags?: Set<string>): number {
+  return Math.max(1, n.weight + n.tendencies.reduce((sum, t) => {
+    const profileBoost = profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0;
+    const envBoost = !profileBoost && activeEnvTags?.has(t.tagId) ? 1 : 0;
+    return sum + (profileBoost + envBoost) * t.weight;
+  }, 0));
 }
 function chooseNode(s:GameState,r:Registry,stage:string):NarrativeNode|undefined {
   const story=adventure(s).story!;story.stage=stage;
-  const tags=new Set(narrativeTags(s,r).map(key)),profile=r.narrativeProfiles.find(p=>p.id===story.profileId);
+  const activeScoped = narrativeTags(s,r);
+  const tags=new Set(activeScoped.map(key)),profile=r.narrativeProfiles.find(p=>p.id===story.profileId);
+  const envTagIds = new Set(activeScoped.filter(t => t.role === 'environment').map(t => t.tagId));
   let pool=r.narrativeNodes.filter(n=>n.kind===story.kind&&n.stage===stage&&(story.visits[n.id]??0)<n.maxVisits&&n.requiresTags.every(t=>tags.has(key(t)))&&!n.excludesTags.some(t=>tags.has(key(t)))&&n.conditions.every(c=>evaluate(c,s,r).pass));
   if(!pool.length)return;
   const priority=Math.max(...pool.map(n=>n.priority));pool=pool.filter(n=>n.priority===priority).sort((a,b)=>a.id.localeCompare(b.id,'en'));
-  const weight=(n:NarrativeNode)=>Math.max(1,n.weight+n.tendencies.reduce((sum,t)=>sum+(profile?.tendencies.find(x=>x.tagId===t.tagId)?.weight??0)*t.weight,0));
+  const weight=(n:NarrativeNode)=>nodeWeight(n, profile, envTagIds);
   let roll=draw(s,`narrative:${story.instanceId}`)*pool.reduce((sum,n)=>sum+weight(n),0);
   const selected=pool.find(n=>(roll-=weight(n))<0)??pool.at(-1)!;
   const problem=proseProblem(applyNarrativeFills(r.text(selected.textKey),story,s,r));
@@ -107,4 +117,117 @@ export function advanceNarrative(s:GameState,r:Registry,c:EffectContext,index:nu
   if(choice.next&&story.steps<12&&chooseNode(s,r,choice.next))return;
   if(story.kind==='defeat'&&s.player.variables['core:health']!<1){s.player.variables['core:health']=1;c.changes.push({label:'脱离危险',before:0,after:1});}
   a.journal.push({at:s.clock.totalMinutes,title:applyNarrativeFills(node.title,story,s,r),text:story.log.join('\n')});a.journal=a.journal.slice(-64);delete s.rng.streams[`narrative:${story.instanceId}`];for(const k of Object.keys(s.rng.streams))if(k.startsWith(`defeat-play:fill:${story.instanceId}`))delete s.rng.streams[k];a.story=null;
+}
+
+export interface NarrativeDebugTrace {
+  node: NarrativeNode;
+  profileId: Id | null;
+  activeTags: { role: ScopedTag['role']; tagId: Id; label: string; origin: string }[];
+  baseWeight: number;
+  finalWeight: number;
+  tendencyHits: { tagId: Id; label: string; nodeWeight: number; multiplier: number; added: number }[];
+  candidates: { id: Id; title: string; priority: number; weight: number; selected: boolean }[];
+  rejected: { id: Id; title: string; reason: string }[];
+  fillsUsed: { placeholder: string; value: string }[];
+}
+
+/** Debug 专用：解释当前故事节点（NarrativeNode）是如何通过 Tag、条件、倾向加权与候选池竞争被选出的。只读不改状态。 */
+export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugTrace | undefined {
+  const story = s.adventure?.story;
+  if (!story) return undefined;
+  const node = r.narrativeNodes.find(n => n.id === story.nodeId);
+  if (!node) return undefined;
+  const profile = r.narrativeProfiles.find(p => p.id === story.profileId);
+  const activeScoped = narrativeTags(s, r);
+  const tagSet = new Set(activeScoped.map(key));
+  const envTagIds = new Set(activeScoped.filter(t => t.role === 'environment').map(t => t.tagId));
+  const playerDerived = new Set(derivedSemantics(s, r, { entity: { kind: 'player' } }));
+  const worldDerived = new Set(derivedSemantics(s, r, { world: true }));
+  const locTags = new Set(s.worldInstance?.definition.locations.find(l => l.id === s.world.locationId)?.tags ?? []);
+  const profTags = new Set(r.locationProfiles.find(p => p.locationId === s.world.locationId)?.tags ?? []);
+
+  const labelOf = (id: Id) => { try { return r.tag(id).label; } catch { return id; } };
+  const activeTags = activeScoped.map(t => {
+    let origin = '故事运行态 (story.tags)';
+    if (t.role === 'player' && playerDerived.has(t.tagId)) origin = '玩家身体/状态派生 (derivedSemantics)';
+    else if (t.role === 'environment') {
+      if (t.tagId.startsWith('foundation:service.')) origin = '当前地点服务 (location.service)';
+      else if (worldDerived.has(t.tagId)) origin = '世界环境派生 (derivedSemantics)';
+      else if (locTags.has(t.tagId)) origin = '世界生成地点标签 (worldInstance.locations)';
+      else if (profTags.has(t.tagId)) origin = '地点环境档案 (locationProfiles)';
+    } else if (t.role === 'opponent' && profile && (profile.tags.includes(t.tagId) || profile.goals.includes(t.tagId))) {
+      origin = `对手/NPC行为档案 (${profile.id})`;
+    }
+    return { role: t.role, tagId: t.tagId, label: labelOf(t.tagId), origin };
+  });
+
+  const tendencyHits: NarrativeDebugTrace['tendencyHits'] = [];
+  for (const t of node.tendencies) {
+    const profileBoost = profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0;
+    const envBoost = !profileBoost && envTagIds.has(t.tagId) ? 1 : 0;
+    const mult = profileBoost + envBoost;
+    if (mult > 0) {
+      tendencyHits.push({ tagId: t.tagId, label: labelOf(t.tagId), nodeWeight: t.weight, multiplier: mult, added: mult * t.weight });
+    }
+  }
+
+  const sameKindStage = r.narrativeNodes.filter(n => n.kind === story.kind && n.stage === story.stage);
+  const passed: NarrativeNode[] = [];
+  const rejected: NarrativeDebugTrace['rejected'] = [];
+  for (const cand of sameKindStage) {
+    const missingReq = cand.requiresTags.find(t => !tagSet.has(key(t)));
+    if (missingReq) {
+      rejected.push({ id: cand.id, title: cand.title, reason: `缺少硬性 Tag：${missingReq.role}/${labelOf(missingReq.tagId)} (${missingReq.tagId})` });
+      continue;
+    }
+    const hitExcl = cand.excludesTags.find(t => tagSet.has(key(t)));
+    if (hitExcl) {
+      rejected.push({ id: cand.id, title: cand.title, reason: `命中互斥 Tag：${hitExcl.role}/${labelOf(hitExcl.tagId)} (${hitExcl.tagId})` });
+      continue;
+    }
+    const failedCond = cand.conditions.map(c => ({ c, res: evaluate(c, s, r) })).find(x => !x.res.pass);
+    if (failedCond) {
+      rejected.push({ id: cand.id, title: cand.title, reason: `条件未满足：${failedCond.res.reason || failedCond.c.op}` });
+      continue;
+    }
+    const usedVisits = (story.visits[cand.id] ?? 0) - (cand.id === node.id ? 1 : 0);
+    if (usedVisits >= cand.maxVisits) {
+      rejected.push({ id: cand.id, title: cand.title, reason: `单次故事访问上限已满 (${usedVisits}/${cand.maxVisits})` });
+      continue;
+    }
+    passed.push(cand);
+  }
+  const maxPriority = passed.length ? Math.max(...passed.map(n => n.priority)) : node.priority;
+  const topPool = passed.filter(n => n.priority === maxPriority).sort((a, b) => a.id.localeCompare(b.id, 'en'));
+  for (const low of passed.filter(n => n.priority < maxPriority)) {
+    rejected.push({ id: low.id, title: low.title, reason: `优先级低于最高候选 (${low.priority} < ${maxPriority})` });
+  }
+  const candidates = topPool.map(cand => ({
+    id: cand.id,
+    title: cand.title,
+    priority: cand.priority,
+    weight: nodeWeight(cand, profile, envTagIds),
+    selected: cand.id === node.id,
+  }));
+
+  const rawTemplate = r.text(node.textKey);
+  const allFills: Record<string, string> = { opponent: story.opponentName, ...sceneContext(s, r), ...(story.fills ?? {}) };
+  const fillsUsed: { placeholder: string; value: string }[] = [];
+  for (const [k, v] of Object.entries(allFills)) {
+    if (rawTemplate.includes(`{${k}}`) || node.title.includes(`{${k}}`)) {
+      fillsUsed.push({ placeholder: `{${k}}`, value: v });
+    }
+  }
+
+  return {
+    node,
+    profileId: story.profileId,
+    activeTags,
+    baseWeight: node.weight,
+    finalWeight: nodeWeight(node, profile, envTagIds),
+    tendencyHits,
+    candidates,
+    rejected,
+    fillsUsed,
+  };
 }

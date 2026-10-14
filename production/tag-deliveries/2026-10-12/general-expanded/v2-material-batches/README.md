@@ -6,4 +6,4 @@
 
 这是待审文字素材，未安装到游戏。tags为空数组：general-taxonomy编辑概念还不是运行字典ID，不能假装已注册。检索与审稿使用外侧taxonomy.json和entries.jsonl中的编辑标签。批次没有奖励、关系或身体状态效果字段。
 
-字典：aetheria/foundation 1.0.0，hash=121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290。字典升级时须重新校验；不得直接替换引用字符串。
+字典：aetheria/foundation 1.0.0，hash=c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959。字典升级时须重新校验；不得直接替换引用字符串。

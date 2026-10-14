@@ -4,6 +4,7 @@ import { parseAdventurePack, ADVENTURE_FIELDS, NARRATIVE_KINDS, PROGRESSION_MOVE
 import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
 import { RELATION_FIELDS } from '../core/npc-types.ts';
 import { PLAYER_RELATIONS } from '../core/quest-types.ts';
+import { LOCATION_FACILITIES, LOCATION_SERVICES, RESIDENT_SERVICES } from '../core/function-types.ts';
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import type { ContentPack } from '../core/types.ts';
@@ -58,6 +59,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'preference.adultOptional') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
     else if (op === 'item.has') { const x = obj(value,path,['op','id','comparison','value']); id(x.id,path); choice(x.comparison,path,['eq','gte','lte']); integer(x.value,path,0,99); }
     else if (op === 'adventure.compare') { const x=obj(value,path,['op','field','comparison','value']);choice(x.field,path,[...ADVENTURE_FIELDS,'victories']);choice(x.comparison,path,['eq','gte','lte']);integer(x.value,path,0,1000000); }
+    else if (op === 'service.available') { const x=obj(value,path,['op','subject','service','id']);choice(x.subject,path,['location','resident']);choice(x.service,path,x.subject==='location'?[...LOCATION_SERVICES]:[...RESIDENT_SERVICES]);if(x.subject==='resident'&&['trade','teach'].includes(String(x.service)))id(x.id,path+'/id');else if(x.id!==undefined)fail(path+'/id','此功能不接受条目ID。'); }
     else if (op === 'progression.available') { const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path); }
     else if(op==='narrative.tag'){const x=obj(value,path,['op','role','id','value']);choice(x.role,path,['player','opponent','environment']);id(x.id,path);boolean(x.value,path);}
     else fail(`${path}/op`, '未知或未实现的条件操作符。', 'UNSUPPORTED_OPCODE');
@@ -81,7 +83,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'item.gain') { const x = obj(value,path,['op','id','amount']); id(x.id,path); integer(x.amount,path,1,99); }
     else if (op === 'combat.turn') { const x = obj(value,path,['op','move','id']); choice(x.move,path,['attack','guard','recover','flee','skill','item','surrender','giveup']); if(x.move==='item'){ if(x.id===undefined) fail(`${path}/id`,'战内使用消耗品必须声明 item id。'); id(x.id,`${path}/id`); } else if(x.id!==undefined) fail(`${path}/id`,'非 item 行动不应带 id。'); }
     else if (op === 'scene.act') { const x = obj(value,path,['op','move','poseId']); choice(x.move,path,['pose','contact','release','pause','resume','exit']); if(x.poseId !== undefined) str(x.poseId,path); }
-    else if (op === 'player.create') { const x = obj(value,path,['op','name','ageYears']); str(x.name,path); integer(x.ageYears,path,18,120); }
+    else if (op === 'player.create') { const x = obj(value,path,['op','name','ageYears']); str(x.name,path); if(x.ageYears!==undefined)integer(x.ageYears,path,18,120); }
     else if (op === 'preference.set') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
     else if (op === 'narrative.start') {const x=obj(value,path,['op','kind','profileId']);choice(x.kind,path,[...NARRATIVE_KINDS]);if(x.profileId!==undefined)id(x.profileId,path);}
     else if (op === 'narrative.choose') {const x=obj(value,path,['op','index']);integer(x.index,path,0,3);}
@@ -103,7 +105,7 @@ export function parsePack(input: unknown): ContentPack {
   list(root.variables, '/variables', (v, p) => { const x = obj(v, p, ['id', 'label', 'initial', 'min', 'max', 'unit']); id(x.id, `${p}/id`); str(x.label, `${p}/label`); for (const k of ['initial', 'min', 'max']) integer(x[k], `${p}/${k}`); if (typeof x.unit !== 'string') fail(`${p}/unit`, '必须是字符串。'); if ((x.min as number) > (x.max as number) || (x.initial as number) < (x.min as number) || (x.initial as number) > (x.max as number)) fail(p, '初值或上下限不一致。'); });
   list(root.flags, '/flags', (v, p) => { const x = obj(v, p, ['id', 'initial']); id(x.id, `${p}/id`); boolean(x.initial, `${p}/initial`); });
   list(root.hooks, '/hooks', (v, p) => { const x = obj(v, p, ['id', 'accepts', 'visibility']); id(x.id, `${p}/id`); choice(x.accepts, `${p}/accepts`, ['action']); choice(x.visibility, `${p}/visibility`, ['public']); });
-  list(root.locations, '/locations', (v, p) => { const x = obj(v, p, ['id', 'name', 'subtitle', 'textKey', 'actionHook', 'map']); for (const k of ['id', 'textKey', 'actionHook']) id(x[k], `${p}/${k}`); str(x.name, `${p}/name`); str(x.subtitle, `${p}/subtitle`); const map = obj(x.map, `${p}/map`, ['x', 'y']); integer(map.x, `${p}/map/x`, 0, 100); integer(map.y, `${p}/map/y`, 0, 100); });
+  list(root.locations, '/locations', (v, p) => { const x = obj(v, p, ['id', 'name', 'subtitle', 'textKey', 'actionHook', 'map','facilities']); for (const k of ['id', 'textKey', 'actionHook']) id(x[k], `${p}/${k}`); str(x.name, `${p}/name`); str(x.subtitle, `${p}/subtitle`); const map = obj(x.map, `${p}/map`, ['x', 'y']); integer(map.x, `${p}/map/x`, 0, 100); integer(map.y, `${p}/map/y`, 0, 100); if(x.facilities!==undefined){list(x.facilities,p+'/facilities',(v,p)=>choice(v,p,[...LOCATION_FACILITIES]));if(Array.isArray(x.facilities)&&new Set(x.facilities).size!==x.facilities.length)fail(p+'/facilities','地点设施不得重复。');} });
   list(root.routes, '/routes', (v, p) => {
     const x = obj(v, p, ['id', 'from', 'to', 'distanceTier', 'durationMinutes']);
     for (const k of ['id', 'from', 'to']) id(x[k], `${p}/${k}`);

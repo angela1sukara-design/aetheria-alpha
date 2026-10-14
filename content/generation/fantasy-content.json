@@ -17,12 +17,23 @@
         "id": "aetheria/social",
         "version": "0.1.0",
         "optional": false
+      },
+      {
+        "id": "aetheria/adventure",
+        "version": "1.0.0",
+        "optional": false
+      },
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
       }
     ],
     "requiresCapabilities": [
       "body.graph.v1",
       "npc.fixed.v1",
-      "district.v1"
+      "district.v1",
+      "adventure.v1"
     ],
     "migrations": []
   },
@@ -64,10 +75,12 @@
       "start": 480,
       "end": 1080,
       "names": [
-        "Gareth",
-        "Rowan",
-        "Elena",
-        "Thorne"
+        "加雷斯",
+        "罗文",
+        "伊莲娜",
+        "索恩",
+        "利亚姆",
+        "薇拉"
       ],
       "profession": "交接信使",
       "appearance": [
@@ -84,10 +97,12 @@
       "bodyTemplateId": "aetheria-tf:body.human",
       "patchIds": [],
       "dialogue": {
-        "intro": "旅馆值守今天顺利。你是新来的旅人吗？",
-        "repeat": "城外驿路还算通畅，公会告示刚换过。",
-        "help": "我可以帮你指去公会广场或神殿疗养所的路。"
-      }
+        "intro": "“我只是赶路的信使，交了信还要出城。你若问路，我倒是记得几条岔道。”",
+        "repeat": "“又碰面了。城门那边今天通行得还顺利吗？”",
+        "help": "你们交换了路况，随后各自继续赶路。"
+      },
+      "services": {},
+      "roleName": "过路信使"
     },
     {
       "id": "fantasy:resident.broker",
@@ -97,10 +112,12 @@
       "start": 480,
       "end": 1080,
       "names": [
-        "Isolde",
-        "Quinn",
-        "Mira",
-        "Jonas"
+        "伊索德",
+        "米拉",
+        "奎因",
+        "乔纳斯",
+        "佩拉",
+        "罗伊"
       ],
       "profession": "摊贩",
       "appearance": [
@@ -117,10 +134,24 @@
       "bodyTemplateId": "aetheria-tf:body.human",
       "patchIds": [],
       "dialogue": {
-        "intro": "广场这边的附魔护具报价刚更新。",
-        "repeat": "魔晶份额的争议还在，合同要写清返修。",
-        "help": "需要核货的话，先把供货单放到台面上。"
-      }
+        "intro": "“当天到的货都在这里，价钱标清了。要找活做，就先帮我把货单核清。”",
+        "repeat": "“熟面孔了。要买东西，还是来谈今天的订单？”",
+        "help": "你把送来的木箱逐一对照货单，数清扣环和布卷。摊主复核后付清约定的工钱。"
+      },
+      "services": {
+        "work": {
+          "label": "帮摊主核对货单",
+          "text": "你把送来的木箱逐一对照货单，数清扣环和布卷。摊主复核后付清约定的工钱。"
+        },
+        "trade": [
+          "progression:equipment.staff",
+          "progression:equipment.charm",
+          "fantasy:item.ration"
+        ],
+        "orders": true,
+        "investments": true
+      },
+      "roleName": "集市摊主"
     },
     {
       "id": "fantasy:resident.wolfkin",
@@ -130,10 +161,12 @@
       "start": 480,
       "end": 1080,
       "names": [
-        "Sable",
-        "Fen",
-        "Lyra",
-        "Ash"
+        "诺拉",
+        "莱拉",
+        "莎贝尔",
+        "艾什",
+        "瑟琳",
+        "艾琳"
       ],
       "profession": "护理员",
       "appearance": [
@@ -152,10 +185,21 @@
         "aetheria-tf:patch.ears.cat"
       ],
       "dialogue": {
-        "intro": "疗养所气味今天很干净。别挡着救护通道。",
-        "repeat": "战地疗伤用品按底额留着，队伍配额另算。",
-        "help": "需要向导或包扎指引的话，先说清伤处。"
-      }
+        "intro": "“先洗手再碰药罐。敷料和净水在这边，有伤就去里面的护理座位。”",
+        "repeat": "“又来了？先说说你哪里不舒服，别拿错了药。”",
+        "help": "你按药柜上的标记分好绷带、药罐和净水。护理员检查封口后，把工钱递到你手里。"
+      },
+      "services": {
+        "work": {
+          "label": "协助护理员整理药柜",
+          "text": "你按药柜上的标记分好绷带、药罐和净水。护理员检查封口后，把工钱递到你手里。"
+        },
+        "trade": [
+          "fantasy:item.bandage",
+          "fantasy:item.draught"
+        ]
+      },
+      "roleName": "神殿护理员"
     },
     {
       "id": "fantasy:resident.smith",
@@ -165,10 +209,12 @@
       "start": 480,
       "end": 1080,
       "names": [
-        "Thorne",
-        "Kai",
-        "Ash",
-        "Rowan"
+        "索恩",
+        "凯尔",
+        "阿什",
+        "罗文",
+        "加雷特",
+        "布兰"
       ],
       "profession": "维护电工",
       "appearance": [
@@ -187,10 +233,28 @@
         "aetheria-tf:patch.ears.cat"
       ],
       "dialogue": {
-        "intro": "锻造坊的时段表刚核对完。",
-        "repeat": "闲置设备要登记维护，才能换独立试产。",
-        "help": "工具坏了可以先放公共检视台。"
-      }
+        "intro": "“锻件要先冷透，别急着上手。工具看左边；想练习握持和发力，我可以带你做一遍。”",
+        "repeat": "“上次教你的握法还记得吗？把手腕放稳，再试一次。”",
+        "help": "你戴好手套，把冷却的锻件按尺寸放回木架，再清点一遍钉扣。铁匠验收后结清工钱。"
+      },
+      "services": {
+        "work": {
+          "label": "帮铁匠分拣锻件",
+          "text": "你戴好手套，把冷却的锻件按尺寸放回木架，再清点一遍钉扣。铁匠验收后结清工钱。"
+        },
+        "trade": [
+          "progression:equipment.blade",
+          "progression:equipment.vest",
+          "progression:equipment.gloves"
+        ],
+        "teach": [
+          "core:attack",
+          "core:defense",
+          "core:hit"
+        ],
+        "orders": true
+      },
+      "roleName": "铁匠"
     },
     {
       "id": "fantasy:resident.slimekin",
@@ -200,10 +264,12 @@
       "start": 480,
       "end": 1080,
       "names": [
-        "Gelda",
-        "Vex",
-        "Onyx",
-        "Mira"
+        "格尔达",
+        "薇克丝",
+        "奥妮克丝",
+        "米娅",
+        "尤娜",
+        "里昂"
       ],
       "profession": "档案整理员",
       "appearance": [
@@ -220,10 +286,17 @@
       "bodyTemplateId": "aetheria-tf:body.human",
       "patchIds": [],
       "dialogue": {
-        "intro": "公议厅的争议单我刚收过。别空手摸潮湿墙面。",
-        "repeat": "清算按重量计，样本要分装。",
-        "help": "若你要进下层走廊，我可以标出最近的安全回撤点。"
-      }
+        "intro": "“委托簿按日期排列。办事先看公告，登记过的事情都有回执，别弄丢了。”",
+        "repeat": "“你上次的回执还留着吧？把编号报给我，就不用从头翻了。”",
+        "help": "你对照印章整理已经办结的委托，把缺少收据的记录单独归档。文书复核后付清工钱。"
+      },
+      "services": {
+        "work": {
+          "label": "帮文书整理委托记录",
+          "text": "你对照印章整理已经办结的委托，把缺少收据的记录单独归档。文书复核后付清工钱。"
+        }
+      },
+      "roleName": "委托文书"
     },
     {
       "id": "fantasy:resident.geltech",
@@ -233,10 +306,12 @@
       "start": 480,
       "end": 1080,
       "names": [
-        "Onyx",
-        "Vex",
-        "Sable",
-        "Kai"
+        "奥妮克丝",
+        "塞拉",
+        "凯恩",
+        "塔洛",
+        "菲娜",
+        "卢卡"
       ],
       "profession": "维护电工",
       "appearance": [
@@ -253,10 +328,87 @@
       "bodyTemplateId": "aetheria-tf:body.human",
       "patchIds": [],
       "dialogue": {
-        "intro": "附魔锻造的黏性残留我刚清过。",
-        "repeat": "设备区与接单区要分开，别混用工具。",
-        "help": "需要量具校准可以来找我。"
-      }
+        "intro": "“工具接头要定期保养，硬拧只会弄坏。想练灵巧和控制，我这里也有基础练习。”",
+        "repeat": "“这次想练哪一项？先把旁边的工具摆稳，别碰还没冷却的金属。”",
+        "help": "你扶稳工具架，依照工匠的指示清除柄上的锈迹，再给活动连接处上油。对方逐件检查后付清工钱。"
+      },
+      "services": {
+        "work": {
+          "label": "协助工匠保养工具",
+          "text": "你扶稳工具架，依照工匠的指示清除柄上的锈迹，再给活动连接处上油。对方逐件检查后付清工钱。"
+        },
+        "trade": [
+          "progression:equipment.probe",
+          "progression:equipment.helm",
+          "progression:equipment.greaves"
+        ],
+        "teach": [
+          "core:attack",
+          "core:defense",
+          "core:speed",
+          "core:skillPower",
+          "core:hit",
+          "core:evasion",
+          "core:crit"
+        ],
+        "orders": true
+      },
+      "roleName": "附魔工匠"
+    }
+  ],
+  "items": [
+    {
+      "id": "fantasy:item.ration",
+      "name": "黑麦干粮",
+      "description": "用油纸包好的黑麦面饼，配水慢慢吃下。适合赶路前补充体力。",
+      "category": "recovery",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": 6
+        }
+      ],
+      "price": 6,
+      "maxStack": 20,
+      "usableInCombat": false
+    },
+    {
+      "id": "fantasy:item.bandage",
+      "name": "草药绷带",
+      "description": "用干净的绷带固定敷料，压住伤口。需要停下来处理，不用于交锋中的临时动作。",
+      "category": "recovery",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:health",
+          "amount": 10
+        }
+      ],
+      "price": 8,
+      "maxStack": 20,
+      "usableInCombat": false
+    },
+    {
+      "id": "fantasy:item.draught",
+      "name": "安神药饮",
+      "description": "一小瓶带着苦味的药饮，用于交锋之后慢慢平复心绪。",
+      "category": "explore",
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:sanity",
+          "amount": 25
+        }
+      ],
+      "price": 10,
+      "maxStack": 20,
+      "usableInCombat": false
     }
   ]
 }

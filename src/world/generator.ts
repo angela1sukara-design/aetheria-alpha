@@ -7,19 +7,22 @@ import type { ActionDef, ContentPack, Effect, Id } from '../core/types.ts';
 import { clone } from '../core/types.ts';
 import { createGameState } from '../engine/state.ts';
 import { instantiateBody, patchedBody } from '../engine/body.ts';
+import { effectivePart } from '../engine/query.ts';
 import { draw } from '../engine/rng.ts';
 import { initialDistrict } from '../engine/district.ts';
+import { facilitiesForService } from '../engine/entity-functions.ts';
 import { advanceWorldSimulation } from './simulation.ts';
 import { hash, integer, parseReference, parseRules } from './schema.ts';
 import { selectQuestContent } from '../content/quest-schema.ts';
 import { compileWorldQuests } from './quests.ts';
 import { compileWorldScenes } from './scenes.ts';
+import { compileResidentServices } from './resident-services.ts';
 import { compileCombatEncounters } from './combat-encounters.ts';
 import { proseProblem } from '../content/player-prose.ts';
 import { applyWorldProfile, chooseWorldProfile, parseWorldProfiles, professionName, worldProfileSelectionTag } from './profiles.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
-export const GENERATOR_VERSION = '0.8.0';
+export const GENERATOR_VERSION = '0.9.0';
 const id = (key: string): Id => `worldgen:${key}`;
 
 /** 生成器只创建初始快照。所有玩法编译成已有内容 DSL，并经过同一个 loader。 */
@@ -90,7 +93,7 @@ export class WorldGenerator {
       const hints = effects.flatMap(effect => {
         if (effect.op === 'clock.advance') return [`${effect.minutes}分钟`];
         if (effect.op === 'var.change') { const variable = input.registry.variable(effect.id); return [`${variable.label}${effect.amount >= 0 ? '+' : '−'}${Math.abs(effect.amount)}${variable.unit}`]; }
-        if (effect.op === 'resident.help') return ['精力−5', '零钱+3', '每天一次'];
+        if (effect.op === 'resident.help') return ['体力−8', '精力最多−2', '零钱+3', '每天一次'];
         if (effect.op === 'world.encounter') return effect.events === false ? ['切换在场居民', '不会触发事件'] : ['留意当天的事'];
         if (effect.op === 'tf.enqueue') return ['确认后开始渐进变化'];
         if (effect.op === 'tf.apply') return ['立即改变当前形态'];
@@ -113,13 +116,17 @@ export class WorldGenerator {
       const cell = pick(mapCells, `map.cell.${i}`); mapCells.splice(mapCells.indexOf(cell), 1);
       pack.locations.push({ id: lid, name, subtitle: `${t.data.economy.join(' / ')} · ${environment.data.name}`, textKey, actionHook: hook, map: { x: 12 + cell % 5 * 18 + Math.floor(draw(randomState, `generation:map.x.${i}`) * 5) - 2, y: 12 + Math.floor(cell / 5) * 24 + Math.floor(draw(randomState, `generation:map.y.${i}`) * 5) - 2 } });
       if(pack.manifest.schemaVersion===2){(pack.locationProfiles??=[]).push({id:id('location-profile.'+i),locationId:lid,light:'lit'});action('light.off.'+i,'关闭工作灯',hook,[{op:'environment.setLight',locationId:lid,value:'dark'}],[{op:'environment.light',locationId:lid,value:'lit'}]);action('light.on.'+i,'打开工作灯',hook,[{op:'environment.setLight',locationId:lid,value:'lit'}],[{op:'environment.light',locationId:lid,value:'dark'}]);}
+      const facilities=t.data.facilities??(profile?.tag==='worlds:setting.fantasy'&&input.registry.residentTemplates.some(t=>t.services!==undefined)?facilitiesForService[t.data.service]:undefined);
+      if(facilities)pack.locations.at(-1)!.facilities=[...facilities];
+      if(facilities)pack.texts[textKey]=`${environment.data.description}\n\n${t.data.description}`;
       definition.locations.push({ id: lid, regionId: 'region-0', templateId: t.id, service: t.data.service, tags: localTags, economy: clone(t.data.economy), professions: clone(t.data.professions), factionId: faction.id }); faction.locationIds.push(lid);
       if (t.data.ambience) for (const [key, start, end] of [['morning', 360, 600], ['day', 600, 1080], ['evening', 1080, 1320], ['night', 1320, 360]] as const) {
         const textKey = id(`text.ambience.${i}.${key}`); pack.texts[textKey] = t.data.ambience[key];
         (pack.sceneTexts ??= []).push({ id: id(`ambience.${i}.${key}`), locationId: lid, conditions: [{ op: 'time.window', start, end }], priority: 1, textKey });
       }
       // 所有地点免费恢复，旅行不扣精力，保证贫穷/耗尽时仍可继续游玩。
-      action(`rest.${i}`, '找个座位休息', hook, [{ op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:energy', amount: 12 }, {op:'var.change',id:'core:stamina',amount:12}], [], 'daily', '你在公共座位休息。精力和体力逐渐恢复，当地的日程仍在推进。');
+      const seated=!facilities||facilities.includes('seat')||facilities.includes('bed');
+      action(`rest.${i}`, seated?'找个座位休息':'停下来缓口气', hook, [{ op: 'clock.advance', minutes: 30 }, { op: 'var.change', id: 'core:energy', amount: 12 }, {op:'var.change',id:'core:stamina',amount:12}], [], 'daily', seated?'你坐下来休息，等呼吸平稳、身上的疲惫减轻，再继续自己的安排。':'你停下脚步，放慢动作调整呼吸。等体力恢复一些，再继续赶路。');
       if (t.data.service === 'clinic') action(`care.${i}`, '使用免费体况恢复座位', hook, [{ op: 'clock.advance', minutes: 45 }, { op: 'var.change', id: 'core:energy', amount: 6 }, { op: 'var.change', id: 'core:health', amount: 8 }], [], 'daily', '你在开放的护理座位补充饮水并休息，体况逐渐恢复。');
       action(`wait.${i}`, '等候一小时', hook, [{ op: 'clock.advance', minutes: 60 }]);
       action(`wait.short.${i}`, '在附近等候一刻钟', hook, [{ op: 'clock.advance', minutes: 15 }], [], 'daily', '你等候了一刻钟，居民按原来的日程活动。');
@@ -128,10 +135,14 @@ export class WorldGenerator {
       action(`meet.${i}`, '看看在场居民', hook, [{ op: 'world.encounter', events: false }], [], 'explore', '你向身边的人打了个招呼。');
       action(`talk.${i}`, '与眼前的居民交谈', hook, [{ op: 'resident.talk' }, { op: 'clock.advance', minutes: 5 }], [{ op: 'resident.available' }], 'daily', '你们聊了聊今天的生活。');
       action(`help.${i}`, '帮居民处理手边的事', hook, [{ op: 'resident.help' }, { op: 'clock.advance', minutes: 15 }], [{ op: 'resident.available' }, { op: 'body.hasCapability', capability: 'grasp', count: 1 }], 'daily', '你先问清楚需要什么，再伸手帮忙。');
+      if(facilities){
+        for(const [key,subject,service] of [['rest','location','rest'],['care','location','care'],['wait','location','wait'],['wait.short','location','wait'],['work','resident','work'],['talk','resident','talk'],['help','resident','work']] as const){const a=pack.actions.find(a=>a.id===id(`action.${key}.${i}`));if(a)a.conditions.push({op:'service.available',subject,service} as import('../core/types.ts').Condition);}
+        const workAction=pack.actions.find(a=>a.id===id(`action.work.${i}`))!;workAction.conditions.push({op:'service.available',subject:'location',service:'work'});
+      }
       const localContributors: ReferenceTemplate[] = [t]; contributionsAt.set(lid, localContributors);
       const context = new Set(localTags), activities: ReferenceTemplate[] = [];
       for (let j = 0; j < (rules.activitiesPerLocation ?? 0); j++) {
-        const filter = (candidate: ReferenceTemplate) => !activities.some(a => a.id === candidate.id);
+        const filter = (candidate: ReferenceTemplate) => !activities.some(a => a.id === candidate.id)&&(!facilities||candidate.kind==='activity'&&(!(candidate.data.moneyChange>0||candidate.data.energyChange<0)||facilities.includes('workplace'))&&(!candidate.data.healthChange||facilities.includes('care')));
         if (!templates.some(candidate => candidate.kind === 'activity' && eligible(candidate, context) && filter(candidate))) break;
         const a = choose('activity', `activity.${i}.${j}`, filter, context); if (a.kind !== 'activity') throw Error();
         activities.push(a); localContributors.push(a);
@@ -139,6 +150,15 @@ export class WorldGenerator {
         const resources = [{ id: 'core:energy' as Id, amount: a.data.energyChange }, { id: 'core:money' as Id, amount: a.data.moneyChange }, { id: 'core:health' as Id, amount: a.data.healthChange }];
         const changes = (positive: boolean): Effect[] => resources.filter(r => positive ? r.amount > 0 : r.amount < 0).map(r => ({ op: 'var.change', ...r }));
         action(`activity.${i}.${j}`, a.data.label, hook, [...changes(false), { op: 'clock.advance', minutes: a.data.minutes }, ...changes(true)], [...a.data.capabilities.map(capability => ({ op: 'body.hasCapability' as const, capability, count: 1 })),...(pack.manifest.schemaVersion===2?[{op:'environment.light' as const,locationId:lid,value:'lit' as const}]:[])], 'daily', a.data.description);
+      }
+      if(facilities)for(const a of pack.actions.filter(a=>a.id.startsWith(id(`action.activity.${i}.`)))){
+        const changes=a.effects.filter(e=>e.op==='var.change');
+        const paid=changes.some(e=>e.op==='var.change'&&(e.id==='core:money'&&e.amount>0||e.id==='core:energy'&&e.amount<0));
+        const care=changes.some(e=>e.op==='var.change'&&e.id==='core:health'&&e.amount>0);
+        const resting=changes.some(e=>e.op==='var.change'&&e.id==='core:energy'&&e.amount>0);
+        if(paid)a.conditions.push({op:'service.available',subject:'resident',service:'work'});
+        else if(care)a.conditions.push({op:'service.available',subject:'location',service:'care'});
+        else if(resting)a.conditions.push({op:'service.available',subject:'location',service:'rest'});
       }
       const events: ReferenceTemplate[] = [];
       for (let j = 0; j < (rules.eventsPerLocation ?? 1); j++) {
@@ -182,22 +202,35 @@ export class WorldGenerator {
       const work = pick(unstaffed.length ? unstaffed : workplaces, `workplace.${i}`);
       if (unstaffed.includes(work)) unstaffed.splice(unstaffed.indexOf(work), 1);
       const localTags = new Set(work.tags);
-      const t = choose('npc', `npc.${i}`, t => t.kind === 'npc' && work.professions.includes(input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!.profession), localTags); if (t.kind !== 'npc') throw Error();
+      const matchesWork=(t:ReferenceTemplate)=>t.kind==='npc'&&work.professions.includes(input.registry.residentTemplates.find(n=>n.id===t.data.residentTemplateId)!.profession);
+      const configured=(t:ReferenceTemplate)=>t.kind==='npc'&&!!input.registry.residentTemplates.find(n=>n.id===t.data.residentTemplateId)?.services?.work;
+      const needsProvider=i<workplaces.length&&!!pack.locations.find(l=>l.id===work.id)?.facilities&&templates.some(t=>matchesWork(t)&&configured(t)&&eligible(t,localTags));
+      const t = choose('npc', `npc.${i}`, t => matchesWork(t)&&(!needsProvider||configured(t)), localTags); if (t.kind !== 'npc') throw Error();
       contributionsAt.get(work.id)!.push(t);
       const source = input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!;
       const template = clone(source); template.id = id(`resident.${i}`); template.locationIds = pack.locations.map(l => l.id); template.start = 0; template.end = 1439;
       if (profile) template.profession = professionName(profile, work.service, source.profession);
+      if(source.roleName)template.profession=source.roleName;
       // 抽样只在生成时完成；单值实例模板继续受原居民存档校验保护。
-      template.names = [`${pick(profile?.residentNames ?? source.names, `npc.name.${i}`)}·${i + 1}`]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
+      const namePool=source.roleName?source.names:profile?.residentNames??source.names;
+      const unused=source.roleName?namePool.filter(name=>!pack.residentTemplates!.some(t=>t.names.includes(name))):namePool;
+      template.names = [`${pick(unused.length?unused:namePool, `npc.name.${i}`)}${source.roleName?'':`·${i + 1}`}`]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
       template.patchIds = source.patchIds.length ? [pick(source.patchIds, `npc.patch.${i}`)] : [];
       let initialBody = instantiateBody(input.registry.bodyTemplate(template.bodyTemplateId));
       for (const patch of template.patchIds) initialBody = patchedBody(initialBody, input.registry.bodyPatch(patch), input.registry);
       const adaptation=residentAdaptation(source,input.registry);
       if(!activityEligibility(initialBody,source,input.registry).pass)throw Error('居民身体不满足明确的职业或活动适配。');
       if(pack.manifest.schemaVersion===2)(pack.residentAdaptations??=[]).push({id:id('adaptation.'+i),templateId:template.id,workCapabilities:[...adaptation.workCapabilities],mobility:adaptation.mobility});
-      // 旧模板外观可能包含与补丁无关的肢体描写；生成外观从真实图读取，避免虚构部件。
-      const parts = initialBody.parts.map(p => input.registry.bodyPart(p.definitionId));
-      template.appearance = [`${[...new Set(parts.filter(p => p.kind === 'ear' || p.kind === 'tail').map(p => p.label))].join('、') || input.registry.bodyTemplate(template.bodyTemplateId).label}，带着${template.profession}的工作用品`];
+      // 旧模板外观可能包含与补丁无关的肢体描写；生成外观从真实图读取（支持耳/尾/翼及覆盖材质），避免虚构部件。
+      const notableParts = [...new Set(initialBody.parts.flatMap(part => {
+        const def = input.registry.bodyPart(part.definitionId);
+        const eff = effectivePart(part, input.registry);
+        const matLabel = part.overrides?.materialId ? input.registry.material(eff.materialId!).label : '';
+        if (def.kind === 'ear' || def.kind === 'tail') return [matLabel ? `${def.label}（${matLabel}）` : def.label];
+        if (matLabel) return [`${def.label}（${matLabel}）`];
+        return [];
+      }))];
+      template.appearance = [`${notableParts.join('、') || input.registry.bodyTemplate(template.bodyTemplateId).label}，带着${template.profession}的工作用品`];
       if (source.attire) {
         // 服装与真实身体描述分开：不把外观词条误当成已安装的器官或 TF。
         template.attire = [pick(source.attire, `npc.attire.${i}`)];
@@ -208,6 +241,7 @@ export class WorldGenerator {
       agents.push({ residentId: `resident:${work.id}:${template.id}`, originLocationId: work.id, factionId: work.factionId, relationships: [], schedule: schedule(rules, home.id, work.id, rest.id) });
     }
     if (profile) for (const place of definition.locations) place.professions = [...new Set(place.professions.map(p => professionName(profile, place.service, p)))];
+    for(const agent of agents){const t=pack.residentTemplates!.find(t=>agent.residentId.endsWith(':'+t.id))!;const place=definition.locations.find(l=>l.id===agent.originLocationId)!;if(t.roleName&&!place.professions.includes(t.profession))place.professions.push(t.profession);}
     // 最小社交网络只记录真实共同住处/工作关系；后续变化属于模拟器。
     for (let i = 0; i < agents.length; i++) {
       const a = agents[i]!, b = agents[(i + 1) % agents.length]!;
@@ -234,6 +268,7 @@ export class WorldGenerator {
     const questPacks = questContent === undefined ? [] : await compileWorldQuests(selectQuestContent(questContent, definition.regions[0]!.environmentTags, canonical), input.seed, input.registry, pack, definition, agents);
     compileCombatEncounters(pack, definition, input.registry);
     definition.eventPool=[...new Set([...definition.eventPool,...pack.events.filter(e=>e.id.startsWith('worldgen:event.danger.')).map(e=>e.id)])];
+    compileResidentServices(pack,input.registry);
     compileWorldScenes(pack, definition, input.registry);
     const sceneKeys=new Set((pack.narrativeNodes??[]).flatMap(n=>[n.textKey,...n.choices.map(c=>c.resultText)]));
     for(const [key,text]of Object.entries(pack.texts)){
@@ -242,6 +277,7 @@ export class WorldGenerator {
     for(const action of pack.actions){const problem=proseProblem(action.label);if(problem)throw Error(`生成选项未完成：${action.id}，${problem}。`);}
     definition.packs = [...clone(input.registry.contentPacks), pack, ...questPacks];
     const registry = await loadPacks(definition.packs), state = createGameState(registry, input.seed);
+    if(pack.locations.some(l=>l.facilities!==undefined)){const center=definition.locations.find(l=>l.service==='commons');if(center)definition.regions[0]!.name=`${registry.location(center.id).name}一带`;}
     state.world = { locationId: definition.startLocationId, knownLocationIds: [definition.startLocationId] };
     state.clock.totalMinutes = rules.startMinutes; state.rng = clone(randomState.rng); state.district = initialDistrict();
     // 不在生成时静默 created：异世界无公寓，需由一键入口 auto-create 或出生点 character-intro 完成签到。

@@ -2,6 +2,7 @@ import { bodyMatches, capabilityCount, entityBody, environment, timeWindow, PLAY
 import type { Condition, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
+import { serviceAvailable } from './entity-functions.ts';
 import { npcPresent, npcState, hasMemory } from './npc.ts';
 import { residentPresent, residentRelation } from './resident-quests.ts';
 import { adventureValue, progressionCheck } from './progression.ts';
@@ -11,6 +12,7 @@ export interface Check { pass: boolean; reason: string; known?: boolean }
 export function evaluate(condition: Condition, state: GameState, registry: Registry): Check {
   let pass: boolean; let reason = '条件尚未满足。';
   switch (condition.op) {
+    case 'service.available': return {pass:serviceAvailable(state,registry,condition),reason:'当前地点或人物不提供这项功能。'};
     case 'adventure.compare': {const value=adventureValue(state,condition.field);pass=condition.comparison==='eq'?value===condition.value:condition.comparison==='gte'?value>=condition.value:value<=condition.value;reason=`${({assets:'经营份额',influence:'组织影响',safety:'街区安全',reputation:'公共声望',orders:'订单',contracts:'契约',victories:'有效战斗胜利'})[condition.field]}需${condition.comparison==='gte'?'至少':condition.comparison==='lte'?'不超过':'等于'}${condition.value}（当前${value}）。`;break;}
     case 'progression.available': return progressionCheck(state,registry,condition.move,condition.id);
     case 'narrative.tag': pass=!!state.adventure?.story&&narrativeTags(state,registry).some(t=>t.role===condition.role&&t.tagId===condition.id)===condition.value;reason='当前故事状态不满足这个选择。';break;
@@ -32,7 +34,7 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     }
     case 'preference.adultOptional': {
       const profile = state.district?.profile;
-      const adult = !!(profile?.created && profile.ageYears >= 18 && profile.adultOptional);
+      const adult = !!(profile?.created && profile.adultOptional);
       pass = adult === condition.value;
       reason = condition.value ? '需要已创建的成年角色并开启成人可选文本偏好。' : '当前已开启成人可选文本。';
       break;

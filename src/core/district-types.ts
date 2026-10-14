@@ -1,6 +1,7 @@
 import type { EntityRef } from './query-types.ts';
 import type { Id, Condition } from './types.ts';
 import type { BodyGraph, BodyCapability } from './body-types.ts';
+import type { ResidentServices } from './function-types.ts';
 export type EnemyTier = 'S' | 'M' | 'L' | 'boss';
 export interface StoryletDef {
   id: Id; locationId: Id; conditions: Condition[]; eventId: Id; weight: number; priority: number;
@@ -13,6 +14,9 @@ export interface ResidentTemplate {
   dialogue?: { intro: string; repeat: string; help: string };
   /** 经编辑适配的服装文字；不定义身体部件、装备属性或能力。生成时抽定并保存。 */
   attire?: string[];
+  services?: ResidentServices;
+  /** 面向当前题材的职业称呼；职业适配和原始选池仍使用 profession。 */
+  roleName?: string;
 }
 export interface Resident {
   id: string; templateId: Id; name: string; locationId: Id; profession: string; appearance: string; personality: string;
@@ -112,7 +116,7 @@ export type DistrictEffect =
   | { op: 'equipment.remove' }
   | { op: 'item.use'; id: Id }
   | { op: 'item.gain'; id: Id; amount: number }
-  | { op: 'player.create'; name: string; ageYears: number }
+  | { op: 'player.create'; name: string; ageYears?: number }
   | { op: 'preference.set'; value: boolean };
 export type DistrictCondition =
   | { op: 'resident.present'; residentId: string }
@@ -151,7 +155,7 @@ export interface CombatState {
   reward?: number;
 }
 export interface DistrictState {
-  version: 1; profile: { name: string; ageYears: number; created: boolean; adultOptional: boolean };
+  version: 1; profile: { name: string; ageYears?: number; created: boolean; adultOptional: boolean };
   residents: Resident[]; currentResidentId: string | null; storyletHistory: { id: Id; at: number }[];
   factsAt: Record<Id, number>; discovered: Id[]; inventory: Id[]; equipped: Id | null;
   combat: CombatState | null;

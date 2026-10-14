@@ -6,11 +6,21 @@ import { adventure, initialAdventure } from './narrative.ts';
 import { RuleError } from '../core/errors.ts';
 import { bodyTraits } from './body.ts';
 import { environment } from './query.ts';
+import { serviceAvailable, usesFunctions } from './entity-functions.ts';
 
 export function adventureValue(s:GameState,field:AdventureField|'victories'):number { const a=s.adventure??initialAdventure();return field==='victories'?Object.values(a.victories).reduce((n,v)=>n+v,0):a[field]; }
+export function purchasePrice(r:Registry,id:Id):number {
+  const item=r.items.find(e=>e.id===id);if(item)return item.price??8;
+  const gear=r.equipment.find(e=>e.id===id);if(!gear)throw new RuleError('MISSING_GOODS','商品不存在。');
+  const slot=gear.slot??'cosmetic';return slot==='weapon'||slot==='held'?25:slot==='accessory'||slot==='cosmetic'?12:30;
+}
 export function progressionCheck(s:GameState,r:Registry,move:Extract<AdventureCondition,{op:'progression.available'}>['move'],id?:Id):{pass:boolean;reason:string} {
   const a=s.adventure??initialAdventure(),v=s.player.variables,day=Math.floor(s.clock.totalMinutes/1440),used=(key:string)=>a.daily[day+':'+key]??0;
   const fail=(reason:string)=>({pass:false,reason});
+  if(usesFunctions(s,r)&&['train','buy','order','invest'].includes(move)){
+    const kind=move==='train'?'teach':move==='buy'?'trade':move;
+    if(!serviceAvailable(s,r,{subject:'resident',service:kind as 'teach'|'trade'|'order'|'invest',...(id?{id}:{})}))return fail('当前在场人物不提供这项服务。');
+  }
   const service=environment(s,r).service,at=(x:string)=>service.known&&service.value===x;
   if(s.district?.combat||s.district?.scene)return fail('先结束眼前的交锋或互动。');
   if(move==='train'){
@@ -19,9 +29,9 @@ export function progressionCheck(s:GameState,r:Registry,move:Extract<AdventureCo
     if(v[id]!>=cap)return fail('已达到当前训练上限。');
     if(used('training')>=3||used('training:'+id)>=2)return fail('今天的训练额度已用完，休息后明天再来。');
     if(v['core:stamina']!<8||v['core:energy']!<4||v['core:money']!<8)return fail('训练需要体力8、精力4、零钱8。');
-    if(!at('workshop')&&!at('commons'))return fail('到工坊或公共训练区训练。');
+    if(!usesFunctions(s,r)&&!at('workshop')&&!at('commons'))return fail('到工坊或公共训练区训练。');
   }else if(move==='buy'){
-    if(!at('market')&&!at('workshop')&&!at('clinic')&&!at('commons'))return fail('到市场、工坊、诊所或公共区购买。');
+    if(!usesFunctions(s,r)&&!at('market')&&!at('workshop')&&!at('clinic')&&!at('commons'))return fail('到市场、工坊、诊所或公共区购买。');
     const gear=r.equipment.find(e=>e.id===id);
     const cons=r.items.find(e=>e.id===id);
     if(!gear&&!cons)return fail('商品不存在。');
@@ -38,12 +48,12 @@ export function progressionCheck(s:GameState,r:Registry,move:Extract<AdventureCo
       if(v['core:money']!<price)return fail(`需要零钱${price}。`);
     }
   }else if(move==='order'){
-    if(!at('market')&&!at('workshop'))return fail('到市场或工坊承接订单。');
+    if(!usesFunctions(s,r)&&!at('market')&&!at('workshop'))return fail('到市场或工坊承接订单。');
     if(!bodyTraits(s.player.body,r).grasp)return fail('需要可用的抓握部位。');
     if(used('orders')>=3)return fail('今天的公开订单已经完成，明天再来。');
     if(v['core:stamina']!<8||v['core:energy']!<5)return fail('完成订单需要体力8、精力5。');
   }else if(move==='invest'){
-    if(!at('market'))return fail('在市场登记经营份额。');if(v['core:money']!<30)return fail('登记经营份额需要零钱30。');
+    if(!usesFunctions(s,r)&&!at('market'))return fail('在市场登记经营份额。');if(v['core:money']!<30)return fail('登记经营份额需要零钱30。');
     if(used('invest')>=1)return fail('今天已登记过经营份额。');
   }else if(move==='patrol'){
     if(used('patrol')>=1)return fail('今天已经完成巡查。');if(v['core:stamina']!<10)return fail('巡查需要体力10。');

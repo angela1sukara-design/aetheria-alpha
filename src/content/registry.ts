@@ -14,6 +14,8 @@ export class Registry {
   readonly environmentEnemyRules: EnvironmentEnemyRule[];
   #definitions = new Map<string, { kind: string; value: unknown; packId:string }>();
   #actionsByHook = new Map<Id, Id[]>();
+  #tagById = new Map<Id, TagDef>();
+  #tagByAlias = new Map<string, Id[]>();
   readonly packs: PackRef[];
   readonly start: { locationId: Id; minutes: number };
   readonly variables: VariableDef[];
@@ -53,12 +55,21 @@ export class Registry {
     this.proseMaterials=freeze(data.flatMap(p=>p.proseMaterials??[]));
     this.proseSelections=freeze(data.flatMap(p=>p.proseSelections??[]));
     this.tags=freeze(data.flatMap(p=>p.tags??[]));
+    for (const t of this.tags) {
+      this.#tagById.set(t.id, t);
+      for (const a of t.aliases) {
+        const key = `${a.scope}/${a.value}`;
+        const list = this.#tagByAlias.get(key) ?? [];
+        if (!list.includes(t.id)) list.push(t.id);
+        this.#tagByAlias.set(key, list);
+      }
+    }
     this.derivedTags=freeze(data.flatMap(p=>p.derivedTags??[]));
     this.locationProfiles=freeze(data.flatMap(p=>p.locationProfiles??[]));
     this.npcBodies=freeze(data.flatMap(p=>p.npcBodies??[]));
     this.residentAdaptations=freeze(data.flatMap(p=>p.residentAdaptations??[]));
     const refs:Record<string,{packId:string;version:string;pointer:string}[]>={};
-    for(const pack of data){const scan=(v:unknown,path:string)=>{if(Array.isArray(v))v.forEach((x,i)=>scan(x,path+'/'+i));else if(v&&typeof v==='object')Object.entries(v).forEach(([k,x])=>{if(k!=='tags'||path!=='')scan(x,path+'/'+k);});else if(typeof v==='string'&&(/\/(tags|requiresTags|excludesTags|compatibleTags|environmentTags)\/\d+$|\/tag(Id)?$/.test(path))){const tag=this.tags.find(t=>t.id===v||t.aliases.some(a=>a.scope==='story.v1'&&path.startsWith('/storylets/')&&a.value===v));if(tag)(refs[tag.id]??=[]).push({packId:pack.manifest.id,version:pack.manifest.version,pointer:path});}};scan(pack,'');}
+    for(const pack of data){const scan=(v:unknown,path:string)=>{if(Array.isArray(v))v.forEach((x,i)=>scan(x,path+'/'+i));else if(v&&typeof v==='object')Object.entries(v).forEach(([k,x])=>{if(k!=='tags'||path!=='')scan(x,path+'/'+k);});else if(typeof v==='string'&&(/\/(tags|requiresTags|excludesTags|compatibleTags|environmentTags)\/\d+$|\/tag(Id)?$/.test(path))){const direct=this.#tagById.get(v as Id);const viaAlias=path.startsWith('/storylets/')?this.#tagByAlias.get(`story.v1/${v}`)?.[0]:undefined;const tagId=direct?.id??viaAlias;if(tagId)(refs[tagId]??=[]).push({packId:pack.manifest.id,version:pack.manifest.version,pointer:path});}};scan(pack,'');}
     this.tagReferences=freeze(refs);
     this.packs = freeze(clone(references));
     this.start = freeze(data.find(x => x.start)!.start!);
@@ -90,6 +101,13 @@ export class Registry {
     const entry = this.#definitions.get(id);
     if (!entry || entry.kind !== kind) throw new RuleError('UNKNOWN_DEFINITION', `${id} 不是已注册的 ${kind}。`);
     return entry.value as T;
+  }
+  hasTag(id: string): boolean { return this.#tagById.has(id as Id); }
+  resolveTagIds(value: string, scope: TagDef['aliases'][number]['scope']): Id[] {
+    const out: Id[] = [];
+    if (this.#tagById.has(value as Id)) out.push(value as Id);
+    for (const id of this.#tagByAlias.get(`${scope}/${value}`) ?? []) if (!out.includes(id)) out.push(id);
+    return out;
   }
   provenance(id:Id):PackRef{const entry=this.#definitions.get(id);if(!entry)throw new RuleError('UNKNOWN_DEFINITION','内容定义不存在。');return this.packs.find(p=>p.id===entry.packId)!;}
   tag(id:Id):TagDef{return this.get(id,'tags');}

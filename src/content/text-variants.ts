@@ -24,7 +24,7 @@ export class TextLibrary {
  list(){return this.#packs.map(p=>({id:p.manifest.id,version:p.manifest.version,enabled:this.#enabled.has(p.manifest.id)}));}
  resolve(slotId:Id,s:GameState,r:Registry):string {
  const slot=r.textSlots.find(x=>x.id===slotId);if(!slot)throw Error('文本槽不存在。');
- const adult=!!s.district?.profile.created&&s.district.profile.ageYears>=18&&slot.participants.every(id=>id==='player'||adultNPCEligibility(r,id).pass);
+ const adult=!!s.district?.profile.created&&slot.participants.every(id=>id==='player'||adultNPCEligibility(r,id).pass);
  const facts=slot.requiredFacts.every(id=>s.player.flags[id]);
  const variants=this.#packs.filter(p=>this.#enabled.has(p.manifest.id)).flatMap(p=>p.variants).filter(v=>v.slotId===slotId&&facts&&(v.tier==='general'||(adult&&s.district?.profile.adultOptional))).sort((a,b)=>b.priority-a.priority||a.textKey.localeCompare(b.textKey,'en'));
  let tx=variants[0]?.text??r.text(slot.fallbackTextKey);

@@ -1,11 +1,13 @@
 import type { Registry } from './registry.ts';
 import type { Id } from '../core/types.ts';
 import type { TagDef } from '../core/query-types.ts';
-/** 别名仅在指定旧域精确解析；主题语义从不作为角色状态。 */
+/** 别名仅在指定旧域精确解析；主题语义从不作为角色状态。使用 Registry O(1) 哈希表加速海量 Tag 解析。 */
 export function resolveTag(r: Registry, value: string, scope: TagDef['aliases'][number]['scope']): Id {
-  const matches = r.tags.filter(t => t.id === value || t.aliases.some(a => a.scope === scope && a.value === value));
+  const matches = typeof r.resolveTagIds === 'function'
+    ? r.resolveTagIds(value, scope)
+    : r.tags.filter(t => t.id === value || t.aliases.some(a => a.scope === scope && a.value === value)).map(t => t.id);
   if (matches.length !== 1) throw Error(`${matches.length ? '歧义' : '未定义'} Tag：${scope}/${value}`);
-  return matches[0]!.id;
+  return matches[0]!;
 }
 export function tagLabel(r: Registry, value: string, scope: TagDef['aliases'][number]['scope']): string {
   if(value === '隐藏' && scope === 'story.v1') return '';

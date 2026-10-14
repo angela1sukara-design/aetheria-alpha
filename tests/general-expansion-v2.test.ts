@@ -123,7 +123,8 @@ test('第二轮：30个文字批次通过正式校验，不注册编辑标签、
   tampered.entries[0].effects = [{type:'money',amount:100}];
   assert.throws(()=>validateSemanticBatch(tampered,registry));
   const invalidTag = structuredClone(result.exported.batches[0]);
-  invalidTag.entries[0].tags = [result.common[0].coreConceptIds[0] ?? result.common[0].qualifierConceptIds[0]];
+  // 部分编辑概念已另行编译进正式字典；拒绝断言必须使用真正未登记的 ID。
+  invalidTag.entries[0].tags = ['editorial-proposal:tag.unregistered'];
   assert.throws(()=>validateSemanticBatch(invalidTag,registry));
 });
 

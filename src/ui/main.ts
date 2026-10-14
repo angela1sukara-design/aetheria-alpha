@@ -92,9 +92,7 @@ async function boot(): Promise<void> {
         content: await Promise.all(contents.map(name => fetchJSON(new URL(name, indexUrl)))),
       };
     }
-    const allWorldProfiles = await fetchJSON(new URL('../../content/generation/world-profiles.json', import.meta.url)) as { format: string; schemaVersion: number; profiles: { tag: string }[] };
-    // 小范围试玩：随机/题材列表只开放中世纪异世界（worlds:setting.fantasy）
-    const worldProfiles = { ...allWorldProfiles, profiles: allWorldProfiles.profiles.filter(p => p.tag === 'worlds:setting.fantasy') };
+    const worldProfiles = await fetchJSON(new URL('../../content/generation/world-profiles.json', import.meta.url));
     return {
       worldProfiles,
       rules: await fetchJSON(new URL('../../content/generation/rules.json', import.meta.url)),
@@ -110,10 +108,10 @@ async function boot(): Promise<void> {
     else adopt({ state: createGameState(fixedRegistry, newSeed()), registry: fixedRegistry });
     result = undefined; redraw(); pages.game(); feedback('已进入新世界。手动存档槽仍保留上次保存的进度；保存后才会覆盖。');
   }, ensurePlayerCreated: () => {
-    // 一键异世界：无公寓签到点时自动 player.create（默认名+年龄≥18），打通 adultOptional 门
+    // 一键异世界：无公寓签到点时只以默认姓名创建成年设定的玩家角色。
     const snap = engine.snapshot();
     if (!snap.district || snap.district.profile.created) { redraw(); return; }
-    const created = engine.performAction({ actionId: asId('district:action.create'), params: { name: '旅人', ageYears: 25 } }, snap.meta.revision, crypto.randomUUID());
+    const created = engine.performAction({ actionId: asId('district:action.create'), params: { name: '旅人' } }, snap.meta.revision, crypto.randomUUID());
     if (created.ok) { result = created; browsing = false; feedback('已用默认身份进入异世界（旅人 · 25 岁）。可在内容偏好开启成人可选文本。'); }
     else feedback(created.message, true);
     redraw();
@@ -157,7 +155,7 @@ async function boot(): Promise<void> {
     const keepBodyPage = !!button.closest('#body-dialog,#bag-dialog');
     const revision = engine.snapshot().meta.revision;
     // 先锁按钮再提交；同一轮快速点击携带旧请求不会悄悄执行下一项行动。
-    const params=button.dataset.action==='district:action.create'?{name:byId<HTMLInputElement>('character-name').value,ageYears:Number(byId<HTMLInputElement>('character-age').value)}:undefined;
+    const params=button.dataset.action==='district:action.create'?{name:byId<HTMLInputElement>('character-name').value}:undefined;
     const actionResult = engine.performAction({ actionId: asId(button.dataset.action!),...(params?{params}:{}) }, revision, crypto.randomUUID());
     if (actionResult.ok) {
       result = actionResult; browsing = false; redraw(); feedback('');
@@ -212,7 +210,7 @@ async function boot(): Promise<void> {
   }));
   function persistTexts():void{for(const pack of texts.list())textEnabled[pack.id]=pack.enabled;try{localStorage.setItem('aetheria-alpha02-texts',JSON.stringify(storedTexts));localStorage.setItem('aetheria-alpha02-text-enabled',JSON.stringify(textEnabled));}catch{byId('pack-message').textContent='文本已在当前会话启用；浏览器不允许持久化扩展文件。';}}
   byId('discovery-search').addEventListener('input',redraw);
-  byId('adult-preference').addEventListener('change',()=>{if(busy)return;const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(!x.ok)byId('pack-message').textContent=x.message;else if(enabled){const p=engine.snapshot().district?.profile;const gate=!!(p?.created&&p.ageYears>=18&&p.adultOptional);byId('pack-message').textContent=gate?'成人可选文本偏好已开启。':'偏好已开启；创建成年角色后即可显示相关文本。';byId('pack-message').dataset.adultReason=gate?'0':'1';}else{byId('pack-message').textContent='已关闭成人可选文本。';delete byId('pack-message').dataset.adultReason;}redraw();});
+  byId('adult-preference').addEventListener('change',()=>{if(busy)return;const enabled=byId<HTMLInputElement>('adult-preference').checked;const x=engine.performAction({actionId:asId('district:action.preference.'+(enabled?'on':'off'))},engine.snapshot().meta.revision,crypto.randomUUID());if(!x.ok)byId('pack-message').textContent=x.message;else if(enabled){const p=engine.snapshot().district?.profile;const gate=!!(p?.created&&p.adultOptional);byId('pack-message').textContent=gate?'成人可选文本偏好已开启。':'偏好已开启；创建角色后即可显示相关文本。';byId('pack-message').dataset.adultReason=gate?'0':'1';}else{byId('pack-message').textContent='已关闭成人可选文本。';delete byId('pack-message').dataset.adultReason;}redraw();});
   byId<HTMLInputElement>('pack-import').addEventListener('change',async event=>{const input=event.target as HTMLInputElement,file=input.files?.[0];input.value='';if(!file)return;try{if(file.size>1024*1024)throw Error('文本包超过1 MiB。');const raw=JSON.parse(await file.text()),id=texts.install(raw,registry);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);storedTexts.push(raw);persistTexts();redraw();byId('pack-message').textContent='可选文本包已启用。当前进度与效果没有改变。';}catch(error){byId('pack-message').textContent='未导入：'+(error instanceof Error?error.message:error);}});
   document.addEventListener('click',event=>{const b=(event.target as Element).closest<HTMLButtonElement>('button[data-pack]');if(!b)return;const id=b.dataset.pack!;if(b.dataset.packMove==='delete'){texts.remove(id);storedTexts=storedTexts.filter((x:unknown)=>(x as {manifest:{id:string}}).manifest.id!==id);delete textEnabled[id];}else {textEnabled[id]=!texts.list().find(x=>x.id===id)!.enabled;texts.setEnabled(id,textEnabled[id]!);}persistTexts();redraw();byId('pack-message').textContent='文本显示已更新；角色与事件状态保留。';});
   byId<HTMLInputElement>('rules-import').addEventListener('change',async event=>{

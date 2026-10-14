@@ -14,6 +14,7 @@ export const folioCategories: Record<string, [string,string]> = {
 };
 export function folioCategory(option: ActionOption, registry: Registry): string {
   if (option.definition.group === 'travel') return 'travel';
+  if(option.definition.conditions.some(c=>c.op==='service.available'&&c.subject==='resident'))return 'people';
   if (option.definition.effects.some(e => e.op === 'resident.talk' || e.op === 'resident.help' || e.op === 'npc.remember'
     || (e.op === 'world.encounter' && e.events === false)
     || (e.op === 'event.start' && ((registry.event(e.id).participantIds?.length ?? 0) > 0 || (registry.event(e.id).residentIds?.length ?? 0) > 0)))) return 'people';
@@ -23,7 +24,7 @@ export function isImmediateTravel(option: ActionOption): boolean {
   return option.definition.group === 'travel' || option.definition.effects.some(e => e.op === 'location.move');
 }
 type Settings = {font:'sm'|'md'|'lg';reveal:'instant'|'type';motion:boolean;debug:boolean};
-let settings: Settings = {font:'md',reveal:'instant',motion:!matchMedia('(prefers-reduced-motion: reduce)').matches,debug:false};
+let settings: Settings = {font:'md',reveal:'instant',motion:(typeof matchMedia==='function'?!matchMedia('(prefers-reduced-motion: reduce)').matches:true),debug:false};
 let current: {view:GameView;registry:Registry;result?:ActionResult;browsing:boolean}|undefined;
 let callbacks: {redraw:()=>void;openPage:(name:string,from?:boolean)=>void};
 let lastChange = '', lastReading = '', timer: ReturnType<typeof setTimeout>|undefined;
@@ -63,6 +64,11 @@ function saveSettings():void {
   for(const button of document.querySelectorAll<HTMLButtonElement>('button[data-font]'))button.setAttribute('aria-pressed',String(button.dataset.font===settings.font));
   for(const button of document.querySelectorAll<HTMLButtonElement>('button[data-reveal]'))button.setAttribute('aria-pressed',String(button.dataset.reveal===settings.reveal));
   byId<HTMLInputElement>('reading-motion').checked=!settings.motion;byId<HTMLInputElement>('reading-debug').checked=settings.debug;
+  const quickDebug = document.getElementById('debug-toggle-quick') as HTMLButtonElement | null;
+  if (quickDebug) {
+    quickDebug.setAttribute('aria-pressed', String(settings.debug));
+    quickDebug.textContent = settings.debug ? 'Tag调试 · 已开' : 'Tag调试';
+  }
   try{localStorage.setItem('aetheria-folio-reading',JSON.stringify(settings));}catch{/* Reading preferences still apply to this session. */}
 }
 export function mountFolio(options:typeof callbacks):void {
@@ -89,7 +95,16 @@ export function mountFolio(options:typeof callbacks):void {
   for(const button of document.querySelectorAll<HTMLButtonElement>('button[data-font]'))button.addEventListener('click',()=>{settings.font=button.dataset.font as Settings['font'];saveSettings();});
   for(const button of document.querySelectorAll<HTMLButtonElement>('button[data-reveal]'))button.addEventListener('click',()=>{finishReading();settings.reveal=button.dataset.reveal as Settings['reveal'];saveSettings();});
   byId('reading-motion').addEventListener('change',()=>{finishReading();settings.motion=!byId<HTMLInputElement>('reading-motion').checked;saveSettings();});
-  byId('reading-debug').addEventListener('change',()=>{settings.debug=byId<HTMLInputElement>('reading-debug').checked;saveSettings();callbacks.redraw();});
+  byId('reading-debug').addEventListener('change',()=>{finishReading();settings.debug=byId<HTMLInputElement>('reading-debug').checked;saveSettings();callbacks.redraw();});
+  const quickDebug = document.getElementById('debug-toggle-quick');
+  if (quickDebug) {
+    quickDebug.addEventListener('click', () => {
+      finishReading();
+      settings.debug = !settings.debug;
+      saveSettings();
+      callbacks.redraw();
+    });
+  }
   for(const event of ['popstate','hashchange','gameviewchange'])window.addEventListener(event,()=>presentFlow());
   document.addEventListener('keydown',e=>{
     if(e.repeat||document.querySelector('dialog:modal')||!byId('folio-cover').hidden||!byId('subpage-host').hidden)return;
@@ -141,9 +156,10 @@ function cardsPagination():void {
   if(!current)return;
   const key=current.view.location.id;
   for(const group of byId('actions').querySelectorAll<HTMLElement>('.action-group')){
+    for (const oldPager of group.querySelectorAll('.action-pager')) oldPager.remove();
     const grid=group.querySelector<HTMLElement>(':scope > .action-grid');if(!grid)continue;
     const cards=[...grid.children] as HTMLElement[];
-    if(cards.length<=6)continue;
+    if(cards.length<=6){for(const card of cards)card.hidden=false;continue;}
     const pageKey=`${key}:${group.dataset.group}`,pages=Math.ceil(cards.length/6);
     let page=Math.min(listPages.get(pageKey)??0,pages-1);
     const pager=element('div','action-pager'),prev=element('button','button-text','← 上一页'),next=element('button','button-text','下一页 →'),count=element('span');prev.type=next.type='button';count.setAttribute('role','status');

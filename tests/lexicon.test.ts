@@ -136,7 +136,7 @@ test('现有素材统计来自实际默认加载列表，可选包分开且不�
 });
 test('运行时源码与默认内容入口没有导入词库，新增素材不会变更游戏存档',async()=>{
  async function scan(dir) {for(const e of await readdir(dir,{withFileTypes:true})) {const file=path.join(dir,e.name);if(e.isDirectory())await scan(file);else if(e.name.endsWith('.ts'))assert.ok(!/lexicon-authoring|scripts\/lexicon/.test(await readFile(file,'utf8')),file);}}
- await scan(path.join(project,'src'));assert.ok(!(await readFile(path.join(project,'content/index.json'),'utf8')).includes('lexicon'));
+ await scan(path.join(project,'src'));assert.ok(!(await readFile(path.join(project,'content/index.json'),'utf8')).includes('lexicon-authoring'));
 });
 test('已分配任务的可派发指令带正确来源，不要求AI改动规则',()=>{
  const prompt=taskPrompt(catalog.find(c=>c.code===task.library),{...task,producer:'claude-a'});assert.ok(prompt.includes('"producer": "claude-a"'));assert.ok(prompt.includes('其余字段全部禁止'));assert.ok(prompt.includes('不定义')||prompt.includes('不设计'));

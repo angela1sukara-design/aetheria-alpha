@@ -22,9 +22,13 @@ export function worldProfileSelectionTag(value: string): string {
   return `worlds:setting.${names[match[1]] ?? match[1]}`;
 }
 const services: Service[] = ['home', 'market', 'workshop', 'clinic', 'commons'];
-const starterProfessions = new Set(['交接信使','烘焙师','缝补工','维护电工','水务工','摊贩','护理员','档案整理员','园艺工']);
+const starterProfessionList = ['交接信使','烘焙师','缝补工','维护电工','水务工','摊贩','护理员','档案整理员','园艺工'];
+const starterProfessions = new Set(starterProfessionList);
 export function professionName(profile: WorldProfile, service: Service, original: string): string {
-  return starterProfessions.has(original) ? profile.locations[service].professions[0]! : original;
+  if (!starterProfessions.has(original)) return original;
+  const list = profile.locations[service].professions;
+  const idx = starterProfessionList.indexOf(original);
+  return list[(idx >= 0 ? idx : 0) % list.length]!;
 }
 const ecologies: Record<string, [string, string]> = {
   wet: ['湿润环境', '潮气凝在遮蔽设施边缘，排水通道把生活区与工作区连在一起。'],
@@ -65,8 +69,10 @@ export function chooseWorldProfile(profiles: WorldProfile[], seed: number, tag?:
   const sorted = [...profiles].sort((a, b) => a.id.localeCompare(b.id, 'en'));
   return clone(sorted[((value ^ value >>> 15) >>> 0) % sorted.length]!);
 }
-/** Adapt copies of reference templates; imported originals and shared service IDs remain intact. */
+/** Adapt copies of reference templates; preserve lexicon-adapted architectural details alongside world profile themes. */
 export function applyWorldProfile(templates: ReferenceTemplate[], profile: WorldProfile): void {
+  let activityIdx = 0;
+  let eventIdx = 0;
   for (const t of templates) {
     if (t.kind === 'environment') {
       const key = t.data.tags.map(tag => tag.match(/(?:setting\.|climate\.)(wet|dry|garden|frost|forge|tidal)$/)?.[1]).find(Boolean);
@@ -74,24 +80,39 @@ export function applyWorldProfile(templates: ReferenceTemplate[], profile: World
       t.data.name = ecology?.[0] ?? '当地环境';
       t.data.description = profile.description + '\n\n' + (ecology?.[1] ?? '住处、交易、生产、护理和公共事务由当地居民维持。');
     } else if (t.kind === 'place') {
-      const p = profile.locations[t.data.service]; t.data = { ...clone(p), service: t.data.service, professions: t.data.professions };
+      const p = profile.locations[t.data.service];
+      const extraParagraphs = t.data.description.split('\n\n').slice(1).join('\n\n').trim();
+      const origAmbience = t.data.ambience ? clone(t.data.ambience) : undefined;
+      const origFacilities=t.data.facilities?clone(t.data.facilities):undefined;
+      t.data = {
+        ...clone(p),
+        service: t.data.service,
+        professions: t.data.professions,
+        ...(origFacilities!==undefined?{facilities:origFacilities}:{}),
+        description: extraParagraphs ? `${p.description}\n\n${extraParagraphs}` : p.description,
+      };
       t.data.ambience = {
-        morning: `清晨，${p.names[0]}的值守人员开始交班。${p.description}`,
-        day: `日间，${p.names[0]}里有人工作，也有人停下来休息。${p.description}`,
-        evening: `傍晚，${p.names[0]}的照明逐渐亮起，通道仍然开放。${p.description}`,
-        night: `夜间，${p.names[0]}降低了声响，值守和公共座位仍然可用。${p.description}`
+        morning: `清晨，${p.names[0]}的值守人员开始交班。${origAmbience?.morning ?? p.description}`,
+        day: `日间，${p.names[0]}里有人工作，也有人停下来休息。${origAmbience?.day ?? p.description}`,
+        evening: `傍晚，${p.names[0]}的照明逐渐亮起，通道仍然开放。${origAmbience?.evening ?? p.description}`,
+        night: `夜间，${p.names[0]}降低了声响，值守和公共座位仍然可用。${origAmbience?.night ?? p.description}`
       };
     } else if (t.kind === 'faction') t.data = clone(profile.factions[t.id.endsWith('.trade') ? 0 : 1]!);
     else if (t.kind === 'activity') {
       const service = t.requiresTags.map(tag => tag.match(/(?:service\.)(home|market|workshop|clinic|commons)$/)?.[1]).find(Boolean) as Service | undefined;
       const place = profile.locations[service ?? 'commons'];
-      t.data.label = t.data.energyChange > 0 ? `在${place.names[0]}补给与休整` : t.data.moneyChange > 0 ? `协助${place.economy[0]}` : `了解${place.economy[0]}的安排`;
-      t.data.description = t.data.energyChange > 0 ? `你在${place.names[0]}按现场安排补充所需，休整片刻后重新出发。` : `你在${place.names[0]}按现场安排完成了一段${place.economy[0]}，随后确认约定的结算。`;
+      const econ = place.economy[activityIdx % place.economy.length]!;
+      const placeName = place.names[activityIdx % place.names.length]!;
+      activityIdx++;
+      t.data.label = t.data.energyChange > 0 ? `在${placeName}补给与休整` : t.data.moneyChange > 0 ? `协助${econ}` : `了解${econ}的安排`;
+      t.data.description = t.data.energyChange > 0 ? `你在${placeName}按现场安排补充所需，休整片刻后重新出发。` : `你在${placeName}按现场安排完成了一段${econ}，随后确认约定的结算。`;
     } else if (t.kind === 'event') {
       const service = t.requiresTags.map(tag => tag.match(/(?:service\.)(home|market|workshop|clinic|commons)$/)?.[1]).find(Boolean) as Service | undefined;
       const place = profile.locations[service ?? 'commons'];
-      t.data.label = `参与${place.economy[0]}的现场协作`;
-      t.data.prompt = `${place.description}\n\n有人正在处理${place.economy[0]}，其中一个环节需要两人配合。你可以就地参与，也可以继续自己的安排。`;
+      const econ = place.economy[eventIdx % place.economy.length]!;
+      eventIdx++;
+      t.data.label = `参与${econ}的现场协作`;
+      t.data.prompt = `${place.description}\n\n有人正在处理${econ}，其中一个环节需要两人配合。你可以就地参与，也可以继续自己的安排。`;
       t.data.completeText = `你和当班人员在现场完成了分工，核对结算后各自继续安排。`;
     }
   }

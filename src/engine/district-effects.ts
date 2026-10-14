@@ -133,8 +133,8 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
   const d = district(s);
   if (e.op === 'player.create') {
     if (d.profile.created) throw new RuleError('CREATED', '角色已经创建。');
-    d.profile = { name: e.name, ageYears: e.ageYears, created: true, adultOptional: d.profile.adultOptional };
-    c.resolvedTexts.push(`${e.name}，${e.ageYears}岁。你在租约上签下名字，把这座城市当作新的起点。`);
+    d.profile = { name: e.name, created: true, adultOptional: d.profile.adultOptional };
+    c.resolvedTexts.push(`${e.name}，你在租约上签下名字，把这座城市当作新的起点。`);
   } else if (e.op === 'preference.set') d.profile.adultOptional = e.value;
   else if (e.op === 'equipment.wear') {
     const item = r.equipment.find(x => x.id === e.id);
@@ -173,7 +173,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     c.resolvedTexts.push(`你使用了${item.name}。`);
   } else if (e.op === 'scene.start') {
     const def = r.interactions.find(x => x.id === e.id);
-    if (!def || d.scene || d.combat || !npcPresent(s, r, def.npcId) || !def.conditions.every(x => evaluate(x, s, r).pass) || !d.profile.created || d.profile.ageYears < 18 || (r.textSlots.find(x => x.id === def.textSlotId)?.contentTier === 'adult_optional' && !adultNPCEligibility(r, def.npcId).pass)) throw new RuleError('SCENE_UNWILLING', '当前身份、意愿或处境不适合继续。');
+    if (!def || d.scene || d.combat || !npcPresent(s, r, def.npcId) || !def.conditions.every(x => evaluate(x, s, r).pass) || !d.profile.created || (r.textSlots.find(x => x.id === def.textSlotId)?.contentTier === 'adult_optional' && !adultNPCEligibility(r, def.npcId).pass)) throw new RuleError('SCENE_UNWILLING', '当前身份、意愿或处境不适合继续。');
     const owner = r.textSlots.find(x => x.id === def.textSlotId)!;
     const current = s.eventInstances.find(x => x.instanceId === s.activeEventStack.at(-1));
     if (current?.definitionId !== owner.owner.eventId || current.nodeId !== owner.owner.nodeId) throw new RuleError('SCENE_CONTEXT', '互动必须从约定的事件节点进入。');

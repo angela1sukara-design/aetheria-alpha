@@ -67,13 +67,13 @@ test('slot kit: preference defaults off and an entered node uses neutral fallbac
   assert.ok(!engine.view().sceneText.includes(marker));
 });
 
-test('slot kit: missing identity, player age or required facts prevents optional display', async () => {
+test('slot kit: missing identity, disabled preference or required facts prevents optional display', async () => {
   const { engine, registry, library } = await fixture();
   enter(engine);
   const initial = engine.snapshot();
   for (const change of [
     state => { state.district.profile.created = false; },
-    state => { state.district.profile.ageYears = 17; },
+    state => { state.district.profile.adultOptional = false; },
     state => { state.player.flags['slotdemo:flag.ready'] = false; },
   ]) {
     // Deliberately invalid snapshots are only read-only gate fixtures; never saved.
@@ -81,6 +81,14 @@ test('slot kit: missing identity, player age or required facts prevents optional
     change(state);
     assert.equal(library.resolve(slotId, state, registry), fallback);
   }
+});
+
+test('slot kit: optional player text does not require an age attribute', async () => {
+  const { engine, registry, library } = await fixture();
+  enter(engine);
+  const state = structuredClone(engine.snapshot());
+  assert.equal(Object.hasOwn(state.district.profile, 'ageYears'), false);
+  assert.ok(library.resolve(slotId, state, registry).includes(marker));
 });
 
 test('slot kit: unknown-age fixed NPC is rejected when registering optional slot', async () => {

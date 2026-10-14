@@ -1,5 +1,6 @@
 import type { ContentPack, GameState, Id, PackRef } from '../core/types.ts';
 import type { BodyCapability } from '../core/body-types.ts';
+import type { LocationFacility } from '../core/function-types.ts';
 
 export type Service = 'home' | 'market' | 'workshop' | 'clinic' | 'commons';
 export interface TemplateRules {
@@ -10,7 +11,7 @@ export interface TemplateRules {
 }
 export type ReferenceTemplate = TemplateRules & { id: string } & (
   | { kind: 'environment'; data: { name: string; description: string; tags: string[] } }
-  | { kind: 'place'; data: { service: Service; names: string[]; description: string; economy: string[]; professions: string[]; ambience?: { morning: string; day: string; evening: string; night: string } } }
+  | { kind: 'place'; data: { service: Service; names: string[]; description: string; economy: string[]; professions: string[]; facilities?: LocationFacility[]; ambience?: { morning: string; day: string; evening: string; night: string } } }
   | { kind: 'npc'; data: { residentTemplateId: Id } }
   | { kind: 'faction'; data: { name: string; activities: string[] } }
   | { kind: 'event'; data: { label: string; prompt: string; completeText: string; minutes: number; reward: number } }

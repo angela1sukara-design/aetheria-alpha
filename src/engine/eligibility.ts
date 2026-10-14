@@ -7,7 +7,8 @@ export function ageEligibility(age:number|null|undefined,intelligent:boolean,thr
 }
 /** 偏好与分级由调用者另查；成年门槛不依赖身体、种族名称或 adult Tag。 */
 export function adultEntityEligibility(s:GameState,r:Registry,ref:EntityRef):{pass:boolean;reason:string}{
-  if(ref.kind==='player')return ageEligibility(s.district?.profile.created?s.district.profile.ageYears:null,true,18);
+  // 玩家角色统一设定为成年人，不再把年龄作为可编辑属性；偏好仍由调用方检查。
+  if(ref.kind==='player')return s.district?.profile.created?{pass:true,reason:''}:{pass:false,reason:'请先创建角色。'};
   const n=ref.kind==='npc'?r.npcs.find(n=>n.id===ref.id):s.district?.residents.find(n=>n.id===ref.id);
   if(!n)return {pass:false,reason:'人物身份未知。'};
   const species=r.species(n.speciesId);return ageEligibility(n.ageYears,species.intelligent,species.adultAgeYears);

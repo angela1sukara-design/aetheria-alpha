@@ -7,7 +7,7 @@ import { byId } from './render.ts';
 import { parseWorldProfiles } from '../world/profiles.ts';
 
 /** 参考库导入只影响下一次创建；不能写正在游玩的世界或未保存进度。 */
-export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown | unknown[]; content?: unknown[]; questContent?: unknown; worldProfiles?: unknown }; lockDefaults?: boolean; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void; /** 一键异世界进入后：若尚未创建则自动 player.create（默认名+成年年龄） */ ensurePlayerCreated?: () => void }): void {
+export function mountWorldControls(options: { source: () => Registry; defaults: { rules: unknown; reference: unknown | unknown[]; content?: unknown[]; questContent?: unknown; worldProfiles?: unknown }; lockDefaults?: boolean; isBusy: () => boolean; setBusy: (value: boolean) => void; replace: (world?: GeneratedWorld) => void; /** 一键异世界进入后：若尚未创建则以默认姓名自动 player.create */ ensurePlayerCreated?: () => void }): void {
   const defaultReferences = (): unknown[] => Array.isArray(options.defaults.reference) ? [...options.defaults.reference] : [options.defaults.reference];
   let rules = options.defaults.rules, references: unknown[] = defaultReferences(), extraContent: unknown[] = [];
   const message = (text: string) => { byId('world-message').textContent = text; };

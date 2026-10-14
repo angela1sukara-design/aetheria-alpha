@@ -7,8 +7,9 @@ import { draw } from './rng.ts';
 import { instantiateBody, patchedBody } from './body.ts';
 import { evaluate } from './conditions.ts';
 import { RuleError } from '../core/errors.ts';
+import { serviceAvailable, usesFunctions } from './entity-functions.ts';
 export function initialDistrict(): DistrictState {
-  return { version: 1, profile: { name: '旅人', ageYears: 25, created: false, adultOptional: false }, residents: [], currentResidentId: null,
+  return { version: 1, profile: { name: '旅人', created: false, adultOptional: false }, residents: [], currentResidentId: null,
     storyletHistory: [], factsAt: {}, discovered: [], inventory: [], equipped: null, combat: null, scene: null };
 }
 export function district(state: GameState): DistrictState { if (!state.district) throw new RuleError('MODULE_ABSENT', '未安装街区内容。'); return state.district; }
@@ -57,6 +58,7 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
   if (!r) throw new RuleError('NO_RESIDENT', '先留意附近的人。');
   const day = Math.floor(state.clock.totalMinutes / 1440), t = registry.residentTemplates.find(x => x.id === r.templateId)!;
   if (help) {
+    if(usesFunctions(state,registry)&&!serviceAvailable(state,registry,{subject:'resident',service:'work'}))throw new RuleError('RESIDENT_NOT_EMPLOYER','对方此刻不提供工作。');
     if(!activityEligibility(r.body,t,registry).pass)throw new RuleError('RESIDENT_ACTIVITY_BODY','对方当前身体不满足这项工作的适配。');
     if (r.memories.includes(`help:${day}`)) throw new RuleError('ALREADY_HELPED', '今天的事情已经处理好。明天再见。');
     const stamina = state.player.variables['core:stamina'] ?? 0;
@@ -68,11 +70,11 @@ export function residentInteraction(state: GameState, registry: Registry, help: 
     r.memories.push(`help:${day}`); r.trust += 2; r.persistent = true;
     const line = { trade: '你帮忙核对称重与收据。对方把一份摊位余粮交给你，叮嘱雨前记得带回家。', repair: '你托稳松动的灯罩，对方接好电线。街角重新亮起来，你们约好有故障可以互相照应。', guide: '你们把模糊的路标重新擦亮。对方在你的路线纸上补了一条能避开积水的通道。' }[t.behavior];
     state.player.variables['core:money'] = Math.min(registry.variable('core:money').max,state.player.variables['core:money']!+3);
-    return `${r.name}与你确认了手边的事情。${t.dialogue?.help ?? line}（体力−8，零钱+3；今天只能协助一次。）`;
+    return `${r.name}与你确认了手边的事情。${t.services?.work?.text ?? t.dialogue?.help ?? line}（体力−8，零钱+3；今天只能协助一次。）`;
   }
   if (r.lastTalkDay !== day) { r.visits++; r.trust++; r.lastTalkDay = day; r.memories.push(`talk:${day}`); }
   r.persistent = r.visits >= 2 || r.trust >= 2;
   const speech = r.visits > 1 ? t.dialogue?.repeat ?? '“又见面了。上次那条路还好走吗？”对方记得你们曾经的交谈。' : t.dialogue?.intro ?? '对方报出名字，说这片街区总有人需要搭一把手。';
   const sentence = (text: string) => /[。！？]$/.test(text) ? text : text + '。';
-  return `${r.name}，${r.profession}，${sentence(residentAppearance(state,registry,r.id))}性情：${sentence(r.personality)}${speech}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : '你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
+  return `${r.name}，${r.profession}，${sentence(residentAppearance(state,registry,r.id))}性情：${sentence(r.personality)}${speech}${r.persistent ? '你们互相留下了联络方式；身份与经历已记入人物册。' : t.services&&!t.services.work?'你记住了这个名字，下次见面还可以继续交谈。':'你记住了这个名字。下一天再聊，或帮一次忙，就能留下联络。'}`;
 }

@@ -1,5 +1,11 @@
 # 以太都市：深渊重塑
 
+2026-10-14 已整合用户提供的干净工程及存档、Tag 调试修复，并保留当前工程的未实装 Tag 与玩家无年龄创建。双击根目录 `启动游戏-双击直接运行.html` 可直接游玩；修改源码后按下方步骤构建。
+
+已完成首批 NPC 服务与地点设施筛选（生成器 0.9.0）：新生成的中世纪世界按人物实际商品、教学与工作配置显示功能，地点按设施筛选行动。双击 [首批可玩示例](examples/首批NPC与地点功能示例.html)，或查看 [示例人物与操作](examples/首批功能示例.md)。示例从铁匠面前开始，沿地图可找到摊主、护理员和路人。
+
+多 AI 协作方案见 [ai.md](ai.md)，分发任务前先读 [核对与修订说明](docs/ai-collaboration-review.md) 与 [首批接口](docs/entity-functions-batch.md)。当前完成 C 的一部分，A/B/D/E 仍为后续任务。
+
 这里是唯一的当前开发工程，包含固定都市、随机街区、BodyGraph / TF、人物、事件及存档系统。游戏包版本为 `0.2.0-alpha`，已加入 foundation v0.4 增量接口。旧交付目录是历史快照，继续开发使用本目录。
 
 当前界面已按用户提供的“墨卷”框架重构：封面、书页、故事卡与对白共用真实游戏状态，补齐三个独立存档、阅读设置和手机资料抽屉。直接打开 `dist/Aetheria-Folio.html`；接入范围、实测与既有回归问题见 [墨卷 UI 接入](docs/folio-ui-2026-10-13.md)。运行 `npm run test:folio` 检查当前界面和实际玩法。
@@ -60,11 +66,13 @@ npm run check
 | 本地位置 | 保存方式 |
 | --- | --- |
 | `dist/`、`node_modules/`、`.npm-cache/` | 可重建的构建、依赖及缓存，不提交 |
-| `artifacts/` | 测试截图、日志、核验副本和整理记录，不提交 |
-| `deliverables/current/` | 已交付试玩、源码 ZIP 和发布元数据，本地保留 |
-| `deliverables/archive/`、`deliverables/checkpoints/` | 旧版本与 Git bundle，本地保留 |
+| `artifacts/` | 近期验证日志、结论与工具仍引用的记录；大型截图和快照另存，不提交 |
+| `../aetheria-history/` | 工程外的旧版本、备份和大型测试产物；附校验清单，不提交 |
+| `dist/Aetheria-Folio.html` | 当前源码构建出的单文件游戏；不再从历史交付目录辨认当前版本 |
 | `deliverables/tools/` | 外发工具压缩包，本地保留；当前工具源码位于 `production/` |
 | `docs/故事/` | 独立故事参考原稿，保留本地，不纳入工程提交 |
+
+2026-10-14 已整理历史副本。归档方式与恢复说明见 [工程目录说明](docs/project-layout.md)。需要再次整理时，先运行 `powershell -NoProfile -File scripts/organize-workspace.ps1` 查看范围，确认后加 `-Apply`；脚本只整理列明的本地历史目录，拒绝归档 Git 跟踪文件和链接路径。
 
 GitHub 保留三个分支：`main`、当前工程开发 `codex/foundation-v0.4`、grok 的 `codex/tag-effect-preview`。两个工作分支分别维护，不自动混合实现。
 

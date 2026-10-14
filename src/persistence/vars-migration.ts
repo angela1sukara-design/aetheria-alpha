@@ -7,6 +7,7 @@ export const LEGACY_CORE_HASHES = new Set([
   'da552b1fe226a6bdb0bd972a7d7e4535a779b210f96617532214c11322810f3a',
   '0a2330430d5c716ee803fb8e43712b798f60807bfdb8beabeb37baf01ced10d6',
   '7d6b5048a40893e027bd157cea182068c2a1db8d16a45da76641dc874e649ff9',
+  '8a581ae11e18f6e085a9ecaa12ce01485f366fc87aaaeea9faff1d03854e616f',
 ]);
 
 /** 统一玩家变量：填补新 VariableDef、剔除已废弃键，并把 district:health 迁入 core:health。 */
