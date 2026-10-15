@@ -77,6 +77,18 @@
 
 词库/正文协作（不改游戏引擎）请用 `production/collaboration-pack/` 与 `node scripts/build-collaboration-pack.mjs`，见该目录 README。
 
+## UI 改动时的文件范围
+
+主界面已拆分，避免通读整份 `render.ts`：
+
+- `src/ui/render.ts` — 主 `renderGame` 组装
+- `src/ui/render-dom.ts` — DOM 工具与 `feedback`
+- `src/ui/tag-debug.ts` — Tag 调试（非玩法）
+- `src/ui/render-actions.ts` — 行动列表
+- `src/ui/render-map.ts` — 地图
+
+构建步骤见 [docs/reference/build-pipeline.md](docs/reference/build-pipeline.md)。
+
 ## 验证命令（按改动范围选，勿默认 `npm run check`）
 
 ```sh

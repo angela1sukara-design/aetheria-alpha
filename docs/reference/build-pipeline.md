@@ -41,4 +41,4 @@
 
 ## 与 AI 协作
 
-能读仓库的 Agent 见根目录 [AGENTS.md](../../AGENTS.md)（若已合并）；不要默认通读 `production/tag-deliveries/` 或全文任务包。
+能读仓库的 Agent 见根目录 [AGENTS.md](../../AGENTS.md)；不要默认通读 `production/tag-deliveries/` 或全文任务包。
