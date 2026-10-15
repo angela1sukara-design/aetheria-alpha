@@ -17,6 +17,7 @@
     "test:quests:browser": "node tests/world-profiles-browser.mjs",
     "lexicon:build": "node scripts/build-lexicon-adapter.mjs",
     "typecheck": "tsc --noEmit",
+    "typecheck:tests": "tsc --noEmit -p tsconfig.tests.json",
     "test": "node --test tests/*.test.ts",
     "test:browser": "node tests/folio-browser.mjs && node tests/adventure-browser.mjs",
     "test:b-content": "node --test tests/b-observations.test.ts tests/b-five-themes.test.ts tests/b-five-themes-previews.test.mjs",
@@ -41,7 +42,8 @@
     "test:prose-assembly": "node --test tests/prose-assembly.test.mjs"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
-    "playwright": "1.62.1"
+    "@types/node": "^24.10.0",
+    "playwright": "1.62.1",
+    "typescript": "5.9.3"
   }
 }
