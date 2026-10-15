@@ -74,6 +74,14 @@ test('event completion feedback is unique and narrative costs match actual time'
  const body=new ActionExecutor(fixed,createGameState(fixed,42));act(body,'progression:action.narrative.transformation');const before=body.snapshot().clock.totalMinutes;act(body,'progression:action.story.0');assert.equal(body.snapshot().clock.totalMinutes-before,10);
 });
 
+test('prose validation rejects author placeholders without rejecting ordinary occupancy wording',()=>{
+ assert.equal(proseProblem('他先去占位的目的是替同伴保留座位。'),undefined);
+ for(const text of ['占位','这是占位。','占位文本','占位的内容','临时占位内容','TODO','【槽：待填】'])assert.equal(proseProblem(text),'正文仍有制作占位',text);
+ assert.equal(proseProblem('{opponents}',true),'正文有未填入或不支持的字段');
+ assert.equal(proseProblem('{opponent}',true),undefined);
+ assert.equal(proseProblem('{opponent}'),'正文有未填入或不支持的字段');
+});
+
 test('all reachable narrative and choice text is finished, including optional variants',()=>{
  for(const n of fixed.narrativeNodes)for(const k of [n.textKey,...n.choices.map(c=>c.resultText)])assert.equal(proseProblem(fixed.text(k),true),undefined,k);
  assert.ok(!fixed.globalActions().some(a=>/narrative\.(quest|ending)$/.test(a.id)));
