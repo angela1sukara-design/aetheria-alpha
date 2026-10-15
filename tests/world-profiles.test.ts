@@ -60,7 +60,7 @@ for (const profile of profiles) test(`${profile.name}: shared services, world-sp
   assert.equal(def.quests!.stages.length,8); assert.equal(def.quests!.sides.length,18);
   for(const place of def.locations){ assert.ok(place.tags.includes(profile.tag)); assert.ok(profile.locations[place.service].names.some(n=>g.registry.location(place.id).name.startsWith(n))); }
   assert.deepEqual(new Set(def.factions.map(f=>f.name)),new Set(profile.factions.map(f=>f.name)));
-  assert.ok(g.state.district!.residents.every(r=>profile.residentNames.some(n=>r.name.startsWith(n))));
+  assert.ok(g.state.district!.residents.every(r=>profile.residentNames.includes(r.personalName!.givenName) && r.personalName!.cultureId===profile.nameCulture!.id));
   assert.doesNotMatch(JSON.stringify(g.registry.contentPacks.filter(p=>p.manifest.id==='generated/neighborhood'||p.manifest.namespace==='main'||p.manifest.namespace==='side')),/百渠总管|雨棚盟首|种源总藏主|百炉总匠|工联执印人|工联落印/);
   for(const route of profile.quests.source.mainQuest.paths){
     let state=structuredClone(g.state); prepareMilestones(state); state.player.variables['core:energy']=0; state.player.variables['core:money']=0;

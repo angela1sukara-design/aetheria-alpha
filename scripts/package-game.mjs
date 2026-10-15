@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import { deflateRawSync, inflateRawSync } from 'node:zlib';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const output = path.join(root, 'deliverables/game/Aetheria-Game-and-Tags-2026-10-14.zip');
+const output = path.join(root, 'deliverables/game/Aetheria-Game-and-Tags-2026-10-15.zip');
 const reportDirectory = path.join(root, 'artifacts/game-package');
 const files = new Map();
 const excluded = [];
@@ -30,6 +30,8 @@ async function add(relative) {
 for (const dir of ['src', 'content', 'production', 'docs/tag-hub', 'dist/src', 'dist/content', 'scripts/nsfw-auto-combo']) await add(dir);
 for (const name of ['index.html', 'tsconfig.json', 'start_game.bat', '.gitignore', 'dist/index.html', 'dist/Aetheria-Folio.html', 'ai.md', 'docs/ai-collaboration-review.md', 'docs/entity-functions-batch.md', 'docs/module-d-implementation.md', 'docs/module-d-collaboration-review.md']) await add(name);
 for (const name of ['build-adventure-content', 'build-personality-content', 'build-lexicon-adapter', 'build-neighborhood-quests', 'build-quest-content', 'build-standalone', 'build-world-profiles', 'build-world-samples', 'build', 'serve']) await add(`scripts/${name}.mjs`);
+await add('scripts/name-cultures.mjs');
+for(const name of ['names-and-inheritance','prose-slot-assembly-standard'])await add(`docs/${name}.md`);
 for (const name of ['catalog', 'cli', 'inventory', 'library', 'neighborhood', 'prepare', 'semantic-format', 'whole-pack']) await add(`scripts/lexicon/${name}.mjs`);
 for (const name of ['foundation-v0.4', 'foundation-tag-mapping', 'general-vocabulary-expansion-v2', 'general-vocabulary-rule-plan', 'content-tag-story-standard', 'nsfw-auto-combo', 'adventure-framework-2026-10-13']) await add(`docs/${name}.md`);
 
@@ -44,7 +46,7 @@ files.set('README.md', Buffer.from(`# 以太都市：游戏工程与全部 Tag �
 files.set('TAG-资料索引.md', Buffer.from(`# Tag 资料索引\n\n| 路径 | 内容与状态 |\n| --- | --- |\n| content/foundation/、content/general-lexicon/、content/generation/ | 当前运行字典、已安装内容及生成参考 |\n| production/lexicon-authoring/collections/ | 基础词库原始收录批次，含尚未审定或使用的条目 |\n| production/lexicon-authoring/management/ | 收录索引、领取信息、审稿状态与实际用途账本 |\n| production/lexicon-authoring/adapters/、formats/ | 已审定候选接入配置与交换格式、规则说明 |\n| production/tag-deliveries/2026-10-12/ | 外部原文、待入库候选、整理版、扩充版与第二轮 v2 数据；各版本保留来源关系 |\n| docs/tag-hub/nsfw-batches/ | NSFW 原始机读批次与 v2-draft 草案 |\n| docs/tag-hub/rules/、outbox/、inventory/ | 共存互斥规则、故事试写、候选清单与来源索引 |\n| production/TAG-STORY-WRITING-SPEC.md | Tag 与组合故事制作要求 |\n\n收录、审定、实装是不同状态，按数据中的状态字段和用途账本判断。目录和条目未因打包自动注册到游戏。\n\n旧 ZIP、tar.gz 不重复携带，其已解包的条目及可读正文保留。部分原始 README 或收据仍引用旧压缩包、历史分支及测试，这些用于追溯；包内使用方式以根目录 README 为准。\n\n制作模板未携带，若要继续派发新批次，可先运行 npm run lexicon:prepare 重建模板；收录批次、审稿和用途数据均已保留。\n`, 'utf8'));
 
 const tagPaths = [...files.keys()].filter(p => p.startsWith('production/lexicon-authoring/') || p.startsWith('production/tag-deliveries/') || p.startsWith('docs/tag-hub/'));
-const manifest = { format: 'aetheria-game-and-tags-package', date: '2026-10-14', runtimeEntry: 'dist/Aetheria-Folio.html', tagSourceFiles: tagPaths.length, excludedHistoricalOrRegenerableFiles: excluded, excludedDirectories: ['.git', 'node_modules', 'archive', 'artifacts', 'deliverables', 'tests', 'docs/故事'], packageOnlyEdits: ['README.md', 'TAG-资料索引.md', 'package.json', 'package-lock.json'], files: [...files].map(([name, bytes]) => ({ path: name, bytes: bytes.length, sha256: sha(bytes) })) };
+const manifest = { format: 'aetheria-game-and-tags-package', date: '2026-10-15', runtimeEntry: 'dist/Aetheria-Folio.html', tagSourceFiles: tagPaths.length, excludedHistoricalOrRegenerableFiles: excluded, excludedDirectories: ['.git', 'node_modules', 'archive', 'artifacts', 'deliverables', 'tests', 'docs/故事'], packageOnlyEdits: ['README.md', 'TAG-资料索引.md', 'package.json', 'package-lock.json'], files: [...files].map(([name, bytes]) => ({ path: name, bytes: bytes.length, sha256: sha(bytes) })) };
 files.set('PACKAGE-MANIFEST.json', Buffer.from(JSON.stringify(manifest, null, 2) + '\n'));
 for (const required of ['src/ui/main.ts', 'dist/Aetheria-Folio.html', 'production/lexicon-authoring/management/reviews.json', 'production/tag-deliveries/2026-10-12/general-expansion-v2/entries.jsonl']) if (!files.has(required)) throw Error(`Missing ${required}`);
 for (const name of files.keys()) if (/^(archive|artifacts|deliverables|node_modules|tests|\.git)\//.test(name)) throw Error(`Unwanted entry ${name}`);

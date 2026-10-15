@@ -5,10 +5,13 @@ import type { Id } from '../core/types.ts';
 import type { QuestContent } from '../core/quest-types.ts';
 import type { Registry } from '../content/registry.ts';
 import type { ReferenceTemplate, Service } from './types.ts';
+import type { NameCulture } from '../core/name-types.ts';
+import { validateNameCulture } from './names.ts';
 
 export interface WorldProfile {
   id: string; tag: Id; name: string; version: string; description: string;
   sourceTheme: string; residentNames: string[];
+  nameCulture?: NameCulture;
   locations: Record<Service, { names: string[]; description: string; economy: string[]; professions: string[] }>;
   factions: { name: string; activities: string[] }[];
   quests: QuestContent;
@@ -45,12 +48,13 @@ export function parseWorldProfiles(raw: unknown, registry?: Registry): WorldProf
   const text = (v: unknown) => { if (typeof v !== 'string' || !v.trim() || v.length > 10000) throw Error('世界配置文字无效。'); };
   const words = (v: unknown) => { if (!Array.isArray(v) || !v.length || v.length > 30 || new Set(v).size !== v.length) throw Error('世界配置列表无效。'); v.forEach(text); };
   for (const p of catalog.profiles) {
-    shape(p, ['id', 'tag', 'name', 'version', 'description', 'sourceTheme', 'residentNames', 'locations', 'factions', 'quests']);
+    shape(p, ['id', 'tag', 'name', 'version', 'description', 'sourceTheme', 'residentNames', 'nameCulture', 'locations', 'factions', 'quests']);
     if (typeof p.id !== 'string' || !/^world\.[a-z][a-z0-9-]*$/.test(p.id) || !/^\d+\.\d+\.\d+$/.test(p.version)) throw Error('世界配置标识或版本无效。');
     stableId(p.tag); if (p.tag !== `worlds:setting.${p.id.slice(6)}`) throw Error('世界配置标识与题材 Tag 不一致。');
     if (ids.has(p.id) || tags.has(p.tag)) throw Error('世界配置或世界 Tag 重复。'); ids.add(p.id); tags.add(p.tag);
     if (registry) { const tag = registry.tag(p.tag); if (tag.status !== 'active' || !tag.facets.includes('setting')) throw Error('世界 Tag 未启用或不是题材。'); }
     [p.name, p.description, p.sourceTheme].forEach(text); words(p.residentNames);
+    if (p.nameCulture !== undefined) validateNameCulture(p.nameCulture);
     shape(p.locations, services);
     for (const service of services) { const place = shape(p.locations[service], ['names', 'description', 'economy', 'professions']); [place.names, place.economy, place.professions].forEach(words); text(place.description); }
     if (!Array.isArray(p.factions) || p.factions.length !== 2) throw Error('世界配置需要两个组织。');

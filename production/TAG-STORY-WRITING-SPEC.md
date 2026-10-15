@@ -1,6 +1,8 @@
 # 以太都市：基于工程 Tag 的战斗与故事写作规范
 
-版本：1.1｜核对日期：2026-10-13｜用途：交给其他 AI 的写作任务说明。
+版本：1.2｜核对日期：2026-10-15｜用途：交给其他 AI 的写作任务说明。
+
+默认交付改为 **槽位模板 + 词条入槽资料 + 拼装校验**，完整 `prose` 仅作回退。必须附独立 `assembly-rules.json`，矩阵 cell 只挂 `assemblyRuleId`；冻结 place / propEnv / bodyPart / senseMod / actionCore / materialFluid / opponentForm / exitChoice 八类槽。词条须写 allowedSlots、priority、审核、实例绑定、互斥；定词仅在 materialFluid 槽内挂前。禁止笛卡尔写作穷举，失败整段普通回退，T32/T34 在选词前与拼装后复核。完整新契约见 [槽位拼装规范](../docs/prose-slot-assembly-standard.md)，其内容优先于下文旧整段稿格式。离线拼装工具已提供，游戏接口尚未接入，不能直接给现有 ContentPack 增加这些字段。
 
 这是编辑与交付规范。组合故事接口现已实现于`src/core/adventure-types.ts`，默认样例见`content/adventure/pack.json`，完整说明见[故事与成长框架](../docs/adventure-framework-2026-10-13.md)。本文的Markdown节点卡与可见标记仍不会自行执行，需转成真实内容包契约；用户指定范围和已确认设定优先，不得凭创作补造工程能力。
 
@@ -14,7 +16,7 @@
 - `runtime-nodes`：使用已实现的NarrativeNode/Profile接口设计节点。条件和效果必须来自当前契约；交付节点卡，委托明确要求JSON时再提交完整且可校验的包。
 - `proposed-nodes`：设计尚未支持的能力。只有超出当前接口的新条件、状态、倾向、动作或效果才列为待实现项。
 
-没有特别委托时交付 Markdown 写作稿。不要把故事节点塞进纯素材批次，不要自行提交代码、修改原始词库、登记新 TagDef 或标记 approved。
+没有特别委托时交付带依据标注的 Markdown 制作稿，同时附有序 proseTemplate、独立规则、入槽词条、完整普通 prose 回退与拼装预览/失败报告。不要把故事节点塞进纯素材批次，不要自行修改游戏代码、原始词库、登记新 TagDef 或标记 approved；独立制作 JSON 不是游戏 ContentPack。
 
 ## 2. 必须读取的工程资料
 
@@ -162,7 +164,13 @@
 参与者与目标对象：
 允许展开的事实：
 本节点不能提前发生的事实：
-正文：直接插入依据标记
+matrix cell 的 assemblyRuleId：只引用独立规则，不内联拼装字段
+独立 assembly-rules.json：规则ID、分级、校验、词池、普通回退
+proseTemplate：按出现顺序列八类槽token，含key、bindTo、连接词及required
+词条入槽表：ID、allowedSlots、poolIds、priority、审核、binding、前置及互斥
+materialFluid 定词：挂前顺序、同实例检查、缺失与重复处理
+prose：完整普通回退，保留依据标记；不是默认整段正文交稿
+拼装成功预览及失败回退报告：包含T32/T34前后复核
 选择表：选项｜适用条件｜本次效果｜下一节点
 差异片段：变体依据｜替换范围｜是否影响后续
 退出/失败/资源不足路径：
@@ -173,6 +181,8 @@
 ```
 
 existing-prose中的选择和效果只能抄录现有契约；正文扩写不能更改它们。runtime-nodes必须列出真实字段映射和来源，不能把已经支持的倾向与选择器误报为待实现。proposed-nodes中的新增能力要说明目标与前后变化，等待规则作者实现。数值来自工程或明确委托；不能自行编奖励或代价。
+
+选择后的反馈文字同样按独立规则交模板、入槽词与普通回退，不能以“反馈”为名继续只交写死整段。下节既有接口范例只说明当前事实与结算边界；新的制作稿须按上述槽位格式交付。
 
 ## 10. 完整范例：当前外衣黏附节点
 

@@ -30,7 +30,9 @@
     "test:adventure:browser": "node tests/adventure-browser.mjs",
     "tag-matrices:build": "node scripts/build-tag-matrices.mjs",
     "tag-matrices:check": "node scripts/check-tag-matrices.mjs",
-    "test:tag-matrices": "node --test tests/tag-matrices.test.mjs"
+    "test:tag-matrices": "node scripts/build-tag-matrices.mjs && node --test tests/tag-matrices.test.mjs tests/prose-assembly.test.mjs",
+    "test:names": "node --test tests/names.test.ts",
+    "test:prose-assembly": "node --test tests/prose-assembly.test.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",

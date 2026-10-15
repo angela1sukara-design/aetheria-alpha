@@ -1,5 +1,7 @@
 # 内容、Tag 分类与固定故事整体规范
 
+> 2026-10-15 写作交付更新：新正文默认采用有序 proseTemplate，完整 prose 仅作普通回退；冻结八类槽，词条明确可入槽/优先级/绑定/互斥，矩阵仅引用独立 assemblyRuleId。禁止笛卡尔写作穷举，拼装前后复核 T32/T34。完整契约与引擎尚未接入的边界见 [槽位拼装规范](prose-slot-assembly-standard.md)。下文旧整段稿要求只作历史参考。
+
 > 2026-10-13 补充：生成世界的阶段任务、五类轻量玩家关系、动态居民任务记忆与 Journal 已接入；默认内容见[世界 Tag 与任务配置](world-profiles.md)，六类生态独立于 17 种世界题材，底层协议见[原赛博任务接入](cyber-apex-integration.md)。下文涉及这些能力的旧限制保留为历史记录。
 
 > 历史版本提示：本文件记录 Alpha 0.2、foundation 增量实施前的制作规范。当前 Tag 注册、实体参数和存档规则见 [foundation v0.4](foundation-v0.4.md) 与 [v2 创作接口](../production/lexicon-authoring/formats/v2/README.md)；下文“没有 TagDef”等限制只描述当时状态。

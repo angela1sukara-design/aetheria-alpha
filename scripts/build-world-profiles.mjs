@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { stableJson } from '../src/core/types.ts';
 import { parseQuestContent } from '../src/content/quest-schema.ts';
 import { parseWorldProfiles } from '../src/world/profiles.ts';
+import { nameProfile } from './name-cultures.mjs';
 import { themes } from '../production/quest-authoring/world-settings/themes.mjs';
 import { sharedCharacters, sharedAtmosphere } from '../production/quest-authoring/neighborhoods/sides.mjs';
 
@@ -71,7 +72,7 @@ export async function buildWorldProfiles() {
     // General taxonomy IDs now have their own canonical TagDefs. Keep legacy
     // world selection at the profile boundary rather than shadowing those tags.
     tags.push({id:tag,label:sourceTheme,definition:`当前世界题材为${sourceTheme}；与湿润、干燥等生态独立。`,facets:['setting'],status:'active',aliases:[]});
-    profiles.push({id:`world.${key}`,tag,name,version:'1.0.0',description,sourceTheme,residentNames:key==='xianxia'?['林舟','Elena','沈青','Kai','叶宁','Mira','苏禾','Jonas']:key==='fantasy'?['Elena','Gareth','Isolde','Rowan','Sable','Kai','Mira','Thorne','Quinn','Lyra']:['Elena','Marcus','Aiko','Noah','Sera','Kai','林舟','Quinn','Ravi','Mira'],locations,factions:[{name:tradeFaction,activities:[`${product}贸易`,`${resource}调配`]},{name:powerFaction,activities:[`${forces}联络`,'公共救护协作']}],quests});
+    profiles.push({id:`world.${key}`,tag,name,version:'1.0.0',description,sourceTheme,...nameProfile(key),locations,factions:[{name:tradeFaction,activities:[`${product}贸易`,`${resource}调配`]},{name:powerFaction,activities:[`${forces}联络`,'公共救护协作']}],quests});
     const dir=`production/quest-authoring/world-settings/${key}`;await mkdir(dir,{recursive:true});await write(`${dir}/quest-tree.json`,source);await write(`${dir}/execution.json`,execution);
   }
   const catalog={format:'aetheria-world-profiles',schemaVersion:1,profiles};parseWorldProfiles(catalog);

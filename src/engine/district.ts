@@ -36,6 +36,7 @@ export function encounter(state: GameState, registry: Registry, includeEvents = 
         appearance: pick(t.appearance), personality: pick(t.personality), speciesId: t.speciesId, ageYears: t.ageYears, body,
         persistent: false, visits: 0, trust: 0, lastTalkDay: -1, memories: [] };
       d.residents.push(resident);
+      if(t.personalName)resident.personalName=structuredClone(t.personalName);
     }
     d.currentResidentId = resident.id;
   } else d.currentResidentId = null;

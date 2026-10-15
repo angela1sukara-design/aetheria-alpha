@@ -1,5 +1,5 @@
 /** 制作规范数据；不是 ContentPack，不能直接导入游戏。 */
-export const version = '1.0.0';
+export const version = '1.2.0';
 export const services = ['home','market','workshop','clinic','commons'];
 export const ecologies = ['wet','dry','garden','frost','forge','tidal'];
 export const facilities = ['seat','bed','care','workplace','training','publicDesk','lightSwitch'];
@@ -73,6 +73,9 @@ export const domains = [
   tests:['tests/npc.test.ts','tests/main-relationships.test.ts','tests/save.test.ts'],fallback:'没有路线执行器时保持现有关系，不显示虚假路线按钮；普通告别始终可用。'},
 ];
 
+for(const domain of domains)domain.jobs.push('正文默认交有序 proseTemplate、独立 assembly-rules.json 规则和已适配词条；完整 prose 仅作普通回退。矩阵 cell 只挂 assemblyRuleId，不内联拼装规则，不按 Tag 笛卡尔组合逐格写整段。');
+for(const id of ['01','02','04','09'])domains.find(d=>d.id===id).jobs.push('人物姓名按已保存的 personalName 姓/名与文化顺序显示；opponentForm/place 名称用精确绑定快照 displayRef，不写死示例人名地名。子代仅已有纯命名接口，后代生成尚未实装；接入时保存亲代ID及明确姓氏继承规则，不随机冒认家族或拆旧全名。');
+
 // 每条有明确判定、作用域、负例和责任领域。具体源数据与矩阵由构建器补齐。
 export const rules = [
  ['T01','登记与生命周期','all','解析 scope 中唯一 canonical ID；必须 active；消费包声明依赖。','缺失、歧义、deprecated 无迁移映射均拒绝；别名不作为存档主键。','registered(id) && active(id) && dependency(owner,consumer)'],
@@ -106,9 +109,16 @@ export const rules = [
  ['T29','缺接口不伪装完成','all','每格标已有契约、制作缺口、接口缺口、不适用或范围外；只有当前入口和执行效果齐备才可标已运行。','保留未实装标签可以，不能把它们自动拼成玩法或隐去缺口。','status != implemented unless runtimeEvidence'],
  ['T30','素材相近不等价','08','同义词需要编辑核定；黑胶、黏液、凝胶各保留主定义，可跨对象共存。','名称相似不自动合并材质；材料与器具、过程与结果分别建对象。','canonicalDefinitions + scopedCoexistence'],
  ['T31','关系阈值与路线选择','09','采用 ai.md E.3 详细表和 relationshipGates；阈值只产生候选，终路线明确选择。','affection=70 但 trust=9 不可 lover；corruption=50 不可 lover；多个候选不自动抢占stage；重复恢复不重发奖励。','detailedGate && explicitChoice && stableActor && receipt'],
+ ['T32','可选成人资格复核','all','选词前及拼装后复核实际偏好、绑定对象在场与当前revision的明确意愿；普通回退不绕过门控，不新增年龄字段。','倾向/性格/关系不是同意；未知资格不进入候选；普通模板不得混入其他分级词。','preference && boundConsentReceipt && present && tier'],
+ ['T33','八槽模板默认交付','all','proseTemplate 是有序出现位，类型只限 place/propEnv/bodyPart/senseMod/actionCore/materialFluid/opponentForm/exitChoice；词条有allowedSlots/priority/审核/互斥。','整段 prose 仅作回退；斜杠只是八槽顺序简写，不拆自然语言或自由多选词。','frozenSlotTypes && orderedTokens && approvedLexemes'],
+ ['T34','智慧对象与普通动物分界','all','智慧类人与普通动物分别分类；普通动物仅普通非色情流程，未知或非智慧对象不进入可选成人互动。','兽耳/兽形/种族文字不证明智慧或意愿，换词池与整段回退均不能绕过。','explicitClassification && intelligence && boundParticipants'],
+ ['T35','定词在材料槽挂前','all','qualifier 只在 materialFluid 槽内按显式顺序挂到同一实例的 core 前；保留来源ID，不造组合Tag。','主名缺失不得留下定词；无合法定词按required选择主名或回退；重复前缀拒绝。','sameInstance && qualifierPrefix && corePresent'],
+ ['T36','非穷举有界拼装','all','矩阵按真实来源和规则职责覆盖，不把题材/身体/材质/动作相乘写正文。候选惰性过滤、有界回溯，失败整段普通回退。','禁止生成全组合数组；搜索上限不可被高优先级绕过；可选槽删除连同连接词。','lazySearch && hardBudget && completeFallback'],
+ ['T37','矩阵引用与拼装原子性','all','cell仅以assemblyRuleId引用独立assembly-rules.json；最终检查字段、互斥、对象、T32/T34与免费退出。','cell不内联模板/词池/预算；拼文字不执行动作、奖励、关系或TF；未接入游戏不能标已上线。','ruleReference && postValidation && noStateMutation'],
 ].map(([id,name,domain,allow,reject,predicate])=>({id,name,domains:domain==='all'?domains.map(d=>d.id):domain.split(','),allow,reject,predicate,level:'制作契约；已有运行能力的对应源码随矩阵附上，未宣称统一运行编译器已上线'}));
 
 export const futureGaps = [
+ {id:'G13',domains:['02','09'],name:'后代实体与家庭生命周期',status:'接口缺口',requirement:'已有结构化姓名与createChildName纯命名接口；出生事务、后代实体、亲子/收养家庭树和存档校验尚未实装。接入时保存稳定亲代ID与明确surnameRule；不得重新随机姓氏或从旧全名猜拆。'},
  {id:'G01',domains:['01','02','05','07'],name:'三地区与地点原型',status:'接口缺口',requirement:'region.kind/stats、placeArchetype、isSpecial 全链路实现；当前单区域和五服务保留。'},
  {id:'G02',domains:['02','03','07'],name:'按地区/原型的 NPC 与敌人分布',status:'接口缺口',requirement:'在 G01 后实施选池、驻留经营者和到访路人差异，环境数值实际参与筛选。'},
  {id:'G03',domains:['03','06'],name:'独立 NPC 任务生命周期',status:'接口缺口',requirement:'先实现接取/进行/提交/完成/失败/取消/重接与一次奖励，再开放任务按钮。'},
@@ -119,4 +129,6 @@ export const futureGaps = [
  {id:'G08',domains:['01','02','04','05','08'],name:'毛发气味翼等完整结构',status:'素材与结构分离',requirement:'已有词条保留；不在 PART_KINDS/属性表内的结构先补图和查询，不能用词条直接授权能力。'},
  {id:'G09',domains:['07','09'],name:'永久终局机制',status:'接口缺口',requirement:'ending 叙事不等于永久终止游戏；永久结局需显式状态、恢复和保存策略。'},
  {id:'G10',domains:['01','02','03','04','05','06','07','08','09'],name:'统一运行时规则编译器',status:'接口缺口',requirement:'本交付是制作规则和离线核查器；不能当成已接入九类引擎的通用规则 DSL。'},
+ {id:'G11',domains:['01','02','03','04','05','06','07','08','09'],name:'槽位格式接入游戏引擎',status:'接口缺口',requirement:'离线拼装器已提供；NarrativeNode/文本包/UI/存档仍需适配器，从实际快照绑定对象与词池，保留旧整段正文回退。'},
+ {id:'G12',domains:['01','02','03','04','05','06','07','08','09'],name:'原始词库入槽审定',status:'制作缺口',requirement:'原始素材保留，但不自动标approved或开放槽。逐条提交allowedSlots/poolIds/priority/binding/前置/互斥/分级后审定；中性演示词不是生产词库。'},
 ];

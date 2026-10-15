@@ -3,6 +3,7 @@ import type { Id, Condition } from './types.ts';
 import type { BodyGraph, BodyCapability } from './body-types.ts';
 import type { TraitVariant } from './personality-types.ts';
 import type { ResidentServices } from './function-types.ts';
+import type { NameCulture, PersonalName } from './name-types.ts';
 export type EnemyTier = 'S' | 'M' | 'L' | 'boss';
 export interface StoryletDef {
   id: Id; locationId: Id; conditions: Condition[]; eventId: Id; weight: number; priority: number;
@@ -20,9 +21,14 @@ export interface ResidentTemplate {
   roleName?: string;
   traitTags?: Id[];
   traitVariants?: TraitVariant[];
+  /** 显式声明 names 是名池；未知旧全名不进行猜测拆分。 */
+  nameCulture?: NameCulture;
+  /** 生成后的单实例模板快照，必须与 names[0] 格式化结果一致。 */
+  personalName?: PersonalName;
 }
 export interface Resident {
   id: string; templateId: Id; name: string; locationId: Id; profession: string; appearance: string; personality: string;
+  personalName?: PersonalName;
   traitTags?: Id[];
   speciesId: Id; ageYears: number; body: BodyGraph; persistent: boolean; visits: number; trust: number; lastTalkDay: number; memories: string[];
 }

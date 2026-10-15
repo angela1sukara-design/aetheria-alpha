@@ -9,7 +9,7 @@ export function validateTraitTags(tags:unknown,r:Registry):asserts tags is Id[] 
   if(!Array.isArray(tags)||tags.length>6||new Set(tags).size!==tags.length)throw Error('性格标签集合无效。');
   for(const id of tags)if(!TRAIT_TAGS.includes(id)||!r.hasTag(id)||r.tag(id).status!=='active'||r.tag(id).facets.length!==1||!r.tag(id).facets.includes('context'))throw Error('只允许六个已注册且有效的共享性格标签。');
 }
-export function personalityEnabled(s:GameState):boolean{return s.worldInstance?.generation.generatorVersion==='0.10.0';}
+export function personalityEnabled(s:GameState):boolean{return ['0.10.0','0.11.0'].includes(s.worldInstance?.generation.generatorVersion??'');}
 export function residentTraits(s:GameState,r:Registry,n:Resident|undefined):Id[]{
   if(!personalityEnabled(s)||!n?.traitTags)return [];
   return n.traitTags.filter(id=>TRAIT_TAGS.includes(id)&&r.hasTag(id)&&r.tag(id).status==='active');

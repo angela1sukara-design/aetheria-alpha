@@ -1,0 +1,511 @@
+{
+  "format": "aetheria-prose-assembly-example",
+  "note": "独立中性测试快照；姓名和地名取自绑定对象的显示记录，示例数据不是写死在词条中的名字。",
+  "slashOrder": "place/opponentForm/bodyPart/actionCore/propEnv/materialFluid/senseMod/exitChoice",
+  "rule": {
+    "id": "assembly.example.eight-slots",
+    "domain": "example",
+    "mode": "prose",
+    "contentTier": "general",
+    "fallbackTier": "general",
+    "checks": [
+      "T03",
+      "T04",
+      "T05",
+      "T27",
+      "T32",
+      "T33",
+      "T34",
+      "T35",
+      "T36",
+      "T37"
+    ],
+    "proseTemplate": [
+      {
+        "key": "where",
+        "slot": "place",
+        "poolId": "place.current",
+        "bindTo": "place",
+        "required": true,
+        "prefix": "在",
+        "suffix": "，"
+      },
+      {
+        "key": "actor",
+        "slot": "opponentForm",
+        "poolId": "actor.form",
+        "bindTo": "actor",
+        "required": true,
+        "prefix": "",
+        "suffix": ""
+      },
+      {
+        "key": "part",
+        "slot": "bodyPart",
+        "poolId": "actor.bodyPart",
+        "bindTo": "part",
+        "subjectAs": [
+          "actor"
+        ],
+        "required": true,
+        "prefix": "的",
+        "suffix": "仍保持原状。"
+      },
+      {
+        "key": "act",
+        "slot": "actionCore",
+        "poolId": "action.observed",
+        "bindTo": "actor",
+        "required": true,
+        "prefix": "对方",
+        "suffix": "。"
+      },
+      {
+        "key": "prop",
+        "slot": "propEnv",
+        "poolId": "environment.prop",
+        "bindTo": "prop",
+        "required": true,
+        "prefix": "旁边放着",
+        "suffix": "，"
+      },
+      {
+        "key": "material",
+        "slot": "materialFluid",
+        "poolId": "material.current",
+        "bindTo": "material",
+        "required": true,
+        "prefixPools": [
+          {
+            "poolId": "material.qualifier",
+            "required": false,
+            "separator": ""
+          }
+        ],
+        "prefix": "里面盛着",
+        "suffix": "，"
+      },
+      {
+        "key": "scent",
+        "slot": "senseMod",
+        "poolId": "environment.sense",
+        "bindTo": "sense",
+        "required": false,
+        "prefix": "空气中带着",
+        "suffix": "。"
+      },
+      {
+        "key": "exit",
+        "slot": "exitChoice",
+        "poolId": "exit.current",
+        "bindTo": "exit",
+        "required": true,
+        "prefix": "你可以",
+        "suffix": "。"
+      }
+    ],
+    "prose": "你可以结束观察，继续自己的安排。"
+  },
+  "context": {
+    "revision": 12,
+    "seed": 7,
+    "bindings": {
+      "place": {
+        "subject": "location",
+        "instanceId": "workshop-1"
+      },
+      "actor": {
+        "subject": "resident:alo",
+        "instanceId": "resident:alo"
+      },
+      "part": {
+        "subject": "resident:alo",
+        "instanceId": "hand-left"
+      },
+      "prop": {
+        "subject": "object",
+        "instanceId": "cup-1"
+      },
+      "material": {
+        "subject": "object",
+        "instanceId": "water-1"
+      },
+      "sense": {
+        "subject": "location",
+        "instanceId": "workshop-1"
+      },
+      "exit": {
+        "subject": "event:observation",
+        "instanceId": "exit-1"
+      }
+    },
+    "facts": {
+      "actor.present": {
+        "known": true,
+        "value": true,
+        "source": "snapshot"
+      },
+      "part.kind": {
+        "known": true,
+        "value": "hand",
+        "source": "engine-query"
+      },
+      "part.changed": {
+        "known": true,
+        "value": false,
+        "source": "snapshot"
+      },
+      "action.observed": {
+        "known": true,
+        "value": "tool-returned",
+        "source": "snapshot"
+      },
+      "water.filtered": {
+        "known": true,
+        "value": true,
+        "source": "snapshot"
+      },
+      "prop.contains": {
+        "known": true,
+        "value": "water-1",
+        "source": "snapshot"
+      },
+      "scent.available": {
+        "known": true,
+        "value": true,
+        "source": "engine-query"
+      }
+    },
+    "participants": [
+      {
+        "id": "resident:alo",
+        "classification": "sapient",
+        "intelligent": true,
+        "present": true
+      }
+    ],
+    "policy": {
+      "adultOptional": false,
+      "consentBySubject": {}
+    },
+    "registeredTags": [],
+    "exitChoice": {
+      "actionId": "example:exit",
+      "label": "结束观察",
+      "next": null,
+      "conditions": [],
+      "effects": [],
+      "setTags": [],
+      "unsetTags": []
+    },
+    "displayValues": [
+      {
+        "binding": {
+          "subject": "location",
+          "instanceId": "workshop-1"
+        },
+        "name": "工坊",
+        "revision": 12,
+        "source": "snapshot"
+      },
+      {
+        "binding": {
+          "subject": "resident:alo",
+          "instanceId": "resident:alo"
+        },
+        "name": "阿洛·灰谷",
+        "revision": 12,
+        "source": "snapshot"
+      }
+    ]
+  },
+  "lexemes": [
+    {
+      "id": "example:word.place",
+      "allowedSlots": [
+        "place"
+      ],
+      "poolIds": [
+        "place.current"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "location",
+        "instanceId": "workshop-1"
+      },
+      "requires": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [],
+      "displayRef": {
+        "field": "name"
+      }
+    },
+    {
+      "id": "example:word.actor",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "resident:alo",
+        "instanceId": "resident:alo"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [],
+      "displayRef": {
+        "field": "name"
+      }
+    },
+    {
+      "id": "example:word.hand",
+      "text": "手",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "resident:alo",
+        "instanceId": "hand-left"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "hand"
+        },
+        {
+          "fact": "part.changed",
+          "comparison": "eq",
+          "value": false
+        }
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "example:word.action.a",
+      "text": "将工具放回原处",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "resident:alo",
+        "instanceId": "resident:alo"
+      },
+      "requires": [
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tool-returned"
+        }
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "example:word.action.b",
+      "text": "收好手边的工具",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "resident:alo",
+        "instanceId": "resident:alo"
+      },
+      "requires": [
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tool-returned"
+        }
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "example:word.prop",
+      "text": "一只量杯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "object",
+        "instanceId": "cup-1"
+      },
+      "requires": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "example:word.water",
+      "text": "水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "object",
+        "instanceId": "water-1"
+      },
+      "requires": [
+        {
+          "fact": "prop.contains",
+          "comparison": "eq",
+          "value": "water-1"
+        }
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "example:word.filtered",
+      "text": "过滤",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subject": "object",
+        "instanceId": "water-1"
+      },
+      "requires": [
+        {
+          "fact": "water.filtered",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "water-treatment",
+          "value": "filtered"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "example:word.scent",
+      "text": "草木的清香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "location",
+        "instanceId": "workshop-1"
+      },
+      "requires": [
+        {
+          "fact": "scent.available",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "example:word.exit",
+      "text": "结束观察",
+      "allowedSlots": [
+        "exitChoice"
+      ],
+      "poolIds": [
+        "exit.current"
+      ],
+      "priority": 10,
+      "review": "approved",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subject": "event:observation",
+        "instanceId": "exit-1"
+      },
+      "requires": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [],
+      "actionId": "example:exit"
+    }
+  ]
+}
