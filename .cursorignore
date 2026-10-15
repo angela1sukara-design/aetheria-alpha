@@ -1,0 +1,21 @@
+# 降低 Agent 索引与误读范围；文件仍在 Git 中，仅影响 Cursor 上下文。
+# 详见根目录 AGENTS.md
+
+# 历史 tag 交付与大量只读 markdown（构建一般不需要）
+production/tag-deliveries/
+
+# 词库制作往返件（协作包走 collaboration-pack）
+production/lexicon-authoring/inbox/
+production/lexicon-authoring/outbox/
+
+# tag-hub 外发草稿
+docs/tag-hub/outbox/
+
+# 生成/构建产物与依赖
+node_modules/
+dist/
+artifacts/
+deliverables/
+
+# 本地参考手稿（与 .gitignore 一致）
+docs/故事/
