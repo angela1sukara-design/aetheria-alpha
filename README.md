@@ -2,9 +2,13 @@
 
 2026-10-14 已整合用户提供的干净工程及存档、Tag 调试修复，并保留当前工程的未实装 Tag 与玩家无年龄创建。双击根目录 `启动游戏-双击直接运行.html` 可直接游玩；修改源码后按下方步骤构建。
 
-已完成首批 NPC 服务与地点设施筛选（生成器 0.9.0）：新生成的中世纪世界按人物实际商品、教学与工作配置显示功能，地点按设施筛选行动。双击 [首批可玩示例](examples/首批NPC与地点功能示例.html)，或查看 [示例人物与操作](examples/首批功能示例.md)。示例从铁匠面前开始，沿地图可找到摊主、护理员和路人。
+已完成首批 NPC 服务与地点设施筛选（当前生成器 0.10.0）：新生成的中世纪世界按人物实际商品、教学与工作配置显示功能，地点按设施筛选行动。构建游戏后运行 `node scripts/build-function-example.mjs` 生成当前版本的 [首批可玩示例](examples/首批NPC与地点功能示例.html) 和 [示例人物与操作](examples/首批功能示例.md)。示例从铁匠面前开始，沿地图可找到摊主、护理员和路人；生成的离线文件与截图不随源码更新上传。
 
-多 AI 协作方案见 [ai.md](ai.md)，分发任务前先读 [核对与修订说明](docs/ai-collaboration-review.md) 与 [首批接口](docs/entity-functions-batch.md)。当前完成 C 的一部分，A/B/D/E 仍为后续任务。
+已接入 [模块 D 性格交谈](docs/module-d-implementation.md)，生成器 0.10.0 的正常 NPC 对话按六类及混合性格展开，有不同回应、真实赠礼和日程离场处理；旧档保留原行为。
+
+多 AI 协作方案见 [ai.md](ai.md)。运行 `node scripts/build-ai-task-pack.mjs` 可在 deliverables/ai-tasks/ 生成面向不能读取工程的 AI 的完整任务文件，内含当前源码全文与优先级。A/B/E 和 C 的补充玩法仍待开发。生成的任务文件与压缩包只在本地交付，不重复提交到仓库。
+
+2026-10-15 已另行交付 Tag 组合规则与九大类覆盖矩阵。仓库保留 [制作源与重建说明](production/tag-matrices/README.md)，运行 `npm run tag-matrices:build` 后可查看 [总规范](deliverables/tag-matrices/00-总规范与协作分工.md) 与 [按类分发说明](deliverables/tag-matrices/00-分发说明.md)。每类任务独立附规则、完整矩阵、相关源码全文、登记 Tag 及本类素材元数据；缺接口与范围外内容单独记账，不计玩法实装。生成后使用 `npm run test:tag-matrices` 和 `npm run tag-matrices:check` 验收。
 
 这里是唯一的当前开发工程，包含固定都市、随机街区、BodyGraph / TF、人物、事件及存档系统。游戏包版本为 `0.2.0-alpha`，已加入 foundation v0.4 增量接口。旧交付目录是历史快照，继续开发使用本目录。
 

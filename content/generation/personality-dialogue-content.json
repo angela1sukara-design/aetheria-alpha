@@ -1,0 +1,2106 @@
+{
+  "manifest": {
+    "id": "aetheria/personality-dialogue",
+    "namespace": "personality-dialogue",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria",
+    "status": "reviewed",
+    "dependencies": [
+      {
+        "id": "aetheria/personality",
+        "version": "1.0.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/adventure",
+        "version": "1.0.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/fantasy-residents",
+        "version": "1.0.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "foundation.v2",
+      "adventure.v1",
+      "condition.v1",
+      "effect.v1",
+      "district.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {
+    "personality-dialogue:text.noble.start.0": "你与{opponent}在{place}开始交流。对方没有急于回应，而是先听完你的来意。谈到具体事情时，措辞格外认真。你先说明自己想聊些什么。",
+    "personality-dialogue:text.noble.start.0.positive": "你的认真让对方放下了一些保留。对方明确表示愿意再聊一会儿。",
+    "personality-dialogue:text.noble.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.noble.start.0.rude": "对方明确表示不愿继续这段交谈。你们就此结束。",
+    "personality-dialogue:text.noble.start.0.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.noble.start.1": "你与{opponent}在{place}开始交流。对方没有急于回应，而是先听完你的来意。谈到具体事情时，措辞格外认真。这次话题从当天的近况展开。",
+    "personality-dialogue:text.noble.start.1.positive": "你的认真让对方放下了一些保留。对方明确表示愿意再聊一会儿。",
+    "personality-dialogue:text.noble.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.noble.start.1.rude": "对方明确表示不愿继续这段交谈。你们就此结束。",
+    "personality-dialogue:text.noble.start.1.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.noble.deepen": "你和{opponent}都愿意继续这段交谈。你们逐渐找到共同关注的事情。对方仍重视分寸，却愿意听你的看法。",
+    "personality-dialogue:text.noble.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.noble.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
+    "personality-dialogue:text.noble.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.noble.deepen.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.shy.start.0": "你与{opponent}在{place}开始交流。对方的回应不多，每次接话前都留出片刻停顿。你有时间决定交谈的节奏。你先说明自己想聊些什么。",
+    "personality-dialogue:text.shy.start.0.positive": "你没有催促。对方确认自己愿意继续，开始多说了一些近况。",
+    "personality-dialogue:text.shy.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.shy.start.0.rude": "对方表示这种催促让自己不舒服，结束了交谈。",
+    "personality-dialogue:text.shy.start.0.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.shy.start.1": "你与{opponent}在{place}开始交流。对方的回应不多，每次接话前都留出片刻停顿。你有时间决定交谈的节奏。这次话题从当天的近况展开。",
+    "personality-dialogue:text.shy.start.1.positive": "你没有催促。对方确认自己愿意继续，开始多说了一些近况。",
+    "personality-dialogue:text.shy.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.shy.start.1.rude": "对方表示这种催促让自己不舒服，结束了交谈。",
+    "personality-dialogue:text.shy.start.1.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.shy.deepen": "你和{opponent}都愿意继续这段交谈。交谈的停顿变得自然。对方可以慢慢说完，你也听得更清楚。",
+    "personality-dialogue:text.shy.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.shy.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
+    "personality-dialogue:text.shy.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.shy.deepen.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.forthright.start.0": "你与{opponent}在{place}开始交流。对方很快把话题带到眼前的事情上。态度坦率，也愿意听清你的意见。你先说明自己想聊些什么。",
+    "personality-dialogue:text.forthright.start.0.positive": "对方认可你把话说明白的做法，明确答应继续交流。",
+    "personality-dialogue:text.forthright.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.forthright.start.0.rude": "对方直接指出你的失礼，并表示今天不再继续聊。",
+    "personality-dialogue:text.forthright.start.0.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.forthright.start.1": "你与{opponent}在{place}开始交流。对方很快把话题带到眼前的事情上。态度坦率，也愿意听清你的意见。这次话题从当天的近况展开。",
+    "personality-dialogue:text.forthright.start.1.positive": "对方认可你把话说明白的做法，明确答应继续交流。",
+    "personality-dialogue:text.forthright.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.forthright.start.1.rude": "对方直接指出你的失礼，并表示今天不再继续聊。",
+    "personality-dialogue:text.forthright.start.1.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.forthright.deepen": "你和{opponent}都愿意继续这段交谈。你们交换了各自的看法。有不同意见时，也能直接讲清原因。",
+    "personality-dialogue:text.forthright.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.forthright.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
+    "personality-dialogue:text.forthright.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.forthright.deepen.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.calculating.start.0": "你与{opponent}在{place}开始交流。对方先问你希望了解什么，再说明自己能够回答的范围。交谈讲究清楚和实际。你先说明自己想聊些什么。",
+    "personality-dialogue:text.calculating.start.0.positive": "你把问题说得具体。对方确认愿意继续，但没有承诺未谈妥的事情。",
+    "personality-dialogue:text.calculating.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.calculating.start.0.rude": "对方拒绝了这个要求，结束了交谈。",
+    "personality-dialogue:text.calculating.start.0.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.calculating.start.1": "你与{opponent}在{place}开始交流。对方先问你希望了解什么，再说明自己能够回答的范围。交谈讲究清楚和实际。这次话题从当天的近况展开。",
+    "personality-dialogue:text.calculating.start.1.positive": "你把问题说得具体。对方确认愿意继续，但没有承诺未谈妥的事情。",
+    "personality-dialogue:text.calculating.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.calculating.start.1.rude": "对方拒绝了这个要求，结束了交谈。",
+    "personality-dialogue:text.calculating.start.1.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.calculating.deepen": "你和{opponent}都愿意继续这段交谈。你们把容易误会的地方逐一说清，逐渐形成了更明确的理解。",
+    "personality-dialogue:text.calculating.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.calculating.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
+    "personality-dialogue:text.calculating.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.calculating.deepen.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.devout.start.0": "你与{opponent}在{place}开始交流。对方认真对待自己的原则，也愿意听你表达。哪些话题可以谈，始终说得清楚。你先说明自己想聊些什么。",
+    "personality-dialogue:text.devout.start.0.positive": "你承认彼此可以保留不同看法。对方明确表示愿意继续交谈。",
+    "personality-dialogue:text.devout.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.devout.start.0.rude": "对方说明自己无法接受这样的态度，结束了交谈。",
+    "personality-dialogue:text.devout.start.0.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.devout.start.1": "你与{opponent}在{place}开始交流。对方认真对待自己的原则，也愿意听你表达。哪些话题可以谈，始终说得清楚。这次话题从当天的近况展开。",
+    "personality-dialogue:text.devout.start.1.positive": "你承认彼此可以保留不同看法。对方明确表示愿意继续交谈。",
+    "personality-dialogue:text.devout.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.devout.start.1.rude": "对方说明自己无法接受这样的态度，结束了交谈。",
+    "personality-dialogue:text.devout.start.1.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.devout.deepen": "你和{opponent}都愿意继续这段交谈。你们讨论各自重视的事情，没有要求谁放弃原有的原则。",
+    "personality-dialogue:text.devout.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.devout.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
+    "personality-dialogue:text.devout.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.devout.deepen.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.playful.start.0": "你与{opponent}在{place}开始交流。对方用一个轻松的问题打开话题。气氛活泼，但你仍可以认真表达或随时结束。你先说明自己想聊些什么。",
+    "personality-dialogue:text.playful.start.0.positive": "对方欣然同意继续聊，也确认你们都可以随时结束。",
+    "personality-dialogue:text.playful.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.playful.start.0.rude": "对方明确说这并不好笑，随后结束了交谈。",
+    "personality-dialogue:text.playful.start.0.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.playful.start.1": "你与{opponent}在{place}开始交流。对方用一个轻松的问题打开话题。气氛活泼，但你仍可以认真表达或随时结束。这次话题从当天的近况展开。",
+    "personality-dialogue:text.playful.start.1.positive": "对方欣然同意继续聊，也确认你们都可以随时结束。",
+    "personality-dialogue:text.playful.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
+    "personality-dialogue:text.playful.start.1.rude": "对方明确说这并不好笑，随后结束了交谈。",
+    "personality-dialogue:text.playful.start.1.exit": "你结束这次交谈，继续自己的安排。",
+    "personality-dialogue:text.playful.deepen": "你和{opponent}都愿意继续这段交谈。玩笑之后，你们开始说起真正关心的事情。交谈轻松，也保留了彼此的分寸。",
+    "personality-dialogue:text.playful.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.playful.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
+    "personality-dialogue:text.playful.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.playful.deepen.exit": "你结束这次交谈，继续自己的安排。"
+  },
+  "contributions": [],
+  "tags": [
+    {
+      "id": "personality-dialogue:tag.welcome",
+      "label": "愿意继续交谈",
+      "definition": "绑定居民在这次交谈中明确同意继续，不代替其他范围的意愿。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    }
+  ],
+  "narrativeNodes": [
+    {
+      "id": "personality-dialogue:node.noble.start.0",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.noble.start.0",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.noble"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.noble",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真说明来意，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.noble.start.0.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-noble-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.noble.start.0.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "嘲弄对方讲究礼数",
+          "resultText": "personality-dialogue:text.noble.start.0.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.noble.start.0.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.noble.start.1",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.noble.start.1",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.noble"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.noble",
+          "weight": 3
+        }
+      ],
+      "weight": 8,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真说明来意，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.noble.start.1.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-noble-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.noble.start.1.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "嘲弄对方讲究礼数",
+          "resultText": "personality-dialogue:text.noble.start.1.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.noble.start.1.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.noble.deepen",
+      "kind": "conversation",
+      "stage": "personality-noble-deepen",
+      "title": "继续与{opponent}交流",
+      "textKey": "personality-dialogue:text.noble.deepen",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.noble"
+        },
+        {
+          "role": "opponent",
+          "tagId": "personality-dialogue:tag.welcome"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.noble",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真听完，结束这次交谈",
+          "resultText": "personality-dialogue:text.noble.deepen.finish",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "赠送一份黑麦干粮",
+          "resultText": "personality-dialogue:text.noble.deepen.gift",
+          "effects": [
+            {
+              "op": "item.consume",
+              "id": "fantasy:item.ration",
+              "amount": 1
+            },
+            {
+              "op": "conversation.respond",
+              "reaction": "gift"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "conversation.giftAvailable"
+            },
+            {
+              "op": "item.has",
+              "id": "fantasy:item.ration",
+              "comparison": "gte",
+              "value": 1
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "询问是否愿意更亲近地相处",
+          "resultText": "personality-dialogue:text.noble.deepen.private",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            },
+            {
+              "op": "conversation.adultEligible"
+            },
+            {
+              "op": "conversation.trust",
+              "value": 2
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.noble.deepen.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.shy.start.0",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.shy.start.0",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.shy"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.shy",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "留出回应的时间，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.shy.start.0.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-shy-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.shy.start.0.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "催促对方立刻回答",
+          "resultText": "personality-dialogue:text.shy.start.0.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.shy.start.0.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.shy.start.1",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.shy.start.1",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.shy"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.shy",
+          "weight": 3
+        }
+      ],
+      "weight": 8,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "留出回应的时间，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.shy.start.1.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-shy-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.shy.start.1.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "催促对方立刻回答",
+          "resultText": "personality-dialogue:text.shy.start.1.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.shy.start.1.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.shy.deepen",
+      "kind": "conversation",
+      "stage": "personality-shy-deepen",
+      "title": "继续与{opponent}交流",
+      "textKey": "personality-dialogue:text.shy.deepen",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.shy"
+        },
+        {
+          "role": "opponent",
+          "tagId": "personality-dialogue:tag.welcome"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.shy",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真听完，结束这次交谈",
+          "resultText": "personality-dialogue:text.shy.deepen.finish",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "赠送一份黑麦干粮",
+          "resultText": "personality-dialogue:text.shy.deepen.gift",
+          "effects": [
+            {
+              "op": "item.consume",
+              "id": "fantasy:item.ration",
+              "amount": 1
+            },
+            {
+              "op": "conversation.respond",
+              "reaction": "gift"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "conversation.giftAvailable"
+            },
+            {
+              "op": "item.has",
+              "id": "fantasy:item.ration",
+              "comparison": "gte",
+              "value": 1
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "询问是否愿意更亲近地相处",
+          "resultText": "personality-dialogue:text.shy.deepen.private",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            },
+            {
+              "op": "conversation.adultEligible"
+            },
+            {
+              "op": "conversation.trust",
+              "value": 2
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.shy.deepen.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.forthright.start.0",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.forthright.start.0",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.forthright"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.forthright",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "直接说明想法，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.forthright.start.0.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-forthright-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.forthright.start.0.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "轻视对方的意见",
+          "resultText": "personality-dialogue:text.forthright.start.0.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.forthright.start.0.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.forthright.start.1",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.forthright.start.1",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.forthright"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.forthright",
+          "weight": 3
+        }
+      ],
+      "weight": 8,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "直接说明想法，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.forthright.start.1.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-forthright-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.forthright.start.1.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "轻视对方的意见",
+          "resultText": "personality-dialogue:text.forthright.start.1.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.forthright.start.1.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.forthright.deepen",
+      "kind": "conversation",
+      "stage": "personality-forthright-deepen",
+      "title": "继续与{opponent}交流",
+      "textKey": "personality-dialogue:text.forthright.deepen",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.forthright"
+        },
+        {
+          "role": "opponent",
+          "tagId": "personality-dialogue:tag.welcome"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.forthright",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真听完，结束这次交谈",
+          "resultText": "personality-dialogue:text.forthright.deepen.finish",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "赠送一份黑麦干粮",
+          "resultText": "personality-dialogue:text.forthright.deepen.gift",
+          "effects": [
+            {
+              "op": "item.consume",
+              "id": "fantasy:item.ration",
+              "amount": 1
+            },
+            {
+              "op": "conversation.respond",
+              "reaction": "gift"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "conversation.giftAvailable"
+            },
+            {
+              "op": "item.has",
+              "id": "fantasy:item.ration",
+              "comparison": "gte",
+              "value": 1
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "询问是否愿意更亲近地相处",
+          "resultText": "personality-dialogue:text.forthright.deepen.private",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            },
+            {
+              "op": "conversation.adultEligible"
+            },
+            {
+              "op": "conversation.trust",
+              "value": 2
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.forthright.deepen.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.calculating.start.0",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.calculating.start.0",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.calculating"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.calculating",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "说清问题与边界，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.calculating.start.0.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-calculating-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.calculating.start.0.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "要求对方无条件为你效劳",
+          "resultText": "personality-dialogue:text.calculating.start.0.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.calculating.start.0.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.calculating.start.1",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.calculating.start.1",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.calculating"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.calculating",
+          "weight": 3
+        }
+      ],
+      "weight": 8,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "说清问题与边界，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.calculating.start.1.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-calculating-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.calculating.start.1.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "要求对方无条件为你效劳",
+          "resultText": "personality-dialogue:text.calculating.start.1.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.calculating.start.1.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.calculating.deepen",
+      "kind": "conversation",
+      "stage": "personality-calculating-deepen",
+      "title": "继续与{opponent}交流",
+      "textKey": "personality-dialogue:text.calculating.deepen",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.calculating"
+        },
+        {
+          "role": "opponent",
+          "tagId": "personality-dialogue:tag.welcome"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.calculating",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真听完，结束这次交谈",
+          "resultText": "personality-dialogue:text.calculating.deepen.finish",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "赠送一份黑麦干粮",
+          "resultText": "personality-dialogue:text.calculating.deepen.gift",
+          "effects": [
+            {
+              "op": "item.consume",
+              "id": "fantasy:item.ration",
+              "amount": 1
+            },
+            {
+              "op": "conversation.respond",
+              "reaction": "gift"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "conversation.giftAvailable"
+            },
+            {
+              "op": "item.has",
+              "id": "fantasy:item.ration",
+              "comparison": "gte",
+              "value": 1
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "询问是否愿意更亲近地相处",
+          "resultText": "personality-dialogue:text.calculating.deepen.private",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            },
+            {
+              "op": "conversation.adultEligible"
+            },
+            {
+              "op": "conversation.trust",
+              "value": 2
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.calculating.deepen.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.devout.start.0",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.devout.start.0",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.devout"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.devout",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "尊重对方的原则，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.devout.start.0.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-devout-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.devout.start.0.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "贬低对方坚持的原则",
+          "resultText": "personality-dialogue:text.devout.start.0.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.devout.start.0.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.devout.start.1",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.devout.start.1",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.devout"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.devout",
+          "weight": 3
+        }
+      ],
+      "weight": 8,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "尊重对方的原则，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.devout.start.1.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-devout-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.devout.start.1.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "贬低对方坚持的原则",
+          "resultText": "personality-dialogue:text.devout.start.1.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.devout.start.1.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.devout.deepen",
+      "kind": "conversation",
+      "stage": "personality-devout-deepen",
+      "title": "继续与{opponent}交流",
+      "textKey": "personality-dialogue:text.devout.deepen",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.devout"
+        },
+        {
+          "role": "opponent",
+          "tagId": "personality-dialogue:tag.welcome"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.devout",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真听完，结束这次交谈",
+          "resultText": "personality-dialogue:text.devout.deepen.finish",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "赠送一份黑麦干粮",
+          "resultText": "personality-dialogue:text.devout.deepen.gift",
+          "effects": [
+            {
+              "op": "item.consume",
+              "id": "fantasy:item.ration",
+              "amount": 1
+            },
+            {
+              "op": "conversation.respond",
+              "reaction": "gift"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "conversation.giftAvailable"
+            },
+            {
+              "op": "item.has",
+              "id": "fantasy:item.ration",
+              "comparison": "gte",
+              "value": 1
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "询问是否愿意更亲近地相处",
+          "resultText": "personality-dialogue:text.devout.deepen.private",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            },
+            {
+              "op": "conversation.adultEligible"
+            },
+            {
+              "op": "conversation.trust",
+              "value": 2
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.devout.deepen.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.playful.start.0",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.playful.start.0",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.playful"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.playful",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "接住话题，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.playful.start.0.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-playful-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.playful.start.0.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "用贬低对方的玩笑取乐",
+          "resultText": "personality-dialogue:text.playful.start.0.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.playful.start.0.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.playful.start.1",
+      "kind": "conversation",
+      "stage": "start",
+      "title": "与{opponent}交谈",
+      "textKey": "personality-dialogue:text.playful.start.1",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.playful"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.playful",
+          "weight": 3
+        }
+      ],
+      "weight": 8,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "接住话题，询问是否愿意继续",
+          "resultText": "personality-dialogue:text.playful.start.1.positive",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "welcomed"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [
+            {
+              "role": "opponent",
+              "tagId": "personality-dialogue:tag.welcome"
+            }
+          ],
+          "unsetTags": [],
+          "next": "personality-playful-deepen"
+        },
+        {
+          "label": "简短交换近况后道别",
+          "resultText": "personality-dialogue:text.playful.start.1.neutral",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "用贬低对方的玩笑取乐",
+          "resultText": "personality-dialogue:text.playful.start.1.rude",
+          "effects": [
+            {
+              "op": "conversation.respond",
+              "reaction": "offended"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.playful.start.1.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    },
+    {
+      "id": "personality-dialogue:node.playful.deepen",
+      "kind": "conversation",
+      "stage": "personality-playful-deepen",
+      "title": "继续与{opponent}交流",
+      "textKey": "personality-dialogue:text.playful.deepen",
+      "requiresTags": [
+        {
+          "role": "opponent",
+          "tagId": "personality:trait.playful"
+        },
+        {
+          "role": "opponent",
+          "tagId": "personality-dialogue:tag.welcome"
+        }
+      ],
+      "excludesTags": [],
+      "conditions": [],
+      "tendencies": [
+        {
+          "tagId": "personality:trait.playful",
+          "weight": 3
+        }
+      ],
+      "weight": 10,
+      "priority": 10,
+      "maxVisits": 1,
+      "choices": [
+        {
+          "label": "认真听完，结束这次交谈",
+          "resultText": "personality-dialogue:text.playful.deepen.finish",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 10
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "赠送一份黑麦干粮",
+          "resultText": "personality-dialogue:text.playful.deepen.gift",
+          "effects": [
+            {
+              "op": "item.consume",
+              "id": "fantasy:item.ration",
+              "amount": 1
+            },
+            {
+              "op": "conversation.respond",
+              "reaction": "gift"
+            },
+            {
+              "op": "clock.advance",
+              "minutes": 5
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "conversation.giftAvailable"
+            },
+            {
+              "op": "item.has",
+              "id": "fantasy:item.ration",
+              "comparison": "gte",
+              "value": 1
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "询问是否愿意更亲近地相处",
+          "resultText": "personality-dialogue:text.playful.deepen.private",
+          "effects": [
+            {
+              "op": "clock.advance",
+              "minutes": 15
+            }
+          ],
+          "conditions": [
+            {
+              "op": "conversation.present"
+            },
+            {
+              "op": "preference.adultOptional",
+              "value": true
+            },
+            {
+              "op": "conversation.adultEligible"
+            },
+            {
+              "op": "conversation.trust",
+              "value": 2
+            }
+          ],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        },
+        {
+          "label": "结束交谈",
+          "resultText": "personality-dialogue:text.playful.deepen.exit",
+          "effects": [],
+          "conditions": [],
+          "setTags": [],
+          "unsetTags": [],
+          "next": null
+        }
+      ]
+    }
+  ]
+}

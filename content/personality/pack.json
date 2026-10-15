@@ -1,0 +1,87 @@
+{
+  "manifest": {
+    "id": "aetheria/personality",
+    "namespace": "personality",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria",
+    "status": "reviewed",
+    "dependencies": [],
+    "requiresCapabilities": [
+      "foundation.v2"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [],
+  "events": [],
+  "texts": {},
+  "contributions": [],
+  "tags": [
+    {
+      "id": "personality:trait.noble",
+      "label": "高傲矜持",
+      "definition": "用于居民性格与交谈候选筛选的行为倾向，不授予身体、服务权限或意愿。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "personality:trait.shy",
+      "label": "羞怯敏感",
+      "definition": "用于居民性格与交谈候选筛选的行为倾向，不授予身体、服务权限或意愿。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "personality:trait.forthright",
+      "label": "直率豪爽",
+      "definition": "用于居民性格与交谈候选筛选的行为倾向，不授予身体、服务权限或意愿。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "personality:trait.calculating",
+      "label": "精明务实",
+      "definition": "用于居民性格与交谈候选筛选的行为倾向，不授予身体、服务权限或意愿。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "personality:trait.devout",
+      "label": "虔诚克制",
+      "definition": "用于居民性格与交谈候选筛选的行为倾向，不授予身体、服务权限或意愿。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    },
+    {
+      "id": "personality:trait.playful",
+      "label": "狡黠活泼",
+      "definition": "用于居民性格与交谈候选筛选的行为倾向，不授予身体、服务权限或意愿。",
+      "facets": [
+        "context"
+      ],
+      "status": "active",
+      "aliases": []
+    }
+  ]
+}

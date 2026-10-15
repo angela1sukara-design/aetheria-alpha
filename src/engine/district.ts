@@ -7,6 +7,7 @@ import { draw } from './rng.ts';
 import { instantiateBody, patchedBody } from './body.ts';
 import { evaluate } from './conditions.ts';
 import { RuleError } from '../core/errors.ts';
+import { conversationResident,structuredConversation } from './personality.ts';
 import { serviceAvailable, usesFunctions } from './entity-functions.ts';
 export function initialDistrict(): DistrictState {
   return { version: 1, profile: { name: '旅人', created: false, adultOptional: false }, residents: [], currentResidentId: null,
@@ -54,7 +55,8 @@ export function encounter(state: GameState, registry: Registry, includeEvents = 
   return selected.eventId;
 }
 export function residentInteraction(state: GameState, registry: Registry, help: boolean): string {
-  const d = district(state), r = d.residents.find(x => x.id === d.currentResidentId && x.locationId === state.world.locationId);
+  const d = district(state), r = !help&&structuredConversation(state,registry)?conversationResident(state):d.residents.find(x => x.id === d.currentResidentId && x.locationId === state.world.locationId);
+  if(r&&r.locationId!==state.world.locationId)throw new RuleError('CONVERSATION_LEFT','交谈对象已经离开。');
   if (!r) throw new RuleError('NO_RESIDENT', '先留意附近的人。');
   const day = Math.floor(state.clock.totalMinutes / 1440), t = registry.residentTemplates.find(x => x.id === r.templateId)!;
   if (help) {

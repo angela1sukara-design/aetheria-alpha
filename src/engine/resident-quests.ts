@@ -21,6 +21,8 @@ export function rememberResident(state: GameState, registry: Registry, residentI
   resident.persistent = true;
 }
 export function residentMemoryText(memoryId: string, registry: Registry): string {
+  const conversation=memoryId.match(/^conversation:(welcomed|declined|gift):\d+$/);
+  if(conversation)return ({welcomed:'曾明确愿意继续交谈',declined:'曾结束一次不愉快的交谈',gift:'接受过实际赠送的心意'} as Record<string,string>)[conversation[1]!]!;
   if (memoryId.startsWith('talk:')) return '交换过当天近况';
   if (memoryId.startsWith('help:')) return '一起处理过实际事务';
   return registry.text(memoryId as Id);

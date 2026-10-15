@@ -22,7 +22,7 @@ import { proseProblem } from '../content/player-prose.ts';
 import { applyWorldProfile, chooseWorldProfile, parseWorldProfiles, professionName, worldProfileSelectionTag } from './profiles.ts';
 import type { GeneratedWorld, GenerationRulePack, ReferenceTemplate, WorldDef, WorldInstance } from './types.ts';
 
-export const GENERATOR_VERSION = '0.9.0';
+export const GENERATOR_VERSION = '0.10.0';
 const id = (key: string): Id => `worldgen:${key}`;
 
 /** 生成器只创建初始快照。所有玩法编译成已有内容 DSL，并经过同一个 loader。 */
@@ -215,6 +215,8 @@ export class WorldGenerator {
       const namePool=source.roleName?source.names:profile?.residentNames??source.names;
       const unused=source.roleName?namePool.filter(name=>!pack.residentTemplates!.some(t=>t.names.includes(name))):namePool;
       template.names = [`${pick(unused.length?unused:namePool, `npc.name.${i}`)}${source.roleName?'':`·${i + 1}`}`]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
+      const traitVariant=source.traitVariants?.length?pick(source.traitVariants,`npc.personality.${i}`):undefined;
+      if(traitVariant)template.personality=[traitVariant.personality];template.traitTags=[...(traitVariant?.traitTags??source.traitTags??[])];delete template.traitVariants;
       template.patchIds = source.patchIds.length ? [pick(source.patchIds, `npc.patch.${i}`)] : [];
       let initialBody = instantiateBody(input.registry.bodyTemplate(template.bodyTemplateId));
       for (const patch of template.patchIds) initialBody = patchedBody(initialBody, input.registry.bodyPatch(patch), input.registry);
@@ -285,7 +287,7 @@ export class WorldGenerator {
       const t = pack.residentTemplates![i]!;
       let body = instantiateBody(registry.bodyTemplate(t.bodyTemplateId));
       for (const patch of t.patchIds) body = patchedBody(body, registry.bodyPatch(patch), registry);
-      state.district.residents.push({ id: agent.residentId, templateId: t.id, name: t.names[0]!, locationId: agent.originLocationId, profession: t.profession, appearance: t.appearance[0]!, personality: t.personality[0]!, speciesId: t.speciesId, ageYears: t.ageYears, body, persistent: false, visits: 0, trust: 0, lastTalkDay: -1, memories: [] });
+      state.district.residents.push({ id: agent.residentId, templateId: t.id, name: t.names[0]!, locationId: agent.originLocationId, profession: t.profession, appearance: t.appearance[0]!, personality: t.personality[0]!, speciesId: t.speciesId, ageYears: t.ageYears, traitTags:[...(t.traitTags??[])], body, persistent: false, visits: 0, trust: 0, lastTalkDay: -1, memories: [] });
     }
     const world: WorldInstance = { version: 1, definition, generation: { generatorVersion: GENERATOR_VERSION, seed: input.seed, rules, rulesHash: await hash(rules), references: await Promise.all(references.map(async p => ({ id: p.id, version: p.version, hash: await hash(p) }))), contentPacks: clone(input.registry.packs), parameters, selectedTemplateIds: [...new Set(selected.map(t => t.id))] }, agents, simulation: { version: 1, lastMinute: rules.startMinutes } };
     state.worldInstance = world; advanceWorldSimulation(state);

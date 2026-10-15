@@ -1,3 +1,4 @@
+import { buildPersonalityContent } from './build-personality-content.mjs';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import { loadAtoms, sampleCombos, toEncounterCandidate } from './nsfw-auto-combo/combiner.mjs';
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
@@ -839,3 +840,5 @@ for(const n of p.narrativeNodes)for(const k of [n.textKey,...n.choices.map(c=>c.
 }
 await mkdir('content/adventure',{recursive:true});await writeFile('content/adventure/pack.json',JSON.stringify(p,null,2)+'\n');
 console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.items.length} consumables, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}, defeat-play fills ${defeatPlayFillCount}.`);
+
+await buildPersonalityContent();

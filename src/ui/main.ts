@@ -100,7 +100,7 @@ async function boot(): Promise<void> {
         await fetchJSON(new URL('../../content/generation/lexicon-reference.json', import.meta.url)),
         await fetchJSON(new URL('../../content/generation/fantasy-reference.json', import.meta.url)),
       ],
-      content: await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url)))),
+      content: [await fetchJSON(new URL('../../content/personality/pack.json',import.meta.url)),...await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content','personality-dialogue-content'].map(name => fetchJSON(new URL(`../../content/generation/${name}.json`, import.meta.url))))],
     };
   })();
   mountWorldControls({ source: () => fixedRegistry, defaults: generation, lockDefaults: playtest === 'tagcoexist', isBusy: () => busy, setBusy: value => { busy = value; syncDefeatPlayQuick(); }, replace: generated => {

@@ -12,8 +12,9 @@ import type { GeneratedWorld } from '../src/world/types.ts';
 const json=async(p:string)=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const index=await json('content/index.json');
 const inputs=await Promise.all(index.packs.map((p:string)=>json('content/'+p)));
+const traitsPack=await json('content/personality/pack.json');
 const extra=await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content'].map(n=>json('content/generation/'+n+'.json')));
-const registry=await loadPacks([...inputs,...extra]);
+const registry=await loadPacks([...inputs,traitsPack,...extra]);
 const rules=await json('content/generation/rules.json'),reference=await json('content/generation/lexicon-reference.json'),fantasy=await json('content/generation/fantasy-reference.json'),profiles=await json('content/generation/world-profiles.json');
 const worlds=await Promise.all([7,42,19].map(seed=>new WorldGenerator().generate({seed,registry,rules:{...rules,startMinutes:600},references:[reference,fantasy],worldProfiles:profiles,worldTag:'worlds:setting.fantasy',parameters:{npcCount:20}})));
 function fixture(world:GeneratedWorld,actorId:string,change:(s:GameState)=>void=()=>{}){
@@ -117,8 +118,8 @@ test('a capable provider stops offering services away from the workplace; lookup
 
 test('schemas reject unsupported services, unknown goods and unregistered facilities',async()=>{
   const fantasyPack=extra.at(-1)!;
-  const bad=structuredClone(fantasyPack);bad.residentTemplates[0].services={repair:true};await assert.rejects(()=>loadPacks([...inputs,...extra.slice(0,-1),bad]));
-  const missing=structuredClone(fantasyPack);missing.residentTemplates[0].services={trade:['missing:item.ghost']};await assert.rejects(()=>loadPacks([...inputs,...extra.slice(0,-1),missing]));
+  const bad=structuredClone(fantasyPack);bad.residentTemplates[0].services={repair:true};await assert.rejects(()=>loadPacks([...inputs,traitsPack,...extra.slice(0,-1),bad]));
+  const missing=structuredClone(fantasyPack);missing.residentTemplates[0].services={trade:['missing:item.ghost']};await assert.rejects(()=>loadPacks([...inputs,traitsPack,...extra.slice(0,-1),missing]));
   const source=structuredClone(inputs);source.find(p=>p.locations.length).locations[0].facilities=['teleport'];await assert.rejects(()=>loadPacks(source));
 });
 
@@ -126,7 +127,7 @@ test('changing only facility and provider data enables a real lesson outside the
   const changed=structuredClone(extra),pack=changed.at(-1)!;
   pack.residentTemplates.find((t:{id:string})=>t.id==='fantasy:resident.wolfkin').services.teach=['core:skillPower'];
   const ref=structuredClone(reference);for(const t of ref.templates)if(t.kind==='place'&&t.data.service==='clinic')t.data.facilities=['seat','care','workplace','training'];
-  const changedRegistry=await loadPacks([...inputs,...changed]);
+  const changedRegistry=await loadPacks([...inputs,traitsPack,...changed]);
   const world=await new WorldGenerator().generate({seed:7,registry:changedRegistry,rules:{...rules,startMinutes:600},references:[ref,fantasy],worldProfiles:profiles,worldTag:'worlds:setting.fantasy',parameters:{npcCount:20}});
   const actor=world.state.district!.residents.find(n=>world.registry.residentTemplates.find(t=>t.id===n.templateId)?.services?.trade?.includes('fantasy:item.bandage'))!;
   assert.ok(actor);const engine=fixture(world,actor.id),lesson=offered(engine,'train').find(a=>a.definition.effects.some(f=>f.op==='progression.act'&&f.id==='core:skillPower'))!;

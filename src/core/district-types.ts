@@ -1,6 +1,7 @@
 import type { EntityRef } from './query-types.ts';
 import type { Id, Condition } from './types.ts';
 import type { BodyGraph, BodyCapability } from './body-types.ts';
+import type { TraitVariant } from './personality-types.ts';
 import type { ResidentServices } from './function-types.ts';
 export type EnemyTier = 'S' | 'M' | 'L' | 'boss';
 export interface StoryletDef {
@@ -17,9 +18,12 @@ export interface ResidentTemplate {
   services?: ResidentServices;
   /** 面向当前题材的职业称呼；职业适配和原始选池仍使用 profession。 */
   roleName?: string;
+  traitTags?: Id[];
+  traitVariants?: TraitVariant[];
 }
 export interface Resident {
   id: string; templateId: Id; name: string; locationId: Id; profession: string; appearance: string; personality: string;
+  traitTags?: Id[];
   speciesId: Id; ageYears: number; body: BodyGraph; persistent: boolean; visits: number; trust: number; lastTalkDay: number; memories: string[];
 }
 /** 敌方八维与行动经济；不写玩家 VariableDef。 */
@@ -104,6 +108,7 @@ export interface DistrictDefinitions {
   items?: ItemDef[];
 }
 export type DistrictEffect =
+  | { op: 'item.consume'; id:Id; amount:number }
   | { op: 'resident.remember'; residentId: string; memoryId: Id }
   | { op: 'world.encounter'; events?: boolean }
   | { op: 'resident.talk' | 'resident.help' }

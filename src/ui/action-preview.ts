@@ -23,5 +23,6 @@ export function actionPreview(action: ActionDef, registry: Registry, state?: Gam
     const variable = registry.variables.find(variable => variable.id === id);
     if (variable) tags.push(`${variable.label} ${amount > 0 ? '+' : '−'}${Math.abs(amount)}${variable.unit}`);
   }
+  for(const e of effects)if(e.op==='item.consume')tags.push(`${registry.items.find(i=>i.id===e.id)?.name??e.id} −${e.amount}`);
   return tags;
 }

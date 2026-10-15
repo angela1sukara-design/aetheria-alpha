@@ -5,6 +5,7 @@ import { bodyTraits } from '../engine/body.ts';
 import { byId, element } from './render.ts';
 import { scenePresentation } from './scene-presentation.ts';
 import { actionPreview } from './action-preview.ts';
+import { conversationResident } from '../engine/personality.ts';
 
 export const folioCategories: Record<string, [string,string]> = {
   explore: ['探索此处','观察四周，寻找线索和新的经历。'],
@@ -176,7 +177,8 @@ function renderParty(view:GameView,registry:Registry):void {
   const interaction=view.state.district?.scene;const interactionNpc=interaction?registry.interactions.find(i=>i.id===interaction.definitionId)?.npcId:undefined;
   const participant=participants[0]??interactionNpc;
   const known=participant?registry.npcs.find(n=>n.id===participant):undefined;
-  const resident=view.state.district?.residents.find(r=>r.id===view.state.district?.currentResidentId&&r.locationId===view.location.id);
+  const bound=conversationResident(view.state);
+  const resident=view.state.adventure?.story?.kind==='conversation'?(bound?.locationId===view.location.id?bound:undefined):view.state.district?.residents.find(r=>r.id===view.state.district?.currentResidentId&&r.locationId===view.location.id);
   const name=known?.name??resident?.name;
   host.append(element('p','eyebrow',name?'对面 / 人物':'此刻 / 周围'));
   if(name){host.append(element('div','party-portrait',name.slice(0,1)),element('h2','',name),element('p','muted',known?.role??resident?.profession??''));

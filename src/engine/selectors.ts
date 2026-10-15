@@ -12,7 +12,7 @@ import { districtOptions, districtText } from './district-effects.ts';
 import { directResourceCheck } from './resource-check.ts';
 import type { TextLibrary } from '../content/text-variants.ts';
 import { routeDistanceTier, routeStaminaCost, staminaGate, STAMINA_COST } from './numerics.ts';
-import { narrativeActions, narrativeText, publicActionEffects } from './narrative.ts';
+import { narrativeActions, narrativeText, publicActionEffects,conversationEntryAction } from './narrative.ts';
 import { progressionCheck } from './progression.ts';
 import { describeResidentAction, functionKey, requiredFunction, selectedResident, serviceAvailable, usesFunctions } from './entity-functions.ts';
 
@@ -37,7 +37,7 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   if(strict)for(const a of supported){const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);if(key&&!a.context&&!a.effects.some(e=>e.op==='narrative.choose')){const old=preferred.get(key);if(!old||score(a)>score(old))preferred.set(key,a);}}
   return supported.filter(a=>{if(!strict||a.context||a.effects.some(e=>e.op==='narrative.choose'))return true;const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);return !key||preferred.get(key)===a;}).map(source => {
     const need=strict&&!source.context?requiredFunction(source,publicActionEffects(source,state,registry)):undefined;
-    const decorated=describeResidentAction(source,state,registry);
+    const decorated=conversationEntryAction(describeResidentAction(source,state,registry),state,registry);
     const definition=need?{...decorated,conditions:[...decorated.conditions,{op:'service.available' as const,...need}]}:decorated;
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
     const effects=publicActionEffects(definition,state,registry);

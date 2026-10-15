@@ -14,7 +14,7 @@ const json=async(p:string)=>JSON.parse(await readFile(new URL('../'+p,import.met
 const index=await json('content/index.json');
 const inputs=await Promise.all(index.packs.map((p:string)=>json('content/'+p)));
 const fixed=await loadPacks(inputs);
-const registry=await loadPacks([...inputs,...await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content'].map(n=>json('content/generation/'+n+'.json')))]);
+const registry=await loadPacks([...inputs,await json('content/personality/pack.json'),...await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content'].map(n=>json('content/generation/'+n+'.json')))]);
 const rules=await json('content/generation/rules.json'),reference=await json('content/generation/lexicon-reference.json'),fantasyRef=await json('content/generation/fantasy-reference.json'),catalog=await json('content/generation/world-profiles.json');
 const generate=(seed:number,tag='worlds:setting.fantasy')=>new WorldGenerator().generate({seed,registry,rules,references:[reference,fantasyRef],worldProfiles:catalog,worldTag:tag});
 let serial=0;

@@ -158,6 +158,9 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     if (next > max) throw new RuleError('ITEM_STACK', `${item.name}超过携带上限。`);
     bag[item.id] = next;
     c.resolvedTexts.push(`获得${item.name}×${e.amount}。`);
+  } else if(e.op==='item.consume'){
+    const item=r.items.find(i=>i.id===e.id),bag=adventure(s).items??{};if(!item||(bag[e.id]??0)<e.amount)throw new RuleError('ITEM_EMPTY','没有足够的赠礼物品。');
+    const before=bag[e.id]!;if(before===e.amount)delete bag[e.id];else bag[e.id]=before-e.amount;c.changes.push({label:item.name,before,after:bag[e.id]??0});
   } else if (e.op === 'item.use') {
     if (d.combat) throw new RuleError('ITEM_IN_COMBAT', '交锋中请使用战内消耗品行动。');
     const item = r.items.find(x => x.id === e.id);

@@ -27,6 +27,11 @@
         "id": "engine/core",
         "version": "0.1.0",
         "optional": false
+      },
+      {
+        "id": "aetheria/personality",
+        "version": "1.0.0",
+        "optional": false
       }
     ],
     "requiresCapabilities": [
@@ -88,8 +93,14 @@
         "袖口绣着公会纹章"
       ],
       "personality": [
-        "直率守约",
-        "好打听远方消息"
+        "言辞讲究分寸，重视清楚的来意",
+        "话不多，习惯先听清再回应",
+        "坦率热情，愿意把想法说清",
+        "注重实际，习惯明确彼此的边界",
+        "认真对待原则，也尊重不同看法",
+        "喜欢轻松的话题，认真时也会直说",
+        "直率而谨慎，重视明确的约定",
+        "温和且有些害羞，愿意慢慢交流"
       ],
       "behavior": "guide",
       "speciesId": "fantasy:species.human",
@@ -102,7 +113,59 @@
         "help": "你们交换了路况，随后各自继续赶路。"
       },
       "services": {},
-      "roleName": "过路信使"
+      "roleName": "过路信使",
+      "traitVariants": [
+        {
+          "personality": "言辞讲究分寸，重视清楚的来意",
+          "traitTags": [
+            "personality:trait.noble"
+          ]
+        },
+        {
+          "personality": "话不多，习惯先听清再回应",
+          "traitTags": [
+            "personality:trait.shy"
+          ]
+        },
+        {
+          "personality": "坦率热情，愿意把想法说清",
+          "traitTags": [
+            "personality:trait.forthright"
+          ]
+        },
+        {
+          "personality": "注重实际，习惯明确彼此的边界",
+          "traitTags": [
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "认真对待原则，也尊重不同看法",
+          "traitTags": [
+            "personality:trait.devout"
+          ]
+        },
+        {
+          "personality": "喜欢轻松的话题，认真时也会直说",
+          "traitTags": [
+            "personality:trait.playful"
+          ]
+        },
+        {
+          "personality": "直率而谨慎，重视明确的约定",
+          "traitTags": [
+            "personality:trait.forthright",
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "温和且有些害羞，愿意慢慢交流",
+          "traitTags": [
+            "personality:trait.shy",
+            "personality:trait.devout"
+          ]
+        }
+      ]
     },
     {
       "id": "fantasy:resident.broker",
@@ -125,8 +188,14 @@
         "腰间挂着验货镜"
       ],
       "personality": [
-        "精于当面核算",
-        "不喜欢空口承诺"
+        "言辞讲究分寸，重视清楚的来意",
+        "话不多，习惯先听清再回应",
+        "坦率热情，愿意把想法说清",
+        "注重实际，习惯明确彼此的边界",
+        "认真对待原则，也尊重不同看法",
+        "喜欢轻松的话题，认真时也会直说",
+        "直率而谨慎，重视明确的约定",
+        "温和且有些害羞，愿意慢慢交流"
       ],
       "behavior": "trade",
       "speciesId": "fantasy:species.human",
@@ -151,7 +220,59 @@
         "orders": true,
         "investments": true
       },
-      "roleName": "集市摊主"
+      "roleName": "集市摊主",
+      "traitVariants": [
+        {
+          "personality": "言辞讲究分寸，重视清楚的来意",
+          "traitTags": [
+            "personality:trait.noble"
+          ]
+        },
+        {
+          "personality": "话不多，习惯先听清再回应",
+          "traitTags": [
+            "personality:trait.shy"
+          ]
+        },
+        {
+          "personality": "坦率热情，愿意把想法说清",
+          "traitTags": [
+            "personality:trait.forthright"
+          ]
+        },
+        {
+          "personality": "注重实际，习惯明确彼此的边界",
+          "traitTags": [
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "认真对待原则，也尊重不同看法",
+          "traitTags": [
+            "personality:trait.devout"
+          ]
+        },
+        {
+          "personality": "喜欢轻松的话题，认真时也会直说",
+          "traitTags": [
+            "personality:trait.playful"
+          ]
+        },
+        {
+          "personality": "直率而谨慎，重视明确的约定",
+          "traitTags": [
+            "personality:trait.forthright",
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "温和且有些害羞，愿意慢慢交流",
+          "traitTags": [
+            "personality:trait.shy",
+            "personality:trait.devout"
+          ]
+        }
+      ]
     },
     {
       "id": "fantasy:resident.wolfkin",
@@ -174,8 +295,14 @@
         "爪印纹的药箱扣"
       ],
       "personality": [
-        "警觉寡言",
-        "重当面约定"
+        "言辞讲究分寸，重视清楚的来意",
+        "话不多，习惯先听清再回应",
+        "坦率热情，愿意把想法说清",
+        "注重实际，习惯明确彼此的边界",
+        "认真对待原则，也尊重不同看法",
+        "喜欢轻松的话题，认真时也会直说",
+        "直率而谨慎，重视明确的约定",
+        "温和且有些害羞，愿意慢慢交流"
       ],
       "behavior": "guide",
       "speciesId": "fantasy:species.beast",
@@ -199,7 +326,59 @@
           "fantasy:item.draught"
         ]
       },
-      "roleName": "神殿护理员"
+      "roleName": "神殿护理员",
+      "traitVariants": [
+        {
+          "personality": "言辞讲究分寸，重视清楚的来意",
+          "traitTags": [
+            "personality:trait.noble"
+          ]
+        },
+        {
+          "personality": "话不多，习惯先听清再回应",
+          "traitTags": [
+            "personality:trait.shy"
+          ]
+        },
+        {
+          "personality": "坦率热情，愿意把想法说清",
+          "traitTags": [
+            "personality:trait.forthright"
+          ]
+        },
+        {
+          "personality": "注重实际，习惯明确彼此的边界",
+          "traitTags": [
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "认真对待原则，也尊重不同看法",
+          "traitTags": [
+            "personality:trait.devout"
+          ]
+        },
+        {
+          "personality": "喜欢轻松的话题，认真时也会直说",
+          "traitTags": [
+            "personality:trait.playful"
+          ]
+        },
+        {
+          "personality": "直率而谨慎，重视明确的约定",
+          "traitTags": [
+            "personality:trait.forthright",
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "温和且有些害羞，愿意慢慢交流",
+          "traitTags": [
+            "personality:trait.shy",
+            "personality:trait.devout"
+          ]
+        }
+      ]
     },
     {
       "id": "fantasy:resident.smith",
@@ -222,8 +401,14 @@
         "锻造围裙沾着魔晶粉"
       ],
       "personality": [
-        "手稳话少",
-        "讲究交接编号"
+        "言辞讲究分寸，重视清楚的来意",
+        "话不多，习惯先听清再回应",
+        "坦率热情，愿意把想法说清",
+        "注重实际，习惯明确彼此的边界",
+        "认真对待原则，也尊重不同看法",
+        "喜欢轻松的话题，认真时也会直说",
+        "直率而谨慎，重视明确的约定",
+        "温和且有些害羞，愿意慢慢交流"
       ],
       "behavior": "repair",
       "speciesId": "fantasy:species.beast",
@@ -254,7 +439,59 @@
         ],
         "orders": true
       },
-      "roleName": "铁匠"
+      "roleName": "铁匠",
+      "traitVariants": [
+        {
+          "personality": "言辞讲究分寸，重视清楚的来意",
+          "traitTags": [
+            "personality:trait.noble"
+          ]
+        },
+        {
+          "personality": "话不多，习惯先听清再回应",
+          "traitTags": [
+            "personality:trait.shy"
+          ]
+        },
+        {
+          "personality": "坦率热情，愿意把想法说清",
+          "traitTags": [
+            "personality:trait.forthright"
+          ]
+        },
+        {
+          "personality": "注重实际，习惯明确彼此的边界",
+          "traitTags": [
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "认真对待原则，也尊重不同看法",
+          "traitTags": [
+            "personality:trait.devout"
+          ]
+        },
+        {
+          "personality": "喜欢轻松的话题，认真时也会直说",
+          "traitTags": [
+            "personality:trait.playful"
+          ]
+        },
+        {
+          "personality": "直率而谨慎，重视明确的约定",
+          "traitTags": [
+            "personality:trait.forthright",
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "温和且有些害羞，愿意慢慢交流",
+          "traitTags": [
+            "personality:trait.shy",
+            "personality:trait.devout"
+          ]
+        }
+      ]
     },
     {
       "id": "fantasy:resident.slimekin",
@@ -277,8 +514,14 @@
         "腰间密封样本瓶"
       ],
       "personality": [
-        "好奇又谨慎",
-        "讨厌空口承诺"
+        "言辞讲究分寸，重视清楚的来意",
+        "话不多，习惯先听清再回应",
+        "坦率热情，愿意把想法说清",
+        "注重实际，习惯明确彼此的边界",
+        "认真对待原则，也尊重不同看法",
+        "喜欢轻松的话题，认真时也会直说",
+        "直率而谨慎，重视明确的约定",
+        "温和且有些害羞，愿意慢慢交流"
       ],
       "behavior": "guide",
       "speciesId": "fantasy:species.monster",
@@ -296,7 +539,59 @@
           "text": "你对照印章整理已经办结的委托，把缺少收据的记录单独归档。文书复核后付清工钱。"
         }
       },
-      "roleName": "委托文书"
+      "roleName": "委托文书",
+      "traitVariants": [
+        {
+          "personality": "言辞讲究分寸，重视清楚的来意",
+          "traitTags": [
+            "personality:trait.noble"
+          ]
+        },
+        {
+          "personality": "话不多，习惯先听清再回应",
+          "traitTags": [
+            "personality:trait.shy"
+          ]
+        },
+        {
+          "personality": "坦率热情，愿意把想法说清",
+          "traitTags": [
+            "personality:trait.forthright"
+          ]
+        },
+        {
+          "personality": "注重实际，习惯明确彼此的边界",
+          "traitTags": [
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "认真对待原则，也尊重不同看法",
+          "traitTags": [
+            "personality:trait.devout"
+          ]
+        },
+        {
+          "personality": "喜欢轻松的话题，认真时也会直说",
+          "traitTags": [
+            "personality:trait.playful"
+          ]
+        },
+        {
+          "personality": "直率而谨慎，重视明确的约定",
+          "traitTags": [
+            "personality:trait.forthright",
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "温和且有些害羞，愿意慢慢交流",
+          "traitTags": [
+            "personality:trait.shy",
+            "personality:trait.devout"
+          ]
+        }
+      ]
     },
     {
       "id": "fantasy:resident.geltech",
@@ -319,8 +614,14 @@
         "符文量尺"
       ],
       "personality": [
-        "细致",
-        "怕返工"
+        "言辞讲究分寸，重视清楚的来意",
+        "话不多，习惯先听清再回应",
+        "坦率热情，愿意把想法说清",
+        "注重实际，习惯明确彼此的边界",
+        "认真对待原则，也尊重不同看法",
+        "喜欢轻松的话题，认真时也会直说",
+        "直率而谨慎，重视明确的约定",
+        "温和且有些害羞，愿意慢慢交流"
       ],
       "behavior": "repair",
       "speciesId": "fantasy:species.monster",
@@ -353,7 +654,59 @@
         ],
         "orders": true
       },
-      "roleName": "附魔工匠"
+      "roleName": "附魔工匠",
+      "traitVariants": [
+        {
+          "personality": "言辞讲究分寸，重视清楚的来意",
+          "traitTags": [
+            "personality:trait.noble"
+          ]
+        },
+        {
+          "personality": "话不多，习惯先听清再回应",
+          "traitTags": [
+            "personality:trait.shy"
+          ]
+        },
+        {
+          "personality": "坦率热情，愿意把想法说清",
+          "traitTags": [
+            "personality:trait.forthright"
+          ]
+        },
+        {
+          "personality": "注重实际，习惯明确彼此的边界",
+          "traitTags": [
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "认真对待原则，也尊重不同看法",
+          "traitTags": [
+            "personality:trait.devout"
+          ]
+        },
+        {
+          "personality": "喜欢轻松的话题，认真时也会直说",
+          "traitTags": [
+            "personality:trait.playful"
+          ]
+        },
+        {
+          "personality": "直率而谨慎，重视明确的约定",
+          "traitTags": [
+            "personality:trait.forthright",
+            "personality:trait.calculating"
+          ]
+        },
+        {
+          "personality": "温和且有些害羞，愿意慢慢交流",
+          "traitTags": [
+            "personality:trait.shy",
+            "personality:trait.devout"
+          ]
+        }
+      ]
     }
   ],
   "items": [

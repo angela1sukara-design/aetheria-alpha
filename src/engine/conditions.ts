@@ -1,3 +1,4 @@
+import { conversationResident,conversationPresent,conversationAdultEligible,conversationMemory } from './personality.ts';
 import { bodyMatches, capabilityCount, entityBody, environment, timeWindow, PLAYER, entityKey } from './query.ts';
 import type { Condition, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
@@ -12,6 +13,10 @@ export interface Check { pass: boolean; reason: string; known?: boolean }
 export function evaluate(condition: Condition, state: GameState, registry: Registry): Check {
   let pass: boolean; let reason = '条件尚未满足。';
   switch (condition.op) {
+    case 'conversation.present': return {pass:conversationPresent(state),reason:'交谈对象已经离开。'};
+    case 'conversation.adultEligible': return {pass:conversationAdultEligible(state,registry),reason:'交谈人物未满足当前互动资格。'};
+    case 'conversation.giftAvailable': return {pass:conversationPresent(state)&&!conversationResident(state)?.memories.includes(conversationMemory(state,'gift')),reason:'今天已经接受过赠礼。'};
+    case 'conversation.trust': return {pass:conversationPresent(state)&&(conversationResident(state)?.trust??0)>=condition.value,reason:`与交谈对象的信任至少需要${condition.value}。`};
     case 'service.available': return {pass:serviceAvailable(state,registry,condition),reason:'当前地点或人物不提供这项功能。'};
     case 'adventure.compare': {const value=adventureValue(state,condition.field);pass=condition.comparison==='eq'?value===condition.value:condition.comparison==='gte'?value>=condition.value:value<=condition.value;reason=`${({assets:'经营份额',influence:'组织影响',safety:'街区安全',reputation:'公共声望',orders:'订单',contracts:'契约',victories:'有效战斗胜利'})[condition.field]}需${condition.comparison==='gte'?'至少':condition.comparison==='lte'?'不超过':'等于'}${condition.value}（当前${value}）。`;break;}
     case 'progression.available': return progressionCheck(state,registry,condition.move,condition.id);

@@ -49,6 +49,10 @@ export function compactHistory(s: GameState): void {
   if (s.district) {
     const cutoff = Math.max(0, s.clock.totalMinutes - 10080), last = new Map<string, number>();
     s.district.storyletHistory = [...s.district.storyletHistory].reverse().filter(h => { if (last.has(h.id)) return false; last.set(h.id, h.at); return true; }).reverse();
-    for (const resident of s.district.residents) resident.memories = resident.memories.filter(m => !/^(talk|help):\d+$/.test(m) || Number(m.split(':')[1]) * 1440 >= cutoff);
+    for (const resident of s.district.residents) resident.memories = resident.memories.filter(m => {
+      if(/^(talk|help):\d+$/.test(m))return Number(m.split(':')[1])*1440>=cutoff;
+      if(/^conversation:(welcomed|declined|gift):\d+$/.test(m))return Number(m.split(':')[2])*1440>=cutoff;
+      return true;
+    });
   }
 }

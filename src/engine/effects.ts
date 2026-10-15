@@ -1,3 +1,4 @@
+import { respondConversation } from './personality.ts';
 import type { Change, Effect, EventInstance, GameState } from '../core/types.ts';
 import type { Registry } from '../content/registry.ts';
 import { RuleError } from '../core/errors.ts';
@@ -20,13 +21,14 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
   for (const effect of effects) {
     if (--context.budget < 0) throw new RuleError('EFFECT_BUDGET', '单次事务效果超过安全上限。');
     switch (effect.op) {
+      case 'conversation.respond': {const delta=respondConversation(draft,registry,effect.reaction);if(delta.before!==delta.after)context.changes.push({label:`${delta.name}的信任`,before:delta.before,after:delta.after});break;}
       case 'narrative.start': startNarrative(draft,registry,context,effect.kind,effect.profileId);break;
       case 'narrative.choose': advanceNarrative(draft,registry,context,effect.index,applyEffects);break;
       case 'adventure.change': case 'progression.act': applyProgression(effect,draft,registry,context,applyEffects);break;
       case 'resident.remember': rememberResident(draft, registry, effect.residentId, effect.memoryId); break;
       case 'world.encounter': { const id = encounter(draft,registry,effect.events !== false); if(id) applyEffects([{op:'event.start',id}],draft,registry,context); else context.resolvedTexts.push(effect.events === false ? (draft.district?.currentResidentId ? '你向另一位在场居民打了招呼，可以继续交谈或协助。' : '此刻没有居民在这里停留。可以查看公共活动时段，再等候或前往其他地点。') : '街区暂时平静。你留意了周围的人与路况。'); break; }
       case 'resident.talk': case 'resident.help': context.resolvedTexts.push(residentInteraction(draft,registry,effect.op === 'resident.help')); break;
-      case 'combat.start': case 'combat.encounter': case 'combat.turn': case 'scene.start': case 'scene.act': case 'equipment.wear': case 'equipment.remove': case 'item.use': case 'item.gain': case 'player.create': case 'preference.set':
+      case 'combat.start': case 'combat.encounter': case 'combat.turn': case 'scene.start': case 'scene.act': case 'equipment.wear': case 'equipment.remove': case 'item.use': case 'item.gain': case 'item.consume': case 'player.create': case 'preference.set':
         applyDistrictEffect(effect,draft,registry,context,applyEffects); break;
       case 'environment.setLight': {
         if(draft.meta.schemaVersion!==4)throw new RuleError('STATE_VERSION','环境覆盖需要存档 v4。');

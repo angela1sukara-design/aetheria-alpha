@@ -27,7 +27,10 @@
     "test:ui": "node tests/folio-browser.mjs",
     "test:ux": "node tests/adventure-browser.mjs",
     "test:folio": "node tests/folio-browser.mjs && node tests/adventure-browser.mjs",
-    "test:adventure:browser": "node tests/adventure-browser.mjs"
+    "test:adventure:browser": "node tests/adventure-browser.mjs",
+    "tag-matrices:build": "node scripts/build-tag-matrices.mjs",
+    "tag-matrices:check": "node scripts/check-tag-matrices.mjs",
+    "test:tag-matrices": "node --test tests/tag-matrices.test.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",

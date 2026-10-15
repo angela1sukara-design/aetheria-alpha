@@ -54,6 +54,8 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'resident.present') { const x = obj(value, path, ['op', 'residentId']); str(x.residentId, path); }
     else if (op === 'resident.relation') { const x = obj(value, path, ['op', 'residentId', 'relation']); str(x.residentId, path); choice(x.relation, path, [...PLAYER_RELATIONS]); }
     else if (op === 'resident.memory') { const x = obj(value, path, ['op', 'residentId', 'memoryId', 'value']); str(x.residentId, path); id(x.memoryId, path); boolean(x.value, path); }
+    else if (['conversation.present','conversation.adultEligible','conversation.giftAvailable'].includes(String(op))) obj(value,path,['op']);
+    else if(op==='conversation.trust'){const x=obj(value,path,['op','value']);integer(x.value,path,0,1000000);}
     else if (op === 'resident.available') obj(value,path,['op']);
     else if (op === 'player.created') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
     else if (op === 'preference.adultOptional') { const x = obj(value,path,['op','value']); boolean(x.value,path); }
@@ -80,6 +82,8 @@ export function parsePack(input: unknown): ContentPack {
     else if (['resident.talk','resident.help','equipment.remove'].includes(String(op))) obj(value,path,['op']);
     else if (op === 'combat.encounter') obj(value,path,['op']);
     else if (['combat.start','scene.start','equipment.wear','item.use'].includes(String(op))) { const x = obj(value,path,['op','id']); id(x.id,path); }
+    else if(op==='conversation.respond'){const x=obj(value,path,['op','reaction']);choice(x.reaction,path,['welcomed','offended','gift']);}
+    else if(op==='item.consume'){const x=obj(value,path,['op','id','amount']);id(x.id,path);integer(x.amount,path,1,99);}
     else if (op === 'item.gain') { const x = obj(value,path,['op','id','amount']); id(x.id,path); integer(x.amount,path,1,99); }
     else if (op === 'combat.turn') { const x = obj(value,path,['op','move','id']); choice(x.move,path,['attack','guard','recover','flee','skill','item','surrender','giveup']); if(x.move==='item'){ if(x.id===undefined) fail(`${path}/id`,'战内使用消耗品必须声明 item id。'); id(x.id,`${path}/id`); } else if(x.id!==undefined) fail(`${path}/id`,'非 item 行动不应带 id。'); }
     else if (op === 'scene.act') { const x = obj(value,path,['op','move','poseId']); choice(x.move,path,['pose','contact','release','pause','resume','exit']); if(x.poseId !== undefined) str(x.poseId,path); }

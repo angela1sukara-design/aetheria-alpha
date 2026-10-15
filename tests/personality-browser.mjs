@@ -1,0 +1,40 @@
+import assert from 'node:assert/strict';
+import {chromium} from 'playwright';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+import path from 'node:path';
+import {enterFolio,openFolioPage,performFolioAction} from './folio-navigation.mjs';
+const out='artifacts/module-d',meta=JSON.parse(await readFile('artifacts/capability-batch/example.json','utf8'));
+const checks=[],errors=[],requests=[];
+const browser=await chromium.launch({headless:true,executablePath:process.env.BROWSER_EXECUTABLE_PATH??'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const actor=(s,id)=>s.district.residents.find(n=>n.id===id);
+async function fresh(){const context=await browser.newContext({viewport:{width:1280,height:1000},acceptDownloads:true});await context.route(/^https?:/,route=>{requests.push(route.request().url());return route.abort();});const page=await context.newPage();await page.addInitScript(()=>{const original=URL.createObjectURL.bind(URL);URL.createObjectURL=blob=>{if(blob instanceof Blob&&blob.type==='application/json')void blob.text().then(text=>{globalThis.__exportedJSON=text;});return original(blob);};});page.setDefaultTimeout(12000);page.on('pageerror',e=>errors.push(e.message));await page.goto(pathToFileURL(path.resolve('examples/首批NPC与地点功能示例.html')).href);await enterFolio(page);return page;}
+async function snapshot(page){await page.waitForTimeout(300);await openFolioPage(page,'save');await page.evaluate(()=>{globalThis.__exportedJSON='';});await page.locator('#save-export').click();await page.waitForFunction(()=>!!globalThis.__exportedJSON);const raw=JSON.parse(await page.evaluate(()=>globalThis.__exportedJSON));await page.locator('#save-export:not(:disabled)').waitFor();await page.locator('#page-home').click();return raw.payload.state;}
+async function act(page,id){await performFolioAction(page,id);assert.ok(!await page.locator('#feedback').evaluate(n=>n.classList.contains('error')),await page.locator('#feedback').textContent());}
+async function talk(page,role){await act(page,`worldgen:action.talk.${meta.locations.findIndex(l=>l.id===role.locationId)}`);assert.equal(await page.locator('#scene-panel').getAttribute('data-mode'),'event');}
+async function goTo(page,role){const start=(await snapshot(page)).world.locationId,queue=[[start,[]]],seen=new Set();let walk;while(queue.length){const[at,steps]=queue.shift();if(at===role.locationId){walk=steps;break;}if(seen.has(at))continue;seen.add(at);for(const route of meta.routes.filter(r=>r.from===at))queue.push([route.to,[...steps,route]]);}assert.ok(walk);for(const route of walk)await act(page,route.actionId);const index=meta.locations.findIndex(l=>l.id===role.locationId);for(let i=0;i<meta.npcCount&&await page.locator('#party-context h2').textContent()!==role.name;i++)await act(page,`worldgen:action.meet.${index}`);assert.equal(await page.locator('#party-context h2').textContent(),role.name);}
+const check=async(name,run)=>{await run();checks.push(name);console.log('PASS '+name);};
+try{
+ const smith=meta.roles.find(r=>r.kind==='smith');
+ await check('正常人物入口进入性格分支，保存中途节点后刷新可继续，重复交谈不重复发每日信任',async()=>{
+   const page=await fresh(),before=await snapshot(page);await talk(page,smith);let s=await snapshot(page);assert.deepEqual(s.adventure.story.actor,{kind:'resident',id:smith.residentId});assert.equal(actor(s,smith.residentId).trust,actor(before,smith.residentId).trust+1);assert.ok(!/[{}]|占位|TODO/.test(await page.locator('#scene-text').textContent()));
+   await act(page,'progression:action.story.0');s=await snapshot(page);assert.match(s.adventure.story.stage,/deepen/);await page.screenshot({path:'examples/模块D性格交谈.png',fullPage:true});
+   await openFolioPage(page,'save');await page.locator('#save-write').click();await page.locator('#save-message').filter({hasText:'保存完成'}).waitFor();await page.reload();await enterFolio(page);assert.deepEqual(await snapshot(page),s);await act(page,'progression:action.story.0');await talk(page,smith);assert.equal(actor(await snapshot(page),smith.residentId).trust,actor(s,smith.residentId).trust);await act(page,'progression:action.story.3');await page.context().close();
+ });
+ await check('中性回应正常收尾；冒犯降低信任并结束，当天不再进入正收益深入分支',async()=>{
+   const page=await fresh();await talk(page,smith);await act(page,'progression:action.story.1');assert.equal((await snapshot(page)).adventure.story,null);
+   await talk(page,smith);const before=await snapshot(page);await act(page,'progression:action.story.2');const after=await snapshot(page);assert.equal(after.adventure.story,null);assert.equal(actor(after,smith.residentId).trust,Math.max(0,actor(before,smith.residentId).trust-1));assert.ok(actor(after,smith.residentId).memories.includes('conversation:declined:0'));for(const key of ['reputation','influence','safety'])assert.equal(after.adventure[key],before.adventure[key]);await page.context().close();
+ });
+ await check('从摊主实际买入干粮再赠送：显示消耗、扣一份、增加真实信任并限制每日一次',async()=>{
+   const page=await fresh(),merchant=meta.roles.find(r=>r.kind==='merchant');await goTo(page,merchant);const buy=merchant.actions.find(a=>a.label==='购买黑麦干粮');await act(page,buy.id);await talk(page,merchant);await act(page,'progression:action.story.0');const before=await snapshot(page);assert.match(await page.locator('#actions [data-action="progression:action.story.1"]').textContent(),/黑麦干粮.*−1/s);await act(page,'progression:action.story.1');const after=await snapshot(page);assert.equal(after.adventure.items['fantasy:item.ration']??0,before.adventure.items['fantasy:item.ration']-1);assert.equal(actor(after,merchant.residentId).trust,actor(before,merchant.residentId).trust+1);await act(page,buy.id);await talk(page,merchant);await act(page,'progression:action.story.0');assert.ok(await page.locator('#actions [data-action="progression:action.story.1"]').isDisabled());await openFolioPage(page,'pack');await page.locator('#adult-preference').check();await page.locator('#page-home').click();assert.ok(await page.locator('#actions [data-action="progression:action.story.2"]').isEnabled());await act(page,'progression:action.story.2');assert.equal((await snapshot(page)).adventure.story,null);await page.context().close();
+ });
+ await check('偏好开启与关闭实际改变可选分支资格，关闭时普通对话完整且可退出',async()=>{
+   const page=await fresh();await talk(page,smith);await act(page,'progression:action.story.0');assert.ok(await page.locator('#actions [data-action="progression:action.story.2"]').isDisabled());await openFolioPage(page,'pack');await page.locator('#adult-preference').check();await page.locator('#page-home').click();const s=await snapshot(page);assert.equal(s.district.profile.adultOptional,true);assert.ok(await page.locator('#actions [data-action="progression:action.story.2"]').isDisabled());await openFolioPage(page,'pack');await page.locator('#adult-preference').uncheck();await page.locator('#page-home').click();assert.equal((await snapshot(page)).district.profile.adultOptional,false);await act(page,'progression:action.story.3');await page.context().close();
+ });
+ await check('真实等候到工作结束边界，推进时间令交谈对象离场后安全收尾',async()=>{
+   const page=await fresh(),index=meta.locations.findIndex(l=>l.id===smith.locationId),s=await snapshot(page),agent=s.worldInstance.agents.find(a=>a.residentId===smith.residentId),work=agent.schedule.find(x=>x.activity==='work');
+   const count=Math.floor((work.end-10-s.clock.totalMinutes)/15);for(let i=0;i<count;i++)await act(page,`worldgen:action.wait.short.${index}`);
+   await talk(page,smith);await act(page,'progression:action.story.0');const after=await snapshot(page);assert.equal(after.adventure.story,null);assert.ok(actor(after,smith.residentId).locationId!==after.world.locationId);await page.context().close();
+ });
+ assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);await writeFile(out+'/browser-report.json',JSON.stringify({status:'passed',checks,errors,requests},null,2));
+}catch(error){await mkdir(out,{recursive:true});await writeFile(out+'/browser-report.json',JSON.stringify({status:'failed',checks,errors,requests,error:String(error)},null,2));console.error(error);process.exitCode=1;}finally{await browser.close();}
