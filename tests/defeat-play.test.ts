@@ -14,25 +14,26 @@ async function registryOf() {
   return loadPacks(inputs);
 }
 
-test('defeat-play G1–G3 multi-beat + G4–G8 single capture, prose fills loaded', async () => {
+test('defeat-play G1–G8 multi-beat prose fills loaded', async () => {
   const fills = await json('content/nsfw-auto-combo/defeat-play-fills.json');
   assert.equal(fills.format, 'aetheria-defeat-play-prose-fills');
   assert.equal(fills.schemaVersion, 2);
-  assert.equal(Object.keys(fills.texts).length, 34);
+  assert.equal(Object.keys(fills.texts).length, 64);
   assert.equal(fills.worldTag, 'worlds:setting.fantasy');
   assert.equal(fills.gameplayCategories.length, 8);
-  assert.ok(fills.peakSamplesNotInstalled['progression:text.node.defeat.g4.peak']);
+  assert.equal(Object.keys(fills.peakSamplesNotInstalled || {}).length, 0);
 
   const candidates = await json('content/nsfw-auto-combo/defeat-play-candidates.json');
   assert.equal(candidates.plays.length, 8);
-  assert.equal(candidates.proseFillsApplied, 34);
+  assert.equal(candidates.proseFillsApplied, 64);
   assert.deepEqual(candidates.stageChain, ['capture', 'press', 'peak', 'resolve']);
   assert.deepEqual(candidates.hubPages.hub3, ['G5', 'G6']);
   assert.equal(candidates.plays[0].multiBeat, true);
-  assert.equal(candidates.plays[3].multiBeat, false);
+  assert.equal(candidates.plays[3].multiBeat, true);
   assert.ok(candidates.plays[0].stages.press);
   assert.ok(candidates.plays[0].stages.resolve);
-  assert.equal(candidates.plays[4].stages.press, undefined);
+  assert.ok(candidates.plays[4].stages.press);
+  assert.ok(candidates.plays[4].stages.resolve);
   assert.equal(candidates.plays[4].stages.escalate, undefined);
 
   const draws = await json('content/nsfw-auto-combo/defeat-play-draws.json');
@@ -55,14 +56,19 @@ test('defeat-play G1–G3 multi-beat + G4–G8 single capture, prose fills loade
     }
   }
   for (const n of [4, 5, 6, 7, 8]) {
-    assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.capture`));
-    assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.capture.adult`));
-    assert.ok(!registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.press`), `G${n} must not install empty press`);
-    assert.ok(!registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.peak`), `G${n} must not install empty peak`);
-    assert.ok(!registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.resolve`), `G${n} must not install empty resolve`);
+    for (const stage of ['capture', 'press', 'peak', 'resolve']) {
+      assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.${stage}`), `missing g${n}.${stage}`);
+      assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.${stage}.adult`), `missing g${n}.${stage}.adult`);
+      const body = registry.text(`progression:text.node.defeat.g${n}.${stage}` as Id);
+      assert.ok(body.length >= 40, body.slice(0, 40));
+      assert.ok(!body.includes('【槽'), 'should not be empty stub slot');
+      assert.ok(!body.includes('故事侧可填'), 'should not be engine placeholder');
+      assert.ok(!body.includes('可核对或回安全'), 'should not be stub checklist prose');
+      const adult = registry.text(`progression:text.node.defeat.g${n}.${stage}.adult` as Id);
+      assert.ok(adult.length >= 40, adult.slice(0, 40));
+      assert.ok(!adult.includes('成人门'), 'adult body must not carry gate copy');
+    }
     assert.ok(!registry.narrativeNodes.some(node => node.id === `progression:node.defeat.play.0${n}.escalate`));
-    const body = registry.text(`progression:text.node.defeat.g${n}.capture` as Id);
-    assert.ok(body.includes('战败') || body.includes('{opponent}'), body.slice(0, 40));
   }
   assert.ok(!registry.narrativeNodes.some(n => n.id.includes('.escalate')));
   assert.ok(!registry.narrativeNodes.some(n => n.id.includes('.aftermath')));
@@ -134,7 +140,7 @@ test('G1 four-beat chain: capture→press→peak→resolve with exit kept', asyn
   assert.ok(e.view().actions.some(a => a.definition.label === '结束当前经历，回到安全位置' && a.available));
 });
 
-test('hub3 path reaches play-05 single capture without empty multi-chain', async () => {
+test('hub3 path reaches play-05 four-beat chain', async () => {
   const registry = await registryOf();
   const s = createGameState(registry, 17);
   s.world.locationId = 'district:location.canal' as Id;
@@ -156,7 +162,15 @@ test('hub3 path reaches play-05 single capture without empty multi-chain', async
   const story = e.snapshot().adventure!.story!;
   assert.equal(story.stage, 'play-05');
   assert.ok(story.nodeId.endsWith('defeat.g5.capture'));
-  assert.ok(!e.view().actions.some(a => /加压|高峰|升级压迫|余波/.test(a.definition.label)));
+  assert.ok(e.view().actions.some(a => a.definition.label === '继续：加压收紧' && a.available));
+  assert.ok(e.view().actions.some(a => a.definition.label === '结束当前经历，回到安全位置' && a.available));
+  pick('继续：加压收紧');
+  assert.equal(e.snapshot().adventure!.story!.stage, 'play-05-press');
+  pick('继续：推向高峰');
+  assert.equal(e.snapshot().adventure!.story!.stage, 'play-05-peak');
+  pick('继续：收束脱困');
+  assert.equal(e.snapshot().adventure!.story!.stage, 'play-05-resolve');
+  assert.ok(e.snapshot().adventure!.story!.nodeId.endsWith('defeat.g5.resolve'));
   assert.ok(e.view().actions.some(a => a.definition.label === '结束当前经历，回到安全位置' && a.available));
 });
 
