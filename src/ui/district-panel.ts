@@ -15,6 +15,10 @@ export function renderDistrict(v:GameView,r:Registry,texts:TextLibrary,journal:J
  const atBirthplace=v.location.id==='aetheria:location.apartment'||(!!startId&&v.location.id===startId);
  const intro=byId('character-intro');
  intro.hidden=d.profile.created||!atBirthplace||!!v.eventTitle||!!d.combat||!!d.scene;
+ // The same button survives world replacement and failed creation attempts.
+ // Restore its availability from the current world instead of retaining a click lock.
+ const createButton=intro.querySelector<HTMLButtonElement>('[data-action="district:action.create"]');
+ if(createButton)createButton.disabled=!v.actions.find(a=>a.definition.id==='district:action.create')?.available;
  // 异世界无公寓文案：出生点同样走签到，不硬绑租约措辞
  if(!intro.hidden){
   const title=intro.querySelector('h2'); const blurb=intro.querySelector('p');

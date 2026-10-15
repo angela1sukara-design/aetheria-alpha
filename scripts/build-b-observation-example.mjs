@@ -1,0 +1,23 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {loadPacks} from '../src/content/loader.ts';
+import {WorldGenerator} from '../src/world/generator.ts';
+import {ActionExecutor} from '../src/engine/executor.ts';
+import {SaveCodec} from '../src/persistence/codec.ts';
+const json=async file=>JSON.parse(await readFile(file,'utf8'));
+const index=await json('content/index.json');
+const source=await loadPacks([...await Promise.all(index.packs.map(p=>json('content/'+p))),await json('content/personality/pack.json'),
+  ...await Promise.all(['neighborhood-content','lexicon-content','world-profile-content','fantasy-content','personality-dialogue-content'].map(p=>json('content/generation/'+p+'.json')))]);
+const g=await new WorldGenerator().generate({seed:42,registry:source,rules:await json('content/generation/rules.json'),references:[await json('content/generation/lexicon-reference.json'),await json('content/generation/fantasy-reference.json')],worldProfiles:await json('content/generation/world-profiles.json'),worldTag:'worlds:setting.modern'});
+const engine=new ActionExecutor(g.registry,g.state);
+const create=engine.performAction({actionId:'district:action.create',params:{name:'旅人'}},engine.snapshot().meta.revision,'b-example-create');assert.equal(create.ok,true,create.message);
+const i=g.world.definition.locations.findIndex(p=>p.id===engine.snapshot().world.locationId);
+const observe=engine.performAction({actionId:`worldgen:action.observe.${i}`},engine.snapshot().meta.revision,'b-example-observe');assert.equal(observe.ok,true,observe.message);
+const codec=new SaveCodec(g.registry),save=await codec.encode(engine.snapshot());assert.equal((await codec.decode(save)).status,'ready');
+const html=await readFile('dist/Aetheria-Folio.html','utf8'),marker='<script>globalThis.aetheriaEmbedded=';assert(html.includes(marker));
+const launch=`globalThis.aetheriaInitialSave=${JSON.stringify(save).replaceAll('<','\\u003c')};globalThis.aetheriaSaveSlot="b-observation-modern-2026-10-15";`;
+await mkdir('examples',{recursive:true});await mkdir('artifacts/b-observations',{recursive:true});
+await writeFile('examples/B词条-现代街区.html',html.replace(marker,'<script>'+launch+'globalThis.aetheriaEmbedded='));
+await writeFile('artifacts/b-observations/modern-save.json',save);
+await writeFile('artifacts/b-observations/installation.json',JSON.stringify({installedEntries:270,reviewedRecipes:270,world:g.world.definition.name,seed:42,generatedObservationNodes:g.registry.narrativeNodes.filter(n=>n.id.startsWith('worldgen:node.observe.')).length,entryAction:`worldgen:action.observe.${i}`,example:'examples/B词条-现代街区.html',sourceHoldsPreserved:true,saveValidated:true},null,2)+'\n');
+console.log('Playable B-content example built: examples/B词条-现代街区.html');

@@ -1,4 +1,5 @@
 import { buildPersonalityContent } from './build-personality-content.mjs';
+import {proseProblem} from '../src/content/player-prose.ts';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import { loadAtoms, sampleCombos, toEncounterCandidate } from './nsfw-auto-combo/combiner.mjs';
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
@@ -476,11 +477,11 @@ const defeatPlayMeta = [
   { n: 1, key: 'G1', name: '束缚制服', multiBeat: true },
   { n: 2, key: 'G2', name: '材质覆层转化', multiBeat: true },
   { n: 3, key: 'G3', name: '侵犯插入', multiBeat: true },
-  { n: 4, key: 'G4', name: '口封感官剥夺', multiBeat: false },
-  { n: 5, key: 'G5', name: '产卵灌注', multiBeat: false },
-  { n: 6, key: 'G6', name: '公开羞辱', multiBeat: false },
-  { n: 7, key: 'G7', name: '主从调教', multiBeat: false },
-  { n: 8, key: 'G8', name: '多体围攻', multiBeat: false },
+  { n: 4, key: 'G4', name: '口封感官剥夺', multiBeat: true },
+  { n: 5, key: 'G5', name: '产卵灌注', multiBeat: true },
+  { n: 6, key: 'G6', name: '公开羞辱', multiBeat: true },
+  { n: 7, key: 'G7', name: '主从调教', multiBeat: true },
+  { n: 8, key: 'G8', name: '多体围攻', multiBeat: true },
 ];
 const defeatStageTitle = { capture: '捕捉', press: '加压', peak: '高峰', resolve: '收束' };
 const defeatContinueLabel = {
@@ -716,7 +717,7 @@ action(
   'explore',
 );
 
-// 回填战败玩法正文（G1–G3 四拍 + G4–G8 单段；不装 peakSamplesNotInstalled）
+// 回填战败玩法正文（G1–G8 四拍；不装 peakSamplesNotInstalled）
 const defeatPlayFillsPath = 'content/nsfw-auto-combo/defeat-play-fills.json';
 let defeatPlayFillCount = 0;
 try {
@@ -745,7 +746,7 @@ await writeFile(
     entryAction: id('action.defeat.play'),
     hubNodeId: id('node.defeat.play.hub'),
     stageChain: defeatPlayStageChain,
-    stageNote: 'G1–G3 实装 capture→press→peak→resolve；G4–G8 仅单段 capture+adult，不硬装空多段链。escalate/aftermath 已弃用。',
+    stageNote: 'G1–G8 实装 capture→press→peak→resolve。escalate/aftermath 已弃用。',
     hubPages: {
       hub: ['G1', 'G2'],
       hub2: ['G3', 'G4'],
@@ -836,7 +837,7 @@ p.texts[id('text.node.transformation.start')]='你在{place}留出一块空地�
 p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))].filter(a=>!['action.narrative.quest','action.narrative.ending'].map(id).includes(a));p.contributions=p.contributions.slice(0,1);
 // Missing prose is a build error, never an instruction shown inside the game.
 for(const n of p.narrativeNodes)for(const k of [n.textKey,...n.choices.map(c=>c.resultText)]){
- if(/占位|可填(?:中性|成人|正文)|【槽|故事侧可填|\b(?:TODO|TBD|placeholder|stub)\b/i.test(p.texts[k]??''))throw Error('可玩正文未完成：'+k);
+ const problem=proseProblem(p.texts[k]??'',true);if(problem)throw Error('可玩正文未完成：'+k+'，'+problem);
 }
 await mkdir('content/adventure',{recursive:true});await writeFile('content/adventure/pack.json',JSON.stringify(p,null,2)+'\n');
 console.log(`Adventure content: ${p.narrativeNodes.length} narrative nodes, ${p.narrativeProfiles.length} behavior profiles, ${p.environmentEnemyRules.length} env-enemy rules, ${p.equipment.length} gear items, ${p.items.length} consumables, ${p.enemies.length} enemies, nsfw-combo samples ${nsfwCombos.length}, prose fills ${proseFillCount}, defeat-play fills ${defeatPlayFillCount}.`);

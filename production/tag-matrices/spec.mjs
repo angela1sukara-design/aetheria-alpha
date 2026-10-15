@@ -5,7 +5,7 @@ export const ecologies = ['wet','dry','garden','frost','forge','tidal'];
 export const facilities = ['seat','bed','care','workplace','training','publicDesk','lightSwitch'];
 export const traits = ['noble','shy','forthright','calculating','devout','playful'].map(x=>'personality:trait.'+x);
 export const relationshipGates={
- source:'ai.md E.3 详细阈值表；详细表优先于任务卡简写。以下是制作契约，运行时尚未实施。',
+ source:'docs/reference/development-plan.md E.3 详细阈值表；详细表优先于任务卡简写。以下是制作契约，运行时尚未实施。',
  ranges:{affection:[0,100],submission:[0,100],corruption:[0,100]},
  stages:{stranger:'新对象初始态',acquaintance:'visits>=1',close:'affection>=30 || submission>=30 || corruption>=30',lover:'affection>=70 && trust>=10 && corruption<50',submissive:'submission>=70',corrupted:'corruption>=70'},
  choice:'门槛只列候选；终路线必须明确选择。单一主stage，多路线同时达标不自动覆盖。',
@@ -68,7 +68,7 @@ export const domains = [
   tests:['tests/body-tf.test.ts','tests/foundation.test.ts','tests/equipment-items.test.ts','tests/save.test.ts'],fallback:'未知身体不进入动作候选，选不假设特定部位的文字；不支持的 TF 目标报接口缺口。'},
  {id:'09',name:'关系路线与结局',priority:'P2',dependencies:['02','04','06','07','08'],purpose:'区分已有信任/背景关系与尚未开发的关系路线状态机。',
   axes:['5 玩家背景关系','5 居民背景关系','stranger/acquaintance/close/lover/submissive/corrupted 规划阶段','NPC/resident/enemy 对象','终局叙事节点'],
-  jobs:['已有 trust/visits、固定 NPC relationship、背景关系分账；affection/submission/corruption 0–100 与路线 stage 当前未实施。','路线只能由明确选择和真实状态转换决定；性格、支配倾向、战败和正文不能自动确立关系。','沿用 ai.md E.3 详细表：相识 visits>=1；亲近三字段任一>=30；lover 同时 affection>=70、trust>=10、corruption<50；submissive 要 submission>=70；corrupted 要 corruption>=70。终路线还需明确选择，不按任务卡简写或数值自动切换。','敌人长期关系需要稳定实例身份、重逢/在场契约与存档，当前共享 enemy 模板不能直接存个人关系。','每个终局写清触发、前置、实际状态变更、可否返回和存档策略；现有 kind:ending 文本不等于游戏已实现永久死亡/消失/关系终局。','本包只制作普通、合意且非露骨的关系/契约与幻想变化规则；未定义效果先记接口缺口。'],
+  jobs:['已有 trust/visits、固定 NPC relationship、背景关系分账；affection/submission/corruption 0–100 与路线 stage 当前未实施。','路线只能由明确选择和真实状态转换决定；性格、支配倾向、战败和正文不能自动确立关系。','沿用 docs/reference/development-plan.md E.3 详细表：相识 visits>=1；亲近三字段任一>=30；lover 同时 affection>=70、trust>=10、corruption<50；submissive 要 submission>=70；corrupted 要 corruption>=70。终路线还需明确选择，不按任务卡简写或数值自动切换。','敌人长期关系需要稳定实例身份、重逢/在场契约与存档，当前共享 enemy 模板不能直接存个人关系。','每个终局写清触发、前置、实际状态变更、可否返回和存档策略；现有 kind:ending 文本不等于游戏已实现永久死亡/消失/关系终局。','本包只制作普通、合意且非露骨的关系/契约与幻想变化规则；未定义效果先记接口缺口。'],
   files:['src/core/npc-types.ts','src/core/quest-types.ts','src/engine/npc.ts','src/engine/resident-quests.ts','src/engine/narrative.ts','src/persistence/npc-validation.ts'],
   tests:['tests/npc.test.ts','tests/main-relationships.test.ts','tests/save.test.ts'],fallback:'没有路线执行器时保持现有关系，不显示虚假路线按钮；普通告别始终可用。'},
 ];
@@ -108,7 +108,7 @@ export const rules = [
  ['T28','关系不等于权限','03,04,09','背景关系、信任、路线意愿和服务权限分开；路线明确选择、效果与收据绑定稳定实体。','lover 文字不能开放所有商店服务，control 倾向不等于关系同意。','separate ledgers + explicitRouteChoice'],
  ['T29','缺接口不伪装完成','all','每格标已有契约、制作缺口、接口缺口、不适用或范围外；只有当前入口和执行效果齐备才可标已运行。','保留未实装标签可以，不能把它们自动拼成玩法或隐去缺口。','status != implemented unless runtimeEvidence'],
  ['T30','素材相近不等价','08','同义词需要编辑核定；黑胶、黏液、凝胶各保留主定义，可跨对象共存。','名称相似不自动合并材质；材料与器具、过程与结果分别建对象。','canonicalDefinitions + scopedCoexistence'],
- ['T31','关系阈值与路线选择','09','采用 ai.md E.3 详细表和 relationshipGates；阈值只产生候选，终路线明确选择。','affection=70 但 trust=9 不可 lover；corruption=50 不可 lover；多个候选不自动抢占stage；重复恢复不重发奖励。','detailedGate && explicitChoice && stableActor && receipt'],
+ ['T31','关系阈值与路线选择','09','采用 docs/reference/development-plan.md E.3 详细表和 relationshipGates；阈值只产生候选，终路线明确选择。','affection=70 但 trust=9 不可 lover；corruption=50 不可 lover；多个候选不自动抢占stage；重复恢复不重发奖励。','detailedGate && explicitChoice && stableActor && receipt'],
  ['T32','可选成人资格复核','all','选词前及拼装后复核实际偏好、绑定对象在场与当前revision的明确意愿；普通回退不绕过门控，不新增年龄字段。','倾向/性格/关系不是同意；未知资格不进入候选；普通模板不得混入其他分级词。','preference && boundConsentReceipt && present && tier'],
  ['T33','八槽模板默认交付','all','proseTemplate 是有序出现位，类型只限 place/propEnv/bodyPart/senseMod/actionCore/materialFluid/opponentForm/exitChoice；词条有allowedSlots/priority/审核/互斥。','整段 prose 仅作回退；斜杠只是八槽顺序简写，不拆自然语言或自由多选词。','frozenSlotTypes && orderedTokens && approvedLexemes'],
  ['T34','智慧对象与普通动物分界','all','智慧类人与普通动物分别分类；普通动物仅普通非色情流程，未知或非智慧对象不进入可选成人互动。','兽耳/兽形/种族文字不证明智慧或意愿，换词池与整段回退均不能绕过。','explicitClassification && intelligence && boundParticipants'],

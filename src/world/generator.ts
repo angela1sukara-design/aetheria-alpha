@@ -16,6 +16,8 @@ import { hash, integer, parseReference, parseRules } from './schema.ts';
 import { selectQuestContent } from '../content/quest-schema.ts';
 import { compileWorldQuests } from './quests.ts';
 import { compileWorldScenes } from './scenes.ts';
+import { compileBObservations } from './b-observations.ts';
+import { compileATemplates } from './a-templates.ts';
 import { compileResidentServices } from './resident-services.ts';
 import { compileCombatEncounters } from './combat-encounters.ts';
 import { proseProblem } from '../content/player-prose.ts';
@@ -275,6 +277,8 @@ export class WorldGenerator {
     definition.eventPool=[...new Set([...definition.eventPool,...pack.events.filter(e=>e.id.startsWith('worldgen:event.danger.')).map(e=>e.id)])];
     compileResidentServices(pack,input.registry);
     compileWorldScenes(pack, definition, input.registry);
+    compileBObservations(pack, definition, input.registry, input.seed);
+    compileATemplates(pack, definition, input.registry, input.seed);
     const sceneKeys=new Set((pack.narrativeNodes??[]).flatMap(n=>[n.textKey,...n.choices.map(c=>c.resultText)]));
     for(const [key,text]of Object.entries(pack.texts)){
       const problem=proseProblem(text,sceneKeys.has(key as Id));if(problem)throw Error(`生成正文未完成：${key}，${problem}。`);

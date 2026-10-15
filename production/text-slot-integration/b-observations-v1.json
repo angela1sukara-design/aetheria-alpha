@@ -1,0 +1,4754 @@
+{
+  "format": "aetheria-reviewed-observation-recipes",
+  "version": 1,
+  "reviewDate": "2026-10-15",
+  "sourceHash": "bbe018971dbc24e17cbd40e9d17b10bde4a955e6a65babfdcc8b096c7a2d2127",
+  "scope": "generated-incidental-scenery-only",
+  "recipes": [
+    {
+      "id": "word.prop.modern.takeout.pile",
+      "service": "home",
+      "theme": "modern",
+      "context": "公寓门厅外",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.takeout.pile"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.takeout.pile": "020c6abbb98af300c3dced2781bb179c7a8748ee8cf97906d9f6ac4a49df31f6"
+      }
+    },
+    {
+      "id": "word.prop.modern.store.vending",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店门口",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.store.vending"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.store.vending": "ee52c575b080c95c2f82c80c7707178a6bb663a875a2577e8e6d7e7393af8473"
+      }
+    },
+    {
+      "id": "word.prop.modern.station.turnstile",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街区交通站的入口",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.station.turnstile"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.station.turnstile": "ef172aed5420944ee7564a8366cb0ca2f52aa2f7f38ca0a78d51a66cd82e7765"
+      }
+    },
+    {
+      "id": "word.prop.modern.locker.parcel",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅的取件区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.locker.parcel"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.locker.parcel": "d78d79024f9d813c9c5d2ae1a94045293d4cbad3b81f28bca792265067431b05"
+      }
+    },
+    {
+      "id": "word.prop.modern.shelf.noodles",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店货架之间",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.shelf.noodles"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.shelf.noodles": "e52d93adbf00b7e1c3efaa1d20832e3fefc7d57337ff4996ba64742cf7ab09f4"
+      }
+    },
+    {
+      "id": "word.prop.modern.corridor.elevator",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅的电梯厅",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.corridor.elevator"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.corridor.elevator": "b2422b5e89d807db7dc2326f3ce9c1909b1b140947eef6cc52f294f1dfd83889"
+      }
+    },
+    {
+      "id": "word.prop.modern.bike.shared",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边的停车线旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.bike.shared"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.bike.shared": "bedf06c7ceb24dbea4ce70d17b19b5e3ea2ea4b0d94c8cc474e300aee932f091"
+      }
+    },
+    {
+      "id": "word.prop.modern.locker.row",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共储物区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.locker.row"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.locker.row": "bd2f3c7bb89c57a763f9735e3bd2fe3ed6bf9c0464498cc089c395fff00830dd"
+      }
+    },
+    {
+      "id": "word.prop.modern.mailbox.grid",
+      "service": "home",
+      "theme": "modern",
+      "context": "公寓的信箱区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.mailbox.grid"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.mailbox.grid": "bae25864551456037befc09a7ade4c011068b59e71923a2e05918216f0897245"
+      }
+    },
+    {
+      "id": "word.prop.modern.dispenser.bottle",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共休息室",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.dispenser.bottle"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.dispenser.bottle": "32082598eee241084957715717101aed80bc247b410f036d6753ea1460bfaaec"
+      }
+    },
+    {
+      "id": "word.prop.modern.extinguisher.expired",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "维修铺的消防架旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.extinguisher.expired"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.extinguisher.expired": "4799b8fe65a72d035068619ca575b7035e2ece32770be31762878ba1178d3402"
+      }
+    },
+    {
+      "id": "word.prop.modern.firstaid.chipped",
+      "service": "clinic",
+      "theme": "modern",
+      "context": "诊所的急救用品区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.firstaid.chipped"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.firstaid.chipped": "8efca5567c2f76ed06b09ad81dcfa8954e1e8a3235e816b4a8b714ba9ed78c91"
+      }
+    },
+    {
+      "id": "word.prop.modern.washbasin.wet",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共盥洗区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.washbasin.wet"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.washbasin.wet": "d005834953e70d570f87d6060e52b5dc5addad99fe789ccc50f0d6f8b91666cf"
+      }
+    },
+    {
+      "id": "word.prop.modern.drain.standing",
+      "service": "commons",
+      "theme": "modern",
+      "context": "路边的排水沟旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.drain.standing"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.drain.standing": "a3baab7874cf3e69e2f31be8bda6622f99c022fce67d4d929f4be7d4ec94bb79"
+      }
+    },
+    {
+      "id": "word.prop.modern.vent.grill",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "工坊的通风口下",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.vent.grill"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.vent.grill": "453acff51ad8fbb2ed34c057eb9aaa78ee59e315ecfd7f33d47547f78fcfdc98"
+      }
+    },
+    {
+      "id": "word.prop.modern.handrail.polished",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅楼梯间",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.handrail.polished"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.handrail.polished": "188c5db2da976be8292aaf9533eeab71b8852700fa71d58ac6a9732a2a97418f"
+      }
+    },
+    {
+      "id": "word.prop.modern.clothespin.row",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共晾晒区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.clothespin.row"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.clothespin.row": "5d98063c7038f8667e77c4f7826f9391b8cd7db7861140ccd4a3cf05079ff2e5"
+      }
+    },
+    {
+      "id": "word.prop.modern.towel.damp",
+      "service": "home",
+      "theme": "modern",
+      "context": "住户开放的洗衣区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.towel.damp"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.towel.damp": "f12ad32311d2b26ababf4d756faca36b4385c27f643fcbcdfcd1ec3f4165bcd1"
+      }
+    },
+    {
+      "id": "word.prop.modern.bottle.scale",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共茶水间",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.bottle.scale"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.bottle.scale": "75958392941ab8f09696c8a4ccb1806a1b8e57885ca2a9c980e663c1d17ec436"
+      }
+    },
+    {
+      "id": "word.prop.modern.thermos.dented",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共茶水间",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.thermos.dented"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.thermos.dented": "545a8149206075813adc57b8572ed96e5f4af8ed814c0383b9bb3fa558bdc4f1"
+      }
+    },
+    {
+      "id": "word.prop.modern.lunchbox.faded",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共厨房的置物架旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.lunchbox.faded"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.lunchbox.faded": "eb7b8468fb8c1d49e7f595b8bb8778ffb26a7a9d4044e22a5cc56c16bd7729be"
+      }
+    },
+    {
+      "id": "word.prop.modern.umbrella.bin",
+      "service": "market",
+      "theme": "modern",
+      "context": "商店的雨伞桶旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.umbrella.bin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.umbrella.bin": "94acd0f3beb3c5034e9fea49837272b11eed6b58269b5dd70812fbdf5d1dd65d"
+      }
+    },
+    {
+      "id": "word.prop.modern.charger.tangled",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "电子维修台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.charger.tangled"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.charger.tangled": "05578a6ebd26e182af9b42abf85c6fd36166a7678559661d93258834b319c3c1"
+      }
+    },
+    {
+      "id": "word.prop.modern.powerbank.labeled",
+      "service": "market",
+      "theme": "modern",
+      "context": "商店的充电柜旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.powerbank.labeled"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.powerbank.labeled": "29456222ad01d349ceef2f17e705d2469714149506a4e3c45e4da0b17dcdcc5a"
+      }
+    },
+    {
+      "id": "word.prop.modern.transitcard.worn",
+      "service": "commons",
+      "theme": "modern",
+      "context": "交通站的失物招领台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.transitcard.worn"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.transitcard.worn": "410febcf32d002ca60a4d948b1a2f438e7c749b3ac63bb9da90f4f2f45d26b9e"
+      }
+    },
+    {
+      "id": "word.prop.modern.receipt.crumpled",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店收银台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.receipt.crumpled"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.receipt.crumpled": "e20d9665a2d8ae69ac6e8c16491d66e1b74f2c5e57f8ecaf8a3adc7a9184070b"
+      }
+    },
+    {
+      "id": "word.prop.modern.clock.slow",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "维修铺的工作台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.clock.slow"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.clock.slow": "38feca4817ff8555ca8638581eec237acb8195c07a0d5dced9d7b95602c3a12f"
+      }
+    },
+    {
+      "id": "word.prop.modern.calendar.stale",
+      "service": "home",
+      "theme": "modern",
+      "context": "公寓值班室",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.calendar.stale"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.calendar.stale": "e5ef0eb8e187445fb160410b25eab922278510d647c7cf3b27f19cfdc3bcb955"
+      }
+    },
+    {
+      "id": "word.prop.modern.hanger.twisted",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共晾晒区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.hanger.twisted"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.hanger.twisted": "fc317d87085a4707a873f83b07d65d323ee4fa7bebf9ae7e795a261d47b7676a"
+      }
+    },
+    {
+      "id": "word.prop.modern.sponge.gray",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共厨房的水槽旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.sponge.gray"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.sponge.gray": "ab2296430c0eb13f97aca4c0106af3bf73e473ed53c49c5a0173bcaff7060830"
+      }
+    },
+    {
+      "id": "word.prop.modern.cloth.striped",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "清洁用品间",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.cloth.striped"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.cloth.striped": "764e28b0ea783c0e7561b87b0cade471cb4a428e24f4376836e43ac60645e037"
+      }
+    },
+    {
+      "id": "word.prop.modern.wrench.greasy",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "修车铺的工作台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.wrench.greasy"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.wrench.greasy": "885ffffb621a76c1d092755d92413d121acee9ecdf7c3a40c420e89a8302dedc"
+      }
+    },
+    {
+      "id": "word.prop.modern.screwdriver.taped",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "电器维修台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.screwdriver.taped"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.screwdriver.taped": "c2ff63a6c2843a5934096629e7b3a0540621c901ea15fa1865b7f98be56958ac"
+      }
+    },
+    {
+      "id": "word.prop.modern.flashlight.rolling",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "工具柜旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.flashlight.rolling"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.flashlight.rolling": "9b1c03469568821b49b3cca8d1e9dc14322032be144c2853ff47681dbf84e98b"
+      }
+    },
+    {
+      "id": "word.prop.modern.tape.halfcut",
+      "service": "market",
+      "theme": "modern",
+      "context": "商店的包装台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.tape.halfcut"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.tape.halfcut": "19f9afd5e2446dd3fc4430ab8d49e50fddbde74c0faa91e9b9687c6d6cf16586"
+      }
+    },
+    {
+      "id": "word.prop.modern.map.frayed",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街区问讯处",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.map.frayed"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.map.frayed": "b224ae9f302c36d75de1f0757f221bebe46ff9f64ad0cdac59c5579c5f88cf2e"
+      }
+    },
+    {
+      "id": "word.prop.modern.key.ring",
+      "service": "home",
+      "theme": "modern",
+      "context": "公寓值班室的失物台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.key.ring"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.key.ring": "f5f344789ee0c3113a3aa5dd97b435651a01141ac2af23eda30281b85b38f438"
+      }
+    },
+    {
+      "id": "word.prop.modern.needle.cuff",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "裁缝铺的试衣区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.needle.cuff"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.needle.cuff": "fa6f31706141ebbeb13f19683acadd6e7afc99ee8c1c2033f4cf2eae1235c459"
+      }
+    },
+    {
+      "id": "word.prop.modern.arcadecoin.crack",
+      "service": "market",
+      "theme": "modern",
+      "context": "街机店门口",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.arcadecoin.crack"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.arcadecoin.crack": "273297447de9fa425573dc6b89108e39826c99c1500ab52d3b23f37cbf00f779"
+      }
+    },
+    {
+      "id": "word.prop.modern.peel.sill",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共厨房的窗边",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.prop.modern.peel.sill"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.prop.modern.peel.sill": "687da2650a20ebc426afcd47b54be98b6e0ea1e900cf8d05657ea0aa6b9a7ca7"
+      }
+    },
+    {
+      "id": "word.sense.modern.exhaust.peak",
+      "service": "commons",
+      "theme": "modern",
+      "context": "车流经过的街边",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.exhaust.peak"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.exhaust.peak": "e4896b74b920c308c202525371aa89ee9f30f89cab17728ba96b4e304e1ad096"
+      }
+    },
+    {
+      "id": "word.sense.modern.ac.outdoor",
+      "service": "home",
+      "theme": "modern",
+      "context": "装着空调外机的住宅楼下",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.ac.outdoor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.ac.outdoor": "f1b20ae414fb73ad3d37ca7d72ac876cc910e7697b335bc7f482cd68cc288508"
+      }
+    },
+    {
+      "id": "word.sense.modern.subway.draft",
+      "service": "commons",
+      "theme": "modern",
+      "context": "地铁站口",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.subway.draft"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.subway.draft": "a9bd2c06e603e7f460700accd8184619fb9fa2a5d4be2628de02d5657597c634"
+      }
+    },
+    {
+      "id": "word.sense.modern.window.grid",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅之间的通道",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.window.grid"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.window.grid": "bcdcfc74ce521fdad0a13d1eba2833794d601afe86758ddab6e629fb3db4e87d"
+      }
+    },
+    {
+      "id": "word.sense.modern.oil.kitchen",
+      "service": "market",
+      "theme": "modern",
+      "context": "小吃店的排烟口旁",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.oil.kitchen"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.oil.kitchen": "c296117e1e9bec3cb9024979bb3b76e46825595bbce4d2eb6664aa8901bd5404"
+      }
+    },
+    {
+      "id": "word.sense.modern.disinfect.floor",
+      "service": "clinic",
+      "theme": "modern",
+      "context": "刚清洁过的诊所走廊",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.disinfect.floor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.disinfect.floor": "31097da6fd8b06f84045f6bcd7e3b9b8e4a4f2dabc0e1dd82b8d946a343815c0"
+      }
+    },
+    {
+      "id": "word.sense.modern.gas.range",
+      "service": "home",
+      "theme": "modern",
+      "context": "一处厨房的灶台旁",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.gas.range"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.gas.range": "04ad03fb66a8724e619e740610efd89e7360ddbe51350b4003cf8b7ab9ad360d"
+      }
+    },
+    {
+      "id": "word.sense.modern.plastic.new",
+      "service": "market",
+      "theme": "modern",
+      "context": "塑料用品店门口",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.plastic.new"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.plastic.new": "f240e448ee9d6d77707fde6ddac2c363d7e98df259ceb8f76ebbbad03a9a1a51"
+      }
+    },
+    {
+      "id": "word.sense.modern.asphalt.humid",
+      "service": "commons",
+      "theme": "modern",
+      "context": "雨后仍温热的柏油路边",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.asphalt.humid"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.asphalt.humid": "1abf55ebb2d3ab1a8bd7990ec79256d86102901cc4ed7e13ed05f0e04c4bc79f"
+      }
+    },
+    {
+      "id": "word.sense.modern.bin.sour",
+      "service": "market",
+      "theme": "modern",
+      "context": "垃圾收集点旁",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.bin.sour"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.bin.sour": "aa458ed7768e4b4cff127859f93be91d94d1de205cfaa082accf78c6f376aadb"
+      }
+    },
+    {
+      "id": "word.sense.modern.brake.burnt",
+      "service": "commons",
+      "theme": "modern",
+      "context": "刚停过车的路口",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.brake.burnt"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.brake.burnt": "9323a50d3bed4cca8cee6b95f25da0c8a3c3f38c8fb1b19f31d656f978fb2cfc"
+      }
+    },
+    {
+      "id": "word.sense.modern.shutter.motor",
+      "service": "market",
+      "theme": "modern",
+      "context": "正在升起卷帘门的商店外",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.shutter.motor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.shutter.motor": "df2551e82827e8147eb696328ec7cf930c8bafaf123085192140a1424eaac4a0"
+      }
+    },
+    {
+      "id": "word.sense.modern.pipe.gurgle",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅的管道井旁",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.pipe.gurgle"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.pipe.gurgle": "5c69600587eb743852c4c66d05c8100b678597ac8c381169a31079c030e36c96"
+      }
+    },
+    {
+      "id": "word.sense.modern.doorbell.shop",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店门口",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.doorbell.shop"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.doorbell.shop": "29f0ecc83a2d617f54ae2c8689a88c566b1f798e45729e8e0e7c848303c45221"
+      }
+    },
+    {
+      "id": "word.sense.modern.screen.coldlight",
+      "service": "commons",
+      "theme": "modern",
+      "context": "有人看手机的长椅旁",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.screen.coldlight"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.screen.coldlight": "37c0171b78e461bf3d50ba1ff4ea12a88c4389b00ff547002616e5c3445e8bc6"
+      }
+    },
+    {
+      "id": "word.sense.modern.headlight.sweep",
+      "service": "home",
+      "theme": "modern",
+      "context": "临街窗户旁",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.headlight.sweep"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.headlight.sweep": "ea4a20dd8c6ed4804f7e32c516a5e8621ed7a7381b1901a1e9cf116336e7bdcd"
+      }
+    },
+    {
+      "id": "word.sense.modern.lightbox.warm",
+      "service": "market",
+      "theme": "modern",
+      "context": "亮着店招灯箱的街边",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.lightbox.warm"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.lightbox.warm": "5822d46e00102c78b27fb8eb3321527fe081f356902eb00f5f2f718db9a2056d"
+      }
+    },
+    {
+      "id": "word.sense.modern.ac.chill",
+      "service": "market",
+      "theme": "modern",
+      "context": "商场的入口",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.ac.chill"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.ac.chill": "438176142709917243b5f0ae493096f3c383958b54480e7e208aee79c3a39729"
+      }
+    },
+    {
+      "id": "word.sense.modern.toner.air",
+      "service": "market",
+      "theme": "modern",
+      "context": "打印店门口",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.toner.air"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.toner.air": "1b65c71d2ab30adc9ed98e91cbe284ea0dfa98767c2386cf0f90c091cd24ebfe"
+      }
+    },
+    {
+      "id": "word.sense.modern.cardboard.dry",
+      "service": "market",
+      "theme": "modern",
+      "context": "纸箱收纳区",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.cardboard.dry"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.cardboard.dry": "90ded44674b464198a1fdbac48668f413413e6b91838c9a20334c6133f562ddd"
+      }
+    },
+    {
+      "id": "word.sense.modern.traffic.hiss",
+      "service": "commons",
+      "theme": "modern",
+      "context": "临近马路的人行道",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.traffic.hiss"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.traffic.hiss": "6128504cc75f3ce87d78c651050891df64fa8fc9be0174f2976f2f320a690dc8"
+      }
+    },
+    {
+      "id": "word.sense.modern.catfood.hall",
+      "service": "home",
+      "theme": "modern",
+      "context": "放着猫食碗的楼道",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.catfood.hall"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.catfood.hall": "fad266ae912500de4a313bc0ee17396fac289a37f2b00827afecad7d2fe8e11e"
+      }
+    },
+    {
+      "id": "word.sense.modern.static.zap",
+      "service": "home",
+      "theme": "modern",
+      "context": "干燥的楼道里，你的指尖刚碰到金属扶手",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.static.zap"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.static.zap": "7bfca78e6cc2d0f71351e9cfd6059f080202f5c1fbeb64e70174b589ed9cbcee"
+      }
+    },
+    {
+      "id": "word.sense.modern.floor.wax",
+      "service": "commons",
+      "theme": "modern",
+      "context": "打过蜡的大厅地板上",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.floor.wax"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.floor.wax": "5ad513a816275db858303d988c02f6480fe2301470815037f1d2df0cfc0abcde"
+      }
+    },
+    {
+      "id": "word.sense.modern.fridge.hum",
+      "service": "home",
+      "theme": "modern",
+      "context": "开着冰箱的公共厨房",
+      "tokens": [
+        "你察觉到",
+        {
+          "entryId": "word.sense.modern.fridge.hum"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.sense.modern.fridge.hum": "42e39f5ec76789a8275a6e7d879dc6db1e9a6283b7a0edc162e99d65e71c2b26"
+      }
+    },
+    {
+      "id": "word.form.modern.rider.mount",
+      "service": "market",
+      "theme": "modern",
+      "context": "商店门口",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.rider.mount"
+        },
+        {
+          "entryId": "word.action.modern.phone.flick"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.rider.mount": "4f35af4af5c721d6872e4e019d79a9f0f8f75f79088205624b276ce93014ac75",
+        "word.action.modern.phone.flick": "bf5f77771205743b8f81b82190fc3abf68b8906eeea3bf21dda8a8c93f073833"
+      }
+    },
+    {
+      "id": "word.form.modern.cashier.drowse",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店的收银区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.cashier.drowse"
+        },
+        {
+          "entryId": "word.action.modern.clock.double"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.cashier.drowse": "b3f554291c0ef7619323cbc7287da0ed72d1f51256d63f893510fe19dd45ca9d",
+        "word.action.modern.clock.double": "0c488b73b34b04eef1fb5df3082be1ccdc9daf0268248591c9609a4f274480ae"
+      }
+    },
+    {
+      "id": "word.form.modern.guard.pace",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅的门岗旁",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.guard.pace"
+        },
+        {
+          "entryId": "word.action.modern.gate.verify"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.guard.pace": "ff387e93a10b28b0e0f9a687636b01314c5997f5129c77b3e89d9e8ba7c20849",
+        "word.action.modern.gate.verify": "398485e24e0d62a568154d8b9dfccd245aa826f8359abe907b9373f2acff4d03"
+      }
+    },
+    {
+      "id": "word.form.modern.commuter.doze",
+      "service": "commons",
+      "theme": "modern",
+      "context": "交通站的候车区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.commuter.doze"
+        },
+        {
+          "entryId": "word.action.modern.doze.nod"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.commuter.doze": "46d7013aec0d280f72801f0600d0d5b5671f85b15653afed114ba097a7fa34e5",
+        "word.action.modern.doze.nod": "50e48d1af14aca05adec1c34ca92b3989e652c811241728f948128ab8e1c9cc6"
+      }
+    },
+    {
+      "id": "word.form.modern.cleaner.lean",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共盥洗区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.cleaner.lean"
+        },
+        {
+          "entryId": "word.action.modern.mop.wring"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.cleaner.lean": "f498c552e6745e4935d3593851498cb325446727ef361500fe0f4cd09e35f0de",
+        "word.action.modern.mop.wring": "733bd552d32f565e07c50f42936d91cc80327b8c143801bc82d2857bf25fb1a8"
+      }
+    },
+    {
+      "id": "word.form.modern.cook.splatter",
+      "service": "market",
+      "theme": "modern",
+      "context": "小吃店开放的备餐区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.cook.splatter"
+        },
+        {
+          "entryId": "word.action.modern.wok.toss"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.cook.splatter": "da1302a99d3866ce142a742df43762abf066d2fac417db42b9f277a00b90ef23",
+        "word.action.modern.wok.toss": "93ebde28985c7b3e43b48e9dfc8225c64d572d420fbe76086cbfe6263fdf1ed4"
+      }
+    },
+    {
+      "id": "word.form.modern.electrician.ladder",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "电器维修铺",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.electrician.ladder"
+        },
+        {
+          "entryId": "word.action.modern.belt.order"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.electrician.ladder": "08583ef7b39b4a0c50584e72014c13f668985f3dca9036c5c0f4a77bc3d18254",
+        "word.action.modern.belt.order": "9846f657a1274e7a4fc1f09cb35b70c9ee07b3a1cbb13b2ebf010c50c4c41cfb"
+      }
+    },
+    {
+      "id": "word.form.modern.plumber.kneel",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "水管维修铺",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.plumber.kneel"
+        },
+        {
+          "entryId": "word.action.modern.screw.back"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.plumber.kneel": "2c8186b66aef30dbf5f4eec767bf8c1366fddb62de86301f22467fafa6429aca",
+        "word.action.modern.screw.back": "96581eacc0cd067d934cf5501b016e99e3b9adec0f3a9ae37a1166b16a2ee758"
+      }
+    },
+    {
+      "id": "word.form.modern.mechanic.crouch",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "修车铺",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.mechanic.crouch"
+        },
+        {
+          "entryId": "word.action.modern.screw.back"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.mechanic.crouch": "0c660aa88e40447f982bac1eddd964cd1e28f0e5951478055eb3fab1ecb1fd64",
+        "word.action.modern.screw.back": "96581eacc0cd067d934cf5501b016e99e3b9adec0f3a9ae37a1166b16a2ee758"
+      }
+    },
+    {
+      "id": "word.form.modern.painter.flecked",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "装修工坊",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.painter.flecked"
+        },
+        {
+          "entryId": "word.action.modern.towel.square"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.painter.flecked": "a850ba497821b8930f3a2a5bf984574665474686cbf98bc2295b2ffa98bcef1b",
+        "word.action.modern.towel.square": "250d4d0a2b41554ed48d58dbe84181db64ff0e9d5dab5d196c2825ba5704ce38"
+      }
+    },
+    {
+      "id": "word.form.modern.barber.sweep",
+      "service": "market",
+      "theme": "modern",
+      "context": "理发店",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.barber.sweep"
+        },
+        {
+          "entryId": "word.action.modern.towel.square"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.barber.sweep": "90d7b1b6b51f453af590c221c349def033d6e0384ce6f8fc9b310bbc542b9b09",
+        "word.action.modern.towel.square": "250d4d0a2b41554ed48d58dbe84181db64ff0e9d5dab5d196c2825ba5704ce38"
+      }
+    },
+    {
+      "id": "word.form.modern.waiter.weave",
+      "service": "market",
+      "theme": "modern",
+      "context": "餐馆的收银区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.waiter.weave"
+        },
+        {
+          "entryId": "word.action.modern.receipt.smooth"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.waiter.weave": "13b2df849a779d4294bc24c27d75452df74cd94dc726273d558e51f3c74b28c1",
+        "word.action.modern.receipt.smooth": "15e6e2cb8eea7895092f179854f59d46e45087d0e66c2eba7b276f670043d9a7"
+      }
+    },
+    {
+      "id": "word.form.modern.student.cram",
+      "service": "market",
+      "theme": "modern",
+      "context": "快餐店外的路灯旁",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.student.cram"
+        },
+        {
+          "entryId": "word.action.modern.novel.lamp"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.student.cram": "aa0f3701b4a5c0966ae8f6247d827478d6c33c28c1f977f77ab6042793ab858e",
+        "word.action.modern.novel.lamp": "6835ff41c99d2146604de5ce30fd059fcb4b4d9ac067f83ede0cc2054fa2419b"
+      }
+    },
+    {
+      "id": "word.form.modern.grandma.cart",
+      "service": "market",
+      "theme": "modern",
+      "context": "街边商店",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.grandma.cart"
+        },
+        {
+          "entryId": "word.action.modern.bargain.point"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.grandma.cart": "6b8b72d313cecd8ee0ec3d538af1ec33eaed461c982f6f324cf5e848c7e2f549",
+        "word.action.modern.bargain.point": "a99cbe4a48247ab1a6fe96188ad2745ab225ad3ca48469f947559c080696eceb"
+      }
+    },
+    {
+      "id": "word.form.modern.office.call",
+      "service": "home",
+      "theme": "modern",
+      "context": "楼道的窗边",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.office.call"
+        },
+        {
+          "entryId": "word.action.modern.call.turn"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.office.call": "c819ca63e1d77d85f12d9b61add896af5901425b06286634758cf31751992406",
+        "word.action.modern.call.turn": "f82a38e97105fedd5d1fd3ef2fa39d15edf344ed9c7701a4373ad2738e9a1868"
+      }
+    },
+    {
+      "id": "word.form.modern.librarian.cart",
+      "service": "commons",
+      "theme": "modern",
+      "context": "图书室外的路灯旁",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.librarian.cart"
+        },
+        {
+          "entryId": "word.action.modern.novel.lamp"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.librarian.cart": "d417dc4bb5cbc523e7513d01fba92853ab81c2303b2cddd77f4dd4f199b54449",
+        "word.action.modern.novel.lamp": "6835ff41c99d2146604de5ce30fd059fcb4b4d9ac067f83ede0cc2054fa2419b"
+      }
+    },
+    {
+      "id": "word.form.modern.reception.verify",
+      "service": "clinic",
+      "theme": "modern",
+      "context": "诊所接待处",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.reception.verify"
+        },
+        {
+          "entryId": "word.action.modern.clock.double"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.reception.verify": "d2f99359acea3ce41da47b0f2afb0984837ea87d2581d5299864e748ae441632",
+        "word.action.modern.clock.double": "0c488b73b34b04eef1fb5df3082be1ccdc9daf0268248591c9609a4f274480ae"
+      }
+    },
+    {
+      "id": "word.form.modern.sorter.squat",
+      "service": "market",
+      "theme": "modern",
+      "context": "快递分拣区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.sorter.squat"
+        },
+        {
+          "entryId": "word.action.modern.sort.toss"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.sorter.squat": "bbd811799cf16b88d173120ed9389cef4c215437b9b45162f1e347a1c7eb935b",
+        "word.action.modern.sort.toss": "6a74b368f53da0714a1f8dea0feaf2d7d9a9bf20ba1cc28557ebf8017093f9e5"
+      }
+    },
+    {
+      "id": "word.form.modern.gardener.butt",
+      "service": "commons",
+      "theme": "modern",
+      "context": "花坛边",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.gardener.butt"
+        },
+        {
+          "entryId": "word.action.modern.stretch.half"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.gardener.butt": "456a7c171c18e9d15192f94450eca57f7649a73704c1c1010f8a043b848346ba",
+        "word.action.modern.stretch.half": "246d41db71046878ac093adce007be713cc953891095ed8cc5f8d65d42c2f28c"
+      }
+    },
+    {
+      "id": "word.form.modern.nightshift.wait",
+      "service": "commons",
+      "theme": "modern",
+      "context": "候车区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.nightshift.wait"
+        },
+        {
+          "entryId": "word.action.modern.battery.stare"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.nightshift.wait": "0d39c1d22a4e2e697d9f913689f59900317fe9b2f97ef71c99a1eeb7b7f7d1b7",
+        "word.action.modern.battery.stare": "461bf989af613cf5fea77f1e767a06acdfa807450673d0f188bfa1403540ef91"
+      }
+    },
+    {
+      "id": "word.form.modern.rainrider.drip",
+      "service": "market",
+      "theme": "modern",
+      "context": "雨棚下",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.rainrider.drip"
+        },
+        {
+          "entryId": "word.action.modern.phone.flick"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.rainrider.drip": "95a82ee0d6fe28987db08a147ecb6dc13deafe7f9e62d9866d250584168adcc3",
+        "word.action.modern.phone.flick": "bf5f77771205743b8f81b82190fc3abf68b8906eeea3bf21dda8a8c93f073833"
+      }
+    },
+    {
+      "id": "word.form.modern.busker.quiet",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边的长椅旁",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.busker.quiet"
+        },
+        {
+          "entryId": "word.action.modern.music.nod"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.busker.quiet": "0f8f9e406e1cf4adc1483be4e4de2b4aa92ec8dc5d2f1c48deaf12b6ad7bd0a4",
+        "word.action.modern.music.nod": "809fb96e52a6fdfea0c22c42521e95a6198d8bcf38a0539500d5ee62e60e7b45"
+      }
+    },
+    {
+      "id": "word.form.modern.pupil.bag",
+      "service": "commons",
+      "theme": "modern",
+      "context": "放学路上的长椅旁",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.pupil.bag"
+        },
+        {
+          "entryId": "word.action.modern.game.swipe"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.pupil.bag": "584721a5dac689c808885e90360a2b14d5b294d51be7430abc9e4fa6d9402b2c",
+        "word.action.modern.game.swipe": "600234fa854422a68b52171e06e07973aab637e0a2c0cea8d12fc37e64843f69"
+      }
+    },
+    {
+      "id": "word.form.modern.jogger.breathe",
+      "service": "commons",
+      "theme": "modern",
+      "context": "步道旁",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.jogger.breathe"
+        },
+        {
+          "entryId": "word.action.modern.stretch.half"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.jogger.breathe": "de451d06b2ec21a1f146efb3746b556a072eb6dcf2eae488f3661b893128b223",
+        "word.action.modern.stretch.half": "246d41db71046878ac093adce007be713cc953891095ed8cc5f8d65d42c2f28c"
+      }
+    },
+    {
+      "id": "word.form.modern.feeder.pigeon",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共广场",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.feeder.pigeon"
+        },
+        {
+          "entryId": "word.action.modern.nod.across"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.feeder.pigeon": "f1a62a37ae0fc535b4f35a312540ee26b98ae19e7ff5da4489bf53552790f69c",
+        "word.action.modern.nod.across": "82b5a2134f9b873dd7fce05e1b420de0c9ab416276c9c6d47faaf46d5778c1ba"
+      }
+    },
+    {
+      "id": "word.form.modern.laundry.novel",
+      "service": "home",
+      "theme": "modern",
+      "context": "洗衣房外的路灯旁",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.laundry.novel"
+        },
+        {
+          "entryId": "word.action.modern.novel.lamp"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.laundry.novel": "c5bf19895feae9f8fb84aacf735da850e65b73471bf2243b1d1bfd652947be13",
+        "word.action.modern.novel.lamp": "6835ff41c99d2146604de5ce30fd059fcb4b4d9ac067f83ede0cc2054fa2419b"
+      }
+    },
+    {
+      "id": "word.form.modern.taiji.dawn",
+      "service": "commons",
+      "theme": "modern",
+      "context": "晨练广场",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.taiji.dawn"
+        },
+        {
+          "entryId": "word.action.modern.taiji.flow"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.taiji.dawn": "1b63322bd5ece732b62835945e95a03930cafa7cab7c677171518bdf3bed20aa",
+        "word.action.modern.taiji.flow": "9fa9ac7cf11ae85184375487222f91e2ebb0df2615e1603820373c6c8e931ec5"
+      }
+    },
+    {
+      "id": "word.form.modern.swim.wethair",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅的门厅",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.swim.wethair"
+        },
+        {
+          "entryId": "word.action.modern.phone.flick"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.swim.wethair": "73d3b17046105a7c4292a3ce558c25e3b8684e3df24515709b1075b2c47bf92a",
+        "word.action.modern.phone.flick": "bf5f77771205743b8f81b82190fc3abf68b8906eeea3bf21dda8a8c93f073833"
+      }
+    },
+    {
+      "id": "word.form.modern.mailbox.tiptoe",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅的信箱区",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.mailbox.tiptoe"
+        },
+        {
+          "entryId": "word.action.modern.lock.rattle"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.mailbox.tiptoe": "77b4eb68f5ce2a3095339fb51a214bcb6e4ebfe64b5852efcdd9f15096314f39",
+        "word.action.modern.lock.rattle": "5d82fbf25f08a14cae2e91869a95605973c51ee54a1dfc18ed3aebbe5dd09837"
+      }
+    },
+    {
+      "id": "word.form.modern.window.primp",
+      "service": "market",
+      "theme": "modern",
+      "context": "街边商店",
+      "tokens": [
+        {
+          "entryId": "word.form.modern.window.primp"
+        },
+        {
+          "entryId": "word.action.modern.bargain.point"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.form.modern.window.primp": "f1c0af08930f219a6d7e82e1763c6ac7a55d7cbe04a266cdabfe279133371374",
+        "word.action.modern.bargain.point": "a99cbe4a48247ab1a6fe96188ad2745ab225ad3ca48469f947559c080696eceb"
+      }
+    },
+    {
+      "id": "word.action.modern.queue.shuffle",
+      "service": "market",
+      "theme": "modern",
+      "context": "商店的结账队伍里",
+      "tokens": [
+        "一位顾客",
+        {
+          "entryId": "word.action.modern.queue.shuffle"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.queue.shuffle": "327b1e66ffc4e7bb6956e26d86ed395f39f0737a71cfae6898e9cbbf8aa6e371"
+      }
+    },
+    {
+      "id": "word.action.modern.phone.flick",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边长椅旁",
+      "tokens": [
+        "一位路人",
+        {
+          "entryId": "word.action.modern.phone.flick"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.phone.flick": "bf5f77771205743b8f81b82190fc3abf68b8906eeea3bf21dda8a8c93f073833"
+      }
+    },
+    {
+      "id": "word.action.modern.paycode.hold",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店收银台前",
+      "tokens": [
+        "一位顾客",
+        {
+          "entryId": "word.action.modern.paycode.hold"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.paycode.hold": "100b704ac3606e72e0b054dd6ff3f7ce2fd92b076f6c6fbb4b819f4cba078992"
+      }
+    },
+    {
+      "id": "word.action.modern.box.seal",
+      "service": "market",
+      "theme": "modern",
+      "context": "快递包装台旁",
+      "tokens": [
+        "一位包装员",
+        {
+          "entryId": "word.action.modern.box.seal"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.box.seal": "2fd07083e90e121479954c1913c69abff56add4ef16f2518b855c4414eac2224"
+      }
+    },
+    {
+      "id": "word.action.modern.mop.wring",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共盥洗区",
+      "tokens": [
+        "一位保洁员",
+        {
+          "entryId": "word.action.modern.mop.wring"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.mop.wring": "733bd552d32f565e07c50f42936d91cc80327b8c143801bc82d2857bf25fb1a8"
+      }
+    },
+    {
+      "id": "word.action.modern.earbud.single",
+      "service": "commons",
+      "theme": "modern",
+      "context": "候车区",
+      "tokens": [
+        "一位乘客",
+        {
+          "entryId": "word.action.modern.earbud.single"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.earbud.single": "6d79c5084241bf4dd89fd1cf8b563165e1143f9e8c599a4778a0f5a4b86befd3"
+      }
+    },
+    {
+      "id": "word.action.modern.board.scan",
+      "service": "commons",
+      "theme": "modern",
+      "context": "交通站的信息屏前",
+      "tokens": [
+        "一位乘客",
+        {
+          "entryId": "word.action.modern.board.scan"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.board.scan": "68b19b61f5dd8e486828ae1422c0a15aeb0aeb538c49d9c69dac853c39e29ba6"
+      }
+    },
+    {
+      "id": "word.action.modern.stand.shift",
+      "service": "commons",
+      "theme": "modern",
+      "context": "候车区的立柱旁",
+      "tokens": [
+        "一位乘客",
+        {
+          "entryId": "word.action.modern.stand.shift"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.stand.shift": "6dafd994c49fb43b7e04fa1d3ebbae8a75b0a59b565b597e1e3d2ec1e67be09e"
+      }
+    },
+    {
+      "id": "word.action.modern.window.watch",
+      "service": "commons",
+      "theme": "modern",
+      "context": "交通站的玻璃隔墙边",
+      "tokens": [
+        "一位乘客",
+        {
+          "entryId": "word.action.modern.window.watch"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.window.watch": "0581e957fd6e54870949c479d68d08890871cbf7ea92c566b3d1b8bf30bf7094"
+      }
+    },
+    {
+      "id": "word.action.modern.ticket.crease",
+      "service": "commons",
+      "theme": "modern",
+      "context": "交通站的候车区",
+      "tokens": [
+        "一位手里拿着车票的乘客",
+        {
+          "entryId": "word.action.modern.ticket.crease"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.ticket.crease": "1afaab08814ecaf17901989cc5546b37ebd86bc4cd6a7293341f33be96999085"
+      }
+    },
+    {
+      "id": "word.action.modern.scan.turn",
+      "service": "market",
+      "theme": "modern",
+      "context": "商店收银台旁",
+      "tokens": [
+        "一位店员",
+        {
+          "entryId": "word.action.modern.scan.turn"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.scan.turn": "89cfa20937f2302ba01bedae228fe26228053e461ed63cc4254034f88661d059"
+      }
+    },
+    {
+      "id": "word.action.modern.wok.toss",
+      "service": "market",
+      "theme": "modern",
+      "context": "小吃店的备餐区",
+      "tokens": [
+        "一位厨师",
+        {
+          "entryId": "word.action.modern.wok.toss"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.wok.toss": "93ebde28985c7b3e43b48e9dfc8225c64d572d420fbe76086cbfe6263fdf1ed4"
+      }
+    },
+    {
+      "id": "word.action.modern.screw.back",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "修车铺的工具台旁",
+      "tokens": [
+        "一位修车师傅",
+        {
+          "entryId": "word.action.modern.screw.back"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.screw.back": "96581eacc0cd067d934cf5501b016e99e3b9adec0f3a9ae37a1166b16a2ee758"
+      }
+    },
+    {
+      "id": "word.action.modern.sort.toss",
+      "service": "market",
+      "theme": "modern",
+      "context": "快递分拣区",
+      "tokens": [
+        "一位分拣员",
+        {
+          "entryId": "word.action.modern.sort.toss"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.sort.toss": "6a74b368f53da0714a1f8dea0feaf2d7d9a9bf20ba1cc28557ebf8017093f9e5"
+      }
+    },
+    {
+      "id": "word.action.modern.towel.square",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共洗衣房",
+      "tokens": [
+        "一位洗衣客",
+        {
+          "entryId": "word.action.modern.towel.square"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.towel.square": "250d4d0a2b41554ed48d58dbe84181db64ff0e9d5dab5d196c2825ba5704ce38"
+      }
+    },
+    {
+      "id": "word.action.modern.shelf.stuff",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店的货架旁",
+      "tokens": [
+        "一位补货员",
+        {
+          "entryId": "word.action.modern.shelf.stuff"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.shelf.stuff": "cbd5c6aad122616d953c618240c8d3d14d96c5adec1d54c2f55af6daf5c0e0fb"
+      }
+    },
+    {
+      "id": "word.action.modern.water.climb",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅楼梯间",
+      "tokens": [
+        "一位送水员",
+        {
+          "entryId": "word.action.modern.water.climb"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.water.climb": "d33ddb3ccaf719a34fa261333caa0071f667abd1da8c27f2c442fc59b0b9c6d8"
+      }
+    },
+    {
+      "id": "word.action.modern.belt.order",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "工坊的工具柜旁",
+      "tokens": [
+        "一位维修工",
+        {
+          "entryId": "word.action.modern.belt.order"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.belt.order": "9846f657a1274e7a4fc1f09cb35b70c9ee07b3a1cbb13b2ebf010c50c4c41cfb"
+      }
+    },
+    {
+      "id": "word.action.modern.game.swipe",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边长椅旁",
+      "tokens": [
+        "一位拿着手机的路人",
+        {
+          "entryId": "word.action.modern.game.swipe"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.game.swipe": "600234fa854422a68b52171e06e07973aab637e0a2c0cea8d12fc37e64843f69"
+      }
+    },
+    {
+      "id": "word.action.modern.music.nod",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共广场",
+      "tokens": [
+        "一位路人",
+        {
+          "entryId": "word.action.modern.music.nod"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.music.nod": "809fb96e52a6fdfea0c22c42521e95a6198d8bcf38a0539500d5ee62e60e7b45"
+      }
+    },
+    {
+      "id": "word.action.modern.smoke.stoop",
+      "service": "commons",
+      "theme": "modern",
+      "context": "室外吸烟区",
+      "tokens": [
+        "一位路人",
+        {
+          "entryId": "word.action.modern.smoke.stoop"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.smoke.stoop": "82cae46293439bd1447bb58dd2c55c1845aab5bf77a82db53cc602f825a13f26"
+      }
+    },
+    {
+      "id": "word.action.modern.stretch.half",
+      "service": "commons",
+      "theme": "modern",
+      "context": "公共广场",
+      "tokens": [
+        "一位晨练者",
+        {
+          "entryId": "word.action.modern.stretch.half"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.stretch.half": "246d41db71046878ac093adce007be713cc953891095ed8cc5f8d65d42c2f28c"
+      }
+    },
+    {
+      "id": "word.action.modern.novel.lamp",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边路灯旁",
+      "tokens": [
+        "一位拿着小说的路人",
+        {
+          "entryId": "word.action.modern.novel.lamp"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.novel.lamp": "6835ff41c99d2146604de5ce30fd059fcb4b4d9ac067f83ede0cc2054fa2419b"
+      }
+    },
+    {
+      "id": "word.action.modern.mirror.check",
+      "service": "commons",
+      "theme": "modern",
+      "context": "路边停着的车旁",
+      "tokens": [
+        "一位司机",
+        {
+          "entryId": "word.action.modern.mirror.check"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.mirror.check": "e9c834989737b60a3f18662c0b0f3695a52f3bdc2781d51323934f65e3d77f56"
+      }
+    },
+    {
+      "id": "word.action.modern.gate.verify",
+      "service": "home",
+      "theme": "modern",
+      "context": "住宅门岗旁",
+      "tokens": [
+        "一位保安",
+        {
+          "entryId": "word.action.modern.gate.verify"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.gate.verify": "398485e24e0d62a568154d8b9dfccd245aa826f8359abe907b9373f2acff4d03"
+      }
+    },
+    {
+      "id": "word.action.modern.lock.rattle",
+      "service": "market",
+      "theme": "modern",
+      "context": "商店门口",
+      "tokens": [
+        "一位刚锁好门的店主",
+        {
+          "entryId": "word.action.modern.lock.rattle"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.lock.rattle": "5d82fbf25f08a14cae2e91869a95605973c51ee54a1dfc18ed3aebbe5dd09837"
+      }
+    },
+    {
+      "id": "word.action.modern.call.turn",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边的安静处",
+      "tokens": [
+        "一位路人",
+        {
+          "entryId": "word.action.modern.call.turn"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.call.turn": "f82a38e97105fedd5d1fd3ef2fa39d15edf344ed9c7701a4373ad2738e9a1868"
+      }
+    },
+    {
+      "id": "word.action.modern.earbud.share",
+      "service": "commons",
+      "theme": "modern",
+      "context": "并排坐着两个人的长椅旁",
+      "tokens": [
+        "其中一人",
+        {
+          "entryId": "word.action.modern.earbud.share"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.earbud.share": "5d7272cec61db69c7e92940ae174df4570ca79187f53eac887e5607430106c4f"
+      }
+    },
+    {
+      "id": "word.action.modern.doze.nod",
+      "service": "commons",
+      "theme": "modern",
+      "context": "交通站的候车区",
+      "tokens": [
+        "一位乘客",
+        {
+          "entryId": "word.action.modern.doze.nod"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.doze.nod": "50e48d1af14aca05adec1c34ca92b3989e652c811241728f948128ab8e1c9cc6"
+      }
+    },
+    {
+      "id": "word.action.modern.clock.double",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "挂着时钟的工作室",
+      "tokens": [
+        "一位戴着手表的维修工",
+        {
+          "entryId": "word.action.modern.clock.double"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.clock.double": "0c488b73b34b04eef1fb5df3082be1ccdc9daf0268248591c9609a4f274480ae"
+      }
+    },
+    {
+      "id": "word.action.modern.receipt.smooth",
+      "service": "market",
+      "theme": "modern",
+      "context": "便利店的收银台旁",
+      "tokens": [
+        "一位店员",
+        {
+          "entryId": "word.action.modern.receipt.smooth"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.receipt.smooth": "15e6e2cb8eea7895092f179854f59d46e45087d0e66c2eba7b276f670043d9a7"
+      }
+    },
+    {
+      "id": "word.action.modern.sketch.counter",
+      "service": "market",
+      "theme": "modern",
+      "context": "店里的座位旁",
+      "tokens": [
+        "一位手里拿着笔的顾客",
+        {
+          "entryId": "word.action.modern.sketch.counter"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.sketch.counter": "9c37ce125becadc036456870cd234ef8a72b069deae8d7d2c94ae3d6cdb6e27f"
+      }
+    },
+    {
+      "id": "word.action.modern.taiji.flow",
+      "service": "commons",
+      "theme": "modern",
+      "context": "播放晨练音乐的广场",
+      "tokens": [
+        "一位晨练者",
+        {
+          "entryId": "word.action.modern.taiji.flow"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.taiji.flow": "9fa9ac7cf11ae85184375487222f91e2ebb0df2615e1603820373c6c8e931ec5"
+      }
+    },
+    {
+      "id": "word.action.modern.battery.stare",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边长椅旁",
+      "tokens": [
+        "一位拿着手机的路人",
+        {
+          "entryId": "word.action.modern.battery.stare"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.battery.stare": "461bf989af613cf5fea77f1e767a06acdfa807450673d0f188bfa1403540ef91"
+      }
+    },
+    {
+      "id": "word.action.modern.corner.track",
+      "service": "commons",
+      "theme": "modern",
+      "context": "街边",
+      "tokens": [
+        "一位路人",
+        {
+          "entryId": "word.action.modern.corner.track"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.corner.track": "06bc577929bd34426a6287f61386dbb6365505753fb8f2840736219d7d53ce16"
+      }
+    },
+    {
+      "id": "word.action.modern.photo.squat",
+      "service": "commons",
+      "theme": "modern",
+      "context": "广场的合影区",
+      "tokens": [
+        "一位拿着相机的路人",
+        {
+          "entryId": "word.action.modern.photo.squat"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.photo.squat": "1e87385fbcc8a219331d5348f6b3388d78951487c1c3446cb5a06e26a9321f8f"
+      }
+    },
+    {
+      "id": "word.action.modern.nod.across",
+      "service": "commons",
+      "theme": "modern",
+      "context": "路口的人行道旁",
+      "tokens": [
+        "一位路人",
+        {
+          "entryId": "word.action.modern.nod.across"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.nod.across": "82b5a2134f9b873dd7fce05e1b420de0c9ab416276c9c6d47faaf46d5778c1ba"
+      }
+    },
+    {
+      "id": "word.action.modern.bargain.point",
+      "service": "market",
+      "theme": "modern",
+      "context": "街边摊位前",
+      "tokens": [
+        "一位顾客",
+        {
+          "entryId": "word.action.modern.bargain.point"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.bargain.point": "a99cbe4a48247ab1a6fe96188ad2745ab225ad3ca48469f947559c080696eceb"
+      }
+    },
+    {
+      "id": "word.action.modern.dog.wait",
+      "service": "commons",
+      "theme": "modern",
+      "context": "人行道的电线杆旁",
+      "tokens": [
+        "一位遛狗的人",
+        {
+          "entryId": "word.action.modern.dog.wait"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.dog.wait": "259d4c11fd9252fe32bd538bf7a6ed508260f04085daad7d7ea4d40c878a9e7e"
+      }
+    },
+    {
+      "id": "word.action.modern.kid.shoulder",
+      "service": "commons",
+      "theme": "modern",
+      "context": "广场上",
+      "tokens": [
+        "一位带着孩子的家长",
+        {
+          "entryId": "word.action.modern.kid.shoulder"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.action.modern.kid.shoulder": "65e7a66a2389141f2e7bd759f60fbf13910a1aa50b6f495753fb6a4191c47992"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hand.vein",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位在长椅上休息的路人伸开了手",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hand.vein"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hand.vein": "1edb2aabc4906425de72a6fdf21619d9b92f60bdf2653b55809b2ed0e37bc655"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hands.folded",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人坐在桌边",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hands.folded"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hands.folded": "77bf7324ba5d7582797cccd5652c5ead6ed8583046d2744657f11f06f0fb5c15"
+      }
+    },
+    {
+      "id": "word.bodypart.common.forearm.prop",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人坐在带扶手的椅子上",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.forearm.prop"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.forearm.prop": "ad1d7dd1ee6f7c9e3d66457e09898b67e44da5fdda1a3fd18e35ba5d746f6e60"
+      }
+    },
+    {
+      "id": "word.bodypart.common.ankle.sway",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人穿着露出脚踝的短裤走过",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.ankle.sway"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.ankle.sway": "ada2f8f94a9dd43b7c79c9209b6b7ba54ae5890f20eb6da737dc81ff017845dd"
+      }
+    },
+    {
+      "id": "word.bodypart.common.shoulder.rise",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人停下来调整呼吸",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.shoulder.rise"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.shoulder.rise": "fc715f6741cb26ecc2d614cc72ef83a701d640118be00d64c92c6a0c3ed95eab"
+      }
+    },
+    {
+      "id": "word.bodypart.common.throat.bob",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人刚喝下一口水",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.throat.bob"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.throat.bob": "9bcef61245364af0145062f1c0e342b4fc6929e3763db51879641ac0d91a8225"
+      }
+    },
+    {
+      "id": "word.bodypart.common.thumb.callus",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位修补匠把手放在工具台上",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.thumb.callus"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.thumb.callus": "fe4f024440ace71079e36237c79df80a1ed4d814a2c09330561abf262eb047b8"
+      }
+    },
+    {
+      "id": "word.bodypart.common.ringfinger.mark",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人伸手整理衣袖",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.ringfinger.mark"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.ringfinger.mark": "78af5588530ad30383806cdb4446b770292a085df73ee9d267f06dd57e080c4c"
+      }
+    },
+    {
+      "id": "word.bodypart.common.fist.clench",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人在活动手指",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.fist.clench"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.fist.clench": "1f6de07ffd4d58d19c5739a158134d903ae787d39afc331bc6e977866e5d6daa"
+      }
+    },
+    {
+      "id": "word.bodypart.common.tiger.corn",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位工匠正在歇手",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.tiger.corn"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.tiger.corn": "7c8d638813bffc82094d0af261de46cde61069cfa49f50f5bb347ef0c501f628"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hand.dangle",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人站在通道旁",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hand.dangle"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hand.dangle": "f443579b39a53d2a7a7e1605f5f4909cb1bdefa43b2235715787b363c2345fca"
+      }
+    },
+    {
+      "id": "word.bodypart.common.elbow.sill",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人倚在窗边",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.elbow.sill"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.elbow.sill": "fc8084e0f2eee43b4910ecbc1fe57c9329a6d8bf583b3044d418a4ff93ae4eac"
+      }
+    },
+    {
+      "id": "word.bodypart.common.wrist.cuff",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人挽起了袖口",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.wrist.cuff"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.wrist.cuff": "37b09ee5c828f28d7210ff38cb104eb13fcc608f72727311943193fa65ce361f"
+      }
+    },
+    {
+      "id": "word.bodypart.common.arms.cross",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人在通道旁抱起双臂",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.arms.cross"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.arms.cross": "aa8cdc151e94deed297ac2aff701114718afce51ef44d80e1d538fe16379e7bc"
+      }
+    },
+    {
+      "id": "word.bodypart.common.back.straight",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人坐直了身体",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.back.straight"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.back.straight": "6dee37fbc17266a71998cd7c563f1bc5b2340e52570979d76cc28051a63fdcc5"
+      }
+    },
+    {
+      "id": "word.bodypart.common.back.wall",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人靠墙歇脚",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.back.wall"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.back.wall": "05e8d49cb0951c656230590565b69fcb246e55741b8662577c37ba32b42faae1"
+      }
+    },
+    {
+      "id": "word.bodypart.common.chest.breath",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人停下来调整呼吸",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.chest.breath"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.chest.breath": "261068ca53c2d3037455832d9ff7614a2323785918e7a8d93144edb43ec5a88d"
+      }
+    },
+    {
+      "id": "word.bodypart.common.collarbone.line",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人整理敞开的衣领",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.collarbone.line"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.collarbone.line": "8991b82d7ad034f0e55e0a4f4c525d23409613b409c1d8e1d5f8be5319c68ef5"
+      }
+    },
+    {
+      "id": "word.bodypart.common.waist.tuck",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人侧身让出通道",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.waist.tuck"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.waist.tuck": "0d0b4485e6e2c9658721a75a85e3ebef778cdbb8a31197e511b0adf4c0bb00d9"
+      }
+    },
+    {
+      "id": "word.bodypart.common.heel.plant",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人站稳了脚步",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.heel.plant"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.heel.plant": "82d99850e9513a11a14be21d452533508ce9bd772828aa8ecb4b51c21bee1fec"
+      }
+    },
+    {
+      "id": "word.bodypart.common.toes.curl",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位在休息区脱下鞋袜的旅人活动着脚趾",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.toes.curl"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.toes.curl": "479d3d92ca8db2319fc87d5fa2b3768b6b656a9a5beea9ccdcdf2e032a757b79"
+      }
+    },
+    {
+      "id": "word.bodypart.common.legs.stand",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人站在通道旁",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.legs.stand"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.legs.stand": "8d301c00bc8d689f995f9d2531ab1149fa7ce365ca68aec135b863dd69beb97b"
+      }
+    },
+    {
+      "id": "word.bodypart.common.knee.bend",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人坐下弯起了腿",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.knee.bend"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.knee.bend": "ca782d4473fca9614b675e1eda5e95b8f78c2539a140e8d62b8b13a9a8d936ee"
+      }
+    },
+    {
+      "id": "word.bodypart.common.calf.hem",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人穿着长裤站在附近",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.calf.hem"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.calf.hem": "d827ae7d9fa28fd576ad78d61b7132e340db8ef6e71c87abad67350ae91ab343"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hair.shoulder",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位留着及肩头发的路人侧过身",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hair.shoulder"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hair.shoulder": "331a7dd036a6ce25b90c778d8bcab4f5a19c2b147a02fd03fe04484f0139ccec"
+      }
+    },
+    {
+      "id": "word.bodypart.common.jaw.set",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人抿了抿嘴",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.jaw.set"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.jaw.set": "d83b49ece162b80587aa1539914f362b023242da0a63844a729a1df2e52a7364"
+      }
+    },
+    {
+      "id": "word.bodypart.common.lash.flutter",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人眨了眨眼",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.lash.flutter"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.lash.flutter": "ef3ff261bb87421ccdb27a356719f1a32a8545d9c8cbb42853417372da21cbec"
+      }
+    },
+    {
+      "id": "word.bodypart.common.nape.expose",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位束起头发的路人低下头",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.nape.expose"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.nape.expose": "c1fa6a773421d6b63b705d75d751b8c113bde94ead19342fde5951c7d41b2f90"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hair.nape",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人抬手整理头发",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hair.nape"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hair.nape": "3015fb13b3035a87ada030b88e8cb11c44d224cc2ebc8b4f575b3703b9b64ef5"
+      }
+    },
+    {
+      "id": "word.bodypart.common.earlobe.pierced",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人侧头听人说话",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.earlobe.pierced"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.earlobe.pierced": "2b6552263007bf8c904172a95fd90b09ae7520d8accc13e5a78f96ed0f6eddf3"
+      }
+    },
+    {
+      "id": "word.bodypart.common.nose.red",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位刚从寒冷处过来的路人停下来回暖",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.nose.red"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.nose.red": "fe0c44242f5f3b9a1c70b979db62c5f4843d68632dc02955ff39ad772cb90ec2"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hand.yawn",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人抬手掩住哈欠",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hand.yawn"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hand.yawn": "c02ecf92004ae4246a35fca49f559eefb0a3aabc7ab4afb88ec69cafc7f28695"
+      }
+    },
+    {
+      "id": "word.bodypart.common.foot.heeldrag",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人松开鞋带，踩下了鞋后帮",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.foot.heeldrag"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.foot.heeldrag": "a54f0463780690ff4a8aa2aadca897364fc9ab2efe7509dca59c23232a224d82"
+      }
+    },
+    {
+      "id": "word.bodypart.common.index.gesture",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人抬手指路",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.index.gesture"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.index.gesture": "78e9ee9bc23f112e9044653c5c77a22995b4b7ff152b0d4a5e62fab83577330b"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hands.headrest",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人在长椅上向后舒展身体",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hands.headrest"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hands.headrest": "df04fb3c81ce2922a64b0d0a7e91c00b9c17681c928e7bf85df4ed50ce5c10ff"
+      }
+    },
+    {
+      "id": "word.bodypart.common.legs.barswing",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人坐在高凳上晃着腿",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.legs.barswing"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.legs.barswing": "7c683848c4141da69e86f8c6b6ef51f4bd2a693fd885f785502a3a993e8fc94a"
+      }
+    },
+    {
+      "id": "word.bodypart.common.knee.dusty",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人的短裤膝部露在外面",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.knee.dusty"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.knee.dusty": "d8af0448a2764857ee27ae06444a7a6c83c35161daf804493bafeefa95434b89"
+      }
+    },
+    {
+      "id": "word.bodypart.common.hand.sleeve",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人拉长了衣袖",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.hand.sleeve"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.hand.sleeve": "f6a2cf3297e7d5ff64f2328692b1081df10765974915336f6be5829024fb593d"
+      }
+    },
+    {
+      "id": "word.bodypart.common.knuckle.page",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人在桌边整理纸张",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.knuckle.page"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.knuckle.page": "5918afb6df42b19e898b48ade7228a561bd8f5e400a6e2f85749dcf6456e8eca"
+      }
+    },
+    {
+      "id": "word.bodypart.common.eyecorner.crease",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人朝同伴笑了笑",
+      "tokens": [
+        "你留意到对方",
+        {
+          "entryId": "word.bodypart.common.eyecorner.crease"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodypart.common.eyecorner.crease": "24db2671f2f7d0677bebb97eb9522a94f4a19823fa3ff15496f719191440036c"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.skin",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人挽起衣袖",
+      "tokens": [
+        "你留意到对方",
+        "手腕上的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.pelt",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只小猫伏在窗台上",
+      "tokens": [
+        "你留意到它",
+        "耳边的",
+        {
+          "entryId": "word.bodymaterial.common.pelt"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.pelt": "4866c72d6bdf0397d2df4e4e730281be806bc9714ff342bcf71af0171ab2aa8e"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.hair",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位长发路人靠在长椅边",
+      "tokens": [
+        "你留意到对方",
+        "垂在肩头的",
+        {
+          "entryId": "word.bodymaterial.common.hair"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.hair": "9ce7d3002b2f2dfac740d21e563651ac9080d36e2aa1c6f992c465d291ff3c04"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.fuzz",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人挽起衣袖",
+      "tokens": [
+        "你留意到对方",
+        "小臂上的",
+        {
+          "entryId": "word.bodymaterial.common.fuzz"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.fuzz": "b1b3165712898ec5d7651a176364588c4d2a2ac207df7a736d6b8490fffb32a5"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.keratin",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人脱下鞋袜休息",
+      "tokens": [
+        "你留意到对方",
+        "脚跟边的",
+        {
+          "entryId": "word.bodymaterial.common.keratin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.keratin": "820322fd632f64b77105aab83a65b76fe3f25f295f0731b5d24a6b2869406a99"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.nail",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人伸手整理东西",
+      "tokens": [
+        "你留意到对方",
+        "指尖的",
+        {
+          "entryId": "word.bodymaterial.common.nail"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.nail": "3c818ae87fd486528fd5f207c171726d6a545e8af59d70480d1c7beed15568ca"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.scale",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只壁虎停在石墙上",
+      "tokens": [
+        "你留意到它",
+        "背部的",
+        {
+          "entryId": "word.bodymaterial.common.scale"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.scale": "cfea78bd478e73ea75d760aa921d4ad998d0ae2a0d3d39da66eb0463a0cec923"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.carapace",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只小螃蟹沿石缝移动",
+      "tokens": [
+        "你留意到它",
+        "背部的",
+        {
+          "entryId": "word.bodymaterial.common.carapace"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.carapace": "4217a289bff589293158dd2ff892d87076651dc3098dfb74f403a645562697fe"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.feather",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只鸟停在屋檐上",
+      "tokens": [
+        "你留意到它",
+        "翼边的",
+        {
+          "entryId": "word.bodymaterial.common.feather"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.feather": "3621f288b9216ba0528e60a26a56935cbe7d2ed833426a670f38f580c390ee72"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.callus",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位工匠摊开手掌歇息",
+      "tokens": [
+        "你留意到对方",
+        "掌心的",
+        {
+          "entryId": "word.bodymaterial.common.callus"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.callus": "b71259b8d93765a6baa8da60daae4d2ce74bb0c1a0c273d53326ee734e016214"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.membrane",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只壁虎在石墙上舒展前肢",
+      "tokens": [
+        "你留意到它",
+        "关节边的",
+        {
+          "entryId": "word.bodymaterial.common.membrane"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.membrane": "560b57b158dda6cb0d69a7f957a211f8f61824ac91e6da5349f620ab2469b301"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.scar",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人挽起衣袖",
+      "tokens": [
+        "你留意到对方",
+        "小臂上的",
+        {
+          "entryId": "word.bodymaterial.common.scar"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.scar": "761df69139a62f99a67f643505b04d7cb3651ad012e627e134c9998fc7986da7"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.clawtip",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只猫伸开前爪",
+      "tokens": [
+        "你留意到它",
+        "前爪上的",
+        {
+          "entryId": "word.bodymaterial.common.clawtip"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.clawtip": "88ef43a1c6acdf49c8e319fc49e55aee59f3f39fa594e232ef5af8487eb7f2e7"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.scab",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人露出了擦伤正在愈合的手肘",
+      "tokens": [
+        "你留意到对方",
+        "手肘上的",
+        {
+          "entryId": "word.bodymaterial.common.scab"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.scab": "aa3bcd9cde03143c84e6d222971344fe3805330badee02b1d9e4f102d550c11d"
+      }
+    },
+    {
+      "id": "word.bodymaterial.common.wisp",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只幼猫伏在窗台上",
+      "tokens": [
+        "你留意到它",
+        "耳边的",
+        {
+          "entryId": "word.bodymaterial.common.wisp"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymaterial.common.wisp": "475b6c4de55a7cb5805d74b85d35c39d7f22511c81476c03dae6e21ef6943830"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.warmth",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位刚在暖处歇息过的路人挽起衣袖",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.warmth"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.warmth": "88a04aad4eb965ea6e92c3d852f19dd73fe12cdca7cc4bd5b4b3759d7e7bfd18",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.coarse",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位工匠摊开手掌",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.coarse"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.callus"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.coarse": "b1623003e757daffc1b0f94bbff51619802bf5cd1d8ce067cfd1bda9d552ab72",
+        "word.bodymaterial.common.callus": "b71259b8d93765a6baa8da60daae4d2ce74bb0c1a0c273d53326ee734e016214"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.soft",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只幼猫伏在窗台上",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.soft"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.wisp"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.soft": "7928ca340c089e20192f54917a69491fd88f8db8efab1f94f2aafbf1790d1573",
+        "word.bodymaterial.common.wisp": "475b6c4de55a7cb5805d74b85d35c39d7f22511c81476c03dae6e21ef6943830"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.taut",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人伸直了手指",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.taut"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.taut": "dbe3fbab0960998a9e97cfcd709e5ed72c2bf35c95dda51d02b1d0bef9e9daaa",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.damp",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只刚淋过雨的小猫伏在窗台上",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.damp"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.pelt"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.damp": "8688913f020ef87e73917742530bf5af41f9faf4c38b062b5154c532ddde1c7f",
+        "word.bodymaterial.common.pelt": "4866c72d6bdf0397d2df4e4e730281be806bc9714ff342bcf71af0171ab2aa8e"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.loose",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人放松了手掌",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.loose"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.loose": "f18c224608173d5f849ceb7a55486409d7e9f343a7f76f63f37edf08ee45941d",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.dryskin",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人的手背因干燥而起皮",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.dryskin"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.dryskin": "651169f9c9a113ef32d61198859a53f0e5787262dd9e30feabca946b0ef2cc3a",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.dense",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只毛茸茸的小猫伏在窗台上",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.dense"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.pelt"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.dense": "40f720e987a76f05fc3d072a87ac77bc8ae0925fb3b1a038f2aaea157d857c74",
+        "word.bodymaterial.common.pelt": "4866c72d6bdf0397d2df4e4e730281be806bc9714ff342bcf71af0171ab2aa8e"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.sparse",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位头发稀疏的路人摘下帽子",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.sparse"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.hair"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.sparse": "b08cc41482d520c5181e7ba3bb92c7572ca3a29a47460274b316b9fcc7e917c7",
+        "word.bodymaterial.common.hair": "9ce7d3002b2f2dfac740d21e563651ac9080d36e2aa1c6f992c465d291ff3c04"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.glossy.oil",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人的额头带着油光",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.glossy.oil"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.glossy.oil": "2233c7516553465c845e2da53aa82d1a6f21ccfa85e55c6b038325ee566df1fb",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.matted",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位头发湿后打绺的路人靠在通道旁",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.matted"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.hair"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.matted": "e3c9a3666fe08d5030f502d19563714e421d26571f76de0366c1abc4a30dea87",
+        "word.bodymaterial.common.hair": "9ce7d3002b2f2dfac740d21e563651ac9080d36e2aa1c6f992c465d291ff3c04"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.smooth",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人伸手整理东西",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.smooth"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.nail"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.smooth": "5400d4c57eddd3ab521500d386ff3d87a99cb8dcb358da9233941c9c87a2c569",
+        "word.bodymaterial.common.nail": "3c818ae87fd486528fd5f207c171726d6a545e8af59d70480d1c7beed15568ca"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.sleek",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位刚梳过头发的路人站在附近",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.sleek"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.hair"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.sleek": "716381d52069c675f345813316cf1cff40c01f910ad5bea03fc9cb41903b7bbf",
+        "word.bodymaterial.common.hair": "9ce7d3002b2f2dfac740d21e563651ac9080d36e2aa1c6f992c465d291ff3c04"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.messy",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位头发被风吹乱的路人站在附近",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.messy"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.hair"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.messy": "440c52dd91eefd8eb3737e122c23b8eb465aafb8e18e9a01410d3fb9f1eb9906",
+        "word.bodymaterial.common.hair": "9ce7d3002b2f2dfac740d21e563651ac9080d36e2aa1c6f992c465d291ff3c04"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.supple",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只壁虎舒展前肢",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.supple"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.membrane"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.supple": "b99cb048054a1429d341be18b9519eabf8e776f59a33e780240cd849e1e24194",
+        "word.bodymaterial.common.membrane": "560b57b158dda6cb0d69a7f957a211f8f61824ac91e6da5349f620ab2469b301"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.callused",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位工匠摊开手掌",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.callused"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.callused": "0b8be9a84264651ddf3b95def4d2fe1f8108f642b897125a70f7028bbba840ec",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.matte.skin",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人伸出没有抛光的指甲",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.matte.skin"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.nail"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.matte.skin": "18a1c0e0884853e7334e4d01aa84c71a50d2d7da84d6944c409ad809534471b5",
+        "word.bodymaterial.common.nail": "3c818ae87fd486528fd5f207c171726d6a545e8af59d70480d1c7beed15568ca"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.hard.keratin",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只小螃蟹沿石缝移动",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.hard.keratin"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.carapace"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.hard.keratin": "7f45ee1c21ec993e3f98f643d409cb4c351edfa261bb4e972dd0ff0fe130a184",
+        "word.bodymaterial.common.carapace": "4217a289bff589293158dd2ff892d87076651dc3098dfb74f403a645562697fe"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.translucent.skin",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只壁虎停在透光的叶片旁",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.translucent.skin"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.membrane"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.translucent.skin": "69814103b93e022b5d737e1087034d0454199ed1017c26fabcc646bf311961eb",
+        "word.bodymaterial.common.membrane": "560b57b158dda6cb0d69a7f957a211f8f61824ac91e6da5349f620ab2469b301"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.striated",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只壁虎停在石墙上",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.striated"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.scale"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.striated": "a3afda0f0fb71459f6a032b5958f30c56fcdbf55326f4ba6a7169b30e373d722",
+        "word.bodymaterial.common.scale": "cfea78bd478e73ea75d760aa921d4ad998d0ae2a0d3d39da66eb0463a0cec923"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.cool",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位刚从凉处过来的路人伸出手",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.cool"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.cool": "05d94f98859926e3add7a08d8ee3cc397e80f1cb4a054f49d252d0400317a654",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.damp.sweat",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位刚跑完步的路人擦拭额头",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.damp.sweat"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.damp.sweat": "91530ffd02e9739fe1331f7497897f148a8b270df7fc3cb5f5d5423e905b4ee3",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.goosebump",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位受凉的路人挽起衣袖",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.goosebump"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.goosebump": "b555bdeea96707908af619edca754174290b3e7fdddea17c09c3cdc6dd19bb76",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.dusty.skin",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位刚搬过积灰箱子的路人摊开手",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.dusty.skin"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.dusty.skin": "dd934acc5cf4291d10df266727b351ac7416fae37bdf1c7b2629009f6f77864f",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.freckled",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位手臂有雀斑的路人挽起衣袖",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.freckled"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.freckled": "63decec27e4207163acba0d9b7dbb0be5355da7d15003d907193caa6fda8edc7",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.bruised",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位手臂带着淤青的路人整理衣袖",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.bruised"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.bruised": "1ebf1bcae694498d4c20420c06a9cb6686469be4af12a1cf4b76fb56982f93d6",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.windsore",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位脸颊被冷风吹皴的路人停下来回暖",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.windsore"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.windsore": "3a1fb81ffb28976220b88534f3d298ebf2e8a4a807a50e8899267fa76f570219",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.wrinkle",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位路人屈起手指",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.wrinkle"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.wrinkle": "a3f3c3b74b25d6b7c1256f918ba7444c9bbc85a909aee35c43d3e81df370e28f",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.scarpull",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一位小臂留着旧疤的路人伸展手臂",
+      "tokens": [
+        "你留意到对方身上",
+        {
+          "entryId": "word.bodymatqual.common.scarpull"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.skin"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.scarpull": "c3ecfd1190bfe6454a66ce9dcc9470e40f3baf630ea923b7bccd04b62f36a36e",
+        "word.bodymaterial.common.skin": "5fd5a52381055118b6b1c1b47003eb0efd3a4fc3b356f6c8d845655cd9e88790"
+      }
+    },
+    {
+      "id": "word.bodymatqual.common.waxslick",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一只甲壳光亮的小螃蟹沿石缝移动",
+      "tokens": [
+        "你留意到它身上",
+        {
+          "entryId": "word.bodymatqual.common.waxslick"
+        },
+        "的",
+        {
+          "entryId": "word.bodymaterial.common.carapace"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.bodymatqual.common.waxslick": "a2b7b055d38589f6dfa44d61342567333ade7855137dfcd75d2dd68afa6294da",
+        "word.bodymaterial.common.carapace": "4217a289bff589293158dd2ff892d87076651dc3098dfb74f403a645562697fe"
+      }
+    },
+    {
+      "id": "word.material.common.water",
+      "service": "commons",
+      "theme": "generic",
+      "context": "饮水处",
+      "tokens": [
+        "你注意到",
+        "杯里的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.material.common.machineoil",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "修车铺的接油盘旁",
+      "tokens": [
+        "你注意到",
+        "盘里的",
+        {
+          "entryId": "word.material.common.machineoil"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.machineoil": "c0a8768981b3f5c09d0091ec19e3c59bf28c31944246f374f4d8c8d7028cacbf"
+      }
+    },
+    {
+      "id": "word.material.common.dust",
+      "service": "home",
+      "theme": "generic",
+      "context": "储物间的架子旁",
+      "tokens": [
+        "你注意到",
+        "架子上的",
+        {
+          "entryId": "word.material.common.dust"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.dust": "8dfeffc5a9df2fe0b78d389522229a5d26d0227f685c0eaa813c43e17a8e20a8"
+      }
+    },
+    {
+      "id": "word.material.common.detergent.liquid",
+      "service": "home",
+      "theme": "modern",
+      "context": "公共厨房的清洁台旁",
+      "tokens": [
+        "你注意到",
+        "瓶里的",
+        {
+          "entryId": "word.material.common.detergent.liquid"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.detergent.liquid": "c8179cf96f4b152f3b5145e534a3bdd3304791efd85c72f94d10a541e5f2819f"
+      }
+    },
+    {
+      "id": "word.material.common.disinfect.liquid",
+      "service": "clinic",
+      "theme": "modern",
+      "context": "诊所的清洁台旁",
+      "tokens": [
+        "你注意到",
+        "瓶里的",
+        {
+          "entryId": "word.material.common.disinfect.liquid"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.disinfect.liquid": "ef993c07208acd7ba51d4163f69a842b56818f377228998954cc3184270aaf79"
+      }
+    },
+    {
+      "id": "word.material.common.grease.lub",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "维修台旁",
+      "tokens": [
+        "你注意到",
+        "盒里的",
+        {
+          "entryId": "word.material.common.grease.lub"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.grease.lub": "4fd566cefa106d893c5eb8d2e2af73bb6e11f2a41b7e0b0b3230f34ff7ec95ad"
+      }
+    },
+    {
+      "id": "word.material.common.condensate",
+      "service": "home",
+      "theme": "modern",
+      "context": "有冷凝水积存的冷藏柜旁",
+      "tokens": [
+        "你注意到",
+        "托盘里的",
+        {
+          "entryId": "word.material.common.condensate"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.condensate": "8032f041839a06350ed2dbd63c20c80777b58be0ffbcd56b86a6af40cd419883"
+      }
+    },
+    {
+      "id": "word.material.common.mud",
+      "service": "commons",
+      "theme": "generic",
+      "context": "刚下过雨的土路旁",
+      "tokens": [
+        "你注意到",
+        "路边的",
+        {
+          "entryId": "word.material.common.mud"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.mud": "2fe969af99ab12b5317289f3d3b02da9fe04f90b25c295e5e7045129a5c62a81"
+      }
+    },
+    {
+      "id": "word.material.common.rust",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "旧铁件清理台旁",
+      "tokens": [
+        "你注意到",
+        "清理下来的",
+        {
+          "entryId": "word.material.common.rust"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.rust": "fa8d604977c6392c41a922eafa2d48cf049509f7d13a43fe4270948987e5f543"
+      }
+    },
+    {
+      "id": "word.material.common.rainwater",
+      "service": "commons",
+      "theme": "generic",
+      "context": "雨后的街边",
+      "tokens": [
+        "你注意到",
+        "桶里接到的",
+        {
+          "entryId": "word.material.common.rainwater"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.rainwater": "078aadfd38fa85d8054c7121c7e52ede5bf7b9a8a37bf95a19ede48414952050"
+      }
+    },
+    {
+      "id": "word.material.common.grime",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "维修台的清洁区",
+      "tokens": [
+        "你注意到",
+        "盘里刮下来的",
+        {
+          "entryId": "word.material.common.grime"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.grime": "5ed1181db7ba6bdc2367418329fb32a6f5a66df107bd25766e7f9ca02bf03b43"
+      }
+    },
+    {
+      "id": "word.material.common.glass.shards",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "玻璃维修铺的回收区",
+      "tokens": [
+        "你注意到",
+        "回收盒里的",
+        {
+          "entryId": "word.material.common.glass.shards"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.glass.shards": "1f30c8d005f0e9957ede499e6e72894b715a4bc33e3c3467b05996fe5fbabac3"
+      }
+    },
+    {
+      "id": "word.material.common.coffee.stain",
+      "service": "market",
+      "theme": "generic",
+      "context": "咖啡店的空桌旁",
+      "tokens": [
+        "你注意到",
+        "桌上的",
+        {
+          "entryId": "word.material.common.coffee.stain"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.coffee.stain": "f3d65af5e3deb184d4cf69888fae808439d89569a40d1fbb4fb79f636c3e0424"
+      }
+    },
+    {
+      "id": "word.material.common.wax.floor",
+      "service": "commons",
+      "theme": "modern",
+      "context": "大厅的清洁用品架旁",
+      "tokens": [
+        "你注意到",
+        "罐里的",
+        {
+          "entryId": "word.material.common.wax.floor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.wax.floor": "4e9a0782cedb3a91bce8dd117fef355fb41cd2c3efdcea886ba5cb66b3aa5a32"
+      }
+    },
+    {
+      "id": "word.material.common.mortar",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "泥瓦工的拌料台旁",
+      "tokens": [
+        "你注意到",
+        "桶里的",
+        {
+          "entryId": "word.material.common.mortar"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.mortar": "57f52d413bdf9ce231eb4eea5dd1f88c1b2edf6eecad236121886e6944689a60"
+      }
+    },
+    {
+      "id": "word.material.common.tea.stain",
+      "service": "home",
+      "theme": "generic",
+      "context": "公共茶水间",
+      "tokens": [
+        "你注意到",
+        "杯壁上的",
+        {
+          "entryId": "word.material.common.tea.stain"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.tea.stain": "2b0ab4a4f844239982e6e8f3171ec0af0bc6c41040d50f2bc6919b2cdce870c2"
+      }
+    },
+    {
+      "id": "word.material.common.powder",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "开启除尘设施的加工间",
+      "tokens": [
+        "你注意到",
+        "集尘盘里的",
+        {
+          "entryId": "word.material.common.powder"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.powder": "fa50c73a3eba92742b897c997dff5128a1f91c2c8418e1e1c13785b43f30045f"
+      }
+    },
+    {
+      "id": "word.material.common.distilled",
+      "service": "clinic",
+      "theme": "modern",
+      "context": "诊所的用品柜旁",
+      "tokens": [
+        "你注意到",
+        "瓶里的",
+        {
+          "entryId": "word.material.common.distilled"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.distilled": "fc08dce4e8303cca10158fdbc7f9ea00474d8cc4dbe87dce7202e9336b734ddb"
+      }
+    },
+    {
+      "id": "word.material.common.salt.melt",
+      "service": "commons",
+      "theme": "modern",
+      "context": "冬季道路维护的物料架旁",
+      "tokens": [
+        "你注意到",
+        "袋里的",
+        {
+          "entryId": "word.material.common.salt.melt"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.salt.melt": "86a0ffbebcff5ecdda437165e83c0eae892a0e7fde04b32ad8a30d56bad0833a"
+      }
+    },
+    {
+      "id": "word.material.common.correction",
+      "service": "commons",
+      "theme": "modern",
+      "context": "书写用品台旁",
+      "tokens": [
+        "你注意到",
+        "瓶里的",
+        {
+          "entryId": "word.material.common.correction"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.material.common.correction": "e95de22c7e48dc82ec4ba889c11a87d0ea2fc92397e3e1a981dd5ac17ce901b3"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.turbid",
+      "service": "commons",
+      "theme": "generic",
+      "context": "有泥沙沉降的水杯旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.turbid"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.turbid": "81acfc1b25667d8dec02ee30b1fa89297c705328f0ac6eb3194c10b5a1a01603",
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.clear",
+      "service": "clinic",
+      "theme": "modern",
+      "context": "放着蒸馏水瓶的台面旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.clear"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.distilled"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.clear": "df16a1e0e4ab422481c180c83631b19041b1c325c116d645ebd315a4a24e4e94",
+        "word.material.common.distilled": "fc08dce4e8303cca10158fdbc7f9ea00474d8cc4dbe87dce7202e9336b734ddb"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.viscous",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "放着机油盘的维修台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.viscous"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.machineoil"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.viscous": "e3e98c67dc2c71205c65e41d3afce36479be14a3f969335f584f27a92fc49caa",
+        "word.material.common.machineoil": "c0a8768981b3f5c09d0091ec19e3c59bf28c31944246f374f4d8c8d7028cacbf"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.scalding",
+      "service": "commons",
+      "theme": "generic",
+      "context": "刚烧好水的茶水台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.scalding"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.scalding": "0c8b36d1bb7abc1bade086629c4bebee0f15a23c33ff93ce70dc05441954640f",
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.crusted",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "积着干硬油垢的清洁盘旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.crusted"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.grime"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.crusted": "27624b85d59091291d9c09628363da372df257b4bb811ce381c2741e33cd12b3",
+        "word.material.common.grime": "5ed1181db7ba6bdc2367418329fb32a6f5a66df107bd25766e7f9ca02bf03b43"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.cold",
+      "service": "commons",
+      "theme": "generic",
+      "context": "放着冷水杯的茶水台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.cold"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.cold": "a18d707c53b7d9065fe8db3dfbff11aec0d61f68c7068c8db39ba0c5c91d034a",
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.lukewarm",
+      "service": "commons",
+      "theme": "generic",
+      "context": "放着温水杯的茶水台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.lukewarm"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.lukewarm": "128dd7254b4d451e3266db4ecdefddbcf3cbf6d07840ad396108ab935885b43d",
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.thin.diluted",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "放着低黏度机油的维修台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.thin.diluted"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.machineoil"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.thin.diluted": "7fdb04bf121964695c3c1fd937c4a7ea27cb6646e3256c645890e8a67059d61c",
+        "word.material.common.machineoil": "c0a8768981b3f5c09d0091ec19e3c59bf28c31944246f374f4d8c8d7028cacbf"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.filtered",
+      "service": "commons",
+      "theme": "generic",
+      "context": "已完成过滤、单独盛放清水的饮水台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.filtered"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.filtered": "fade84f6576e2f5381364c5300b057ced4bd21a0ef25dd720b66372c5d19c19c",
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.congealed",
+      "service": "commons",
+      "theme": "modern",
+      "context": "存放已经凝固地板蜡的清洁台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.congealed"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.wax.floor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.congealed": "4e20ad4697c49a73766a490753191a859ce0931d5e1a86cf95ba2035de26a627",
+        "word.material.common.wax.floor": "4e9a0782cedb3a91bce8dd117fef355fb41cd2c3efdcea886ba5cb66b3aa5a32"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.frothy",
+      "service": "home",
+      "theme": "modern",
+      "context": "刚搅动过清洁液的水槽旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.frothy"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.detergent.liquid"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.frothy": "6e79d242b8b0c5eb51db4795283903dc38c1885cd1647149209f86e459bc1a33",
+        "word.material.common.detergent.liquid": "c8179cf96f4b152f3b5145e534a3bdd3304791efd85c72f94d10a541e5f2819f"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.bubbling",
+      "service": "commons",
+      "theme": "generic",
+      "context": "气泡正在冒出的泥水坑旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.bubbling"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.mud"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.bubbling": "4022b9bdd34fdce92ac84a43a8319b1071e6492f9909695ced547ad2d52fa5ee",
+        "word.material.common.mud": "2fe969af99ab12b5317289f3d3b02da9fe04f90b25c295e5e7045129a5c62a81"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.seeping",
+      "service": "commons",
+      "theme": "generic",
+      "context": "刚取出的含水泥浆旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.seeping"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.mud"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.seeping": "a12765dc18b13c253ca42762cef905c42708ee96dfa2d4eb8b6c4a01ad78bd48",
+        "word.material.common.mud": "2fe969af99ab12b5317289f3d3b02da9fe04f90b25c295e5e7045129a5c62a81"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.rusted",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "旧铁件的除锈台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.rusted"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.rust"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.rusted": "02645299203c6739ef567483a70bd41946906c709a68195123527e34941df055",
+        "word.material.common.rust": "fa8d604977c6392c41a922eafa2d48cf049509f7d13a43fe4270948987e5f543"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.moldy",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "存放发霉油垢的废弃清洁盘旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.moldy"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.grime"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.moldy": "df8be4ad0f5898aa99ccd39acf96a3f8f3e8cb5927048e5823e020d23065d74f",
+        "word.material.common.grime": "5ed1181db7ba6bdc2367418329fb32a6f5a66df107bd25766e7f9ca02bf03b43"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.dried",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "存放干燥灰浆碎块的回收区",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.dried"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.mortar"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.dried": "644063f41db7593c3729e08df520c6647266bcbe03d6cbac0b25cbdeff87cddd",
+        "word.material.common.mortar": "57f52d413bdf9ce231eb4eea5dd1f88c1b2edf6eecad236121886e6944689a60"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.dusty.mat",
+      "service": "commons",
+      "theme": "modern",
+      "context": "一块表面落了灰的凝固地板蜡旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.dusty.mat"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.wax.floor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.dusty.mat": "0067a881e1a07ce7ae0c97a045d5ce189bf1373c4adaa2343f4436688ca950f5",
+        "word.material.common.wax.floor": "4e9a0782cedb3a91bce8dd117fef355fb41cd2c3efdcea886ba5cb66b3aa5a32"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.greasy.mat",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一处混入油脂的泥浆坑旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.greasy.mat"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.mud"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.greasy.mat": "eea8eb016b25639035f3410ef8af8c7b7da3efac5be8d34ff12f25b6eae71bad",
+        "word.material.common.mud": "2fe969af99ab12b5317289f3d3b02da9fe04f90b25c295e5e7045129a5c62a81"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.soaked",
+      "service": "home",
+      "theme": "generic",
+      "context": "刚被水浸湿的积灰旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.soaked"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.dust"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.soaked": "588e354c14ad4d896c2140d11049fa14a4bab93d27d50be110723434b09567a5",
+        "word.material.common.dust": "8dfeffc5a9df2fe0b78d389522229a5d26d0227f685c0eaa813c43e17a8e20a8"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.frozen",
+      "service": "commons",
+      "theme": "generic",
+      "context": "寒冷天气里结冰的接雨桶旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.frozen"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.rainwater"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.frozen": "1baa997b07ea3b9d10f26d03f1a2c4538d33e8cb99c527393b31247dde4f528e",
+        "word.material.common.rainwater": "078aadfd38fa85d8054c7121c7e52ede5bf7b9a8a37bf95a19ede48414952050"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.sticky",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "润滑脂收纳盒旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.sticky"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.grease.lub"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.sticky": "c604a027775632dda5b0a58e31fa8d5b94b47ca93f7f393997462e144773a422",
+        "word.material.common.grease.lub": "4fd566cefa106d893c5eb8d2e2af73bb6e11f2a41b7e0b0b3230f34ff7ec95ad"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.layered",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "一盘油水分层的废机油旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.layered"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.machineoil"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.layered": "dd0722dece9eea02eacd3c8e45ea436d13020de2f5673096c1a4e2b853168c20",
+        "word.material.common.machineoil": "c0a8768981b3f5c09d0091ec19e3c59bf28c31944246f374f4d8c8d7028cacbf"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.iridescent",
+      "service": "commons",
+      "theme": "generic",
+      "context": "一洼表面浮着彩色油膜的积水旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.iridescent"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.iridescent": "d66d7554bf6b9973cd317d6572ac307137fef5b59186814a8cef046bdca367d0",
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.sparkling",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "透光的玻璃回收盒旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.sparkling"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.glass.shards"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.sparkling": "31e721206ccb40ecbdd2295e146ceee3ad0f801dce1728dc48c45a586b2c1bef",
+        "word.material.common.glass.shards": "1f30c8d005f0e9957ede499e6e72894b715a4bc33e3c3467b05996fe5fbabac3"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.faded",
+      "service": "commons",
+      "theme": "modern",
+      "context": "存放颜色已褪去的有色修正液旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.faded"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.correction"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.faded": "b7bb7ae350d285322f71e689b3f74c10145d32dbfe4e92521203615f669b161c",
+        "word.material.common.correction": "e95de22c7e48dc82ec4ba889c11a87d0ea2fc92397e3e1a981dd5ac17ce901b3"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.embedded",
+      "service": "commons",
+      "theme": "modern",
+      "context": "嵌着碎屑的凝固地板蜡旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.embedded"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.wax.floor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.embedded": "601db1c2a28562840152f3e52a92930ecab3abd7f2d658b8af485d691b363824",
+        "word.material.common.wax.floor": "4e9a0782cedb3a91bce8dd117fef355fb41cd2c3efdcea886ba5cb66b3aa5a32"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.etched",
+      "service": "workshop",
+      "theme": "generic",
+      "context": "回收带有蚀痕碎玻璃的工具台旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.etched"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.glass.shards"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.etched": "954acd6271a32ad60b27d2c52a8bfef4330cecfc3bff82c08933cc5917f274d4",
+        "word.material.common.glass.shards": "1f30c8d005f0e9957ede499e6e72894b715a4bc33e3c3467b05996fe5fbabac3"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.staticcling",
+      "service": "commons",
+      "theme": "modern",
+      "context": "表面吸附纸屑的凝固地板蜡旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.staticcling"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.wax.floor"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.staticcling": "202e2271c3f616c530ca4972a81a84a794deaf40e406613920677dd4804d37f3",
+        "word.material.common.wax.floor": "4e9a0782cedb3a91bce8dd117fef355fb41cd2c3efdcea886ba5cb66b3aa5a32"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.bubble.fine",
+      "service": "commons",
+      "theme": "generic",
+      "context": "盛着细密气泡尚未散尽清水的杯子旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.bubble.fine"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.water"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.bubble.fine": "513f23729ca1b254e91c29bf63ca3b04640e48ef674540ae387d253a539e0c48",
+        "word.material.common.water": "05e2597b547df31d7eb0df5d8ec399bd77e98b759b44816d93c1d307bb47039e"
+      }
+    },
+    {
+      "id": "word.materialqualifier.common.metal.fleck",
+      "service": "workshop",
+      "theme": "modern",
+      "context": "放着混有金属屑的废机油盘旁",
+      "tokens": [
+        "你注意到",
+        {
+          "entryId": "word.materialqualifier.common.metal.fleck"
+        },
+        "的",
+        {
+          "entryId": "word.material.common.machineoil"
+        },
+        "。"
+      ],
+      "sourceHashes": {
+        "word.materialqualifier.common.metal.fleck": "38183ef11f38901998808e93903e659e2e2a04e3de7ffa57d48668013d18144b",
+        "word.material.common.machineoil": "c0a8768981b3f5c09d0091ec19e3c59bf28c31944246f374f4d8c8d7028cacbf"
+      }
+    }
+  ]
+}

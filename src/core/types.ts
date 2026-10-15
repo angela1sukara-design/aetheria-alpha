@@ -40,7 +40,7 @@ export type Effect =
 export interface VariableDef { id: Id; label: string; initial: number; min: number; max: number; unit: string }
 export interface FlagDef { id: Id; initial: boolean }
 export interface HookDef { id: Id; accepts: 'action'; visibility: 'public' }
-export interface LocationDef { id: Id; name: string; subtitle: string; textKey: Id; actionHook: Id; map: { x: number; y: number }; facilities?: LocationFacility[] }
+export interface LocationDef { id: Id; name: string; subtitle: string; textKey: Id; actionHook: Id; map: { x: number; y: number }; facilities?: LocationFacility[]; proseScenery?: import('./prose-types.ts').ProseScenery[] }
 export type RouteDistanceTier = 'adjacent' | 'far' | 'cross';
 export interface RouteDef {
   id: Id;

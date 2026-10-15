@@ -2,7 +2,7 @@
 
 本目录是规则和矩阵的可重建制作工具，不是游戏内容包，也不是九类玩法的新执行器。
 
-当前版本 1.2：正文默认交有序 `proseTemplate`，完整 `prose` 只作普通回退。矩阵只引用 `assemblyRuleId`，禁止按 Tag 笛卡尔组合逐格写正文。人物/地名通过精确绑定快照的 displayRef 取值；[姓名与继承契约](../../docs/names-and-inheritance.md) 区分已实装命名与待开发后代实体。详见 [槽位拼装规范](../../docs/prose-slot-assembly-standard.md)。
+当前版本 1.2：正文默认交有序 `proseTemplate`，完整 `prose` 只作普通回退。矩阵只引用 `assemblyRuleId`，禁止按 Tag 笛卡尔组合逐格写正文。人物/地名通过精确绑定快照的 displayRef 取值；[姓名与继承契约](../../docs/reference/names-and-inheritance.md) 区分已实装命名与待开发后代实体。详见 [槽位拼装规范](../../docs/reference/prose-slot-assembly-standard.md)。
 
 - `spec.mjs`：九大类任务、完整共用规则、依赖顺序和接口缺口。
 - `evaluate.mjs`：离线组合核查，保留未知值和对象边界。

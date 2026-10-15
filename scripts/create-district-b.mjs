@@ -2,7 +2,7 @@ import {readFile,writeFile}from'node:fs/promises';import{kit}from'./content-kit.
 const p=JSON.parse(await readFile('content/district/pack.json','utf8'));
 if(p.enemies.length)throw Error('B content already exists');
 const {id,text,has,set,change,time,hooks,action,graph,go}=kit(p),loc=k=>id('location.'+k),clinic='aetheria-tf:location.clinic';
-// district:health deprecated — unified HP is core:health (see docs/NOTES-vars-engine.md)
+// district:health deprecated — unified HP is core:health (see docs/reference/NOTES-vars-engine.md)
 for(const [move,label]of [['attack','进攻 · 体力−3'],['guard','防守 · 承伤减半、精力+2'],['recover','临时包扎 · 体力−4、生命+8'],['flee','寻找出口撤离 · 体力−4']])action('combat.'+move,label,'你根据对方的意图行动。',[{op:'combat.turn',move}],[],id('hook.runtime'));
 // 深设计 S/M 模板：gel S35 / scavenger S40 / collector M60；tier+combat 见 pack 与 DESIGN-deep-numerics
 for(const [key,name,hp,reward,intents,location,defeatIntro]of [

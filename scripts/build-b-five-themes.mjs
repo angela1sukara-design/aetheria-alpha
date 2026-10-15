@@ -1,0 +1,23 @@
+import fs from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {proseProblem} from '../src/content/player-prose.ts';
+import {FIVE_THEMES,sceneryRecipe} from './lexicon/five-theme-scenery.mjs';
+const read=async p=>JSON.parse(await fs.readFile(p,'utf8'));
+const sha=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
+const source=await read('content/prose/b-five-themes-v2.json'),plan=await read('production/text-slot-integration/b-five-themes-v2.json');
+const old=await read('content/prose/b-authoring-v2.json');
+const entries=source.deliveries.flatMap(d=>d.entries),allIds=[...entries,...old.deliveries.flatMap(d=>d.entries)].map(e=>e.id);
+if(entries.length!==675||new Set(allIds).size!==945)throw Error('B source IDs or counts changed.');
+if(plan.sourceHash!==sha(source))throw Error('Source changed; re-review the five-theme scene plan.');
+const byId=new Map(entries.map(e=>[e.id,e]));
+if(plan.recipes.length!==675||new Set(plan.recipes.map(r=>r.id)).size!==675)throw Error('Missing or duplicate recipe.');
+const rows=plan.recipes.map(r=>{
+ const e=byId.get(r.id);if(!e||r.sourceHash!==sha(e)||!FIVE_THEMES.includes(r.theme))throw Error('Unreviewed scene source.');
+ const expected=sceneryRecipe(e,r.theme);const {sourceHash,...actual}=r;
+ if(JSON.stringify(actual)!==JSON.stringify(expected))throw Error('Recipe interpretation changed; independent re-review required.');
+ if(!e.requires.some(c=>c.fact==='scene.setting'&&c.value===r.theme))throw Error('Missing source theme requirement.');
+ const text=r.context+'。'+r.fragments.join('');if(proseProblem(text)||text.includes('的的')||text.includes('其中盛着过滤水'))throw Error('Invalid scene prose.');
+ const {scope,semanticRequirements,assertedCaption,semanticKey,...runtime}=expected;return runtime;
+});
+await fs.writeFile('src/world/b-five-theme-data.ts','// Generated from fingerprinted, reviewed five-theme scenery. Do not edit directly.\nexport const B_FIVE_THEME_OBSERVATIONS = '+JSON.stringify(rows,null,2)+' as const;\n');
+console.log(JSON.stringify({entries:entries.length,recipes:rows.length,combinedEntries:945,timeGated:rows.filter(r=>r.timeWindow).length,byTheme:Object.fromEntries(FIVE_THEMES.map(theme=>[theme,rows.filter(r=>r.theme===theme).length]))}));

@@ -1,0 +1,4218 @@
+{
+  "format": "aetheria-reviewed-a-templates",
+  "version": 2,
+  "deliveries": [
+    {
+      "format": "aetheria-authoring-delivery",
+      "specVersion": "1.3",
+      "task": "A1",
+      "theme": "generic",
+      "author": "WorkBuddy；Codex 编辑修订",
+      "batchId": "a1-templates-reviewed-v2",
+      "revision": 2,
+      "entries": [
+        {
+          "id": "assembly.01.variant.firstsight",
+          "domain": "01",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.01.variant.senselead",
+          "domain": "01",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "目光落在",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.01.variant.propfirst",
+          "domain": "01",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "入眼的是",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "你所在的地方是",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.01.variant.trailend",
+          "domain": "01",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你注意到",
+              "suffix": "，"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "也察觉到",
+              "suffix": "，"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.01.variant.stillstand",
+          "domain": "01",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "你人在",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.01.variant.bare",
+          "domain": "01",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你看见",
+              "suffix": "。"
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "material.current",
+              "bindTo": "material",
+              "required": false,
+              "prefix": "你还注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.03.variant.facility",
+          "domain": "03",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "，"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.03.variant.handover",
+          "domain": "03",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你看见",
+              "suffix": "。"
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "material.current",
+              "bindTo": "material",
+              "required": false,
+              "prefix": "你还注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "地方是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.03.variant.handoff",
+          "domain": "03",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "material.current",
+              "bindTo": "material",
+              "required": false,
+              "prefix": "你还注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.03.variant.locate",
+          "domain": "03",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "在",
+              "suffix": "，"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.03.variant.serve",
+          "domain": "03",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你看见",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "地方名叫",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.03.variant.bare",
+          "domain": "03",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.05.variant.nocturnal",
+          "domain": "05",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "在",
+              "suffix": "，"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你看见",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.05.variant.omen",
+          "domain": "05",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.05.variant.routine",
+          "domain": "05",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.05.variant.trail",
+          "domain": "05",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你看见",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "你人在",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.05.variant.wait",
+          "domain": "05",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "prop",
+              "slot": "propEnv",
+              "poolId": "environment.prop",
+              "bindTo": "prop",
+              "required": true,
+              "prefix": "你注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "material.current",
+              "bindTo": "material",
+              "required": false,
+              "prefix": "你还注意到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.05.variant.bare",
+          "domain": "05",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        }
+      ],
+      "handPreviews": [
+        {
+          "templateId": "assembly.01.variant.firstsight",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是维修工坊。你注意到搁在台面上还泛着油光的扳手。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.firstsight",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是共享公寓。你注意到搁在台面上还泛着油光的扳手。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.senselead",
+          "entryIds": [
+            "word.sense.modern.disinfect.floor",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你察觉到拖地后残留的消毒水味。目光落在搁在台面上还泛着油光的扳手。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.senselead",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "目光落在搁在台面上还泛着油光的扳手。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.propfirst",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "入眼的是搁在台面上还泛着油光的扳手。你所在的地方是维修工坊。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.propfirst",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "入眼的是搁在台面上还泛着油光的扳手。你所在的地方是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.trailend",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你注意到搁在台面上还泛着油光的扳手，也察觉到拖地后残留的消毒水味，这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.trailend",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你注意到搁在台面上还泛着油光的扳手，这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.stillstand",
+          "entryIds": [
+            "word.sense.modern.disinfect.floor",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你察觉到拖地后残留的消毒水味。你留意到搁在台面上还泛着油光的扳手。你人在维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.stillstand",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到搁在台面上还泛着油光的扳手。你人在共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.bare",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "word.material.common.water",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见搁在台面上还泛着油光的扳手。你还注意到水。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.01.variant.bare",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见搁在台面上还泛着油光的扳手。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.facility",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是维修工坊，你注意到搁在台面上还泛着油光的扳手。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.facility",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是共享公寓，你注意到搁在台面上还泛着油光的扳手。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.handover",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "word.material.common.water",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见搁在台面上还泛着油光的扳手。你还注意到水。地方是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.handover",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见搁在台面上还泛着油光的扳手。地方是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.handoff",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "word.material.common.water",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到搁在台面上还泛着油光的扳手。你还注意到水。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.handoff",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到搁在台面上还泛着油光的扳手。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.locate",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在维修工坊，你注意到搁在台面上还泛着油光的扳手。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.locate",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在共享公寓，你注意到搁在台面上还泛着油光的扳手。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.serve",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见搁在台面上还泛着油光的扳手。你察觉到拖地后残留的消毒水味。地方名叫维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.serve",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见搁在台面上还泛着油光的扳手。地方名叫共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.bare",
+          "entryIds": [
+            "word.sense.modern.disinfect.floor",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你察觉到拖地后残留的消毒水味。你留意到搁在台面上还泛着油光的扳手。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.03.variant.bare",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到搁在台面上还泛着油光的扳手。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.nocturnal",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在维修工坊，你看见搁在台面上还泛着油光的扳手。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.nocturnal",
+          "entryIds": [
+            "runtime:display.place",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在共享公寓，你看见搁在台面上还泛着油光的扳手。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.omen",
+          "entryIds": [
+            "word.sense.modern.disinfect.floor",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你察觉到拖地后残留的消毒水味。你留意到搁在台面上还泛着油光的扳手。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.omen",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到搁在台面上还泛着油光的扳手。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.routine",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到搁在台面上还泛着油光的扳手。这里是维修工坊。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.routine",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到搁在台面上还泛着油光的扳手。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.trail",
+          "entryIds": [
+            "word.sense.modern.disinfect.floor",
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你察觉到拖地后残留的消毒水味。你看见搁在台面上还泛着油光的扳手。你人在维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.trail",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见搁在台面上还泛着油光的扳手。你人在共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.wait",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "word.material.common.water",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你注意到搁在台面上还泛着油光的扳手。你还注意到水。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.wait",
+          "entryIds": [
+            "word.prop.modern.wrench.greasy",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你注意到搁在台面上还泛着油光的扳手。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.bare",
+          "entryIds": [
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你察觉到拖地后残留的消毒水味。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.05.variant.bare",
+          "entryIds": [
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        }
+      ],
+      "suggestedTags": [],
+      "notes": "保留原54条模板ID，按v1.3修订槽位、绑定、定词挂前、通道中性连接语和普通回退。预览来自显式synthetic场景的参考拼装器，不代表游戏实时事实或安装。双部位、历史变化、服务可用性、伤情、对话和任务状态均不由模板常量推定；未支持的语义见说明。"
+    },
+    {
+      "format": "aetheria-authoring-delivery",
+      "specVersion": "1.3",
+      "task": "A2",
+      "theme": "generic",
+      "author": "WorkBuddy；Codex 编辑修订",
+      "batchId": "a2-templates-reviewed-v2",
+      "revision": 2,
+      "entries": [
+        {
+          "id": "assembly.02.variant.arrival",
+          "domain": "02",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你看见",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.02.variant.distance",
+          "domain": "02",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "那是",
+              "suffix": "。"
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "地方是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.02.variant.guess",
+          "domain": "02",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.02.variant.routine",
+          "domain": "02",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "在",
+              "suffix": "，"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.02.variant.sizeup",
+          "domain": "02",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你打量的是",
+              "suffix": "。"
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": false,
+              "prefix": "你还留意到",
+              "suffix": "。",
+              "subjectAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.02.variant.bare",
+          "domain": "02",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.04.variant.opening",
+          "domain": "04",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.04.variant.microexp",
+          "domain": "04",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你看着的是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.04.variant.turn",
+          "domain": "04",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.04.variant.smalltalk",
+          "domain": "04",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "在",
+              "suffix": "，"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.04.variant.listen",
+          "domain": "04",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.04.variant.bare",
+          "domain": "04",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.06.variant.brief",
+          "domain": "06",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.06.variant.terms",
+          "domain": "06",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.06.variant.delivery",
+          "domain": "06",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "地方是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.06.variant.ledger",
+          "domain": "06",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "在",
+              "suffix": "，"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.06.variant.reminder",
+          "domain": "06",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.06.variant.bare",
+          "domain": "06",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.07.variant.extract",
+          "domain": "07",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.07.variant.triage",
+          "domain": "07",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": false,
+              "prefix": "你还留意到",
+              "suffix": "。",
+              "subjectAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.07.variant.allclear",
+          "domain": "07",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.07.variant.disarm",
+          "domain": "07",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.07.variant.regroup",
+          "domain": "07",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.07.variant.aftermath",
+          "domain": "07",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "你人在",
+              "suffix": "。"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": false,
+              "prefix": "你还留意到",
+              "suffix": "。",
+              "subjectAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.09.variant.pause",
+          "domain": "09",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": false,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.09.variant.wordless",
+          "domain": "09",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.09.variant.parting",
+          "domain": "09",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.09.variant.kept",
+          "domain": "09",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.09.variant.stay",
+          "domain": "09",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": true,
+              "prefix": "你人在",
+              "suffix": "。"
+            },
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": false,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        },
+        {
+          "id": "assembly.09.variant.unspoken",
+          "domain": "09",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "form",
+              "slot": "opponentForm",
+              "poolId": "actor.form",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。"
+            },
+            {
+              "key": "act",
+              "slot": "actionCore",
+              "poolId": "action.observed",
+              "bindTo": "actor",
+              "required": false,
+              "prefix": "你观察到对方的动作：",
+              "suffix": "。",
+              "sameAs": [
+                "form"
+              ]
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": []
+        }
+      ],
+      "handPreviews": [
+        {
+          "templateId": "assembly.02.variant.arrival",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.arrival",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你看见顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.distance",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。那是手背蹭着油污的修车师傅。地方是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.distance",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。那是顶着湿发拎着泳袋的住户。地方是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.guess",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.guess",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.routine",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在维修工坊，你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.routine",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在共享公寓，你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.sizeup",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "word.bodypart.common.wrist.cuff",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你打量的是手背蹭着油污的修车师傅。你还留意到袖口下露出的一截手腕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.sizeup",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你打量的是顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.bare",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.02.variant.bare",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.opening",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.opening",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.microexp",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你看着的是手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.microexp",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你看着的是顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.turn",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你留意到手背蹭着油污的修车师傅。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.turn",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.smalltalk",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在维修工坊，你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.smalltalk",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在共享公寓，你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.listen",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你留意到手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.listen",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.bare",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.04.variant.bare",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.brief",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.brief",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.terms",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你留意到手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.terms",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.delivery",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。地方是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.delivery",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。地方是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.ledger",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在维修工坊，你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.ledger",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "在共享公寓，你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.reminder",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你留意到手背蹭着油污的修车师傅。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.reminder",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.bare",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.06.variant.bare",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.extract",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.extract",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。这里是共享公寓。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.triage",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.bodypart.common.wrist.cuff",
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你还留意到袖口下露出的一截手腕。你留意到手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.triage",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.allclear",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你留意到手背蹭着油污的修车师傅。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.allclear",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.disarm",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是维修工坊。你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.disarm",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是共享公寓。你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.regroup",
+          "entryIds": [
+            "word.sense.modern.disinfect.floor",
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你察觉到拖地后残留的消毒水味。你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.regroup",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "word.action.modern.phone.flick",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你观察到对方的动作：反复点亮又按灭手机屏幕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.aftermath",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.mechanic.crouch",
+            "word.bodypart.common.wrist.cuff",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你人在维修工坊。你留意到手背蹭着油污的修车师傅。你还留意到袖口下露出的一截手腕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.07.variant.aftermath",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你人在共享公寓。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.pause",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.pause",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.wordless",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是维修工坊。你留意到手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.wordless",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "这里是共享公寓。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.parting",
+          "entryIds": [
+            "word.action.modern.screw.back",
+            "word.form.modern.mechanic.crouch",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你留意到手背蹭着油污的修车师傅。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.parting",
+          "entryIds": [
+            "word.action.modern.phone.flick",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察到对方的动作：反复点亮又按灭手机屏幕。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.kept",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.kept",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.stay",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你人在维修工坊。你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.stay",
+          "entryIds": [
+            "runtime:display.place",
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你人在共享公寓。你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.unspoken",
+          "entryIds": [
+            "word.form.modern.mechanic.crouch",
+            "word.action.modern.screw.back",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到手背蹭着油污的修车师傅。你观察到对方的动作：对准螺孔，缓缓拧紧螺丝。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.09.variant.unspoken",
+          "entryIds": [
+            "word.form.modern.swim.wethair",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你留意到顶着湿发拎着泳袋的住户。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        }
+      ],
+      "suggestedTags": [],
+      "notes": "保留原54条模板ID，按v1.3修订槽位、绑定、定词挂前、通道中性连接语和普通回退。预览来自显式synthetic场景的参考拼装器，不代表游戏实时事实或安装。双部位、历史变化、服务可用性、伤情、对话和任务状态均不由模板常量推定；未支持的语义见说明。"
+    },
+    {
+      "format": "aetheria-authoring-delivery",
+      "specVersion": "1.3",
+      "task": "A3",
+      "theme": "generic",
+      "author": "WorkBuddy；Codex 编辑修订",
+      "batchId": "a3-templates-reviewed-v2",
+      "revision": 2,
+      "entries": [
+        {
+          "id": "assembly.08.variant.overview",
+          "domain": "08",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "actor",
+              "slot": "opponentForm",
+              "poolId": "actor.name",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察",
+              "suffix": "。"
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "。",
+              "subjectAs": [
+                "actor"
+              ]
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "body.material",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "这处的表面材质是",
+              "suffix": "。",
+              "sameAs": [
+                "part"
+              ]
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": false,
+              "prefix": "你人在",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": [
+            {
+              "key": "mat",
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "id": "assembly.08.variant.delta",
+          "domain": "08",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "actor",
+              "slot": "opponentForm",
+              "poolId": "actor.name",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你关注的是",
+              "suffix": "。"
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "其中一处是",
+              "suffix": "，",
+              "subjectAs": [
+                "actor"
+              ]
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "body.material",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "表面材质为",
+              "suffix": "。",
+              "sameAs": [
+                "part"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": [
+            {
+              "key": "mat",
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "id": "assembly.08.variant.otherview",
+          "domain": "08",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "actor",
+              "slot": "opponentForm",
+              "poolId": "actor.name",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察",
+              "suffix": "。"
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "目光落在",
+              "suffix": "，",
+              "subjectAs": [
+                "actor"
+              ]
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "body.material",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "这处的表面材质是",
+              "suffix": "。",
+              "sameAs": [
+                "part"
+              ]
+            },
+            {
+              "key": "sense",
+              "slot": "senseMod",
+              "poolId": "environment.sense",
+              "bindTo": "sense",
+              "required": false,
+              "prefix": "你察觉到",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": [
+            {
+              "key": "mat",
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "id": "assembly.08.variant.selfcheck",
+          "domain": "08",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "actor",
+              "slot": "opponentForm",
+              "poolId": "actor.name",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你查看的对象是",
+              "suffix": "。"
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "你留意到",
+              "suffix": "，",
+              "subjectAs": [
+                "actor"
+              ]
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "body.material",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "这一部位的表面材质是",
+              "suffix": "。",
+              "sameAs": [
+                "part"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": [
+            {
+              "key": "mat",
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "id": "assembly.08.variant.surface",
+          "domain": "08",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "actor",
+              "slot": "opponentForm",
+              "poolId": "actor.name",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你观察",
+              "suffix": "。"
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "你查看",
+              "suffix": "。",
+              "subjectAs": [
+                "actor"
+              ]
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "body.material",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "你留意到的表面材质是",
+              "suffix": "。",
+              "sameAs": [
+                "part"
+              ]
+            },
+            {
+              "key": "where",
+              "slot": "place",
+              "poolId": "place.current",
+              "bindTo": "place",
+              "required": false,
+              "prefix": "这里是",
+              "suffix": "。"
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": [
+            {
+              "key": "mat",
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "id": "assembly.08.variant.pair",
+          "domain": "08",
+          "mode": "prose",
+          "contentTier": "general",
+          "fallbackTier": "general",
+          "proseTemplate": [
+            {
+              "key": "actor",
+              "slot": "opponentForm",
+              "poolId": "actor.name",
+              "bindTo": "actor",
+              "required": true,
+              "prefix": "你查看的对象是",
+              "suffix": "。"
+            },
+            {
+              "key": "mat",
+              "slot": "materialFluid",
+              "poolId": "body.material",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "这处的表面材质是",
+              "suffix": "。",
+              "sameAs": [
+                "part"
+              ]
+            },
+            {
+              "key": "part",
+              "slot": "bodyPart",
+              "poolId": "actor.bodyPart",
+              "bindTo": "part",
+              "required": true,
+              "prefix": "对应的部位是",
+              "suffix": "。",
+              "subjectAs": [
+                "actor"
+              ]
+            },
+            {
+              "key": "exit",
+              "slot": "exitChoice",
+              "poolId": "exit.current",
+              "bindTo": "exit",
+              "required": true,
+              "prefix": "你可以",
+              "suffix": "。"
+            }
+          ],
+          "prose": "你可以结束观察，继续自己的安排。",
+          "qualifierPlan": [
+            {
+              "key": "mat",
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        }
+      ],
+      "handPreviews": [
+        {
+          "templateId": "assembly.08.variant.overview",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymatqual.common.smooth",
+            "word.bodymaterial.common.skin",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察林川。你留意到袖口下露出的一截手腕。这处的表面材质是光滑的皮肤。你人在维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.overview",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymaterial.common.skin",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察许宁。你留意到袖口下露出的一截手腕。这处的表面材质是皮肤。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.delta",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymatqual.common.smooth",
+            "word.bodymaterial.common.skin",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你关注的是林川。其中一处是袖口下露出的一截手腕，表面材质为光滑的皮肤。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.delta",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymaterial.common.skin",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你关注的是许宁。其中一处是袖口下露出的一截手腕，表面材质为皮肤。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.otherview",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymatqual.common.smooth",
+            "word.bodymaterial.common.skin",
+            "word.sense.modern.disinfect.floor",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察林川。目光落在袖口下露出的一截手腕，这处的表面材质是光滑的皮肤。你察觉到拖地后残留的消毒水味。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.otherview",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymaterial.common.skin",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察许宁。目光落在袖口下露出的一截手腕，这处的表面材质是皮肤。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.selfcheck",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymatqual.common.smooth",
+            "word.bodymaterial.common.skin",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你查看的对象是林川。你留意到袖口下露出的一截手腕，这一部位的表面材质是光滑的皮肤。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.selfcheck",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymaterial.common.skin",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你查看的对象是许宁。你留意到袖口下露出的一截手腕，这一部位的表面材质是皮肤。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.surface",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymatqual.common.smooth",
+            "word.bodymaterial.common.skin",
+            "runtime:display.place",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察林川。你查看袖口下露出的一截手腕。你留意到的表面材质是光滑的皮肤。这里是维修工坊。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.surface",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodypart.common.wrist.cuff",
+            "word.bodymaterial.common.skin",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你观察许宁。你查看袖口下露出的一截手腕。你留意到的表面材质是皮肤。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.pair",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodymatqual.common.smooth",
+            "word.bodymaterial.common.skin",
+            "word.bodypart.common.wrist.cuff",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-smell-0",
+          "seed": 42,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你查看的对象是林川。这处的表面材质是光滑的皮肤。对应的部位是袖口下露出的一截手腕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        },
+        {
+          "templateId": "assembly.08.variant.pair",
+          "entryIds": [
+            "runtime:display.actor",
+            "word.bodymaterial.common.skin",
+            "word.bodypart.common.wrist.cuff",
+            "runtime:display.exit"
+          ],
+          "fixtureId": "synthetic-a-review-sound-1",
+          "seed": 43,
+          "revision": 2,
+          "mode": "reference-assembler",
+          "text": "你查看的对象是许宁。这处的表面材质是皮肤。对应的部位是袖口下露出的一截手腕。你可以结束观察。",
+          "evidenceStatus": "fixture-verified"
+        }
+      ],
+      "suggestedTags": [],
+      "notes": "保留原54条模板ID，按v1.3修订槽位、绑定、定词挂前、通道中性连接语和普通回退。预览来自显式synthetic场景的参考拼装器，不代表游戏实时事实或安装。双部位、历史变化、服务可用性、伤情、对话和任务状态均不由模板常量推定；未支持的语义见说明。"
+    }
+  ]
+}

@@ -72,7 +72,7 @@ export async function packageExpansionV2(root=projectRoot) {
   await walk(expansionV2Path);
   for (const file of ['scripts/lexicon/common-general-seeds-v2.mjs','scripts/lexicon/build-general-expansion-v2.mjs',
     'scripts/lexicon/package-general-expansion-v2.mjs','tests/general-expansion-v2.test.ts',
-    'docs/general-vocabulary-expansion-v2.md','docs/general-vocabulary-rule-plan.md']) await add(file);
+    'docs/reference/general-vocabulary-expansion-v2.md','docs/reference/general-vocabulary-rule-plan.md']) await add(file);
   files.sort((a,b)=>a.path.localeCompare(b.path));
   const index=JSON.parse(await readFile(path.join(root,expansionV2Path,'index.json'),'utf8'));
   const manifest={format:'aetheria-vocabulary-supplement-package',schemaVersion:1,

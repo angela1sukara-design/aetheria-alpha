@@ -24,7 +24,11 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   const storyActions=narrativeActions(state,registry);
   const actions: ActionDef[] = storyActions??(current ? current.node.actionIds.map(id => registry.action(id)).filter(x => x.context?.eventId === current.event.definitionId && x.context.nodeId === current.node.id) : registry.actionsAt(state.world.locationId).filter(x => !x.context));
   const topics = current ? [] : registry.npcs.filter(n => npcPresent(state, registry, n.id)).flatMap(n => registry.actionsForHook(n.topicHook));
-  const allActions = [...new Map([...actions, ...(storyActions?[]:topics), ...(storyActions?[]:registry.globalActions())].map(a => [a.id, a])).values()];
+  // Snapshot-based observation may remain open while the player uses the body
+  // panel. Expose only player TF controls; other narrative kinds stay isolated.
+  const observing=!!state.adventure?.story?.prose;
+  const observationBody=observing?registry.globalActions().filter(a=>a.surface==='body'&&a.effects.length&&a.effects.every(e=>['tf.apply','tf.pause','tf.resume','tf.cancel'].includes(e.op)&&(!('target'in e)||!e.target||e.target.kind==='player'))):[];
+  const allActions = [...new Map([...actions, ...(storyActions?[]:topics), ...(storyActions?observationBody:registry.globalActions())].map(a => [a.id, a])).values()];
   const stamina = state.player.variables[STAMINA_ID] ?? 100;
   const gate = staminaGate(stamina);
   const strict=usesFunctions(state,registry), supported=districtOptions(state,registry,allActions).filter(a=>{

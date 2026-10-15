@@ -5,10 +5,10 @@ import type { EquipmentSlot, EnemyCombatStats } from './district-types.ts';
 export const NARRATIVE_KINDS = ['defeat', 'encounter', 'exploration', 'daily', 'conversation', 'quest', 'transformation', 'ending'] as const;
 export type NarrativeKind = typeof NARRATIVE_KINDS[number];
 export interface ScopedTag { role: 'player' | 'opponent' | 'environment'; tagId: Id }
-export interface NarrativeProfile { id: Id; enemyId?: Id; npcId?: Id; tags: Id[]; goals: Id[]; tendencies: { tagId: Id; weight: number }[]; defeatTags?: ScopedTag[] }
+export interface NarrativeProfile { id: Id; enemyId?: Id; npcId?: Id; tags: Id[]; goals: Id[]; tendencies: { tagId: Id; weight: number }[]; defeatTags?: ScopedTag[]; /** Optional closed candidate set for dedicated narrative entries. */ nodeIds?: Id[] }
 export interface NarrativeChoice { label: string; resultText: Id; conditions: Condition[]; effects: Effect[]; setTags: ScopedTag[]; unsetTags: ScopedTag[]; next: string | null }
-export interface NarrativeNode { id: Id; kind: NarrativeKind; stage: string; title: string; textKey: Id; requiresTags: ScopedTag[]; excludesTags: ScopedTag[]; conditions: Condition[]; tendencies: { tagId: Id; weight: number }[]; weight: number; priority: number; maxVisits: number; choices: NarrativeChoice[] }
-export interface NarrativeState { instanceId: string; kind: NarrativeKind; stage: string; nodeId: Id; profileId: Id | null; opponentName: string; actor: EntityRef | null; tags: ScopedTag[]; visits: Record<Id, number>; log: string[]; steps: number; /** 战败玩法等入口的占位填充（{material}/{part}/{tf}…）；缺省兼容旧档 */ fills?: Record<string, string> }
+export interface NarrativeNode { id: Id; kind: NarrativeKind; stage: string; title: string; textKey: Id; requiresTags: ScopedTag[]; excludesTags: ScopedTag[]; conditions: Condition[]; tendencies: { tagId: Id; weight: number }[]; weight: number; priority: number; maxVisits: number; choices: NarrativeChoice[]; proseAssembly?: {version:1;mode:import('./prose-types.ts').ProseMode;rule:import('./prose-types.ts').ProseRule} }
+export interface NarrativeState { instanceId: string; kind: NarrativeKind; stage: string; nodeId: Id; profileId: Id | null; opponentName: string; actor: EntityRef | null; tags: ScopedTag[]; visits: Record<Id, number>; log: string[]; steps: number; /** 战败玩法等入口的占位填充（{material}/{part}/{tf}…）；缺省兼容旧档 */ fills?: Record<string, string>; prose?: import('./prose-types.ts').ProseSnapshot }
 export const ADVENTURE_FIELDS = ['assets', 'influence', 'safety', 'reputation', 'orders', 'contracts'] as const;
 export type AdventureField = typeof ADVENTURE_FIELDS[number];
 export interface AdventureState {

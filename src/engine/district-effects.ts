@@ -451,7 +451,7 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
 export function districtOptions(s: GameState, r: Registry, actions: ActionDef[]): ActionDef[] {
   if (!s.district) return actions;
   const runtime = r.actionsForHook('district:hook.runtime'), settings = runtime.filter(a => a.effects.some(e => e.op === 'preference.set'));
-  const story=narrativeActions(s,r);if(story)return [...story.slice(0,-1),...settings,...story.slice(-1)];
+  const story=narrativeActions(s,r);if(story)return [...story.slice(0,-1),...settings,...(s.adventure?.story?.prose?actions.filter(a=>a.surface==='body'):[]),...story.slice(-1)];
   if (s.district.combat) {
     const turns=[...runtime.filter(a => a.effects.some(e => e.op === 'combat.turn')), ...r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn'))];
     const combatItems=r.globalActions().filter(a=>a.effects.some(e=>e.op==='combat.turn'&&e.move==='item'));

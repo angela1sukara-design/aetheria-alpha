@@ -134,7 +134,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
   if (starts.length !== 1) fail(sorted[0] ?? parsePack(input[0]), 'INVALID_ENTRYPOINT', '/start', '必须且只能有一个世界开局入口。');
   for (const p of sorted) {
     if (p.start) ref(p, p.start.locationId, 'locations', '/start/locationId');
-    for (const l of p.locations) { ref(p, l.textKey, 'texts', `/locations/${l.id}/textKey`); ref(p, l.actionHook, 'hooks', `/locations/${l.id}/actionHook`); }
+    for (const l of p.locations) { ref(p, l.textKey, 'texts', `/locations/${l.id}/textKey`); ref(p, l.actionHook, 'hooks', `/locations/${l.id}/actionHook`); for(const o of l.proseScenery??[])for(const c of o.conditions)checkCondition(p,c,`/locations/${l.id}/proseScenery`); }
     for (const r of p.routes) { ref(p, r.from, 'locations', `/routes/${r.id}/from`); ref(p, r.to, 'locations', `/routes/${r.id}/to`); if (r.from === r.to) fail(p, 'INVALID_ROUTE', `/routes/${r.id}`, '路线两端相同。'); }
     for (const c of p.contributions) { ref(p, c.hookId, 'hooks', '/contributions/hookId'); for (const id of c.actionIds) { ref(p, id, 'actions', '/contributions/actionIds'); if (id.split(':')[0] !== p.manifest.namespace) fail(p, 'CONTRIBUTION_OWNERSHIP', '/contributions/actionIds', '只可贡献自己的动作。'); const action = definitions.get(id)?.value as ContentPack['actions'][number] | undefined; if (action?.context) fail(p, 'EVENT_ACTION_IN_HOOK', '/contributions/actionIds', '事件专用动作不能暴露到地点 Hook。'); } }
     for (const a of p.actions) {

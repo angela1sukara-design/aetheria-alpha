@@ -2,9 +2,9 @@
 
 版本：1.2｜核对日期：2026-10-15｜用途：交给其他 AI 的写作任务说明。
 
-默认交付改为 **槽位模板 + 词条入槽资料 + 拼装校验**，完整 `prose` 仅作回退。必须附独立 `assembly-rules.json`，矩阵 cell 只挂 `assemblyRuleId`；冻结 place / propEnv / bodyPart / senseMod / actionCore / materialFluid / opponentForm / exitChoice 八类槽。词条须写 allowedSlots、priority、审核、实例绑定、互斥；定词仅在 materialFluid 槽内挂前。禁止笛卡尔写作穷举，失败整段普通回退，T32/T34 在选词前与拼装后复核。完整新契约见 [槽位拼装规范](../docs/prose-slot-assembly-standard.md)，其内容优先于下文旧整段稿格式。离线拼装工具已提供，游戏接口尚未接入，不能直接给现有 ContentPack 增加这些字段。
+默认交付改为 **槽位模板 + 词条入槽资料 + 拼装校验**，完整 `prose` 仅作回退。必须附独立 `assembly-rules.json`，矩阵 cell 只挂 `assemblyRuleId`；冻结 place / propEnv / bodyPart / senseMod / actionCore / materialFluid / opponentForm / exitChoice 八类槽。词条须写 allowedSlots、priority、审核、实例绑定、互斥；定词仅在 materialFluid 槽内挂前。禁止笛卡尔写作穷举，失败整段普通回退，T32/T34 在选词前与拼装后复核。完整新契约见 [槽位拼装规范](../docs/reference/prose-slot-assembly-standard.md)，其内容优先于下文旧整段稿格式。离线拼装工具已提供，游戏接口尚未接入，不能直接给现有 ContentPack 增加这些字段。
 
-这是编辑与交付规范。组合故事接口现已实现于`src/core/adventure-types.ts`，默认样例见`content/adventure/pack.json`，完整说明见[故事与成长框架](../docs/adventure-framework-2026-10-13.md)。本文的Markdown节点卡与可见标记仍不会自行执行，需转成真实内容包契约；用户指定范围和已确认设定优先，不得凭创作补造工程能力。
+这是编辑与交付规范。组合故事接口现已实现于`src/core/adventure-types.ts`，默认样例见`content/adventure/pack.json`，完整说明见[故事与成长框架](../docs/reference/adventure-framework-2026-10-13.md)。本文的Markdown节点卡与可见标记仍不会自行执行，需转成真实内容包契约；用户指定范围和已确认设定优先，不得凭创作补造工程能力。
 
 ## 1. 给写作 AI 的任务
 

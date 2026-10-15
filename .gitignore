@@ -7,6 +7,10 @@ artifacts/*
 deliverables/
 archive/
 启动游戏-双击直接运行.html
+examples/*.html
+examples/*.png
+examples/*.md
+!examples/README.md
 
 # Local reference manuscripts; not game content packs.
 docs/故事/

@@ -12,6 +12,7 @@ import { sceneContext } from './scene-context.ts';
 import { proseProblem } from '../content/player-prose.ts';
 import { residentTraits,conversationResident,conversationPresent,structuredConversation,conversationMemory } from './personality.ts';
 import { residentInteraction } from './district.ts';
+import {captureAProse} from './a-prose.ts';
 
 export function initialAdventure(): AdventureState { return {version:1,assets:0,influence:0,safety:0,reputation:0,orders:0,contracts:0,victories:{},daily:{},equipment:{},items:{},story:null,journal:[],lastCombat:null}; }
 export function adventure(s:GameState):AdventureState { if(!s.adventure){s.adventure=initialAdventure();s.adventure.daily['world.day']=Math.floor(s.clock.totalMinutes/1440);}return s.adventure; }
@@ -44,13 +45,14 @@ function chooseNode(s:GameState,r:Registry,stage:string):NarrativeNode|undefined
   const tags=new Set(activeScoped.map(key)),profile=r.narrativeProfiles.find(p=>p.id===story.profileId);
   const envTagIds = new Set(activeScoped.filter(t => t.role === 'environment').map(t => t.tagId));
   const opponentTraits=new Set(residentTraits(s,r,conversationResident(s)));
-  let pool=r.narrativeNodes.filter(n=>n.kind===story.kind&&n.stage===stage&&(story.visits[n.id]??0)<n.maxVisits&&n.requiresTags.every(t=>tags.has(key(t)))&&!n.excludesTags.some(t=>tags.has(key(t)))&&n.conditions.every(c=>evaluate(c,s,r).pass));
+  let pool=r.narrativeNodes.filter(n=>(!profile?.nodeIds||profile.nodeIds.includes(n.id))&&n.kind===story.kind&&n.stage===stage&&(story.visits[n.id]??0)<n.maxVisits&&n.requiresTags.every(t=>tags.has(key(t)))&&!n.excludesTags.some(t=>tags.has(key(t)))&&n.conditions.every(c=>evaluate(c,s,r).pass));
   if(!pool.length)return;
   const priority=Math.max(...pool.map(n=>n.priority));pool=pool.filter(n=>n.priority===priority).sort((a,b)=>a.id.localeCompare(b.id,'en'));
   const weight=(n:NarrativeNode)=>nodeWeight(n, profile, envTagIds,opponentTraits);
   let roll=draw(s,`narrative:${story.instanceId}`)*pool.reduce((sum,n)=>sum+weight(n),0);
   const selected=pool.find(n=>(roll-=weight(n))<0)??pool.at(-1)!;
-  const problem=proseProblem(applyNarrativeFills(r.text(selected.textKey),story,s,r));
+  if(selected.proseAssembly)story.prose=captureAProse(s,r,selected);else delete story.prose;
+  const problem=proseProblem(story.prose?.text??applyNarrativeFills(r.text(selected.textKey),story,s,r));
   if(problem)throw new RuleError('NARRATIVE_TEXT',`这段内容尚未准备好：${problem}。`);
   story.nodeId=selected.id;story.visits[selected.id]=(story.visits[selected.id]??0)+1;return selected;
 }
@@ -94,7 +96,7 @@ export function narrativeText(s:GameState,r:Registry):string|undefined {
   if(structuredConversation(s,r)&&!conversationPresent(s))return '交谈已经结束\n\n对方已经离开这里。你可以结束这次交谈，继续自己的安排。';
   const node=r.narrativeNodes.find(n=>n.id===story.nodeId)!;
   const replace=(text:string)=>applyNarrativeFills(text,story,s,r);
-  return `${replace(node.title)}\n\n${replace(r.text(node.textKey))}${story.log.length?'\n\n'+replace(story.log.at(-1)!):''}`;
+  return `${replace(node.title)}\n\n${story.prose?.text??replace(r.text(node.textKey))}${story.log.length?'\n\n'+replace(story.log.at(-1)!):''}`;
 }
 export function narrativeTitle(s:GameState,r:Registry):string|undefined {
   if(structuredConversation(s,r)&&!conversationPresent(s))return '交谈已经结束';
@@ -209,6 +211,10 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
   const passed: NarrativeNode[] = [];
   const rejected: NarrativeDebugTrace['rejected'] = [];
   for (const cand of sameKindStage) {
+    if(profile?.nodeIds&&!profile.nodeIds.includes(cand.id)){
+      rejected.push({id:cand.id,title:cand.title,reason:'不在当前入口的候选节点范围内'});
+      continue;
+    }
     const missingReq = cand.requiresTags.find(t => !tagSet.has(key(t)));
     if (missingReq) {
       rejected.push({ id: cand.id, title: cand.title, reason: `缺少硬性 Tag：${missingReq.role}/${labelOf(missingReq.tagId)} (${missingReq.tagId})` });

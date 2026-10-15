@@ -22,7 +22,7 @@ const packs=documents.filter(x=>x.data.manifest&&Array.isArray(x.data.actions));
 const refs=documents.filter(x=>x.data.format==='aetheria-reference');
 const profiles=(await load('content/generation/world-profiles.json')).profiles;
 const assemblyCatalog=validateAssemblyCatalog(await load('production/tag-matrices/assembly-rules.json'));
-const assemblyStandard=(await read('docs/prose-slot-assembly-standard.md')).toString('utf8');
+const assemblyStandard=(await read('docs/reference/prose-slot-assembly-standard.md')).toString('utf8');
 const assemblyExample=await load('production/tag-matrices/assembly-example.json');
 const assemblyPreview=assembleProse({catalog:{...structuredClone(assemblyCatalog),rules:[...structuredClone(assemblyCatalog.rules),assemblyExample.rule]},assemblyRuleId:assemblyExample.rule.id,lexemes:assemblyExample.lexemes,context:assemblyExample.context});
 assert.equal(assemblyPreview.mode,'assembled');
@@ -36,7 +36,7 @@ for(const c of editorialTaxonomy.concepts)assert.ok(editorialFacetDomains[c.face
 for(const h of editorialHints)assert.ok(editorialFamilyDomains[h.family],'未分类规则族：'+h.family);
 const editorialSourceItems=[...editorialHints.map(h=>({key:editorialBase+'/rule-hints.json#hints/'+h.conceptId,file:editorialBase+'/rule-hints.json',kind:'editorialRuleHint',id:h.conceptId,domains:editorialFamilyDomains[h.family],status:'编辑提示；runtimeExecutable=false，不授予实际状态或效果',payload:h})),...editorialTaxonomy.rules.map(r=>({key:editorialBase+'/taxonomy.json#rules/'+r.id,file:editorialBase+'/taxonomy.json',kind:'lexicalRule',id:r.id,domains:editorialFacetDomains[editorialMap.get(r.conceptId)?.facet]??['05'],status:'词面提取规则；仅用于编辑归类，不证明实体事实',payload:r}))];
 const index=await load('content/index.json');
-await read('ai.md'); // 阈值追溯指纹；不把旧稿正文与不适用的旧要求复制进协作任务。
+await read('docs/reference/development-plan.md'); // 阈值追溯指纹；不把旧稿正文与不适用的旧要求复制进协作任务。
 const defaultPaths=new Set(index.packs.map(f=>'content/'+f.replace(/^\.\//,'')));
 const defaultPackIds=packs.filter(p=>defaultPaths.has(p.file)).map(p=>p.data.manifest.id);
 const tagMap=new Map(),duplicateTags=[];
@@ -130,7 +130,7 @@ await writeFile(out+'/00-总规范与协作分工.md',`# Tag 组合规则与九�
 // 相关 TS 的本地 import 递归闭包，实际全文写入每包，不用目录和指纹代替。
 async function closure(initial){const pending=[...initial],seen=new Set();while(pending.length){const file=pending.shift();if(seen.has(file))continue;const text=(await read(file)).toString('utf8');seen.add(file);for(const match of text.matchAll(/(?:from\s*|import\s*\()\s*['"](\.[^'"]+)['"]/g)){const dependency=path.posix.normalize(path.posix.join(path.posix.dirname(file),match[1]));if(/\.(ts|mjs|json)$/.test(dependency))pending.push(dependency);}}return [...seen].sort(sort);}
 const taskFiles=[],embeddedManifest=[];
-const toolFiles=['docs/names-and-inheritance.md','src/core/name-types.ts','src/world/names.ts','tests/names.test.ts','scripts/name-cultures.mjs','docs/prose-slot-assembly-standard.md','production/tag-matrices/assembly-rules.json','production/tag-matrices/assembly-example.json','production/tag-matrices/assembly.mjs','production/tag-matrices/coverage-cells.mjs','tests/prose-assembly.test.mjs','production/tag-matrices/spec.mjs','production/tag-matrices/evaluate.mjs','production/tag-matrices/README.md','scripts/build-tag-matrices.mjs','scripts/check-tag-matrices.mjs','tests/tag-matrices.test.mjs','package.json'];
+const toolFiles=['docs/reference/names-and-inheritance.md','src/core/name-types.ts','src/world/names.ts','tests/names.test.ts','scripts/name-cultures.mjs','docs/reference/prose-slot-assembly-standard.md','production/tag-matrices/assembly-rules.json','production/tag-matrices/assembly-example.json','production/tag-matrices/assembly.mjs','production/tag-matrices/coverage-cells.mjs','tests/prose-assembly.test.mjs','production/tag-matrices/spec.mjs','production/tag-matrices/evaluate.mjs','production/tag-matrices/README.md','scripts/build-tag-matrices.mjs','scripts/check-tag-matrices.mjs','tests/tag-matrices.test.mjs','package.json'];
 const materialCategories={
  '01':['world-','text-environment'],
  '02':['npc-','body-build','body-form','body-surface','body-hair','body-scale','body-color','body-organ','body-beast','body-mechanical','body-anomaly','body-clothing','body-accessory'],

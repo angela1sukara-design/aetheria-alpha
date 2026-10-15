@@ -1,0 +1,3003 @@
+// Generated from fingerprinted A1/A2/A3 source.
+import type {ProseCatalog} from '../core/prose-types.ts';
+export const A_TEMPLATE_CATALOG:ProseCatalog={
+  "format": "aetheria-prose-assembly-rules",
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "runtimeIntegrated": false,
+  "slots": [
+    "place",
+    "propEnv",
+    "bodyPart",
+    "senseMod",
+    "actionCore",
+    "materialFluid",
+    "opponentForm",
+    "exitChoice"
+  ],
+  "selection": {
+    "strategy": "bounded-lazy-search",
+    "maxCandidatesPerSlot": 4,
+    "maxSteps": 64,
+    "tieBreak": "seed-and-entry-id",
+    "cartesianEnumeration": false
+  },
+  "rules": [
+    {
+      "id": "assembly.01.variant.firstsight",
+      "domain": "01",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.01.variant.senselead",
+      "domain": "01",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "目光落在",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.01.variant.propfirst",
+      "domain": "01",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "入眼的是",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "你所在的地方是",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.01.variant.trailend",
+      "domain": "01",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你注意到",
+          "suffix": "，"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "也察觉到",
+          "suffix": "，"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.01.variant.stillstand",
+      "domain": "01",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "你人在",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.01.variant.bare",
+      "domain": "01",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你看见",
+          "suffix": "。"
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "material.current",
+          "bindTo": "material",
+          "required": false,
+          "prefix": "你还注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.03.variant.facility",
+      "domain": "03",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "，"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.03.variant.handover",
+      "domain": "03",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你看见",
+          "suffix": "。"
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "material.current",
+          "bindTo": "material",
+          "required": false,
+          "prefix": "你还注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "地方是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.03.variant.handoff",
+      "domain": "03",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "material.current",
+          "bindTo": "material",
+          "required": false,
+          "prefix": "你还注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.03.variant.locate",
+      "domain": "03",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "在",
+          "suffix": "，"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.03.variant.serve",
+      "domain": "03",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你看见",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "地方名叫",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.03.variant.bare",
+      "domain": "03",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.05.variant.nocturnal",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "在",
+          "suffix": "，"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你看见",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.05.variant.omen",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.05.variant.routine",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.05.variant.trail",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你看见",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "你人在",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.05.variant.wait",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "material.current",
+          "bindTo": "material",
+          "required": false,
+          "prefix": "你还注意到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.05.variant.bare",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.02.variant.arrival",
+      "domain": "02",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你看见",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.02.variant.distance",
+      "domain": "02",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "那是",
+          "suffix": "。"
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "地方是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.02.variant.guess",
+      "domain": "02",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.02.variant.routine",
+      "domain": "02",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "在",
+          "suffix": "，"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.02.variant.sizeup",
+      "domain": "02",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你打量的是",
+          "suffix": "。"
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": false,
+          "prefix": "你还留意到",
+          "suffix": "。",
+          "subjectAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.02.variant.bare",
+      "domain": "02",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.04.variant.opening",
+      "domain": "04",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.04.variant.microexp",
+      "domain": "04",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你看着的是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.04.variant.turn",
+      "domain": "04",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.04.variant.smalltalk",
+      "domain": "04",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "在",
+          "suffix": "，"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.04.variant.listen",
+      "domain": "04",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.04.variant.bare",
+      "domain": "04",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.06.variant.brief",
+      "domain": "06",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.06.variant.terms",
+      "domain": "06",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.06.variant.delivery",
+      "domain": "06",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "地方是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.06.variant.ledger",
+      "domain": "06",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "在",
+          "suffix": "，"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.06.variant.reminder",
+      "domain": "06",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.06.variant.bare",
+      "domain": "06",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.07.variant.extract",
+      "domain": "07",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.07.variant.triage",
+      "domain": "07",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": false,
+          "prefix": "你还留意到",
+          "suffix": "。",
+          "subjectAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.07.variant.allclear",
+      "domain": "07",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.07.variant.disarm",
+      "domain": "07",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.07.variant.regroup",
+      "domain": "07",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.07.variant.aftermath",
+      "domain": "07",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "你人在",
+          "suffix": "。"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": false,
+          "prefix": "你还留意到",
+          "suffix": "。",
+          "subjectAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.09.variant.pause",
+      "domain": "09",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": false,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.09.variant.wordless",
+      "domain": "09",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.09.variant.parting",
+      "domain": "09",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.09.variant.kept",
+      "domain": "09",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.09.variant.stay",
+      "domain": "09",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "你人在",
+          "suffix": "。"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": false,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.09.variant.unspoken",
+      "domain": "09",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": false,
+          "prefix": "你观察到对方的动作：",
+          "suffix": "。",
+          "sameAs": [
+            "form"
+          ]
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.08.variant.overview",
+      "domain": "08",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "actor",
+          "slot": "opponentForm",
+          "poolId": "actor.name",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察",
+          "suffix": "。"
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。",
+          "subjectAs": [
+            "actor"
+          ]
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "body.material",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "这处的表面材质是",
+          "suffix": "。",
+          "sameAs": [
+            "part"
+          ],
+          "prefixPools": [
+            {
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": false,
+          "prefix": "你人在",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.08.variant.delta",
+      "domain": "08",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "actor",
+          "slot": "opponentForm",
+          "poolId": "actor.name",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你关注的是",
+          "suffix": "。"
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "其中一处是",
+          "suffix": "，",
+          "subjectAs": [
+            "actor"
+          ]
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "body.material",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "表面材质为",
+          "suffix": "。",
+          "sameAs": [
+            "part"
+          ],
+          "prefixPools": [
+            {
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.08.variant.otherview",
+      "domain": "08",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "actor",
+          "slot": "opponentForm",
+          "poolId": "actor.name",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察",
+          "suffix": "。"
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "目光落在",
+          "suffix": "，",
+          "subjectAs": [
+            "actor"
+          ]
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "body.material",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "这处的表面材质是",
+          "suffix": "。",
+          "sameAs": [
+            "part"
+          ],
+          "prefixPools": [
+            {
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": false,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.08.variant.selfcheck",
+      "domain": "08",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "actor",
+          "slot": "opponentForm",
+          "poolId": "actor.name",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你查看的对象是",
+          "suffix": "。"
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "，",
+          "subjectAs": [
+            "actor"
+          ]
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "body.material",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "这一部位的表面材质是",
+          "suffix": "。",
+          "sameAs": [
+            "part"
+          ],
+          "prefixPools": [
+            {
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.08.variant.surface",
+      "domain": "08",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "actor",
+          "slot": "opponentForm",
+          "poolId": "actor.name",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你观察",
+          "suffix": "。"
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "你查看",
+          "suffix": "。",
+          "subjectAs": [
+            "actor"
+          ]
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "body.material",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "你留意到的表面材质是",
+          "suffix": "。",
+          "sameAs": [
+            "part"
+          ],
+          "prefixPools": [
+            {
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": false,
+          "prefix": "这里是",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    },
+    {
+      "id": "assembly.08.variant.pair",
+      "domain": "08",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "actor",
+          "slot": "opponentForm",
+          "poolId": "actor.name",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你查看的对象是",
+          "suffix": "。"
+        },
+        {
+          "key": "mat",
+          "slot": "materialFluid",
+          "poolId": "body.material",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "这处的表面材质是",
+          "suffix": "。",
+          "sameAs": [
+            "part"
+          ],
+          "prefixPools": [
+            {
+              "poolId": "body.material.qualifier",
+              "required": false,
+              "separator": "的"
+            }
+          ]
+        },
+        {
+          "key": "part",
+          "slot": "bodyPart",
+          "poolId": "actor.bodyPart",
+          "bindTo": "part",
+          "required": true,
+          "prefix": "对应的部位是",
+          "suffix": "。",
+          "subjectAs": [
+            "actor"
+          ]
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "prose": "你可以结束观察，继续自己的安排。",
+      "checks": [
+        "T32",
+        "T33",
+        "T34",
+        "T35",
+        "T36",
+        "T37"
+      ]
+    }
+  ]
+};
