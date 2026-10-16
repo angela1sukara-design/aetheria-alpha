@@ -22,6 +22,7 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     case 'progression.available': return progressionCheck(state,registry,condition.move,condition.id);
     case 'narrative.tag': pass=!!state.adventure?.story&&narrativeTags(state,registry).some(t=>t.role===condition.role&&t.tagId===condition.id)===condition.value;reason='当前故事状态不满足这个选择。';break;
     case 'resident.present': pass = residentPresent(state, condition.residentId); reason = '约定的居民此刻不在这里，请按其日程再来。'; break;
+    case 'resident.trust': pass=residentPresent(state,condition.residentId)&&(state.district?.residents.find(n=>n.id===condition.residentId)?.trust??0)>=condition.value;reason=`与约定居民的信任需要至少${condition.value}。`;break;
     case 'resident.relation': pass = residentRelation(state, condition.residentId, condition.relation); reason = '需要与该居民有相应的共同背景。'; break;
     case 'resident.memory': pass = (state.district?.residents.find(r => r.id === condition.residentId)?.memories.includes(condition.memoryId) ?? false) === condition.value; break;
     case 'body.matches': {const q=bodyMatches(state,registry,condition.target,condition.part);return q.known?{pass:q.value,reason:q.value?'':'身体部件条件不满足。',known:true}:{pass:false,reason:q.reason,known:false};}

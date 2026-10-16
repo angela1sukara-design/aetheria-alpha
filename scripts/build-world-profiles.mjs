@@ -51,11 +51,11 @@ export async function buildWorldProfiles() {
     for (const [route, routeKey] of ['resource','stewardship'].entries()) {
       const stages = stageRows.slice(route*4,route*4+4).map(([title,locationType,milestone,a,b],i) => {
         const id = `${routeKey}_s${i+1}`, flag = i===3?'main:flag.top_reached':`main:flag.${routeKey}.${i+1}`;
-        const outcome = action => `你${action}。${milestone}。${i===3?`你以${route? ruler:rich}的身份站上顶点。`:'这项权利已由现场各方确认。'}`;
+        const outcome = action => `你${action}，顺利${milestone}。${i===3?`自此，你以${route? ruler:rich}的身份在${name}真正站稳了顶点。`:'在场各方当面签字画押，将这份新格局落到了实处。'}`;
         const choices = [choice('a',a,outcome(a),20),choice('b',b,outcome(b),25)];
-        if(i<3)choices.push(choice('supported',`采用「${sideRows[route*3+i][0]}」的处理记录`, `你用已确认的处理记录解决了本次谈判中的争议，随后完成现场交接。${milestone}。`,10,[support[route*3+i]]));
+        if(i<3)choices.push(choice('supported',`援引「${sideRows[route*3+i][0]}」的先例化解僵局`, `你拿出先前妥善处置「${sideRows[route*3+i][0]}」的凭据，让争执双方心服口服地退让一步，当场${milestone}。`,10,[support[route*3+i]]));
         execution.stages[id]=choices;
-        return {id,name:title,locationType,objective:`${milestone}。${i===3?'控制权必须完成实际交接。':'需要当场落实约定，传闻或口头承诺不算完成。'}`,flag,actions:choices.map(c=>c.label),requires:[i===0?'main:flag.started':`main:flag.${routeKey}.${i}`],next:i===3?[]:[`${routeKey}_s${i+2}`]};
+        return {id,name:title,locationType,objective:`${milestone}（需在当地当面敲定方案并完成交接）。`,flag,actions:choices.map(c=>c.label),requires:[i===0?'main:flag.started':`main:flag.${routeKey}.${i}`],next:i===3?[]:[`${routeKey}_s${i+2}`]};
       });
       source.mainQuest.paths.push({id:`path.${routeKey}`,style:`${route?'权力争夺':'资源经营'}：成为${route?ruler:rich}`,stages});
       stages.slice(0,-1).forEach((s,i)=>source.mainQuest.journal.push({unlockFlag:s.flag,text:stages[i+1].objective}));

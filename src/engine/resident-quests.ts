@@ -20,6 +20,14 @@ export function rememberResident(state: GameState, registry: Registry, residentI
   if (!resident.memories.includes(memoryId)) resident.memories.push(memoryId);
   resident.persistent = true;
 }
+/** Uses the existing validated trust field; arbitrary UI targets cannot change it. */
+export function changeResidentTrust(state:GameState,registry:Registry,residentId:string,amount:number){
+ const event=activeEvent(state);
+ if(!Number.isSafeInteger(amount)||Math.abs(amount)>100||!event||!registry.event(event.definitionId).residentIds?.includes(residentId)||!residentPresent(state,residentId))throw new RuleError('RESIDENT_TRUST_CONTEXT','信任只能在约定居民在场的事件中更新。');
+ const resident=state.district!.residents.find(n=>n.id===residentId)!,before=resident.trust;
+ resident.trust=Math.max(0,Math.min(1000000,before+amount));resident.persistent=true;
+ return {name:resident.name,before,after:resident.trust};
+}
 export function residentMemoryText(memoryId: string, registry: Registry): string {
   const conversation=memoryId.match(/^conversation:(welcomed|declined|gift):\d+$/);
   if(conversation)return ({welcomed:'曾明确愿意继续交谈',declined:'曾结束一次不愉快的交谈',gift:'接受过实际赠送的心意'} as Record<string,string>)[conversation[1]!]!;

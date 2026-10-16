@@ -11,7 +11,7 @@ import { applyDistrictEffect } from './district-effects.ts';
 import { aftertasteDecay, isSanityHostileLocation, routeDistanceTier, routeDurationMinutes, routeStaminaCost, SANITY_PASSIVE_DRAIN_ENABLED, SANITY_PASSIVE_DRAIN_INTERVAL, sanityPassiveDrainSteps, sanityRestDelta, skillResourceOutOfCombatRegen, staminaGate } from './numerics.ts';
 import { SANITY_BREAK_FLAG, SANITY_ID } from '../persistence/vars-migration.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
-import { residentPresent, rememberResident } from './resident-quests.ts';
+import { residentPresent, rememberResident, changeResidentTrust } from './resident-quests.ts';
 import { startNarrative, advanceNarrative } from './narrative.ts';
 import { advanceAdventureDay, applyProgression } from './progression.ts';
 export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id; narrativeChoice?: { nodeId: import('../core/types.ts').Id; index: number } }
@@ -26,6 +26,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       case 'narrative.choose': advanceNarrative(draft,registry,context,effect.index,applyEffects);break;
       case 'adventure.change': case 'progression.act': applyProgression(effect,draft,registry,context,applyEffects);break;
       case 'resident.remember': rememberResident(draft, registry, effect.residentId, effect.memoryId); break;
+      case 'resident.trust.change': {const c=changeResidentTrust(draft,registry,effect.residentId,effect.amount);if(c.before!==c.after)context.changes.push({label:`${c.name}的信任`,before:c.before,after:c.after});break;}
       case 'world.encounter': { const id = encounter(draft,registry,effect.events !== false); if(id) applyEffects([{op:'event.start',id}],draft,registry,context); else context.resolvedTexts.push(effect.events === false ? (draft.district?.currentResidentId ? '你向另一位在场居民打了招呼，可以继续交谈或协助。' : '此刻没有居民在这里停留。可以查看公共活动时段，再等候或前往其他地点。') : '街区暂时平静。你留意了周围的人与路况。'); break; }
       case 'resident.talk': case 'resident.help': context.resolvedTexts.push(residentInteraction(draft,registry,effect.op === 'resident.help')); break;
       case 'combat.start': case 'combat.encounter': case 'combat.turn': case 'scene.start': case 'scene.act': case 'equipment.wear': case 'equipment.remove': case 'item.use': case 'item.gain': case 'item.consume': case 'player.create': case 'preference.set':

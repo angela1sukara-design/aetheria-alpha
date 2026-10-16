@@ -32,14 +32,21 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   const stamina = state.player.variables[STAMINA_ID] ?? 100;
   const gate = staminaGate(stamina);
   const strict=usesFunctions(state,registry), supported=districtOptions(state,registry,allActions).filter(a=>{
+    // Show the current personal chapter/commission phase. Trust, waiting days
+    // and resources remain visible restrictions; completed/future phases do not.
+    if(a.id.startsWith('worldgen:action.personal.')&&a.effects.some(e=>e.op==='event.start')&&a.conditions.some(c=>c.op==='flag.has'&&!evaluate(c,state,registry).pass))return false;
     if(a.conditions.some(c=>c.op==='service.available'&&!serviceAvailable(state,registry,c)))return false;
     const need=requiredFunction(a,publicActionEffects(a,state,registry));
     return !strict||!!a.context||!need||serviceAvailable(state,registry,need);
   });
   const preferred=new Map<string,ActionDef>();
-  const score=(a:ActionDef)=>a.effects.some(e=>e.op==='resident.help'||e.op==='resident.talk')?1000:a.effects.reduce((n,e)=>n+(e.op==='var.change'&&e.amount>0&&['core:energy','core:stamina','core:health'].includes(e.id)?e.amount*10:e.op==='clock.advance'?-e.minutes:0),0);
-  if(strict)for(const a of supported){const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);if(key&&!a.context&&!a.effects.some(e=>e.op==='narrative.choose')){const old=preferred.get(key);if(!old||score(a)>score(old))preferred.set(key,a);}}
-  return supported.filter(a=>{if(!strict||a.context||a.effects.some(e=>e.op==='narrative.choose'))return true;const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);return !key||preferred.get(key)===a;}).map(source => {
+  const waitingPersonalDay=Object.entries(state.district?.factsAt??{}).some(([key,at])=>{
+    const m=/^worldgen:flag.personal.story\.(\d+)\.s([0-2])$/.exec(key);
+    return !!m&&state.player.flags[key as Id]&&!state.player.flags[`worldgen:flag.personal.story.${m[1]}.s${Number(m[2])+1}`]&&Math.floor(at/1440)===Math.floor(state.clock.totalMinutes/1440);
+  });
+  const score=(a:ActionDef)=>a.id.startsWith('worldgen:action.personal.waitday.')?(waitingPersonalDay?2000:-2000):a.effects.some(e=>e.op==='resident.help'||e.op==='resident.talk')?1000:a.effects.reduce((n,e)=>n+(e.op==='var.change'&&e.amount>0&&['core:energy','core:stamina','core:health'].includes(e.id)?e.amount*10:e.op==='clock.advance'?-e.minutes:0),0);
+  if(strict)for(const a of supported){const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);if(key&&!a.context&&!a.effects.some(e=>e.op==='narrative.choose'||e.op==='event.start')){const old=preferred.get(key);if(!old||score(a)>score(old))preferred.set(key,a);}}
+  return supported.filter(a=>{if(!strict||a.context||a.effects.some(e=>e.op==='narrative.choose'||e.op==='event.start'))return true;const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);return !key||preferred.get(key)===a;}).map(source => {
     const need=strict&&!source.context?requiredFunction(source,publicActionEffects(source,state,registry)):undefined;
     const decorated=conversationEntryAction(describeResidentAction(source,state,registry),state,registry);
     const definition=need?{...decorated,conditions:[...decorated.conditions,{op:'service.available' as const,...need}]}:decorated;

@@ -19,6 +19,7 @@ import { compileWorldScenes } from './scenes.ts';
 import { compileBObservations } from './b-observations.ts';
 import { compileATemplates } from './a-templates.ts';
 import { compileResidentServices } from './resident-services.ts';
+import { compilePersonalContent } from './personal-content.ts';
 import { compileCombatEncounters } from './combat-encounters.ts';
 import { proseProblem } from '../content/player-prose.ts';
 import { generatePersonalName, formatName } from './names.ts';
@@ -283,6 +284,7 @@ export class WorldGenerator {
     compileCombatEncounters(pack, definition, input.registry);
     definition.eventPool=[...new Set([...definition.eventPool,...pack.events.filter(e=>e.id.startsWith('worldgen:event.danger.')).map(e=>e.id)])];
     compileResidentServices(pack,input.registry);
+    compilePersonalContent(pack,definition,agents,input.registry,input.seed);
     compileWorldScenes(pack, definition, input.registry);
     compileBObservations(pack, definition, input.registry, input.seed);
     compileATemplates(pack, definition, input.registry, input.seed);

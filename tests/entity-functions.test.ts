@@ -90,7 +90,8 @@ test('facilities control sleep and treatment; one rest and one waiting action re
     const state=structuredClone(world.state);state.world.locationId=place.id;state.district!.currentResidentId=null;
     const engine=new ActionExecutor(world.registry,state),options=engine.view().actions;
     assert.equal(options.some(a=>a.definition.id==='progression:action.sleep'),place.service==='home');
-    const care=options.filter(a=>a.definition.conditions.some(c=>c.op==='service.available'&&c.subject==='location'&&c.service==='care'));
+    // A personal story can require a clinic; it does not perform treatment.
+    const care=options.filter(a=>!a.definition.effects.some(e=>e.op==='event.start')&&a.definition.conditions.some(c=>c.op==='service.available'&&c.subject==='location'&&c.service==='care'));
     assert.equal(care.length,place.service==='clinic'?1:0);
     for(const service of ['rest','wait'])assert.equal(options.filter(a=>a.definition.conditions.some(c=>c.op==='service.available'&&c.subject==='location'&&c.service===service)).length,1,place.service+':'+service);
     assert.ok(!options.some(a=>a.definition.effects.some(f=>f.op==='environment.setLight')));

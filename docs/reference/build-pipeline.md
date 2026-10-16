@@ -14,6 +14,7 @@
 | 4 | `scripts/build-b-observations.mjs` | `content/prose/b-authoring-v2.json` | `src/world/b-observation-data.ts` |
 | 5 | `scripts/build-b-five-themes.mjs` | B 五题材计划 | `src/world/b-five-theme-data.ts` |
 | 6 | `scripts/build-a-templates.mjs` | A 模板与 tag 矩阵 | `src/engine/prose-assembly.generated.ts` 等 |
+| 6a | `scripts/build-personal-content.mjs` | 个人故事/职业原稿与显式结算计划 | `src/world/personal-content-data.ts` |
 | 7 | `scripts/build.mjs` | `src/**/*.ts` | `dist/`（剥类型 ESM） |
 | 8 | `scripts/build-standalone.mjs` | `dist/` | 单机 HTML 入口 |
 | 9 | `scripts/build-world-samples.mjs` | 生成配置 | 样例世界 |

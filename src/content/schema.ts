@@ -8,7 +8,7 @@ import { LOCATION_FACILITIES, LOCATION_SERVICES, RESIDENT_SERVICES } from '../co
 import { PackError } from '../core/errors.ts';
 import type { PackIssue } from '../core/errors.ts';
 import type { ContentPack } from '../core/types.ts';
-export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1', 'npc.fixed.v1', 'district.v1', 'quest.binding.v1', 'adventure.v1'] as const;
+export const CAPABILITIES = ['condition.v1', 'effect.v1', 'event.choice.v1', 'hook.action.v1', 'body.graph.v1', 'tf.pipeline.v1', 'hook.global.v1', 'npc.fixed.v1', 'district.v1', 'quest.binding.v1', 'adventure.v1', 'resident.story.v1'] as const;
 type Obj = Record<string, unknown>;
 /** 只冻结本切片实际使用的契约；未实现操作符必须导入失败，不能静默跳过。 */
 export function parsePack(input: unknown): ContentPack {
@@ -52,6 +52,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'day.after') { const x = obj(value,path,['op','flagId','days']); id(x.flagId,path); integer(x.days,path,1,30); }
     else if (op === 'scene.state') { const x = obj(value,path,['op','value']); choice(x.value,path,['active','paused','none']); }
     else if (op === 'resident.present') { const x = obj(value, path, ['op', 'residentId']); str(x.residentId, path); }
+    else if (op === 'resident.trust') { const x = obj(value,path,['op','residentId','value']);str(x.residentId,path);integer(x.value,path,0,1000000); }
     else if (op === 'resident.relation') { const x = obj(value, path, ['op', 'residentId', 'relation']); str(x.residentId, path); choice(x.relation, path, [...PLAYER_RELATIONS]); }
     else if (op === 'resident.memory') { const x = obj(value, path, ['op', 'residentId', 'memoryId', 'value']); str(x.residentId, path); id(x.memoryId, path); boolean(x.value, path); }
     else if (['conversation.present','conversation.adultEligible','conversation.giftAvailable'].includes(String(op))) obj(value,path,['op']);
@@ -78,6 +79,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (['tf.apply', 'tf.enqueue', 'tf.pause', 'tf.resume', 'tf.cancel'].includes(String(op))) { const x = obj(value, path, ['op', 'id']); id(x.id, `${path}/id`); }
     else if (op === 'npc.remember') { const x = obj(value, path, ['op', 'npcId', 'memoryId', 'relationship']); id(x.npcId, `${path}/npcId`); id(x.memoryId, `${path}/memoryId`); const d = obj(x.relationship, `${path}/relationship`, [...RELATION_FIELDS]); for (const field of RELATION_FIELDS) integer(d[field], `${path}/relationship/${field}`, -100, 100); }
     else if (op === 'resident.remember') { const x = obj(value, path, ['op', 'residentId', 'memoryId']); str(x.residentId, path); id(x.memoryId, path); }
+    else if (op === 'resident.trust.change') { const x=obj(value,path,['op','residentId','amount']);str(x.residentId,path);integer(x.amount,path,-100,100); }
     else if (op === 'world.encounter') { const x = obj(value,path,['op','events']); if (x.events !== undefined) boolean(x.events,path); }
     else if (['resident.talk','resident.help','equipment.remove'].includes(String(op))) obj(value,path,['op']);
     else if (op === 'combat.encounter') obj(value,path,['op']);

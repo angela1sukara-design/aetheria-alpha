@@ -41,95 +41,95 @@
   "actions": [],
   "events": [],
   "texts": {
-    "personality-dialogue:text.noble.start.0": "你与{opponent}在{place}开始交流。对方没有急于回应，而是先听完你的来意。谈到具体事情时，措辞格外认真。你先说明自己想聊些什么。",
-    "personality-dialogue:text.noble.start.0.positive": "你的认真让对方放下了一些保留。对方明确表示愿意再聊一会儿。",
+    "personality-dialogue:text.noble.start.0": "你与{opponent}在{place}开始交流。对方端正地停下脚步，目光沉静地听你把话说完。哪怕只是谈起日常小事，神色间也透着一股不敷衍的认真。你先说明自己想聊些什么。",
+    "personality-dialogue:text.noble.start.0.positive": "见你言辞得体、态度诚恳，对方微微颔首，眉宇间的疏离淡去了几分，示意不妨再多聊片刻。",
     "personality-dialogue:text.noble.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.noble.start.0.rude": "对方明确表示不愿继续这段交谈。你们就此结束。",
+    "personality-dialogue:text.noble.start.0.rude": "对方神色微敛，淡淡表示彼此话不投机，随即颔首告辞。",
     "personality-dialogue:text.noble.start.0.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.noble.start.1": "你与{opponent}在{place}开始交流。对方没有急于回应，而是先听完你的来意。谈到具体事情时，措辞格外认真。这次话题从当天的近况展开。",
-    "personality-dialogue:text.noble.start.1.positive": "你的认真让对方放下了一些保留。对方明确表示愿意再聊一会儿。",
+    "personality-dialogue:text.noble.start.1": "你与{opponent}在{place}开始交流。对方端正地停下脚步，目光沉静地听你把话说完。哪怕只是谈起日常小事，神色间也透着一股不敷衍的认真。这次话题从当天的近况展开。",
+    "personality-dialogue:text.noble.start.1.positive": "见你言辞得体、态度诚恳，对方微微颔首，眉宇间的疏离淡去了几分，示意不妨再多聊片刻。",
     "personality-dialogue:text.noble.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.noble.start.1.rude": "对方明确表示不愿继续这段交谈。你们就此结束。",
+    "personality-dialogue:text.noble.start.1.rude": "对方神色微敛，淡淡表示彼此话不投机，随即颔首告辞。",
     "personality-dialogue:text.noble.start.1.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.noble.deepen": "你和{opponent}都愿意继续这段交谈。你们逐渐找到共同关注的事情。对方仍重视分寸，却愿意听你的看法。",
-    "personality-dialogue:text.noble.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.noble.deepen": "你和{opponent}都愿意继续这段交谈。话匣子慢慢打开后，你们聊起了彼此近来留心的见闻。对方依然看重分寸，却已十分乐意倾听你的见解。",
+    "personality-dialogue:text.noble.deepen.finish": "你们把眼下的话从容聊透，彼此心照不宣地点头道别，留待日后再叙。",
     "personality-dialogue:text.noble.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
-    "personality-dialogue:text.noble.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.noble.deepen.private": "你轻声道出心意。{opponent}微微笑着应允，与你在安静的角落里贴近彼此、共度了一段温存而笃定的时光，随后才恋恋不舍地道别。",
     "personality-dialogue:text.noble.deepen.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.shy.start.0": "你与{opponent}在{place}开始交流。对方的回应不多，每次接话前都留出片刻停顿。你有时间决定交谈的节奏。你先说明自己想聊些什么。",
-    "personality-dialogue:text.shy.start.0.positive": "你没有催促。对方确认自己愿意继续，开始多说了一些近况。",
+    "personality-dialogue:text.shy.start.0": "你与{opponent}在{place}开始交流。对方听你开口时略微垂下眼帘，每次接话前都会轻轻吸一口气，声音不高，却在认真斟酌词句。你先说明自己想聊些什么。",
+    "personality-dialogue:text.shy.start.0.positive": "察觉到你没有半点催促的意思，对方紧绷的肩膀慢慢放松下来，小声同你说起了这两天的近况。",
     "personality-dialogue:text.shy.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.shy.start.0.rude": "对方表示这种催促让自己不舒服，结束了交谈。",
+    "personality-dialogue:text.shy.start.0.rude": "对方被突如其来的催促惊得退后半步，低声说了句失陪，匆匆结束了交谈。",
     "personality-dialogue:text.shy.start.0.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.shy.start.1": "你与{opponent}在{place}开始交流。对方的回应不多，每次接话前都留出片刻停顿。你有时间决定交谈的节奏。这次话题从当天的近况展开。",
-    "personality-dialogue:text.shy.start.1.positive": "你没有催促。对方确认自己愿意继续，开始多说了一些近况。",
+    "personality-dialogue:text.shy.start.1": "你与{opponent}在{place}开始交流。对方听你开口时略微垂下眼帘，每次接话前都会轻轻吸一口气，声音不高，却在认真斟酌词句。这次话题从当天的近况展开。",
+    "personality-dialogue:text.shy.start.1.positive": "察觉到你没有半点催促的意思，对方紧绷的肩膀慢慢放松下来，小声同你说起了这两天的近况。",
     "personality-dialogue:text.shy.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.shy.start.1.rude": "对方表示这种催促让自己不舒服，结束了交谈。",
+    "personality-dialogue:text.shy.start.1.rude": "对方被突如其来的催促惊得退后半步，低声说了句失陪，匆匆结束了交谈。",
     "personality-dialogue:text.shy.start.1.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.shy.deepen": "你和{opponent}都愿意继续这段交谈。交谈的停顿变得自然。对方可以慢慢说完，你也听得更清楚。",
-    "personality-dialogue:text.shy.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.shy.deepen": "你和{opponent}都愿意继续这段交谈。交谈的节奏变得温和而自然。哪怕中间偶有安静的停顿，也不让人觉得局促，对方眼中多了几分安心。",
+    "personality-dialogue:text.shy.deepen.finish": "你们把眼下的话从容聊透，彼此心照不宣地点头道别，留待日后再叙。",
     "personality-dialogue:text.shy.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
-    "personality-dialogue:text.shy.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.shy.deepen.private": "你轻声道出心意。{opponent}微微笑着应允，与你在安静的角落里贴近彼此、共度了一段温存而笃定的时光，随后才恋恋不舍地道别。",
     "personality-dialogue:text.shy.deepen.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.forthright.start.0": "你与{opponent}在{place}开始交流。对方很快把话题带到眼前的事情上。态度坦率，也愿意听清你的意见。你先说明自己想聊些什么。",
-    "personality-dialogue:text.forthright.start.0.positive": "对方认可你把话说明白的做法，明确答应继续交流。",
+    "personality-dialogue:text.forthright.start.0": "你与{opponent}在{place}开始交流。对方爽快地停下手头的活计，开门见山地问你今天有什么新鲜事，眼神明亮而坦率。你先说明自己想聊些什么。",
+    "personality-dialogue:text.forthright.start.0.positive": "对方朗声一笑，很欣赏你不绕弯子的脾气，当即拍了拍衣袖邀你接着往下聊。",
     "personality-dialogue:text.forthright.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.forthright.start.0.rude": "对方直接指出你的失礼，并表示今天不再继续聊。",
+    "personality-dialogue:text.forthright.start.0.rude": "对方眉头一皱，直言不喜欢这种敷衍应付的腔调，摆摆手表示今天到此为止。",
     "personality-dialogue:text.forthright.start.0.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.forthright.start.1": "你与{opponent}在{place}开始交流。对方很快把话题带到眼前的事情上。态度坦率，也愿意听清你的意见。这次话题从当天的近况展开。",
-    "personality-dialogue:text.forthright.start.1.positive": "对方认可你把话说明白的做法，明确答应继续交流。",
+    "personality-dialogue:text.forthright.start.1": "你与{opponent}在{place}开始交流。对方爽快地停下手头的活计，开门见山地问你今天有什么新鲜事，眼神明亮而坦率。这次话题从当天的近况展开。",
+    "personality-dialogue:text.forthright.start.1.positive": "对方朗声一笑，很欣赏你不绕弯子的脾气，当即拍了拍衣袖邀你接着往下聊。",
     "personality-dialogue:text.forthright.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.forthright.start.1.rude": "对方直接指出你的失礼，并表示今天不再继续聊。",
+    "personality-dialogue:text.forthright.start.1.rude": "对方眉头一皱，直言不喜欢这种敷衍应付的腔调，摆摆手表示今天到此为止。",
     "personality-dialogue:text.forthright.start.1.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.forthright.deepen": "你和{opponent}都愿意继续这段交谈。你们交换了各自的看法。有不同意见时，也能直接讲清原因。",
-    "personality-dialogue:text.forthright.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.forthright.deepen": "你和{opponent}都愿意继续这段交谈。你们痛快地交换了对眼下局势的看法。就算偶有不同主张，也能敞开天窗说亮话，越聊越投机。",
+    "personality-dialogue:text.forthright.deepen.finish": "你们把眼下的话从容聊透，彼此心照不宣地点头道别，留待日后再叙。",
     "personality-dialogue:text.forthright.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
-    "personality-dialogue:text.forthright.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.forthright.deepen.private": "你轻声道出心意。{opponent}微微笑着应允，与你在安静的角落里贴近彼此、共度了一段温存而笃定的时光，随后才恋恋不舍地道别。",
     "personality-dialogue:text.forthright.deepen.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.calculating.start.0": "你与{opponent}在{place}开始交流。对方先问你希望了解什么，再说明自己能够回答的范围。交谈讲究清楚和实际。你先说明自己想聊些什么。",
-    "personality-dialogue:text.calculating.start.0.positive": "你把问题说得具体。对方确认愿意继续，但没有承诺未谈妥的事情。",
+    "personality-dialogue:text.calculating.start.0": "你与{opponent}在{place}开始交流。对方一边整理手边的物件，一边温和而干脆地问起你的来意，言谈间条理分明，从不轻率许诺。你先说明自己想聊些什么。",
+    "personality-dialogue:text.calculating.start.0.positive": "见你是个明白事理的人，对方眼中露出赞许之色，放下手头杂务与你细聊起来。",
     "personality-dialogue:text.calculating.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.calculating.start.0.rude": "对方拒绝了这个要求，结束了交谈。",
+    "personality-dialogue:text.calculating.start.0.rude": "对方平静地合上手头的册子，直言这笔账算不通，客气而坚决地送客道别。",
     "personality-dialogue:text.calculating.start.0.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.calculating.start.1": "你与{opponent}在{place}开始交流。对方先问你希望了解什么，再说明自己能够回答的范围。交谈讲究清楚和实际。这次话题从当天的近况展开。",
-    "personality-dialogue:text.calculating.start.1.positive": "你把问题说得具体。对方确认愿意继续，但没有承诺未谈妥的事情。",
+    "personality-dialogue:text.calculating.start.1": "你与{opponent}在{place}开始交流。对方一边整理手边的物件，一边温和而干脆地问起你的来意，言谈间条理分明，从不轻率许诺。这次话题从当天的近况展开。",
+    "personality-dialogue:text.calculating.start.1.positive": "见你是个明白事理的人，对方眼中露出赞许之色，放下手头杂务与你细聊起来。",
     "personality-dialogue:text.calculating.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.calculating.start.1.rude": "对方拒绝了这个要求，结束了交谈。",
+    "personality-dialogue:text.calculating.start.1.rude": "对方平静地合上手头的册子，直言这笔账算不通，客气而坚决地送客道别。",
     "personality-dialogue:text.calculating.start.1.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.calculating.deepen": "你和{opponent}都愿意继续这段交谈。你们把容易误会的地方逐一说清，逐渐形成了更明确的理解。",
-    "personality-dialogue:text.calculating.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.calculating.deepen": "你和{opponent}都愿意继续这段交谈。你们把来龙去脉逐一理顺，没有半句虚浮的客套，却在彼此心里立下了踏实的信誉。",
+    "personality-dialogue:text.calculating.deepen.finish": "你们把眼下的话从容聊透，彼此心照不宣地点头道别，留待日后再叙。",
     "personality-dialogue:text.calculating.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
-    "personality-dialogue:text.calculating.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.calculating.deepen.private": "你轻声道出心意。{opponent}微微笑着应允，与你在安静的角落里贴近彼此、共度了一段温存而笃定的时光，随后才恋恋不舍地道别。",
     "personality-dialogue:text.calculating.deepen.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.devout.start.0": "你与{opponent}在{place}开始交流。对方认真对待自己的原则，也愿意听你表达。哪些话题可以谈，始终说得清楚。你先说明自己想聊些什么。",
-    "personality-dialogue:text.devout.start.0.positive": "你承认彼此可以保留不同看法。对方明确表示愿意继续交谈。",
+    "personality-dialogue:text.devout.start.0": "你与{opponent}在{place}开始交流。对方神色温和而克制，举手投足间守着一贯的行事准则，在听你说话时目光始终专注。你先说明自己想聊些什么。",
+    "personality-dialogue:text.devout.start.0.positive": "感受到你的理解与尊重，对方轻轻欠身致意，语调平和地与你聊起了心中的坚持。",
     "personality-dialogue:text.devout.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.devout.start.0.rude": "对方说明自己无法接受这样的态度，结束了交谈。",
+    "personality-dialogue:text.devout.start.0.rude": "对方摇了摇头，平静地表示此事不可轻侮，随后向你礼貌告退。",
     "personality-dialogue:text.devout.start.0.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.devout.start.1": "你与{opponent}在{place}开始交流。对方认真对待自己的原则，也愿意听你表达。哪些话题可以谈，始终说得清楚。这次话题从当天的近况展开。",
-    "personality-dialogue:text.devout.start.1.positive": "你承认彼此可以保留不同看法。对方明确表示愿意继续交谈。",
+    "personality-dialogue:text.devout.start.1": "你与{opponent}在{place}开始交流。对方神色温和而克制，举手投足间守着一贯的行事准则，在听你说话时目光始终专注。这次话题从当天的近况展开。",
+    "personality-dialogue:text.devout.start.1.positive": "感受到你的理解与尊重，对方轻轻欠身致意，语调平和地与你聊起了心中的坚持。",
     "personality-dialogue:text.devout.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.devout.start.1.rude": "对方说明自己无法接受这样的态度，结束了交谈。",
+    "personality-dialogue:text.devout.start.1.rude": "对方摇了摇头，平静地表示此事不可轻侮，随后向你礼貌告退。",
     "personality-dialogue:text.devout.start.1.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.devout.deepen": "你和{opponent}都愿意继续这段交谈。你们讨论各自重视的事情，没有要求谁放弃原有的原则。",
-    "personality-dialogue:text.devout.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.devout.deepen": "你和{opponent}都愿意继续这段交谈。你们静下心来谈起各自珍视的信条，虽经历不同，却在这份纯粹的坦诚里生出了几分惺惺相惜。",
+    "personality-dialogue:text.devout.deepen.finish": "你们把眼下的话从容聊透，彼此心照不宣地点头道别，留待日后再叙。",
     "personality-dialogue:text.devout.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
-    "personality-dialogue:text.devout.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.devout.deepen.private": "你轻声道出心意。{opponent}微微笑着应允，与你在安静的角落里贴近彼此、共度了一段温存而笃定的时光，随后才恋恋不舍地道别。",
     "personality-dialogue:text.devout.deepen.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.playful.start.0": "你与{opponent}在{place}开始交流。对方用一个轻松的问题打开话题。气氛活泼，但你仍可以认真表达或随时结束。你先说明自己想聊些什么。",
-    "personality-dialogue:text.playful.start.0.positive": "对方欣然同意继续聊，也确认你们都可以随时结束。",
+    "personality-dialogue:text.playful.start.0": "你与{opponent}在{place}开始交流。对方眨了眨眼，先用一句俏皮的闲话打趣了今天的天气，把周遭沉闷的气氛一下子带得活络起来。你先说明自己想聊些什么。",
+    "personality-dialogue:text.playful.start.0.positive": "对方眉眼弯弯地笑了起来，饶有兴致地邀你坐下再聊几句街坊趣闻。",
     "personality-dialogue:text.playful.start.0.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.playful.start.0.rude": "对方明确说这并不好笑，随后结束了交谈。",
+    "personality-dialogue:text.playful.start.0.rude": "对方收起笑容，直言这种玩笑并不好笑，随即转身结束了交谈。",
     "personality-dialogue:text.playful.start.0.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.playful.start.1": "你与{opponent}在{place}开始交流。对方用一个轻松的问题打开话题。气氛活泼，但你仍可以认真表达或随时结束。这次话题从当天的近况展开。",
-    "personality-dialogue:text.playful.start.1.positive": "对方欣然同意继续聊，也确认你们都可以随时结束。",
+    "personality-dialogue:text.playful.start.1": "你与{opponent}在{place}开始交流。对方眨了眨眼，先用一句俏皮的闲话打趣了今天的天气，把周遭沉闷的气氛一下子带得活络起来。这次话题从当天的近况展开。",
+    "personality-dialogue:text.playful.start.1.positive": "对方眉眼弯弯地笑了起来，饶有兴致地邀你坐下再聊几句街坊趣闻。",
     "personality-dialogue:text.playful.start.1.neutral": "你们聊完眼前的近况，平和地结束了这次交流。",
-    "personality-dialogue:text.playful.start.1.rude": "对方明确说这并不好笑，随后结束了交谈。",
+    "personality-dialogue:text.playful.start.1.rude": "对方收起笑容，直言这种玩笑并不好笑，随即转身结束了交谈。",
     "personality-dialogue:text.playful.start.1.exit": "你结束这次交谈，继续自己的安排。",
-    "personality-dialogue:text.playful.deepen": "你和{opponent}都愿意继续这段交谈。玩笑之后，你们开始说起真正关心的事情。交谈轻松，也保留了彼此的分寸。",
-    "personality-dialogue:text.playful.deepen.finish": "你们把这次的话说完，没有把交谈当成尚未约定的任务或承诺。",
+    "personality-dialogue:text.playful.deepen": "你和{opponent}都愿意继续这段交谈。几句玩笑过后，话题自然而然转到了彼此真正挂心的日常上。气氛轻松惬意，又恰到好处地留着体面。",
+    "personality-dialogue:text.playful.deepen.finish": "你们把眼下的话从容聊透，彼此心照不宣地点头道别，留待日后再叙。",
     "personality-dialogue:text.playful.deepen.gift": "你留下一份黑麦干粮。{opponent}接受了这份心意，你们随后道别。",
-    "personality-dialogue:text.playful.deepen.private": "你先说明自己的想法。{opponent}明确表示愿意，你们在彼此认可的分寸内度过一段安静的相处时光，随后各自继续安排。",
+    "personality-dialogue:text.playful.deepen.private": "你轻声道出心意。{opponent}微微笑着应允，与你在安静的角落里贴近彼此、共度了一段温存而笃定的时光，随后才恋恋不舍地道别。",
     "personality-dialogue:text.playful.deepen.exit": "你结束这次交谈，继续自己的安排。"
   },
   "contributions": [],
@@ -171,7 +171,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真说明来意，询问是否愿意继续",
+          "label": "以相称的礼数说明来意，请教对方的看法",
           "resultText": "personality-dialogue:text.noble.start.0.positive",
           "effects": [
             {
@@ -216,7 +216,7 @@
           "next": null
         },
         {
-          "label": "嘲弄对方讲究礼数",
+          "label": "出言讥讽对方过于端着架子",
           "resultText": "personality-dialogue:text.noble.start.0.rude",
           "effects": [
             {
@@ -273,7 +273,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真说明来意，询问是否愿意继续",
+          "label": "以相称的礼数说明来意，请教对方的看法",
           "resultText": "personality-dialogue:text.noble.start.1.positive",
           "effects": [
             {
@@ -318,7 +318,7 @@
           "next": null
         },
         {
-          "label": "嘲弄对方讲究礼数",
+          "label": "出言讥讽对方过于端着架子",
           "resultText": "personality-dialogue:text.noble.start.1.rude",
           "effects": [
             {
@@ -379,7 +379,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真听完，结束这次交谈",
+          "label": "认真听完，温和道别",
           "resultText": "personality-dialogue:text.noble.deepen.finish",
           "effects": [
             {
@@ -433,7 +433,7 @@
           "next": null
         },
         {
-          "label": "询问是否愿意更亲近地相处",
+          "label": "询问是否愿意更亲近地独处片刻",
           "resultText": "personality-dialogue:text.noble.deepen.private",
           "effects": [
             {
@@ -497,7 +497,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "留出回应的时间，询问是否愿意继续",
+          "label": "放缓语速，给对方留出从容接话的空档",
           "resultText": "personality-dialogue:text.shy.start.0.positive",
           "effects": [
             {
@@ -542,7 +542,7 @@
           "next": null
         },
         {
-          "label": "催促对方立刻回答",
+          "label": "不耐烦地催促对方快点把话说完",
           "resultText": "personality-dialogue:text.shy.start.0.rude",
           "effects": [
             {
@@ -599,7 +599,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "留出回应的时间，询问是否愿意继续",
+          "label": "放缓语速，给对方留出从容接话的空档",
           "resultText": "personality-dialogue:text.shy.start.1.positive",
           "effects": [
             {
@@ -644,7 +644,7 @@
           "next": null
         },
         {
-          "label": "催促对方立刻回答",
+          "label": "不耐烦地催促对方快点把话说完",
           "resultText": "personality-dialogue:text.shy.start.1.rude",
           "effects": [
             {
@@ -705,7 +705,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真听完，结束这次交谈",
+          "label": "认真听完，温和道别",
           "resultText": "personality-dialogue:text.shy.deepen.finish",
           "effects": [
             {
@@ -759,7 +759,7 @@
           "next": null
         },
         {
-          "label": "询问是否愿意更亲近地相处",
+          "label": "询问是否愿意更亲近地独处片刻",
           "resultText": "personality-dialogue:text.shy.deepen.private",
           "effects": [
             {
@@ -823,7 +823,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "直接说明想法，询问是否愿意继续",
+          "label": "直截了当地说出自己的想法与打算",
           "resultText": "personality-dialogue:text.forthright.start.0.positive",
           "effects": [
             {
@@ -868,7 +868,7 @@
           "next": null
         },
         {
-          "label": "轻视对方的意见",
+          "label": "敷衍轻慢地打断对方的直白建议",
           "resultText": "personality-dialogue:text.forthright.start.0.rude",
           "effects": [
             {
@@ -925,7 +925,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "直接说明想法，询问是否愿意继续",
+          "label": "直截了当地说出自己的想法与打算",
           "resultText": "personality-dialogue:text.forthright.start.1.positive",
           "effects": [
             {
@@ -970,7 +970,7 @@
           "next": null
         },
         {
-          "label": "轻视对方的意见",
+          "label": "敷衍轻慢地打断对方的直白建议",
           "resultText": "personality-dialogue:text.forthright.start.1.rude",
           "effects": [
             {
@@ -1031,7 +1031,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真听完，结束这次交谈",
+          "label": "认真听完，温和道别",
           "resultText": "personality-dialogue:text.forthright.deepen.finish",
           "effects": [
             {
@@ -1085,7 +1085,7 @@
           "next": null
         },
         {
-          "label": "询问是否愿意更亲近地相处",
+          "label": "询问是否愿意更亲近地独处片刻",
           "resultText": "personality-dialogue:text.forthright.deepen.private",
           "effects": [
             {
@@ -1149,7 +1149,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "说清问题与边界，询问是否愿意继续",
+          "label": "把想打听的事和盘托出，讲明彼此的界限",
           "resultText": "personality-dialogue:text.calculating.start.0.positive",
           "effects": [
             {
@@ -1194,7 +1194,7 @@
           "next": null
         },
         {
-          "label": "要求对方无条件为你效劳",
+          "label": "强行要求对方无偿替你办妥难事",
           "resultText": "personality-dialogue:text.calculating.start.0.rude",
           "effects": [
             {
@@ -1251,7 +1251,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "说清问题与边界，询问是否愿意继续",
+          "label": "把想打听的事和盘托出，讲明彼此的界限",
           "resultText": "personality-dialogue:text.calculating.start.1.positive",
           "effects": [
             {
@@ -1296,7 +1296,7 @@
           "next": null
         },
         {
-          "label": "要求对方无条件为你效劳",
+          "label": "强行要求对方无偿替你办妥难事",
           "resultText": "personality-dialogue:text.calculating.start.1.rude",
           "effects": [
             {
@@ -1357,7 +1357,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真听完，结束这次交谈",
+          "label": "认真听完，温和道别",
           "resultText": "personality-dialogue:text.calculating.deepen.finish",
           "effects": [
             {
@@ -1411,7 +1411,7 @@
           "next": null
         },
         {
-          "label": "询问是否愿意更亲近地相处",
+          "label": "询问是否愿意更亲近地独处片刻",
           "resultText": "personality-dialogue:text.calculating.deepen.private",
           "effects": [
             {
@@ -1475,7 +1475,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "尊重对方的原则，询问是否愿意继续",
+          "label": "尊重对方的行事准则，温和地展开话题",
           "resultText": "personality-dialogue:text.devout.start.0.positive",
           "effects": [
             {
@@ -1520,7 +1520,7 @@
           "next": null
         },
         {
-          "label": "贬低对方坚持的原则",
+          "label": "出言轻慢对方一直坚守的信念",
           "resultText": "personality-dialogue:text.devout.start.0.rude",
           "effects": [
             {
@@ -1577,7 +1577,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "尊重对方的原则，询问是否愿意继续",
+          "label": "尊重对方的行事准则，温和地展开话题",
           "resultText": "personality-dialogue:text.devout.start.1.positive",
           "effects": [
             {
@@ -1622,7 +1622,7 @@
           "next": null
         },
         {
-          "label": "贬低对方坚持的原则",
+          "label": "出言轻慢对方一直坚守的信念",
           "resultText": "personality-dialogue:text.devout.start.1.rude",
           "effects": [
             {
@@ -1683,7 +1683,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真听完，结束这次交谈",
+          "label": "认真听完，温和道别",
           "resultText": "personality-dialogue:text.devout.deepen.finish",
           "effects": [
             {
@@ -1737,7 +1737,7 @@
           "next": null
         },
         {
-          "label": "询问是否愿意更亲近地相处",
+          "label": "询问是否愿意更亲近地独处片刻",
           "resultText": "personality-dialogue:text.devout.deepen.private",
           "effects": [
             {
@@ -1801,7 +1801,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "接住话题，询问是否愿意继续",
+          "label": "笑着接住对方的话头，顺势聊下去",
           "resultText": "personality-dialogue:text.playful.start.0.positive",
           "effects": [
             {
@@ -1846,7 +1846,7 @@
           "next": null
         },
         {
-          "label": "用贬低对方的玩笑取乐",
+          "label": "拿刻薄的玩笑去试探对方的底线",
           "resultText": "personality-dialogue:text.playful.start.0.rude",
           "effects": [
             {
@@ -1903,7 +1903,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "接住话题，询问是否愿意继续",
+          "label": "笑着接住对方的话头，顺势聊下去",
           "resultText": "personality-dialogue:text.playful.start.1.positive",
           "effects": [
             {
@@ -1948,7 +1948,7 @@
           "next": null
         },
         {
-          "label": "用贬低对方的玩笑取乐",
+          "label": "拿刻薄的玩笑去试探对方的底线",
           "resultText": "personality-dialogue:text.playful.start.1.rude",
           "effects": [
             {
@@ -2009,7 +2009,7 @@
       "maxVisits": 1,
       "choices": [
         {
-          "label": "认真听完，结束这次交谈",
+          "label": "认真听完，温和道别",
           "resultText": "personality-dialogue:text.playful.deepen.finish",
           "effects": [
             {
@@ -2063,7 +2063,7 @@
           "next": null
         },
         {
-          "label": "询问是否愿意更亲近地相处",
+          "label": "询问是否愿意更亲近地独处片刻",
           "resultText": "personality-dialogue:text.playful.deepen.private",
           "effects": [
             {

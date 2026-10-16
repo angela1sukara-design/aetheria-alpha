@@ -49,6 +49,9 @@ export function serviceAvailable(s: GameState, r: Registry, need: ServiceRequire
   return !!need.id && !!services.teach?.includes(need.id) && serviceAvailable(s, r, { subject: 'location', service: 'train' });
 }
 export function requiredFunction(a: ActionDef, effects: Effect[]): ServiceRequirement | undefined {
+  // A story may require a care/work facility without itself being treatment or
+  // employment. Its explicit prerequisites still run through evaluate.
+  if(effects.some(e=>e.op==='event.start'))return undefined;
   const explicit = a.conditions.find(c => c.op === 'service.available');
   if (explicit?.op === 'service.available') return explicit;
   for (const e of effects) {

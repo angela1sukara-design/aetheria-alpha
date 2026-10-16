@@ -51,6 +51,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     if (d.pack !== p && !p.manifest.dependencies.some(x => x.id === d.pack.manifest.id)) fail(p, 'UNDECLARED_DEPENDENCY', path, `引用 ${id} 需要显式依赖其包。`, id);
   }
   function checkCondition(p: ContentPack, c: Condition, path: string): void {
+    if(c.op==='resident.trust'&&!p.manifest.requiresCapabilities.includes('resident.story.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明resident.story.v1。');
     if(c.op==='service.available'&&c.subject==='resident'&&c.id)ref(p,c.id,c.service==='teach'?'variables':definitions.get(c.id)?.type==='items'?'items':'equipment',path);
     if((['adventure.compare','progression.available','narrative.tag'].includes(c.op)||c.op.startsWith('conversation.'))&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
     if(c.op==='progression.available'&&c.id){const buyType=definitions.has(c.id)&&definitions.get(c.id)!.type==='items'?'items':c.move==='buy'?'equipment':'variables';ref(p,c.id,c.move==='buy'?buyType:'variables',path);}
@@ -79,6 +80,11 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     }
   }
   function checkEffect(p: ContentPack, e: Effect, path: string, context?: { eventId: Id; nodeId: string }): void {
+    if(e.op==='resident.trust.change'){
+      checkResident(p,e.residentId,path);
+      const event=context?definitions.get(context.eventId)?.value as ContentPack['events'][number]|undefined:undefined;
+      if(!p.manifest.requiresCapabilities.includes('resident.story.v1')||!event?.residentIds?.includes(e.residentId))fail(p,'RESIDENT_TRUST_CONTEXT',path,'信任更新须声明能力且绑定在场事件参与者。');
+    }
     if(['narrative.start','narrative.choose','adventure.change','progression.act','combat.encounter','conversation.respond'].includes(e.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
     if (e.op === 'resident.remember') {
       checkResident(p, e.residentId, path); ref(p, e.memoryId, 'texts', path);

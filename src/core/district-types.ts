@@ -116,6 +116,7 @@ export interface DistrictDefinitions {
 export type DistrictEffect =
   | { op: 'item.consume'; id:Id; amount:number }
   | { op: 'resident.remember'; residentId: string; memoryId: Id }
+  | { op: 'resident.trust.change'; residentId: string; amount: number }
   | { op: 'world.encounter'; events?: boolean }
   | { op: 'resident.talk' | 'resident.help' }
   | { op: 'combat.start'; id: Id }
@@ -131,6 +132,7 @@ export type DistrictEffect =
   | { op: 'preference.set'; value: boolean };
 export type DistrictCondition =
   | { op: 'resident.present'; residentId: string }
+  | { op: 'resident.trust'; residentId: string; value: number }
   | { op: 'resident.relation'; residentId: string; relation: import('./quest-types.ts').PlayerRelation }
   | { op: 'resident.memory'; residentId: string; memoryId: Id; value: boolean }
   | { op: 'day.after'; flagId: Id; days: number }
