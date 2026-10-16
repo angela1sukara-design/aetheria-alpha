@@ -102,6 +102,12 @@ node --test tests/<与任务相关的>.test.ts
 - A/B 正文：`npm run test:a-content` / `npm run test:b-content`
 - 发版前整合：`npm run check`
 
+## Cursor Cloud specific instructions
+
+- 使用 Node.js 24（`/usr/local/bin/node`）。`package.json` 的 `engines` 要求 `>=24`。
+- 开发服务器：`npm run dev`。它编译 `src/` 到 `dist/`，并在 `http://127.0.0.1:4173/` 提供页面。
+- 运行 `npm test` 时设置 `LANG=zh_CN.UTF-8` 与 `LC_ALL=zh_CN.UTF-8`。词库测试用 `localeCompare` 的 zh-CN 顺序对照已提交的中文文件名。
+
 ## 离线 / 无仓库 AI
 
 按 [安装规范](docs/reference/ai-install-spec.md) 第 6 节的同一段说明交稿。`words` 与 `content` 交 JSON；`mechanism` 交针对 `base` 的 diff。`node scripts/build-ai-task-pack.mjs` 只是可选的全文附件，不是另一套规范。
