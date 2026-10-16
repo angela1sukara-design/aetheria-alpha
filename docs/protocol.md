@@ -1,6 +1,6 @@
 # 第一阶段最小数据协议 · API 0.1 / Schema 1
 
-本协议只描述已执行的切片，不是完整 v0.2 协议冻结。类型见 `src/core/types.ts`；运行时校验见 `src/content/schema.ts`、`loader.ts`。
+本协议只描述当时已执行的切片。后续 opcode 以 `src/content/schema.ts` 为准。新内容与新机制的交付格式见 [安装规范](reference/ai-install-spec.md)。
 
 ## 内容包
 

@@ -45,4 +45,4 @@
 
 ## 与 AI 协作
 
-能读仓库的 Agent 见根目录 [AGENTS.md](../../AGENTS.md)；不要默认通读 `production/tag-deliveries/` 或全文任务包。
+装入只走 [安装规范](ai-install-spec.md)。能读仓库时的目录白名单在根目录 [AGENTS.md](../../AGENTS.md)。不要默认通读 `production/tag-deliveries/` 或全文任务包。

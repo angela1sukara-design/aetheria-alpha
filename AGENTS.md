@@ -1,8 +1,8 @@
 # AI 协作指引（有仓库访问权限）
 
-本文件给 **能读取本 Git 仓库** 的 Agent（Cursor Cloud、本地 Cursor 等）。不要默认打开 `deliverables/ai-tasks/` 里的全文任务包；那是给无法读工程的离线模型用的，体积极大。
+本文件给 **能读取本 Git 仓库** 的 Agent（Cursor、Claude、Gemini、GPT 等）。装入格式只有一份：[安装规范](docs/reference/ai-install-spec.md)（`aetheria-install/1`）。先选 `words` / `content` / `mechanism` 车道，再按该文件第 2 节写交付头。
 
-更完整的协作口径见 [docs/reference/ai-collaboration-review.md](docs/reference/ai-collaboration-review.md)。模块级长规范见 [docs/reference/development-plan.md](docs/reference/development-plan.md)，仅在领用对应模块时再读。
+不要默认打开 `deliverables/ai-tasks/` 里的全文任务包。玩法取舍记录在 [协作核对](docs/reference/ai-collaboration-review.md)。模块 A–E 的历史任务说明在 [development-plan.md](docs/reference/development-plan.md)，只在领用对应模块时阅读。
 
 ## 工程分层（改代码前先定位）
 
@@ -104,4 +104,4 @@ node --test tests/<与任务相关的>.test.ts
 
 ## 离线 / 无仓库 AI
 
-运行 `node scripts/build-ai-task-pack.mjs` 生成自包含任务（体积大）。有仓库时优先：本文件 + 任务描述 + 上述白名单 + `git rev-parse HEAD` 作为基准指纹。
+按 [安装规范](docs/reference/ai-install-spec.md) 第 6 节的同一段说明交稿。`words` 与 `content` 交 JSON；`mechanism` 交针对 `base` 的 diff。`node scripts/build-ai-task-pack.mjs` 只是可选的全文附件，不是另一套规范。
