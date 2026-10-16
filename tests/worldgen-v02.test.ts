@@ -11,6 +11,7 @@ import { advanceClock } from '../src/engine/clock.ts';
 import { ActionExecutor } from '../src/engine/executor.ts';
 import { SaveCodec, validateState } from '../src/persistence/codec.ts';
 import type { Id } from '../src/core/types.ts';
+import type { ReferenceTemplate } from '../src/world/types.ts';
 const json = async (name: string) => JSON.parse(await readFile(new URL(`../content/${name}.json`, import.meta.url), 'utf8'));
 const registry = await loadPacks([...await packs(), await json('district/pack'), await json('generation/neighborhood-content')]);
 const rules = await json('generation/rules'), reference = await json('generation/reference');
@@ -77,8 +78,8 @@ test('public arrival information follows saved schedules and remains read-only',
   assert.deepEqual(state, before);
 });
 test('activity rules compile to existing effects; costs fail atomically and recovery still works', async () => {
-  const ref = structuredClone(reference), source = structuredClone(ref.templates.find(t => t.kind === 'event'));
-  ref.templates = ref.templates.filter(t => t.kind !== 'activity');
+  const ref = structuredClone(reference), source = structuredClone(ref.templates.find((t: ReferenceTemplate) => t.kind === 'event'));
+  ref.templates = ref.templates.filter((t: ReferenceTemplate) => t.kind !== 'activity');
   source.id = 'test.activity.home'; source.kind = 'activity'; source.environmentTags = [];
   source.requiresTags = ['service.home'];
   source.data = { label: '整理公用工作台', description: '你完成了约定的整理，收到报酬。', minutes: 20, energyChange: -6, moneyChange: 4, healthChange: 0, capabilities: ['grasp'] };
@@ -94,7 +95,7 @@ test('activity rules compile to existing effects; costs fail atomically and reco
 });
 test('multiple local storylets are distinct and keep their real free exits', async () => {
   const ref = structuredClone(reference);
-  for (const t of reference.templates.filter(t => t.kind === 'event')) { const extra = structuredClone(t); extra.id += '.extra'; ref.templates.push(extra); }
+  for (const t of reference.templates.filter((t: ReferenceTemplate) => t.kind === 'event')) { const extra = structuredClone(t); extra.id += '.extra'; ref.templates.push(extra); }
   const g = await generate({ rules: { ...rules, eventsPerLocation: 2 }, references: [ref] });
   const local = g.registry.storylets.filter(s => s.locationId === 'worldgen:location.0'); assert.equal(local.length, 2);
   const engine = new ActionExecutor(g.registry, g.state), seen = new Set<string>();
@@ -109,18 +110,18 @@ test('multiple local storylets are distinct and keep their real free exits', asy
 });
 test('new author fields reject unknown body capabilities, invalid costs and unbounded counts', () => {
   assert.throws(() => parseRules({ ...rules, activitiesPerLocation: 100 }));
-  const ref = structuredClone(reference), activity = structuredClone(ref.templates.find(t => t.kind === 'event'));
+  const ref = structuredClone(reference), activity = structuredClone(ref.templates.find((t: ReferenceTemplate) => t.kind === 'event'));
   activity.kind = 'activity'; activity.id = 'test.activity.invalid';
   activity.data = { label: '测试', description: '中性接口测试。', minutes: 20, energyChange: -1000, moneyChange: 0, healthChange: 0, capabilities: ['unknown'] };
   ref.templates.push(activity); assert.throws(() => parseReference(ref, registry));
   activity.data.energyChange = -6; assert.throws(() => parseReference(ref, registry));
 });
 test('all six starter ecologies generate useful places, distinct local pools and authored ambience', async () => {
-  assert.equal(reference.templates.filter(t => t.kind === 'environment').length, 6);
-  assert.equal(reference.templates.filter(t => t.kind === 'place').length, 60);
-  assert.equal(reference.templates.filter(t => t.kind === 'activity').length, 21);
-  for (const environment of reference.templates.filter(t => t.kind === 'environment')) {
-    const ref = structuredClone(reference); ref.templates = ref.templates.filter(t => t.kind !== 'environment' || t.id === environment.id);
+  assert.equal(reference.templates.filter((t: ReferenceTemplate) => t.kind === 'environment').length, 6);
+  assert.equal(reference.templates.filter((t: ReferenceTemplate) => t.kind === 'place').length, 60);
+  assert.equal(reference.templates.filter((t: ReferenceTemplate) => t.kind === 'activity').length, 21);
+  for (const environment of reference.templates.filter((t: ReferenceTemplate) => t.kind === 'environment')) {
+    const ref = structuredClone(reference); ref.templates = ref.templates.filter((t: ReferenceTemplate) => t.kind !== 'environment' || t.id === environment.id);
     const g = await generate({ references: [ref] }); validateState(g.state, g.registry);
     assert.equal(g.world.definition.name, environment.data.name);
     for (const location of g.world.definition.locations) {
@@ -169,12 +170,12 @@ test('every clinic keeps a free recovery path even with an empty activity pool',
   validateState(engine.snapshot(), g.registry);
 });
 test('local activity tags are available to later NPC selection before workplace coverage', async () => {
-  const ref = structuredClone(reference); ref.templates = ref.templates.filter(t => t.kind !== 'activity');
-  for (const npc of ref.templates.filter(t => t.kind === 'npc')) {
+  const ref = structuredClone(reference); ref.templates = ref.templates.filter((t: ReferenceTemplate) => t.kind !== 'activity');
+  for (const npc of ref.templates.filter((t: ReferenceTemplate) => t.kind === 'npc')) {
     if (npc.id === 'base.npc.neighborhood.nurse') npc.requiresTags = ['clinic.contributor.selected'];
     else npc.excludesTags.push('service.clinic');
   }
-  const activity = structuredClone(reference.templates.find(t => t.kind === 'activity'));
+  const activity = structuredClone(reference.templates.find((t: ReferenceTemplate) => t.kind === 'activity'));
   activity.id = 'test.activity.clinic-tags'; activity.environmentTags = []; activity.requiresTags = ['service.clinic'];
   activity.contributes.tags = ['clinic.contributor.selected'];
   activity.data = { label:'核对公开说明',description:'你核对了公开说明册的编号。',minutes:15,energyChange:0,moneyChange:0,healthChange:0,capabilities:[] };
@@ -186,7 +187,7 @@ test('local activity tags are available to later NPC selection before workplace 
   assert.equal(g.state.district!.residents.find(r => r.id === agent.residentId)!.profession, '护理员');
 });
 test('contributed prototype expansion is bounded before allocating virtual templates', async () => {
-  const ref = structuredClone(reference), source = ref.templates.find(t => t.kind === 'activity');
+  const ref = structuredClone(reference), source = ref.templates.find((t: ReferenceTemplate) => t.kind === 'activity');
   const npcIds = registry.residentTemplates.filter(t => t.id.startsWith('neighborhood:')).map(t => t.id);
   for (let i = 0; i < 250; i++) {
     const entry = structuredClone(source); entry.id = `test.budget.${i}`; entry.contributes.npcTemplateIds = npcIds;

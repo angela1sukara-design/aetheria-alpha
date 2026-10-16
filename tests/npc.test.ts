@@ -12,7 +12,7 @@ import { SaveCodec, validateState } from '../src/persistence/codec.ts';
 import { MemorySaveStore, SaveRepository } from '../src/persistence/store.ts';
 const id = (s: string) => `aetheria-social:${s}` as Id;
 const velvet = id('npc.velvet');
-const social = (engine: ActionExecutor, suffix: string, request = crypto.randomUUID()) => engine.performAction({ actionId: id(`action.${suffix}`) }, engine.snapshot().meta.revision, request);
+const social = (engine: ActionExecutor, suffix: string, request: string = crypto.randomUUID()) => engine.performAction({ actionId: id(`action.${suffix}`) }, engine.snapshot().meta.revision, request);
 function must(engine: ActionExecutor, suffix: string, request?: string) { const result = social(engine, suffix, request); assert.equal(result.ok, true, `${suffix}: ${result.message}`); return result; }
 function salon(engine: ActionExecutor) { assert.equal(act(engine, 'travel.apartment_street').ok, true); must(engine, 'travel.street_salon'); must(engine, 'salon.wait'); must(engine, 'salon.wait'); }
 function promise(engine: ActionExecutor) { must(engine, 'velvet.meet'); must(engine, 'talk.order'); must(engine, 'talk.order.accept'); }

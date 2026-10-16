@@ -50,7 +50,7 @@ test('every one of the 54 templates assembles against real generated locations, 
    const subject=snapshot.context.bindings.actor?.subject;
    for(const word of snapshot.lexemes.filter(e=>e.allowedSlots.includes('bodyPart')||e.role==='qualifier'||e.poolIds.includes('body.material')))assert.equal(word.binding.subject,subject);
    if(mode==='body'){
-    assert.equal(subject,'player');const part=state.player.body.parts.find(p=>p.instanceId===snapshot.context.bindings.part.instanceId)!;assert(part);
+    assert.equal(subject,'player');assert(state.player.body);const part=state.player.body.parts.find(p=>p.instanceId===snapshot.context.bindings.part.instanceId)!;assert(part);
     const attributes=effectivePart(part,g.registry);assert(snapshot.text.includes(attributes.materialId?g.registry.material(attributes.materialId).label:attributes.materialFamily==='organic'?'有机材质':'机械材质'));
    }
    counts[mode]++;
@@ -61,8 +61,8 @@ test('every one of the 54 templates assembles against real generated locations, 
 for(const mode of ['environment','person','body'] as const)test(`${mode}: real action captures once, saves exactly, continues and exits without resources or time`,async()=>{
  const engine=enter(mode),before=engine.snapshot();validateState(before,g.registry);assert.equal(before.adventure!.story!.prose!.mode,'assembled');
  const body=narrativeText(before,g.registry),codec=new SaveCodec(g.registry),restored=await codec.decode(await codec.encode(before));
- assert.equal(restored.status,'ready',restored.reason);assert.deepEqual(restored.state,before);assert.equal(narrativeText(restored.state!,restored.registry!),body);
- const changed=structuredClone(before);changed.player.body.parts[0]!.overrides={...changed.player.body.parts[0]!.overrides,color:'silver'};
+ assert(restored.status==='ready',restored.status==='ready'?'':restored.reason);assert.deepEqual(restored.state,before);assert.equal(narrativeText(restored.state,restored.registry!),body);
+ const changed=structuredClone(before);assert(changed.player.body);changed.player.body.parts[0]!.overrides={...changed.player.body.parts[0]!.overrides,color:'silver'};
  assert.equal(narrativeText(changed,g.registry),body,'rendering must not re-query or rewrite captured prose');
  const act=(id:Id)=>{const r=engine.performAction({actionId:id},engine.snapshot().meta.revision,'a-'+mode+'-'+id);assert(r.ok,r.message);};
  act('progression:action.story.0');assert(engine.snapshot().adventure!.story!.prose);
@@ -88,11 +88,11 @@ test('body-panel TF is executable during A observation, preserves captured text 
  const engine=enter('body'),before=engine.snapshot(),text=narrativeText(before,g.registry);
  const applied=engine.performAction({actionId:'aetheria-tf:action.free.ears.cat'},before.meta.revision,'a-body-live-tf');assert(applied.ok,applied.message);
  const after=engine.snapshot();assert.notDeepEqual(after.player.body,before.player.body);assert.deepEqual(after.adventure!.story!.prose,before.adventure!.story!.prose);assert.equal(narrativeText(after,g.registry),text);
- const codec=new SaveCodec(g.registry),loaded=await codec.decode(await codec.encode(after));assert.equal(loaded.status,'ready',loaded.reason);assert.deepEqual(loaded.state,after);
+ const codec=new SaveCodec(g.registry),loaded=await codec.decode(await codec.encode(after));assert(loaded.status==='ready',loaded.status==='ready'?'':loaded.reason);assert.deepEqual(loaded.state,after);
  assert(!engine.view().actions.some(a=>a.definition.id==='worldgen:action.work.0'));
 });
 test('five supported themes retain 54 live templates and old worlds remain usable without retroactive nodes',async()=>{
  for(const theme of ['modern','cyberpunk','xianxia','post-apocalypse']){const world=await new WorldGenerator().generate({...args,seed:42,worldTag:'worlds:setting.'+theme});validateState(world.state,world.registry);assert.equal(world.registry.narrativeNodes.filter(n=>n.proseAssembly).length,54);}
  const old=gunzipSync(await readFile(new URL('fixtures/a-predecessor-five-themes.json.gz',import.meta.url))).toString('utf8'),codec=new SaveCodec(g.registry,source),restored=await codec.decode(old);
- assert.equal(restored.status,'ready',restored.reason);assert(!restored.registry!.narrativeNodes.some(n=>n.proseAssembly));assert(!restored.state!.adventure!.story!.prose);
+ assert(restored.status==='ready',restored.status==='ready'?'':restored.reason);assert(!restored.registry!.narrativeNodes.some(n=>n.proseAssembly));assert(!restored.state.adventure!.story!.prose);
 });

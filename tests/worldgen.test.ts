@@ -10,7 +10,8 @@ import { ActionExecutor } from '../src/engine/executor.ts';
 import { createGameState } from '../src/engine/state.ts';
 import { advanceClock } from '../src/engine/clock.ts';
 import { clone, stableJson } from '../src/core/types.ts';
-import type { Id } from '../src/core/types.ts';
+import type { ActionDef, Id } from '../src/core/types.ts';
+import type { ReferenceTemplate } from '../src/world/types.ts';
 import { validateBody } from '../src/engine/body.ts';
 const json = async (name: string) => JSON.parse(await readFile(new URL(`../content/${name}.json`, import.meta.url), 'utf8'));
 const registry = await loadPacks([...await packs(), await json('district/pack'), await json('generation/neighborhood-content')]);
@@ -109,16 +110,16 @@ test('原TF、事件选择、工作与免费恢复可在生成街区结算，零
 test('无效规则、自由文本、未知字段、不兼容模板与超限输入被拒绝', async () => {
   assert.throws(() => parseRules({ ...rules, locationCount: 1 })); assert.throws(() => parseReference('随便修改世界', registry));
   assert.throws(() => parseReference({ ...reference, executable: 'anything' }, registry));
-  const impossible = clone(reference); impossible.templates.filter(t => t.kind === 'place').forEach(t => { t.requiresTags = ['missing']; });
+  const impossible = clone(reference); impossible.templates.filter((t: ReferenceTemplate) => t.kind === 'place').forEach((t: ReferenceTemplate) => { t.requiresTags = ['missing']; });
   await assert.rejects(generate(42, { references: [impossible] })); await assert.rejects(generate(-1));
   const duplicate = clone(reference); duplicate.id = 'another'; await assert.rejects(generate(42, { references: [reference, duplicate] }));
 });
 test('父模板贡献NPC、TF、已有事件与世界标签实际参与生成', async () => {
   const added = await loadPacks([...registry.contentPacks, await json('generation/addon-content'), await json('extension-event/pack')]);
-  const addon = await json('generation/addon-reference'); addon.templates = addon.templates.filter(t => t.kind === 'place');
+  const addon = await json('generation/addon-reference'); addon.templates = addon.templates.filter((t: ReferenceTemplate) => t.kind === 'place');
   addon.templates[0].contributes.npcTemplateIds = ['lamplighter:resident.artisan'];
   const ref = clone(reference);
-  for (const t of ref.templates.filter(t => t.kind === 'environment')) { t.contributes.tags.push('public.lighting'); t.contributes.tfIds.push('aetheria-tf:tf.ears.cat'); t.contributes.eventIds.push('lamp-author:event.lamp'); }
+  for (const t of ref.templates.filter((t: ReferenceTemplate) => t.kind === 'environment')) { t.contributes.tags.push('public.lighting'); t.contributes.tfIds.push('aetheria-tf:tf.ears.cat'); t.contributes.eventIds.push('lamp-author:event.lamp'); }
   const g = await generator.generate({ seed: 42, registry: added, rules, references: [ref, addon] }); validateState(g.state, g.registry);
   assert.ok(g.state.district!.residents.some(n => n.profession === '灯匠'));
   assert.ok(g.world.definition.eventPool.includes('lamp-author:event.lamp'));
@@ -126,22 +127,22 @@ test('父模板贡献NPC、TF、已有事件与世界标签实际参与生成', 
 });
 test('依赖固定地图或缺少免费退出的参考事件不能进入生成池', async () => {
   const bad = await json('extension-event/pack');
-  bad.actions.find(a=>a.id==='lamp-author:action.finish').effects.unshift({op:'location.move',routeId:registry.routes[0].id});
+  bad.actions.find((a: ActionDef) =>a.id==='lamp-author:action.finish').effects.unshift({op:'location.move',routeId:registry.routes[0].id});
   const loaded = await loadPacks([...registry.contentPacks,bad]);
-  const ref = clone(reference);for(const t of ref.templates.filter(t=>t.kind==='environment'))t.contributes.eventIds=['lamp-author:event.lamp'];
+  const ref = clone(reference);for(const t of ref.templates.filter((t: ReferenceTemplate) =>t.kind==='environment'))t.contributes.eventIds=['lamp-author:event.lamp'];
   assert.throws(()=>parseReference(ref,loaded),/固定地图/);
-  const locked = await json('extension-event/pack');locked.actions.find(a=>a.id==='lamp-author:action.leave').conditions=[{op:'var.compare',id:'core:money',comparison:'gte',value:1}];
+  const locked = await json('extension-event/pack');locked.actions.find((a: ActionDef) =>a.id==='lamp-author:action.leave').conditions=[{op:'var.compare',id:'core:money',comparison:'gte',value:1}];
   const lockedRegistry = await loadPacks([...registry.contentPacks,locked]);
   assert.throws(()=>parseReference(ref,lockedRegistry),/免费退出/);
 });
 test('排斥条件、组合要求与环境兼容控制候选池，失败事务不推进模拟', async () => {
   const ref = clone(reference);
-  for (const t of ref.templates.filter(t => t.kind === 'environment')) if (t.id.endsWith('wet')) t.excludesTags = ['impossible']; else t.requiresTags = ['missing'];
+  for (const t of ref.templates.filter((t: ReferenceTemplate) => t.kind === 'environment')) if (t.id.endsWith('wet')) t.excludesTags = ['impossible']; else t.requiresTags = ['missing'];
   const g = await generate(7, { references: [ref] }); assert.equal(g.world.definition.name, '雾潮街区');
   const failed = clone(g.state); failed.player.variables['core:energy'] = 0;
   const e = new ActionExecutor(g.registry, failed), before = e.snapshot();
   assert.equal(e.performAction({actionId:'worldgen:action.work.0'},0,'exhausted').ok,false); assert.deepEqual(e.snapshot(),before);
-  const impossible = clone(reference); for(const t of impossible.templates.filter(t=>t.kind==='place'))t.combination.requiresTemplates=['base.environment.dry'];
+  const impossible = clone(reference); for(const t of impossible.templates.filter((t: ReferenceTemplate) =>t.kind==='place'))t.combination.requiresTemplates=['base.environment.dry'];
   await assert.rejects(generate(42,{references:[impossible]}));
 });
 test('即使重算存档校验和，断路、错日程、坏身体及来源篡改仍被隔离并保留原文', async () => {

@@ -120,7 +120,7 @@ test('扩充：已交付的素材ID不能因为新增、重排或删除而悄悄
 });
 
 test('扩充：保存的完整主表可重复生成，分库和批次交付齐全',async()=>{
-  const actual=(await readFile(`${expandedPath}/entries.jsonl`,'utf8')).trim().split('\n').map(JSON.parse);
+  const actual=(await readFile(`${expandedPath}/entries.jsonl`,'utf8')).trim().split('\n').map(line=>JSON.parse(line));
   assert.deepEqual(actual,entries);assert.deepEqual(JSON.parse(await readFile(`${expandedPath}/index.json`,'utf8')),index);
   assert.equal((await readdir(`${expandedPath}/按库`)).filter(f=>f.endsWith('.md')).length,new Set(entries.map((r:any)=>r.library)).size);
   assert.equal((await readdir(`${expandedPath}/v2-material-batches`)).filter(f=>f.endsWith('.json')).length,35);
@@ -131,5 +131,5 @@ test('扩充：保存的完整主表可重复生成，分库和批次交付齐�
 test('扩充：原交付含NSFW的31个文件原始哈希与全部JSON内容哈希保持一致',async()=>{
   assert.equal(index.preservedSourceFiles.length,31);
   for(const s of index.preservedSourceFiles)assert.equal(sha(await readFile(`production/tag-deliveries/2026-10-12/${s.path}`)),s.sha256);
-  for(const s of index.sources){const bytes=await readFile(s.path);assert.equal(sha(s.hashing==='json-stringify-sha256'?JSON.stringify(JSON.parse(bytes.toString('utf8'))):bytes),s.sha256);}
+  for(const s of index.sources){const bytes=await readFile(s.path);assert.equal(sha('hashing' in s && s.hashing==='json-stringify-sha256'?JSON.stringify(JSON.parse(bytes.toString('utf8'))):bytes),s.sha256);}
 });

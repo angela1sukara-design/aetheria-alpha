@@ -7,7 +7,7 @@ export async function packs(): Promise<ContentPack[]> {
   return Promise.all(['core', 'world', 'reshaping', 'social', 'recovery'].map(async name => JSON.parse(await readFile(new URL(`../content/${name}/pack.json`, import.meta.url), 'utf8'))));
 }
 export async function game(seed = 123456) { const registry = await loadPacks(await packs()); return { registry, engine: new ActionExecutor(registry, createGameState(registry, seed)) }; }
-export function act(engine: ActionExecutor, suffix: string, requestId = crypto.randomUUID()) {
+export function act(engine: ActionExecutor, suffix: string, requestId: string = crypto.randomUUID()) {
   return engine.performAction({ actionId: `aetheria:action.${suffix}` as Id }, engine.snapshot().meta.revision, requestId);
 }
 export function extension(): ContentPack {

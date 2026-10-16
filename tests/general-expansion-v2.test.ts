@@ -147,7 +147,7 @@ test('第二轮：生成文件可确定性重建，主表、索引、旁路元�
   assert.deepEqual(await readJson('label-collisions.json'),result.collisions);
   assert.deepEqual(await readJson('export-links.json'),result.exported.links);
   for (const [file,rows] of [['entries.jsonl',result.entries],['new-entries.jsonl',result.common]] as const) {
-    const actual = (await readFile(path.join(projectRoot,expansionV2Path,file),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
+    const actual = (await readFile(path.join(projectRoot,expansionV2Path,file),'utf8')).trim().split(/\r?\n/).map(line=>JSON.parse(line));
     assert.deepEqual(actual,rows);
   }
   const files = await readdir(path.join(projectRoot,expansionV2Path,'v2-material-batches'));

@@ -14,7 +14,7 @@ import { SaveRepository, MemorySaveStore } from '../src/persistence/store.ts';
 import { STAGE3_PACKS, STAGE3_FIX1_PACKS } from '../src/persistence/stage3-packs.ts';
 const velvet: Id = 'aetheria-social:npc.velvet';
 const salon: Id = 'aetheria-social:location.salon';
-function social(engine: ActionExecutor, suffix: string, request = crypto.randomUUID()) {
+function social(engine: ActionExecutor, suffix: string, request: string = crypto.randomUUID()) {
   const r = engine.performAction({ actionId: `aetheria-social:action.${suffix}` }, engine.snapshot().meta.revision, request);
   assert.equal(r.ok, true, `${suffix}: ${r.message}`); return r;
 }

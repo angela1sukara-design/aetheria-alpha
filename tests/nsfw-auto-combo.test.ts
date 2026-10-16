@@ -81,7 +81,7 @@ test('adventure pack exposes nsfwcombo encounter action and sample nodes', async
 
 test('toEncounterCandidate never forges foundation material.gel', async () => {
   const atoms = await loadAtoms();
-  const c3 = sampleCombos(atoms).find((c) => c.sampleId === 'C3')!;
+  const c3 = sampleCombos(atoms).find((c: {sampleId:string}) => c.sampleId === 'C3')!;
   const cand = toEncounterCandidate(c3, {
     nodeId: 'progression:node.encounter.nsfwcombo.c3',
     textKey: 'progression:text.node.encounter.nsfwcombo.c3',
