@@ -18,4 +18,6 @@
 
 正式网页、根目录“启动游戏-双击直接运行.html”和examples/A模板-实际游戏.html包含本轮接入。旧存档保留原快照，使用新入口请新建世界。构建后执行node scripts/build-a-template-example.mjs可重建直接试玩；npm run build已包含A模板的指纹校验和运行生成。
 
+2026-10-16 P0修正：其余十二题材的环境观察读取与serviceAvailable一致的兼容设施，并仅依据真实保存的光照状态补充感官候选；显式空设施列表不补物件，未知光照不编造声音、温度或机械运行。人物日程仍只证明当前时段与在场，不扩写具体工作动作。玩家自身部位显示省去姓名及普通人类前缀，历史存档中的已捕获正文保持原样。安装及验收记录见production/integrations/gemini-p0-2026-10-16/install.json。
+
 验证入口：node --test tests/a-templates.test.ts tests/prose-assembly.test.mjs。逐条检查54模板真实拼装、同一对象归属、缺事实回退、原参考实现一致性、免费出口及存档篡改拒绝。node tests/a-templates-browser.mjs检查离线/手机显示、实际人物、玩家身体变化期间的正文锁定、保存恢复，以及从正式游戏菜单新建五种题材后使用三个入口。日志、截图与安装记录在artifacts/a-templates。

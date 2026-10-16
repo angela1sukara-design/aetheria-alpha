@@ -115,13 +115,14 @@ export class WorldGenerator {
       const name = pick(t.data.names, `name.${i}`) + (i >= 5 ? `·${i + 1}` : '');
       const localTags = [...new Set([...tags, canonical(`service.${t.data.service}`), ...t.contributes.tags])];
       pack.hooks.push({ id: hook, accepts: 'action', visibility: 'public' });
-      pack.texts[textKey] = `${environment.data.description}\n\n${t.data.description}\n\n这里以${t.data.economy.join('、')}维持生计，由${faction.name}协调。你可以休息、找工作或留意附近的人。`;
+      const envDesc = !profile || i === 0 ? environment.data.description : (environment.data.description.split('\n\n').slice(1).join('\n\n') || environment.data.description);
+      pack.texts[textKey] = `${envDesc}\n\n${t.data.description}\n\n这里以${t.data.economy.join('、')}维持生计，由${faction.name}协调。你可以休息、找工作或留意附近的人。`;
       const cell = pick(mapCells, `map.cell.${i}`); mapCells.splice(mapCells.indexOf(cell), 1);
       pack.locations.push({ id: lid, name, subtitle: `${t.data.economy.join(' / ')} · ${environment.data.name}`, textKey, actionHook: hook, map: { x: 12 + cell % 5 * 18 + Math.floor(draw(randomState, `generation:map.x.${i}`) * 5) - 2, y: 12 + Math.floor(cell / 5) * 24 + Math.floor(draw(randomState, `generation:map.y.${i}`) * 5) - 2 } });
       if(pack.manifest.schemaVersion===2){(pack.locationProfiles??=[]).push({id:id('location-profile.'+i),locationId:lid,light:'lit'});action('light.off.'+i,'关闭工作灯',hook,[{op:'environment.setLight',locationId:lid,value:'dark'}],[{op:'environment.light',locationId:lid,value:'lit'}]);action('light.on.'+i,'打开工作灯',hook,[{op:'environment.setLight',locationId:lid,value:'lit'}],[{op:'environment.light',locationId:lid,value:'dark'}]);}
       const facilities=t.data.facilities??(profile?.tag==='worlds:setting.fantasy'&&input.registry.residentTemplates.some(t=>t.services!==undefined)?facilitiesForService[t.data.service]:undefined);
       if(facilities)pack.locations.at(-1)!.facilities=[...facilities];
-      if(facilities)pack.texts[textKey]=`${environment.data.description}\n\n${t.data.description}`;
+      if(facilities)pack.texts[textKey]=`${envDesc}\n\n${t.data.description}`;
       definition.locations.push({ id: lid, regionId: 'region-0', templateId: t.id, service: t.data.service, tags: localTags, economy: clone(t.data.economy), professions: clone(t.data.professions), factionId: faction.id }); faction.locationIds.push(lid);
       if (t.data.ambience) for (const [key, start, end] of [['morning', 360, 600], ['day', 600, 1080], ['evening', 1080, 1320], ['night', 1320, 360]] as const) {
         const textKey = id(`text.ambience.${i}.${key}`); pack.texts[textKey] = t.data.ambience[key];
@@ -212,13 +213,17 @@ export class WorldGenerator {
       contributionsAt.get(work.id)!.push(t);
       const source = input.registry.residentTemplates.find(n => n.id === t.data.residentTemplateId)!;
       const template = clone(source); template.id = id(`resident.${i}`); template.locationIds = pack.locations.map(l => l.id); template.start = 0; template.end = 1439;
+      // Only the built-in fantasy provider pool is adapted away from fantasy.
+      // Imported authors' explicit names, cultures and roleName remain theirs.
+      const adaptFantasySource = !!profile && profile.tag !== 'worlds:setting.fantasy' && input.registry.contentPacks.some(p=>p.manifest.id==='aetheria/fantasy-residents'&&p.residentTemplates?.some(t=>t.id===source.id));
       if (profile) template.profession = professionName(profile, work.service, source.profession);
-      if(source.roleName)template.profession=source.roleName;
+      if (!adaptFantasySource && source.roleName) template.profession = source.roleName;
+      else delete template.roleName;
       // 抽样只在生成时完成；单值实例模板继续受原居民存档校验保护。
-      const namePool=source.roleName||source.nameCulture?source.names:profile?.residentNames??source.names;
-      const culture = source.nameCulture ?? (!source.roleName ? profile?.nameCulture : undefined);
+      const namePool = (!adaptFantasySource && (source.roleName || source.nameCulture)) ? source.names : profile?.residentNames ?? source.names;
+      const culture = adaptFantasySource ? profile?.nameCulture : source.nameCulture ?? (!source.roleName ? profile?.nameCulture : undefined);
       template.personalName = generatePersonalName({seed: input.seed, entityId: template.id, givenNames: namePool, culture: culture ?? {id:'legacy-single',familyNames:[],order:'single',separator:'',defaultInheritance:'none'}, usedNames:pack.residentTemplates!.flatMap(t=>t.names)});
-      if(culture)template.nameCulture=clone(culture);
+      if(culture)template.nameCulture=clone(culture);else delete template.nameCulture;
       template.names = [formatName(template.personalName)]; template.personality = [pick(source.personality, `npc.personality.${i}`)];
       const traitVariant=source.traitVariants?.length?pick(source.traitVariants,`npc.personality.${i}`):undefined;
       if(traitVariant)template.personality=[traitVariant.personality];template.traitTags=[...(traitVariant?.traitTags??source.traitTags??[])];delete template.traitVariants;
@@ -233,14 +238,16 @@ export class WorldGenerator {
         const def = input.registry.bodyPart(part.definitionId);
         const eff = effectivePart(part, input.registry);
         const matLabel = part.overrides?.materialId ? input.registry.material(eff.materialId!).label : '';
-        if (def.kind === 'ear' || def.kind === 'tail') return [matLabel ? `${def.label}（${matLabel}）` : def.label];
+        if ((def.kind === 'ear' && def.label !== '人类耳') || def.kind === 'tail') return [matLabel ? `${def.label}（${matLabel}）` : def.label];
         if (matLabel) return [`${def.label}（${matLabel}）`];
         return [];
       }))];
-      template.appearance = [`${notableParts.join('、') || input.registry.bodyTemplate(template.bodyTemplateId).label}，带着${template.profession}的工作用品`];
+      const baseLook = notableParts.join('、') || input.registry.bodyTemplate(template.bodyTemplateId).label;
+      template.appearance = [`${baseLook}，带着${template.profession}的常用物件`];
       if (source.attire) {
         // 服装与真实身体描述分开：不把外观词条误当成已安装的器官或 TF。
-        template.attire = [pick(source.attire, `npc.attire.${i}`)];
+        const rawAttire = pick(source.attire, `npc.attire.${i}`);
+        template.attire = [rawAttire.includes('：') ? rawAttire.replace('：', '（') + '）' : rawAttire];
         template.appearance[0] += `。衣着：${template.attire[0]}`;
       }
       pack.residentTemplates!.push(template);

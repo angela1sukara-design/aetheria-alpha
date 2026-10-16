@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {chromium} from 'playwright';
+import {pathToFileURL} from 'node:url';
+import path from 'node:path';
+import {enterFolio,openFolioPage,folioHome,performFolioAction} from './folio-navigation.mjs';
+const out=path.resolve('artifacts/gemini-p0-2026-10-16/browser');await mkdir(out,{recursive:true});
+const browser=await chromium.launch({headless:true,executablePath:process.env.BROWSER_EXECUTABLE_PATH??'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
+const errors=[],requests=[],checks=[];
+try{
+ const context=await browser.newContext({viewport:{width:1360,height:1000}}),page=await context.newPage();page.setDefaultTimeout(15000);
+ page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
+ await page.goto(pathToFileURL(path.resolve('启动游戏-双击直接运行.html')).href);await enterFolio(page);
+ await openFolioPage(page,'world');await page.locator('#world-theme').selectOption('worlds:setting.steampunk');await page.locator('#world-seed').fill('42');await page.locator('#world-generate').click();await page.locator('#world-dialog').waitFor({state:'hidden'});
+ if(await page.locator('#character-intro').isVisible())await performFolioAction(page,'district:action.create');
+ const testButtons=()=>page.locator('#actions [data-action="progression:action.nsfwcombo.encounter"], #actions [data-action="progression:action.defeat.play"]');
+ assert.equal(await testButtons().count(),0,'general hub must not show engineering test actions, including folded/locked groups');checks.push('default general hub hides both engineering trial entries');
+ await page.locator('#debug-toggle-quick').click();assert.equal(await page.locator('body').getAttribute('data-debug'),'true');assert.equal(await testButtons().count(),2);checks.push('debug explicitly exposes both trial entries');
+ await page.locator('#debug-toggle-quick').click();assert.equal(await testButtons().count(),0);
+ await openFolioPage(page,'pack');await page.locator('#adult-preference').check();await page.getByRole('button',{name:'关闭偏好',exact:true}).click();await folioHome(page);assert.equal(await testButtons().count(),2);checks.push('explicit optional-content preference exposes the existing entries');
+ await openFolioPage(page,'pack');await page.locator('#adult-preference').uncheck();await page.getByRole('button',{name:'关闭偏好',exact:true}).click();await folioHome(page);
+ await performFolioAction(page,'worldgen:action.a-environment.0');assert.doesNotMatch(await page.locator('#scene-text').innerText(),/你可以结束观察，继续自己的安排/);assert.match(await page.locator('#scene-text').innerText(),/返回地点/);
+ await page.locator('#location-review').click();
+ const light='工作灯亮着，细小的刻线仍然清晰。';
+ const visible=await page.locator('#location-description').innerText()+'\n'+(await page.locator('#scene-text').isVisible()?await page.locator('#scene-text').innerText():'');
+ assert.equal(visible.split(light).length-1,1,'real environment observation must remain visible exactly once during the story');checks.push('steampunk A1 assembles with true light and retains one environmental observation');
+ await page.screenshot({path:path.join(out,'steampunk-observation.png'),fullPage:true,animations:'disabled'});
+ await performFolioAction(page,'progression:action.story.1');
+ await page.setViewportSize({width:390,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:path.join(out,'mobile.png'),fullPage:true,animations:'disabled'});checks.push('mobile has no horizontal overflow');
+ assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
+ await writeFile(path.join(out,'report.json'),JSON.stringify({status:'passed',checks,pageErrors:errors,externalRequests:requests},null,2)+'\n');console.log('Gemini P0 browser checks passed: '+checks.length);
+}finally{await browser.close();}

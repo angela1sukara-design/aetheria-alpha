@@ -12,7 +12,7 @@ export function sceneContext(state: GameState, registry: Registry): Record<strin
   const parts = state.player.body?.parts.map(p=>({part:p,definition:registry.bodyPart(p.definitionId)}))??[];
   const distinct = [...new Set([...parts].sort((a,b)=>Number(['tail','ear','wing'].includes(b.definition.kind))-Number(['tail','ear','wing'].includes(a.definition.kind))).map(({part,definition})=>{
     const actual=effectivePart(part,registry);
-    return definition.label+(part.overrides?.materialId?`（${registry.material(actual.materialId!).label}）`:'')+(part.overrides?.lengthMm?`，${actual.lengthMm}毫米`:'');
+    const cleanLabel=definition.label==='人类耳'?'双耳':definition.label.replace(/^人类(?=.{2,})/,'');return cleanLabel+(part.overrides?.materialId?`（${registry.material(actual.materialId!).label}）`:'')+(part.overrides?.lengthMm?`，${actual.lengthMm}毫米`:'');
   }))];
   const jobs = state.tfQueues.filter(j=>(!j.target||j.target.kind==='player')&&['active','paused','blocked'].includes(j.status));
   const job = jobs[0];

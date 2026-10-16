@@ -4,6 +4,7 @@ import type {WorldDef} from './types.ts';
 import type {ProseMode} from '../core/prose-types.ts';
 import {A_TEMPLATE_CATALOG} from './a-template-data.ts';
 import {B_FIVE_THEME_OBSERVATIONS} from './b-five-theme-data.ts';
+import {facilitiesForService} from '../engine/entity-functions.ts';
 const labels={environment:'细看周边环境',person:'观察在场人物',body:'查看身体细节'};
 export function compileATemplates(pack:ContentPack,world:WorldDef,source:Registry,seed:number):void{
  if(pack.manifest.schemaVersion!==2||!source.narrativeNodes.length)return;
@@ -34,8 +35,16 @@ export function compileATemplates(pack:ContentPack,world:WorldDef,source:Registr
   const selected=[...(anytime?[anytime]:[]),...props.filter(r=>r!==anytime).slice(0,3),...senses.slice(0,3)];
   location.proseScenery=selected.map((r,j)=>({id:`${place.id}:scenery:${j}`,sourceId:r.id,kind:r.id.startsWith('word.prop.')?'prop':'sense',text:r.fragments[1],conditions:'timeWindow'in r?[{op:'time.window',start:r.timeWindow.start,end:r.timeWindow.end}]:[]}));
   if(!location.proseScenery.some(o=>o.kind==='prop')){
-   const names={seat:'供人休息的座位',bed:'供人休息的床铺',care:'护理设施',workplace:'工作设施',training:'训练设施',publicDesk:'公共办事台',lightSwitch:'工作灯开关'};
-   for(const f of (location.facilities??[]).slice(0,3))location.proseScenery.push({id:`${place.id}:facility:${f}`,sourceId:`worldgen:facility.${f}`,kind:'prop',text:names[f],conditions:[]});
+   const names={seat:'供人休息的座位',bed:'供人休息的床铺',care:'护理设施',workplace:'工作设施',training:'训练设施',publicDesk:'公共办事台',lightSwitch:'照明控制开关'};
+   // Match serviceAvailable's legacy defaults. Explicit [] means no facilities.
+   const fac=(location.facilities??facilitiesForService[place.service]??[]).slice(0,3);
+   for(const f of fac)location.proseScenery.push({id:`${place.id}:facility:${f}`,sourceId:`worldgen:facility.${f}`,kind:'prop',text:names[f],conditions:[]});
+  }
+  if(!location.proseScenery.some(o=>o.kind==='sense')){
+   // Light is a real saved environmental state. A service name cannot prove
+   // ventilation, machinery, people talking, temperature or street lighting.
+   if(pack.locationProfiles?.some(p=>p.locationId===place.id))for(const [value,text]of [['lit','亮着的照明'],['dark','昏暗的光线']] as const)
+    location.proseScenery.push({id:`${place.id}:sense:light:${value}`,sourceId:`worldgen:sense.light.${value}`,kind:'sense',text,conditions:[{op:'environment.light',locationId:place.id,value}]});
   }
   // Instances belong only to this saved location; they grant no inventory or service.
  }

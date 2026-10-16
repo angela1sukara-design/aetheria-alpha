@@ -22,7 +22,8 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
   byId('action-context').textContent = scene.active ? '查看人物、身体或存档后，点“继续故事”即可回到这里。' : '选择行动前，可查看耗时与数值变化；实际恢复受状态上限影响。';
   byId('location-name').textContent = view.location.name;
   const observation = presentationText(view.state, registry, 'environment');
-  const locFullText = registry.text(view.location.textKey) + (observation ? `\n\n${observation}` : '');
+  const observationInScene = !scene.primaryResult && scene.mode !== 'hub' && !!observation && view.sceneText.includes(observation);
+  const locFullText = registry.text(view.location.textKey) + (observation && !observationInScene ? `\n\n${observation}` : '');
   const locTraces = document.body.dataset.debug === 'true' ? buildParagraphTraces('location', locFullText, view, registry, result) : undefined;
   proseParagraphs(byId('location-description'), locFullText, locTraces);
   renderDebugInspectorHost('debug-inspector-location', byId('location-description'), locTraces ?? [], '地点描述 Tag 与生成模板溯源');
@@ -64,6 +65,7 @@ export function renderGame(view: GameView, registry: Registry, result?: ActionRe
       && (!(scene.mode === 'conversation' && !scene.active) || x.definition.effects.some(effect => effect.op === 'resident.talk' || effect.op === 'resident.help')));
     // 可见性瘦身：购买/装备/使用不进主列表（背包面板仍有按钮）；玩法未删。
     if (densityHub) options = options.filter(x => !isInventoryOnlyAction(x));
+    if (densityHub && !view.state.district?.profile.adultOptional && document.body.dataset.debug !== 'true') options = options.filter(x => !/nsfwcombo|defeat\.play/.test(x.definition.id));
     const folded = densityHub ? options.filter(isMoreDailyAction) : [];
     if (densityHub) options = options.filter(x => !isMoreDailyAction(x));
     if (densityHub) options = [...options].sort((a, b) => mainActionPriority(a) - mainActionPriority(b) || a.definition.label.localeCompare(b.definition.label, 'zh'));

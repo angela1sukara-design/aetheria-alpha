@@ -48,7 +48,7 @@ export async function compileWorldQuests(content: QuestContent, seed: number, so
     const ns = pack.manifest.namespace;
     const promptKey: Id = `${ns}:text.${binding.id}.prompt`, doneKey: Id = `${ns}:text.${binding.id}.done`, leaveKey: Id = `${ns}:text.${binding.id}.leave`;
     pack.texts[promptKey] = `${title}\n\n${prompt}`;
-    if(source.narrativeNodes.length){pack.texts[promptKey]+='\n\n【工作】【调查】';if(endingFlag)pack.texts[promptKey]+=/resource|capital/.test(endingFlag)?'\n实际门槛：经营份额6、已完成订单3、登记契约2。可先免费退出，到市场与工坊完成订单及经营登记。':'\n实际门槛：组织影响5、街区安全5、有效战斗胜利2。可先免费退出，进行巡查、协作与交锋。';}
+    if(source.narrativeNodes.length){if(endingFlag)pack.texts[promptKey]+=/resource|capital/.test(endingFlag)?'\n实际门槛：经营份额6、已完成订单3、登记契约2。可先免费退出，到市场与工坊完成订单及经营登记。':'\n实际门槛：组织影响5、街区安全5、有效战斗胜利2。可先免费退出，进行巡查、协作与交锋。';}
     pack.texts[doneKey] = `${title}：本阶段已完成。`;
     pack.texts[leaveKey] = '你暂时离开，现有进度保留。以后可以从原入口继续。';
     const context = { eventId: binding.eventId, nodeId: 'choice' };
@@ -56,7 +56,6 @@ export async function compileWorldQuests(content: QuestContent, seed: number, so
     for (const [choiceIndex,choice] of choices.entries()) {
       const actionId: Id = `${ns}:action.${binding.id}.${choice.id}`, textKey: Id = `${ns}:text.${binding.id}.${choice.id}`;
       pack.texts[textKey] = choice.result;
-      if(source.narrativeNodes.length)pack.texts[textKey]+=endingFlag?'【身份】':'【工作】';
       const effects: Effect[] = [];
       if (choice.energy) effects.push({ op: 'var.change', id: 'core:energy', amount: -choice.energy });
       if (choice.complete) {

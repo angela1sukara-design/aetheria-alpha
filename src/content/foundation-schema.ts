@@ -76,6 +76,7 @@ export function projectV2(input: unknown, parseV1: (v: unknown) => ContentPack):
     shape(op,['type','partId','set','unset']);if(!/^[a-z][a-z0-9_.-]{0,79}$/.test(op.partId))bad('属性补丁部件 ID 无效。');attributes(op.set);array(op.unset,k=>values(k,['materialId','morphologyId','color','lengthMm']));if(new Set(op.unset).size!==op.unset.length||op.unset.some(k=>Object.hasOwn(op.set,k))||!Object.keys(op.set).length&&!op.unset.length)bad('属性补丁为空或自相矛盾。');return {type:'remove',partId:op.partId};
   });
   for (const key of ['actions','storylets','interactions','sceneTexts','equipment'] as const)for(const d of legacy[key]??[]){if('conditions'in d)d.conditions=d.conditions.map(x=>projectCondition(x));if('requires'in d)d.requires=d.requires.map(x=>projectCondition(x));}
+  for(const location of legacy.locations)for(const scenery of location.proseScenery??[])scenery.conditions=scenery.conditions.map(c=>projectCondition(c));
   const fx=(e:any)=>{if(e.op==='environment.setLight'){shape(e,['op','locationId','value']);stableId(e.locationId);values(e.value,['lit','dark']);return {op:'clock.advance',minutes:0};}if(Object.hasOwn(e,'target')){if(!e.op.startsWith('tf.'))bad('该效果不支持目标。');entityRef(e.target);const x=clone(e);delete x.target;return x;}return e;};
   for(const a of legacy.actions)a.effects=a.effects.map(fx);
   for(const e of legacy.events)for(const n of e.nodes)n.onEnter=n.onEnter.map(fx);

@@ -45,18 +45,24 @@ export function captureAProse(s:GameState,r:Registry,node:NarrativeNode):ProseSn
   const subject=entityKey(target),actor={subject,instanceId:subject};context.bindings.actor=actor;
   const display=person?.name??s.district?.profile.name??'旅人';story.opponentName=display;
   name('runtime:actor.name','opponentForm',['actor.name'],actor,display);
-  word('runtime:actor.form','opponentForm',['actor.form'],actor,person?`${person.name}（${person.profession}）`:display);
+  word('runtime:actor.form','opponentForm',['actor.form'],actor,person?`${person.name}（${person.profession}）`:'自己的身体');
   context.facts['actor.present']={known:true,source:'engine-query',value:true};
   const agent=person?s.worldInstance?.agents.find(a=>a.residentId===person.id):undefined,minute=s.clock.totalMinutes%1440;
   const slot=agent?.schedule.find(t=>t.start<=minute&&minute<t.end&&t.locationId===location.id);
-  if(slot){const description={home:'在居家时段停留于此',work:'在工作时段停留于此',leisure:'在休闲时段停留于此'}[slot.activity];const action=word('runtime:action.schedule','actionCore',['action.observed'],actor,description);action.requires=[{fact:'actor.present',comparison:'eq',value:true}];}
+  if(slot){
+   // A schedule establishes presence and the current period, not a performed
+   // task, pose, prop or attention state. Keep the wording at that precision.
+   const description={home:'在居家时段留在这里',work:'在工作时段留在这里',leisure:'在闲暇时段留在这里'}[slot.activity];
+   const action=word('runtime:action.schedule','actionCore',['action.observed'],actor,description);
+   action.requires=[{fact:'actor.present',comparison:'eq',value:true}];
+  }
   const body=entityBody(s,target);
   if(body.known){
    const parts=[...body.value.parts].sort((a,b)=>seed(context.seed,a.instanceId)-seed(context.seed,b.instanceId));
    const part=parts.find(p=>effectivePart(p,r).materialId!==undefined)??parts[0];
    if(part){
     const binding={subject,instanceId:part.instanceId},attributes=effectivePart(part,r);context.bindings.part=binding;
-    word('runtime:part.'+part.instanceId,'bodyPart',['actor.bodyPart'],binding,`${display}的${r.bodyPart(part.definitionId).label}`);
+    const rawPartLabel=r.bodyPart(part.definitionId).label,cleanPartLabel=rawPartLabel==='人类耳'?'双耳':rawPartLabel.replace(/^人类(?=.{2,})/,'');word('runtime:part.'+part.instanceId,'bodyPart',['actor.bodyPart'],binding,person?`${display}的${cleanPartLabel}`:cleanPartLabel);
     // Legacy parts explicitly declare only a material family. Keep that precision;
     // organic is not evidence for skin, fur, scales or any specific substance.
     context.bindings.material=binding;word('runtime:material.'+part.instanceId,'materialFluid',['body.material','material.current'],binding,attributes.materialId?r.material(attributes.materialId).label:attributes.materialFamily==='organic'?'有机材质':'机械材质');

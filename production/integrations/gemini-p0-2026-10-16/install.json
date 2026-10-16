@@ -1,0 +1,41 @@
+{
+  "spec": "aetheria-install/1",
+  "lane": "mechanism",
+  "base": "c686c634348e244b2ad79b10a9e44e591eaba404",
+  "summary": "接入Gemini P0正文清理、专用遭遇隔离、题材职业姓名和观察显示修复；修正虚构日程动作、设施空值与光照事实、外部定制模板保留和v2景物条件投影。",
+  "status": "installed",
+  "files": [
+    "content/adventure/pack.json",
+    "content/nsfw-auto-combo/candidates.json",
+    "content/nsfw-auto-combo/defeat-play-fills.json",
+    "content/nsfw-auto-combo/prose-fills.json",
+    "docs/reference/a-template-installation-2026-10-15.md",
+    "scripts/build-adventure-content.mjs",
+    "src/content/foundation-schema.ts",
+    "src/engine/a-prose.ts",
+    "src/engine/scene-context.ts",
+    "src/ui/render.ts",
+    "src/world/a-templates.ts",
+    "src/world/generator.ts",
+    "src/world/profiles.ts",
+    "src/world/quests.ts",
+    "tests/gemini-p0.test.ts",
+    "tests/gemini-p0-browser.mjs",
+    "tests/fixtures/pre-gemini-p0-world.json.gz"
+  ],
+  "verify": [
+    "node node_modules/typescript/bin/tsc --noEmit：通过",
+    "node node_modules/typescript/bin/tsc --noEmit -p tsconfig.tests.json：通过",
+    "node --test tests/a-templates.test.ts tests/adventure.test.ts tests/defeat-play.test.ts tests/entity-functions.test.ts tests/foundation.test.ts tests/names.test.ts tests/save.test.ts tests/world-profiles.test.ts tests/nsfw-auto-combo.test.ts tests/lexicon-integration.test.ts：114通过，0失败",
+    "node --test tests/gemini-p0.test.ts tests/worldgen.test.ts tests/worldgen-v02.test.ts tests/environment-enemies.test.ts tests/semantic-query.test.ts tests/prose-assembly.test.mjs tests/b-five-themes-previews.test.mjs：66通过，0失败",
+    "按package.json的build顺序逐一直接执行11个构建/示例/分发检查脚本：通过；npm入口因系统cmd.exe EACCES未能启动，未把它记为通过",
+    "node tests/gemini-p0-browser.mjs：默认/调试/偏好入口、蒸汽A1及手机布局5项通过，无页面异常或外部请求",
+    "node tests/a-templates-browser.mjs：三个观察模式、真实人物绑定、身体变化期间快照锁定、保存恢复及正式菜单五题材通过",
+    "scripts/check-dist.mjs：通过，含精确历史迁移和存档往返"
+  ],
+  "notDone": [
+    "附带的ENG-WORLD、ENG-RELATION、ENG-JOBS、CONTENT-NPC、CONTENT-JOBS和十二题材B1/B2文件均为任务书或格式示意，不是新增机制、故事或词条成品；未冒充安装。",
+    "未采纳交付包中覆盖当前安装规范的旧版文档；保留本项目现行aetheria-install/1。",
+    "本轮运行与改动有关的回归及浏览器流程，未运行全量npm test或npm run check。"
+  ]
+}

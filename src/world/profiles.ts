@@ -73,7 +73,7 @@ export function chooseWorldProfile(profiles: WorldProfile[], seed: number, tag?:
   const sorted = [...profiles].sort((a, b) => a.id.localeCompare(b.id, 'en'));
   return clone(sorted[((value ^ value >>> 15) >>> 0) % sorted.length]!);
 }
-/** Adapt copies of reference templates; preserve lexicon-adapted architectural details alongside world profile themes. */
+/** Adapt copies; retain extra architecture only when explicitly scoped to this theme. */
 export function applyWorldProfile(templates: ReferenceTemplate[], profile: WorldProfile): void {
   let activityIdx = 0;
   let eventIdx = 0;
@@ -85,8 +85,9 @@ export function applyWorldProfile(templates: ReferenceTemplate[], profile: World
       t.data.description = profile.description + '\n\n' + (ecology?.[1] ?? '住处、交易、生产、护理和公共事务由当地居民维持。');
     } else if (t.kind === 'place') {
       const p = profile.locations[t.data.service];
-      const extraParagraphs = t.data.description.split('\n\n').slice(1).join('\n\n').trim();
-      const origAmbience = t.data.ambience ? clone(t.data.ambience) : undefined;
+      const scopedDetails = [...t.requiresTags,...t.compatibleTags,...t.environmentTags].includes(profile.tag);
+      const extraParagraphs = scopedDetails ? t.data.description.split('\n\n').slice(1).join('\n\n').trim() : '';
+      const origAmbience = scopedDetails && t.data.ambience ? clone(t.data.ambience) : undefined;
       const origFacilities=t.data.facilities?clone(t.data.facilities):undefined;
       t.data = {
         ...clone(p),
