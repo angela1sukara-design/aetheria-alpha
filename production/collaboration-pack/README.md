@@ -1,6 +1,6 @@
 # 通用协作包制作源
 
-这是用户协作包的v1.3修订制作源，不是游戏内容包。
+这是 `words` 车道的 v1.3 制作源，不是游戏内容包。与内容包、新机制一起装入时，交付头遵循 [安装规范](../../docs/reference/ai-install-spec.md)。
 
 在工程根目录运行 `node scripts/build-collaboration-pack.mjs`，从当前真实Tag定义、离线拼装器与本目录规范生成 `deliverables/协作包-通用版-v1.3-已修订.zip`。原用户压缩包不覆盖。
 

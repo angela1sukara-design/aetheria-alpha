@@ -24,7 +24,8 @@ npm run build
 
 ## 开发入口
 
-- [AGENTS.md](AGENTS.md)：给能读仓库的 AI 的协作范围、必读白名单与验证命令（省 token）。
+- [安装规范](docs/reference/ai-install-spec.md)：所有模型共用的交付与装入口径。
+- [AGENTS.md](AGENTS.md)：能读仓库时的目录白名单与验证命令。
 - src、content：游戏源码、内容及需要保存的审定来源。
 - scripts、tests：构建、制作工具和验证。
 - production：构建或验证仍需使用的制作源；保留不代表所有素材都已实装。
