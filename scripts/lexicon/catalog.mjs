@@ -2,6 +2,8 @@
 const named = (name, description) => ({ name, description });
 const trait = (name, description, ...examples) => ({ name, description, examples });
 const phrase = (text, description) => ({ text, description });
+/** @typedef {{name?:string,text?:string,description:string,examples?:string[]}} LexiconExample */
+/** @type {Array<[string,string,string,'named'|'trait'|'phrase',number,string,string,LexiconExample]>} */
 const rows = [
  ['npc','npc-name','姓名','named',400,'短名、复名、姓氏、全名、艺名','音节节奏、文化来源、长短、正式程度；避免套用现有主角姓名',named('芮岚','音节简短、收尾舒缓的人名；不附带固定种族、性别或身世。')],
  ['npc','npc-alias','外号','named',200,'手艺外号、生活外号、自选别称、熟人昵称、旧称','外号来源与情感温度，不以身体差异取笑人物',named('补灯人','因常替邻居修灯而得的外号，带着亲近的生活气息。')],

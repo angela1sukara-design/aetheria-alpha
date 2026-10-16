@@ -12,7 +12,9 @@ export async function inventory(project) {
  const index=await load('content/index.json'),packs=[];
  for(const f of index.packs)packs.push(await load('content/'+f.replace(/^\.\//,'')));
  const types=['locations','routes','actions','events','npcs','npcMemories','residentTemplates','bodyParts','bodyTemplates','bodyPatches','transformations','species','storylets','textSlots','sceneTexts','equipment','interactions'];
- const totals={},byPack=packs.map(p=>{
+ /** @type {Record<string,number>} */
+ const totals={};
+ const byPack=packs.map(p=>{
   const counts=Object.fromEntries(types.map(t=>[t,(p[t]??[]).length]));counts.textKeys=Object.keys(p.texts).length;
   for(const [k,v]of Object.entries(counts))totals[k]=(totals[k]??0)+v;
   return {id:p.manifest.id,version:p.manifest.version,counts};

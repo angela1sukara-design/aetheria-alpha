@@ -1,4 +1,4 @@
-import test from 'node:test';
+import test, {type TestContext} from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, rm, readFile } from 'node:fs/promises';
 import os from 'node:os';
@@ -17,7 +17,7 @@ function delivery(scope='daily') {
   });return b;
  })};
 }
-async function fixture(t) {const root=await mkdtemp(path.join(os.tmpdir(),'aetheria-whole-'));t.after(()=>rm(root,{recursive:true,force:true}));return {root,file:path.join(root,'delivery.json')};}
+async function fixture(t:TestContext) {const root=await mkdtemp(path.join(os.tmpdir(),'aetheria-whole-'));t.after(()=>rm(root,{recursive:true,force:true}));return {root,file:path.join(root,'delivery.json')};}
 test('五个大类完整覆盖全量10700条且批号互不重叠',()=>{
  const tasks=['npc','body','world','daily','text'].flatMap(scopeTasks);assert.equal(tasks.length,214);assert.equal(new Set(tasks.map(t=>t.batchId)).size,214);assert.equal(tasks.reduce((n,t)=>n+t.size,0),10700);
  assert.equal(scopeTasks('all').length,initialPlan().length);assert.throws(()=>scopeTasks('unknown'));
@@ -28,7 +28,7 @@ test('全包总指令要求连续完成而无需逐50条确认，五类也有独
 });
 test('整包格式要求完整范围，拒绝缺批、重批、范围外批次和夹带规则',()=>{
  const d=delivery();assert.equal(validateDelivery(d).batches.length,scopeTasks('daily').length);
- for(const modify of [d=>d.batches.pop(),d=>d.batches.push(d.batches[0]),d=>d.scope='npc',d=>d.effects=[],d=>d.batches.at(-1).entries[0].weight=1]){const raw=delivery();modify(raw);assert.throws(()=>validateDelivery(raw));}
+ for(const modify of [(d:ReturnType<typeof delivery> & {effects?:unknown[]})=>d.batches.pop(),(d:ReturnType<typeof delivery> & {effects?:unknown[]})=>d.batches.push(d.batches[0]),(d:ReturnType<typeof delivery> & {effects?:unknown[]})=>d.scope='npc',(d:ReturnType<typeof delivery> & {effects?:unknown[]})=>d.effects=[],(d:ReturnType<typeof delivery> & {effects?:unknown[]})=>d.batches.at(-1)!.entries[0].weight=1]){const raw=delivery();modify(raw);assert.throws(()=>validateDelivery(raw));}
 });
 test('一次领取整类，重领幂等，范围冲突不会部分改写领取记录',async t=>{
  const {root}=await fixture(t);await assign(root,'daily-work.b0001','another-ai');const before=await assignments(root);
@@ -43,8 +43,8 @@ test('整类一次导入，保持原ID与未审稿状态；重复整包幂等且
 });
 test('最后一批格式或来源错误，整包都不收录',async t=>{
  const {root,file}=await fixture(t);await assignScope(root,'daily','ai-main');
- const bad=delivery();bad.batches.at(-1).entries[0].effects=[];await atomicJSON(file,bad);await assert.rejects(importDelivery(root,file));assert.equal((await collection(root)).entries.length,0);
- const wrong=delivery();wrong.batches.at(-1).source.producer='imposter';await atomicJSON(file,wrong);await assert.rejects(importDelivery(root,file),/来源/);assert.equal((await collection(root)).entries.length,0);
+ const bad=delivery();bad.batches.at(-1)!.entries[0].effects=[];await atomicJSON(file,bad);await assert.rejects(importDelivery(root,file));assert.equal((await collection(root)).entries.length,0);
+ const wrong=delivery();wrong.batches.at(-1)!.source.producer='imposter';await atomicJSON(file,wrong);await assert.rejects(importDelivery(root,file),/来源/);assert.equal((await collection(root)).entries.length,0);
 });
 test('整包内部精确重复会拒绝所有批次，不留下前面已检查的词条',async t=>{
  const {root,file}=await fixture(t);await assignScope(root,'daily','ai-main');const d=delivery();d.batches[1].entries[0].text=d.batches[0].entries[0].text;await atomicJSON(file,d);

@@ -51,7 +51,7 @@ test('通用原子化：源清单ID重复或格式损坏拒绝，不静默漏条
 });
 test('通用原子化：全量10700条一一映射、引用/证据精确、输出可重现',async()=>{
   const source=await readFile(sourcePath);const parsed=parseInventory(source.toString('utf8'));
-  const output=(await readFile(outputPath+'/entries.jsonl','utf8')).trim().split('\n').map(JSON.parse);
+  const output=(await readFile(outputPath+'/entries.jsonl','utf8')).trim().split('\n').map(line=>JSON.parse(line));
   const index=JSON.parse(await readFile(outputPath+'/index.json','utf8'));
   assert.equal(parsed.length,10700);assert.equal(output.length,10700);assert.equal(new Set(output.map(e=>e.sourceEntryId)).size,10700);
   assert.equal(index.source.sha256,createHash('sha256').update(source).digest('hex'));

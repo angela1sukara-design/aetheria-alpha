@@ -6,6 +6,7 @@ import {loadPacks} from '../src/content/loader.ts';
 import {WorldGenerator} from '../src/world/generator.ts';
 import {B_OBSERVATIONS} from '../src/world/b-observation-data.ts';
 import {OBSERVATION_CATALOG} from '../src/world/b-observations.ts';
+import type {ObservationRecipe} from '../src/world/b-observations.ts';
 import {ActionExecutor} from '../src/engine/executor.ts';
 import {SaveCodec,validateState} from '../src/persistence/codec.ts';
 import {narrativeText} from '../src/engine/narrative.ts';
@@ -27,8 +28,8 @@ test('270 held originals have fingerprinted, explicit scenery recipes without bu
   assert.equal(words.length,270);assert(words.every((e:{review:string})=>e.review==='hold'));
   assert.equal(plan.sourceHash,createHash('sha256').update(JSON.stringify(source)).digest('hex'));
   assert.deepEqual(new Set(B_OBSERVATIONS.map(r=>r.id)),new Set(words.map((w:{id:string})=>w.id)));
-  for(const recipe of B_OBSERVATIONS){assert(recipe.entryIds.includes(recipe.id));assert.equal(proseProblem(recipe.context+'。'+recipe.fragments.join('')),undefined);}
-  const find=(id:string)=>B_OBSERVATIONS.find(r=>r.id===id)!;
+  for(const recipe of B_OBSERVATIONS as readonly ObservationRecipe[]){assert(recipe.entryIds.includes(recipe.id));assert.equal(proseProblem(recipe.context+'。'+recipe.fragments.join('')),undefined);}
+  const find=(id:string):ObservationRecipe=>{const recipe=B_OBSERVATIONS.find(r=>r.id===id);assert(recipe,id);return recipe;};
   assert(find('word.materialqualifier.common.etched').entryIds.includes('word.material.common.glass.shards'));
   assert(find('word.bodymatqual.common.goosebump').entryIds.includes('word.bodymaterial.common.skin'));
   assert(find('word.bodymatqual.common.dense').entryIds.includes('word.bodymaterial.common.pelt'));

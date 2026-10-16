@@ -20,12 +20,16 @@
 
 改 **B 观察文案** 时至少跑 4 → 7；改 **A 槽位拼装** 时至少跑 6 → 7；只改 `src/` 逻辑且不动上述输入时，通常 **7** 即可。
 
+上述局部步骤更新的是模块版。需要更新双击运行的独立HTML时继续跑8；需要更新种子示例时继续跑9，避免打开旧的运行文件。
+
 ## 常用局部命令
 
-- 类型：`npm run typecheck`（`src/`）；测试类型检查逐步启用：`npm run typecheck:tests`（见 `tsconfig.tests.json`）
+- 类型：`npm run typecheck`（`src/`）；`npm run typecheck:tests`严格检查全部`tests/**/*.ts`，不排除现有测试。测试依赖的`.mjs`工具通过`allowJs`推断接口，`checkJs=false`表示不单独检查JavaScript工具内部；这些工具仍需实际测试验证。
 - 单元测试：`npm test` 或 `package.json` 中带 `test:` 前缀的脚本
 - Tag 矩阵：`npm run tag-matrices:build` / `test:tag-matrices`
 - AI 任务包（离线、体积大）：`node scripts/build-ai-task-pack.mjs` → `deliverables/ai-tasks/`
+
+`npm run check`依次执行源码类型、测试类型、单元测试、完整构建、运行产物与基础规则检查；测试类型失败会阻止后续发布构建。
 
 ## UI 源码（`src/ui/`）
 

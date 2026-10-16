@@ -1,5 +1,5 @@
 // 词条工具验收使用临时目录与合成占位样本，不将测试样本计入素材库存。
-import test from 'node:test';
+import test, {type TestContext} from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, readFile, writeFile, mkdir, rm, readdir } from 'node:fs/promises';
 import os from 'node:os';
@@ -11,20 +11,21 @@ import { validateBatch, duplicateReport, normalize, assign, extend, importBatch,
 import { inventory } from '../scripts/lexicon/inventory.mjs';
 const project=fileURLToPath(new URL('../',import.meta.url));
 const kit=path.join(project,'production','lexicon-authoring');
-const task=initialPlan().find(t=>t.batchId==='npc-trait.b0001');
+const task=initialPlan().find(t=>t.batchId==='npc-trait.b0001')!;
+assert(task,'Missing synthetic fixture task');
 function batch(t=task,producer='writer-a') {
- const c=catalog.find(c=>c.code===t.library),b=exampleBatch(c,t);b.source.producer=producer;b.source.model='synthetic-test';
+ const c=catalog.find(c=>c.code===t.library);assert(c);const b=exampleBatch(c,t);b.source.producer=producer;b.source.model='synthetic-test';
  b.entries=Array.from({length:t.size},(_,i)=>({...structuredClone(b.entries[0]),id:`lx.${t.batchId}.${String(i+1).padStart(4,'0')}`,name:`测试占位${t.batchId}${i}`,description:`只供临时测试的占位描述${t.batchId}${i}`}));
  return b;
 }
-async function fixture(t) {
+async function fixture(t:TestContext) {
  const root=await mkdtemp(path.join(os.tmpdir(),'aetheria-lexicon-'));t.after(()=>rm(root,{recursive:true,force:true}));
  return {root,file:path.join(root,'incoming.json')};
 }
-async function imported(t) {
+async function imported(t:TestContext) {
  const f=await fixture(t);await assign(f.root,task.batchId,'writer-a');await atomicJSON(f.file,batch());await importBatch(f.root,f.file);return f;
 }
-async function reviewFile(root,id,status='approved') {
+async function reviewFile(root:string,id:string,status='approved') {
  const file=path.join(root,'review-input.json');await atomicJSON(file,{format:'aetheria-lexicon-review',schemaVersion:1,reviewer:'editor-a',decisions:[{id,status,note:'测试审稿决定'}]});return file;
 }
 test('58类示例均有合法子类与完整独立批次结构，示例不进入库存',async t=>{
@@ -41,17 +42,17 @@ test('首期10700条/214批无重号，每个独立任务已落盘且编号正�
  for(const t of plan) {const prompt=await readFile(path.join(kit,t.prompt),'utf8');assert.ok(prompt.includes(`本批恰好 ${t.size} 条`));assert.ok(prompt.includes(`lx.${t.batchId}.0050`));assert.ok(prompt.includes('不设计组合规则'));}
 });
 test('规则包、脚本字段与写作者自批approved不能伪装成纯素材',()=>{
- for(const modify of [b=>b.weight=1,b=>b.entries[0].effects=[],b=>b.entries[0].conditions=[],b=>b.entries[0].reviewStatus='approved',b=>b.source.rules={},b=>b.format='aetheria-reference']) {
+ for(const modify of [(b:ReturnType<typeof batch>)=>Reflect.set(b,'weight',1),(b:ReturnType<typeof batch>)=>b.entries[0].effects=[],(b:ReturnType<typeof batch>)=>b.entries[0].conditions=[],(b:ReturnType<typeof batch>)=>b.entries[0].reviewStatus='approved',(b:ReturnType<typeof batch>)=>Reflect.set(b.source,'rules',{}),(b:ReturnType<typeof batch>)=>b.format='aetheria-reference']) {
   const b=batch();modify(b);assert.throws(()=>validateBatch(b));
  }
 });
 test('分类错配、跳号、批次零号和未定义子类被拒绝',()=>{
- for(const modify of [b=>b.library='unknown',b=>b.entries[0].category='npc-name',b=>b.entries[1].id=b.entries[0].id,b=>b.batchId='npc-trait.b0000',b=>b.entries[0].subcategory='任意新子类']) {
+ for(const modify of [(b:ReturnType<typeof batch>)=>b.library='unknown',(b:ReturnType<typeof batch>)=>b.entries[0].category='npc-name',(b:ReturnType<typeof batch>)=>b.entries[1].id=b.entries[0].id,(b:ReturnType<typeof batch>)=>b.batchId='npc-trait.b0000',(b:ReturnType<typeof batch>)=>b.entries[0].subcategory='任意新子类']) {
   const b=batch();modify(b);assert.throws(()=>validateBatch(b));
  }
 });
 test('超过批量、空文本、错误字段类型、空标签与控制字符被拒绝',()=>{
- for(const modify of [b=>b.entries.push({...b.entries[0]}),b=>b.entries[0].description=' ',b=>b.entries[0].name=24,b=>b.entries[0].tags=[],b=>b.entries[0].description='坏\u0000文本',b=>b.entries[0].name='界'.repeat(41)]) {
+ for(const modify of [(b:ReturnType<typeof batch>)=>b.entries.push({...b.entries[0]}),(b:ReturnType<typeof batch>)=>b.entries[0].description=' ',(b:ReturnType<typeof batch>)=>b.entries[0].name=24,(b:ReturnType<typeof batch>)=>b.entries[0].tags=[],(b:ReturnType<typeof batch>)=>b.entries[0].description='坏\u0000文本',(b:ReturnType<typeof batch>)=>b.entries[0].name='界'.repeat(41)]) {
   const b=batch();modify(b);assert.throws(()=>validateBatch(b));
  }
 });
@@ -71,7 +72,7 @@ test('领取人冲突拒绝，重复领取幂等，扩充不会重用首期批�
  const {root}=await fixture(t);await assign(root,task.batchId,'writer-a');await assign(root,task.batchId,'writer-a');
  await assert.rejects(assign(root,task.batchId,'writer-b'),/已由/);
  const next=await extend(root,'npc-trait','writer-b','新主题');assert.equal(next.batchId,'npc-trait.b0005');assert.equal(next.size,50);
- const index=await rebuildIndex(root);assert.equal(index.tasks.length,215);assert.equal(index.tasks.find(t=>t.batchId===next.batchId).producer,'writer-b');
+ const index=await rebuildIndex(root);assert.equal(index.tasks.length,215);assert.equal(index.tasks.find((t:{batchId:string;producer:string})=>t.batchId===next.batchId)?.producer,'writer-b');
 });
 test('未领取与假冒来源的交付无法收录',async t=>{
  const {root,file}=await fixture(t);await atomicJSON(file,batch());await assert.rejects(importBatch(root,file),/领取/);
@@ -88,7 +89,7 @@ test('批次收录与重复导入幂等，已收录文件不允许覆盖',async 
  assert.equal((await collection(root)).entries.length,50);
 });
 test('跨批精确重复使整批不写入，近似项保留编辑判断',async t=>{
- const {root,file}=await imported(t),next=initialPlan().find(t=>t.batchId==='npc-trait.b0002');await assign(root,next.batchId,'writer-a');
+ const {root,file}=await imported(t),next=initialPlan().find(t=>t.batchId==='npc-trait.b0002')!;assert(next);await assign(root,next.batchId,'writer-a');
  const b=batch(next);b.entries[0]={...batch().entries[0],id:`lx.${next.batchId}.0001`};await atomicJSON(file,b);
  await assert.rejects(importBatch(root,file),/精确重复/);assert.equal((await collection(root)).entries.length,50);
 });
@@ -123,7 +124,7 @@ test('并发写锁阻止领取，不覆盖既有管理记录',async t=>{
  const {root}=await fixture(t);await mkdir(path.join(root,'management','.lock'),{recursive:true});await assert.rejects(assign(root,task.batchId,'writer-a'),/另一个整理进程/);
 });
 test('跨批续写摘要只来自已收录词库，提供稳定ID与精简内容',async t=>{
- const {root}=await imported(t);const result=await contextSummary(root,'npc-trait');assert.equal(result.count,50);const data=JSON.parse(await readFile(result.output,'utf8'));assert.equal(data.entries[0].id,batch().entries[0].id);assert.ok(data.entries.every(e=>e.summary.length<=160));
+ const {root}=await imported(t);const result=await contextSummary(root,'npc-trait');assert.equal(result.count,50);const data=JSON.parse(await readFile(result.output,'utf8'));assert.equal(data.entries[0].id,batch().entries[0].id);assert.ok(data.entries.every((e:{summary:string})=>e.summary.length<=160));
 });
 test('一万条规模可查精确重复，报告不改变原始条目',()=>{
  const entries=Array.from({length:10000},(_,i)=>({id:`test-${i}`,category:'stress',text:`临时测试样本条目${i.toString(36)}专用，不是生产素材。`}));entries.push({...entries[123],id:'duplicate'});
@@ -131,11 +132,11 @@ test('一万条规模可查精确重复，报告不改变原始条目',()=>{
 });
 test('现有素材统计来自实际默认加载列表，可选包分开且不公开秘密正文',async()=>{
  const inv=await inventory(project),index=JSON.parse(await readFile(path.join(project,'content/index.json'),'utf8'));assert.equal(inv.byPack.length,index.packs.length);
- const packs=await Promise.all(index.packs.map(f=>readFile(path.join(project,'content',f),'utf8').then(JSON.parse)));assert.equal(inv.totals.textKeys,packs.reduce((n,p)=>n+Object.keys(p.texts).length,0));
+ const packs=await Promise.all(index.packs.map((f:string)=>readFile(path.join(project,'content',f),'utf8').then(JSON.parse)));assert.equal(inv.totals.textKeys,packs.reduce((n,p)=>n+Object.keys(p.texts).length,0));
  assert.ok(inv.sources.every(s=>/^[a-f0-9]{64}$/.test(s.sha256)));assert.ok(inv.optional.every(p=>p.loadedByDefault===false));assert.equal(Object.hasOwn(inv,'texts'),false);
 });
 test('运行时源码与默认内容入口没有导入词库，新增素材不会变更游戏存档',async()=>{
- async function scan(dir) {for(const e of await readdir(dir,{withFileTypes:true})) {const file=path.join(dir,e.name);if(e.isDirectory())await scan(file);else if(e.name.endsWith('.ts'))assert.ok(!/lexicon-authoring|scripts\/lexicon/.test(await readFile(file,'utf8')),file);}}
+ async function scan(dir:string) {for(const e of await readdir(dir,{withFileTypes:true})) {const file=path.join(dir,e.name);if(e.isDirectory())await scan(file);else if(e.name.endsWith('.ts'))assert.ok(!/lexicon-authoring|scripts\/lexicon/.test(await readFile(file,'utf8')),file);}}
  await scan(path.join(project,'src'));assert.ok(!(await readFile(path.join(project,'content/index.json'),'utf8')).includes('lexicon-authoring'));
 });
 test('已分配任务的可派发指令带正确来源，不要求AI改动规则',()=>{

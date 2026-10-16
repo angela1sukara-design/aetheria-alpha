@@ -93,6 +93,7 @@
 
 ```sh
 npm run typecheck
+npm run typecheck:tests
 node --test tests/<与任务相关的>.test.ts
 ```
 

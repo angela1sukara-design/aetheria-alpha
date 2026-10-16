@@ -28,7 +28,7 @@
     "examples:b-content": "node scripts/build-b-five-theme-examples.mjs && node scripts/build-b-observation-example.mjs",
     "test:worldgen": "node --test tests/worldgen.test.ts tests/worldgen-v02.test.ts",
     "test:worldgen:browser": "node tests/worldgen-browser.mjs",
-    "check": "npm run typecheck && npm test && npm run build && node scripts/check-dist.mjs && npm run check:foundation",
+    "check": "npm run typecheck && npm run typecheck:tests && npm test && npm run build && node scripts/check-dist.mjs && npm run check:foundation",
     "check:foundation": "node scripts/check-foundation.mjs",
     "test:foundation:browser": "node tests/foundation-browser.mjs",
     "test:ui": "node tests/folio-browser.mjs",
