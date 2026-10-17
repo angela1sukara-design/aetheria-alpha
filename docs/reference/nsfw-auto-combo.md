@@ -95,3 +95,22 @@ const many = enumerateCombos(atoms, { limit: 12 });
 
 大类：束缚制服｜材质覆层转化｜侵犯插入｜口封感官剥夺｜产卵灌注｜公开羞辱｜主从调教｜多体围攻。  
 combo 样例亦按 `gameplayCategories` G1–G8 过滤；词条≠玩法≠数值。
+
+## 野外战败 · 4+1 敌人（涎狼 + 定稿表）
+
+合载工厂：`scripts/nsfw-auto-combo/wild-defeat-mount.mjs` + `wild-defeat-enemy-specs.mjs`。正文：`content/nsfw-auto-combo/wild-defeat-fills.json`（schema 2，54 节点）。组合运行时：`src/engine/wild-defeat-draws.ts`。
+
+| 敌 | 敌人 ID | 环境规则 | A profile | 试跑 A / B action | 痕迹 flag（恶堕门） |
+|---|---|---|---|---|---|
+| 兽径涎狼 | `progression:enemy.saliva_wolf` | `env-enemy.saliva_wolf.wild`（exploration+beast-form） | `profile.beast.saliva_wolf` | `wild.defeat.saliva_wolf` / `wild.defeat.corruption.saliva_wolf` | `flag.saliva_wolf.neck_unwiped` |
+| E1 林缘蛞蝓兽 | `progression:enemy.forest_slug` | `forest_slug.wild`（exploration+gel） | `profile.beast.forest_slug` | `wild.defeat.forest_slug` / `…corruption.forest_slug` | `flag.forest_slug.coat_unwiped` |
+| E2 兽径触手藤 | `progression:enemy.tentacle_vine` | `tentacle_vine.wild`（exploration+beast-form） | `profile.monster.tentacle_vine` | `wild.defeat.tentacle_vine` / `…corruption.tentacle_vine` | `flag.tentacle_vine.bind_unwiped` |
+| E3 泥沼史莱姆堆 | `progression:enemy.bog_slime` | `bog_slime.wild`（exploration+waterways） | `profile.monster.bog_slime` | `wild.defeat.bog_slime` / `…corruption.bog_slime` | `flag.bog_slime.wrap_unwiped` |
+| E4 暗处虫巢爬者 | `progression:enemy.hive_crawler` | `hive_crawler.wild`（exploration+risk） | `profile.beast.hive_crawler` | `wild.defeat.hive_crawler` / `…corruption.hive_crawler` | `flag.hive_crawler.cocoon_unwiped` |
+| Boss 黑胶林地看守 | `progression:enemy.gel_warden` | `gel_warden.wild`（exploration+gel，priority 9） | `profile.boss.gel_warden` | `wild.defeat.gel_warden` / `…corruption.gel_warden` | `flag.gel_warden.seal_unwiped` |
+
+恶堕门通用：`flag.defeat.{beast|monster|boss}.*.done` + 上表痕迹 flag + 未升 `flag.corruption.*`。A4 收束**不**默认进 B1。
+
+构建：`node --experimental-strip-types scripts/build-adventure-content.mjs`。自检：`NODE_OPTIONS='--experimental-strip-types' node --test tests/wild-defeat-saliva-wolf.test.ts tests/wild-defeat-four-plus-one.test.ts`。
+
+**Tag 自动组合（现状）**：入口按 profile 抽 3 行 Material×Part×Action → 对手 `progression:tag.*.combo.*`；选项用 `narrative.tag` 分支。仍靠作者写死节点/选项；无物种泛化 Condition；Boss B 链可写黑胶化/恍惚（叙事，非八槽 runtime）。

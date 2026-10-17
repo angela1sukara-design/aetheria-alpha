@@ -20,7 +20,8 @@ import { validRequestFilter } from '../engine/history.ts';
 import { validateAdventure } from './adventure-validation.ts';
 import { adventure } from '../engine/narrative.ts';
 import { upgradeUXContent } from './ux-content-migration.ts';
-export const MAX_SAVE_BYTES = 4 * 1024 * 1024;
+/** World snapshots embed pack definitions; adventure growth needs headroom above 4 MiB. */
+export const MAX_SAVE_BYTES = 5 * 1024 * 1024;
 export type DecodeResult = { status: 'ready'; state: GameState; registry?: Registry; migration?: string } | { status: 'quarantined'; code: string; reason: string; original: string };
 interface SavePayload { format: 'aetheria-alpha'; schemaVersion: 3 | 4; savedAt: string; state: GameState }
 async function checksum(value: unknown): Promise<string> {

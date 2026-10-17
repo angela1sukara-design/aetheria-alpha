@@ -2,6 +2,7 @@ import { buildPersonalityContent } from './build-personality-content.mjs';
 import {proseProblem} from '../src/content/player-prose.ts';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import { loadAtoms, sampleCombos, toEncounterCandidate } from './nsfw-auto-combo/combiner.mjs';
+import { mountAllWildDefeatEnemies, applyWildDefeatFills, writeWildDefeatCandidates } from './nsfw-auto-combo/wild-defeat-mount.mjs';
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
 const index=await json('content/index.json'),base=await Promise.all(index.packs.filter(p=>!p.includes('/adventure/')).map(p=>json('content/'+p)));
 const id=s=>'progression:'+s,tag=s=>id('tag.'+s),scoped=(role,s)=>({role,tagId:tag(s)}),has=(role,s,value=true)=>({op:'narrative.tag',role,id:tag(s),value});
@@ -1618,6 +1619,27 @@ for (const rDef of reactionDefinitions) {
     priority: rDef.priority,
   });
 }
+
+const wildDefeatMetas = mountAllWildDefeatEnemies(p, {
+  id,
+  tag,
+  scoped,
+  has,
+  choice,
+  exit,
+  time,
+  health,
+  adultGate,
+  action,
+  envRule,
+  json,
+  readFile,
+});
+const wildDefeatFills = await applyWildDefeatFills(p, wildDefeatMetas, json);
+await writeWildDefeatCandidates('content/nsfw-auto-combo/wild-defeat-candidates.json', writeFile, {
+  metas: wildDefeatMetas,
+  fillCount: wildDefeatFills.fillCount,
+});
 
 await writeFile(
   'content/nsfw-auto-combo/defeat-play-draws.json',
