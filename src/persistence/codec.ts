@@ -185,13 +185,13 @@ export class SaveCodec {
     validateState(state, this.registry);
     if (state.worldInstance && await hash(state.worldInstance.generation.rules) !== state.worldInstance.generation.rulesHash) throw Error('世界规则哈希不符。');
     const payload: SavePayload = { format: 'aetheria-alpha', schemaVersion: state.meta.schemaVersion, savedAt: new Date().toISOString(), state: clone(state) };
-    const text = JSON.stringify({ payload, checksum: await checksum(payload) }, null, 2);
-    if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB；本版本不会截断账本或删除进度。');
+    const text = JSON.stringify({ payload, checksum: await checksum(payload) });
+    if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error(`存档超过 ${MAX_SAVE_BYTES / 1024 / 1024} MiB；本版本不会截断账本或删除进度。`);
     return text;
   }
   async decode(text: string): Promise<DecodeResult> {
     try {
-      if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error('存档超过 4 MiB。');
+      if (new TextEncoder().encode(text).byteLength > MAX_SAVE_BYTES) throw new Error(`存档超过 ${MAX_SAVE_BYTES / 1024 / 1024} MiB。`);
       const envelope = JSON.parse(text);
       if (envelope?.payload?.format !== 'aetheria-alpha' || ![1, 2, 3, 4].includes(envelope.payload.schemaVersion)) throw new Error('文件不是受支持的 Alpha 0.1 存档。');
       if (await checksum(envelope.payload) !== envelope.checksum) {

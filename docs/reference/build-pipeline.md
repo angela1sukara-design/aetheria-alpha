@@ -17,11 +17,12 @@
 | 6a | `scripts/build-personal-content.mjs` | 个人故事/职业原稿与显式结算计划 | `src/world/personal-content-data.ts` |
 | 7 | `scripts/build.mjs` | `src/**/*.ts` | `dist/`（剥类型 ESM） |
 | 8 | `scripts/build-standalone.mjs` | `dist/` | 单机 HTML 入口 |
-| 9 | `scripts/build-world-samples.mjs` | 生成配置 | 样例世界 |
 
 改 **B 观察文案** 时至少跑 4 → 7；改 **A 槽位拼装** 时至少跑 6 → 7；只改 `src/` 逻辑且不动上述输入时，通常 **7** 即可。
 
-上述局部步骤更新的是模块版。需要更新双击运行的独立HTML时继续跑8；需要更新种子示例时继续跑9，避免打开旧的运行文件。
+上述局部步骤更新的是模块版。需要更新双击运行的独立HTML时继续跑8。正式入口统一为根目录“启动游戏-双击直接运行.html”，start_game.bat也打开该文件。dist中的兼容HTML供既有测试与工具使用。
+
+种子示例已移出默认构建；需要时在步骤8后执行npm run examples:worldgen（scripts/build-world-samples.mjs），输出到dist。依赖种子示例的npm浏览器检查命令会先生成示例；直接运行对应测试文件时须自行准备。
 
 ## 常用局部命令
 

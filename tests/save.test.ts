@@ -10,6 +10,10 @@ test('存档/JSON 导出/导入完整恢复所有游戏事实', async () => {
   const { registry, engine } = await game(); act(engine, 'travel.apartment_street'); act(engine, 'travel.street_market'); act(engine, 'market.work');
   const codec = new SaveCodec(registry); const encoded = await codec.encode(engine.snapshot()); const decoded = await codec.decode(encoded);
   assert.equal(decoded.status, 'ready'); if (decoded.status === 'ready') assert.deepEqual(decoded.state, engine.snapshot());
+  const expanded = JSON.stringify(JSON.parse(encoded), null, 2);
+  assert.ok(Buffer.byteLength(encoded) < Buffer.byteLength(expanded));
+  const legacyLayout = await codec.decode(expanded);
+  assert.equal(legacyLayout.status, 'ready'); if (legacyLayout.status === 'ready') assert.deepEqual(legacyLayout.state, engine.snapshot());
 });
 test('事件中途保存再读档：节点、文字、RNG 稳定', async () => {
   const { registry, engine } = await game(); act(engine, 'travel.apartment_street'); act(engine, 'street.notice', 'locked-entry');
@@ -32,7 +36,8 @@ test('Repository 真正保存/读取，空槽不伪造存档', async () => {
 });
 test('损坏 JSON/篡改数据都隔离并保留原字符串', async () => {
   const { registry, engine } = await game(); const codec = new SaveCodec(registry);
-  for (const text of ['{broken', (await codec.encode(engine.snapshot())).replace('"totalMinutes": 480', '"totalMinutes": 999')]) {
+  const tampered = JSON.parse(await codec.encode(engine.snapshot())); tampered.payload.state.clock.totalMinutes = 999;
+  for (const text of ['{broken', JSON.stringify(tampered)]) {
     const result = await codec.decode(text); assert.equal(result.status, 'quarantined'); if (result.status === 'quarantined') assert.equal(result.original, text);
   }
 });

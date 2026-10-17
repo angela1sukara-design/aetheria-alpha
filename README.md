@@ -11,7 +11,9 @@ npm ci
 npm run build
 ```
 
-随后双击上述文件，或运行start_game.bat。网页入口为dist/Aetheria-Folio.html。
+正式游玩统一双击根目录“启动游戏-双击直接运行.html”；start_game.bat也打开同一文件。开发时使用npm run dev。
+
+根目录index.html是构建模板；dist是运行产物，examples是按需生成的专项试玩。它们不作为另外几版游戏使用。默认构建不再生成种子试玩，确有需要时执行npm run examples:worldgen。
 
 ## 当前内容
 
@@ -34,4 +36,4 @@ npm run build
 
 验证：npm run typecheck、npm test、npm run test:a-content、npm run test:b-content。浏览器检查见package.json对应命令。
 
-构建、依赖、试玩HTML、截图、外发包和验证日志不上传。历史文档与旧产物收在工程旁的../aetheria-history，详见[目录与归档约定](docs/project-layout.md)。
+构建、依赖、试玩HTML、截图、外发包和验证日志不上传。历史文档与旧产物收在工程旁的../aetheria-history，详见[目录与归档约定](docs/project-layout.md)。2026-10-17已将旧测试产物和专项试玩页移出工程，备份保留原文件及SHA-256清单。
