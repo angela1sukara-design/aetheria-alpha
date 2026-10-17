@@ -1,0 +1,1909 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B2",
+  "theme": "western",
+  "author": "author-b-v2",
+  "batchId": "b2-western-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.form.western.present-person",
+      "text": "在边陲驿站前廊驻足的旅人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.nearby-figure",
+      "text": "同处木廊阴影下的边镇身影",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.pump-well",
+      "text": "在压水井旁打水注满木槽的杂役",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pump-well"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.coil-lasso",
+      "text": "在鞍架旁盘整浸蜡套索的牧工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "coil-lasso"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.sort-mail",
+      "text": "在邮袋旁分拣信件包裹的邮差",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sort-mail"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.check-timetable",
+      "text": "在黑漆木牌前核对驿车时刻的乘客",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "check-timetable"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.watch-road",
+      "text": "在木廊栏杆边眺望远方驿路的哨卫",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "watch-road"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.weigh-freight",
+      "text": "在货台前清点托运木箱的站务员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "weigh-freight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.mend-harness",
+      "text": "在工作凳前检修皮革挽具的皮匠",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "mend-harness"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.greet-rider",
+      "text": "在拴马杆旁点头致意的同行骑手",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "greet-rider"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.widebrim-drover",
+      "text": "头戴宽檐毡帽、领口系方巾的赶牛人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物头戴宽檐毡帽且领口系有方巾。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.vest-stationmaster",
+      "text": "身穿细条纹马甲、袖套黑布护袖的驿站长",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物身穿细条纹马甲并戴有黑布护袖。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.chaps-rancher",
+      "text": "外罩耐磨牛皮套裤的牧场骑手",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物外罩牛皮套裤。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.apron-farrier",
+      "text": "系着厚皮围裙手持蹄铁锤的钉掌匠",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物系有厚皮围裙且手持蹄铁锤。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.canvas-coat-driver",
+      "text": "披着长款防尘帆布风衣的驿车御手",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物披有长款防尘帆布风衣。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.visor-telegrapher",
+      "text": "戴着绿透明遮光帽舌的电报员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物戴有绿透明遮光帽舌。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.mailbag-courier",
+      "text": "肩挎厚帆布邮政袋的快马信使",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物肩挎厚帆布邮政袋。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.rocking-whittler",
+      "text": "坐在桦木摇椅上削木头的老驿卒",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物坐在桦木摇椅上并正在削木头。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.lantern-nightwatch",
+      "text": "手提铁丝护罩马灯巡夜的值更人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物手提铁丝护罩马灯。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.form.western.dipper-water-boy",
+      "text": "提着镀锌铁桶给饮马槽添水的帮工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物手提镀锌铁桶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.pump-well",
+      "text": "往复按动长柄压水铁杆把清水打进饮马木槽",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pump-well"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "pump-well"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.coil-lasso",
+      "text": "将浸蜡麻制套索按顺时针盘成圆环挂回鞍架",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "coil-lasso"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "coil-lasso"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.sort-mail",
+      "text": "按收件镇名分拣帆布邮袋里的信函与包裹",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sort-mail"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "sort-mail"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.check-timetable",
+      "text": "抬头查看木牌上登记的下一班驿车到站时刻",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "check-timetable"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "check-timetable"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.watch-road",
+      "text": "手扶木廊栏杆远眺驿路尽头是否扬起烟尘",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "watch-road"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "watch-road"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.weigh-freight",
+      "text": "对照货运单逐件清点待装车的木箱数量",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "weigh-freight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "weigh-freight"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.mend-harness",
+      "text": "仔细检查皮革缰绳与肚带的铜扣是否牢固",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "mend-harness"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "mend-harness"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.greet-rider",
+      "text": "向走上木廊台阶的同行旅人点头致意",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "greet-rider"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "greet-rider"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.beat-dust",
+      "text": "站在木廊下风处拍打衣袖与裤腿上的红土浮尘",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "beat-dust"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "beat-dust"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.check-strongbox",
+      "text": "伸手检查驿车铁皮箱上的双道挂锁是否锁紧",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "check-strongbox"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "check-strongbox"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.sweep-porch",
+      "text": "用高粱秆扫帚把松木廊板上的浮沙扫下台阶",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sweep-porch"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "sweep-porch"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.rest-porch",
+      "text": "坐在遮阳木廊的长凳上吹着穿堂风歇息",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "rest-porch"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "rest-porch"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.share-trail-news",
+      "text": "与同路客商交流前方河谷渡口的水深情况",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "share-trail-news"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "share-trail-news"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.hitch-reins-rail",
+      "text": "把皮革缰绳在杉木拴马杆上绕两圈打上活结",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有皮革缰绳且面前有杉木拴马杆。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.pour-enamel-coffee",
+      "text": "提起蓝搪瓷咖啡壶往马口铁杯里倒出热咖啡",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有装热咖啡的蓝搪瓷壶与马口铁杯。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.oil-saddle-leather",
+      "text": "用软布蘸取牛脚油细致擦拭马鞍座面",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有蘸牛脚油软布与马鞍。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.nail-notice-board",
+      "text": "用图钉把新到的驿路通告按在廊柱木板上",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有图钉与通告且面前有廊柱木板。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.scoop-oat-bucket",
+      "text": "用木升子从镀锌铁桶里舀出燕麦倒进料槽",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有木升子且面前有燕麦桶与料槽。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.whittle-cedar-stick",
+      "text": "用折刀顺着木纹慢慢削平手中的红杉木条",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有折刀与红杉木条。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.trim-barn-lantern",
+      "text": "提起铁丝护罩马灯旋高灯芯使火苗更亮",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有已点亮的铁丝护罩马灯。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.fit-iron-horseshoe",
+      "text": "拿起熟铁马掌比对尺寸并用小锤轻敲校正",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有熟铁马掌与小锤。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.write-chalk-arrival",
+      "text": "用粉笔在黑漆木牌上改写驿车预计抵达时间",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有粉笔且面前有黑漆木牌。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.hand-mail-sack",
+      "text": "将封好铅封的厚帆布邮袋双手递给驿车御手",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有帆布邮袋且身旁有驿车御手。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.ladle-barrel-water",
+      "text": "拿起长柄马口铁水瓢从水桶里舀水洗手",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有马口铁水瓢且面前有盛水木桶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.action.western.tap-telegraph-key",
+      "text": "手指轻按电报发报机铜键发出到站报平安信号",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物面前有电报发报机且正在操作。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.western.pump-well",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在边陲木结构驿站前廊，你留意到在场人员的手。对方往复按动长柄压水铁杆把清水打进饮马木槽。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.western.coil-lasso",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在边陲木结构驿站前廊，你留意到在场人员的手。对方将浸蜡麻制套索按顺时针盘成圆环挂回鞍架。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.western.sort-mail",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 9,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在边陲木结构驿站前廊，你留意到在场人员的手。对方按收件镇名分拣帆布邮袋里的信函与包裹。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B2（题材：western / 西部边陲）正式配额交付，共45条（actor.form 20条：draft 10 / hold 10；action.observed 25条：draft 13 / hold 12；全批合计 draft 23条、hold 22条）。每条均带 scene.setting eq western 前置，手工预览标为 manual/hypothetical-only。"
+}

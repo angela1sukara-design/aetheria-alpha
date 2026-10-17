@@ -1,0 +1,1661 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "steampunk",
+  "author": "author-b-v2",
+  "batchId": "b1-steampunk-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.steampunk.pressure-gauge",
+      "text": "一只黄铜表盘蒸汽压力计",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "pressure-gauge"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "pressure-gauge"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.oil-can",
+      "text": "一把长嘴黄铜注油壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "oil-can"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "oil-can"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.wrench-rack",
+      "text": "一排挂在工位架上的铆接扳手",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "wrench-rack"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "wrench-rack"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.coal-scuttle",
+      "text": "一只盛放无烟煤块的铁皮煤斗",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "coal-scuttle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "coal-scuttle"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.valve-wheel",
+      "text": "一只铸铁四辐减压手轮",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "valve-wheel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "valve-wheel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.punch-card-box",
+      "text": "一只存放差分机穿孔卡的木匣",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "punch-card-box"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "punch-card-box"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.brass-lantern",
+      "text": "一盏带玻璃防风罩的煤气提灯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "brass-lantern"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "brass-lantern"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.copper-coil",
+      "text": "一卷盘绕整齐的紫铜导流管",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "copper-coil"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "copper-coil"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.gasket-tray",
+      "text": "一盘按口径分格的皮革密封垫圈",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "gasket-tray"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "gasket-tray"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.rivet-bucket",
+      "text": "一桶备用的圆头钢制铆钉",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "rivet-bucket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "rivet-bucket"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.whistle-pull",
+      "text": "一根连接汽笛阀门的铜链拉柄",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "whistle-pull"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "whistle-pull"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.blueprint-tube",
+      "text": "一只收纳机械图纸的黄铜圆筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "blueprint-tube"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "blueprint-tube"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.boiler-hatch",
+      "text": "一扇边缘渗着白汽的锅炉检修门",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认锅炉检修门当前处于微渗白汽状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.clockwork-pendulum",
+      "text": "一座摆锤正在匀速摆动的发条座钟",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认座钟发条已上紧且摆锤正在摆动。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.grease-rag",
+      "text": "一块沾有深色齿轮润滑脂的擦机布",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认擦机布上沾有齿轮润滑脂。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.teacup-warmer",
+      "text": "一只搁在余热管壁上保温的锡制茶杯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认锡制茶杯当前搁在余热管壁上且内有温茶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.pressure-log",
+      "text": "一本翻开在当班压力记录页的值班簿",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认值班簿当前翻开在当班压力记录页。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.goggles-case",
+      "text": "一只扣环半掩的皮质防尘护目镜盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认护目镜盒扣环处于半掩状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.condensate-pan",
+      "text": "一只积有浅层冷凝水的铜制接水盘",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认接水盘内当前积有浅层冷凝水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.telegraph-key",
+      "text": "一台触点微微泛亮的电报发报电键",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认电报电键触点外观与当前摆放位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.coal-shovel",
+      "text": "一把铲沿留有煤灰擦痕的短柄铁锹",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认短柄铁锹铲沿留有煤灰擦痕。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.gear-mold",
+      "text": "一副内壁涂有脱模粉的砂型齿轮模具",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认齿轮模具内壁当前涂有脱模粉。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.exhaust-louvers",
+      "text": "一扇叶片挂着细小水珠的排汽百叶窗",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认排汽百叶窗叶片当前挂有水珠。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.ticket-punch",
+      "text": "一把挂在皮带环上的黄铜检票打孔钳",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认检票打孔钳当前挂在皮带环上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.prop.steampunk.mercury-manometer",
+      "text": "一支水银柱停在标准刻度的U型压差计",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认U型压差计内水银柱停在标准刻度。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.machine-oil-scent",
+      "text": "机械润滑油与温热黄铜混合的气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "machine-oil-scent"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "machine-oil-scent"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.coal-smoke-trace",
+      "text": "燃煤炉膛飘出的淡淡煤烟气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "coal-smoke-trace"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "coal-smoke-trace"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.boiled-tea-steam",
+      "text": "休息角茶壶随蒸汽散出的红茶香气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认休息角茶壶正在沸腾并散发红茶香。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.piston-rhythm",
+      "text": "远处蒸汽活塞往复推拉的规律节拍声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "piston-rhythm"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "piston-rhythm"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.gear-meshing",
+      "text": "传动轴与大小齿轮咬合运转的咔嗒声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "gear-meshing"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "gear-meshing"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.valve-hiss",
+      "text": "泄压阀间歇排汽时发出的短促嘶鸣声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认泄压阀当前正处于间歇排汽状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.gas-lamp-glow",
+      "text": "煤气灯纱罩透出的暖黄光晕",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "gas-lamp-glow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "gas-lamp-glow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.brass-reflection",
+      "text": "抛光黄铜管壁映出的柔和反光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "brass-reflection"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "brass-reflection"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.furnace-slit-glare",
+      "text": "炉门视孔透出的一线橘红火光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认炉门视孔当前开启并透出炉火光线。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.pipe-radiant-warmth",
+      "text": "主蒸汽管道外侧散发的烘人暖意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "pipe-radiant-warmth"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "pipe-radiant-warmth"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.vent-warm-puff",
+      "text": "排风口随活塞节拍涌出的温热气流",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认排风口当前正随节拍排出温热气流。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.window-cool-draft",
+      "text": "高窗铁框缝隙渗入的微凉街风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认高窗铁框缝隙当前有微凉街风渗入。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.floor-plate-vibration",
+      "text": "脚下铸铁格栅随轮机运转传来的细微震颤",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "floor-plate-vibration"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "floor-plate-vibration"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.humid-steam-film",
+      "text": "空气中散逸水汽拂过手背的微潮触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "humid-steam-film"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "humid-steam-film"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    },
+    {
+      "id": "word.sense.steampunk.oily-handrail-feel",
+      "text": "铁制扶手表面略带油膜的顺滑触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "steampunk"
+        }
+      ],
+      "pendingFacts": [
+        "确认铁制扶手表面当前留有薄油膜。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.steampunk"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.steampunk.pressure-gauge",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.steampunk.machine-oil-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在齿轮工坊廊道，你留意到在场人员的手。对方把工具归回原位。你注意到一只黄铜表盘蒸汽压力计，旁侧备有过滤水。你察觉到机械润滑油与温热黄铜混合的气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.steampunk.oil-can",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.steampunk.piston-rhythm",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在齿轮工坊廊道，你留意到在场人员的手。对方将工具放回原处。你注意到一把长嘴黄铜注油壶，旁侧备有过滤水。你察觉到远处蒸汽活塞往复推拉的规律节拍声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.steampunk.machine-oil-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在齿轮工坊廊道，你察觉到机械润滑油与温热黄铜混合的气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.steampunk.piston-rhythm",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在齿轮工坊廊道，你察觉到远处蒸汽活塞往复推拉的规律节拍声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B1（题材：steampunk / 蒸汽都市）正式配额交付，共40条（environment.prop 25条：draft 12 / hold 13；environment.sense.* 五子池各3条共15条：draft 8 / hold 7；全批合计 draft 20条、hold 20条）。每条均带 scene.setting eq steampunk 前置，手工预览标为 manual/hypothetical-only。"
+}

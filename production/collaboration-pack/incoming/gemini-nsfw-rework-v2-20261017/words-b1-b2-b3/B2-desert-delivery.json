@@ -1,0 +1,1909 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B2",
+  "theme": "desert",
+  "author": "author-b-v2",
+  "batchId": "b2-desert-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.form.desert.present-person",
+      "text": "在绿洲驿站遮阳廊驻足的行人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.nearby-figure",
+      "text": "同处凉棚下的商旅身影",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.draw-well",
+      "text": "在绿洲水井旁汲水装囊的杂役",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "draw-well"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.check-compass",
+      "text": "在路标旁核对沙海方位的向导",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "check-compass"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.wait-dusk",
+      "text": "在遮阳席上等候暑气消退的旅人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "wait-dusk"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.tally-water",
+      "text": "在储水瓮前登记配额的管水员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tally-water"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.pack-cargo",
+      "text": "在拴桩旁整理货包的商队伙计",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pack-cargo"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.watch-horizon",
+      "text": "在高台边缘眺望风沙动向的哨兵",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "watch-horizon"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.grind-spice",
+      "text": "在石臼前捣碎干香料的驿站厨役",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "grind-spice"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.greet-traveler",
+      "text": "在廊下举手向来客致意的驿卒",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "greet-traveler"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.turbaned-guide",
+      "text": "头缠防沙亚麻布巾的沙海向导",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物头缠防沙亚麻布巾。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.cloak-merchant",
+      "text": "身披浅色粗麻防晒斗篷的行商",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物身披浅色粗麻防晒斗篷。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.waterskin-porter",
+      "text": "肩头斜背两只牛皮水囊的挑夫",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物肩头斜背两只牛皮水囊。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.sand-goggles-scout",
+      "text": "眼部戴着窄缝骨制防眩镜的斥候",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物眼部戴有窄缝骨制防眩镜。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.sunburned-driver",
+      "text": "腕部缠着麻布护腕的驼队赶脚人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物腕部缠有麻布护腕。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.bead-trader",
+      "text": "腰间系着算筹与小铜秤的香料客商",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物腰间系有算筹与小铜秤。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.pottery-keeper",
+      "text": "挽着宽袖在陶瓮间巡查的管水人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物挽着宽袖并在陶瓮间巡查。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.linen-weaver",
+      "text": "膝上铺着半成品椰枣叶席的编织匠",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物膝上铺有半成品椰枣叶席。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.lantern-watchman",
+      "text": "手提防风马灯守在驿门的值夜人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物手提防风马灯并守在驿门。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.form.desert.staff-pilgrim",
+      "text": "拄着胡杨木长杖在廊下歇脚的远行人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物拄着胡杨木长杖。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.draw-well",
+      "text": "在绿洲水井旁平稳拉起盛满清水的木桶",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "draw-well"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "draw-well"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.check-compass",
+      "text": "对照日影与指北针核对下一段沙路方向",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "check-compass"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "check-compass"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.wait-dusk",
+      "text": "坐在遮阳廊凉席上静候午后烈日西斜",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "wait-dusk"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "wait-dusk"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.tally-water",
+      "text": "在木牌上逐笔记录今日发放的饮水份额",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tally-water"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "tally-water"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.pack-cargo",
+      "text": "按轻重顺序捆扎即将装驮的帆布货包",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pack-cargo"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "pack-cargo"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.watch-horizon",
+      "text": "站在夯土高台边留神观察远方沙脊线",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "watch-horizon"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "watch-horizon"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.grind-spice",
+      "text": "用石杵有节奏地将干香料捣成细末",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "grind-spice"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "grind-spice"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.greet-traveler",
+      "text": "向步入遮阳廊的同行旅人点头致意",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "greet-traveler"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "greet-traveler"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.shake-sand",
+      "text": "站在廊外下风处轻轻拍去衣摆上的浮沙",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "shake-sand"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "shake-sand"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.tighten-awning",
+      "text": "检查遮阳篷拉绳的绳结并将其重新系牢",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tighten-awning"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "tighten-awning"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.cool-hands",
+      "text": "在陶盆边用清水冲去手上的燥热与沙尘",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "cool-hands"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "cool-hands"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.sort-dates",
+      "text": "将晾干的椰枣按颗粒大小分装进藤篮",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sort-dates"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "sort-dates"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.share-route",
+      "text": "与同路商旅低声交流前方水井的水位情况",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "share-route"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "share-route"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.tie-waterskin-mouth",
+      "text": "用细麻绳将灌满水的牛皮囊口扎紧两道",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有装满水的牛皮水囊与细麻绳。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.ladle-jar-water",
+      "text": "拿起长柄木勺从渗水陶瓮里舀出半勺凉水",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有长柄木勺且面前有盛水陶瓮。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.close-compass-lid",
+      "text": "合上黄铜指北针翻盖并收入皮囊内袋",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有黄铜指北针与皮囊。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.oil-leather-strap",
+      "text": "用蘸有羊油的软布擦拭干裂的皮鞍带",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有蘸羊油软布与皮鞍带。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.sweep-step-sand",
+      "text": "握着棕榈扫帚把夯土台阶上的积沙扫净",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有棕榈扫帚且台阶上有积沙。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.pour-mint-tea",
+      "text": "高举长嘴铜壶将热茶稳稳注入小陶杯",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有装有热茶的长嘴铜壶与小陶杯。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.adjust-linen-wrap",
+      "text": "抬手将松散的防沙头巾尾端重新掖紧",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物佩戴防沙头巾且具备手部动作条件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.weigh-salt-chunk",
+      "text": "用小铜秤称量切下的岩盐块并记下斤两",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有小铜秤与岩盐块。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.unroll-sleeping-mat",
+      "text": "在背风墙角摊开卷起的椰枣叶编织凉席",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有椰枣叶凉席且处于背风墙角。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.trim-lamp-wick",
+      "text": "用铜镊拨正陶制油灯的棉芯使火苗平稳",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有铜镊且面前有点燃的陶制油灯。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.hand-water-cup",
+      "text": "双手捧起盛着凉水的陶碗递给刚到的旅人",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物双手捧有盛水陶碗且身旁有旅人。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    },
+    {
+      "id": "word.action.desert.secure-wind-screen",
+      "text": "将竹篾挡沙屏底脚插入沙槽并用石块压稳",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "desert"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物正在操作竹篾挡沙屏与压重石块。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.desert"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.desert.draw-well",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在绿洲驿站遮阳廊，你留意到在场人员的手。对方在绿洲水井旁平稳拉起盛满清水的木桶。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.desert.check-compass",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在绿洲驿站遮阳廊，你留意到在场人员的手。对方对照日影与指北针核对下一段沙路方向。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.desert.wait-dusk",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 9,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在绿洲驿站遮阳廊，你留意到在场人员的手。对方坐在遮阳廊凉席上静候午后烈日西斜。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B2（题材：desert / 沙海绿洲）正式配额交付，共45条（actor.form 20条：draft 10 / hold 10；action.observed 25条：draft 13 / hold 12；全批合计 draft 23条、hold 22条）。每条均带 scene.setting eq desert 前置，手工预览标为 manual/hypothetical-only。"
+}

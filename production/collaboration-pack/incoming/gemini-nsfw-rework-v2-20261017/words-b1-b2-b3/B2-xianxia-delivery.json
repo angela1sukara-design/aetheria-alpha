@@ -1,0 +1,2805 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B2",
+  "theme": "xianxia",
+  "author": "author-b3",
+  "batchId": "b2-xianxia-v1",
+  "revision": 2,
+  "entries": [
+    {
+      "id": "word.form.xianxia.present-person",
+      "text": "在山门殿宇驻足的修行人物",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.nearby-figure",
+      "text": "同处庭轩内的宗门身影",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.azure-robe-apprentice",
+      "text": "在石碑前默读碑文记载的求道者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "read-stele"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:identity.apprentice"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.scroll-scribe",
+      "text": "在丹房外侧看守炉火的值守弟子",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tend-furnace"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.scribe"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.herb-basket-gardener",
+      "text": "在山门石阶上清扫落叶的洒扫人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sweep-steps"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.job.gardener"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.gourd-carer",
+      "text": "在书阁案前整理玉简目录的执事",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sort-slips"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.carer"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.broom-cleaner",
+      "text": "在讲堂廊下静候开讲的听讲人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "wait-lecture"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.cleaner"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.jade-token-reception",
+      "text": "在灵泉边汲取泉水入瓮的侍从",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "draw-spring"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.reception"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.ledger-warehouse-clerk",
+      "text": "在山道沿线按序巡查的巡山人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "patrol-mountain"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.job.warehouse-clerk"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.fan-cook",
+      "text": "在殿前广场拱手行礼的同道",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "salute-peer"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.cook"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.hammer-metalworker",
+      "text": "在铸器坊司炉的锻造金工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为铸器金工且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.metalworker"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.seal-archivist",
+      "text": "看管宗门卷宗的典籍管理员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为典籍档案管理员且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.job.archivist",
+        "general-taxonomy:common.job.librarian"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.wooden-box-courier",
+      "text": "背负封灵木匣的传讯递送员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为递送员且背部背负封灵木匣。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.courier"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.scale-weigher",
+      "text": "执掌分药戥秤的药房称重员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为称重员且持有分药戥秤。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.weigher"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.lantern-guide",
+      "text": "手持引路灯笼的山门引导员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为引导员且手持引路灯笼。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.guide"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.robe-teacher",
+      "text": "在传功堂讲学的执事教习",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物具有教习身份且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.teacher"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.patrol-inspector",
+      "text": "佩挂巡山木牌的值守巡检员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为巡检员且腰间佩挂巡山木牌。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.job.inspector",
+        "general-taxonomy:common.job.security"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.needle-tailor",
+      "text": "缝制法衣云纹的织造缝纫工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为缝纫工且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.tailor"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.carpenter-plane",
+      "text": "修缮亭台榫卯的营造木工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为木工且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.carpenter"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.tea-barista",
+      "text": "在竹轩司茶的烹茶师",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物负责烹茶且位于竹轩茶席旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.job.barista"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.crystal-brow-researcher",
+      "text": "发簪嵌有莹白晶石的丹道研究员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为研究员且发簪嵌有莹白晶石。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.job.researcher",
+        "general-taxonomy:appearance.crystal"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.flow-sleeve-mediator",
+      "text": "大袖随风轻扬的戒律堂调解员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为调解员且衣袖呈飘逸流动外观。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.mediator",
+        "general-taxonomy:appearance.flow"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.sibling-disciple",
+      "text": "同门修行的师兄姐",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物具有同门身份关系且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:identity.sibling",
+        "general-taxonomy:identity.association"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.quiet-housemate",
+      "text": "同住一院清修的邻舍同道",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为同院合住者且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:identity.housemate"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.cliff-resident",
+      "text": "居住在山腰竹舍的清修住户",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为本处竹舍住户。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:identity.resident"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.resource-care-custodian",
+      "text": "仔细清点残破器物的库房看管员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为看管员且正在清点器物。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.custodian",
+        "general-taxonomy:disposition.resource-care"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.ask-first-clerk",
+      "text": "执礼询问来意的庶务堂办事员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为庶务堂办事员且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.clerk",
+        "general-taxonomy:disposition.ask-first"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.volunteer-helper",
+      "text": "自愿协助修缮山道的义工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为志愿义工且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:identity.volunteer"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.porter-bamboo",
+      "text": "挑着竹担运送山泉水的杂役搬运工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为搬运工且肩挑竹担水桶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.porter"
+      ]
+    },
+    {
+      "id": "word.form.xianxia.reader-pavilion",
+      "text": "在书楼轻声诵读古籍的代读员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为代读员且手持古籍。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:job.reader"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.queue-outside-hall",
+      "text": "在庶务堂外按次序排队等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "hall-queued"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "hall-queued"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.queue",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.wait-outside-pavilion",
+      "text": "在竹亭外静候通传",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pavilion-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "pavilion-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.pause-on-bridge",
+      "text": "在石拱桥头驻足停顿",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "bridge-paused"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "bridge-paused"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.pause"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.wait-tea-boiling",
+      "text": "守在茶炉旁等候泉水煮沸",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tea-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "tea-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.sort-medicinal-herbs",
+      "text": "按药性分类挑拣晒干的药材",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "herbs-sorted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "herbs-sorted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.sort"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.weigh-alchemical-material",
+      "text": "精细称量配制所需的灵材分量",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "material-weighed"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "material-weighed"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.weigh"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.record-bamboo-ledger",
+      "text": "在册页上记录领用与归还明细",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "bamboo-ledger-kept"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "bamboo-ledger-kept"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.keep-record"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.dry-scrolls-in-sun",
+      "text": "在廊下晾晒受潮的典籍书卷",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "scrolls-dried"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "scrolls-dried"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.dry"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.meditate-quietly",
+      "text": "盘膝静坐收敛心神冥想",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "meditating"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "meditating"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:activity.meditate",
+        "general-taxonomy:action.sit-rest"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.taste-spring-tea",
+      "text": "细品新烹的山泉清茶",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "spring-tea-tasted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "spring-tea-tasted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.taste",
+        "general-taxonomy:action.drink"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.walk-bamboo-path",
+      "text": "沿着林间青石小径缓步独行",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "bamboo-path-walked"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "bamboo-path-walked"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.walk",
+        "general-taxonomy:action.be-alone"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.take-rest-in-pavilion",
+      "text": "在凉亭石凳上小憩片刻",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pavilion-break-taken"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "pavilion-break-taken"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.take-break"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.look-far-sea-of-clouds",
+      "text": "凭栏远望云海彼端的山影",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "clouds-watched"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "clouds-watched"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.look-far"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.listen-pine-wind",
+      "text": "凝神侧听松林深处的风声动静",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pine-wind-listened"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "pine-wind-listened"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.listen"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.inspect-formation-stone",
+      "text": "检查护山界石表面的刻痕是否完好",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "stone-inspected"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "stone-inspected"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.keep-quiet-boundary",
+      "text": "在清修禁地外围保持止步边界",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sanctuary-boundary-kept"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "sanctuary-boundary-kept"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:activity.boundary"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.host-fellow-disciple",
+      "text": "在茶席旁设座款待来访同道",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "disciple-hosted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "disciple-hosted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.host"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.handover-patrol-tally",
+      "text": "与同门交接巡山值守信物",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tally-handed-over"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "tally-handed-over"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.handover"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.make-room-mountain-steps",
+      "text": "在狭窄山阶上侧身让出通路",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "steps-room-made"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "steps-room-made"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.make-room"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.return-borrowed-classic",
+      "text": "按期归还从藏经阁借阅的典籍",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "classic-returned"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "classic-returned"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.return"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.sleeve-hands-waiting",
+      "text": "双手拢在宽大袍袖中静立廊下等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、身着宽袖袍服且正立于廊下等候。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.watch-incense-burn",
+      "text": "注视香炉中线香燃尽的刻度计算时辰",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有燃着的线香香炉且该人物正注视线香计时。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.touch-jade-pendant-wait",
+      "text": "指尖轻抚腰间玉佩在石亭外耐心等待",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手指、腰间佩有玉佩且位于石亭外。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.hold-oil-umbrella-wait",
+      "text": "撑着油纸伞站在山门石阶下等待同门",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物手持撑开的油纸伞且站立于山门石阶下。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.grind-ink-on-stone",
+      "text": "执起墨锭在青石砚台内缓缓冲水研墨",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手部、面前有砚台与墨锭且正在研墨。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.prepare",
+        "general-taxonomy:activity.write"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.turn-drying-herbs",
+      "text": "双手托起竹匾轻轻翻动正在晾晒的药叶",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、持有装药叶的竹匾且正在翻晒。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.dry",
+        "general-taxonomy:action.organize"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.brush-dust-from-stele",
+      "text": "用棕毛小刷拂去石碑刻字凹槽里的浮尘",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有毛刷、面前有刻字石碑且正在清理浮尘。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.clean"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.tie-medicine-packets",
+      "text": "用棉线将包好的草药方剂逐一系紧贴签",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有棉线与药包且正在打包贴签。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.pack",
+        "general-taxonomy:common.action.label"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.pour-purple-clay-teapot",
+      "text": "执起紫砂壶将澄澈茶汤注入青瓷小盏",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手部、持有紫砂壶与青瓷盏且正在斟茶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.drink",
+        "general-taxonomy:action.prepare"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.copy-scripture-scroll",
+      "text": "端坐案前用小楷毛笔抄录静心经卷",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物坐于案前、手持毛笔且面前铺有经卷纸张。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:activity.write",
+        "general-taxonomy:activity.learn"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.stretch-arms-facing-mist",
+      "text": "迎着山间晨雾缓缓舒展双臂吐纳晨气",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双臂、当前处于山间晨雾环境且正在舒展。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.stretch",
+        "general-taxonomy:activity.exercise"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.mend-robe-hem",
+      "text": "捏着骨针在灯下细密缝补道袍磨破的衣摆",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有骨针与丝线且正在缝补道袍衣摆。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.repair",
+        "general-taxonomy:action.self-care"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.inspect-broken-bamboo",
+      "text": "俯身查看竹林边缘新近折断的青竹茬口",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认竹林边缘有折断青竹且该人物正俯身近看。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.inspect-near"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.test-suspension-rope",
+      "text": "伸手握住索桥藤绳试探其绷紧程度",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有藤绳索桥且该人物正用手试探绳索张力。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.action.test",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.check-pill-bottle-seal",
+      "text": "举起丹瓶迎光检查瓶口火漆封泥有无裂隙",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有封口丹瓶且正迎光检查封泥完好性。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.inspect-near"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.pause-at-wet-moss-step",
+      "text": "看清青石阶上的滑腻青苔后放轻落脚力道",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认石阶表面有青苔且该人物具备双足正在谨慎落脚。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.walk",
+        "general-taxonomy:action.adapt-space"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.present-jade-slip-both-hands",
+      "text": "双手捧起记事玉简平举至胸前递予对方",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、持有玉简且正递交给在场对象。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.handover"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.share-spring-water-bamboo",
+      "text": "拔开青竹水筒的木塞将清泉分给同行者饮用",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有装水的竹筒且有同行者在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.share",
+        "general-taxonomy:action.drink"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.compare-herb-illustrations",
+      "text": "将采回的鲜草药与图谱上的描摹逐叶比对",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有鲜草药与实体图谱且正在比对特征。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.compare"
+      ]
+    },
+    {
+      "id": "word.action.xianxia.sweep-seat-for-guest",
+      "text": "用袖口轻拂石凳上的落叶请来客落座",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "xianxia"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有带落叶的石凳与来客且该人物正拂拭石凳。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:action.host",
+        "general-taxonomy:action.clean"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.xianxia.queue-outside-hall",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方在庶务堂外按次序排队等候。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.xianxia.sort-medicinal-herbs",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方按药性分类挑拣晒干的药材。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.xianxia.meditate-quietly",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 9,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方盘膝静坐收敛心神冥想。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B2（题材：xianxia）返修交付，共70条（actor.form 30条：draft 10条 / hold 20条；action.observed 40条：draft 20条 / hold 20条；全批合计 draft 30条、hold 40条；已消除跨批重复泛称文本并补齐 scene.setting 题材前置）。"
+}

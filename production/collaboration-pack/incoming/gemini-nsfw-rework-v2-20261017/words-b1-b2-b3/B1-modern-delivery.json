@@ -1,0 +1,2607 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "modern",
+  "author": "author-b3",
+  "batchId": "b1-modern-v1",
+  "revision": 2,
+  "entries": [
+    {
+      "id": "word.prop.modern.ticket-machine",
+      "text": "一台自助售票机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "ticket-machine"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "ticket-machine"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.ticket-machine"
+      ]
+    },
+    {
+      "id": "word.prop.modern.turnstile",
+      "text": "一道检票闸机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "turnstile"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "turnstile"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.turnstile"
+      ]
+    },
+    {
+      "id": "word.prop.modern.parcel-locker",
+      "text": "一组智能快递柜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "parcel-locker"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "parcel-locker"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.parcel-locker"
+      ]
+    },
+    {
+      "id": "word.prop.modern.water-dispenser",
+      "text": "一台立式饮水机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "water-dispenser"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "water-dispenser"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.water-dispenser"
+      ]
+    },
+    {
+      "id": "word.prop.modern.queue-display",
+      "text": "一块电子叫号屏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "queue-display"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "queue-display"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.queue-display"
+      ]
+    },
+    {
+      "id": "word.prop.modern.vending-machine",
+      "text": "一台自动售货机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "vending-machine"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "vending-machine"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.vending-machine"
+      ]
+    },
+    {
+      "id": "word.prop.modern.access-panel",
+      "text": "一只门禁读卡器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "access-panel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "access-panel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.access-panel"
+      ]
+    },
+    {
+      "id": "word.prop.modern.thermos",
+      "text": "一只不锈钢保温瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "thermos"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "thermos"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.thermos"
+      ]
+    },
+    {
+      "id": "word.prop.modern.transit-card",
+      "text": "一张公交乘车卡",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "transit-card"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "transit-card"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.transit-card"
+      ]
+    },
+    {
+      "id": "word.prop.modern.powerbank",
+      "text": "一块便携移动电源",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "powerbank"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "powerbank"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.powerbank"
+      ]
+    },
+    {
+      "id": "word.prop.modern.umbrella",
+      "text": "一把折叠晴雨伞",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "umbrella"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "umbrella"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.umbrella"
+      ]
+    },
+    {
+      "id": "word.prop.modern.lunchbox",
+      "text": "一只分格便当盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "lunchbox"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "lunchbox"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.lunchbox"
+      ]
+    },
+    {
+      "id": "word.prop.modern.receipt",
+      "text": "一张机打收据",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "receipt"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "receipt"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.receipt"
+      ]
+    },
+    {
+      "id": "word.prop.modern.first-aid-kit",
+      "text": "一只壁挂急救箱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "first-aid-kit"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "first-aid-kit"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.first-aid-kit"
+      ]
+    },
+    {
+      "id": "word.prop.modern.waste-sort-bin",
+      "text": "一组分类垃圾桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "waste-sort-bin"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "waste-sort-bin"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.waste-sort-bin"
+      ]
+    },
+    {
+      "id": "word.prop.modern.wet-umbrella",
+      "text": "一把伞面挂着水珠的长柄伞",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该伞实例存在且伞面当前附着水珠湿度记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.umbrella"
+      ]
+    },
+    {
+      "id": "word.prop.modern.scratched-transit-card",
+      "text": "一张边角磨损的交通卡",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该交通卡实例存在且表面有边角磨损旧痕记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.transit-card"
+      ]
+    },
+    {
+      "id": "word.prop.modern.blinking-charger",
+      "text": "一只指示灯常亮的充电器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该充电器实例存在且当前处于通电常亮状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.charger"
+      ]
+    },
+    {
+      "id": "word.prop.modern.half-open-locker",
+      "text": "一格柜门虚掩的储物柜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该储物柜实例存在且柜门处于未锁闭虚掩状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.locker"
+      ]
+    },
+    {
+      "id": "word.prop.modern.fogged-water-bottle",
+      "text": "一只外壁凝着水雾的随手杯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该水杯实例存在且外壁有冷凝水雾状态记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.water-bottle"
+      ]
+    },
+    {
+      "id": "word.prop.modern.folded-raincoat",
+      "text": "一件叠放在挂钩下的雨衣",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该雨衣实例存在、处于折叠状态且位于挂钩下方位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.raincoat"
+      ]
+    },
+    {
+      "id": "word.prop.modern.stamped-envelope",
+      "text": "一封盖有收发章的牛皮纸信封",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该信封实例存在且带有已盖章标记与材质记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.envelope"
+      ]
+    },
+    {
+      "id": "word.prop.modern.tangled-earphones",
+      "text": "一副线缆轻绕的有线耳机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该耳机实例存在且线缆处于盘绕状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.earphones"
+      ]
+    },
+    {
+      "id": "word.prop.modern.marked-calendar",
+      "text": "一本圈出日期的台式日历",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该日历实例存在且页面带有手写圈注记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.calendar"
+      ]
+    },
+    {
+      "id": "word.prop.modern.worn-work-gloves",
+      "text": "一双掌心磨毛的劳动手套",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该手套实例存在且掌心部位有磨损痕迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.tool.work-gloves"
+      ]
+    },
+    {
+      "id": "word.prop.modern.clipped-receipts",
+      "text": "一叠用金属夹固定的报销单据",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认单据与金属夹实例同时存在且处于夹持固定状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.receipt",
+        "general-taxonomy:common.object.clip"
+      ]
+    },
+    {
+      "id": "word.prop.modern.standby-public-terminal",
+      "text": "一台停留在主界面的公共查询终端",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该公共终端实例存在且屏幕当前处于开机主界面状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.public-terminal"
+      ]
+    },
+    {
+      "id": "word.prop.modern.damp-mop",
+      "text": "一把刚拧干水渍的平头拖把",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该拖把实例存在且拖头处于微湿拧干状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.tool.mop"
+      ]
+    },
+    {
+      "id": "word.prop.modern.tagged-key-ring",
+      "text": "一串系着塑料号码牌的钥匙",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该钥匙实例存在且附带塑料号码牌配件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.key"
+      ]
+    },
+    {
+      "id": "word.prop.modern.unsealed-medicine-box",
+      "text": "一只搭扣未锁的家庭药盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该药盒实例存在且盒盖搭扣处于未扣合状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.medicine-box"
+      ]
+    },
+    {
+      "id": "word.prop.modern.stacked-shopping-bag",
+      "text": "一只折成方块的环保购物袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该购物袋实例存在且当前处于折叠收纳状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.shopping-bag"
+      ]
+    },
+    {
+      "id": "word.prop.modern.dusty-air-filter",
+      "text": "一扇格栅积着薄灰的空气过滤器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该空气过滤器实例存在且格栅表面有积灰状态记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.air-filter"
+      ]
+    },
+    {
+      "id": "word.prop.modern.calibrated-thermometer",
+      "text": "一支水银柱停在室温刻度的温度计",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该温度计实例存在且读数处于室温区间。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.thermometer"
+      ]
+    },
+    {
+      "id": "word.prop.modern.rolled-tape-measure",
+      "text": "一盘外壳带划痕的钢卷尺",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该卷尺实例存在且外壳带有划痕旧迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.tool.tape-measure"
+      ]
+    },
+    {
+      "id": "word.prop.modern.idle-escalator",
+      "text": "一部暂停运行的电动扶梯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该扶梯实例存在且当前处于停机静止状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.escalator"
+      ]
+    },
+    {
+      "id": "word.prop.modern.wet-washbasin",
+      "text": "一处台面留有水痕的洗手台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该洗手台实例存在且台面有残留水痕记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.washbasin"
+      ]
+    },
+    {
+      "id": "word.prop.modern.pinned-notice-board",
+      "text": "一块贴着值班表的公告屏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该公告屏实例存在且当前展示值班表内容。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.bulletin-screen"
+      ]
+    },
+    {
+      "id": "word.prop.modern.locked-bike-rack",
+      "text": "一排停放着通勤单车的自行车架",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该自行车架实例存在且当前有单车停靠占用。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.facility.bike-rack"
+      ]
+    },
+    {
+      "id": "word.prop.modern.chipped-ceramic-plate",
+      "text": "一只边缘带细小磕痕的餐盘",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该餐盘实例存在且边缘具有磕碰缺口记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.plate"
+      ]
+    },
+    {
+      "id": "word.prop.modern.labeled-storage-bag",
+      "text": "一只贴有分类便签的收纳袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该收纳袋实例存在且表面贴有分类标签。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.object.storage-bag"
+      ]
+    },
+    {
+      "id": "word.sense.modern.disinfectant",
+      "text": "空气中淡淡的消毒水气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "disinfectant"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "disinfectant"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:expanded.scent.disinfectant"
+      ]
+    },
+    {
+      "id": "word.sense.modern.coffee-aroma",
+      "text": "若有若无的现磨咖啡香气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "coffee"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "coffee"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.drink.coffee"
+      ]
+    },
+    {
+      "id": "word.sense.modern.ac-hum",
+      "text": "空调出风口平稳的低鸣",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "ac-hum"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "ac-hum"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.sensory.low-hum",
+        "general-taxonomy:sound.machine"
+      ]
+    },
+    {
+      "id": "word.sense.modern.hall-footsteps",
+      "text": "走廊地面传来的规律脚步声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "footsteps"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "footsteps"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:sound.footsteps"
+      ]
+    },
+    {
+      "id": "word.sense.modern.panel-glow",
+      "text": "顶灯洒下的均匀冷白光斑",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "panel-light"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "panel-light"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.sensory.light-pool"
+      ]
+    },
+    {
+      "id": "word.sense.modern.window-daylight",
+      "text": "透窗而入的柔和日光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "daylight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "daylight"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:weather.sunlight"
+      ]
+    },
+    {
+      "id": "word.sense.modern.ac-chilly",
+      "text": "室内恒温系统带来的微凉感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "chilly"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "chilly"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.sense.modern.corridor-mild",
+      "text": "走廊里不冷不热的温和体感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "mild"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "mild"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.mild"
+      ]
+    },
+    {
+      "id": "word.sense.modern.corridor-draft",
+      "text": "门缝间掠过的轻微穿堂风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "draft"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "draft"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.draft"
+      ]
+    },
+    {
+      "id": "word.sense.modern.dry-indoor-air",
+      "text": "长时间开启通风后的干燥空气触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "dry-air"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "dry-air"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.dry-air"
+      ]
+    },
+    {
+      "id": "word.sense.modern.rain-asphalt",
+      "text": "雨后从窗缝渗入的潮湿沥青气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认室外刚经历降雨且窗户留缝导致沥青潮气传入室内。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.mat.asphalt",
+        "general-taxonomy:expanded.scent.mud"
+      ]
+    },
+    {
+      "id": "word.sense.modern.warm-paper-ink",
+      "text": "打印设备刚运作后的温热纸墨气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认附近打印设备近期完成作业且纸墨气味尚未散去。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.mat.paper"
+      ]
+    },
+    {
+      "id": "word.sense.modern.citrus-cleaner",
+      "text": "保洁作业后残留的淡雅果香清洁剂味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认该地点刚完成清洁且使用了带果香配方的清洁剂。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:expanded.scent.fruit"
+      ]
+    },
+    {
+      "id": "word.sense.modern.elevator-chime",
+      "text": "电梯抵达楼层时清脆的提示铃声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前地点存在电梯设施且正处于到站响铃时刻。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:sound.bell",
+        "general-taxonomy:common.facility.elevator"
+      ]
+    },
+    {
+      "id": "word.sense.modern.distant-rain-tap",
+      "text": "细雨敲打玻璃幕墙的密集轻响",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前天气为细雨且地点具备临外玻璃幕墙结构。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:sound.water",
+        "general-taxonomy:common.env.drizzle"
+      ]
+    },
+    {
+      "id": "word.sense.modern.white-noise-vent",
+      "text": "新风管道持续掩蔽背景杂音的白噪声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认新风系统处于开启状态并产生可感知的掩蔽白噪声。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.sensory.white-noise",
+        "general-taxonomy:v2.sensory.sound-masking"
+      ]
+    },
+    {
+      "id": "word.sense.modern.blinds-stripes",
+      "text": "百叶帘在地面投下的明暗条纹硬阴影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认窗户装有百叶帘且外部直射光正在地面形成条纹阴影。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.sensory.hard-shadow"
+      ]
+    },
+    {
+      "id": "word.sense.modern.screen-afterglow",
+      "text": "电子告示牌切换画面时的浅蓝余辉",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场电子告示牌正处于运行切换状态且环境照度足以凸显余辉。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.sensory.afterglow",
+        "general-taxonomy:v2.sensory.glow"
+      ]
+    },
+    {
+      "id": "word.sense.modern.frosted-glass-silhouette",
+      "text": "磨砂隔断后方模糊移动的半透光剪影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有磨砂隔断且隔断另一侧存在移动光源或人物。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.sensory.translucence",
+        "general-taxonomy:v2.sensory.silhouette"
+      ]
+    },
+    {
+      "id": "word.sense.modern.sunlit-sill-warmth",
+      "text": "临窗区域被午后日光晒暖的微热感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前为日照时段且临窗局部区域存在明显温升。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.warm",
+        "general-taxonomy:weather.sunlight"
+      ]
+    },
+    {
+      "id": "word.sense.modern.door-opening-gust-cold",
+      "text": "自动门开启瞬间涌入的一股室外寒意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认室外温度偏低且自动门刚发生开启事件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:weather.cold",
+        "general-taxonomy:common.facility.automatic-door"
+      ]
+    },
+    {
+      "id": "word.sense.modern.crowded-room-stuffy",
+      "text": "人员密集区域尚未排散的滞闷微热",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前空间人员密度较高且通风速率不足。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.stuffy",
+        "general-taxonomy:common.env.hot"
+      ]
+    },
+    {
+      "id": "word.sense.modern.humid-rain-breeze",
+      "text": "半开窗扇吹进来的潮湿微风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认窗户处于半开状态且外部吹入高湿度微风。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.breeze",
+        "general-taxonomy:common.env.humid-air"
+      ]
+    },
+    {
+      "id": "word.sense.modern.fan-resonance",
+      "text": "地面随大型设备运转传来的微弱共振",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认建筑内大型设备正在运转且地板传导可感知的微弱振动。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:v2.sensory.resonance",
+        "general-taxonomy:sound.machine"
+      ]
+    },
+    {
+      "id": "word.sense.modern.condensation-dew",
+      "text": "靠近冷风口时空气中略带结露的湿冷触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "modern"
+        }
+      ],
+      "pendingFacts": [
+        "确认冷风口开启且局部湿度达到微露湿冷条件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.env.dew",
+        "general-taxonomy:common.env.chilly"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.modern.ticket-machine",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.modern.disinfectant",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方把工具归回原位。你注意到一台自助售票机，其中盛着过滤水。你察觉到空气中淡淡的消毒水气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.modern.turnstile",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.modern.ac-hum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方将工具放回原处。你注意到一道检票闸机，其中盛着过滤水。你察觉到空调出风口平稳的低鸣。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.modern.disinfectant",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到空气中淡淡的消毒水气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.modern.ac-hum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到空调出风口平稳的低鸣。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B1（题材：modern）首批正式配额交付，共65条（environment.prop 40条：draft 15 / hold 25；environment.sense.* 五子池各5条共25条：draft 10 / hold 15；全批合计 draft 25条、hold 40条）。未提报新Tag，手工预览标为manual/hypothetical-only。"
+}

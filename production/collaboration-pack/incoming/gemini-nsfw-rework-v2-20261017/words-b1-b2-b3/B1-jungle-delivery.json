@@ -1,0 +1,1661 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "jungle",
+  "author": "author-b-v2",
+  "batchId": "b1-jungle-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.jungle.machete-sheath",
+      "text": "一只挂在竹柱上的牛皮开山刀鞘",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "machete-sheath"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "machete-sheath"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.bamboo-water-tube",
+      "text": "一节带藤编提梁的毛竹储水筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bamboo-water-tube"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bamboo-water-tube"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.mosquito-net-roll",
+      "text": "一卷收拢挂在床架边的细纱防虫帐",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "mosquito-net-roll"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "mosquito-net-roll"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.rattan-basket",
+      "text": "一只编织紧密的背负式山藤采药篓",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "rattan-basket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "rattan-basket"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.resin-torch-holder",
+      "text": "一只插在栈道栏杆上的松脂火把竹筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "resin-torch-holder"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "resin-torch-holder"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.rain-gauge-funnel",
+      "text": "一只安置在林间空地边缘的铜制量雨筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "rain-gauge-funnel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "rain-gauge-funnel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.vine-rope-coil",
+      "text": "一盘经过熏烤防霉处理的白藤绳",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "vine-rope-coil"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "vine-rope-coil"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.drying-sieve",
+      "text": "一面晒放草本叶片的圆形竹篾筛",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "drying-sieve"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "drying-sieve"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.wooden-clapper",
+      "text": "一副用于林间驱兽联络的硬木响板",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "wooden-clapper"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "wooden-clapper"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.oilcloth-pack",
+      "text": "一只用桐油布包裹防潮的行李袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "oilcloth-pack"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "oilcloth-pack"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.botanical-press",
+      "text": "一副用麻绳捆扎标本吸水纸的木夹板",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "botanical-press"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "botanical-press"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.log-bridge-handrail",
+      "text": "一根绑在吊桥两侧的粗壮青藤扶手",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "log-bridge-handrail"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "log-bridge-handrail"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.rain-dripping-tarpaulin",
+      "text": "一角正顺着芭蕉叶槽滴落雨水的防雨油篷",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认防雨油篷当前积有雨水并正沿叶槽滴落。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.mossy-stone-lantern",
+      "text": "一座表面爬满翠绿湿苔的石雕矮灯台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认石雕矮灯台表面当前长满湿苔。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.pressed-fern-sheet",
+      "text": "一张夹着完整凤尾蕨叶片标本的吸水草纸",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认吸水草纸内当前夹有凤尾蕨叶片标本。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.smoking-citronella-coil",
+      "text": "一盘在瓦碟里缓缓燃着青烟的香茅驱虫香",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认瓦碟内的香茅驱虫香当前正在燃烧冒烟。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.mud-splashed-gaiters",
+      "text": "一副下摆沾有红壤泥点的粗布绑腿",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认粗布绑腿下摆当前沾有红壤泥点。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.orchid-hanging-pot",
+      "text": "一只挂在廊檐下盛开着白瓣气生兰的椰壳盆",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认廊檐椰壳盆内的气生兰当前处于开花状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.notched-bamboo-tally",
+      "text": "一根刻着十余道水位记号的竹制水尺",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认竹制水尺表面刻有水位记号。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.quinine-bark-jar",
+      "text": "一只装有干燥金鸡纳树皮碎片的广口玻璃瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认广口玻璃瓶内当前装有金鸡纳树皮碎片。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.hammock-hooks",
+      "text": "一张两头拴在铁木桩上微微晃动的麻网吊床",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认麻网吊床当前拴在木桩上且微微晃动。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.snake-hook-staff",
+      "text": "一根前端带平钝铜弯钩的竹制探草杖",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认竹制探草杖前端带有平钝铜弯钩。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.dew-filled-pitcher-plant",
+      "text": "一株笼口积着半盅露水的标本猪笼草",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认猪笼草笼口内当前积有半盅露水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.sharpened-machete",
+      "text": "一把刃口刚用溪石磨亮的宽背砍刀",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认宽背砍刀刃口刚经打磨发亮。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.prop.jungle.feather-fletched-marker",
+      "text": "一支插在树干上指示小径方向的彩羽木签",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认树干上当前插有彩羽木签。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.wet-humus-earthy",
+      "text": "雨林腐殖质与潮湿苔藓蒸腾出的浓郁草木土香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "wet-humus-earthy"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "wet-humus-earthy"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.crushed-fern-green",
+      "text": "枝叶与青藤摩擦后散发的清新植物汁液气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "crushed-fern-green"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "crushed-fern-green"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.citronella-smoke-scent",
+      "text": "廊下瓦碟里飘来的柠檬草与艾叶驱虫烟香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场正燃有柠檬草艾叶驱虫香。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.canopy-cicada-chorus",
+      "text": "高处树冠层连绵不绝的虫鸣与林鸟啼叫声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "canopy-cicada-chorus"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "canopy-cicada-chorus"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.foliage-drip-patter",
+      "text": "宽大叶片上的积水滴落底层灌木的啪嗒声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "foliage-drip-patter"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "foliage-drip-patter"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.suspension-bridge-creak",
+      "text": "有人踏过树冠藤索吊桥时的竹板轻响",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前有人正在踏过藤索吊桥。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.canopy-filtered-green",
+      "text": "层叠树冠筛落下来的柔和翠绿斑驳光线",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "canopy-filtered-green"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "canopy-filtered-green"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.mist-diffused-sunbeam",
+      "text": "穿过林间薄雾斜射而下的几缕明亮光柱",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "mist-diffused-sunbeam"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "mist-diffused-sunbeam"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.wet-leaf-specular-glint",
+      "text": "阳光照在沾水滴水观音叶面上反射的碎亮光斑",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前有阳光照射在带水珠的宽叶表面。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.muggy-rainforest-warmth",
+      "text": "林间常年温热潮湿、仿佛裹着水汽的闷暖体感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "muggy-rainforest-warmth"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "muggy-rainforest-warmth"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.creek-gully-cool-air",
+      "text": "吊桥下方溪谷水面升起的微凉湿空气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色当前靠近溪谷上方吊桥处。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.sun-break-humid-heat",
+      "text": "云隙烈日直射后林间迅速升腾的湿热蒸腾感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前处于云隙烈日直射时段。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.clammy-moisture-skin",
+      "text": "饱含水汽的林间微风拂过脖颈时的黏润触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "clammy-moisture-skin"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "clammy-moisture-skin"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.fibrous-vine-rail",
+      "text": "手掌扶握青藤护栏时粗糙坚韧的植物纤维感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "fibrous-vine-rail"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "fibrous-vine-rail"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    },
+    {
+      "id": "word.sense.jungle.cool-raindrop-neck",
+      "text": "树冠抖落的雨滴突然落在手背上的冰凉点触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "jungle"
+        }
+      ],
+      "pendingFacts": [
+        "确认有树冠积水滴落在角色手背上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.jungle"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.jungle.machete-sheath",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.jungle.wet-humus-earthy",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在树冠吊桥林间营站，你留意到在场人员的手。对方把工具归回原位。你注意到一只挂在竹柱上的牛皮开山刀鞘，旁侧备有过滤水。你察觉到雨林腐殖质与潮湿苔藓蒸腾出的浓郁草木土香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.jungle.bamboo-water-tube",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.jungle.canopy-cicada-chorus",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在树冠吊桥林间营站，你留意到在场人员的手。对方将工具放回原处。你注意到一节带藤编提梁的毛竹储水筒，旁侧备有过滤水。你察觉到高处树冠层连绵不绝的虫鸣与林鸟啼叫声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.jungle.wet-humus-earthy",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在树冠吊桥林间营站，你察觉到雨林腐殖质与潮湿苔藓蒸腾出的浓郁草木土香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.jungle.canopy-cicada-chorus",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在树冠吊桥林间营站，你察觉到高处树冠层连绵不绝的虫鸣与林鸟啼叫声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B1（题材：jungle / 密林雨林）正式配额交付，共40条（environment.prop 25条：draft 12 / hold 13；environment.sense.* 五子池各3条共15条：draft 8 / hold 7；全批合计 draft 20条、hold 20条）。每条均带 scene.setting eq jungle 前置，手工预览标为 manual/hypothetical-only。"
+}

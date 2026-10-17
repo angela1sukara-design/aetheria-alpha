@@ -1,0 +1,109 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0018",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Gemini",
+    "theme": "查缺补齐 · 被茧缚与感官现场态 · b0018"
+  },
+  "entries": [
+    {
+      "subcategory": "束缚现场态",
+      "name": "被茧缚",
+      "description": "身体被多层致密丝茧或黏丝包裹固定，四肢紧贴躯干难以大幅挣动；对应 E4 茧维现场态。待审定。",
+      "tags": [
+        "茧缚",
+        "现场态"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0001",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "感官现场态",
+      "name": "感官剥夺中",
+      "description": "视觉、听觉或发声通道被外物暂时遮蔽封堵的现场状态；≠性癖分类「感官剥夺」。待审定。",
+      "tags": [
+        "感官现场态",
+        "G4"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0002",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "感官现场态",
+      "name": "口封中",
+      "description": "口唇被胶膜、口球、触手或藤条封堵而无法清晰吐字的现场状态。待审定。",
+      "tags": [
+        "感官现场态",
+        "口封"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0003",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "感官现场态",
+      "name": "眼封中",
+      "description": "视线被眼罩、黏液膜、触手或藤条遮蔽而陷入黑暗或模糊光影的现场状态。待审定。",
+      "tags": [
+        "感官现场态",
+        "眼封"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0004",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "感官现场态",
+      "name": "耳封中",
+      "description": "耳廓被软塞、胶膜或覆层封住而仅能听见内部脉搏与闷响的现场状态。待审定。",
+      "tags": [
+        "感官现场态",
+        "耳封"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0005",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "束缚现场态",
+      "name": "被藤蔓束缚",
+      "description": "手腕、脚踝或腰躯被活藤与缠绕茎勒紧固定的现场状态。待审定。",
+      "tags": [
+        "植物",
+        "束缚现场态"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0006",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "束缚现场态",
+      "name": "悬吊受制",
+      "description": "腕踝被拉高使足尖离地或重心悬空的现场状态。待审定。",
+      "tags": [
+        "悬吊",
+        "束缚现场态"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0007",
+      "category": "nsfw-state"
+    },
+    {
+      "subcategory": "战后现场态",
+      "name": "残迹未消",
+      "description": "脱离交锋后体表与衣料内侧仍留有湿滑覆层、勒痕或温热感应的战后状态。待审定。",
+      "tags": [
+        "残迹",
+        "战后态"
+      ],
+      "usage": "state",
+      "id": "lx.nsfw-state.b0018.0008",
+      "category": "nsfw-state"
+    }
+  ]
+}

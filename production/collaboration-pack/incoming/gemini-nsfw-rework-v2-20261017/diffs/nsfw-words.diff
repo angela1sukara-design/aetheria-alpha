@@ -1,0 +1,1810 @@
+diff --git a/docs/tag-hub/nsfw-batches/nsfw-action.b0018.json b/docs/tag-hub/nsfw-batches/nsfw-action.b0018.json
+new file mode 100644
+index 0000000..671382c
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/nsfw-action.b0018.json
+@@ -0,0 +1,142 @@
++{
++  "format": "aetheria-nsfw-lexicon-batch",
++  "schemaVersion": 1,
++  "library": "nsfw-action",
++  "batchId": "nsfw-action.b0018",
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "查缺补齐 · 藤条封夺/结茧/节肢钳制 · b0018"
++  },
++  "entries": [
++    {
++      "subcategory": "感官封夺动作",
++      "name": "藤条封眼",
++      "description": "柔韧藤条或宽叶横过眼周缠紧，遮蔽视线并剥夺视觉方向感；对应植物类 G4 感官封夺。待审定。",
++      "tags": [
++        "植物",
++        "封眼",
++        "G4"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0001",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "感官封夺动作",
++      "name": "藤条封口",
++      "description": "活藤或柔韧茎蔓勒入唇齿之间或严密覆住口唇，使受缚者仅能发出闷哼；对应植物类 G4 口封。待审定。",
++      "tags": [
++        "植物",
++        "封口",
++        "G4"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0002",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "束缚包覆动作",
++      "name": "结茧",
++      "description": "用密集黏丝或虫巢分泌丝线将猎物从脚踝至肩胸层层缠裹成茧，限制四肢伸展；对应 E4 茧维与 G1/G2。待审定。",
++      "tags": [
++        "虫巢",
++        "茧缚",
++        "G1",
++        "G2"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0003",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "压制束缚动作",
++      "name": "节肢钳制",
++      "description": "坚硬的甲壳节肢从两侧扣死手腕、腰胯或膝弯，令受制者无法借力挣脱；对应虫巢类 G1/G8。待审定。",
++      "tags": [
++        "虫巢",
++        "压制",
++        "G1",
++        "G8"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0004",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "悬吊束缚动作",
++      "name": "藤蔓吊缚",
++      "description": "数条活藤自高处垂落缠住腕踝并将重心拉离地面，迫使身体呈悬垂或踮脚受制姿态；对应 G1。待审定。",
++      "tags": [
++        "植物",
++        "悬吊",
++        "G1"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0005",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "感官封夺动作",
++      "name": "胶膜封耳",
++      "description": "半透明凝胶或黏膜覆住耳廓外侧，将外界声响过滤为低沉闷响并放大自身心跳呼吸；对应 G4。待审定。",
++      "tags": [
++        "封耳",
++        "G4"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0006",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "多体围攻动作",
++      "name": "多肢揉压",
++      "description": "多条触手、藤蔓或附肢同时贴合胸侧、腰腹与腿根交替施压摩挲，分散防御精力；对应 G8。待审定。",
++      "tags": [
++        "多体",
++        "G8"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0007",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "调教引导动作",
++      "name": "牵引迫跪",
++      "description": "收紧颈环、腕带或腰侧牵引索，迫使受制者重心下沉呈跪立或俯身顺从姿态；对应 G7。待审定。",
++      "tags": [
++        "调教",
++        "G7"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0008",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "悬吊束缚动作",
++      "name": "倒挂",
++      "description": "活藤或束带缠紧双侧脚踝并将身体倒悬吊起，使受制者重心倒置难以借力；对应 E2 藤核与 G1。待审定。",
++      "tags": [
++        "植物",
++        "倒挂",
++        "G1"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0009",
++      "category": "nsfw-action"
++    },
++    {
++      "subcategory": "压制束缚动作",
++      "name": "勒紧",
++      "description": "缠绕在手腕、脚踝或腰腹处的活藤、茎蔓或束带持续收束勒紧，进一步压缩活动余地；对应 E2 藤核与 G1。待审定。",
++      "tags": [
++        "植物",
++        "勒紧",
++        "G1"
++      ],
++      "usage": "action",
++      "id": "lx.nsfw-action.b0018.0010",
++      "category": "nsfw-action"
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/nsfw-gear.b0018.json b/docs/tag-hub/nsfw-batches/nsfw-gear.b0018.json
+new file mode 100644
+index 0000000..d898fe0
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/nsfw-gear.b0018.json
+@@ -0,0 +1,85 @@
++{
++  "format": "aetheria-nsfw-lexicon-batch",
++  "schemaVersion": 1,
++  "library": "nsfw-gear",
++  "batchId": "nsfw-gear.b0018",
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "查缺补齐 · 脚铐/踝铐与拘束具 · b0018"
++  },
++  "entries": [
++    {
++      "subcategory": "踝部拘束具",
++      "name": "脚铐",
++      "description": "扣合于双侧足踝之间的刚性或链式金属拘束具，限制步幅与踢踹动作。待审定。",
++      "tags": [
++        "拘束具",
++        "足踝"
++      ],
++      "usage": "gear",
++      "id": "lx.nsfw-gear.b0018.0001",
++      "category": "nsfw-gear"
++    },
++    {
++      "subcategory": "踝部拘束具",
++      "name": "踝铐",
++      "description": "贴合单侧或双侧脚踝凹槽的紧固环扣，可连接地面锚点、牵引索或腿根束带。待审定。",
++      "tags": [
++        "拘束具",
++        "足踝"
++      ],
++      "usage": "gear",
++      "id": "lx.nsfw-gear.b0018.0002",
++      "category": "nsfw-gear"
++    },
++    {
++      "subcategory": "全身拘束具",
++      "name": "连体拘束带",
++      "description": "自肩背斜跨胸侧、腰腹至腿根的多点收束皮带或胶带组，固定躯干姿态。待审定。",
++      "tags": [
++        "拘束具",
++        "躯干"
++      ],
++      "usage": "gear",
++      "id": "lx.nsfw-gear.b0018.0003",
++      "category": "nsfw-gear"
++    },
++    {
++      "subcategory": "下肢拘束具",
++      "name": "分腿横杆",
++      "description": "连接于双侧膝弯或脚踝内侧的定距横杆，迫使下肢保持敞开无法并拢。待审定。",
++      "tags": [
++        "拘束具",
++        "下肢"
++      ],
++      "usage": "gear",
++      "id": "lx.nsfw-gear.b0018.0004",
++      "category": "nsfw-gear"
++    },
++    {
++      "subcategory": "感官遮蔽具",
++      "name": "软胶耳塞",
++      "description": "贴合耳道轮廓的隔音软胶塞，用于阻断外部声响与放大体表触觉。待审定。",
++      "tags": [
++        "感官遮蔽",
++        "耳部"
++      ],
++      "usage": "gear",
++      "id": "lx.nsfw-gear.b0018.0005",
++      "category": "nsfw-gear"
++    },
++    {
++      "subcategory": "感官遮蔽具",
++      "name": "遮光眼罩",
++      "description": "覆合眼眶与鼻梁的软垫眼罩，完全隔绝外部光线。待审定。",
++      "tags": [
++        "感官遮蔽",
++        "眼部"
++      ],
++      "usage": "gear",
++      "id": "lx.nsfw-gear.b0018.0006",
++      "category": "nsfw-gear"
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/nsfw-material.b0018.json b/docs/tag-hub/nsfw-batches/nsfw-material.b0018.json
+new file mode 100644
+index 0000000..48cb74b
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/nsfw-material.b0018.json
+@@ -0,0 +1,116 @@
++{
++  "format": "aetheria-nsfw-lexicon-batch",
++  "schemaVersion": 1,
++  "library": "nsfw-material",
++  "batchId": "nsfw-material.b0018",
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "查缺补齐 · E2藤核/E4茧维/M1窄条 · b0018"
++  },
++  "entries": [
++    {
++      "subcategory": "定词材质",
++      "name": "活藤",
++      "description": "具有自主缠绕与蠕动活性的植物藤蔓材质，可捆缚手腕脚踝、勒紧腰胯或探入衣物缝隙；定词挂前。≠普通死藤、≠触手黏液。待审定。",
++      "tags": [
++        "定词挂前",
++        "植物",
++        "藤蔓"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0001",
++      "category": "nsfw-material"
++    },
++    {
++      "subcategory": "定词材质",
++      "name": "缠绕茎",
++      "description": "柔韧带有细微吸盘或气根的植物缠绕茎，可顺着四肢攀附收紧并分泌微凉植物津液；定词挂前。待审定。",
++      "tags": [
++        "定词挂前",
++        "植物",
++        "藤蔓"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0002",
++      "category": "nsfw-material"
++    },
++    {
++      "subcategory": "定词材质",
++      "name": "藤条",
++      "description": "坚韧有弹性的细长植物藤条，可用于紧密捆扎、悬吊或封堵感官；定词挂前。待审定。",
++      "tags": [
++        "定词挂前",
++        "植物",
++        "束缚"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0003",
++      "category": "nsfw-material"
++    },
++    {
++      "subcategory": "定词材质",
++      "name": "丝茧",
++      "description": "虫巢或异虫吐出的致密丝质包覆层，可层层缠裹躯干与四肢形成束缚茧房；定词挂前。待审定。",
++      "tags": [
++        "定词挂前",
++        "虫巢",
++        "茧缚"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0004",
++      "category": "nsfw-material"
++    },
++    {
++      "subcategory": "定词材质",
++      "name": "蛞蝓黏液",
++      "description": "高粘度拉丝的软体动物分泌黏液窄条，可大面积涂覆腿根与腰腹并阻滞行动；与M1定词挂前「蛞蝓+黏液」同义对齐。待审定。",
++      "tags": [
++        "定词挂前",
++        "黏液",
++        "M1对齐"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0005",
++      "category": "nsfw-material"
++    },
++    {
++      "subcategory": "定词材质",
++      "name": "花蜜黏液",
++      "description": "植物花冠或藤蔓分泌的微甜黏稠津液，兼有润滑涂覆与感官芬芳干扰；定词挂前。待审定。",
++      "tags": [
++        "定词挂前",
++        "植物",
++        "黏液"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0006",
++      "category": "nsfw-material"
++    },
++    {
++      "subcategory": "定词材质",
++      "name": "活体蛛丝",
++      "description": "带有弹力与粘附性的高韧度生物丝线，可缠绕关节、封住口唇或悬吊肢体；定词挂前。待审定。",
++      "tags": [
++        "定词挂前",
++        "丝线",
++        "束缚"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0007",
++      "category": "nsfw-material"
++    },
++    {
++      "subcategory": "定词材质",
++      "name": "温热蜡液",
++      "description": "低温融化后滴落体表并迅速凝成薄壳的温热软蜡，带来短暂温热刺激与紧致包覆感；定词挂前。待审定。",
++      "tags": [
++        "定词挂前",
++        "覆层"
++      ],
++      "usage": "material",
++      "id": "lx.nsfw-material.b0018.0008",
++      "category": "nsfw-material"
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/nsfw-mod.b0018.json b/docs/tag-hub/nsfw-batches/nsfw-mod.b0018.json
+new file mode 100644
+index 0000000..edc2821
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/nsfw-mod.b0018.json
+@@ -0,0 +1,61 @@
++{
++  "format": "aetheria-nsfw-lexicon-batch",
++  "schemaVersion": 1,
++  "library": "nsfw-mod",
++  "batchId": "nsfw-mod.b0018",
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "查缺补齐 · 质感与动态修饰词 · b0018"
++  },
++  "entries": [
++    {
++      "subcategory": "触感修饰",
++      "name": "拉丝湿滑",
++      "description": "黏液、垂涎或未干胶层在肢体分离时牵出透明细丝的湿滑质感。待审定。",
++      "tags": [
++        "触感",
++        "黏液"
++      ],
++      "usage": "modifier",
++      "id": "lx.nsfw-mod.b0018.0001",
++      "category": "nsfw-mod"
++    },
++    {
++      "subcategory": "触感修饰",
++      "name": "温热搏动",
++      "description": "活体材质或虫巢分泌物贴合肌肤时伴随节律性收缩与微热脉动的触感。待审定。",
++      "tags": [
++        "触感",
++        "活体"
++      ],
++      "usage": "modifier",
++      "id": "lx.nsfw-mod.b0018.0002",
++      "category": "nsfw-mod"
++    },
++    {
++      "subcategory": "触感修饰",
++      "name": "紧致包覆",
++      "description": "乳胶、黑胶或致密丝茧毫无空隙地收束贴合肌肉轮廓的压迫质感。待审定。",
++      "tags": [
++        "触感",
++        "包覆"
++      ],
++      "usage": "modifier",
++      "id": "lx.nsfw-mod.b0018.0003",
++      "category": "nsfw-mod"
++    },
++    {
++      "subcategory": "感官修饰",
++      "name": "甜腥微麻",
++      "description": "伴随植物花蜜或虫巢气息渗入表皮时带来的微甜气味与轻度酥麻感。待审定。",
++      "tags": [
++        "气味",
++        "触感"
++      ],
++      "usage": "modifier",
++      "id": "lx.nsfw-mod.b0018.0004",
++      "category": "nsfw-mod"
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/nsfw-state.b0018.json b/docs/tag-hub/nsfw-batches/nsfw-state.b0018.json
+new file mode 100644
+index 0000000..772e874
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/nsfw-state.b0018.json
+@@ -0,0 +1,109 @@
++{
++  "format": "aetheria-nsfw-lexicon-batch",
++  "schemaVersion": 1,
++  "library": "nsfw-state",
++  "batchId": "nsfw-state.b0018",
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "查缺补齐 · 被茧缚与感官现场态 · b0018"
++  },
++  "entries": [
++    {
++      "subcategory": "束缚现场态",
++      "name": "被茧缚",
++      "description": "身体被多层致密丝茧或黏丝包裹固定，四肢紧贴躯干难以大幅挣动；对应 E4 茧维现场态。待审定。",
++      "tags": [
++        "茧缚",
++        "现场态"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0001",
++      "category": "nsfw-state"
++    },
++    {
++      "subcategory": "感官现场态",
++      "name": "感官剥夺中",
++      "description": "视觉、听觉或发声通道被外物暂时遮蔽封堵的现场状态；≠性癖分类「感官剥夺」。待审定。",
++      "tags": [
++        "感官现场态",
++        "G4"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0002",
++      "category": "nsfw-state"
++    },
++    {
++      "subcategory": "感官现场态",
++      "name": "口封中",
++      "description": "口唇被胶膜、口球、触手或藤条封堵而无法清晰吐字的现场状态。待审定。",
++      "tags": [
++        "感官现场态",
++        "口封"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0003",
++      "category": "nsfw-state"
++    },
++    {
++      "subcategory": "感官现场态",
++      "name": "眼封中",
++      "description": "视线被眼罩、黏液膜、触手或藤条遮蔽而陷入黑暗或模糊光影的现场状态。待审定。",
++      "tags": [
++        "感官现场态",
++        "眼封"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0004",
++      "category": "nsfw-state"
++    },
++    {
++      "subcategory": "感官现场态",
++      "name": "耳封中",
++      "description": "耳廓被软塞、胶膜或覆层封住而仅能听见内部脉搏与闷响的现场状态。待审定。",
++      "tags": [
++        "感官现场态",
++        "耳封"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0005",
++      "category": "nsfw-state"
++    },
++    {
++      "subcategory": "束缚现场态",
++      "name": "被藤蔓束缚",
++      "description": "手腕、脚踝或腰躯被活藤与缠绕茎勒紧固定的现场状态。待审定。",
++      "tags": [
++        "植物",
++        "束缚现场态"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0006",
++      "category": "nsfw-state"
++    },
++    {
++      "subcategory": "束缚现场态",
++      "name": "悬吊受制",
++      "description": "腕踝被拉高使足尖离地或重心悬空的现场状态。待审定。",
++      "tags": [
++        "悬吊",
++        "束缚现场态"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0007",
++      "category": "nsfw-state"
++    },
++    {
++      "subcategory": "战后现场态",
++      "name": "残迹未消",
++      "description": "脱离交锋后体表与衣料内侧仍留有湿滑覆层、勒痕或温热感应的战后状态。待审定。",
++      "tags": [
++        "残迹",
++        "战后态"
++      ],
++      "usage": "state",
++      "id": "lx.nsfw-state.b0018.0008",
++      "category": "nsfw-state"
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/MANIFEST.json b/docs/tag-hub/nsfw-batches/v2-draft/MANIFEST.json
+index a6d6351..3d4d1b8 100755
+--- a/docs/tag-hub/nsfw-batches/v2-draft/MANIFEST.json
++++ b/docs/tag-hub/nsfw-batches/v2-draft/MANIFEST.json
+@@ -3,9 +3,9 @@
+   "dictionary": {
+     "id": "aetheria/foundation",
+     "version": "1.0.0",
+-    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
++    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
+   },
+-  "filter": "b0017",
++  "filter": "b0017|b0018",
+   "status": "pending-review",
+   "runtime": "not-installed",
+   "batches": [
+@@ -14,6 +14,11 @@
+       "entries": 7,
+       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0017.v2.json"
+     },
++    {
++      "batchId": "nsfw-action.b0018",
++      "entries": 10,
++      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.v2.json"
++    },
+     {
+       "batchId": "nsfw-fluid.b0017",
+       "entries": 2,
+@@ -24,16 +29,31 @@
+       "entries": 10,
+       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0017.v2.json"
+     },
++    {
++      "batchId": "nsfw-gear.b0018",
++      "entries": 6,
++      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.v2.json"
++    },
+     {
+       "batchId": "nsfw-material.b0017",
+       "entries": 7,
+       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0017.v2.json"
+     },
++    {
++      "batchId": "nsfw-material.b0018",
++      "entries": 8,
++      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.v2.json"
++    },
+     {
+       "batchId": "nsfw-mod.b0017",
+       "entries": 2,
+       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0017.v2.json"
+     },
++    {
++      "batchId": "nsfw-mod.b0018",
++      "entries": 4,
++      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.v2.json"
++    },
+     {
+       "batchId": "nsfw-part.b0017",
+       "entries": 18,
+@@ -43,6 +63,11 @@
+       "batchId": "nsfw-state.b0017",
+       "entries": 8,
+       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0017.v2.json"
++    },
++    {
++      "batchId": "nsfw-state.b0018",
++      "entries": 8,
++      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.v2.json"
+     }
+   ]
+ }
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.tag-notes.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.tag-notes.json
+new file mode 100644
+index 0000000..a7d473f
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.tag-notes.json
+@@ -0,0 +1,110 @@
++{
++  "sourceFormat": "aetheria-nsfw-lexicon-batch",
++  "sourceSchemaVersion": 1,
++  "batchId": "nsfw-action.b0018",
++  "mappedAt": "2026-10-17T06:01:43.817Z",
++  "status": "pending-review",
++  "runtime": "not-installed",
++  "droppedFreeTags": [
++    {
++      "id": "lx.nsfw-action.b0018.0001",
++      "name": "藤条封眼",
++      "v1Tags": [
++        "植物",
++        "封眼",
++        "G4"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0002",
++      "name": "藤条封口",
++      "v1Tags": [
++        "植物",
++        "封口",
++        "G4"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0003",
++      "name": "结茧",
++      "v1Tags": [
++        "虫巢",
++        "茧缚",
++        "G1",
++        "G2"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0004",
++      "name": "节肢钳制",
++      "v1Tags": [
++        "虫巢",
++        "压制",
++        "G1",
++        "G8"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0005",
++      "name": "藤蔓吊缚",
++      "v1Tags": [
++        "植物",
++        "悬吊",
++        "G1"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0006",
++      "name": "胶膜封耳",
++      "v1Tags": [
++        "封耳",
++        "G4"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0007",
++      "name": "多肢揉压",
++      "v1Tags": [
++        "多体",
++        "G8"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0008",
++      "name": "牵引迫跪",
++      "v1Tags": [
++        "调教",
++        "G7"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0009",
++      "name": "倒挂",
++      "v1Tags": [
++        "植物",
++        "倒挂",
++        "G1"
++      ],
++      "usage": "action"
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0010",
++      "name": "勒紧",
++      "v1Tags": [
++        "植物",
++        "勒紧",
++        "G1"
++      ],
++      "usage": "action"
++    }
++  ],
++  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.v2.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.v2.json
+new file mode 100644
+index 0000000..edd86c0
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.v2.json
+@@ -0,0 +1,149 @@
++{
++  "format": "aetheria-lexicon-materials",
++  "schemaVersion": 2,
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "v1→v2 draft · nsfw-action.b0018 · 待审定 · 未实装"
++  },
++  "dictionary": {
++    "id": "aetheria/foundation",
++    "version": "1.0.0",
++    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
++  },
++  "domain": "nsfw",
++  "library": "nsfw-action",
++  "batchId": "nsfw-action.b0018",
++  "entries": [
++    {
++      "id": "lx.nsfw-action.b0018.0001",
++      "category": "nsfw-action",
++      "subcategory": "感官封夺动作",
++      "text": "藤条封眼",
++      "description": "柔韧藤条或宽叶横过眼周缠紧，遮蔽视线并剥夺视觉方向感；对应植物类 G4 感官封夺。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0002",
++      "category": "nsfw-action",
++      "subcategory": "感官封夺动作",
++      "text": "藤条封口",
++      "description": "活藤或柔韧茎蔓勒入唇齿之间或严密覆住口唇，使受缚者仅能发出闷哼；对应植物类 G4 口封。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0003",
++      "category": "nsfw-action",
++      "subcategory": "束缚包覆动作",
++      "text": "结茧",
++      "description": "用密集黏丝或虫巢分泌丝线将猎物从脚踝至肩胸层层缠裹成茧，限制四肢伸展；对应 E4 茧维与 G1/G2。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0004",
++      "category": "nsfw-action",
++      "subcategory": "压制束缚动作",
++      "text": "节肢钳制",
++      "description": "坚硬的甲壳节肢从两侧扣死手腕、腰胯或膝弯，令受制者无法借力挣脱；对应虫巢类 G1/G8。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0005",
++      "category": "nsfw-action",
++      "subcategory": "悬吊束缚动作",
++      "text": "藤蔓吊缚",
++      "description": "数条活藤自高处垂落缠住腕踝并将重心拉离地面，迫使身体呈悬垂或踮脚受制姿态；对应 G1。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0006",
++      "category": "nsfw-action",
++      "subcategory": "感官封夺动作",
++      "text": "胶膜封耳",
++      "description": "半透明凝胶或黏膜覆住耳廓外侧，将外界声响过滤为低沉闷响并放大自身心跳呼吸；对应 G4。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0007",
++      "category": "nsfw-action",
++      "subcategory": "多体围攻动作",
++      "text": "多肢揉压",
++      "description": "多条触手、藤蔓或附肢同时贴合胸侧、腰腹与腿根交替施压摩挲，分散防御精力；对应 G8。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0008",
++      "category": "nsfw-action",
++      "subcategory": "调教引导动作",
++      "text": "牵引迫跪",
++      "description": "收紧颈环、腕带或腰侧牵引索，迫使受制者重心下沉呈跪立或俯身顺从姿态；对应 G7。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0009",
++      "category": "nsfw-action",
++      "subcategory": "悬吊束缚动作",
++      "text": "倒挂",
++      "description": "活藤或束带缠紧双侧脚踝并将身体倒悬吊起，使受制者重心倒置难以借力；对应 E2 藤核与 G1。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-action.b0018.0010",
++      "category": "nsfw-action",
++      "subcategory": "压制束缚动作",
++      "text": "勒紧",
++      "description": "缠绕在手腕、脚踝或腰腹处的活藤、茎蔓或束带持续收束勒紧，进一步压缩活动余地；对应 E2 藤核与 G1。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.tag-notes.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.tag-notes.json
+new file mode 100644
+index 0000000..84825ca
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.tag-notes.json
+@@ -0,0 +1,65 @@
++{
++  "sourceFormat": "aetheria-nsfw-lexicon-batch",
++  "sourceSchemaVersion": 1,
++  "batchId": "nsfw-gear.b0018",
++  "mappedAt": "2026-10-17T06:01:43.825Z",
++  "status": "pending-review",
++  "runtime": "not-installed",
++  "droppedFreeTags": [
++    {
++      "id": "lx.nsfw-gear.b0018.0001",
++      "name": "脚铐",
++      "v1Tags": [
++        "拘束具",
++        "足踝"
++      ],
++      "usage": "gear"
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0002",
++      "name": "踝铐",
++      "v1Tags": [
++        "拘束具",
++        "足踝"
++      ],
++      "usage": "gear"
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0003",
++      "name": "连体拘束带",
++      "v1Tags": [
++        "拘束具",
++        "躯干"
++      ],
++      "usage": "gear"
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0004",
++      "name": "分腿横杆",
++      "v1Tags": [
++        "拘束具",
++        "下肢"
++      ],
++      "usage": "gear"
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0005",
++      "name": "软胶耳塞",
++      "v1Tags": [
++        "感官遮蔽",
++        "耳部"
++      ],
++      "usage": "gear"
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0006",
++      "name": "遮光眼罩",
++      "v1Tags": [
++        "感官遮蔽",
++        "眼部"
++      ],
++      "usage": "gear"
++    }
++  ],
++  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.v2.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.v2.json
+new file mode 100644
+index 0000000..b90c4e1
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.v2.json
+@@ -0,0 +1,97 @@
++{
++  "format": "aetheria-lexicon-materials",
++  "schemaVersion": 2,
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "v1→v2 draft · nsfw-gear.b0018 · 待审定 · 未实装"
++  },
++  "dictionary": {
++    "id": "aetheria/foundation",
++    "version": "1.0.0",
++    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
++  },
++  "domain": "nsfw",
++  "library": "nsfw-gear",
++  "batchId": "nsfw-gear.b0018",
++  "entries": [
++    {
++      "id": "lx.nsfw-gear.b0018.0001",
++      "category": "nsfw-gear",
++      "subcategory": "踝部拘束具",
++      "text": "脚铐",
++      "description": "扣合于双侧足踝之间的刚性或链式金属拘束具，限制步幅与踢踹动作。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0002",
++      "category": "nsfw-gear",
++      "subcategory": "踝部拘束具",
++      "text": "踝铐",
++      "description": "贴合单侧或双侧脚踝凹槽的紧固环扣，可连接地面锚点、牵引索或腿根束带。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0003",
++      "category": "nsfw-gear",
++      "subcategory": "全身拘束具",
++      "text": "连体拘束带",
++      "description": "自肩背斜跨胸侧、腰腹至腿根的多点收束皮带或胶带组，固定躯干姿态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0004",
++      "category": "nsfw-gear",
++      "subcategory": "下肢拘束具",
++      "text": "分腿横杆",
++      "description": "连接于双侧膝弯或脚踝内侧的定距横杆，迫使下肢保持敞开无法并拢。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0005",
++      "category": "nsfw-gear",
++      "subcategory": "感官遮蔽具",
++      "text": "软胶耳塞",
++      "description": "贴合耳道轮廓的隔音软胶塞，用于阻断外部声响与放大体表触觉。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-gear.b0018.0006",
++      "category": "nsfw-gear",
++      "subcategory": "感官遮蔽具",
++      "text": "遮光眼罩",
++      "description": "覆合眼眶与鼻梁的软垫眼罩，完全隔绝外部光线。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.tag-notes.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.tag-notes.json
+new file mode 100644
+index 0000000..3385090
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.tag-notes.json
+@@ -0,0 +1,90 @@
++{
++  "sourceFormat": "aetheria-nsfw-lexicon-batch",
++  "sourceSchemaVersion": 1,
++  "batchId": "nsfw-material.b0018",
++  "mappedAt": "2026-10-17T06:01:43.829Z",
++  "status": "pending-review",
++  "runtime": "not-installed",
++  "droppedFreeTags": [
++    {
++      "id": "lx.nsfw-material.b0018.0001",
++      "name": "活藤",
++      "v1Tags": [
++        "定词挂前",
++        "植物",
++        "藤蔓"
++      ],
++      "usage": "material"
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0002",
++      "name": "缠绕茎",
++      "v1Tags": [
++        "定词挂前",
++        "植物",
++        "藤蔓"
++      ],
++      "usage": "material"
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0003",
++      "name": "藤条",
++      "v1Tags": [
++        "定词挂前",
++        "植物",
++        "束缚"
++      ],
++      "usage": "material"
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0004",
++      "name": "丝茧",
++      "v1Tags": [
++        "定词挂前",
++        "虫巢",
++        "茧缚"
++      ],
++      "usage": "material"
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0005",
++      "name": "蛞蝓黏液",
++      "v1Tags": [
++        "定词挂前",
++        "黏液",
++        "M1对齐"
++      ],
++      "usage": "material"
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0006",
++      "name": "花蜜黏液",
++      "v1Tags": [
++        "定词挂前",
++        "植物",
++        "黏液"
++      ],
++      "usage": "material"
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0007",
++      "name": "活体蛛丝",
++      "v1Tags": [
++        "定词挂前",
++        "丝线",
++        "束缚"
++      ],
++      "usage": "material"
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0008",
++      "name": "温热蜡液",
++      "v1Tags": [
++        "定词挂前",
++        "覆层"
++      ],
++      "usage": "material"
++    }
++  ],
++  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.v2.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.v2.json
+new file mode 100644
+index 0000000..ca21ba8
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.v2.json
+@@ -0,0 +1,123 @@
++{
++  "format": "aetheria-lexicon-materials",
++  "schemaVersion": 2,
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "v1→v2 draft · nsfw-material.b0018 · 待审定 · 未实装"
++  },
++  "dictionary": {
++    "id": "aetheria/foundation",
++    "version": "1.0.0",
++    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
++  },
++  "domain": "nsfw",
++  "library": "nsfw-material",
++  "batchId": "nsfw-material.b0018",
++  "entries": [
++    {
++      "id": "lx.nsfw-material.b0018.0001",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "活藤",
++      "description": "具有自主缠绕与蠕动活性的植物藤蔓材质，可捆缚手腕脚踝、勒紧腰胯或探入衣物缝隙；定词挂前。≠普通死藤、≠触手黏液。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0002",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "缠绕茎",
++      "description": "柔韧带有细微吸盘或气根的植物缠绕茎，可顺着四肢攀附收紧并分泌微凉植物津液；定词挂前。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0003",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "藤条",
++      "description": "坚韧有弹性的细长植物藤条，可用于紧密捆扎、悬吊或封堵感官；定词挂前。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0004",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "丝茧",
++      "description": "虫巢或异虫吐出的致密丝质包覆层，可层层缠裹躯干与四肢形成束缚茧房；定词挂前。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0005",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "蛞蝓黏液",
++      "description": "高粘度拉丝的软体动物分泌黏液窄条，可大面积涂覆腿根与腰腹并阻滞行动；与M1定词挂前「蛞蝓+黏液」同义对齐。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0006",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "花蜜黏液",
++      "description": "植物花冠或藤蔓分泌的微甜黏稠津液，兼有润滑涂覆与感官芬芳干扰；定词挂前。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0007",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "活体蛛丝",
++      "description": "带有弹力与粘附性的高韧度生物丝线，可缠绕关节、封住口唇或悬吊肢体；定词挂前。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-material.b0018.0008",
++      "category": "nsfw-material",
++      "subcategory": "定词材质",
++      "text": "温热蜡液",
++      "description": "低温融化后滴落体表并迅速凝成薄壳的温热软蜡，带来短暂温热刺激与紧致包覆感；定词挂前。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.tag-notes.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.tag-notes.json
+new file mode 100644
+index 0000000..ce48034
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.tag-notes.json
+@@ -0,0 +1,47 @@
++{
++  "sourceFormat": "aetheria-nsfw-lexicon-batch",
++  "sourceSchemaVersion": 1,
++  "batchId": "nsfw-mod.b0018",
++  "mappedAt": "2026-10-17T06:01:43.832Z",
++  "status": "pending-review",
++  "runtime": "not-installed",
++  "droppedFreeTags": [
++    {
++      "id": "lx.nsfw-mod.b0018.0001",
++      "name": "拉丝湿滑",
++      "v1Tags": [
++        "触感",
++        "黏液"
++      ],
++      "usage": "modifier"
++    },
++    {
++      "id": "lx.nsfw-mod.b0018.0002",
++      "name": "温热搏动",
++      "v1Tags": [
++        "触感",
++        "活体"
++      ],
++      "usage": "modifier"
++    },
++    {
++      "id": "lx.nsfw-mod.b0018.0003",
++      "name": "紧致包覆",
++      "v1Tags": [
++        "触感",
++        "包覆"
++      ],
++      "usage": "modifier"
++    },
++    {
++      "id": "lx.nsfw-mod.b0018.0004",
++      "name": "甜腥微麻",
++      "v1Tags": [
++        "气味",
++        "触感"
++      ],
++      "usage": "modifier"
++    }
++  ],
++  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.v2.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.v2.json
+new file mode 100644
+index 0000000..5e26721
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.v2.json
+@@ -0,0 +1,71 @@
++{
++  "format": "aetheria-lexicon-materials",
++  "schemaVersion": 2,
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "v1→v2 draft · nsfw-mod.b0018 · 待审定 · 未实装"
++  },
++  "dictionary": {
++    "id": "aetheria/foundation",
++    "version": "1.0.0",
++    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
++  },
++  "domain": "nsfw",
++  "library": "nsfw-mod",
++  "batchId": "nsfw-mod.b0018",
++  "entries": [
++    {
++      "id": "lx.nsfw-mod.b0018.0001",
++      "category": "nsfw-mod",
++      "subcategory": "触感修饰",
++      "text": "拉丝湿滑",
++      "description": "黏液、垂涎或未干胶层在肢体分离时牵出透明细丝的湿滑质感。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-mod.b0018.0002",
++      "category": "nsfw-mod",
++      "subcategory": "触感修饰",
++      "text": "温热搏动",
++      "description": "活体材质或虫巢分泌物贴合肌肤时伴随节律性收缩与微热脉动的触感。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-mod.b0018.0003",
++      "category": "nsfw-mod",
++      "subcategory": "触感修饰",
++      "text": "紧致包覆",
++      "description": "乳胶、黑胶或致密丝茧毫无空隙地收束贴合肌肉轮廓的压迫质感。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-mod.b0018.0004",
++      "category": "nsfw-mod",
++      "subcategory": "感官修饰",
++      "text": "甜腥微麻",
++      "description": "伴随植物花蜜或虫巢气息渗入表皮时带来的微甜气味与轻度酥麻感。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    }
++  ]
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.tag-notes.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.tag-notes.json
+new file mode 100644
+index 0000000..b93bad2
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.tag-notes.json
+@@ -0,0 +1,83 @@
++{
++  "sourceFormat": "aetheria-nsfw-lexicon-batch",
++  "sourceSchemaVersion": 1,
++  "batchId": "nsfw-state.b0018",
++  "mappedAt": "2026-10-17T06:01:43.834Z",
++  "status": "pending-review",
++  "runtime": "not-installed",
++  "droppedFreeTags": [
++    {
++      "id": "lx.nsfw-state.b0018.0001",
++      "name": "被茧缚",
++      "v1Tags": [
++        "茧缚",
++        "现场态"
++      ],
++      "usage": "state"
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0002",
++      "name": "感官剥夺中",
++      "v1Tags": [
++        "感官现场态",
++        "G4"
++      ],
++      "usage": "state"
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0003",
++      "name": "口封中",
++      "v1Tags": [
++        "感官现场态",
++        "口封"
++      ],
++      "usage": "state"
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0004",
++      "name": "眼封中",
++      "v1Tags": [
++        "感官现场态",
++        "眼封"
++      ],
++      "usage": "state"
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0005",
++      "name": "耳封中",
++      "v1Tags": [
++        "感官现场态",
++        "耳封"
++      ],
++      "usage": "state"
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0006",
++      "name": "被藤蔓束缚",
++      "v1Tags": [
++        "植物",
++        "束缚现场态"
++      ],
++      "usage": "state"
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0007",
++      "name": "悬吊受制",
++      "v1Tags": [
++        "悬吊",
++        "束缚现场态"
++      ],
++      "usage": "state"
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0008",
++      "name": "残迹未消",
++      "v1Tags": [
++        "残迹",
++        "战后态"
++      ],
++      "usage": "state"
++    }
++  ],
++  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
++}
+diff --git a/docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.v2.json b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.v2.json
+new file mode 100644
+index 0000000..adeb8b5
+--- /dev/null
++++ b/docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.v2.json
+@@ -0,0 +1,123 @@
++{
++  "format": "aetheria-lexicon-materials",
++  "schemaVersion": 2,
++  "source": {
++    "producer": "ai-nsfw",
++    "model": "Gemini",
++    "theme": "v1→v2 draft · nsfw-state.b0018 · 待审定 · 未实装"
++  },
++  "dictionary": {
++    "id": "aetheria/foundation",
++    "version": "1.0.0",
++    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
++  },
++  "domain": "nsfw",
++  "library": "nsfw-state",
++  "batchId": "nsfw-state.b0018",
++  "entries": [
++    {
++      "id": "lx.nsfw-state.b0018.0001",
++      "category": "nsfw-state",
++      "subcategory": "束缚现场态",
++      "text": "被茧缚",
++      "description": "身体被多层致密丝茧或黏丝包裹固定，四肢紧贴躯干难以大幅挣动；对应 E4 茧维现场态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0002",
++      "category": "nsfw-state",
++      "subcategory": "感官现场态",
++      "text": "感官剥夺中",
++      "description": "视觉、听觉或发声通道被外物暂时遮蔽封堵的现场状态；≠性癖分类「感官剥夺」。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0003",
++      "category": "nsfw-state",
++      "subcategory": "感官现场态",
++      "text": "口封中",
++      "description": "口唇被胶膜、口球、触手或藤条封堵而无法清晰吐字的现场状态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0004",
++      "category": "nsfw-state",
++      "subcategory": "感官现场态",
++      "text": "眼封中",
++      "description": "视线被眼罩、黏液膜、触手或藤条遮蔽而陷入黑暗或模糊光影的现场状态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0005",
++      "category": "nsfw-state",
++      "subcategory": "感官现场态",
++      "text": "耳封中",
++      "description": "耳廓被软塞、胶膜或覆层封住而仅能听见内部脉搏与闷响的现场状态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0006",
++      "category": "nsfw-state",
++      "subcategory": "束缚现场态",
++      "text": "被藤蔓束缚",
++      "description": "手腕、脚踝或腰躯被活藤与缠绕茎勒紧固定的现场状态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0007",
++      "category": "nsfw-state",
++      "subcategory": "束缚现场态",
++      "text": "悬吊受制",
++      "description": "腕踝被拉高使足尖离地或重心悬空的现场状态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    },
++    {
++      "id": "lx.nsfw-state.b0018.0008",
++      "category": "nsfw-state",
++      "subcategory": "战后现场态",
++      "text": "残迹未消",
++      "description": "脱离交锋后体表与衣料内侧仍留有湿滑覆层、勒痕或温热感应的战后状态。待审定。",
++      "tags": [],
++      "classification": {
++        "tier": "adult_optional",
++        "preferenceKey": "adultOptional",
++        "eligibility": "verified-adults"
++      }
++    }
++  ]
++}
+diff --git a/scripts/nsfw-auto-combo/atoms.json b/scripts/nsfw-auto-combo/atoms.json
+index 934a4ff..55621bd 100755
+--- a/scripts/nsfw-auto-combo/atoms.json
++++ b/scripts/nsfw-auto-combo/atoms.json
+@@ -18,7 +18,8 @@
+       "dingci": "蛞蝓",
+       "label": "蛞蝓黏液",
+       "kind": "L",
+-      "batch": "nsfw-material.b0002.json"
++      "batch": "nsfw-material.b0002.json",
++      "narrowId": "lx.nsfw-material.b0018.0005"
+     },
+     {
+       "key": "M2",
+@@ -64,6 +65,42 @@
+       "label": "凝胶膜",
+       "kind": "L",
+       "batch": "nsfw-material.b0001.json"
++    },
++    {
++      "key": "M7",
++      "id": "lx.nsfw-material.b0018.0001",
++      "name": "活藤",
++      "dingci": "兽径",
++      "label": "兽径活藤",
++      "kind": "L",
++      "batch": "nsfw-material.b0018.json"
++    },
++    {
++      "key": "M8",
++      "id": "lx.nsfw-material.b0018.0002",
++      "name": "缠绕茎",
++      "dingci": "翠暗",
++      "label": "翠暗缠绕茎",
++      "kind": "L",
++      "batch": "nsfw-material.b0018.json"
++    },
++    {
++      "key": "M10",
++      "id": "lx.nsfw-material.b0018.0003",
++      "name": "藤条",
++      "dingci": "柔韧",
++      "label": "柔韧藤条",
++      "kind": "L",
++      "batch": "nsfw-material.b0018.json"
++    },
++    {
++      "key": "M11",
++      "id": "lx.nsfw-material.b0018.0004",
++      "name": "丝茧",
++      "dingci": "虫巢",
++      "label": "虫巢丝茧",
++      "kind": "L",
++      "batch": "nsfw-material.b0018.json"
+     }
+   ],
+   "parts": [
+@@ -237,6 +274,70 @@
+       "kind": "L",
+       "batch": "nsfw-action.b0012.json",
+       "adultRequired": true
++    },
++    {
++      "key": "A14",
++      "id": "lx.nsfw-action.b0018.0001",
++      "name": "藤条封眼",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": false
++    },
++    {
++      "key": "A15",
++      "id": "lx.nsfw-action.b0018.0002",
++      "name": "藤条封口",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": true
++    },
++    {
++      "key": "A16",
++      "id": "lx.nsfw-action.b0018.0003",
++      "name": "结茧",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": false
++    },
++    {
++      "key": "A17",
++      "id": "lx.nsfw-action.b0018.0004",
++      "name": "节肢钳制",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": false
++    },
++    {
++      "key": "A18",
++      "id": "lx.nsfw-action.b0018.0005",
++      "name": "藤蔓吊缚",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": false
++    },
++    {
++      "key": "A19",
++      "id": "lx.nsfw-action.b0018.0006",
++      "name": "胶膜封耳",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": true
++    },
++    {
++      "key": "A20",
++      "id": "lx.nsfw-action.b0018.0009",
++      "name": "倒挂",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": false
++    },
++    {
++      "key": "A21",
++      "id": "lx.nsfw-action.b0018.0010",
++      "name": "勒紧",
++      "kind": "L",
++      "batch": "nsfw-action.b0018.json",
++      "adultRequired": false
+     }
+   ],
+   "states": [
+@@ -275,6 +376,48 @@
+       "id": "lx.nsfw-state.b0003.0002",
+       "name": "恍惚服从",
+       "kind": "L"
++    },
++    {
++      "key": "S7",
++      "id": "lx.nsfw-state.b0018.0001",
++      "name": "被茧缚",
++      "kind": "L"
++    },
++    {
++      "key": "S8",
++      "id": "lx.nsfw-state.b0018.0002",
++      "name": "感官剥夺中",
++      "kind": "L"
++    },
++    {
++      "key": "S9",
++      "id": "lx.nsfw-state.b0018.0003",
++      "name": "口封中",
++      "kind": "L"
++    },
++    {
++      "key": "S10",
++      "id": "lx.nsfw-state.b0018.0004",
++      "name": "眼封中",
++      "kind": "L"
++    },
++    {
++      "key": "S11",
++      "id": "lx.nsfw-state.b0018.0005",
++      "name": "耳封中",
++      "kind": "L"
++    },
++    {
++      "key": "S12",
++      "id": "lx.nsfw-state.b0018.0006",
++      "name": "被藤蔓束缚",
++      "kind": "L"
++    },
++    {
++      "key": "S13",
++      "id": "lx.nsfw-state.b0018.0007",
++      "name": "悬吊受制",
++      "kind": "L"
+     }
+   ],
+   "tfs": [

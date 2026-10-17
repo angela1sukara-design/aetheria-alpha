@@ -2,6 +2,7 @@ import { projectV2 } from './foundation-schema.ts';
 import { parseDistrict } from './district-schema.ts';
 import { parseAdventurePack, ADVENTURE_FIELDS, NARRATIVE_KINDS, PROGRESSION_MOVES } from './adventure-schema.ts';
 import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
+import { ENEMY_SPECIES_KINDS, DEFEAT_MATERIAL_KEYS, DEFEAT_PLAY_KEYS, GENERIC_TF_ATOMS } from '../core/district-types.ts';
 import { RELATION_FIELDS } from '../core/npc-types.ts';
 import { PLAYER_RELATIONS } from '../core/quest-types.ts';
 import { LOCATION_FACILITIES, LOCATION_SERVICES, RESIDENT_SERVICES } from '../core/function-types.ts';
@@ -65,6 +66,17 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'service.available') { const x=obj(value,path,['op','subject','service','id']);choice(x.subject,path,['location','resident']);choice(x.service,path,x.subject==='location'?[...LOCATION_SERVICES]:[...RESIDENT_SERVICES]);if(x.subject==='resident'&&['trade','teach'].includes(String(x.service)))id(x.id,path+'/id');else if(x.id!==undefined)fail(path+'/id','此功能不接受条目ID。'); }
     else if (op === 'progression.available') { const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path); }
     else if(op==='narrative.tag'){const x=obj(value,path,['op','role','id','value']);choice(x.role,path,['player','opponent','environment']);id(x.id,path);boolean(x.value,path);}
+    else if(op==='opponent.matches'){
+      const x=obj(value,path,['op','enemyId','speciesKind','attributeTag','fetishTag','materialKey','playKey','tf']);
+      if(Object.keys(x).length<=1)fail(path,'对手匹配条件至少需要一项约束。');
+      if(x.enemyId!==undefined)id(x.enemyId,`${path}/enemyId`);
+      if(x.speciesKind!==undefined)choice(x.speciesKind,`${path}/speciesKind`,[...ENEMY_SPECIES_KINDS]);
+      if(x.attributeTag!==undefined)id(x.attributeTag,`${path}/attributeTag`);
+      if(x.fetishTag!==undefined)id(x.fetishTag,`${path}/fetishTag`);
+      if(x.materialKey!==undefined)choice(x.materialKey,`${path}/materialKey`,[...DEFEAT_MATERIAL_KEYS]);
+      if(x.playKey!==undefined)choice(x.playKey,`${path}/playKey`,[...DEFEAT_PLAY_KEYS]);
+      if(x.tf!==undefined)choice(x.tf,`${path}/tf`,[...GENERIC_TF_ATOMS]);
+    }
     else fail(`${path}/op`, '未知或未实现的条件操作符。', 'UNSUPPORTED_OPCODE');
   }
   function effect(value: unknown, path: string): void {
@@ -97,7 +109,7 @@ export function parsePack(input: unknown): ContentPack {
     else if (op === 'progression.act') {const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path);}
     else fail(`${path}/op`, '未知或未实现的效果操作符。', 'UNSUPPORTED_OPCODE');
   }
-  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'items', 'narrativeProfiles','narrativeNodes','environmentEnemyRules']);
+  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'items', 'narrativeProfiles','narrativeNodes','environmentEnemyRules','defeatReactionRules']);
   const m = obj(root.manifest, '/manifest', ['id', 'namespace', 'version', 'schemaVersion', 'engineApiVersion', 'author', 'status', 'dependencies', 'requiresCapabilities', 'migrations']);
   if (typeof m.id === 'string') packId = m.id;
   str(m.id, '/manifest/id'); str(m.author, '/manifest/author');

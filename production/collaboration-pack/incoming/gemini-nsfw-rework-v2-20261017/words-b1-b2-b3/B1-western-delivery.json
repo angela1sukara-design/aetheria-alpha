@@ -1,0 +1,1661 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "western",
+  "author": "author-b-v2",
+  "batchId": "b1-western-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.western.hitching-post-rail",
+      "text": "一根横在驿站门前被缰绳磨滑的杉木拴马杆",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "hitching-post-rail"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "hitching-post-rail"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.water-trough",
+      "text": "一槽用整段松木掏空而成的饮马木槽",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "water-trough"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "water-trough"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.cast-iron-skillet",
+      "text": "一口挂在廊柱木钉上的厚底铸铁平底锅",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "cast-iron-skillet"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "cast-iron-skillet"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.kerosene-barn-lantern",
+      "text": "一盏带铁丝护罩的防风提梁马灯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "kerosene-barn-lantern"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "kerosene-barn-lantern"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.lasso-rope-coil",
+      "text": "一盘挂在鞍架角上的浸蜡麻制套索",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "lasso-rope-coil"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "lasso-rope-coil"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.wooden-rocking-chair",
+      "text": "一把摆在遮阳木廊下的桦木摇椅",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "wooden-rocking-chair"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "wooden-rocking-chair"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.stagecoach-strongbox",
+      "text": "一口包着黑铁角的驿车双锁铁皮箱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "stagecoach-strongbox"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "stagecoach-strongbox"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.horseshoe-rack",
+      "text": "一串挂在横梁下备用的U型熟铁马掌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "horseshoe-rack"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "horseshoe-rack"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.canvas-mail-sack",
+      "text": "一只印有邮政字样的厚帆布邮袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "canvas-mail-sack"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "canvas-mail-sack"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.washboard-tub",
+      "text": "一只搁在后廊木凳上的波纹锌板搓衣盆",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "washboard-tub"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "washboard-tub"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.wind-pump-lever",
+      "text": "一根连接浅井汲水筒的长柄压水铁杆",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "wind-pump-lever"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "wind-pump-lever"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.branding-iron-stand",
+      "text": "一排竖在墙角铁架上的牧场字母烙铁",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "branding-iron-stand"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "branding-iron-stand"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.dusty-saddle-stand",
+      "text": "一副搭在木马架上、雕花皮面蒙着红土浮尘的马鞍",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认马鞍当前搭在木马架上且表面蒙有红土浮尘。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.creaking-swing-doors",
+      "text": "两扇在干风中微微晃动的驿站半截百叶木门",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认半截百叶木门当前正在风中轻微晃动。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.tin-coffee-pot",
+      "text": "一把搁在火塘石边冒着醇厚焦香的蓝搪瓷咖啡壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认蓝搪瓷咖啡壶当前搁在火塘边且内有热咖啡。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.spurs-hanging-hook",
+      "text": "一对小齿轮沾着干草屑的黄铜马刺",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认黄铜马刺小齿轮当前沾有干草屑并挂在钩上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.tumbleweed-corner",
+      "text": "一团卡在木廊台阶栏杆下的风滚草枯枝",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认木廊台阶栏杆下当前卡有一团风滚草。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.whittled-cedar-stick",
+      "text": "一截削了一半、旁落着木花的红杉木块",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认红杉木块削了一半且旁边落有木花。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.rain-barrel-dipper",
+      "text": "一只浮在半桶清水表面的长柄马口铁水瓢",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认木桶内有半桶清水且表面浮有马口铁水瓢。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.posted-notice-bill",
+      "text": "一张用四枚图钉按在廊柱上的发黄驿路通告",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认廊柱上当前由四枚图钉钉有发黄通告。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.oiled-leather-chaps",
+      "text": "一条搭在栏杆上刚擦过牛脚油的皮套裤",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认皮套裤刚擦过牛脚油并搭在栏杆上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.telegraph-insulator",
+      "text": "一只固定在屋檐横木上的翠绿色玻璃电报绝缘子",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认屋檐横木上固定有翠绿色玻璃绝缘子。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.feed-oat-bucket",
+      "text": "一桶装有半桶燕麦粒的镀锌铁皮喂料桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认镀锌铁皮桶内当前装有半桶燕麦粒。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.harmonic-pocket-case",
+      "text": "一只放在木桌边沿的十孔铜簧口琴盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认十孔口琴盒当前放在木桌边沿。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.prop.western.stage-timetable-chalk",
+      "text": "一块用粉笔写着下一班驿车到站时刻的黑漆木牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认黑漆木牌上当前写有下一班驿车时刻。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.dry-sagebrush-dust",
+      "text": "荒原鼠尾草、红土浮尘与暴晒松木混合的干爽气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "dry-sagebrush-dust"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "dry-sagebrush-dust"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.saddle-leather-hay",
+      "text": "马鞍熟皮革与干苜蓿草料交织的驿站气息",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "saddle-leather-hay"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "saddle-leather-hay"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.boiled-coffee-smoke",
+      "text": "火塘边搪瓷壶飘出的浓烈黑咖啡与桦木柴烟香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认火塘边正煮着黑咖啡并燃有桦木柴。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.porch-board-creak",
+      "text": "靴跟踏在干燥松木廊板上发出的笃笃闷响",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "porch-board-creak"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "porch-board-creak"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.windmill-vane-squeak",
+      "text": "后院汲水风车叶片随荒原风转动的规律吱呀声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "windmill-vane-squeak"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "windmill-vane-squeak"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.telegraph-clicker-tap",
+      "text": "驿站窗口内电报收报机传出的清脆滴答敲击声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认窗口内电报收报机当前正在接收电报。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.prairie-bright-sunlight",
+      "text": "开阔荒原毫无遮挡的明晃晃日光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "prairie-bright-sunlight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "prairie-bright-sunlight"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.porch-slatted-shadow",
+      "text": "木廊顶棚木条在廊板上投下的明暗相间条纹",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "porch-slatted-shadow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "porch-slatted-shadow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.amber-dust-sundown",
+      "text": "夕阳穿过驿路扬尘在走廊拉出的暖金斜晖",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前处于夕阳时段且驿路有微尘透光。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.dry-frontier-warmth",
+      "text": "边陲午后阳光晒透木墙散发的干燥暖意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "dry-frontier-warmth"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "dry-frontier-warmth"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.shaded-porch-breeze",
+      "text": "坐在木廊阴影里迎着荒原穿堂风的清爽感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色当前处于木廊阴影处并有穿堂风。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.prairie-nightfall-cool",
+      "text": "日落后旷野气温迅速回落的干冷凉意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前处于日落后的降温时段。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.sun-baked-pine-grain",
+      "text": "手指抚过暴晒松木栏杆时干燥微糙的木纹触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "sun-baked-pine-grain"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "sun-baked-pine-grain"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.gritty-prairie-wind",
+      "text": "夹着细微红土沙粒的荒原风拂过面颊的干涩感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "gritty-prairie-wind"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "gritty-prairie-wind"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    },
+    {
+      "id": "word.sense.western.cold-well-water-splash",
+      "text": "压水井刚打上来的地下水冲过手背的沁凉感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "western"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色正在用压水井刚打上的冷水洗手。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.western"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.western.hitching-post-rail",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.western.dry-sagebrush-dust",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在边陲木结构驿站前廊，你留意到在场人员的手。对方把工具归回原位。你注意到一根横在驿站门前被缰绳磨滑的杉木拴马杆，旁侧备有过滤水。你察觉到荒原鼠尾草、红土浮尘与暴晒松木混合的干爽气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.western.water-trough",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.western.porch-board-creak",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在边陲木结构驿站前廊，你留意到在场人员的手。对方将工具放回原处。你注意到一槽用整段松木掏空而成的饮马木槽，旁侧备有过滤水。你察觉到靴跟踏在干燥松木廊板上发出的笃笃闷响。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.western.dry-sagebrush-dust",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在边陲木结构驿站前廊，你察觉到荒原鼠尾草、红土浮尘与暴晒松木混合的干爽气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.western.porch-board-creak",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在边陲木结构驿站前廊，你察觉到靴跟踏在干燥松木廊板上发出的笃笃闷响。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B1（题材：western / 西部边陲）正式配额交付，共40条（environment.prop 25条：draft 12 / hold 13；environment.sense.* 五子池各3条共15条：draft 8 / hold 7；全批合计 draft 20条、hold 20条）。每条均带 scene.setting eq western 前置，手工预览标为 manual/hypothetical-only。"
+}

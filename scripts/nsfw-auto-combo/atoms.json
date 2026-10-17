@@ -18,7 +18,8 @@
       "dingci": "蛞蝓",
       "label": "蛞蝓黏液",
       "kind": "L",
-      "batch": "nsfw-material.b0002.json"
+      "batch": "nsfw-material.b0002.json",
+      "narrowId": "lx.nsfw-material.b0018.0005"
     },
     {
       "key": "M2",
@@ -64,6 +65,42 @@
       "label": "凝胶膜",
       "kind": "L",
       "batch": "nsfw-material.b0001.json"
+    },
+    {
+      "key": "M7",
+      "id": "lx.nsfw-material.b0018.0001",
+      "name": "活藤",
+      "dingci": "兽径",
+      "label": "兽径活藤",
+      "kind": "L",
+      "batch": "nsfw-material.b0018.json"
+    },
+    {
+      "key": "M8",
+      "id": "lx.nsfw-material.b0018.0002",
+      "name": "缠绕茎",
+      "dingci": "翠暗",
+      "label": "翠暗缠绕茎",
+      "kind": "L",
+      "batch": "nsfw-material.b0018.json"
+    },
+    {
+      "key": "M10",
+      "id": "lx.nsfw-material.b0018.0003",
+      "name": "藤条",
+      "dingci": "柔韧",
+      "label": "柔韧藤条",
+      "kind": "L",
+      "batch": "nsfw-material.b0018.json"
+    },
+    {
+      "key": "M11",
+      "id": "lx.nsfw-material.b0018.0004",
+      "name": "丝茧",
+      "dingci": "虫巢",
+      "label": "虫巢丝茧",
+      "kind": "L",
+      "batch": "nsfw-material.b0018.json"
     }
   ],
   "parts": [
@@ -237,6 +274,70 @@
       "kind": "L",
       "batch": "nsfw-action.b0012.json",
       "adultRequired": true
+    },
+    {
+      "key": "A14",
+      "id": "lx.nsfw-action.b0018.0001",
+      "name": "藤条封眼",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A15",
+      "id": "lx.nsfw-action.b0018.0002",
+      "name": "藤条封口",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A16",
+      "id": "lx.nsfw-action.b0018.0003",
+      "name": "结茧",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A17",
+      "id": "lx.nsfw-action.b0018.0004",
+      "name": "节肢钳制",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A18",
+      "id": "lx.nsfw-action.b0018.0005",
+      "name": "藤蔓吊缚",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A19",
+      "id": "lx.nsfw-action.b0018.0006",
+      "name": "胶膜封耳",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": true
+    },
+    {
+      "key": "A20",
+      "id": "lx.nsfw-action.b0018.0009",
+      "name": "倒挂",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": false
+    },
+    {
+      "key": "A21",
+      "id": "lx.nsfw-action.b0018.0010",
+      "name": "勒紧",
+      "kind": "L",
+      "batch": "nsfw-action.b0018.json",
+      "adultRequired": false
     }
   ],
   "states": [
@@ -274,6 +375,48 @@
       "key": "S6",
       "id": "lx.nsfw-state.b0003.0002",
       "name": "恍惚服从",
+      "kind": "L"
+    },
+    {
+      "key": "S7",
+      "id": "lx.nsfw-state.b0018.0001",
+      "name": "被茧缚",
+      "kind": "L"
+    },
+    {
+      "key": "S8",
+      "id": "lx.nsfw-state.b0018.0002",
+      "name": "感官剥夺中",
+      "kind": "L"
+    },
+    {
+      "key": "S9",
+      "id": "lx.nsfw-state.b0018.0003",
+      "name": "口封中",
+      "kind": "L"
+    },
+    {
+      "key": "S10",
+      "id": "lx.nsfw-state.b0018.0004",
+      "name": "眼封中",
+      "kind": "L"
+    },
+    {
+      "key": "S11",
+      "id": "lx.nsfw-state.b0018.0005",
+      "name": "耳封中",
+      "kind": "L"
+    },
+    {
+      "key": "S12",
+      "id": "lx.nsfw-state.b0018.0006",
+      "name": "被藤蔓束缚",
+      "kind": "L"
+    },
+    {
+      "key": "S13",
+      "id": "lx.nsfw-state.b0018.0007",
+      "name": "悬吊受制",
       "kind": "L"
     }
   ],
@@ -322,7 +465,7 @@
       "optionalPose": null,
       "defeatHook": "defeat.coat|hands",
       "adultRequired": false,
-      "title": "触手黏液缠住腕与腰（束缚制服）"
+      "title": "触手黏液缠住腕与腰"
     },
     {
       "id": "C2",
@@ -386,7 +529,7 @@
       "optionalPose": null,
       "defeatHook": "proposed.encounter",
       "adultRequired": false,
-      "title": "虫巢黏液缠绕身后（束缚制服）"
+      "title": "虫巢黏液缠绕身后"
     },
     {
       "id": "C6",
@@ -450,7 +593,7 @@
       "optionalPose": null,
       "defeatHook": "proposed.oviposition",
       "adultRequired": true,
-      "title": "虫巢黏液产卵于胯下（产卵灌注）"
+      "title": "虫巢黏液产卵于胯下"
     },
     {
       "id": "C10",
@@ -483,7 +626,7 @@
       "optionalPose": null,
       "defeatHook": "proposed.oviposition",
       "adultRequired": true,
-      "title": "触手黏液灌入胯下（产卵灌注）"
+      "title": "触手黏液灌入胯下"
     },
     {
       "id": "C12",

@@ -1,0 +1,4425 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B3",
+  "theme": "generic",
+  "author": "author-b3",
+  "batchId": "b3-generic-v1",
+  "revision": 2,
+  "entries": [
+    {
+      "id": "word.part.generic.hand",
+      "text": "手",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "hand"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "hand"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.hand"
+      ]
+    },
+    {
+      "id": "word.part.generic.arm",
+      "text": "手臂",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "arm"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "arm"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.arm"
+      ]
+    },
+    {
+      "id": "word.part.generic.ear",
+      "text": "耳部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "ear"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "ear"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.ear"
+      ]
+    },
+    {
+      "id": "word.part.generic.leg",
+      "text": "腿部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "leg"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "leg"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.leg"
+      ]
+    },
+    {
+      "id": "word.part.generic.foot",
+      "text": "足部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "foot"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "foot"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.foot"
+      ]
+    },
+    {
+      "id": "word.part.generic.tail",
+      "text": "尾部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "tail"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "tail"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.tail"
+      ]
+    },
+    {
+      "id": "word.part.generic.head",
+      "text": "头部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "head"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "head"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.part.generic.root",
+      "text": "躯干主部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.kind",
+          "comparison": "eq",
+          "value": "root"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.kind",
+          "value": "root"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.part.generic.open-palm",
+      "text": "摊开的手掌",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该部件有对应手掌结构且处于张开姿态，不能仅凭hand kind推断。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.hand"
+      ]
+    },
+    {
+      "id": "word.part.generic.back-of-hand",
+      "text": "手背",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该部件具备手背细分结构且当前朝向可见，不能仅凭hand kind推断。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.hand"
+      ]
+    },
+    {
+      "id": "word.part.generic.thumb",
+      "text": "拇指",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该部件具备独立拇指结构，09事实目录尚未冻结finger/thumb细分kind。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.finger"
+      ]
+    },
+    {
+      "id": "word.part.generic.index-finger",
+      "text": "食指",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该部件具备独立食指结构，09事实目录尚未冻结finger细分kind。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.finger"
+      ]
+    },
+    {
+      "id": "word.part.generic.fingertip",
+      "text": "指尖",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该部件具备手指末端结构，09事实目录尚未冻结finger及末端细分查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.finger"
+      ]
+    },
+    {
+      "id": "word.part.generic.wrist",
+      "text": "手腕",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为手腕，09事实目录part.kind尚未收录wrist枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.wrist"
+      ]
+    },
+    {
+      "id": "word.part.generic.elbow",
+      "text": "手肘",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为手肘，09事实目录part.kind尚未收录elbow枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.elbow"
+      ]
+    },
+    {
+      "id": "word.part.generic.shoulder",
+      "text": "肩部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为肩部，09事实目录part.kind尚未收录shoulder枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.shoulder"
+      ]
+    },
+    {
+      "id": "word.part.generic.collarbone",
+      "text": "锁骨",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为锁骨且未被衣物遮挡，09事实目录尚未收录collarbone及遮挡查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.collarbone"
+      ]
+    },
+    {
+      "id": "word.part.generic.neck",
+      "text": "颈部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为颈部，09事实目录part.kind尚未收录neck枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.neck"
+      ]
+    },
+    {
+      "id": "word.part.generic.throat",
+      "text": "喉部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为喉部前侧，09事实目录part.kind尚未收录throat枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.throat"
+      ]
+    },
+    {
+      "id": "word.part.generic.chest",
+      "text": "胸部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为胸部躯干分区，09事实目录part.kind尚未收录chest枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.chest"
+      ]
+    },
+    {
+      "id": "word.part.generic.abdomen",
+      "text": "腹部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为腹部躯干分区，09事实目录part.kind尚未收录abdomen枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.abdomen"
+      ]
+    },
+    {
+      "id": "word.part.generic.back",
+      "text": "背部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为背部，09事实目录part.kind尚未收录back枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.back"
+      ]
+    },
+    {
+      "id": "word.part.generic.waist",
+      "text": "腰部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为腰部，09事实目录part.kind尚未收录waist枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.waist"
+      ]
+    },
+    {
+      "id": "word.part.generic.hip",
+      "text": "胯部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为胯部，09事实目录part.kind尚未收录hip枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.hip"
+      ]
+    },
+    {
+      "id": "word.part.generic.knee",
+      "text": "膝部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为膝部关节，09事实目录part.kind尚未收录knee枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.knee"
+      ]
+    },
+    {
+      "id": "word.part.generic.ankle",
+      "text": "脚踝",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为脚踝，09事实目录part.kind尚未收录ankle枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.ankle"
+      ]
+    },
+    {
+      "id": "word.part.generic.toe",
+      "text": "趾部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为足趾结构，09事实目录part.kind尚未收录toe枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.toe"
+      ]
+    },
+    {
+      "id": "word.part.generic.eye",
+      "text": "眼部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为眼部，09事实目录part.kind尚未收录eye枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.eye"
+      ]
+    },
+    {
+      "id": "word.part.generic.nose",
+      "text": "鼻部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为鼻部，09事实目录part.kind尚未收录nose枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.nose"
+      ]
+    },
+    {
+      "id": "word.part.generic.mouth",
+      "text": "口部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为口部，09事实目录part.kind尚未收录mouth枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.mouth"
+      ]
+    },
+    {
+      "id": "word.part.generic.hair-lock",
+      "text": "发绺",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为发绺结构，09事实目录part.kind尚未收录hair-lock枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.hair-lock"
+      ]
+    },
+    {
+      "id": "word.part.generic.horn",
+      "text": "角部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定人物真实拥有角部结构，09事实目录part.kind尚未收录horn枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.horn"
+      ]
+    },
+    {
+      "id": "word.part.generic.wing",
+      "text": "翼部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定人物真实拥有翼部结构，09事实目录part.kind尚未收录wing枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.wing"
+      ]
+    },
+    {
+      "id": "word.part.generic.claw",
+      "text": "爪部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为爪部结构而非普通手足，09事实目录part.kind尚未收录claw枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.claw"
+      ]
+    },
+    {
+      "id": "word.part.generic.hoof",
+      "text": "蹄部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为蹄部结构，09事实目录part.kind尚未收录hoof枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.hoof"
+      ]
+    },
+    {
+      "id": "word.part.generic.fin",
+      "text": "鳍部",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为鳍部结构，09事实目录part.kind尚未收录fin枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.fin"
+      ]
+    },
+    {
+      "id": "word.part.generic.scale-plate",
+      "text": "鳞片层",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为体表鳞片结构，09事实目录part.kind尚未收录scale枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.scale"
+      ]
+    },
+    {
+      "id": "word.part.generic.carapace-armor",
+      "text": "外甲片",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为体表外甲片结构，09事实目录part.kind尚未收录armor枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.armor"
+      ]
+    },
+    {
+      "id": "word.part.generic.paw-pad",
+      "text": "掌垫",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件具有掌垫结构且当前可见，09事实目录尚未收录paw-pad枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:expanded.anatomy.paw-pad"
+      ]
+    },
+    {
+      "id": "word.part.generic.whisker",
+      "text": "触须",
+      "allowedSlots": [
+        "bodyPart"
+      ],
+      "poolIds": [
+        "actor.bodyPart"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认绑定部件为须/触须结构，09事实目录part.kind尚未收录whisker枚举值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:part.whisker"
+      ]
+    },
+    {
+      "id": "word.material.generic.brass",
+      "text": "黄铜",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "brass"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "brass"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.brass"
+      ]
+    },
+    {
+      "id": "word.material.generic.copper",
+      "text": "紫铜",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "copper"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "copper"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.copper"
+      ]
+    },
+    {
+      "id": "word.material.generic.iron",
+      "text": "铸铁",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "iron"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "iron"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.material.generic.steel",
+      "text": "钢材",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "steel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "steel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:common.mat.steel"
+      ]
+    },
+    {
+      "id": "word.material.generic.ceramic",
+      "text": "陶瓷",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "ceramic"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "ceramic"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.ceramic"
+      ]
+    },
+    {
+      "id": "word.material.generic.glass",
+      "text": "玻璃",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "glass"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "glass"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.glass"
+      ]
+    },
+    {
+      "id": "word.material.generic.wood",
+      "text": "木质",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "wood"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "wood"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.material.generic.stone",
+      "text": "石质",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "stone"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "stone"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.stone"
+      ]
+    },
+    {
+      "id": "word.material.generic.bone",
+      "text": "骨质",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "bone"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "bone"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.bone"
+      ]
+    },
+    {
+      "id": "word.material.generic.shell",
+      "text": "甲壳",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "shell"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "shell"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.shell"
+      ]
+    },
+    {
+      "id": "word.material.generic.silicone",
+      "text": "硅胶",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "silicone"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "silicone"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:common.mat.silicone"
+      ]
+    },
+    {
+      "id": "word.material.generic.resin",
+      "text": "树脂",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.material",
+          "comparison": "eq",
+          "value": "resin"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.material",
+          "value": "resin"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:common.mat.resin"
+      ]
+    },
+    {
+      "id": "word.material.generic.leather-clad-metal",
+      "text": "包覆皮革的钢材",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件同时具有内层钢材与外覆皮革的双层材质记录，单一part.material字段不足以表达复合层级。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.leather",
+        "general-taxonomy:common.mat.steel"
+      ]
+    },
+    {
+      "id": "word.material.generic.woven-rattan-wood",
+      "text": "藤木交织材质",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件由藤条与木质交织构成，需复合材质或编织结构查询支持。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.rattan",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.material.generic.layered-keratin-shell",
+      "text": "叠层角质甲壳",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件材质为角质甲壳且具有叠层构造事实，不能仅凭单一材质名推断结构。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:material.shell",
+        "general-taxonomy:shape.stacked"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.fine-grain",
+      "text": "带细纹",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "fine-grain"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "fine-grain"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.matte-surface",
+      "text": "哑光",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "matte"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "matte"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.matte"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.glossy-surface",
+      "text": "光亮",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "glossy"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "glossy"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.glossy"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.coarse-surface",
+      "text": "粗糙",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "coarse"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "coarse"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.coarse"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.brushed-surface",
+      "text": "拉丝",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "brushed"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "brushed"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.frosted-surface",
+      "text": "磨砂",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "frosted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "frosted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.matte"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.polished-surface",
+      "text": "抛光",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "polished"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "polished"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.glossy"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.ring-grained",
+      "text": "带环纹",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [
+        {
+          "fact": "part.finish",
+          "comparison": "eq",
+          "value": "ringed"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.finish",
+          "value": "ringed"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:shape.ringed"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-hard",
+      "text": "坚硬",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例具有硬度=坚硬的已核实记录，09尚未登记part.hardness查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.hardness",
+          "value": "hard"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.hard"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-soft",
+      "text": "柔软",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例具有硬度=柔软的已核实记录，09尚未登记part.hardness查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.hardness",
+          "value": "soft"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.soft"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-transparent",
+      "text": "透明",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例具有透光度=透明的已核实记录，09尚未登记part.opacity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.opacity",
+          "value": "transparent"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.transparent"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-translucent",
+      "text": "微透光",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例具有透光度=半透明的已核实记录，09尚未登记part.opacity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.opacity",
+          "value": "translucent"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.transparent"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-opaque",
+      "text": "密实不透光",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例具有透光度=不透光的已核实记录，09尚未登记part.opacity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.opacity",
+          "value": "opaque"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.part-warm",
+      "text": "微温",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例当前表面温度为微温，09尚未登记part.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.temperature",
+          "value": "warm"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.part-cool",
+      "text": "偏凉",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例当前表面温度为偏凉，09尚未登记part.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.temperature",
+          "value": "cool"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.part-room-temp",
+      "text": "接近室温",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例当前表面温度接近室温，09尚未登记part.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.temperature",
+          "value": "neutral"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.part-dry",
+      "text": "干燥",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例表面处于干燥状态，09尚未登记part.moisture查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.moisture",
+          "value": "dry"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.part-damp",
+      "text": "微潮",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例表面处于微潮状态，09尚未登记part.moisture查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.moisture",
+          "value": "damp"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.part-color-black",
+      "text": "乌亮色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为黑色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "black"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.black"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-white",
+      "text": "浅灰白色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为灰白色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "white"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.white",
+        "general-taxonomy:color.grey"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-grey",
+      "text": "铅灰色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为铅灰色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "grey"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.grey"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-brown",
+      "text": "深褐色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为深褐色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "brown"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.brown"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-apricot",
+      "text": "浅杏色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为浅杏色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "apricot"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.apricot"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-blue",
+      "text": "暗蓝色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为暗蓝色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "blue"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.blue"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-green",
+      "text": "青绿色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为青绿色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "green"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.green"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-yellow",
+      "text": "浅黄色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为浅黄色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "yellow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.yellow"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-color-red",
+      "text": "暗红色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例的主色调为暗红色，09尚未登记part.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.color",
+          "value": "red"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.red"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-spotted",
+      "text": "带斑点",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例表面存在斑点纹样，09尚未登记part.pattern查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.pattern",
+          "value": "spotted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:shape.spotted"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-striped",
+      "text": "带条纹",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例表面存在条纹纹样，09尚未登记part.pattern查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.pattern",
+          "value": "striped"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:shape.striped"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.part-woven",
+      "text": "呈编织纹理",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "body.material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "part"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一部件实例表面呈编织纹理，09尚未登记part.pattern查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "part.pattern",
+          "value": "woven"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:shape.woven"
+      ]
+    },
+    {
+      "id": "word.material.generic.water",
+      "text": "水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "water"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "water"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.drinking-water"
+      ]
+    },
+    {
+      "id": "word.material.generic.drinking-water",
+      "text": "饮用水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "drinking-water"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "drinking-water"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.drinking-water"
+      ]
+    },
+    {
+      "id": "word.material.generic.tea",
+      "text": "茶水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "tea"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "tea"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.tea"
+      ]
+    },
+    {
+      "id": "word.material.generic.coffee",
+      "text": "咖啡",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "coffee"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "coffee"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.coffee"
+      ]
+    },
+    {
+      "id": "word.material.generic.broth",
+      "text": "清汤",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "broth"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "broth"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.broth"
+      ]
+    },
+    {
+      "id": "word.material.generic.milk",
+      "text": "乳饮",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "milk"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "milk"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.milk"
+      ]
+    },
+    {
+      "id": "word.material.generic.soy-milk",
+      "text": "豆浆",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "soy-milk"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "soy-milk"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.soy-milk"
+      ]
+    },
+    {
+      "id": "word.material.generic.fruit-juice",
+      "text": "果汁",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "fruit-juice"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "fruit-juice"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.fruit-juice"
+      ]
+    },
+    {
+      "id": "word.material.generic.sparkling-water",
+      "text": "气泡水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "sparkling-water"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "sparkling-water"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.sparkling-water"
+      ]
+    },
+    {
+      "id": "word.material.generic.cooking-oil",
+      "text": "食用油",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "cooking-oil"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "cooking-oil"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.oil"
+      ]
+    },
+    {
+      "id": "word.material.generic.soy-sauce",
+      "text": "酱油",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "soy-sauce"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "soy-sauce"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.soy-sauce"
+      ]
+    },
+    {
+      "id": "word.material.generic.vinegar",
+      "text": "米醋",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "vinegar"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "vinegar"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.vinegar"
+      ]
+    },
+    {
+      "id": "word.material.generic.lubricant",
+      "text": "润滑剂",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "lubricant"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "lubricant"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:common.tool.lubricant"
+      ]
+    },
+    {
+      "id": "word.material.generic.detergent",
+      "text": "清洁剂",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "material.kind",
+          "comparison": "eq",
+          "value": "detergent"
+        },
+        {
+          "fact": "prop.contains",
+          "comparison": "exists"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.kind",
+          "value": "detergent"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:common.tool.detergent"
+      ]
+    },
+    {
+      "id": "word.material.generic.saline-water",
+      "text": "淡盐水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认容器内同一流体实例同时含有水与溶解食盐成分，09尚未提供溶液配比或成分查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.drinking-water",
+        "general-taxonomy:v2.drink.salt"
+      ]
+    },
+    {
+      "id": "word.material.generic.sugar-water",
+      "text": "糖水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认容器内同一流体实例为含糖水溶液，09尚未提供溶质成分查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.drinking-water",
+        "general-taxonomy:v2.drink.sugar"
+      ]
+    },
+    {
+      "id": "word.material.generic.herbal-infusion",
+      "text": "草本浸泡液",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认容器内流体为草本浸泡液且与容器实例存在精确包含关系，需细化材料子类或配料查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.tea"
+      ]
+    },
+    {
+      "id": "word.material.generic.glue-solution",
+      "text": "胶水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认容器所盛材料实例为液态胶黏剂且未固化，需材料相态查询支持。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:common.tool.glue"
+      ]
+    },
+    {
+      "id": "word.material.generic.diluted-detergent",
+      "text": "稀释清洁液",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例为兑水稀释后的清洁剂溶液，09尚未登记溶液浓度查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:common.tool.detergent",
+        "general-taxonomy:v2.drink.drinking-water"
+      ]
+    },
+    {
+      "id": "word.material.generic.starch-slurry",
+      "text": "淀粉水",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.current"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例为淀粉与水的悬浊液且处于未沉降或已搅拌状态，09尚未登记混合悬浊状态查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:v2.drink.drinking-water"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.filtered",
+      "text": "过滤",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "water.filtered",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.filtration",
+          "value": "filtered"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.unfiltered",
+      "text": "未过滤",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "water.filtered",
+          "comparison": "eq",
+          "value": false
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.filtration",
+          "value": "unfiltered"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-warm",
+      "text": "温热",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例当前温度为温热，不得借用容器或环境温度，09尚未登记material.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.temperature",
+          "value": "warm"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-hot",
+      "text": "滚烫",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例当前温度处于高温滚烫区间，09尚未登记material.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.temperature",
+          "value": "hot"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-cool",
+      "text": "微凉",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例当前温度为微凉，09尚未登记material.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.temperature",
+          "value": "cool"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-chilled",
+      "text": "冰镇",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例经过冷藏或冰镇且当前低温成立，09尚未登记material.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.temperature",
+          "value": "chilled"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-room-temp",
+      "text": "常温",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例处于常温状态，09尚未登记material.temperature查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.temperature",
+          "value": "room-temp"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-cooled",
+      "text": "放凉",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例由热转凉的历史与当前温度记录成立，09尚未登记该查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.temperature",
+          "value": "cooled"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-clear",
+      "text": "澄澈",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈澄澈透明状态，09尚未登记material.clarity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.clarity",
+          "value": "clear"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.transparent"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-turbid",
+      "text": "微浊",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈微浊状态，09尚未登记material.clarity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.clarity",
+          "value": "turbid"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-translucent",
+      "text": "半透明",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈半透明状态，09尚未登记material.clarity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.clarity",
+          "value": "translucent"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.transparent"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-opaque",
+      "text": "不透光",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈不透光状态，09尚未登记material.clarity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.clarity",
+          "value": "opaque"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-colorless",
+      "text": "无色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例为无色状态，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "colorless"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:surface.transparent"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-milky-white",
+      "text": "乳白色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈乳白色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "white"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.white"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-amber-brown",
+      "text": "浅褐色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈浅褐色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "brown"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.brown"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-pale-yellow",
+      "text": "淡黄色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈淡黄色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "yellow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.yellow"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-pale-green",
+      "text": "浅绿色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈浅绿色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "green"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.green"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-dark-red",
+      "text": "深红色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈深红色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "red"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.red"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-pale-pink",
+      "text": "浅粉色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈浅粉色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "pink"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.pink"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-greyish",
+      "text": "灰白色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈灰白色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "grey"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.grey"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-dark-black",
+      "text": "乌黑色",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈乌黑色，09尚未登记material.color查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.color",
+          "value": "black"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:color.black"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-viscous",
+      "text": "粘稠",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例处于高粘度/粘稠状态，09尚未登记material.viscosity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.viscosity",
+          "value": "viscous"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-thin",
+      "text": "稀薄",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例处于低粘度/稀薄状态，09尚未登记material.viscosity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.viscosity",
+          "value": "thin"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-concentrated",
+      "text": "浓缩",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例为浓缩状态，09尚未登记material.concentration查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.concentration",
+          "value": "concentrated"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-diluted",
+      "text": "稀释",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例为稀释状态，09尚未登记material.concentration查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.concentration",
+          "value": "diluted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-foaming",
+      "text": "带细泡",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例表面存在细小气泡，09尚未登记material.surfaceState查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.surface-state",
+          "value": "foaming"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-settled",
+      "text": "静置无波",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例处于静置平缓状态，09尚未登记material.surfaceState查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.surface-state",
+          "value": "settled"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-layered",
+      "text": "分层",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例呈现液体分层状态，09尚未登记material.homogeneity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.homogeneity",
+          "value": "layered"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:shape.stacked"
+      ]
+    },
+    {
+      "id": "word.qualifier.generic.mat-uniform",
+      "text": "质地均匀",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例处于质地均匀无沉淀状态，09尚未登记material.homogeneity查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.homogeneity",
+          "value": "uniform"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.qualifier.generic.mat-fresh-boiled",
+      "text": "煮沸过",
+      "allowedSlots": [
+        "materialFluid"
+      ],
+      "poolIds": [
+        "material.qualifier"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "qualifier",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一材料实例具有已煮沸处理的记录，09尚未登记material.treatment查询。"
+      ],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "material.treatment",
+          "value": "boiled"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": []
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.08.demo.body",
+      "entryIds": [
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.qualifier.generic.fine-grain",
+        "word.material.generic.brass",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "你留意到阿洛·灰谷的手。该部件的表面呈现带细纹的黄铜质感。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.08.demo.body",
+      "entryIds": [
+        "runtime:display.actor",
+        "word.part.generic.arm",
+        "word.qualifier.generic.matte-surface",
+        "word.material.generic.ceramic",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "你留意到阿洛·灰谷的手臂。该部件的表面呈现哑光的陶瓷质感。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方把工具归回原位。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.unfiltered",
+        "word.material.generic.drinking-water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方将工具放回原处。你注意到一只量杯，其中盛着未过滤饮用水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B3通用批正式配额交付（共135条：actor.bodyPart 40条、body.material 15条、body.material.qualifier 30条、material.current 20条、material.qualifier 30条）。严格按09-事实目录区分draft（44条）与hold（91条），定词均不带末尾“的”，未运行离线tools校验，预览均标记为manual/hypothetical-only。（已消解 body.material.qualifier 与 material.qualifier 间的 4 处同形文本重复）。"
+}

@@ -1,0 +1,71 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Gemini",
+    "theme": "v1→v2 draft · nsfw-mod.b0018 · 待审定 · 未实装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
+  },
+  "domain": "nsfw",
+  "library": "nsfw-mod",
+  "batchId": "nsfw-mod.b0018",
+  "entries": [
+    {
+      "id": "lx.nsfw-mod.b0018.0001",
+      "category": "nsfw-mod",
+      "subcategory": "触感修饰",
+      "text": "拉丝湿滑",
+      "description": "黏液、垂涎或未干胶层在肢体分离时牵出透明细丝的湿滑质感。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-mod.b0018.0002",
+      "category": "nsfw-mod",
+      "subcategory": "触感修饰",
+      "text": "温热搏动",
+      "description": "活体材质或虫巢分泌物贴合肌肤时伴随节律性收缩与微热脉动的触感。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-mod.b0018.0003",
+      "category": "nsfw-mod",
+      "subcategory": "触感修饰",
+      "text": "紧致包覆",
+      "description": "乳胶、黑胶或致密丝茧毫无空隙地收束贴合肌肉轮廓的压迫质感。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-mod.b0018.0004",
+      "category": "nsfw-mod",
+      "subcategory": "感官修饰",
+      "text": "甜腥微麻",
+      "description": "伴随植物花蜜或虫巢气息渗入表皮时带来的微甜气味与轻度酥麻感。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    }
+  ]
+}

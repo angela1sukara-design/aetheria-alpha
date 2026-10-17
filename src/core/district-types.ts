@@ -5,6 +5,32 @@ import type { TraitVariant } from './personality-types.ts';
 import type { ResidentServices } from './function-types.ts';
 import type { NameCulture, PersonalName } from './name-types.ts';
 export type EnemyTier = 'S' | 'M' | 'L' | 'boss';
+export const ENEMY_SPECIES_KINDS = ['human', 'beast', 'monster', 'plant', 'slime', 'insect', 'construct'] as const;
+export type EnemySpeciesKind = typeof ENEMY_SPECIES_KINDS[number];
+export const DEFEAT_MATERIAL_KEYS = ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10'] as const;
+export type DefeatMaterialKey = typeof DEFEAT_MATERIAL_KEYS[number];
+export const DEFEAT_PLAY_KEYS = ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8'] as const;
+export type DefeatPlayKey = typeof DEFEAT_PLAY_KEYS[number];
+export const GENERIC_TF_ATOMS = ['黏液化', '黑胶化'] as const;
+export type GenericTfAtom = typeof GENERIC_TF_ATOMS[number];
+export interface EnemyFetishTendency {
+  /** 已注册的性癖/玩法倾向 Tag ID */
+  tagId: Id;
+  /** 倾向权重（0–100），用于战败节点与玩法抽选加权 */
+  weight: number;
+}
+export interface EnemyDefeatComboConfig {
+  /** 允许抽取的定词挂前材质键（M1–M6） */
+  materials?: DefeatMaterialKey[];
+  /** 允许抽取的目标部位名称 */
+  parts?: string[];
+  /** 偏好的战败玩法大类（G1–G8） */
+  plays?: DefeatPlayKey[];
+  /** 允许抽取的通用转化原子（仅限通用黏液化/黑胶化，禁止物种专条） */
+  tfs?: GenericTfAtom[];
+  /** 战败进入叙事时是否自动抽取组合槽位（fills） */
+  autoCombo?: boolean;
+}
 export interface StoryletDef {
   id: Id; locationId: Id; conditions: Condition[]; eventId: Id; weight: number; priority: number;
   cooldownMinutes: number; cooldownGroup: string; repeat: 'once' | 'daily' | 'repeat'; hidden: boolean; tags: string[];
@@ -51,6 +77,16 @@ export interface EnemyDef {
   phases?: EnemyPhaseDef[];
   intents: { label: string; damage: number; guard: number; drain: number }[];
   victoryEventId: Id; defeatEventId: Id; escapeEventId: Id;
+  /** 敌人物种/形态大类（人/兽/异形/植物/史莱姆/虫群/构装） */
+  speciesKind?: EnemySpeciesKind;
+  /** 敌人固有身体/材质/生态属性 Tag（如黏液、触手、藤蔓、甲壳、催眠信息素、群聚等） */
+  attributeTags?: Id[];
+  /** 敌人性癖/战败支配倾向 Tag（如束缚、覆层、侵入、感官剥夺、产卵寄宿、羞辱、调教、围攻等） */
+  fetishTags?: Id[];
+  /** 带权重的性癖倾向列表（供战败节点与玩法抽选加权） */
+  fetishTendencies?: EnemyFetishTendency[];
+  /** 战败自动组合候选池配置 */
+  defeatCombo?: EnemyDefeatComboConfig;
 }
 export interface InteractionDef {
   id: Id; npcId: Id; conditions: Condition[]; textSlotId: Id; endEventId: Id;

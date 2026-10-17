@@ -1,0 +1,123 @@
+{
+  "format": "aetheria-lexicon-materials",
+  "schemaVersion": 2,
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Gemini",
+    "theme": "v1→v2 draft · nsfw-state.b0018 · 待审定 · 未实装"
+  },
+  "dictionary": {
+    "id": "aetheria/foundation",
+    "version": "1.0.0",
+    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
+  },
+  "domain": "nsfw",
+  "library": "nsfw-state",
+  "batchId": "nsfw-state.b0018",
+  "entries": [
+    {
+      "id": "lx.nsfw-state.b0018.0001",
+      "category": "nsfw-state",
+      "subcategory": "束缚现场态",
+      "text": "被茧缚",
+      "description": "身体被多层致密丝茧或黏丝包裹固定，四肢紧贴躯干难以大幅挣动；对应 E4 茧维现场态。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0002",
+      "category": "nsfw-state",
+      "subcategory": "感官现场态",
+      "text": "感官剥夺中",
+      "description": "视觉、听觉或发声通道被外物暂时遮蔽封堵的现场状态；≠性癖分类「感官剥夺」。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0003",
+      "category": "nsfw-state",
+      "subcategory": "感官现场态",
+      "text": "口封中",
+      "description": "口唇被胶膜、口球、触手或藤条封堵而无法清晰吐字的现场状态。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0004",
+      "category": "nsfw-state",
+      "subcategory": "感官现场态",
+      "text": "眼封中",
+      "description": "视线被眼罩、黏液膜、触手或藤条遮蔽而陷入黑暗或模糊光影的现场状态。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0005",
+      "category": "nsfw-state",
+      "subcategory": "感官现场态",
+      "text": "耳封中",
+      "description": "耳廓被软塞、胶膜或覆层封住而仅能听见内部脉搏与闷响的现场状态。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0006",
+      "category": "nsfw-state",
+      "subcategory": "束缚现场态",
+      "text": "被藤蔓束缚",
+      "description": "手腕、脚踝或腰躯被活藤与缠绕茎勒紧固定的现场状态。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0007",
+      "category": "nsfw-state",
+      "subcategory": "束缚现场态",
+      "text": "悬吊受制",
+      "description": "腕踝被拉高使足尖离地或重心悬空的现场状态。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0008",
+      "category": "nsfw-state",
+      "subcategory": "战后现场态",
+      "text": "残迹未消",
+      "description": "脱离交锋后体表与衣料内侧仍留有湿滑覆层、勒痕或温热感应的战后状态。待审定。",
+      "tags": [],
+      "classification": {
+        "tier": "adult_optional",
+        "preferenceKey": "adultOptional",
+        "eligibility": "verified-adults"
+      }
+    }
+  ]
+}

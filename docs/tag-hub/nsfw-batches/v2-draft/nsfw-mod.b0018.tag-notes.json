@@ -1,0 +1,47 @@
+{
+  "sourceFormat": "aetheria-nsfw-lexicon-batch",
+  "sourceSchemaVersion": 1,
+  "batchId": "nsfw-mod.b0018",
+  "mappedAt": "2026-10-17T06:01:43.832Z",
+  "status": "pending-review",
+  "runtime": "not-installed",
+  "droppedFreeTags": [
+    {
+      "id": "lx.nsfw-mod.b0018.0001",
+      "name": "拉丝湿滑",
+      "v1Tags": [
+        "触感",
+        "黏液"
+      ],
+      "usage": "modifier"
+    },
+    {
+      "id": "lx.nsfw-mod.b0018.0002",
+      "name": "温热搏动",
+      "v1Tags": [
+        "触感",
+        "活体"
+      ],
+      "usage": "modifier"
+    },
+    {
+      "id": "lx.nsfw-mod.b0018.0003",
+      "name": "紧致包覆",
+      "v1Tags": [
+        "触感",
+        "包覆"
+      ],
+      "usage": "modifier"
+    },
+    {
+      "id": "lx.nsfw-mod.b0018.0004",
+      "name": "甜腥微麻",
+      "v1Tags": [
+        "气味",
+        "触感"
+      ],
+      "usage": "modifier"
+    }
+  ],
+  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
+}

@@ -61,7 +61,7 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
       reason = `${registry.variable(condition.id).label}需${condition.comparison === 'gte' ? '至少' : condition.comparison === 'lte' ? '不超过' : '等于'} ${condition.value}（当前 ${value}）。`;
       break;
     }
-    case 'flag.has': pass = state.player.flags[condition.id] === condition.value; break;
+    case 'flag.has': pass = (state.player.flags[condition.id] ?? false) === condition.value; break;
     case 'location.is': pass = state.world.locationId === condition.id; reason = `需要位于${registry.location(condition.id).name}。`; break;
     case 'time.window': {
       pass = timeWindow(state,condition.start,condition.end);
@@ -78,6 +78,38 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     case 'body.hasPart': {const b=entityBody(state,condition.target??PLAYER);if(!b.known)return {pass:false,reason:b.reason,known:false};pass=b.value.parts.some(x=>x.definitionId===condition.definitionId);} reason = `需要${registry.bodyPart(condition.definitionId).label}。`; break;
     case 'body.hasCapability': { const q=capabilityCount(state,registry,condition.target??PLAYER,condition.capability);if(!q.known)return {pass:false,reason:q.reason,known:false};const n=q.value; pass = n >= condition.count; reason = `需要 ${condition.count} 个可用${{ grasp: '抓握部位', walk: '行走部位', hear: '听觉部位', balance: '平衡部位', tailGrip: '尾部抓握部位' }[condition.capability]}（当前 ${n}）。`; break; }
     case 'tf.state': { const jobs = state.tfQueues.filter(x => x.definitionId === condition.id&&entityKey(x.target)===entityKey(condition.target)); pass = condition.state === 'idle' ? !jobs.some(x => ['active', 'paused', 'blocked'].includes(x.status)) : jobs.some(x => x.status === condition.state); reason = '当前改造进度不符合这项行动。'; break; }
+    case 'opponent.matches': {
+      const story = state.adventure?.story;
+      const lastCombat = state.adventure?.lastCombat;
+      const activeCombat = state.district?.combat;
+      const profile = story?.profileId ? registry.narrativeProfiles.find(p => p.id === story.profileId) : undefined;
+      const enemyId = profile?.enemyId ?? lastCombat?.enemyId ?? activeCombat?.enemyId;
+      const enemy = enemyId ? registry.enemies.find(e => e.id === enemyId) : undefined;
+      const rule = activeCombat?.selectionRuleId ? registry.environmentEnemyRules.find(r => r.id === activeCombat.selectionRuleId) : undefined;
+      const activeOppTags = new Set([
+        ...(story ? narrativeTags(state, registry).filter(t => t.role === 'opponent').map(t => t.tagId) : []),
+        ...(enemy?.attributeTags ?? []),
+        ...(enemy?.fetishTags ?? []),
+        ...(profile?.attributeTags ?? []),
+        ...(profile?.fetishTags ?? []),
+        ...(rule?.attributeTags ?? []),
+        ...(rule?.fetishTags ?? []),
+      ]);
+      const actualSpecies = rule?.speciesKind ?? profile?.speciesKind ?? enemy?.speciesKind ?? story?.fills?.opponentKind;
+      const actualMat = story?.fills?.materialKey;
+      const actualPlay = story?.fills?.playKey;
+      const actualTf = story?.fills?.tf;
+      pass = true;
+      if (condition.enemyId !== undefined && enemyId !== condition.enemyId) pass = false;
+      if (condition.speciesKind !== undefined && actualSpecies !== condition.speciesKind) pass = false;
+      if (condition.attributeTag !== undefined && !activeOppTags.has(condition.attributeTag)) pass = false;
+      if (condition.fetishTag !== undefined && !activeOppTags.has(condition.fetishTag)) pass = false;
+      if (condition.materialKey !== undefined && actualMat !== condition.materialKey) pass = false;
+      if (condition.playKey !== undefined && actualPlay !== condition.playKey && !activeOppTags.has(`progression:tag.defeat.play.${condition.playKey.toLowerCase()}`)) pass = false;
+      if (condition.tf !== undefined && actualTf !== condition.tf) pass = false;
+      reason = '当前对手的属性或倾向不符合该条件。';
+      break;
+    }
     case 'npc.present': pass = npcPresent(state, registry, condition.npcId); reason = `${registry.npc(condition.npcId).name}此刻不在这里。`; break;
     case 'npc.memory': pass = hasMemory(state, condition.npcId, condition.memoryId) === condition.value; reason = condition.value ? '还没有一起经历这件事。' : '这件事已经记住了。'; break;
     case 'npc.relation': { const value = npcState(state, condition.npcId).relationship[condition.field]; pass = condition.comparison === 'eq' ? value === condition.value : condition.comparison === 'gte' ? value >= condition.value : value <= condition.value; reason = `${registry.npc(condition.npcId).name}与你还不够熟悉。`; break; }

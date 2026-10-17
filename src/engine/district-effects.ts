@@ -275,7 +275,15 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     const intent = enemy.intents[battle.turn % enemy.intents.length]!;
     const end = (result: 'victory' | 'defeat' | 'escape', voluntary?: 'surrender'|'giveup') => {
       d.combat = null;
-      if(r.narrativeNodes.length){const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);const defeat=battle.defeatTags??profile?.defeatTags??[];a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:result==='defeat'?(voluntary?[{role:'player',tagId:`progression:tag.${voluntary}`}]:[...defeat]):[]};}
+      if(r.narrativeNodes.length){
+        const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);
+        const rule=battle.selectionRuleId?r.environmentEnemyRules.find(x=>x.id===battle.selectionRuleId):undefined;
+        const defeat=battle.defeatTags??profile?.defeatTags??[];
+        const oppExtra=[...(rule?.attributeTags??[]),...(rule?.fetishTags??[])].map(tagId=>({role:'opponent' as const,tagId}));
+        const rawTags=result==='defeat'?(voluntary?[{role:'player' as const,tagId:`progression:tag.${voluntary}` as Id},...oppExtra]:[...defeat,...oppExtra]):[];
+        const deduped=[...new Map(rawTags.map(t=>[`${t.role}/${t.tagId}`,t])).values()];
+        a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:deduped};
+      }
       c.resolvedTexts.push(voluntary==='surrender'?'你示意投降，结束交锋，等待对方回应。':voluntary==='giveup'?'你停止抵抗，放下防备，让眼前的对手接手后续。':result === 'victory' ? '你赢得了交锋。' : result === 'defeat' ? '你失去继续战斗的力气，后续仍有恢复路径。' : '你找到空隙离开了交锋。');
       let eventId = result === 'victory' ? enemy.victoryEventId : result === 'defeat' ? enemy.defeatEventId : enemy.escapeEventId;
       if (result === 'defeat') {
@@ -473,9 +481,10 @@ export function districtText(s: GameState, r: Registry, base: string): string {
     const b = s.district.combat, e = r.enemies.find(x => x.id === b.enemyId)!;
     const hpMax = b.enemy?.hpMax ?? e.hp;
     const player=playerCombatStats(s,r);
-    const labels=(ids:Id[])=>ids.map(id=>`【${r.tag(id).label}】`).join('')||'无已登记标签';
+    const labels=(ids:Id[])=>[...new Set(ids)].map(id=>`【${r.tag(id).label}】`).join('')||'无已登记标签';
     const profile=r.narrativeProfiles.find(p=>p.enemyId===e.id);
-    return `交锋：${b.enemyName??e.name}\n\n我方：生命${s.player.variables[PLAYER_HP_ID]}；体力${s.player.variables[STAMINA_ID]}；攻击${player.attack}；防御${player.defense}；速度${player.speed}；技能强度${player.skillPower}；技能资源${s.player.variables[SKILL_RES_ID]}；行动点${s.player.variables[AP_ID]}\n我方Tag：${labels(derivedSemantics(s,r,{entity:{kind:'player'}}))}\n敌方：生命${b.hp}/${hpMax}；攻击${b.enemy.attack}；防御${b.enemy.defense}；速度${b.enemy.speed}；每回合行动${b.enemy.actionsPerTurn}次\n敌方Tag：${labels([...(profile?.tags??[]),...(profile?.goals.slice(0,1)??[])])}\n\n第${b.turn+1}回合；下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
+    const rule=b.selectionRuleId?r.environmentEnemyRules.find(x=>x.id===b.selectionRuleId):undefined;
+    return `交锋：${b.enemyName??e.name}\n\n我方：生命${s.player.variables[PLAYER_HP_ID]}；体力${s.player.variables[STAMINA_ID]}；攻击${player.attack}；防御${player.defense}；速度${player.speed}；技能强度${player.skillPower}；技能资源${s.player.variables[SKILL_RES_ID]}；行动点${s.player.variables[AP_ID]}\n我方Tag：${labels(derivedSemantics(s,r,{entity:{kind:'player'}}))}\n敌方：生命${b.hp}/${hpMax}；攻击${b.enemy.attack}；防御${b.enemy.defense}；速度${b.enemy.speed}；每回合行动${b.enemy.actionsPerTurn}次\n敌方Tag：${labels([...(profile?.tags??[]),...(profile?.goals.slice(0,1)??[]),...(e.attributeTags??[]),...(e.fetishTags??[]),...(profile?.attributeTags??[]),...(profile?.fetishTags??[]),...(rule?.attributeTags??[]),...(rule?.fetishTags??[])])}\n\n第${b.turn+1}回合；下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
   }
   if (s.district.scene) {
     const scene = s.district.scene, i = r.interactions.find(x => x.id === scene.definitionId)!, p = i.poses.find(p => p.id === scene.poseId)!;

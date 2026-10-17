@@ -1,0 +1,2799 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B2",
+  "theme": "fantasy",
+  "author": "author-b3",
+  "batchId": "b2-fantasy-v1",
+  "revision": 2,
+  "entries": [
+    {
+      "id": "word.form.fantasy.present-person",
+      "text": "在石砌厅堂驻足的人物",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.nearby-figure",
+      "text": "同处廊檐下的行会身影",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.leather-apron-metalworker",
+      "text": "在委托板前浏览告示的冒险者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "check-board"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.metalworker"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.sawdust-carpenter",
+      "text": "在货摊旁称量货物重量的商贩",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "weigh-goods"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.carpenter"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.flour-baker",
+      "text": "在长桌前抄录卷轴目录的书记员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "copy-scroll"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.job.baker"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.quill-scribe",
+      "text": "在驿站廊下等候商队启程的旅人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "wait-caravan"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.scribe"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.scroll-archivist",
+      "text": "在药架前分拣干草药材的学徒",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sort-herbs"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.job.archivist"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.lantern-custodian",
+      "text": "在石门内侧按时值守的卫兵",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "guard-gate"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.custodian"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.scale-weigher",
+      "text": "在庭院水井旁提水装桶的杂役",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "draw-water"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.weigher"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.cloak-courier",
+      "text": "在行会大厅互致问候的同行者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "greet-guild"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.courier"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.rope-porter",
+      "text": "肩搭粗麻扁担绳的搬运工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为搬运工且肩部搭有麻绳。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.porter"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.needle-tailor",
+      "text": "腕戴插针布垫的缝纫工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为缝纫工且手腕佩戴针垫。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.tailor"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.brush-painter",
+      "text": "提着木制颜料桶的漆工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为漆工且手提木制颜料桶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.painter"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.ladle-cook",
+      "text": "站在铁锅旁的帮厨",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为厨工且站立于铁锅旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.cook",
+        "general-taxonomy:common.job.kitchen-assistant"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.herb-carer",
+      "text": "整理草药包扎带的照护员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为照护员且正在整理包扎带。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.carer"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.map-guide",
+      "text": "佩戴行会铜徽的向导引导员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为引导员且衣襟佩戴行会铜徽。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.guide"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.book-reader",
+      "text": "坐在讲台边的代读员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为代读员且坐于讲台旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.reader"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.robe-teacher",
+      "text": "手持木戒尺的书院教习",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为教习且手持木尺。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.teacher"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.stall-vendor",
+      "text": "守在帆布棚下的售货员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为售货员且位于帆布棚下。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.vendor"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.badge-mediator",
+      "text": "神态平和的行会调解员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为调解员且外在神态平和可核实。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.mediator"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.broom-cleaner",
+      "text": "拿着棕榈长帚的庭院清洁工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为清洁工且手持棕榈长帚。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.cleaner"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.shears-gardener",
+      "text": "腰挎修枝铁剪的园艺工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为园艺工且腰间挎有铁剪。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.job.gardener"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.crystal-horn-apprentice",
+      "text": "额角带有微光晶质纹路的学徒",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为学徒且额角部位具有晶质纹路外观。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:identity.apprentice",
+        "general-taxonomy:appearance.crystal"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.rock-skin-guard",
+      "text": "小臂带有岩石纹理的值守保安员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为保安员且小臂体表呈岩石纹理。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.job.security",
+        "general-taxonomy:appearance.rock"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.flow-cloak-researcher",
+      "text": "衣摆呈水波流动外观的奥术研究员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为研究员且衣摆具有流动外观特征。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.job.researcher",
+        "general-taxonomy:appearance.flow"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.guild-member",
+      "text": "佩戴工匠协会木章的社群成员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为协会成员且佩戴协会木章。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:identity.association"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.courtyard-resident",
+      "text": "端着木盆穿过回廊的住户",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为住户且正端着木盆位于回廊中。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:identity.resident"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.helpful-volunteer",
+      "text": "在物资站协助分发的志愿者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为志愿者且正在物资站协助分发。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:identity.volunteer",
+        "general-taxonomy:disposition.helpfulness"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.reception-clerk",
+      "text": "站在木柜台后的旅店接待员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为接待员且站立于木柜台后。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.reception"
+      ]
+    },
+    {
+      "id": "word.form.fantasy.ledger-clerk",
+      "text": "正在拨动木算盘的账房办事员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为办事员且手部正在拨动木算盘。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:job.clerk"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.queue-at-guild",
+      "text": "在柜台前按先后排队等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "guild-queued"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "guild-queued"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.queue",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.wait-for-ferry",
+      "text": "在渡口回廊下静候班船",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "ferry-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "ferry-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.pause-on-steps",
+      "text": "在石阶中段停下脚步",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "steps-paused"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "steps-paused"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.pause"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.wait-kiln-cooling",
+      "text": "守在工坊外等待炉温降下",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "kiln-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "kiln-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.weigh-grain-sack",
+      "text": "称量麻袋内谷物的净重",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "grain-weighed"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "grain-weighed"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.weigh"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.keep-guild-ledger",
+      "text": "在账册上记下今日的收支条目",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "guild-ledger-kept"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "guild-ledger-kept"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.keep-record"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.dry-herbs-in-yard",
+      "text": "在晾晒架上铺开待晾干的草药",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "herbs-dried"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "herbs-dried"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.dry"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.repair-wooden-tool",
+      "text": "修补破损的木制农具构件",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "wood-tool-repaired"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "wood-tool-repaired"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.repair"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.sit-rest-under-eaves",
+      "text": "在廊檐下的木凳上坐歇",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "eaves-resting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "eaves-resting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.sit-rest"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.take-noon-break",
+      "text": "放下手头活计休息片刻",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "noon-break-taken"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "noon-break-taken"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.take-break"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.taste-warm-soup",
+      "text": "品尝刚出锅的热汤滋味",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "soup-tasted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "soup-tasted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.taste"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.stroll-in-courtyard",
+      "text": "沿着庭院石径缓步而行",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "courtyard-walked"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "courtyard-walked"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.walk"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.look-far-from-tower",
+      "text": "登高远望城门外道路的动静",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "road-watched"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "road-watched"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.look-far"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.listen-to-wind-sound",
+      "text": "侧听林间传来的细微声响",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "forest-listened"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "forest-listened"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.listen"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.inspect-gate-bolt",
+      "text": "检查木门门闩与铜锁是否完好",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "bolt-inspected"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "bolt-inspected"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect",
+        "general-taxonomy:common.action.lock"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.keep-guard-boundary",
+      "text": "守在警戒线外侧保持边界",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "guard-boundary-kept"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "guard-boundary-kept"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:activity.boundary"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.host-visiting-guest",
+      "text": "引导来访客人入座待客",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "guest-hosted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "guest-hosted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.host"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.handover-watch-token",
+      "text": "与接替者交接值守木牌",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "token-handed-over"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "token-handed-over"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.handover"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.make-room-for-cart",
+      "text": "向路旁退让一步给推车让出空间",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "cart-room-made"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "cart-room-made"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.make-room"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.share-dry-rations",
+      "text": "将随身干粮分给同行的旅伴",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "rations-shared"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "rations-shared"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.share"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.rub-brass-tally",
+      "text": "用指腹摩挲着掌心的黄铜号牌等待传唤",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手指与手掌、持有黄铜号牌且正在摩挲等候。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.lean-stone-pillar",
+      "text": "斜靠着回廊石柱避雨并等待雨势转小",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场为降雨天气、存在回廊石柱且该人物正倚靠等候。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.watch-hourglass-sand",
+      "text": "注视桌上的玻璃沙漏等待计时结束",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认桌上放置有沙漏且该人物正注视沙漏计时。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.hold-folded-cloak",
+      "text": "双臂搭着折好的斗篷站在马车旁等候出发",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双臂、搭放着折叠斗篷且位于马车旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.file-brass-gear",
+      "text": "用扁锉刀仔细打磨黄铜齿轮边缘的毛刺",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手部、持有扁锉刀与黄铜齿轮且正在打磨。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.make",
+        "general-taxonomy:action.repair"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.tie-hemp-sack",
+      "text": "抽紧麻绳将装满麦粒的粗麻袋口扎牢",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、持有麻绳与麻袋且正在扎口。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.pack",
+        "general-taxonomy:action.store"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.stamp-wax-seal",
+      "text": "在融化的红火漆上稳稳按下一枚黄铜印章",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有黄铜印章且信封封口存在未凝固火漆。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.label"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.fold-linen-cloth",
+      "text": "将晾干的亚麻布匹按折痕叠成整齐的方垛",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、面前有已晾干亚麻布且正在折叠。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.fold",
+        "general-taxonomy:action.organize"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.drink-clay-mug",
+      "text": "双手捧着粗陶杯小口啜饮温热的麦茶",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手与口部、持有盛麦茶的粗陶杯且正在饮用。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.drink"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.carve-wood-block",
+      "text": "坐在木墩上用小刀修削一块松木镇纸",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物坐在木墩上、持有小刀与木块且正在雕刻。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.sit-rest",
+        "general-taxonomy:action.make"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.warm-hands-by-brazier",
+      "text": "将微凉的双手伸到炭火盆上方烘烤取暖",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有燃着的炭火盆且该人物正伸出双手烘烤。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.relax",
+        "general-taxonomy:action.self-care"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.read-parchment-notes",
+      "text": "借着提灯的暖光翻看旅途记录手札",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场点有提灯且该人物正手持手札翻阅。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:activity.learn"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.check-saddle-strap",
+      "text": "伸手用力拉拽皮带扣环检查捆扎是否牢靠",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手部、面前有皮带扣环且正在拉拽检查。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.hold-lantern-high",
+      "text": "高举黄铜提灯照向石阶下方的阴影角落",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手臂、持有亮着的提灯且正高举照明。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect",
+        "general-taxonomy:action.look-far"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.test-plank-footing",
+      "text": "先用前脚掌轻踩木桥踏板确认木质未腐朽",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备足部、面前有木桥踏板且正在试探承重。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect",
+        "general-taxonomy:common.action.test"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.sniff-potion-vial",
+      "text": "拔开软木塞隔着一掌距离轻嗅药瓶气味",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有带软木塞的药瓶且正在鉴别气味。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect-near"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.pour-tea-for-guest",
+      "text": "提起铜壶为同桌落座的旅人添上热茶",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有铜壶、同桌有客人且正在斟茶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.host",
+        "general-taxonomy:action.share"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.help-lift-wooden-chest",
+      "text": "伸手托住木箱一侧的铁提手协助同伴搬运",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有带铁提手的木箱与同伴且该人物正搭手搬运。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.carry",
+        "general-taxonomy:action.prepare-cooperation"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.compare-guild-maps",
+      "text": "把两张手绘舆图平铺在木桌上比对山路标记",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认木桌上铺有两张舆图且该人物正与同伴比对。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.compare"
+      ]
+    },
+    {
+      "id": "word.action.fantasy.return-borrowed-scissors",
+      "text": "双手捏住剪刀刀背将握柄朝向对方归还",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、持有剪刀且正以安全姿势归还对方。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.return"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.fantasy.queue-at-guild",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方在柜台前按先后排队等候。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.fantasy.weigh-grain-sack",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方称量麻袋内谷物的净重。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.fantasy.sit-rest-under-eaves",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 9,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方在廊檐下的木凳上坐歇。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B2（题材：fantasy）返修交付，共70条（actor.form 30条：draft 10条 / hold 20条；action.observed 40条：draft 20条 / hold 20条；全批合计 draft 30条、hold 40条；已消除跨批重复泛称文本并补齐 scene.setting 题材前置）。"
+}

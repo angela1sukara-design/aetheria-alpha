@@ -1,0 +1,83 @@
+{
+  "sourceFormat": "aetheria-nsfw-lexicon-batch",
+  "sourceSchemaVersion": 1,
+  "batchId": "nsfw-state.b0018",
+  "mappedAt": "2026-10-17T06:01:43.834Z",
+  "status": "pending-review",
+  "runtime": "not-installed",
+  "droppedFreeTags": [
+    {
+      "id": "lx.nsfw-state.b0018.0001",
+      "name": "被茧缚",
+      "v1Tags": [
+        "茧缚",
+        "现场态"
+      ],
+      "usage": "state"
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0002",
+      "name": "感官剥夺中",
+      "v1Tags": [
+        "感官现场态",
+        "G4"
+      ],
+      "usage": "state"
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0003",
+      "name": "口封中",
+      "v1Tags": [
+        "感官现场态",
+        "口封"
+      ],
+      "usage": "state"
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0004",
+      "name": "眼封中",
+      "v1Tags": [
+        "感官现场态",
+        "眼封"
+      ],
+      "usage": "state"
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0005",
+      "name": "耳封中",
+      "v1Tags": [
+        "感官现场态",
+        "耳封"
+      ],
+      "usage": "state"
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0006",
+      "name": "被藤蔓束缚",
+      "v1Tags": [
+        "植物",
+        "束缚现场态"
+      ],
+      "usage": "state"
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0007",
+      "name": "悬吊受制",
+      "v1Tags": [
+        "悬吊",
+        "束缚现场态"
+      ],
+      "usage": "state"
+    },
+    {
+      "id": "lx.nsfw-state.b0018.0008",
+      "name": "残迹未消",
+      "v1Tags": [
+        "残迹",
+        "战后态"
+      ],
+      "usage": "state"
+    }
+  ],
+  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
+}

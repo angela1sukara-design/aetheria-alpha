@@ -3,9 +3,9 @@
   "dictionary": {
     "id": "aetheria/foundation",
     "version": "1.0.0",
-    "hash": "121dc466aa5b39b0e286b4a46558df674239cfa28b3d2efd1c772bf0466d5290"
+    "hash": "c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959"
   },
-  "filter": "b0017",
+  "filter": "b0017|b0018",
   "status": "pending-review",
   "runtime": "not-installed",
   "batches": [
@@ -13,6 +13,11 @@
       "batchId": "nsfw-action.b0017",
       "entries": 7,
       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0017.v2.json"
+    },
+    {
+      "batchId": "nsfw-action.b0018",
+      "entries": 10,
+      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-action.b0018.v2.json"
     },
     {
       "batchId": "nsfw-fluid.b0017",
@@ -25,14 +30,29 @@
       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0017.v2.json"
     },
     {
+      "batchId": "nsfw-gear.b0018",
+      "entries": 6,
+      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-gear.b0018.v2.json"
+    },
+    {
       "batchId": "nsfw-material.b0017",
       "entries": 7,
       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0017.v2.json"
     },
     {
+      "batchId": "nsfw-material.b0018",
+      "entries": 8,
+      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-material.b0018.v2.json"
+    },
+    {
       "batchId": "nsfw-mod.b0017",
       "entries": 2,
       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0017.v2.json"
+    },
+    {
+      "batchId": "nsfw-mod.b0018",
+      "entries": 4,
+      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-mod.b0018.v2.json"
     },
     {
       "batchId": "nsfw-part.b0017",
@@ -43,6 +63,11 @@
       "batchId": "nsfw-state.b0017",
       "entries": 8,
       "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0017.v2.json"
+    },
+    {
+      "batchId": "nsfw-state.b0018",
+      "entries": 8,
+      "file": "docs/tag-hub/nsfw-batches/v2-draft/nsfw-state.b0018.v2.json"
     }
   ]
 }

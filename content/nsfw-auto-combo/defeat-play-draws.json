@@ -1,6 +1,6 @@
 {
   "format": "aetheria-defeat-play-draws",
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "note": "运行时表在 src/engine/defeat-play-draws.ts；本文件供核对 / 文档。定词挂前；goo TF 仅通用原子。",
   "opponents": [
     {
@@ -14,6 +14,22 @@
     {
       "kind": "monster",
       "label": "异形生物"
+    },
+    {
+      "kind": "plant",
+      "label": "妖异藤植"
+    },
+    {
+      "kind": "slime",
+      "label": "胶质生物"
+    },
+    {
+      "kind": "insect",
+      "label": "虫巢异虫"
+    },
+    {
+      "kind": "construct",
+      "label": "失控构装体"
     }
   ],
   "materials": [
@@ -52,6 +68,30 @@
       "dingci": null,
       "base": "凝胶膜",
       "label": "凝胶膜"
+    },
+    {
+      "key": "M7",
+      "dingci": "兽径",
+      "base": "活藤",
+      "label": "兽径活藤"
+    },
+    {
+      "key": "M8",
+      "dingci": "翠暗",
+      "base": "缠绕茎",
+      "label": "翠暗缠绕茎"
+    },
+    {
+      "key": "M9",
+      "dingci": "柔韧",
+      "base": "藤条",
+      "label": "柔韧藤条"
+    },
+    {
+      "key": "M10",
+      "dingci": "虫巢",
+      "base": "丝茧",
+      "label": "虫巢丝茧"
     }
   ],
   "parts": [
@@ -61,12 +101,17 @@
     "大腿内侧",
     "脖颈",
     "锁骨窝",
-    "嘴唇"
+    "嘴唇",
+    "小腿",
+    "膝弯",
+    "肩胛",
+    "眼周",
+    "耳廓"
   ],
   "tfs": [
     "黏液化",
     "黑胶化"
   ],
   "wiredToNsfwAutoCombo": true,
-  "comboRows": 12
+  "comboRows": 20
 }

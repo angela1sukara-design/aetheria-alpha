@@ -1,0 +1,2806 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B2",
+  "theme": "post-apocalypse",
+  "author": "author-b3",
+  "batchId": "b2-post-apocalypse-v1",
+  "revision": 2,
+  "entries": [
+    {
+      "id": "word.form.post-apocalypse.present-person",
+      "text": "在避难所通道驻足的人物",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.nearby-figure",
+      "text": "同处掩体内的幸存身影",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.goggles-mechanic",
+      "text": "在换气口旁检查滤芯读数的维护员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "check-filter"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.mechanic"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.patched-vest-security",
+      "text": "在配给窗口前排队领用物资的居民",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "ration-queue"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.security"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.filter-mask-inspector",
+      "text": "在回收台前分类可用零件的拾荒者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sort-scrap"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.inspector"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.wrench-plumber",
+      "text": "在防爆门内侧轮班警戒的哨兵",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "watch-gate"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.plumber"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.canvas-pack-courier",
+      "text": "在通讯台前调试波段信号的报务员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "test-radio"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.courier",
+        "general-taxonomy:common.job.courier"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.ledger-warehouse-clerk",
+      "text": "在净水炉旁守候沸水冷却的值日者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "boil-water"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.warehouse-clerk"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.scale-weigher",
+      "text": "在仓库账册上登记出入库的保管员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "log-supplies"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.weigher"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.first-aid-carer",
+      "text": "在休整区交流沿途路况的同行人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "share-news"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.carer"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.apron-cook",
+      "text": "在废油灶前掌勺的营地厨工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为厨工且位于废油灶旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.cook"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.gloved-electrician",
+      "text": "腰缠回收铜线的线路电工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为电工且腰间缠有回收铜线。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.electrician"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.radio-dispatcher",
+      "text": "守在手摇电台旁的联络调度员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为调度员且位于手摇电台旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.dispatcher"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.welding-mask-metalworker",
+      "text": "掀开焊工面罩的钣金金工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为金工且头部佩戴掀开的焊工面罩。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.metalworker"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.needle-tailor",
+      "text": "专补帆布与皮革防具的缝纫工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为缝纫工且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.tailor"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.shovel-gardener",
+      "text": "照料无土栽培槽的温室园艺工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为园艺工且在栽培槽旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.gardener"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.sorter-scrap",
+      "text": "戴着厚牛皮手套的废料分拣员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为分拣员且双手穿戴厚牛皮手套。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.sorter"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.porter-water",
+      "text": "推着改装独轮水车的搬运工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为搬运工且手扶改装独轮水车。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.porter"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.custodian-bunker",
+      "text": "揣着成串铁钥匙的掩体看管员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为看管员且携带成串铁钥匙。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.custodian"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.guide-wasteland",
+      "text": "披着伪装防尘披风的废土引导员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为引导员且身披防尘披风。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.guide"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.mediator-camp",
+      "text": "佩戴中立白布条的聚落调解员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为调解员且佩戴白色标识布条。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.mediator"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.archivist-paper",
+      "text": "抢救纸质旧书册的避难所档案员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为档案管理员且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.job.archivist"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.resource-care-resident",
+      "text": "衣着打满整洁补丁的避难所住户",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为住户且衣物带有多处整洁补丁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:identity.resident",
+        "general-taxonomy:disposition.resource-care"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.cautious-volunteer",
+      "text": "协助加固沙袋掩体的志愿服务者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为志愿者且在沙袋掩体旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:identity.volunteer",
+        "general-taxonomy:disposition.caution"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.housemate-bunker",
+      "text": "同住一间地下宿舍的室友",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物具有合住室友身份且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:identity.housemate"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.representative-shelter",
+      "text": "主持物资分配会议的社区代表",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为社区代表且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:identity.representative"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.apprentice-repair",
+      "text": "提着工具铁盒跟班的修理学徒",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为学徒且手提工具铁盒。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:identity.apprentice"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.rock-callus-carpenter",
+      "text": "加固掩体木支撑架的木工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为木工且在支撑架旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.carpenter"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.cleaner-filter",
+      "text": "清理通风道积尘的掩体清洁工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为清洁工且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.cleaner"
+      ]
+    },
+    {
+      "id": "word.form.post-apocalypse.vendor-barter",
+      "text": "守在易物木桌后的集市售货员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同一人物为售货员且位于易物木桌后。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:job.vendor"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.queue-for-ration",
+      "text": "在配给窗口前按序排队等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "ration-queued"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "ration-queued"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.queue",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.wait-airlock-cycle",
+      "text": "在防尘门内等待滤尘通风完成",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "airlock-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "airlock-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.ventilate",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.pause-at-watchpost",
+      "text": "在哨卡掩体旁停顿观察",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "watchpost-paused"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "watchpost-paused"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.pause"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.wait-water-distribution",
+      "text": "留在储水点旁等待分水时段",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "water-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "water-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.sort-salvaged-parts",
+      "text": "分类挑拣回收来的金属零件",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "parts-sorted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "parts-sorted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.sort"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.repair-damaged-gear",
+      "text": "修补磨损的防护器具",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "gear-repaired"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "gear-repaired"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.repair",
+        "general-taxonomy:activity.repair"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.weigh-ration-portion",
+      "text": "按标准称量今日配给的物资分量",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "ration-weighed"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "ration-weighed"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.weigh"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.refill-generator-fuel",
+      "text": "为备用设备补充消耗品",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "consumable-refilled"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "consumable-refilled"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.refill"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.take-shelter-break",
+      "text": "在掩体安全区内休息片刻",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "shelter-break-taken"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "shelter-break-taken"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.take-break"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.sit-rest-on-bunk",
+      "text": "坐在铺位边缘坐歇恢复体力",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "bunk-resting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "bunk-resting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.sit-rest",
+        "general-taxonomy:activity.recover"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.stretch-after-patrol",
+      "text": "结束巡视后舒展筋骨放松",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "patrol-stretched"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "patrol-stretched"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.stretch",
+        "general-taxonomy:action.relax"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.stay-alone-in-bunk",
+      "text": "在角落安静处独处片刻",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "corner-alone"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "corner-alone"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.be-alone"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.look-far-wasteland",
+      "text": "从瞭望口远望荒原方向",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "wasteland-watched"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "wasteland-watched"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.look-far"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.listen-tunnel-sound",
+      "text": "侧听地下通道深处的动静",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tunnel-listened"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "tunnel-listened"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.listen"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.inspect-shelter-seal",
+      "text": "检查防尘门封条与门锁状态",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "seal-inspected"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "seal-inspected"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.inspect",
+        "general-taxonomy:common.action.lock"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.keep-quarantine-boundary",
+      "text": "与未消杀区域保持明确边界",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "quarantine-boundary-kept"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "quarantine-boundary-kept"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:activity.boundary"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.handover-sentry-shift",
+      "text": "与接班同伴交接哨位值守情况",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "sentry-handed-over"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "sentry-handed-over"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.handover"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.make-room-in-tunnel",
+      "text": "在狭窄掩体过道里让出通行空间",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "tunnel-room-made"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "tunnel-room-made"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.make-room"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.share-clean-water",
+      "text": "与小队同伴分享配给饮水",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "water-shared"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "water-shared"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.share"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.prepare-team-scavenge",
+      "text": "为接下来的结伴外勤做协作准备",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "scavenge-prepared"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "scavenge-prepared"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.prepare-cooperation"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.grip-ration-token",
+      "text": "用粗糙的指节攥紧领物铝牌等待窗口叫号",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手指部件、持有铝牌且正在窗口前等候。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.state.waiting",
+        "general-taxonomy:common.action.collect"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.crank-flashlight-waiting",
+      "text": "站在昏暗走廊里匀速摇动手电筒手柄蓄电等待",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有手摇手电筒且正在走廊里摇柄蓄电。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.charge",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.crouch-by-stove-wait",
+      "text": "半蹲在废油炉旁等待铁锅里的水烧开",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有废油炉与铁锅且该人物正处于半蹲等候姿态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.tap-canteen-wall",
+      "text": "用指尖轻弹铝水壶外壁听声估算剩余水量",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手指、持有铝水壶且正在轻弹壶壁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.scrape-rust-with-file",
+      "text": "握着钢锉刀用力挫去铁板接缝处的浮锈",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手部、持有钢锉刀且正在打磨生锈铁板。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.repair",
+        "general-taxonomy:action.clean"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.patch-hose-with-tape",
+      "text": "将防水胶带一圈圈缠紧在渗水的橡胶软管上",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有渗水软管且该人物正用防水胶带缠绕修补。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.repair",
+        "general-taxonomy:common.state.leaking"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.shake-dust-from-blanket",
+      "text": "在通风口下双手抖开毛毡毯拍打吸附的沙尘",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、持有毛毡毯且正在拍打灰尘。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.clean"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.record-chalk-tally",
+      "text": "捏着半截粉笔在铁皮板上记下今日净水产出量",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有粉笔、面前有铁皮记录板且正在书写。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.keep-record",
+        "general-taxonomy:activity.write"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.sip-tin-mug-broth",
+      "text": "捧着掉瓷的搪瓷缸小口喝着温热的菜汤",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手与口部、持有盛汤的搪瓷缸且正在饮用。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.drink",
+        "general-taxonomy:action.taste"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.oil-leather-boots",
+      "text": "坐在木箱上用破布蘸取少许油脂擦拭皮靴裂纹",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物坐于木箱上、持有蘸油破布且正在保养皮靴。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.sit-rest",
+        "general-taxonomy:action.self-care"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.whittle-wood-peg",
+      "text": "靠着掩体混凝土墙用折刀削制备用木楔",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物背靠墙面、持有折刀与木料且正在削制。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.make",
+        "general-taxonomy:action.relax"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.organize-small-screws",
+      "text": "把攒下的几枚完好螺母按口径收进空铁皮药盒",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有螺母与空铁皮盒且正在分类收纳。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.store",
+        "general-taxonomy:action.organize"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.check-filter-gasket",
+      "text": "凑近手电光束仔细检查防尘面罩的橡胶密封圈",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有防尘面罩与手电光源且正近距离检查密封圈。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.inspect-near"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.listen-wall-vibration",
+      "text": "将手掌贴在掩体钢梁上感知地面上方的震动",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备手掌、现场有掩体钢梁且正在贴触感知。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.listen",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.test-rope-knot-tension",
+      "text": "双手拉扯攀爬麻绳的绳结确认承重可靠",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物具备双手、现场有麻绳绳结且正在拉扯测试。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.action.test",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.peer-through-slit",
+      "text": "透过铁门上的狭窄观察孔注视通道外侧动静",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场铁门带有观察孔且该人物正透过观察孔向外注视。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.look-far",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.pass-heavy-wrench",
+      "text": "双手托住重型管钳的中段递给梯子上的同伴",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有重型管钳、同伴位于梯子上且正在递交工具。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.handover",
+        "general-taxonomy:action.prepare-cooperation"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.share-boiled-water",
+      "text": "拧开行军水壶往同伴的空杯里倒出半壶熟水",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认该人物持有装熟水的水壶、同伴持有空杯且正在分水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.share",
+        "general-taxonomy:action.drink"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.compare-route-marks",
+      "text": "在塑料覆膜地图上用手指比对两处水源点的距离",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场铺有塑料覆膜地图且该人物正用手指比对标记。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.compare"
+      ]
+    },
+    {
+      "id": "word.action.post-apocalypse.help-strap-heavy-pack",
+      "text": "伸手帮即将外出的同伴拉紧帆布背包的肩带卡扣",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "post-apocalypse"
+        }
+      ],
+      "pendingFacts": [
+        "确认同伴背有帆布背包且该人物正伸手协助拉紧卡扣。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:action.prepare-cooperation"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.post-apocalypse.queue-for-ration",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方在配给窗口前按序排队等候。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.post-apocalypse.sort-salvaged-parts",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方分类挑拣回收来的金属零件。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.post-apocalypse.take-shelter-break",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 9,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方在掩体安全区内休息片刻。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B2（题材：post-apocalypse）返修交付，共70条（actor.form 30条：draft 10条 / hold 20条；action.observed 40条：draft 20条 / hold 20条；全批合计 draft 30条、hold 40条；已消除跨批重复泛称文本并补齐 scene.setting 题材前置）。"
+}

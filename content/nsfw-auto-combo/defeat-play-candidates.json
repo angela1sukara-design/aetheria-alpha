@@ -11,7 +11,7 @@
     "peak",
     "resolve"
   ],
-  "stageNote": "G1–G8 实装 capture→press→peak→resolve。escalate/aftermath 已弃用。",
+  "stageNote": "G1–G8 实装 capture→press→peak→resolve（含 resolve.escape / resolve.marked / resolve.tf 多结局分流）。escalate/aftermath 已弃用。",
   "hubPages": {
     "hub": [
       "G1",
@@ -54,7 +54,7 @@
           "editNodeId": "edit:node.defeat.g1.capture",
           "textKey": "progression:text.node.defeat.g1.capture",
           "adultNodeId": "progression:node.defeat.g1.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g1.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.adult",
           "adultTextKey": "progression:text.node.defeat.g1.capture.adult"
         },
         "press": {
@@ -63,7 +63,7 @@
           "editNodeId": "edit:node.defeat.g1.press",
           "textKey": "progression:text.node.defeat.g1.press",
           "adultNodeId": "progression:node.defeat.g1.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g1.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.adult",
           "adultTextKey": "progression:text.node.defeat.g1.press.adult"
         },
         "peak": {
@@ -72,7 +72,7 @@
           "editNodeId": "edit:node.defeat.g1.peak",
           "textKey": "progression:text.node.defeat.g1.peak",
           "adultNodeId": "progression:node.defeat.g1.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g1.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.adult",
           "adultTextKey": "progression:text.node.defeat.g1.peak.adult"
         },
         "resolve": {
@@ -81,7 +81,7 @@
           "editNodeId": "edit:node.defeat.g1.resolve",
           "textKey": "progression:text.node.defeat.g1.resolve",
           "adultNodeId": "progression:node.defeat.g1.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g1.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g1.adult",
           "adultTextKey": "progression:text.node.defeat.g1.resolve.adult"
         }
       }
@@ -103,7 +103,7 @@
           "editNodeId": "edit:node.defeat.g2.capture",
           "textKey": "progression:text.node.defeat.g2.capture",
           "adultNodeId": "progression:node.defeat.g2.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g2.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.adult",
           "adultTextKey": "progression:text.node.defeat.g2.capture.adult"
         },
         "press": {
@@ -112,7 +112,7 @@
           "editNodeId": "edit:node.defeat.g2.press",
           "textKey": "progression:text.node.defeat.g2.press",
           "adultNodeId": "progression:node.defeat.g2.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g2.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.adult",
           "adultTextKey": "progression:text.node.defeat.g2.press.adult"
         },
         "peak": {
@@ -121,7 +121,7 @@
           "editNodeId": "edit:node.defeat.g2.peak",
           "textKey": "progression:text.node.defeat.g2.peak",
           "adultNodeId": "progression:node.defeat.g2.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g2.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.adult",
           "adultTextKey": "progression:text.node.defeat.g2.peak.adult"
         },
         "resolve": {
@@ -130,7 +130,7 @@
           "editNodeId": "edit:node.defeat.g2.resolve",
           "textKey": "progression:text.node.defeat.g2.resolve",
           "adultNodeId": "progression:node.defeat.g2.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g2.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g2.adult",
           "adultTextKey": "progression:text.node.defeat.g2.resolve.adult"
         }
       }
@@ -152,7 +152,7 @@
           "editNodeId": "edit:node.defeat.g3.capture",
           "textKey": "progression:text.node.defeat.g3.capture",
           "adultNodeId": "progression:node.defeat.g3.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g3.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.adult",
           "adultTextKey": "progression:text.node.defeat.g3.capture.adult"
         },
         "press": {
@@ -161,7 +161,7 @@
           "editNodeId": "edit:node.defeat.g3.press",
           "textKey": "progression:text.node.defeat.g3.press",
           "adultNodeId": "progression:node.defeat.g3.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g3.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.adult",
           "adultTextKey": "progression:text.node.defeat.g3.press.adult"
         },
         "peak": {
@@ -170,7 +170,7 @@
           "editNodeId": "edit:node.defeat.g3.peak",
           "textKey": "progression:text.node.defeat.g3.peak",
           "adultNodeId": "progression:node.defeat.g3.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g3.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.adult",
           "adultTextKey": "progression:text.node.defeat.g3.peak.adult"
         },
         "resolve": {
@@ -179,7 +179,7 @@
           "editNodeId": "edit:node.defeat.g3.resolve",
           "textKey": "progression:text.node.defeat.g3.resolve",
           "adultNodeId": "progression:node.defeat.g3.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g3.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g3.adult",
           "adultTextKey": "progression:text.node.defeat.g3.resolve.adult"
         }
       }
@@ -201,7 +201,7 @@
           "editNodeId": "edit:node.defeat.g4.capture",
           "textKey": "progression:text.node.defeat.g4.capture",
           "adultNodeId": "progression:node.defeat.g4.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g4.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g4.adult",
           "adultTextKey": "progression:text.node.defeat.g4.capture.adult"
         },
         "press": {
@@ -210,7 +210,7 @@
           "editNodeId": "edit:node.defeat.g4.press",
           "textKey": "progression:text.node.defeat.g4.press",
           "adultNodeId": "progression:node.defeat.g4.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g4.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g4.adult",
           "adultTextKey": "progression:text.node.defeat.g4.press.adult"
         },
         "peak": {
@@ -219,7 +219,7 @@
           "editNodeId": "edit:node.defeat.g4.peak",
           "textKey": "progression:text.node.defeat.g4.peak",
           "adultNodeId": "progression:node.defeat.g4.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g4.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g4.adult",
           "adultTextKey": "progression:text.node.defeat.g4.peak.adult"
         },
         "resolve": {
@@ -228,7 +228,7 @@
           "editNodeId": "edit:node.defeat.g4.resolve",
           "textKey": "progression:text.node.defeat.g4.resolve",
           "adultNodeId": "progression:node.defeat.g4.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g4.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g4.adult",
           "adultTextKey": "progression:text.node.defeat.g4.resolve.adult"
         }
       }
@@ -250,7 +250,7 @@
           "editNodeId": "edit:node.defeat.g5.capture",
           "textKey": "progression:text.node.defeat.g5.capture",
           "adultNodeId": "progression:node.defeat.g5.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g5.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g5.adult",
           "adultTextKey": "progression:text.node.defeat.g5.capture.adult"
         },
         "press": {
@@ -259,7 +259,7 @@
           "editNodeId": "edit:node.defeat.g5.press",
           "textKey": "progression:text.node.defeat.g5.press",
           "adultNodeId": "progression:node.defeat.g5.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g5.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g5.adult",
           "adultTextKey": "progression:text.node.defeat.g5.press.adult"
         },
         "peak": {
@@ -268,7 +268,7 @@
           "editNodeId": "edit:node.defeat.g5.peak",
           "textKey": "progression:text.node.defeat.g5.peak",
           "adultNodeId": "progression:node.defeat.g5.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g5.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g5.adult",
           "adultTextKey": "progression:text.node.defeat.g5.peak.adult"
         },
         "resolve": {
@@ -277,7 +277,7 @@
           "editNodeId": "edit:node.defeat.g5.resolve",
           "textKey": "progression:text.node.defeat.g5.resolve",
           "adultNodeId": "progression:node.defeat.g5.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g5.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g5.adult",
           "adultTextKey": "progression:text.node.defeat.g5.resolve.adult"
         }
       }
@@ -299,7 +299,7 @@
           "editNodeId": "edit:node.defeat.g6.capture",
           "textKey": "progression:text.node.defeat.g6.capture",
           "adultNodeId": "progression:node.defeat.g6.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g6.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g6.adult",
           "adultTextKey": "progression:text.node.defeat.g6.capture.adult"
         },
         "press": {
@@ -308,7 +308,7 @@
           "editNodeId": "edit:node.defeat.g6.press",
           "textKey": "progression:text.node.defeat.g6.press",
           "adultNodeId": "progression:node.defeat.g6.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g6.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g6.adult",
           "adultTextKey": "progression:text.node.defeat.g6.press.adult"
         },
         "peak": {
@@ -317,7 +317,7 @@
           "editNodeId": "edit:node.defeat.g6.peak",
           "textKey": "progression:text.node.defeat.g6.peak",
           "adultNodeId": "progression:node.defeat.g6.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g6.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g6.adult",
           "adultTextKey": "progression:text.node.defeat.g6.peak.adult"
         },
         "resolve": {
@@ -326,7 +326,7 @@
           "editNodeId": "edit:node.defeat.g6.resolve",
           "textKey": "progression:text.node.defeat.g6.resolve",
           "adultNodeId": "progression:node.defeat.g6.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g6.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g6.adult",
           "adultTextKey": "progression:text.node.defeat.g6.resolve.adult"
         }
       }
@@ -348,7 +348,7 @@
           "editNodeId": "edit:node.defeat.g7.capture",
           "textKey": "progression:text.node.defeat.g7.capture",
           "adultNodeId": "progression:node.defeat.g7.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g7.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g7.adult",
           "adultTextKey": "progression:text.node.defeat.g7.capture.adult"
         },
         "press": {
@@ -357,7 +357,7 @@
           "editNodeId": "edit:node.defeat.g7.press",
           "textKey": "progression:text.node.defeat.g7.press",
           "adultNodeId": "progression:node.defeat.g7.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g7.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g7.adult",
           "adultTextKey": "progression:text.node.defeat.g7.press.adult"
         },
         "peak": {
@@ -366,7 +366,7 @@
           "editNodeId": "edit:node.defeat.g7.peak",
           "textKey": "progression:text.node.defeat.g7.peak",
           "adultNodeId": "progression:node.defeat.g7.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g7.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g7.adult",
           "adultTextKey": "progression:text.node.defeat.g7.peak.adult"
         },
         "resolve": {
@@ -375,7 +375,7 @@
           "editNodeId": "edit:node.defeat.g7.resolve",
           "textKey": "progression:text.node.defeat.g7.resolve",
           "adultNodeId": "progression:node.defeat.g7.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g7.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g7.adult",
           "adultTextKey": "progression:text.node.defeat.g7.resolve.adult"
         }
       }
@@ -397,7 +397,7 @@
           "editNodeId": "edit:node.defeat.g8.capture",
           "textKey": "progression:text.node.defeat.g8.capture",
           "adultNodeId": "progression:node.defeat.g8.capture.adult",
-          "editAdultNodeId": "edit:node.defeat.g8.capture.adult",
+          "editAdultNodeId": "edit:node.defeat.g8.adult",
           "adultTextKey": "progression:text.node.defeat.g8.capture.adult"
         },
         "press": {
@@ -406,7 +406,7 @@
           "editNodeId": "edit:node.defeat.g8.press",
           "textKey": "progression:text.node.defeat.g8.press",
           "adultNodeId": "progression:node.defeat.g8.press.adult",
-          "editAdultNodeId": "edit:node.defeat.g8.press.adult",
+          "editAdultNodeId": "edit:node.defeat.g8.adult",
           "adultTextKey": "progression:text.node.defeat.g8.press.adult"
         },
         "peak": {
@@ -415,7 +415,7 @@
           "editNodeId": "edit:node.defeat.g8.peak",
           "textKey": "progression:text.node.defeat.g8.peak",
           "adultNodeId": "progression:node.defeat.g8.peak.adult",
-          "editAdultNodeId": "edit:node.defeat.g8.peak.adult",
+          "editAdultNodeId": "edit:node.defeat.g8.adult",
           "adultTextKey": "progression:text.node.defeat.g8.peak.adult"
         },
         "resolve": {
@@ -424,7 +424,7 @@
           "editNodeId": "edit:node.defeat.g8.resolve",
           "textKey": "progression:text.node.defeat.g8.resolve",
           "adultNodeId": "progression:node.defeat.g8.resolve.adult",
-          "editAdultNodeId": "edit:node.defeat.g8.resolve.adult",
+          "editAdultNodeId": "edit:node.defeat.g8.adult",
           "adultTextKey": "progression:text.node.defeat.g8.resolve.adult"
         }
       }
