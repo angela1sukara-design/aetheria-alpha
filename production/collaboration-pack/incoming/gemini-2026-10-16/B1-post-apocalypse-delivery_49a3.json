@@ -1,0 +1,2278 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "post-apocalypse",
+  "author": "author-b3",
+  "batchId": "b1-post-apocalypse-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.post-apocalypse.air-filter",
+      "text": "一台手工拼装的活性炭空气过滤器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "air-filter"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "air-filter"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.air-filter"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.backup-power",
+      "text": "一台柴油改装的备用发电机组",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "backup-power"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "backup-power"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.backup-power"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.water-dispenser",
+      "text": "一座带净水滤芯的储水分配桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "water-dispenser"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "water-dispenser"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.water-dispenser"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.first-aid-kit",
+      "text": "一只印着褪色十字的铁皮急救箱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "first-aid-kit"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "first-aid-kit"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.first-aid-kit",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.fire-extinguisher",
+      "text": "一具重新充装的干粉灭火器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "fire-extinguisher"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "fire-extinguisher"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.fire-extinguisher"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.intercom",
+      "text": "一部有线手摇对讲电话",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "intercom"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "intercom"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.intercom"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.flashlight",
+      "text": "一支手摇发电照明手电筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "flashlight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "flashlight"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.flashlight"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.kettle",
+      "text": "一只铝制行军水壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "kettle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "kettle"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.kettle",
+        "general-taxonomy:common.mat.aluminium"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.blanket",
+      "text": "一条厚实的灰绿色毛毡毯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "blanket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "blanket"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.blanket",
+        "general-taxonomy:common.mat.felt"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.wrench",
+      "text": "一把重型管钳扳手",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "wrench"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "wrench"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.wrench",
+        "general-taxonomy:common.mat.steel"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.pliers",
+      "text": "一把多功能断线钳",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "pliers"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "pliers"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.pliers"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.tape",
+      "text": "一卷高粘度防水修补胶带",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "tape"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "tape"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.tape"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.work-gloves",
+      "text": "一双加厚牛皮防护手套",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "work-gloves"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "work-gloves"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.work-gloves",
+        "general-taxonomy:material.leather"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.bucket",
+      "text": "一只镀锌铁皮储水桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bucket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bucket"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.bucket",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.map",
+      "text": "一张标注着水源点的塑料覆膜地图",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "map"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "map"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.map",
+        "general-taxonomy:common.mat.plastic"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.dented-canteen",
+      "text": "一只壶身带着两处凹坑的军用铝水壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该水壶实例存在且壶身具有凹陷磕碰旧痕。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.water-bottle",
+        "general-taxonomy:common.mat.aluminium"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.patched-tarpaulin-canopy",
+      "text": "一顶用防水胶带打满补丁的帆布遮阳棚",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该遮阳棚实例存在且表面粘有多处防水胶带补丁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.shade-canopy",
+        "general-taxonomy:material.canvas",
+        "general-taxonomy:common.tool.tape"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.rusty-locker",
+      "text": "一格门板生锈但挂着新锁的铁皮储物柜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该储物柜实例表面生锈且外挂锁具处于锁闭状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.locker",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.hand-cranked-charger",
+      "text": "一只焊在木底座上的手摇充电器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该充电器实例存在且固定于木质底座上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.charger",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.ration-ticket",
+      "text": "一张盖着配给站钢印的纸质领物票券",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该票券实例存在且带有配给站钢印记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.ticket",
+        "general-taxonomy:common.mat.paper"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.repaired-raincoat",
+      "text": "一件接缝处涂满密封胶的厚橡胶雨衣",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该雨衣实例存在且接缝涂有密封胶层。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.raincoat",
+        "general-taxonomy:common.mat.rubber",
+        "general-taxonomy:common.tool.glue"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.spliced-battery-pack",
+      "text": "一组用扎带捆成排的回收电池组",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该电池组实例由多节电池通过扎带捆扎而成。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.battery",
+        "general-taxonomy:common.tool.cable-tie"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.soot-stained-saucepan",
+      "text": "一口架在废油炉上的不锈钢小锅",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该锅具实例存在且外壁留有烟熏痕迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.saucepan",
+        "general-taxonomy:common.mat.stainless-steel"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.chipped-file",
+      "text": "一把木柄缠着防滑布条的旧钢锉",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该锉刀实例存在且手柄缠有防滑布条。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.file",
+        "general-taxonomy:common.mat.steel"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.filtered-water-jug",
+      "text": "一只贴着手写净水日期标签的塑料储水桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该储水桶实例存在且表面贴有净水日期标签。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.bucket",
+        "general-taxonomy:common.mat.plastic"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.cracked-thermometer",
+      "text": "一支固定在避难所墙面上的酒精温度计",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该温度计实例安装于墙面且处于可用状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.thermometer"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.salvaged-repair-bench",
+      "text": "一张由废旧钢板焊接而成的公共修理台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该公共修理台实例存在且为钢板焊接构造。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:v2.services.repair-bench",
+        "general-taxonomy:common.mat.steel"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.chalk-tally-board",
+      "text": "一块用粉笔记录滤芯剩余寿命的铁皮公告板",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该公告板实例存在且表面写有滤芯寿命粉笔记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.bulletin-screen",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.sealed-seed-bag",
+      "text": "一只双层热封防潮的谷物收纳袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该收纳袋实例存在且处于密封防潮状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.storage-bag",
+        "general-taxonomy:common.mat.plastic"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.heavy-duty-clamp",
+      "text": "一只夹着待粘合轮胎皮的C型铁夹",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该固定夹实例正夹持着橡胶工件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.clamp",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.wired-guardrail",
+      "text": "一段缠着警示布条的钢筋护栏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该护栏实例存在且系有警示布条。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.guardrail",
+        "general-taxonomy:common.mat.steel"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.seepage-drain",
+      "text": "一个盖着细密防虫铁网的地下排水口",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该排水口实例存在且加装了铁丝防虫网。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.drain",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.rebuilt-vent",
+      "text": "一处扇叶缓慢转动的铁皮通风口",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该通风口实例存在且扇叶正处于低速运转状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.vent",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.numbered-identity-tag",
+      "text": "一枚用钢印打出编号的铝制身份牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该身份牌实例存在且表面带有钢印编号。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.identity-card",
+        "general-taxonomy:common.mat.aluminium"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.oil-can-lubricant",
+      "text": "一罐嘴口带细长导管的机械润滑剂",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该润滑剂容器实例存在且装有细长导油管。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.lubricant"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.wooden-ramp-plank",
+      "text": "一块垫在台阶缺口处的厚木板坡道",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该木板坡道实例架设于台阶缺口处且稳固可用。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.facility.ramp",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.hand-sewn-pillow",
+      "text": "一只塞满碎布条的粗帆布枕头",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该枕头实例存在且为帆布外皮构造。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.pillow",
+        "general-taxonomy:material.canvas"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.tin-lunchbox",
+      "text": "一只盒盖扣紧的马口铁饭盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该饭盒实例存在且盒盖处于扣紧状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.lunchbox",
+        "general-taxonomy:material.tin"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.coarse-sandpaper-roll",
+      "text": "一卷用于除锈的粗金刚砂纸",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该砂纸实例存在且处于成卷收纳状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.tool.sandpaper"
+      ]
+    },
+    {
+      "id": "word.prop.post-apocalypse.boiled-towel",
+      "text": "一条搭在绳上晾干的消毒毛巾",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该毛巾实例正悬挂于晾衣绳上处于晾干状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.object.towel",
+        "general-taxonomy:common.object.clothes-pin"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.rust-odor",
+      "text": "废旧金属构件散发的明显铁锈味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "rust"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "rust"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:expanded.scent.rust"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.dust-odor",
+      "text": "干燥空气中弥漫的细微粉尘气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "dust"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "dust"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:expanded.scent.dust"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.generator-hum",
+      "text": "远处发电机低沉而平稳的机器声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "machine"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "machine"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:sound.machine",
+        "general-taxonomy:v2.sensory.low-hum"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.wind-howl",
+      "text": "穿过残垣空隙的呼啸风声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "wind"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "wind"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:sound.wind"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.shaft-light-pool",
+      "text": "高窗裂隙投射在水泥地上的光斑",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "light-pool"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "light-pool"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:v2.sensory.light-pool"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.haze-silhouette",
+      "text": "灰黄烟霾中轮廓模糊的远景剪影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "silhouette"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "silhouette"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:v2.sensory.silhouette",
+        "general-taxonomy:common.env.haze"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.bunker-chilly",
+      "text": "地下掩体常年不散的阴凉寒气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "chilly"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "chilly"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.surface-heat",
+      "text": "正午地表辐射下来的干燥炎热感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "heat"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "heat"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:weather.heat",
+        "general-taxonomy:common.env.dry-air"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.gritty-dust-air",
+      "text": "夹杂着细沙颗粒的粗糙空气触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "dust"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "dust"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.env.dust",
+        "general-taxonomy:common.env.dry-air"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.tunnel-draft",
+      "text": "掩体通道深处持续吹来的穿堂风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "draft"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "draft"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.env.draft"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.diesel-fuel-exhaust",
+      "text": "备用发电机排烟管飘来的柴油燃料气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认附近柴油发电机正在运转且排气味随风飘入。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:expanded.scent.fuel",
+        "general-taxonomy:expanded.scent.smoke"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.iodine-first-aid",
+      "text": "医疗角换药后残留的碘伏与消毒液气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认医疗区域近期使用过碘伏与消毒液。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:expanded.scent.iodine",
+        "general-taxonomy:expanded.scent.disinfectant"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.pickled-ration-scent",
+      "text": "储藏室开启时传出的咸菜发酵气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认储藏室门开启且内部存放有发酵腌制食品。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:expanded.scent.pickles",
+        "general-taxonomy:expanded.scent.salt"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.loose-sheet-metal-wind",
+      "text": "阵风吹动屋顶松动铁皮发出的哐当声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认外部有阵风且建筑顶部存在松动的金属板件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:sound.wind",
+        "general-taxonomy:common.env.gust"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.seepage-water-drip",
+      "text": "地下管廊裂缝间缓慢滴入铁桶的水声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认管廊存在渗水且下方放置了接水铁桶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:v2.hydrology.seepage",
+        "general-taxonomy:v2.hydrology.dripping"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.repair-hammer-tools",
+      "text": "维修棚里敲平金属板件的叮当工具声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认附近维修棚正在进行钣金敲击作业。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:sound.tools"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.dust-beam-tyndall",
+      "text": "穿过破损天窗并在扬尘中显出光柱的硬朗日光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认天窗有直射光进入且室内空气悬浮粉尘形成丁达尔光柱。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:weather.sunlight",
+        "general-taxonomy:common.env.dust",
+        "general-taxonomy:v2.sensory.hard-shadow"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.low-voltage-lamp-glow",
+      "text": "低压蓄电池供能下略显昏黄的微弱辉光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认照明由低压蓄电池供电且照度偏低。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:v2.sensory.glow",
+        "general-taxonomy:v2.sensory.shadow-detail"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.haze-overexposure",
+      "text": "沙尘散射阳光造成的地平线白茫亮部失细节",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认室外处于沙尘烟霾天气且强光散射严重。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:v2.sensory.overexposure",
+        "general-taxonomy:common.env.haze"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.oil-stove-warmth",
+      "text": "废油取暖炉旁局部聚集的干燥暖意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场废油取暖炉正在燃烧供暖。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.env.warm",
+        "general-taxonomy:common.env.dry-air"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.night-wasteland-cold",
+      "text": "入夜后铁皮屋顶迅速散尽热量带来的刺骨寒冷感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前为夜间且建筑保温层薄弱导致室温骤降。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:weather.cold",
+        "general-taxonomy:common.env.frost"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.sealed-shelter-stuffy",
+      "text": "防尘阀门关闭期间室内逐渐积聚的滞闷微热",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认避难所防尘阀门处于关闭状态且内部通风受限。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.env.stuffy",
+        "general-taxonomy:common.env.hot"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.filter-vent-breeze",
+      "text": "净风管道出口吹来的干净微风触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认空气过滤机组正在正常送风。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.env.breeze",
+        "general-taxonomy:common.env.fresh"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.damp-concrete-seepage",
+      "text": "贴近地下防空洞内壁时潮湿阴冷的结露触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前位于地下结构且墙面存在冷凝结露。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:common.env.dew",
+        "general-taxonomy:common.env.humid-air"
+      ]
+    },
+    {
+      "id": "word.sense.post-apocalypse.generator-floor-resonance",
+      "text": "脚下钢板随老旧柴油机活塞往复传来的明显共振",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认柴油发电机正在运转且与脚下钢板存在刚性连接。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.post-apocalypse",
+        "general-taxonomy:v2.sensory.resonance",
+        "general-taxonomy:sound.machine"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.post-apocalypse.air-filter",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.post-apocalypse.rust-odor",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方把工具归回原位。你注意到一台手工拼装的活性炭空气过滤器，其中盛着过滤水。你察觉到废旧金属构件散发的明显铁锈味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.post-apocalypse.backup-power",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.post-apocalypse.generator-hum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方将工具放回原处。你注意到一台柴油改装的备用发电机组，其中盛着过滤水。你察觉到远处发电机低沉而平稳的机器声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.post-apocalypse.rust-odor",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到废旧金属构件散发的明显铁锈味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.post-apocalypse.generator-hum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到远处发电机低沉而平稳的机器声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "任务卡B1（题材：post-apocalypse）首批正式配额交付，共65条（environment.prop 40条：draft 15 / hold 25；environment.sense.* 五子池各5条共25条：draft 10 / hold 15；全批合计 draft 25条、hold 40条）。未提报新Tag，手工预览标为manual/hypothetical-only。"
+}

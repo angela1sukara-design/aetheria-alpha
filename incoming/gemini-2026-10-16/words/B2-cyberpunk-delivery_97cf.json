@@ -1,0 +1,2341 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B2",
+  "theme": "cyberpunk",
+  "author": "author-b3",
+  "batchId": "b2-cyberpunk-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.form.cyberpunk.present-person",
+      "text": "在场的人物",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.nearby-figure",
+      "text": "同处一室的身影",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.visor-mechanic",
+      "text": "戴着光学护目镜的机械维修员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为机械维修员且眼部佩戴光学护目镜。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.mechanic"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.insulated-electrician",
+      "text": "穿防电弧夹克的电工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为电工且身着防电弧夹克。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.electrician"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.headset-dispatcher",
+      "text": "接入多路信道的调度员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为调度员且佩戴多路信道通讯设备。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.dispatcher"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.holo-receptionist",
+      "text": "守在全息台前的前台接待",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为前台接待且位于全息接待台后方。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.receptionist"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.armored-security",
+      "text": "穿防刺背心的安保巡逻员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为保安员且身着防刺背心。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.security"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.exorig-porter",
+      "text": "穿戴助力外架的搬运工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为搬运工且身体穿戴机械助力外架。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:job.porter"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.thermal-bag-courier",
+      "text": "背着恒温配送箱的快递员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为快递员且背部背负恒温配送箱。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.courier"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.scanner-sorter",
+      "text": "佩戴指环扫码器的分拣员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为分拣员且手指佩戴扫码器。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.sorter"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.anti-static-lab-assistant",
+      "text": "穿防静电服的实验助理",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为实验助理且身穿防静电工作服。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.lab-assistant"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.datapad-researcher",
+      "text": "手持数据板的研究员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为研究员且手部持有数据板。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.researcher"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.earpiece-translator",
+      "text": "戴着同传耳机的翻译员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为翻译员且耳部佩戴同传耳机。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.translator"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.multi-screen-scheduler",
+      "text": "坐在监控阵列前的排班员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为排班员且正坐于监控屏幕阵列前。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.scheduler"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.double-shadow-figure",
+      "text": "在霓虹灯下投出重影的人物",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物处于多光源霓虹环境下且地面投射重影。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:appearance.double-shadow"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.asymmetric-jacket-resident",
+      "text": "穿不对称剪裁风衣的底层住户",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为住户且身穿不对称剪裁风衣。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:identity.resident",
+        "general-taxonomy:appearance.asymmetry"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.shadow-lag-passer",
+      "text": "护目镜反光滞后的夜班办事员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为办事员、佩戴护目镜且存在光学影像滞后外观。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:job.clerk",
+        "general-taxonomy:appearance.shadow-lag"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.transparent-raincoat-driver",
+      "text": "披着透明防酸雨衣的货运司机",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为司机且外披透明防酸雨衣。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.driver",
+        "general-taxonomy:appearance.transparency"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.metallic-glove-metalworker",
+      "text": "戴着耐热合金手套的金工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为金工且手部穿戴耐热合金手套。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:job.metalworker"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.mask-cleaner",
+      "text": "戴着滤尘面罩的管道清洁工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为清洁工且面部佩戴滤尘面罩。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:job.cleaner"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.probe-inspector",
+      "text": "腰挂便携检测仪的线路巡检员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为巡检员且腰部挂载检测仪。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.inspector"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.neon-apron-barista",
+      "text": "站在合成饮品机旁的饮品师",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为饮品师且站立于合成饮品机旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.barista"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.terminal-archivist",
+      "text": "负责冷备磁带库的档案管理员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物具有档案管理员职务且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.archivist"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.keycard-custodian",
+      "text": "佩有最高门禁卡的机房看管员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为机房看管员且随身佩戴门禁卡。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:job.custodian"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.wrench-plumber",
+      "text": "携带高压管阀工具的水管工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为水管工且携带管阀工具。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.plumber"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.cautious-apprentice",
+      "text": "紧跟在技师身后的见习学徒",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为学徒且当前位于技师身后位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:identity.apprentice",
+        "general-taxonomy:disposition.caution"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.badge-representative",
+      "text": "佩戴街区议会徽章的社区代表",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为社区代表且佩戴议会徽章。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:identity.representative"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.patch-tailor",
+      "text": "专修功能性面料的缝纫工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物具有缝纫工职业身份且在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:job.tailor"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.caja-cashier",
+      "text": "守在信用点结算台后的收银员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为收银员且位于结算台后方。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.cashier"
+      ]
+    },
+    {
+      "id": "word.form.cyberpunk.clipboard-warehouse-clerk",
+      "text": "核对电子货单的义体零件仓管员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为仓管员且正在核对电子货单。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.job.warehouse-clerk"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.wait-terminal-boot",
+      "text": "等待终端完成自检流程",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "terminal-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "terminal-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.queue-at-checkpoint",
+      "text": "在闸机通道前排队等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "checkpoint-queued"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "checkpoint-queued"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.queue"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.pause-under-neon",
+      "text": "在走廊交汇处停顿观察",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "corridor-paused"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "corridor-paused"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.pause"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.wait-charging-complete",
+      "text": "留在充电桩旁等待补能结束",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "charge-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "charge-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.charge",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.report-system-fault",
+      "text": "登记并上报设备故障代码",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "fault-reported"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "fault-reported"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.report-fault",
+        "general-taxonomy:common.state.fault"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.check-manifest-list",
+      "text": "核对货运清单上的编码",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "manifest-checked"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "manifest-checked"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.check-list"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.charge-power-unit",
+      "text": "为备用电源模块补充蓄电",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "unit-charged"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "unit-charged"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.charge"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.unlock-access-gate",
+      "text": "按权限解锁封闭的维护通道",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "gate-unlocked"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "gate-unlocked"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.unlock"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.take-shift-break",
+      "text": "在换班空档休息片刻",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "shift-break-taken"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "shift-break-taken"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.take-break"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.sit-on-crate-rest",
+      "text": "在休息区长椅上坐歇",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "bench-resting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "bench-resting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.sit-rest"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.relax-tense-posture",
+      "text": "放缓节奏调整站立姿态",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "pose-adjusted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "pose-adjusted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.adjust-pose",
+        "general-taxonomy:action.relax"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.stay-in-quiet-corner",
+      "text": "避开嘈杂人流独自待着",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "alone-staying"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "alone-staying"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.be-alone"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.listen-to-hum",
+      "text": "侧听机柜内部的异响",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "cabinet-listened"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "cabinet-listened"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.listen"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.inspect-cable-joint",
+      "text": "检查线缆接口的密封状态",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "joint-inspected"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "joint-inspected"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.look-down-overpass",
+      "text": "远望高架连廊另一端的动静",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "overpass-watched"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "overpass-watched"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.look-far"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.keep-safe-boundary",
+      "text": "与高压作业区保持安全边界",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "boundary-maintained"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "boundary-maintained"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:activity.boundary"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.handover-duty-log",
+      "text": "向接班人员交接值守日志",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "log-handed-over"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "log-handed-over"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.handover"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.make-room-narrow-way",
+      "text": "在狭窄过道里侧身让出空间",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "way-made"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "way-made"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.make-room"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.prepare-team-repair",
+      "text": "为接下来的协同检修做准备",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "repair-coop-prepared"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "repair-coop-prepared"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.prepare-cooperation",
+        "general-taxonomy:action.repair"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.verify-exchange-part",
+      "text": "办理备用模块的借用与归还登记",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "part-exchanged"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "part-exchanged"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.borrow",
+        "general-taxonomy:common.action.return"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.tap-terminal-casing",
+      "text": "屈指轻叩终端金属外壳等待界面刷新",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手指部件、面前有终端设备且正在轻叩外壳。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.check-powerbank-led",
+      "text": "低头查看移动电源上的剩余电量指示灯",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物持有带指示灯的移动电源且正在低头查看。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.charge"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.fold-arms-by-turnstile",
+      "text": "双臂交叠站在闸机旁等候通行授权",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备双臂部件、位于闸机旁且处于抱臂站立姿态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.wipe-rain-from-visor",
+      "text": "抬手抹去护目镜镜片上的酸雨水珠",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物佩戴护目镜、镜片有水珠且具备手部正在擦拭。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.self-care"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.tighten-cable-tie",
+      "text": "用压线钳收紧线束上的尼龙扎带并剪齐尾端",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、持有压线钳与扎带且正在整理线束。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.repair"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.scan-package-barcode",
+      "text": "举起手持终端逐一扫描货箱侧面的条码标签",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物持有扫码终端、面前有带标签货箱且正在扫描。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.check-list",
+        "general-taxonomy:common.action.label"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.replace-air-filter-mesh",
+      "text": "拧开卡扣取出空气过滤器里积灰的旧滤网",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物正在操作空气过滤器且拆下旧滤网。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.state.maintenance",
+        "general-taxonomy:action.clean"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.test-voltage-probe",
+      "text": "将万用表探针抵在接线端子上测量输出电压",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物持有测量探针且正在接触接线端子测试。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.measure",
+        "general-taxonomy:common.action.test"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.drink-canned-coffee",
+      "text": "拉开金属饮品罐拉环喝下一口温热合成咖啡",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部与口部、持有罐装咖啡且正在饮用。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.drink"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.untangle-earphone-cord",
+      "text": "坐在工位旁耐心地解开绕在一起的耳机线",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物处于坐姿、具备双手且持有缠绕的耳机线。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.sit-rest",
+        "general-taxonomy:action.organize"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.massage-wrist-joint",
+      "text": "用拇指按揉长时间操作工具后发酸的手腕",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备拇指与手腕部件且正在按揉放松。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.self-care",
+        "general-taxonomy:action.relax"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.lean-against-vending",
+      "text": "背靠着自动售货机微温的侧板闭目养神",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场有自动售货机且该人物正背靠机器侧板休息。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.relax"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.inspect-broken-seal",
+      "text": "凑近端详配电箱门缝处被撕开一半的防拆封条",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认配电箱贴有破损封条且该人物正近距离查看。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.inspect-near"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.listen-pipe-leak",
+      "text": "把耳廓贴近金属墙壁辨别管道深处的漏水声",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备耳部且墙内管道存在漏水响动。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.listen",
+        "general-taxonomy:common.state.leaking"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.check-access-log-screen",
+      "text": "调出门禁读卡器的最近十条刷卡记录逐一比对",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物正在操作门禁面板并比对屏幕记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.compare",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.step-over-live-cable",
+      "text": "看清地面裸露的临时电缆后迈步从上方跨过",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认地面铺有电缆且该人物具备双腿正迈步跨过。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.walk",
+        "general-taxonomy:activity.boundary"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.pass-insulated-screwdriver",
+      "text": "将手柄擦净的绝缘螺丝刀柄部朝前递给搭档",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物持有螺丝刀、有搭档在场且正在递交工具。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.handover",
+        "general-taxonomy:action.share"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.swipe-card-for-colleague",
+      "text": "替双手搬着零件箱的同伴刷开自动门禁",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物持有门禁卡、同伴正搬运重物且现场有自动门。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.action.unlock",
+        "general-taxonomy:action.host"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.point-route-on-holomap",
+      "text": "用指尖在电子街区图上划出避开积水路段的路线",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手指、面前有电子地图且正在指示路线。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.share"
+      ]
+    },
+    {
+      "id": "word.action.cyberpunk.split-ration-pack",
+      "text": "把刚加热好的双份合成餐盒分出一半推到对方面前",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物面前有餐盒与同席人员且正在分餐。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:action.share",
+        "general-taxonomy:activity.shared-meal"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.cyberpunk.wait-terminal-boot",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方等待终端完成自检流程。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.cyberpunk.report-system-fault",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方登记并上报设备故障代码。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.cyberpunk.take-shift-break",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 9,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方在换班空档休息片刻。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "任务卡B2（题材：cyberpunk）首批正式配额交付，共70条（actor.form 30条：通用低优先级回退draft 2条 / 含职业、衣着、姿态、外貌特征的hold 28条；action.observed 40条覆盖等候/工作/消遣/警惕/社交五类：纯行为记录draft 20条 / 含具体部件或持物条件的hold 20条；全批合计 draft 22条、hold 48条）。未提报新Tag，手工预览标为manual/hypothetical-only。"
+}

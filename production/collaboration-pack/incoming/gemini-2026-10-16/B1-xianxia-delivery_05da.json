@@ -1,0 +1,2278 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "xianxia",
+  "author": "author-b3",
+  "batchId": "b1-xianxia-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.xianxia.kettle",
+      "text": "一把紫砂提梁茶壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "kettle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "kettle"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.kettle",
+        "general-taxonomy:material.ceramic"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.chopsticks",
+      "text": "一双打磨光滑的青竹筷",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "chopsticks"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "chopsticks"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.chopsticks",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.cushion",
+      "text": "一只蒲草编织的圆坐垫",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "cushion"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "cushion"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.cushion",
+        "general-taxonomy:shape.round"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.brush",
+      "text": "一支竹管狼毫毛笔",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "brush"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "brush"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.tool.brush",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.map",
+      "text": "一卷绘有山脉走向的绢帛舆图",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "map"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "map"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.map"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.medicine-box",
+      "text": "一只分格精巧的檀木药匣",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "medicine-box"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "medicine-box"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.medicine-box",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.plate",
+      "text": "一只青釉瓷盘",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "plate"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "plate"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.plate",
+        "general-taxonomy:material.ceramic"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.umbrella",
+      "text": "一把竹骨油纸伞",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "umbrella"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "umbrella"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.umbrella",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.bucket",
+      "text": "一只杉木汲水桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bucket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bucket"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.tool.bucket",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.storage-bag",
+      "text": "一只素色棉麻百宝囊",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "storage-bag"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "storage-bag"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.storage-bag",
+        "general-taxonomy:material.cotton"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.identity-card",
+      "text": "一枚刻有堂号的身份木牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "identity-card"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "identity-card"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.identity-card",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.calendar",
+      "text": "一册批注节气的线装历书",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "calendar"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "calendar"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.calendar",
+        "general-taxonomy:common.mat.paper"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.towel",
+      "text": "一条浆洗洁净的素白棉帕",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "towel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "towel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.towel",
+        "general-taxonomy:material.cotton"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.hanger",
+      "text": "一座榫卯结构的木制衣架",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "hanger"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "hanger"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.hanger",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.first-aid-kit",
+      "text": "一只备有金创敷料的医护木箱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "first-aid-kit"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "first-aid-kit"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.first-aid-kit",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.warm-jade-token",
+      "text": "一枚触手温润的记名玉牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该身份牌实例存在、材质为玉石且表面带有温润触感记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.identity-card",
+        "general-taxonomy:material.stone"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.steaming-tea-kettle",
+      "text": "一只壶嘴萦绕白雾的陶制煎茶壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该茶壶实例正在加热或刚离火且壶嘴有水汽冒出。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.kettle",
+        "general-taxonomy:material.ceramic"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.dew-bamboo-umbrella",
+      "text": "一把斜靠在廊柱旁滴着露水的油纸伞",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该油纸伞实例斜靠于廊柱且伞面带有未干露水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.umbrella",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.ink-wet-scroll",
+      "text": "一卷镇纸压平、墨迹未干的宣纸书卷",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认宣纸书卷展开且由镇纸压住、表面墨迹尚未干透。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.mat.paper",
+        "general-taxonomy:common.object.pen"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.sealed-pill-gourd",
+      "text": "一只塞着红布木塞的盛丹瓷瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该瓷瓶实例存在且瓶口木塞处于封塞状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.medicine-box",
+        "general-taxonomy:material.ceramic"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.mossy-stone-washbasin",
+      "text": "一处引山泉注入的石雕净手池",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该净手池实例为石雕构造且有山泉活水注入。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.washbasin",
+        "general-taxonomy:material.stone"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.woven-rattan-chest",
+      "text": "一只挂着铜锁的藤编书箱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该藤编书箱实例存在且铜锁处于扣合状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.locker",
+        "general-taxonomy:material.rattan",
+        "general-taxonomy:material.copper"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.worn-prayer-cushion",
+      "text": "一只中央微陷的旧蒲团坐垫",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该坐垫实例存在且中心部位有长期打坐形成的凹陷痕迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.cushion"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.bamboo-water-channel",
+      "text": "一段引泉水入室的剖竹排水槽",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该排水槽实例由竹材制成且正在导流泉水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.drain",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.pine-soot-lamp",
+      "text": "一盏灯芯修剪整齐的青铜油灯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该油灯实例存在且灯芯处于修剪整齐状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.flashlight",
+        "general-taxonomy:material.brass"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.herbal-drying-sieve",
+      "text": "一面摊着鲜采药叶的竹编簸箕",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该竹编器皿实例存在且内部正摊放着待晾干药叶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.tool.dustpan",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.carved-wood-guardrail",
+      "text": "一排凝着晨霜的雕花木护栏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该木护栏实例存在且表面附着一层晨霜。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.guardrail",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.folded-dao-robe-hanger",
+      "text": "一件平整搭在木架上的素色外衫",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认木衣架实例存在且其上平整搭放着素色外衫。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.hanger",
+        "general-taxonomy:material.cotton"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.stone-stele-bulletin",
+      "text": "一方刻有山门值守条规的青石告示碑",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该告示石碑实例存在且碑面刻有值守条规文字。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.bulletin-screen",
+        "general-taxonomy:material.stone"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.copper-weighing-scale",
+      "text": "一杆盘面光亮的称药小铜秤",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该称量器具实例存在且铜盘表面保持光亮。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.tool.tape-measure",
+        "general-taxonomy:material.copper"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.celadon-porridge-bowl",
+      "text": "一只盛着温热白粥的覆盖饭盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该盛器实例存在、盒盖闭合且内部盛有温热白粥。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.lunchbox",
+        "general-taxonomy:v2.food.porridge"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.bamboo-slip-receipt",
+      "text": "一枚系着麻绳的领物竹筹",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该竹筹凭证实例存在且系有麻绳。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.ticket",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.coarse-hemp-broom",
+      "text": "一把倚在石阶边的竹枝扫帚",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该清扫工具实例存在且倚靠在石阶旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.tool.brush",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.spring-water-thermos",
+      "text": "一只装满冷泉水的青竹水筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该竹水筒实例存在且内部盛有山泉水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.water-bottle",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.stone-bridge-ramp",
+      "text": "一段凿有防滑浅槽的青石坡道",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该青石坡道实例存在且表面凿有防滑槽纹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.ramp",
+        "general-taxonomy:material.stone"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.silk-thread-spool",
+      "text": "一轴缠绕紧密的冰蚕丝线",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该丝线轴实例存在且丝线缠绕整齐。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.tool.thread"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.jade-hairpin-clip",
+      "text": "一枚用来固定书页的竹夹子",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该竹夹实例存在且正夹持固定书页。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.clip",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.iron-cauldron-stew",
+      "text": "一口架在炭盆上慢煨的砂锅",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该砂锅实例架于炭盆上且处于慢火煨煮状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.object.saucepan",
+        "general-taxonomy:material.ceramic"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.lotus-shade-canopy",
+      "text": "一顶覆着竹席的凉亭遮阳棚",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该遮阳棚实例存在且顶部铺覆竹席。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.facility.shade-canopy",
+        "general-taxonomy:material.bamboo"
+      ]
+    },
+    {
+      "id": "word.prop.xianxia.unlit-incense-burner",
+      "text": "一只余灰平整的黄铜香炉",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该香炉实例存在、当前未燃香且炉内香灰平整。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:material.brass"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.medicinal-herb",
+      "text": "丹房外飘散的清苦草药香气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "herb"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "herb"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:expanded.scent.herb",
+        "general-taxonomy:v2.drink.bitterness"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.clear-tea-scent",
+      "text": "茶席间袅袅升起的清茗茶香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "tea"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "tea"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.drink.tea"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.mountain-bell",
+      "text": "远处山门传来的悠扬钟磬声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "bell"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "bell"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:sound.bell"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.bamboo-wind",
+      "text": "风吹竹林发出的沙沙风声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "wind"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "wind"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:sound.wind"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.morning-sunlight",
+      "text": "破云而出的澄澈晨曦日光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "sunlight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "sunlight"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:weather.sunlight"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.jade-translucence",
+      "text": "雕花窗棂间流转的半透光影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "translucence"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "translucence"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.sensory.translucence"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.mountain-chilly",
+      "text": "高处云台沁人心脾的微凉山气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "chilly"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "chilly"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.pavilion-mild",
+      "text": "竹轩内冬暖夏凉的温和体感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "mild"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "mild"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.env.mild"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.pine-breeze",
+      "text": "拂过衣袂的山间清爽微风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "breeze"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "breeze"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.env.breeze"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.cloud-fog-touch",
+      "text": "山间云雾漫过廊下时的湿润触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "fog"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "fog"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:weather.fog",
+        "general-taxonomy:common.env.humid-air"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.sandalwood-smoke",
+      "text": "静室内檀香燃尽后留下的清冽余烟味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认静室内刚燃过檀香且余烟气味尚未散尽。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:expanded.scent.smoke",
+        "general-taxonomy:expanded.scent.spice"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.pine-needle-snow",
+      "text": "松针覆雪后特有的清冷草木气息",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认周围有松林覆雪且空气洁净清冷。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:expanded.scent.herb",
+        "general-taxonomy:common.env.fresh"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.alchemical-sulfur",
+      "text": "地火丹室方向偶尔逸出的淡淡硫磺与火石味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认附近存在地火丹室且排风带来微量硫磺气息。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:expanded.scent.sulfur"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.spring-water-drip",
+      "text": "竹笕引泉滴入石潭的清脆水声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场装有引水竹笕且泉水正滴入石潭。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.hydrology.dripping",
+        "general-taxonomy:sound.water"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.crane-birds-far",
+      "text": "云雾深处偶而传来的清越鹤唳鸟声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认山间远处有飞鸟鸣叫且声音穿透云雾传来。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:sound.birds"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.stone-steps-footsteps",
+      "text": "青石长阶上由远及近的轻缓脚步声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认长阶上有行人在走动且环境安静可辨。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:sound.footsteps"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.mist-diffraction",
+      "text": "晨光穿透山间薄雾形成的七彩衍射光纹",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前处于晨雾未散且阳光斜射的特定气象条件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.sensory.diffraction",
+        "general-taxonomy:v2.hydrology.rainbow"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.bamboo-dappled-pool",
+      "text": "竹叶间隙在青石板上洒下的细碎光斑",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认头顶有竹林遮蔽且日光透过竹叶间隙投射。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.sensory.light-pool",
+        "general-taxonomy:v2.sensory.soft-shadow"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.moonlit-frost-glow",
+      "text": "清冷月华映照在霜面上的幽微辉光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前为晴朗夜晚且地表结霜反光。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.sensory.glow",
+        "general-taxonomy:common.env.frost"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.earth-fire-warmth",
+      "text": "靠近地火引流渠时脚底传来的融融暖意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认地下铺设有地火引流渠且正处于供暖运行状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.env.warm",
+        "general-taxonomy:weather.heat"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.high-peak-frost-cold",
+      "text": "绝顶寒风掠过廊庑时的凛冽寒冷感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认地点位于高海拔峰顶且当前刮起寒风。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:weather.cold",
+        "general-taxonomy:common.env.icy-surface"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.frost-thaw-chill",
+      "text": "日出融霜时分空气中清透的微寒",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前正值日出融霜阶段且吸热带来微寒感。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.hydrology.frost-thaw",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.waterfall-mist-spray",
+      "text": "临水崖畔随风飘来的细密水雾触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认临近飞瀑或溪流且风向将水雾吹向当前位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:v2.hydrology.water-ripple",
+        "general-taxonomy:common.env.humid-air"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.mountain-pass-crosswind",
+      "text": "山门垭口处衣袖猎猎作响的强劲侧风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前位于山门垭口风道且阵风强劲。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.env.crosswind",
+        "general-taxonomy:common.env.gust"
+      ]
+    },
+    {
+      "id": "word.sense.xianxia.meditation-hall-still-air",
+      "text": "闭关静室内无风无尘的沉静空气触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认静室门窗闭合、通风平缓且室内无扬尘。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.xianxia",
+        "general-taxonomy:common.env.odorless"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.xianxia.kettle",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.xianxia.medicinal-herb",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方把工具归回原位。你注意到一把紫砂提梁茶壶，其中盛着过滤水。你察觉到丹房外飘散的清苦草药香气。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.xianxia.chopsticks",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.xianxia.mountain-bell",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方将工具放回原处。你注意到一双打磨光滑的青竹筷，其中盛着过滤水。你察觉到远处山门传来的悠扬钟磬声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.xianxia.medicinal-herb",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到丹房外飘散的清苦草药香气。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.xianxia.mountain-bell",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到远处山门传来的悠扬钟磬声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "任务卡B1（题材：xianxia）首批正式配额交付，共65条（environment.prop 40条：draft 15 / hold 25；environment.sense.* 五子池各5条共25条：draft 10 / hold 15；全批合计 draft 25条、hold 40条）。未提报新Tag，手工预览标为manual/hypothetical-only。"
+}

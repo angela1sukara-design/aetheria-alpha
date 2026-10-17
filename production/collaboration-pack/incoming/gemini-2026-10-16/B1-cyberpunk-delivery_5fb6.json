@@ -1,0 +1,2246 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "cyberpunk",
+  "author": "author-b3",
+  "batchId": "b1-cyberpunk-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.cyberpunk.public-terminal",
+      "text": "一台接入城域网的公共终端",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "public-terminal"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "public-terminal"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.public-terminal"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.access-panel",
+      "text": "一只多频段门禁读卡器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "access-panel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "access-panel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.access-panel"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.backup-power",
+      "text": "一组模块化备用电源柜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "backup-power"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "backup-power"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.backup-power"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.charging-point",
+      "text": "一处高功率快充接口桩",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "charging-point"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "charging-point"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.charging-point"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.air-filter",
+      "text": "一台工业级空气过滤机组",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "air-filter"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "air-filter"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.air-filter"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.bulletin-screen",
+      "text": "一面全息滚动公告屏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bulletin-screen"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bulletin-screen"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.bulletin-screen"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.intercom",
+      "text": "一部嵌入式加密对讲机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "intercom"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "intercom"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.intercom"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.vending-machine",
+      "text": "一台合成饮品自动售货机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "vending-machine"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "vending-machine"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.vending-machine"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.battery",
+      "text": "一节高密度锂聚合物电池",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "battery"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "battery"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.battery"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.powerbank",
+      "text": "一只带数显的便携储能电源",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "powerbank"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "powerbank"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.powerbank"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.phone",
+      "text": "一部多频手持通讯器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "phone"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "phone"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.phone"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.identity-card",
+      "text": "一张内嵌芯片的身份识别卡",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "identity-card"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "identity-card"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.identity-card"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.cable-tie",
+      "text": "一束耐高温尼龙扎带",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "cable-tie"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "cable-tie"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.cable-tie"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.screwdriver",
+      "text": "一把精密多头螺丝刀",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "screwdriver"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "screwdriver"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.screwdriver"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.pliers",
+      "text": "一把绝缘柄压线钳",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "pliers"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "pliers"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.pliers"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.flickering-bulletin",
+      "text": "一面边缘像素闪烁的霓虹公告屏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该公告屏实例存在且边缘显示模块存在闪烁故障记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.bulletin-screen"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.overheated-backup-power",
+      "text": "一台散热格栅发烫的备用电源箱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该备用电源实例正在高负载运行且外壳温度升高。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.backup-power"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.bundled-cable-vent",
+      "text": "一处缠满扎带与外露线束的通风口",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该通风口实例周围捆扎有外露线束与扎带。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.vent",
+        "general-taxonomy:common.tool.cable-tie"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.corroded-drain",
+      "text": "一个残留着酸雨渍的金属排水口",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该排水口实例存在且表面附着酸雨腐蚀水渍记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.drain"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.cracked-phone",
+      "text": "一部外屏带蛛网裂纹的旧款通讯器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该通讯器实例存在且外屏具有裂纹破损事实。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.phone"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.leaking-battery",
+      "text": "一节极柱泛出白霜的旧电池",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该电池实例存在且电极部位有老化析出物记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.battery"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.greasy-wrench",
+      "text": "一把沾着导电润滑脂的扭矩扳手",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该扳手实例存在且表面附着润滑脂残留。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.wrench",
+        "general-taxonomy:common.tool.lubricant"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.locked-tool-locker",
+      "text": "一格贴有防拆封条的设备储物柜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该储物柜实例存在且柜缝处贴有完整防拆封条。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.locker",
+        "general-taxonomy:common.tool.tape"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.noisy-air-filter",
+      "text": "一台滤芯指示灯报警的空气过滤器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该空气过滤器实例存在且处于滤芯寿命告警状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.air-filter"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.wet-neon-raincoat",
+      "text": "一件反光条磨损的透明防酸雨衣",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该雨衣实例存在且反光条部位带有磨损痕迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.raincoat"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.modified-charger",
+      "text": "一只飞线改装过的多口充电器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该充电器实例存在且具有外露改装线缆特征。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.charger"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.clamped-circuit-board",
+      "text": "一只夹在固定夹上的待修模块盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认固定夹实例存在且正夹持着待修硬件模块。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.clamp"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.peeling-queue-display",
+      "text": "一块防眩膜起泡的叫号显示屏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该叫号屏实例存在且表面贴膜有起泡翘边现象。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.queue-display"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.insulated-work-gloves",
+      "text": "一双指尖带有防静电涂层的作业手套",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该作业手套实例存在且具备指尖防静电涂层构造。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.work-gloves"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.condensed-can-vending",
+      "text": "一台取物口凝着冷雾的自动售货机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该售货机实例制冷运行中且取物口有冷凝水雾。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.vending-machine"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.scratched-access-panel",
+      "text": "一只刷卡区布满划痕的门禁面板",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该门禁读卡器实例存在且感应区有密集划痕。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.access-panel"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.magnetic-spirit-level",
+      "text": "一把带激光校准线的电子水平尺",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该水平尺实例存在且具备电子激光校准组件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.spirit-level"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.rusty-handrail",
+      "text": "一段焊点裸露的合金通道扶手",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该扶手实例存在且表面焊点外露未打磨。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.handrail"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.coded-storage-bag",
+      "text": "一只印有条形码的防静电收纳袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该收纳袋实例存在且表面印有条码标识。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.storage-bag"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.jammed-turnstile",
+      "text": "一道挡板卡在半途的磁吸闸机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该闸机实例存在且挡板处于机械卡滞状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.facility.turnstile"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.half-used-tape",
+      "text": "一卷边缘粘着金属碎屑的绝缘胶带",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该胶带实例存在且侧面沾有金属碎屑。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.tape"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.dim-flashlight",
+      "text": "一支透镜发黄的强光检修手电",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该手电筒实例存在且前端透镜有老化发黄迹象。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.flashlight"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.open-repair-bench",
+      "text": "一张铺着耐热硅胶垫的公共修理台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该公共修理台实例存在且台面铺设有硅胶垫。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.services.repair-bench",
+        "general-taxonomy:common.mat.silicone"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.tagged-transit-card",
+      "text": "一张写有临时通行编码的磁卡",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该交通/通行卡实例存在且表面标有临时编码。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.object.transit-card"
+      ]
+    },
+    {
+      "id": "word.prop.cyberpunk.stained-cleaning-cloth",
+      "text": "一块擦过机油的化纤抹布",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该抹布实例存在且附着有油污痕迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.tool.cleaning-cloth"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.ozone-scent",
+      "text": "高压电器运转散发的臭氧气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "ozone"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "ozone"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:expanded.scent.ozone"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.heated-plastic",
+      "text": "机柜周围淡淡的受热塑料气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "plastic"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "plastic"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:expanded.scent.plastic"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.transformer-hum",
+      "text": "变电箱持续不断的低频嗡鸣",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "low-hum"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "low-hum"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.low-hum",
+        "general-taxonomy:sound.machine"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.cooling-fan-noise",
+      "text": "散热风扇高速旋转的机器声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "machine"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "machine"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:sound.machine"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.neon-glow",
+      "text": "电子灯牌投射的冷调辉光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "glow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "glow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.glow"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.diffraction-grid",
+      "text": "潮湿水汽折射出的衍射光纹",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "diffraction"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "diffraction"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.diffraction"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.exhaust-warmth",
+      "text": "排风管附近吹出的温热气流",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "warm"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "warm"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.warm"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.alley-chilly",
+      "text": "背阴底层街区的阴凉寒意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "chilly"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "chilly"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.chassis-resonance",
+      "text": "金属地板传来的设备运转共振",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "resonance"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "resonance"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.resonance"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.humid-smog-air",
+      "text": "狭长通道内潮湿滞闷的空气触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "humid-air"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "humid-air"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.humid-air",
+        "general-taxonomy:common.env.stuffy"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.burnt-rubber-oil",
+      "text": "线缆过载后混杂着油脂与橡胶的焦味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场存在近期过载发热的线缆或机械部件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:expanded.scent.rubber",
+        "general-taxonomy:expanded.scent.oil"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.acid-rain-rust",
+      "text": "外廊雨水倒灌带来的铁锈与硫化物气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认外部有降雨且雨水接触锈蚀金属结构。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:expanded.scent.rust",
+        "general-taxonomy:expanded.scent.sulfide"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.synthetic-spice",
+      "text": "街角排烟管飘来的廉价合成香料与油烟味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认附近排烟管道正在排放餐饮油烟与合成香料气味。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:expanded.scent.spice",
+        "general-taxonomy:expanded.scent.smoke"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.coil-whine-high",
+      "text": "老旧电源模块间歇发出的高频啸叫声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场存在老化电源模块且正发出高频电流声。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.high-pitch",
+        "general-taxonomy:sound.machine"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.pipe-dripping-echo",
+      "text": "冷凝水顺着金属管壁滴落的空洞回响",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认管道存在冷凝滴水且空间具备金属反射回音条件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.hydrology.dripping",
+        "general-taxonomy:sound.water"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.servo-tools-clack",
+      "text": "远处维修工位传来的气动工具敲击声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认附近维修工位正在进行气动工具作业。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:sound.tools",
+        "general-taxonomy:sound.machine"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.overexposed-holo",
+      "text": "全息广告牌直射造成的亮部失细节眩光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认全息光源正对该区域且亮度超过正常视觉对比范围。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.overexposure",
+        "general-taxonomy:v2.sensory.highlight"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.double-shadow-neon",
+      "text": "两侧异色灯管在地面交叠出的重影暗部",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场存在至少两个不同色温的人造光源同时投射阴影。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.shadow-detail",
+        "general-taxonomy:v2.sensory.color-temperature"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.flickering-tube-afterglow",
+      "text": "接触不良的荧光灯管明灭时的冷青余辉",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场灯管存在接触不良频闪状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:v2.sensory.afterglow"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.server-corridor-heat",
+      "text": "机房排风口与冷气交界处忽冷忽热的体感温差",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前位置处于热排风口与冷气通道交界处。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.hot",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.drizzle-cold-draft",
+      "text": "高层连廊裂隙灌入的夹雨冷风寒意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认外侧正在下细雨且连廊裂隙有冷风灌入。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.drizzle",
+        "general-taxonomy:weather.cold"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.overloaded-cabinet-heat",
+      "text": "贴近配电柜外壳时明显的烘烤热感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认配电柜正处于高负荷发热状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:weather.heat",
+        "general-taxonomy:common.env.hot"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.oily-mist-film",
+      "text": "通风不良区域空气中微粘的油雾触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认区域内排风不畅且存在机械油雾悬浮。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.stuffy"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.vent-crosswind",
+      "text": "高架夹层通道口强劲的侧风推力",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该位置处于高架夹层风口且当前风速较大。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.crosswind",
+        "general-taxonomy:common.env.gust"
+      ]
+    },
+    {
+      "id": "word.sense.cyberpunk.static-dry-air",
+      "text": "强力除湿机房内极度干燥易起静电的空气触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认机房除湿设备开启且环境湿度极低。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.cyberpunk",
+        "general-taxonomy:common.env.dry-air"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.cyberpunk.public-terminal",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.cyberpunk.ozone-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方把工具归回原位。你注意到一台接入城域网的公共终端，其中盛着过滤水。你察觉到高压电器运转散发的臭氧气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.cyberpunk.access-panel",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.cyberpunk.transformer-hum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方将工具放回原处。你注意到一只多频段门禁读卡器，其中盛着过滤水。你察觉到变电箱持续不断的低频嗡鸣。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.cyberpunk.ozone-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到高压电器运转散发的臭氧气味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.cyberpunk.transformer-hum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到变电箱持续不断的低频嗡鸣。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "任务卡B1（题材：cyberpunk）首批正式配额交付，共65条（environment.prop 40条：draft 15 / hold 25；environment.sense.* 五子池各5条共25条：draft 10 / hold 15；全批合计 draft 25条、hold 40条）。未提报新Tag，手工预览标为manual/hypothetical-only。"
+}

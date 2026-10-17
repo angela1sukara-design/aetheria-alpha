@@ -1,0 +1,2276 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "fantasy",
+  "author": "author-b3",
+  "batchId": "b1-fantasy-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.fantasy.kettle",
+      "text": "一只黄铜提梁水壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "kettle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "kettle"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.kettle",
+        "general-taxonomy:material.brass"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.saucepan",
+      "text": "一口生铁炖锅",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "saucepan"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "saucepan"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.saucepan",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.map",
+      "text": "一幅羊皮卷手绘地图",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "map"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "map"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.map"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.key",
+      "text": "一枚黄铜齿纹钥匙",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "key"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "key"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.key",
+        "general-taxonomy:material.brass"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.blanket",
+      "text": "一条粗纺羊毛毯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "blanket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "blanket"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.blanket",
+        "general-taxonomy:common.mat.wool"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.cushion",
+      "text": "一只亚麻布坐垫",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "cushion"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "cushion"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.cushion",
+        "general-taxonomy:common.mat.linen"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.bucket",
+      "text": "一只箍铁木水桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bucket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bucket"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.bucket",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.brush",
+      "text": "一把猪鬃硬毛刷",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "brush"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "brush"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.brush"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.file",
+      "text": "一把锻铁扁锉刀",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "file"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "file"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.file",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.scissors",
+      "text": "一把黄铜柄裁布剪",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "scissors"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "scissors"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.scissors",
+        "general-taxonomy:material.brass"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.needle",
+      "text": "一枚细长骨针",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "needle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "needle"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.needle",
+        "general-taxonomy:material.bone"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.thread",
+      "text": "一轴本色亚麻线",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "thread"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "thread"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.thread",
+        "general-taxonomy:common.mat.linen"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.storage-bag",
+      "text": "一只系绳粗麻收纳袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "storage-bag"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "storage-bag"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.storage-bag",
+        "general-taxonomy:material.hemp"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.plate",
+      "text": "一只圆边木餐盘",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "plate"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "plate"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.plate",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.clock",
+      "text": "一座齿轮外露的立式摆钟",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "clock"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "clock"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.clock"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.wax-sealed-envelope",
+      "text": "一封火漆印章完好的信函",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该信封实例存在且封口火漆印章处于未拆封完好状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.envelope"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.soot-blackened-kettle",
+      "text": "一只壶底熏黑的铜水壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该水壶实例存在且底部带有烟熏黑迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.kettle",
+        "general-taxonomy:material.copper"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.chipped-stone-basin",
+      "text": "一处边缘生着青苔的石砌洗手台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该洗手台实例为石质且边缘存在青苔生长记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.facility.washbasin",
+        "general-taxonomy:material.stone"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.rolled-parchment-map",
+      "text": "一卷用皮绳束紧的旧海图",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该地图实例处于卷起状态且由皮绳束紧。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.map",
+        "general-taxonomy:material.leather"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.simmering-saucepan",
+      "text": "一口锅盖微冒白气的铁锅",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该铁锅实例正处于加热保温状态且锅内有热气逸出。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.saucepan",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.notched-wood-measure",
+      "text": "一把刻痕磨平的木制量尺",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该量尺实例存在且表面刻度有长期磨损痕迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.tape-measure",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.oiled-leather-wallet",
+      "text": "一只擦过护革油的翻盖钱袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该钱袋实例存在且皮革表面刚完成上油养护。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.wallet",
+        "general-taxonomy:material.leather"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.hanging-herb-basket",
+      "text": "一只编织纹理紧密的藤条收纳篮",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该收纳容器为藤编结构且处于完好状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.storage-bag",
+        "general-taxonomy:material.rattan"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.patched-wool-blanket",
+      "text": "一条边角打着亚麻补丁的羊毛毯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该毛毯实例存在且边角位置缝有亚麻补丁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.blanket",
+        "general-taxonomy:common.mat.wool"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.crystal-lens-lamp",
+      "text": "一盏嵌有透光晶石片的提灯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该照明器具实例存在且嵌有晶石灯罩结构。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.flashlight"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.chalk-marked-board",
+      "text": "一块写有今日委托事项的木制告示牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该告示牌实例存在且表面留有字迹记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.facility.bulletin-screen",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.rusted-iron-lock-box",
+      "text": "一格挂着黄铜挂锁的木储物柜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该储物柜实例存在且外挂黄铜锁具处于锁闭状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.facility.locker",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.flour-dusted-scraper",
+      "text": "一块沾着少许面粉的木刮板",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该刮板实例存在且表面残留有面粉颗粒。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.scraper",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.soaked-sponge",
+      "text": "一块吸饱清水的天然海绵",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该海绵实例存在且当前处于吸水饱胀状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.sponge"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.sharpened-sandpaper",
+      "text": "一张裹在木块上的粗目砂纸",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该砂纸实例存在且已包裹在打磨木块上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.sandpaper",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.brass-clamp-bench",
+      "text": "一张装有黄铜固定夹的木工修理台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该修理台实例存在且安装有黄铜固定夹具。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.services.repair-bench",
+        "general-taxonomy:common.tool.clamp"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.wooden-ticket-tally",
+      "text": "一枚烙有编号的木制凭证牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该凭证牌实例存在且表面带有烙印编号。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.ticket",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.ceramic-medicine-jar",
+      "text": "一只塞着软木塞的陶制要盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该药盒/药罐实例为陶制且由软木塞封口。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.medicine-box",
+        "general-taxonomy:material.ceramic",
+        "general-taxonomy:common.mat.cork"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.woven-hemp-raincoat",
+      "text": "一件领口微潮的油布雨披",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该雨披实例存在且领口带有微潮水迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.raincoat",
+        "general-taxonomy:material.canvas"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.hand-written-receipt",
+      "text": "一张墨迹刚干的羽毛笔收据",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该收据实例存在且表面带有手写墨迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.receipt",
+        "general-taxonomy:common.mat.paper"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.feather-quill-pen",
+      "text": "一支笔尖沾着蓝黑墨水的蘸水笔",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该笔实例存在且笔尖附着未干墨水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.pen"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.wooden-handrail",
+      "text": "一段被手掌摩挲得发亮的橡木扶手",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该木扶手实例存在且表面因长期使用呈光亮包浆状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.facility.handrail",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.stone-drain-channel",
+      "text": "一条流淌着清浅水流的石槽排水口",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该排水石槽实例存在且内部当前有水流通过。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.facility.drain",
+        "general-taxonomy:material.stone"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.canvas-shade-canopy",
+      "text": "一顶绳索拉紧的帆布遮阳棚",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该遮阳棚实例存在且处于撑开绷紧状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.facility.shade-canopy",
+        "general-taxonomy:material.canvas"
+      ]
+    },
+    {
+      "id": "word.prop.fantasy.iron-fire-bucket",
+      "text": "一只盛满细沙的防灾铁桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该防灾铁桶实例存在且内部盛有灭火细沙。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.facility.fire-extinguisher",
+        "general-taxonomy:material.iron"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.herbal-scent",
+      "text": "药草晾晒时散发的草本清香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "herbal"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "herbal"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.herb"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.tanned-leather",
+      "text": "工作台附近醇厚的皮革气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "leather"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "leather"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.leather"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.courtyard-birds",
+      "text": "庭院树梢间清脆的鸟鸣声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "birds"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "birds"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.birds"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.forge-tools",
+      "text": "工坊内有节奏的金属工具敲击声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "tools"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "tools"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.tools"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.sunset-afterglow",
+      "text": "天际斜照入室的暖色余辉",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "afterglow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "afterglow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.afterglow"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.soft-candle-shadow",
+      "text": "壁灯在石墙上投下的柔阴影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "soft-shadow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "soft-shadow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.soft-shadow"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.hearth-warm",
+      "text": "壁炉余温带来的舒适温暖感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "warm"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "warm"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.warm"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.cellar-chilly",
+      "text": "石砌长廊特有的微凉气息",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "chilly"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "chilly"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.courtyard-breeze",
+      "text": "穿过拱廊的清爽微风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "breeze"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "breeze"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.breeze"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.morning-dew-air",
+      "text": "清晨空气中略带结露的湿润触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "dew"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "dew"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.dew"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.baking-wheat-sweet",
+      "text": "后厨烤炉飘来的温热麦香与甜味气息",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认附近烘焙炉正在作业且甜麦香气扩散至当前位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.food.bread",
+        "general-taxonomy:v2.drink.sweetness"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.fireplace-pine-smoke",
+      "text": "木柴在壁炉中缓燃散发的松木烟气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认壁炉内正燃烧松木柴且有少量木烟气息散出。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.smoke",
+        "general-taxonomy:material.wood"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.damp-moss-earth",
+      "text": "石阶缝隙在雨后泛起的湿润泥土气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前处于雨后阶段且地面石阶缝隙带有潮湿泥土与苔藓。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.mud",
+        "general-taxonomy:v2.hydrology.rain-break"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.wind-chime-bell",
+      "text": "檐角铜铃随风轻晃发出的清越铃声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认檐角挂有铜铃且当前风力足以吹动铜铃发声。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.bell",
+        "general-taxonomy:sound.wind"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.mill-water-wheel",
+      "text": "远处水渠流淌与木轮转动的潺潺水声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认附近存在水渠或水车设施且水流正常运转。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.water",
+        "general-taxonomy:v2.hydrology.water-ripple"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.evening-insects",
+      "text": "草丛深处此起彼伏的夏夜虫鸣",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前时节与时段有草丛昆虫鸣叫。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.insects"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.stained-glass-pool",
+      "text": "彩绘玻璃窗在石地上投射的斑斓光斑",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认建筑带有彩绘玻璃窗且外部光线正透过玻璃投射地面。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.light-pool",
+        "general-taxonomy:v2.sensory.color-temperature"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.lantern-warm-glow",
+      "text": "黄铜提灯摇曳出的暖黄辉光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场点亮了黄铜提灯且火焰辉光稳定。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.glow",
+        "general-taxonomy:material.brass"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.archway-silhouette",
+      "text": "逆光石拱门下轮廓分明的剪影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认石拱门外侧照度明显高于内侧从而形成逆光剪影。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.silhouette",
+        "general-taxonomy:v2.sensory.hard-shadow"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.smithy-radiant-heat",
+      "text": "靠近锻炉区域时扑面而来的烘烤炎热感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认锻炉正处于点火作业状态且热辐射覆盖当前位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:weather.heat",
+        "general-taxonomy:common.env.hot"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.night-stone-frost",
+      "text": "入夜后石板地面透出的微寒凉意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前为夜间降温时段且石板地面温度偏低。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:weather.cold",
+        "general-taxonomy:common.env.frost"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.sunshower-mild",
+      "text": "太阳雨初歇时空气里温润怡人的体感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认刚经历太阳雨且空气温湿度处于温和区间。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.hydrology.sunshower",
+        "general-taxonomy:common.env.mild"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.misty-valley-fog",
+      "text": "山谷晨雾漫过回廊时的绵密湿润触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认当前处于晨雾弥漫状态且水汽进入回廊。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.foggy",
+        "general-taxonomy:common.env.humid-air"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.workshop-sawdust-dry",
+      "text": "木工坊内略带细微木屑粉尘的干燥空气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认木工坊近期有锯木作业且空气干燥含微尘。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.dry-air",
+        "general-taxonomy:common.env.dust"
+      ]
+    },
+    {
+      "id": "word.sense.fantasy.stone-arch-draft",
+      "text": "穿过高大石砌门洞的强劲穿堂风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认石砌门洞前后存在气压差并形成明显穿堂风。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.draft",
+        "general-taxonomy:common.env.gust"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.fantasy.kettle",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.fantasy.herbal-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方把工具归回原位。你注意到一只黄铜提梁水壶，其中盛着过滤水。你察觉到药草晾晒时散发的草本清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.fantasy.saucepan",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.fantasy.courtyard-birds",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方将工具放回原处。你注意到一口生铁炖锅，其中盛着过滤水。你察觉到庭院树梢间清脆的鸟鸣声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.fantasy.herbal-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到药草晾晒时散发的草本清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.fantasy.courtyard-birds",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你察觉到庭院树梢间清脆的鸟鸣声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "任务卡B1（题材：fantasy）首批正式配额交付，共65条（environment.prop 40条：draft 15 / hold 25；environment.sense.* 五子池各5条共25条：draft 10 / hold 15；全批合计 draft 25条、hold 40条）。未提报新Tag，手工预览标为manual/hypothetical-only。"
+}

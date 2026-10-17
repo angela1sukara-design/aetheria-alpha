@@ -1,0 +1,32 @@
+warning: content/adventure/pack.json has type 100644, expected 100755
+error: patch failed: content/adventure/pack.json:1883
+error: content/adventure/pack.json: patch does not apply
+warning: content/nsfw-auto-combo/defeat-play-candidates.json has type 100644, expected 100755
+warning: content/nsfw-auto-combo/defeat-play-draws.json has type 100644, expected 100755
+warning: docs/tag-hub/nsfw-batches/v2-draft/MANIFEST.json has type 100644, expected 100755
+warning: production/tag-matrices/spec.mjs has type 100644, expected 100755
+warning: scripts/build-adventure-content.mjs has type 100644, expected 100755
+error: patch failed: scripts/build-adventure-content.mjs:46
+error: scripts/build-adventure-content.mjs: patch does not apply
+warning: scripts/nsfw-auto-combo/atoms.json has type 100644, expected 100755
+warning: src/content/adventure-schema.ts has type 100644, expected 100755
+warning: src/content/append-only.ts has type 100644, expected 100755
+warning: src/content/district-schema.ts has type 100644, expected 100755
+warning: src/content/foundation-schema.ts has type 100644, expected 100755
+warning: src/content/loader.ts has type 100644, expected 100755
+error: patch failed: src/content/loader.ts:52
+error: src/content/loader.ts: patch does not apply
+warning: src/content/registry.ts has type 100644, expected 100755
+warning: src/content/schema.ts has type 100644, expected 100755
+warning: src/core/adventure-types.ts has type 100644, expected 100755
+warning: src/core/district-types.ts has type 100644, expected 100755
+warning: src/core/types.ts has type 100644, expected 100755
+warning: src/engine/conditions.ts has type 100644, expected 100755
+error: patch failed: src/engine/conditions.ts:21
+error: src/engine/conditions.ts: patch does not apply
+warning: src/engine/defeat-play-draws.ts has type 100644, expected 100755
+warning: src/engine/district-effects.ts has type 100644, expected 100755
+warning: src/engine/narrative.ts has type 100644, expected 100755
+warning: src/persistence/codec.ts has type 100644, expected 100755
+warning: src/world/validation.ts has type 100644, expected 100755
+warning: tests/defeat-play.test.ts has type 100644, expected 100755

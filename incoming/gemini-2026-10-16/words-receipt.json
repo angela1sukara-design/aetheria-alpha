@@ -1,0 +1,30 @@
+{
+  "spec": "aetheria-install/1",
+  "lane": "words",
+  "base": "05796349e5e1d32c8787c85bb11b77203d039699",
+  "source": "Gemini Drive 2026-10-16",
+  "status": "checked",
+  "tool": "node deliverables/协作包-通用版-v1.3/tools/validate-delivery.mjs（协作包 v1.3，Node 24.22）",
+  "summary": "B1×5 + B2×5 + B3 共 810 条协作包格式校验通过；未写入 content/prose，未实装。",
+  "batches": [
+    {"file": "B1-cyberpunk-delivery_5fb6.json", "task": "B1", "theme": "cyberpunk", "entries": 65, "draft": 25, "hold": 40},
+    {"file": "B1-fantasy-delivery_d705.json", "task": "B1", "theme": "fantasy", "entries": 65, "draft": 25, "hold": 40},
+    {"file": "B1-modern-delivery_a718.json", "task": "B1", "theme": "modern", "entries": 65, "draft": 25, "hold": 40},
+    {"file": "B1-post-apocalypse-delivery_49a3.json", "task": "B1", "theme": "post-apocalypse", "entries": 65, "draft": 25, "hold": 40},
+    {"file": "B1-xianxia-delivery_05da.json", "task": "B1", "theme": "xianxia", "entries": 65, "draft": 25, "hold": 40},
+    {"file": "B2-cyberpunk-delivery_97cf.json", "task": "B2", "theme": "cyberpunk", "entries": 70, "draft": 22, "hold": 48},
+    {"file": "B2-fantasy-delivery_518e.json", "task": "B2", "theme": "fantasy", "entries": 70, "draft": 22, "hold": 48},
+    {"file": "B2-modern-delivery_fbcd.json", "task": "B2", "theme": "modern", "entries": 70, "draft": 22, "hold": 48},
+    {"file": "B2-post-apocalypse-delivery_8211.json", "task": "B2", "theme": "post-apocalypse", "entries": 70, "draft": 22, "hold": 48},
+    {"file": "B2-xianxia-delivery_f637.json", "task": "B2", "theme": "xianxia", "entries": 70, "draft": 22, "hold": 48},
+    {"file": "B3-generic-delivery_d09a.json", "task": "B3", "theme": "generic", "entries": 135, "draft": 44, "hold": 91}
+  ],
+  "totals": {"entries": 810, "draft": 279, "hold": 531},
+  "notDone": [
+    "无 aetheria-install/1 交付头（作者侧）",
+    "审读记录 12 条重复文本未去重",
+    "十二新题材 B1/B2 仅有任务卡 zip，无成品 JSON",
+    "CONTENT-NPC / CONTENT-JOBS 与 main 已装字节相同，见 words/ 内副本仅作归档"
+  ],
+  "log": "incoming/gemini-2026-10-16/words-validate.log"
+}
