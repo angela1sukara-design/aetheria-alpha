@@ -27,6 +27,7 @@ import {
 import { transformProgress } from './transform-perception.ts';
 import { adventure, narrativeActions, startNarrative } from './narrative.ts';
 import { matchingEnvironmentEnemyRules, overlayEnvironmentEnemy, selectEnvironmentEnemyRule } from './environment-enemies.ts';
+import { eventNode } from './events.ts';
 
 export const SANITY_BREAK_EVENT = 'district:event.sanity_break' as Id;
 const STAMINA_ID = 'core:stamina' as Id;
@@ -237,11 +238,15 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
     }
     scene.turn++;
   } else if (e.op === 'combat.start' || e.op === 'combat.encounter') {
-    if (d.combat || d.scene || s.activeEventStack.length) throw new RuleError('COMBAT_CONTEXT', '现在不能开始战斗。');
+    const current = eventNode(s, r);
+    const owner = current && r.action(c.actionId).context;
+    if (d.combat || d.scene || s.adventure?.story || current && (!current.node.combatOutcomes || owner?.eventId !== current.event.definitionId || owner.nodeId !== current.node.id)) throw new RuleError('COMBAT_CONTEXT', '现在不能开始战斗。');
     if (s.player.variables[PLAYER_HP_ID]! < 1) throw new RuleError('NEED_RECOVERY', '需要先休息恢复。');
-    const rule = e.op === 'combat.encounter'
+    const boundRule = current?.event.context?.enemyRuleId ? r.environmentEnemyRules.find(rule => rule.id === current.event.context!.enemyRuleId) : undefined;
+    const rule = boundRule ?? (e.op === 'combat.encounter'
       ? selectEnvironmentEnemyRule(s, r, `combat:encounter:${c.transactionId}`)
-      : selectEnvironmentEnemyRule(s, r, `combat:overlay:${c.transactionId}:${e.id}`, e.id);
+      : selectEnvironmentEnemyRule(s, r, `combat:overlay:${c.transactionId}:${e.id}`, e.id));
+    if (boundRule && e.op === 'combat.start' && e.id !== boundRule.enemyId) throw new RuleError('COMBAT_CONTEXT', '交锋对象与已绑定的故事对手不一致。');
     if (e.op === 'combat.encounter' && !rule) throw new RuleError('NO_ENV_ENEMY', '当前地点环境没有可匹配的敌人。');
     const enemyId = e.op === 'combat.encounter' ? rule!.enemyId : e.id;
     const enemy = r.enemies.find(x => x.id === enemyId);
@@ -285,6 +290,16 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
         a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:deduped};
       }
       c.resolvedTexts.push(voluntary==='surrender'?'你示意投降，结束交锋，等待对方回应。':voluntary==='giveup'?'你停止抵抗，放下防备，让眼前的对手接手后续。':result === 'victory' ? '你赢得了交锋。' : result === 'defeat' ? '你失去继续战斗的力气，后续仍有恢复路径。' : '你找到空隙离开了交锋。');
+      const current = eventNode(s, r);
+      if (current?.node.combatOutcomes) {
+        if (result === 'defeat') {
+          const badEnd = applyDefeatSanity(s, r, c);
+          if (badEnd) { apply([{ op: 'event.exit' }, { op: 'event.start', id: SANITY_BREAK_EVENT }], s, r, c); return; }
+          if (s.player.variables[PLAYER_HP_ID]! < 1) s.player.variables[PLAYER_HP_ID] = 1;
+        }
+        apply([{ op: 'event.advance', nodeId: current.node.combatOutcomes[result] }], s, r, c);
+        return;
+      }
       let eventId = result === 'victory' ? enemy.victoryEventId : result === 'defeat' ? enemy.defeatEventId : enemy.escapeEventId;
       if (result === 'defeat') {
         if(voluntary&&r.narrativeNodes.some(n=>n.kind==='defeat')){startNarrative(s,r,c,'defeat',undefined,voluntary==='giveup'?'yielded':'start');return;}
@@ -468,7 +483,7 @@ export function districtOptions(s: GameState, r: Registry, actions: ActionDef[])
   if (s.district.scene) return [...runtime.filter(a => a.effects.some(e => e.op === 'scene.act' && (s.district!.scene!.phase === 'active' ? e.move !== 'resume' : ['resume', 'exit'].includes(e.move)))), ...r.globalActions().filter(a=>a.surface==='body'), ...settings];
   const creation=s.worldInstance?.definition.startLocationId===s.world.locationId&&!s.district.profile.created?[r.action('district:action.create')]:[];
   return [...actions, ...creation, ...settings].filter(a=>{
-    if(a.effects.some(e=>e.op==='narrative.choose'||e.op==='combat.turn'))return false;
+    if(a.effects.some(e=>e.op==='narrative.choose'||e.op==='narrative.skip'||e.op==='combat.turn'))return false;
     if(a.effects.some(e=>e.op==='combat.encounter')&&!matchingEnvironmentEnemyRules(s,r).length)return false;
     return !s.activeEventStack.length||!!a.context||!a.id.startsWith('progression:')&&!a.effects.some(e=>e.op==='narrative.start'||e.op==='progression.act'||e.op==='combat.start'||e.op==='combat.encounter');
   });
@@ -491,6 +506,8 @@ export function districtText(s: GameState, r: Registry, base: string): string {
     return `${r.npc(i.npcId).name}与你 · ${scene.phase === 'paused' ? '暂停中' : '正在相处'}\n\n姿态：${p.label}；朝向：${p.facing === 'front' ? '面向对方' : '背向对方'}；位置：${p.zone === 'near' ? '近处' : '桌子另一侧'}。\n\n${scene.contacts.length ? `已建立${scene.contacts.length}条手部接触；对应动作资源被占用。` : '尚未建立接触，身体部位空闲。'}\n\n${base}`;
   }
   const event = s.eventInstances.find(x => x.instanceId === s.activeEventStack.at(-1));
+  // Bound events already supply a complete scene ending at its decision point.
+  if (event?.context) return base;
   const variants = r.sceneTexts.filter(v => v.locationId === s.world.locationId && (v.owner ? v.owner.eventId === event?.definitionId && v.owner.nodeId === event.nodeId : !event) && v.conditions.every(c => evaluate(c, s, r).pass)).sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id, 'en'));
   const observation = presentationText(s, r, 'environment');
   return base + (observation ? '\n\n' + observation : '') + (variants[0] ? '\n\n' + r.text(variants[0].textKey) : '');

@@ -6,6 +6,7 @@ import type { Registry } from '../content/registry.ts';
 import { evaluate } from './conditions.ts';
 import { transformationCheck } from './transformations.ts';
 import { eventNode } from './events.ts';
+import { eventBindingCheck, eventText } from './event-context.ts';
 import { npcPresent } from './npc.ts';
 import { residentPresent } from './resident-quests.ts';
 import { districtOptions, districtText } from './district-effects.ts';
@@ -32,6 +33,9 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   const stamina = state.player.variables[STAMINA_ID] ?? 100;
   const gate = staminaGate(stamina);
   const strict=usesFunctions(state,registry), supported=districtOptions(state,registry,allActions).filter(a=>{
+    if(current?.event.context&&!state.district?.combat&&!a.context&&!a.effects.every(e=>e.op==='preference.set'))return false;
+    if(!a.context&&(current||state.adventure?.story||state.district?.combat)&&a.effects.some(e=>e.op==='event.start'))return false;
+    if(a.effects.some(e=>e.op==='event.start'&&!eventBindingCheck(state,registry,registry.event(e.id)).pass))return false;
     // Show the current personal chapter/commission phase. Trust, waiting days
     // and resources remain visible restrictions; completed/future phases do not.
     if(a.id.startsWith('worldgen:action.personal.')&&a.effects.some(e=>e.op==='event.start')&&a.conditions.some(c=>c.op==='flag.has'&&!evaluate(c,state,registry).pass))return false;
@@ -48,7 +52,7 @@ export function actionOptions(state: GameState, registry: Registry): ActionOptio
   if(strict)for(const a of supported){const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);if(key&&!a.context&&!a.effects.some(e=>e.op==='narrative.choose'||e.op==='event.start')){const old=preferred.get(key);if(!old||score(a)>score(old))preferred.set(key,a);}}
   return supported.filter(a=>{if(!strict||a.context||a.effects.some(e=>e.op==='narrative.choose'||e.op==='event.start'))return true;const need=requiredFunction(a,publicActionEffects(a,state,registry)),key=need&&functionKey(need);return !key||preferred.get(key)===a;}).map(source => {
     const need=strict&&!source.context?requiredFunction(source,publicActionEffects(source,state,registry)):undefined;
-    const decorated=conversationEntryAction(describeResidentAction(source,state,registry),state,registry);
+    const decorated=conversationEntryAction(describeResidentAction({...source,label:eventText(source.label,current?.event),hint:eventText(source.hint,current?.event)},state,registry),state,registry);
     const definition=need?{...decorated,conditions:[...decorated.conditions,{op:'service.available' as const,...need}]}:decorated;
     const checks = definition.conditions.map(c => evaluate(c, state, registry));
     const effects=publicActionEffects(definition,state,registry);
@@ -115,7 +119,7 @@ export function selectGameView(state: GameState, registry: Registry, texts?: Tex
   const base = narrativeText(state,registry)??(slot && texts ? texts.resolve(slot.id, state, registry) : current ? registry.text(current.event.textByNode[current.node.id]) : registry.text(location.textKey));
   return freeze({
     location, state: clone(state), actions: actionOptions(state, registry),
-    sceneText: districtText(state, registry, base),
+    sceneText: districtText(state, registry, eventText(base, current?.event)),
     ...(current||state.adventure?.story ? { eventTitle: '正在发生' } : {}),
   });
 }

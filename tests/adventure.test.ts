@@ -16,6 +16,7 @@ import type {GameState,Id} from '../src/core/types.ts';
 import {rikerRoute} from './district-helpers.ts';
 const json=async(p:string)=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const index=await json('content/index.json'),inputs=await Promise.all(index.packs.map((p:string)=>json('content/'+p))),registry=await loadPacks(inputs);
+const adventureInput=inputs.find(p=>p.manifest.id==='aetheria/adventure');
 let serial=0;
 function act(e:ActionExecutor,id:Id){const result=e.performAction({actionId:id},e.snapshot().meta.revision,'adventure-test-'+ ++serial);assert.equal(result.ok,true,`${id}: ${result.message}`);return result;}
 function stateAt(location:Id='aetheria:location.market',seed=42):GameState{const s=createGameState(registry,seed);s.world.locationId=location;if(!s.world.knownLocationIds.includes(location))s.world.knownLocationIds.push(location);return s;}
@@ -55,12 +56,12 @@ test('persisted incompatible extensions are isolated while valid base still load
  const raw=structuredClone(inputs.at(-1));raw.manifest.dependencies[0].version='999.0.0';const loaded=await loadPersistedExtensions(inputs.slice(0,-1),[raw]);assert.equal(loaded.quarantined.length,1);assert.equal(loaded.accepted.length,0);assert.ok(loaded.registry.locations.length);
 });
 
-test('defeat creates real scoped context, stable node selection, and a free recovery exit',async()=>{
+test('defeat preserves scoped context and completes the authored recovery instead of offering a free escape',async()=>{
  const s=stateAt();s.player.variables['core:health']=1;s.player.variables['core:defense']=0;const e=new ActionExecutor(registry,s);act(e,'progression:action.challenge.gel');
  for(let i=0;i<10&&e.snapshot().district!.combat;i++)act(e,'district:action.combat.guard');
  assert.ok(['progression:node.defeat.control','progression:node.defeat.control.cautious'].includes(e.snapshot().adventure!.story!.nodeId));const before=e.snapshot();e.view();e.view();assert.deepEqual(e.snapshot(),before);
  const codec=new SaveCodec(registry),loaded=await codec.decode(await codec.encode(before));assert.equal(loaded.status,'ready');if(loaded.status!=='ready')return;const restored=new ActionExecutor(registry,loaded.state);assert.deepEqual(restored.snapshot(),before);
- act(restored,'progression:action.story.0');assert.equal(restored.snapshot().adventure!.story?.nodeId,'progression:node.defeat.coat');const options=restored.view().actions;assert.ok(options.some(o=>o.available));act(restored,options.at(-1)!.definition.id);assert.equal(restored.snapshot().adventure!.story,null);assert.ok(restored.snapshot().player.variables['core:health']!>=1);
+ act(restored,'progression:action.story.0');assert.equal(restored.snapshot().adventure!.story?.nodeId,'progression:node.defeat.coat');const options=restored.view().actions;assert.ok(options.some(o=>o.available));assert.ok(options.every(o=>o.definition.label!=='结束当前经历，回到安全位置'));act(restored,'progression:action.story.1');assert.equal(restored.snapshot().adventure!.story?.stage,'help');act(restored,'progression:action.story.0');assert.equal(restored.snapshot().adventure!.story,null);assert.ok(restored.snapshot().player.variables['core:health']!>=1);assert.ok(restored.snapshot().clock.totalMinutes>before.clock.totalMinutes);
 });
 
 test('accepted mechanical maintenance applies real TF once with verifiable narrative origin',async()=>{
@@ -93,14 +94,14 @@ test('all story categories have usable starts and condition-driven branches',()=
  const s=stateAt();s.clock.totalMinutes=1320;const e=new ActionExecutor(registry,s);act(e,'progression:action.narrative.exploration');assert.equal(e.snapshot().adventure!.story!.nodeId,'progression:node.exploration.night');
 });
 
-test('strict authoring validation rejects unknown tag scopes and missing free exits',()=>{
- const raw=structuredClone(inputs.at(-1));raw.narrativeNodes[0].requiresTags=[{role:'someone',tagId:'foundation:theme.gel'}];assert.throws(()=>parsePack(raw));const blocked=structuredClone(inputs.at(-1));blocked.narrativeNodes[0].choices=blocked.narrativeNodes[0].choices.filter((x:{next:string|null})=>x.next!==null);assert.throws(()=>parsePack(blocked));
+test('strict authoring validation rejects unknown scopes and resource deadlocks while allowing forward-only beats',()=>{
+ const raw=structuredClone(adventureInput);raw.narrativeNodes[0].requiresTags=[{role:'someone',tagId:'foundation:theme.gel'}];assert.throws(()=>parsePack(raw));const blocked=structuredClone(adventureInput);delete blocked.narrativeNodes[0].skipChoiceIndex;blocked.narrativeNodes[0].choices=[{...blocked.narrativeNodes[0].choices[0],conditions:[{op:'var.compare',id:'core:stamina',comparison:'gte',value:10}]}];assert.throws(()=>parsePack(blocked));assert.doesNotThrow(()=>parsePack(adventureInput));
 });
 
 test('authored story costs use ordinary eligibility and public previews without mutating state',async()=>{
- const raw=structuredClone(inputs.at(-1)),node=raw.narrativeNodes.find((n:{id:string})=>n.id==='progression:node.daily.start');
+ const raw=structuredClone(adventureInput),node=raw.narrativeNodes.find((n:{id:string})=>n.id==='progression:node.daily.start');
  node.choices[0].conditions=[];node.choices[0].effects=[{op:'var.change',id:'core:money',amount:-8},{op:'clock.advance',minutes:15}];
- const r=await loadPacks([...inputs.slice(0,-1),raw]),s=createGameState(r,42);s.player.variables['core:money']=0;const e=new ActionExecutor(r,s);act(e,'progression:action.narrative.daily');
+ const r=await loadPacks(inputs.map(p=>p.manifest.id===raw.manifest.id?raw:p)),s=createGameState(r,42);s.player.variables['core:money']=0;const e=new ActionExecutor(r,s);act(e,'progression:action.narrative.daily');
  const before=e.snapshot(),option=e.view().actions[0]!;assert.equal(option.available,false);assert.match(option.reason,/零钱不足/);assert.deepEqual(actionPreview(option.definition,r,before),['15分钟','零钱 −8币']);assert.deepEqual(e.snapshot(),before);
  const result=e.performAction({actionId:option.definition.id},before.meta.revision,'story-cannot-pay');assert.equal(result.ok,false);assert.deepEqual(e.snapshot(),before);act(e,'progression:action.story.1');assert.equal(e.snapshot().adventure!.story,null);
  const overlap=structuredClone(raw);overlap.narrativeNodes[0].choices[0].effects=[{op:'scene.start',id:'district:interaction.riker.quiet'}];assert.throws(()=>parsePack(overlap));
@@ -123,7 +124,7 @@ test('emergency withdrawal also works with no action points',()=>{
 });
 
 test('pre-adventure fixed saves upgrade additively and generated worlds have real combat in all 17 themes',async()=>{
- const oldRegistry=await loadPacks(inputs.slice(0,-1)),old=createGameState(oldRegistry,42),save=await new SaveCodec(oldRegistry).encode(old),loaded=await new SaveCodec(registry).decode(save);assert.equal(loaded.status,'ready');if(loaded.status==='ready'){assert.ok(loaded.state.adventure);assert.deepEqual(loaded.state.player,old.player);assert.deepEqual(loaded.state.ledger,old.ledger);}
+ const oldRegistry=await loadPacks(inputs.filter(p=>!['aetheria/adventure','aetheria/story-replay'].includes(p.manifest.id))),old=createGameState(oldRegistry,42),save=await new SaveCodec(oldRegistry).encode(old),loaded=await new SaveCodec(registry).decode(save);assert.equal(loaded.status,'ready');if(loaded.status==='ready'){assert.ok(loaded.state.adventure);assert.deepEqual(loaded.state.player,old.player);assert.deepEqual(loaded.state.ledger,old.ledger);assert.ok(loaded.registry);assert.ok(!loaded.registry.packs.some(p=>p.id==='aetheria/story-replay'));}
  const extra=await Promise.all(['neighborhood-content','lexicon-content','world-profile-content'].map(n=>json('content/generation/'+n+'.json'))),source=await loadPacks([...inputs,...extra]),profiles=await json('content/generation/world-profiles.json'),references=[await json('content/generation/lexicon-reference.json')],rules=await json('content/generation/rules.json');
  for(const profile of profiles.profiles){const g=await new WorldGenerator().generate({seed:42,registry:source,references,rules,worldProfiles:profiles,worldTag:profile.tag});const commons=g.world.definition.locations.find(l=>l.service==='commons')!;g.state.world.locationId=commons.id;g.state.world.knownLocationIds.push(commons.id);const e=new ActionExecutor(g.registry,g.state);assert.equal(e.view().actions.find(o=>o.definition.id==='progression:action.challenge.raider')?.available,true);act(e,'progression:action.challenge.raider');act(e,'district:action.combat.flee');validateState(e.snapshot(),g.registry);}
 });

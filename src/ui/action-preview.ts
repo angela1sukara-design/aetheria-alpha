@@ -5,6 +5,7 @@ import { publicActionEffects } from '../engine/narrative.ts';
 
 /** Display only explicit, public costs; never execute an action or inspect future prose. */
 export function actionPreview(action: ActionDef, registry: Registry, state?: GameState): string[] {
+  if(action.effects.some(e=>e.op==='narrative.skip'))return ['沿途耗时与状态照常结算，在下一处选择停下'];
   const effects=state?publicActionEffects(action,state,registry):action.effects;
   const hasMove = effects.some(effect => effect.op === 'location.move');
   let minutes = 0;

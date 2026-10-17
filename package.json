@@ -11,7 +11,7 @@
     "lexicon:prepare": "node scripts/lexicon/prepare.mjs",
     "test:lexicon": "node --test tests/lexicon.test.ts tests/lexicon-whole.test.ts",
     "dev": "node scripts/serve.mjs",
-    "build": "node scripts/build-adventure-content.mjs && node scripts/build-quest-content.mjs && node scripts/build-lexicon-adapter.mjs && node scripts/build-b-observations.mjs && node scripts/build-b-five-themes.mjs && node scripts/build-a-templates.mjs && node scripts/build-personal-content.mjs && node scripts/build.mjs && node scripts/build-standalone.mjs",
+    "build": "node scripts/build-adventure-content.mjs && node scripts/build-story-content.mjs && node scripts/build-quest-content.mjs && node scripts/build-lexicon-adapter.mjs && node scripts/build-b-observations.mjs && node scripts/build-b-five-themes.mjs && node scripts/build-a-templates.mjs && node scripts/build-personal-content.mjs && node scripts/build.mjs && node scripts/build-standalone.mjs",
     "examples:worldgen": "node scripts/build-world-samples.mjs",
     "quests:build": "node scripts/build-quest-content.mjs",
     "test:quests": "node --test tests/cyber-apex.test.ts tests/neighborhood-quests.test.ts tests/world-profiles.test.ts tests/main-relationships.test.ts",

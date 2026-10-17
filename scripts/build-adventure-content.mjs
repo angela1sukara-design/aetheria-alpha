@@ -4,7 +4,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import { loadAtoms, sampleCombos, toEncounterCandidate } from './nsfw-auto-combo/combiner.mjs';
 import { mountAllWildDefeatEnemies, applyWildDefeatFills, writeWildDefeatCandidates } from './nsfw-auto-combo/wild-defeat-mount.mjs';
 const json=async p=>JSON.parse(await readFile(p,'utf8'));
-const index=await json('content/index.json'),base=await Promise.all(index.packs.filter(p=>!p.includes('/adventure/')).map(p=>json('content/'+p)));
+const index=await json('content/index.json'),base=await Promise.all(index.packs.filter(p=>!p.includes('/adventure/')&&!p.includes('/story-replay/')).map(p=>json('content/'+p)));
 const id=s=>'progression:'+s,tag=s=>id('tag.'+s),scoped=(role,s)=>({role,tagId:tag(s)}),has=(role,s,value=true)=>({op:'narrative.tag',role,id:tag(s),value});
 const p={manifest:{id:'aetheria/adventure',namespace:'progression',version:'1.0.0',schemaVersion:2,engineApiVersion:'0.1',author:'Aetheria',status:'draft',dependencies:base.map(p=>({id:p.manifest.id,version:p.manifest.version,optional:false})),requiresCapabilities:['foundation.v2','adventure.v1','condition.v1','effect.v1','hook.global.v1','district.v1','body.graph.v1','tf.pipeline.v1'],migrations:[]},variables:[],flags:[],hooks:[{id:id('hook.runtime'),accepts:'action',visibility:'public'}],locations:[],routes:[],actions:[],events:[],texts:{},contributions:[],globalActionHooks:[id('hook.runtime')],tags:[],narrativeNodes:[],narrativeProfiles:[],environmentEnemyRules:[],equipment:[],items:[],enemies:[],locationProfiles:[],bodyPatches:[],transformations:[]};
 for(const [key,label,definition]of [
@@ -850,6 +850,7 @@ for (const play of defeatPlayMeta) {
       priority: 6,
       maxVisits: 1,
       choices,
+      ...(['capture','press'].includes(stage)?{skipChoiceIndex:0}:{}),
     });
     const adultChoices = [];
     if (nextStage) {
@@ -1693,6 +1694,21 @@ node('encounter.local','encounter','start','{place}的动静','{period}，你在
 ],{priority:20,conditions:[{op:'any',conditions:base.flatMap(p=>p.locations).map(l=>({op:'location.is',id:l.id}))}],excludesTags:[scoped('opponent','nsfwcombo.active')]});
 p.texts[id('text.node.exploration.start')]='{period}，你沿{place}的通道走了一段。路牌通向{routeNames}。{nearby}';
 p.texts[id('text.node.transformation.start')]='你在{place}留出一块空地，慢慢活动身体。你目前的结构包括{bodyState}。{tfState}';
+// Remove mechanically appended escape buttons from defeat beats. The authored
+// actions keep their costs, outcomes and real escape conditions. Process-only
+// beats can fast-forward through that same action, stopping at the next choice.
+for(const n of p.narrativeNodes.filter(n=>n.kind==='defeat')){
+ const remaining=n.choices.filter(c=>c.label!=='结束当前经历，回到安全位置');
+ const fallback=n.choices.find(c=>c.label==='结束当前经历，回到安全位置');
+ if(fallback&&!remaining.some(c=>!c.conditions.length&&!c.effects.some(e=>e.op==='var.change'&&e.amount<0||e.op==='progression.act'))){
+  const resultText=id('text.defeat.settlement.fallback');p.texts[resultText]='你等待现场处置结束，再带着本次留下的痕迹离开。已经发生的身体变化与损失继续保留。';
+  remaining.push({...fallback,label:'等待处置结束，承担本次留下的后果',resultText,effects:[time(10),{op:'flag.set',id:id('flag.aftermath.mark'),value:true}]});
+ }
+ n.choices=remaining;
+ if(n.choices.length===1&&n.choices[0].next&&!n.choices[0].conditions.length)n.skipChoiceIndex=0;
+ for(const key of [n.textKey,...n.choices.map(c=>c.resultText)])p.texts[key]=p.texts[key].replaceAll('你仍可随时中断离开','你仍可尝试脱身，结果取决于接下来的行动').replaceAll('仍可随时抽身离开','可以寻找脱身的机会');
+}
+action('story.skip','跳过过程描写，保留后续选择与结算',[{op:'narrative.skip'}]);
 p.contributions[0].actionIds=[...new Set(p.contributions.filter(c=>c.hookId===id('hook.runtime')).flatMap(c=>c.actionIds))].filter(a=>!['action.narrative.quest','action.narrative.ending'].map(id).includes(a));p.contributions=p.contributions.slice(0,1);
 // Missing prose is a build error, never an instruction shown inside the game.
 for(const n of p.narrativeNodes)for(const k of [n.textKey,...n.choices.map(c=>c.resultText)]){

@@ -49,9 +49,10 @@ export function parseAdventurePack(p: ContentPack, h: Helpers): void {
     if(x.defeatCombo!==undefined)defeatCombo(x.defeatCombo);
   });
   array(p.narrativeNodes ?? [], n => {
-    shape(n, ['id','kind','stage','title','textKey','requiresTags','excludesTags','conditions','tendencies','weight','priority','maxVisits','choices'],['proseAssembly']); stableId(n.id); stableId(n.textKey); if (!NARRATIVE_KINDS.includes(n.kind)) bad('节点类别无效。'); text(n.stage); text(n.title); integer(n.weight,1,100); integer(n.priority,0,100); integer(n.maxVisits,1,3); array(n.requiresTags,scoped); array(n.excludesTags,scoped); weights(n.tendencies); array(n.conditions,c=>h.condition(c,'/narrativeNodes/conditions')); if(n.proseAssembly!==undefined)validateNodeAssembly(n.proseAssembly);
-    array(n.choices,c=>{shape(c,['label','resultText','conditions','effects','setTags','unsetTags','next']);text(c.label);stableId(c.resultText);if(c.next!==null)text(c.next);array(c.conditions,x=>h.condition(x,'/narrativeNodes/choices/conditions'));array(c.effects,x=>{if(['event.start','event.advance','event.exit','combat.start','scene.start','scene.act','narrative.start','narrative.choose'].includes(x?.op))bad('节点效果不能递归跳转；使用next。');h.effect(x,'/narrativeNodes/choices/effects');});array(c.setTags,scoped);array(c.unsetTags,scoped);},4);
-    if (!n.choices.length || !n.choices.some((c: any)=>c.next===null&&!c.conditions.length&&!c.effects.some((e: Effect)=>e.op==='var.change'&&e.amount<0||e.op==='progression.act'))) bad('每个节点须有免费无条件退出。');
+    shape(n, ['id','kind','stage','title','textKey','requiresTags','excludesTags','conditions','tendencies','weight','priority','maxVisits','choices'],['proseAssembly','skipChoiceIndex']); stableId(n.id); stableId(n.textKey); if (!NARRATIVE_KINDS.includes(n.kind)) bad('节点类别无效。'); text(n.stage); text(n.title); integer(n.weight,1,100); integer(n.priority,0,100); integer(n.maxVisits,1,3); array(n.requiresTags,scoped); array(n.excludesTags,scoped); weights(n.tendencies); array(n.conditions,c=>h.condition(c,'/narrativeNodes/conditions')); if(n.proseAssembly!==undefined)validateNodeAssembly(n.proseAssembly);
+    array(n.choices,c=>{shape(c,['label','resultText','conditions','effects','setTags','unsetTags','next']);text(c.label);stableId(c.resultText);if(c.next!==null)text(c.next);array(c.conditions,x=>h.condition(x,'/narrativeNodes/choices/conditions'));array(c.effects,x=>{if(['event.start','event.advance','event.exit','combat.start','combat.encounter','scene.start','scene.act','narrative.start','narrative.choose','narrative.skip'].includes(x?.op))bad('节点效果不能递归跳转；使用next。');h.effect(x,'/narrativeNodes/choices/effects');});array(c.setTags,scoped);array(c.unsetTags,scoped);},4);
+    if (!n.choices.length || !n.choices.some((c: any)=>!c.conditions.length&&!c.effects.some((e: Effect)=>e.op==='var.change'&&e.amount<0||e.op==='progression.act'))) bad('每个节点须有资源耗尽时仍可执行的推进或结算路径；不要求立即退出。');
+    if(n.skipChoiceIndex!==undefined){integer(n.skipChoiceIndex,0,3);const c=n.choices[n.skipChoiceIndex];if(!c||c.conditions.length||!c.next)bad('跳过须指向无条件的过程推进，不能直接结束故事；存在其他可选分支时运行时停下。');}
   });
   array(p.defeatReactionRules ?? [], r => {
     shape(r, ['id','label','stages','playerConditions','opponentConditions','choiceLabel','resultText','targetStage','effects','setTags','unsetTags','priority']);
@@ -61,7 +62,7 @@ export function parseAdventurePack(p: ContentPack, h: Helpers): void {
     text(r.choiceLabel); stableId(r.resultText);
     if (r.targetStage !== null) text(r.targetStage);
     array(r.effects, x => {
-      if (['event.start','event.advance','event.exit','combat.start','scene.start','scene.act','narrative.start','narrative.choose'].includes(x?.op)) bad('反应规则效果不能递归跳转。');
+      if (['event.start','event.advance','event.exit','combat.start','combat.encounter','scene.start','scene.act','narrative.start','narrative.choose','narrative.skip'].includes(x?.op)) bad('反应规则效果不能递归跳转。');
       h.effect(x, '/defeatReactionRules/effects');
     });
     array(r.setTags, scoped); array(r.unsetTags, scoped);

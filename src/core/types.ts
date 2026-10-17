@@ -21,6 +21,7 @@ export type Condition =
   | { op: 'body.hasPart'; definitionId: Id; target?: EntityRef }
   | { op: 'body.hasCapability'; capability: BodyCapability; count: number; target?: EntityRef }
   | { op: 'tf.state'; id: Id; state: TFState | 'idle'; target?: EntityRef }
+  | { op: 'tf.available'; id: Id; target?: EntityRef }
   | { op: 'npc.present'; npcId: Id }
   | { op: 'npc.memory'; npcId: Id; memoryId: Id; value: boolean }
   | { op: 'npc.relation'; npcId: Id; field: RelationField; comparison: 'eq' | 'gte' | 'lte'; value: number };
@@ -57,8 +58,29 @@ export interface ActionDef {
   context?: { eventId: Id; nodeId: string };
   surface?: 'scene' | 'body';
 }
-export interface EventNode { id: string; type: 'choice' | 'exit'; textVariants: Id[]; actionIds: Id[]; onEnter: Effect[] }
-export interface EventDef { id: Id; startNode: string; nodes: EventNode[]; participantIds?: Id[]; residentIds?: string[]; textMode?: 'fixed'; rating?: 'general' | 'adult' }
+export interface EventBinding {
+  environmentTags?: Id[];
+  resident?: { tags: Id[]; service?: import('./function-types.ts').ServiceRequirement & { subject: 'resident' } };
+  enemy?: 'environment';
+  partKind?: import('./body-types.ts').PartKind;
+}
+export interface EventContext {
+  locationId: Id;
+  residentId?: string;
+  enemyId?: Id;
+  enemyRuleId?: Id;
+  partId?: string;
+  fills: Record<string, string>;
+}
+export interface EventNode {
+  id: string; type: 'choice' | 'exit'; textVariants: Id[]; actionIds: Id[]; onEnter: Effect[];
+  /** First matching complete paragraph; effects share the normal transaction. */
+  textCases?: { when: Condition[]; text: Id; onEnter: Effect[] }[];
+  /** Alias of the sole continuation action, with exactly the same settlement. */
+  skipActionId?: Id;
+  combatOutcomes?: { victory: string; defeat: string; escape: string };
+}
+export interface EventDef { id: Id; startNode: string; nodes: EventNode[]; participantIds?: Id[]; residentIds?: string[]; textMode?: 'fixed'; rating?: 'general' | 'adult'; binding?: EventBinding }
 export interface PackManifest {
   id: string; namespace: string; version: string; schemaVersion: 1 | 2; engineApiVersion: '0.1';
   author: string; status: 'draft' | 'reviewed' | 'approved';
@@ -79,6 +101,7 @@ export interface PackRef { id: string; version: string; hash: string }
 export interface EventInstance {
   instanceId: string; definitionId: Id; nodeId: string; status: 'active' | 'completed';
   textByNode: Record<string, Id>; draws: { nodeId: string; value: number }[]; locals: Record<string, Scalar>;
+  context?: EventContext;
 }
 export interface ActionIntent { actionId: Id; params?: { name?: string; ageYears?: number } }
 export interface Change { label: string; before: string | number | boolean; after: string | number | boolean }
@@ -86,7 +109,8 @@ export interface ActionResult {
   ok: boolean; code: string; message: string; revision: number;
   text: string; changes: Change[]; requestId: string;
 }
-export interface Transaction { requestId: string; fingerprint: string; result: ActionResult; narrativeChoice?: { nodeId: Id; index: number } }
+export interface EventEntry { eventId: Id; nodeId: string; textId: Id }
+export interface Transaction { requestId: string; fingerprint: string; result: ActionResult; narrativeChoice?: { nodeId: Id; index: number }; narrativeChoices?: { nodeId: Id; index: number }[]; eventEntries?: EventEntry[] }
 export interface LedgerCheckpoint { revision: number; requests: string; evidence: Transaction[]; completedEvents: Id[] }
 export interface GameState {
   adventure?: AdventureState;

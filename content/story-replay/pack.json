@@ -1,0 +1,1189 @@
+{
+  "manifest": {
+    "id": "aetheria/story-replay",
+    "namespace": "stories",
+    "version": "1.0.0",
+    "schemaVersion": 2,
+    "engineApiVersion": "0.1",
+    "author": "Aetheria",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/reshaping",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/social",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/recovery",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/district",
+        "version": "0.2.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/foundation",
+        "version": "1.0.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/general-lexicon",
+        "version": "1.0.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/adventure",
+        "version": "1.0.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "foundation.v2",
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "event.context.v1",
+      "hook.global.v1",
+      "adventure.v1",
+      "district.v1",
+      "body.graph.v1",
+      "tf.pipeline.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [
+    {
+      "id": "stories:flag.cargo-lost",
+      "initial": false
+    },
+    {
+      "id": "stories:flag.cargo-saved",
+      "initial": false
+    },
+    {
+      "id": "stories:flag.false-order-found",
+      "initial": false
+    }
+  ],
+  "hooks": [
+    {
+      "id": "stories:hook.entries",
+      "accepts": "action",
+      "visibility": "public"
+    }
+  ],
+  "locations": [],
+  "routes": [],
+  "actions": [
+    {
+      "id": "stories:action.mire-trap.start",
+      "label": "穿过湿地边缘的狭窄通道",
+      "hint": "湿地险路 · 可能发生交锋与体表覆层",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "event.state",
+          "id": "stories:event.mire-trap",
+          "state": "unseen"
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "stories:event.mire-trap"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.start"
+    },
+    {
+      "id": "stories:action.mire-trap.pull",
+      "label": "趁泥层未合拢拔出双腿",
+      "hint": "体力≥40 · 体力−15 · 10分钟",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:stamina",
+          "comparison": "gte",
+          "value": 40
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": -15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "edge"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.pull",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "entry"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.climb",
+      "label": "借支点攀援横移",
+      "hint": "精力≥35 · 需要抓握部位 · 精力−15 · 5分钟",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:energy",
+          "comparison": "gte",
+          "value": 35
+        },
+        {
+          "op": "body.hasCapability",
+          "capability": "grasp",
+          "count": 1
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "edge"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.climb",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "entry"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.fight",
+      "label": "撑住支点迎击{opponent}",
+      "hint": "进入常规战斗；结果返回当前故事",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.encounter"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.fight",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "entry"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.sink",
+      "label": "护住身体，随泥面下沉寻找落脚处",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "trapped"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.sink",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "entry"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.break-free",
+      "label": "借最后的支点强行翻上路沿",
+      "hint": "体力≥55 · 体力−25 · 10分钟",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:stamina",
+          "comparison": "gte",
+          "value": 55
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": -25
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "edge"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.break-free",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "trapped"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.endure",
+      "label": "护住呼吸，承受围困",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "defeat"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.endure",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "trapped"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.withdraw",
+      "label": "扶住路沿，带着残迹撤离",
+      "hint": "等待压制松动，再退回可以站稳的位置",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "edge"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.withdraw",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "defeat"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.skip",
+      "label": "略过撤离描写",
+      "hint": "仍需5分钟，已有体表状态和残迹保留",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "edge"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.skip",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "defeat"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.clean",
+      "label": "花时间清理附着物后离开",
+      "hint": "停留10分钟，清理衣物和已有覆层",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "clean-end"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.clean",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "edge"
+      }
+    },
+    {
+      "id": "stories:action.mire-trap.leave",
+      "label": "带着现状离开险路",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "stories:text.mire-trap.result.leave",
+      "context": {
+        "eventId": "stories:event.mire-trap",
+        "nodeId": "edge"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.start",
+      "label": "替在场的委托人交接货箱",
+      "hint": "委托交接 · 可能丢失货物或发生交锋",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "event.state",
+          "id": "stories:event.alley-handoff",
+          "state": "unseen"
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "stories:event.alley-handoff"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.start"
+    },
+    {
+      "id": "stories:action.alley-handoff.ram",
+      "label": "带着货箱撞开侧门",
+      "hint": "体力≥45 · 体力−15 · 10分钟",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:stamina",
+          "comparison": "gte",
+          "value": 45
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:stamina",
+          "amount": -15
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "flag.set",
+          "id": "stories:flag.cargo-saved",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "report"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.ram",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "entry"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.fight",
+      "label": "护住货箱迎战{opponent}",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "combat.encounter"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.fight",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "entry"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.abandon",
+      "label": "弃下货箱，等对方移开障碍",
+      "hint": "等待10分钟 · 货箱丢失",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "loss"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.abandon",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "entry"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.evidence",
+      "label": "带回货箱与假交接单",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "flag.set",
+          "id": "stories:flag.false-order-found",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "report"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.evidence",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "loot"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.cargo-only",
+      "label": "只带货箱回去结账",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "report"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.cargo-only",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "loot"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.report-loss",
+      "label": "带着丢货的结果回去说明",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "clock.advance",
+          "minutes": 5
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "report"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.report-loss",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "loss"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.investigate",
+      "label": "说明经过，追查假单据",
+      "hint": "精力≥30 · 精力−10 · 10分钟 · 零钱+25",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "var.compare",
+          "id": "core:energy",
+          "comparison": "gte",
+          "value": 30
+        }
+      ],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:energy",
+          "amount": -10
+        },
+        {
+          "op": "clock.advance",
+          "minutes": 10
+        },
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 25
+        },
+        {
+          "op": "flag.set",
+          "id": "stories:flag.false-order-found",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.investigate",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "report"
+      }
+    },
+    {
+      "id": "stories:action.alley-handoff.basic-pay",
+      "label": "按实际结果结清基础账目",
+      "hint": "继续处理眼前的处境",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "var.change",
+          "id": "core:money",
+          "amount": 10
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "end"
+        }
+      ],
+      "resultText": "stories:text.alley-handoff.result.basic-pay",
+      "context": {
+        "eventId": "stories:event.alley-handoff",
+        "nodeId": "report"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "stories:event.mire-trap",
+      "startNode": "entry",
+      "binding": {
+        "environmentTags": [
+          "foundation:setting.wet",
+          "foundation:service.commons"
+        ],
+        "enemy": "environment",
+        "partKind": "leg"
+      },
+      "rating": "general",
+      "nodes": [
+        {
+          "id": "entry",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.mire-trap.entry"
+          ],
+          "actionIds": [
+            "stories:action.mire-trap.pull",
+            "stories:action.mire-trap.climb",
+            "stories:action.mire-trap.fight",
+            "stories:action.mire-trap.sink"
+          ],
+          "onEnter": [],
+          "combatOutcomes": {
+            "victory": "edge",
+            "defeat": "defeat",
+            "escape": "edge"
+          },
+          "textCases": [
+            {
+              "when": [
+                {
+                  "op": "var.compare",
+                  "id": "core:stamina",
+                  "comparison": "gte",
+                  "value": 0
+                },
+                {
+                  "op": "var.compare",
+                  "id": "core:stamina",
+                  "comparison": "lte",
+                  "value": 39
+                }
+              ],
+              "text": "stories:text.mire-trap.entry.tired",
+              "onEnter": []
+            }
+          ]
+        },
+        {
+          "id": "trapped",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.mire-trap.trapped"
+          ],
+          "actionIds": [
+            "stories:action.mire-trap.break-free",
+            "stories:action.mire-trap.endure"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "defeat",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.mire-trap.defeat"
+          ],
+          "actionIds": [
+            "stories:action.mire-trap.withdraw",
+            "stories:action.mire-trap.skip"
+          ],
+          "onEnter": [
+            {
+              "op": "flag.set",
+              "id": "progression:flag.aftermath.mark",
+              "value": true
+            }
+          ],
+          "textCases": [
+            {
+              "when": [
+                {
+                  "op": "any",
+                  "conditions": [
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M5"
+                    }
+                  ]
+                },
+                {
+                  "op": "body.matches",
+                  "target": {
+                    "kind": "player"
+                  },
+                  "part": {
+                    "kind": "leg",
+                    "materialId": "progression:material.living-latex"
+                  }
+                }
+              ],
+              "text": "stories:text.mire-trap.defeat.latex.existing",
+              "onEnter": []
+            },
+            {
+              "when": [
+                {
+                  "op": "any",
+                  "conditions": [
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M5"
+                    }
+                  ]
+                },
+                {
+                  "op": "tf.available",
+                  "id": "stories:tf.latex-legs"
+                }
+              ],
+              "text": "stories:text.mire-trap.defeat.latex.settle",
+              "onEnter": [
+                {
+                  "op": "tf.apply",
+                  "id": "stories:tf.latex-legs"
+                }
+              ]
+            },
+            {
+              "when": [
+                {
+                  "op": "any",
+                  "conditions": [
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M1"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M2"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M3"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M4"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M6"
+                    }
+                  ]
+                },
+                {
+                  "op": "body.matches",
+                  "target": {
+                    "kind": "player"
+                  },
+                  "part": {
+                    "kind": "leg",
+                    "materialId": "progression:material.slime-mucus"
+                  }
+                }
+              ],
+              "text": "stories:text.mire-trap.defeat.slime.existing",
+              "onEnter": []
+            },
+            {
+              "when": [
+                {
+                  "op": "any",
+                  "conditions": [
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M1"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M2"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M3"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M4"
+                    },
+                    {
+                      "op": "opponent.matches",
+                      "materialKey": "M6"
+                    }
+                  ]
+                },
+                {
+                  "op": "tf.available",
+                  "id": "stories:tf.slime-legs"
+                }
+              ],
+              "text": "stories:text.mire-trap.defeat.slime.settle",
+              "onEnter": [
+                {
+                  "op": "tf.apply",
+                  "id": "stories:tf.slime-legs"
+                }
+              ]
+            }
+          ],
+          "skipActionId": "stories:action.mire-trap.skip"
+        },
+        {
+          "id": "edge",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.mire-trap.edge"
+          ],
+          "actionIds": [
+            "stories:action.mire-trap.clean",
+            "stories:action.mire-trap.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "clean-end",
+          "type": "exit",
+          "textVariants": [
+            "stories:text.mire-trap.clean-end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "flag.set",
+              "id": "progression:flag.aftermath.mark",
+              "value": false
+            },
+            {
+              "op": "event.exit"
+            }
+          ],
+          "textCases": [
+            {
+              "when": [
+                {
+                  "op": "any",
+                  "conditions": [
+                    {
+                      "op": "body.matches",
+                      "target": {
+                        "kind": "player"
+                      },
+                      "part": {
+                        "kind": "leg",
+                        "materialId": "progression:material.slime-mucus"
+                      }
+                    },
+                    {
+                      "op": "body.matches",
+                      "target": {
+                        "kind": "player"
+                      },
+                      "part": {
+                        "kind": "leg",
+                        "materialId": "progression:material.living-latex"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "text": "stories:text.mire-trap.clean-end.coated",
+              "onEnter": [
+                {
+                  "op": "tf.apply",
+                  "id": "progression:tf.cleanse-coatings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "stories:text.mire-trap.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stories:event.alley-handoff",
+      "startNode": "entry",
+      "binding": {
+        "environmentTags": [
+          "foundation:service.workshop"
+        ],
+        "resident": {
+          "tags": [],
+          "service": {
+            "subject": "resident",
+            "service": "work"
+          }
+        },
+        "enemy": "environment"
+      },
+      "rating": "general",
+      "nodes": [
+        {
+          "id": "entry",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.alley-handoff.entry"
+          ],
+          "actionIds": [
+            "stories:action.alley-handoff.ram",
+            "stories:action.alley-handoff.fight",
+            "stories:action.alley-handoff.abandon"
+          ],
+          "onEnter": [],
+          "combatOutcomes": {
+            "victory": "loot",
+            "defeat": "loss",
+            "escape": "loss"
+          },
+          "textCases": [
+            {
+              "when": [
+                {
+                  "op": "opponent.matches",
+                  "speciesKind": "construct"
+                }
+              ],
+              "text": "stories:text.alley-handoff.entry.construct",
+              "onEnter": []
+            }
+          ]
+        },
+        {
+          "id": "loot",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.alley-handoff.loot"
+          ],
+          "actionIds": [
+            "stories:action.alley-handoff.evidence",
+            "stories:action.alley-handoff.cargo-only"
+          ],
+          "onEnter": [
+            {
+              "op": "flag.set",
+              "id": "stories:flag.cargo-saved",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "loss",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.alley-handoff.loss"
+          ],
+          "actionIds": [
+            "stories:action.alley-handoff.report-loss"
+          ],
+          "onEnter": [
+            {
+              "op": "flag.set",
+              "id": "stories:flag.cargo-lost",
+              "value": true
+            },
+            {
+              "op": "flag.set",
+              "id": "progression:flag.aftermath.mark",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "report",
+          "type": "choice",
+          "textVariants": [
+            "stories:text.alley-handoff.report"
+          ],
+          "actionIds": [
+            "stories:action.alley-handoff.investigate",
+            "stories:action.alley-handoff.basic-pay"
+          ],
+          "onEnter": [],
+          "textCases": [
+            {
+              "when": [
+                {
+                  "op": "flag.has",
+                  "id": "stories:flag.cargo-lost",
+                  "value": true
+                }
+              ],
+              "text": "stories:text.alley-handoff.report.lost",
+              "onEnter": []
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "type": "exit",
+          "textVariants": [
+            "stories:text.alley-handoff.end"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "stories:text.mire-trap.start": "你接手了眼前正在发生的事情。",
+    "stories:text.mire-trap.entry": "你沿{place}的湿地边缘踏上狭窄通道，脚下浮泥突然向内塌陷，冷水夹着软泥漫过{part}。你抓住身旁突出的支点，泥面另一侧的{opponent}却已循着水声靠近。支点正在松动，你必须在发力脱身、另找落脚处和迎击来敌之间立即作出选择。",
+    "stories:text.mire-trap.entry.tired": "你走进{place}边缘的低洼通道，浮泥在脚下突然塌陷，冷水很快浸过{part}。你试着提起身体，疲乏的双腿却撑不住整块泥面的吸力；水声又引来了{opponent}，它正从通道另一头逼近。身旁还有一处支点，你得决定借力横移、迎击，还是先护住身体承受下陷。",
+    "stories:text.mire-trap.result.pull": "你借支点发力拔出双腿，退到了坚实的路沿。",
+    "stories:text.mire-trap.result.climb": "你判断支点间的距离，沿通道侧面攀回了实地。",
+    "stories:text.mire-trap.result.fight": "你稳住身形，迎向逼近的对手。",
+    "stories:text.mire-trap.result.sink": "你护住口鼻停止乱蹬，浮泥继续下陷，脚下终于碰到一段倾斜的硬面。",
+    "stories:text.mire-trap.trapped": "你在{place}下陷的通道里踩住一段硬面，泥水仍围在腰侧，身后的{opponent}已经截住来路。你把重心压在尚未塌掉的边缘，能感觉到支点正缓缓滑开。此时硬挣还有机会翻上路沿；若撑不住，就得护住呼吸，承受这次受困留下的后果。",
+    "stories:text.mire-trap.result.break-free": "你猛力蹬住硬面，翻过了正在塌落的路沿。",
+    "stories:text.mire-trap.result.endure": "你没能脱身，只能稳住呼吸，等待压制松动。",
+    "stories:text.mire-trap.defeat": "你在{place}的低处耗尽了脱身的机会，{opponent}压住来路，直到泥面停止塌落才渐渐松开。你扶着路沿重新站稳，衣物上留着清楚的擦痕与残迹，刚才受困的经过也已留下记录。眼前通道终于空出一线，你得带着本次实际留下的状态撤回路沿。",
+    "stories:text.mire-trap.defeat.latex.existing": "你在{place}的低处被{opponent}截住退路，紧贴{part}的{material}随拉扯收束，最终在下肢留下富有弹性的体表覆层。你没有再贸然发力，直到周围的压制渐渐松动，才撑着路沿站稳。覆层和本次受困的记录都已保留，现在只能先带着这些后果撤回通道。",
+    "stories:text.mire-trap.defeat.latex.settle": "你在{place}的低处被{opponent}截住退路，紧贴{part}的{material}随拉扯收束，最终在下肢留下富有弹性的体表覆层。你没有再贸然发力，直到周围的压制渐渐松动，才撑着路沿站稳。覆层和本次受困的记录都已保留，现在只能先带着这些后果撤回通道。",
+    "stories:text.mire-trap.defeat.slime.existing": "你在{place}的低处被{opponent}截住来路，{material}顺着{part}延展，在下肢留下湿滑的生物黏液覆层。你护住呼吸等到浮泥稳住，才抓着路沿缓缓站起，体表的附着感仍然清楚。本次覆层与受困记录已经落定，你得先带着它们撤回可以站稳的通道。",
+    "stories:text.mire-trap.defeat.slime.settle": "你在{place}的低处被{opponent}截住来路，{material}顺着{part}延展，在下肢留下湿滑的生物黏液覆层。你护住呼吸等到浮泥稳住，才抓着路沿缓缓站起，体表的附着感仍然清楚。本次覆层与受困记录已经落定，你得先带着它们撤回可以站稳的通道。",
+    "stories:text.mire-trap.result.withdraw": "你等到通道空出，带着体表状态与受困记录撤回了路沿。",
+    "stories:text.mire-trap.result.skip": "你略过撤离过程的描写，耗时和已有后果照常保留。",
+    "stories:text.mire-trap.edge": "你退到了{place}坚实的路沿，身后的泥面渐渐恢复平静，{opponent}也没有继续逼近。你终于能重新掌握脚下的重心，但衣物和体表是否留有覆层，仍要按刚才实际发生的结果处理。前方道路已经畅通，你可以花时间清理后再走，也可以带着现状离开这段险路。",
+    "stories:text.mire-trap.result.clean": "你停下清理衣物和体表，再沿当前道路离开险处。",
+    "stories:text.mire-trap.result.leave": "你沿当前地点的道路离开险处，已有的身体状态继续保留。",
+    "stories:text.mire-trap.clean-end": "你清理了衣物上的残迹，重新走上{place}可以正常通行的道路。",
+    "stories:text.mire-trap.clean-end.coated": "你调用清理方法洗去实际存在的下肢覆层，沿{place}的道路继续行动。",
+    "stories:text.mire-trap.end": "你沿{place}的道路离开了塌陷处。已经结算的体表状态与受困记录继续保留，之后可以自行清理或处理。",
+    "stories:text.alley-handoff.start": "你接手了眼前正在发生的事情。",
+    "stories:text.alley-handoff.entry": "你替{resident}把密封货箱推到{place}后侧的交接通道，头顶的铁门却突然落下，堵住了原来的出口。{opponent}循着货箱的声响逼近，箱体正卡在侧门与墙沿之间。你看见侧门还留着一道缝，得立刻决定撞门带货脱身、留在原地迎战，还是弃货翻过旁边的矮墙。",
+    "stories:text.alley-handoff.entry.construct": "你替{resident}把密封货箱送到{place}后侧的交接通道，铁门突然落下，{opponent}的搬运臂也随之转向箱体。它没有按交接信号停机，金属轮履正在封住出口，侧门却还留着一道窄缝。你必须决定带货撞开侧门、迎战这台失控设备，或弃货翻过矮墙。",
+    "stories:text.alley-handoff.result.ram": "你撞开侧门，将货箱一起推回了公共通道。",
+    "stories:text.alley-handoff.result.fight": "你用货箱挡住第一下冲击，准备迎战。",
+    "stories:text.alley-handoff.result.abandon": "你不再阻挡对方清运货箱，等到门口重新空出才离开；这次委托未能保住货物。",
+    "stories:text.alley-handoff.loot": "你在{place}的交接通道里击退了{opponent}，落下的铁门旁只剩货箱和一张被踩皱的交接单。你检查封条，发现货物还完整，但对方使用的印记与{resident}交给你的原单并不一致。你现在可以带着证据回去追查，也可以只把货箱交还，先结清这次受托的账目。",
+    "stories:text.alley-handoff.result.evidence": "你收好交接单，带着货箱返回委托人所在的通道。",
+    "stories:text.alley-handoff.result.cargo-only": "你带回完整货箱，暂时搁下交接单上的疑点。",
+    "stories:text.alley-handoff.loss": "你从{place}的交接通道脱身时，货箱已经落在{opponent}封住的门后，无法再按原单完成交接。你稳住呼吸，确认自己能够继续行动，手中还攥着委托凭据。货物丢失已经成为事实，你得回到{resident}面前说明经过，再决定是否花力气追查这张可疑的单据。",
+    "stories:text.alley-handoff.result.report-loss": "你沿当前地点的通道返回，准备说明货物丢失的经过。",
+    "stories:text.alley-handoff.report": "你回到{place}的交接处，找到仍在这里的{resident}，把手中的委托凭据放上工作台。刚才落门与拦截的经过让这笔交接显得格外可疑，货物的实际结果也已经记下。对方等着你说明下一步：是继续花精力核对这张单据，还是只按当前结果结清基础账目。",
+    "stories:text.alley-handoff.report.lost": "你回到{place}，把没有完成交接的凭据交给{resident}，如实说明货箱留在封门后的经过。工作台上还压着一份原始委托单，与交接处的印记明显对不上。丢货的结果不会因回报而抹去，你现在可以花精力追查假单据，也可以先结清这次受托的基础账目。",
+    "stories:text.alley-handoff.result.investigate": "你与{resident}核对了两份单据，记录下伪造线索，并结清了25零钱的调查报酬。货物的原有结果继续保留。",
+    "stories:text.alley-handoff.result.basic-pay": "你与{resident}结清了10零钱的基础报酬，交接结果与已有线索仍然保留。",
+    "stories:text.alley-handoff.end": "你结束了与{resident}的这次交接，继续沿{place}的通道行动。已经结算的报酬、货物结果和调查记录都保留在当前进度中。"
+  },
+  "contributions": [
+    {
+      "hookId": "stories:hook.entries",
+      "actionIds": [
+        "stories:action.mire-trap.start"
+      ]
+    },
+    {
+      "hookId": "stories:hook.entries",
+      "actionIds": [
+        "stories:action.alley-handoff.start"
+      ]
+    }
+  ],
+  "globalActionHooks": [
+    "stories:hook.entries"
+  ],
+  "transformations": [
+    {
+      "id": "stories:tf.slime-legs",
+      "label": "陷阱留下的下肢黏液覆层",
+      "source": "free",
+      "stages": [
+        {
+          "id": "settle",
+          "label": "体表覆层结算",
+          "atMinutes": 0,
+          "patchId": "progression:patch.slime-legs"
+        }
+      ]
+    },
+    {
+      "id": "stories:tf.latex-legs",
+      "label": "陷阱留下的下肢黑胶覆层",
+      "source": "free",
+      "stages": [
+        {
+          "id": "settle",
+          "label": "体表覆层结算",
+          "atMinutes": 0,
+          "patchId": "progression:patch.latex-legs"
+        }
+      ]
+    }
+  ],
+  "environmentEnemyRules": [
+    {
+      "id": "stories:env.wet-slime",
+      "enemyId": "district:enemy.gel",
+      "requiresTags": [
+        "foundation:setting.wet",
+        "foundation:service.commons"
+      ],
+      "priority": 11,
+      "weight": 1,
+      "name": "湿地黏液群落",
+      "speciesKind": "slime",
+      "defeatCombo": {
+        "autoCombo": true,
+        "materials": [
+          "M4"
+        ],
+        "parts": [
+          "小腿"
+        ],
+        "plays": [
+          "G1",
+          "G2"
+        ],
+        "tfs": [
+          "黏液化"
+        ]
+      }
+    },
+    {
+      "id": "stories:env.wet-latex",
+      "enemyId": "district:enemy.gel",
+      "requiresTags": [
+        "foundation:setting.wet",
+        "foundation:service.commons"
+      ],
+      "priority": 11,
+      "weight": 1,
+      "name": "湿地黑胶群落",
+      "speciesKind": "slime",
+      "defeatCombo": {
+        "autoCombo": true,
+        "materials": [
+          "M5"
+        ],
+        "parts": [
+          "小腿"
+        ],
+        "plays": [
+          "G1",
+          "G2"
+        ],
+        "tfs": [
+          "黑胶化"
+        ]
+      }
+    },
+    {
+      "id": "stories:env.wet-workshop",
+      "enemyId": "district:enemy.scavenger",
+      "requiresTags": [
+        "foundation:setting.wet",
+        "foundation:service.workshop"
+      ],
+      "priority": 5,
+      "weight": 1,
+      "name": "失控搬运装置",
+      "speciesKind": "construct"
+    }
+  ]
+}

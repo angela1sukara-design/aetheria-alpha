@@ -4,8 +4,8 @@ import { readFile } from 'node:fs/promises';
 import { loadPacks } from '../src/content/loader.ts';
 import type { ContentPack, Id } from '../src/core/types.ts';
 
-const START_ACTION = 'playtest-r003-mire:action.start' as Id;
-const EVENT_ID = 'playtest-r003-mire:event.trap';
+const START_ACTION = 'stories:action.mire-trap.start' as Id;
+const EVENT_ID = 'stories:event.mire-trap';
 
 async function loadPlaytestRegistry() {
   const index = JSON.parse(await readFile('content/index.playtest-r003-mire.json', 'utf8')) as { packs: string[] };
@@ -15,19 +15,19 @@ async function loadPlaytestRegistry() {
   return loadPacks(packs);
 }
 
-test('playtest-r003-mire index loads and exposes street hook + event graph', async () => {
+test('old r003 preview URL loads the real attribute-driven story instead of the draft observation graph', async () => {
   const registry = await loadPlaytestRegistry();
   const start = registry.action(START_ACTION);
-  assert.equal(start.label, '走近黑沼迷雾带（试玩）');
+  assert.equal(start.label, '穿过湿地边缘的狭窄通道');
 
-  const streetActions = registry.actionsForHook('aetheria:hook.street.actions' as Id);
+  const streetActions = registry.actionsForHook('stories:hook.entries' as Id);
   assert.ok(streetActions.some(a => a.id === START_ACTION));
 
   const event = registry.event(EVENT_ID as Id);
-  assert.equal(event.startNode, 'N01');
-  assert.deepEqual(event.nodes.map(n => n.id), ['N01', 'N02', 'N03', 'N04', 'N05']);
-  assert.equal(event.nodes[4]!.type, 'exit');
-  assert.ok(event.nodes[4]!.onEnter?.some(e => e.op === 'event.exit'));
+  assert.equal(event.startNode, 'entry');
+  assert.ok(event.binding?.environmentTags?.includes('foundation:setting.wet'));
+  assert.deepEqual(event.nodes.filter(n=>n.type==='choice').map(n => n.id), ['entry', 'trapped', 'defeat', 'edge']);
+  assert.ok(event.nodes.filter(n=>n.type==='exit').every(n=>n.onEnter.some(e=>e.op==='event.exit')));
 });
 
 test('default content/index.json does not include playtest-r003-mire pack', async () => {

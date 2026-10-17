@@ -46,7 +46,7 @@ try{
     assert.ok(await page.locator('#play-page [data-action="district:action.combat.flee"]').isEnabled());await act(page,'district:action.combat.flee');
     assert.equal((await snapshot(page)).district.combat,null);
   });
-  await check('战败进入带Tag的分支，保存刷新不重抽节点，免费退出恢复行动',async()=>{
+  await check('战败进入带Tag的分支，保存刷新不重抽节点，完成救援结算恢复行动',async()=>{
     await fixture(page,'aetheria:location.market',s=>{s.player.variables['core:health']=1;s.player.variables['core:defense']=0;});
     await act(page,'progression:action.challenge.gel');for(let i=0;i<10&&!(await snapshot(page)).adventure.story;i++)await act(page,'district:action.combat.guard');
     await act(page,'progression:action.story.0');assert.match(await page.locator('#scene-text').innerText(),/【外衣黏附】/);
@@ -54,7 +54,7 @@ try{
     assert.equal(await page.locator('#scene-text').innerText(),text);assert.deepEqual(await snapshot(page),before);
     await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     await page.screenshot({path:path.join(out,'defeat-mobile.png'),fullPage:true});await page.setViewportSize({width:1280,height:900});
-    await act(page,'progression:action.story.2');const after=await snapshot(page);assert.equal(after.adventure.story,null);assert.ok(after.player.variables['core:health']>=1);
+    await act(page,'progression:action.story.1');assert.equal((await snapshot(page)).adventure.story.stage,'help');await act(page,'progression:action.story.0');const after=await snapshot(page);assert.equal(after.adventure.story,null);assert.ok(after.player.variables['core:health']>=1);
   });
   await check('训练限制、购买及武器护甲叠加实际生效；技能消耗SR且战斗记录保持三段',async()=>{
     await fixture(page,'district:location.workshop',s=>{s.player.variables['core:money']=200;});

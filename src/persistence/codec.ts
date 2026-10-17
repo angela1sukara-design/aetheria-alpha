@@ -78,7 +78,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
   else if (registry.bodyTemplates.some(x => x.initial)) bad('存档缺少身体图。');
   const eventIds: string[] = []; const activeIds: string[] = [];
   for (const raw of array(state.eventInstances)) {
-    const event = object(raw, ['instanceId', 'definitionId', 'nodeId', 'status', 'textByNode', 'draws', 'locals']);
+    const event = object(raw, ['instanceId', 'definitionId', 'nodeId', 'status', 'textByNode', 'draws', 'locals', ...((raw as GameState['eventInstances'][number])?.context ? ['context'] : [])]);
     const instanceId = string(event.instanceId); eventIds.push(instanceId);
     const def = registry.event(string(event.definitionId) as Id);
     if (!def.nodes.some(x => x.id === event.nodeId)) bad('事件节点不存在。');
@@ -86,11 +86,22 @@ export function validateState(value: unknown, registry: Registry): asserts value
     if (event.status === 'active') activeIds.push(instanceId);
     const texts = object(event.textByNode);
     if (!texts[string(event.nodeId)]) bad('当前事件没有已经锁定的文字。');
-    for (const [nodeId, textId] of Object.entries(texts)) if (!def.nodes.find(x => x.id === nodeId)?.textVariants.includes(string(textId) as Id)) bad('事件抽样结果与定义不一致。');
+    for (const [nodeId, textId] of Object.entries(texts)) { const node=def.nodes.find(x=>x.id===nodeId);if(!node||![...node.textVariants,...(node.textCases??[]).map(c=>c.text)].includes(string(textId) as Id))bad('事件抽样结果与定义不一致。'); }
     const draws = array(event.draws); const drawnIds: string[] = [];
-    for (const rawDraw of draws) { const d = object(rawDraw, ['nodeId', 'value']); drawnIds.push(string(d.nodeId)); if (!texts[string(d.nodeId)] || typeof d.value !== 'number' || d.value < 0 || d.value >= 1) bad('事件随机记录无效。'); const n = def.nodes.find(x => x.id === d.nodeId)!; if (n.textVariants[Math.floor((d.value as number) * n.textVariants.length)] !== texts[string(d.nodeId)]) bad('随机结果与文字索引不一致。'); }
+    for (const rawDraw of draws) { const d = object(rawDraw, ['nodeId', 'value']); drawnIds.push(string(d.nodeId)); if (!texts[string(d.nodeId)] || typeof d.value !== 'number' || d.value < 0 || d.value >= 1) bad('事件随机记录无效。'); const n = def.nodes.find(x => x.id === d.nodeId)!; if (n.textVariants[Math.floor((d.value as number) * n.textVariants.length)] !== texts[string(d.nodeId)]&&!n.textCases?.some(c=>c.text===texts[string(d.nodeId)])) bad('随机结果与文字索引不一致。'); }
     unique(drawnIds); if (draws.length !== (def.textMode === 'fixed' ? 0 : Object.keys(texts).length)) bad('事件抽样次数不一致。');
     for (const v of Object.values(object(event.locals))) if (!['string', 'number', 'boolean'].includes(typeof v) || (typeof v === 'number' && !Number.isFinite(v))) bad('事件局部变量无效。');
+    if (event.context) {
+      if (!def.binding) bad('事件没有声明上下文绑定。');
+      const context=object(event.context,['locationId','fills',...['residentId','enemyId','enemyRuleId','partId'].filter(k=>Object.hasOwn(event.context as object,k))]);
+      const location=registry.location(string(context.locationId) as Id),fills=object(context.fills);
+      if(Object.keys(fills).length>32)bad('事件绑定信息过多。');
+      for(const [key,value]of Object.entries(fills))if(!/^[a-zA-Z][a-zA-Z0-9]{0,39}$/.test(key)||typeof value!=='string'||value.length>10000)bad('事件绑定文字无效。');
+      if(fills.place!==location.name)bad('事件场地绑定不一致。');
+      if(!!def.binding!.resident!==!!context.residentId||!!def.binding!.enemy!==!!context.enemyId||!!def.binding!.partKind!==!!context.partId)bad('事件绑定对象缺失。');
+      if(context.residentId){const resident=(state as unknown as GameState).district?.residents.find(n=>n.id===context.residentId);if(!resident||fills.resident!==resident.name)bad('事件居民绑定无效。');}
+      if(context.enemyId){const enemy=registry.enemies.find(e=>e.id===context.enemyId),rule=registry.environmentEnemyRules.find(e=>e.id===context.enemyRuleId);if(!enemy||!rule||rule.enemyId!==enemy.id||fills.opponent!==(rule.name??enemy.name))bad('事件对手绑定无效。');}
+    } else if(def.binding)bad('事件缺少已保存的上下文，不能重抽场地或对手。');
   }
   unique(eventIds); const stack = array(state.activeEventStack); unique(stack);
   if (stack.length > 1 || stableJson([...stack].sort()) !== stableJson([...activeIds].sort())) bad('事件栈与活动事件不一致。');
@@ -104,12 +115,15 @@ export function validateState(value: unknown, registry: Registry): asserts value
   if (checkpoint) { if (!validRequestFilter(checkpoint.requests)) bad('归档请求过滤器无效。'); const completed = array(checkpoint.completedEvents); unique(completed); for (const id of completed) registry.event(string(id) as Id); }
   if (transactions.length + baseRevision !== revision) bad('事务账本与 revision 不一致。');
   const checkTransaction = (raw: unknown, expectedRevision: number) => {
-    const tx = object(raw, ['requestId', 'fingerprint', 'result', ...((raw as GameState['ledger']['transactions'][number])?.narrativeChoice?['narrativeChoice']:[])]); const requestId = string(tx.requestId); if (requestId.length > 128) bad('事务 ID 过长。'); requests.push(requestId);
+    const tx = object(raw, ['requestId', 'fingerprint', 'result', ...((raw as GameState['ledger']['transactions'][number])?.narrativeChoice?['narrativeChoice']:[]), ...((raw as GameState['ledger']['transactions'][number])?.narrativeChoices?['narrativeChoices']:[]), ...((raw as GameState['ledger']['transactions'][number])?.eventEntries?['eventEntries']:[])]); const requestId = string(tx.requestId); if (requestId.length > 128) bad('事务 ID 过长。'); requests.push(requestId);
     const intent = JSON.parse(string(tx.fingerprint)); const intentObj = object(intent);
     if (Object.keys(intentObj).some(k => k !== 'actionId' && k !== 'params')) bad('事务 intent 包含未知字段。');
     if (intentObj.params && Object.keys(object(intentObj.params)).length) { const p=object(intentObj.params);if(Object.keys(p).some(k=>k!=='name'&&k!=='ageYears')||intentObj.actionId!=='district:action.create'||typeof p.name!=='string'||!p.name.trim()||p.name.length>40)bad('事务参数未登记。');if(p.ageYears!==undefined)int(p.ageYears,18,120); }
     registry.action(string(intentObj.actionId) as Id);
-    if(tx.narrativeChoice){const context=object(tx.narrativeChoice,['nodeId','index']);const index=int(context.index,0,3),node=registry.narrativeNodes.find(n=>n.id===context.nodeId);const hasChoice=!!node?.choices[index]||(node?.kind==='defeat'&&index===node.choices.length&&(registry.defeatReactionRules?.length??0)>0);if(!hasChoice||!registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.choose'&&e.index===index))bad('故事事务来源错配。');}
+    if(registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.skip')&&!tx.narrativeChoices)bad('跳过过程缺少完整结算来源。');
+    if(tx.narrativeChoices){const choices=array(tx.narrativeChoices);if(!choices.length||choices.length>12||!registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.skip')||stableJson(choices.at(-1))!==stableJson(tx.narrativeChoice))bad('跳过过程的事务记录无效。');for(let i=0;i<choices.length;i++){const choice=object(choices[i],['nodeId','index']),node=registry.narrativeNodes.find(n=>n.id===choice.nodeId),index=int(choice.index,0,3);if(!node||node.skipChoiceIndex!==index)bad('跳过过程来源错配。');if(i+1<choices.length){const next=choices[i+1] as {nodeId:string},target=registry.narrativeNodes.find(n=>n.id===next.nodeId);if(!target||target.kind!==node!.kind||node!.choices[index]!.next!==target.stage)bad('跳过过程的阶段不连续。');}}}
+    if(tx.eventEntries){const entries=array(tx.eventEntries);if(!entries.length||entries.length>64)bad('事件事务来源无效。');for(const rawEntry of entries){const entry=object(rawEntry,['eventId','nodeId','textId']),def=registry.event(string(entry.eventId) as Id),node=def.nodes.find(n=>n.id===entry.nodeId),action=registry.action(intentObj.actionId as Id);if(!(def.binding||def.nodes.some(n=>n.textCases||n.combatOutcomes||n.skipActionId))||!node||![...node.textVariants,...(node.textCases??[]).map(c=>c.text)].includes(string(entry.textId) as Id)||!action.effects.some(e=>e.op==='event.start'&&e.id===def.id&&def.startNode===node.id||e.op==='event.advance'&&action.context?.eventId===def.id&&e.nodeId===node.id||e.op==='combat.turn'&&def.nodes.some(n=>Object.values(n.combatOutcomes??{}).includes(node.id))))bad('事件事务来源错配。');}}
+    if(tx.narrativeChoice){const context=object(tx.narrativeChoice,['nodeId','index']);const index=int(context.index,0,3),node=registry.narrativeNodes.find(n=>n.id===context.nodeId);const hasChoice=!!node?.choices[index]||(node?.kind==='defeat'&&index===node.choices.length&&(registry.defeatReactionRules?.length??0)>0);if(!hasChoice||!registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.choose'&&e.index===index||e.op==='narrative.skip'&&node?.skipChoiceIndex===index))bad('故事事务来源错配。');}
     if (stableJson(intent) !== tx.fingerprint) bad('事务指纹无效。');
     const result = object(tx.result, ['ok', 'code', 'message', 'revision', 'requestId', 'text', 'changes']);
     if (result.ok !== true || result.code !== 'COMMITTED' || result.revision !== expectedRevision || result.requestId !== requestId) bad('事务结果无效。');
@@ -227,10 +241,11 @@ export class SaveCodec {
         return new SaveCodec(this.fixedRegistry ?? await loadPacks(this.registry.contentPacks.filter(p => !['generated/neighborhood', 'generated/cyber-apex-main', 'generated/cyber-apex-side'].includes(p.manifest.id)))).decode(text);
       }
       if(this.registry.packs.some(p=>p.id==='aetheria/adventure')&&!envelope.payload.state.meta.packs.some((p:{id:string})=>p.id==='aetheria/adventure')){
-        const base=await loadPacks(this.registry.contentPacks.filter(p=>p.manifest.id!=='aetheria/adventure'));
+        const compatible=await loadPacks(this.registry.contentPacks.filter(p=>!p.manifest.requiresCapabilities.includes('event.context.v1')));
+        const base=await loadPacks(compatible.contentPacks.filter(p=>p.manifest.id!=='aetheria/adventure'));
         const previous=await new SaveCodec(base).decode(text);if(previous.status!=='ready')return previous;
-        const state=clone(previous.state);state.meta.packs=clone(this.registry.packs);normalizePlayerVariables(state,this.registry);normalizePlayerFlags(state,this.registry);adventure(state);validateState(state,this.registry);
-        return {status:'ready',state,registry:this.registry,migration:`${previous.migration??''} 已追加故事与成长内容，原有身体、记忆与事件保持。`};
+        const state=clone(previous.state);state.meta.packs=clone(compatible.packs);normalizePlayerVariables(state,compatible);normalizePlayerFlags(state,compatible);adventure(state);validateState(state,compatible);
+        return {status:'ready',state,registry:compatible,migration:`${previous.migration??''} 已追加故事与成长内容，原有身体、记忆与事件保持。新故事绑定仅用于新世界。`};
       }
       const ux=await upgradeUXContent(envelope.payload.state,this.registry);
       if(ux){validateState(ux.state,ux.registry);return {status:'ready',...ux,migration:'已更新内容显示，身体、人物和原进度保留。'};}

@@ -119,7 +119,7 @@ test('引用、命名空间和重复 ID 都会阻止启用', async () => {
   const wrong = await packs(); wrong[1].actions[0].id = 'core:action.overwrite'; await assert.rejects(loadPacks(wrong), /NAMESPACE_OWNERSHIP/);
   const duplicate = await packs(); duplicate[1].locations.push(duplicate[1].locations[0]); await assert.rejects(loadPacks(duplicate), /DUPLICATE_ID/);
 });
-test('事件没有合法出口时导入失败', async () => {
+test('事件缺少资源耗尽时可执行的推进或结算路径时导入失败', async () => {
   const input = await packs(); input[1].actions.find(x => x.id === 'aetheria:action.notice.leave')!.conditions.push({ op: 'var.compare', id: 'core:money', comparison: 'gte', value: 999 });
-  await assert.rejects(loadPacks(input), /NO_SAFE_EXIT/);
+  await assert.rejects(loadPacks(input), /NO_FALLBACK_PATH/);
 });

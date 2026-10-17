@@ -8,6 +8,9 @@ import { npcPresent, npcState, hasMemory } from './npc.ts';
 import { residentPresent, residentRelation } from './resident-quests.ts';
 import { adventureValue, progressionCheck } from './progression.ts';
 import { narrativeTags } from './narrative.ts';
+import { activeEvent } from './events.ts';
+import { eventContextTags } from './event-context.ts';
+import { transformationCheck } from './transformations.ts';
 export interface Check { pass: boolean; reason: string; known?: boolean }
 /** 条件求值是纯读取：不能在这里抽 RNG，也不能推进时钟。 */
 export function evaluate(condition: Condition, state: GameState, registry: Registry): Check {
@@ -20,7 +23,7 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     case 'service.available': return {pass:serviceAvailable(state,registry,condition),reason:'当前地点或人物不提供这项功能。'};
     case 'adventure.compare': {const value=adventureValue(state,condition.field);pass=condition.comparison==='eq'?value===condition.value:condition.comparison==='gte'?value>=condition.value:value<=condition.value;reason=`${({assets:'经营份额',influence:'组织影响',safety:'街区安全',reputation:'公共声望',orders:'订单',contracts:'契约',victories:'有效战斗胜利'})[condition.field]}需${condition.comparison==='gte'?'至少':condition.comparison==='lte'?'不超过':'等于'}${condition.value}（当前${value}）。`;break;}
     case 'progression.available': return progressionCheck(state,registry,condition.move,condition.id);
-    case 'narrative.tag': pass=!!state.adventure?.story&&narrativeTags(state,registry).some(t=>t.role===condition.role&&t.tagId===condition.id)===condition.value;reason='当前故事状态不满足这个选择。';break;
+    case 'narrative.tag': pass=!!(state.adventure?.story||activeEvent(state)?.context)&&[...narrativeTags(state,registry),...eventContextTags(state,registry)].some(t=>t.role===condition.role&&t.tagId===condition.id)===condition.value;reason='当前故事状态不满足这个选择。';break;
     case 'resident.present': pass = residentPresent(state, condition.residentId); reason = '约定的居民此刻不在这里，请按其日程再来。'; break;
     case 'resident.trust': pass=residentPresent(state,condition.residentId)&&(state.district?.residents.find(n=>n.id===condition.residentId)?.trust??0)>=condition.value;reason=`与约定居民的信任需要至少${condition.value}。`;break;
     case 'resident.relation': pass = residentRelation(state, condition.residentId, condition.relation); reason = '需要与该居民有相应的共同背景。'; break;
@@ -78,14 +81,17 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
     case 'body.hasPart': {const b=entityBody(state,condition.target??PLAYER);if(!b.known)return {pass:false,reason:b.reason,known:false};pass=b.value.parts.some(x=>x.definitionId===condition.definitionId);} reason = `需要${registry.bodyPart(condition.definitionId).label}。`; break;
     case 'body.hasCapability': { const q=capabilityCount(state,registry,condition.target??PLAYER,condition.capability);if(!q.known)return {pass:false,reason:q.reason,known:false};const n=q.value; pass = n >= condition.count; reason = `需要 ${condition.count} 个可用${{ grasp: '抓握部位', walk: '行走部位', hear: '听觉部位', balance: '平衡部位', tailGrip: '尾部抓握部位' }[condition.capability]}（当前 ${n}）。`; break; }
     case 'tf.state': { const jobs = state.tfQueues.filter(x => x.definitionId === condition.id&&entityKey(x.target)===entityKey(condition.target)); pass = condition.state === 'idle' ? !jobs.some(x => ['active', 'paused', 'blocked'].includes(x.status)) : jobs.some(x => x.status === condition.state); reason = '当前改造进度不符合这项行动。'; break; }
+    case 'tf.available': return transformationCheck(state,registry,condition.id,registry.transformation(condition.id).source==='free'?'tf.apply':'tf.enqueue',condition.target);
     case 'opponent.matches': {
       const story = state.adventure?.story;
       const lastCombat = state.adventure?.lastCombat;
       const activeCombat = state.district?.combat;
+      const bound = activeEvent(state)?.context;
       const profile = story?.profileId ? registry.narrativeProfiles.find(p => p.id === story.profileId) : undefined;
-      const enemyId = profile?.enemyId ?? lastCombat?.enemyId ?? activeCombat?.enemyId;
+      const enemyId = activeCombat?.enemyId ?? bound?.enemyId ?? profile?.enemyId ?? lastCombat?.enemyId;
       const enemy = enemyId ? registry.enemies.find(e => e.id === enemyId) : undefined;
-      const rule = activeCombat?.selectionRuleId ? registry.environmentEnemyRules.find(r => r.id === activeCombat.selectionRuleId) : undefined;
+      const ruleId = activeCombat?.selectionRuleId ?? bound?.enemyRuleId;
+      const rule = registry.environmentEnemyRules.find(r => r.id === ruleId);
       const activeOppTags = new Set([
         ...(story ? narrativeTags(state, registry).filter(t => t.role === 'opponent').map(t => t.tagId) : []),
         ...(enemy?.attributeTags ?? []),
@@ -96,9 +102,9 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
         ...(rule?.fetishTags ?? []),
       ]);
       const actualSpecies = rule?.speciesKind ?? profile?.speciesKind ?? enemy?.speciesKind ?? story?.fills?.opponentKind;
-      const actualMat = story?.fills?.materialKey;
-      const actualPlay = story?.fills?.playKey;
-      const actualTf = story?.fills?.tf;
+      const actualMat = bound?.fills.materialKey ?? story?.fills?.materialKey;
+      const actualPlay = bound?.fills.playKey ?? story?.fills?.playKey;
+      const actualTf = bound?.fills.tf ?? story?.fills?.tf;
       pass = true;
       if (condition.enemyId !== undefined && enemyId !== condition.enemyId) pass = false;
       if (condition.speciesKind !== undefined && actualSpecies !== condition.speciesKind) pass = false;

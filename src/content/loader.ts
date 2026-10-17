@@ -72,7 +72,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     else if (c.op === 'location.is') ref(p, c.id, 'locations', path);
     else if (c.op === 'event.state') ref(p, c.id, 'events', path);
     else if (c.op === 'body.hasPart') ref(p, c.definitionId, 'bodyParts', path);
-    else if (c.op === 'tf.state') ref(p, c.id, 'transformations', path);
+    else if (c.op === 'tf.state' || c.op === 'tf.available') ref(p, c.id, 'transformations', path);
     else if (c.op === 'opponent.matches') {
       if (!p.manifest.requiresCapabilities.includes('adventure.v1')) fail(p, 'CAPABILITY_UNDECLARED', path, '需声明adventure.v1。');
       if (c.enemyId) ref(p, c.enemyId, 'enemies', `${path}/enemyId`);
@@ -91,7 +91,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       const event=context?definitions.get(context.eventId)?.value as ContentPack['events'][number]|undefined:undefined;
       if(!p.manifest.requiresCapabilities.includes('resident.story.v1')||!event?.residentIds?.includes(e.residentId))fail(p,'RESIDENT_TRUST_CONTEXT',path,'信任更新须声明能力且绑定在场事件参与者。');
     }
-    if(['narrative.start','narrative.choose','adventure.change','progression.act','combat.encounter','conversation.respond'].includes(e.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
+    if(['narrative.start','narrative.choose','narrative.skip','adventure.change','progression.act','combat.encounter','conversation.respond'].includes(e.op)&&!p.manifest.requiresCapabilities.includes('adventure.v1'))fail(p,'CAPABILITY_UNDECLARED',path,'需声明adventure.v1。');
     if (e.op === 'resident.remember') {
       checkResident(p, e.residentId, path); ref(p, e.memoryId, 'texts', path);
       const event = context ? definitions.get(context.eventId)?.value as ContentPack['events'][number] | undefined : undefined;
@@ -156,6 +156,9 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       a.effects.forEach((x, i) => checkEffect(p, x, `/actions/${a.id}/effects/${i}`, a.context));
     }
     for (const e of p.events) {
+      if ((e.binding || e.nodes.some(n => n.textCases || n.skipActionId || n.combatOutcomes)) && !p.manifest.requiresCapabilities.includes('event.context.v1')) fail(p, 'CAPABILITY_UNDECLARED', `/events/${e.id}`, '故事绑定与分支需声明 event.context.v1。');
+      for (const id of [...(e.binding?.environmentTags ?? []), ...(e.binding?.resident?.tags ?? [])]) ref(p, id, 'tags', `/events/${e.id}/binding`);
+      if (e.binding?.resident?.service) checkCondition(p, { op: 'service.available', ...e.binding.resident.service }, `/events/${e.id}/binding/resident/service`);
       for (const residentId of e.residentIds ?? []) checkResident(p, residentId, `/events/${e.id}/residentIds`);
       if (e.textMode === 'fixed' && (!p.manifest.requiresCapabilities.includes('quest.binding.v1') || e.nodes.some(n => n.textVariants.length !== 1))) fail(p, 'FIXED_EVENT_TEXT', `/events/${e.id}`, '固定文本事件需声明任务能力且每节点只有一个文本。');
       for (const npcId of e.participantIds ?? []) ref(p, npcId, 'npcs', `/events/${e.id}/participantIds`);
@@ -165,20 +168,46 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       if (nodes.size !== e.nodes.length || !nodes.has(e.startNode)) fail(p, 'INVALID_EVENT_NODES', `/events/${e.id}`, '节点重复或缺开局节点。');
       for (const n of e.nodes) {
         n.textVariants.forEach(id => ref(p, id, 'texts', `/events/${e.id}/${n.id}/textVariants`));
+        const textIds = [...n.textVariants, ...(n.textCases ?? []).map(c => c.text)];
+        if (new Set(textIds).size !== textIds.length) fail(p, 'DUPLICATE_EVENT_TEXT', `/events/${e.id}/${n.id}`, '节点文本分支必须使用不同的文本 ID。');
+        for (const c of n.textCases ?? []) {
+          ref(p, c.text, 'texts', `/events/${e.id}/${n.id}/textCases`);
+          c.when.forEach(x => checkCondition(p, x, `/events/${e.id}/${n.id}/textCases/when`));
+          c.onEnter.forEach(x => {
+            checkEffect(p, x, `/events/${e.id}/${n.id}/textCases/onEnter`, { eventId: e.id, nodeId: n.id });
+            if (['event.start', 'event.advance', 'event.exit', 'combat.start', 'combat.encounter', 'narrative.start'].includes(x.op)) fail(p, 'EVENT_RECURSION', `/events/${e.id}/${n.id}`, '正文分支的进入效果不能跳转或接管事件。');
+          });
+        }
+        if (n.skipActionId) {
+          const skip = definitions.get(n.skipActionId)?.value as ContentPack['actions'][number] | undefined;
+          const continuations = n.actionIds.filter(id => id !== n.skipActionId).map(id => definitions.get(id)?.value as ContentPack['actions'][number] | undefined);
+          if (!n.actionIds.includes(n.skipActionId) || !skip || continuations.length !== 1 || !continuations[0] || skip.conditions.length || stableJson(skip.effects) !== stableJson(continuations[0].effects) || stableJson(skip.conditions) !== stableJson(continuations[0].conditions)) fail(p, 'INVALID_EVENT_SKIP', `/events/${e.id}/${n.id}`, '跳过只能复用唯一后续行动的相同条件和结算，不能代替决策或免除后果。');
+        }
+        if (n.combatOutcomes) for (const target of Object.values(n.combatOutcomes)) if (!nodes.has(target)) fail(p, 'INVALID_NODE', `/events/${e.id}/${n.id}/combatOutcomes`, '战斗结局引用不存在的节点。');
         n.actionIds.forEach(id => { ref(p, id, 'actions', `/events/${e.id}/${n.id}/actionIds`); const action = definitions.get(id)?.value as ContentPack['actions'][number] | undefined; if (action && (action.context?.eventId !== e.id || action.context?.nodeId !== n.id)) fail(p, 'INVALID_EVENT_ACTION', `/events/${e.id}/${n.id}/actionIds`, '动作的事件上下文与节点不匹配。'); });
         n.onEnter.forEach((x, i) => { checkEffect(p, x, `/events/${e.id}/${n.id}/onEnter/${i}`, { eventId: e.id, nodeId: n.id }); if (x.op === 'event.start' || x.op === 'event.advance') fail(p, 'EVENT_RECURSION', `/events/${e.id}/${n.id}`, '本切片不允许进入节点时递归启动/推进事件。'); });
         if (n.type === 'exit' && !n.onEnter.some(x => x.op === 'event.exit')) fail(p, 'MISSING_EXIT', `/events/${e.id}/${n.id}`, '退出节点必须清理事件。');
         if (n.type === 'choice' && (!n.actionIds.length || n.onEnter.some(x => x.op === 'event.exit'))) fail(p, 'INVALID_CHOICE', `/events/${e.id}/${n.id}`, '选择节点需要真实行动且不能进入后即退出。');
       }
       const seen = new Set<string>();
-      function reachable(id: string): void { if (seen.has(id)) return; seen.add(id); const n = nodes.get(id); for (const a of n?.actionIds ?? []) { const action = definitions.get(a)?.value as ContentPack['actions'][number] | undefined; for (const fx of action?.effects ?? []) { if (fx.op === 'event.advance') reachable(fx.nodeId); if (fx.op === 'scene.start') { const scene = sorted.flatMap(p=>p.interactions??[]).find(i=>i.id===fx.id);const slot = sorted.flatMap(p=>p.textSlots??[]).find(s=>s.id===scene?.textSlotId);if(slot?.owner.eventId===e.id)reachable(slot.nextNodeId); } } } }
+      function reachable(id: string): void { if (seen.has(id)) return; seen.add(id); const n = nodes.get(id); for (const target of Object.values(n?.combatOutcomes ?? {})) reachable(target); for (const a of n?.actionIds ?? []) { const action = definitions.get(a)?.value as ContentPack['actions'][number] | undefined; for (const fx of action?.effects ?? []) { if (fx.op === 'event.advance') reachable(fx.nodeId); if (fx.op === 'scene.start') { const scene = sorted.flatMap(p=>p.interactions??[]).find(i=>i.id===fx.id);const slot = sorted.flatMap(p=>p.textSlots??[]).find(s=>s.id===scene?.textSlotId);if(slot?.owner.eventId===e.id)reachable(slot.nextNodeId); } } } }
       reachable(e.startNode);
       if (seen.size !== nodes.size || !e.nodes.some(x => seen.has(x.id) && x.type === 'exit')) fail(p, 'EVENT_UNREACHABLE', `/events/${e.id}`, '存在不可达节点或没有退出路径。');
-      // 每一个选择节点都需要无条件出口；条件分支可存在，但不能把玩家锁死。
+      // 资源耗尽仍能推进或结算；无条件路径可以承担失败后果，不要求立刻脱身。
       for (const n of e.nodes.filter(x => x.type === 'choice')) {
         const actions = n.actionIds.map(x => definitions.get(x)?.value as ContentPack['actions'][number] | undefined);
-        if (!actions.some(a => a && !a.conditions.length && a.effects.some(fx => fx.op === 'event.exit' || (fx.op === 'event.advance' && nodes.get(fx.nodeId)?.type === 'exit')))) fail(p, 'NO_SAFE_EXIT', `/events/${e.id}/${n.id}`, '选择节点缺无条件合法退出。');
+        if (!actions.some(a => a && !a.conditions.length && !a.effects.some(fx => fx.op === 'var.change' && fx.amount < 0 || fx.op === 'progression.act' || fx.op === 'location.move') && a.effects.some(fx => fx.op === 'event.exit' || fx.op === 'event.advance'))) fail(p, 'NO_FALLBACK_PATH', `/events/${e.id}/${n.id}`, '选择节点缺少资源耗尽时仍可执行的推进或结算路径。');
       }
+      const settled = new Set(e.nodes.filter(n => n.type === 'exit').map(n => n.id));
+      let changed = true;
+      while (changed) {
+        changed = false;
+        for (const n of e.nodes.filter(n => !settled.has(n.id))) {
+          const usable = n.actionIds.map(id => definitions.get(id)?.value as ContentPack['actions'][number] | undefined).filter(a => a && !a.conditions.length && !a.effects.some(fx => fx.op === 'var.change' && fx.amount < 0 || fx.op === 'progression.act' || fx.op === 'location.move'));
+          if (usable.some(a => a!.effects.some(fx => fx.op === 'event.exit' || fx.op === 'event.advance' && settled.has(fx.nodeId)))) { settled.add(n.id); changed = true; }
+        }
+      }
+      if (e.nodes.some(n => !settled.has(n.id))) fail(p, 'EVENT_NO_SETTLEMENT', `/events/${e.id}`, '存在资源耗尽后无法走到结算的节点或闭环。');
     }
   }
   const templates = sorted.flatMap(p => p.bodyTemplates ?? []);

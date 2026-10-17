@@ -151,7 +151,10 @@ test('G1–G8 beats mount and clear all 9 live state tags (progression:tag.state
   assert.equal(e.snapshot().adventure!.story!.stage, 'play-01-peak');
   pick('继续：收束脱困');
   assert.equal(e.snapshot().adventure!.story!.stage, 'play-01-resolve');
-  pick('结束当前经历，回到安全位置');
+  pick('带着残迹退回安全位置');
+  assert.equal(e.snapshot().adventure!.story!.stage, 'play-01-resolve-marked');
+  pick('拢紧衣襟护住手腕先退开');
+  assert.equal(e.snapshot().player.flags['progression:flag.aftermath.mark'], true);
   assert.equal(e.snapshot().adventure!.story, null);
 });
 

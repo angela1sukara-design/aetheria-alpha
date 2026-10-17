@@ -167,6 +167,11 @@ export function matchingDefeatReactions(s: GameState, r: Registry): DefeatReacti
     })
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id, 'en'));
 }
+function skippableChoice(node:NarrativeNode,s:GameState,r:Registry):number|undefined{
+  const index=node.skipChoiceIndex;
+  if(index===undefined||node.choices.some((choice,i)=>i!==index&&choice.conditions.every(c=>evaluate(c,s,r).pass))||matchingDefeatReactions(s,r).length)return;
+  return index;
+}
 export function narrativeActions(s:GameState,r:Registry):ActionDef[]|undefined {
   const story=s.adventure?.story;if(!story)return;
   const node=r.narrativeNodes.find(n=>n.id===story.nodeId)!;
@@ -190,11 +195,13 @@ export function narrativeActions(s:GameState,r:Registry):ActionDef[]|undefined {
       });
     }
   }
+  if(skippableChoice(node,s,r)!==undefined&&!departed){const skip=r.globalActions().find(a=>a.effects.length===1&&a.effects[0]?.op==='narrative.skip');if(skip)baseChoices.push({...skip,label:'跳过过程描写，保留后续选择与结算',hint:'执行相同的过程效果，到下一个决策点停下'});}
   return baseChoices;
 }
 /** Read the current option's public effects for cost and eligibility checks, without advancing it. */
 export function publicActionEffects(action:ActionDef,s:GameState,r:Registry):Effect[] {
   return action.effects.flatMap(e=>{
+    if(e.op==='narrative.skip'){const node=r.narrativeNodes.find(n=>n.id===s.adventure?.story?.nodeId);return node?.skipChoiceIndex===undefined?[]:node.choices[node.skipChoiceIndex]!.effects;}
     if (e.op !== 'narrative.choose') return [e];
     const node = r.narrativeNodes.find(n=>n.id===s.adventure?.story?.nodeId);
     if (node && e.index === node.choices.length && s.adventure?.story?.kind === 'defeat') {
@@ -229,9 +236,23 @@ export function advanceNarrative(s:GameState,r:Registry,c:EffectContext,index:nu
   const line=applyNarrativeFills(r.text(choice.resultText),story,s,r);
   const problem=proseProblem(line);if(problem)throw new RuleError('NARRATIVE_TEXT',`这段内容尚未准备好：${problem}。`);
   story.log.push(line);story.log=story.log.slice(-12);c.resolvedTexts.push(line);
-  if(choice.next&&story.steps<12&&(!structuredConversation(s,r)||conversationPresent(s))&&chooseNode(s,r,choice.next))return;
+  if(choice.next&&(!structuredConversation(s,r)||conversationPresent(s))){if(story.steps>=12)throw new RuleError('NARRATIVE_LIMIT','故事超过连续推进上限，不能跳过尚未结算的后果。');if(!chooseNode(s,r,choice.next))throw new RuleError('NO_NARRATIVE','缺少适用于当前状态的后续正文，不能提前结束故事。');return;}
   if(story.kind==='defeat'&&s.player.variables['core:health']!<1){s.player.variables['core:health']=1;c.changes.push({label:'脱离危险',before:0,after:1});}
   a.journal.push({at:s.clock.totalMinutes,title:applyNarrativeFills(node.title,story,s,r),text:story.log.join('\n')});a.journal=a.journal.slice(-64);delete s.rng.streams[`narrative:${story.instanceId}`];for(const k of Object.keys(s.rng.streams))if(k.startsWith(`defeat-play:fill:${story.instanceId}`))delete s.rng.streams[k];a.story=null;
+}
+
+/** Follow only authored single-continuation beats; keep every ordinary effect and draw. */
+export function skipNarrative(s:GameState,r:Registry,c:EffectContext,apply:(effects:Effect[],s:GameState,r:Registry,c:EffectContext)=>void):void {
+  let advanced=false;
+  while(s.adventure?.story){
+    const node=r.narrativeNodes.find(n=>n.id===s.adventure!.story!.nodeId);
+    const index=node?skippableChoice(node,s,r):undefined;
+    if(index===undefined)break;
+    advanced=true;
+    (c.narrativeChoices??=[]).push({nodeId:node!.id,index});
+    advanceNarrative(s,r,c,index,apply);
+  }
+  if(!advanced)throw new RuleError('NARRATIVE_SKIP','这里需要作出选择，不能用跳过代替。');
 }
 
 function safeConversationExit(choice:NarrativeNode['choices'][number]):boolean{return choice.next===null&&!choice.conditions.length&&!choice.effects.length;}

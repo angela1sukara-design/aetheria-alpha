@@ -36,7 +36,7 @@ export interface NarrativeProfile {
   defeatCombo?: EnemyDefeatComboConfig;
 }
 export interface NarrativeChoice { label: string; resultText: Id; conditions: Condition[]; effects: Effect[]; setTags: ScopedTag[]; unsetTags: ScopedTag[]; next: string | null }
-export interface NarrativeNode { id: Id; kind: NarrativeKind; stage: string; title: string; textKey: Id; requiresTags: ScopedTag[]; excludesTags: ScopedTag[]; conditions: Condition[]; tendencies: { tagId: Id; weight: number }[]; weight: number; priority: number; maxVisits: number; choices: NarrativeChoice[]; proseAssembly?: {version:1;mode:import('./prose-types.ts').ProseMode;rule:import('./prose-types.ts').ProseRule} }
+export interface NarrativeNode { id: Id; kind: NarrativeKind; stage: string; title: string; textKey: Id; requiresTags: ScopedTag[]; excludesTags: ScopedTag[]; conditions: Condition[]; tendencies: { tagId: Id; weight: number }[]; weight: number; priority: number; maxVisits: number; choices: NarrativeChoice[]; skipChoiceIndex?: number; proseAssembly?: {version:1;mode:import('./prose-types.ts').ProseMode;rule:import('./prose-types.ts').ProseRule} }
 export interface NarrativeState { instanceId: string; kind: NarrativeKind; stage: string; nodeId: Id; profileId: Id | null; opponentName: string; actor: EntityRef | null; tags: ScopedTag[]; visits: Record<Id, number>; log: string[]; steps: number; /** 战败玩法等入口的占位填充（{material}/{part}/{tf}…）；缺省兼容旧档 */ fills?: Record<string, string>; prose?: import('./prose-types.ts').ProseSnapshot }
 export const ADVENTURE_FIELDS = ['assets', 'influence', 'safety', 'reputation', 'orders', 'contracts'] as const;
 export type AdventureField = typeof ADVENTURE_FIELDS[number];
@@ -92,7 +92,7 @@ export interface AdventureDefinitions {
   environmentEnemyRules?: EnvironmentEnemyRule[];
   defeatReactionRules?: DefeatReactionRule[];
 }
-export type AdventureEffect = {op:'conversation.respond';reaction:'welcomed'|'offended'|'gift'} | { op: 'narrative.start'; kind: NarrativeKind; profileId?: Id } | { op: 'narrative.choose'; index: number } | { op: 'adventure.change'; field: AdventureField; amount: number } | { op: 'progression.act'; move: 'train' | 'buy' | 'order' | 'invest' | 'patrol' | 'aid' | 'reconcile'; id?: Id };
+export type AdventureEffect = {op:'conversation.respond';reaction:'welcomed'|'offended'|'gift'} | { op: 'narrative.start'; kind: NarrativeKind; profileId?: Id } | { op: 'narrative.choose'; index: number } | { op: 'narrative.skip' } | { op: 'adventure.change'; field: AdventureField; amount: number } | { op: 'progression.act'; move: 'train' | 'buy' | 'order' | 'invest' | 'patrol' | 'aid' | 'reconcile'; id?: Id };
 export type OpponentMatchCondition = {
   op: 'opponent.matches';
   enemyId?: Id;

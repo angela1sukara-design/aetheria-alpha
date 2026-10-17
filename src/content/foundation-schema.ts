@@ -53,7 +53,7 @@ export function projectV2(input: unknown, parseV1: (v: unknown) => ContentPack):
     if (c.op === 'body.matches') { shape(c, ['op','target','part']); entityRef(c.target); predicate(c.part); return { op:'time.window',start:0,end:1 }; }
     if (c.op === 'environment.light' || c.op === 'environment.service') { shape(c,['op','value'],['locationId']); if(Object.hasOwn(c,'locationId'))stableId(c.locationId); values(c.value,c.op==='environment.light'?['lit','dark']:['home','market','workshop','clinic','commons']); return {op:'time.window',start:0,end:1}; }
     const copy = clone(c);
-    if ('target' in copy) { if (!['body.hasPart','body.hasCapability','tf.state'].includes(copy.op)) bad('该条件不支持实体作用域。'); entityRef(copy.target); delete copy.target; }
+    if ('target' in copy) { if (!['body.hasPart','body.hasCapability','tf.state','tf.available'].includes(copy.op)) bad('该条件不支持实体作用域。'); entityRef(copy.target); delete copy.target; }
     return copy;
   };
   for (const key of FOUNDATION_KEYS) array(p[key] ?? [], d => {
@@ -79,7 +79,7 @@ export function projectV2(input: unknown, parseV1: (v: unknown) => ContentPack):
   for(const location of legacy.locations)for(const scenery of location.proseScenery??[])scenery.conditions=scenery.conditions.map(c=>projectCondition(c));
   const fx=(e:any)=>{if(e.op==='environment.setLight'){shape(e,['op','locationId','value']);stableId(e.locationId);values(e.value,['lit','dark']);return {op:'clock.advance',minutes:0};}if(Object.hasOwn(e,'target')){if(!e.op.startsWith('tf.'))bad('该效果不支持目标。');entityRef(e.target);const x=clone(e);delete x.target;return x;}return e;};
   for(const a of legacy.actions)a.effects=a.effects.map(fx);
-  for(const e of legacy.events)for(const n of e.nodes)n.onEnter=n.onEnter.map(fx);
+  for(const e of legacy.events)for(const n of e.nodes){n.onEnter=n.onEnter.map(fx);for(const c of n.textCases??[]){c.when=c.when.map(projectCondition);c.onEnter=c.onEnter.map(fx);}}
   for(const n of legacy.narrativeNodes??[]){n.conditions=n.conditions.map(c=>projectCondition(c));for(const c of n.choices){c.conditions=c.conditions.map(x=>projectCondition(x));c.effects=c.effects.map(fx);}}
   for(const r of legacy.defeatReactionRules??[]){r.playerConditions=r.playerConditions.map(c=>projectCondition(c));r.opponentConditions=r.opponentConditions.map(c=>projectCondition(c));r.effects=r.effects.map(fx);}
   parseV1(legacy);

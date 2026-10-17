@@ -1,0 +1,68 @@
+import assert from 'node:assert/strict';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { chromium } from 'playwright';
+import { loadPacks } from '../src/content/loader.ts';
+import { WorldGenerator } from '../src/world/generator.ts';
+import { SaveCodec } from '../src/persistence/codec.ts';
+import { ActionExecutor } from '../src/engine/executor.ts';
+import { enterFolio, openFolioPage, performFolioAction, folioHome } from './folio-navigation.mjs';
+
+const json = async p => JSON.parse(await readFile(p, 'utf8'));
+const index = await json('content/index.json');
+const registry = await loadPacks(await Promise.all(index.packs.map(p => json('content/' + p))));
+const rules = await json('content/generation/rules.json'), reference = await json('content/generation/reference.json');
+const out = path.resolve('artifacts/story-replay'); await mkdir(out, { recursive: true });
+const browser = await chromium.launch({ headless: true, executablePath: process.env.BROWSER_EXECUTABLE_PATH ?? 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe' });
+const errors = [], results = [];
+let serial = 0;
+try {
+  const generated = await new WorldGenerator().generate({ seed: 3, registry, rules, references: [reference] });
+  const location = generated.world.definition.locations.find(l => l.service === 'commons');
+  const state = structuredClone(generated.state); state.world.locationId = location.id;
+  state.world.knownLocationIds = [...new Set([...state.world.knownLocationIds, location.id])];
+  state.player.variables['core:stamina'] = 0; state.player.variables['core:energy'] = 0;
+  const initial = await new SaveCodec(generated.registry).encode(state);
+  const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, acceptDownloads: true });
+  await context.addInitScript(save => { globalThis.aetheriaInitialSave = save; globalThis.aetheriaSaveSlot = 'story-replay-browser'; }, initial);
+  const page = await context.newPage(); page.on('pageerror', error => errors.push(error.message)); page.setDefaultTimeout(12000);
+  await page.goto(pathToFileURL(path.resolve('dist/Aetheria-Alpha-0.2.html')).href);
+  await page.locator('#location-name').filter({ hasText: generated.registry.location(location.id).name }).waitFor({ state: 'attached' });
+  await enterFolio(page);
+  const act = async suffix => {
+    await folioHome(page); await performFolioAction(page, 'stories:action.mire-trap.' + suffix);
+    assert.ok(!await page.locator('#feedback').evaluate(node => node.classList.contains('error')), await page.locator('#feedback').innerText());
+  };
+  const snapshot = async () => {
+    await folioHome(page); await openFolioPage(page, 'save');
+    const download = page.waitForEvent('download'); await page.locator('#save-export').click();
+    const file = path.join(out, 'browser-save-' + ++serial + '.json'); await (await download).saveAs(file); await folioHome(page);
+    return (await json(file)).payload.state;
+  };
+  await act('start'); assert.match(await page.locator('#scene-text').innerText(), /疲乏的/);
+  await act('sink'); await act('endure');
+  const before = await snapshot();
+  assert.equal(before.player.flags['progression:flag.aftermath.mark'], true);
+  assert.ok(before.player.body.parts.some(p => ['progression:material.slime-mucus', 'progression:material.living-latex'].includes(p.overrides?.materialId)));
+  const actual = before.eventInstances.find(e => e.status === 'active').context;
+  assert.match(await page.locator('#scene-text').innerText(), new RegExp(actual.fills.opponent));
+  assert.doesNotMatch(await page.locator('#scene-text').innerText(), /\{[a-zA-Z]+\}/);
+  await page.screenshot({ path: path.join(out, 'bound-story-desktop.png'), fullPage: true });
+  const ordinary = new ActionExecutor(generated.registry, before);
+  assert.equal(ordinary.performAction({ actionId: 'stories:action.mire-trap.withdraw' }, before.meta.revision, 'read-withdrawal').ok, true);
+  await act('skip'); const skipped = await snapshot();
+  for (const key of ['clock', 'player', 'rng', 'eventInstances', 'tfQueues']) assert.deepEqual(skipped[key], ordinary.snapshot()[key]);
+  assert.equal(skipped.eventInstances.find(e => e.status === 'active').nodeId, 'edge');
+  results.push('浏览器中的真实随机世界：低资源正文、真实对手与覆层、跳过保留全部后果');
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  await page.screenshot({ path: path.join(out, 'bound-story-mobile.png'), fullPage: true });
+  await act('clean'); const cleaned = await snapshot();
+  assert.equal(cleaned.activeEventStack.length, 0); assert.equal(cleaned.player.flags['progression:flag.aftermath.mark'], false);
+  assert.ok(!cleaned.player.body.parts.some(p => ['progression:material.slime-mucus', 'progression:material.living-latex'].includes(p.overrides?.materialId)));
+  results.push('移动布局正常；实际清理覆层并回到当前地图循环');
+  assert.deepEqual(errors, []);
+  await writeFile(path.join(out, 'browser-results.json'), JSON.stringify({ results, errors }, null, 2) + '\n');
+  for (const result of results) console.log('PASS ' + result);
+} finally { await browser.close(); }

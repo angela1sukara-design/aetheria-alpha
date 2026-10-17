@@ -12,9 +12,11 @@ import { aftertasteDecay, isSanityHostileLocation, routeDistanceTier, routeDurat
 import { SANITY_BREAK_FLAG, SANITY_ID } from '../persistence/vars-migration.ts';
 import { npcPresent, rememberNPC } from './npc.ts';
 import { residentPresent, rememberResident, changeResidentTrust } from './resident-quests.ts';
-import { startNarrative, advanceNarrative } from './narrative.ts';
+import { startNarrative, advanceNarrative, skipNarrative } from './narrative.ts';
 import { advanceAdventureDay, applyProgression } from './progression.ts';
-export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id; narrativeChoice?: { nodeId: import('../core/types.ts').Id; index: number } }
+import { bindEventContext, eventText } from './event-context.ts';
+import { evaluate } from './conditions.ts';
+export interface EffectContext { budget: number; changes: Change[]; resolvedTexts: string[]; transactionId: string; actionId: import('../core/types.ts').Id; narrativeChoice?: { nodeId: import('../core/types.ts').Id; index: number }; narrativeChoices?: { nodeId: import('../core/types.ts').Id; index: number }[]; eventEntries?: import('../core/types.ts').EventEntry[] }
 export function applyEffects(effects: Effect[], draft: GameState, registry: Registry, context: EffectContext): void {
   // 旅行 Action 常仍带 clock.advance 10；时钟改由 location.move 按 Route 推进，同批效果内跳过以免双计（保留旧包指纹）。
   const routeOwnsClock = effects.some(e => e.op === 'location.move');
@@ -24,6 +26,7 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
       case 'conversation.respond': {const delta=respondConversation(draft,registry,effect.reaction);if(delta.before!==delta.after)context.changes.push({label:`${delta.name}的信任`,before:delta.before,after:delta.after});break;}
       case 'narrative.start': startNarrative(draft,registry,context,effect.kind,effect.profileId);break;
       case 'narrative.choose': advanceNarrative(draft,registry,context,effect.index,applyEffects);break;
+      case 'narrative.skip': skipNarrative(draft,registry,context,applyEffects);break;
       case 'adventure.change': case 'progression.act': applyProgression(effect,draft,registry,context,applyEffects);break;
       case 'resident.remember': rememberResident(draft, registry, effect.residentId, effect.memoryId); break;
       case 'resident.trust.change': {const c=changeResidentTrust(draft,registry,effect.residentId,effect.amount);if(c.before!==c.after)context.changes.push({label:`${c.name}的信任`,before:c.before,after:c.after});break;}
@@ -151,6 +154,8 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
           instanceId: `event-${context.transactionId}`, definitionId: def.id, nodeId: def.startNode,
           status: 'active', textByNode: {}, draws: [], locals: {},
         };
+        const binding = bindEventContext(draft, registry, def, context.transactionId);
+        if (binding) instance.context = binding;
         draft.eventInstances.push(instance); draft.activeEventStack.push(instance.instanceId);
         enterNode(instance, draft, registry, context);
         break;
@@ -173,17 +178,22 @@ export function applyEffects(effects: Effect[], draft: GameState, registry: Regi
   }
 }
 function enterNode(instance: EventInstance, draft: GameState, registry: Registry, context: EffectContext): void {
-  const node = registry.event(instance.definitionId).nodes.find(x => x.id === instance.nodeId);
+  const definition = registry.event(instance.definitionId);
+  const node = definition.nodes.find(x => x.id === instance.nodeId);
   if (!node) throw new RuleError('INVALID_NODE', '事件节点不存在。');
   // 已抽结果固化到实例；重绘、存读和查看地图只读 textByNode，不重抽、不重放 onEnter。
   if (!instance.textByNode[node.id]) {
+    const selectedCase = node.textCases?.find(c => c.when.every(condition => evaluate(condition, draft, registry).pass));
     if (registry.event(instance.definitionId).textMode === 'fixed') instance.textByNode[node.id] = node.textVariants[0]!;
     else {
       const value = draw(draft, `event:${instance.instanceId}`);
       instance.draws.push({ nodeId: node.id, value });
       instance.textByNode[node.id] = node.textVariants[Math.floor(value * node.textVariants.length)];
     }
+    if (selectedCase) instance.textByNode[node.id] = selectedCase.text;
+    if (definition.binding || definition.nodes.some(n=>n.textCases||n.combatOutcomes||n.skipActionId)) (context.eventEntries ??= []).push({ eventId: instance.definitionId, nodeId: node.id, textId: instance.textByNode[node.id]! });
     applyEffects(node.onEnter, draft, registry, context);
+    if (selectedCase) applyEffects(selectedCase.onEnter, draft, registry, context);
   }
-  if (node.type === 'exit') context.resolvedTexts.push(registry.text(instance.textByNode[node.id]));
+  if (node.type === 'exit') context.resolvedTexts.push(eventText(registry.text(instance.textByNode[node.id]), instance));
 }

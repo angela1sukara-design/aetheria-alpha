@@ -11,6 +11,8 @@ import { revalidateDistrict } from './interaction.ts';
 import { TextLibrary } from '../content/text-variants.ts';
 import { compactHistory, historyTransaction, requestArchived } from './history.ts';
 import { uniqueParagraphs } from '../content/player-prose.ts';
+import { activeEvent } from './events.ts';
+import { eventText } from './event-context.ts';
 /** 唯一写入权威。存档恢复建立新的 executor，不能通过可写 snapshot 绕过事务。 */
 export class ActionExecutor {
   #state: GameState;
@@ -37,15 +39,17 @@ export class ActionExecutor {
     const context: EffectContext = { budget: 64, changes: [], resolvedTexts: [], transactionId: requestId, actionId: intent.actionId };
     try {
       const effects=option.definition.effects.map(e=>e.op==='player.create'&&intent.params?.name ? {...e,name:intent.params.name.trim()}:e);
+      const previousEvent = activeEvent(draft);
       applyEffects(effects, draft, this.registry, context);
+      const resultText = eventText(this.registry.text(option.definition.resultText), previousEvent ?? activeEvent(draft));
       revalidateDistrict(draft,this.registry,context);
       // 只在全部效果成功后记录人物的实际去向；不由UI推断“任务完成所以消失”。
       const movements = npcPresenceTransitions(this.#state, draft, this.registry);
       context.changes.push(...movements.changes); context.resolvedTexts.push(...movements.texts);
       draft.meta.revision++;
       const result: ActionResult = { ok: true, code: 'COMMITTED', message: '行动完成。', requestId,
-        revision: draft.meta.revision, text: uniqueParagraphs([option.definition.effects.some(e=>e.op==='combat.turn'||e.op==='narrative.choose')?'':this.registry.text(option.definition.resultText), ...context.resolvedTexts].filter(Boolean).join('\n\n')), changes: context.changes };
-      draft.ledger.transactions.push({ requestId, fingerprint, result: clone(result), ...(context.narrativeChoice?{narrativeChoice:context.narrativeChoice}:{}) });
+        revision: draft.meta.revision, text: uniqueParagraphs([option.definition.effects.some(e=>e.op==='combat.turn'||e.op==='narrative.choose'||e.op==='narrative.skip')?'':resultText, ...context.resolvedTexts].filter(Boolean).join('\n\n')), changes: context.changes };
+      draft.ledger.transactions.push({ requestId, fingerprint, result: clone(result), ...(context.narrativeChoice?{narrativeChoice:context.narrativeChoice}:{}), ...(context.narrativeChoices?{narrativeChoices:context.narrativeChoices}:{}), ...(context.eventEntries?{eventEntries:context.eventEntries}:{}) });
       compactHistory(draft);
       // 只有所有效果成功之后才替换权威状态；渲染、IO、AI 都不参与此次提交。
       this.#state = draft;
