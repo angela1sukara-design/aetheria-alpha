@@ -1,0 +1,1157 @@
+
+> aetheria-abyss-reshaping@0.2.0-alpha test
+> node --test tests/*.test.ts
+
+✔ all 54 reviewed rules are fingerprinted, installed, and the canonical runtime matches reference assembly (13.381075ms)
+✔ every one of the 54 templates assembles against real generated locations, residents and body graphs (2891.942458ms)
+✔ environment: real action captures once, saves exactly, continues and exits without resources or time (779.481092ms)
+✔ person: real action captures once, saves exactly, continues and exits without resources or time (775.288214ms)
+✔ body: real action captures once, saves exactly, continues and exits without resources or time (785.182951ms)
+✔ absent or departed residents yield complete fallback, never another resident or invented work (168.206285ms)
+✔ schema rejects malformed templates and save validation rejects text, exit and object-binding tampering (312.004408ms)
+✔ body-panel TF is executable during A observation, preserves captured text and restores from a real save (646.444099ms)
+✔ five supported themes retain 54 live templates and old worlds remain usable without retroactive nodes (1500.703639ms)
+✔ zero stamina battle retains an emergency exit before and after saving (241.900547ms)
+✔ split real travel accumulates recovery time and remainder survives save (216.559439ms)
+✔ 10000 actual actions keep a bounded history and archived requests never pay again (12767.437625ms)
+✔ archiving preserves completed event conditions and TF/NPC source receipts (1343.689532ms)
+✔ persisted incompatible extensions are isolated while valid base still loads (169.873896ms)
+✔ defeat creates real scoped context, stable node selection, and a free recovery exit (200.727733ms)
+✔ accepted mechanical maintenance applies real TF once with verifiable narrative origin (179.9923ms)
+✔ training has real costs and daily limits; shops equip weapon and armor together (14.453857ms)
+✔ orders, investments and daily income form a playable resource loop (11.094355ms)
+✔ all story categories have usable starts and condition-driven branches (11.058136ms)
+✔ strict authoring validation rejects unknown tag scopes and missing free exits (13.307963ms)
+✔ authored story costs use ordinary eligibility and public previews without mutating state (172.588196ms)
+✔ NPC origin receipts remain valid after old dialogue history is archived (1119.630894ms)
+✔ skill resources are spent and same-day opponent rewards cannot be farmed (12.541332ms)
+✔ emergency withdrawal also works with no action points (2.6754ms)
+✔ pre-adventure fixed saves upgrade additively and generated worlds have real combat in all 17 themes (7140.804112ms)
+✔ capital and stewardship endings require and accept milestones earned through real actions (4934.676213ms)
+✔ all 675 source phrases are installed once with explicit theme qualification and frozen review evidence (24.659709ms)
+✔ modern: actual worlds contain matching new scenes, work at night, and round-trip saves (1819.607392ms)
+✔ cyberpunk: actual worlds contain matching new scenes, work at night, and round-trip saves (1703.364019ms)
+✔ fantasy: actual worlds contain matching new scenes, work at night, and round-trip saves (1800.672588ms)
+✔ xianxia: actual worlds contain matching new scenes, work at night, and round-trip saves (1642.622432ms)
+✔ post-apocalypse: actual worlds contain matching new scenes, work at night, and round-trip saves (1640.966175ms)
+✔ snow, mist, midday and moonlight stay qualified in dry and frost worlds (669.612722ms)
+✔ 270 held originals have fingerprinted, explicit scenery recipes without bulk approval (6.083723ms)
+✔ new worlds actually publish bounded observation actions and source phrases, stable by seed (618.010288ms)
+✔ modern-only scenery is excluded from fantasy, existing random streams are unchanged, max world stays valid (694.731086ms)
+✔ observation renders in the real executor, preserves resources and bodies, saves identically and exits freely (680.740321ms)
+✔ closed observation profiles reject invalid references and cannot select competing high-priority global stories (710.814994ms)
+✔ 初始模板是连通身体；耳、手掌、足部能力从实际节点派生 (37.273355ms)
+✔ 自由耳型双侧整体更换，时间/金钱/既有身份标记不变 (11.48438ms)
+✔ 自由拓扑新增/移除尾部，连接数与平衡能力同步变化 (7.489561ms)
+✔ 额外手掌内容无需 engine/UI 改动，资源预算增加为3 (5.52675ms)
+✔ 无效锚点、容量超出、循环、孤立图和删除父节点均拒绝 (5.758272ms)
+✔ 图补丁任一操作失败，原身体不产生半次变化 (5.849207ms)
+✔ 第四地点路线与改造咨询的多节点/无条件出口真实可用 (29.129651ms)
+✔ 同请求预约仅扣款一次，15分钟试装无抓握，45分钟才有能力 (11.245054ms)
+✔ 尾部预约期间自由耳型成功；尾部塑形冲突给出原因且不结算 (9.133734ms)
+✔ 暂停阻止世界时间增加TF进度并保留锁，继续从原阶段推进 (12.150144ms)
+✔ 取消释放锁，不退费、不撤销试装；可移除试装后重新预约 (11.377767ms)
+✔ 已经有生物尾时拒绝机械尾预约，咨询仍可合法退出 (7.901213ms)
+✔ 付款后发生其他效果失败：身体/进度/金钱/时间一起回滚 (10.28585ms)
+✔ 一次长行动跨越两个TF阶段和多个午夜，结构只改变一次 (19.487132ms)
+✔ 两个不同部位剧情队列并行，时间不会逐队列重复扣除 (9.054525ms)
+✔ 机械尾校准后解锁真实工作；试装或移除时工作不可执行 (10.782358ms)
+✔ 临界点结构不兼容会阻塞；解除原因后原边界重试并可保存 (12.959786ms)
+✔ 有队列时反复读取身体/行动预览，不改变任何图、进度、RNG (14.743008ms)
+✔ 试装与暂停期间存读恢复图、队列、事件文字；恢复后不重扣费 (16.181798ms)
+✔ 存档拒绝伪造阶段、进度、来源事务、身体连接和冲突预约 (14.058422ms)
+✔ 内容包缺失身体定义时隔离完整存档，原字符串保持 (6.898513ms)
+✔ 第一阶段真实存档精确升级；时间/金钱/事件/随机/账本原样保留 (6.720177ms)
+✔ 旧档checksum正确但状态无效/包未知仍隔离，不能靠迁移绕过校验 (5.567864ms)
+✔ 新增身体/TF schema、能力、引用、时间阶段与模板图的负例导入失败 (15.452449ms)
+✔ same seed reproduces bindings, relations and packs; authoring prose is never evaluated (609.233139ms)
+✔ path.capital reaches the common apex without mandatory sides after progression milestones (3701.348795ms)
+✔ path.warlord reaches the common apex without mandatory sides after progression milestones (3614.450021ms)
+✔ free exit resumes from the same location; exhausted paid choice rolls back atomically (909.199843ms)
+✔ bound residents must be present; side options and memories persist across days and restore (1407.372389ms)
+✔ parallel routes show independent next steps; optional flags cannot bypass a stage (704.480496ms)
+✔ small worlds may omit unmatched relationship quests and always retain both main routes (655.410058ms)
+✔ every local side branch records its actual choice; atmosphere stays out of Journal (9147.387316ms)
+✔ a resident can leave at the schedule boundary after recording the shared action (358.572767ms)
+✔ imported rules can reorder services while keeping the final command stage at the starting home (252.124611ms)
+✔ invalid author data, missing participant context and forged saved bindings are rejected (331.538374ms)
+✔ defeat-play G1–G8 multi-beat prose fills loaded (244.300622ms)
+✔ defeat.play action opens hub under fantasy play entry tag (195.518872ms)
+✔ G1 four-beat chain: capture→press→peak→resolve with exit kept (192.020758ms)
+✔ hub3 path reaches play-05 four-beat chain (197.432348ms)
+✔ two seeds (or redraws) produce different defeat-play fillings (175.276482ms)
+✔ gel defeat chain nodes remain untouched (196.387792ms)
+✔ B: three distinct enemies, victory reward only once and aftermath resumes (80.780642ms)
+✖ B: defeat has multiple nodes, persistent injury and safe recovery with no money (36.38409ms)
+✔ B: flee has real exit without victory reward (39.446038ms)
+✔ B: gel TF has premonition, physical replacement, adaptation and work response (74.144769ms)
+✔ B: cross-location canal task waits a real game day and retains branch (53.379582ms)
+✔ C: full Riker personal route is gated by facts and a real next day (125.703471ms)
+✔ C: selling branch pays money but closes private route, even after repeated daily talk (56.332345ms)
+✔ C: contact resources, facing, pause, restore and exit really update the scene (79.519155ms)
+✔ C: all four text package lifecycle states preserve exact gameplay state (79.017256ms)
+✔ C: rule injection, unknown variable, version and priority conflicts are rejected (35.721282ms)
+✔ C: new topology removes incompatible equipment without destroying item (53.192537ms)
+✔ D: TF defers occupied body part, release/resume applies once and saves scene (181.546784ms)
+✔ D: append-only event pack imports without engine edits and survives save; missing rules quarantine original (85.357904ms)
+✔ D: storylet cooldown and package load order are deterministic; rendering draws nothing (66.011887ms)
+✔ D: adult preference cannot permit unknown-age Velvet; text updates preserve state (39.431505ms)
+✔ A: ten useful places and thirty distinct storylets load through one added pack (68.211261ms)
+✔ A: creation, work, resident persistence, storylet, cross day and save round trip (94.743682ms)
+✔ A: exact Alpha 0.1.3.1 fixture appends district without changing old ledger (34.500786ms)
+✔ 完整日常循环：三个地点、谋生、买热食、回家恢复 (51.07631ms)
+✔ 同 requestId 重放只提交一次，即使 revision 过期 (12.923129ms)
+✔ 请求 ID 不能冒用于另一行动 (7.521664ms)
+✔ 旧 revision 的新请求被拒绝，不消耗状态 (5.918404ms)
+✔ 不能从当前地点执行隐藏或事件专用动作 (5.901109ms)
+✔ 未登记 intent 参数明确拒绝 (5.135704ms)
+✔ 重复读取视图/选择器不能改时间、revision、RNG、金钱 (19.640155ms)
+✔ 快照与 Registry 深冻结，外部不能写状态或定义 (6.510328ms)
+✔ 预检资源不足：有具体原因且没有扣费/推进时间 (5.29188ms)
+✔ 效果中途失败：时间、金钱、事件、RNG 原子回滚 (7.722596ms)
+✔ 事件分支有真实代价与奖励，结束后回到行动列表 (9.463418ms)
+✔ 不帮忙出口真实结束，不获得未走分支的奖励 (14.253215ms)
+✔ 连续多个午夜仅记录一次，重放不会重复推进边界 (5.857986ms)
+✔ 精力为零仍可回到公寓恢复，不形成软锁 (11.182602ms)
+✔ 夜间时间窗与布尔组合求值为纯读取 (9.603899ms)
+✔ 独立随机流可复现，其他流不会改变事件流 (4.528334ms)
+✔ 加载同一包集合的顺序不同，Registry 索引与 hash 一致 (7.924454ms)
+✔ 第三方内容包通过公开 Hook 增加真实行动，无需改 engine/UI (5.180451ms)
+✔ 未知高级 Effect/Condition 操作符导入失败，附 JSON pointer (2.836779ms)
+✔ 缺少依赖、循环依赖、版本错误导入失败 (10.968646ms)
+✔ 引用、命名空间和重复 ID 都会阻止启用 (15.416857ms)
+✔ 事件没有合法出口时导入失败 (2.041989ms)
+✔ configured fantasy generation is reproducible while different seeds produce different real residents and inventories (2923.753715ms)
+✔ NPC inventory and lessons come from explicit service data, with no unrelated actions (97.935785ms)
+✔ a generated passerby can talk but never exposes work, goods or teaching, even as unavailable options (142.78425ms)
+✔ unaffordable supported goods remain visible with a specific resource reason, and failure is atomic (82.357068ms)
+✔ buying and lessons execute real transactions, remain idempotent and survive save restoration (811.836538ms)
+✔ facilities control sleep and treatment; one rest and one waiting action remain per location (220.703708ms)
+✔ a healer sells actual herbal supplies which can be used from inventory (188.66851ms)
+✔ a capable provider stops offering services away from the workplace; lookups never mutate RNG or state (32.383526ms)
+✔ schemas reject unsupported services, unknown goods and unregistered facilities (201.769174ms)
+✔ changing only facility and provider data enables a real lesson outside the workshop class (522.008308ms)
+✔ location profiles expose environment tags used by enemy matching (1.692573ms)
+✔ combat.encounter at canal starts an env-matched enemy with overlays (7.901804ms)
+✔ workshop scavenger overlay injects hands.restricted defeat tags (2.459342ms)
+✔ fixed combat.start still applies matching overlay when env fits (1.92496ms)
+✔ cafe has no env-enemy match so encounter action is hidden (1.896623ms)
+✔ overlay helper keeps base enemy when no rule matches (0.14055ms)
+✔ selectEnvironmentEnemyRule is deterministic for a fixed seed stream (0.616815ms)
+✔ equipment slots include six primary plus proposed wings/tail (0.610924ms)
+✔ multi-slot wear stacks held+body+accessory bonuses with caps; accessory is zero (26.110484ms)
+✔ consumables buy, use out of combat, and use in combat with quantity deduct (195.789771ms)
+✔ accessory non-zero bonuses rejected; held attack sample allowed (0.54638ms)
+✔ 唯一实体身体、缺省与未知；读取不改状态、随机流或历史文本 (5.348309ms)
+✔ 机械手＋有机尾不会被跨部件合并成机械尾；真实能力不由材料或 Tag 授予 (1.078199ms)
+✔ v1 拒绝 v2 属性；未知引用、歧义 Tag、替代环与部件范围错误明确拒绝 (122.994948ms)
+✔ NPC TF 经事务修改唯一目标；重复请求幂等、失败回滚和存读一致 (55.489868ms)
+✔ 旧 v3 加载增量包保持账本/记忆/图；原包哈希不冒用 (40.874948ms)
+✔ 统一成年门槛不允许新种族低阈值绕过，未知年龄仍回退 (9.76651ms)
+✔ 实际属性 TF 改变候选文本，尺寸及改造来源经存档校验 (3.362112ms)
+✔ NPC 阶段 TF 遇真实接触阻塞，暂停/存读/恢复/取消均保留阶段且不改玩家 (165.781313ms)
+✔ 生成居民 TF 使用同一事务目标路由；身体变化后旧外观不再作为当前结构 (269.712167ms)
+✔ v0.3 世界服务/生态/光照、真实行为限制与新旧快照闭环 (274.865943ms)
+✔ 新旧参考域拒绝未知 Tag、同义矛盾、错误服务及生成顺序不可达 (24.740973ms)
+✔ 普通与 NSFW 素材 v2 严格验收；旧 parser 不冒充兼容且正文不能夹带规则 (5.504782ms)
+✔ 旧场景身体副本被弃用且不升级为 NPC 权威；未知身体暂停但事件与历史不丢失 (73.522604ms)
+✔ 参数变化使装备失效时保留物品；候选按同一部件长度判断 (23.336207ms)
+✔ 存档封装不能冒用另一格式版本，即使校验和有效也明确隔离 (1.82203ms)
+✔ 显式辅助移动和听觉职业适配允许无手足身体；生成与存档使用相同规则 (191.098106ms)
+✔ all 17 themes keep real services, profile-specific built-in roles/names and valid saved worlds (767.760405ms)
+✔ all twelve remaining themes assemble A1 from genuine default facilities and conditional saved light (825.327394ms)
+✔ explicitly empty facilities and missing light profiles never acquire fictitious props or sensory facts (14.472487ms)
+✔ v2 scenery conditions reject unknown operations, invalid light values and dangling location references (133.690363ms)
+✔ observed schedules never invent a performed task, posture, records or props (53.313874ms)
+✔ theme adaptation removes unscoped foreign architecture but retains explicitly scoped imported details (4.749667ms)
+✔ dedicated combination encounters cannot be hijacked by unrelated home, street or canal chains (905.686088ms)
+✔ quest text is clean and a real pre-install save preserves its exact historic prose and world (883.753308ms)
+✔ 第二轮：820候选去重为787新增，主表12542条，旧素材逐条保留 (8.043052ms)
+✔ 第二轮：41组均有实际新增与说明，跨库角色和规则用途独立 (2.927552ms)
+✔ 第二轮：重名、别名及全角名称进入复核而非自动合并，重复稳定键拒绝 (0.533911ms)
+✔ 第二轮：概念ID由键定义且与排序无关，旧定义与旧匹配规则原样保留 (22.389934ms)
+✔ 第二轮：灯光、声音、空间对象、味觉分别归入独立维度 (3.201286ms)
+✔ 第二轮：20种尺寸与物理量有明确单位，无默认值；物性维度不冒充事实 (7.6949ms)
+✔ 第二轮：情绪、习惯、目标、历史和同意分层，不以倾向替代真实事实 (28.349255ms)
+✔ 第二轮：动作意图需要参与者和运行检查，不结算效果，身体适配绑定实例 (5.12505ms)
+✔ 第二轮：30个文字批次通过正式校验，不注册编辑标签、不携带状态效果 (211.933046ms)
+✔ 第二轮：已发布交换ID不可改序、删除、追加、重复占用 (1.951411ms)
+✖ 第二轮：生成文件可确定性重建，主表、索引、旁路元数据相互一致 (8.08904ms)
+✔ 第二轮：上一版指纹和31份原始交付不变，3064条待审未伪装已完成 (262.723787ms)
+✔ general-lexicon pack loads into default index path (225.54666ms)
+✔ sanity remaining model: initial full, rest recovers, pressure magnitude positive (6.86969ms)
+✔ 扩充：原10700、两批667与388条真正新增均完整保留且身份唯一 (4.865303ms)
+✔ 扩充：17种背景标题去掉数量与备注，全部有独立背景维度 (0.994935ms)
+✔ 扩充：候选ID不因插入或排序改变，原表文字与说明独立 (0.821004ms)
+✔ 扩充：截短行有前缀证据才恢复，任意同ID差异不覆盖 (0.189266ms)
+✔ 扩充：街道核心不携带霓虹、层位、雨天或赛博设定 (1.028065ms)
+✔ 扩充：标题材质与说明主题分开，触感类比、否定及假设不赋予材质 (0.537169ms)
+✔ 扩充：低重力与零重力分别建概念；宽度、摩擦、照明分维度 (0.879279ms)
+✔ 扩充：专名保留与明确待审队列，描述关键词不冒充实体状态 (1.318826ms)
+✔ 扩充：所有标题和描述证据都能定位回原文，引用概念均存在 (12.034113ms)
+✔ 扩充：语义不明的重名提案单列，不进行跨维度破坏性合并 (0.318726ms)
+✔ 扩充：35批纯文字全部通过正式v2格式校验，编辑标签和效果不进入批次 (201.293994ms)
+✔ 扩充：已交付的素材ID不能因为新增、重排或删除而悄悄改写 (0.393487ms)
+✔ 扩充：保存的完整主表可重复生成，分库和批次交付齐全 (177.612114ms)
+✔ 扩充：原交付含NSFW的31个文件原始哈希与全部JSON内容哈希保持一致 (40.039493ms)
+✔ 通用原子化：耳饰与材质、尺寸、丝状分开，不修改源短语 (7.346696ms)
+✔ 通用原子化：黄铜不同时重复推成铜，项链坠不推成项链 (1.165192ms)
+✔ 通用原子化：夜间与雨是独立维度，不互相吞掉 (0.336822ms)
+✔ 通用原子化：软陶/棉絮是触感意象，不授予陶瓷/棉材质 (0.607832ms)
+✔ 通用原子化：木纹/藤纹和铜色不等于对应材质，浅不等于小 (2.659293ms)
+✔ 通用原子化：姓名外号及地名原样保留，不拆成徒弟或照明 (0.278093ms)
+✔ 通用原子化：否定隐私询问不能提取为侵犯隐私，行为不折成单一人格 (0.606202ms)
+✔ 通用原子化：对白作为例句，疑问中的身体不变成已有身体 (0.189067ms)
+✔ 通用原子化：词义模糊保持待复核，颜色可独立作为属性 (0.573971ms)
+✔ 通用原子化：源清单ID重复或格式损坏拒绝，不静默漏条 (0.698478ms)
+✔ 通用原子化：全量10700条一一映射、引用/证据精确、输出可重现 (427.276738ms)
+✔ 通用原子化：所有交付原件与NSFW文件哈希不变 (11.755332ms)
+✔ real delivery has 214 valid batches, 10700 entries and a preserved source archive (753.3278ms)
+✔ only approved unchanged text can be compiled; editing prose revokes build eligibility (73.349714ms)
+✔ each recorded use resolves to real compiled text; the archive and held entries are not runtime packs (28.440933ms)
+✔ adaptation changes text without changing occupations, schedules, body recipes or activity effects (1.368733ms)
+✔ lexicon neighborhoods reproduce from seed, differ across seeds and use actual body structure plus saved attire (1363.67129ms)
+✔ meeting, helping, existing TF and save restore work with reviewed text and stable resident memories (997.878296ms)
+✔ actual published v0.2 save remains unchanged after installing the lexicon adapter (84.748973ms)
+✔ outfit field rejects effects or empty pools in content validation (60.311003ms)
+✔ 五个大类完整覆盖全量10700条且批号互不重叠 (2.165962ms)
+✔ 全包总指令要求连续完成而无需逐50条确认，五类也有独立指令 (1.759974ms)
+✔ 整包格式要求完整范围，拒绝缺批、重批、范围外批次和夹带规则 (50.453869ms)
+✔ 一次领取整类，重领幂等，范围冲突不会部分改写领取记录 (21.680825ms)
+✔ 整类一次导入，保持原ID与未审稿状态；重复整包幂等且修复派生索引 (447.762031ms)
+✔ 最后一批格式或来源错误，整包都不收录 (53.692901ms)
+✔ 整包内部精确重复会拒绝所有批次，不留下前面已检查的词条 (261.661373ms)
+✔ 部分已收录后重交完整包只补齐缺失批次，不覆盖旧内容 (316.142873ms)
+✔ 58类示例均有合法子类与完整独立批次结构，示例不进入库存 (18.410023ms)
+✔ 首期10700条/214批无重号，每个独立任务已落盘且编号正确 (30.504894ms)
+✔ 规则包、脚本字段与写作者自批approved不能伪装成纯素材 (1.365628ms)
+✔ 分类错配、跳号、批次零号和未定义子类被拒绝 (1.374481ms)
+✔ 超过批量、空文本、错误字段类型、空标签与控制字符被拒绝 (0.890948ms)
+✔ 未实现身体形态与器官可合法收录为描述，不要求BodyGraph能力 (0.571845ms)
+✔ 精确查重规范化全半角、空白、标点；同名不同义只提示 (1.350916ms)
+✔ 字面相近项给出审查线索，不自动删除或合并 (0.188049ms)
+✔ 领取人冲突拒绝，重复领取幂等，扩充不会重用首期批号 (39.475012ms)
+✔ 未领取与假冒来源的交付无法收录 (11.77827ms)
+✔ 交付数量与主题必须匹配已派发任务，错误不留下半批数据 (6.889456ms)
+✔ 批次收录与重复导入幂等，已收录文件不允许覆盖 (34.504127ms)
+✔ 跨批精确重复使整批不写入，近似项保留编辑判断 (42.964136ms)
+✔ 本批精确重复也拒绝，锁在失败后释放 (34.32988ms)
+✔ 收录、审定、游戏使用三个数量分开；只导出审定条目并保留来源 (39.787524ms)
+✔ 混合审稿中任一未知ID会拒绝整份决定 (23.219895ms)
+✔ hold与rejected保留收录历史，不进入已审定导出 (64.515459ms)
+✔ 使用登记必须来自已收录审定条目；不能先登记后冒充实装 (31.904915ms)
+✔ 并发写锁阻止领取，不覆盖既有管理记录 (0.830064ms)
+✔ 跨批续写摘要只来自已收录词库，提供稳定ID与精简内容 (15.906987ms)
+✔ 一万条规模可查精确重复，报告不改变原始条目 (1263.372401ms)
+✔ 现有素材统计来自实际默认加载列表，可选包分开且不公开秘密正文 (30.25788ms)
+✔ 运行时源码与默认内容入口没有导入词库，新增素材不会变更游戏存档 (12.877439ms)
+✔ 已分配任务的可派发指令带正确来源，不要求AI改动规则 (0.29746ms)
+✔ main goal is the root; paths cover all residents and real stages, regardless of input order (597.752352ms)
+✔ seed changes regenerate contacts and edges from the same NPC pool; names are never hard-coded (272.284598ms)
+✔ changing main service demands changes circle membership, rather than merely renaming a ring (401.477205ms)
+✔ 3 residents: bounded, connected circles; no absent contact blocks the main quest (1118.494468ms)
+✔ 9 residents: bounded, connected circles; no absent contact blocks the main quest (1146.113009ms)
+✔ 40 residents: bounded, connected circles; no absent contact blocks the main quest (1454.99956ms)
+✔ three route roots work with three residents; unavailable workplace contacts remain public desks (228.615758ms)
+✔ invalid hierarchy, role, side links and rival edges are rejected without repairing or rerolling (1550.281368ms)
+✔ real v0.5 world saves restore exactly; no new relationship tree is retroactively generated (260.087267ms)
+✔ 名与姓独立生成，中文、西式、单名格式以及复姓不猜测截字 (1.574848ms)
+✔ 姓名只由创建输入决定且不修改输入，40人尽量不重名、不附加编号 (2.31312ms)
+✔ 子代默认继承明确亲代，名由子代自己的种子和身份抽取 (0.673247ms)
+✔ 家庭共姓、收养、跨文化保留姓氏文字，未知亲代不随机编造姓 (0.589424ms)
+✔ 双姓按明确亲代分量组成，同姓去重，多代不无限串接 (1.070634ms)
+✔ 姓名和继承严格校验，缺姓、乱槽、重复亲代、注入文本和文化矛盾拒绝 (1.334838ms)
+✔ 0.11新世界姓名保存于模板与居民，无编号；缺失或篡改结构化姓名拒绝读档 (367.992414ms)
+✔ 未声明名池的旧模板不猜拆全名，显式名文化进入新居民且Schema拒绝不一致全名 (76.281791ms)
+✔ catalog rejects missing/ambiguous environment matches instead of assigning cyber quests (7.326167ms)
+✔ wet: correct tree, 18 sides, stable bindings and small-world fallback (906.361729ms)
+✔ wet: both routes finish after growth milestones without mandatory sides; saved ending uses chosen title (4766.140578ms)
+✔ wet: all 36 side outcomes work locally, persist memories, and unlock optional solutions (22016.909365ms)
+✔ dry: correct tree, 18 sides, stable bindings and small-world fallback (728.710453ms)
+✔ dry: both routes finish after growth milestones without mandatory sides; saved ending uses chosen title (4754.517861ms)
+✔ dry: all 36 side outcomes work locally, persist memories, and unlock optional solutions (22051.871795ms)
+✔ garden: correct tree, 18 sides, stable bindings and small-world fallback (745.8341ms)
+✔ garden: both routes finish after growth milestones without mandatory sides; saved ending uses chosen title (4625.484508ms)
+✔ garden: all 36 side outcomes work locally, persist memories, and unlock optional solutions (22023.466721ms)
+✔ frost: correct tree, 18 sides, stable bindings and small-world fallback (801.435203ms)
+✔ frost: both routes finish after growth milestones without mandatory sides; saved ending uses chosen title (4601.097985ms)
+✔ frost: all 36 side outcomes work locally, persist memories, and unlock optional solutions (22306.697789ms)
+✔ forge: correct tree, 18 sides, stable bindings and small-world fallback (761.141633ms)
+✔ forge: both routes finish after growth milestones without mandatory sides; saved ending uses chosen title (4575.270926ms)
+✔ forge: all 36 side outcomes work locally, persist memories, and unlock optional solutions (22076.514325ms)
+✔ tidal: correct tree, 18 sides, stable bindings and small-world fallback (709.790363ms)
+✔ tidal: both routes finish after growth milestones without mandatory sides; saved ending uses chosen title (4692.877566ms)
+✔ tidal: all 36 side outcomes work locally, persist memories, and unlock optional solutions (22829.052925ms)
+✔ 固定身份不随 seed 改变；反复读人物/场景不改时钟、RNG和实例 (57.680647ms)
+✔ 日程按半开时段解析，柜台/集市/离场和跨午夜边界准确 (6.753585ms)
+✔ 不在场不能执行人物话题；真正等候后可见，不能远程冒用 (9.892112ms)
+✔ 过关店时间的谈话保留参与者，结束立即恢复日程 (11.92541ms)
+✔ 活动NPC事件不能转入旅行或另一事件，随时都有合法出口 (10.712956ms)
+✔ 重复见面与话题只结算一次里程碑，不用新请求刷熟悉 (13.999033ms)
+✔ 拒绝委托写真实记忆但不扣钱/封锁；后来仍可接受 (10.651664ms)
+✔ 跨地点委托：集市实际核对，NPC回来听报告才知道，报酬只领一次 (17.942347ms)
+✔ 未完成核对不能交差，进度话题没有奖励 (9.164294ms)
+✔ 完成委托后真实解锁近况话题，反复聊不反复增加关系 (13.948609ms)
+✔ 人物不会自动读取TF变化；展示校准机械尾后才增加观察记忆 (11.732351ms)
+✔ 事件记忆/关系/时间/RNG在后续扣费失败时全部回滚 (6.819111ms)
+✔ 多节点NPC事件存读还原同一位置覆盖、记忆、关系与锁定文案 (16.0739ms)
+✔ 伪造NPC身份、关系、记忆来源、重复记忆和未来时间都拒绝 (10.655813ms)
+✔ 第二阶段真实暂停TF存档精确升级，原身体/队列/账本不重结算也不覆盖槽 (6.316554ms)
+✔ 第二阶段未知包/伪造旧标记/坏TF即使重算checksum仍隔离 (7.535548ms)
+✔ 第三阶段缺人物包或包内容改变时隔离，不删除完整进度 (23.838404ms)
+✔ 公开人物话题Hook可被独立作者追加，同组包乱序加载一致 (11.415995ms)
+✔ 第二位固定人物作为内容追加，无需人物专用引擎分支 (15.677166ms)
+✔ NPC日程缺口/重叠、错引用/记忆所有者、未知关系字段和未声明能力均失败 (18.654782ms)
+✔ 缺年龄/未成年/非智慧人物不能通过成人资格，成人事件在本阶段不可加载 (16.897021ms)
+✔ combiner builds C1–C12 from production-card atoms with real hub IDs (25.364378ms)
+✔ combine rejects unknown atoms and non-generic species TF names (1.068335ms)
+✔ enumerateCombos stays bounded and fills slots (1.20043ms)
+✔ adventure pack exposes nsfwcombo encounter action and sample nodes (262.917531ms)
+✔ toEncounterCandidate never forges foundation material.gel (1.868937ms)
+✔ adult samples expose gated adult text slots (198.293299ms)
+✔ prose-fills applied to start and adult text slots (P0+P1) (14.261201ms)
+✔ local encounter action skips empty shell and 核对细节 (227.201782ms)
+✔ C6/C7 offer engage/avoid/alt without 核对组合 (186.5034ms)
+✔ atoms expose 8 gameplay categories and samples cover all (1.139338ms)
+✔ b0017 v1 hub batches are present and schema-shaped (3.338743ms)
+✔ b0017 v2 drafts pass validate-v2 and stay uninstalled (234.699168ms)
+✔ sanityLoss: defeat pressure magnitude mid base 6 with zero mods (0.758215ms)
+✔ sanityLoss: arousal/submission/tf multipliers (0.12586ms)
+✔ sanityLoss: stress/400 mult and high-stress pulse (1.003049ms)
+✔ sanityLoss: full mult with stress pulse (0.1313ms)
+✔ sanityLoss: statusMod clamp (0.114571ms)
+✔ sanityRestDelta recovers remaining sanity (0.08031ms)
+✔ passive hostile drain helpers (0.263827ms)
+✔ combatHitChance bounds (0.142795ms)
+✔ combatDamage physical and crit (0.141917ms)
+✔ combatDamage skill uses 0.35 defense factor (0.132584ms)
+✔ fleeChance and aftertaste (0.136208ms)
+✔ band and staminaGate (0.098682ms)
+✔ enemy tiers: Boss not derived from S/M/L multipliers (0.500979ms)
+✔ all authored stages, six commissions and goods compile into valid new fantasy worlds only (612.553956ms)
+✔ story 0, ending 0: real stages, daily gate, free exit, exact save and explicit ending (3609.518069ms)
+✔ story 0, ending 1: real stages, daily gate, free exit, exact save and explicit ending (3522.11986ms)
+✔ story 1, ending 0: real stages, daily gate, free exit, exact save and explicit ending (3508.192364ms)
+✔ story 1, ending 1: real stages, daily gate, free exit, exact save and explicit ending (3512.309711ms)
+✔ story 2, ending 0: real stages, daily gate, free exit, exact save and explicit ending (3558.723343ms)
+✔ story 2, ending 1: real stages, daily gate, free exit, exact save and explicit ending (3477.582867ms)
+✔ commission 0, outcome 0: offer, real travel, steps, save, submit once and follow-up (2349.701444ms)
+✔ commission 0, outcome 1: offer, real travel, steps, save, submit once and follow-up (2331.994058ms)
+✔ commission 1, outcome 0: offer, real travel, steps, save, submit once and follow-up (2401.235934ms)
+✔ commission 1, outcome 1: offer, real travel, steps, save, submit once and follow-up (2424.02392ms)
+✔ commission 2, outcome 0: offer, real travel, steps, save, submit once and follow-up (2336.408899ms)
+✔ commission 2, outcome 1: offer, real travel, steps, save, submit once and follow-up (2345.883617ms)
+✔ commission 3, outcome 0: offer, real travel, steps, save, submit once and follow-up (1801.360655ms)
+✔ commission 3, outcome 1: offer, real travel, steps, save, submit once and follow-up (1864.320214ms)
+✔ commission 4, outcome 0: offer, real travel, steps, save, submit once and follow-up (1827.522754ms)
+✔ commission 4, outcome 1: offer, real travel, steps, save, submit once and follow-up (1740.791593ms)
+✔ commission 5, outcome 0: offer, real travel, steps, save, submit once and follow-up (1593.808853ms)
+✔ commission 5, outcome 1: offer, real travel, steps, save, submit once and follow-up (1574.905252ms)
+✔ no resource or absent actor: actions fail without granting progress; new trust opcode has strict authority (843.076525ms)
+✔ personal goods use actual purchase, inventory, equipment and recovery effects; work still has daily protection (834.24476ms)
+✔ pre-install actual saved world restores without new personal tasks or changes to captured prose (431.831682ms)
+✔ six traits are shared, strictly registered and independent of district/adventure; invalid traits and undeclared dependencies fail (874.358042ms)
+✔ all six traits and mixed personalities occur in normal generation; same seed reproduces, other seeds vary (295.325556ms)
+✔ normal NPC entry starts bound personality conversation once and preserves daily memories, services and pure queries (449.342775ms)
+✔ each of the six personalities has real positive, neutral and offended paths with no global score farming (4102.500876ms)
+✔ repeated dialogue cannot repeat daily trust or visit rewards and receipts survive saving (1110.710446ms)
+✔ gift checks and deducts a real item atomically, once per person/day, and survives restoration (1025.286147ms)
+✔ optional closeness separately requires preference, real adult eligibility, presence and existing trust (262.444861ms)
+✔ time-based departure permits only a free exit; departure during a choice closes the conversation safely (848.588553ms)
+✔ bound actor remains authoritative if selection changes; other story kinds never inherit the selected resident traits (259.206897ms)
+✔ low resources preserve free exit, body-agnostic prose resolves, and bad instance traits are rejected (195.330685ms)
+✔ current 0.9 snapshot keeps its content and short conversation under the new engine (799.249746ms)
+✔ unknown source personalities remain empty and use ordinary dialogue without hash inference (496.669951ms)
+✔ new characters only submit a name and never acquire a player age property (199.811173ms)
+✔ old creation requests retain ledger compatibility without recreating the age stat (202.46552ms)
+✔ existing profile ages remain readable without changing saved progress (778.501601ms)
+✔ optional content still requires opting in; NPC adult eligibility is unchanged (173.695434ms)
+✔ age-free player.create definitions load and invalid names still fail atomically (4.01156ms)
+Generated UX: 29 worlds, 435 scenes, 435 distinct texts, 1329 executable branches.
+✔ every generated location uses sampled local scenes across 17 themes and 12 fantasy seeds (234118.014952ms)
+✔ same seed reproduces prose and changed seed changes content, not just a seed label (1009.309567ms)
+✔ preferences work in every fixed location, active narrative and combat without moving or spending time (36.137947ms)
+✔ event completion feedback is unique and narrative costs match actual time (3.617158ms)
+✔ prose validation rejects author placeholders without rejecting ordinary occupancy wording (0.156148ms)
+✔ all reachable narrative and choice text is finished, including optional variants (0.810856ms)
+✔ ordinary exploration in fixed and generated danger areas offers fight/avoid and round-trips mid-battle (1240.240008ms)
+✔ unsupported fields or unfinished generated reference content fail generation instead of reaching players (7.176359ms)
+✔ released fixed/generated saves upgrade without changing map, NPCs, body, clock or RNG (730.2069ms)
+✔ surrender and giving up work with zero AP/stamina, pay no victory rewards, and preserve the current opponent (328.83695ms)
+✔ route defaults: adjacent/far/cross duration and stamina (0.601347ms)
+✔ location.move adjacent: 10min / −2, no double clock from travel action (38.053529ms)
+✔ far route option unavailable at stamina 39 (51.443962ms)
+✔ cross route: 45min / −5 when stamina allows (31.787079ms)
+✔ equipment bonuses: weapon +3 ATK at combat read; VariableDef unchanged; cosmetic 0; switch off (0.732936ms)
+✔ safe-zone heal is +40 not +100 (1.898814ms)
+✔ staminaGate allowFarMove threshold 40 (0.144303ms)
+✔ cosmetic non-zero bonuses rejected by schema (0.308125ms)
+✔ 存档/JSON 导出/导入完整恢复所有游戏事实 (40.441945ms)
+✔ 事件中途保存再读档：节点、文字、RNG 稳定 (13.423377ms)
+✔ 读档后重放已领取奖励的 requestId 不会再次支付 (12.703997ms)
+✔ Repository 真正保存/读取，空槽不伪造存档 (6.671157ms)
+✔ 损坏 JSON/篡改数据都隔离并保留原字符串 (12.613674ms)
+✔ 内容包缺失或 hash 改变时隔离，不静默丢进度 (21.036814ms)
+✔ 未知字段与任意写状态被存档边界拒绝 (5.794278ms)
+✔ 不合法事件栈/随机记录/重复事务不能导入 (6.090345ms)
+✔ 存储失败被传回 UI，不假报保存成功 (6.990488ms)
+✔ 存档中的引用必须是正确类型，不能用变量 ID 伪装地点 (4.211485ms)
+✔ 修复包独立追加；原第三阶段四包指纹保持精确不变 (28.127824ms)
+✔ 白天完成任务后NPC仍在，退出后可继续交谈且奖励不重领 (22.472687ms)
+✔ 真实任务谈话跨18点，退出提示去集市和次日再会；集市仍能继续 (22.307721ms)
+✔ 过19点退出只离开公开场所；保存读取、真实等到次日后同一NPC回来 (65.316497ms)
+✔ 公开再会查询跨午夜/地点过滤/极大时间，重复查询无写入 (5.426228ms)
+✔ NPC事件位置覆盖和纯重绘不伪造离场；动作失败无通知或状态变化 (30.055578ms)
+✔ 原第三阶段任务存档只追加包引用，保留全部事实；读取不覆盖原槽 (10.33368ms)
+✔ 第三阶段伪造包/记忆/未知字段即使重算checksum仍隔离并保留 (10.784996ms)
+✔ 第三阶段精确升级不接纳改变过的修复包；新版缺恢复包仍隔离 (20.061993ms)
+✔ 四包Registry正常读取其匹配的四包档，不触发不必要迁移 (6.435228ms)
+✔ 原版实际操作耗尽精力的沙龙存档，可免费休息再回公寓，不清进度 (9.88257ms)
+✔ 直接资源预检累计多次扣费并遵循上限；节点/TF边界后不错误推断 (4.187483ms)
+✔ 恢复行动只属于沙龙常态；事件内不能远程休息，诊室零精力仍能离开 (11.093417ms)
+✔ slot kit: full pack registers a usable node, substitution and unconditional exit (238.104188ms)
+✔ slot kit: preference defaults off and an entered node uses neutral fallback (206.632809ms)
+✔ slot kit: missing identity, disabled preference or required facts prevents optional display (197.9807ms)
+✔ slot kit: optional player text does not require an age attribute (202.730184ms)
+✔ slot kit: unknown-age fixed NPC is rejected when registering optional slot (181.058642ms)
+✔ slot kit: dynamic instance cannot be passed as a fixed NPC definition (179.867036ms)
+✔ slot kit: text package cannot register a missing slot (177.760043ms)
+✔ slot kit: unknown variables, effect fields and invented ratings are rejected (203.263985ms)
+✔ slot kit: existing adult event loader guard is retained (34.476769ms)
+✔ slot kit: import, update, disable, remove and repeated rendering preserve authoritative state (209.666017ms)
+✔ slot kit: save restores exact node and identity; missing prose changes presentation only (413.604981ms)
+✔ slot kit: exported context reports real fixed participant and no invented scene (183.980762ms)
+✔ historical world selection IDs remain compatible without shadowing installed taxonomy tags (0.611406ms)
+✔ 17 existing source themes have unique runtime tags; selection is stable and rejects bad configuration (867.507271ms)
+✔ world theme and six ecologies are independent; extra references can filter by world Tag (3622.926939ms)
+✔ 赛博都市: shared services, world-specific text, routes, sides and saved identity (5437.482677ms)
+✔ 废土世界: shared services, world-specific text, routes, sides and saved identity (5481.038773ms)
+✔ 轨道空间站: shared services, world-specific text, routes, sides and saved identity (5547.354551ms)
+✔ 沙漠世界: shared services, world-specific text, routes, sides and saved identity (5389.996987ms)
+✔ 浮空世界: shared services, world-specific text, routes, sides and saved identity (5388.121231ms)
+✔ 火山世界: shared services, world-specific text, routes, sides and saved identity (5392.375069ms)
+✔ 地下矿城: shared services, world-specific text, routes, sides and saved identity (5507.622344ms)
+✔ 极地世界: shared services, world-specific text, routes, sides and saved identity (5550.513473ms)
+✔ 雨林世界: shared services, world-specific text, routes, sides and saved identity (5443.01443ms)
+✔ 蒸汽都市: shared services, world-specific text, routes, sides and saved identity (5354.562679ms)
+✔ 仙侠世界: shared services, world-specific text, routes, sides and saved identity (5397.445429ms)
+✔ 深海世界: shared services, world-specific text, routes, sides and saved identity (5379.484446ms)
+✔ 中世纪异世界: shared services, world-specific text, routes, sides and saved identity (5556.52784ms)
+✔ 现代都市: shared services, world-specific text, routes, sides and saved identity (5465.40599ms)
+✔ 自由港世界: shared services, world-specific text, routes, sides and saved identity (5434.678099ms)
+✔ 地下城世界: shared services, world-specific text, routes, sides and saved identity (5497.839888ms)
+✔ 西部边境: shared services, world-specific text, routes, sides and saved identity (5565.368924ms)
+✔ old ecology-only worlds and their original quest snapshots restore without acquiring a world theme (877.214484ms)
+✔ v0.2 reads an actual published v0.1 snapshot without regenerating its world (268.075086ms)
+✔ eligible workplaces get residents before any second assignment; map points stay separated (83.463828ms)
+✔ resident browsing cycles only present identities and never consumes storylets or RNG (98.652598ms)
+✔ generated residents remain selectable at 23:59 and through midnight (87.209448ms)
+✔ public arrival information follows saved schedules and remains read-only (45.552566ms)
+✔ activity rules compile to existing effects; costs fail atomically and recovery still works (75.205703ms)
+✔ multiple local storylets are distinct and keep their real free exits (102.860585ms)
+✔ new author fields reject unknown body capabilities, invalid costs and unbounded counts (2.95048ms)
+✔ all six starter ecologies generate useful places, distinct local pools and authored ambience (368.21821ms)
+✔ generation-only professions are used without changing the fixed world pack list (534.117676ms)
+✔ profession dialogue uses the stored template, and daily help cannot duplicate rewards (172.495264ms)
+✔ every clinic keeps a free recovery path even with an empty activity pool (69.372089ms)
+✔ local activity tags are available to later NPC selection before workplace coverage (36.049817ms)
+✔ contributed prototype expansion is bounded before allocating virtual templates (11.012377ms)
+✔ 生成结果可由原 Registry、身体与存档校验器验证 (74.392638ms)
+✔ 同种子、规则、内容可复现整个初始状态，包/模板输入顺序不影响结果 (151.605003ms)
+✔ 两个测试种子在环境、地图与居民分布均有差异 (84.865105ms)
+✔ 32个种子及规模边界全部可达、可返回、职业与全天日程有效 (1889.648539ms)
+✔ 现有居民行动创建记忆并跨日/跨地点保持同一个身份 (118.423242ms)
+✔ 模拟跨多个边界只更新活动位置，读取和重绘不推进时间或随机流 (95.292478ms)
+✔ 存档快照恢复不调用生成器，新增/修改参考库不改变旧档；固定/生成存档可互读 (263.475131ms)
+✔ 不同已加载内容包与参考扩展实际参与地点和NPC生成 (114.008704ms)
+✔ 运行中追加事件包可存读，但不篡改生成时内容包来源记录 (154.284602ms)
+✔ 原TF、事件选择、工作与免费恢复可在生成街区结算，零资源仍能旅行 (145.423927ms)
+✔ 无效规则、自由文本、未知字段、不兼容模板与超限输入被拒绝 (10.605568ms)
+✔ 父模板贡献NPC、TF、已有事件与世界标签实际参与生成 (71.312036ms)
+✔ 依赖固定地图或缺少免费退出的参考事件不能进入生成池 (36.517149ms)
+✔ 排斥条件、组合要求与环境兼容控制候选池，失败事务不推进模拟 (54.331059ms)
+✔ 即使重算存档校验和，断路、错日程、坏身体及来源篡改仍被隔离并保留原文 (257.132077ms)
+ℹ tests 468
+ℹ suites 0
+ℹ pass 466
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 293720.606813
+
+✖ failing tests:
+
+test at tests/district-b.test.ts:6:1
+✖ B: defeat has multiple nodes, persistent injury and safe recovery with no money (36.38409ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   enemy: {
+  +     actionsPerTurn: 1,
+  +     attack: 9,
+  +     crit: 3,
+  +     defense: 5,
+  +     defenseBonus: 0,
+  +     evasion: 5,
+  +     fleeBonus: 10,
+  +     hit: 72,
+  +     hpMax: 40,
+  +     skillPower: 6,
+  +     skillResource: 0,
+  +     speed: 9,
+  +     tier: 'S'
+  +   },
+  +   enemyId: 'district:enemy.scavenger',
+  +   guarding: false,
+  +   hp: 33,
+  +   log: [
+  +     '状态：我方生命1，体力100；敌方生命40/40\n行动：进攻；敌方转动机械臂横扫\n造成效果：敌方受到7点伤害。 敌方第1次行动未命中。'
+  +   ],
+  +   playerAp: 1,
+  +   turn: 1
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///workspace/tests/district-b.test.ts:6:181)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { enemyId: 'district:enemy.scavenger', hp: 33, turn: 1, log: [ '状态：我方生命1，体力100；敌方生命40/40\n行动：进攻；敌方转动机械臂横扫\n造成效果：敌方受到7点伤害。 敌方第1次行动未命中。' ], enemy: { hpMax: 40, attack: 9, defense: 5, speed: 9, skillPower: 6, crit: 3, hit: 72, evasion: 5, skillResource: 0, actionsPerTurn: 1, defenseBonus: 0, tier: 'S', fleeBonus: 10 }, playerAp: 1, guarding: false },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/general-expansion-v2.test.ts:141:1
+✖ 第二轮：生成文件可确定性重建，主表、索引、旁路元数据相互一致 (8.08904ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      counts: {
+        candidates: 820,
+        excludedLabelCollisions: 33,
+        groups: 41,
+  ...
+          hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/base-10700.jsonl',
+  -       sha256: 'e1f2f02eb59650283616a8928fd21cc5646bec4ade6dc2eed516ba896988165d'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/common-additions.json',
+  -       sha256: '611448a851e2b95f5bcf9f4b2c3b2de713b599fc982913ffc952a3e615710109'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/duplicates.json',
+  -       sha256: '5ce49ce84eb7a2bfd7f49fdeb65f78958d32be9a1c9be3aac075f6035fe5fdbd'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/entries.jsonl',
+  -       sha256: '437924e9f01783bc9b3f82a67becb19936eb4986d8253871104ff43b50b2bb70'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/export-links.json',
+  -       sha256: 'c9b2d53ea062d93f470c1154ea781f567710f0d18c9f8653066cb270d46242ed'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/index.json',
+  -       sha256: 'c342c628a9994804e0e4ac6a98e7ac481cd91c505e8cae186623f5757fe4d2aa'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/needs-core-review.jsonl',
+  -       sha256: '3b8d220436a31189fbf9d016e6a6b08412b6de6ad809e2b5c362bc416fbc9aa7'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/README.md',
+  -       sha256: '6ef6a5e09221f0c42ca9697f3e75c9727b39e4d20f3a72b9f4a4b496ad2c9fc3'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/reused-common-labels.json',
+  -       sha256: '0d7525a316ba7488e691375d100674ee79c8bb09b204ee1f648f1cc3dffb63d6'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/source-corrections.json',
+  -       sha256: '8bc91b5619f6479f5b7c72c072f046a47c13777fdc37ea20d146f20865e0039f'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/taxonomy.json',
+  -       sha256: 'c70443d263bf20f1b94e57023e2c5f2e839623cbf3418546ac369cfb67ea81aa'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-accessory.b9101.json',
+  -       sha256: '799aca17f6ee08db97f80bbabf9409d9c57df9e400f176d282a875d659a6ff82'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-adaptation.b9001.json',
+  -       sha256: '9e7710f3893cd349e01e37c04d4268a7c0b2661f4219acf48401b53dbda4bb26'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-clothing.b9101.json',
+  -       sha256: '9fab5fbea209e06091cab441880cac3b69d12e163a01aed10e77d7b07077306f'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-part.b9001.json',
+  -       sha256: '1c3569fd6ac051af70e8f54a00e925d7832bf6ad4dd0ffcbd5352996e31dd41f'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-action.b9001.json',
+  -       sha256: '43281a019293132a3795e85c7f2104092d647310696344c5ed04e5965bf84f1d'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-move.b9101.json',
+  -       sha256: '5b4630d1e3d1dc07c79d60d91005e845b8fb36fcb5137ec2fa0eb746252ccd31'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-rest.b9101.json',
+  -       sha256: 'aa68291a745372ad80adf721406bec0b7a517ca6430def898d46615b63bd6731'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-work.b9101.json',
+  -       sha256: '51f30d479350540922e974bbc8b409b90d3745973a0161591c9845c0862caa16'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/material.b9001.json',
+  -       sha256: 'd7af00d69cc92ba4f9dceacb640be46ed0b2532ebc71cb3af9a481fde4ad30d4'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/npc-job.b9001.json',
+  -       sha256: 'e55ce20a82e4cd6c765dc53ad9b61e09ba0c475e792d6b735bf35e3722f75535'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/README.md',
+  -       sha256: 'a8fb3ca4f601a6730956dcb233a4f12706fe030dc49301cef9477f946ae34015'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/relationship-context.b9001.json',
+  -       sha256: 'd72823399ed7fc889ff0020f3905fe313d4f817b1b70f46899d921c2e58b143e'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/social-action.b9001.json',
+  -       sha256: '645827ae03f7fa7838ca9572f306313b1a0a96b7cef48d1f25b4045d1f550632'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/text-environment.b9101.json',
+  -       sha256: 'a51ed79dd293a51a54ab99dd53bf69e1c5edd2f685dc6e69adc02518fb211ae8'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9001.json',
+  -       sha256: 'fa483d0accdb3f8f6de4bc11ef61a1cf1d1f89ad29dccc2adc739aa9d96914a7'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9101.json',
+  -       sha256: '14d1f017c8d6432dcb636466c64f6cee887444bf851137f60bd4620e994c1c9e'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9102.json',
+  -       sha256: 'feeff89ae7118727b418096409f3c202a3320e4369089db0a1f1977b9816f9b8'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-culture.b9101.json',
+  -       sha256: 'd66336c1aa087ce9f98c966e6d8c5827e9507b899322592364d62af5a9bd88df'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-detail.b9101.json',
+  -       sha256: '94c015afcd4c1071a97d7703dfce9286c739505946077bdd069a4e40020b0890'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-district.b9101.json',
+  -       sha256: 'efe9c941eaa263918b11504f05e49aae7379dabdaaac095060de966ba625e4cb'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-environment.b9001.json',
+  -       sha256: '95d78e4ef95025a77e4484e45f2af189d3e1825d18344f2cfee7ed3b46ffc34a'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9001.json',
+  -       sha256: '243d09407dab57142f04f3e006b17f2f901ff4865be35e1a9659e608cbfc7c30'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9101.json',
+  -       sha256: '9099d563ad9012802d86b0665fb747961cddcb2b01725a0fb373b8a81ae07bbb'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9102.json',
+  -       sha256: '6994bae157a70f2a23879300997106de64ae9a5fdf6f61e0661a64abf31ab45c'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-nature.b9101.json',
+  -       sha256: '5734782ff6b12ced1220f7c0c87617d4ad7d60d9af6030b750d41a52c21d5378'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9001.json',
+  -       sha256: 'dc60614f829636f592e06e0f92604f4201cf71102fd961892ac50caf0d481f44'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9002.json',
+  -       sha256: '2229779dc20143e7d00988c9c6f2175503484c33e254d4a1b68036803e4f48e9'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9101.json',
+  -       sha256: '199107751d2fe6092c5a2dd47f49ddc2fdd182bcf5c8b9ff4765dd069e4aca93'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-room.b9101.json',
+  -       sha256: '4af47471afdf7182b6b2917e48bbe444d965aa9740f40e866e826eaf63eadcb7'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-scent.b9101.json',
+  -       sha256: 'c18be8df68d814fe9e3b90fd7d85b40bde9262d7475af8df1417989e6762054b'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-sound.b9101.json',
+  -       sha256: '3eb2a29fb7a08036a6aca018443678d0f6cc59343cc0e1a66f7d34c99682fc35'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-space.b9001.json',
+  -       sha256: '5e95b00a2710bfe86b2fa25a16dbda4a9093de11a7d89b71a2144aa815d18c14'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-state.b9001.json',
+  -       sha256: '82cc61e5c16e704d1b50e930842e524d1ad9baf2244c974f6f5d4c821e5b131e'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-terrain.b9101.json',
+  -       sha256: '5206e893d4f36d72ff9002cc79b5401cf10163bdce685052fc9c24d2b92203c3'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-weather.b9101.json',
+  -       sha256: 'fb71d08f909946aa81f2b2d4c5647989c16384d747b249901b17cb6b30b006bd'
+  -     },
+  -     {
+  -       hashing: 'json-stringify-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-workplace.b9101.json',
+  -       sha256: '47d8125db415c6c91c728ecb4f6f14fd451af5e335c3dbe2749d2fc157eb834f'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/world-gap-667.jsonl',
+  -       sha256: '51a8731d9aaa05efc3d951d3ffafc011c3dee03439a571f53f0842b0e279ccf1'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/世界环境候选整理.md',
+  -       sha256: '1af1fe68e746ae94ce8a07513c8aece217dc6717fa9e7a59e47c871ccc5e349a'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/原子概念字典.md',
+  -       sha256: '43c4e757bde2dc2424955ab3a3487d0d07284d1d509aab45372eec0888ac0227'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/拆分规则与示例.md',
+  -       sha256: '910a2e62270384dc2a9e9f6519d11c14484202c83f4476bdc19c1f75355843ae'
+  -     },
+  -     {
+  -       hashing: 'lf-text-sha256',
+          path: 'production/tag-deliveries/2026-10-12/general-expanded/按库/body-accessory.md',
+          sha256: '9743e40281b79c77aefb2af1e277b25a2d5f9672cfc92127e2b86c1f037379d8'
+        },
+        {
+          hashing: 'lf-text-sha256',
+  ...
+          hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/拆分规则与示例.md',
+  +       sha256: '910a2e62270384dc2a9e9f6519d11c14484202c83f4476bdc19c1f75355843ae'
+  -       path: 'production/tag-deliveries/2026-10-12/general-expanded/新增常用通用词条.md',
+  -       sha256: '4dda826480aa8b5dbd2c64830d28b05675f72eb0ff1a9a04d5a0c267c507cdc8'
+        },
+        {
+          hashing: 'lf-text-sha256',
+          path: 'production/tag-deliveries/2026-10-12/general-expanded/来源全文恢复.md',
+          sha256: '743f6a91188f05ddb641a1057455e38b0ac755577b1d686299f9ce2d5a8e2a7e'
+  ...
+          hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/世界环境候选整理.md',
+  +       sha256: '1af1fe68e746ae94ce8a07513c8aece217dc6717fa9e7a59e47c871ccc5e349a'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/新增常用通用词条.md',
+  +       sha256: '4dda826480aa8b5dbd2c64830d28b05675f72eb0ff1a9a04d5a0c267c507cdc8'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+          path: 'production/tag-deliveries/2026-10-12/general-expanded/验证/类型检查.txt',
+          sha256: 'd8b55579fe82e84d1e86f77665ef352436b2e7804f812c39026d45819522fe04'
+        },
+        {
+          hashing: 'lf-text-sha256',
+  ...
+        },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/原子概念字典.md',
+  +       sha256: '43c4e757bde2dc2424955ab3a3487d0d07284d1d509aab45372eec0888ac0227'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/base-10700.jsonl',
+  +       sha256: 'e1f2f02eb59650283616a8928fd21cc5646bec4ade6dc2eed516ba896988165d'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/common-additions.json',
+  +       sha256: '611448a851e2b95f5bcf9f4b2c3b2de713b599fc982913ffc952a3e615710109'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/duplicates.json',
+  +       sha256: '5ce49ce84eb7a2bfd7f49fdeb65f78958d32be9a1c9be3aac075f6035fe5fdbd'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/entries.jsonl',
+  +       sha256: '437924e9f01783bc9b3f82a67becb19936eb4986d8253871104ff43b50b2bb70'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/export-links.json',
+  +       sha256: 'c9b2d53ea062d93f470c1154ea781f567710f0d18c9f8653066cb270d46242ed'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/index.json',
+  +       sha256: 'c342c628a9994804e0e4ac6a98e7ac481cd91c505e8cae186623f5757fe4d2aa'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/needs-core-review.jsonl',
+  +       sha256: '3b8d220436a31189fbf9d016e6a6b08412b6de6ad809e2b5c362bc416fbc9aa7'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/README.md',
+  +       sha256: '6ef6a5e09221f0c42ca9697f3e75c9727b39e4d20f3a72b9f4a4b496ad2c9fc3'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/reused-common-labels.json',
+  +       sha256: '0d7525a316ba7488e691375d100674ee79c8bb09b204ee1f648f1cc3dffb63d6'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/source-corrections.json',
+  +       sha256: '8bc91b5619f6479f5b7c72c072f046a47c13777fdc37ea20d146f20865e0039f'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/taxonomy.json',
+  +       sha256: 'c70443d263bf20f1b94e57023e2c5f2e839623cbf3418546ac369cfb67ea81aa'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-accessory.b9101.json',
+  +       sha256: '799aca17f6ee08db97f80bbabf9409d9c57df9e400f176d282a875d659a6ff82'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-adaptation.b9001.json',
+  +       sha256: '9e7710f3893cd349e01e37c04d4268a7c0b2661f4219acf48401b53dbda4bb26'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-clothing.b9101.json',
+  +       sha256: '9fab5fbea209e06091cab441880cac3b69d12e163a01aed10e77d7b07077306f'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/body-part.b9001.json',
+  +       sha256: '1c3569fd6ac051af70e8f54a00e925d7832bf6ad4dd0ffcbd5352996e31dd41f'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-action.b9001.json',
+  +       sha256: '43281a019293132a3795e85c7f2104092d647310696344c5ed04e5965bf84f1d'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-move.b9101.json',
+  +       sha256: '5b4630d1e3d1dc07c79d60d91005e845b8fb36fcb5137ec2fa0eb746252ccd31'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-rest.b9101.json',
+  +       sha256: 'aa68291a745372ad80adf721406bec0b7a517ca6430def898d46615b63bd6731'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/daily-work.b9101.json',
+  +       sha256: '51f30d479350540922e974bbc8b409b90d3745973a0161591c9845c0862caa16'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/material.b9001.json',
+  +       sha256: 'd7af00d69cc92ba4f9dceacb640be46ed0b2532ebc71cb3af9a481fde4ad30d4'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/npc-job.b9001.json',
+  +       sha256: 'e55ce20a82e4cd6c765dc53ad9b61e09ba0c475e792d6b735bf35e3722f75535'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/README.md',
+  +       sha256: 'a8fb3ca4f601a6730956dcb233a4f12706fe030dc49301cef9477f946ae34015'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/relationship-context.b9001.json',
+  +       sha256: 'd72823399ed7fc889ff0020f3905fe313d4f817b1b70f46899d921c2e58b143e'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/social-action.b9001.json',
+  +       sha256: '645827ae03f7fa7838ca9572f306313b1a0a96b7cef48d1f25b4045d1f550632'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/text-environment.b9101.json',
+  +       sha256: 'a51ed79dd293a51a54ab99dd53bf69e1c5edd2f685dc6e69adc02518fb211ae8'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9001.json',
+  +       sha256: 'fa483d0accdb3f8f6de4bc11ef61a1cf1d1f89ad29dccc2adc739aa9d96914a7'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9101.json',
+  +       sha256: '14d1f017c8d6432dcb636466c64f6cee887444bf851137f60bd4620e994c1c9e'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-building.b9102.json',
+  +       sha256: 'feeff89ae7118727b418096409f3c202a3320e4369089db0a1f1977b9816f9b8'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-culture.b9101.json',
+  +       sha256: 'd66336c1aa087ce9f98c966e6d8c5827e9507b899322592364d62af5a9bd88df'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-detail.b9101.json',
+  +       sha256: '94c015afcd4c1071a97d7703dfce9286c739505946077bdd069a4e40020b0890'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-district.b9101.json',
+  +       sha256: 'efe9c941eaa263918b11504f05e49aae7379dabdaaac095060de966ba625e4cb'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-environment.b9001.json',
+  +       sha256: '95d78e4ef95025a77e4484e45f2af189d3e1825d18344f2cfee7ed3b46ffc34a'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9001.json',
+  +       sha256: '243d09407dab57142f04f3e006b17f2f901ff4865be35e1a9659e608cbfc7c30'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9101.json',
+  +       sha256: '9099d563ad9012802d86b0665fb747961cddcb2b01725a0fb373b8a81ae07bbb'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-facility.b9102.json',
+  +       sha256: '6994bae157a70f2a23879300997106de64ae9a5fdf6f61e0661a64abf31ab45c'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-nature.b9101.json',
+  +       sha256: '5734782ff6b12ced1220f7c0c87617d4ad7d60d9af6030b750d41a52c21d5378'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9001.json',
+  +       sha256: 'dc60614f829636f592e06e0f92604f4201cf71102fd961892ac50caf0d481f44'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9002.json',
+  +       sha256: '2229779dc20143e7d00988c9c6f2175503484c33e254d4a1b68036803e4f48e9'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-object.b9101.json',
+  +       sha256: '199107751d2fe6092c5a2dd47f49ddc2fdd182bcf5c8b9ff4765dd069e4aca93'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-room.b9101.json',
+  +       sha256: '4af47471afdf7182b6b2917e48bbe444d965aa9740f40e866e826eaf63eadcb7'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-scent.b9101.json',
+  +       sha256: 'c18be8df68d814fe9e3b90fd7d85b40bde9262d7475af8df1417989e6762054b'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-sound.b9101.json',
+  +       sha256: '3eb2a29fb7a08036a6aca018443678d0f6cc59343cc0e1a66f7d34c99682fc35'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-space.b9001.json',
+  +       sha256: '5e95b00a2710bfe86b2fa25a16dbda4a9093de11a7d89b71a2144aa815d18c14'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-state.b9001.json',
+  +       sha256: '82cc61e5c16e704d1b50e930842e524d1ad9baf2244c974f6f5d4c821e5b131e'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-terrain.b9101.json',
+  +       sha256: '5206e893d4f36d72ff9002cc79b5401cf10163bdce685052fc9c24d2b92203c3'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-weather.b9101.json',
+  +       sha256: 'fb71d08f909946aa81f2b2d4c5647989c16384d747b249901b17cb6b30b006bd'
+  +     },
+  +     {
+  +       hashing: 'json-stringify-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/v2-material-batches/world-workplace.b9101.json',
+  +       sha256: '47d8125db415c6c91c728ecb4f6f14fd451af5e335c3dbe2749d2fc157eb834f'
+  +     },
+  +     {
+  +       hashing: 'lf-text-sha256',
+  +       path: 'production/tag-deliveries/2026-10-12/general-expanded/world-gap-667.jsonl',
+  +       sha256: '51a8731d9aaa05efc3d951d3ffafc011c3dee03439a571f53f0842b0e279ccf1'
+  +     }
+      ],
+      previousRelease: 'production/tag-deliveries/2026-10-12/general-expanded',
+      reviewStatus: 'authored-proposed',
+      ruleHintStatus: 'authoring-metadata-only-no-runtime-template-compiler',
+      runtimeImportable: false,
+  
+      at TestContext.<anonymous> (file:///workspace/tests/general-expansion-v2.test.ts:142:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: {
+      format: 'aetheria-general-expansion-v2',
+      schemaVersion: 1,
+      domain: 'general',
+      runtimeImportable: false,
+      reviewStatus: 'authored-proposed',
+      nsfwChanges: 0,
+      previousRelease: 'production/tag-deliveries/2026-10-12/general-expanded',
+      previousFiles: [
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object],
+        ... 23 more items
+      ],
+      counts: { previousMaterials: 11755, candidates: 820, newCommon: 787, excludedLabelCollisions: 33, totalMaterials: 12542, previousConcepts: 1145, newConcepts: 787, totalConcepts: 1932, groups: 41, numericParameters: 20, previousNeedsCoreReview: 3064, validatedV2Batches: 30, verifiedOriginalReceipts: 31 },
+      dictionary: { id: 'aetheria/foundation', version: '1.0.0', hash: 'c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959' },
+      idPolicy: 'v2 candidate keys are immutable; b9201+ reserved for this frozen release; further additions require a new release',
+      ruleHintStatus: 'authoring-metadata-only-no-runtime-template-compiler',
+      textImportStatus: 'v2 exchange batches validated; not installed; editorial concepts are not runtime TagDef IDs'
+    },
+    expected: {
+      format: 'aetheria-general-expansion-v2',
+      schemaVersion: 1,
+      domain: 'general',
+      runtimeImportable: false,
+      reviewStatus: 'authored-proposed',
+      nsfwChanges: 0,
+      previousRelease: 'production/tag-deliveries/2026-10-12/general-expanded',
+      previousFiles: [
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object], [Object], [Object],
+        [Object], [Object], [Object], [Object],
+        ... 23 more items
+      ],
+      counts: { previousMaterials: 11755, candidates: 820, newCommon: 787, excludedLabelCollisions: 33, totalMaterials: 12542, previousConcepts: 1145, newConcepts: 787, totalConcepts: 1932, groups: 41, numericParameters: 20, previousNeedsCoreReview: 3064, validatedV2Batches: 30, verifiedOriginalReceipts: 31 },
+      dictionary: { id: 'aetheria/foundation', version: '1.0.0', hash: 'c24574c91b1d70f584eb79be4c4758b57a04252ead0d2cd0c94c95a31871b959' },
+      idPolicy: 'v2 candidate keys are immutable; b9201+ reserved for this frozen release; further additions require a new release',
+      ruleHintStatus: 'authoring-metadata-only-no-runtime-template-compiler',
+      textImportStatus: 'v2 exchange batches validated; not installed; editorial concepts are not runtime TagDef IDs'
+    },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

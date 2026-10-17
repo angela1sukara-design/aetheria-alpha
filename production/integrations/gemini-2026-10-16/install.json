@@ -1,0 +1,30 @@
+{
+  "spec": "aetheria-install/1",
+  "lane": "mechanism",
+  "base": "05796349e5e1d32c8787c85bb11b77203d039699",
+  "summary": "归档 Gemini Drive 2026-10-16 整批交付至 incoming/gemini-2026-10-16；words 车道格式已校验；NSFW 机制补丁未合入。",
+  "status": "authored",
+  "files": [
+    "incoming/gemini-2026-10-16/README.md",
+    "incoming/gemini-2026-10-16/words-receipt.json",
+    "incoming/gemini-2026-10-16/words-validate.log",
+    "incoming/gemini-2026-10-16/patch-apply-check.log",
+    "incoming/gemini-2026-10-16/verify-main.log",
+    "production/collaboration-pack/incoming/gemini-2026-10-16/"
+  ],
+  "verify": [
+    "git apply --check incoming/gemini-2026-10-16/aetheria-p0-fixes_db5d.patch → 失败：content/adventure/pack.json、scripts/build-adventure-content.mjs、src/content/loader.ts、src/engine/conditions.ts",
+    "协作包 validate-delivery：11 份 B JSON 全部 authoring-format-passed（见 words-validate.log）",
+    "Node 24.22：npm run typecheck、npm run typecheck:tests 通过",
+    "Node 24.22：npm test → 468 项，466 通过，2 失败（main 既有：tests/district-b.test.ts、tests/general-expansion-v2.test.ts），与本归档无关"
+  ],
+  "notDone": [
+    "NSFW/TF：aetheria-nsfw-tf-update.zip 与 aetheria-p0-fixes.patch（与 zip 内 gap patch 字节相同）未应用；需基于 main 重打 mechanism/content/words 三车道 diff，并修旧档回归与现场态。详见 incoming/.../notes/给Gemini-还缺什么-v2.md",
+    "不合入：aetheria-p0-modified-files.zip、core zip、Drive 改写版 ai-install-spec.md（若在包内）",
+    "未解压 aetheria-alpha-core-20261016.zip 覆盖工程",
+    "CONTENT-NPC / CONTENT-JOBS 与 production/quest-authoring/personal-deliveries 已装内容重复，不重复安装",
+    "Aetheria-Folio.html 仅离线构建产物归档",
+    "十二题材-B1B2-24张任务卡.zip 为外发任务书，非成品",
+    "words 810 条未进入 content/prose 审定安装链；待编辑去重与配方审定"
+  ]
+}

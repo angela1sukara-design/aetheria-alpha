@@ -1,0 +1,2329 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B2",
+  "theme": "modern",
+  "author": "author-b3",
+  "batchId": "b2-modern-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.form.modern.present-person",
+      "text": "在场的人物",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern"
+      ]
+    },
+    {
+      "id": "word.form.modern.nearby-figure",
+      "text": "同处一室的身影",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 400,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern"
+      ]
+    },
+    {
+      "id": "word.form.modern.doorframe",
+      "text": "靠在门框上的短发人物",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物正倚靠真实门框，且短发特征已知。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.form.modern.uniform-receptionist",
+      "text": "佩戴工牌的前台接待",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物具备前台接待职务且当前佩戴真实工牌。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.receptionist"
+      ]
+    },
+    {
+      "id": "word.form.modern.vest-dispatcher",
+      "text": "穿反光背心的调度员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为调度员且身穿反光背心衣物。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.dispatcher"
+      ]
+    },
+    {
+      "id": "word.form.modern.apron-barista",
+      "text": "系着深色围裙的饮品师",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为饮品师且当前系有深色围裙。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.barista"
+      ]
+    },
+    {
+      "id": "word.form.modern.rolled-sleeve-baker",
+      "text": "挽起袖口的烘焙师",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为烘焙师且衣袖处于挽起姿态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.baker"
+      ]
+    },
+    {
+      "id": "word.form.modern.clipboard-inspector",
+      "text": "夹着记录板的巡检员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为巡检员、具备对应上肢部件且持有真实记录板。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.inspector"
+      ]
+    },
+    {
+      "id": "word.form.modern.helmet-courier",
+      "text": "拎着头盔的快递员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为快递员、具备对应手部且正拎着头盔物件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.courier"
+      ]
+    },
+    {
+      "id": "word.form.modern.gloved-electrician",
+      "text": "戴着绝缘手套的电工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为电工、具备手部且佩戴绝缘手套。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.electrician"
+      ]
+    },
+    {
+      "id": "word.form.modern.overall-mechanic",
+      "text": "穿连体工装的机械维修员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为机械维修员且身着连体工装。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.mechanic"
+      ]
+    },
+    {
+      "id": "word.form.modern.glasses-archivist",
+      "text": "戴着细框眼镜的档案管理员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为档案管理员且面部佩戴细框眼镜。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.archivist"
+      ]
+    },
+    {
+      "id": "word.form.modern.cardigan-librarian",
+      "text": "穿针织开衫的图书管理员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为图书管理员且身着针织开衫。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.librarian"
+      ]
+    },
+    {
+      "id": "word.form.modern.badge-security",
+      "text": "站在通道侧方的保安员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为保安员且当前站立于通道侧方位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.security"
+      ]
+    },
+    {
+      "id": "word.form.modern.standing-cashier",
+      "text": "守在收银台后的收银员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为收银员且位于收银台后方。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.cashier"
+      ]
+    },
+    {
+      "id": "word.form.modern.labcoat-assistant",
+      "text": "穿白大褂的实验助理",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为实验助理且身穿白大褂。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.lab-assistant"
+      ]
+    },
+    {
+      "id": "word.form.modern.folder-property-manager",
+      "text": "拿着登记册的物业管理员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为物业管理员且手部持有登记册。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.property-manager"
+      ]
+    },
+    {
+      "id": "word.form.modern.headset-maintenance-dispatch",
+      "text": "戴单耳耳麦的报修接线员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为报修接线员且耳部佩戴单耳耳麦。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.maintenance-dispatch"
+      ]
+    },
+    {
+      "id": "word.form.modern.canvas-bag-mail-carrier",
+      "text": "背着帆布邮包的邮递员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为邮递员且肩背帆布邮包。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.mail-carrier"
+      ]
+    },
+    {
+      "id": "word.form.modern.scanner-warehouse-clerk",
+      "text": "挂着扫码枪的仓管员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为仓管员且随身挂载扫码枪物件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.warehouse-clerk"
+      ]
+    },
+    {
+      "id": "word.form.modern.armband-volunteer",
+      "text": "佩戴红袖章的志愿服务者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为志愿服务者且手臂佩戴红袖章。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.volunteer",
+        "general-taxonomy:identity.volunteer"
+      ]
+    },
+    {
+      "id": "word.form.modern.tray-waiter",
+      "text": "托着空托盘的服务员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为服务员、具备对应手部且托持空托盘。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.waiter"
+      ]
+    },
+    {
+      "id": "word.form.modern.comb-pouch-hairdresser",
+      "text": "腰间别着工具包的理发师",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为理发师且腰部佩戴工具包。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.hairdresser"
+      ]
+    },
+    {
+      "id": "word.form.modern.rubber-boots-gardener",
+      "text": "穿防水胶靴的园艺工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为园艺工且足部穿着防水胶靴。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.gardener"
+      ]
+    },
+    {
+      "id": "word.form.modern.toolbelt-plumber",
+      "text": "系着工具腰带的水管工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为水管工且腰部系有工具腰带。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.plumber"
+      ]
+    },
+    {
+      "id": "word.form.modern.nametag-shop-assistant",
+      "text": "整理衣领的店员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为店员且衣着、姿态与当前动作核实成立。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.shop-assistant"
+      ]
+    },
+    {
+      "id": "word.form.modern.cap-driver",
+      "text": "戴鸭舌帽的司机",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为司机且头部佩戴鸭舌帽。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.driver"
+      ]
+    },
+    {
+      "id": "word.form.modern.notebook-researcher",
+      "text": "夹着笔记本的研究员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为研究员且腋下或手部夹持笔记本。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.job.researcher"
+      ]
+    },
+    {
+      "id": "word.form.modern.casual-housemate",
+      "text": "穿家居便服的合住者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物具有合住者身份且身着家居便服。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:identity.housemate"
+      ]
+    },
+    {
+      "id": "word.form.modern.keychain-resident",
+      "text": "站在信箱前的住户",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认同一人物为本处住户且当前站立于信箱前方位置。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:identity.resident"
+      ]
+    },
+    {
+      "id": "word.action.modern.queue-in-line",
+      "text": "按顺序排队等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "queue-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "queue-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.queue",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.modern.wait-for-call",
+      "text": "留在等候区等待叫号",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "call-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "call-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.modern.pause-at-entrance",
+      "text": "在入口处略作停顿",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "entrance-paused"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "entrance-paused"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.pause"
+      ]
+    },
+    {
+      "id": "word.action.modern.stand-by-quietly",
+      "text": "在原地静候后续安排",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "standby-waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "standby-waiting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.modern.check-item-list",
+      "text": "逐行核对清单上的条目",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "checklist-verified"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "checklist-verified"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.check-list"
+      ]
+    },
+    {
+      "id": "word.action.modern.register-entry-record",
+      "text": "登记今日的到访记录",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "entry-registered"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "entry-registered"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.register"
+      ]
+    },
+    {
+      "id": "word.action.modern.sort-packages",
+      "text": "按区域分类待处理的物件",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "items-sorted"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "items-sorted"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.sort"
+      ]
+    },
+    {
+      "id": "word.action.modern.keep-daily-ledger",
+      "text": "核对并记录台账明细",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "ledger-recorded"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "ledger-recorded"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.keep-record"
+      ]
+    },
+    {
+      "id": "word.action.modern.take-short-break",
+      "text": "趁工作间隙休息片刻",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "short-break-taken"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "short-break-taken"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.take-break"
+      ]
+    },
+    {
+      "id": "word.action.modern.sit-and-rest",
+      "text": "在座位上坐歇放松",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "seated-resting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "seated-resting"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.sit-rest",
+        "general-taxonomy:action.relax"
+      ]
+    },
+    {
+      "id": "word.action.modern.stretch-slowly",
+      "text": "在原地舒展身体",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "body-stretched"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "body-stretched"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.stretch"
+      ]
+    },
+    {
+      "id": "word.action.modern.stay-alone-quietly",
+      "text": "留在安静处独自待着",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "alone-staying"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "alone-staying"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.be-alone"
+      ]
+    },
+    {
+      "id": "word.action.modern.listen-to-corridor",
+      "text": "侧听走廊方向的动静",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "corridor-listened"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "corridor-listened"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.listen"
+      ]
+    },
+    {
+      "id": "word.action.modern.look-far-ahead",
+      "text": "远望通道尽头的情况",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "distance-watched"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "distance-watched"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.look-far"
+      ]
+    },
+    {
+      "id": "word.action.modern.inspect-surroundings",
+      "text": "仔细检查周边的设施状态",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "facility-inspected"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "facility-inspected"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.modern.maintain-boundary",
+      "text": "与周围人群保持安全边界",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "boundary-kept"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "boundary-kept"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:activity.boundary"
+      ]
+    },
+    {
+      "id": "word.action.modern.make-room-for-passer",
+      "text": "侧身让出通行的空间",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "room-made"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "room-made"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.make-room"
+      ]
+    },
+    {
+      "id": "word.action.modern.handover-shift-work",
+      "text": "与同伴交接班次事宜",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "shift-handed-over"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "shift-handed-over"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.handover"
+      ]
+    },
+    {
+      "id": "word.action.modern.prepare-cooperation",
+      "text": "为接下来的协作做准备",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "cooperation-prepared"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "cooperation-prepared"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.prepare-cooperation"
+      ]
+    },
+    {
+      "id": "word.action.modern.follow-up-request",
+      "text": "跟进先前提交的事项进度",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "request-followed-up"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "action.observed",
+          "value": "request-followed-up"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.follow-up"
+      ]
+    },
+    {
+      "id": "word.action.modern.ticket-rub",
+      "text": "用拇指反复蹭着票据边缘",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物有适用部件、持有真实票据，且正在做该动作。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": []
+    },
+    {
+      "id": "word.action.modern.watch-check",
+      "text": "抬起手腕查看表盘上的时间",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手腕部件、佩戴钟表且正在执行看表动作。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.modern.shift-weight-standing",
+      "text": "双手插在衣袋里轻轻换脚站立",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备双手与双足部件、衣物有口袋且正在换脚站立。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.adjust-pose",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.modern.lean-railing-wait",
+      "text": "单手扶着金属扶手等待电梯抵达",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、现场有金属扶手与电梯且正在等候。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.action.modern.stick-barcode-label",
+      "text": "揭下不干胶标签贴在包裹侧面",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、持有标签与包裹且正在执行贴标动作。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.label",
+        "general-taxonomy:common.action.pack"
+      ]
+    },
+    {
+      "id": "word.action.modern.wipe-counter-cloth",
+      "text": "握着拧干的抹布擦拭台面水渍",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、持有抹布且台面存在水渍正被擦拭。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.clean"
+      ]
+    },
+    {
+      "id": "word.action.modern.measure-box-tape",
+      "text": "拉开卷尺测量纸箱的长宽高尺寸",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、持有卷尺与纸箱且正在测量。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.measure"
+      ]
+    },
+    {
+      "id": "word.action.modern.refill-printer-paper",
+      "text": "拆开包装将新打印纸装入进纸盒",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物持有包装纸张、现场有打印设备且正在补充耗材。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.refill",
+        "general-taxonomy:common.action.unpack"
+      ]
+    },
+    {
+      "id": "word.action.modern.sip-warm-thermos",
+      "text": "拧开保温杯盖小口饮用温水",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部与口部、持有装有温水的保温杯且正在饮水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.drink"
+      ]
+    },
+    {
+      "id": "word.action.modern.unfold-napkin-meal",
+      "text": "打开便当盒盖准备享用工作餐",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、持有便当盒且正打开盒盖。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.prepare",
+        "general-taxonomy:activity.shared-meal"
+      ]
+    },
+    {
+      "id": "word.action.modern.sketch-in-notebook",
+      "text": "握着铅笔在速写本上勾勒线条",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、持有铅笔与本子且正在绘画。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:activity.draw"
+      ]
+    },
+    {
+      "id": "word.action.modern.roll-shoulders-seated",
+      "text": "靠在椅背上轻轻转动酸痛的肩颈",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物正坐在有靠背的座椅上且具备肩颈部件正在活动。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.relax",
+        "general-taxonomy:action.sit-rest"
+      ]
+    },
+    {
+      "id": "word.action.modern.inspect-lock-latch",
+      "text": "凑近查看门锁锁舌是否完全扣合",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备眼部、现场有门锁且正在近距离检查锁舌。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.inspect-near",
+        "general-taxonomy:common.action.lock"
+      ]
+    },
+    {
+      "id": "word.action.modern.test-handle-firmness",
+      "text": "伸手轻拉柜门把手确认已经锁妥",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、现场有带把手的柜门且正在测试锁闭状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.lock",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.action.modern.sniff-air-vent",
+      "text": "仰头查看通风口并留意异常气味来源",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备头部与嗅觉/视觉且现场存在通风口。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.inspect",
+        "general-taxonomy:common.action.ventilate"
+      ]
+    },
+    {
+      "id": "word.action.modern.step-back-wet-floor",
+      "text": "看清地面水渍后立刻收步停在干燥处",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认地面存在水渍且该人物正执行收步避让动作。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.pause",
+        "general-taxonomy:activity.boundary"
+      ]
+    },
+    {
+      "id": "word.action.modern.sign-delivery-receipt",
+      "text": "接过签字笔在收货回执单上签字",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物具备手部、持有签字笔与回执单且正在签收。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:common.action.sign-receipt"
+      ]
+    },
+    {
+      "id": "word.action.modern.hold-elevator-door",
+      "text": "伸手按住开门键等待后方来人进入",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物位于电梯内、具备手部且正在按住开门按钮。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.host",
+        "general-taxonomy:action.make-room"
+      ]
+    },
+    {
+      "id": "word.action.modern.compare-two-forms",
+      "text": "把两份打印表格并排摆在桌面比对差异",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认该人物持有两份实体表格并在桌面上进行比对。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.compare"
+      ]
+    },
+    {
+      "id": "word.action.modern.share-spare-umbrella",
+      "text": "从伞架取出一把备用伞递给同行者",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [],
+      "pendingFacts": [
+        "确认现场有伞架与备用伞、有同行者在场且正在递交。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.modern",
+        "general-taxonomy:action.share",
+        "general-taxonomy:common.action.borrow"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.modern.queue-in-line",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方按顺序排队等候。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.modern.check-item-list",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方逐行核对清单上的条目。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.modern.take-short-break",
+        "word.prop.generic.cup",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.generic.herbal",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 9,
+      "revision": 12,
+      "mode": "manual",
+      "text": "在工坊，你留意到阿洛·灰谷的手。对方趁工作间隙休息片刻。你注意到一只量杯，其中盛着过滤水。你察觉到草木的清香。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "任务卡B2（题材：modern）首批正式配额交付，共70条（actor.form 30条：通用低优先级回退draft 2条 / 含职业、衣着、姿态、外貌特征的hold 28条；action.observed 40条覆盖等候/工作/消遣/警惕/社交五类：纯行为记录draft 20条 / 含具体部件或持物条件的hold 20条；全批合计 draft 22条、hold 48条）。未提报新Tag，手工预览标为manual/hypothetical-only。"
+}
