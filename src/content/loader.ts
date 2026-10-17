@@ -38,7 +38,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
       for (const value of p[type] ?? []) add(p, value.id, type, value);
     }
     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
-    for (const type of ['narrativeNodes','narrativeProfiles','environmentEnemyRules'] as const) for (const value of p[type]??[]) add(p,value.id,type,value);
+    for (const type of ['narrativeNodes','narrativeProfiles','environmentEnemyRules','defeatReactionRules'] as const) for (const value of p[type]??[]) add(p,value.id,type,value);
   }
   function add(p: ContentPack, id: string, type: string, value: unknown): void {
     if (id.split(':')[0] !== p.manifest.namespace) fail(p, 'NAMESPACE_OWNERSHIP', `/${type}/${id}`, '不能定义其他包的 ID。', id);
@@ -73,6 +73,12 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
     else if (c.op === 'event.state') ref(p, c.id, 'events', path);
     else if (c.op === 'body.hasPart') ref(p, c.definitionId, 'bodyParts', path);
     else if (c.op === 'tf.state') ref(p, c.id, 'transformations', path);
+    else if (c.op === 'opponent.matches') {
+      if (!p.manifest.requiresCapabilities.includes('adventure.v1')) fail(p, 'CAPABILITY_UNDECLARED', path, '需声明adventure.v1。');
+      if (c.enemyId) ref(p, c.enemyId, 'enemies', `${path}/enemyId`);
+      if (c.attributeTag) ref(p, c.attributeTag, 'tags', `${path}/attributeTag`);
+      if (c.fetishTag) ref(p, c.fetishTag, 'tags', `${path}/fetishTag`);
+    }
     else if (c.op === 'npc.present' || c.op === 'npc.memory' || c.op === 'npc.relation') {
       ref(p, c.npcId, 'npcs', path);
       if (c.op === 'npc.memory') { ref(p, c.memoryId, 'npcMemories', path); const memory = definitions.get(c.memoryId)?.value as NonNullable<ContentPack['npcMemories']>[number] | undefined; if (memory && memory.npcId !== c.npcId) fail(p, 'NPC_MEMORY_OWNER', path, '记忆与人物不匹配。'); }

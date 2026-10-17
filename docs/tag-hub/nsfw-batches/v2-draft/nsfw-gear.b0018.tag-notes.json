@@ -1,0 +1,65 @@
+{
+  "sourceFormat": "aetheria-nsfw-lexicon-batch",
+  "sourceSchemaVersion": 1,
+  "batchId": "nsfw-gear.b0018",
+  "mappedAt": "2026-10-17T06:01:43.825Z",
+  "status": "pending-review",
+  "runtime": "not-installed",
+  "droppedFreeTags": [
+    {
+      "id": "lx.nsfw-gear.b0018.0001",
+      "name": "脚铐",
+      "v1Tags": [
+        "拘束具",
+        "足踝"
+      ],
+      "usage": "gear"
+    },
+    {
+      "id": "lx.nsfw-gear.b0018.0002",
+      "name": "踝铐",
+      "v1Tags": [
+        "拘束具",
+        "足踝"
+      ],
+      "usage": "gear"
+    },
+    {
+      "id": "lx.nsfw-gear.b0018.0003",
+      "name": "连体拘束带",
+      "v1Tags": [
+        "拘束具",
+        "躯干"
+      ],
+      "usage": "gear"
+    },
+    {
+      "id": "lx.nsfw-gear.b0018.0004",
+      "name": "分腿横杆",
+      "v1Tags": [
+        "拘束具",
+        "下肢"
+      ],
+      "usage": "gear"
+    },
+    {
+      "id": "lx.nsfw-gear.b0018.0005",
+      "name": "软胶耳塞",
+      "v1Tags": [
+        "感官遮蔽",
+        "耳部"
+      ],
+      "usage": "gear"
+    },
+    {
+      "id": "lx.nsfw-gear.b0018.0006",
+      "name": "遮光眼罩",
+      "v1Tags": [
+        "感官遮蔽",
+        "眼部"
+      ],
+      "usage": "gear"
+    }
+  ],
+  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
+}

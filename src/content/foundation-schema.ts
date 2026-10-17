@@ -81,6 +81,7 @@ export function projectV2(input: unknown, parseV1: (v: unknown) => ContentPack):
   for(const a of legacy.actions)a.effects=a.effects.map(fx);
   for(const e of legacy.events)for(const n of e.nodes)n.onEnter=n.onEnter.map(fx);
   for(const n of legacy.narrativeNodes??[]){n.conditions=n.conditions.map(c=>projectCondition(c));for(const c of n.choices){c.conditions=c.conditions.map(x=>projectCondition(x));c.effects=c.effects.map(fx);}}
+  for(const r of legacy.defeatReactionRules??[]){r.playerConditions=r.playerConditions.map(c=>projectCondition(c));r.opponentConditions=r.opponentConditions.map(c=>projectCondition(c));r.effects=r.effects.map(fx);}
   parseV1(legacy);
   return p;
 }

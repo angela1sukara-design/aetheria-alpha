@@ -1,5 +1,5 @@
 import type { ActionDef, Effect, GameState, Id } from '../core/types.ts';
-import type { AdventureState, NarrativeKind, NarrativeNode, ScopedTag } from '../core/adventure-types.ts';
+import type { AdventureState, DefeatReactionRule, NarrativeKind, NarrativeNode, ScopedTag } from '../core/adventure-types.ts';
 import type { Registry } from '../content/registry.ts';
 import type { EffectContext } from './effects.ts';
 import { RuleError } from '../core/errors.ts';
@@ -31,11 +31,19 @@ export function narrativeTags(s:GameState,r:Registry):ScopedTag[] {
   const service=environment(s,r).service;if(service.known&&has(`foundation:service.${service.value}`))live.push({role:'environment',tagId:`foundation:service.${service.value}`});
   return [...new Map(live.map(t=>[key(t),t])).values()];
 }
-function nodeWeight(n: NarrativeNode, profile?: Registry['narrativeProfiles'][number], activeEnvTags?: Set<string>, opponentTraits?:Set<string>): number {
+function nodeWeight(
+  n: NarrativeNode,
+  profile?: Registry['narrativeProfiles'][number],
+  activeEnvTags?: Set<string>,
+  opponentTraits?: Set<string>,
+  enemy?: Registry['enemies'][number],
+): number {
   return Math.max(1, n.weight + n.tendencies.reduce((sum, t) => {
-    const profileBoost = profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0;
+    const profileBoost = (profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0)
+      + (profile?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0)
+      + (enemy?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0);
     const envBoost = !profileBoost && activeEnvTags?.has(t.tagId) ? 1 : 0;
-    const traitBoost=opponentTraits?.has(t.tagId)?1:0;
+    const traitBoost = opponentTraits?.has(t.tagId) ? 1 : 0;
     return sum + (profileBoost + envBoost + traitBoost) * t.weight;
   }, 0));
 }
@@ -43,12 +51,16 @@ function chooseNode(s:GameState,r:Registry,stage:string):NarrativeNode|undefined
   const story=adventure(s).story!;story.stage=stage;
   const activeScoped = narrativeTags(s,r);
   const tags=new Set(activeScoped.map(key)),profile=r.narrativeProfiles.find(p=>p.id===story.profileId);
+  const enemy = profile?.enemyId ? r.enemies.find(e => e.id === profile.enemyId) : story.kind === 'defeat' && s.adventure?.lastCombat?.enemyId ? r.enemies.find(e => e.id === s.adventure!.lastCombat!.enemyId) : undefined;
   const envTagIds = new Set(activeScoped.filter(t => t.role === 'environment').map(t => t.tagId));
-  const opponentTraits=new Set(residentTraits(s,r,conversationResident(s)));
+  const opponentTraits=new Set([
+    ...residentTraits(s,r,conversationResident(s)),
+    ...activeScoped.filter(t => t.role === 'opponent').map(t => t.tagId),
+  ]);
   let pool=r.narrativeNodes.filter(n=>(!profile?.nodeIds||profile.nodeIds.includes(n.id))&&n.kind===story.kind&&n.stage===stage&&(story.visits[n.id]??0)<n.maxVisits&&n.requiresTags.every(t=>tags.has(key(t)))&&!n.excludesTags.some(t=>tags.has(key(t)))&&n.conditions.every(c=>evaluate(c,s,r).pass));
   if(!pool.length)return;
   const priority=Math.max(...pool.map(n=>n.priority));pool=pool.filter(n=>n.priority===priority).sort((a,b)=>a.id.localeCompare(b.id,'en'));
-  const weight=(n:NarrativeNode)=>nodeWeight(n, profile, envTagIds,opponentTraits);
+  const weight=(n:NarrativeNode)=>nodeWeight(n, profile, envTagIds, opponentTraits, enemy);
   let roll=draw(s,`narrative:${story.instanceId}`)*pool.reduce((sum,n)=>sum+weight(n),0);
   const selected=pool.find(n=>(roll-=weight(n))<0)??pool.at(-1)!;
   if(selected.proseAssembly)story.prose=captureAProse(s,r,selected);else delete story.prose;
@@ -60,23 +72,42 @@ export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:Narra
   if(s.district?.combat||s.district?.scene||s.activeEventStack.length||s.adventure?.story)throw new RuleError('NARRATIVE_BUSY','先结束眼前的交锋或故事。');
   const a=adventure(s),profile=profileId?r.narrativeProfiles.find(p=>p.id===profileId):kind==='defeat'?r.narrativeProfiles.find(p=>p.enemyId===a.lastCombat?.enemyId):undefined;
   if(profileId&&!profile)throw new RuleError('NARRATIVE_PROFILE','行为档案不存在。');
+  const enemy = profile?.enemyId ? r.enemies.find(e => e.id === profile.enemyId) : kind === 'defeat' && a.lastCombat?.enemyId ? r.enemies.find(e => e.id === a.lastCombat!.enemyId) : undefined;
   const resident=s.district?.residents.find(n=>n.id===s.district?.currentResidentId&&n.locationId===s.world.locationId);
   if(kind==='conversation'&&!resident)throw new RuleError('NO_RESIDENT','交谈对象此刻不在这里。');
-  const tags:ScopedTag[]=[...(kind==='defeat'?a.lastCombat?.tags??[]:[]),...(profile?.tags??[]).map(tagId=>({role:'opponent' as const,tagId})),...(profile?.goals.slice(0,1)??[]).map(tagId=>({role:'opponent' as const,tagId}))];
-  let opponentName=kind==='defeat'?a.lastCombat?.enemyName??'对方':resident?.name??s.district?.residents.find(n=>n.locationId===s.world.locationId)?.name??'对方';
+  const rawTags:ScopedTag[]=[
+    ...(kind==='defeat'?a.lastCombat?.tags??[]:[]),
+    ...(profile?.tags??[]).map(tagId=>({role:'opponent' as const,tagId})),
+    ...(profile?.goals.slice(0,1)??[]).map(tagId=>({role:'opponent' as const,tagId})),
+    ...(profile?.attributeTags??[]).map(tagId=>({role:'opponent' as const,tagId})),
+    ...(profile?.fetishTags??[]).map(tagId=>({role:'opponent' as const,tagId})),
+    ...(kind==='defeat'?[...(enemy?.attributeTags??[]),...(enemy?.fetishTags??[])].map(tagId=>({role:'opponent' as const,tagId})):[]),
+  ];
+  const tags:ScopedTag[]=[...new Map(rawTags.map(t=>[key(t),t])).values()];
+  let opponentName=kind==='defeat'?a.lastCombat?.enemyName??enemy?.name??'对方':resident?.name??s.district?.residents.find(n=>n.locationId===s.world.locationId)?.name??'对方';
   let fills:Record<string,string>|undefined;
-  // fantasy 战败 8 玩法：入口小随机（对手人/兽/怪占位 + 定词材质 + 部位 + 通用 TF）
-  if(profile?.id==='progression:profile.defeat.play'){
-    const drawn=drawDefeatPlayFills(s,`defeat-play:fill:${c.transactionId}`);
-    opponentName=opponentLabelForKind(drawn.opponentKind);
+  const comboCfg = profile?.defeatCombo ?? enemy?.defeatCombo;
+  const speciesKind = profile?.speciesKind ?? enemy?.speciesKind;
+  // fantasy 战败 8 玩法或开启了 autoCombo 的敌方档案：抽取对手种类 + 定词材质 + 部位 + 通用 TF
+  if(profile?.id==='progression:profile.defeat.play' || comboCfg?.autoCombo){
+    const drawn=drawDefeatPlayFills(s,`defeat-play:fill:${c.transactionId}`, {
+      speciesKind,
+      defeatCombo: comboCfg,
+    });
+    if(profile?.id==='progression:profile.defeat.play'){
+      opponentName=opponentLabelForKind(drawn.opponentKind);
+    }
     fills={
       opponentKind:drawn.opponentKind,
+      materialKey:drawn.materialKey,
       material:drawn.material,
       materialBase:drawn.materialBase,
       dingci:drawn.dingci||'（无定词）',
+      materialTrace:drawn.materialTrace,
       part:drawn.part,
       tf:drawn.tf,
       comboSample:drawn.comboSample,
+      playKey:drawn.playKey,
     };
   }
   a.story={instanceId:c.transactionId,kind,stage:'start',nodeId:'progression:unselected',profileId:profile?.id??null,opponentName,actor:resident?{kind:'resident',id:resident.id}:profile?.npcId?{kind:'npc',id:profile.npcId}:null,tags,visits:{},log:[],steps:0,...(fills?{fills}:{})};
@@ -103,25 +134,77 @@ export function narrativeTitle(s:GameState,r:Registry):string|undefined {
   const story=s.adventure?.story,node=r.narrativeNodes.find(n=>n.id===story?.nodeId);
   return story&&node?applyNarrativeFills(node.title,story,s,r):undefined;
 }
+export function resolveDefeatReactionStage(targetStage: string | null, currentStage: string): string | null {
+  if (!targetStage) return null;
+  const m = /^(play-\d+)(?:-.+)?$/.exec(currentStage);
+  const prefix = m ? m[1]! : 'play-01';
+  return targetStage.replace('{playPrefix}', prefix);
+}
+export function matchingDefeatReactions(s: GameState, r: Registry): DefeatReactionRule[] {
+  const story = s.adventure?.story;
+  if (!story || story.kind !== 'defeat') return [];
+  return (r.defeatReactionRules ?? [])
+    .filter(rule => {
+      const stageMatch = rule.stages.some(st => st === '*' || story.stage === st || story.stage.endsWith('-' + st));
+      if (!stageMatch) return false;
+      return rule.playerConditions.every(c => evaluate(c, s, r).pass)
+        && rule.opponentConditions.every(c => evaluate(c, s, r).pass);
+    })
+    .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id, 'en'));
+}
 export function narrativeActions(s:GameState,r:Registry):ActionDef[]|undefined {
   const story=s.adventure?.story;if(!story)return;
   const node=r.narrativeNodes.find(n=>n.id===story.nodeId)!;
   const departed=structuredConversation(s,r)&&!conversationPresent(s);
-  return node.choices.flatMap((choice,index)=>{
+  const baseChoices = node.choices.flatMap((choice,index)=>{
     if(departed&&!safeConversationExit(choice))return [];
     const costs=choice.effects.some(e=>e.op==='progression.act'||e.op==='var.change'&&e.amount<0);
     const time=choice.effects.filter(e=>e.op==='clock.advance').reduce((n,e)=>n+(e.op==='clock.advance'?e.minutes:0),0);
     return [{...r.action(`progression:action.story.${index}`),label:applyNarrativeFills(choice.label,story,s,r),conditions:choice.conditions,hint:costs?'按选项结算行动消耗':time?'按下方耗时执行':choice.next?'继续当前经历':'结束当前经历；无资源费用'}];
   });
+  if (story.kind === 'defeat' && node.choices.length < 4) {
+    const reactions = matchingDefeatReactions(s, r);
+    if (reactions.length) {
+      const top = reactions[0]!;
+      const idx = node.choices.length;
+      baseChoices.push({
+        ...r.action(`progression:action.story.${idx}`),
+        label: applyNarrativeFills(top.choiceLabel, story, s, r),
+        conditions: [...top.playerConditions, ...top.opponentConditions],
+        hint: '双方属性对偶反应 · 动态触发分支',
+      });
+    }
+  }
+  return baseChoices;
 }
 /** Read the current option's public effects for cost and eligibility checks, without advancing it. */
 export function publicActionEffects(action:ActionDef,s:GameState,r:Registry):Effect[] {
-  return action.effects.flatMap(e=>e.op==='narrative.choose'
-    ? r.narrativeNodes.find(n=>n.id===s.adventure?.story?.nodeId)?.choices[e.index]?.effects??[]
-    : [e]);
+  return action.effects.flatMap(e=>{
+    if (e.op !== 'narrative.choose') return [e];
+    const node = r.narrativeNodes.find(n=>n.id===s.adventure?.story?.nodeId);
+    if (node && e.index === node.choices.length && s.adventure?.story?.kind === 'defeat') {
+      return matchingDefeatReactions(s, r)[0]?.effects ?? [];
+    }
+    return node?.choices[e.index]?.effects ?? [];
+  });
 }
 export function advanceNarrative(s:GameState,r:Registry,c:EffectContext,index:number,apply:(effects:import('../core/types.ts').Effect[],s:GameState,r:Registry,c:EffectContext)=>void):void {
-  const a=adventure(s),story=a.story,node=r.narrativeNodes.find(n=>n.id===story?.nodeId),choice=node?.choices[index];
+  const a=adventure(s),story=a.story,node=r.narrativeNodes.find(n=>n.id===story?.nodeId);
+  let choice=node?.choices[index];
+  if (!choice && story?.kind === 'defeat' && node && index === node.choices.length) {
+    const top = matchingDefeatReactions(s, r)[0];
+    if (top) {
+      choice = {
+        label: top.choiceLabel,
+        resultText: top.resultText,
+        conditions: [...top.playerConditions, ...top.opponentConditions],
+        effects: top.effects,
+        setTags: top.setTags,
+        unsetTags: top.unsetTags,
+        next: resolveDefeatReactionStage(top.targetStage, story.stage),
+      };
+    }
+  }
   if(!story||!node||!choice||!choice.conditions.every(x=>evaluate(x,s,r).pass))throw new RuleError('NARRATIVE_CHOICE','当前选择不可用。');
   if(structuredConversation(s,r)&&!conversationPresent(s)&&!safeConversationExit(choice))throw new RuleError('CONVERSATION_LEFT','交谈对象已经离开。');
   c.narrativeChoice={nodeId:node.id,index};
@@ -171,10 +254,14 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
   const node = r.narrativeNodes.find(n => n.id === story.nodeId);
   if (!node) return undefined;
   const profile = r.narrativeProfiles.find(p => p.id === story.profileId);
+  const enemy = profile?.enemyId ? r.enemies.find(e => e.id === profile.enemyId) : story.kind === 'defeat' && s.adventure?.lastCombat?.enemyId ? r.enemies.find(e => e.id === s.adventure!.lastCombat!.enemyId) : undefined;
   const activeScoped = narrativeTags(s, r);
   const tagSet = new Set(activeScoped.map(key));
   const envTagIds = new Set(activeScoped.filter(t => t.role === 'environment').map(t => t.tagId));
-  const opponentTraits=new Set(residentTraits(s,r,conversationResident(s)));
+  const opponentTraits=new Set([
+    ...residentTraits(s,r,conversationResident(s)),
+    ...activeScoped.filter(t => t.role === 'opponent').map(t => t.tagId),
+  ]);
   const playerDerived = new Set(derivedSemantics(s, r, { entity: { kind: 'player' } }));
   const worldDerived = new Set(derivedSemantics(s, r, { world: true }));
   const locTags = new Set(s.worldInstance?.definition.locations.find(l => l.id === s.world.locationId)?.tags ?? []);
@@ -189,9 +276,11 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
       else if (worldDerived.has(t.tagId)) origin = '世界环境派生 (derivedSemantics)';
       else if (locTags.has(t.tagId)) origin = '世界生成地点标签 (worldInstance.locations)';
       else if (profTags.has(t.tagId)) origin = '地点环境档案 (locationProfiles)';
-    } else if(t.role==='opponent'&&opponentTraits.has(t.tagId)){
+    } else if(t.role==='opponent'&&residentTraits(s,r,conversationResident(s)).includes(t.tagId)){
       origin=`绑定居民性格 (${story.actor?.kind==='resident'?story.actor.id:''})`;
-    } else if (t.role === 'opponent' && profile && (profile.tags.includes(t.tagId) || profile.goals.includes(t.tagId))) {
+    } else if (t.role === 'opponent' && enemy && ((enemy.attributeTags ?? []).includes(t.tagId) || (enemy.fetishTags ?? []).includes(t.tagId))) {
+      origin = `敌方属性/性癖倾向 (${enemy.id})`;
+    } else if (t.role === 'opponent' && profile && (profile.tags.includes(t.tagId) || profile.goals.includes(t.tagId) || (profile.attributeTags ?? []).includes(t.tagId) || (profile.fetishTags ?? []).includes(t.tagId))) {
       origin = `对手/NPC行为档案 (${profile.id})`;
     }
     return { role: t.role, tagId: t.tagId, label: labelOf(t.tagId), origin };
@@ -199,7 +288,9 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
 
   const tendencyHits: NarrativeDebugTrace['tendencyHits'] = [];
   for (const t of node.tendencies) {
-    const profileBoost = profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0;
+    const profileBoost = (profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0)
+      + (profile?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0)
+      + (enemy?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0);
     const envBoost = !profileBoost && envTagIds.has(t.tagId) ? 1 : 0;
     const mult = profileBoost + envBoost + (opponentTraits.has(t.tagId)?1:0);
     if (mult > 0) {
@@ -246,7 +337,7 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
     id: cand.id,
     title: cand.title,
     priority: cand.priority,
-    weight: nodeWeight(cand, profile, envTagIds,opponentTraits),
+    weight: nodeWeight(cand, profile, envTagIds, opponentTraits, enemy),
     selected: cand.id === node.id,
   }));
 
@@ -264,7 +355,7 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
     profileId: story.profileId,
     activeTags,
     baseWeight: node.weight,
-    finalWeight: nodeWeight(node, profile, envTagIds,opponentTraits),
+    finalWeight: nodeWeight(node, profile, envTagIds, opponentTraits, enemy),
     tendencyHits,
     candidates,
     rejected,

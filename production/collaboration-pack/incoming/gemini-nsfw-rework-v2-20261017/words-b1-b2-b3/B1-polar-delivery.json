@@ -1,0 +1,1661 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "polar",
+  "author": "author-b-v2",
+  "batchId": "b1-polar-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.polar.snow-shoes-rack",
+      "text": "一对立在门廊木架上的网状雪鞋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "snow-shoes-rack"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "snow-shoes-rack"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.ice-auger",
+      "text": "一根带螺旋钻头的手动取冰钻杆",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "ice-auger"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "ice-auger"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.kerosene-stove",
+      "text": "一台黄铜油箱便携煤油炉",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "kerosene-stove"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "kerosene-stove"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.bamboo-route-flag",
+      "text": "一捆绑着红布条的雪地路标竹竿",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bamboo-route-flag"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bamboo-route-flag"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.thermos-flask",
+      "text": "一只裹着防冻皮套的不锈钢保温瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "thermos-flask"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "thermos-flask"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.sled-harness",
+      "text": "一副挂在木桩上的帆布雪橇牵引挽具",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "sled-harness"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "sled-harness"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.anemometer-mast",
+      "text": "一根竖在哨站屋顶边缘的测风杆",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "anemometer-mast"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "anemometer-mast"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.snow-shovel",
+      "text": "一把宽口铝合金雪铲",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "snow-shovel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "snow-shovel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.barograph-box",
+      "text": "一只装在防震木盒里的自记气压计",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "barograph-box"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "barograph-box"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.ice-axe",
+      "text": "一把钢镐头带防滑腕带的登山冰镐",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "ice-axe"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "ice-axe"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.paraffin-block-crate",
+      "text": "一箱码放整齐的防潮石蜡燃料块",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "paraffin-block-crate"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "paraffin-block-crate"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.storm-rope-reel",
+      "text": "一盘连接各舱室门口的暴风雪导向绳",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "storm-rope-reel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "storm-rope-reel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.rime-coated-rail",
+      "text": "一根结满羽毛状白雾凇的门廊铁扶手",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认门廊铁扶手表面当前结有羽毛状雾凇。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.steaming-kettle-stove",
+      "text": "一只在煤油炉蓝色火苗上冒着热气的化雪铝锅",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认煤油炉已点燃且上面的化雪铝锅正在冒热气。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.ice-core-tube",
+      "text": "一支封存着半透明圆柱形冰芯样本的保温管",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认保温管内当前封存有冰芯样本。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.snow-drifted-threshold",
+      "text": "一道堆着细密风吹雪的防风门门槛",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认防风门门槛处当前堆有风吹雪。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.amber-snow-goggles",
+      "text": "一副镜片带侧翼遮光皮罩的防雪盲护目镜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认防雪盲护目镜带有侧翼皮罩并摆在台面上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.tallow-boot-wax",
+      "text": "一盒表面留有指刮痕迹的海豹油防水靴蜡",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认靴蜡盒内当前留有指刮痕迹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.packed-cargo-sled",
+      "text": "一辆用交叉麻绳捆紧物资箱的木制雪橇",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认木制雪橇上当前捆有物资箱。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.frosted-double-pane",
+      "text": "一扇内侧边缘结着冰花的双层观察窗",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认双层观察窗内侧边缘当前结有冰花。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.mittens-drying-line",
+      "text": "一副夹在炉旁晾衣绳上烘烤的厚羊毛连指手套",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认炉旁晾衣绳上当前夹有厚羊毛连指手套。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.compass-theodolite",
+      "text": "一架罩着防冻绒布套的极地经纬仪",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认极地经纬仪当前罩有防冻绒布套。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.frozen-rope-coil",
+      "text": "一盘略带硬霜的登山主绳",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认登山主绳表面当前带有硬霜。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.signal-flare-tin",
+      "text": "一罐涂有橘红防锈漆的防潮信号弹铁筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认信号弹铁筒表面涂有橘红防锈漆。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.prop.polar.aurora-camera-tripod",
+      "text": "一架支在观景台角落的防寒相机云台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认观景台角落当前支有防寒相机云台。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.crisp-subzero-air",
+      "text": "零下严寒中毫无杂质的凛冽冰雪气息",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "crisp-subzero-air"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "crisp-subzero-air"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.kerosene-heater-faint",
+      "text": "门廊内煤油取暖炉散出的淡淡油气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "kerosene-heater-faint"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "kerosene-heater-faint"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.melted-snow-hot-cocoa",
+      "text": "化雪锅旁飘出的热可可与烤麦饼香气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场正冲泡热可可并烘烤麦饼。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.snow-crunch-underfoot",
+      "text": "靴底踩踏冻实干雪时发出的清脆咯吱声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "snow-crunch-underfoot"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "snow-crunch-underfoot"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.blizzard-wind-howl",
+      "text": "哨站双层板壁外寒风掠过雪原的呼啸声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "blizzard-wind-howl"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "blizzard-wind-howl"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.stove-blue-flame-purr",
+      "text": "加压煤油炉喷嘴稳定燃烧时的嘶嘶轻响",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认加压煤油炉当前正在燃烧。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.snowfield-dazzling-white",
+      "text": "晴朗冰原上积雪反射的耀眼纯白光线",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "snowfield-dazzling-white"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "snowfield-dazzling-white"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.pale-low-sun-angle",
+      "text": "贴近地平线的极地斜阳投下的狭长蓝影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "pale-low-sun-angle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "pale-low-sun-angle"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.aurora-green-curtain",
+      "text": "极夜天幕上缓缓流转的翠绿色极光光幕",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前处于极夜或夜间且天幕出现翠绿极光。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.biting-polar-cold",
+      "text": "暴露在寒风中时眉睫与脸颊迅速发僵的刺骨寒意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "biting-polar-cold"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "biting-polar-cold"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.airlock-vestibule-warmth",
+      "text": "跨进双层防风门内廊时迎面包裹的暖空气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色刚进入有供暖的双层防风门内廊。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.thermos-cup-heat",
+      "text": "双手捧住热饮金属杯盖时传来的暖手温度",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色双手当前正捧着盛有热饮的杯盖。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.dry-powder-snow-brush",
+      "text": "细碎干冷的粉雪被风吹过护面布的轻擦感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "dry-powder-snow-brush"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "dry-powder-snow-brush"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.stiff-frozen-fabric",
+      "text": "防风外套面料在低温下变得硬挺的摩擦感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "stiff-frozen-fabric"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "stiff-frozen-fabric"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    },
+    {
+      "id": "word.sense.polar.sticky-cold-metal",
+      "text": "未戴手套的指尖擦过极冷铁器时的瞬时黏附感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "polar"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色未戴手套且指尖触碰低温铁器。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.polar"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.polar.snow-shoes-rack",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.polar.crisp-subzero-air",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在冰原科考哨站门廊，你留意到在场人员的手。对方把工具归回原位。你注意到一对立在门廊木架上的网状雪鞋，旁侧备有过滤水。你察觉到零下严寒中毫无杂质的凛冽冰雪气息。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.polar.ice-auger",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.polar.snow-crunch-underfoot",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在冰原科考哨站门廊，你留意到在场人员的手。对方将工具放回原处。你注意到一根带螺旋钻头的手动取冰钻杆，旁侧备有过滤水。你察觉到靴底踩踏冻实干雪时发出的清脆咯吱声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.polar.crisp-subzero-air",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在冰原科考哨站门廊，你察觉到零下严寒中毫无杂质的凛冽冰雪气息。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.polar.snow-crunch-underfoot",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在冰原科考哨站门廊，你察觉到靴底踩踏冻实干雪时发出的清脆咯吱声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B1（题材：polar / 极地冰原）正式配额交付，共40条（environment.prop 25条：draft 12 / hold 13；environment.sense.* 五子池各3条共15条：draft 8 / hold 7；全批合计 draft 20条、hold 20条）。每条均带 scene.setting eq polar 前置，手工预览标为 manual/hypothetical-only。"
+}

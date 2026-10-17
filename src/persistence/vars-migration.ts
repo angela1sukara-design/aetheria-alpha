@@ -39,6 +39,7 @@ export function normalizePlayerFlags(state: GameState, registry: Registry): void
   const vars = state.player.variables as Record<string, number>;
   const hadRemaining = Object.prototype.hasOwnProperty.call(flags, SANITY_REMAINING_FLAG);
   for (const def of registry.flags) {
+    if (def.id.startsWith('progression:')) continue;
     if (!(def.id in flags)) flags[def.id] = def.initial;
   }
   for (const id of Object.keys(flags)) {

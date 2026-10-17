@@ -468,20 +468,221 @@ await writeFile(
 );
 
 
-// —— fantasy 战败后 8 玩法大类（proposed-nodes 合载）——
-// G1–G3：4 拍 capture→press→peak→resolve；textKey progression:text.node.defeat.g{N}.{stage}[+.adult]
-// G4–G8：单段 capture + adult（不硬装空多段链）；peak 样文仅 fills.peakSamplesNotInstalled
-// 成人门 adultOptional；词条≠玩法≠数值；不硬换 gel 战败链（defeat.control / coat / profile.gel）
+// —— fantasy 战败后 8 玩法大类（含敌方属性/性癖、现场态挂载清理、双方反应规则与 escape/marked/tf 三结局）——
+p.flags.push({ id: id('flag.aftermath.mark'), initial: false });
+(p.materials ??= []).push(
+  { id: id('material.slime-mucus'), label: '生物黏液覆层', family: 'organic' },
+  { id: id('material.living-latex'), label: '活体黑胶覆层', family: 'organic' },
+);
+(p.morphologies ??= []).push(
+  { id: id('morphology.slime-coated'), label: '黏液包裹态', kinds: ['arm', 'hand', 'leg', 'foot', 'tail'] },
+  { id: id('morphology.latex-sheathed'), label: '黑胶紧缚态', kinds: ['arm', 'hand', 'leg', 'foot', 'tail'] },
+);
+for (const [key, label, definition] of [
+  ['attr.mucus', '黏液分泌', '敌方属性：体表或腺体持续分泌高粘度生物黏液。'],
+  ['attr.tentacle', '触手附肢', '敌方属性：具备柔韧可延展的触手或软体附肢。'],
+  ['attr.vine', '藤蔓缠卷', '敌方属性：具备植物藤蔓、气根与缠绕茎结构。'],
+  ['attr.gel-body', '流体胶质躯体', '敌方属性：由半透明史莱姆或活体黑胶构成的流体躯干。'],
+  ['attr.chitin', '甲壳外骨骼', '敌方属性：覆盖节肢甲片与细密刚毛的虫巢躯体。'],
+  ['attr.pheromone', '感官干扰气息', '敌方属性：散发干扰感官与注意力的甜腥气雾或低频共鸣，不视为自愿同意。'],
+  ['attr.pack', '群聚围猎', '敌方属性：习惯多体协同包抄、轮番消耗猎物体力。'],
+  ['attr.warm-saliva', '温热涎液', '敌方属性：口腔分泌大量滑腻温热的垂涎。'],
+  ['fetish.restraint', '束缚拘禁倾向', '性癖倾向：偏爱缠绕手腕脚踝、悬吊或限制行动自由（对应 G1）。'],
+  ['fetish.coating', '材质覆层倾向', '性癖倾向：偏爱用黏液、凝胶或活体黑胶包裹涂覆猎物体表（对应 G2）。'],
+  ['fetish.penetration', '贴身侵入倾向', '性癖倾向：偏爱紧密贴合与深入侵入式的压迫接触（对应 G3）。'],
+  ['fetish.sensory-deprivation', '感官封夺倾向', '性癖倾向：偏爱遮蔽视线、封堵口鼻与剥夺外部感知（对应 G4）。'],
+  ['fetish.oviposition', '温床寄宿倾向', '性癖倾向：偏爱灌注营养液或将猎物作为虫巢温床（对应 G5）。'],
+  ['fetish.humiliation', '失态展示倾向', '性癖倾向：偏爱剥除防具衣物、迫使猎物显露狼狈姿态（对应 G6）。'],
+  ['fetish.domination', '支配驯服倾向', '性癖倾向：偏爱通过指令低语、节奏控制与姿势引导迫使顺从（对应 G7）。'],
+  ['fetish.swarm', '多体合围倾向', '性癖倾向：偏爱从多角度同时纠缠多个部位使其无暇顾及（对应 G8）。'],
+  ['defeat.loosened', '挣脱松动', '战败对抗中玩家借力挣松了束缚或牵制。'],
+  ['defeat.soaked', '覆层浸染', '战败对抗中玩家体表被异质黏液或黑胶深度浸染。'],
+  ['state.bound', '束缚状态', '现场态：四肢或躯干正处于束带、藤蔓或黏丝束缚之中。'],
+  ['state.coated', '涂覆状态', '现场态：体表局部正被黏液、垂涎或活体胶层涂覆。'],
+  ['state.suspended', '悬吊受制', '现场态：手腕或脚踝被藤蔓或束带拉高，重心悬垂受制。'],
+  ['state.gagged', '口封中', '感官现场态：口唇被胶膜、口球、触手或藤条封堵，发声受阻。'],
+  ['state.blindfolded', '眼封中', '感官现场态：视线被眼罩、黏液膜、触手或藤条遮蔽。'],
+  ['state.ear-sealed', '耳封中', '感官现场态：耳廓被软塞或胶膜覆住，外界声响闷钝。'],
+  ['state.sensory-deprived', '感官剥夺中', '感官现场态：视觉、听觉或发声通道处于多重受限状态（≠性癖标签）。'],
+  ['state.cocooned', '被茧缚', '现场态：身体被致密丝茧或黏丝包裹固定（E4 茧维）。'],
+  ['state.exposed', '衣料敞露', '现场态：外衣或防具被扯开滑落，局部肌肤暴露在外。'],
+]) p.tags.push({ id: tag(key), label, definition, facets: ['context'], status: 'active', aliases: [] });
+
+for (const [key, label, definition] of [
+  ['body.slime-coated', '黏液化体表', '派生事实：身体部位表面带有生物黏液覆层材质。'],
+  ['body.latex-sheathed', '黑胶化体表', '派生事实：身体部位表面带有活体黑胶覆层材质。'],
+  ['body.wolf-ears', '狼耳特征', '派生事实：头部具有狼耳部件。'],
+]) p.tags.push({ id: tag(key), label, definition, facets: ['body'], status: 'active', aliases: [] });
+
+(p.derivedTags ??= []).push(
+  { id: id('derive.slime-coated'), tagId: tag('body.slime-coated'), subject: 'entity', when: { op: 'body.matches', target: { kind: 'player' }, part: { materialId: id('material.slime-mucus') } } },
+  { id: id('derive.latex-sheathed'), tagId: tag('body.latex-sheathed'), subject: 'entity', when: { op: 'body.matches', target: { kind: 'player' }, part: { materialId: id('material.living-latex') } } },
+  { id: id('derive.wolf-ears'), tagId: tag('body.wolf-ears'), subject: 'entity', when: { op: 'body.hasPart', target: { kind: 'player' }, definitionId: 'aetheria-tf:part.ear.wolf' } },
+);
+
+// 可玩 TF 仅保留通用「黏液化 / 黑胶化」与洗净恢复（物种专条甲质/藤膜/兽尾已移除/hold）
+p.bodyPatches.push(
+  { id: id('patch.slime-legs'), label: '下肢黏液化覆层', summary: '双腿与双足覆上柔滑半透明的生物黏液层', operations: ['leg.left', 'leg.right', 'foot.left', 'foot.right'].map(partId => ({ type: 'attributes', partId, set: { materialId: id('material.slime-mucus'), morphologyId: id('morphology.slime-coated'), color: 'silver' }, unset: [] })) },
+  { id: id('patch.slime-arms'), label: '上肢黏液化覆层', summary: '双臂与双手覆上柔滑半透明的生物黏液层', operations: ['arm.left', 'arm.right', 'hand.left', 'hand.right'].map(partId => ({ type: 'attributes', partId, set: { materialId: id('material.slime-mucus'), morphologyId: id('morphology.slime-coated'), color: 'silver' }, unset: [] })) },
+  { id: id('patch.latex-legs'), label: '下肢黑胶化包覆', summary: '双腿与双足贴合柔韧光滑的活体黑胶层', operations: ['leg.left', 'leg.right', 'foot.left', 'foot.right'].map(partId => ({ type: 'attributes', partId, set: { materialId: id('material.living-latex'), morphologyId: id('morphology.latex-sheathed'), color: 'black' }, unset: [] })) },
+  { id: id('patch.latex-arms'), label: '上肢黑胶化包覆', summary: '双臂与双手贴合柔韧光滑的活体黑胶层', operations: ['arm.left', 'arm.right', 'hand.left', 'hand.right'].map(partId => ({ type: 'attributes', partId, set: { materialId: id('material.living-latex'), morphologyId: id('morphology.latex-sheathed'), color: 'black' }, unset: [] })) },
+  { id: id('patch.cleanse-limbs'), label: '洗净体表异质覆层', summary: '四肢与手足恢复原本洁净的肌肤质感', operations: ['arm.left', 'arm.right', 'hand.left', 'hand.right', 'leg.left', 'leg.right', 'foot.left', 'foot.right'].map(partId => ({ type: 'attributes', partId, set: {}, unset: ['materialId', 'morphologyId', 'color'] })) },
+);
+p.texts[id('text.tf.slime.seep')] = '微凉滑腻的生物黏液顺着肌肤纹理延展，表面渐渐形成一层水润的半透明薄膜。';
+p.texts[id('text.tf.slime.legs')] = '双腿与双足完全被柔韧的生物黏液覆层包裹，迈步之间带着温润的回弹质感。';
+p.texts[id('text.tf.slime.arms')] = '黏液覆层进一步漫过双臂与掌心，体表呈现均匀莹润的半透明光泽，同时保留自主活动能力。';
+p.texts[id('text.tf.latex.adhere')] = '残留的活体黑胶随体温软化延展，顺着四肢轮廓紧密收束贴合。';
+p.texts[id('text.tf.latex.legs')] = '双腿与足踝被浑然一体的哑光黑胶覆层包裹，包裹感紧密而富有弹性。';
+p.texts[id('text.tf.latex.arms')] = '活体黑胶覆层延伸至双臂与十指，宛如第二层光滑的紧身外肤。';
+p.texts[id('text.tf.cleanse.done')] = '你用温水与中和剂仔细洗去四肢表面的异质覆层，肌肤恢复了原本清爽的触感。';
+p.transformations.push(
+  { id: id('tf.slime-coating'), label: '通用黏液化浸染', source: 'story', stages: [
+    { id: 'seep', label: '前兆：黏膜延展', atMinutes: 10, textKey: id('text.tf.slime.seep') },
+    { id: 'legs', label: '下肢黏液化覆层', atMinutes: 25, patchId: id('patch.slime-legs'), textKey: id('text.tf.slime.legs') },
+    { id: 'arms', label: '四肢黏液化完成', atMinutes: 45, patchId: id('patch.slime-arms'), textKey: id('text.tf.slime.arms') },
+  ] },
+  { id: id('tf.latex-coating'), label: '通用黑胶化包覆', source: 'story', stages: [
+    { id: 'adhere', label: '前兆：黑胶贴合', atMinutes: 10, textKey: id('text.tf.latex.adhere') },
+    { id: 'legs', label: '下肢黑胶化包覆', atMinutes: 25, patchId: id('patch.latex-legs'), textKey: id('text.tf.latex.legs') },
+    { id: 'arms', label: '四肢黑胶化完成', atMinutes: 45, patchId: id('patch.latex-arms'), textKey: id('text.tf.latex.arms') },
+  ] },
+  { id: id('tf.cleanse-coatings'), label: '洗净体表异质覆层', source: 'free', stages: [
+    { id: 'clean', label: '恢复清爽体表', atMinutes: 0, patchId: id('patch.cleanse-limbs'), textKey: id('text.tf.cleanse.done') },
+  ] },
+);
+const anyCoatingCondition = {
+  op: 'any',
+  conditions: [
+    { op: 'body.matches', target: { kind: 'player' }, part: { materialId: id('material.slime-mucus') } },
+    { op: 'body.matches', target: { kind: 'player' }, part: { materialId: id('material.living-latex') } },
+  ],
+};
+const cleanseActionId = action('tf.cleanse-coatings', '洗净体表异质覆层', [{ op: 'tf.apply', id: id('tf.cleanse-coatings') }, { op: 'flag.set', id: id('flag.aftermath.mark'), value: false }], [anyCoatingCondition], '即时清理四肢黏液或黑胶覆层', 'daily');
+const cleanseActionDef = p.actions.find(a => a.id === cleanseActionId);
+if (cleanseActionDef) cleanseActionDef.surface = 'body';
+
+node('transformation.slime', 'transformation', 'start', '适应黏液化覆层', '你低头审视四肢表面那层半透明的生物黏液覆层。微凉滑腻的薄膜随着你的呼吸微微起伏，你屈伸手指试了试覆层的回弹力道，水润的触感始终贴合着手腕与小腿。', [
+  choice('顺应黏液覆层舒展肢体', '你配合着表面黏膜的弹性舒展四肢，动作显得格外柔顺轻巧。', null, [time(10), { op: 'var.change', id: 'core:stamina', amount: 8 }, { op: 'var.change', id: 'core:energy', amount: 6 }]),
+  choice('洗去体表的生物黏液覆层', '你取来清水与中和剂洗净四肢，皮肤恢复了原本干爽的触感。', null, [{ op: 'tf.apply', id: id('tf.cleanse-coatings') }, { op: 'flag.set', id: id('flag.aftermath.mark'), value: false }, time(5)]),
+], { priority: 6, requiresTags: [scoped('player', 'body.slime-coated')] });
+node('transformation.latex', 'transformation', 'start', '适应黑胶化包覆', '你活动着被活体黑胶紧密包裹的四肢。哑光黑胶顺着肌肉线条收束贴合，每一次屈伸都传来清晰的回弹支撑力，手腕边缘的胶层随着脉搏微微收紧。', [
+  choice('配合黑胶张力练习发力', '你借着黑胶覆层的回弹张力稳住步态，体能与专注度随之回升。', null, [time(10), { op: 'var.change', id: 'core:stamina', amount: 8 }, { op: 'var.change', id: 'core:skillResource', amount: 8 }]),
+  choice('剥离并洗净活体黑胶覆层', '你顺着边缘缓缓卸下黑胶覆层，四肢重新呼吸到清爽的空气。', null, [{ op: 'tf.apply', id: id('tf.cleanse-coatings') }, { op: 'flag.set', id: id('flag.aftermath.mark'), value: false }, time(5)]),
+], { priority: 6, requiresTags: [scoped('player', 'body.latex-sheathed')] });
+
+// —— B1 事后体表残迹支线（只保留通用黏液化 / 黑胶化 + 洗净，与恶堕彻底分开）——
+p.tags.push(
+  {
+    id: tag('residue.trace.active'),
+    label: '战后体表残迹追查激活',
+    definition: '故事局部：玩家在安全状态下主动检视战败留下的体表残迹与覆层感应（独立事后 TF 支线）。',
+    facets: ['context'],
+    status: 'active',
+    aliases: [],
+  },
+  {
+    id: tag('aftermath.corruption.active'),
+    label: '事后余韵沉溺支线激活',
+    definition: '故事局部：玩家在开启成人偏好且带有战后残迹标记时，主动进入事后余韵与顺从倾向回响（独立 B2 心性支线，与 TF 分开）。',
+    facets: ['context'],
+    status: 'active',
+    aliases: [],
+  },
+);
+p.narrativeProfiles.push(
+  {
+    id: id('profile.residue.trace'),
+    tags: [tag('residue.trace.active')],
+    goals: [],
+    tendencies: [],
+    defeatTags: [],
+  },
+  {
+    id: id('profile.aftermath.corruption'),
+    tags: [tag('aftermath.corruption.active')],
+    goals: [],
+    tendencies: [],
+    defeatTags: [],
+  },
+);
+node('transformation.residue.start', 'transformation', 'start', '检视战后体表残迹与转化感应', '你在{place}寻了一处僻静角落，挽起衣袖细看先前交锋留下的体表残迹。腕踝与小腿外侧还留着异质接触后的微凉触感，表层覆膜随着体温微微贴合起伏。你按住手腕边缘，权衡着如何处置这层残迹。', [
+  choice('彻底洗净残迹，平复身心', '你仔细擦净衣角与皮肤上的残留痕迹，体表那丝异样的感应随之消散。', null, [{ op: 'flag.set', id: id('flag.aftermath.mark'), value: false }, time(10), health(6), { op: 'var.change', id: 'core:sanity', amount: 6 }]),
+  choice('顺应体表感应，引导覆层转化', '你放缓呼吸，任由手腕与脚踝处的异质覆层顺着肌肤纹理继续延展。', 'residue-deepen', [time(10)]),
+  choice('静心调息等待覆层演化', '你静下心来调息片刻，体会着体表覆层渐进贴合的变化。{tfState}', null, [time(20), { op: 'var.change', id: 'core:energy', amount: 6 }]),
+], { priority: 10, requiresTags: [scoped('opponent', 'residue.trace.active')] });
+node('transformation.residue.deepen', 'transformation', 'residue-deepen', '选择体表覆层转化方向', '随着你放松对表层残迹的抵御，四肢肌肤表面泛起清晰的包覆感。微凉的水润黏膜与紧密收束的弹性胶层分别在腕踝处浮现征兆，等待你作出取舍。', [
+  choice('接纳通用黏液化覆层', '你顺应水润滑腻的包裹感，任由通用黏液化覆层沿着四肢缓缓延展。', null, [{ op: 'tf.enqueue', id: id('tf.slime-coating') }, time(15)], [{ op: 'tf.state', id: id('tf.slime-coating'), state: 'idle' }]),
+  choice('接纳通用黑胶化包覆', '你顺应紧密收束的弹性张力，任由通用黑胶化包覆顺着四肢渐渐成型。', null, [{ op: 'tf.enqueue', id: id('tf.latex-coating') }, time(15)], [{ op: 'tf.state', id: id('tf.latex-coating'), state: 'idle' }]),
+  choice('取水洗去体表残迹', '你取来清水将四肢表层的残迹洗净，皮肤重归清爽。', null, [{ op: 'flag.set', id: id('flag.aftermath.mark'), value: false }, time(10), health(4)]),
+], { priority: 8, requiresTags: [scoped('opponent', 'residue.trace.active')] });
+action('residue.trace', '检视战后体表残迹与转化感应', [{ op: 'narrative.start', kind: 'transformation', profileId: id('profile.residue.trace') }], [{ op: 'flag.has', id: id('flag.aftermath.mark'), value: true }], '战后体表留痕可自主洗净，或引导黏液化/黑胶化覆层', 'explore');
+
+// —— B2 独立恶堕入口：事后余韵与支配回响（只做心性和叙事，与 TF 彻底分开）——
+node('transformation.corruption.start', 'transformation', 'start', '回味战后余韵与支配回响', '你在{place}寻了一处无人打扰的角落坐下，呼吸渐渐平缓，先前受制时腕踝被死死箍紧的压迫感却仍在皮肤表层隐隐发烫。耳畔似乎还回荡着交锋落败那刻急促的喘息与近在咫尺的声响，胸口随之泛起一阵陌生而细密的悸动。你垂下目光按住手腕上的压痕，指尖在微凉的衣袖边缘停住。', [
+  choice('闭目沉入受制时的悸动余韵', '你闭上双目，任由那股被压制时的悸动在胸口漫开，身体对束缚与支配的适应随之加深。', null, [time(15), { op: 'var.change', id: 'core:submissionTendency', amount: 6 }, { op: 'var.change', id: 'core:desire', amount: 6 }, { op: 'var.change', id: 'core:aftertaste', amount: 8 }]),
+  choice('定神敛息，拂去脑海中的支配回响', '你用冷水拍了拍面颊，将残留的杂念与体表残迹一并清理干净，心神重新恢复清明。', null, [{ op: 'flag.set', id: id('flag.aftermath.mark'), value: false }, time(10), { op: 'var.change', id: 'core:sanity', amount: 8 }, { op: 'var.change', id: 'core:confidence', amount: 4 }]),
+], { priority: 10, requiresTags: [scoped('opponent', 'aftermath.corruption.active')], conditions: [{ op: 'preference.adultOptional', value: true }] });
+action('aftermath.corruption', '回味战后余韵与支配回响', [{ op: 'narrative.start', kind: 'transformation', profileId: id('profile.aftermath.corruption') }], [{ op: 'flag.has', id: id('flag.aftermath.mark'), value: true }, { op: 'preference.adultOptional', value: true }], '独立事后心性支线 · 可自选加深顺从余韵或彻底平复', 'explore');
+
+// 为已有基础档案、敌人与环境选敌规则补齐属性/性癖与组合池配置
+const baseProfileExtras = {
+  gel: { speciesKind: 'slime', attributeTags: [tag('attr.gel-body'), tag('attr.mucus')], fetishTags: [tag('fetish.coating'), tag('fetish.restraint')], fetishTendencies: [{ tagId: tag('fetish.coating'), weight: 85 }, { tagId: tag('fetish.restraint'), weight: 65 }], defeatCombo: { materials: ['M5', 'M6'], parts: ['脚踝', '手腕', '腰侧'], plays: ['G2', 'G1'], tfs: ['黑胶化'] } },
+  collector: { speciesKind: 'human', attributeTags: [], fetishTags: [tag('fetish.restraint'), tag('fetish.humiliation')], fetishTendencies: [{ tagId: tag('fetish.restraint'), weight: 60 }, { tagId: tag('fetish.humiliation'), weight: 55 }], defeatCombo: { materials: ['M5'], parts: ['手腕', '脖颈'], plays: ['G1', 'G6'], tfs: ['黑胶化'] } },
+  scavenger: { speciesKind: 'construct', attributeTags: [tag('attr.tentacle')], fetishTags: [tag('fetish.restraint'), tag('fetish.domination')], fetishTendencies: [{ tagId: tag('fetish.restraint'), weight: 75 }, { tagId: tag('fetish.domination'), weight: 60 }], defeatCombo: { materials: ['M5', 'M6'], parts: ['手腕', '脚踝', '腰侧'], plays: ['G1', 'G7'], tfs: ['黑胶化'] } },
+  raider: { speciesKind: 'human', attributeTags: [tag('attr.pack')], fetishTags: [tag('fetish.restraint'), tag('fetish.humiliation')], fetishTendencies: [{ tagId: tag('fetish.restraint'), weight: 65 }, { tagId: tag('fetish.humiliation'), weight: 60 }], defeatCombo: { materials: ['M4', 'M5'], parts: ['手腕', '腰侧', '大腿内侧'], plays: ['G1', 'G6'], tfs: ['黏液化'] } },
+  sentinel: { speciesKind: 'construct', attributeTags: [tag('attr.tentacle')], fetishTags: [tag('fetish.restraint'), tag('fetish.sensory-deprivation')], fetishTendencies: [{ tagId: tag('fetish.restraint'), weight: 90 }, { tagId: tag('fetish.sensory-deprivation'), weight: 70 }], defeatCombo: { materials: ['M5', 'M6'], parts: ['手腕', '脚踝', '脖颈'], plays: ['G1', 'G4'], tfs: ['黑胶化'] } },
+  overseer: { speciesKind: 'construct', attributeTags: [tag('attr.tentacle'), tag('attr.pheromone')], fetishTags: [tag('fetish.domination'), tag('fetish.coating'), tag('fetish.restraint')], fetishTendencies: [{ tagId: tag('fetish.domination'), weight: 90 }, { tagId: tag('fetish.coating'), weight: 80 }, { tagId: tag('fetish.restraint'), weight: 75 }], defeatCombo: { materials: ['M5', 'M6'], parts: ['手腕', '脖颈', '腰侧', '大腿内侧'], plays: ['G7', 'G2', 'G1'], tfs: ['黑胶化'] } },
+};
+for (const [k, extra] of Object.entries(baseProfileExtras)) {
+  const prof = p.narrativeProfiles.find(x => x.id === id('profile.' + k));
+  if (prof) Object.assign(prof, extra);
+  const en = p.enemies.find(x => x.id === id('enemy.' + k));
+  if (en) Object.assign(en, extra);
+}
+const baseEnvRuleExtras = {
+  'gel.canal': { speciesKind: 'slime', attributeTags: [tag('attr.gel-body'), tag('attr.mucus')], fetishTags: [tag('fetish.coating'), tag('fetish.restraint')] },
+  'scavenger.canal': { speciesKind: 'construct', attributeTags: [tag('attr.tentacle')], fetishTags: [tag('fetish.restraint')] },
+  'scavenger.workshop': { speciesKind: 'construct', attributeTags: [tag('attr.tentacle')], fetishTags: [tag('fetish.restraint'), tag('fetish.domination')] },
+  'collector.station': { speciesKind: 'human', fetishTags: [tag('fetish.restraint')] },
+  'collector.market': { speciesKind: 'human', fetishTags: [tag('fetish.humiliation')] },
+};
+for (const [k, extra] of Object.entries(baseEnvRuleExtras)) {
+  const r = p.environmentEnemyRules.find(x => x.id === id('env-enemy.' + k));
+  if (r) Object.assign(r, extra);
+}
+
+const ALL_LIVE_STATE_KEYS = [
+  'state.bound',
+  'state.coated',
+  'state.suspended',
+  'state.gagged',
+  'state.blindfolded',
+  'state.ear-sealed',
+  'state.sensory-deprived',
+  'state.cocooned',
+  'state.exposed',
+];
+const ALL_LIVE_STATE_TAGS = ALL_LIVE_STATE_KEYS.map(k => scoped('player', k));
+const ALL_DEFEAT_CLEANUP_TAGS = [
+  ...ALL_LIVE_STATE_TAGS,
+  scoped('player', 'defeat.loosened'),
+  scoped('player', 'defeat.soaked'),
+];
+const defeatExit = () => ({
+  ...exit(),
+  unsetTags: ALL_DEFEAT_CLEANUP_TAGS,
+});
+
 const defeatPlayStageChain = ['capture', 'press', 'peak', 'resolve'];
 const defeatPlayMeta = [
-  { n: 1, key: 'G1', name: '束缚制服', multiBeat: true },
-  { n: 2, key: 'G2', name: '材质覆层转化', multiBeat: true },
-  { n: 3, key: 'G3', name: '侵犯插入', multiBeat: true },
-  { n: 4, key: 'G4', name: '口封感官剥夺', multiBeat: true },
-  { n: 5, key: 'G5', name: '产卵灌注', multiBeat: true },
-  { n: 6, key: 'G6', name: '公开羞辱', multiBeat: true },
-  { n: 7, key: 'G7', name: '主从调教', multiBeat: true },
-  { n: 8, key: 'G8', name: '多体围攻', multiBeat: true },
+  { n: 1, key: 'G1', name: '束缚制服', multiBeat: true, fetishTag: 'fetish.restraint', entryStates: ['state.bound'], pressStates: ['state.bound', 'state.suspended'], peakStates: ['state.bound', 'state.suspended'] },
+  { n: 2, key: 'G2', name: '材质覆层转化', multiBeat: true, fetishTag: 'fetish.coating', entryStates: ['state.coated'], pressStates: ['state.coated', 'state.bound'], peakStates: ['state.coated', 'state.bound'] },
+  { n: 3, key: 'G3', name: '侵犯插入', multiBeat: true, fetishTag: 'fetish.penetration', entryStates: ['state.bound', 'state.exposed'], pressStates: ['state.bound', 'state.exposed'], peakStates: ['state.bound', 'state.exposed', 'state.coated'] },
+  { n: 4, key: 'G4', name: '口封感官剥夺', multiBeat: true, fetishTag: 'fetish.sensory-deprivation', entryStates: ['state.gagged', 'state.blindfolded'], pressStates: ['state.gagged', 'state.blindfolded', 'state.ear-sealed'], peakStates: ['state.gagged', 'state.blindfolded', 'state.ear-sealed', 'state.sensory-deprived'] },
+  { n: 5, key: 'G5', name: '产卵灌注', multiBeat: true, fetishTag: 'fetish.oviposition', entryStates: ['state.bound', 'state.cocooned'], pressStates: ['state.bound', 'state.cocooned'], peakStates: ['state.cocooned', 'state.coated'] },
+  { n: 6, key: 'G6', name: '公开羞辱', multiBeat: true, fetishTag: 'fetish.humiliation', entryStates: ['state.exposed', 'state.bound'], pressStates: ['state.exposed', 'state.suspended'], peakStates: ['state.exposed', 'state.suspended'] },
+  { n: 7, key: 'G7', name: '主从调教', multiBeat: true, fetishTag: 'fetish.domination', entryStates: ['state.bound', 'state.gagged'], pressStates: ['state.bound', 'state.blindfolded'], peakStates: ['state.sensory-deprived', 'state.gagged'] },
+  { n: 8, key: 'G8', name: '多体围攻', multiBeat: true, fetishTag: 'fetish.swarm', entryStates: ['state.bound', 'state.coated'], pressStates: ['state.exposed', 'state.cocooned'], peakStates: ['state.ear-sealed', 'state.sensory-deprived'] },
 ];
 const defeatStageTitle = { capture: '捕捉', press: '加压', peak: '高峰', resolve: '收束' };
 const defeatContinueLabel = {
@@ -517,22 +718,42 @@ p.narrativeProfiles.push({
 const playHubChoices = [];
 const defeatStageId = (n, stage, adult = false) => {
   const pad = String(n).padStart(2, '0');
-  if (stage === 'capture' && !adult) return `play-${pad}`; // hub next 兼容
+  if (stage === 'capture' && !adult) return `play-${pad}`;
   return adult ? `play-${pad}-${stage}-adult` : `play-${pad}-${stage}`;
 };
+const tailGrip = { op: 'body.hasCapability', capability: 'tailGrip', count: 1 };
+const canCounterBreak = {
+  op: 'any',
+  conditions: [
+    grasp,
+    tailGrip,
+    { op: 'var.compare', id: 'core:stamina', comparison: 'gte', value: 25 },
+  ],
+};
+const hasPlayableTfCondition = {
+  op: 'any',
+  conditions: [
+    { op: 'opponent.matches', tf: '黏液化' },
+    { op: 'opponent.matches', tf: '黑胶化' },
+  ],
+};
+
 for (const play of defeatPlayMeta) {
   const g = `g${play.n}`;
   const pad = String(play.n).padStart(2, '0');
   const stages = play.multiBeat ? defeatPlayStageChain : ['capture'];
   const toPlay = id(`text.choice.defeat.${g}.enter`);
-  p.texts[toPlay] = `眼前的局势落入「${play.name}」的压制之中，你仍可随时中断并设法脱身。`;
+  p.texts[toPlay] = '{opponent}逼近身侧，{part}处的{material}随之收紧，你仍可随时设法中断并抽身离开。';
   playHubChoices.push({
     label: `进入：${play.name}`,
     resultText: toPlay,
     next: defeatStageId(play.n, 'capture'),
     effects: [time(5)],
     conditions: [],
-    setTags: [scoped('player', `defeat.play.${play.key.toLowerCase()}`)],
+    setTags: [
+      scoped('player', `defeat.play.${play.key.toLowerCase()}`),
+      ...play.entryStates.map(s => scoped('player', s)),
+    ],
     unsetTags: [],
   });
   for (let si = 0; si < stages.length; si++) {
@@ -548,6 +769,11 @@ for (const play of defeatPlayMeta) {
     p.texts[adultKey] = `【可填成人正文槽 · ${play.name} · ${stage}】占位：同意前提下的成人向战败玩法描写。{opponent} / {material} / {part}。勿写未成年人；勿伪造 foundation:*。`;
     const adultChoiceText = id(`text.choice.defeat.${g}.${stage}.adult`);
     p.texts[adultChoiceText] = '你留意着当下的贴身感官细节，仍可随时抽身离开。';
+    const stageTransitionTags = nextStage === 'press'
+      ? play.pressStates.map(s => scoped('player', s))
+      : nextStage === 'peak'
+      ? play.peakStates.map(s => scoped('player', s))
+      : [];
     const choices = [];
     if (nextStage) {
       const contKey = id(`text.choice.defeat.${g}.${stage}.continue`);
@@ -558,7 +784,44 @@ for (const play of defeatPlayMeta) {
         next: defeatStageId(play.n, nextStage),
         effects: [time(5)],
         conditions: [],
-        setTags: [],
+        setTags: stageTransitionTags,
+        unsetTags: [],
+      });
+    }
+    if (stage === 'peak') {
+      const breakKey = id(`text.choice.defeat.${g}.peak.break`);
+      p.texts[breakKey] = '你趁{opponent}攻势收拢到顶点的一瞬，借着肢体支撑猛然挣开{part}处的{material}牵制。';
+      choices.push({
+        label: '借力挣脱反制',
+        resultText: breakKey,
+        next: `play-${pad}-resolve-escape`,
+        effects: [time(5), { op: 'var.change', id: 'core:stamina', amount: -4 }],
+        conditions: [canCounterBreak],
+        setTags: [scoped('player', 'defeat.loosened')],
+        unsetTags: [],
+      });
+    }
+    if (stage === 'resolve') {
+      const soakKey = id(`text.choice.defeat.${g}.resolve.soak`);
+      p.texts[soakKey] = '你感到{part}处的{material}正渗入表皮纹理，四肢浮现出覆层转化的前兆感应。';
+      choices.push({
+        label: '检视体表覆层与转化感应',
+        resultText: soakKey,
+        next: `play-${pad}-resolve-tf`,
+        effects: [time(5)],
+        conditions: [hasPlayableTfCondition],
+        setTags: [scoped('player', 'defeat.soaked'), scoped('player', 'state.coated')],
+        unsetTags: [],
+      });
+      const markKey = id(`text.choice.defeat.${g}.resolve.mark`);
+      p.texts[markKey] = '你带着{part}残留的{material}痕迹退向安全通道，拉开与{opponent}的距离。';
+      choices.push({
+        label: '带着残迹退回安全位置',
+        resultText: markKey,
+        next: `play-${pad}-resolve-marked`,
+        effects: [time(5)],
+        conditions: [],
+        setTags: [scoped('player', 'state.coated')],
         unsetTags: [],
       });
     }
@@ -568,10 +831,10 @@ for (const play of defeatPlayMeta) {
       next: adultStageId,
       effects: [time(5)],
       conditions: adultGate,
-      setTags: [],
+      setTags: stage === 'capture' ? play.entryStates.map(s => scoped('player', s)) : [],
       unsetTags: [],
     });
-    choices.push(exit());
+    choices.push(defeatExit());
     p.narrativeNodes.push({
       id: nodeId,
       kind: 'defeat',
@@ -581,7 +844,7 @@ for (const play of defeatPlayMeta) {
       requiresTags: [scoped('opponent', 'defeat.play.active')],
       excludesTags: [],
       conditions: [],
-      tendencies: [],
+      tendencies: [{ tagId: tag(play.fetishTag), weight: 2 }],
       weight: 10,
       priority: 6,
       maxVisits: 1,
@@ -597,11 +860,59 @@ for (const play of defeatPlayMeta) {
         next: defeatStageId(play.n, nextStage),
         effects: [time(5)],
         conditions: [],
-        setTags: [],
+        setTags: stageTransitionTags,
         unsetTags: [],
       });
     }
-    adultChoices.push(exit());
+    if (stage === 'peak') {
+      const breakAdultKey = id(`text.choice.defeat.${g}.peak.adult.break`);
+      p.texts[breakAdultKey] = '你在感官压迫的顶点稳住呼吸，寻得空隙挣开了{opponent}在{part}处的纠缠。';
+      adultChoices.push({
+        label: '借力挣脱反制',
+        resultText: breakAdultKey,
+        next: `play-${pad}-resolve-escape`,
+        effects: [time(5), { op: 'var.change', id: 'core:stamina', amount: -4 }],
+        conditions: [canCounterBreak],
+        setTags: [scoped('player', 'defeat.loosened')],
+        unsetTags: [],
+      });
+      const soakAdultKey = id(`text.choice.defeat.${g}.peak.adult.soak`);
+      p.texts[soakAdultKey] = '浓稠的{material}顺着{part}漫延四肢，体表浮现出明显的覆层浸染征兆。';
+      adultChoices.push({
+        label: '任由异质覆层浸染',
+        resultText: soakAdultKey,
+        next: `play-${pad}-resolve-tf`,
+        effects: [time(5)],
+        conditions: [hasPlayableTfCondition],
+        setTags: [scoped('player', 'defeat.soaked'), scoped('player', 'state.coated')],
+        unsetTags: [],
+      });
+    }
+    if (stage === 'resolve') {
+      const soakResAdultKey = id(`text.choice.defeat.${g}.resolve.adult.soak`);
+      p.texts[soakResAdultKey] = '你低头察看{part}上尚未退去的{material}覆层，四肢肌肤传来清晰的转化脉动。';
+      adultChoices.push({
+        label: '检视体表覆层与转化感应',
+        resultText: soakResAdultKey,
+        next: `play-${pad}-resolve-tf`,
+        effects: [time(5)],
+        conditions: [hasPlayableTfCondition],
+        setTags: [scoped('player', 'defeat.soaked'), scoped('player', 'state.coated')],
+        unsetTags: [],
+      });
+      const markResAdultKey = id(`text.choice.defeat.${g}.resolve.adult.mark`);
+      p.texts[markResAdultKey] = '你拢起散乱的衣襟，带着{part}上的{material}残迹退向安全通道。';
+      adultChoices.push({
+        label: '带着残迹退回安全位置',
+        resultText: markResAdultKey,
+        next: `play-${pad}-resolve-marked`,
+        effects: [time(5)],
+        conditions: [],
+        setTags: [scoped('player', 'state.coated')],
+        unsetTags: [],
+      });
+    }
+    adultChoices.push(defeatExit());
     p.narrativeNodes.push({
       id: adultNodeId,
       kind: 'defeat',
@@ -611,14 +922,408 @@ for (const play of defeatPlayMeta) {
       requiresTags: [scoped('opponent', 'defeat.play.active')],
       excludesTags: [],
       conditions: adultGate,
-      tendencies: [],
+      tendencies: [{ tagId: tag(play.fetishTag), weight: 2 }],
       weight: 10,
       priority: 6,
       maxVisits: 1,
       choices: adultChoices,
     });
   }
+
+  // 分支结局节点 A：挣脱抽身 (resolve.escape) —— 无玩法内部名，出口清掉全部现场态
+  const escapeNodeText = id(`text.node.defeat.${g}.resolve.escape`);
+  p.texts[escapeNodeText] = '你在周遭压制彻底合拢前找准支点，发力震开了{opponent}缠在{part}上的{material}。趁对方攻势一滞，你迅速拉开距离退到通道安全处，扶着墙沿平复急促的呼吸，拍去衣袖上的擦痕。';
+  const escapeCleanKey = id(`text.choice.defeat.${g}.resolve.escape.clean`);
+  p.texts[escapeCleanKey] = '你拍净衣袖上的零星擦痕，稳住呼吸回到安全地点。';
+  p.narrativeNodes.push({
+    id: id(`node.defeat.${g}.resolve.escape`),
+    kind: 'defeat',
+    stage: `play-${pad}-resolve-escape`,
+    title: `战败 · ${play.name} · 挣脱抽身`,
+    textKey: escapeNodeText,
+    requiresTags: [scoped('opponent', 'defeat.play.active')],
+    excludesTags: [],
+    conditions: [],
+    tendencies: [],
+    weight: 10,
+    priority: 7,
+    maxVisits: 1,
+    choices: [
+      {
+        label: '趁势整顿衣装，清爽脱身',
+        resultText: escapeCleanKey,
+        next: null,
+        effects: [time(5), health(6), { op: 'flag.set', id: id('flag.aftermath.mark'), value: false }],
+        conditions: [],
+        setTags: [],
+        unsetTags: ALL_DEFEAT_CLEANUP_TAGS,
+      },
+      defeatExit(),
+    ],
+  });
+
+  // 分支结局节点 B：带痕脱身 (resolve.marked) —— 按 materialTrace 区分藤类/丝茧/胶质，不含玩法内部名或工程解释，选项不含括号元说明
+  const markedNodeText = id(`text.node.defeat.${g}.resolve.marked`);
+  p.texts[markedNodeText] = '你趁{opponent}攻势收拢的空档抽身退开，脱离了当场的贴身压制，但{part}与衣料内侧仍留有{material}缠附擦过后的清晰残迹与紧束压痕。你扶住通道边缘稳住步伐，低头察看腕踝与衣襟上的残留痕迹。';
+  const markedLeaveKey = id(`text.choice.defeat.${g}.resolve.marked.leave`);
+  p.texts[markedLeaveKey] = '你拢紧外衣遮住{part}上的{material}残迹，先行退回安全位置。';
+  const markedCleanKey = id(`text.choice.defeat.${g}.resolve.marked.clean`);
+  p.texts[markedCleanKey] = '你在路边取水匆匆拭去{part}表层的{material}，整理好衣袖回到安全位置。';
+  p.narrativeNodes.push({
+    id: id(`node.defeat.${g}.resolve.marked`),
+    kind: 'defeat',
+    stage: `play-${pad}-resolve-marked`,
+    title: `战败 · ${play.name} · 带痕脱身`,
+    textKey: markedNodeText,
+    requiresTags: [scoped('opponent', 'defeat.play.active')],
+    excludesTags: [],
+    conditions: [],
+    tendencies: [{ tagId: tag(play.fetishTag), weight: 1 }],
+    weight: 10,
+    priority: 7,
+    maxVisits: 1,
+    choices: [
+      {
+        label: '拢紧衣襟护住手腕先退开',
+        resultText: markedLeaveKey,
+        next: null,
+        effects: [{ op: 'flag.set', id: id('flag.aftermath.mark'), value: true }, time(5), health(4)],
+        conditions: [],
+        setTags: [],
+        unsetTags: ALL_DEFEAT_CLEANUP_TAGS,
+      },
+      {
+        label: '当场拭去表层残迹后离开',
+        resultText: markedCleanKey,
+        next: null,
+        effects: [{ op: 'flag.set', id: id('flag.aftermath.mark'), value: false }, time(10), health(4)],
+        conditions: [],
+        setTags: [],
+        unsetTags: ALL_DEFEAT_CLEANUP_TAGS,
+      },
+      defeatExit(),
+    ],
+  });
+
+  // 分支结局节点 C：覆层浸染与转化结算 (resolve.tf) —— 仅保留通用黏液化与黑胶化
+  const tfNodeText = id(`text.node.defeat.${g}.resolve.tf`);
+  p.texts[tfNodeText] = '交锋余波渐息，{opponent}留在你{part}与四肢表面的{material}随着体温化作一层贴合肌肤的异质薄膜。手腕与小腿表层传来清晰的包裹感，你停在通道边缘审视着这层覆膜的变化。';
+  const tfSlimeKey = id(`text.choice.defeat.${g}.resolve.tf.slime`);
+  p.texts[tfSlimeKey] = '你顺应体表水润滑腻的触感，任由通用黏液化覆层沿着四肢缓缓成型。';
+  const tfLatexKey = id(`text.choice.defeat.${g}.resolve.tf.latex`);
+  p.texts[tfLatexKey] = '你顺应体表紧密收束的弹性张力，任由通用黑胶化包覆沿着四肢渐渐定型。';
+  const tfDeferKey = id(`text.choice.defeat.${g}.resolve.tf.defer`);
+  p.texts[tfDeferKey] = '你暂且拢紧外衣压下体表的微麻感应，先退向安全通道。';
+  p.narrativeNodes.push({
+    id: id(`node.defeat.${g}.resolve.tf`),
+    kind: 'defeat',
+    stage: `play-${pad}-resolve-tf`,
+    title: `战败 · ${play.name} · 覆层浸染`,
+    textKey: tfNodeText,
+    requiresTags: [scoped('opponent', 'defeat.play.active')],
+    excludesTags: [],
+    conditions: [],
+    tendencies: [{ tagId: tag(play.fetishTag), weight: 2 }],
+    weight: 10,
+    priority: 7,
+    maxVisits: 1,
+    choices: [
+      {
+        label: '接纳黏液化覆层转化',
+        resultText: tfSlimeKey,
+        next: null,
+        effects: [{ op: 'tf.enqueue', id: id('tf.slime-coating') }, { op: 'flag.set', id: id('flag.aftermath.mark'), value: true }, time(10), health(5)],
+        conditions: [
+          { op: 'tf.state', id: id('tf.slime-coating'), state: 'idle' },
+        ],
+        setTags: [],
+        unsetTags: ALL_DEFEAT_CLEANUP_TAGS,
+      },
+      {
+        label: '接纳黑胶化包覆转化',
+        resultText: tfLatexKey,
+        next: null,
+        effects: [{ op: 'tf.enqueue', id: id('tf.latex-coating') }, { op: 'flag.set', id: id('flag.aftermath.mark'), value: true }, time(10), health(5)],
+        conditions: [
+          { op: 'tf.state', id: id('tf.latex-coating'), state: 'idle' },
+        ],
+        setTags: [],
+        unsetTags: ALL_DEFEAT_CLEANUP_TAGS,
+      },
+      {
+        label: '拢起外衣先行退开',
+        resultText: tfDeferKey,
+        next: `play-${pad}-resolve-marked`,
+        effects: [time(5)],
+        conditions: [],
+        setTags: [],
+        unsetTags: [scoped('player', 'defeat.soaked')],
+      },
+      defeatExit(),
+    ],
+  });
 }
+
+// —— 野外六敌（E2 触手藤不带黏液化 TF 且真实挂 state.suspended + state.bound；E4 虫巢爬者结茧拍挂 state.cocooned；选项全部去括号元说明）——
+const wildEnemies = [
+  {
+    slug: 'saliva-wolf',
+    name: '涎狼',
+    tier: 'S',
+    hp: 48,
+    attack: 11,
+    defense: 6,
+    speed: 12,
+    reward: 14,
+    actions: 1,
+    speciesKind: 'beast',
+    attributeTags: [tag('attr.warm-saliva'), tag('attr.pack')],
+    fetishTags: [tag('fetish.restraint'), tag('fetish.coating')],
+    fetishTendencies: [{ tagId: tag('fetish.restraint'), weight: 85 }, { tagId: tag('fetish.coating'), weight: 70 }],
+    defeatCombo: { materials: ['M1', 'M4'], parts: ['脖颈', '手腕', '脚踝'], plays: ['G1', 'G2'], tfs: ['黏液化'], autoCombo: true },
+    primaryPlay: 1,
+    secondaryPlay: 2,
+    primaryLabel: '架住前爪抵挡扑压',
+    secondaryLabel: '侧身拨开滴落的垂涎',
+    primaryStates: ['state.bound'],
+    secondaryStates: ['state.coated'],
+    introText: '你力竭跌坐在林缘草地上，{opponent}低伏着前躯逼近，温热湿滑的垂涎滴落在你的{part}附近。沉重的前爪按住你的肩侧与手腕，将你压制在草甸原处。',
+  },
+  {
+    slug: 'slug-beast',
+    name: '林缘蛞蝓兽',
+    tier: 'M',
+    hp: 62,
+    attack: 10,
+    defense: 9,
+    speed: 7,
+    reward: 18,
+    actions: 1,
+    speciesKind: 'slime',
+    attributeTags: [tag('attr.mucus'), tag('attr.gel-body')],
+    fetishTags: [tag('fetish.coating'), tag('fetish.sensory-deprivation')],
+    fetishTendencies: [{ tagId: tag('fetish.coating'), weight: 95 }, { tagId: tag('fetish.sensory-deprivation'), weight: 65 }],
+    defeatCombo: { materials: ['M1', 'M6'], parts: ['脚踝', '腰侧', '大腿内侧'], plays: ['G2', 'G4'], tfs: ['黏液化'], autoCombo: true },
+    primaryPlay: 2,
+    secondaryPlay: 4,
+    primaryLabel: '拔脚挣动陷入腹足的靴尖',
+    secondaryLabel: '偏头避开漫向面颊的胶膜',
+    primaryStates: ['state.coated'],
+    secondaryStates: ['state.gagged', 'state.blindfolded'],
+    introText: '失去平衡后，{opponent}柔软沉重的腹足缓缓漫过你的靴尖，浓稠拉丝的{material}顺着{part}迅速向上涂覆，每一次蠕动都带来沉甸甸的吸附力。',
+  },
+  {
+    slug: 'tentacle-vine',
+    name: '兽径触手藤',
+    tier: 'M',
+    hp: 68,
+    attack: 13,
+    defense: 8,
+    speed: 10,
+    reward: 20,
+    actions: 2,
+    speciesKind: 'plant',
+    attributeTags: [tag('attr.vine'), tag('attr.tentacle')],
+    fetishTags: [tag('fetish.restraint'), tag('fetish.sensory-deprivation'), tag('fetish.humiliation')],
+    fetishTendencies: [{ tagId: tag('fetish.restraint'), weight: 95 }, { tagId: tag('fetish.sensory-deprivation'), weight: 80 }, { tagId: tag('fetish.humiliation'), weight: 65 }],
+    defeatCombo: { materials: ['M7', 'M8', 'M9'], parts: ['手腕', '脚踝', '大腿内侧', '腰侧', '眼周'], plays: ['G1', 'G4', 'G6'], tfs: [], autoCombo: true },
+    primaryPlay: 1,
+    secondaryPlay: 4,
+    primaryLabel: '扣住缠紧腕踝倒吊的活藤',
+    secondaryLabel: '仰颈避开压向眼周与口唇的藤条',
+    primaryStates: ['state.bound', 'state.suspended'],
+    secondaryStates: ['state.bound', 'state.suspended', 'state.blindfolded', 'state.gagged'],
+    introText: '数条柔韧的翠暗活藤趁你脱力时倏然收紧，带有细微气根的{material}顺着藤身在你的{part}处绕出数道紧实的环扣，勒紧脚踝与手腕将你的重心倒挂拉高。',
+  },
+  {
+    slug: 'mire-slime',
+    name: '泥沼史莱姆',
+    tier: 'M',
+    hp: 72,
+    attack: 12,
+    defense: 10,
+    speed: 8,
+    reward: 22,
+    actions: 1,
+    speciesKind: 'slime',
+    attributeTags: [tag('attr.gel-body'), tag('attr.mucus'), tag('attr.pack')],
+    fetishTags: [tag('fetish.coating'), tag('fetish.swarm'), tag('fetish.sensory-deprivation')],
+    fetishTendencies: [{ tagId: tag('fetish.coating'), weight: 95 }, { tagId: tag('fetish.swarm'), weight: 85 }, { tagId: tag('fetish.sensory-deprivation'), weight: 70 }],
+    defeatCombo: { materials: ['M4', 'M6'], parts: ['腰侧', '大腿内侧', '嘴唇', '锁骨窝'], plays: ['G2', 'G8', 'G4'], tfs: ['黏液化'], autoCombo: true },
+    primaryPlay: 2,
+    secondaryPlay: 8,
+    primaryLabel: '撑起双臂阻挡合拢的胶浪',
+    secondaryLabel: '屏息护住口鼻间的空隙',
+    primaryStates: ['state.coated', 'state.bound'],
+    secondaryStates: ['state.coated', 'state.ear-sealed', 'state.sensory-deprived'],
+    introText: '半透明的胶质浪涌从四面合拢，{opponent}将富有弹性的{material}层层裹上你的{part}，温凉的胶体不断挤压着你的活动空间。',
+  },
+  {
+    slug: 'hive-crawler',
+    name: '虫巢爬者',
+    tier: 'L',
+    hp: 86,
+    attack: 15,
+    defense: 11,
+    speed: 11,
+    reward: 26,
+    actions: 2,
+    speciesKind: 'insect',
+    attributeTags: [tag('attr.chitin'), tag('attr.mucus'), tag('attr.pack')],
+    fetishTags: [tag('fetish.oviposition'), tag('fetish.swarm'), tag('fetish.restraint')],
+    fetishTendencies: [{ tagId: tag('fetish.oviposition'), weight: 95 }, { tagId: tag('fetish.swarm'), weight: 85 }, { tagId: tag('fetish.restraint'), weight: 70 }],
+    defeatCombo: { materials: ['M3', 'M10'], parts: ['腰侧', '大腿内侧', '手腕', '小腿'], plays: ['G5', 'G8', 'G1'], tfs: ['黏液化'], autoCombo: true },
+    primaryPlay: 5,
+    secondaryPlay: 8,
+    primaryLabel: '曲肘格开钳向腰侧的节肢与丝茧',
+    secondaryLabel: '挣动小腿扯开层层缠绕的茧丝',
+    primaryStates: ['state.cocooned', 'state.bound'],
+    secondaryStates: ['state.cocooned', 'state.bound', 'state.coated'],
+    introText: '甲片摩挲的细密声响在耳畔收拢，{opponent}用节肢钳制住你的四肢，致密的{material}贴着{part}层层缠裹结茧，将你的躯干固定在原地。',
+  },
+  {
+    slug: 'latex-warden',
+    name: '黑胶林地看守',
+    tier: 'L',
+    hp: 96,
+    attack: 16,
+    defense: 12,
+    speed: 11,
+    reward: 30,
+    actions: 2,
+    speciesKind: 'monster',
+    attributeTags: [tag('attr.gel-body'), tag('attr.pheromone'), tag('attr.tentacle')],
+    fetishTags: [tag('fetish.domination'), tag('fetish.coating'), tag('fetish.restraint')],
+    fetishTendencies: [{ tagId: tag('fetish.domination'), weight: 95 }, { tagId: tag('fetish.coating'), weight: 90 }, { tagId: tag('fetish.restraint'), weight: 75 }],
+    defeatCombo: { materials: ['M5', 'M6'], parts: ['脖颈', '锁骨窝', '手腕', '大腿内侧'], plays: ['G7', 'G2', 'G1'], tfs: ['黑胶化'], autoCombo: true },
+    primaryPlay: 7,
+    secondaryPlay: 2,
+    primaryLabel: '稳住步态抗衡逼近的压迫',
+    secondaryLabel: '抬手扯动漫过手腕的黑胶',
+    primaryStates: ['state.bound', 'state.gagged'],
+    secondaryStates: ['state.coated', 'state.bound'],
+    introText: '{opponent}迈着沉稳的步伐停在你身前，富有光泽的{material}顺着你的{part}漫延收束，空气中回荡着令人思绪发沉的低频指令声。你按住手腕稳住呼吸，审视着眼前的处境。',
+  },
+];
+for (const w of wildEnemies) {
+  const enemyId = id('enemy.' + w.slug);
+  p.enemies.push({
+    id: enemyId,
+    name: w.name,
+    hp: w.hp,
+    reward: w.reward,
+    tier: w.tier,
+    combat: {
+      attack: w.attack,
+      defense: w.defense,
+      speed: w.speed,
+      skillPower: w.attack,
+      hit: 78,
+      evasion: 9,
+      crit: 6,
+      actionsPerTurn: w.actions,
+      skillResource: 0,
+    },
+    intents: [
+      { label: '逼近缠绕试探', damage: 5, guard: 2, drain: 1 },
+      { label: '收紧覆层压迫', damage: 8, guard: 4, drain: 2 },
+      { label: '全力扑压制服', damage: 12, guard: 0, drain: 2 },
+    ],
+    victoryEventId: id('event.victory'),
+    defeatEventId: id('event.defeat'),
+    escapeEventId: id('event.escape'),
+    speciesKind: w.speciesKind,
+    attributeTags: w.attributeTags,
+    fetishTags: w.fetishTags,
+    fetishTendencies: w.fetishTendencies,
+    defeatCombo: w.defeatCombo,
+  });
+  p.narrativeProfiles.push({
+    id: id('profile.' + w.slug),
+    enemyId,
+    tags: [tag('control'), tag('defeat.play.active')],
+    goals: [tag('goal.control')],
+    tendencies: [{ tagId: tag('control'), weight: 80 }],
+    defeatTags: [scoped('player', 'clear'), scoped('player', 'injured'), scoped('opponent', 'defeat.play.active')],
+    speciesKind: w.speciesKind,
+    attributeTags: w.attributeTags,
+    fetishTags: w.fetishTags,
+    fetishTendencies: w.fetishTendencies,
+    defeatCombo: w.defeatCombo,
+  });
+  p.environmentEnemyRules.push({
+    id: id('env-enemy.wild.' + w.slug),
+    enemyId,
+    requiresTags: ['foundation:service.commons', 'foundation:theme.exploration'],
+    weight: 14,
+    priority: 0,
+    name: w.name,
+    hp: w.hp,
+    reward: w.reward,
+    defeatTags: [scoped('player', 'clear'), scoped('player', 'injured'), scoped('opponent', 'defeat.play.active')],
+    speciesKind: w.speciesKind,
+    attributeTags: w.attributeTags,
+    fetishTags: w.fetishTags,
+    fetishTendencies: w.fetishTendencies,
+    defeatCombo: w.defeatCombo,
+  });
+  const p1 = defeatPlayMeta.find(m => m.n === w.primaryPlay);
+  const p2 = defeatPlayMeta.find(m => m.n === w.secondaryPlay);
+  const wildExit = defeatExit();
+  const wildChoices = [
+    choice(
+      w.primaryLabel,
+      `{opponent}顺势收紧了在{part}处的{material}，将你拖入更深的束缚与压制之中。`,
+      defeatStageId(p1.n, 'capture'),
+      [time(5)],
+      [],
+      [
+        scoped('player', `defeat.play.${p1.key.toLowerCase()}`),
+        ...w.primaryStates.map(s => scoped('player', s)),
+      ],
+    ),
+    choice(
+      w.secondaryLabel,
+      `你在拉扯间触动了{opponent}的另一重攻势，{material}顺着{part}再次缠紧。`,
+      defeatStageId(p2.n, 'capture'),
+      [time(5)],
+      [],
+      [
+        scoped('player', `defeat.play.${p2.key.toLowerCase()}`),
+        ...w.secondaryStates.map(s => scoped('player', s)),
+      ],
+    ),
+    choice(
+      '借地形支点挣脱抽身',
+      '你利用手边支点猛然发力，在{opponent}彻底合围前挣开{material}退回安全处。',
+      `play-0${p1.n}-resolve-escape`,
+      [time(5), { op: 'var.change', id: 'core:stamina', amount: -4 }],
+      [canCounterBreak],
+      [scoped('player', 'defeat.loosened')],
+      ALL_LIVE_STATE_TAGS,
+    ),
+    wildExit,
+  ];
+  const wildNid = id('node.defeat.wild.' + w.slug);
+  const wildTkey = id('text.node.defeat.wild.' + w.slug);
+  p.texts[wildTkey] = w.introText;
+  p.narrativeNodes.push({
+    id: wildNid,
+    kind: 'defeat',
+    stage: 'start',
+    title: `战败 · ${w.name}的压制`,
+    textKey: wildTkey,
+    requiresTags: [scoped('opponent', 'defeat.play.active')],
+    excludesTags: [],
+    conditions: [{ op: 'opponent.matches', enemyId }],
+    tendencies: w.fetishTendencies,
+    weight: 10,
+    priority: 10,
+    maxVisits: 1,
+    choices: wildChoices,
+  });
+}
+
 const hubText = id('text.node.defeat.play.hub');
 p.texts[hubText] = '交锋结束后，{opponent}仍在{place}。你还没有离开现场。你可以选择下一步应对，也可以立即结束这段经历。';
 // hub 分页：每页 ≤3 玩法 + exit（shape 上限 4）。G5 必须从 hub3 路径可达。
@@ -640,11 +1345,11 @@ p.narrativeNodes.push({
     playHubChoices[0],
     playHubChoices[1],
     { label: '查看更多玩法…', resultText: id('text.choice.defeat.play.more'), next: 'play-hub-more', effects: [], conditions: [], setTags: [], unsetTags: [] },
-    exit(),
+    defeatExit(),
   ],
 });
 p.texts[id('text.choice.defeat.play.more')] = '你继续浏览其余战败玩法入口。';
-p.texts[id('text.node.defeat.play.hub2')] = '还有其他玩法大类可选（侵犯插入、口封感官剥夺…）。选择一类进入，或结束回到安全位置。';
+p.texts[id('text.node.defeat.play.hub2')] = '还有其他战败分支可选。选择一类进入，或结束回到安全位置。';
 p.narrativeNodes.push({
   id: id('node.defeat.play.hub2'),
   kind: 'defeat',
@@ -662,11 +1367,11 @@ p.narrativeNodes.push({
     playHubChoices[2],
     playHubChoices[3],
     { label: '查看其余玩法…', resultText: id('text.choice.defeat.play.more2'), next: 'play-hub-rest', effects: [], conditions: [], setTags: [], unsetTags: [] },
-    exit(),
+    defeatExit(),
   ],
 });
-p.texts[id('text.choice.defeat.play.more2')] = '你继续浏览剩余战败玩法入口（含产卵灌注）。';
-p.texts[id('text.node.defeat.play.hub3')] = '其余玩法大类：产卵灌注、公开羞辱等。选择一类进入，或查看最后两类。';
+p.texts[id('text.choice.defeat.play.more2')] = '你继续浏览剩余战败玩法入口。';
+p.texts[id('text.node.defeat.play.hub3')] = '其余战败分支可选。选择一类进入，或查看最后两类。';
 p.narrativeNodes.push({
   id: id('node.defeat.play.hub3'),
   kind: 'defeat',
@@ -681,14 +1386,14 @@ p.narrativeNodes.push({
   priority: 6,
   maxVisits: 1,
   choices: [
-    playHubChoices[4], // G5 产卵灌注
-    playHubChoices[5], // G6
+    playHubChoices[4],
+    playHubChoices[5],
     { label: '查看最后玩法…', resultText: id('text.choice.defeat.play.more3'), next: 'play-hub-last', effects: [], conditions: [], setTags: [], unsetTags: [] },
-    exit(),
+    defeatExit(),
   ],
 });
 p.texts[id('text.choice.defeat.play.more3')] = '你查看最后的战败玩法入口。';
-p.texts[id('text.node.defeat.play.hub4')] = '最后两类玩法大类：主从调教、多体围攻。选择一类进入，或结束回到安全位置。';
+p.texts[id('text.node.defeat.play.hub4')] = '最后两类战败分支可选。选择一类进入，或结束回到安全位置。';
 p.narrativeNodes.push({
   id: id('node.defeat.play.hub4'),
   kind: 'defeat',
@@ -703,9 +1408,9 @@ p.narrativeNodes.push({
   priority: 6,
   maxVisits: 1,
   choices: [
-    playHubChoices[6], // G7
-    playHubChoices[7], // G8
-    exit(),
+    playHubChoices[6],
+    playHubChoices[7],
+    defeatExit(),
   ],
 });
 action(
@@ -746,7 +1451,7 @@ await writeFile(
     entryAction: id('action.defeat.play'),
     hubNodeId: id('node.defeat.play.hub'),
     stageChain: defeatPlayStageChain,
-    stageNote: 'G1–G8 实装 capture→press→peak→resolve。escalate/aftermath 已弃用。',
+    stageNote: 'G1–G8 实装 capture→press→peak→resolve（含 resolve.escape / resolve.marked / resolve.tf 多结局分流）。escalate/aftermath 已弃用。',
     hubPages: {
       hub: ['G1', 'G2'],
       hub2: ['G3', 'G4'],
@@ -770,7 +1475,7 @@ await writeFile(
           editNodeId: `edit:node.defeat.${g}.${stage}`,
           textKey: id(`text.node.defeat.${g}.${stage}`),
           adultNodeId: id(`node.defeat.${g}.${stage}.adult`),
-          editAdultNodeId: `edit:node.defeat.${g}.${stage}.adult`,
+          editAdultNodeId: `edit:node.defeat.${g}.adult`,
           adultTextKey: id(`text.node.defeat.${g}.${stage}.adult`),
         };
       }
@@ -790,16 +1495,144 @@ await writeFile(
   }, null, 2) + '\n',
 );
 
+// —— 一等公民双方属性反应规则表 (DefeatReactionRule：含玩家脱身反应与敌方压制反应) ——
+p.defeatReactionRules = [];
+const reactionDefinitions = [
+  {
+    slug: 'tail-counter',
+    label: '机械尾支点撬解',
+    stages: ['press', 'peak'],
+    playerConditions: [tailGrip],
+    opponentConditions: [],
+    choiceLabel: '借机械尾支点撬开束缚',
+    resultProse: '你利用身后已校准的机械尾扣住地面棱角作为第三支点，猛然发力撬开了{opponent}在{part}处的{material}牵制。',
+    targetStage: '{playPrefix}-resolve-escape',
+    effects: [time(5), { op: 'var.change', id: 'core:stamina', amount: -3 }],
+    setTags: [scoped('player', 'defeat.loosened')],
+    unsetTags: ALL_LIVE_STATE_TAGS,
+    priority: 20,
+  },
+  {
+    slug: 'vine-slip',
+    label: '藤蔓收拢间隙滑步',
+    stages: ['capture', 'press'],
+    playerConditions: [{ op: 'var.compare', id: 'core:speed', comparison: 'gte', value: 12 }],
+    opponentConditions: [{ op: 'opponent.matches', attributeTag: tag('attr.vine') }],
+    choiceLabel: '趁活藤收拢间隙滑步脱身',
+    resultProse: '你预判了{opponent}藤蔓盘绕的收束轨迹，在{material}完全勒死{part}之前顺势滑步抽出，仅在衣角留下一抹草木残痕。',
+    targetStage: '{playPrefix}-resolve-marked',
+    effects: [time(5), { op: 'var.change', id: 'core:stamina', amount: -3 }],
+    setTags: [scoped('player', 'defeat.loosened')],
+    unsetTags: [scoped('player', 'state.bound'), scoped('player', 'state.suspended')],
+    priority: 25,
+  },
+  {
+    slug: 'cocoon-guard',
+    label: '虫巢结茧曲肘留隙',
+    stages: ['capture', 'press'],
+    playerConditions: [{ op: 'var.compare', id: 'core:defense', comparison: 'gte', value: 12 }],
+    opponentConditions: [{ op: 'opponent.matches', attributeTag: tag('attr.chitin') }],
+    choiceLabel: '曲肘撑开丝茧留出脱身余地',
+    resultProse: '面对{opponent}层层缠裹的{material}，你提前曲肘沉肩撑住胸前空隙，在丝茧凝固定型前挣开一道缺口退向安全通道。',
+    targetStage: '{playPrefix}-resolve-marked',
+    effects: [time(5), { op: 'var.change', id: 'core:stamina', amount: -2 }],
+    setTags: [scoped('player', 'defeat.loosened')],
+    unsetTags: [scoped('player', 'state.cocooned'), scoped('player', 'state.bound')],
+    priority: 22,
+  },
+  {
+    slug: 'coating-slide',
+    label: '既有覆层卸力滑脱',
+    stages: ['press'],
+    playerConditions: [{ op: 'any', conditions: [has('player', 'body.slime-coated'), has('player', 'body.latex-sheathed')] }],
+    opponentConditions: [],
+    choiceLabel: '借体表既有覆层卸开牵制力道',
+    resultProse: '你借着四肢表面既有的滑腻覆层顺势扭腕，让{opponent}压在{part}上的{material}擦滑落空，带着残余痕迹抽身退开。',
+    targetStage: '{playPrefix}-resolve-marked',
+    effects: [time(5)],
+    setTags: [scoped('player', 'defeat.loosened')],
+    unsetTags: [scoped('player', 'state.bound')],
+    priority: 18,
+  },
+  // 敌方反应 1：活藤收紧倒挂
+  {
+    slug: 'enemy-vine-tighten',
+    label: '敌方反应：活藤收紧倒挂',
+    stages: ['capture', 'press'],
+    playerConditions: [{ op: 'var.compare', id: 'core:speed', comparison: 'lte', value: 11 }],
+    opponentConditions: [{ op: 'opponent.matches', attributeTag: tag('attr.vine') }],
+    choiceLabel: '重心被收紧的活藤强行拉起',
+    resultProse: '{opponent}缠在你{part}处的{material}猛然收紧，数条活藤交错勒住腕踝并将你的重心倒挂拉离地面。',
+    targetStage: '{playPrefix}-peak',
+    effects: [time(5)],
+    setTags: [scoped('player', 'state.bound'), scoped('player', 'state.suspended')],
+    unsetTags: [scoped('player', 'defeat.loosened')],
+    priority: 16,
+  },
+  // 敌方反应 2：黏液二次涂覆
+  {
+    slug: 'enemy-mucus-recoat',
+    label: '敌方反应：黏液二次涂覆',
+    stages: ['press', 'peak'],
+    playerConditions: [{ op: 'var.compare', id: 'core:stamina', comparison: 'lte', value: 60 }],
+    opponentConditions: [{ op: 'opponent.matches', attributeTag: tag('attr.mucus') }],
+    choiceLabel: '被涌来的浓稠黏液二次涂覆',
+    resultProse: '{opponent}顺着你的{part}再度涌出一层浓稠的{material}，湿滑覆层迅速漫过四肢关节，阻滞了你的发力节奏。',
+    targetStage: '{playPrefix}-resolve-tf',
+    effects: [time(5)],
+    setTags: [scoped('player', 'state.coated'), scoped('player', 'defeat.soaked')],
+    unsetTags: [scoped('player', 'defeat.loosened')],
+    priority: 15,
+  },
+  // 敌方反应 3：虫巢丝茧加厚封裹
+  {
+    slug: 'enemy-cocoon-wrap',
+    label: '敌方反应：丝茧加厚封裹',
+    stages: ['capture', 'press'],
+    playerConditions: [{ op: 'var.compare', id: 'core:defense', comparison: 'lte', value: 11 }],
+    opponentConditions: [{ op: 'opponent.matches', attributeTag: tag('attr.chitin') }],
+    choiceLabel: '被虫巢丝缕层层加厚裹紧',
+    resultProse: '{opponent}吐出致密的虫巢丝线缠上你的{part}，转眼间将四肢与躯干一并封入紧实的丝茧之中。',
+    targetStage: '{playPrefix}-peak',
+    effects: [time(5)],
+    setTags: [scoped('player', 'state.cocooned'), scoped('player', 'state.bound')],
+    unsetTags: [scoped('player', 'defeat.loosened')],
+    priority: 14,
+  },
+];
+for (const rDef of reactionDefinitions) {
+  const resKey = id(`text.reaction.${rDef.slug}`);
+  p.texts[resKey] = rDef.resultProse;
+  p.defeatReactionRules.push({
+    id: id(`reaction.defeat.${rDef.slug}`),
+    label: rDef.label,
+    stages: rDef.stages,
+    playerConditions: rDef.playerConditions,
+    opponentConditions: rDef.opponentConditions,
+    choiceLabel: rDef.choiceLabel,
+    resultText: resKey,
+    targetStage: rDef.targetStage,
+    effects: rDef.effects,
+    setTags: rDef.setTags,
+    unsetTags: rDef.unsetTags,
+    priority: rDef.priority,
+  });
+}
+
 await writeFile(
   'content/nsfw-auto-combo/defeat-play-draws.json',
   JSON.stringify({
     format: 'aetheria-defeat-play-draws',
-    schemaVersion: 1,
+    schemaVersion: 2,
     note: '运行时表在 src/engine/defeat-play-draws.ts；本文件供核对 / 文档。定词挂前；goo TF 仅通用原子。',
     opponents: [
       { kind: 'human', label: '人类对手' },
       { kind: 'beast', label: '野兽' },
       { kind: 'monster', label: '异形生物' },
+      { kind: 'plant', label: '妖异藤植' },
+      { kind: 'slime', label: '胶质生物' },
+      { kind: 'insect', label: '虫巢异虫' },
+      { kind: 'construct', label: '失控构装体' },
     ],
     materials: [
       { key: 'M1', dingci: '蛞蝓', base: '黏液', label: '蛞蝓黏液' },
@@ -808,11 +1641,15 @@ await writeFile(
       { key: 'M4', dingci: '史莱姆', base: '黏液', label: '史莱姆黏液' },
       { key: 'M5', dingci: null, base: '活体黑胶', label: '活体黑胶' },
       { key: 'M6', dingci: null, base: '凝胶膜', label: '凝胶膜' },
+      { key: 'M7', dingci: '兽径', base: '活藤', label: '兽径活藤' },
+      { key: 'M8', dingci: '翠暗', base: '缠绕茎', label: '翠暗缠绕茎' },
+      { key: 'M9', dingci: '柔韧', base: '藤条', label: '柔韧藤条' },
+      { key: 'M10', dingci: '虫巢', base: '丝茧', label: '虫巢丝茧' },
     ],
-    parts: ['手腕', '腰侧', '脚踝', '大腿内侧', '脖颈', '锁骨窝', '嘴唇'],
+    parts: ['手腕', '腰侧', '脚踝', '大腿内侧', '脖颈', '锁骨窝', '嘴唇', '小腿', '膝弯', '肩胛', '眼周', '耳廓'],
     tfs: ['黏液化', '黑胶化'],
     wiredToNsfwAutoCombo: true,
-    comboRows: 12,
+    comboRows: 20,
   }, null, 2) + '\n',
 );
 

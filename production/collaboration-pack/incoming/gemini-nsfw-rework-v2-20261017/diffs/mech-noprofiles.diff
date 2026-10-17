@@ -1,0 +1,1344 @@
+diff --git a/production/tag-matrices/spec.mjs b/production/tag-matrices/spec.mjs
+index 4b4967a..c09f624 100755
+--- a/production/tag-matrices/spec.mjs
++++ b/production/tag-matrices/spec.mjs
+@@ -24,7 +24,7 @@ export const editorialFacetDomains=Object.fromEntries([
+  [['tf'],['08','09']],
+  [['condition','narration','encounter'],['04','05','08']],
+ ].flatMap(([facets,ids])=>facets.map(facet=>[facet,ids])));
+-export const sourceKinds={locations:['01'],routes:['01'],locationProfiles:['01'],residentTemplates:['02','03'],species:['02'],npcs:['02','04','09'],npcBodies:['02','08'],residentAdaptations:['02','08'],storylets:['05'],events:['05'],actions:['03','05'],narrativeNodes:['04','05','06','07','08','09'],narrativeProfiles:['07'],environmentEnemyRules:['07'],enemies:['07'],bodyParts:['08'],bodyTemplates:['08'],bodyPatches:['08'],transformations:['08'],materials:['08'],morphologies:['08'],partProfiles:['08'],equipment:['03','08'],items:['03','07'],interactions:['04'],textSlots:['04'],sceneTexts:['01','05'],derivedTags:['01','08'],proseMaterials:['01','08'],proseSelections:['01','08'],npcMemories:['04','09'],variables:['03','06','08','09'],flags:['05','06'],hooks:['03','05'],globalActionHooks:['03'],contributions:['03','05']};
++export const sourceKinds={locations:['01'],routes:['01'],locationProfiles:['01'],residentTemplates:['02','03'],species:['02'],npcs:['02','04','09'],npcBodies:['02','08'],residentAdaptations:['02','08'],storylets:['05'],events:['05'],actions:['03','05'],narrativeNodes:['04','05','06','07','08','09'],narrativeProfiles:['07'],environmentEnemyRules:['07'],defeatReactionRules:['07'],enemies:['07'],bodyParts:['08'],bodyTemplates:['08'],bodyPatches:['08'],transformations:['08'],materials:['08'],morphologies:['08'],partProfiles:['08'],equipment:['03','08'],items:['03','07'],interactions:['04'],textSlots:['04'],sceneTexts:['01','05'],derivedTags:['01','08'],proseMaterials:['01','08'],proseSelections:['01','08'],npcMemories:['04','09'],variables:['03','06','08','09'],flags:['05','06'],hooks:['03','05'],globalActionHooks:['03'],contributions:['03','05']};
+ export const domains = [
+  {id:'01',name:'世界区域与地点',priority:'P0',dependencies:[],purpose:'确定题材、生态、区域和地点的合法组合，向其他八类提供真实地点事实。',
+   axes:['17 个实际题材','6 类生态','5 类实际地点服务','7 类设施','4 个时段','区域与地点原型的待开发边界'],
+diff --git a/src/content/adventure-schema.ts b/src/content/adventure-schema.ts
+index 64161f4..8043ea8 100755
+--- a/src/content/adventure-schema.ts
++++ b/src/content/adventure-schema.ts
+@@ -1,4 +1,5 @@
+ import { ADVENTURE_FIELDS, NARRATIVE_KINDS } from '../core/adventure-types.ts';
++import { ENEMY_SPECIES_KINDS, DEFEAT_MATERIAL_KEYS, DEFEAT_PLAY_KEYS, GENERIC_TF_ATOMS } from '../core/district-types.ts';
+ import type { ContentPack, Condition, Effect } from '../core/types.ts';
+ import type { Registry } from './registry.ts';
+ import { shape, stableId } from './foundation-schema.ts';
+@@ -10,10 +11,28 @@ const integer = (v: unknown, min: number, max: number) => { if (!Number.isSafeIn
+ const array = (v: unknown, fn: (v: any) => void, max = 500) => { if (!Array.isArray(v) || v.length > max) bad('数组无效。'); (v as unknown[]).forEach(fn); };
+ const scoped = (v: unknown) => { const x = shape(v, ['role', 'tagId']); if (!['player','opponent','environment'].includes(x.role)) bad('角色作用域无效。'); stableId(x.tagId); };
+ const weights = (v: unknown) => array(v, x => { shape(x, ['tagId','weight']); stableId(x.tagId); integer(x.weight, 0, 100); });
++const defeatCombo = (v: unknown) => {
++  const dc = shape(v, [], ['materials', 'parts', 'plays', 'tfs', 'autoCombo']);
++  if (dc.materials !== undefined) array(dc.materials, m => { if (!DEFEAT_MATERIAL_KEYS.includes(m)) bad('材质键无效。'); });
++  if (dc.parts !== undefined) array(dc.parts, text);
++  if (dc.plays !== undefined) array(dc.plays, pl => { if (!DEFEAT_PLAY_KEYS.includes(pl)) bad('玩法键无效。'); });
++  if (dc.tfs !== undefined) array(dc.tfs, tf => { if (!GENERIC_TF_ATOMS.includes(tf)) bad('通用转化原子无效。'); });
++  if (dc.autoCombo !== undefined && typeof dc.autoCombo !== 'boolean') bad('autoCombo 须为布尔值。');
++};
+ export function parseAdventurePack(p: ContentPack, h: Helpers): void {
+-  array(p.narrativeProfiles ?? [], x => { shape(x, ['id','tags','goals','tendencies'], ['enemyId','npcId','defeatTags','nodeIds']); stableId(x.id); if (x.enemyId) stableId(x.enemyId); if (x.npcId) stableId(x.npcId); array(x.tags, stableId); array(x.goals, stableId); weights(x.tendencies); array(x.defeatTags??[],scoped); if(x.nodeIds!==undefined){array(x.nodeIds,stableId);if(new Set(x.nodeIds).size!==x.nodeIds.length)bad('档案候选节点重复。');} });
++  array(p.narrativeProfiles ?? [], x => {
++    shape(x, ['id','tags','goals','tendencies'], ['enemyId','npcId','defeatTags','nodeIds','speciesKind','attributeTags','fetishTags','fetishTendencies','defeatCombo']);
++    stableId(x.id); if (x.enemyId) stableId(x.enemyId); if (x.npcId) stableId(x.npcId);
++    array(x.tags, stableId); array(x.goals, stableId); weights(x.tendencies); array(x.defeatTags??[],scoped);
++    if(x.nodeIds!==undefined){array(x.nodeIds,stableId);if(new Set(x.nodeIds).size!==x.nodeIds.length)bad('档案候选节点重复。');}
++    if(x.speciesKind!==undefined&&!ENEMY_SPECIES_KINDS.includes(x.speciesKind))bad('档案物种类型无效。');
++    if(x.attributeTags!==undefined)array(x.attributeTags,stableId);
++    if(x.fetishTags!==undefined)array(x.fetishTags,stableId);
++    if(x.fetishTendencies!==undefined)weights(x.fetishTendencies);
++    if(x.defeatCombo!==undefined)defeatCombo(x.defeatCombo);
++  });
+   array(p.environmentEnemyRules ?? [], x => {
+-    shape(x, ['id','enemyId','requiresTags','weight'], ['excludesTags','priority','name','hp','reward','combat','defeatTags']);
++    shape(x, ['id','enemyId','requiresTags','weight'], ['excludesTags','priority','name','hp','reward','combat','defeatTags','speciesKind','attributeTags','fetishTags','fetishTendencies','defeatCombo']);
+     stableId(x.id); stableId(x.enemyId); array(x.requiresTags, stableId); if (!x.requiresTags.length) bad('环境选敌须声明 requiresTags。');
+     array(x.excludesTags??[], stableId); integer(x.weight,1,1000); if (x.priority!==undefined) integer(x.priority,0,100);
+     if (x.name!==undefined) text(x.name); if (x.hp!==undefined) integer(x.hp,1,500); if (x.reward!==undefined) integer(x.reward,0,100);
+@@ -23,12 +42,31 @@ export function parseAdventurePack(p: ContentPack, h: Helpers): void {
+       if(c.actionsPerTurn!==undefined) integer(c.actionsPerTurn,1,5); if(c.skillResource!==undefined) integer(c.skillResource,0,100);
+       if(!Object.keys(c).length) bad('combat 覆盖不能为空。');}
+     array(x.defeatTags??[], scoped);
++    if(x.speciesKind!==undefined&&!ENEMY_SPECIES_KINDS.includes(x.speciesKind))bad('环境选敌物种类型无效。');
++    if(x.attributeTags!==undefined)array(x.attributeTags,stableId);
++    if(x.fetishTags!==undefined)array(x.fetishTags,stableId);
++    if(x.fetishTendencies!==undefined)weights(x.fetishTendencies);
++    if(x.defeatCombo!==undefined)defeatCombo(x.defeatCombo);
+   });
+   array(p.narrativeNodes ?? [], n => {
+     shape(n, ['id','kind','stage','title','textKey','requiresTags','excludesTags','conditions','tendencies','weight','priority','maxVisits','choices'],['proseAssembly']); stableId(n.id); stableId(n.textKey); if (!NARRATIVE_KINDS.includes(n.kind)) bad('节点类别无效。'); text(n.stage); text(n.title); integer(n.weight,1,100); integer(n.priority,0,100); integer(n.maxVisits,1,3); array(n.requiresTags,scoped); array(n.excludesTags,scoped); weights(n.tendencies); array(n.conditions,c=>h.condition(c,'/narrativeNodes/conditions')); if(n.proseAssembly!==undefined)validateNodeAssembly(n.proseAssembly);
+     array(n.choices,c=>{shape(c,['label','resultText','conditions','effects','setTags','unsetTags','next']);text(c.label);stableId(c.resultText);if(c.next!==null)text(c.next);array(c.conditions,x=>h.condition(x,'/narrativeNodes/choices/conditions'));array(c.effects,x=>{if(['event.start','event.advance','event.exit','combat.start','scene.start','scene.act','narrative.start','narrative.choose'].includes(x?.op))bad('节点效果不能递归跳转；使用next。');h.effect(x,'/narrativeNodes/choices/effects');});array(c.setTags,scoped);array(c.unsetTags,scoped);},4);
+     if (!n.choices.length || !n.choices.some((c: any)=>c.next===null&&!c.conditions.length&&!c.effects.some((e: Effect)=>e.op==='var.change'&&e.amount<0||e.op==='progression.act'))) bad('每个节点须有免费无条件退出。');
+   });
++  array(p.defeatReactionRules ?? [], r => {
++    shape(r, ['id','label','stages','playerConditions','opponentConditions','choiceLabel','resultText','targetStage','effects','setTags','unsetTags','priority']);
++    stableId(r.id); text(r.label); array(r.stages, text); if (!r.stages.length) bad('反应规则须声明适用阶段。');
++    array(r.playerConditions, c => h.condition(c, '/defeatReactionRules/playerConditions'));
++    array(r.opponentConditions, c => h.condition(c, '/defeatReactionRules/opponentConditions'));
++    text(r.choiceLabel); stableId(r.resultText);
++    if (r.targetStage !== null) text(r.targetStage);
++    array(r.effects, x => {
++      if (['event.start','event.advance','event.exit','combat.start','scene.start','scene.act','narrative.start','narrative.choose'].includes(x?.op)) bad('反应规则效果不能递归跳转。');
++      h.effect(x, '/defeatReactionRules/effects');
++    });
++    array(r.setTags, scoped); array(r.unsetTags, scoped);
++    integer(r.priority, 0, 100);
++  });
+ }
+ export function validateAdventureDefinitions(p: ContentPack, r: Registry, checkCondition: (p:ContentPack,c:Condition,path:string)=>void, checkEffect:(p:ContentPack,e:Effect,path:string)=>void): void {
+   if(p.narrativeNodes?.length)for(let index=0;index<4;index++){
+@@ -38,9 +76,10 @@ export function validateAdventureDefinitions(p: ContentPack, r: Registry, checkC
+     if(source.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===source.id))bad('故事执行入口缺少显式依赖。');
+   }
+   const tag = (id: Parameters<Registry['tag']>[0]) => { if(r.tag(id).status!=='active')bad('引用废弃标签。'); const source=r.provenance(id);if(source.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===source.id))bad('标签引用缺少显式依赖。'); };
+-  for(const profile of p.narrativeProfiles??[]){if(profile.enemyId&&!r.enemies.some(e=>e.id===profile.enemyId))bad('敌人档案引用不存在。');if(profile.npcId)r.npc(profile.npcId);[...profile.tags,...profile.goals,...profile.tendencies.map(t=>t.tagId),...(profile.defeatTags??[]).map(t=>t.tagId)].forEach(tag);for(const id of profile.nodeIds??[]){if(!r.narrativeNodes.some(n=>n.id===id))bad('档案候选节点不存在。');const owner=r.provenance(id);if(owner.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===owner.id))bad('档案候选节点缺少依赖。');}}
+-  for(const rule of p.environmentEnemyRules??[]){if(!r.enemies.some(e=>e.id===rule.enemyId))bad('环境选敌引用不存在的敌人。');[...rule.requiresTags,...(rule.excludesTags??[]),...(rule.defeatTags??[]).map(t=>t.tagId)].forEach(tag);}
++  for(const profile of p.narrativeProfiles??[]){if(profile.enemyId&&!r.enemies.some(e=>e.id===profile.enemyId))bad('敌人档案引用不存在。');if(profile.npcId)r.npc(profile.npcId);[...profile.tags,...profile.goals,...profile.tendencies.map(t=>t.tagId),...(profile.defeatTags??[]).map(t=>t.tagId),...(profile.attributeTags??[]),...(profile.fetishTags??[]),...(profile.fetishTendencies??[]).map(t=>t.tagId)].forEach(tag);for(const id of profile.nodeIds??[]){if(!r.narrativeNodes.some(n=>n.id===id))bad('档案候选节点不存在。');const owner=r.provenance(id);if(owner.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===owner.id))bad('档案候选节点缺少依赖。');}}
++  for(const rule of p.environmentEnemyRules??[]){if(!r.enemies.some(e=>e.id===rule.enemyId))bad('环境选敌引用不存在的敌人。');[...rule.requiresTags,...(rule.excludesTags??[]),...(rule.defeatTags??[]).map(t=>t.tagId),...(rule.attributeTags??[]),...(rule.fetishTags??[]),...(rule.fetishTendencies??[]).map(t=>t.tagId)].forEach(tag);}
+   for(const node of p.narrativeNodes??[]){r.text(node.textKey);[...node.requiresTags,...node.excludesTags,...node.tendencies].forEach(t=>tag(t.tagId));node.conditions.forEach(c=>checkCondition(p,c,'/narrativeNodes/'+node.id));for(const c of node.choices){r.text(c.resultText);[...c.setTags,...c.unsetTags].forEach(t=>{tag(t.tagId);if(r.tag(t.tagId).facets.includes('body')||r.derivedTags.some(d=>d.tagId===t.tagId))bad('真实身体和环境语义必须查询，不能由故事标签赋予。');});c.conditions.forEach(x=>checkCondition(p,x,'/narrativeNodes/choices'));c.effects.forEach(x=>checkEffect(p,x,'/narrativeNodes/choices'));if(c.next&&!r.narrativeNodes.some(n=>n.kind===node.kind&&n.stage===c.next))bad('后续阶段不存在。');}}
++  for(const rule of p.defeatReactionRules??[]){r.text(rule.resultText);[...rule.setTags,...rule.unsetTags].forEach(t=>{tag(t.tagId);if(r.tag(t.tagId).facets.includes('body')||r.derivedTags.some(d=>d.tagId===t.tagId))bad('真实身体和环境语义必须查询，不能由故事标签赋予。');});rule.playerConditions.forEach(c=>checkCondition(p,c,'/defeatReactionRules/'+rule.id+'/player'));rule.opponentConditions.forEach(c=>checkCondition(p,c,'/defeatReactionRules/'+rule.id+'/opponent'));rule.effects.forEach(e=>checkEffect(p,e,'/defeatReactionRules/'+rule.id+'/effects'));}
+   for(const kind of NARRATIVE_KINDS){const nodes=(p.narrativeNodes??[]).filter(n=>n.kind===kind);const fallback=r.narrativeNodes.some(n=>n.kind===kind&&n.stage==='start'&&!n.requiresTags.length&&!n.conditions.length&&(r.provenance(n.id).id===p.manifest.id||p.manifest.dependencies.some(d=>d.id===r.provenance(n.id).id)));if(nodes.length&&!fallback)bad('每类故事须有本包或显式依赖提供的无条件起始回退。');}
+ }
+ export const PROGRESSION_MOVES = ['train','buy','order','invest','patrol','aid','reconcile'] as const;
+diff --git a/src/content/append-only.ts b/src/content/append-only.ts
+index ec6b36a..b90800c 100755
+--- a/src/content/append-only.ts
++++ b/src/content/append-only.ts
+@@ -1,4 +1,4 @@
+ import type{ContentPack}from'../core/types.ts';
+ export function isAppendOnlyEventPack(p:ContentPack):boolean {
+- return !p.start&&!['variables','flags','hooks','locations','routes','bodyParts','bodyTemplates','bodyPatches','transformations','species','npcs','npcMemories','storylets','residentTemplates','enemies','interactions','textSlots','sceneTexts','equipment','globalActionHooks','tags','materials','morphologies','partProfiles','npcBodies','locationProfiles','residentAdaptations','derivedTags','proseMaterials','proseSelections','narrativeProfiles','narrativeNodes','environmentEnemyRules'].some(key=>((p as unknown as Record<string,unknown[]>)[key]?.length??0)>0);
++ return !p.start&&!['variables','flags','hooks','locations','routes','bodyParts','bodyTemplates','bodyPatches','transformations','species','npcs','npcMemories','storylets','residentTemplates','enemies','interactions','textSlots','sceneTexts','equipment','globalActionHooks','tags','materials','morphologies','partProfiles','npcBodies','locationProfiles','residentAdaptations','derivedTags','proseMaterials','proseSelections','narrativeProfiles','narrativeNodes','environmentEnemyRules','defeatReactionRules'].some(key=>((p as unknown as Record<string,unknown[]>)[key]?.length??0)>0);
+ }
+diff --git a/src/content/district-schema.ts b/src/content/district-schema.ts
+index 5c9326c..0a421b4 100755
+--- a/src/content/district-schema.ts
++++ b/src/content/district-schema.ts
+@@ -1,5 +1,6 @@
+ import { validateTraitTags } from '../engine/personality.ts';
+ import { validateNameCulture, validatePersonalName, formatName } from '../world/names.ts';
++import { ENEMY_SPECIES_KINDS, DEFEAT_MATERIAL_KEYS, DEFEAT_PLAY_KEYS, GENERIC_TF_ATOMS } from '../core/district-types.ts';
+ import type { ContentPack, Condition, Id } from '../core/types.ts';
+ import type { Registry } from './registry.ts';
+ type Helpers = { obj(v:unknown,p:string,k:string[]):Record<string,unknown>; str(v:unknown,p:string):void; id(v:unknown,p:string):void; integer(v:unknown,p:string,min?:number,max?:number):void; boolean(v:unknown,p:string):void; list(v:unknown,p:string,fn:(x:unknown,p:string)=>void):void; choice(v:unknown,p:string,a:unknown[]):void; condition(v:unknown,p:string):void };
+@@ -9,7 +10,28 @@ export function parseDistrict(input:unknown,h:Helpers):void {
+  list(r.storylets ?? [],'/storylets',(v,p)=>{const x=obj(v,p,['id','locationId','conditions','eventId','weight','priority','cooldownMinutes','cooldownGroup','repeat','hidden','tags']); for(const k of ['id','locationId','eventId']) id(x[k],p+'/'+k); list(x.conditions,p,condition); integer(x.weight,p,1,1000); integer(x.priority,p,0,100); integer(x.cooldownMinutes,p,0,10080); str(x.cooldownGroup,p); choice(x.repeat,p,['once','daily','repeat']); boolean(x.hidden,p); list(x.tags,p,str);});
+  list(r.residentTemplates ?? [],'/residentTemplates',(v,p)=>{const x=obj(v,p,['id','locationIds','start','end','names','profession','appearance','personality','behavior','speciesId','ageYears','bodyTemplateId','patchIds','dialogue','attire','services','roleName','traitTags','traitVariants','nameCulture','personalName']); for(const k of ['id','speciesId','bodyTemplateId']) id(x[k],p); for(const k of ['locationIds','patchIds']) list(x[k],p,id); for(const k of ['names','appearance','personality']) {list(x[k],p,str); integer((x[k] as unknown[])?.length,p,1,100);} if(x.attire!==undefined){list(x.attire,p+'/attire',str);integer((x.attire as unknown[])?.length,p+'/attire',1,100);} str(x.profession,p); integer(x.start,p,0,1439); integer(x.end,p,0,1439); integer(x.ageYears,p,18,120); choice(x.behavior,p,['trade','repair','guide']);if(x.dialogue!==undefined){const d=obj(x.dialogue,p+'/dialogue',['intro','repeat','help']);for(const k of ['intro','repeat','help'])str(d[k],p+'/dialogue/'+k);}});
+  list(r.residentTemplates??[],'/residentTemplates',(v,p)=>{if(!v||typeof v!=='object'||Array.isArray(v))return;const x=v as Record<string,unknown>;if(x.roleName!==undefined)str(x.roleName,p+'/roleName');if(x.traitTags!==undefined){list(x.traitTags,p+'/traitTags',id);integer((x.traitTags as unknown[]).length,p,0,6);if(new Set(x.traitTags as unknown[]).size!==(x.traitTags as unknown[]).length)integer(-1,p,0);}if(x.traitVariants!==undefined){list(x.traitVariants,p+'/traitVariants',(v,pp)=>{const q=obj(v,pp,['personality','traitTags']);str(q.personality,pp);list(q.traitTags,pp,id);integer((q.traitTags as unknown[]).length,pp,1,2);});integer((x.traitVariants as unknown[]).length,p,1,32);}if(x.services===undefined)return;const s=obj(x.services,p+'/services',['work','trade','teach','orders','investments']);if(s.work!==undefined){const w=obj(s.work,p+'/services/work',['label','text']);str(w.label,p);str(w.text,p);}for(const key of ['orders','investments'])if(s[key]!==undefined)boolean(s[key],p+'/services/'+key);for(const kind of ['trade','teach'])if(s[kind]!==undefined){list(s[kind],p+'/services/'+kind,id);integer((s[kind] as unknown[]).length,p,0,32);if(new Set(s[kind] as unknown[]).size!==(s[kind] as unknown[]).length)integer(-1,p+'/services/'+kind,0);}});
+- list(r.enemies ?? [],'/enemies',(v,p)=>{const x=obj(v,p,['id','name','hp','reward','intents','victoryEventId','defeatEventId','escapeEventId','tier','combat','phases']); for(const k of ['id','victoryEventId','defeatEventId','escapeEventId']) id(x[k],p); str(x.name,p); integer(x.hp,p,1,500); integer(x.reward,p,0,100); if(x.tier!==undefined) choice(x.tier,p+'/tier',['S','M','L','boss']); if(x.combat!==undefined){const c=obj(x.combat,p+'/combat',['attack','defense','speed','skillPower','crit','hit','evasion','actionsPerTurn','skillResource']); for(const k of ['attack','defense','speed','skillPower']) integer(c[k],p+'/combat/'+k,0,999); for(const k of ['crit','hit','evasion']) integer(c[k],p+'/combat/'+k,0,100); integer(c.actionsPerTurn,p+'/combat/actionsPerTurn',1,5); integer(c.skillResource,p+'/combat/skillResource',0,100);} if(x.phases!==undefined) list(x.phases,p+'/phases',(v,pp)=>{const ph=obj(v,pp,['hpRatio','defenseBonus','extraActions']); if(typeof ph.hpRatio!=='number'||ph.hpRatio<=0||ph.hpRatio>1) integer(-1,pp+'/hpRatio'); integer(ph.defenseBonus,pp+'/defenseBonus',0,50); integer(ph.extraActions,pp+'/extraActions',0,3);}); list(x.intents,p,(v,p)=>{const i=obj(v,p,['label','damage','guard','drain']); str(i.label,p); for(const k of ['damage','guard','drain']) integer(i[k],p,0,100);}); integer((x.intents as unknown[])?.length,p,1,20);});
++ list(r.enemies ?? [],'/enemies',(v,p)=>{
++  const x=obj(v,p,['id','name','hp','reward','intents','victoryEventId','defeatEventId','escapeEventId','tier','combat','phases','speciesKind','attributeTags','fetishTags','fetishTendencies','defeatCombo']);
++  for(const k of ['id','victoryEventId','defeatEventId','escapeEventId']) id(x[k],p);
++  str(x.name,p); integer(x.hp,p,1,500); integer(x.reward,p,0,100);
++  if(x.tier!==undefined) choice(x.tier,p+'/tier',['S','M','L','boss']);
++  if(x.speciesKind!==undefined) choice(x.speciesKind,p+'/speciesKind',[...ENEMY_SPECIES_KINDS]);
++  if(x.attributeTags!==undefined) list(x.attributeTags,p+'/attributeTags',id);
++  if(x.fetishTags!==undefined) list(x.fetishTags,p+'/fetishTags',id);
++  if(x.fetishTendencies!==undefined) list(x.fetishTendencies,p+'/fetishTendencies',(ft,ftp)=>{const t=obj(ft,ftp,['tagId','weight']);id(t.tagId,ftp+'/tagId');integer(t.weight,ftp+'/weight',0,100);});
++  if(x.defeatCombo!==undefined){
++    const dc=obj(x.defeatCombo,p+'/defeatCombo',['materials','parts','plays','tfs','autoCombo']);
++    if(dc.materials!==undefined) list(dc.materials,p+'/defeatCombo/materials',(m,mp)=>choice(m,mp,[...DEFEAT_MATERIAL_KEYS]));
++    if(dc.parts!==undefined) list(dc.parts,p+'/defeatCombo/parts',str);
++    if(dc.plays!==undefined) list(dc.plays,p+'/defeatCombo/plays',(pl,plp)=>choice(pl,plp,[...DEFEAT_PLAY_KEYS]));
++    if(dc.tfs!==undefined) list(dc.tfs,p+'/defeatCombo/tfs',(tf,tfp)=>choice(tf,tfp,[...GENERIC_TF_ATOMS]));
++    if(dc.autoCombo!==undefined) boolean(dc.autoCombo,p+'/defeatCombo/autoCombo');
++  }
++  if(x.combat!==undefined){const c=obj(x.combat,p+'/combat',['attack','defense','speed','skillPower','crit','hit','evasion','actionsPerTurn','skillResource']); for(const k of ['attack','defense','speed','skillPower']) integer(c[k],p+'/combat/'+k,0,999); for(const k of ['crit','hit','evasion']) integer(c[k],p+'/combat/'+k,0,100); integer(c.actionsPerTurn,p+'/combat/actionsPerTurn',1,5); integer(c.skillResource,p+'/combat/skillResource',0,100);}
++  if(x.phases!==undefined) list(x.phases,p+'/phases',(v,pp)=>{const ph=obj(v,pp,['hpRatio','defenseBonus','extraActions']); if(typeof ph.hpRatio!=='number'||ph.hpRatio<=0||ph.hpRatio>1) integer(-1,pp+'/hpRatio'); integer(ph.defenseBonus,pp+'/defenseBonus',0,50); integer(ph.extraActions,pp+'/extraActions',0,3);});
++  list(x.intents,p,(v,p)=>{const i=obj(v,p,['label','damage','guard','drain']); str(i.label,p); for(const k of ['damage','guard','drain']) integer(i[k],p,0,100);});
++  integer((x.intents as unknown[])?.length,p,1,20);
++ });
+  list(r.interactions ?? [],'/interactions',(v,p)=>{const x=obj(v,p,['id','npcId','conditions','textSlotId','endEventId','poses','contact']); for(const k of ['id','npcId','textSlotId','endEventId']) id(x[k],p); list(x.conditions,p,condition); list(x.poses,p,(v,p)=>{const a=obj(v,p,['id','label','facing','zone','requires']); str(a.id,p); str(a.label,p); choice(a.facing,p,['front','away']); choice(a.zone,p,['near','across']); choice(a.requires,p,[null,'grasp','walk','balance','tailGrip','hear']);}); const c=obj(x.contact,p,['playerKind','npcKind','label']); choice(c.playerKind,p,['hand']); choice(c.npcKind,p,['hand']); str(c.label,p);});
+  list(r.textSlots ?? [],'/textSlots',(v,p)=>{const x=obj(v,p,['id','owner','contentTier','fallbackTextKey','participants','allowedVariables','requiredFacts','sceneRequirements','before','after','purpose','requiredBeats','nextNodeId','exitActionIds','allowedReplacement']); id(x.id,p); id(x.fallbackTextKey,p); const o=obj(x.owner,p,['eventId','nodeId']); id(o.eventId,p); str(o.nodeId,p); choice(x.contentTier,p,['mature_fade','adult_optional']); list(x.participants,p,(a,p)=>{if(a!=='player')id(a,p);}); for(const k of ['allowedVariables','sceneRequirements','requiredBeats']) list(x[k],p,str); for(const k of ['requiredFacts','exitActionIds']) list(x[k],p,id); for(const k of ['before','after','purpose','nextNodeId']) str(x[k],p); choice(x.allowedReplacement,p,['prose_only']);});
+  list(r.sceneTexts ?? [],'/sceneTexts',(v,p)=>{const x=obj(v,p,['id','locationId','conditions','priority','textKey','owner']); if(x.owner){const owner=obj(x.owner,p,['eventId','nodeId']);id(owner.eventId,p);str(owner.nodeId,p);} for(const k of ['id','locationId','textKey']) id(x[k],p); list(x.conditions,p,condition); integer(x.priority,p,0,100);});
+@@ -55,7 +77,13 @@ export function validateDistrictDefinitions(packs:ContentPack[],r:Registry,fail:
+  for(const t of p.residentTemplates ?? []) test(t.id,()=>{t.locationIds.forEach(id=>r.location(id));r.bodyTemplate(t.bodyTemplateId);t.patchIds.forEach(id=>r.bodyPatch(id));const species=r.species(t.speciesId);if(!species.intelligent || t.ageYears < species.adultAgeYears) throw Error();});
+  for(const t of p.residentTemplates??[])test(t.id,()=>{for(const tags of [t.traitTags??[],...(t.traitVariants??[]).map(v=>v.traitTags)]){validateTraitTags(tags,r);for(const id of tags){const owner=r.provenance(id);if(owner.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===owner.id))throw Error();}}for(const v of t.traitVariants??[])if(!t.personality.includes(v.personality))throw Error();});
+  for(const t of p.residentTemplates??[])test(t.id,()=>{for(const id of t.services?.trade??[]){if(!r.equipment.some(e=>e.id===id)&&!r.items.some(e=>e.id===id))throw Error();const owner=r.provenance(id);if(owner.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===owner.id))throw Error();}for(const id of t.services?.teach??[]){r.variable(id);if(!['core:attack','core:defense','core:speed','core:skillPower','core:hit','core:evasion','core:crit'].includes(id))throw Error();const owner=r.provenance(id);if(owner.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===owner.id))throw Error();}});
+- for(const e of p.enemies ?? []) test(e.id,()=>{r.event(e.victoryEventId);r.event(e.defeatEventId);r.event(e.escapeEventId);});
++ for(const e of p.enemies ?? []) test(e.id,()=>{
++   r.event(e.victoryEventId);r.event(e.defeatEventId);r.event(e.escapeEventId);
++   for(const tagId of [...(e.attributeTags??[]),...(e.fetishTags??[]),...(e.fetishTendencies??[]).map(t=>t.tagId)]){
++     if(r.tag(tagId).status!=='active')throw Error();
++     const owner=r.provenance(tagId);if(owner.id!==p.manifest.id&&!p.manifest.dependencies.some(d=>d.id===owner.id))throw Error();
++   }
++ });
+  for(const i of p.interactions ?? []) {test(i.id,()=>{const n=r.npc(i.npcId),sp=r.species(n.speciesId),slot=r.textSlots.find(s=>s.id===i.textSlotId);if(!slot || (slot.contentTier==='adult_optional'&&(n.ageYears===null || n.ageYears<sp.adultAgeYears)) || !sp.intelligent || !i.poses.length || new Set(i.poses.map(p=>p.id)).size!==i.poses.length)throw Error();r.event(i.endEventId);});i.conditions.forEach(c=>check(p,c,'/interactions/'+i.id));}
+  for(const s of p.textSlots ?? []) test(s.id,()=>{const e=r.event(s.owner.eventId);if(!e.nodes.some(n=>n.id===s.owner.nodeId)||!e.nodes.some(n=>n.id===s.nextNodeId))throw Error();r.text(s.fallbackTextKey);s.requiredFacts.forEach(id=>r.flag(id));s.exitActionIds.forEach(id=>r.action(id));for(const id of s.participants)if(id!=='player'){const n=r.npc(id),sp=r.species(n.speciesId);if((s.contentTier==='adult_optional'&&(n.ageYears===null||n.ageYears<sp.adultAgeYears))||!sp.intelligent)throw Error();}if(s.allowedVariables.some(v=>!['player.name','npc.displayName'].includes(v)))throw Error();});
+  for(const s of p.sceneTexts ?? []) {test(s.id,()=>{r.location(s.locationId);r.text(s.textKey);});s.conditions.forEach(c=>check(p,c,'/sceneTexts/'+s.id));}
+diff --git a/src/content/foundation-schema.ts b/src/content/foundation-schema.ts
+index cbaebc0..1fe5e1d 100755
+--- a/src/content/foundation-schema.ts
++++ b/src/content/foundation-schema.ts
+@@ -80,6 +80,7 @@ export function projectV2(input: unknown, parseV1: (v: unknown) => ContentPack):
+   for(const a of legacy.actions)a.effects=a.effects.map(fx);
+   for(const e of legacy.events)for(const n of e.nodes)n.onEnter=n.onEnter.map(fx);
+   for(const n of legacy.narrativeNodes??[]){n.conditions=n.conditions.map(c=>projectCondition(c));for(const c of n.choices){c.conditions=c.conditions.map(x=>projectCondition(x));c.effects=c.effects.map(fx);}}
++  for(const r of legacy.defeatReactionRules??[]){r.playerConditions=r.playerConditions.map(c=>projectCondition(c));r.opponentConditions=r.opponentConditions.map(c=>projectCondition(c));r.effects=r.effects.map(fx);}
+   parseV1(legacy);
+   return p;
+ }
+diff --git a/src/content/loader.ts b/src/content/loader.ts
+index 7c87b55..b120050 100755
+--- a/src/content/loader.ts
++++ b/src/content/loader.ts
+@@ -38,7 +38,7 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
+       for (const value of p[type] ?? []) add(p, value.id, type, value);
+     }
+     for (const [id, value] of Object.entries(p.texts)) add(p, id, 'texts', value);
+-    for (const type of ['narrativeNodes','narrativeProfiles','environmentEnemyRules'] as const) for (const value of p[type]??[]) add(p,value.id,type,value);
++    for (const type of ['narrativeNodes','narrativeProfiles','environmentEnemyRules','defeatReactionRules'] as const) for (const value of p[type]??[]) add(p,value.id,type,value);
+   }
+   function add(p: ContentPack, id: string, type: string, value: unknown): void {
+     if (id.split(':')[0] !== p.manifest.namespace) fail(p, 'NAMESPACE_OWNERSHIP', `/${type}/${id}`, '不能定义其他包的 ID。', id);
+@@ -72,6 +72,12 @@ export async function loadPacks(input: unknown[]): Promise<Registry> {
+     else if (c.op === 'event.state') ref(p, c.id, 'events', path);
+     else if (c.op === 'body.hasPart') ref(p, c.definitionId, 'bodyParts', path);
+     else if (c.op === 'tf.state') ref(p, c.id, 'transformations', path);
++    else if (c.op === 'opponent.matches') {
++      if (!p.manifest.requiresCapabilities.includes('adventure.v1')) fail(p, 'CAPABILITY_UNDECLARED', path, '需声明adventure.v1。');
++      if (c.enemyId) ref(p, c.enemyId, 'enemies', `${path}/enemyId`);
++      if (c.attributeTag) ref(p, c.attributeTag, 'tags', `${path}/attributeTag`);
++      if (c.fetishTag) ref(p, c.fetishTag, 'tags', `${path}/fetishTag`);
++    }
+     else if (c.op === 'npc.present' || c.op === 'npc.memory' || c.op === 'npc.relation') {
+       ref(p, c.npcId, 'npcs', path);
+       if (c.op === 'npc.memory') { ref(p, c.memoryId, 'npcMemories', path); const memory = definitions.get(c.memoryId)?.value as NonNullable<ContentPack['npcMemories']>[number] | undefined; if (memory && memory.npcId !== c.npcId) fail(p, 'NPC_MEMORY_OWNER', path, '记忆与人物不匹配。'); }
+diff --git a/src/content/registry.ts b/src/content/registry.ts
+index ff41b22..979cba9 100755
+--- a/src/content/registry.ts
++++ b/src/content/registry.ts
+@@ -6,12 +6,13 @@ import type { NPCDef, NPCMemoryDef, SpeciesDef } from '../core/npc-types.ts';
+ import type { StoryletDef, ResidentTemplate, EnemyDef, InteractionDef, TextSlotDef, SceneTextDef, EquipmentDef, ItemDef } from '../core/district-types.ts';
+ import { RuleError } from '../core/errors.ts';
+ import { isAppendOnlyEventPack } from './append-only.ts';
+-import type { EnvironmentEnemyRule, NarrativeNode, NarrativeProfile } from '../core/adventure-types.ts';
++import type { DefeatReactionRule, EnvironmentEnemyRule, NarrativeNode, NarrativeProfile } from '../core/adventure-types.ts';
+ export class Registry {
+   readonly contentPacks: ContentPack[];
+   readonly narrativeNodes: NarrativeNode[];
+   readonly narrativeProfiles: NarrativeProfile[];
+   readonly environmentEnemyRules: EnvironmentEnemyRule[];
++  readonly defeatReactionRules: DefeatReactionRule[];
+   #definitions = new Map<string, { kind: string; value: unknown; packId:string }>();
+   #actionsByHook = new Map<Id, Id[]>();
+   #tagById = new Map<Id, TagDef>();
+@@ -47,6 +48,7 @@ export class Registry {
+     this.narrativeNodes = freeze(data.flatMap(p=>p.narrativeNodes??[]));
+     this.narrativeProfiles = freeze(data.flatMap(p=>p.narrativeProfiles??[]));
+     this.environmentEnemyRules = freeze(data.flatMap(p=>p.environmentEnemyRules??[]));
++    this.defeatReactionRules = freeze(data.flatMap(p=>p.defeatReactionRules??[]));
+     this.appendOnlyPackIds = freeze(data.filter(isAppendOnlyEventPack).map(p=>p.manifest.id));
+     if (packs.some(p => p.manifest.requiresCapabilities.includes('district.v1'))) {
+       const legacy = packs.filter(p => !p.manifest.requiresCapabilities.includes('district.v1') && p.manifest.schemaVersion!==2);
+@@ -91,7 +93,7 @@ export class Registry {
+     for (const pack of data) {
+       for (const kind of ['variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'items', 'tags', 'materials', 'morphologies', 'partProfiles', 'npcBodies', 'locationProfiles', 'residentAdaptations', 'derivedTags', 'proseMaterials', 'proseSelections'] as const) for (const def of pack[kind] ?? []) this.#definitions.set(def.id, { kind, value: def,packId:pack.manifest.id });
+       for (const [key, text] of Object.entries(pack.texts)) this.#definitions.set(key, { kind: 'texts', value: text,packId:pack.manifest.id });
+-      for (const kind of ['narrativeNodes','narrativeProfiles','environmentEnemyRules'] as const) for (const value of pack[kind]??[]) this.#definitions.set(value.id,{kind,value,packId:pack.manifest.id});
++      for (const kind of ['narrativeNodes','narrativeProfiles','environmentEnemyRules','defeatReactionRules'] as const) for (const value of pack[kind]??[]) this.#definitions.set(value.id,{kind,value,packId:pack.manifest.id});
+       for (const c of pack.contributions) this.#actionsByHook.set(c.hookId, [...(this.#actionsByHook.get(c.hookId) ?? []), ...c.actionIds]);
+     }
+     for (const [key, values] of this.#actionsByHook) this.#actionsByHook.set(key, [...new Set(values)].sort());
+diff --git a/src/content/schema.ts b/src/content/schema.ts
+index 9a48a2d..b37eb85 100755
+--- a/src/content/schema.ts
++++ b/src/content/schema.ts
+@@ -2,6 +2,7 @@ import { projectV2 } from './foundation-schema.ts';
+ import { parseDistrict } from './district-schema.ts';
+ import { parseAdventurePack, ADVENTURE_FIELDS, NARRATIVE_KINDS, PROGRESSION_MOVES } from './adventure-schema.ts';
+ import { PART_KINDS, BODY_CAPABILITIES } from '../core/body-types.ts';
++import { ENEMY_SPECIES_KINDS, DEFEAT_MATERIAL_KEYS, DEFEAT_PLAY_KEYS, GENERIC_TF_ATOMS } from '../core/district-types.ts';
+ import { RELATION_FIELDS } from '../core/npc-types.ts';
+ import { PLAYER_RELATIONS } from '../core/quest-types.ts';
+ import { LOCATION_FACILITIES, LOCATION_SERVICES, RESIDENT_SERVICES } from '../core/function-types.ts';
+@@ -64,6 +65,17 @@ export function parsePack(input: unknown): ContentPack {
+     else if (op === 'service.available') { const x=obj(value,path,['op','subject','service','id']);choice(x.subject,path,['location','resident']);choice(x.service,path,x.subject==='location'?[...LOCATION_SERVICES]:[...RESIDENT_SERVICES]);if(x.subject==='resident'&&['trade','teach'].includes(String(x.service)))id(x.id,path+'/id');else if(x.id!==undefined)fail(path+'/id','此功能不接受条目ID。'); }
+     else if (op === 'progression.available') { const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path); }
+     else if(op==='narrative.tag'){const x=obj(value,path,['op','role','id','value']);choice(x.role,path,['player','opponent','environment']);id(x.id,path);boolean(x.value,path);}
++    else if(op==='opponent.matches'){
++      const x=obj(value,path,['op','enemyId','speciesKind','attributeTag','fetishTag','materialKey','playKey','tf']);
++      if(Object.keys(x).length<=1)fail(path,'对手匹配条件至少需要一项约束。');
++      if(x.enemyId!==undefined)id(x.enemyId,`${path}/enemyId`);
++      if(x.speciesKind!==undefined)choice(x.speciesKind,`${path}/speciesKind`,[...ENEMY_SPECIES_KINDS]);
++      if(x.attributeTag!==undefined)id(x.attributeTag,`${path}/attributeTag`);
++      if(x.fetishTag!==undefined)id(x.fetishTag,`${path}/fetishTag`);
++      if(x.materialKey!==undefined)choice(x.materialKey,`${path}/materialKey`,[...DEFEAT_MATERIAL_KEYS]);
++      if(x.playKey!==undefined)choice(x.playKey,`${path}/playKey`,[...DEFEAT_PLAY_KEYS]);
++      if(x.tf!==undefined)choice(x.tf,`${path}/tf`,[...GENERIC_TF_ATOMS]);
++    }
+     else fail(`${path}/op`, '未知或未实现的条件操作符。', 'UNSUPPORTED_OPCODE');
+   }
+   function effect(value: unknown, path: string): void {
+@@ -95,7 +107,7 @@ export function parsePack(input: unknown): ContentPack {
+     else if (op === 'progression.act') {const x=obj(value,path,['op','move','id']);choice(x.move,path,[...PROGRESSION_MOVES]);if(x.id!==undefined)id(x.id,path);}
+     else fail(`${path}/op`, '未知或未实现的效果操作符。', 'UNSUPPORTED_OPCODE');
+   }
+-  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'items', 'narrativeProfiles','narrativeNodes','environmentEnemyRules']);
++  const root = obj(input, '', ['manifest', 'variables', 'flags', 'hooks', 'locations', 'routes', 'actions', 'events', 'texts', 'contributions', 'start', 'bodyParts', 'bodyTemplates', 'bodyPatches', 'transformations', 'globalActionHooks', 'species', 'npcs', 'npcMemories', 'storylets', 'residentTemplates', 'enemies', 'interactions', 'textSlots', 'sceneTexts', 'equipment', 'items', 'narrativeProfiles','narrativeNodes','environmentEnemyRules','defeatReactionRules']);
+   const m = obj(root.manifest, '/manifest', ['id', 'namespace', 'version', 'schemaVersion', 'engineApiVersion', 'author', 'status', 'dependencies', 'requiresCapabilities', 'migrations']);
+   if (typeof m.id === 'string') packId = m.id;
+   str(m.id, '/manifest/id'); str(m.author, '/manifest/author');
+diff --git a/src/core/adventure-types.ts b/src/core/adventure-types.ts
+index c9a9a45..83317b8 100755
+--- a/src/core/adventure-types.ts
++++ b/src/core/adventure-types.ts
+@@ -1,11 +1,40 @@
+ import type { Condition, Effect, Id } from './types.ts';
+ import type { EntityRef } from './query-types.ts';
+-import type { EquipmentSlot, EnemyCombatStats } from './district-types.ts';
++import type {
++  EquipmentSlot,
++  EnemyCombatStats,
++  EnemySpeciesKind,
++  EnemyFetishTendency,
++  EnemyDefeatComboConfig,
++  DefeatMaterialKey,
++  DefeatPlayKey,
++  GenericTfAtom,
++} from './district-types.ts';
+ 
+ export const NARRATIVE_KINDS = ['defeat', 'encounter', 'exploration', 'daily', 'conversation', 'quest', 'transformation', 'ending'] as const;
+ export type NarrativeKind = typeof NARRATIVE_KINDS[number];
+ export interface ScopedTag { role: 'player' | 'opponent' | 'environment'; tagId: Id }
+-export interface NarrativeProfile { id: Id; enemyId?: Id; npcId?: Id; tags: Id[]; goals: Id[]; tendencies: { tagId: Id; weight: number }[]; defeatTags?: ScopedTag[]; /** Optional closed candidate set for dedicated narrative entries. */ nodeIds?: Id[] }
++export interface NarrativeProfile {
++  id: Id;
++  enemyId?: Id;
++  npcId?: Id;
++  tags: Id[];
++  goals: Id[];
++  tendencies: { tagId: Id; weight: number }[];
++  defeatTags?: ScopedTag[];
++  /** Optional closed candidate set for dedicated narrative entries. */
++  nodeIds?: Id[];
++  /** 对手物种/形态大类覆盖 */
++  speciesKind?: EnemySpeciesKind;
++  /** 对手身体/材质/生态属性 Tag */
++  attributeTags?: Id[];
++  /** 对手性癖/支配倾向 Tag */
++  fetishTags?: Id[];
++  /** 带权重的性癖倾向列表 */
++  fetishTendencies?: EnemyFetishTendency[];
++  /** 战败自动组合候选池配置 */
++  defeatCombo?: EnemyDefeatComboConfig;
++}
+ export interface NarrativeChoice { label: string; resultText: Id; conditions: Condition[]; effects: Effect[]; setTags: ScopedTag[]; unsetTags: ScopedTag[]; next: string | null }
+ export interface NarrativeNode { id: Id; kind: NarrativeKind; stage: string; title: string; textKey: Id; requiresTags: ScopedTag[]; excludesTags: ScopedTag[]; conditions: Condition[]; tendencies: { tagId: Id; weight: number }[]; weight: number; priority: number; maxVisits: number; choices: NarrativeChoice[]; proseAssembly?: {version:1;mode:import('./prose-types.ts').ProseMode;rule:import('./prose-types.ts').ProseRule} }
+ export interface NarrativeState { instanceId: string; kind: NarrativeKind; stage: string; nodeId: Id; profileId: Id | null; opponentName: string; actor: EntityRef | null; tags: ScopedTag[]; visits: Record<Id, number>; log: string[]; steps: number; /** 战败玩法等入口的占位填充（{material}/{part}/{tf}…）；缺省兼容旧档 */ fills?: Record<string, string>; prose?: import('./prose-types.ts').ProseSnapshot }
+@@ -36,11 +65,48 @@ export interface EnvironmentEnemyRule {
+   combat?: Partial<EnemyCombatStats>;
+   /** 若填写则战败写入这些 tag（可进不同战败节点）；缺省仍用 NarrativeProfile.defeatTags */
+   defeatTags?: ScopedTag[];
++  /** 环境敌人变体的物种/属性/性癖与组合池覆盖 */
++  speciesKind?: EnemySpeciesKind;
++  attributeTags?: Id[];
++  fetishTags?: Id[];
++  fetishTendencies?: EnemyFetishTendency[];
++  defeatCombo?: EnemyDefeatComboConfig;
++}
++export interface DefeatReactionRule {
++  id: Id;
++  label: string;
++  stages: string[];
++  playerConditions: Condition[];
++  opponentConditions: Condition[];
++  choiceLabel: string;
++  resultText: Id;
++  targetStage: string | null;
++  effects: Effect[];
++  setTags: ScopedTag[];
++  unsetTags: ScopedTag[];
++  priority: number;
+ }
+ export interface AdventureDefinitions {
+   narrativeProfiles?: NarrativeProfile[];
+   narrativeNodes?: NarrativeNode[];
+   environmentEnemyRules?: EnvironmentEnemyRule[];
++  defeatReactionRules?: DefeatReactionRule[];
+ }
+ export type AdventureEffect = {op:'conversation.respond';reaction:'welcomed'|'offended'|'gift'} | { op: 'narrative.start'; kind: NarrativeKind; profileId?: Id } | { op: 'narrative.choose'; index: number } | { op: 'adventure.change'; field: AdventureField; amount: number } | { op: 'progression.act'; move: 'train' | 'buy' | 'order' | 'invest' | 'patrol' | 'aid' | 'reconcile'; id?: Id };
+-export type AdventureCondition = {op:'conversation.present'|'conversation.adultEligible'|'conversation.giftAvailable'} | {op:'conversation.trust';value:number} | { op: 'adventure.compare'; field: AdventureField | 'victories'; comparison: 'eq' | 'gte' | 'lte'; value: number } | { op: 'progression.available'; move: 'train' | 'buy' | 'order' | 'invest' | 'patrol' | 'aid' | 'reconcile'; id?: Id } | {op:'narrative.tag';role:ScopedTag['role'];id:Id;value:boolean};
++export type OpponentMatchCondition = {
++  op: 'opponent.matches';
++  enemyId?: Id;
++  speciesKind?: EnemySpeciesKind;
++  attributeTag?: Id;
++  fetishTag?: Id;
++  materialKey?: DefeatMaterialKey;
++  playKey?: DefeatPlayKey;
++  tf?: GenericTfAtom;
++};
++export type AdventureCondition =
++  | {op:'conversation.present'|'conversation.adultEligible'|'conversation.giftAvailable'}
++  | {op:'conversation.trust';value:number}
++  | { op: 'adventure.compare'; field: AdventureField | 'victories'; comparison: 'eq' | 'gte' | 'lte'; value: number }
++  | { op: 'progression.available'; move: 'train' | 'buy' | 'order' | 'invest' | 'patrol' | 'aid' | 'reconcile'; id?: Id }
++  | {op:'narrative.tag';role:ScopedTag['role'];id:Id;value:boolean}
++  | OpponentMatchCondition;
+diff --git a/src/core/district-types.ts b/src/core/district-types.ts
+index 862636d..d6ba4e4 100755
+--- a/src/core/district-types.ts
++++ b/src/core/district-types.ts
+@@ -5,6 +5,32 @@ import type { TraitVariant } from './personality-types.ts';
+ import type { ResidentServices } from './function-types.ts';
+ import type { NameCulture, PersonalName } from './name-types.ts';
+ export type EnemyTier = 'S' | 'M' | 'L' | 'boss';
++export const ENEMY_SPECIES_KINDS = ['human', 'beast', 'monster', 'plant', 'slime', 'insect', 'construct'] as const;
++export type EnemySpeciesKind = typeof ENEMY_SPECIES_KINDS[number];
++export const DEFEAT_MATERIAL_KEYS = ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10'] as const;
++export type DefeatMaterialKey = typeof DEFEAT_MATERIAL_KEYS[number];
++export const DEFEAT_PLAY_KEYS = ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8'] as const;
++export type DefeatPlayKey = typeof DEFEAT_PLAY_KEYS[number];
++export const GENERIC_TF_ATOMS = ['黏液化', '黑胶化'] as const;
++export type GenericTfAtom = typeof GENERIC_TF_ATOMS[number];
++export interface EnemyFetishTendency {
++  /** 已注册的性癖/玩法倾向 Tag ID */
++  tagId: Id;
++  /** 倾向权重（0–100），用于战败节点与玩法抽选加权 */
++  weight: number;
++}
++export interface EnemyDefeatComboConfig {
++  /** 允许抽取的定词挂前材质键（M1–M6） */
++  materials?: DefeatMaterialKey[];
++  /** 允许抽取的目标部位名称 */
++  parts?: string[];
++  /** 偏好的战败玩法大类（G1–G8） */
++  plays?: DefeatPlayKey[];
++  /** 允许抽取的通用转化原子（仅限通用黏液化/黑胶化，禁止物种专条） */
++  tfs?: GenericTfAtom[];
++  /** 战败进入叙事时是否自动抽取组合槽位（fills） */
++  autoCombo?: boolean;
++}
+ export interface StoryletDef {
+   id: Id; locationId: Id; conditions: Condition[]; eventId: Id; weight: number; priority: number;
+   cooldownMinutes: number; cooldownGroup: string; repeat: 'once' | 'daily' | 'repeat'; hidden: boolean; tags: string[];
+@@ -51,6 +77,16 @@ export interface EnemyDef {
+   phases?: EnemyPhaseDef[];
+   intents: { label: string; damage: number; guard: number; drain: number }[];
+   victoryEventId: Id; defeatEventId: Id; escapeEventId: Id;
++  /** 敌人物种/形态大类（人/兽/异形/植物/史莱姆/虫群/构装） */
++  speciesKind?: EnemySpeciesKind;
++  /** 敌人固有身体/材质/生态属性 Tag（如黏液、触手、藤蔓、甲壳、催眠信息素、群聚等） */
++  attributeTags?: Id[];
++  /** 敌人性癖/战败支配倾向 Tag（如束缚、覆层、侵入、感官剥夺、产卵寄宿、羞辱、调教、围攻等） */
++  fetishTags?: Id[];
++  /** 带权重的性癖倾向列表（供战败节点与玩法抽选加权） */
++  fetishTendencies?: EnemyFetishTendency[];
++  /** 战败自动组合候选池配置 */
++  defeatCombo?: EnemyDefeatComboConfig;
+ }
+ export interface InteractionDef {
+   id: Id; npcId: Id; conditions: Condition[]; textSlotId: Id; endEventId: Id;
+diff --git a/src/engine/conditions.ts b/src/engine/conditions.ts
+index 69ec01c..4292048 100755
+--- a/src/engine/conditions.ts
++++ b/src/engine/conditions.ts
+@@ -60,7 +60,7 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
+       reason = `${registry.variable(condition.id).label}需${condition.comparison === 'gte' ? '至少' : condition.comparison === 'lte' ? '不超过' : '等于'} ${condition.value}（当前 ${value}）。`;
+       break;
+     }
+-    case 'flag.has': pass = state.player.flags[condition.id] === condition.value; break;
++    case 'flag.has': pass = (state.player.flags[condition.id] ?? false) === condition.value; break;
+     case 'location.is': pass = state.world.locationId === condition.id; reason = `需要位于${registry.location(condition.id).name}。`; break;
+     case 'time.window': {
+       pass = timeWindow(state,condition.start,condition.end);
+@@ -77,6 +77,38 @@ export function evaluate(condition: Condition, state: GameState, registry: Regis
+     case 'body.hasPart': {const b=entityBody(state,condition.target??PLAYER);if(!b.known)return {pass:false,reason:b.reason,known:false};pass=b.value.parts.some(x=>x.definitionId===condition.definitionId);} reason = `需要${registry.bodyPart(condition.definitionId).label}。`; break;
+     case 'body.hasCapability': { const q=capabilityCount(state,registry,condition.target??PLAYER,condition.capability);if(!q.known)return {pass:false,reason:q.reason,known:false};const n=q.value; pass = n >= condition.count; reason = `需要 ${condition.count} 个可用${{ grasp: '抓握部位', walk: '行走部位', hear: '听觉部位', balance: '平衡部位', tailGrip: '尾部抓握部位' }[condition.capability]}（当前 ${n}）。`; break; }
+     case 'tf.state': { const jobs = state.tfQueues.filter(x => x.definitionId === condition.id&&entityKey(x.target)===entityKey(condition.target)); pass = condition.state === 'idle' ? !jobs.some(x => ['active', 'paused', 'blocked'].includes(x.status)) : jobs.some(x => x.status === condition.state); reason = '当前改造进度不符合这项行动。'; break; }
++    case 'opponent.matches': {
++      const story = state.adventure?.story;
++      const lastCombat = state.adventure?.lastCombat;
++      const activeCombat = state.district?.combat;
++      const profile = story?.profileId ? registry.narrativeProfiles.find(p => p.id === story.profileId) : undefined;
++      const enemyId = profile?.enemyId ?? lastCombat?.enemyId ?? activeCombat?.enemyId;
++      const enemy = enemyId ? registry.enemies.find(e => e.id === enemyId) : undefined;
++      const rule = activeCombat?.selectionRuleId ? registry.environmentEnemyRules.find(r => r.id === activeCombat.selectionRuleId) : undefined;
++      const activeOppTags = new Set([
++        ...(story ? narrativeTags(state, registry).filter(t => t.role === 'opponent').map(t => t.tagId) : []),
++        ...(enemy?.attributeTags ?? []),
++        ...(enemy?.fetishTags ?? []),
++        ...(profile?.attributeTags ?? []),
++        ...(profile?.fetishTags ?? []),
++        ...(rule?.attributeTags ?? []),
++        ...(rule?.fetishTags ?? []),
++      ]);
++      const actualSpecies = rule?.speciesKind ?? profile?.speciesKind ?? enemy?.speciesKind ?? story?.fills?.opponentKind;
++      const actualMat = story?.fills?.materialKey;
++      const actualPlay = story?.fills?.playKey;
++      const actualTf = story?.fills?.tf;
++      pass = true;
++      if (condition.enemyId !== undefined && enemyId !== condition.enemyId) pass = false;
++      if (condition.speciesKind !== undefined && actualSpecies !== condition.speciesKind) pass = false;
++      if (condition.attributeTag !== undefined && !activeOppTags.has(condition.attributeTag)) pass = false;
++      if (condition.fetishTag !== undefined && !activeOppTags.has(condition.fetishTag)) pass = false;
++      if (condition.materialKey !== undefined && actualMat !== condition.materialKey) pass = false;
++      if (condition.playKey !== undefined && actualPlay !== condition.playKey && !activeOppTags.has(`progression:tag.defeat.play.${condition.playKey.toLowerCase()}`)) pass = false;
++      if (condition.tf !== undefined && actualTf !== condition.tf) pass = false;
++      reason = '当前对手的属性或倾向不符合该条件。';
++      break;
++    }
+     case 'npc.present': pass = npcPresent(state, registry, condition.npcId); reason = `${registry.npc(condition.npcId).name}此刻不在这里。`; break;
+     case 'npc.memory': pass = hasMemory(state, condition.npcId, condition.memoryId) === condition.value; reason = condition.value ? '还没有一起经历这件事。' : '这件事已经记住了。'; break;
+     case 'npc.relation': { const value = npcState(state, condition.npcId).relationship[condition.field]; pass = condition.comparison === 'eq' ? value === condition.value : condition.comparison === 'gte' ? value >= condition.value : value <= condition.value; reason = `${registry.npc(condition.npcId).name}与你还不够熟悉。`; break; }
+diff --git a/src/engine/defeat-play-draws.ts b/src/engine/defeat-play-draws.ts
+index de6206b..43e3dd9 100755
+--- a/src/engine/defeat-play-draws.ts
++++ b/src/engine/defeat-play-draws.ts
+@@ -1,85 +1,160 @@
+ import type { GameState } from '../core/types.ts';
++import type {
++  DefeatMaterialKey,
++  DefeatPlayKey,
++  EnemyDefeatComboConfig,
++  EnemySpeciesKind,
++  GenericTfAtom,
++} from '../core/district-types.ts';
+ import { draw } from './rng.ts';
+ 
+-/** 人/兽/怪占位标签（非物种 TF 专条） */
++/** 人/兽/怪等物种显示标签（非物种 TF 专条） */
+ export const DEFEAT_PLAY_OPPONENTS = [
+   { kind: 'human', label: '人类对手' },
+   { kind: 'beast', label: '野兽' },
+   { kind: 'monster', label: '异形生物' },
++  { kind: 'plant', label: '妖异藤植' },
++  { kind: 'slime', label: '胶质生物' },
++  { kind: 'insect', label: '虫巢异虫' },
++  { kind: 'construct', label: '失控构装体' },
+ ] as const;
+ 
++/** 基础三类随机池（保持无配置入口与旧测试 RNG 完全一致） */
++export const DEFAULT_OPPONENT_KINDS = ['human', 'beast', 'monster'] as const;
++
+ /**
+  * 定词挂前材质表（与 scripts/nsfw-auto-combo/atoms.json materials 对齐）。
+  * label = dingci ? dingci+base名 : base；转化只用通用黏液化/黑胶化。
+  */
+ export const DEFEAT_PLAY_MATERIALS = [
+-  { key: 'M1', dingci: '蛞蝓', base: '黏液', label: '蛞蝓黏液' },
+-  { key: 'M2', dingci: '触手', base: '黏液', label: '触手黏液' },
+-  { key: 'M3', dingci: '虫巢', base: '黏液', label: '虫巢黏液' },
+-  { key: 'M4', dingci: '史莱姆', base: '黏液', label: '史莱姆黏液' },
+-  { key: 'M5', dingci: null, base: '活体黑胶', label: '活体黑胶' },
+-  { key: 'M6', dingci: null, base: '凝胶膜', label: '凝胶膜' },
++  { key: 'M1' as DefeatMaterialKey, dingci: '蛞蝓', base: '黏液', label: '蛞蝓黏液' },
++  { key: 'M2' as DefeatMaterialKey, dingci: '触手', base: '黏液', label: '触手黏液' },
++  { key: 'M3' as DefeatMaterialKey, dingci: '虫巢', base: '黏液', label: '虫巢黏液' },
++  { key: 'M4' as DefeatMaterialKey, dingci: '史莱姆', base: '黏液', label: '史莱姆黏液' },
++  { key: 'M5' as DefeatMaterialKey, dingci: null, base: '活体黑胶', label: '活体黑胶' },
++  { key: 'M6' as DefeatMaterialKey, dingci: null, base: '凝胶膜', label: '凝胶膜' },
++  { key: 'M7' as DefeatMaterialKey, dingci: '兽径', base: '活藤', label: '兽径活藤' },
++  { key: 'M8' as DefeatMaterialKey, dingci: '翠暗', base: '缠绕茎', label: '翠暗缠绕茎' },
++  { key: 'M9' as DefeatMaterialKey, dingci: '柔韧', base: '藤条', label: '柔韧藤条' },
++  { key: 'M10' as DefeatMaterialKey, dingci: '虫巢', base: '丝茧', label: '虫巢丝茧' },
+ ] as const;
+ 
+-export const DEFEAT_PLAY_PARTS = ['手腕', '腰侧', '脚踝', '大腿内侧', '脖颈', '锁骨窝', '嘴唇'] as const;
++export const DEFEAT_PLAY_PARTS = ['手腕', '腰侧', '脚踝', '大腿内侧', '脖颈', '锁骨窝', '嘴唇', '小腿', '膝弯', '肩胛', '眼周', '耳廓'] as const;
+ 
+ /** 通用 goo TF 原子 only — 禁止物种专条 */
+-export const DEFEAT_PLAY_TFS = ['黏液化', '黑胶化'] as const;
++export const DEFEAT_PLAY_TFS: readonly GenericTfAtom[] = ['黏液化', '黑胶化'] as const;
+ 
+ /**
+- * 与 nsfw-auto-combo 12 candidates 对齐的轻量挂接行：
+- * 抽一格 → opponentKind + material + 首选 part。
++ * 与 nsfw-auto-combo candidates 对齐的轻量挂接行：
++ * 抽一格 → opponentKind + material + 首选 part + 默认关联玩法大类。
+  */
+ export const DEFEAT_PLAY_COMBO_ROWS = [
+-  { sampleId: 'C1', opponentKind: 'monster', materialKey: 'M2', part: '手腕' },
+-  { sampleId: 'C2', opponentKind: 'beast', materialKey: 'M1', part: '脚踝' },
+-  { sampleId: 'C3', opponentKind: 'monster', materialKey: 'M6', part: '腰侧' },
+-  { sampleId: 'C4', opponentKind: 'monster', materialKey: 'M5', part: '嘴唇' },
+-  { sampleId: 'C5', opponentKind: 'beast', materialKey: 'M3', part: '腰侧' },
+-  { sampleId: 'C6', opponentKind: 'monster', materialKey: 'M4', part: '大腿内侧' },
+-  { sampleId: 'C7', opponentKind: 'monster', materialKey: 'M2', part: '脖颈' },
+-  { sampleId: 'C8', opponentKind: 'human', materialKey: 'M5', part: '大腿内侧' },
+-  { sampleId: 'C9', opponentKind: 'beast', materialKey: 'M3', part: '腰侧' },
+-  { sampleId: 'C10', opponentKind: 'human', materialKey: 'M4', part: '嘴唇' },
+-  { sampleId: 'C11', opponentKind: 'monster', materialKey: 'M2', part: '腰侧' },
+-  { sampleId: 'C12', opponentKind: 'monster', materialKey: 'M6', part: '大腿内侧' },
++  { sampleId: 'C1', opponentKind: 'monster', materialKey: 'M2' as DefeatMaterialKey, part: '手腕', playKey: 'G1' as DefeatPlayKey },
++  { sampleId: 'C2', opponentKind: 'beast', materialKey: 'M1' as DefeatMaterialKey, part: '脚踝', playKey: 'G2' as DefeatPlayKey },
++  { sampleId: 'C3', opponentKind: 'monster', materialKey: 'M6' as DefeatMaterialKey, part: '腰侧', playKey: 'G2' as DefeatPlayKey },
++  { sampleId: 'C4', opponentKind: 'monster', materialKey: 'M5' as DefeatMaterialKey, part: '嘴唇', playKey: 'G4' as DefeatPlayKey },
++  { sampleId: 'C5', opponentKind: 'beast', materialKey: 'M3' as DefeatMaterialKey, part: '腰侧', playKey: 'G5' as DefeatPlayKey },
++  { sampleId: 'C6', opponentKind: 'monster', materialKey: 'M4' as DefeatMaterialKey, part: '大腿内侧', playKey: 'G3' as DefeatPlayKey },
++  { sampleId: 'C7', opponentKind: 'monster', materialKey: 'M2' as DefeatMaterialKey, part: '脖颈', playKey: 'G4' as DefeatPlayKey },
++  { sampleId: 'C8', opponentKind: 'human', materialKey: 'M5' as DefeatMaterialKey, part: '大腿内侧', playKey: 'G7' as DefeatPlayKey },
++  { sampleId: 'C9', opponentKind: 'beast', materialKey: 'M3' as DefeatMaterialKey, part: '腰侧', playKey: 'G8' as DefeatPlayKey },
++  { sampleId: 'C10', opponentKind: 'human', materialKey: 'M4' as DefeatMaterialKey, part: '嘴唇', playKey: 'G6' as DefeatPlayKey },
++  { sampleId: 'C11', opponentKind: 'monster', materialKey: 'M2' as DefeatMaterialKey, part: '腰侧', playKey: 'G1' as DefeatPlayKey },
++  { sampleId: 'C12', opponentKind: 'monster', materialKey: 'M6' as DefeatMaterialKey, part: '大腿内侧', playKey: 'G3' as DefeatPlayKey },
++  { sampleId: 'C13', opponentKind: 'plant', materialKey: 'M7' as DefeatMaterialKey, part: '手腕', playKey: 'G1' as DefeatPlayKey },
++  { sampleId: 'C14', opponentKind: 'plant', materialKey: 'M8' as DefeatMaterialKey, part: '脚踝', playKey: 'G6' as DefeatPlayKey },
++  { sampleId: 'C15', opponentKind: 'plant', materialKey: 'M9' as DefeatMaterialKey, part: '眼周', playKey: 'G4' as DefeatPlayKey },
++  { sampleId: 'C16', opponentKind: 'insect', materialKey: 'M10' as DefeatMaterialKey, part: '腰侧', playKey: 'G1' as DefeatPlayKey },
++  { sampleId: 'C17', opponentKind: 'insect', materialKey: 'M3' as DefeatMaterialKey, part: '小腿', playKey: 'G5' as DefeatPlayKey },
++  { sampleId: 'C18', opponentKind: 'slime', materialKey: 'M1' as DefeatMaterialKey, part: '锁骨窝', playKey: 'G2' as DefeatPlayKey },
++  { sampleId: 'C19', opponentKind: 'monster', materialKey: 'M5' as DefeatMaterialKey, part: '手腕', playKey: 'G7' as DefeatPlayKey },
++  { sampleId: 'C20', opponentKind: 'slime', materialKey: 'M4' as DefeatMaterialKey, part: '膝弯', playKey: 'G8' as DefeatPlayKey },
+ ] as const;
+ 
++export function materialTraceForKey(key: DefeatMaterialKey): string {
++  if (key === 'M7' || key === 'M8' || key === 'M9') {
++    return '缠绕勒紧留下的深青藤痕与细碎草木湿膜';
++  }
++  if (key === 'M10') {
++    return '层层缠裹留下的丝茧残缕与束缚压痕';
++  }
++  if (key === 'M5') {
++    return '紧密收束后贴附在肌理间的哑光黑胶残膜';
++  }
++  return '尚未完全拭净的粘稠覆层残迹';
++}
++
+ export type DefeatPlayFills = {
+   opponentKind: string;
++  materialKey: DefeatMaterialKey;
+   material: string;
+   materialBase: string;
+   dingci: string;
++  materialTrace: string;
+   part: string;
+-  tf: string;
++  tf: GenericTfAtom | '';
+   comboSample: string;
++  playKey: DefeatPlayKey;
+ };
+ 
++export interface DefeatPlayDrawOptions {
++  speciesKind?: EnemySpeciesKind;
++  defeatCombo?: EnemyDefeatComboConfig;
++}
++
+ function pick<T>(state: GameState, stream: string, list: readonly T[]): T {
+   const i = Math.min(list.length - 1, Math.floor(draw(state, stream) * list.length));
+   return list[i]!;
+ }
+ 
+-/** 战败 8 玩法入口：按种子抽对手 + 定词材质 + 部位 + 通用 TF。 */
+-export function drawDefeatPlayFills(state: GameState, streamBase: string): DefeatPlayFills {
+-  const row = pick(state, `${streamBase}:combo`, DEFEAT_PLAY_COMBO_ROWS);
+-  const opponent = DEFEAT_PLAY_OPPONENTS.find(o => o.kind === row.opponentKind) ?? DEFEAT_PLAY_OPPONENTS[0];
+-  const material = DEFEAT_PLAY_MATERIALS.find(m => m.key === row.materialKey) ?? DEFEAT_PLAY_MATERIALS[0];
+-  const part = draw(state, `${streamBase}:part-flip`) < 0.35
+-    ? pick(state, `${streamBase}:part`, DEFEAT_PLAY_PARTS)
++/** 战败 8 玩法与敌人自动组合入口：按种子（及可选敌人专属池）抽对手 + 定词材质 + 部位 + 通用 TF。 */
++export function drawDefeatPlayFills(
++  state: GameState,
++  streamBase: string,
++  options?: DefeatPlayDrawOptions,
++): DefeatPlayFills {
++  const cfg = options?.defeatCombo;
++  const allowedMatKeys = cfg?.materials?.length ? new Set(cfg.materials) : null;
++  const filteredRows = allowedMatKeys
++    ? DEFEAT_PLAY_COMBO_ROWS.filter(r => allowedMatKeys.has(r.materialKey))
++    : DEFEAT_PLAY_COMBO_ROWS;
++  const rowPool = filteredRows.length ? filteredRows : DEFEAT_PLAY_COMBO_ROWS;
++  const row = pick(state, `${streamBase}:combo`, rowPool);
++
++  const opponentKind = options?.speciesKind ?? row.opponentKind;
++  const matPool = allowedMatKeys
++    ? DEFEAT_PLAY_MATERIALS.filter(m => allowedMatKeys.has(m.key))
++    : DEFEAT_PLAY_MATERIALS;
++  const material = DEFEAT_PLAY_MATERIALS.find(m => m.key === row.materialKey && (!allowedMatKeys || allowedMatKeys.has(m.key)))
++    ?? (matPool.length ? matPool[0]! : DEFEAT_PLAY_MATERIALS[0]);
++
++  const partPool = cfg?.parts?.length ? cfg.parts : DEFEAT_PLAY_PARTS;
++  const part = draw(state, `${streamBase}:part-flip`) < 0.35 || (cfg?.parts?.length && !cfg.parts.includes(row.part))
++    ? pick(state, `${streamBase}:part`, partPool)
+     : row.part;
+-  const tf = pick(state, `${streamBase}:tf`, DEFEAT_PLAY_TFS);
++
++  const hasExplicitEmptyTf = cfg?.tfs !== undefined && cfg.tfs.length === 0;
++  const tfPool = cfg?.tfs?.length ? cfg.tfs : DEFEAT_PLAY_TFS;
++  const tf: GenericTfAtom | '' = hasExplicitEmptyTf ? '' : pick(state, `${streamBase}:tf`, tfPool);
++
++  const playKey = cfg?.plays?.length
++    ? pick(state, `${streamBase}:play`, cfg.plays)
++    : row.playKey;
++
+   return {
+-    opponentKind: opponent.kind,
++    opponentKind,
++    materialKey: material.key,
+     material: material.label,
+     materialBase: material.base,
+     dingci: material.dingci ?? '',
++    materialTrace: materialTraceForKey(material.key),
+     part,
+     tf,
+     comboSample: row.sampleId,
++    playKey,
+   };
+ }
+ 
+ export function opponentLabelForKind(kind: string): string {
+-  return DEFEAT_PLAY_OPPONENTS.find(o => o.kind === kind)?.label ?? '对手';
++  return DEFEAT_PLAY_OPPONENTS.find(o => o.kind === kind)?.label ?? DEFEAT_PLAY_OPPONENTS[0].label;
+ }
+diff --git a/src/engine/district-effects.ts b/src/engine/district-effects.ts
+index 30b29ae..36a2bcb 100755
+--- a/src/engine/district-effects.ts
++++ b/src/engine/district-effects.ts
+@@ -275,7 +275,15 @@ export function applyDistrictEffect(e: DistrictEffect, s: GameState, r: Registry
+     const intent = enemy.intents[battle.turn % enemy.intents.length]!;
+     const end = (result: 'victory' | 'defeat' | 'escape', voluntary?: 'surrender'|'giveup') => {
+       d.combat = null;
+-      if(r.narrativeNodes.length){const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);const defeat=battle.defeatTags??profile?.defeatTags??[];a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:result==='defeat'?(voluntary?[{role:'player',tagId:`progression:tag.${voluntary}`}]:[...defeat]):[]};}
++      if(r.narrativeNodes.length){
++        const a=adventure(s),profile=r.narrativeProfiles.find(p=>p.enemyId===enemy.id);
++        const rule=battle.selectionRuleId?r.environmentEnemyRules.find(x=>x.id===battle.selectionRuleId):undefined;
++        const defeat=battle.defeatTags??profile?.defeatTags??[];
++        const oppExtra=[...(rule?.attributeTags??[]),...(rule?.fetishTags??[])].map(tagId=>({role:'opponent' as const,tagId}));
++        const rawTags=result==='defeat'?(voluntary?[{role:'player' as const,tagId:`progression:tag.${voluntary}` as Id},...oppExtra]:[...defeat,...oppExtra]):[];
++        const deduped=[...new Map(rawTags.map(t=>[`${t.role}/${t.tagId}`,t])).values()];
++        a.lastCombat={enemyId:enemy.id,enemyName:battle.enemyName??enemy.name,result,turn:battle.turn+1,tags:deduped};
++      }
+       c.resolvedTexts.push(voluntary==='surrender'?'你示意投降，结束交锋，等待对方回应。':voluntary==='giveup'?'你停止抵抗，放下防备，让眼前的对手接手后续。':result === 'victory' ? '你赢得了交锋。' : result === 'defeat' ? '你失去继续战斗的力气，后续仍有恢复路径。' : '你找到空隙离开了交锋。');
+       let eventId = result === 'victory' ? enemy.victoryEventId : result === 'defeat' ? enemy.defeatEventId : enemy.escapeEventId;
+       if (result === 'defeat') {
+@@ -473,9 +481,10 @@ export function districtText(s: GameState, r: Registry, base: string): string {
+     const b = s.district.combat, e = r.enemies.find(x => x.id === b.enemyId)!;
+     const hpMax = b.enemy?.hpMax ?? e.hp;
+     const player=playerCombatStats(s,r);
+-    const labels=(ids:Id[])=>ids.map(id=>`【${r.tag(id).label}】`).join('')||'无已登记标签';
++    const labels=(ids:Id[])=>[...new Set(ids)].map(id=>`【${r.tag(id).label}】`).join('')||'无已登记标签';
+     const profile=r.narrativeProfiles.find(p=>p.enemyId===e.id);
+-    return `交锋：${b.enemyName??e.name}\n\n我方：生命${s.player.variables[PLAYER_HP_ID]}；体力${s.player.variables[STAMINA_ID]}；攻击${player.attack}；防御${player.defense}；速度${player.speed}；技能强度${player.skillPower}；技能资源${s.player.variables[SKILL_RES_ID]}；行动点${s.player.variables[AP_ID]}\n我方Tag：${labels(derivedSemantics(s,r,{entity:{kind:'player'}}))}\n敌方：生命${b.hp}/${hpMax}；攻击${b.enemy.attack}；防御${b.enemy.defense}；速度${b.enemy.speed}；每回合行动${b.enemy.actionsPerTurn}次\n敌方Tag：${labels([...(profile?.tags??[]),...(profile?.goals.slice(0,1)??[])])}\n\n第${b.turn+1}回合；下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
++    const rule=b.selectionRuleId?r.environmentEnemyRules.find(x=>x.id===b.selectionRuleId):undefined;
++    return `交锋：${b.enemyName??e.name}\n\n我方：生命${s.player.variables[PLAYER_HP_ID]}；体力${s.player.variables[STAMINA_ID]}；攻击${player.attack}；防御${player.defense}；速度${player.speed}；技能强度${player.skillPower}；技能资源${s.player.variables[SKILL_RES_ID]}；行动点${s.player.variables[AP_ID]}\n我方Tag：${labels(derivedSemantics(s,r,{entity:{kind:'player'}}))}\n敌方：生命${b.hp}/${hpMax}；攻击${b.enemy.attack}；防御${b.enemy.defense}；速度${b.enemy.speed}；每回合行动${b.enemy.actionsPerTurn}次\n敌方Tag：${labels([...(profile?.tags??[]),...(profile?.goals.slice(0,1)??[]),...(e.attributeTags??[]),...(e.fetishTags??[]),...(profile?.attributeTags??[]),...(profile?.fetishTags??[]),...(rule?.attributeTags??[]),...(rule?.fetishTags??[])])}\n\n第${b.turn+1}回合；下一步意图：${e.intents[b.turn % e.intents.length]!.label}\n\n${b.log.join('\n\n')}`;
+   }
+   if (s.district.scene) {
+     const scene = s.district.scene, i = r.interactions.find(x => x.id === scene.definitionId)!, p = i.poses.find(p => p.id === scene.poseId)!;
+diff --git a/src/engine/narrative.ts b/src/engine/narrative.ts
+index c0b84c6..0a44153 100755
+--- a/src/engine/narrative.ts
++++ b/src/engine/narrative.ts
+@@ -1,5 +1,5 @@
+ import type { ActionDef, Effect, GameState, Id } from '../core/types.ts';
+-import type { AdventureState, NarrativeKind, NarrativeNode, ScopedTag } from '../core/adventure-types.ts';
++import type { AdventureState, DefeatReactionRule, NarrativeKind, NarrativeNode, ScopedTag } from '../core/adventure-types.ts';
+ import type { Registry } from '../content/registry.ts';
+ import type { EffectContext } from './effects.ts';
+ import { RuleError } from '../core/errors.ts';
+@@ -31,11 +31,19 @@ export function narrativeTags(s:GameState,r:Registry):ScopedTag[] {
+   const service=environment(s,r).service;if(service.known&&has(`foundation:service.${service.value}`))live.push({role:'environment',tagId:`foundation:service.${service.value}`});
+   return [...new Map(live.map(t=>[key(t),t])).values()];
+ }
+-function nodeWeight(n: NarrativeNode, profile?: Registry['narrativeProfiles'][number], activeEnvTags?: Set<string>, opponentTraits?:Set<string>): number {
++function nodeWeight(
++  n: NarrativeNode,
++  profile?: Registry['narrativeProfiles'][number],
++  activeEnvTags?: Set<string>,
++  opponentTraits?: Set<string>,
++  enemy?: Registry['enemies'][number],
++): number {
+   return Math.max(1, n.weight + n.tendencies.reduce((sum, t) => {
+-    const profileBoost = profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0;
++    const profileBoost = (profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0)
++      + (profile?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0)
++      + (enemy?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0);
+     const envBoost = !profileBoost && activeEnvTags?.has(t.tagId) ? 1 : 0;
+-    const traitBoost=opponentTraits?.has(t.tagId)?1:0;
++    const traitBoost = opponentTraits?.has(t.tagId) ? 1 : 0;
+     return sum + (profileBoost + envBoost + traitBoost) * t.weight;
+   }, 0));
+ }
+@@ -43,12 +51,16 @@ function chooseNode(s:GameState,r:Registry,stage:string):NarrativeNode|undefined
+   const story=adventure(s).story!;story.stage=stage;
+   const activeScoped = narrativeTags(s,r);
+   const tags=new Set(activeScoped.map(key)),profile=r.narrativeProfiles.find(p=>p.id===story.profileId);
++  const enemy = profile?.enemyId ? r.enemies.find(e => e.id === profile.enemyId) : story.kind === 'defeat' && s.adventure?.lastCombat?.enemyId ? r.enemies.find(e => e.id === s.adventure!.lastCombat!.enemyId) : undefined;
+   const envTagIds = new Set(activeScoped.filter(t => t.role === 'environment').map(t => t.tagId));
+-  const opponentTraits=new Set(residentTraits(s,r,conversationResident(s)));
++  const opponentTraits=new Set([
++    ...residentTraits(s,r,conversationResident(s)),
++    ...activeScoped.filter(t => t.role === 'opponent').map(t => t.tagId),
++  ]);
+   let pool=r.narrativeNodes.filter(n=>(!profile?.nodeIds||profile.nodeIds.includes(n.id))&&n.kind===story.kind&&n.stage===stage&&(story.visits[n.id]??0)<n.maxVisits&&n.requiresTags.every(t=>tags.has(key(t)))&&!n.excludesTags.some(t=>tags.has(key(t)))&&n.conditions.every(c=>evaluate(c,s,r).pass));
+   if(!pool.length)return;
+   const priority=Math.max(...pool.map(n=>n.priority));pool=pool.filter(n=>n.priority===priority).sort((a,b)=>a.id.localeCompare(b.id,'en'));
+-  const weight=(n:NarrativeNode)=>nodeWeight(n, profile, envTagIds,opponentTraits);
++  const weight=(n:NarrativeNode)=>nodeWeight(n, profile, envTagIds, opponentTraits, enemy);
+   let roll=draw(s,`narrative:${story.instanceId}`)*pool.reduce((sum,n)=>sum+weight(n),0);
+   const selected=pool.find(n=>(roll-=weight(n))<0)??pool.at(-1)!;
+   if(selected.proseAssembly)story.prose=captureAProse(s,r,selected);else delete story.prose;
+@@ -60,23 +72,42 @@ export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:Narra
+   if(s.district?.combat||s.district?.scene||s.activeEventStack.length||s.adventure?.story)throw new RuleError('NARRATIVE_BUSY','先结束眼前的交锋或故事。');
+   const a=adventure(s),profile=profileId?r.narrativeProfiles.find(p=>p.id===profileId):kind==='defeat'?r.narrativeProfiles.find(p=>p.enemyId===a.lastCombat?.enemyId):undefined;
+   if(profileId&&!profile)throw new RuleError('NARRATIVE_PROFILE','行为档案不存在。');
++  const enemy = profile?.enemyId ? r.enemies.find(e => e.id === profile.enemyId) : kind === 'defeat' && a.lastCombat?.enemyId ? r.enemies.find(e => e.id === a.lastCombat!.enemyId) : undefined;
+   const resident=s.district?.residents.find(n=>n.id===s.district?.currentResidentId&&n.locationId===s.world.locationId);
+   if(kind==='conversation'&&!resident)throw new RuleError('NO_RESIDENT','交谈对象此刻不在这里。');
+-  const tags:ScopedTag[]=[...(kind==='defeat'?a.lastCombat?.tags??[]:[]),...(profile?.tags??[]).map(tagId=>({role:'opponent' as const,tagId})),...(profile?.goals.slice(0,1)??[]).map(tagId=>({role:'opponent' as const,tagId}))];
+-  let opponentName=kind==='defeat'?a.lastCombat?.enemyName??'对方':resident?.name??s.district?.residents.find(n=>n.locationId===s.world.locationId)?.name??'对方';
++  const rawTags:ScopedTag[]=[
++    ...(kind==='defeat'?a.lastCombat?.tags??[]:[]),
++    ...(profile?.tags??[]).map(tagId=>({role:'opponent' as const,tagId})),
++    ...(profile?.goals.slice(0,1)??[]).map(tagId=>({role:'opponent' as const,tagId})),
++    ...(profile?.attributeTags??[]).map(tagId=>({role:'opponent' as const,tagId})),
++    ...(profile?.fetishTags??[]).map(tagId=>({role:'opponent' as const,tagId})),
++    ...(kind==='defeat'?[...(enemy?.attributeTags??[]),...(enemy?.fetishTags??[])].map(tagId=>({role:'opponent' as const,tagId})):[]),
++  ];
++  const tags:ScopedTag[]=[...new Map(rawTags.map(t=>[key(t),t])).values()];
++  let opponentName=kind==='defeat'?a.lastCombat?.enemyName??enemy?.name??'对方':resident?.name??s.district?.residents.find(n=>n.locationId===s.world.locationId)?.name??'对方';
+   let fills:Record<string,string>|undefined;
+-  // fantasy 战败 8 玩法：入口小随机（对手人/兽/怪占位 + 定词材质 + 部位 + 通用 TF）
+-  if(profile?.id==='progression:profile.defeat.play'){
+-    const drawn=drawDefeatPlayFills(s,`defeat-play:fill:${c.transactionId}`);
+-    opponentName=opponentLabelForKind(drawn.opponentKind);
++  const comboCfg = profile?.defeatCombo ?? enemy?.defeatCombo;
++  const speciesKind = profile?.speciesKind ?? enemy?.speciesKind;
++  // fantasy 战败 8 玩法或开启了 autoCombo 的敌方档案：抽取对手种类 + 定词材质 + 部位 + 通用 TF
++  if(profile?.id==='progression:profile.defeat.play' || comboCfg?.autoCombo){
++    const drawn=drawDefeatPlayFills(s,`defeat-play:fill:${c.transactionId}`, {
++      speciesKind,
++      defeatCombo: comboCfg,
++    });
++    if(profile?.id==='progression:profile.defeat.play'){
++      opponentName=opponentLabelForKind(drawn.opponentKind);
++    }
+     fills={
+       opponentKind:drawn.opponentKind,
++      materialKey:drawn.materialKey,
+       material:drawn.material,
+       materialBase:drawn.materialBase,
+       dingci:drawn.dingci||'（无定词）',
++      materialTrace:drawn.materialTrace,
+       part:drawn.part,
+       tf:drawn.tf,
+       comboSample:drawn.comboSample,
++      playKey:drawn.playKey,
+     };
+   }
+   a.story={instanceId:c.transactionId,kind,stage:'start',nodeId:'progression:unselected',profileId:profile?.id??null,opponentName,actor:resident?{kind:'resident',id:resident.id}:profile?.npcId?{kind:'npc',id:profile.npcId}:null,tags,visits:{},log:[],steps:0,...(fills?{fills}:{})};
+@@ -103,25 +134,77 @@ export function narrativeTitle(s:GameState,r:Registry):string|undefined {
+   const story=s.adventure?.story,node=r.narrativeNodes.find(n=>n.id===story?.nodeId);
+   return story&&node?applyNarrativeFills(node.title,story,s,r):undefined;
+ }
++export function resolveDefeatReactionStage(targetStage: string | null, currentStage: string): string | null {
++  if (!targetStage) return null;
++  const m = /^(play-\d+)(?:-.+)?$/.exec(currentStage);
++  const prefix = m ? m[1]! : 'play-01';
++  return targetStage.replace('{playPrefix}', prefix);
++}
++export function matchingDefeatReactions(s: GameState, r: Registry): DefeatReactionRule[] {
++  const story = s.adventure?.story;
++  if (!story || story.kind !== 'defeat') return [];
++  return (r.defeatReactionRules ?? [])
++    .filter(rule => {
++      const stageMatch = rule.stages.some(st => st === '*' || story.stage === st || story.stage.endsWith('-' + st));
++      if (!stageMatch) return false;
++      return rule.playerConditions.every(c => evaluate(c, s, r).pass)
++        && rule.opponentConditions.every(c => evaluate(c, s, r).pass);
++    })
++    .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id, 'en'));
++}
+ export function narrativeActions(s:GameState,r:Registry):ActionDef[]|undefined {
+   const story=s.adventure?.story;if(!story)return;
+   const node=r.narrativeNodes.find(n=>n.id===story.nodeId)!;
+   const departed=structuredConversation(s,r)&&!conversationPresent(s);
+-  return node.choices.flatMap((choice,index)=>{
++  const baseChoices = node.choices.flatMap((choice,index)=>{
+     if(departed&&!safeConversationExit(choice))return [];
+     const costs=choice.effects.some(e=>e.op==='progression.act'||e.op==='var.change'&&e.amount<0);
+     const time=choice.effects.filter(e=>e.op==='clock.advance').reduce((n,e)=>n+(e.op==='clock.advance'?e.minutes:0),0);
+     return [{...r.action(`progression:action.story.${index}`),label:applyNarrativeFills(choice.label,story,s,r),conditions:choice.conditions,hint:costs?'按选项结算行动消耗':time?'按下方耗时执行':choice.next?'继续当前经历':'结束当前经历；无资源费用'}];
+   });
++  if (story.kind === 'defeat' && node.choices.length < 4) {
++    const reactions = matchingDefeatReactions(s, r);
++    if (reactions.length) {
++      const top = reactions[0]!;
++      const idx = node.choices.length;
++      baseChoices.push({
++        ...r.action(`progression:action.story.${idx}`),
++        label: applyNarrativeFills(top.choiceLabel, story, s, r),
++        conditions: [...top.playerConditions, ...top.opponentConditions],
++        hint: '双方属性对偶反应 · 动态触发分支',
++      });
++    }
++  }
++  return baseChoices;
+ }
+ /** Read the current option's public effects for cost and eligibility checks, without advancing it. */
+ export function publicActionEffects(action:ActionDef,s:GameState,r:Registry):Effect[] {
+-  return action.effects.flatMap(e=>e.op==='narrative.choose'
+-    ? r.narrativeNodes.find(n=>n.id===s.adventure?.story?.nodeId)?.choices[e.index]?.effects??[]
+-    : [e]);
++  return action.effects.flatMap(e=>{
++    if (e.op !== 'narrative.choose') return [e];
++    const node = r.narrativeNodes.find(n=>n.id===s.adventure?.story?.nodeId);
++    if (node && e.index === node.choices.length && s.adventure?.story?.kind === 'defeat') {
++      return matchingDefeatReactions(s, r)[0]?.effects ?? [];
++    }
++    return node?.choices[e.index]?.effects ?? [];
++  });
+ }
+ export function advanceNarrative(s:GameState,r:Registry,c:EffectContext,index:number,apply:(effects:import('../core/types.ts').Effect[],s:GameState,r:Registry,c:EffectContext)=>void):void {
+-  const a=adventure(s),story=a.story,node=r.narrativeNodes.find(n=>n.id===story?.nodeId),choice=node?.choices[index];
++  const a=adventure(s),story=a.story,node=r.narrativeNodes.find(n=>n.id===story?.nodeId);
++  let choice=node?.choices[index];
++  if (!choice && story?.kind === 'defeat' && node && index === node.choices.length) {
++    const top = matchingDefeatReactions(s, r)[0];
++    if (top) {
++      choice = {
++        label: top.choiceLabel,
++        resultText: top.resultText,
++        conditions: [...top.playerConditions, ...top.opponentConditions],
++        effects: top.effects,
++        setTags: top.setTags,
++        unsetTags: top.unsetTags,
++        next: resolveDefeatReactionStage(top.targetStage, story.stage),
++      };
++    }
++  }
+   if(!story||!node||!choice||!choice.conditions.every(x=>evaluate(x,s,r).pass))throw new RuleError('NARRATIVE_CHOICE','当前选择不可用。');
+   if(structuredConversation(s,r)&&!conversationPresent(s)&&!safeConversationExit(choice))throw new RuleError('CONVERSATION_LEFT','交谈对象已经离开。');
+   c.narrativeChoice={nodeId:node.id,index};
+@@ -171,10 +254,14 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
+   const node = r.narrativeNodes.find(n => n.id === story.nodeId);
+   if (!node) return undefined;
+   const profile = r.narrativeProfiles.find(p => p.id === story.profileId);
++  const enemy = profile?.enemyId ? r.enemies.find(e => e.id === profile.enemyId) : story.kind === 'defeat' && s.adventure?.lastCombat?.enemyId ? r.enemies.find(e => e.id === s.adventure!.lastCombat!.enemyId) : undefined;
+   const activeScoped = narrativeTags(s, r);
+   const tagSet = new Set(activeScoped.map(key));
+   const envTagIds = new Set(activeScoped.filter(t => t.role === 'environment').map(t => t.tagId));
+-  const opponentTraits=new Set(residentTraits(s,r,conversationResident(s)));
++  const opponentTraits=new Set([
++    ...residentTraits(s,r,conversationResident(s)),
++    ...activeScoped.filter(t => t.role === 'opponent').map(t => t.tagId),
++  ]);
+   const playerDerived = new Set(derivedSemantics(s, r, { entity: { kind: 'player' } }));
+   const worldDerived = new Set(derivedSemantics(s, r, { world: true }));
+   const locTags = new Set(s.worldInstance?.definition.locations.find(l => l.id === s.world.locationId)?.tags ?? []);
+@@ -189,9 +276,11 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
+       else if (worldDerived.has(t.tagId)) origin = '世界环境派生 (derivedSemantics)';
+       else if (locTags.has(t.tagId)) origin = '世界生成地点标签 (worldInstance.locations)';
+       else if (profTags.has(t.tagId)) origin = '地点环境档案 (locationProfiles)';
+-    } else if(t.role==='opponent'&&opponentTraits.has(t.tagId)){
++    } else if(t.role==='opponent'&&residentTraits(s,r,conversationResident(s)).includes(t.tagId)){
+       origin=`绑定居民性格 (${story.actor?.kind==='resident'?story.actor.id:''})`;
+-    } else if (t.role === 'opponent' && profile && (profile.tags.includes(t.tagId) || profile.goals.includes(t.tagId))) {
++    } else if (t.role === 'opponent' && enemy && ((enemy.attributeTags ?? []).includes(t.tagId) || (enemy.fetishTags ?? []).includes(t.tagId))) {
++      origin = `敌方属性/性癖倾向 (${enemy.id})`;
++    } else if (t.role === 'opponent' && profile && (profile.tags.includes(t.tagId) || profile.goals.includes(t.tagId) || (profile.attributeTags ?? []).includes(t.tagId) || (profile.fetishTags ?? []).includes(t.tagId))) {
+       origin = `对手/NPC行为档案 (${profile.id})`;
+     }
+     return { role: t.role, tagId: t.tagId, label: labelOf(t.tagId), origin };
+@@ -199,7 +288,9 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
+ 
+   const tendencyHits: NarrativeDebugTrace['tendencyHits'] = [];
+   for (const t of node.tendencies) {
+-    const profileBoost = profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0;
++    const profileBoost = (profile?.tendencies.find(x => x.tagId === t.tagId)?.weight ?? 0)
++      + (profile?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0)
++      + (enemy?.fetishTendencies?.find(x => x.tagId === t.tagId)?.weight ?? 0);
+     const envBoost = !profileBoost && envTagIds.has(t.tagId) ? 1 : 0;
+     const mult = profileBoost + envBoost + (opponentTraits.has(t.tagId)?1:0);
+     if (mult > 0) {
+@@ -246,7 +337,7 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
+     id: cand.id,
+     title: cand.title,
+     priority: cand.priority,
+-    weight: nodeWeight(cand, profile, envTagIds,opponentTraits),
++    weight: nodeWeight(cand, profile, envTagIds, opponentTraits, enemy),
+     selected: cand.id === node.id,
+   }));
+ 
+@@ -264,7 +355,7 @@ export function explainNarrativeNode(s: GameState, r: Registry): NarrativeDebugT
+     profileId: story.profileId,
+     activeTags,
+     baseWeight: node.weight,
+-    finalWeight: nodeWeight(node, profile, envTagIds,opponentTraits),
++    finalWeight: nodeWeight(node, profile, envTagIds, opponentTraits, enemy),
+     tendencyHits,
+     candidates,
+     rejected,
+diff --git a/src/persistence/codec.ts b/src/persistence/codec.ts
+index 6461922..947be3e 100755
+--- a/src/persistence/codec.ts
++++ b/src/persistence/codec.ts
+@@ -67,8 +67,12 @@ export function validateState(value: unknown, registry: Registry): asserts value
+   const player = object(state.player, ['variables', 'flags', 'body']);
+   const variables = object(player.variables, registry.variables.map(x => x.id));
+   for (const v of registry.variables) int(variables[v.id], v.min, v.max);
+-  const flags = object(player.flags, registry.flags.map(x => x.id));
+-  for (const v of registry.flags) if (typeof flags[v.id] !== 'boolean') bad('标记状态无效。');
++  const flags = object(player.flags);
++  for (const k of Object.keys(flags)) if (!registry.flags.some(f => f.id === k)) bad('状态中存在未知标记。');
++  for (const v of registry.flags) {
++    if (v.id.startsWith('progression:') && !(v.id in flags)) continue;
++    if (typeof flags[v.id] !== 'boolean') bad('标记状态无效。');
++  }
+   if (player.body !== null) validateBody(player.body, registry);
+   else if (registry.bodyTemplates.some(x => x.initial)) bad('存档缺少身体图。');
+   const eventIds: string[] = []; const activeIds: string[] = [];
+@@ -104,7 +108,7 @@ export function validateState(value: unknown, registry: Registry): asserts value
+     if (Object.keys(intentObj).some(k => k !== 'actionId' && k !== 'params')) bad('事务 intent 包含未知字段。');
+     if (intentObj.params && Object.keys(object(intentObj.params)).length) { const p=object(intentObj.params);if(Object.keys(p).some(k=>k!=='name'&&k!=='ageYears')||intentObj.actionId!=='district:action.create'||typeof p.name!=='string'||!p.name.trim()||p.name.length>40)bad('事务参数未登记。');if(p.ageYears!==undefined)int(p.ageYears,18,120); }
+     registry.action(string(intentObj.actionId) as Id);
+-    if(tx.narrativeChoice){const context=object(tx.narrativeChoice,['nodeId','index']);const index=int(context.index,0,3),node=registry.narrativeNodes.find(n=>n.id===context.nodeId);if(!node?.choices[index]||!registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.choose'&&e.index===index))bad('故事事务来源错配。');}
++    if(tx.narrativeChoice){const context=object(tx.narrativeChoice,['nodeId','index']);const index=int(context.index,0,3),node=registry.narrativeNodes.find(n=>n.id===context.nodeId);const hasChoice=!!node?.choices[index]||(node?.kind==='defeat'&&index===node.choices.length&&(registry.defeatReactionRules?.length??0)>0);if(!hasChoice||!registry.action(intentObj.actionId as Id).effects.some(e=>e.op==='narrative.choose'&&e.index===index))bad('故事事务来源错配。');}
+     if (stableJson(intent) !== tx.fingerprint) bad('事务指纹无效。');
+     const result = object(tx.result, ['ok', 'code', 'message', 'revision', 'requestId', 'text', 'changes']);
+     if (result.ok !== true || result.code !== 'COMMITTED' || result.revision !== expectedRevision || result.requestId !== requestId) bad('事务结果无效。');
+diff --git a/src/persistence/vars-migration.ts b/src/persistence/vars-migration.ts
+index 100c6fc..b802b2f 100755
+--- a/src/persistence/vars-migration.ts
++++ b/src/persistence/vars-migration.ts
+@@ -39,6 +39,7 @@ export function normalizePlayerFlags(state: GameState, registry: Registry): void
+   const vars = state.player.variables as Record<string, number>;
+   const hadRemaining = Object.prototype.hasOwnProperty.call(flags, SANITY_REMAINING_FLAG);
+   for (const def of registry.flags) {
++    if (def.id.startsWith('progression:')) continue;
+     if (!(def.id in flags)) flags[def.id] = def.initial;
+   }
+   for (const id of Object.keys(flags)) {
+diff --git a/tests/defeat-play.test.ts b/tests/defeat-play.test.ts
+index 8c01eb4..2bacb24 100755
+--- a/tests/defeat-play.test.ts
++++ b/tests/defeat-play.test.ts
+@@ -4,6 +4,8 @@ import { readFile } from 'node:fs/promises';
+ import { loadPacks } from '../src/content/loader.ts';
+ import { ActionExecutor } from '../src/engine/executor.ts';
+ import { createGameState } from '../src/engine/state.ts';
++import { evaluate } from '../src/engine/conditions.ts';
++import { SaveCodec, validateState } from '../src/persistence/codec.ts';
+ import type { Id } from '../src/core/types.ts';
+ 
+ const json = async (p: string) => JSON.parse(await readFile(new URL('../' + p, import.meta.url), 'utf8'));
+@@ -14,7 +16,7 @@ async function registryOf() {
+   return loadPacks(inputs);
+ }
+ 
+-test('defeat-play G1–G8 multi-beat prose fills loaded', async () => {
++test('defeat-play G1–G8 multi-beat prose fills loaded and free of meta-prose', async () => {
+   const fills = await json('content/nsfw-auto-combo/defeat-play-fills.json');
+   assert.equal(fills.format, 'aetheria-defeat-play-prose-fills');
+   assert.equal(fills.schemaVersion, 2);
+@@ -41,7 +43,8 @@ test('defeat-play G1–G8 multi-beat prose fills loaded', async () => {
+   assert.ok(draws.tfs.every((t: string) => t === '黏液化' || t === '黑胶化'));
+ 
+   const registry = await registryOf();
+-  for (const n of [1, 2, 3]) {
++  const internalPlayNames = ['束缚制服', '材质覆层转化', '侵犯插入', '口封感官剥夺', '产卵灌注', '公开羞辱', '主从调教', '多体围攻'];
++  for (let n = 1; n <= 8; n++) {
+     for (const stage of ['capture', 'press', 'peak', 'resolve']) {
+       assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.${stage}`), `missing g${n}.${stage}`);
+       assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.${stage}.adult`), `missing g${n}.${stage}.adult`);
+@@ -52,21 +55,18 @@ test('defeat-play G1–G8 multi-beat prose fills loaded', async () => {
+       const adult = registry.text(`progression:text.node.defeat.g${n}.${stage}.adult` as Id);
+       assert.ok(adult.length >= 40, adult.slice(0, 40));
+       assert.ok(!adult.includes('成人门'), 'adult body must not carry gate copy');
+-      assert.ok(!adult.includes('【可填成人'), 'adult should be filled prose');
+     }
+-  }
+-  for (const n of [4, 5, 6, 7, 8]) {
+-    for (const stage of ['capture', 'press', 'peak', 'resolve']) {
+-      assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.${stage}`), `missing g${n}.${stage}`);
+-      assert.ok(registry.narrativeNodes.some(node => node.id === `progression:node.defeat.g${n}.${stage}.adult`), `missing g${n}.${stage}.adult`);
+-      const body = registry.text(`progression:text.node.defeat.g${n}.${stage}` as Id);
+-      assert.ok(body.length >= 40, body.slice(0, 40));
+-      assert.ok(!body.includes('【槽'), 'should not be empty stub slot');
+-      assert.ok(!body.includes('故事侧可填'), 'should not be engine placeholder');
+-      assert.ok(!body.includes('可核对或回安全'), 'should not be stub checklist prose');
+-      const adult = registry.text(`progression:text.node.defeat.g${n}.${stage}.adult` as Id);
+-      assert.ok(adult.length >= 40, adult.slice(0, 40));
+-      assert.ok(!adult.includes('成人门'), 'adult body must not carry gate copy');
++    for (const suffix of ['resolve.escape', 'resolve.marked', 'resolve.tf']) {
++      const node = registry.narrativeNodes.find(nd => nd.id === `progression:node.defeat.g${n}.${suffix}`)!;
++      assert.ok(node, `missing g${n}.${suffix}`);
++      const body = registry.text(node.textKey);
++      for (const playName of internalPlayNames) {
++        assert.ok(!body.includes(playName), `${node.id} body must not leak internal play name ${playName}`);
++      }
++      assert.ok(!body.includes('这让脱困不再只有'), `${node.id} body must not contain engineering meta explanation`);
++      for (const ch of node.choices) {
++        assert.ok(!ch.label.includes('（'), `${node.id} choice label must not contain parenthetical explanation: ${ch.label}`);
++      }
+     }
+     assert.ok(!registry.narrativeNodes.some(node => node.id === `progression:node.defeat.play.0${n}.escalate`));
+   }
+@@ -76,11 +76,6 @@ test('defeat-play G1–G8 multi-beat prose fills loaded', async () => {
+   assert.ok(registry.narrativeNodes.some(n => n.id === 'progression:node.defeat.play.hub3'));
+   assert.ok(registry.narrativeNodes.some(n => n.id === 'progression:node.defeat.play.hub4'));
+   assert.equal(registry.action('progression:action.defeat.play' as Id).label, '试跑战败后 8 玩法');
+-
+-  const hub3 = registry.narrativeNodes.find(n => n.id === 'progression:node.defeat.play.hub3')!;
+-  assert.ok(hub3.choices.some(c => c.next === 'play-05'), 'hub3 must expose play-05 产卵灌注');
+-  assert.ok(hub3.choices.some(c => c.next === 'play-06'));
+-  assert.ok(hub3.choices.some(c => c.next === 'play-hub-last'), 'hub3 continues to hub4 for G7/G8');
+ });
+ 
+ test('defeat.play action opens hub under fantasy play entry tag', async () => {
+@@ -101,11 +96,39 @@ test('defeat.play action opens hub under fantasy play entry tag', async () => {
+   assert.ok(story.fills?.material, 'entry draw should fill material');
+   assert.ok(story.fills?.part, 'entry draw should fill part');
+   assert.ok(story.fills?.tf === '黏液化' || story.fills?.tf === '黑胶化');
+-  assert.doesNotMatch(story.opponentName, /占位/);assert.ok(story.opponentName.length>0);
++  assert.doesNotMatch(story.opponentName, /占位/);
++  assert.ok(story.opponentName.length > 0);
+ });
+ 
+-test('G1 four-beat chain: capture→press→peak→resolve with exit kept', async () => {
++test('G1–G8 beats mount and clear all 9 live state tags (progression:tag.state.*)', async () => {
+   const registry = await registryOf();
++  const expectedTags = [
++    'progression:tag.state.bound',
++    'progression:tag.state.coated',
++    'progression:tag.state.suspended',
++    'progression:tag.state.gagged',
++    'progression:tag.state.blindfolded',
++    'progression:tag.state.ear-sealed',
++    'progression:tag.state.sensory-deprived',
++    'progression:tag.state.cocooned',
++    'progression:tag.state.exposed',
++  ];
++  const mountedAcrossNodes = new Set<string>();
++  for (const node of registry.narrativeNodes) {
++    if (!node.id.startsWith('progression:node.defeat.')) continue;
++    for (const ch of node.choices) {
++      for (const st of ch.setTags ?? []) {
++        if (st.tagId.startsWith('progression:tag.state.')) {
++          mountedAcrossNodes.add(st.tagId);
++        }
++      }
++    }
++  }
++  for (const tagId of expectedTags) {
++    assert.ok(mountedAcrossNodes.has(tagId), `expected live state tag ${tagId} to be mounted in defeat nodes`);
++  }
++
++  // Runtime verification on G1 chain: bound on capture, suspended on press/peak, cleared on exit
+   const s = createGameState(registry, 17);
+   s.world.locationId = 'district:location.canal' as Id;
+   if (!s.world.knownLocationIds.includes(s.world.locationId)) s.world.knownLocationIds.push(s.world.locationId);
+@@ -121,26 +144,18 @@ test('G1 four-beat chain: capture→press→peak→resolve with exit kept', asyn
+   };
+ 
+   pick('进入：束缚制服');
+-  assert.equal(e.snapshot().adventure!.story!.stage, 'play-01');
+-  assert.ok(e.snapshot().adventure!.story!.nodeId.endsWith('defeat.g1.capture'));
+-  const captureText = e.view().sceneText;
+-  assert.ok(captureText.includes('束缚带') || captureText.includes('{opponent}') || captureText.length > 40, captureText.slice(0, 80));
+-  assert.ok(e.view().actions.some(a => a.definition.label === '结束当前经历，回到安全位置' && a.available));
+-
++  assert.ok(e.snapshot().adventure!.story!.tags.some(t => t.tagId === 'progression:tag.state.bound' && t.role === 'player'));
+   pick('继续：加压收紧');
+-  assert.equal(e.snapshot().adventure!.story!.stage, 'play-01-press');
+-  assert.ok(e.snapshot().adventure!.story!.nodeId.endsWith('defeat.g1.press'));
+-
++  assert.ok(e.snapshot().adventure!.story!.tags.some(t => t.tagId === 'progression:tag.state.suspended' && t.role === 'player'));
+   pick('继续：推向高峰');
+   assert.equal(e.snapshot().adventure!.story!.stage, 'play-01-peak');
+-
+   pick('继续：收束脱困');
+   assert.equal(e.snapshot().adventure!.story!.stage, 'play-01-resolve');
+-  assert.ok(e.snapshot().adventure!.story!.nodeId.endsWith('defeat.g1.resolve'));
+-  assert.ok(e.view().actions.some(a => a.definition.label === '结束当前经历，回到安全位置' && a.available));
++  pick('结束当前经历，回到安全位置');
++  assert.equal(e.snapshot().adventure!.story, null);
+ });
+ 
+-test('hub3 path reaches play-05 four-beat chain', async () => {
++test('hub3 path reaches play-05 four-beat chain and mounts bound/cocooned/coated tags', async () => {
+   const registry = await registryOf();
+   const s = createGameState(registry, 17);
+   s.world.locationId = 'district:location.canal' as Id;
+@@ -159,19 +174,14 @@ test('hub3 path reaches play-05 four-beat chain', async () => {
+   pick('查看其余玩法…');
+   assert.equal(e.snapshot().adventure!.story!.stage, 'play-hub-rest');
+   pick('进入：产卵灌注');
+-  const story = e.snapshot().adventure!.story!;
+-  assert.equal(story.stage, 'play-05');
+-  assert.ok(story.nodeId.endsWith('defeat.g5.capture'));
+-  assert.ok(e.view().actions.some(a => a.definition.label === '继续：加压收紧' && a.available));
+-  assert.ok(e.view().actions.some(a => a.definition.label === '结束当前经历，回到安全位置' && a.available));
++  assert.ok(e.snapshot().adventure!.story!.tags.some(t => t.tagId === 'progression:tag.state.bound'));
++  assert.ok(e.snapshot().adventure!.story!.tags.some(t => t.tagId === 'progression:tag.state.cocooned'));
+   pick('继续：加压收紧');
+   assert.equal(e.snapshot().adventure!.story!.stage, 'play-05-press');
+   pick('继续：推向高峰');
+-  assert.equal(e.snapshot().adventure!.story!.stage, 'play-05-peak');
++  assert.ok(e.snapshot().adventure!.story!.tags.some(t => t.tagId === 'progression:tag.state.coated'));
+   pick('继续：收束脱困');
+   assert.equal(e.snapshot().adventure!.story!.stage, 'play-05-resolve');
+-  assert.ok(e.snapshot().adventure!.story!.nodeId.endsWith('defeat.g5.resolve'));
+-  assert.ok(e.view().actions.some(a => a.definition.label === '结束当前经历，回到安全位置' && a.available));
+ });
+ 
+ test('two seeds (or redraws) produce different defeat-play fillings', async () => {
+@@ -183,12 +193,11 @@ test('two seeds (or redraws) produce different defeat-play fillings', async () =
+     const e = new ActionExecutor(registry, s);
+     assert.equal(e.performAction({ actionId: 'progression:action.defeat.play' as Id }, e.snapshot().meta.revision, tx).ok, true);
+     const story = e.snapshot().adventure!.story!;
+-    const visible = `${story.opponentName}|${story.fills!.material}|${story.fills!.part}|${story.fills!.tf}|${story.fills!.comboSample}`;
+-    return visible;
++    return `${story.opponentName}|${story.fills!.material}|${story.fills!.part}|${story.fills!.tf}|${story.fills!.comboSample}`;
+   };
+   const a = run(17, 'draw-a');
+   const b = run(99, 'draw-b');
+-  const c = run(17, 'draw-a'); // same seed+tx → same
++  const c = run(17, 'draw-a');
+   assert.equal(a, c, 'same seed+transactionId should redraw identically');
+   assert.notEqual(a, b, `expected different fills: ${a} vs ${b}`);
+ });
+@@ -202,3 +211,156 @@ test('gel defeat chain nodes remain untouched', async () => {
+   const gel = registry.narrativeProfiles.find(p => p.id === 'progression:profile.gel')!;
+   assert.ok(gel.defeatTags?.some(t => t.tagId === 'progression:tag.coat.stuck'));
+ });
++
++test('wild enemies, generic-only TF pipeline, E2 vine tfs:[], and E4 cocooned state work end-to-end', async () => {
++  const registry = await registryOf();
++  // Verify species TFs are absent and only generic slime/latex coatings + cleanse-coatings + tail-maintenance exist in progression pack
++  const progressionTfs = registry.transformations.filter(t => t.id.startsWith('progression:tf.'));
++  assert.deepEqual(
++    progressionTfs.map(t => t.id).sort(),
++    [
++      'progression:tf.cleanse-coatings',
++      'progression:tf.latex-coating',
++      'progression:tf.slime-coating',
++      'progression:tf.tail-maintenance',
++    ],
++    'species TFs must be removed; only generic slime/latex coatings and cleanse-coatings remain alongside tail-maintenance',
++  );
++  assert.throws(() => registry.action('progression:action.tf.cleanse-species' as Id));
++
++  // Verify E2 tentacle-vine has tfs: [] and mounts state.suspended + state.bound
++  const vine = registry.enemies.find(e => e.id === 'progression:enemy.tentacle-vine')!;
++  assert.deepEqual(vine.defeatCombo?.materials, ['M7', 'M8', 'M9']);
++  assert.deepEqual(vine.defeatCombo?.tfs, []);
++  const vineStartNode = registry.narrativeNodes.find(n => n.id === 'progression:node.defeat.wild.tentacle-vine')!;
++  const vineSetTags = vineStartNode.choices[0]!.setTags?.map(t => t.tagId) ?? [];
++  assert.ok(vineSetTags.includes('progression:tag.state.suspended' as Id));
++  assert.ok(vineSetTags.includes('progression:tag.state.bound' as Id));
++
++  // Verify E4 hive-crawler mounts state.cocooned
++  const crawlerStartNode = registry.narrativeNodes.find(n => n.id === 'progression:node.defeat.wild.hive-crawler')!;
++  const crawlerSetTags = crawlerStartNode.choices[0]!.setTags?.map(t => t.tagId) ?? [];
++  assert.ok(crawlerSetTags.includes('progression:tag.state.cocooned' as Id));
++
++  // Verify b0018 action lexicon has 倒挂 (0009) and 勒紧 (0010)
++  const b0018Action = await json('docs/tag-hub/nsfw-batches/nsfw-action.b0018.json');
++  assert.ok(b0018Action.entries.some((x: any) => x.id === 'lx.nsfw-action.b0018.0009' && x.name === '倒挂'));
++  assert.ok(b0018Action.entries.some((x: any) => x.id === 'lx.nsfw-action.b0018.0010' && x.name === '勒紧'));
++
++  // Combat defeat -> generic TF pipeline -> cleanse
++  const s2 = createGameState(registry, 23);
++  s2.world.locationId = 'aetheria:location.street' as Id;
++  if (!s2.world.knownLocationIds.includes(s2.world.locationId)) s2.world.knownLocationIds.push(s2.world.locationId);
++  s2.player.variables['core:health'] = 1;
++  s2.player.variables['core:defense'] = 0;
++  s2.player.variables['core:evasion'] = 0;
++  const e2 = new ActionExecutor(registry, s2);
++  assert.equal(e2.performAction({ actionId: 'progression:action.encounter.env' as Id }, e2.snapshot().meta.revision, 'wild-enc-2').ok, true);
++  const foughtEnemyId = e2.snapshot().district!.combat!.enemyId;
++  const foughtEnemy = registry.enemies.find(x => x.id === foughtEnemyId)!;
++  for (let i = 0; i < 10 && e2.snapshot().district!.combat; i++) {
++    e2.performAction({ actionId: 'district:action.combat.guard' as Id }, e2.snapshot().meta.revision, 'wild-guard-' + i);
++  }
++  const story = e2.snapshot().adventure!.story!;
++  assert.ok(story, 'should enter defeat story');
++  assert.equal(story.opponentName, foughtEnemy.name);
++  assert.ok(story.nodeId.startsWith('progression:node.defeat.wild.'), `expected wild start node, got ${story.nodeId}`);
++
++  // Verify opponent.matches condition evaluation
++  assert.equal(evaluate({ op: 'opponent.matches', enemyId: foughtEnemyId }, e2.snapshot(), registry).pass, true);
++  assert.equal(evaluate({ op: 'opponent.matches', speciesKind: foughtEnemy.speciesKind }, e2.snapshot(), registry).pass, true);
++  assert.equal(evaluate({ op: 'opponent.matches', attributeTag: foughtEnemy.attributeTags![0] }, e2.snapshot(), registry).pass, true);
++  assert.equal(evaluate({ op: 'opponent.matches', fetishTag: foughtEnemy.fetishTags![0] }, e2.snapshot(), registry).pass, true);
++
++  const pick2 = (labelSubstr: string, tx: string) => {
++    const view = e2.view();
++    const act = view.actions.find(a => a.definition.label.includes(labelSubstr) && a.available);
++    assert.ok(act, `missing choice ${labelSubstr}; have ${view.actions.map(a => a.definition.label).join(' | ')}`);
++    const res = e2.performAction({ actionId: act!.definition.id }, e2.snapshot().meta.revision, tx);
++    assert.equal(res.ok, true, res.message);
++  };
++  pick2('撑起双臂阻挡合拢的胶浪', 'wild-to-capture');
++  pick2('继续：加压收紧', 'wild-to-press');
++  pick2('继续：推向高峰', 'wild-to-peak');
++  pick2('继续：收束脱困', 'wild-to-resolve');
++  pick2('检视体表覆层与转化感应', 'wild-to-resolve-tf');
++  assert.ok(e2.snapshot().adventure!.story!.nodeId.endsWith('.resolve.tf'));
++  pick2('接纳黏液化覆层转化', 'wild-enqueue-slime-tf');
++  assert.equal(e2.snapshot().adventure!.story, null);
++  assert.equal(e2.snapshot().player.flags['progression:flag.aftermath.mark'], true);
++  assert.equal(e2.snapshot().player.flags['district:flag.injury'], false);
++  assert.ok(e2.snapshot().tfQueues.some(j => j.definitionId === 'progression:tf.slime-coating' && j.status === 'active'));
++
++  // Advance time via rest (2x 30 min = 60 min) to complete all 3 stages of progression:tf.slime-coating
++  assert.equal(e2.performAction({ actionId: 'progression:action.rest' as Id }, e2.snapshot().meta.revision, 'tf-rest-1').ok, true);
++  assert.equal(e2.performAction({ actionId: 'progression:action.rest' as Id }, e2.snapshot().meta.revision, 'tf-rest-2').ok, true);
++  const slimeJob = e2.snapshot().tfQueues.find(j => j.definitionId === 'progression:tf.slime-coating')!;
++  assert.equal(slimeJob.status, 'completed');
++  const leftArm = e2.snapshot().player.body!.parts.find(p => p.instanceId === 'arm.left')!;
++  assert.equal(leftArm.overrides?.materialId, 'progression:material.slime-mucus');
++
++  validateState(e2.snapshot(), registry);
++  const codec = new SaveCodec(registry);
++  const decoded = await codec.decode(await codec.encode(e2.snapshot()));
++  assert.equal(decoded.status, 'ready');
++
++  const cleanseAct = e2.view().actions.find(a => a.definition.id === 'progression:action.tf.cleanse-coatings' && a.available);
++  assert.ok(cleanseAct, 'cleanse coatings action should be available when coated');
++  assert.equal(e2.performAction({ actionId: 'progression:action.tf.cleanse-coatings' as Id }, e2.snapshot().meta.revision, 'tf-cleanse').ok, true);
++  assert.equal(e2.snapshot().player.body!.parts.find(p => p.instanceId === 'arm.left')!.overrides?.materialId, undefined);
++  assert.equal(e2.snapshot().player.flags['progression:flag.aftermath.mark'], false);
++});
++
++test('DefeatReactionRule player+enemy rules, threshold gte 12, resolve.marked, and separated B1/B2 aftermath chains', async () => {
++  const registry = await registryOf();
++  // 1. First-class DefeatReactionRule table: 4 player reactions + 3 enemy reactions = 7 rules
++  assert.equal(registry.defeatReactionRules.length, 7);
++  const vineSlip = registry.defeatReactionRules.find(r => r.id === 'progression:reaction.defeat.vine-slip')!;
++  const cocoonGuard = registry.defeatReactionRules.find(r => r.id === 'progression:reaction.defeat.cocoon-guard')!;
++  assert.deepEqual(vineSlip.playerConditions, [{ op: 'var.compare', id: 'core:speed', comparison: 'gte', value: 12 }]);
++  assert.deepEqual(cocoonGuard.playerConditions, [{ op: 'var.compare', id: 'core:defense', comparison: 'gte', value: 12 }]);
++  assert.ok(registry.defeatReactionRules.some(r => r.id === 'progression:reaction.defeat.enemy-vine-tighten'));
++  assert.ok(registry.defeatReactionRules.some(r => r.id === 'progression:reaction.defeat.enemy-mucus-recoat'));
++  assert.ok(registry.defeatReactionRules.some(r => r.id === 'progression:reaction.defeat.enemy-cocoon-wrap'));
++
++  // 2. Test resolve -> resolve.marked -> sets progression:flag.aftermath.mark (without TF) -> unlocks B1 & B2
++  const s = createGameState(registry, 31);
++  s.world.locationId = 'district:location.canal' as Id;
++  if (!s.world.knownLocationIds.includes(s.world.locationId)) s.world.knownLocationIds.push(s.world.locationId);
++  s.district!.profile = { name: '旅人', created: true, adultOptional: true };
++  const e = new ActionExecutor(registry, s);
++  assert.equal(e.performAction({ actionId: 'progression:action.defeat.play' as Id }, e.snapshot().meta.revision, 'mark-flow-start').ok, true);
++
++  const pick = (labelSubstr: string, tx: string) => {
++    const act = e.view().actions.find(a => a.definition.label.includes(labelSubstr) && a.available);
++    assert.ok(act, `missing choice ${labelSubstr}; have ${e.view().actions.map(a => a.definition.label).join(' | ')}`);
++    const res = e.performAction({ actionId: act!.definition.id }, e.snapshot().meta.revision, tx);
++    assert.equal(res.ok, true, res.message);
++  };
++  pick('进入：束缚制服', 'mark-g1');
++  pick('继续：加压收紧', 'mark-press');
++  pick('继续：推向高峰', 'mark-peak');
++  pick('继续：收束脱困', 'mark-resolve');
++  pick('带着残迹退回安全位置', 'mark-to-marked-node');
++  assert.equal(e.snapshot().adventure!.story!.nodeId, 'progression:node.defeat.g1.resolve.marked');
++  pick('拢紧衣襟护住手腕先退开', 'mark-exit-with-mark');
++  assert.equal(e.snapshot().adventure!.story, null);
++  assert.equal(e.snapshot().player.flags['progression:flag.aftermath.mark'], true);
++  assert.equal(e.snapshot().player.flags['district:flag.injury'], false);
++  assert.equal(e.snapshot().tfQueues.length, 0, 'resolve.marked must not enqueue TF');
++
++  // Verify B2 (aftermath.corruption) is strictly separated from TF (no residue-deepen jump, no AI meta text)
++  const corrNode = registry.narrativeNodes.find(n => n.id === 'progression:node.transformation.corruption.start')!;
++  const corrText = registry.text(corrNode.textKey);
++  assert.ok(!corrText.includes('不再直接塞入机械队列'), 'corruption text must not contain AI meta explanation');
++  assert.ok(corrNode.choices.every(c => c.next === null), 'corruption choices must not jump into TF residue-deepen');
++
++  const b1 = e.view().actions.find(a => a.definition.id === 'progression:action.residue.trace');
++  const b2 = e.view().actions.find(a => a.definition.id === 'progression:action.aftermath.corruption');
++  assert.ok(b1?.available, 'B1 residue.trace should be available');
++  assert.ok(b2?.available, 'B2 aftermath.corruption should be available when adultOptional is on');
++  assert.equal(e.performAction({ actionId: b2!.definition.id }, e.snapshot().meta.revision, 'b2-enter').ok, true);
++  assert.equal(e.snapshot().adventure!.story!.nodeId, 'progression:node.transformation.corruption.start');
++  pick('定神敛息，拂去脑海中的支配回响', 'b2-cleanse');
++  assert.equal(e.snapshot().player.flags['progression:flag.aftermath.mark'], false);
++});

@@ -1,0 +1,1661 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "underground",
+  "author": "author-b-v2",
+  "batchId": "b1-underground-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.underground.carbide-lamp",
+      "text": "一盏带黄铜反光碗的电石矿灯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "carbide-lamp"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "carbide-lamp"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.mine-cart-chock",
+      "text": "一块卡在窄轨矿车轮下的三角木楔",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "mine-cart-chock"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "mine-cart-chock"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.pickaxe-rack",
+      "text": "一排竖放在岩壁木架上的钢嘴鹤嘴锄",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "pickaxe-rack"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "pickaxe-rack"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.echo-sounding-rod",
+      "text": "一根用于敲击岩壁听音辨空的探岩铁钎",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "echo-sounding-rod"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "echo-sounding-rod"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.spore-filter-mask",
+      "text": "一只挂在木钉上的多层棉纱防尘面罩",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "spore-filter-mask"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "spore-filter-mask"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.wooden-pit-prop",
+      "text": "一根顶住巷道拱顶的粗壮松木支护柱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "wooden-pit-prop"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "wooden-pit-prop"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.canary-cage-hook",
+      "text": "一只悬在巷道高处的测风小铜笼挂钩",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "canary-cage-hook"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "canary-cage-hook"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.ore-sample-tray",
+      "text": "一盘按矿脉层位分格的岩石标本木盘",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "ore-sample-tray"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "ore-sample-tray"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.plumb-bob-reel",
+      "text": "一只缠着墨线与铅锤的垂准线轮",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "plumb-bob-reel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "plumb-bob-reel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.water-seep-gutter",
+      "text": "一道沿岩壁底部开凿的引水石沟",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "water-seep-gutter"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "water-seep-gutter"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.chalk-marker-box",
+      "text": "一盒用于在岔路口做记号的白色石笔",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "chalk-marker-box"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "chalk-marker-box"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.rope-winch-drum",
+      "text": "一台固定在竖井口的手动绞盘卷筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "rope-winch-drum"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "rope-winch-drum"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.glowing-fungus-cluster",
+      "text": "一簇在潮湿岩缝间泛着幽蓝微光的伞菌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认岩缝间当前生长有泛幽蓝微光的伞菌簇。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.dripping-stalactite",
+      "text": "一根尖端正悬着水珠欲滴的灰白钟乳石",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认钟乳石尖端当前悬有水珠。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.half-filled-ore-cart",
+      "text": "一辆装了半车青灰矿石的窄轨翻斗矿车",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认窄轨矿车内当前装有半车青灰矿石。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.chalk-arrow-wall",
+      "text": "一面画着白色粉笔指向箭头的岔道岩壁",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认岔道岩壁表面当前画有白色粉笔箭头。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.rusted-track-switch",
+      "text": "一处扳柄磨得发亮的窄轨分道器",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认窄轨分道器扳柄表面磨得发亮。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.moss-covered-step",
+      "text": "一级覆着薄层暗绿地衣的凿石台阶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认凿石台阶表面当前覆有暗绿地衣。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.hanging-water-flask",
+      "text": "一只挂在支护木柱钉上的扁圆锡水壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认扁圆锡水壶当前挂在支护木柱铁钉上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.crystal-geode-half",
+      "text": "一枚切开后露出紫晶簇内腔的晶洞石",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认晶洞石已切开并露出内部紫晶簇。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.oil-wick-tin",
+      "text": "一盒浸泡在菜籽油里的备用棉灯芯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认铁盒内当前装有浸在菜籽油里的棉灯芯。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.sounding-hammer",
+      "text": "一把锤面留有白色石英擦痕的地质小锤",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认地质小锤锤面留有石英擦痕。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.vent-cloth-curtain",
+      "text": "一幅挂在巷道口导引风流的厚帆布风障",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认巷道口当前挂有厚帆布风障。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.timber-wedge-pile",
+      "text": "一摞塞在松木支护柱顶端的硬木紧固楔",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认松木支护柱顶端当前塞有硬木紧固楔。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.prop.underground.blind-fish-jar",
+      "text": "一只盛着洞穴清水的玻璃观察瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认玻璃观察瓶内当前盛有洞穴清水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.damp-limestone-earthy",
+      "text": "潮湿石灰岩与地下泥土混合的阴凉土腥气",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "damp-limestone-earthy"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "damp-limestone-earthy"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.fungal-spore-musty",
+      "text": "洞窟菌类散发出的淡淡湿木与菌菇气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "fungal-spore-musty"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "fungal-spore-musty"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.carbide-acetylene-trace",
+      "text": "电石矿灯加水反应时飘出的微弱电石气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有正在加水反应的电石矿灯。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.cave-water-drip",
+      "text": "洞顶渗水滴落积水潭时规律而空灵的滴答声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "cave-water-drip"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "cave-water-drip"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.distant-pick-echo",
+      "text": "深处巷道传来的层层衰减的敲击回声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "distant-pick-echo"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "distant-pick-echo"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.mine-cart-rail-clatter",
+      "text": "窄轨矿车碾过铁轨接缝时的金属滚动声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认当前有窄轨矿车正在轨道上推行。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.bioluminescent-blue-glow",
+      "text": "岩壁荧光菌丛透出的柔和幽蓝冷光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "bioluminescent-blue-glow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "bioluminescent-blue-glow"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.lamp-reflector-beam",
+      "text": "矿灯反光碗在幽暗巷道里切出的一束暖黄光柱",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "lamp-reflector-beam"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "lamp-reflector-beam"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.wet-calcite-sparkle",
+      "text": "矿灯光束扫过潮湿方解石晶面时的细碎闪光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认现场有矿灯光束正照向潮湿方解石晶面。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.subterranean-cool-constant",
+      "text": "地底深处不受地表昼夜影响的恒定阴凉感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "subterranean-cool-constant"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "subterranean-cool-constant"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.deep-shaft-cold-draft",
+      "text": "从下部盲竖井涌上来的沁骨冷风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色当前靠近盲竖井口并有冷风涌上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.lamp-hand-warmth",
+      "text": "手掌拢在电石矿灯铜罐外壁时的微温感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色手掌当前拢在开启的矿灯外壁旁。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.humid-cave-air",
+      "text": "高湿度洞穴空气附在皮肤上的微潮腻感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "humid-cave-air"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "humid-cave-air"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.rough-chiseled-rock",
+      "text": "指尖擦过人工开凿岩壁时的粗粝棱角感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "rough-chiseled-rock"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "rough-chiseled-rock"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    },
+    {
+      "id": "word.sense.underground.slippery-moss-stone",
+      "text": "鞋底踩在渗水石阶薄苔上的湿滑感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underground"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色当前踩在有渗水薄苔的石阶上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underground"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.underground.carbide-lamp",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.underground.damp-limestone-earthy",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在荧光菌洞矿道驿站，你留意到在场人员的手。对方把工具归回原位。你注意到一盏带黄铜反光碗的电石矿灯，旁侧备有过滤水。你察觉到潮湿石灰岩与地下泥土混合的阴凉土腥气。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.underground.mine-cart-chock",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.underground.cave-water-drip",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在荧光菌洞矿道驿站，你留意到在场人员的手。对方将工具放回原处。你注意到一块卡在窄轨矿车轮下的三角木楔，旁侧备有过滤水。你察觉到洞顶渗水滴落积水潭时规律而空灵的滴答声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.underground.damp-limestone-earthy",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在荧光菌洞矿道驿站，你察觉到潮湿石灰岩与地下泥土混合的阴凉土腥气。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.underground.cave-water-drip",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在荧光菌洞矿道驿站，你察觉到洞顶渗水滴落积水潭时规律而空灵的滴答声。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B1（题材：underground / 地底幽窟）正式配额交付，共40条（environment.prop 25条：draft 12 / hold 13；environment.sense.* 五子池各3条共15条：draft 8 / hold 7；全批合计 draft 20条、hold 20条）。每条均带 scene.setting eq underground 前置，手工预览标为 manual/hypothetical-only。"
+}

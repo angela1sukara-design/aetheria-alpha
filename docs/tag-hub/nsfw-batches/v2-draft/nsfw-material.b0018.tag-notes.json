@@ -1,0 +1,90 @@
+{
+  "sourceFormat": "aetheria-nsfw-lexicon-batch",
+  "sourceSchemaVersion": 1,
+  "batchId": "nsfw-material.b0018",
+  "mappedAt": "2026-10-17T06:01:43.829Z",
+  "status": "pending-review",
+  "runtime": "not-installed",
+  "droppedFreeTags": [
+    {
+      "id": "lx.nsfw-material.b0018.0001",
+      "name": "活藤",
+      "v1Tags": [
+        "定词挂前",
+        "植物",
+        "藤蔓"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0018.0002",
+      "name": "缠绕茎",
+      "v1Tags": [
+        "定词挂前",
+        "植物",
+        "藤蔓"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0018.0003",
+      "name": "藤条",
+      "v1Tags": [
+        "定词挂前",
+        "植物",
+        "束缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0018.0004",
+      "name": "丝茧",
+      "v1Tags": [
+        "定词挂前",
+        "虫巢",
+        "茧缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0018.0005",
+      "name": "蛞蝓黏液",
+      "v1Tags": [
+        "定词挂前",
+        "黏液",
+        "M1对齐"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0018.0006",
+      "name": "花蜜黏液",
+      "v1Tags": [
+        "定词挂前",
+        "植物",
+        "黏液"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0018.0007",
+      "name": "活体蛛丝",
+      "v1Tags": [
+        "定词挂前",
+        "丝线",
+        "束缚"
+      ],
+      "usage": "material"
+    },
+    {
+      "id": "lx.nsfw-material.b0018.0008",
+      "name": "温热蜡液",
+      "v1Tags": [
+        "定词挂前",
+        "覆层"
+      ],
+      "usage": "material"
+    }
+  ],
+  "note": "tags[] 为空：v1 中文自由标签不是运行字典 ID。审定后再挂 foundation:* 或编辑概念。"
+}

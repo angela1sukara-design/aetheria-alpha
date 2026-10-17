@@ -1,0 +1,1661 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "task": "B1",
+  "theme": "underwater",
+  "author": "author-b-v2",
+  "batchId": "b1-underwater-v1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.prop.underwater.bathysphere-hatch-wheel",
+      "text": "一只带黄铜锁舌的水密舱门转轮",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bathysphere-hatch-wheel"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bathysphere-hatch-wheel"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.depth-pressure-dial",
+      "text": "一只标注水深帕数的荧光水压表",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "depth-pressure-dial"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "depth-pressure-dial"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.diving-weight-belt",
+      "text": "一条挂在装备架上的铅块配重腰带",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "diving-weight-belt"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "diving-weight-belt"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.sonar-ping-console",
+      "text": "一台显示回波距离的声呐测距屏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "sonar-ping-console"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "sonar-ping-console"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.kelp-drying-rack",
+      "text": "一排晾挂深海海带样本的耐蚀钛架",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "kelp-drying-rack"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "kelp-drying-rack"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.dehumidifier-unit",
+      "text": "一台持续收集空气水汽的冷凝除湿机",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "dehumidifier-unit"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "dehumidifier-unit"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.bilge-hand-pump",
+      "text": "一台安装在底舱沟槽边的手动排水泵",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bilge-hand-pump"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "bilge-hand-pump"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.coral-specimen-jar",
+      "text": "一只盛着海水与珊瑚枝的密封玻璃缸",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "coral-specimen-jar"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "coral-specimen-jar"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.copper-diving-torch",
+      "text": "一支带双层石英灯头的水下强光手电",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "copper-diving-torch"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "copper-diving-torch"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.ballast-valve-lever",
+      "text": "一根控制外舱压载水箱进排水的铜拉杆",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "ballast-valve-lever"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "ballast-valve-lever"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.salinity-hydrometer",
+      "text": "一支插在量筒架上的海水盐度比重计",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "salinity-hydrometer"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "salinity-hydrometer"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.emergency-air-tank",
+      "text": "一瓶固定在舱壁卡座上的备用压缩气瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "emergency-air-tank"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "prop.kind",
+          "value": "emergency-air-tank"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.beaded-dome-glass",
+      "text": "一面外侧游过发光鱼群、内侧凝着微露的弧形厚玻璃窗",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认弧形玻璃窗外当前有发光鱼群且内侧凝有微露。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.dripping-diving-suit",
+      "text": "一套挂在沥水架上还在往下滴落海水的橡胶潜水服",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认橡胶潜水服当前挂在沥水架上且正在滴水。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.glowing-jellyfish-tank",
+      "text": "一只水体泛着幽青生物荧光的水母培养柱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认培养柱内当前有泛幽青荧光的水母。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.salt-crusted-valve",
+      "text": "一只阀杆边缘结着白色海盐结晶的海水取样阀",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认海水取样阀边缘当前结有白色海盐结晶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.brass-helmet-stand",
+      "text": "一顶观察窗擦得透亮的十二螺栓重潜铜头盔",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认重潜铜头盔样式并搁在专用托架上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.sonar-paper-roll",
+      "text": "一卷正在记录海底地形深度曲线的声呐热敏纸",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认声呐记录仪当前正在输出深度曲线纸。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.nautilus-shell-model",
+      "text": "一件摆在海图桌角的鹦鹉螺腔室剖面标本",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认海图桌角当前摆有鹦鹉螺剖面标本。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.wet-flippers-pair",
+      "text": "一对靠在排水格栅旁沾着细海沙的橡胶脚蹼",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认橡胶脚蹼当前靠在排水格栅旁且沾有海沙。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.air-hose-reel",
+      "text": "一盘缠绕在铜滚筒上的高压供气软管",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认高压供气软管当前缠绕在铜滚筒上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.manganese-nodule-tray",
+      "text": "一盘刚从海床采集上来的黑褐色多金属结核",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认托盘内当前装有海床采集的多金属结核。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.seawater-sample-rack",
+      "text": "一排贴着不同水层深度标签的玻璃采水瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认架上摆有贴着深度标签的玻璃采水瓶。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.damp-logbook-binder",
+      "text": "一本装在防水透明夹套里的潜航值更日志",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认潜航值更日志当前装在防水透明夹套内。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.prop.underwater.periscope-eyepiece",
+      "text": "一具橡胶眼罩朝下折叠的穹顶顶视潜望镜",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认顶视潜望镜橡胶眼罩当前朝下折叠。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.briny-seawater-scent",
+      "text": "减压过渡舱飘来的淡淡海盐与海水腥咸味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "briny-seawater-scent"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "briny-seawater-scent"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.rubber-seal-odor",
+      "text": "潜水装具与氯丁橡胶密封圈特有的微涩气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "rubber-seal-odor"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.smell",
+          "value": "rubber-seal-odor"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.kelp-iodine-aroma",
+      "text": "样本架上海藻标本散发出的浓郁海带碘香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认样本架上当前晾有新鲜海藻标本。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.deep-current-thrum",
+      "text": "穹顶厚重外壳外侧深海暗流掠过的低沉嗡鸣",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "deep-current-thrum"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "deep-current-thrum"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.sonar-regular-ping",
+      "text": "测距台间歇发出的清脆水声脉冲回响",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "sonar-regular-ping"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.sound",
+          "value": "sonar-regular-ping"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.hull-pressure-creak",
+      "text": "耐压钢肋在水压微变时发出的短促金属应力声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认耐压钢肋当前因水压微变发出声响。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.abyssal-cerulean-dim",
+      "text": "透过厚重穹顶玻璃洒入廊内的深海幽蓝微光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "abyssal-cerulean-dim"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "abyssal-cerulean-dim"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.caustic-water-ripples",
+      "text": "舱内浅水池与探照灯折射在舱壁上的游动水波纹",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "caustic-water-ripples"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.light",
+          "value": "caustic-water-ripples"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.bioluminescent-shoal-flash",
+      "text": "窗外深海发光鱼群转向时掠过的一片青色荧光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认窗外当前有发光鱼群转向发出荧光。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.seabed-chill-radiation",
+      "text": "贴近玻璃穹顶时感受到的深海低温辐射寒意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "seabed-chill-radiation"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.thermal",
+          "value": "seabed-chill-radiation"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.dehumidifier-warm-exhaust",
+      "text": "除湿机出风口吹出的温和干燥热风",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认除湿机当前正在运转并吹出暖风。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.cold-seawater-pipe",
+      "text": "未包覆保温棉的海水取样管外壁刺骨的冰凉",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认海水取样管当前有深层冷水流过。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.slight-salt-film",
+      "text": "空气中微量海盐结晶附在手背上的微涩触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "slight-salt-film"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "slight-salt-film"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.steady-deck-hum",
+      "text": "脚下耐压甲板随环控与水泵运转传来的轻微震感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "steady-deck-hum"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [
+        {
+          "group": "sense.touch",
+          "value": "steady-deck-hum"
+        }
+      ],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    },
+    {
+      "id": "word.sense.underwater.slick-wet-grating",
+      "text": "鞋底踩在沥水区防滑格栅水膜上的湿润感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "underwater"
+        }
+      ],
+      "pendingFacts": [
+        "确认角色当前踩在沥水区带有水膜的格栅上。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.underwater"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.store-tools",
+        "word.prop.underwater.bathysphere-hatch-wheel",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.underwater.briny-seawater-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在海底玻璃穹顶观测廊，你留意到在场人员的手。对方把工具归回原位。你注意到一只带黄铜锁舌的水密舱门转轮，旁侧备有过滤水。你察觉到减压过渡舱飘来的淡淡海盐与海水腥咸味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.observation",
+      "entryIds": [
+        "runtime:display.place",
+        "runtime:display.actor",
+        "word.part.generic.hand",
+        "word.action.generic.return-tools",
+        "word.prop.underwater.depth-pressure-dial",
+        "word.qualifier.generic.filtered",
+        "word.material.generic.water",
+        "word.sense.underwater.deep-current-thrum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在海底玻璃穹顶观测廊，你留意到在场人员的手。对方将工具放回原处。你注意到一只标注水深帕数的荧光水压表，旁侧备有过滤水。你察觉到穹顶厚重外壳外侧深海暗流掠过的低沉嗡鸣。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.underwater.briny-seawater-scent",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 7,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在海底玻璃穹顶观测廊，你察觉到减压过渡舱飘来的淡淡海盐与海水腥咸味。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.demo.sense",
+      "entryIds": [
+        "runtime:display.place",
+        "word.sense.underwater.deep-current-thrum",
+        "runtime:display.exit"
+      ],
+      "fixtureId": "neutral-workshop-v1",
+      "seed": 8,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在海底玻璃穹顶观测廊，你察觉到穹顶厚重外壳外侧深海暗流掠过的低沉嗡鸣。你可以结束观察。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "[aetheria-install/1 lane=words status=authored] 任务卡B1（题材：underwater / 深海穹顶）正式配额交付，共40条（environment.prop 25条：draft 12 / hold 13；environment.sense.* 五子池各3条共15条：draft 8 / hold 7；全批合计 draft 20条、hold 20条）。每条均带 scene.setting eq underwater 前置，手工预览标为 manual/hypothetical-only。"
+}

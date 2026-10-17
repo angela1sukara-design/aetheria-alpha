@@ -1,0 +1,85 @@
+{
+  "format": "aetheria-nsfw-lexicon-batch",
+  "schemaVersion": 1,
+  "library": "nsfw-gear",
+  "batchId": "nsfw-gear.b0018",
+  "source": {
+    "producer": "ai-nsfw",
+    "model": "Gemini",
+    "theme": "查缺补齐 · 脚铐/踝铐与拘束具 · b0018"
+  },
+  "entries": [
+    {
+      "subcategory": "踝部拘束具",
+      "name": "脚铐",
+      "description": "扣合于双侧足踝之间的刚性或链式金属拘束具，限制步幅与踢踹动作。待审定。",
+      "tags": [
+        "拘束具",
+        "足踝"
+      ],
+      "usage": "gear",
+      "id": "lx.nsfw-gear.b0018.0001",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "踝部拘束具",
+      "name": "踝铐",
+      "description": "贴合单侧或双侧脚踝凹槽的紧固环扣，可连接地面锚点、牵引索或腿根束带。待审定。",
+      "tags": [
+        "拘束具",
+        "足踝"
+      ],
+      "usage": "gear",
+      "id": "lx.nsfw-gear.b0018.0002",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "全身拘束具",
+      "name": "连体拘束带",
+      "description": "自肩背斜跨胸侧、腰腹至腿根的多点收束皮带或胶带组，固定躯干姿态。待审定。",
+      "tags": [
+        "拘束具",
+        "躯干"
+      ],
+      "usage": "gear",
+      "id": "lx.nsfw-gear.b0018.0003",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "下肢拘束具",
+      "name": "分腿横杆",
+      "description": "连接于双侧膝弯或脚踝内侧的定距横杆，迫使下肢保持敞开无法并拢。待审定。",
+      "tags": [
+        "拘束具",
+        "下肢"
+      ],
+      "usage": "gear",
+      "id": "lx.nsfw-gear.b0018.0004",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "感官遮蔽具",
+      "name": "软胶耳塞",
+      "description": "贴合耳道轮廓的隔音软胶塞，用于阻断外部声响与放大体表触觉。待审定。",
+      "tags": [
+        "感官遮蔽",
+        "耳部"
+      ],
+      "usage": "gear",
+      "id": "lx.nsfw-gear.b0018.0005",
+      "category": "nsfw-gear"
+    },
+    {
+      "subcategory": "感官遮蔽具",
+      "name": "遮光眼罩",
+      "description": "覆合眼眶与鼻梁的软垫眼罩，完全隔绝外部光线。待审定。",
+      "tags": [
+        "感官遮蔽",
+        "眼部"
+      ],
+      "usage": "gear",
+      "id": "lx.nsfw-gear.b0018.0006",
+      "category": "nsfw-gear"
+    }
+  ]
+}
