@@ -1,0 +1,255 @@
+{
+  "format": "aetheria-wild-defeat-candidates",
+  "schemaVersion": 2,
+  "splitNote": "A4 出口不回 B1；恶堕走 wild.defeat.corruption.*",
+  "comboSource": "src/engine/wild-defeat-draws.ts",
+  "proseFillsApplied": 54,
+  "enemies": [
+    {
+      "slug": "saliva_wolf",
+      "profileNs": "beast",
+      "displayName": "兽径涎狼",
+      "enemyId": "progression:enemy.saliva_wolf",
+      "profileId": "progression:profile.beast.saliva_wolf",
+      "corruptionProfileId": "progression:profile.beast.saliva_wolf.corruption",
+      "nodeIdsA": [
+        "progression:node.defeat.beast.saliva_wolf.capture",
+        "progression:node.defeat.beast.saliva_wolf.press",
+        "progression:node.defeat.beast.saliva_wolf.press.adult",
+        "progression:node.defeat.beast.saliva_wolf.peak",
+        "progression:node.defeat.beast.saliva_wolf.peak.adult",
+        "progression:node.defeat.beast.saliva_wolf.resolve"
+      ],
+      "nodeIdsB": [
+        "progression:node.defeat.beast.saliva_wolf.corruption.seed",
+        "progression:node.defeat.beast.saliva_wolf.corruption.slip",
+        "progression:node.defeat.beast.saliva_wolf.corruption.sink"
+      ],
+      "defeatTag": "defeat.beast.saliva_wolf",
+      "flags": {
+        "defeatDone": "defeat.beast.saliva_wolf.done",
+        "markUnwiped": "saliva_wolf.neck_unwiped",
+        "corruption": "corruption.beast.saliva_wolf"
+      },
+      "combos": [
+        {
+          "key": "saliva_neck",
+          "tagKey": "beast.combo.saliva_neck"
+        },
+        {
+          "key": "fur_waist",
+          "tagKey": "beast.combo.fur_waist"
+        },
+        {
+          "key": "saliva_thigh",
+          "tagKey": "beast.combo.saliva_thigh"
+        }
+      ]
+    },
+    {
+      "slug": "forest_slug",
+      "profileNs": "beast",
+      "displayName": "林缘蛞蝓兽",
+      "enemyId": "progression:enemy.forest_slug",
+      "profileId": "progression:profile.beast.forest_slug",
+      "corruptionProfileId": "progression:profile.beast.forest_slug.corruption",
+      "nodeIdsA": [
+        "progression:node.defeat.beast.forest_slug.capture",
+        "progression:node.defeat.beast.forest_slug.press",
+        "progression:node.defeat.beast.forest_slug.press.adult",
+        "progression:node.defeat.beast.forest_slug.peak",
+        "progression:node.defeat.beast.forest_slug.peak.adult",
+        "progression:node.defeat.beast.forest_slug.resolve"
+      ],
+      "nodeIdsB": [
+        "progression:node.defeat.beast.forest_slug.corruption.seed",
+        "progression:node.defeat.beast.forest_slug.corruption.slip",
+        "progression:node.defeat.beast.forest_slug.corruption.sink"
+      ],
+      "defeatTag": "defeat.beast.forest_slug",
+      "flags": {
+        "defeatDone": "defeat.beast.forest_slug.done",
+        "markUnwiped": "forest_slug.coat_unwiped",
+        "corruption": "corruption.beast.forest_slug"
+      },
+      "combos": [
+        {
+          "key": "slug_ankle_coat",
+          "tagKey": "beast.combo.forest_slug.ankle"
+        },
+        {
+          "key": "slug_thigh_drip",
+          "tagKey": "beast.combo.forest_slug.thigh"
+        },
+        {
+          "key": "slug_waist_layer",
+          "tagKey": "beast.combo.forest_slug.waist"
+        }
+      ]
+    },
+    {
+      "slug": "tentacle_vine",
+      "profileNs": "monster",
+      "displayName": "触手藤",
+      "enemyId": "progression:enemy.tentacle_vine",
+      "profileId": "progression:profile.monster.tentacle_vine",
+      "corruptionProfileId": "progression:profile.monster.tentacle_vine.corruption",
+      "nodeIdsA": [
+        "progression:node.defeat.monster.tentacle_vine.capture",
+        "progression:node.defeat.monster.tentacle_vine.press",
+        "progression:node.defeat.monster.tentacle_vine.press.adult",
+        "progression:node.defeat.monster.tentacle_vine.peak",
+        "progression:node.defeat.monster.tentacle_vine.peak.adult",
+        "progression:node.defeat.monster.tentacle_vine.resolve"
+      ],
+      "nodeIdsB": [
+        "progression:node.defeat.monster.tentacle_vine.corruption.seed",
+        "progression:node.defeat.monster.tentacle_vine.corruption.slip",
+        "progression:node.defeat.monster.tentacle_vine.corruption.sink"
+      ],
+      "defeatTag": "defeat.monster.tentacle_vine",
+      "flags": {
+        "defeatDone": "defeat.monster.tentacle_vine.done",
+        "markUnwiped": "tentacle_vine.bind_unwiped",
+        "corruption": "corruption.monster.tentacle_vine"
+      },
+      "combos": [
+        {
+          "key": "vine_wrist_bind",
+          "tagKey": "monster.combo.tentacle_vine.wrist"
+        },
+        {
+          "key": "vine_neck_tight",
+          "tagKey": "monster.combo.tentacle_vine.neck"
+        },
+        {
+          "key": "vine_hang_back",
+          "tagKey": "monster.combo.tentacle_vine.hang"
+        }
+      ]
+    },
+    {
+      "slug": "bog_slime",
+      "profileNs": "monster",
+      "displayName": "沼面软泥",
+      "enemyId": "progression:enemy.bog_slime",
+      "profileId": "progression:profile.monster.bog_slime",
+      "corruptionProfileId": "progression:profile.monster.bog_slime.corruption",
+      "nodeIdsA": [
+        "progression:node.defeat.monster.bog_slime.capture",
+        "progression:node.defeat.monster.bog_slime.press",
+        "progression:node.defeat.monster.bog_slime.press.adult",
+        "progression:node.defeat.monster.bog_slime.peak",
+        "progression:node.defeat.monster.bog_slime.peak.adult",
+        "progression:node.defeat.monster.bog_slime.resolve"
+      ],
+      "nodeIdsB": [
+        "progression:node.defeat.monster.bog_slime.corruption.seed",
+        "progression:node.defeat.monster.bog_slime.corruption.slip",
+        "progression:node.defeat.monster.bog_slime.corruption.sink"
+      ],
+      "defeatTag": "defeat.monster.bog_slime",
+      "flags": {
+        "defeatDone": "defeat.monster.bog_slime.done",
+        "markUnwiped": "bog_slime.wrap_unwiped",
+        "corruption": "corruption.monster.bog_slime"
+      },
+      "combos": [
+        {
+          "key": "slime_crotch_coat",
+          "tagKey": "monster.combo.bog_slime.crotch"
+        },
+        {
+          "key": "slime_waist_mold",
+          "tagKey": "monster.combo.bog_slime.waist"
+        },
+        {
+          "key": "slime_lip_seal",
+          "tagKey": "monster.combo.bog_slime.lip"
+        }
+      ]
+    },
+    {
+      "slug": "hive_crawler",
+      "profileNs": "beast",
+      "displayName": "虫巢爬行者",
+      "enemyId": "progression:enemy.hive_crawler",
+      "profileId": "progression:profile.beast.hive_crawler",
+      "corruptionProfileId": "progression:profile.beast.hive_crawler.corruption",
+      "nodeIdsA": [
+        "progression:node.defeat.beast.hive_crawler.capture",
+        "progression:node.defeat.beast.hive_crawler.press",
+        "progression:node.defeat.beast.hive_crawler.press.adult",
+        "progression:node.defeat.beast.hive_crawler.peak",
+        "progression:node.defeat.beast.hive_crawler.peak.adult",
+        "progression:node.defeat.beast.hive_crawler.resolve"
+      ],
+      "nodeIdsB": [
+        "progression:node.defeat.beast.hive_crawler.corruption.seed",
+        "progression:node.defeat.beast.hive_crawler.corruption.slip",
+        "progression:node.defeat.beast.hive_crawler.corruption.sink"
+      ],
+      "defeatTag": "defeat.beast.hive_crawler",
+      "flags": {
+        "defeatDone": "defeat.beast.hive_crawler.done",
+        "markUnwiped": "hive_crawler.cocoon_unwiped",
+        "corruption": "corruption.beast.hive_crawler"
+      },
+      "combos": [
+        {
+          "key": "hive_back_clamp",
+          "tagKey": "beast.combo.hive_crawler.back"
+        },
+        {
+          "key": "hive_wrist_cocoon",
+          "tagKey": "beast.combo.hive_crawler.wrist"
+        },
+        {
+          "key": "hive_crotch_egg",
+          "tagKey": "beast.combo.hive_crawler.crotch"
+        }
+      ]
+    },
+    {
+      "slug": "gel_warden",
+      "profileNs": "boss",
+      "displayName": "黑胶守卫",
+      "enemyId": "progression:enemy.gel_warden",
+      "profileId": "progression:profile.boss.gel_warden",
+      "corruptionProfileId": "progression:profile.boss.gel_warden.corruption",
+      "nodeIdsA": [
+        "progression:node.defeat.boss.gel_warden.capture",
+        "progression:node.defeat.boss.gel_warden.press",
+        "progression:node.defeat.boss.gel_warden.press.adult",
+        "progression:node.defeat.boss.gel_warden.peak",
+        "progression:node.defeat.boss.gel_warden.peak.adult",
+        "progression:node.defeat.boss.gel_warden.resolve"
+      ],
+      "nodeIdsB": [
+        "progression:node.defeat.boss.gel_warden.corruption.seed",
+        "progression:node.defeat.boss.gel_warden.corruption.slip",
+        "progression:node.defeat.boss.gel_warden.corruption.sink"
+      ],
+      "defeatTag": "defeat.boss.gel_warden",
+      "flags": {
+        "defeatDone": "defeat.boss.gel_warden.done",
+        "markUnwiped": "gel_warden.seal_unwiped",
+        "corruption": "corruption.boss.gel_warden"
+      },
+      "combos": [
+        {
+          "key": "gel_lip_seal",
+          "tagKey": "boss.combo.gel_warden.lip"
+        },
+        {
+          "key": "gel_body_drip",
+          "tagKey": "boss.combo.gel_warden.body"
+        },
+        {
+          "key": "gel_crotch_press",
+          "tagKey": "boss.combo.gel_warden.crotch"
+        }
+      ]
+    }
+  ]
+}

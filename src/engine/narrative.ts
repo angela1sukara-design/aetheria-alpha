@@ -6,6 +6,7 @@ import { RuleError } from '../core/errors.ts';
 import { evaluate } from './conditions.ts';
 import { draw } from './rng.ts';
 import { drawDefeatPlayFills, opponentLabelForKind } from './defeat-play-draws.ts';
+import { drawWildDefeatCombo, wildDefeatBaseProfileId } from './wild-defeat-draws.ts';
 import { derivedSemantics } from './semantic-query.ts';
 import { environment } from './query.ts';
 import { sceneContext } from './scene-context.ts';
@@ -108,6 +109,20 @@ export function startNarrative(s:GameState,r:Registry,c:EffectContext,kind:Narra
       tf:drawn.tf,
       comboSample:drawn.comboSample,
       playKey:drawn.playKey,
+    };
+  }
+  const wildBase=profile?.id?wildDefeatBaseProfileId(profile.id):undefined;
+  if(wildBase){
+    const drawn=drawWildDefeatCombo(s,wildBase,`wild-defeat:fill:${c.transactionId}`);
+    const enemy=r.enemies.find(e=>e.id===profile?.enemyId);
+    opponentName=enemy?.name??opponentName;
+    tags.push({role:'opponent',tagId:drawn.comboTagId});
+    fills={
+      material:drawn.material,
+      part:drawn.part,
+      action:drawn.action,
+      comboKey:drawn.comboKey,
+      ...(drawn.tf?{tf:drawn.tf}:{})
     };
   }
   a.story={instanceId:c.transactionId,kind,stage:'start',nodeId:'progression:unselected',profileId:profile?.id??null,opponentName,actor:resident?{kind:'resident',id:resident.id}:profile?.npcId?{kind:'npc',id:profile.npcId}:null,tags,visits:{},log:[],steps:0,...(fills?{fills}:{})};
