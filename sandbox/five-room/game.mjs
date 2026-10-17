@@ -1,7 +1,9 @@
 import {
   CAPABILITIES, COAT_LABEL, FETISHES, KEEPER_NAMES, MATERIALS, MONSTERS,
   PLAYER_NAMES, RELATIONS, SMITH_NAMES, TRAITS,
-  defeatOpen, fallScript, grapple, keeperSee, label, meet, monster, rumor, smithSee,
+  armorScene, defeatOpen, fallScript, fleeScene, grapple, intelScene, keeperSee,
+  label, meet, monster, mudRoom, opened, pumpRoom, questScene, restoreScene,
+  rumor, smithSee, turnInScene, washScene, winScene, restScene,
 } from './content.mjs';
 
 const STAMINA = 10;
@@ -232,17 +234,21 @@ function fallChoices(state) {
 export function present(state) {
   const p = state.player;
   if (state.phase === 'talk') {
-    return view(state, rumor(state.talk.topic), [choice('talk-close', '听完，回到眼前')]);
+    const npc = state.talk.topic === 'mud' ? state.keeper : state.smith;
+    return view(state, rumor(state.talk.topic, npc), [choice('talk-close', '听完，回到眼前')]);
   }
   if (state.phase === 'combat') {
     const foe = monster(state.combat.id);
-    const text = state.combat.beat === 0 ? meet(foe.id, p) : state.combat.beat === 1 ? grapple(foe.id, p) : (state.combat.clean ? '你挣开了这一下。它还挡在路中间。' : '这一下已经留在身上。它还没退。');
+    const text = state.combat.beat === 0
+      ? meet(foe.id, p)
+      : state.combat.beat === 1
+        ? grapple(foe.id, p)
+        : opened(foe.id, state.combat.clean);
     return view(state, text, combatChoices(state), foe.name);
   }
   if (state.phase === 'defeat') {
     const foe = monster(state.combat.id);
-    const extra = state.adult ? '你可以挣回落脚点，也可以留下。' : '你还能挣回落脚点。';
-    return view(state, `${defeatOpen(foe.id, state.combat.leaned)}${extra}`, [
+    return view(state, defeatOpen(foe.id, state.combat.leaned), [
       choice('def-return', '挣回落脚点'),
       ...(state.adult ? [choice('def-stay', '留下')] : []),
     ], foe.name);
@@ -250,19 +256,14 @@ export function present(state) {
   if (state.phase === 'fall') {
     return view(state, fallScript(state.fall.id, state.fall.step, p), fallChoices(state), monster(state.fall.id).name);
   }
-  if (state.phase === 'haven') return view(state, `${keeperSee(state.keeper, p)}灯下有床，也有水。`, roomChoices(state), '落脚点');
-  if (state.phase === 'workshop') return view(state, `${smithSee(state.smith, p)}柜台上摆着护具和还没人认领的零件。`, roomChoices(state), '工坊');
-  if (state.phase === 'mud') {
-    const text = state.cleared.mud ? '泥潭还在原处。你已经从这里走出去过一次。' : '暗渠的泥没过脚踝，还在往下吸。过去之后才会撞上守在里面的东西。';
-    return view(state, text, roomChoices(state), '暗渠');
-  }
-  const door = state.cleared.boss ? '最里面的门今天已经空了。' : '泵站的铁架还在滴水。最里面有一扇门。';
-  return view(state, door, roomChoices(state), '泵站');
+  if (state.phase === 'haven') return view(state, keeperSee(state.keeper, p), roomChoices(state), '落脚点');
+  if (state.phase === 'workshop') return view(state, smithSee(state.smith, p), roomChoices(state), '工坊');
+  if (state.phase === 'mud') return view(state, mudRoom(state.cleared.mud), roomChoices(state), '暗渠');
+  return view(state, pumpRoom(state.cleared.boss), roomChoices(state), '泵站');
 }
 
 function view(state, text, choices, place = '') {
-  const shown = state.arrival ? `${state.arrival}\n\n${text}` : text;
-  return { place, text: shown, choices, sheet: sheet(state) };
+  return { place, text: state.arrival || text, choices, sheet: sheet(state) };
 }
 
 export function sheet(state) {
@@ -323,23 +324,14 @@ function startFight(state, id) {
 
 function winFight(state) {
   const id = state.combat.id;
-  const foe = monster(id);
   if (id !== 'boss' && state.player.quest === 'accepted') state.player.quest = 'holding';
   state.player.money += id === 'boss' ? PRICES.boss : PRICES.win;
   if (id === 'slime' || id === 'vine') state.cleared.mud = true;
   if (id === 'crawler' || id === 'wolf') state.cleared.pump = true;
   if (id === 'boss') state.cleared.boss = true;
   state.combat = null;
-  if (id === 'boss') {
-    state.phase = 'pump';
-    state.arrival = `你把${foe.name}留在门后。今天这扇门不会再打开。`;
-  } else if (id === 'slime' || id === 'vine') {
-    state.phase = 'mud';
-    state.arrival = `你赢了。${state.player.quest === 'holding' ? '搜刮到的零件掂在手里。' : ''}路通向泵站，也可以退回工坊。`;
-  } else {
-    state.phase = 'pump';
-    state.arrival = `泵站安静下来。${state.player.quest === 'holding' ? '零件还在你手里。' : ''}最里面的门还关着。`;
-  }
+  state.phase = id === 'slime' || id === 'vine' ? 'mud' : 'pump';
+  state.arrival = winScene(id, state.player.quest === 'holding');
 }
 
 function loseFight(state) {
@@ -364,17 +356,19 @@ function apply(state, id) {
     state.day += 1;
     state.cleared = { mud: false, pump: false, boss: false };
     if (p.quest === 'done') p.quest = 'none';
-    state.arrival = '你把气喘匀。门外的东西回到了明天还会在的位置。';
+    state.arrival = restScene(state.keeper);
     return;
   }
   if (id === 'wash' || id === 'keeper-wash') {
+    const coats = [...p.coatings];
     clearCoats(p);
-    state.arrival = id === 'wash' ? '你自己把痕迹从皮肤上搓掉。长出来的部位还在。' : `${state.keeper.name}用热水和布把痕迹擦掉，看了你一眼，没再追问。长出来的部位还在。`;
+    state.arrival = washScene(state.keeper, coats, id === 'keeper-wash', p);
     return;
   }
   if (id === 'restore') {
+    const before = { ears: p.ears, hands: p.hands, arm: p.arm, tail: p.tail };
     restoreHuman(p);
-    state.arrival = '你把多出来的部分收回去。耳朵、手、手臂和尾巴回到出发时的样子。';
+    state.arrival = restoreScene(state.keeper.name, before);
     return;
   }
   if (id === 'go-workshop') { state.phase = 'workshop'; return; }
@@ -389,14 +383,14 @@ function apply(state, id) {
   if (id === 'talk-keeper') { state.phase = 'talk'; state.talk = { topic: 'mud' }; return; }
   if (id === 'talk-smith') { state.phase = 'talk'; state.talk = { topic: 'pump' }; return; }
   if (id === 'talk-close') { state.phase = state.talk.topic === 'mud' ? 'haven' : 'workshop'; state.talk = null; return; }
-  if (id === 'buy-armor') { p.money -= PRICES.armor; p.armor = true; state.arrival = '护具扣上身。柜台空出一块。'; return; }
-  if (id === 'accept-quest') { p.quest = 'accepted'; state.arrival = '店主要你从高危区带回一件还能用的零件。对方没说里面守着的是什么。'; return; }
-  if (id === 'turn-in') { p.quest = 'done'; p.money += PRICES.quest; state.arrival = '零件落在柜台上。钱推回到你这边。'; return; }
+  if (id === 'buy-armor') { p.money -= PRICES.armor; p.armor = true; state.arrival = armorScene(state.smith); return; }
+  if (id === 'accept-quest') { p.quest = 'accepted'; state.arrival = questScene(state.smith); return; }
+  if (id === 'turn-in') { p.quest = 'done'; p.money += PRICES.quest; state.arrival = turnInScene(state.smith); return; }
   if (id.startsWith('intel-')) {
     const foe = id.slice(6);
     if (!intelFree(state, foe)) p.money -= PRICES.intel;
     p.intel.push(foe);
-    state.arrival = `你记住了：${monster(foe).finisher}。`;
+    state.arrival = intelScene(state.smith, foe);
     return;
   }
   if (id === 'mud-slip') { startFight(state, state.mudId); return; }
@@ -414,7 +408,7 @@ function apply(state, id) {
     if (foe === 'boss') state.phase = 'pump';
     else if (foe === 'crawler' || foe === 'wolf') state.phase = state.cleared.pump ? 'pump' : 'mud';
     else state.phase = 'mud';
-    state.arrival = foe === 'wolf' ? '你跑出泵站。身后的爪子追到门槛才停。' : '你从交锋里撤出来。';
+    state.arrival = fleeScene(foe, state.phase);
     return;
   }
   if (id === 'c-giveup') { loseFight(state); return; }

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { MONSTERS } from './content.mjs';
+import { MONSTERS, RELATIONS, TRAITS, keeperSee, rumor, smithSee } from './content.mjs';
 import { createGame, present, choose, isTransformed } from './game.mjs';
 
 function has(state, id) {
@@ -55,6 +55,22 @@ test('两局互相改不到对方身上', () => {
   assert.equal(second.phase, 'haven');
   assert.notEqual(next.keeper.name + next.smith.name, '');
   assert.notEqual(first.keeper, second.keeper);
+});
+
+test('每种性格的问话都不点破怪物', () => {
+  const hidden = [...new Set(Object.values(MONSTERS).flatMap(monster => monster.hidden))];
+  const blank = { hands: 'human', arm: 'human', ears: 'human', tail: 'none', coatings: [] };
+  for (const [trait] of TRAITS) {
+    for (const which of ['mud', 'pump']) {
+      const text = rumor(which, { name: '老闸', trait, relation: 'colleague' });
+      for (const word of hidden) assert.equal(text.includes(word), false, `${trait} ${which} ${word}`);
+    }
+    for (const [relation] of RELATIONS) {
+      const npc = { name: '老闸', trait, relation };
+      assert.ok(keeperSee(npc, blank).length > 20);
+      assert.ok(smithSee(npc, blank).length > 20);
+    }
+  }
 });
 
 test('问话不说出怪物名字和打法', () => {
