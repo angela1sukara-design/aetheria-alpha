@@ -22,7 +22,11 @@ async function fetchJSON(url: URL): Promise<unknown> {
 }
 async function boot(): Promise<void> {
   const playtest = new URLSearchParams(location.search).get('playtest');
-  const indexFile = playtest === 'tagcoexist' ? '../../content/index.playtest-tagcoexist.json' : '../../content/index.json';
+  const playtestIndex: Record<string, string> = {
+    tagcoexist: '../../content/index.playtest-tagcoexist.json',
+    'r003-mire': '../../content/index.playtest-r003-mire.json',
+  };
+  const indexFile = (playtest && playtestIndex[playtest]) ?? '../../content/index.json';
   const indexUrl = new URL(indexFile, import.meta.url);
   const embedded = (globalThis as unknown as {aetheriaEmbedded?:{packs:unknown[];journal:JournalEntry[];generation:{rules:unknown;reference:unknown | unknown[];content?:unknown[];questContent?:unknown;worldProfiles?:unknown}}}).aetheriaEmbedded;
   const index = embedded ? {packs:[] as string[]} : await fetchJSON(indexUrl) as { packs: string[]; generation?: { rules?: string; reference?: string | string[]; content?: string[] } };

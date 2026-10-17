@@ -1,0 +1,681 @@
+{
+  "manifest": {
+    "id": "playtest/r003-mire",
+    "namespace": "playtest-r003-mire",
+    "version": "0.1.0",
+    "schemaVersion": 1,
+    "engineApiVersion": "0.1",
+    "author": "Angla · R003 黑沼靴尖粘附试玩草稿",
+    "status": "draft",
+    "dependencies": [
+      {
+        "id": "engine/core",
+        "version": "0.1.0",
+        "optional": false
+      },
+      {
+        "id": "aetheria/world",
+        "version": "0.1.0",
+        "optional": false
+      }
+    ],
+    "requiresCapabilities": [
+      "condition.v1",
+      "effect.v1",
+      "event.choice.v1",
+      "hook.action.v1"
+    ],
+    "migrations": []
+  },
+  "variables": [],
+  "flags": [
+    {
+      "id": "playtest-r003-mire:flag.entered",
+      "initial": false
+    },
+    {
+      "id": "playtest-r003-mire:flag.boot_stuck",
+      "initial": false
+    },
+    {
+      "id": "playtest-r003-mire:flag.leg_ascend",
+      "initial": false
+    },
+    {
+      "id": "playtest-r003-mire:flag.assessed",
+      "initial": false
+    },
+    {
+      "id": "playtest-r003-mire:flag.signal",
+      "initial": false
+    },
+    {
+      "id": "playtest-r003-mire:flag.peeled",
+      "initial": false
+    },
+    {
+      "id": "playtest-r003-mire:flag.done",
+      "initial": false
+    }
+  ],
+  "hooks": [],
+  "locations": [],
+  "routes": [],
+  "actions": [
+    {
+      "id": "playtest-r003-mire:action.start",
+      "label": "走近黑沼迷雾带（试玩）",
+      "hint": "草稿短事件 · general · 可再挑战",
+      "group": "explore",
+      "conditions": [
+        {
+          "op": "not",
+          "condition": {
+            "op": "event.state",
+            "id": "playtest-r003-mire:event.trap",
+            "state": "active"
+          }
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.start",
+          "id": "playtest-r003-mire:event.trap"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.start.enter"
+    },
+    {
+      "id": "playtest-r003-mire:action.n01.probe",
+      "label": "继续小心前探",
+      "hint": "踏入粘稠带",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "playtest-r003-mire:flag.boot_stuck",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.entered",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N02"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n01.probe",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N01"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n01.inspect",
+      "label": "蹲下查看泥面",
+      "hint": "多观察仍进陷阱",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "playtest-r003-mire:flag.boot_stuck",
+          "value": false
+        }
+      ],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.entered",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.assessed",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N02"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n01.inspect",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N01"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n01.retreat",
+      "label": "立刻退回干地",
+      "hint": "无条件撤离 · 未立粘附",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n01.retreat",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N01"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n01.resume_ascend",
+      "label": "继续处理靴侧粘附（跳过重播）",
+      "hint": "已 stuck · 不重播陷入",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "all",
+          "conditions": [
+            {
+              "op": "flag.has",
+              "id": "playtest-r003-mire:flag.boot_stuck",
+              "value": true
+            },
+            {
+              "op": "flag.has",
+              "id": "playtest-r003-mire:flag.leg_ascend",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "N03"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n01.resume_ascend",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N01"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n01.resume_resolve",
+      "label": "处理腿侧残留粘迹（跳过重播）",
+      "hint": "已上行 · 直达处理",
+      "group": "event",
+      "conditions": [
+        {
+          "op": "flag.has",
+          "id": "playtest-r003-mire:flag.leg_ascend",
+          "value": true
+        }
+      ],
+      "effects": [
+        {
+          "op": "event.advance",
+          "nodeId": "N04"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n01.resume_resolve",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N01"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n02.pull",
+      "label": "用力拔靴",
+      "hint": "靴陷成立 → 上行",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.boot_stuck",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N03"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n02.pull",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N02"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n02.twist",
+      "label": "放慢动作，旋转鞋跟松绑",
+      "hint": "靴陷 + 已检查",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.boot_stuck",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.assessed",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N03"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n02.twist",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N02"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n02.abandon",
+      "label": "拒绝纠缠，抛下物资爬向干地",
+      "hint": "无条件出口 · 弱化粘附",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.entered",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.boot_stuck",
+          "value": false
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n02.abandon",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N02"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n02.leave",
+      "label": "先撤，稍后再处理",
+      "hint": "无条件出口 · 保留靴陷离线",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.boot_stuck",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n02.leave",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N02"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n03.block",
+      "label": "用手截断上行路径",
+      "hint": "腿侧上行 + 已检查",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.leg_ascend",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.assessed",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N04"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n03.block",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N03"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n03.hem",
+      "label": "抓紧下摆，不让它沾到更内侧",
+      "hint": "停在下摆沾附",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.leg_ascend",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N04"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n03.hem",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N03"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n03.signal",
+      "label": "求助 / 呼叫",
+      "hint": "上行 + 已求助",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.leg_ascend",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.signal",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N04"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n03.signal",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N03"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n03.drag",
+      "label": "拖靴撤离现场",
+      "hint": "无条件出口 · 带粘迹",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.leg_ascend",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n03.drag",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N03"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n04.peel",
+      "label": "慢慢剥开腿侧与靴沿的粘膜",
+      "hint": "剥开 · unset stuck",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.peeled",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.boot_stuck",
+          "value": false
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.leg_ascend",
+          "value": false
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n04.peel",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N04"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n04.help",
+      "label": "呼救 / 等待协助",
+      "hint": "对齐 gel help 气质",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.signal",
+          "value": true
+        },
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n04.help",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N04"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n04.withdraw",
+      "label": "先撤到干地再处理",
+      "hint": "无条件出口 · 保留 stuck",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n04.withdraw",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N04"
+      }
+    },
+    {
+      "id": "playtest-r003-mire:action.n04.stop",
+      "label": "停止互动，结束本段",
+      "hint": "无条件免费退出",
+      "group": "event",
+      "conditions": [],
+      "effects": [
+        {
+          "op": "flag.set",
+          "id": "playtest-r003-mire:flag.done",
+          "value": true
+        },
+        {
+          "op": "event.advance",
+          "nodeId": "N05"
+        }
+      ],
+      "resultText": "playtest-r003-mire:text.n04.stop",
+      "context": {
+        "eventId": "playtest-r003-mire:event.trap",
+        "nodeId": "N04"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "playtest-r003-mire:event.trap",
+      "rating": "general",
+      "startNode": "N01",
+      "nodes": [
+        {
+          "id": "N01",
+          "type": "choice",
+          "textVariants": [
+            "playtest-r003-mire:text.n01.body"
+          ],
+          "actionIds": [
+            "playtest-r003-mire:action.n01.probe",
+            "playtest-r003-mire:action.n01.inspect",
+            "playtest-r003-mire:action.n01.retreat",
+            "playtest-r003-mire:action.n01.resume_ascend",
+            "playtest-r003-mire:action.n01.resume_resolve"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "N02",
+          "type": "choice",
+          "textVariants": [
+            "playtest-r003-mire:text.n02.body"
+          ],
+          "actionIds": [
+            "playtest-r003-mire:action.n02.pull",
+            "playtest-r003-mire:action.n02.twist",
+            "playtest-r003-mire:action.n02.abandon",
+            "playtest-r003-mire:action.n02.leave"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "N03",
+          "type": "choice",
+          "textVariants": [
+            "playtest-r003-mire:text.n03.body"
+          ],
+          "actionIds": [
+            "playtest-r003-mire:action.n03.block",
+            "playtest-r003-mire:action.n03.hem",
+            "playtest-r003-mire:action.n03.signal",
+            "playtest-r003-mire:action.n03.drag"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "N04",
+          "type": "choice",
+          "textVariants": [
+            "playtest-r003-mire:text.n04.body"
+          ],
+          "actionIds": [
+            "playtest-r003-mire:action.n04.peel",
+            "playtest-r003-mire:action.n04.help",
+            "playtest-r003-mire:action.n04.withdraw",
+            "playtest-r003-mire:action.n04.stop"
+          ],
+          "onEnter": []
+        },
+        {
+          "id": "N05",
+          "type": "exit",
+          "textVariants": [
+            "playtest-r003-mire:text.n05.body"
+          ],
+          "actionIds": [],
+          "onEnter": [
+            {
+              "op": "flag.set",
+              "id": "playtest-r003-mire:flag.done",
+              "value": true
+            },
+            {
+              "op": "event.exit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texts": {
+    "playtest-r003-mire:text.start.enter": "雾气发甜。你朝那片油亮的黑泥走了几步——试玩短事件已开始。",
+    "playtest-r003-mire:text.n01.body": "雾气发甜，带着腐败的潮意，一层层贴上你的面颊与袖口。脚下不再是硬土，而是湿软、油亮的黑泥，每一步都轻轻下陷。你提起下摆想避开最深的那一小洼——却已经站在粘稠带的中央。四周很静，只有泥面偶尔鼓起又瘪下去的细响。",
+    "playtest-r003-mire:text.n01.probe": "你放慢脚步，继续往前探。靴底已经明显比刚才更沉。",
+    "playtest-r003-mire:text.n01.inspect": "你蹲下看泥面：油亮、发冷，指尖几乎要碰上那层膜。观察够了，粘稠带仍在你脚下。",
+    "playtest-r003-mire:text.n01.retreat": "你立刻退回较干的地面。靴边只沾了几点泥，没有被缠住。",
+    "playtest-r003-mire:text.n01.resume_ascend": "靴侧已有干结的黑壳上沿。你不再重演陷入那一刻，直接面对腿侧的粘液。",
+    "playtest-r003-mire:text.n01.resume_resolve": "腿侧到下摆已有一道干亮黑痕。上行过程不必再看一遍——该决定怎么处理。",
+    "playtest-r003-mire:text.n02.body": "你想抽出前脚。泥没有溅开，而是像温热的沥青缠住靴底，咕叽一声往上裹。鞋跟陷得更深，踝侧被冷而发亮的黑膜勒住，越挣越紧。你的重心晃了一下，另一只靴也被迫踩进同一滩粘稠里。呼吸里全是甜腻的腐败味——靴子，暂时不听使唤了。",
+    "playtest-r003-mire:text.n02.pull": "你用力一拔。泥膜绷紧又回弹，靴仍陷着，粘附已经坐实。",
+    "playtest-r003-mire:text.n02.twist": "你放慢呼吸，试着旋转鞋跟。松了一点点，但黑膜仍贴着踝侧。你把处境看清楚了。",
+    "playtest-r003-mire:text.n02.abandon": "你甩掉背囊边缘的杂物，手脚并用爬向干地。靴上的泥被蹭掉大半，没有继续缠死。",
+    "playtest-r003-mire:text.n02.leave": "你先撤到雾缘。靴侧的凉膜还在，稍后再处理也不迟。",
+    "playtest-r003-mire:text.n03.body": "黑泥不再满足于靴面。一条条发亮的粘液贴着腿侧向上游走，冰凉，在皮肤上拉出细丝。它们爬过膝弯，探进外衣下摆，已经沾上衬裙或下摆的边缘。你伸手去拨——指尖触到的不是水，而是高弹、拉不断的胶质。粘液还在上行，像要替这片沼泽量一遍你的轮廓。到此为止：局部覆层，不是心性崩坏。",
+    "playtest-r003-mire:text.n03.block": "你用手去截。粘液改了道，仍绕过指缝往上。你确认了：这是上行覆层，得另想办法。",
+    "playtest-r003-mire:text.n03.hem": "你抓紧下摆。粘液停在外衣边缘发亮发沉，没有再往更内侧钻。",
+    "playtest-r003-mire:text.n03.signal": "你抬高声音呼叫。粘液仍贴着腿侧，但至少有人——或你自己——知道你需要协助。",
+    "playtest-r003-mire:text.n03.drag": "你拖着不听使唤的靴子往干地挪。腿侧留下一道发亮的痕迹，选项暂时结束。",
+    "playtest-r003-mire:text.n04.body": "粘液在腿侧停住了一拍，像在等待你的下一步。靴底仍吸在泥里，下摆边缘发亮、发沉。你可以试着一点点撕开那层凉膜，可以出声求人，也可以拖着靴子先离开这片发甜的雾。选择之前，沼泽只是轻轻、持续地，贴着你。",
+    "playtest-r003-mire:text.n04.peel": "你慢慢剥开腿侧与靴沿的粘膜。黑膜成条落下，皮肤凉而干净。粘附解除。",
+    "playtest-r003-mire:text.n04.help": "有人应了，或你把自己从泥里挪到能喘息的地方。协助让你脱离最紧的那一圈。",
+    "playtest-r003-mire:text.n04.withdraw": "你先撤到干地。粘迹还在，安全之后再剥不迟。",
+    "playtest-r003-mire:text.n04.stop": "你停止互动。这段经历可以记一笔，也可以先放下。",
+    "playtest-r003-mire:text.n05.body": "雾仍在，但你已不在陷阱选项里。粘过的地方或凉或紧，会慢慢被你忘掉——或留在经历里，等下次再踏错。本段试玩结束（journal 痕迹由引擎事件退出承担；本包不写恶堕、不写物种完成态）。"
+  },
+  "contributions": [
+    {
+      "hookId": "aetheria:hook.street.actions",
+      "actionIds": [
+        "playtest-r003-mire:action.start"
+      ]
+    }
+  ]
+}
