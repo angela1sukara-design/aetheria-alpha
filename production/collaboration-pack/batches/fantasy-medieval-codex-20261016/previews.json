@@ -1,0 +1,644 @@
+{
+  "format": "aetheria-authoring-manual-previews",
+  "specVersion": "1.3",
+  "contentTier": "general",
+  "runtimeIntegrated": false,
+  "authority": "manual-style-review-only",
+  "warning": "这六个场景是公开声明的假设，只为审阅文风。含 hold 的场景不会进入参考拼装器；没有创建批准记录或真实退出按钮。模板仅作为手工预览的完整外部引用，不计入 A 类任务配额。",
+  "templates": [
+    {
+      "id": "assembly.05.fantasy.medieval-codex-20261016.preview-b1",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "在",
+          "suffix": "，"
+        },
+        {
+          "key": "prop",
+          "slot": "propEnv",
+          "poolId": "environment.prop",
+          "bindTo": "prop",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "。"
+        },
+        {
+          "key": "sense",
+          "slot": "senseMod",
+          "poolId": "environment.sense",
+          "bindTo": "sense",
+          "required": true,
+          "prefix": "你察觉到",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "qualifierPlan": [],
+      "prose": "你可以结束观察，继续自己的安排。"
+    },
+    {
+      "id": "assembly.05.fantasy.medieval-codex-20261016.preview-b2",
+      "domain": "05",
+      "mode": "prose",
+      "contentTier": "general",
+      "fallbackTier": "general",
+      "proseTemplate": [
+        {
+          "key": "where",
+          "slot": "place",
+          "poolId": "place.current",
+          "bindTo": "place",
+          "required": true,
+          "prefix": "在",
+          "suffix": "，"
+        },
+        {
+          "key": "form",
+          "slot": "opponentForm",
+          "poolId": "actor.form",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "你留意到",
+          "suffix": "，"
+        },
+        {
+          "key": "act",
+          "slot": "actionCore",
+          "poolId": "action.observed",
+          "bindTo": "actor",
+          "required": true,
+          "prefix": "对方",
+          "suffix": "。"
+        },
+        {
+          "key": "exit",
+          "slot": "exitChoice",
+          "poolId": "exit.current",
+          "bindTo": "exit",
+          "required": true,
+          "prefix": "你可以",
+          "suffix": "。"
+        }
+      ],
+      "qualifierPlan": [],
+      "prose": "你可以结束观察，继续自己的安排。"
+    }
+  ],
+  "fixtures": [
+    {
+      "fixtureId": "hypothetical-fantasy-medieval-market-r1",
+      "task": "B1",
+      "syntheticTestSnapshot": true,
+      "runtimeIntegrated": false,
+      "evidenceStatus": "hypothetical-only",
+      "seed": 5101,
+      "revision": 1,
+      "placeName": "石桥集市",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b1.prop.18",
+        "word.fantasy.medieval-codex-20261016.b1.sense.sound.01"
+      ],
+      "selectedWords": [
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b1.prop.18",
+          "text": "一架天平",
+          "review": "draft"
+        },
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b1.sense.sound.01",
+          "text": "铃铛的轻响",
+          "review": "draft"
+        }
+      ],
+      "assumedFacts": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy",
+          "source": "manual-hypothesis",
+          "bindingKey": "place",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:place"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "balance-scale",
+          "source": "manual-hypothesis",
+          "bindingKey": "prop",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:prop"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true,
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:sense"
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound",
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:sense"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "soft-handbell",
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:sense"
+        }
+      ],
+      "assumedSemanticPrerequisites": [],
+      "hypotheticalExit": {
+        "label": "结束观察，继续自己的安排",
+        "free": true,
+        "implemented": false,
+        "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:exit"
+      },
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b1",
+      "text": "在石桥集市，你留意到一架天平。你察觉到铃铛的轻响。你可以结束观察，继续自己的安排。",
+      "scope": "仅为手工语感样张；不是实际运行拼装器的输出。",
+      "assumedBindings": {
+        "place": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:place",
+          "source": "manual-hypothesis"
+        },
+        "prop": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:prop",
+          "source": "manual-hypothesis"
+        },
+        "sense": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:sense",
+          "source": "manual-hypothesis"
+        },
+        "exit": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-market-r1:exit",
+          "source": "manual-hypothesis"
+        }
+      }
+    },
+    {
+      "fixtureId": "hypothetical-fantasy-medieval-inn-r1",
+      "task": "B1",
+      "syntheticTestSnapshot": true,
+      "runtimeIntegrated": false,
+      "evidenceStatus": "hypothetical-only",
+      "seed": 5102,
+      "revision": 1,
+      "placeName": "炉火旅店",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b1.prop.04",
+        "word.fantasy.medieval-codex-20261016.b1.sense.thermal.02"
+      ],
+      "selectedWords": [
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b1.prop.04",
+          "text": "一盏油灯",
+          "review": "draft"
+        },
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.02",
+          "text": "温暖",
+          "review": "draft"
+        }
+      ],
+      "assumedFacts": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy",
+          "source": "manual-hypothesis",
+          "bindingKey": "place",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:place"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "oil-lamp",
+          "source": "manual-hypothesis",
+          "bindingKey": "prop",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:prop"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true,
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:sense"
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal",
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:sense"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "warm",
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:sense"
+        }
+      ],
+      "assumedSemanticPrerequisites": [],
+      "hypotheticalExit": {
+        "label": "结束观察，继续自己的安排",
+        "free": true,
+        "implemented": false,
+        "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:exit"
+      },
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b1",
+      "text": "在炉火旅店，你留意到一盏油灯。你察觉到温暖。你可以结束观察，继续自己的安排。",
+      "scope": "仅为手工语感样张；不是实际运行拼装器的输出。",
+      "assumedBindings": {
+        "place": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:place",
+          "source": "manual-hypothesis"
+        },
+        "prop": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:prop",
+          "source": "manual-hypothesis"
+        },
+        "sense": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:sense",
+          "source": "manual-hypothesis"
+        },
+        "exit": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-inn-r1:exit",
+          "source": "manual-hypothesis"
+        }
+      }
+    },
+    {
+      "fixtureId": "hypothetical-fantasy-medieval-school-r1",
+      "task": "B1",
+      "syntheticTestSnapshot": true,
+      "runtimeIntegrated": false,
+      "evidenceStatus": "hypothetical-only",
+      "seed": 5103,
+      "revision": 1,
+      "placeName": "渡鸦书院",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b1.prop.40",
+        "word.fantasy.medieval-codex-20261016.b1.sense.smell.01"
+      ],
+      "selectedWords": [
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b1.prop.40",
+          "text": "一根镶着水晶的法杖",
+          "review": "hold"
+        },
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b1.sense.smell.01",
+          "text": "草木的清香",
+          "review": "draft"
+        }
+      ],
+      "assumedFacts": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy",
+          "source": "manual-hypothesis",
+          "bindingKey": "place",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:place"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "staff",
+          "source": "manual-hypothesis",
+          "bindingKey": "prop",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:prop"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true,
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:sense"
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell",
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:sense"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "herbal",
+          "source": "manual-hypothesis",
+          "bindingKey": "sense",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:sense"
+        }
+      ],
+      "assumedSemanticPrerequisites": [
+        {
+          "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.40",
+          "assumptions": [
+            "核实物件有明确的法杖身份记录、水晶材质和镶嵌关系；不能由木杖外观推出施法能力。"
+          ]
+        }
+      ],
+      "hypotheticalExit": {
+        "label": "结束观察，继续自己的安排",
+        "free": true,
+        "implemented": false,
+        "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:exit"
+      },
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b1",
+      "text": "在渡鸦书院，你留意到一根镶着水晶的法杖。你察觉到草木的清香。你可以结束观察，继续自己的安排。",
+      "scope": "含 hold，仅供文风审阅，不进入离线或游戏运行候选。",
+      "assumedBindings": {
+        "place": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:place",
+          "source": "manual-hypothesis"
+        },
+        "prop": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:prop",
+          "source": "manual-hypothesis"
+        },
+        "sense": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:sense",
+          "source": "manual-hypothesis"
+        },
+        "exit": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-school-r1:exit",
+          "source": "manual-hypothesis"
+        }
+      }
+    },
+    {
+      "fixtureId": "hypothetical-fantasy-medieval-forge-r1",
+      "task": "B2",
+      "syntheticTestSnapshot": true,
+      "runtimeIntegrated": false,
+      "evidenceStatus": "hypothetical-only",
+      "seed": 5201,
+      "revision": 1,
+      "placeName": "钟楼铁坊",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b2.form.19",
+        "word.fantasy.medieval-codex-20261016.b2.action.work.04"
+      ],
+      "selectedWords": [
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b2.form.19",
+          "text": "一位围着皮围裙的人",
+          "review": "hold"
+        },
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b2.action.work.04",
+          "text": "以小锤敲平扣环",
+          "review": "hold"
+        }
+      ],
+      "assumedFacts": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy",
+          "source": "manual-hypothesis",
+          "bindingKey": "place",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-forge-r1:place"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true,
+          "source": "manual-hypothesis",
+          "bindingKey": "actor",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-forge-r1:actor"
+        }
+      ],
+      "assumedSemanticPrerequisites": [
+        {
+          "entryId": "word.fantasy.medieval-codex-20261016.b2.form.19",
+          "assumptions": [
+            "核实同一人物正围着围裙及该衣物的皮革材质；不以职业 Tag 代替穿戴事实。"
+          ]
+        },
+        {
+          "entryId": "word.fantasy.medieval-codex-20261016.b2.action.work.04",
+          "assumptions": [
+            "核实小锤和扣环实例、人物持握与敲击关系，以及敲平这一已记录动作；不能由制作或修理标签推出。"
+          ]
+        }
+      ],
+      "hypotheticalExit": {
+        "label": "结束观察，继续自己的安排",
+        "free": true,
+        "implemented": false,
+        "instanceId": "hypothetical:hypothetical-fantasy-medieval-forge-r1:exit"
+      },
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b2",
+      "text": "在钟楼铁坊，你留意到一位围着皮围裙的人，对方以小锤敲平扣环。你可以结束观察，继续自己的安排。",
+      "scope": "含 hold，仅供文风审阅，不进入离线或游戏运行候选。",
+      "assumedBindings": {
+        "place": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-forge-r1:place",
+          "source": "manual-hypothesis"
+        },
+        "actor": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-forge-r1:actor",
+          "source": "manual-hypothesis"
+        },
+        "exit": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-forge-r1:exit",
+          "source": "manual-hypothesis"
+        }
+      }
+    },
+    {
+      "fixtureId": "hypothetical-fantasy-medieval-singer-r1",
+      "task": "B2",
+      "syntheticTestSnapshot": true,
+      "runtimeIntegrated": false,
+      "evidenceStatus": "hypothetical-only",
+      "seed": 5202,
+      "revision": 1,
+      "placeName": "炉火旅店",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b2.form.09",
+        "word.fantasy.medieval-codex-20261016.b2.action.leisure.03"
+      ],
+      "selectedWords": [
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b2.form.09",
+          "text": "一位巡游歌者",
+          "review": "hold"
+        },
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.03",
+          "text": "拨动鲁特琴的琴弦",
+          "review": "hold"
+        }
+      ],
+      "assumedFacts": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy",
+          "source": "manual-hypothesis",
+          "bindingKey": "place",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-singer-r1:place"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true,
+          "source": "manual-hypothesis",
+          "bindingKey": "actor",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-singer-r1:actor"
+        }
+      ],
+      "assumedSemanticPrerequisites": [
+        {
+          "entryId": "word.fantasy.medieval-codex-20261016.b2.form.09",
+          "assumptions": [
+            "核实绑定人物的歌者身份和巡游状态记录；乐器或衣着不证明职业。"
+          ]
+        },
+        {
+          "entryId": "word.fantasy.medieval-codex-20261016.b2.action.leisure.03",
+          "assumptions": [
+            "核实人物与鲁特琴的持有关系、琴弦部位及拨弦动作；不由歌者身份推出正在演奏。"
+          ]
+        }
+      ],
+      "hypotheticalExit": {
+        "label": "结束观察，继续自己的安排",
+        "free": true,
+        "implemented": false,
+        "instanceId": "hypothetical:hypothetical-fantasy-medieval-singer-r1:exit"
+      },
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b2",
+      "text": "在炉火旅店，你留意到一位巡游歌者，对方拨动鲁特琴的琴弦。你可以结束观察，继续自己的安排。",
+      "scope": "含 hold，仅供文风审阅，不进入离线或游戏运行候选。",
+      "assumedBindings": {
+        "place": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-singer-r1:place",
+          "source": "manual-hypothesis"
+        },
+        "actor": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-singer-r1:actor",
+          "source": "manual-hypothesis"
+        },
+        "exit": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-singer-r1:exit",
+          "source": "manual-hypothesis"
+        }
+      }
+    },
+    {
+      "fixtureId": "hypothetical-fantasy-medieval-guild-r1",
+      "task": "B2",
+      "syntheticTestSnapshot": true,
+      "runtimeIntegrated": false,
+      "evidenceStatus": "hypothetical-only",
+      "seed": 5203,
+      "revision": 1,
+      "placeName": "灰石公会",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b2.form.16",
+        "word.fantasy.medieval-codex-20261016.b2.action.social.04"
+      ],
+      "selectedWords": [
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b2.form.16",
+          "text": "一位冒险者公会接待员",
+          "review": "hold"
+        },
+        {
+          "id": "word.fantasy.medieval-codex-20261016.b2.action.social.04",
+          "text": "把摊开的地图转向同伴",
+          "review": "hold"
+        }
+      ],
+      "assumedFacts": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy",
+          "source": "manual-hypothesis",
+          "bindingKey": "place",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-guild-r1:place"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true,
+          "source": "manual-hypothesis",
+          "bindingKey": "actor",
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-guild-r1:actor"
+        }
+      ],
+      "assumedSemanticPrerequisites": [
+        {
+          "entryId": "word.fantasy.medieval-codex-20261016.b2.form.16",
+          "assumptions": [
+            "核实接待员身份和公会归属；身份文案不产生委托、登记或报酬功能。"
+          ]
+        },
+        {
+          "entryId": "word.fantasy.medieval-codex-20261016.b2.action.social.04",
+          "assumptions": [
+            "核实地图实例及展开状态、转向动作、目标人物精确实例及同伴关系；不以文案新建关系。"
+          ]
+        }
+      ],
+      "hypotheticalExit": {
+        "label": "结束观察，继续自己的安排",
+        "free": true,
+        "implemented": false,
+        "instanceId": "hypothetical:hypothetical-fantasy-medieval-guild-r1:exit"
+      },
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b2",
+      "text": "在灰石公会，你留意到一位冒险者公会接待员，对方把摊开的地图转向同伴。你可以结束观察，继续自己的安排。",
+      "scope": "含 hold，仅供文风审阅，不进入离线或游戏运行候选。",
+      "assumedBindings": {
+        "place": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-guild-r1:place",
+          "source": "manual-hypothesis"
+        },
+        "actor": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-guild-r1:actor",
+          "source": "manual-hypothesis"
+        },
+        "exit": {
+          "instanceId": "hypothetical:hypothetical-fantasy-medieval-guild-r1:exit",
+          "source": "manual-hypothesis"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2665 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "contentTier": "general",
+  "task": "B1",
+  "theme": "fantasy",
+  "author": "Codex",
+  "batchId": "batch5-fantasy-medieval-codex-20261016-b1",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.01",
+      "text": "一座烛台",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "candlestick"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.02",
+      "text": "一只沙漏",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "hourglass"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.03",
+      "text": "一卷卷轴",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "scroll"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.04",
+      "text": "一盏油灯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "oil-lamp"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.05",
+      "text": "一只铃铛",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "handbell"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.bell"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.06",
+      "text": "一把挂锁",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "padlock"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.07",
+      "text": "一只水桶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bucket"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.tool.bucket"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.08",
+      "text": "一把水壶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "kettle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.kettle"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.09",
+      "text": "一只高脚杯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "goblet"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.10",
+      "text": "一只汤碗",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "soup-bowl"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.11",
+      "text": "一只餐盘",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "plate"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.plate"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.12",
+      "text": "一只钱袋",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "coin-purse"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.13",
+      "text": "一把钥匙",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "key"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.key"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.14",
+      "text": "一张地图",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "map"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.map"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.15",
+      "text": "一支羽毛笔",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "quill"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.object.pen"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.16",
+      "text": "一只墨水瓶",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "ink-bottle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.17",
+      "text": "一只针线盒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "sewing-box"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.18",
+      "text": "一架天平",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "balance-scale"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.19",
+      "text": "一枚砝码",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "balance-weight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.20",
+      "text": "一只箭筒",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "quiver"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.21",
+      "text": "一面盾牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "shield"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.22",
+      "text": "一柄长剑",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "longsword"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.23",
+      "text": "一把手弩",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "hand-crossbow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.24",
+      "text": "一副马鞍",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "saddle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.25",
+      "text": "一把火钳",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "fire-tongs"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.26",
+      "text": "一只研钵",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "mortar"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.27",
+      "text": "一只药罐",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "medicine-jar"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.28",
+      "text": "一枚纺锤",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "spindle"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.29",
+      "text": "一把鲁特琴",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "lute"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.30",
+      "text": "一架风箱",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "bellows"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.31",
+      "text": "一柄剑刃带缺口的长剑",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "longsword"
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定长剑的剑刃确有缺口，并能查询该精确部位的表面状态；prop.kind 不证明缺损。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.32",
+      "text": "一盏灯芯焦黑的油灯",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "oil-lamp"
+        }
+      ],
+      "pendingFacts": [
+        "核实油灯具有可定位的灯芯，且该灯芯当前颜色及焦化状态有记录；不得由油灯类型推断燃烧历史。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.33",
+      "text": "一张系着蓝绳的地图",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "map"
+        }
+      ],
+      "pendingFacts": [
+        "核实蓝绳与绑定地图的系缚关系、绳子的颜色和当前状态；不能由 map 类型推出。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.34",
+      "text": "一只锁孔积着灰的匣子",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "casket"
+        }
+      ],
+      "pendingFacts": [
+        "核实该匣子有锁孔，以及灰尘位于同一匣子的锁孔内；需物件部位与附着物查询。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.35",
+      "text": "一面边缘留下箭痕的盾牌",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "shield"
+        }
+      ],
+      "pendingFacts": [
+        "核实盾牌边缘的痕迹及其明确的箭击来源记录；不能把一般划痕解释成箭痕或推断战斗经历。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.36",
+      "text": "一封封蜡开裂的信",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "sealed-letter"
+        }
+      ],
+      "pendingFacts": [
+        "核实信件确有封蜡及其附着关系，且同一封蜡当前开裂；不推断有人拆阅过。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.37",
+      "text": "一块钉着通缉令的告示板",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "notice-board"
+        }
+      ],
+      "pendingFacts": [
+        "核实告示板、纸件与钉子的附着关系；纸件内容确被识别为通缉令，不虚构追捕任务或悬赏。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.38",
+      "text": "一只盛着碎药草的研钵",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "mortar"
+        }
+      ],
+      "pendingFacts": [
+        "核实研钵与所含药草精确实例的包含关系、药草身份和碎切状态；prop.contains 单独不能证明材料种类与加工状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.39",
+      "text": "一枚刻着发光符文的护符",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "amulet"
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定护符确有刻纹、刻纹已被识别为符文，且发光源正是该符文；不推断护符效果或可用能力。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.prop.40",
+      "text": "一根镶着水晶的法杖",
+      "allowedSlots": [
+        "propEnv"
+      ],
+      "poolIds": [
+        "environment.prop"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "object"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "prop.kind",
+          "comparison": "eq",
+          "value": "staff"
+        }
+      ],
+      "pendingFacts": [
+        "核实物件有明确的法杖身份记录、水晶材质和镶嵌关系；不能由木杖外观推出施法能力。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.smell.01",
+      "text": "草木的清香",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "herbal"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.herb"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.smell.02",
+      "text": "皮革的气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "leather"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.leather"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.smell.03",
+      "text": "烟气的气味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "smoke"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.smoke"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.smell.04",
+      "text": "烤麦香里混着蜂蜡的甜味",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        }
+      ],
+      "pendingFacts": [
+        "核实同一次嗅觉记录同时辨认出烤麦与蜂蜡两种来源，以及混合关系和甜味描述；不能由单一 sense.sample 拼造复合气味。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.smell.05",
+      "text": "药草苦气中夹着炭烟",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.smell"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "smell"
+        }
+      ],
+      "pendingFacts": [
+        "核实同一地点、同一时刻的药草苦气与炭烟两种源及混合关系；不能借不同地点的样本组合。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:expanded.scent.herb",
+        "general-taxonomy:expanded.scent.smoke"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.sound.01",
+      "text": "铃铛的轻响",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "soft-handbell"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.bell"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.sound.02",
+      "text": "脚步声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "footsteps"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.footsteps"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.sound.03",
+      "text": "水声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "water-sound"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.water"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.sound.04",
+      "text": "锤砧的脆响间穿着风箱的喘声",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        }
+      ],
+      "pendingFacts": [
+        "核实锤、砧与风箱为同一听觉场景中可辨的声源，并有交替节律及音色记录；不能从铁坊地点名推断开工。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:sound.tools"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.sound.05",
+      "text": "马蹄声与车轮声交错的响动",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.sound"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "sound"
+        }
+      ],
+      "pendingFacts": [
+        "核实当前听觉记录中马蹄与车轮两个声源、同时性和交错关系；不由声音虚构车马在场。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.light.01",
+      "text": "日光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "sunlight"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:weather.sunlight"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.light.02",
+      "text": "一片柔和的光斑",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "soft-light-pool"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.light-pool"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.light.03",
+      "text": "边缘分明的阴影",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "hard-edged-shadow"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.hard-shadow"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.light.04",
+      "text": "彩绘窗投下的碎色光斑",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        }
+      ],
+      "pendingFacts": [
+        "核实彩绘窗实例、透光状态、光斑位置及光斑来自该窗的关系；不能由普通光斑样本推出彩绘玻璃。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.light-pool"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.light.05",
+      "text": "护符符文透出的青光",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.light"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "light"
+        }
+      ],
+      "pendingFacts": [
+        "核实同一护符上的符文、发光状态、青色及源与光的关系；单独的发光 Tag 不证明上述事实。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:v2.sensory.glow"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.01",
+      "text": "微凉",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "chilly"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.02",
+      "text": "温暖",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "warm"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.warm"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.03",
+      "text": "闷热",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "hot-and-stuffy"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.hot"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.04",
+      "text": "石墙透出的凉意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        }
+      ],
+      "pendingFacts": [
+        "核实石墙实例及材质、温度感知记录和该凉意来自石墙的关系；不能仅凭室内或石墙外观推断温度。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.env.chilly"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.05",
+      "text": "炉口涌出的热意",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.thermal"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "thermal"
+        }
+      ],
+      "pendingFacts": [
+        "核实当前炉口实例、热量感知及二者源关系；不由炉具存在推断已经点火。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:weather.heat"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.touch.01",
+      "text": "粗糙的触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "rough-contact"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:surface.coarse"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.touch.02",
+      "text": "光滑的触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "smooth-contact"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.touch.03",
+      "text": "柔软的触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        },
+        {
+          "fact": "sense.sample",
+          "comparison": "eq",
+          "value": "soft-contact"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:surface.soft"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.touch.04",
+      "text": "皮绳勒过掌心的紧涩感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        }
+      ],
+      "pendingFacts": [
+        "核实皮绳、人物掌心部件和实际接触关系，以及紧勒、摩擦的当前触觉记录；不能只凭 hand kind 推定掌心或接触。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:material.leather"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b1.sense.touch.05",
+      "text": "石阶上薄苔的湿滑触感",
+      "allowedSlots": [
+        "senseMod"
+      ],
+      "poolIds": [
+        "environment.sense.touch"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "location"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "sense.available",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "sense.channel",
+          "comparison": "eq",
+          "value": "touch"
+        }
+      ],
+      "pendingFacts": [
+        "核实石阶、苔层、附着位置及接触实例，且同次触觉记录确认湿滑；不得从苔的存在推断已接触或必然湿润。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:material.stone"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b1",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b1.prop.18",
+        "word.fantasy.medieval-codex-20261016.b1.sense.sound.01"
+      ],
+      "fixtureId": "hypothetical-fantasy-medieval-market-r1",
+      "seed": 5101,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在石桥集市，你留意到一架天平。你察觉到铃铛的轻响。你可以结束观察，继续自己的安排。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b1",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b1.prop.04",
+        "word.fantasy.medieval-codex-20261016.b1.sense.thermal.02"
+      ],
+      "fixtureId": "hypothetical-fantasy-medieval-inn-r1",
+      "seed": 5102,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在炉火旅店，你留意到一盏油灯。你察觉到温暖。你可以结束观察，继续自己的安排。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b1",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b1.prop.40",
+        "word.fantasy.medieval-codex-20261016.b1.sense.smell.01"
+      ],
+      "fixtureId": "hypothetical-fantasy-medieval-school-r1",
+      "seed": 5103,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在渡鸦书院，你留意到一根镶着水晶的法杖。你察觉到草木的清香。你可以结束观察，继续自己的安排。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "40 道具 + 25 感官；感官五通道各 5 条。中世纪异世界文风试稿，使用现有 fantasy 代号。每条均以 scene.setting=fantasy 门控，Tag 仅取 05 参考。draft 只表示字段和查询引用自检，不表示游戏适配器已接入或值已被生产快照采用；开放字符串查询的本批取值见 review-report.json。hold 不可用于运行候选。预览均为 manual/hypothetical-only，假设与待补条件在 previews.json。按用户要求保留顶层 contentTier=general；当前本地 v1.3 delivery Schema 不允许该顶层字段，兼容校验仅在内存中移除这一个字段后调用原验证器，不改共享 Schema。当前基于本地提交，Gemini 云端改动同步后需复核 ID、查询与内容重复。"
+}

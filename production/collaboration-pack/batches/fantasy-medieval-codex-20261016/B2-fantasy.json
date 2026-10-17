@@ -1,0 +1,2775 @@
+{
+  "format": "aetheria-authoring-delivery",
+  "specVersion": "1.3",
+  "contentTier": "general",
+  "task": "B2",
+  "theme": "fantasy",
+  "author": "Codex",
+  "batchId": "batch5-fantasy-medieval-codex-20261016-b2",
+  "revision": 1,
+  "entries": [
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.01",
+      "text": "一位旅店掌柜",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的旅店掌柜身份及任职对象；actor.present 与 fantasy 题材均不能证明职业，不据此开放住宿服务。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.02",
+      "text": "一位行商",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物确有行商身份记录；不由携带行囊、货物或旅行衣着推断交易功能。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.03",
+      "text": "一名城门守卫",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的守卫身份及所守城门；不由甲胄或站位推断职务或战斗资格。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.04",
+      "text": "一位抄写员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的抄写员身份；记录动作不等于职业，职业也不证明正在抄写。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.05",
+      "text": "一位铁匠",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的铁匠身份；不凭铁锤、火炉或金工 Tag 推断可提供修理服务。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.06",
+      "text": "一位草药师",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的草药师身份；不凭药草气味或药罐推断医疗能力及可用服务。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.07",
+      "text": "一名马厩照料者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物与特定马厩的照料身份关系；动物在场不证明该人物的身份。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.08",
+      "text": "一位驿站信使",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的信使身份及驿站归属；不能以持信或旅行状态推断。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.09",
+      "text": "一位巡游歌者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的歌者身份和巡游状态记录；乐器或衣着不证明职业。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.10",
+      "text": "一位磨坊工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物的磨坊任职身份；地点在磨坊不自动赋予职业。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.11",
+      "text": "一位石匠",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的石匠身份；工具和石屑不替代身份记录。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.12",
+      "text": "一位织工",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物的织工身份；不能由织机在场或一次编织动作反推职业。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.13",
+      "text": "一位酒窖看管者",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物与明确酒窖的看管身份关系；不凭钥匙、酒杯或站位推断权限。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.14",
+      "text": "一位修院教习",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实教习身份及修院归属；不从服饰或言行推断信仰、学识或教学服务。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.15",
+      "text": "一名受训中的法师",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实法师身份及当前受训状态；不由法杖、符文或外观推断施法能力。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.16",
+      "text": "一位冒险者公会接待员",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实接待员身份和公会归属；身份文案不产生委托、登记或报酬功能。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.17",
+      "text": "一位披着旅行斗篷的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实同一人物正穿着斗篷，并且衣物被识别为旅行斗篷；需穿戴关系和衣物类型映射。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.18",
+      "text": "一位穿着锁子甲的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实同一人物当前穿戴锁子甲的关系与衣物类型；不由金属外观推断甲种或防护数值。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.19",
+      "text": "一位围着皮围裙的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实同一人物正围着围裙及该衣物的皮革材质；不以职业 Tag 代替穿戴事实。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.20",
+      "text": "一位抱着账簿的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实绑定人物与账簿实例的持有关系、抱持姿态和账簿类型；不能用普通书籍外观代替。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.21",
+      "text": "一位提着风灯的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物与风灯实例的持有及提握关系；不据此推断风灯点亮或人物正巡夜。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.22",
+      "text": "一位带着封蜡信件的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物携带信件的关系、信件实例及封蜡附着状态；不推断信使身份或投递目标。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.23",
+      "text": "一位手背沾着炭灰的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物具备可定位的手背部位，炭灰附着在该精确部位；hand kind 不足以证明手背与附着物。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.24",
+      "text": "一位帽檐别着羽毛的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物穿戴帽子的关系、帽檐部位及羽毛的别附关系；不推断人物族群或职业。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.25",
+      "text": "一位耳尖细长的旅人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物耳部精确形状和旅人身份；不由耳形推断种族、性格、能力或意愿。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.26",
+      "text": "一位背着圆盾的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物与盾牌的背负关系、盾牌形状及当前位置；不推断守卫身份或战斗结果。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.27",
+      "text": "一位在门廊下等候的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物与门廊的当前位置关系及明确的等候动作；actor.present 不能证明具体站位。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.28",
+      "text": "一位肩头停着渡鸦的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物有相应肩部、渡鸦精确实例及停落关系；不由该画面推断驯养、契约或魔法能力。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.29",
+      "text": "一位腰侧挂着符文牌的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物腰侧位置、牌件悬挂关系及刻纹被识别为符文；不推断牌件功效或公会身份。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.form.30",
+      "text": "一位指间拈着木骰的人",
+      "allowedSlots": [
+        "opponentForm"
+      ],
+      "poolIds": [
+        "actor.form"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物适用的手指部件、骰子材质和持握姿态；不从 hand kind 或休闲 Tag 推定细动作。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.01",
+      "text": "等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "waiting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.02",
+      "text": "停下脚步",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "paused-walk"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.pause"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.03",
+      "text": "扶着杖柄等候",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物的等候动作、杖实例和扶持关系，以及适用部件与杖柄位置；粗粒度等候记录不能证明扶杖。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.state.waiting"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.04",
+      "text": "用靴尖轻点石阶",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实穿靴关系、靴尖部位、石阶实例及轻点动作的接触关系和强度。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.05",
+      "text": "逐个拨动腰间的钱袋",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物腰间钱袋实例、悬挂位置及逐个拨动动作；不能虚构钱袋数量或内含财物。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.06",
+      "text": "低头整理斗篷扣",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实斗篷穿戴关系、扣件位置、低头姿态和整理动作；整理记录不能证明衣物细节。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.organize"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.07",
+      "text": "倚着门柱望向街口",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物与门柱的倚靠关系、街口方位和视线方向；不由远望记录补造站位。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.look-far"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.waiting.08",
+      "text": "把行囊从一肩换到另一肩",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物适用的双肩部件、行囊持有及由一侧换至另一侧的完整已记录动作；不写入负重或物品变更。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.adjust-pose"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.01",
+      "text": "整理物件",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "organizing-objects"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.organize"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.02",
+      "text": "核对清单",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "checking-list"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.check-list"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.03",
+      "text": "用羽毛笔在账簿上记下数目",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物、羽毛笔、账簿和书写接触关系，以及确实记录数目的细动作；不产生财产结算或新账目。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.keep-record"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.04",
+      "text": "以小锤敲平扣环",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实小锤和扣环实例、人物持握与敲击关系，以及敲平这一已记录动作；不能由制作或修理标签推出。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.make"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.05",
+      "text": "将药草倒入研钵",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实药草、研钵、持有与倒入动作的对象关系及历史记录；观察文案不移动库存。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.prepare"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.06",
+      "text": "牵着缰绳把马领向饮水槽",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物、马、缰绳、饮水槽精确实例，以及牵引关系、路径和动作记录；不由马厩身份补造马匹。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.walk"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.07",
+      "text": "沿着织机经线穿过梭子",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实织机经线、梭子实例、人物操作关系及穿梭动作；制作记录不证明具体工具与工序。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.make"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.work.08",
+      "text": "将封蜡按在信封口",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实封蜡和信封的精确实例、信封口部位及按压动作记录；不由此声明邮件已封好或任务完成。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.prepare"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.01",
+      "text": "歇息",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "resting"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:common.action.take-break"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.02",
+      "text": "舒展身体",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "stretching"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.stretch"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.03",
+      "text": "拨动鲁特琴的琴弦",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物与鲁特琴的持有关系、琴弦部位及拨弦动作；不由歌者身份推出正在演奏。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.04",
+      "text": "在掌心抛起一枚木骰",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实适用掌心、骰子木质材质、持有及抛掷动作；不能仅凭 hand kind 推断掌心或细动作。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.05",
+      "text": "用靴跟踏着歌调的节拍",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实穿靴与靴跟部位、踏击动作、歌曲声源及动作与节拍同步关系。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.06",
+      "text": "托着酒杯看杯中泡沫",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物托杯姿态、酒杯及杯中泡沫实例、包含关系和视线目标；不推断饮用、醉意或意愿。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect-near"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.07",
+      "text": "用炭条在木板上描画城堡",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实炭条、木板材质、绘画接触关系，以及图像内容确被记录为城堡；不声称学会绘画。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:activity.draw"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.leisure.08",
+      "text": "将草茎交叠编绕",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物持有的草茎实例及交叠编绕细动作；不由制作记录补造已经制成的物品。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.make"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.01",
+      "text": "查看周围",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "inspecting-surroundings"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.02",
+      "text": "倾听",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "listening"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.listen"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.03",
+      "text": "把灯笼抬向拱门内侧",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物持灯关系、拱门内侧位置及抬灯动作；不推断灯已点亮或拱门后安全。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.04",
+      "text": "用盾沿试探门缝",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实盾牌边缘、门缝实例、持有和试探接触关系；不据此改变门锁状态。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.05",
+      "text": "沿着地上的蹄印缓步察看",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实地面痕迹确为蹄印、痕迹位置、人物缓步动作及观察路径；不推断坐骑种类或追踪成功。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.06",
+      "text": "握着剑柄注视巷口",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实长剑和剑柄实例、人物握持关系、巷口方位及视线目标；不推断敌意或即将开战。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.07",
+      "text": "隔着窗板缝隙观察街道",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实窗板缝隙、街道可视关系与人物位置和视线；不能由观察动作补造遮挡条件。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.inspect"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.08",
+      "text": "俯身听门后的动静",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实俯身姿态、门实例、人物与门的方位关系及声音来自门后的证据；不推断门后有人。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.listen"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.01",
+      "text": "与人交谈",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "talking"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.02",
+      "text": "向人让出空间",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "draft",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        },
+        {
+          "fact": "action.observed",
+          "comparison": "eq",
+          "value": "making-room"
+        }
+      ],
+      "pendingFacts": [],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.make-room"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.03",
+      "text": "用两指托出一枚行会徽章",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物适用的两个手指部件、徽章持有与托举姿态，且行会身份来自物件记录；不由纹样推断成员资格。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.04",
+      "text": "把摊开的地图转向同伴",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实地图实例及展开状态、转向动作、目标人物精确实例及同伴关系；不以文案新建关系。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.share"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.05",
+      "text": "举起木杯向邻座致意",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实木杯材质与持有关系、相邻座位及目标人物，以及举杯致意的明确动作记录；不推断对方回应或好感。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.06",
+      "text": "用指节轻敲柜台示意",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实适用指节、柜台接触关系、轻敲动作及其确有示意记录；不能从敲击反推意图。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.07",
+      "text": "将一小袋香料递给摊主",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实袋子与香料包含关系、摊主身份、交接双方和递交记录；观察文案不扣物品、不确认交易完成。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy",
+        "general-taxonomy:action.handover"
+      ]
+    },
+    {
+      "id": "word.fantasy.medieval-codex-20261016.b2.action.social.08",
+      "text": "弯腰向披甲的来客行礼",
+      "allowedSlots": [
+        "actionCore"
+      ],
+      "poolIds": [
+        "action.observed"
+      ],
+      "priority": 500,
+      "review": "hold",
+      "status": "active",
+      "role": "core",
+      "binding": {
+        "subjectType": "person"
+      },
+      "requires": [
+        {
+          "fact": "scene.setting",
+          "comparison": "eq",
+          "value": "fantasy"
+        },
+        {
+          "fact": "actor.present",
+          "comparison": "eq",
+          "value": true
+        }
+      ],
+      "pendingFacts": [
+        "核实人物弯腰行礼动作、目标来客的精确实例、来客身份与甲胄穿戴关系；不据此确立尊敬、臣属或亲密关系。"
+      ],
+      "excludes": [],
+      "exclusive": [],
+      "contentTier": "general",
+      "tagIds": [
+        "general-taxonomy:setting.fantasy"
+      ]
+    }
+  ],
+  "handPreviews": [
+    {
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b2",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b2.form.19",
+        "word.fantasy.medieval-codex-20261016.b2.action.work.04"
+      ],
+      "fixtureId": "hypothetical-fantasy-medieval-forge-r1",
+      "seed": 5201,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在钟楼铁坊，你留意到一位围着皮围裙的人，对方以小锤敲平扣环。你可以结束观察，继续自己的安排。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b2",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b2.form.09",
+        "word.fantasy.medieval-codex-20261016.b2.action.leisure.03"
+      ],
+      "fixtureId": "hypothetical-fantasy-medieval-singer-r1",
+      "seed": 5202,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在炉火旅店，你留意到一位巡游歌者，对方拨动鲁特琴的琴弦。你可以结束观察，继续自己的安排。",
+      "evidenceStatus": "hypothetical-only"
+    },
+    {
+      "templateId": "assembly.05.fantasy.medieval-codex-20261016.preview-b2",
+      "entryIds": [
+        "word.fantasy.medieval-codex-20261016.b2.form.16",
+        "word.fantasy.medieval-codex-20261016.b2.action.social.04"
+      ],
+      "fixtureId": "hypothetical-fantasy-medieval-guild-r1",
+      "seed": 5203,
+      "revision": 1,
+      "mode": "manual",
+      "text": "在灰石公会，你留意到一位冒险者公会接待员，对方把摊开的地图转向同伴。你可以结束观察，继续自己的安排。",
+      "evidenceStatus": "hypothetical-only"
+    }
+  ],
+  "suggestedTags": [],
+  "notes": "30 人物泛称 + 40 观察动作；等候/工作/消遣/警惕/社交各 8 条。中世纪异世界文风试稿，使用现有 fantasy 代号。每条均以 scene.setting=fantasy 门控，Tag 仅取 05 参考。draft 只表示字段和查询引用自检，不表示游戏适配器已接入或值已被生产快照采用；开放字符串查询的本批取值见 review-report.json。hold 不可用于运行候选。预览均为 manual/hypothetical-only，假设与待补条件在 previews.json。按用户要求保留顶层 contentTier=general；当前本地 v1.3 delivery Schema 不允许该顶层字段，兼容校验仅在内存中移除这一个字段后调用原验证器，不改共享 Schema。当前基于本地提交，Gemini 云端改动同步后需复核 ID、查询与内容重复。"
+}

@@ -1,0 +1,937 @@
+{
+  "format": "aetheria-authoring-review-report",
+  "specVersion": "1.3",
+  "base": "c686c634348e244b2ad79b10a9e44e591eaba404",
+  "theme": "fantasy",
+  "style": "中世纪异世界",
+  "status": "authored",
+  "runtimeIntegrated": false,
+  "totals": {
+    "total": 135,
+    "draft": 55,
+    "hold": 80
+  },
+  "batches": [
+    {
+      "task": "B1",
+      "total": 65,
+      "draft": 45,
+      "hold": 20,
+      "countsByPool": {
+        "environment.prop": {
+          "total": 40,
+          "draft": 30,
+          "hold": 10
+        },
+        "environment.sense.smell": {
+          "total": 5,
+          "draft": 3,
+          "hold": 2
+        },
+        "environment.sense.sound": {
+          "total": 5,
+          "draft": 3,
+          "hold": 2
+        },
+        "environment.sense.light": {
+          "total": 5,
+          "draft": 3,
+          "hold": 2
+        },
+        "environment.sense.thermal": {
+          "total": 5,
+          "draft": 3,
+          "hold": 2
+        },
+        "environment.sense.touch": {
+          "total": 5,
+          "draft": 3,
+          "hold": 2
+        }
+      },
+      "checks": {
+        "quota": "passed",
+        "wordSchema": "passed",
+        "canonicalTags05": "passed",
+        "factReferences09": "passed",
+        "perEntryFantasyGate": "passed",
+        "uniqueIdsAndTexts": "passed",
+        "manualPreviewReferencesAndConcatenation": "passed",
+        "unmodifiedDeliverySchema": "blocked-by-requested-top-level-contentTier",
+        "unmodifiedDeliverySchemaError": "$/contentTier: 未知字段",
+        "requestSpecificSchemaOverlay": "passed",
+        "officialValidatorOnInMemoryNormalizedCopy": "passed"
+      },
+      "file": "B1-fantasy.json"
+    },
+    {
+      "task": "B2",
+      "total": 70,
+      "draft": 10,
+      "hold": 60,
+      "countsByPool": {
+        "actor.form": {
+          "total": 30,
+          "draft": 0,
+          "hold": 30
+        },
+        "action.observed": {
+          "total": 40,
+          "draft": 10,
+          "hold": 30
+        }
+      },
+      "checks": {
+        "quota": "passed",
+        "wordSchema": "passed",
+        "canonicalTags05": "passed",
+        "factReferences09": "passed",
+        "perEntryFantasyGate": "passed",
+        "uniqueIdsAndTexts": "passed",
+        "manualPreviewReferencesAndConcatenation": "passed",
+        "unmodifiedDeliverySchema": "blocked-by-requested-top-level-contentTier",
+        "unmodifiedDeliverySchemaError": "$/contentTier: 未知字段",
+        "requestSpecificSchemaOverlay": "passed",
+        "officialValidatorOnInMemoryNormalizedCopy": "passed"
+      },
+      "file": "B2-fantasy.json"
+    }
+  ],
+  "scope": "本地作者稿自检；不是独立语义批准、生产快照验证、拼装器运行或游戏接入。",
+  "verification": {
+    "command": "node artifacts/authoring-fantasy-medieval-20261016/verify.mjs",
+    "passed": true,
+    "interpretation": "词条及模板按当前 v1.3 校验器验证；顶层 contentTier 只按用户要求做兼容。原 delivery Schema 未修改，原稿直接校验仍因该顶层字段失败。"
+  },
+  "compatibility": {
+    "requestedField": "contentTier",
+    "requestedValue": "general",
+    "sharedSchemaModified": false,
+    "normalization": "仅内存副本删除顶层 contentTier，再执行原 validateDelivery；交付 JSON 保留该字段。",
+    "integrationAction": "Gemini 同步后，由整合方确认采用的 delivery Schema；未解决前不称作无兼容差异的原生 v1.3 稿。"
+  },
+  "openStringValueContract": {
+    "meaning": "09 对 prop.kind/action.observed/sense.sample 只冻结字符串类型，没有冻结值枚举；以下是本稿用于精确门控的作者值，尚未验证与生产快照一致，不注册新事实键。新取值不是已实现功能；整合方必须匹配真实快照，缺失值正常不入候选。",
+    "values": {
+      "prop.kind": [
+        {
+          "value": "candlestick",
+          "meaning": "一座烛台"
+        },
+        {
+          "value": "hourglass",
+          "meaning": "一只沙漏"
+        },
+        {
+          "value": "scroll",
+          "meaning": "一卷卷轴"
+        },
+        {
+          "value": "oil-lamp",
+          "meaning": "一盏油灯"
+        },
+        {
+          "value": "handbell",
+          "meaning": "一只铃铛"
+        },
+        {
+          "value": "padlock",
+          "meaning": "一把挂锁"
+        },
+        {
+          "value": "bucket",
+          "meaning": "一只水桶"
+        },
+        {
+          "value": "kettle",
+          "meaning": "一把水壶"
+        },
+        {
+          "value": "goblet",
+          "meaning": "一只高脚杯"
+        },
+        {
+          "value": "soup-bowl",
+          "meaning": "一只汤碗"
+        },
+        {
+          "value": "plate",
+          "meaning": "一只餐盘"
+        },
+        {
+          "value": "coin-purse",
+          "meaning": "一只钱袋"
+        },
+        {
+          "value": "key",
+          "meaning": "一把钥匙"
+        },
+        {
+          "value": "map",
+          "meaning": "一张地图"
+        },
+        {
+          "value": "quill",
+          "meaning": "一支羽毛笔"
+        },
+        {
+          "value": "ink-bottle",
+          "meaning": "一只墨水瓶"
+        },
+        {
+          "value": "sewing-box",
+          "meaning": "一只针线盒"
+        },
+        {
+          "value": "balance-scale",
+          "meaning": "一架天平"
+        },
+        {
+          "value": "balance-weight",
+          "meaning": "一枚砝码"
+        },
+        {
+          "value": "quiver",
+          "meaning": "一只箭筒"
+        },
+        {
+          "value": "shield",
+          "meaning": "一面盾牌"
+        },
+        {
+          "value": "longsword",
+          "meaning": "一柄长剑"
+        },
+        {
+          "value": "hand-crossbow",
+          "meaning": "一把手弩"
+        },
+        {
+          "value": "saddle",
+          "meaning": "一副马鞍"
+        },
+        {
+          "value": "fire-tongs",
+          "meaning": "一把火钳"
+        },
+        {
+          "value": "mortar",
+          "meaning": "一只研钵"
+        },
+        {
+          "value": "medicine-jar",
+          "meaning": "一只药罐"
+        },
+        {
+          "value": "spindle",
+          "meaning": "一枚纺锤"
+        },
+        {
+          "value": "lute",
+          "meaning": "一把鲁特琴"
+        },
+        {
+          "value": "bellows",
+          "meaning": "一架风箱"
+        }
+      ],
+      "action.observed": [
+        {
+          "value": "waiting",
+          "meaning": "等候"
+        },
+        {
+          "value": "paused-walk",
+          "meaning": "停下脚步"
+        },
+        {
+          "value": "organizing-objects",
+          "meaning": "整理物件"
+        },
+        {
+          "value": "checking-list",
+          "meaning": "核对清单"
+        },
+        {
+          "value": "resting",
+          "meaning": "歇息"
+        },
+        {
+          "value": "stretching",
+          "meaning": "舒展身体"
+        },
+        {
+          "value": "inspecting-surroundings",
+          "meaning": "查看周围"
+        },
+        {
+          "value": "listening",
+          "meaning": "倾听"
+        },
+        {
+          "value": "talking",
+          "meaning": "与人交谈"
+        },
+        {
+          "value": "making-room",
+          "meaning": "向人让出空间"
+        }
+      ],
+      "sense.sample": [
+        {
+          "value": "herbal",
+          "meaning": "草木的清香"
+        },
+        {
+          "value": "leather",
+          "meaning": "皮革的气味"
+        },
+        {
+          "value": "smoke",
+          "meaning": "烟气的气味"
+        },
+        {
+          "value": "soft-handbell",
+          "meaning": "铃铛的轻响"
+        },
+        {
+          "value": "footsteps",
+          "meaning": "脚步声"
+        },
+        {
+          "value": "water-sound",
+          "meaning": "水声"
+        },
+        {
+          "value": "sunlight",
+          "meaning": "日光"
+        },
+        {
+          "value": "soft-light-pool",
+          "meaning": "一片柔和的光斑"
+        },
+        {
+          "value": "hard-edged-shadow",
+          "meaning": "边缘分明的阴影"
+        },
+        {
+          "value": "chilly",
+          "meaning": "微凉"
+        },
+        {
+          "value": "warm",
+          "meaning": "温暖"
+        },
+        {
+          "value": "hot-and-stuffy",
+          "meaning": "闷热"
+        },
+        {
+          "value": "rough-contact",
+          "meaning": "粗糙的触感"
+        },
+        {
+          "value": "smooth-contact",
+          "meaning": "光滑的触感"
+        },
+        {
+          "value": "soft-contact",
+          "meaning": "柔软的触感"
+        }
+      ]
+    }
+  },
+  "pendingSemanticFacts": [
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.31",
+      "text": "一柄剑刃带缺口的长剑",
+      "pendingFacts": [
+        "核实绑定长剑的剑刃确有缺口，并能查询该精确部位的表面状态；prop.kind 不证明缺损。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.32",
+      "text": "一盏灯芯焦黑的油灯",
+      "pendingFacts": [
+        "核实油灯具有可定位的灯芯，且该灯芯当前颜色及焦化状态有记录；不得由油灯类型推断燃烧历史。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.33",
+      "text": "一张系着蓝绳的地图",
+      "pendingFacts": [
+        "核实蓝绳与绑定地图的系缚关系、绳子的颜色和当前状态；不能由 map 类型推出。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.34",
+      "text": "一只锁孔积着灰的匣子",
+      "pendingFacts": [
+        "核实该匣子有锁孔，以及灰尘位于同一匣子的锁孔内；需物件部位与附着物查询。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.35",
+      "text": "一面边缘留下箭痕的盾牌",
+      "pendingFacts": [
+        "核实盾牌边缘的痕迹及其明确的箭击来源记录；不能把一般划痕解释成箭痕或推断战斗经历。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.36",
+      "text": "一封封蜡开裂的信",
+      "pendingFacts": [
+        "核实信件确有封蜡及其附着关系，且同一封蜡当前开裂；不推断有人拆阅过。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.37",
+      "text": "一块钉着通缉令的告示板",
+      "pendingFacts": [
+        "核实告示板、纸件与钉子的附着关系；纸件内容确被识别为通缉令，不虚构追捕任务或悬赏。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.38",
+      "text": "一只盛着碎药草的研钵",
+      "pendingFacts": [
+        "核实研钵与所含药草精确实例的包含关系、药草身份和碎切状态；prop.contains 单独不能证明材料种类与加工状态。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.39",
+      "text": "一枚刻着发光符文的护符",
+      "pendingFacts": [
+        "核实绑定护符确有刻纹、刻纹已被识别为符文，且发光源正是该符文；不推断护符效果或可用能力。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.prop.40",
+      "text": "一根镶着水晶的法杖",
+      "pendingFacts": [
+        "核实物件有明确的法杖身份记录、水晶材质和镶嵌关系；不能由木杖外观推出施法能力。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.smell.04",
+      "text": "烤麦香里混着蜂蜡的甜味",
+      "pendingFacts": [
+        "核实同一次嗅觉记录同时辨认出烤麦与蜂蜡两种来源，以及混合关系和甜味描述；不能由单一 sense.sample 拼造复合气味。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.smell.05",
+      "text": "药草苦气中夹着炭烟",
+      "pendingFacts": [
+        "核实同一地点、同一时刻的药草苦气与炭烟两种源及混合关系；不能借不同地点的样本组合。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.sound.04",
+      "text": "锤砧的脆响间穿着风箱的喘声",
+      "pendingFacts": [
+        "核实锤、砧与风箱为同一听觉场景中可辨的声源，并有交替节律及音色记录；不能从铁坊地点名推断开工。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.sound.05",
+      "text": "马蹄声与车轮声交错的响动",
+      "pendingFacts": [
+        "核实当前听觉记录中马蹄与车轮两个声源、同时性和交错关系；不由声音虚构车马在场。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.light.04",
+      "text": "彩绘窗投下的碎色光斑",
+      "pendingFacts": [
+        "核实彩绘窗实例、透光状态、光斑位置及光斑来自该窗的关系；不能由普通光斑样本推出彩绘玻璃。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.light.05",
+      "text": "护符符文透出的青光",
+      "pendingFacts": [
+        "核实同一护符上的符文、发光状态、青色及源与光的关系；单独的发光 Tag 不证明上述事实。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.04",
+      "text": "石墙透出的凉意",
+      "pendingFacts": [
+        "核实石墙实例及材质、温度感知记录和该凉意来自石墙的关系；不能仅凭室内或石墙外观推断温度。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.thermal.05",
+      "text": "炉口涌出的热意",
+      "pendingFacts": [
+        "核实当前炉口实例、热量感知及二者源关系；不由炉具存在推断已经点火。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.touch.04",
+      "text": "皮绳勒过掌心的紧涩感",
+      "pendingFacts": [
+        "核实皮绳、人物掌心部件和实际接触关系，以及紧勒、摩擦的当前触觉记录；不能只凭 hand kind 推定掌心或接触。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b1.sense.touch.05",
+      "text": "石阶上薄苔的湿滑触感",
+      "pendingFacts": [
+        "核实石阶、苔层、附着位置及接触实例，且同次触觉记录确认湿滑；不得从苔的存在推断已接触或必然湿润。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.01",
+      "text": "一位旅店掌柜",
+      "pendingFacts": [
+        "核实绑定人物的旅店掌柜身份及任职对象；actor.present 与 fantasy 题材均不能证明职业，不据此开放住宿服务。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.02",
+      "text": "一位行商",
+      "pendingFacts": [
+        "核实绑定人物确有行商身份记录；不由携带行囊、货物或旅行衣着推断交易功能。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.03",
+      "text": "一名城门守卫",
+      "pendingFacts": [
+        "核实绑定人物的守卫身份及所守城门；不由甲胄或站位推断职务或战斗资格。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.04",
+      "text": "一位抄写员",
+      "pendingFacts": [
+        "核实绑定人物的抄写员身份；记录动作不等于职业，职业也不证明正在抄写。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.05",
+      "text": "一位铁匠",
+      "pendingFacts": [
+        "核实绑定人物的铁匠身份；不凭铁锤、火炉或金工 Tag 推断可提供修理服务。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.06",
+      "text": "一位草药师",
+      "pendingFacts": [
+        "核实绑定人物的草药师身份；不凭药草气味或药罐推断医疗能力及可用服务。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.07",
+      "text": "一名马厩照料者",
+      "pendingFacts": [
+        "核实人物与特定马厩的照料身份关系；动物在场不证明该人物的身份。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.08",
+      "text": "一位驿站信使",
+      "pendingFacts": [
+        "核实绑定人物的信使身份及驿站归属；不能以持信或旅行状态推断。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.09",
+      "text": "一位巡游歌者",
+      "pendingFacts": [
+        "核实绑定人物的歌者身份和巡游状态记录；乐器或衣着不证明职业。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.10",
+      "text": "一位磨坊工",
+      "pendingFacts": [
+        "核实人物的磨坊任职身份；地点在磨坊不自动赋予职业。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.11",
+      "text": "一位石匠",
+      "pendingFacts": [
+        "核实绑定人物的石匠身份；工具和石屑不替代身份记录。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.12",
+      "text": "一位织工",
+      "pendingFacts": [
+        "核实绑定人物的织工身份；不能由织机在场或一次编织动作反推职业。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.13",
+      "text": "一位酒窖看管者",
+      "pendingFacts": [
+        "核实人物与明确酒窖的看管身份关系；不凭钥匙、酒杯或站位推断权限。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.14",
+      "text": "一位修院教习",
+      "pendingFacts": [
+        "核实教习身份及修院归属；不从服饰或言行推断信仰、学识或教学服务。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.15",
+      "text": "一名受训中的法师",
+      "pendingFacts": [
+        "核实法师身份及当前受训状态；不由法杖、符文或外观推断施法能力。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.16",
+      "text": "一位冒险者公会接待员",
+      "pendingFacts": [
+        "核实接待员身份和公会归属；身份文案不产生委托、登记或报酬功能。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.17",
+      "text": "一位披着旅行斗篷的人",
+      "pendingFacts": [
+        "核实同一人物正穿着斗篷，并且衣物被识别为旅行斗篷；需穿戴关系和衣物类型映射。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.18",
+      "text": "一位穿着锁子甲的人",
+      "pendingFacts": [
+        "核实同一人物当前穿戴锁子甲的关系与衣物类型；不由金属外观推断甲种或防护数值。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.19",
+      "text": "一位围着皮围裙的人",
+      "pendingFacts": [
+        "核实同一人物正围着围裙及该衣物的皮革材质；不以职业 Tag 代替穿戴事实。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.20",
+      "text": "一位抱着账簿的人",
+      "pendingFacts": [
+        "核实绑定人物与账簿实例的持有关系、抱持姿态和账簿类型；不能用普通书籍外观代替。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.21",
+      "text": "一位提着风灯的人",
+      "pendingFacts": [
+        "核实人物与风灯实例的持有及提握关系；不据此推断风灯点亮或人物正巡夜。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.22",
+      "text": "一位带着封蜡信件的人",
+      "pendingFacts": [
+        "核实人物携带信件的关系、信件实例及封蜡附着状态；不推断信使身份或投递目标。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.23",
+      "text": "一位手背沾着炭灰的人",
+      "pendingFacts": [
+        "核实人物具备可定位的手背部位，炭灰附着在该精确部位；hand kind 不足以证明手背与附着物。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.24",
+      "text": "一位帽檐别着羽毛的人",
+      "pendingFacts": [
+        "核实人物穿戴帽子的关系、帽檐部位及羽毛的别附关系；不推断人物族群或职业。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.25",
+      "text": "一位耳尖细长的旅人",
+      "pendingFacts": [
+        "核实人物耳部精确形状和旅人身份；不由耳形推断种族、性格、能力或意愿。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.26",
+      "text": "一位背着圆盾的人",
+      "pendingFacts": [
+        "核实人物与盾牌的背负关系、盾牌形状及当前位置；不推断守卫身份或战斗结果。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.27",
+      "text": "一位在门廊下等候的人",
+      "pendingFacts": [
+        "核实人物与门廊的当前位置关系及明确的等候动作；actor.present 不能证明具体站位。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.28",
+      "text": "一位肩头停着渡鸦的人",
+      "pendingFacts": [
+        "核实人物有相应肩部、渡鸦精确实例及停落关系；不由该画面推断驯养、契约或魔法能力。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.29",
+      "text": "一位腰侧挂着符文牌的人",
+      "pendingFacts": [
+        "核实人物腰侧位置、牌件悬挂关系及刻纹被识别为符文；不推断牌件功效或公会身份。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.form.30",
+      "text": "一位指间拈着木骰的人",
+      "pendingFacts": [
+        "核实人物适用的手指部件、骰子材质和持握姿态；不从 hand kind 或休闲 Tag 推定细动作。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.waiting.03",
+      "text": "扶着杖柄等候",
+      "pendingFacts": [
+        "核实人物的等候动作、杖实例和扶持关系，以及适用部件与杖柄位置；粗粒度等候记录不能证明扶杖。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.waiting.04",
+      "text": "用靴尖轻点石阶",
+      "pendingFacts": [
+        "核实穿靴关系、靴尖部位、石阶实例及轻点动作的接触关系和强度。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.waiting.05",
+      "text": "逐个拨动腰间的钱袋",
+      "pendingFacts": [
+        "核实人物腰间钱袋实例、悬挂位置及逐个拨动动作；不能虚构钱袋数量或内含财物。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.waiting.06",
+      "text": "低头整理斗篷扣",
+      "pendingFacts": [
+        "核实斗篷穿戴关系、扣件位置、低头姿态和整理动作；整理记录不能证明衣物细节。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.waiting.07",
+      "text": "倚着门柱望向街口",
+      "pendingFacts": [
+        "核实人物与门柱的倚靠关系、街口方位和视线方向；不由远望记录补造站位。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.waiting.08",
+      "text": "把行囊从一肩换到另一肩",
+      "pendingFacts": [
+        "核实人物适用的双肩部件、行囊持有及由一侧换至另一侧的完整已记录动作；不写入负重或物品变更。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.work.03",
+      "text": "用羽毛笔在账簿上记下数目",
+      "pendingFacts": [
+        "核实人物、羽毛笔、账簿和书写接触关系，以及确实记录数目的细动作；不产生财产结算或新账目。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.work.04",
+      "text": "以小锤敲平扣环",
+      "pendingFacts": [
+        "核实小锤和扣环实例、人物持握与敲击关系，以及敲平这一已记录动作；不能由制作或修理标签推出。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.work.05",
+      "text": "将药草倒入研钵",
+      "pendingFacts": [
+        "核实药草、研钵、持有与倒入动作的对象关系及历史记录；观察文案不移动库存。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.work.06",
+      "text": "牵着缰绳把马领向饮水槽",
+      "pendingFacts": [
+        "核实人物、马、缰绳、饮水槽精确实例，以及牵引关系、路径和动作记录；不由马厩身份补造马匹。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.work.07",
+      "text": "沿着织机经线穿过梭子",
+      "pendingFacts": [
+        "核实织机经线、梭子实例、人物操作关系及穿梭动作；制作记录不证明具体工具与工序。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.work.08",
+      "text": "将封蜡按在信封口",
+      "pendingFacts": [
+        "核实封蜡和信封的精确实例、信封口部位及按压动作记录；不由此声明邮件已封好或任务完成。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.leisure.03",
+      "text": "拨动鲁特琴的琴弦",
+      "pendingFacts": [
+        "核实人物与鲁特琴的持有关系、琴弦部位及拨弦动作；不由歌者身份推出正在演奏。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.leisure.04",
+      "text": "在掌心抛起一枚木骰",
+      "pendingFacts": [
+        "核实适用掌心、骰子木质材质、持有及抛掷动作；不能仅凭 hand kind 推断掌心或细动作。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.leisure.05",
+      "text": "用靴跟踏着歌调的节拍",
+      "pendingFacts": [
+        "核实穿靴与靴跟部位、踏击动作、歌曲声源及动作与节拍同步关系。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.leisure.06",
+      "text": "托着酒杯看杯中泡沫",
+      "pendingFacts": [
+        "核实人物托杯姿态、酒杯及杯中泡沫实例、包含关系和视线目标；不推断饮用、醉意或意愿。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.leisure.07",
+      "text": "用炭条在木板上描画城堡",
+      "pendingFacts": [
+        "核实炭条、木板材质、绘画接触关系，以及图像内容确被记录为城堡；不声称学会绘画。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.leisure.08",
+      "text": "将草茎交叠编绕",
+      "pendingFacts": [
+        "核实人物持有的草茎实例及交叠编绕细动作；不由制作记录补造已经制成的物品。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.03",
+      "text": "把灯笼抬向拱门内侧",
+      "pendingFacts": [
+        "核实人物持灯关系、拱门内侧位置及抬灯动作；不推断灯已点亮或拱门后安全。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.04",
+      "text": "用盾沿试探门缝",
+      "pendingFacts": [
+        "核实盾牌边缘、门缝实例、持有和试探接触关系；不据此改变门锁状态。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.05",
+      "text": "沿着地上的蹄印缓步察看",
+      "pendingFacts": [
+        "核实地面痕迹确为蹄印、痕迹位置、人物缓步动作及观察路径；不推断坐骑种类或追踪成功。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.06",
+      "text": "握着剑柄注视巷口",
+      "pendingFacts": [
+        "核实长剑和剑柄实例、人物握持关系、巷口方位及视线目标；不推断敌意或即将开战。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.07",
+      "text": "隔着窗板缝隙观察街道",
+      "pendingFacts": [
+        "核实窗板缝隙、街道可视关系与人物位置和视线；不能由观察动作补造遮挡条件。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.vigilance.08",
+      "text": "俯身听门后的动静",
+      "pendingFacts": [
+        "核实俯身姿态、门实例、人物与门的方位关系及声音来自门后的证据；不推断门后有人。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.social.03",
+      "text": "用两指托出一枚行会徽章",
+      "pendingFacts": [
+        "核实人物适用的两个手指部件、徽章持有与托举姿态，且行会身份来自物件记录；不由纹样推断成员资格。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.social.04",
+      "text": "把摊开的地图转向同伴",
+      "pendingFacts": [
+        "核实地图实例及展开状态、转向动作、目标人物精确实例及同伴关系；不以文案新建关系。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.social.05",
+      "text": "举起木杯向邻座致意",
+      "pendingFacts": [
+        "核实木杯材质与持有关系、相邻座位及目标人物，以及举杯致意的明确动作记录；不推断对方回应或好感。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.social.06",
+      "text": "用指节轻敲柜台示意",
+      "pendingFacts": [
+        "核实适用指节、柜台接触关系、轻敲动作及其确有示意记录；不能从敲击反推意图。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.social.07",
+      "text": "将一小袋香料递给摊主",
+      "pendingFacts": [
+        "核实袋子与香料包含关系、摊主身份、交接双方和递交记录；观察文案不扣物品、不确认交易完成。"
+      ]
+    },
+    {
+      "entryId": "word.fantasy.medieval-codex-20261016.b2.action.social.08",
+      "text": "弯腰向披甲的来客行礼",
+      "pendingFacts": [
+        "核实人物弯腰行礼动作、目标来客的精确实例、来客身份与甲胄穿戴关系；不据此确立尊敬、臣属或亲密关系。"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "file": "production/collaboration-pack/schema.mjs",
+      "sha256": "a3531aea9d6d2444c2d5170b6b619cf8722a4c158d6d51201de31f24da69be47"
+    },
+    {
+      "file": "deliverables/协作包-通用版-v1.3/05-Tag参考.json",
+      "sha256": "15ab71d7d703d150b0e5cb83f1cf42f559c81c9f418e4f858320b58b12c6f615"
+    },
+    {
+      "file": "deliverables/协作包-通用版-v1.3/09-事实目录.json",
+      "sha256": "15de9cf62c5ff29591a3a6fdf4dee1558cd7a62bd1ca21481e74c428485a9c75"
+    },
+    {
+      "file": "deliverables/协作包-通用版-v1.3/tools/authoring.mjs",
+      "sha256": "355b3851ea8856657512261485560c1671e283b26f26017bae1a85975533a7cd"
+    }
+  ],
+  "previewSummary": {
+    "total": 6,
+    "manual": 6,
+    "hypotheticalOnly": 6,
+    "containsHold": 4,
+    "referenceAssemblerExecuted": false
+  },
+  "notDone": [
+    "Gemini 云端改动尚未同步；未核对云端 ID、重复词面及规范变更。",
+    "未将稿件接入游戏或注册为 approved；未修改共享 Schema、运行内容包及引擎。",
+    "未运行参考拼装器、build-collaboration-pack、build-b-observations、游戏测试或 UI/存档验证。",
+    "80 条 hold 的语义事实与 55 条 draft 的生产查询取值尚待整合方核实。"
+  ]
+}

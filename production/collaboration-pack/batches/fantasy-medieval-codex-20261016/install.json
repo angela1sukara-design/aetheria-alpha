@@ -1,0 +1,24 @@
+{
+  "spec": "aetheria-install/1",
+  "lane": "words",
+  "base": "c686c634348e244b2ad79b10a9e44e591eaba404",
+  "summary": "中世纪异世界 fantasy 作者稿：B1 65 条、B2 70 条，共 135 条，55 draft / 80 hold；6 个手工预览。",
+  "status": "authored",
+  "files": [
+    "production/collaboration-pack/batches/fantasy-medieval-codex-20261016/install.json",
+    "production/collaboration-pack/batches/fantasy-medieval-codex-20261016/B1-fantasy.json",
+    "production/collaboration-pack/batches/fantasy-medieval-codex-20261016/B2-fantasy.json",
+    "production/collaboration-pack/batches/fantasy-medieval-codex-20261016/previews.json",
+    "production/collaboration-pack/batches/fantasy-medieval-codex-20261016/review-report.json",
+    "production/collaboration-pack/batches/fantasy-medieval-codex-20261016/README.md"
+  ],
+  "verify": [
+    "node artifacts/authoring-fantasy-medieval-20261016/verify.mjs"
+  ],
+  "notDone": [
+    "Gemini 云端改动尚未同步；未核对云端 ID、重复词面及规范变更。",
+    "未将稿件接入游戏或注册为 approved；未修改共享 Schema、运行内容包及引擎。",
+    "未运行参考拼装器、build-collaboration-pack、build-b-observations、游戏测试或 UI/存档验证。",
+    "80 条 hold 的语义事实与 55 条 draft 的生产查询取值尚待整合方核实。"
+  ]
+}
